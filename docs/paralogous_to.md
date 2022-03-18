@@ -1,38 +1,38 @@
----
-parent: Predicates
-title: biolink:paralogous_to
-grand_parent: Slots
-layout: default
----
-
-# Relation: paralogous_to
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: paralogous_to
+_a homology relationship that holds between entities (typically genes) that diverged after a duplication event._
 
 
-a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
-
-URI: [biolink:paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [homologous to](homologous_to.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:HOM0000011 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [similar_to](similar_to.md)
+            * [homologous_to](homologous_to.md)
+                * **paralogous_to**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

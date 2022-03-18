@@ -1,35 +1,26 @@
----
-parent: Node Properties
-title: biolink:source_web_page
-grand_parent: Slots
-layout: default
----
-
 # Slot: source_web_page
 
+URI: [https://w3id.org/biolink/vocab/source_web_page](https://w3id.org/biolink/vocab/source_web_page)
 
 
 
-URI: [biolink:source_web_page](https://w3id.org/biolink/vocab/source_web_page)
 
-## Domain and Range
+## Inheritance
 
-[DatasetSummary](DatasetSummary.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+* [node_property](node_property.md)
+    * **source_web_page**
 
 
-## Used by
 
- * [DatasetSummary](DatasetSummary.md)
+## Properties
 
-## Other properties
+ * Range: None
 
-|  |  |  |
-| --- | --- | --- |
-| **Broad Mappings:** | | dct:source |
+
+
+## Identifier and Mapping Information
+
+
+
+
 

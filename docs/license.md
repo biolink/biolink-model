@@ -1,48 +1,26 @@
----
-parent: Node Properties
-title: biolink:license
-grand_parent: Slots
-layout: default
----
-
 # Slot: license
 
+URI: [https://w3id.org/biolink/vocab/license](https://w3id.org/biolink/vocab/license)
 
 
 
-URI: [biolink:license](https://w3id.org/biolink/vocab/license)
 
-## Domain and Range
+## Inheritance
 
-[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+* [node_property](node_property.md)
+    * **license**
 
 
-## Used by
 
- * [Article](Article.md)
- * [Book](Book.md)
- * [BookChapter](BookChapter.md)
- * [ConfidenceLevel](ConfidenceLevel.md)
- * [Dataset](Dataset.md)
- * [DatasetDistribution](DatasetDistribution.md)
- * [DatasetSummary](DatasetSummary.md)
- * [DatasetVersion](DatasetVersion.md)
- * [EvidenceType](EvidenceType.md)
- * [InformationContentEntity](InformationContentEntity.md)
- * [InformationResource](InformationResource.md)
- * [Publication](Publication.md)
- * [Serial](Serial.md)
+## Properties
 
-## Other properties
+ * Range: None
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | dct:license |
-| **Narrow Mappings:** | | WIKIDATA_PROPERTY:P275 |
+
+
+## Identifier and Mapping Information
+
+
+
+
 

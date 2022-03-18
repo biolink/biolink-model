@@ -1,45 +1,36 @@
----
-parent: Predicates
-title: biolink:overlaps
-grand_parent: Slots
-layout: default
----
-
-# Relation: overlaps
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: overlaps
+_holds between entities that overlap in their extents (materials or processes)_
 
 
-holds between entities that overlap in their extents (materials or processes)
-
-URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
-
- *  [has part](has_part.md)
- *  [part of](part_of.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/overlaps](https://w3id.org/biolink/vocab/overlaps)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002131 |
-| **Narrow Mappings:** | | BSPO:0005001 |
-|  | | CHEMBL.MECHANISM:overlaps_with |
-|  | | RO:0002100 |
-|  | | RO:0002102 |
-|  | | RO:0002433 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **overlaps**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

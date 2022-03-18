@@ -1,35 +1,29 @@
----
-parent: Edge Properties
-title: biolink:genome_build
-grand_parent: Slots
-layout: default
----
-
 # Slot: genome_build
+_The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens._
 
 
-The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
-
-URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
-
-## Domain and Range
-
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [strand_enum](strand_enum.md)
-
-## Parents
-
- *  is_a: [sequence localization attribute](sequence_localization_attribute.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/genome_build](https://w3id.org/biolink/vocab/genome_build)
 
 
-## Used by
 
- * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | gff3:strand |
+* [association_slot](association_slot.md)
+    * [sequence_localization_attribute](sequence_localization_attribute.md)
+        * **genome_build**
+
+
+
+## Properties
+
+ * Range: strand_enum
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

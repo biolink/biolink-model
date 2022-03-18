@@ -1,28 +1,70 @@
----
-parent: Other Classes
-title: biolink:HospitalizationOutcome
-grand_parent: Classes
-layout: default
----
-
 # Class: HospitalizationOutcome
+_An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization._
 
 
-An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+
+
 
 URI: [biolink:HospitalizationOutcome](https://w3id.org/biolink/vocab/HospitalizationOutcome)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[HospitalizationOutcome]uses%20-.-%3E[Outcome])
-
----
 
 
-## Uses Mixins
+## Inheritance
 
- *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
+* **HospitalizationOutcome** [ outcome]
 
-## Attributes
 
+
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: hospitalization outcome
+description: An outcome resulting from an exposure event which is the increased manifestation
+  of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- outcome
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: hospitalization outcome
+description: An outcome resulting from an exposure event which is the increased manifestation
+  of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- outcome
+
+```
+</details>

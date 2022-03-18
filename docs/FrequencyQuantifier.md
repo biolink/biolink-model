@@ -1,49 +1,114 @@
----
-parent: Class Mixins
-title: biolink:FrequencyQuantifier
-grand_parent: Classes
-layout: default
----
-
 # Class: FrequencyQuantifier
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuantifier)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier%7Chas_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[VariantToPopulationAssociation])
-
----
 
 
-## Parents
+## Inheritance
 
- *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
-
-## Mixin for
-
- * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
-
-## Referenced by class
+* [RelationshipQuantifier](RelationshipQuantifier.md)
+    * **FrequencyQuantifier**
 
 
-## Attributes
 
 
-### Own
+## Slots
 
- * [has count](has_count.md)  <sub>0..1</sub>
-     * Description: number of things with a particular property
-     * Range: [Integer](types/Integer.md)
- * [has percentage](has_percentage.md)  <sub>0..1</sub>
-     * Description: equivalent to has quotient multiplied by 100
-     * Range: [Double](types/Double.md)
- * [has quotient](has_quotient.md)  <sub>0..1</sub>
-     * Range: [Double](types/Double.md)
- * [has total](has_total.md)  <sub>0..1</sub>
-     * Description: total number of things in a particular reference set
-     * Range: [Integer](types/Integer.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [has_count](has_count.md) | [integer](integer.md) | 0..1 | number of things with a particular property  | . |
+| [has_total](has_total.md) | [integer](integer.md) | 0..1 | total number of things in a particular reference set  | . |
+| [has_quotient](has_quotient.md) | [double](double.md) | 0..1 | None  | . |
+| [has_percentage](has_percentage.md) | [double](double.md) | 0..1 | equivalent to has quotient multiplied by 100  | . |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: frequency quantifier
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: relationship quantifier
+mixin: true
+slots:
+- has count
+- has total
+- has quotient
+- has percentage
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: frequency quantifier
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: relationship quantifier
+mixin: true
+attributes:
+  has count:
+    name: has count
+    exact_mappings:
+    - LOINC:has_count
+    description: number of things with a particular property
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: aggregate statistic
+    domain: named thing
+    alias: has_count
+    owner: frequency quantifier
+    range: integer
+  has total:
+    name: has total
+    description: total number of things in a particular reference set
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: aggregate statistic
+    domain: named thing
+    alias: has_total
+    owner: frequency quantifier
+    range: integer
+  has quotient:
+    name: has quotient
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: aggregate statistic
+    domain: named thing
+    alias: has_quotient
+    owner: frequency quantifier
+    range: double
+  has percentage:
+    name: has percentage
+    description: equivalent to has quotient multiplied by 100
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: aggregate statistic
+    domain: named thing
+    alias: has_percentage
+    owner: frequency quantifier
+    range: double
+
+```
+</details>

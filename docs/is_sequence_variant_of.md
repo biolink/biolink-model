@@ -1,44 +1,36 @@
----
-parent: Predicates
-title: biolink:is_sequence_variant_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: is_sequence_variant_of
+# Slot: is_sequence_variant_of
+_holds between a sequence variant and a nucleic acid entity_
 
 
-holds between a sequence variant and a nucleic acid entity
-
-URI: [biolink:is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence_variant_of)
-
-## Domain and Range
-
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
-
- *  [is frameshift variant of](is_frameshift_variant_of.md)
- *  [is missense variant of](is_missense_variant_of.md)
- *  [is nearby variant of](is_nearby_variant_of.md)
- *  [is non coding variant of](is_non_coding_variant_of.md)
- *  [is nonsense variant of](is_nonsense_variant_of.md)
- *  [is splice site variant of](is_splice_site_variant_of.md)
- *  [is synonymous variant of](is_synonymous_variant_of.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/is_sequence_variant_of](https://w3id.org/biolink/vocab/is_sequence_variant_of)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | gene product sequence variation encoded by gene mutant |
-|  | | allelic variant of |
-|  | | gene product variant of gene product |
-| **Narrow Mappings:** | | WIKIDATA:P3433 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **is_sequence_variant_of**
+
+
+
+## Properties
+
+ * Range: nucleic acid entity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

@@ -1,35 +1,36 @@
----
-parent: Predicates
-title: biolink:translation_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: translation_of
+# Slot: translation_of
+_inverse of translates to_
 
 
-inverse of translates to
-
-URI: [biolink:translation_of](https://w3id.org/biolink/vocab/translation_of)
-
-## Domain and Range
-
-[Protein](Protein.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/translation_of](https://w3id.org/biolink/vocab/translation_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Close Mappings:** | | RO:0002512 |
-|  | | SIO:010083 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **translation_of**
+
+
+
+## Properties
+
+ * Range: transcript
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:opposite_of | biolink:translates to |
+
 

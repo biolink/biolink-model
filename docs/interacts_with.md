@@ -1,45 +1,36 @@
----
-parent: Predicates
-title: biolink:interacts_with
-grand_parent: Slots
-layout: default
----
-
-# Relation: interacts_with
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: interacts_with
+_holds between any two entities that directly or indirectly interact with each other_
 
 
-holds between any two entities that directly or indirectly interact with each other
-
-URI: [biolink:interacts_with](https://w3id.org/biolink/vocab/interacts_with)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
-
- *  [directly interacts with](directly_interacts_with.md)
- *  [genetically interacts with](genetically_interacts_with.md)
- *  [physically interacts with](physically_interacts_with.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/interacts_with](https://w3id.org/biolink/vocab/interacts_with)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002434 |
-| **Narrow Mappings:** | | RO:0002103 |
-|  | | RO:0002120 |
-|  | | RO:0002130 |
-|  | | SEMMEDDB:complicates |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **interacts_with**
+
+
+
+## Properties
+
+ * Range: named thing
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

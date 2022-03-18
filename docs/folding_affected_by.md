@@ -1,29 +1,28 @@
----
-parent: Predicates
-title: biolink:folding_affected_by
-grand_parent: Slots
-layout: default
----
+# Slot: folding_affected_by
 
-# Relation: folding_affected_by
+URI: [https://w3id.org/biolink/vocab/folding_affected_by](https://w3id.org/biolink/vocab/folding_affected_by)
 
 
 
 
-URI: [biolink:folding_affected_by](https://w3id.org/biolink/vocab/folding_affected_by)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **folding_affected_by**
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
-## Parents
 
- *  is_a: [affected by](affected_by.md)
+## Properties
 
-## Children
+ * Range: chemical entity or gene or gene product
 
- *  [folding decreased by](folding_decreased_by.md)
- *  [folding increased by](folding_increased_by.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

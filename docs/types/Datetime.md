@@ -1,16 +1,10 @@
----
-parent: Built-in Types
-grand_parent: Types
-title: metatype:Datetime
-layout: default
----
 
-# Type: Datetime
+# Type: datetime
 
 
 The combination of a date and time
 
-URI: [metatype:Datetime](https://linkml.github.io/linkml-model/docs/types/Datetime)
+URI: [linkml:Datetime](https://w3id.org/linkml/Datetime)
 
 |  |  |  |
 | --- | --- | --- |

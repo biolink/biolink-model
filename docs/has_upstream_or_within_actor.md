@@ -1,29 +1,28 @@
----
-parent: Predicates
-title: biolink:has_upstream_or_within_actor
-grand_parent: Slots
-layout: default
----
+# Slot: has_upstream_or_within_actor
 
-# Relation: has_upstream_or_within_actor
+URI: [https://w3id.org/biolink/vocab/has_upstream_or_within_actor](https://w3id.org/biolink/vocab/has_upstream_or_within_actor)
 
 
 
 
-URI: [biolink:has_upstream_or_within_actor](https://w3id.org/biolink/vocab/has_upstream_or_within_actor)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_upstream_actor](has_upstream_actor.md)
+            * **has_upstream_or_within_actor**
 
-[BiologicalProcess](BiologicalProcess.md) ->  <sub>0..\*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
-## Parents
 
- *  is_a: [has upstream actor](has_upstream_actor.md)
+## Properties
 
-## Children
+ * Range: gene or gene product
 
- *  [has negative upstream or within actor](has_negative_upstream_or_within_actor.md)
- *  [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

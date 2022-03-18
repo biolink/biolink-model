@@ -1,35 +1,30 @@
----
-parent: Predicates
-title: biolink:author
-grand_parent: Slots
-layout: default
----
-
-# Relation: author
+# Slot: author
+_an instance of one (co-)creator primarily responsible for a written work_
 
 
-an instance of one (co-)creator primarily responsible for a written work
-
-URI: [biolink:author](https://w3id.org/biolink/vocab/author)
-
-## Domain and Range
-
-[Publication](Publication.md) ->  <sub>0..\*</sub> [Agent](Agent.md)
-
-## Parents
-
- *  is_a: [contributor](contributor.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/author](https://w3id.org/biolink/vocab/author)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | dct:creator |
-|  | | WIKIDATA_PROPERTY:P50 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [contributor](contributor.md)
+            * **author**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

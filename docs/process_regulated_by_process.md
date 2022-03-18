@@ -1,29 +1,28 @@
----
-parent: Predicates
-title: biolink:process_regulated_by_process
-grand_parent: Slots
-layout: default
----
+# Slot: process_regulated_by_process
 
-# Relation: process_regulated_by_process
+URI: [https://w3id.org/biolink/vocab/process_regulated_by_process](https://w3id.org/biolink/vocab/process_regulated_by_process)
 
 
 
 
-URI: [biolink:process_regulated_by_process](https://w3id.org/biolink/vocab/process_regulated_by_process)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **process_regulated_by_process**
 
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
 
-## Parents
 
- *  is_a: [affected by](affected_by.md)
+## Properties
 
-## Children
+ * Range: occurrent
 
- *  [process negatively regulated by process](process_negatively_regulated_by_process.md)
- *  [process positively regulated by process](process_positively_regulated_by_process.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

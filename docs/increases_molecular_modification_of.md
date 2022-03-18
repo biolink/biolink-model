@@ -1,71 +1,39 @@
----
-parent: Predicates
-title: biolink:increases_molecular_modification_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: increases_molecular_modification_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: increases_molecular_modification_of
+_holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)_
 
 
-holds between two chemical or gene/gene product entities  where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
-
-URI: [biolink:increases_molecular_modification_of](https://w3id.org/biolink/vocab/increases_molecular_modification_of)
-
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [affects molecular modification of](affects_molecular_modification_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/increases_molecular_modification_of](https://w3id.org/biolink/vocab/increases_molecular_modification_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_molecular_modification_of |
-| **Narrow Mappings:** | | CTD:increases_acetylation |
-|  | | CTD:increases_acylation |
-|  | | CTD:increases_alkylation |
-|  | | CTD:increases_amination |
-|  | | CTD:increases_carbamoylation |
-|  | | CTD:increases_ethylation |
-|  | | CTD:increases_glutathionylation |
-|  | | CTD:increases_glycation |
-|  | | CTD:increases_glycosylation |
-|  | | CTD:increases_glucuronidation |
-|  | | CTD:increases_N-linked_glycosylation |
-|  | | CTD:increases_O-linked_glycosylation |
-|  | | CTD:increases_hydroxylation |
-|  | | CTD:increases_lipidation |
-|  | | CTD:increases_farnesylation |
-|  | | CTD:increases_geranoylation |
-|  | | CTD:increases_myristoylation |
-|  | | CTD:increases_palmitoylation |
-|  | | CTD:increases_prenylation |
-|  | | CTD:increases_methylation |
-|  | | CTD:increases_nitrosation |
-|  | | CTD:increases_nucleotidylation |
-|  | | CTD:increases_phosphorylation |
-|  | | CTD:increases_ribosylation |
-|  | | CTD:increases_ADP-ribosylation |
-|  | | CTD:increases_sulfation |
-|  | | CTD:increases_sumoylation |
-|  | | CTD:increases_ubiquitination |
-|  | | CTD:increases_oxidation |
-|  | | CTD:increases_reduction |
-|  | | CTD:increases_carboxylation |
-|  | | GAMMA:acetylation |
-|  | | GAMMA:oxidizer |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * [affects_molecular_modification_of](affects_molecular_modification_of.md)
+                * **increases_molecular_modification_of** [ increases amount or activity of]
+
+
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:decreases molecular modification of |
+
 

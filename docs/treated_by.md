@@ -1,41 +1,29 @@
----
-parent: Predicates
-title: biolink:treated_by
-grand_parent: Slots
-layout: default
----
-
-# Relation: treated_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: treated_by
+_holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition_
 
 
-holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-
-URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
-
-## Domain and Range
-
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
-
- *  [approved for treatment by](approved_for_treatment_by.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/treated_by](https://w3id.org/biolink/vocab/treated_by)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P2176 |
-|  | | MONDO:disease_responds_to |
-| **Narrow Mappings:** | | RO:0002302 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **treated_by**
+
+
+
+## Properties
+
+ * Range: chemical or drug or treatment
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

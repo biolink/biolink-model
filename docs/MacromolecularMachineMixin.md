@@ -1,50 +1,115 @@
----
-parent: Class Mixins
-title: biolink:MacromolecularMachineMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: MacromolecularMachineMixin
+_A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this._
 
 
-A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:MacromolecularMachineMixin](https://w3id.org/biolink/vocab/MacromolecularMachineMixin)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularActivity],[ChemicalToChemicalDerivationAssociation]++-%20catalyst%20qualifier(i)%200..%2A%3E[MacromolecularMachineMixin%7Cname:symbol_type%20%3F],[ChemicalToChemicalDerivationAssociation]++-%20catalyst%20qualifier%200..%2A%3E[MacromolecularMachineMixin],[FunctionalAssociation]++-%20subject%201..1%3E[MacromolecularMachineMixin],[MolecularActivity]++-%20enabled%20by%200..%2A%3E[MacromolecularMachineMixin],[MacromolecularMachineMixin]%5E-[MacromolecularComplexMixin],[MacromolecularMachineMixin]%5E-[GeneOrGeneProduct],[MacromolecularComplexMixin],[GeneOrGeneProduct],[FunctionalAssociation],[ChemicalToChemicalDerivationAssociation],[Association])
-
----
 
 
-## Children
+## Inheritance
 
- * [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
- * [MacromolecularComplexMixin](MacromolecularComplexMixin.md) - A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
-
-## Referenced by class
-
- *  **[Association](Association.md)** *[catalyst qualifier](catalyst_qualifier.md)*  <sub>0..\*</sub>  **[MacromolecularMachineMixin](MacromolecularMachineMixin.md)**
- *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[chemical to chemical derivation association➞catalyst qualifier](chemical_to_chemical_derivation_association_catalyst_qualifier.md)*  <sub>0..\*</sub>  **[MacromolecularMachineMixin](MacromolecularMachineMixin.md)**
- *  **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association➞subject](functional_association_subject.md)*  <sub>1..1</sub>  **[MacromolecularMachineMixin](MacromolecularMachineMixin.md)**
- *  **[MolecularActivity](MolecularActivity.md)** *[molecular activity➞enabled by](molecular_activity_enabled_by.md)*  <sub>0..\*</sub>  **[MacromolecularMachineMixin](MacromolecularMachineMixin.md)**
-
-## Attributes
+* **MacromolecularMachineMixin**
+    * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * [MacromolecularComplexMixin](MacromolecularComplexMixin.md)
 
 
-### Own
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
 
-### Domain for slot:
+## Slots
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name  | . |
+
+
+## Usages
+
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [MolecularActivity](MolecularActivity.md) | [enabled_by](enabled_by.md) | range | macromolecular machine mixin |
+| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [catalyst_qualifier](catalyst_qualifier.md) | range | macromolecular machine mixin |
+| [FunctionalAssociation](FunctionalAssociation.md) | [subject](subject.md) | range | macromolecular machine mixin |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [subject](subject.md) | domain | macromolecular machine mixin |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [subject](subject.md) | range | macromolecular machine mixin |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [subject](subject.md) | domain | macromolecular machine mixin |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [subject](subject.md) | range | macromolecular machine mixin |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [subject](subject.md) | domain | macromolecular machine mixin |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [subject](subject.md) | range | macromolecular machine mixin |
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: macromolecular machine mixin
+description: A union of gene locus, gene product, and macromolecular complex mixin.
+  These are the basic units of function in a cell. They either carry out individual
+  biological activities, or they encode molecules which do this.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slots:
+- name
+slot_usage:
+  name:
+    name: name
+    description: genes are typically designated by a short symbol and a full name.
+      We map the symbol to the default display name and use an additional slot for
+      full name
+    range: symbol type
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: macromolecular machine mixin
+description: A union of gene locus, gene product, and macromolecular complex mixin.
+  These are the basic units of function in a cell. They either carry out individual
+  biological activities, or they encode molecules which do this.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  name:
+    name: name
+    description: genes are typically designated by a short symbol and a full name.
+      We map the symbol to the default display name and use an additional slot for
+      full name
+    range: symbol type
+attributes:
+  name:
+    name: name
+    description: genes are typically designated by a short symbol and a full name.
+      We map the symbol to the default display name and use an additional slot for
+      full name
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: macromolecular machine mixin
+    range: symbol type
+
+```
+</details>

@@ -1,34 +1,81 @@
----
-parent: Other Classes
-title: biolink:PathologicalProcessExposure
-grand_parent: Classes
-layout: default
----
-
 # Class: PathologicalProcessExposure
+_A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease._
 
 
-A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+
+
 
 URI: [biolink:PathologicalProcessExposure](https://w3id.org/biolink/vocab/PathologicalProcessExposure)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalProcessExposure%7Ctimepoint:time_type%20%3F]uses%20-.-%3E[ExposureEvent],[ExposureEvent])
-
----
 
 
-## Uses Mixins
+## Inheritance
 
- *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-
-## Attributes
+* **PathologicalProcessExposure** [ exposure event]
 
 
-### Inherited from exposure event:
 
- * [timepoint](timepoint.md)  <sub>0..1</sub>
-     * Description: a point in time
-     * Range: [TimeType](types/TimeType.md)
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: pathological process exposure
+description: A pathological process, when viewed as an exposure, representing a precondition,
+  leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: pathological process exposure
+description: A pathological process, when viewed as an exposure, representing a precondition,
+  leading to or influencing an outcome, e.g. autoimmunity leading to disease.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+attributes:
+  timepoint:
+    name: timepoint
+    description: a point in time
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: timepoint
+    owner: pathological process exposure
+    range: time type
+
+```
+</details>

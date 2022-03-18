@@ -1,5 +1,5 @@
 
-# Class: model_organism_database
+# Subset: model_organism_database
 
 
 Subset that is relevant for a typical Model Organism Database (MOD)

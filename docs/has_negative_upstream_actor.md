@@ -1,27 +1,28 @@
----
-parent: Predicates
-title: biolink:has_negative_upstream_actor
-grand_parent: Slots
-layout: default
----
+# Slot: has_negative_upstream_actor
 
-# Relation: has_negative_upstream_actor
+URI: [https://w3id.org/biolink/vocab/has_negative_upstream_actor](https://w3id.org/biolink/vocab/has_negative_upstream_actor)
 
 
 
 
-URI: [biolink:has_negative_upstream_actor](https://w3id.org/biolink/vocab/has_negative_upstream_actor)
+## Inheritance
 
-## Domain and Range
-
-[BiologicalProcess](BiologicalProcess.md) ->  <sub>0..\*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [has upstream actor](has_upstream_actor.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_upstream_actor](has_upstream_actor.md)
+            * **has_negative_upstream_actor**
 
 
-## Used by
+
+## Properties
+
+ * Range: gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

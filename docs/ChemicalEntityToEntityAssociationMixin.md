@@ -1,44 +1,84 @@
----
-parent: Class Mixins
-title: biolink:ChemicalEntityToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: ChemicalEntityToEntityAssociationMixin
+_An interaction between a chemical entity and another entity_
 
 
-An interaction between a chemical entity and another entity
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:ChemicalEntityToEntityAssociationMixin](https://w3id.org/biolink/vocab/ChemicalEntityToEntityAssociationMixin)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DrugToEntityAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalEntityOrGeneOrGeneProduct]%3Csubject%201..1-++[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalEntityOrGeneOrGeneProduct])
-
----
 
 
-## Children
+## Inheritance
 
- * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)
- * [DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md) - An interaction between a drug and another entity
-
-## Referenced by class
-
-
-## Attributes
+* **ChemicalEntityToEntityAssociationMixin**
+    * [DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md)
+    * [ChemicalToEntityAssociationMixin](ChemicalToEntityAssociationMixin.md)
 
 
-### Own
 
- * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the chemical entity that is an interactor
-     * Range: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
-### Domain for slot:
+## Slots
 
- * [chemical entity to entity association mixin➞subject](chemical_entity_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the chemical entity that is an interactor
-     * Range: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: chemical entity to entity association mixin
+description: An interaction between a chemical entity and another entity
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the chemical entity that is an interactor
+    range: chemical entity or gene or gene product
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: chemical entity to entity association mixin
+description: An interaction between a chemical entity and another entity
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the chemical entity that is an interactor
+    range: chemical entity or gene or gene product
+defining_slots:
+- subject
+
+```
+</details>

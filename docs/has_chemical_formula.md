@@ -1,34 +1,28 @@
----
-parent: Node Properties
-title: biolink:has_chemical_formula
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_chemical_formula
+_description of chemical compound based on element symbols_
 
 
-description of chemical compound based on element symbols
-
-URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [ChemicalFormulaValue](types/ChemicalFormulaValue.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P274 |
+* [node_property](node_property.md)
+    * **has_chemical_formula**
+
+
+
+## Properties
+
+ * Range: chemical formula value
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

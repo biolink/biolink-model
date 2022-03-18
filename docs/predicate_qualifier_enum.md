@@ -1,5 +1,5 @@
 
-# Class: predicate_qualifier_enum
+# Enum: predicate_qualifier_enum
 
 
 constrained list of qualifying terms that soften or expand the definition of the predicate used. can be used to constrain or qualify any predicate (any child of related_to).

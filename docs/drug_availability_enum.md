@@ -1,5 +1,5 @@
 
-# Class: drug_availability_enum
+# Enum: drug_availability_enum
 
 
 

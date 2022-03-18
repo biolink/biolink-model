@@ -1,40 +1,35 @@
----
-parent: Predicates
-title: biolink:affects_response_to
-grand_parent: Slots
-layout: default
----
+# Slot: affects_response_to
 
-# Relation: affects_response_to
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/affects_response_to](https://w3id.org/biolink/vocab/affects_response_to)
 
 
 
 
-URI: [biolink:affects_response_to](https://w3id.org/biolink/vocab/affects_response_to)
+## Inheritance
 
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [affects](affects.md)
-
-## Children
-
- *  [decreases response to](decreases_response_to.md)
- *  [increases response to](increases_response_to.md)
-
-## Used by
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * **affects_response_to**
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_response_to |
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

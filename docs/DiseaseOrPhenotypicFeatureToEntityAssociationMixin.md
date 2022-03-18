@@ -1,47 +1,84 @@
----
-parent: Class Mixins
-title: biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: DiseaseOrPhenotypicFeatureToEntityAssociationMixin
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeature])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) (mixin)  - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: disease or phenotype
-     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
-     * Example: MP:0013229 abnormal brain ventricle size
 
-### Domain for slot:
 
- * [disease or phenotypic feature to entity association mixin➞subject](disease_or_phenotypic_feature_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: disease or phenotype
-     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
-     * Example: MP:0013229 abnormal brain ventricle size
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: disease or phenotypic feature to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: disease or phenotype
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    - value: MP:0013229
+      description: abnormal brain ventricle size
+    range: disease or phenotypic feature
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: disease or phenotypic feature to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: disease or phenotype
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    - value: MP:0013229
+      description: abnormal brain ventricle size
+    range: disease or phenotypic feature
+defining_slots:
+- subject
+
+```
+</details>

@@ -1,41 +1,37 @@
----
-parent: Predicates
-title: biolink:exact_match
-grand_parent: Slots
-layout: default
----
-
-# Relation: exact_match
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: exact_match
+_holds between two entities that have strictly equivalent meanings, with a high degree of confidence_
 
 
-holds between two entities that have strictly equivalent meanings, with a high degree of confidence
-
-URI: [biolink:exact_match](https://w3id.org/biolink/vocab/exact_match)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [close match](close_match.md)
-
-## Children
-
- *  [same as](same_as.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/exact_match](https://w3id.org/biolink/vocab/exact_match)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | skos:exactMatch |
-|  | | WIKIDATA:Q39893449 |
-|  | | WIKIDATA:P2888 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_concept_level](related_to_at_concept_level.md)
+        * [close_match](close_match.md)
+            * **exact_match**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

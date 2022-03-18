@@ -1,40 +1,36 @@
----
-parent: Predicates
-title: biolink:expressed_in
-grand_parent: Slots
-layout: default
----
-
-# Relation: expressed_in
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: expressed_in
+_holds between a gene or gene product and an anatomical entity in which it is expressed_
 
 
-holds between a gene or gene product and an anatomical entity in which it is expressed
-
-URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
-
-## Domain and Range
-
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [AnatomicalEntity](AnatomicalEntity.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002206 |
-| **Narrow Mappings:** | | NCIT:R49 |
-|  | | NCIT:R46 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **expressed_in**
+
+
+
+## Properties
+
+ * Range: anatomical entity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

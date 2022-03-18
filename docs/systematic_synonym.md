@@ -1,34 +1,28 @@
----
-parent: Node Properties
-title: biolink:systematic_synonym
-grand_parent: Slots
-layout: default
----
-
 # Slot: systematic_synonym
+_more commonly used for gene symbols in yeast_
 
 
-more commonly used for gene symbols in yeast
-
-URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_synonym)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [LabelType](types/LabelType.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [http://purl.obolibrary.org/obo/go#systematic_synonym](http://purl.obolibrary.org/obo/go#systematic_synonym)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | GOP:systematic_synonym |
+* [node_property](node_property.md)
+    * **systematic_synonym**
+
+
+
+## Properties
+
+ * Range: label type
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

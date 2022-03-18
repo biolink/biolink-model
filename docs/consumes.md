@@ -1,34 +1,36 @@
----
-parent: Predicates
-title: biolink:consumes
-grand_parent: Slots
-layout: default
----
+# Slot: consumes
 
-# Relation: consumes
+URI: [https://w3id.org/biolink/vocab/consumes](https://w3id.org/biolink/vocab/consumes)
 
 
 
 
-URI: [biolink:consumes](https://w3id.org/biolink/vocab/consumes)
+## Inheritance
 
-## Domain and Range
-
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
-
-## Parents
-
- *  is_a: [has input](has_input.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_participant](has_participant.md)
+            * [has_input](has_input.md)
+                * **consumes**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Narrow Mappings:** | | RO:0004009 |
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

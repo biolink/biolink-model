@@ -1,28 +1,68 @@
----
-parent: Other Classes
-title: biolink:MortalityOutcome
-grand_parent: Classes
-layout: default
----
-
 # Class: MortalityOutcome
+_An outcome of death from resulting from an exposure event._
 
 
-An outcome of death from resulting from an exposure event.
+
+
 
 URI: [biolink:MortalityOutcome](https://w3id.org/biolink/vocab/MortalityOutcome)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[MortalityOutcome]uses%20-.-%3E[Outcome])
-
----
 
 
-## Uses Mixins
+## Inheritance
 
- *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
+* **MortalityOutcome** [ outcome]
 
-## Attributes
 
+
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: mortality outcome
+description: An outcome of death from resulting from an exposure event.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- outcome
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: mortality outcome
+description: An outcome of death from resulting from an exposure event.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- outcome
+
+```
+</details>

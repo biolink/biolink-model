@@ -1,5 +1,5 @@
 
-# Class: logical_interpretation_enum
+# Enum: logical_interpretation_enum
 
 
 

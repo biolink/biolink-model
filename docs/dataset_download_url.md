@@ -1,34 +1,26 @@
----
-parent: Node Properties
-title: biolink:dataset_download_url
-grand_parent: Slots
-layout: default
----
-
 # Slot: dataset_download_url
 
+URI: [http://www.w3.org/ns/dcat#downloadURL](http://www.w3.org/ns/dcat#downloadURL)
 
 
 
-URI: [biolink:dataset_download_url](https://w3id.org/biolink/vocab/dataset_download_url)
 
-## Domain and Range
+## Inheritance
 
-[Dataset](Dataset.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+* [node_property](node_property.md)
+    * **dataset_download_url**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | dcat:downloadURL |
+## Identifier and Mapping Information
+
+
+
+
 

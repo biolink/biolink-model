@@ -1,36 +1,28 @@
----
-parent: Edge Properties
-title: biolink:p_value
-grand_parent: Slots
-layout: default
----
-
 # Slot: p_value
+_A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone._
 
 
-A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
-
-URI: [biolink:p_value](https://w3id.org/biolink/vocab/p_value)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/p_value](https://w3id.org/biolink/vocab/p_value)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | OBI:0000175 |
-|  | | NCIT:C44185 |
-|  | | EDAM-DATA:1669 |
+* [association_slot](association_slot.md)
+    * **p_value**
+
+
+
+## Properties
+
+ * Range: float
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

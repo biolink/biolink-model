@@ -1,37 +1,29 @@
----
-parent: Predicates
-title: biolink:secretion_decreased_by
-grand_parent: Slots
-layout: default
----
+# Slot: secretion_decreased_by
 
-# Relation: secretion_decreased_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/secretion_decreased_by](https://w3id.org/biolink/vocab/secretion_decreased_by)
 
 
 
 
-URI: [biolink:secretion_decreased_by](https://w3id.org/biolink/vocab/secretion_decreased_by)
+## Inheritance
 
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [secretion affected by](secretion_affected_by.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * [secretion_affected_by](secretion_affected_by.md)
+                * **secretion_decreased_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Identifier and Mapping Information
+
+
+
+
 

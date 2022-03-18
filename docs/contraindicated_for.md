@@ -1,34 +1,37 @@
----
-parent: Predicates
-title: biolink:contraindicated_for
-grand_parent: Slots
-layout: default
----
-
-# Relation: contraindicated_for
+# Slot: contraindicated_for
+_Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug._
 
 
-Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
-
-URI: [biolink:contraindicated_for](https://w3id.org/biolink/vocab/contraindicated_for)
-
-## Domain and Range
-
-[Drug](Drug.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/contraindicated_for](https://w3id.org/biolink/vocab/contraindicated_for)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | NCIT:C37933 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **contraindicated_for**
+
+
+
+## Properties
+
+ * Range: disease or phenotypic feature
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:treats |
+
 

@@ -1,11 +1,14 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-15T22:59:25\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.14\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-17T15:48:20\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.14\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
          "@prefix": true
       },
-      "AspGD": "http://example.org/UNKNOWN/AspGD/",
+      "AspGD": {
+         "@id": "http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=",
+         "@prefix": true
+      },
       "BFO": {
          "@id": "http://purl.obolibrary.org/obo/BFO_",
          "@prefix": true

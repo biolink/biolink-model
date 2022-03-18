@@ -1,36 +1,28 @@
----
-parent: Edge Properties
-title: biolink:reaction_direction
-grand_parent: Slots
-layout: default
----
-
 # Slot: reaction_direction
+_the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)_
 
 
-the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
-
-URI: [biolink:reaction_direction](https://w3id.org/biolink/vocab/reaction_direction)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [reaction_direction_enum](reaction_direction_enum.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/reaction_direction](https://w3id.org/biolink/vocab/reaction_direction)
 
 
-## Used by
 
- * [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md)
- * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Narrow Mappings:** | | NCIT:C42677 |
+* [association_slot](association_slot.md)
+    * **reaction_direction**
+
+
+
+## Properties
+
+ * Range: reaction_direction_enum
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

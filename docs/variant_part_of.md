@@ -1,27 +1,29 @@
----
-parent: Predicates
-title: biolink:variant_part_of
-grand_parent: Slots
-layout: default
----
+# Slot: variant_part_of
 
-# Relation: variant_part_of
+URI: [https://w3id.org/biolink/vocab/variant_part_of](https://w3id.org/biolink/vocab/variant_part_of)
 
 
 
 
-URI: [biolink:variant_part_of](https://w3id.org/biolink/vocab/variant_part_of)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [part of](part_of.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [overlaps](overlaps.md)
+            * [part_of](part_of.md)
+                * **variant_part_of**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

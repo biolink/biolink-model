@@ -1,38 +1,39 @@
----
-parent: Predicates
-title: biolink:decreases_folding_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: decreases_folding_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: decreases_folding_of
+_holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other_
 
 
-holds between a chemical or gene or gene product entity and a nucleic acid entity where the action or effect of one decreases the rate or quality of folding of the other
-
-URI: [biolink:decreases_folding_of](https://w3id.org/biolink/vocab/decreases_folding_of)
-
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
-
-## Parents
-
- *  is_a: [affects folding of](affects_folding_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/decreases_folding_of](https://w3id.org/biolink/vocab/decreases_folding_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:decreases_folding_of |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * [affects_folding_of](affects_folding_of.md)
+                * **decreases_folding_of** [ decreases amount or activity of]
+
+
+
+## Properties
+
+ * Range: nucleic acid entity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:increases folding of |
+
 

@@ -1,47 +1,85 @@
----
-parent: Class Mixins
-title: biolink:DrugToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: DrugToEntityAssociationMixin
+_An interaction between a drug and another entity_
 
 
-An interaction between a drug and another entity
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/vocab/DrugToEntityAssociationMixin)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Drug]%3Csubject%201..1-%20[DrugToEntityAssociationMixin],[DrugToGeneAssociation]uses%20-.-%3E[DrugToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[DrugToEntityAssociationMixin],[DrugToGeneAssociation],[Drug],[ChemicalEntityToEntityAssociationMixin])
-
----
 
 
-## Parents
+## Inheritance
 
- *  is_a: [ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
-
-## Mixin for
-
- * [DrugToGeneAssociation](DrugToGeneAssociation.md) (mixin)  - An interaction between a drug and a gene or gene product.
-
-## Referenced by class
+* [ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md)
+    * **DrugToEntityAssociationMixin**
 
 
-## Attributes
 
 
-### Own
+## Slots
 
- * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the drug that is an interactor
-     * Range: [Drug](Drug.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
-### Domain for slot:
 
- * [drug to entity association mixin➞subject](drug_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the drug that is an interactor
-     * Range: [Drug](Drug.md)
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: drug to entity association mixin
+description: An interaction between a drug and another entity
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: chemical entity to entity association mixin
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the drug that is an interactor
+    range: drug
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: drug to entity association mixin
+description: An interaction between a drug and another entity
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: chemical entity to entity association mixin
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the drug that is an interactor
+    range: drug
+defining_slots:
+- subject
+
+```
+</details>

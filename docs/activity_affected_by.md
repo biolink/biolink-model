@@ -1,29 +1,30 @@
----
-parent: Predicates
-title: biolink:activity_affected_by
-grand_parent: Slots
-layout: default
----
-
-# Relation: activity_affected_by
+# Slot: activity_affected_by
+_holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest_
 
 
-holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
+URI: [https://w3id.org/biolink/vocab/activity_affected_by](https://w3id.org/biolink/vocab/activity_affected_by)
 
-URI: [biolink:activity_affected_by](https://w3id.org/biolink/vocab/activity_affected_by)
 
-## Domain and Range
 
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
-## Parents
+## Inheritance
 
- *  is_a: [affected by](affected_by.md)
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **activity_affected_by**
 
-## Children
 
- *  [activity decreased by](activity_decreased_by.md)
- *  [activity increased by](activity_increased_by.md)
 
-## Used by
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

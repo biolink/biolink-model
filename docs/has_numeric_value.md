@@ -1,38 +1,23 @@
----
-parent: Other Slots
-title: biolink:has_numeric_value
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_numeric_value
-
-samples
-{: .samples-subset-label }
+_connects a quantity value to a number_
 
 
-connects a quantity value to a number
-
-URI: [biolink:has_numeric_value](https://w3id.org/biolink/vocab/has_numeric_value)
-
-## Domain and Range
-
-[QuantityValue](QuantityValue.md) ->  <sub>0..1</sub> [Double](types/Double.md)
-
-## Parents
+URI: [https://w3id.org/biolink/vocab/has_numeric_value](https://w3id.org/biolink/vocab/has_numeric_value)
 
 
-## Children
+
+<!-- no inheritance hierarchy -->
 
 
-## Used by
+## Properties
 
- * [QuantityValue](QuantityValue.md)
+ * Range: double
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | samples |
-| **Exact Mappings:** | | qud:quantityValue |
+
+## Identifier and Mapping Information
+
+
+
+
 

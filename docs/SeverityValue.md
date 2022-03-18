@@ -1,87 +1,186 @@
----
-parent: Other Classes
-title: biolink:SeverityValue
-grand_parent: Classes
-layout: default
----
-
 # Class: SeverityValue
+_describes the severity of a phenotypic feature or disease_
 
 
-describes the severity of a phenotypic feature or disease
+
+
 
 URI: [biolink:SeverityValue](https://w3id.org/biolink/vocab/SeverityValue)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[EntityToFeatureOrDiseaseQualifiersMixin]++-%20severity%20qualifier%200..1%3E[SeverityValue%7Cname(i):label_type%20%3F;iri(i):iri_type%20%3F;source(i):label_type%20%3F],[Attribute]%5E-[SeverityValue],[QuantityValue],[OntologyClass],[NamedThing],[EntityToFeatureOrDiseaseQualifiersMixin],[Attribute],[Association])
-
----
 
 
-## Parents
+## Inheritance
 
- *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
-
-## Referenced by class
-
- *  **[Association](Association.md)** *[severity qualifier](severity_qualifier.md)*  <sub>0..1</sub>  **[SeverityValue](SeverityValue.md)**
-
-## Attributes
+* [Annotation](Annotation.md)
+    * [Attribute](Attribute.md) [ ontology class]
+        * **SeverityValue**
 
 
-### Inherited from attribute:
 
- * [attribute➞name](attribute_name.md)  <sub>0..1</sub>
-     * Description: The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal,samples)
- * [has attribute type](has_attribute_type.md)  <sub>1..1</sub>
-     * Description: connects an attribute to a class that describes it
-     * Range: [OntologyClass](OntologyClass.md)
-     * in subsets: (samples)
- * [has quantitative value](has_quantitative_value.md)  <sub>0..\*</sub>
-     * Description: connects an attribute to a value
-     * Range: [QuantityValue](QuantityValue.md)
-     * in subsets: (samples)
- * [has qualitative value](has_qualitative_value.md)  <sub>0..1</sub>
-     * Description: connects an attribute to a value
-     * Range: [NamedThing](NamedThing.md)
-     * in subsets: (samples)
 
-### Inherited from entity:
+## Slots
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>0..1</sub>
-     * Description: An IRI for an entity. This is determined by the id using expansion rules.
-     * Range: [IriType](types/IriType.md)
-     * in subsets: (translator_minimal,samples)
- * [category](category.md)  <sub>0..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [CategoryType](types/CategoryType.md)
-     * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal)
- * [provided by](provided_by.md)  <sub>0..\*</sub>
-     * Description: connects an association to the agent (person, organization or group) that provided it
-     * Range: [Agent](Agent.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+| [has_attribute_type](has_attribute_type.md) | [OntologyClass](OntologyClass.md) | 1..1 | connects an attribute to a class that describes it  | . |
+| [has_quantitative_value](has_quantitative_value.md) | [QuantityValue](QuantityValue.md) | 0..* | connects an attribute to a value  | . |
+| [has_qualitative_value](has_qualitative_value.md) | [NamedThing](NamedThing.md) | 0..1 | connects an attribute to a value  | . |
+| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
+| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+
+
+## Usages
+
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | range | severity value |
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: severity value
+description: describes the severity of a phenotypic feature or disease
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: attribute
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: severity value
+description: describes the severity of a phenotypic feature or disease
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: attribute
+attributes:
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: severity value
+    range: label type
+  has attribute type:
+    name: has attribute type
+    narrow_mappings:
+    - LOINC:has_modality_type
+    - LOINC:has_view_type
+    description: connects an attribute to a class that describes it
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: attribute
+    multivalued: false
+    alias: has_attribute_type
+    owner: severity value
+    range: ontology class
+    required: true
+  has quantitative value:
+    name: has quantitative value
+    exact_mappings:
+    - qud:quantityValue
+    narrow_mappings:
+    - SNOMED:has_concentration_strength_numerator_value
+    - SNOMED:has_presentation_strength_denominator_value
+    - SNOMED:has_presentation_strength_numerator_value
+    description: connects an attribute to a value
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: attribute
+    multivalued: true
+    alias: has_quantitative_value
+    owner: severity value
+    range: quantity value
+  has qualitative value:
+    name: has qualitative value
+    description: connects an attribute to a value
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: attribute
+    multivalued: false
+    alias: has_qualitative_value
+    owner: severity value
+    range: named thing
+  iri:
+    name: iri
+    exact_mappings:
+    - WIKIDATA_PROPERTY:P854
+    description: An IRI for an entity. This is determined by the id using expansion
+      rules.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: iri
+    owner: severity value
+    range: iri type
+  source:
+    name: source
+    description: a lightweight analog to the association class 'provided by' slot,
+      which is the string name, or the authoritative (i.e. database) namespace, designating
+      the origin of the entity to which the slot belongs.
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: source
+    owner: severity value
+    range: label type
+
+```
+</details>

@@ -1,39 +1,38 @@
----
-parent: Predicates
-title: biolink:predisposes
-grand_parent: Slots
-layout: default
----
-
-# Relation: predisposes
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: predisposes
+_holds between two entities where exposure to one entity increases the chance of developing the other_
 
 
-holds between two entities where exposure to one entity increases the chance of developing the other
-
-URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [affects risk for](affects_risk_for.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/predisposes](https://w3id.org/biolink/vocab/predisposes)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | SEMMEDDB:PREDISPOSES |
-|  | | SEMMEDDB:predisposes |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects_risk_for](affects_risk_for.md)
+            * **predisposes**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:prevents |
+
 

@@ -1,27 +1,28 @@
----
-parent: Predicates
-title: biolink:has_nonsense_variant
-grand_parent: Slots
-layout: default
----
+# Slot: has_nonsense_variant
 
-# Relation: has_nonsense_variant
+URI: [https://w3id.org/biolink/vocab/has_nonsense_variant](https://w3id.org/biolink/vocab/has_nonsense_variant)
 
 
 
 
-URI: [biolink:has_nonsense_variant](https://w3id.org/biolink/vocab/has_nonsense_variant)
+## Inheritance
 
-## Domain and Range
-
-[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
-
-## Parents
-
- *  is_a: [has sequence variant](has_sequence_variant.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_sequence_variant](has_sequence_variant.md)
+            * **has_nonsense_variant**
 
 
-## Used by
+
+## Properties
+
+ * Range: sequence variant
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

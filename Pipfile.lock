@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7cff20fe34dcf37d6e11a2d506233299510385436dc2ebe63b50cbe4b8790d67"
+            "sha256": "5e37653c0a0f1ab9843d8658c51644819e8c3a7ea213eac2f5ab7e47482f6ed6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -302,11 +302,11 @@
         },
         "linkml": {
             "hashes": [
-                "sha256:22c1d0b54c8a22cd25dc5391367d459b34a4c3461ac651d8cb2e55570cbc2d80",
-                "sha256:d6928231d6fef738b4825a54b81d8e407e868a526b2ef6199c1b02218e6c5113"
+                "sha256:ca633be50241e75f4b5a63b045d84f23e3376e0e5113eed1231bf3f810388662",
+                "sha256:e2f893b6d1202614eba22c326dc18583b57cf047e7ca50f5f60c7864866d9a30"
             ],
             "index": "pypi",
-            "version": "==1.2.2"
+            "version": "==1.2.3"
         },
         "linkml-dataops": {
             "hashes": [
@@ -321,7 +321,7 @@
                 "sha256:4df6f91e7256bb9b05bc79c9e5dca3757433ea19577e50df6f57baafb1a1b050",
                 "sha256:dc01bf5965df1d8266aa5cb1ba39a9679ce66eedebbb1a83f4764596dbb11f47"
             ],
-            "markers": "python_full_version >= '3.7.1' and python_full_version < '4.0.0'",
+            "markers": "python_version < '4' and python_full_version >= '3.7.1'",
             "version": "==1.2.2"
         },
         "markdown-it-py": {
@@ -721,11 +721,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:2347b2b432c891a863acadca2da9ac101eae6169b1d3dfee2ec605ecd50dbfe5",
-                "sha256:e4f30b9f84e5ab3decf945113119649fec09c1fc3507c6ebffec75646c56e62b"
+                "sha256:6599055eeb23bfef457d5605d33a4d68804266e6cb430b0fb12417c5efeae36c",
+                "sha256:782ef48d58982ddb49920c11a0c5c9c0b02e7d7d1c2ad0aa44e1a1e133051c96"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==60.9.3"
+            "version": "==60.10.0"
         },
         "shexjsg": {
             "hashes": [
@@ -888,11 +888,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed",
-                "sha256:0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+                "sha256:44ece4d53fb1706f667c9bd1c648f5469a2ec925fcf3a776667042d645472c14",
+                "sha256:aabaf16477806a5e1dd19aa41f8c2b7950dd3c746362d7e3223dbe6de6ac448e"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_full_version < '4.0.0'",
-            "version": "==1.26.8"
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
+            "version": "==1.26.9"
         },
         "watchdog": {
             "hashes": [

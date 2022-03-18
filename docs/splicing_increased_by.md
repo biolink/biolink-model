@@ -1,37 +1,29 @@
----
-parent: Predicates
-title: biolink:splicing_increased_by
-grand_parent: Slots
-layout: default
----
+# Slot: splicing_increased_by
 
-# Relation: splicing_increased_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/splicing_increased_by](https://w3id.org/biolink/vocab/splicing_increased_by)
 
 
 
 
-URI: [biolink:splicing_increased_by](https://w3id.org/biolink/vocab/splicing_increased_by)
+## Inheritance
 
-## Domain and Range
-
-[Transcript](Transcript.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [splicing affected by](splicing_affected_by.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * [splicing_affected_by](splicing_affected_by.md)
+                * **splicing_increased_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Identifier and Mapping Information
+
+
+
+
 

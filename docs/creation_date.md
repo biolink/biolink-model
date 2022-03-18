@@ -1,49 +1,28 @@
----
-parent: Node Properties
-title: biolink:creation_date
-grand_parent: Slots
-layout: default
----
-
 # Slot: creation_date
+_date on which an entity was created. This can be applied to nodes or edges_
 
 
-date on which an entity was created. This can be applied to nodes or edges
-
-URI: [biolink:creation_date](https://w3id.org/biolink/vocab/creation_date)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [Date](types/Date.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/creation_date](https://w3id.org/biolink/vocab/creation_date)
 
 
-## Used by
 
- * [Article](Article.md)
- * [Book](Book.md)
- * [BookChapter](BookChapter.md)
- * [ConfidenceLevel](ConfidenceLevel.md)
- * [Dataset](Dataset.md)
- * [DatasetDistribution](DatasetDistribution.md)
- * [DatasetSummary](DatasetSummary.md)
- * [DatasetVersion](DatasetVersion.md)
- * [EvidenceType](EvidenceType.md)
- * [InformationContentEntity](InformationContentEntity.md)
- * [InformationResource](InformationResource.md)
- * [Publication](Publication.md)
- * [Serial](Serial.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | publication date |
-| **Exact Mappings:** | | dct:createdOn |
-|  | | WIKIDATA_PROPERTY:P577 |
+* [node_property](node_property.md)
+    * **creation_date**
+
+
+
+## Properties
+
+ * Range: date
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

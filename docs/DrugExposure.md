@@ -1,56 +1,99 @@
----
-parent: Other Classes
-title: biolink:DrugExposure
-grand_parent: Classes
-layout: default
----
-
 # Class: DrugExposure
+_A drug exposure is an intake of a particular drug._
 
 
-A drug exposure is an intake of a particular drug.
+
+
 
 URI: [biolink:DrugExposure](https://w3id.org/biolink/vocab/DrugExposure)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[DrugToGeneInteractionExposure],[DrugExposure%7Ctimepoint(i):time_type%20%3F]uses%20-.-%3E[ExposureEvent],[DrugExposure]%5E-[DrugToGeneInteractionExposure],[ChemicalExposure]%5E-[DrugExposure],[ChemicalExposure])
-
----
 
 
-## Parents
+## Inheritance
 
- *  is_a: [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical entity.
-
-## Uses Mixins
-
- *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-
-## Children
-
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
-
-## Referenced by class
+* [ChemicalExposure](ChemicalExposure.md) [ exposure event]
+    * **DrugExposure** [ exposure event]
+        * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) [ gene grouping mixin]
 
 
-## Attributes
 
 
-### Inherited from exposure event:
+## Slots
 
- * [timepoint](timepoint.md)  <sub>0..1</sub>
-     * Description: a point in time
-     * Range: [TimeType](types/TimeType.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | drug intake |
-|  | | drug dose |
-|  | | medication intake |
-| **Exact Mappings:** | | ECTO:0000509 |
-| **Broad Mappings:** | | SIO:001005 |
+## Usages
 
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: drug exposure
+aliases:
+- drug intake
+- drug dose
+- medication intake
+exact_mappings:
+- ECTO:0000509
+broad_mappings:
+- SIO:001005
+description: A drug exposure is an intake of a particular drug.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: chemical exposure
+mixins:
+- exposure event
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: drug exposure
+aliases:
+- drug intake
+- drug dose
+- medication intake
+exact_mappings:
+- ECTO:0000509
+broad_mappings:
+- SIO:001005
+description: A drug exposure is an intake of a particular drug.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: chemical exposure
+mixins:
+- exposure event
+attributes:
+  timepoint:
+    name: timepoint
+    description: a point in time
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: timepoint
+    owner: drug exposure
+    range: time type
+
+```
+</details>

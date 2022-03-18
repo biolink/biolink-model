@@ -1,44 +1,74 @@
----
-parent: Class Mixins
-title: biolink:GeneToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: GeneToEntityAssociationMixin
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) (mixin) 
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) (mixin) 
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: gene that is the subject of the association
-     * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 
-### Domain for slot:
 
- * [gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: gene that is the subject of the association
-     * Range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: gene to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: gene that is the subject of the association
+    range: gene or gene product
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: gene to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: gene that is the subject of the association
+    range: gene or gene product
+defining_slots:
+- subject
+
+```
+</details>

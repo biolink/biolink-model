@@ -1,27 +1,27 @@
----
-parent: Predicates
-title: biolink:missing_from
-grand_parent: Slots
-layout: default
----
+# Slot: missing_from
 
-# Relation: missing_from
+URI: [https://w3id.org/biolink/vocab/missing_from](https://w3id.org/biolink/vocab/missing_from)
 
 
 
 
-URI: [biolink:missing_from](https://w3id.org/biolink/vocab/missing_from)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **missing_from**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

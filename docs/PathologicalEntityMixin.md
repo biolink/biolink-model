@@ -1,41 +1,72 @@
----
-parent: Class Mixins
-title: biolink:PathologicalEntityMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: PathologicalEntityMixin
+_A pathological (abnormal) structure or process._
 
 
-A pathological (abnormal) structure or process.
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:PathologicalEntityMixin](https://w3id.org/biolink/vocab/PathologicalEntityMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalProcess]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalAnatomicalStructure]uses%20-.-%3E[PathologicalEntityMixin],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[PathologicalEntityMixin],[PathologicalProcess],[PathologicalAnatomicalStructure],[DiseaseOrPhenotypicFeatureExposure])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) (mixin)  - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
- * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) (mixin)  - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
- * [PathologicalProcess](PathologicalProcess.md) (mixin)  - A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+## Slots
 
-## Referenced by class
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-## Attributes
+## Usages
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | MPATH:0 |
-| **Narrow Mappings:** | | HP:0000118 |
+## Identifier and Mapping Information
 
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: pathological entity mixin
+exact_mappings:
+- MPATH:0
+narrow_mappings:
+- HP:0000118
+description: A pathological (abnormal) structure or process.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: pathological entity mixin
+exact_mappings:
+- MPATH:0
+narrow_mappings:
+- HP:0000118
+description: A pathological (abnormal) structure or process.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+
+```
+</details>

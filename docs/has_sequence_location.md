@@ -1,34 +1,36 @@
----
-parent: Predicates
-title: biolink:has_sequence_location
-grand_parent: Slots
-layout: default
----
-
-# Relation: has_sequence_location
+# Slot: has_sequence_location
+_holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig._
 
 
-holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
-
-URI: [biolink:has_sequence_location](https://w3id.org/biolink/vocab/has_sequence_location)
-
-## Domain and Range
-
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_sequence_location](https://w3id.org/biolink/vocab/has_sequence_location)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | faldo:location |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **has_sequence_location**
+
+
+
+## Properties
+
+ * Range: nucleic acid entity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

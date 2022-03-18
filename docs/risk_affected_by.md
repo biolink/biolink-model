@@ -1,28 +1,27 @@
----
-parent: Predicates
-title: biolink:risk_affected_by
-grand_parent: Slots
-layout: default
----
+# Slot: risk_affected_by
 
-# Relation: risk_affected_by
+URI: [https://w3id.org/biolink/vocab/risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
 
 
 
 
-URI: [biolink:risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **risk_affected_by**
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
-## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+## Properties
 
-## Children
+ * Range: None
 
- *  [prevented by](prevented_by.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

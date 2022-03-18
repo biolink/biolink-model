@@ -1,5 +1,5 @@
 
-# Class: sequence_enum
+# Enum: sequence_enum
 
 
 type of sequence

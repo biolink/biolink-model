@@ -1,27 +1,30 @@
----
-parent: Predicates
-title: biolink:disrupted_by
-grand_parent: Slots
-layout: default
----
-
-# Relation: disrupted_by
+# Slot: disrupted_by
+_describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another._
 
 
-describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
-
-URI: [biolink:disrupted_by](https://w3id.org/biolink/vocab/disrupted_by)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [affected by](affected_by.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/disrupted_by](https://w3id.org/biolink/vocab/disrupted_by)
 
 
-## Used by
+
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **disrupted_by**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

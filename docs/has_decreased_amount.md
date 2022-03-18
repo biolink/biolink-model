@@ -1,34 +1,35 @@
----
-parent: Predicates
-title: biolink:has_decreased_amount
-grand_parent: Slots
-layout: default
----
+# Slot: has_decreased_amount
 
-# Relation: has_decreased_amount
+URI: [https://w3id.org/biolink/vocab/has_decreased_amount](https://w3id.org/biolink/vocab/has_decreased_amount)
 
 
 
 
-URI: [biolink:has_decreased_amount](https://w3id.org/biolink/vocab/has_decreased_amount)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **has_decreased_amount**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Narrow Mappings:** | | CL:has_low_plasma_membrane_amount |
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:has increased amount |
+
 

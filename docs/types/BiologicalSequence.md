@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:BiologicalSequence
-layout: default
----
 
-# Type: BiologicalSequence
+# Type: biological sequence
 
 
 
 
-URI: [biolink:BiologicalSequence](https://w3id.org/biolink/vocab/types/biolink:BiologicalSequence)
+URI: [biolink:BiologicalSequence](https://w3id.org/biolink/vocab/BiologicalSequence)
 
 |  |  |  |
 | --- | --- | --- |

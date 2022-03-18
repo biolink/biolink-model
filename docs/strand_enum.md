@@ -1,5 +1,5 @@
 
-# Class: strand_enum
+# Enum: strand_enum
 
 
 strand

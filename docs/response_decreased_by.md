@@ -1,37 +1,29 @@
----
-parent: Predicates
-title: biolink:response_decreased_by
-grand_parent: Slots
-layout: default
----
+# Slot: response_decreased_by
 
-# Relation: response_decreased_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/response_decreased_by](https://w3id.org/biolink/vocab/response_decreased_by)
 
 
 
 
-URI: [biolink:response_decreased_by](https://w3id.org/biolink/vocab/response_decreased_by)
+## Inheritance
 
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [response affected by](response_affected_by.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * [response_affected_by](response_affected_by.md)
+                * **response_decreased_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Identifier and Mapping Information
+
+
+
+
 

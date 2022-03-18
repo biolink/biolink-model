@@ -1,35 +1,26 @@
----
-parent: Node Properties
-title: biolink:ingest_date
-grand_parent: Slots
-layout: default
----
-
 # Slot: ingest_date
 
+URI: [http://purl.org/pav/version](http://purl.org/pav/version)
 
 
 
-URI: [biolink:ingest_date](https://w3id.org/biolink/vocab/ingest_date)
 
-## Domain and Range
+## Inheritance
 
-[DatasetVersion](DatasetVersion.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+* [node_property](node_property.md)
+    * **ingest_date**
 
 
-## Used by
 
- * [DatasetVersion](DatasetVersion.md)
+## Properties
 
-## Other properties
+ * Range: None
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | pav:version |
+
+
+## Identifier and Mapping Information
+
+
+
+
 

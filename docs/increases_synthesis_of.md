@@ -1,38 +1,39 @@
----
-parent: Predicates
-title: biolink:increases_synthesis_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: increases_synthesis_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: increases_synthesis_of
+_holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other_
 
 
-holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
-
-URI: [biolink:increases_synthesis_of](https://w3id.org/biolink/vocab/increases_synthesis_of)
-
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [affects synthesis of](affects_synthesis_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/increases_synthesis_of](https://w3id.org/biolink/vocab/increases_synthesis_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_synthesis_of |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * [affects_synthesis_of](affects_synthesis_of.md)
+                * **increases_synthesis_of** [ increases amount or activity of]
+
+
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:decreases synthesis of |
+
 

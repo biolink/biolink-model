@@ -1,27 +1,28 @@
----
-parent: Edge Properties
-title: biolink:has_confidence_level
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_confidence_level
+_connects an association to a qualitative term denoting the level of confidence_
 
 
-connects an association to a qualitative term denoting the level of confidence
-
-URI: [biolink:has_confidence_level](https://w3id.org/biolink/vocab/has_confidence_level)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [ConfidenceLevel](ConfidenceLevel.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_confidence_level](https://w3id.org/biolink/vocab/has_confidence_level)
 
 
-## Used by
+
+
+## Inheritance
+
+* [association_slot](association_slot.md)
+    * **has_confidence_level**
+
+
+
+## Properties
+
+ * Range: confidence level
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

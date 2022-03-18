@@ -1,27 +1,27 @@
----
-parent: Predicates
-title: biolink:increased_amount_of
-grand_parent: Slots
-layout: default
----
+# Slot: increased_amount_of
 
-# Relation: increased_amount_of
+URI: [https://w3id.org/biolink/vocab/increased_amount_of](https://w3id.org/biolink/vocab/increased_amount_of)
 
 
 
 
-URI: [biolink:increased_amount_of](https://w3id.org/biolink/vocab/increased_amount_of)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **increased_amount_of**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

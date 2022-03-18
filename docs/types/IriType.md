@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:IriType
-layout: default
----
 
-# Type: IriType
+# Type: iri type
 
 
 An IRI
 
-URI: [biolink:IriType](https://w3id.org/biolink/vocab/types/biolink:IriType)
+URI: [biolink:IriType](https://w3id.org/biolink/vocab/IriType)
 
 |  |  |  |
 | --- | --- | --- |

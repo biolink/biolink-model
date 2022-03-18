@@ -1,35 +1,77 @@
----
-parent: Class Mixins
-title: biolink:UnclassifiedOntologyClass
-grand_parent: Classes
-layout: default
----
-
 # Class: UnclassifiedOntologyClass
+_this is used for nodes that are taken from an ontology but are not typed using an existing biolink class_
 
 
-this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:UnclassifiedOntologyClass](https://w3id.org/biolink/vocab/UnclassifiedOntologyClass)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass]%5E-[UnclassifiedOntologyClass],[OntologyClass])
-
----
 
 
-## Parents
+## Inheritance
 
- *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
+* [OntologyClass](OntologyClass.md)
+    * **UnclassifiedOntologyClass**
 
-## Attributes
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | testing |
+## Slots
 
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: unclassified ontology class
+description: this is used for nodes that are taken from an ontology but are not typed
+  using an existing biolink class
+in_subset:
+- testing
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: ontology class
+mixin: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: unclassified ontology class
+description: this is used for nodes that are taken from an ontology but are not typed
+  using an existing biolink class
+in_subset:
+- testing
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: ontology class
+mixin: true
+
+```
+</details>

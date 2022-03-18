@@ -1,44 +1,74 @@
----
-parent: Class Mixins
-title: biolink:GenotypeToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: GenotypeToEntityAssociationMixin
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:GenotypeToEntityAssociationMixin](https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Genotype]%3Csubject%201..1-%20[GenotypeToEntityAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToEntityAssociationMixin],[GenotypeToDiseaseAssociation]uses%20-.-%3E[GenotypeToEntityAssociationMixin],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToDiseaseAssociation],[Genotype])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) (mixin) 
- * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [genotype to entity association mixin➞subject](genotype_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: genotype that is the subject of the association
-     * Range: [Genotype](Genotype.md)
 
-### Domain for slot:
 
- * [genotype to entity association mixin➞subject](genotype_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: genotype that is the subject of the association
-     * Range: [Genotype](Genotype.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: genotype to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: genotype that is the subject of the association
+    range: genotype
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: genotype to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: genotype that is the subject of the association
+    range: genotype
+defining_slots:
+- subject
+
+```
+</details>

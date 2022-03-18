@@ -1,35 +1,37 @@
----
-parent: Edge Properties
-title: biolink:end_interbase_coordinate
-grand_parent: Slots
-layout: default
----
-
 # Slot: end_interbase_coordinate
+_The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on._
 
 
-The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
-
-URI: [biolink:end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
-
-## Domain and Range
-
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
-
- *  is_a: [interbase coordinate](interbase_coordinate.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
 
 
-## Used by
 
- * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Close Mappings:** | | faldo:end |
+* [association_slot](association_slot.md)
+    * [sequence_localization_attribute](sequence_localization_attribute.md)
+        * [interbase_coordinate](interbase_coordinate.md)
+            * **end_interbase_coordinate**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:opposite_of | biolink:start interbase coordinate |
+
 

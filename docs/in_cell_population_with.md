@@ -1,37 +1,37 @@
----
-parent: Predicates
-title: biolink:in_cell_population_with
-grand_parent: Slots
-layout: default
----
-
-# Relation: in_cell_population_with
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: in_cell_population_with
+_holds between two genes or gene products that are expressed in the same cell type or population_
 
 
-holds between two genes or gene products that are expressed in the same cell type or population
-
-URI: [biolink:in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_population_with)
-
-## Domain and Range
-
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [coexists with](coexists_with.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_population_with)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [coexists_with](coexists_with.md)
+            * **in_cell_population_with**
+
+
+
+## Properties
+
+ * Range: gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

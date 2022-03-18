@@ -1,34 +1,37 @@
----
-parent: Predicates
-title: biolink:is_non_coding_variant_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: is_non_coding_variant_of
+# Slot: is_non_coding_variant_of
+_holds between a sequence variant and a gene, where the variant does not affect the coding sequence_
 
 
-holds between a sequence variant and a gene, where the variant does not affect the coding sequence
-
-URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_coding_variant_of)
-
-## Domain and Range
-
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [is sequence variant of](is_sequence_variant_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_coding_variant_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | GAMMA:0000103 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [is_sequence_variant_of](is_sequence_variant_of.md)
+            * **is_non_coding_variant_of**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

@@ -1,34 +1,35 @@
----
-parent: Predicates
-title: biolink:acts_upstream_of_or_within
-grand_parent: Slots
-layout: default
----
+# Slot: acts_upstream_of_or_within
 
-# Relation: acts_upstream_of_or_within
+URI: [https://w3id.org/biolink/vocab/acts_upstream_of_or_within](https://w3id.org/biolink/vocab/acts_upstream_of_or_within)
 
 
 
 
-URI: [biolink:acts_upstream_of_or_within](https://w3id.org/biolink/vocab/acts_upstream_of_or_within)
+## Inheritance
 
-## Domain and Range
-
-[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [BiologicalProcess](BiologicalProcess.md)
-
-## Parents
-
- *  is_a: [acts upstream of](acts_upstream_of.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [acts_upstream_of](acts_upstream_of.md)
+            * **acts_upstream_of_or_within**
 
 
-## Used by
+
+## Properties
+
+ * Range: biological process
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0002264 |
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

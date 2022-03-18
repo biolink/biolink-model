@@ -1,141 +1,407 @@
----
-parent: Entities
-title: biolink:AnatomicalEntity
-grand_parent: Classes
-layout: default
----
-
 # Class: AnatomicalEntity
+_A subcellular location, cell type or gross anatomical part_
 
 
-A subcellular location, cell type or gross anatomical part
+
+
 
 URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[PhysicalEssence],[PathologicalAnatomicalStructure],[OrganismalEntity],[OrganismTaxon],[NamedThing],[GrossAnatomicalStructure],[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[DiseaseOrPhenotypicFeatureToLocationAssociation],[CellularComponent],[Cell],[Attribute],[Association],[AnatomicalEntityToAnatomicalEntityPartOfAssociation],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],[AnatomicalEntityToAnatomicalEntityAssociation],[AnatomicalEntityToAnatomicalEntityAssociation]-%20object%201..1%3E[AnatomicalEntity%7Cid(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject%201..1%3E[AnatomicalEntity],[DiseaseOrPhenotypicFeatureToLocationAssociation]-%20object%201..1%3E[AnatomicalEntity],[GeneExpressionMixin]-%20expression%20site%200..1%3E[AnatomicalEntity],[GeneToExpressionSiteAssociation]-%20object%201..1%3E[AnatomicalEntity],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[PhysicalEssence],[AnatomicalEntity]%5E-[PathologicalAnatomicalStructure],[AnatomicalEntity]%5E-[GrossAnatomicalStructure],[AnatomicalEntity]%5E-[CellularComponent],[AnatomicalEntity]%5E-[Cell],[OrganismalEntity]%5E-[AnatomicalEntity],[GeneExpressionMixin],[Agent])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * UBERON
- * GO
- * CL
- * UMLS
- * MESH
- * NCIT
-
-## Parents
-
- *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
-
-## Uses Mixins
-
- *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
- *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
-
-## Children
-
- * [Cell](Cell.md)
- * [CellularComponent](CellularComponent.md) - A location in or around a cell
- * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
- * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
-
-## Referenced by class
-
- *  **[AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)** *[anatomical entity to anatomical entity association➞object](anatomical_entity_to_anatomical_entity_association_object.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)** *[anatomical entity to anatomical entity association➞subject](anatomical_entity_to_anatomical_entity_association_subject.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)** *[anatomical entity to anatomical entity ontogenic association➞object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)** *[anatomical entity to anatomical entity ontogenic association➞subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)** *[anatomical entity to anatomical entity part of association➞object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)** *[anatomical entity to anatomical entity part of association➞subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md)** *[disease or phenotypic feature to location association➞object](disease_or_phenotypic_feature_to_location_association_object.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[expressed in](expressed_in.md)*  <sub>0..\*</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[Association](Association.md)** *[expression site](expression_site.md)*  <sub>0..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
- *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association➞object](gene_to_expression_site_association_object.md)*  <sub>1..1</sub>  **[AnatomicalEntity](AnatomicalEntity.md)**
-
-## Attributes
+* [Entity](Entity.md)
+    * [NamedThing](NamedThing.md)
+        * [BiologicalEntity](BiologicalEntity.md)
+            * [OrganismalEntity](OrganismalEntity.md)
+                * **AnatomicalEntity** [ thing with taxon physical essence]
+                    * [CellularComponent](CellularComponent.md)
+                    * [Cell](Cell.md)
+                    * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+                    * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) [ pathological entity mixin]
 
 
-### Inherited from entity:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>0..1</sub>
-     * Description: An IRI for an entity. This is determined by the id using expansion rules.
-     * Range: [IriType](types/IriType.md)
-     * in subsets: (translator_minimal,samples)
- * [category](category.md)  <sub>0..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [in_taxon](in_taxon.md) | [OrganismTaxon](OrganismTaxon.md) | 0..* | connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'  | . |
+| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
+| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
+| [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [CategoryType](types/CategoryType.md)
-     * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal)
- * [provided by](provided_by.md)  <sub>0..\*</sub>
-     * Description: connects an association to the agent (person, organization or group) that provided it
-     * Range: [Agent](Agent.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
+| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
+| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+## Usages
 
-### Inherited from named thing:
 
- * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [NamedThing](NamedThing.md)
-     * in subsets: (translator_minimal)
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [GeneExpressionMixin](GeneExpressionMixin.md) | [expression_site](expression_site.md) | range | anatomical entity |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [expression_site](expression_site.md) | range | anatomical entity |
+| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [object](object.md) | range | anatomical entity |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [expression_site](expression_site.md) | range | anatomical entity |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [object](object.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [subject](subject.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [object](object.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [subject](subject.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [object](object.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [subject](subject.md) | range | anatomical entity |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [object](object.md) | range | anatomical entity |
 
-### Inherited from organismal entity:
 
- * [organismal entity➞has attribute](organismal_entity_has_attribute.md)  <sub>0..\*</sub>
-     * Description: may often be an organism attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
 
-### Inherited from thing with taxon:
+## Identifier and Mapping Information
 
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
-## Other properties
+### Valid ID Prefixes
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | UBERON:0001062 |
-|  | | WIKIDATA:Q4936952 |
-|  | | UMLSSG:ANAT |
-|  | | STY:T017 |
+Instances of this class *should* have identifiers with one of the following prefixes:
 
+* UBERON
+
+* GO
+
+* CL
+
+* UMLS
+
+* MESH
+
+* NCIT
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: anatomical entity
+id_prefixes:
+- UBERON
+- GO
+- CL
+- UMLS
+- MESH
+- NCIT
+exact_mappings:
+- UBERON:0001062
+- WIKIDATA:Q4936952
+- UMLSSG:ANAT
+- STY:T017
+description: A subcellular location, cell type or gross anatomical part
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: organismal entity
+mixins:
+- thing with taxon
+- physical essence
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: anatomical entity
+id_prefixes:
+- UBERON
+- GO
+- CL
+- UMLS
+- MESH
+- NCIT
+exact_mappings:
+- UBERON:0001062
+- WIKIDATA:Q4936952
+- UMLSSG:ANAT
+- STY:T017
+description: A subcellular location, cell type or gross anatomical part
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: organismal entity
+mixins:
+- thing with taxon
+- physical essence
+attributes:
+  in taxon:
+    name: in taxon
+    aliases:
+    - instance of
+    - is organism source of gene product
+    - organism has gene
+    - gene found in organism
+    - ' gene product has organism source'
+    exact_mappings:
+    - RO:0002162
+    - WIKIDATA_PROPERTY:P703
+    narrow_mappings:
+    - RO:0002160
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: 'True'
+    description: connects an entity to its taxonomic classification. Only certain
+      kinds of entities can be taxonomically classified; see 'thing with taxon'
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: related to at instance level
+    domain: thing with taxon
+    multivalued: true
+    inherited: true
+    alias: in_taxon
+    owner: anatomical entity
+    range: organism taxon
+  id:
+    name: id
+    exact_mappings:
+    - alliancegenome:primaryId
+    - gff3:ID
+    - gpi:DB_Object_ID
+    description: A unique identifier for an entity. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    identifier: true
+    alias: id
+    owner: anatomical entity
+    range: string
+    required: true
+  iri:
+    name: iri
+    exact_mappings:
+    - WIKIDATA_PROPERTY:P854
+    description: An IRI for an entity. This is determined by the id using expansion
+      rules.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: iri
+    owner: anatomical entity
+    range: iri type
+  category:
+    name: category
+    description: "Name of the high level ontology class in which this entity is categorized.\
+      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
+      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
+      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
+      \ include values for ancestors of the biolink class; for example, a protein\
+      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
+      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
+      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
+      \ to a class more specific than something in biolink. For example, a sequence\
+      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
+      \ which is more specific than anything in biolink. Here we would have categories\
+      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: type
+    domain: entity
+    multivalued: true
+    designates_type: true
+    alias: category
+    owner: anatomical entity
+    is_class_field: true
+    range: named thing
+    required: true
+  type:
+    name: type
+    exact_mappings:
+    - alliancegenome:soTermId
+    - gff3:type
+    - gpi:DB_Object_Type
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdf:type
+    alias: type
+    owner: anatomical entity
+    range: string
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: anatomical entity
+    range: label type
+  description:
+    name: description
+    aliases:
+    - definition
+    exact_mappings:
+    - IAO:0000115
+    - skos:definitions
+    narrow_mappings:
+    - gff3:Description
+    description: a human-readable description of an entity
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: dct:description
+    alias: description
+    owner: anatomical entity
+    range: narrative text
+  source:
+    name: source
+    description: a lightweight analog to the association class 'provided by' slot,
+      which is the string name, or the authoritative (i.e. database) namespace, designating
+      the origin of the entity to which the slot belongs.
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: source
+    owner: anatomical entity
+    range: label type
+  provided by:
+    name: provided by
+    exact_mappings:
+    - pav:providedBy
+    description: connects an association to the agent (person, organization or group)
+      that provided it
+    deprecated: This slot is deprecated and replaced by a set of more precise slots
+      for describing the source retrieval provenance of an Association.  These include
+      'knowledge source' and its descendants 'primary knowledge source', 'original
+      knowledge source', and 'aggregator knowledge source'.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: provided_by
+    owner: anatomical entity
+    range: agent
+  has attribute:
+    name: has attribute
+    exact_mappings:
+    - SIO:000008
+    close_mappings:
+    - OBI:0001927
+    narrow_mappings:
+    - OBAN:association_has_subject_property
+    - OBAN:association_has_object_property
+    - CPT:has_possibly_included_panel_element
+    - DRUGBANK:category
+    - EFO:is_executed_in
+    - HANCESTRO:0301
+    - LOINC:has_action_guidance
+    - LOINC:has_adjustment
+    - LOINC:has_aggregation_view
+    - LOINC:has_approach_guidance
+    - LOINC:has_divisor
+    - LOINC:has_exam
+    - LOINC:has_method
+    - LOINC:has_modality_subtype
+    - LOINC:has_object_guidance
+    - LOINC:has_scale
+    - LOINC:has_suffix
+    - LOINC:has_time_aspect
+    - LOINC:has_time_modifier
+    - LOINC:has_timing_of
+    - NCIT:R88
+    - NCIT:eo_disease_has_property_or_attribute
+    - NCIT:has_data_element
+    - NCIT:has_pharmaceutical_administration_method
+    - NCIT:has_pharmaceutical_basic_dose_form
+    - NCIT:has_pharmaceutical_intended_site
+    - NCIT:has_pharmaceutical_release_characteristics
+    - NCIT:has_pharmaceutical_state_of_matter
+    - NCIT:has_pharmaceutical_transformation
+    - NCIT:is_qualified_by
+    - NCIT:qualifier_applies_to
+    - NCIT:role_has_domain
+    - NCIT:role_has_range
+    - INO:0000154
+    - HANCESTRO:0308
+    - OMIM:has_inheritance_type
+    - ORPHA:C016
+    - ORPHA:C017
+    - RO:0000053
+    - RO:0000086
+    - RO:0000087
+    - SNOMED:has_access
+    - SNOMED:has_clinical_course
+    - SNOMED:has_count_of_base_of_active_ingredient
+    - SNOMED:has_dose_form_administration_method
+    - SNOMED:has_dose_form_release_characteristic
+    - SNOMED:has_dose_form_transformation
+    - SNOMED:has_finding_context
+    - SNOMED:has_finding_informer
+    - SNOMED:has_inherent_attribute
+    - SNOMED:has_intent
+    - SNOMED:has_interpretation
+    - SNOMED:has_laterality
+    - SNOMED:has_measurement_method
+    - SNOMED:has_method
+    - SNOMED:has_priority
+    - SNOMED:has_procedure_context
+    - SNOMED:has_process_duration
+    - SNOMED:has_property
+    - SNOMED:has_revision_status
+    - SNOMED:has_scale_type
+    - SNOMED:has_severity
+    - SNOMED:has_specimen
+    - SNOMED:has_state_of_matter
+    - SNOMED:has_subject_relationship_context
+    - SNOMED:has_surgical_approach
+    - SNOMED:has_technique
+    - SNOMED:has_temporal_context
+    - SNOMED:has_time_aspect
+    - SNOMED:has_units
+    - UMLS:has_structural_class
+    - UMLS:has_supported_concept_property
+    - UMLS:has_supported_concept_relationship
+    - UMLS:may_be_qualified_by
+    description: connects any entity to an attribute
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: entity
+    multivalued: true
+    alias: has_attribute
+    owner: anatomical entity
+    range: attribute
+
+```
+</details>

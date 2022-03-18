@@ -1,40 +1,38 @@
----
-parent: Predicates
-title: biolink:prevents
-grand_parent: Slots
-layout: default
----
-
-# Relation: prevents
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: prevents
+_holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature._
 
 
-holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
-
-URI: [biolink:prevents](https://w3id.org/biolink/vocab/prevents)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [affects risk for](affects_risk_for.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/prevents](https://w3id.org/biolink/vocab/prevents)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | SEMMEDDB:PREVENTS |
-|  | | SEMMEDDB:prevents |
-| **Narrow Mappings:** | | RO:0002599 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects_risk_for](affects_risk_for.md)
+            * **prevents**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:predisposes |
+
 

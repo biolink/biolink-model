@@ -1,27 +1,30 @@
----
-parent: Predicates
-title: biolink:molecular_interaction_increased_by
-grand_parent: Slots
-layout: default
----
+# Slot: molecular_interaction_increased_by
 
-# Relation: molecular_interaction_increased_by
+URI: [https://w3id.org/biolink/vocab/molecular_interaction_increased_by](https://w3id.org/biolink/vocab/molecular_interaction_increased_by)
 
 
 
 
-URI: [biolink:molecular_interaction_increased_by](https://w3id.org/biolink/vocab/molecular_interaction_increased_by)
+## Inheritance
 
-## Domain and Range
-
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
-
-## Parents
-
- *  is_a: [molecularly interacts with](molecularly_interacts_with.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [interacts_with](interacts_with.md)
+            * [physically_interacts_with](physically_interacts_with.md)
+                * [molecularly_interacts_with](molecularly_interacts_with.md)
+                    * **molecular_interaction_increased_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

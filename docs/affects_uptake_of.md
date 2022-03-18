@@ -1,41 +1,37 @@
----
-parent: Predicates
-title: biolink:affects_uptake_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: affects_uptake_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: affects_uptake_of
+_holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ_
 
 
-holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
-
-URI: [biolink:affects_uptake_of](https://w3id.org/biolink/vocab/affects_uptake_of)
-
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [affects](affects.md)
-
-## Children
-
- *  [decreases uptake of](decreases_uptake_of.md)
- *  [increases uptake of](increases_uptake_of.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/affects_uptake_of](https://w3id.org/biolink/vocab/affects_uptake_of)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:affects_uptake_of |
-| **Broad Mappings:** | | CTD:affects_import |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * **affects_uptake_of**
+
+
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

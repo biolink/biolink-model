@@ -1,18 +1,19 @@
----
-parent: Built-in Types
-grand_parent: Types
-title: metatype:Objectidentifier
-layout: default
----
 
-# Type: Objectidentifier
+# Type: objectidentifier
 
 
 A URI or CURIE that represents an object in the model.
 
-URI: [metatype:Objectidentifier](https://linkml.github.io/linkml-model/docs/types/Objectidentifier)
+URI: [linkml:Objectidentifier](https://w3id.org/linkml/Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |
 | Root (builtin) type | | **ElementIdentifier** |
 | Representation | | str |
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | Used for inheritence and type checking |
+

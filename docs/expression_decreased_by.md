@@ -1,37 +1,29 @@
----
-parent: Predicates
-title: biolink:expression_decreased_by
-grand_parent: Slots
-layout: default
----
+# Slot: expression_decreased_by
 
-# Relation: expression_decreased_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/expression_decreased_by](https://w3id.org/biolink/vocab/expression_decreased_by)
 
 
 
 
-URI: [biolink:expression_decreased_by](https://w3id.org/biolink/vocab/expression_decreased_by)
+## Inheritance
 
-## Domain and Range
-
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [expression affected by](expression_affected_by.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * [expression_affected_by](expression_affected_by.md)
+                * **expression_decreased_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: named thing
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Identifier and Mapping Information
+
+
+
+
 

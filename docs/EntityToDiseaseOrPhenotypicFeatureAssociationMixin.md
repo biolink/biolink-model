@@ -1,49 +1,84 @@
----
-parent: Class Mixins
-title: biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: EntityToDiseaseOrPhenotypicFeatureAssociationMixin
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin](https://w3id.org/biolink/vocab/EntityToDiseaseOrPhenotypicFeatureAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Cobject%201..1-%20[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
- * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An association between a material sample and a disease or phenotype.
+## Slots
 
-## Referenced by class
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-## Attributes
+## Usages
 
 
-### Own
 
- * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>1..1</sub>
-     * Description: disease or phenotype
-     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
-     * Example: MP:0013229 abnormal brain ventricle size
+## Identifier and Mapping Information
 
-### Domain for slot:
 
- * [entity to disease or phenotypic feature association mixin➞object](entity_to_disease_or_phenotypic_feature_association_mixin_object.md)  <sub>1..1</sub>
-     * Description: disease or phenotype
-     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
-     * Example: MP:0013229 abnormal brain ventricle size
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: entity to disease or phenotypic feature association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  object:
+    name: object
+    description: disease or phenotype
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    - value: MP:0013229
+      description: abnormal brain ventricle size
+    range: disease or phenotypic feature
+defining_slots:
+- object
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: entity to disease or phenotypic feature association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  object:
+    name: object
+    description: disease or phenotype
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    - value: MP:0013229
+      description: abnormal brain ventricle size
+    range: disease or phenotypic feature
+defining_slots:
+- object
+
+```
+</details>

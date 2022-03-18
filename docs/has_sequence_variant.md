@@ -1,34 +1,27 @@
----
-parent: Predicates
-title: biolink:has_sequence_variant
-grand_parent: Slots
-layout: default
----
+# Slot: has_sequence_variant
 
-# Relation: has_sequence_variant
+URI: [https://w3id.org/biolink/vocab/has_sequence_variant](https://w3id.org/biolink/vocab/has_sequence_variant)
 
 
 
 
-URI: [biolink:has_sequence_variant](https://w3id.org/biolink/vocab/has_sequence_variant)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **has_sequence_variant**
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
 
-## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+## Properties
 
-## Children
+ * Range: sequence variant
 
- *  [has frameshift variant](has_frameshift_variant.md)
- *  [has missense variant](has_missense_variant.md)
- *  [has nearby variant](has_nearby_variant.md)
- *  [has non coding variant](has_non_coding_variant.md)
- *  [has nonsense variant](has_nonsense_variant.md)
- *  [has splice site variant](has_splice_site_variant.md)
- *  [has synonymous variant](has_synonymous_variant.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

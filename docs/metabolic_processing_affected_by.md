@@ -1,39 +1,28 @@
----
-parent: Predicates
-title: biolink:metabolic_processing_affected_by
-grand_parent: Slots
-layout: default
----
+# Slot: metabolic_processing_affected_by
 
-# Relation: metabolic_processing_affected_by
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/metabolic_processing_affected_by](https://w3id.org/biolink/vocab/metabolic_processing_affected_by)
 
 
 
 
-URI: [biolink:metabolic_processing_affected_by](https://w3id.org/biolink/vocab/metabolic_processing_affected_by)
+## Inheritance
 
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [affected by](affected_by.md)
-
-## Children
-
- *  [metabolic processing decreased by](metabolic_processing_decreased_by.md)
- *  [metabolic processing increased by](metabolic_processing_increased_by.md)
-
-## Used by
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **metabolic_processing_affected_by**
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

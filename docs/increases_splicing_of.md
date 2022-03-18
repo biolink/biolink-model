@@ -1,39 +1,39 @@
----
-parent: Predicates
-title: biolink:increases_splicing_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: increases_splicing_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: increases_splicing_of
+_holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA_
 
 
-holds between a chemical entity and an mRNA where the action or effect of the chemical entity increases the proper splicing of the mRNA
-
-URI: [biolink:increases_splicing_of](https://w3id.org/biolink/vocab/increases_splicing_of)
-
-## Domain and Range
-
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
-
-## Parents
-
- *  is_a: [affects splicing of](affects_splicing_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/increases_splicing_of](https://w3id.org/biolink/vocab/increases_splicing_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:increases_RNA_splicing |
-| **Broad Mappings:** | | CTD:increases_splicing_of |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * [affects_splicing_of](affects_splicing_of.md)
+                * **increases_splicing_of** [ increases amount or activity of]
+
+
+
+## Properties
+
+ * Range: transcript
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:decreases splicing of |
+
 

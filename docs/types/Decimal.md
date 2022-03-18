@@ -1,16 +1,10 @@
----
-parent: Built-in Types
-grand_parent: Types
-title: metatype:Decimal
-layout: default
----
 
-# Type: Decimal
+# Type: decimal
 
 
 A real number with arbitrary precision that conforms to the xsd:decimal specification
 
-URI: [metatype:Decimal](https://linkml.github.io/linkml-model/docs/types/Decimal)
+URI: [linkml:Decimal](https://w3id.org/linkml/Decimal)
 
 |  |  |  |
 | --- | --- | --- |

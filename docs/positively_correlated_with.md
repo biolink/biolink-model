@@ -1,38 +1,39 @@
----
-parent: Predicates
-title: biolink:positively_correlated_with
-grand_parent: Slots
-layout: default
----
-
-# Relation: positively_correlated_with
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: positively_correlated_with
+_holds between any two named thing entities "correlated with" one another in a positive manner._
 
 
-holds between any two named thing entities "correlated with" one another in a positive manner.
-
-URI: [biolink:positively_correlated_with](https://w3id.org/biolink/vocab/positively_correlated_with)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [correlated with](correlated_with.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/positively_correlated_with](https://w3id.org/biolink/vocab/positively_correlated_with)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | CTD:positive_correlation |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [associated_with](associated_with.md)
+            * [correlated_with](correlated_with.md)
+                * **positively_correlated_with**
+
+
+
+## Properties
+
+ * Range: named thing
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:negatively correlated with |
+
 

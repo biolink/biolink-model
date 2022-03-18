@@ -1,41 +1,78 @@
----
-parent: Class Mixins
-title: biolink:GeneGroupingMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: GeneGroupingMixin
+_any grouping of multiple genes or gene products_
 
 
-any grouping of multiple genes or gene products
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:GeneGroupingMixin](https://w3id.org/biolink/vocab/GeneGroupingMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Gene]%3Chas%20gene%20or%20gene%20product%200..%2A-%20[GeneGroupingMixin],[ProteinFamily]uses%20-.-%3E[GeneGroupingMixin],[ProteinDomain]uses%20-.-%3E[GeneGroupingMixin],[GenomicBackgroundExposure]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[GeneGroupingMixin],[DrugToGeneInteractionExposure]uses%20-.-%3E[GeneGroupingMixin],[ProteinFamily],[ProteinDomain],[GenomicBackgroundExposure],[GeneFamily],[Gene],[DrugToGeneInteractionExposure])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) (mixin)  - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
- * [GeneFamily](GeneFamily.md) (mixin)  - any grouping of multiple genes or gene products related by common descent
- * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) (mixin)  - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
- * [ProteinDomain](ProteinDomain.md) (mixin)  - A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
- * [ProteinFamily](ProteinFamily.md) (mixin) 
+## Slots
 
-## Referenced by class
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [has_gene_or_gene_product](has_gene_or_gene_product.md) | [Gene](Gene.md) | 0..* | connects an entity with one or more gene or gene products  | . |
 
 
-## Attributes
+## Usages
 
 
-### Own
 
- * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..\*</sub>
-     * Description: connects an entity with one or more gene or gene products
-     * Range: [Gene](Gene.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: gene grouping mixin
+description: any grouping of multiple genes or gene products
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slots:
+- has gene or gene product
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: gene grouping mixin
+description: any grouping of multiple genes or gene products
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+attributes:
+  has gene or gene product:
+    name: has gene or gene product
+    description: connects an entity with one or more gene or gene products
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: has_gene_or_gene_product
+    owner: gene grouping mixin
+    range: gene
+
+```
+</details>

@@ -1,32 +1,35 @@
----
-parent: Predicates
-title: biolink:related_to_at_concept_level
-grand_parent: Slots
-layout: default
----
-
-# Relation: related_to_at_concept_level
+# Slot: related_to_at_concept_level
+_Represents a relationship held between terminology components that describe the conceptual model of a domain._
 
 
-Represents a relationship held between terminology components that describe the conceptual model of a domain.
+URI: [https://w3id.org/biolink/vocab/related_to_at_concept_level](https://w3id.org/biolink/vocab/related_to_at_concept_level)
 
-URI: [biolink:related_to_at_concept_level](https://w3id.org/biolink/vocab/related_to_at_concept_level)
 
-## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
-## Parents
+## Inheritance
 
- *  is_a: [related to](related_to.md)
+* [related_to](related_to.md)
+    * **related_to_at_concept_level**
 
-## Children
 
- *  [broad match](broad_match.md)
- *  [close match](close_match.md)
- *  [narrow match](narrow_match.md)
- *  [subclass of](subclass_of.md)
- *  [superclass of](superclass_of.md)
 
-## Used by
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

@@ -1,29 +1,28 @@
----
-parent: Predicates
-title: biolink:abundance_affected_by
-grand_parent: Slots
-layout: default
----
+# Slot: abundance_affected_by
 
-# Relation: abundance_affected_by
+URI: [https://w3id.org/biolink/vocab/abundance_affected_by](https://w3id.org/biolink/vocab/abundance_affected_by)
 
 
 
 
-URI: [biolink:abundance_affected_by](https://w3id.org/biolink/vocab/abundance_affected_by)
+## Inheritance
 
-## Domain and Range
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affected_by](affected_by.md)
+            * **abundance_affected_by**
 
-[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
 
-## Parents
 
- *  is_a: [affected by](affected_by.md)
+## Properties
 
-## Children
+ * Range: chemical entity or gene or gene product
 
- *  [abundance decreased by](abundance_decreased_by.md)
- *  [abundance increased by](abundance_increased_by.md)
 
-## Used by
+
+## Identifier and Mapping Information
+
+
+
+
 

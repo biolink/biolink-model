@@ -1,27 +1,28 @@
----
-parent: Edge Properties
-title: biolink:association_type
-grand_parent: Slots
-layout: default
----
-
-# Slot: association_type _(deprecated)_
+# Slot: association_type
+_connects an association to the category of association (e.g. gene to phenotype)_
 
 
-connects an association to the category of association (e.g. gene to phenotype)
-
-URI: [biolink:association_type](https://w3id.org/biolink/vocab/association_type)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [CategoryType](types/CategoryType.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/association_type](https://w3id.org/biolink/vocab/association_type)
 
 
-## Used by
+
+
+## Inheritance
+
+* [association_slot](association_slot.md)
+    * **association_type**
+
+
+
+## Properties
+
+ * Range: category type
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

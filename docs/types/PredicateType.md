@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:PredicateType
-layout: default
----
 
-# Type: PredicateType
+# Type: predicate type
 
 
 A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats.
 
-URI: [biolink:PredicateType](https://w3id.org/biolink/vocab/types/biolink:PredicateType)
+URI: [biolink:PredicateType](https://w3id.org/biolink/vocab/PredicateType)
 
 |  |  |  |
 | --- | --- | --- |

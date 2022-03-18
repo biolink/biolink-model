@@ -1,38 +1,37 @@
----
-parent: Predicates
-title: biolink:genetically_interacts_with
-grand_parent: Slots
-layout: default
----
-
-# Relation: genetically_interacts_with
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: genetically_interacts_with
+_holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality._
 
 
-holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-
-URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetically_interacts_with)
-
-## Domain and Range
-
-[Gene](Gene.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [interacts with](interacts_with.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/genetically_interacts_with](https://w3id.org/biolink/vocab/genetically_interacts_with)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002435 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [interacts_with](interacts_with.md)
+            * **genetically_interacts_with**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

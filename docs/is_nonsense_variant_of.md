@@ -1,34 +1,37 @@
----
-parent: Predicates
-title: biolink:is_nonsense_variant_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: is_nonsense_variant_of
+# Slot: is_nonsense_variant_of
+_holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon_
 
 
-holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
-
-URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense_variant_of)
-
-## Domain and Range
-
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [is sequence variant of](is_sequence_variant_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense_variant_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Broad Mappings:** | | SO:0002054 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [is_sequence_variant_of](is_sequence_variant_of.md)
+            * **is_nonsense_variant_of**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

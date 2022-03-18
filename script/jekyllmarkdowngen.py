@@ -1,18 +1,18 @@
-import logging
 import os
 from contextlib import redirect_stdout
-from io import StringIO
-from typing import Union, TextIO, Optional, Set, List, Any, Callable, Dict
+from typing import Union, TextIO, Set, Dict
 
-from linkml.generators.markdowngen import MarkdownGenerator
+from linkml.generators.docgen import DocGenerator
 from linkml.generators.yumlgen import YumlGenerator
-from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, Element, ClassDefinitionName, \
-    TypeDefinition
+
+from linkml_runtime.utils.schemaview import SchemaView
+from linkml_runtime.linkml_model.meta import SchemaDefinition, ClassDefinition, SlotDefinition, SubsetDefinition, \
+    EnumDefinition, Element, ClassDefinitionName, TypeDefinition
 from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
-class JekyllMarkdownGenerator(MarkdownGenerator):
+class JekyllMarkdownGenerator(DocGenerator):
     """
     Extends linkml.generators.markdowngen.MarkdownGenerator to add new styles
     and override certain existing styles.
@@ -26,8 +26,10 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], **kwargs) -> None:
         super().__init__(schema, **kwargs)
+        self.schemaview = SchemaView(schema)
 
-    def visit_schema(self, directory: str = None, classes: Set[ClassDefinitionName] = None, image_dir: bool = False, noimages: bool = False, **_) -> None:
+    def visit_schema(self, directory: str = None, classes: Set[ClassDefinitionName] = None, image_dir: bool = False,
+                     noimages: bool = False, **_) -> None:
         """
         Visit the schema and generate Markdown for each ClassDefinition, SlotDefinition,
         and TypeDefinition.
@@ -68,51 +70,53 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             # Create the data model index
             with redirect_stdout(ixfile):
-                self.frontmatter(**{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default', 'has_toc': 'false'})
+                self.frontmatter(
+                    **{'title': self.doc_root_title, 'has_children': 'true', 'nav_order': 2, 'layout': 'default',
+                       'has_toc': 'false'})
                 self.para(be(self.schema.description))
 
                 self.header(2, 'Classes')
 
-                self.header(3, 'Entities')
+                self.header(3, "Entity")
+                cls = self.schemaview.get_element('entity')
+                self.seen_elements.add(cls.name)
+                self.bullet(self.class_link(cls, use_desc=True))
 
-                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    ancs = self.ancestors(cls)
-                    if 'named thing' in ancs:
-                        if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
-                            self.seen_elements.add(cls.name)
-                            self.class_hier(cls)
+                self.header(3, 'Named Things')
+
+                cls = self.schemaview.get_element('named thing')
+                self.seen_elements.add(cls.name)
+                self.class_hier(cls)
 
                 self.header(3, 'Associations')
-                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    ancs = self.ancestors(cls)
-                    if 'association' in ancs:
-                        if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
-                            self.seen_elements.add(cls.name)
-                            self.class_hier(cls)
+                cls = self.schemaview.get_element('association')
+                self.seen_elements.add(cls.name)
+                self.class_hier(cls)
 
                 self.header(3, 'Class Mixins')
-                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name.lower()):
                     if cls.mixin and self.is_secondary_ref(cls.name):
                         if cls.name not in self.seen_elements:
                             self.seen_elements.add(cls.name)
                             self.class_hier(cls)
 
                 self.header(3, 'Other Classes')
-                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name.lower()):
                     if cls.name not in self.seen_elements:
                         self.seen_elements.add(cls.name)
                         self.class_hier(cls)
 
                 self.header(2, 'Slots')
+
                 self.header(3, 'Predicates')
-                for slot in sorted(self.schema.slots.values(), key=lambda c: c.name):
+                for slot in sorted(self.schema.slots.values(), key=lambda c: c.name.lower()):
                     if not slot.alias:
                         if 'related to' in self.ancestors(slot) and not slot.mixin:
                             self.seen_elements.add(slot.name)
                             self.pred_hier(slot)
 
                 self.header(3, 'Node Properties')
-                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name.lower()):
                     ancs = self.ancestors(slot)
                     if not slot.alias:
                         if 'node property' in ancs and not slot.mixin:
@@ -120,7 +124,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.pred_hier(slot)
 
                 self.header(3, 'Edge Properties')
-                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name.lower()):
                     ancs = self.ancestors(slot)
                     if not slot.alias:
                         if 'association slot' in ancs and not slot.mixin:
@@ -138,8 +142,15 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
                     if not slot.alias:
                         if slot.name not in self.seen_elements:
-                            self.seen_elements.add(slot.name)
-                            self.pred_hier(slot)
+                            ancs = self.ancestors(slot)
+                            if len(ancs) <= 1:
+                                self.seen_elements.add(slot.name)
+                                self.pred_hier(slot)
+
+                self.header(2, 'Subsets')
+                for subset in sorted(self.schema.subsets.values(), key=lambda s: s.name):
+                    self.seen_elements.add(subset.name)
+                    self.bullet(self.subset_link(subset, use_desc=True))
 
                 self.header(2, 'Types')
                 self.header(3, 'Built in')
@@ -153,14 +164,20 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             typ_typ = self.type_link(typ.typeof)
                         else:
                             typ_typ = f'**{typ.base}**'
-
                         self.bullet(self.type_link(typ, after_link=f' ({typ_typ})', use_desc=True))
+
+                self.header(2, "Enums")
+                for enum in sorted(self.schema.enums.values(), key=lambda s: s.name.lower()):
+                    self.bullet(self.enum_link(enum, use_desc=True), 0)
 
         # create parent for organizing markdown based on Class types
         with open(os.path.join(directory, 'classes.md'), 'w') as file:
-            file.write(f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\nlayout: default\n---')
-        with open(os.path.join(directory, 'entities.md'), 'w') as file:
-            file.write(f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Entities\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+            file.write(
+                f'---\nparent: {self.doc_root_title}\ntitle: Classes\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+        with open(os.path.join(directory, 'named_things.md'), 'w') as file:
+            file.write(
+                f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Named Things\nhas_children: true\nnav_order: 1\nlayout: default\n---')
+
         with open(os.path.join(directory, 'associations.md'), 'w') as file:
             file.write(
                 f'---\nparent: Classes\ngrand_parent: {self.doc_root_title}\ntitle: Associations\nhas_children: true\nnav_order: 2\nlayout: default\n---')
@@ -191,17 +208,28 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
             file.write(
                 f'---\nparent: Slots\ngrand_parent: {self.doc_root_title}\ntitle: Other Slots\nhas_children: true\nnav_order: 5\nlayout: default\n---')
 
+        # create parent for organizing markdown based on Subset types
+        with open(os.path.join(directory, 'subsets.md'), 'w') as file:
+            file.write(
+                f'---\nparent: {self.doc_root_title}\ntitle: Subsets\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+
         # create parent for organizing markdown based on Type types
         os.makedirs(os.path.join(directory, 'types'), exist_ok=True)
         with open(os.path.join(directory, 'types', 'index.md'), 'w') as file:
             file.write(
-                f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 3\nlayout: default\n---')
+                f'---\nparent: {self.doc_root_title}\ntitle: Types\nhas_children: true\nnav_order: 4\nlayout: default\n---')
         with open(os.path.join(directory, 'types', 'built_in_types.md'), 'w') as file:
             file.write(
                 f'---\nparent: Types\ngrand_parent: {self.doc_root_title}\ntitle: Built-in Types\nhas_children: true\nnav_order: 1\nlayout: default\n---')
         with open(os.path.join(directory, 'types', 'defined_types.md'), 'w') as file:
             file.write(
                 f'---\nparent: Types\ngrand_parent: {self.doc_root_title}\ntitle: Defined Types\nhas_children: true\nnav_order: 2\nlayout: default\n---')
+
+        # create parent for organizing markdown based on Enum types
+        with open(os.path.join(directory, 'enums.md'), 'w') as file:
+            file.write(
+                f'---\nparent: {self.doc_root_title}\ntitle: Enums\nhas_children: true\nnav_order: 4\nlayout: default\n---')
+
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         """
@@ -248,7 +276,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 else:
                     parent = 'Other Classes'
                     grand_parent = 'Classes'
-                self.frontmatter(**{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
+                self.frontmatter(
+                    **{'parent': parent, 'title': class_curi, 'grand_parent': grand_parent, 'layout': 'default'})
                 self.element_header(cls, cls.name, class_curi, class_uri)
                 for m in cls.mappings:
                     self.badges(m, 'mapping-label')
@@ -302,8 +331,12 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     for sn in sorted(self.synopsis.classrefs[cls.name].slotrefs):
                         slot = self.schema.slots[sn]
                         if slot.range == cls.name:
+                            if slot.alias and slot.usage_slot_name:
+                                original_slot = self.schema.slots[slot.usage_slot_name]
+                            else:
+                                original_slot = slot
                             self.bullet(f' **{self.class_link(slot.domain)}** '
-                                        f'*{self.slot_link(slot, add_subset=False)}*{self.predicate_cardinality(slot)}  '
+                                        f'*{self.slot_link(original_slot, add_subset=False)}*{self.predicate_cardinality(slot)}  '
                                         f'**{self.class_type_link(slot.range)}**')
 
                 self.header(2, 'Attributes')
@@ -312,6 +345,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 if own_slots:
                     self.header(3, 'Own')
                     for slot in own_slots:
+                        if slot.alias and slot.usage_slot_name:
+                            slot = self.schema.slots[slot.usage_slot_name]
                         self.slot_field(cls, slot)
 
                 for slot_owner in sorted({slot.owner for slot in [self.schema.slots[sn] for sn in cls.slots]
@@ -320,6 +355,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     for owner_slot_name in self.schema.classes[slot_owner].slots:
                         owner_slot = self.schema.slots[owner_slot_name]
                         if owner_slot.owner == slot_owner:
+                            if owner_slot.alias and owner_slot.usage_slot_name:
+                                owner_slot = self.schema.slots[owner_slot.usage_slot_name]
                             self.slot_field(cls, owner_slot)
 
                 domain_for_slots = [slot for slot in [self.schema.slots[sn]
@@ -327,6 +364,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 if domain_for_slots:
                     self.header(3, 'Domain for slot:')
                     for slot in domain_for_slots:
+                        if slot.alias and slot.usage_slot_name:
+                            slot = self.schema.slots[slot.usage_slot_name]
                         self.slot_field(cls, slot)
 
                 self.element_properties(cls)
@@ -384,7 +423,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             parent = 'Other Slots'
                         grand_parent = 'Slots'
                         slot_type = 'Slot'
-                    self.frontmatter(**{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
+                    self.frontmatter(
+                        **{'parent': parent, 'title': slot_curie, 'grand_parent': grand_parent, 'layout': 'default'})
                     simple_name = slot_curie.split(':', 1)[1]
                     self.header(1, f"{slot_type}: {simple_name}" + (f" _(deprecated)_" if slot.deprecated else ""))
                     for s in slot.in_subset:
@@ -414,8 +454,88 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                             self.bullet(f'{self.class_link(rc)}')
                     if aliased_slot_name == 'relation':
                         if slot.subproperty_of:
-                            self.bullet(f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
+                            self.bullet(
+                                f' reifies: {self.slot_link(slot.subproperty_of) if slot.subproperty_of in self.schema.slots else slot.subproperty_of}')
                     self.element_properties(slot)
+
+    def visit_subset(self, subset: SubsetDefinition) -> None:
+        """
+        Visit a given subset definition and write the following properties in Markdown,
+        - Classes
+        - Mixins
+        - Slots
+        - Types
+        - Enums
+
+        Parameters
+        ----------
+        cls: linkml_runtime.linkml_model.meta.SubsetDefinition
+            A SubsetDefinition
+
+        """
+        grand_parent = self.doc_root_title
+        parent = "Subsets"
+        seen_subset_elements = set()
+        with open(self.exist_warning(self.dir_path(subset)), 'w', encoding='UTF-8') as subsetfile:
+            with redirect_stdout(subsetfile):
+                curie = self.namespaces.uri_or_curie_for(str(self.namespaces._base), underscore(subset.name))
+                uri = self.namespaces.uri_for(curie)
+                self.frontmatter(**{'grand_parent': grand_parent, 'parent': parent, 'title': curie, 'layout': 'default'})
+                self.element_header(obj=subset, name=subset.name, curie=curie, uri=uri)
+                # TODO: consider showing hierarchy within a subset
+                self.header(3, 'Classes')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name.lower()):
+                    if not cls.mixin:
+                        if cls.in_subset and subset.name in cls.in_subset:
+                            if cls.name not in seen_subset_elements:
+                                seen_subset_elements.add(cls.name)
+                                self.bullet(self.class_link(cls, use_desc=True), 0)
+                self.header(3, 'Mixins')
+                for cls in sorted(self.schema.classes.values(), key=lambda c: c.name.lower()):
+                    if cls.mixin:
+                        if cls.in_subset and subset.name in cls.in_subset:
+                            if cls.name not in seen_subset_elements:
+                                seen_subset_elements.add(cls.name)
+                                self.bullet(self.class_link(cls, use_desc=True), 0)
+                self.header(3, 'Slots')
+                for slot in sorted(self.schema.slots.values(), key=lambda s: s.name.lower()):
+                    if slot.in_subset and subset.name in slot.in_subset:
+                        if slot.alias and slot.usage_slot_name:
+                            slot = self.schema.slots[slot.usage_slot_name]
+                        if slot.name not in seen_subset_elements:
+                            seen_subset_elements.add(slot.name)
+                            self.bullet(self.slot_link(slot, use_desc=True), 0)
+                self.header(3, 'Types')
+                for type in sorted(self.schema.types.values(), key=lambda s: s.name.lower()):
+                    if type.in_subset and subset.name in type.in_subset:
+                        self.bullet(self.type_link(type, use_desc=True), 0)
+                self.header(3, 'Enums')
+                for enum in sorted(self.schema.enums.values(), key=lambda s: s.name.lower()):
+                    if enum.in_subset and subset.name in enum.in_subset:
+                        self.bullet(self.enum_link(enum, use_desc=True), 0)
+                self.element_properties(subset)
+
+    def visit_enum(self, enum: EnumDefinition) -> None:
+        """
+        Visit a given enum definition and write the following properties in Markdown,
+        - Properties
+        - Permissible Values
+
+        Parameters
+        ----------
+        cls: linkml_runtime.linkml_model.meta.EnumDefinition
+            A EnumDefinition
+
+        """
+        grand_parent = self.doc_root_title
+        parent = "Enums"
+        with open(self.exist_warning(self.dir_path(enum)), 'w', encoding='UTF-8') as enumfile:
+            with redirect_stdout(enumfile):
+                enum_curie = self.namespaces.uri_or_curie_for(str(self.namespaces._base), underscore(enum.name))
+                enum_uri = self.namespaces.uri_for(enum_curie)
+                self.frontmatter(**{'grand_parent': grand_parent, 'parent': parent, 'title': enum_curie, 'layout': 'default'})
+                self.element_header(obj=enum, name=enum.name, curie=enum_curie, uri=enum_uri)
+                self.element_properties(enum)
 
     def class_hier(self, cls: ClassDefinition, level: int = 0) -> None:
         """
@@ -433,7 +553,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
         if cls.name in sorted(self.synopsis.isarefs):
             for child in sorted(self.synopsis.isarefs[cls.name].classrefs):
                 self.seen_elements.add(child)
-                self.class_hier(self.schema.classes[child], level+1)
+                self.class_hier(self.schema.classes[child], level + 1)
 
     def pred_hier(self, slot: SlotDefinition, level: int = 0) -> None:
         """
@@ -453,7 +573,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                 child_slot = self.schema.slots[child]
                 if not child_slot.alias and not child_slot.mixin:
                     self.seen_elements.add(child)
-                    self.pred_hier(child_slot, level+1)
+                    self.pred_hier(child_slot, level + 1)
 
     def visit_type(self, typ: TypeDefinition) -> None:
         """
@@ -488,7 +608,8 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
                     parent = 'Built-in Types'
                 else:
                     parent = 'Defined Types'
-                self.frontmatter(**{'parent': parent, 'grand_parent': 'Types', 'title': type_curie, 'layout': 'default'})
+                self.frontmatter(
+                    **{'parent': parent, 'grand_parent': 'Types', 'title': type_curie, 'layout': 'default'})
                 self.element_header(typ, typ.name, type_curie, type_uri)
 
                 print("|  |  |  |")
@@ -510,7 +631,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
         """
         print('---')
-        for k,v in kwargs.items():
+        for k, v in kwargs.items():
             print(f'{k}: {v}')
         print('---')
 
@@ -577,7 +698,7 @@ class JekyllMarkdownGenerator(MarkdownGenerator):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='A generator for creating Jekyll style markdown')
-    parser.add_argument('--yaml',  help='the YAML file', required=True)
+    parser.add_argument('--yaml', help='the YAML file', required=True)
     parser.add_argument('--dir', help='the destination folder', required=True)
     args = parser.parse_args()
     JekyllMarkdownGenerator(yamlfile=args.yaml, schema=args.yaml).serialize(directory=args.dir)

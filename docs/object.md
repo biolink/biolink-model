@@ -1,57 +1,28 @@
----
-parent: Edge Properties
-title: biolink:object
-grand_parent: Slots
-layout: default
----
-
 # Slot: object
+_connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
 
 
-connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-
-URI: [biolink:object](https://w3id.org/biolink/vocab/object)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>1..1</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [http://www.w3.org/1999/02/22-rdf-syntax-ns#object](http://www.w3.org/1999/02/22-rdf-syntax-ns#object)
 
 
-## Used by
 
- * [Association](Association.md)
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
- * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
- * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
- * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
- * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
- * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
- * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
- * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
- * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
- * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
- * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
- * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)
- * [SequenceAssociation](SequenceAssociation.md)
- * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Local names:** | | descriptor (ga4gh) |
-|  | | node with incoming relationship (neo4j) |
-| **Mappings:** | | rdf:object |
-| **Exact Mappings:** | | owl:annotatedTarget |
-|  | | OBAN:association_has_object |
+* [association_slot](association_slot.md)
+    * **object**
+
+
+
+## Properties
+
+ * Range: named thing
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

@@ -1,5 +1,5 @@
 
-# Class: samples
+# Subset: samples
 
 
 Sample/biosample datamodel

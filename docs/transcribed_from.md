@@ -1,35 +1,37 @@
----
-parent: Predicates
-title: biolink:transcribed_from
-grand_parent: Slots
-layout: default
----
-
-# Relation: transcribed_from
+# Slot: transcribed_from
+_x is transcribed from y if and only if x is synthesized from template y_
 
 
-x is transcribed from y if and only if x is synthesized from template y
-
-URI: [biolink:transcribed_from](https://w3id.org/biolink/vocab/transcribed_from)
-
-## Domain and Range
-
-[Transcript](Transcript.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/transcribed_from](https://w3id.org/biolink/vocab/transcribed_from)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0002510 |
-|  | | SIO:010081 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **transcribed_from**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:transcribed to |
+
 

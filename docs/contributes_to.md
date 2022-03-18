@@ -1,44 +1,36 @@
----
-parent: Predicates
-title: biolink:contributes_to
-grand_parent: Slots
-layout: default
----
-
-# Relation: contributes_to
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: contributes_to
+_holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other_
 
 
-holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
-
-URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
-
- *  [causes](causes.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002326 |
-| **Close Mappings:** | | IDO:0000664 |
-| **Narrow Mappings:** | | CTD:marker_mechanism |
-|  | | MONDO:predisposes_towards |
-|  | | RO:0002255 |
-|  | | RO:0003304 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **contributes_to**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

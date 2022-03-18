@@ -1,37 +1,28 @@
----
-parent: Predicates
-title: biolink:is_output_of
-grand_parent: Slots
-layout: default
----
+# Slot: is_output_of
 
-# Relation: is_output_of
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/is_output_of](https://w3id.org/biolink/vocab/is_output_of)
 
 
 
 
-URI: [biolink:is_output_of](https://w3id.org/biolink/vocab/is_output_of)
+## Inheritance
 
-## Domain and Range
-
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
-
-## Parents
-
- *  is_a: [participates in](participates_in.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [participates_in](participates_in.md)
+            * **is_output_of**
 
 
-## Used by
+
+## Properties
+
+ * Range: occurrent
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
+## Identifier and Mapping Information
+
+
+
+
 

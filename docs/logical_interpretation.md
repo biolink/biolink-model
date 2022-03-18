@@ -1,34 +1,26 @@
----
-parent: Edge Properties
-title: biolink:logical_interpretation
-grand_parent: Slots
-layout: default
----
-
 # Slot: logical_interpretation
 
+URI: [https://w3id.org/biolink/vocab/logical_interpretation](https://w3id.org/biolink/vocab/logical_interpretation)
 
 
 
-URI: [biolink:logical_interpretation](https://w3id.org/biolink/vocab/logical_interpretation)
 
-## Domain and Range
+## Inheritance
 
-[Association](Association.md) ->  <sub>0..1</sub> [logical_interpretation_enum](logical_interpretation_enum.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+* [association_slot](association_slot.md)
+    * **logical_interpretation**
 
 
-## Used by
+
+## Properties
+
+ * Range: logical_interpretation_enum
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | os:LogicalInterpretation |
+## Identifier and Mapping Information
+
+
+
+
 

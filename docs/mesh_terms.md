@@ -1,39 +1,28 @@
----
-parent: Node Properties
-title: biolink:mesh_terms
-grand_parent: Slots
-layout: default
----
-
 # Slot: mesh_terms
+_mesh terms tagging a publication_
 
 
-mesh terms tagging a publication
-
-URI: [biolink:mesh_terms](https://w3id.org/biolink/vocab/mesh_terms)
-
-## Domain and Range
-
-[Publication](Publication.md) ->  <sub>0..\*</sub> [Uriorcurie](types/Uriorcurie.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/mesh_terms](https://w3id.org/biolink/vocab/mesh_terms)
 
 
-## Used by
 
- * [Article](Article.md)
- * [Book](Book.md)
- * [BookChapter](BookChapter.md)
- * [Publication](Publication.md)
- * [Serial](Serial.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | dcid:MeSHTerm |
+* [node_property](node_property.md)
+    * **mesh_terms**
+
+
+
+## Properties
+
+ * Range: uriorcurie
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

@@ -1,75 +1,135 @@
----
-parent: Class Mixins
-title: biolink:GeneOrGeneProduct
-grand_parent: Classes
-layout: default
----
-
 # Class: GeneOrGeneProduct
+_A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another_
 
 
-A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:GeneOrGeneProduct](https://w3id.org/biolink/vocab/GeneOrGeneProduct)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ReactionToCatalystAssociation],[MacromolecularMachineMixin],[GeneToPhenotypicFeatureAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation],[GeneRegulatoryRelationship],[GeneProductMixin],[ChemicalToGeneAssociation]++-%20object%201..1%3E[GeneOrGeneProduct%7Cname(i):symbol_type%20%3F],[DrugToGeneAssociation]++-%20object%201..1%3E[GeneOrGeneProduct],[GeneAsAModelOfDiseaseAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneRegulatoryRelationship]++-%20object%201..1%3E[GeneOrGeneProduct],[GeneRegulatoryRelationship]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneToDiseaseAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneToEntityAssociationMixin]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneToExpressionSiteAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneToGeneAssociation]++-%20object%201..1%3E[GeneOrGeneProduct],[GeneToGeneAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[GeneToPhenotypicFeatureAssociation]++-%20subject%201..1%3E[GeneOrGeneProduct],[ReactionToCatalystAssociation]++-%20object%201..1%3E[GeneOrGeneProduct],[Gene]uses%20-.-%3E[GeneOrGeneProduct],[GeneOrGeneProduct]%5E-[GeneProductMixin],[MacromolecularMachineMixin]%5E-[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[Gene],[DrugToGeneAssociation],[ChemicalToGeneAssociation],[BiologicalProcess],[AnatomicalEntity])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * CHEMBL.TARGET
- * IUPHAR.FAMILY
-
-## Parents
-
- *  is_a: [MacromolecularMachineMixin](MacromolecularMachineMixin.md) - A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-
-## Children
-
- * [GeneProductMixin](GeneProductMixin.md) - The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
-
-## Mixin for
-
- * [Gene](Gene.md) (mixin)  - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
-
-## Referenced by class
-
- *  **[ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)** *[chemical to gene association➞object](chemical_to_gene_association_object.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[coexpressed with](coexpressed_with.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[DrugToGeneAssociation](DrugToGeneAssociation.md)** *[drug to gene association➞object](drug_to_gene_association_object.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[AnatomicalEntity](AnatomicalEntity.md)** *[expresses](expresses.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)** *[gene as a model of disease association➞subject](gene_as_a_model_of_disease_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[gene has variant that contributes to disease association➞subject](gene_has_variant_that_contributes_to_disease_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[gene regulatory relationship➞object](gene_regulatory_relationship_object.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)** *[gene to disease association➞subject](gene_to_disease_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToEntityAssociationMixin](GeneToEntityAssociationMixin.md)** *[gene to entity association mixin➞subject](gene_to_entity_association_mixin_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association➞subject](gene_to_expression_site_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[gene to gene association➞object](gene_to_gene_association_object.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[gene to gene association➞subject](gene_to_gene_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)** *[gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has negative upstream actor](has_negative_upstream_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has negative upstream or within actor](has_negative_upstream_or_within_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has positive upstream actor](has_positive_upstream_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has positive upstream or within actor](has_positive_upstream_or_within_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has upstream actor](has_upstream_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[BiologicalProcess](BiologicalProcess.md)** *[has upstream or within actor](has_upstream_or_within_actor.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in cell population with](in_cell_population_with.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in complex with](in_complex_with.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in pathway with](in_pathway_with.md)*  <sub>0..\*</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  **[ReactionToCatalystAssociation](ReactionToCatalystAssociation.md)** *[reaction to catalyst association➞object](reaction_to_catalyst_association_object.md)*  <sub>1..1</sub>  **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
-
-## Attributes
+* [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
+    * **GeneOrGeneProduct**
+        * [GeneProductMixin](GeneProductMixin.md)
 
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+
+
+## Usages
+
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [object](object.md) | range | gene or gene product |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [object](object.md) | range | gene or gene product |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [object](object.md) | range | gene or gene product |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [subject](subject.md) | range | gene or gene product |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [object](object.md) | range | gene or gene product |
+| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [object](object.md) | range | gene or gene product |
+| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [object](object.md) | range | gene or gene product |
+| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [object](object.md) | range | gene or gene product |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [subject](subject.md) | range | gene or gene product |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [object](object.md) | range | gene or gene product |
+
+
+
+## Identifier and Mapping Information
+
+
+### Valid ID Prefixes
+
+Instances of this class *should* have identifiers with one of the following prefixes:
+
+* CHEMBL.TARGET
+
+* IUPHAR.FAMILY
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: gene or gene product
+id_prefixes:
+- CHEMBL.TARGET
+- IUPHAR.FAMILY
+description: A union of gene loci or gene products. Frequently an identifier for one
+  will be used as proxy for another
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: macromolecular machine mixin
+mixin: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: gene or gene product
+id_prefixes:
+- CHEMBL.TARGET
+- IUPHAR.FAMILY
+description: A union of gene loci or gene products. Frequently an identifier for one
+  will be used as proxy for another
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: macromolecular machine mixin
+mixin: true
+attributes:
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: gene or gene product
+    range: symbol type
+
+```
+</details>

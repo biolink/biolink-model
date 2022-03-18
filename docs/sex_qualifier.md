@@ -1,35 +1,28 @@
----
-parent: Edge Properties
-title: biolink:sex_qualifier
-grand_parent: Slots
-layout: default
----
-
 # Slot: sex_qualifier
+_a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
 
 
-a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-
-URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [BiologicalSex](BiologicalSex.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 
-## Used by
 
- * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
- * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
- * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
- * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
- * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+
+## Inheritance
+
+* [association_slot](association_slot.md)
+    * **sex_qualifier**
+
+
+
+## Properties
+
+ * Range: biological sex
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+

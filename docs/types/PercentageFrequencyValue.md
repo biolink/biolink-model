@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:PercentageFrequencyValue
-layout: default
----
 
-# Type: PercentageFrequencyValue
+# Type: percentage frequency value
 
 
 
 
-URI: [biolink:PercentageFrequencyValue](https://w3id.org/biolink/vocab/types/biolink:PercentageFrequencyValue)
+URI: [biolink:PercentageFrequencyValue](https://w3id.org/biolink/vocab/PercentageFrequencyValue)
 
 |  |  |  |
 | --- | --- | --- |

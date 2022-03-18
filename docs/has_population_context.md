@@ -1,28 +1,28 @@
----
-parent: Edge Properties
-title: biolink:has_population_context
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_population_context
+_a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association._
 
 
-a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
-
-URI: [biolink:has_population_context](https://w3id.org/biolink/vocab/has_population_context)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_population_context](https://w3id.org/biolink/vocab/has_population_context)
 
 
-## Used by
 
- * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
+
+## Inheritance
+
+* [association_slot](association_slot.md)
+    * **has_population_context**
+
+
+
+## Properties
+
+ * Range: population of individual organisms
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+

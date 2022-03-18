@@ -1,5 +1,5 @@
 
-# Class: reaction_direction_enum
+# Enum: reaction_direction_enum
 
 
 

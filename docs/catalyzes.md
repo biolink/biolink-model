@@ -1,27 +1,35 @@
----
-parent: Predicates
-title: biolink:catalyzes
-grand_parent: Slots
-layout: default
----
+# Slot: catalyzes
 
-# Relation: catalyzes
+URI: [https://w3id.org/biolink/vocab/catalyzes](https://w3id.org/biolink/vocab/catalyzes)
 
 
 
 
-URI: [biolink:catalyzes](https://w3id.org/biolink/vocab/catalyzes)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
-
-## Parents
-
- *  is_a: [participates in](participates_in.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [participates_in](participates_in.md)
+            * **catalyzes**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

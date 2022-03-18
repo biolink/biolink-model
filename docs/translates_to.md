@@ -1,35 +1,37 @@
----
-parent: Predicates
-title: biolink:translates_to
-grand_parent: Slots
-layout: default
----
-
-# Relation: translates_to
+# Slot: translates_to
+_x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)_
 
 
-x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
-
-URI: [biolink:translates_to](https://w3id.org/biolink/vocab/translates_to)
-
-## Domain and Range
-
-[Transcript](Transcript.md) ->  <sub>0..\*</sub> [Protein](Protein.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/translates_to](https://w3id.org/biolink/vocab/translates_to)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Close Mappings:** | | RO:0002513 |
-|  | | SIO:010082 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **translates_to**
+
+
+
+## Properties
+
+ * Range: protein
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:translation of |
+
 

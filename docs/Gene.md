@@ -1,158 +1,541 @@
----
-parent: Entities
-title: biolink:Gene
-grand_parent: Classes
-layout: default
----
-
 # Class: Gene
+_A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions._
 
 
-A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
+
+
 
 URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[Transcript],[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenotypeToGeneAssociation],[GenomicEntity],[GeneToGoTermAssociation],[GeneToGeneProductRelationship],[GeneProductMixin],[GeneOrGeneProduct],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;xref:uriorcurie%20%2A;has_biological_sequence:biological_sequence%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GeneToGoTermAssociation]-%20subject%201..1%3E[Gene],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..%2A%3E[Gene],[GeneGroupingMixin]-%20has%20gene%20or%20gene%20product%200..%2A%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[Gene]uses%20-.-%3E[GeneOrGeneProduct],[Gene]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Gene]uses%20-.-%3E[PhysicalEssence],[Gene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Gene],[GeneGroupingMixin],[DiseaseOrPhenotypicFeature],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute],[Agent])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * AspGD
- * NCBIGene
- * ENSEMBL
- * HGNC
- * MGI
- * ZFIN
- * dictyBase
- * WB
- * WormBase
- * FB
- * RGD
- * SGD
- * PomBase
- * OMIM
- * KEGG.GENE
- * UMLS
- * Xenbase
-
-## Parents
-
- *  is_a: [BiologicalEntity](BiologicalEntity.md)
-
-## Uses Mixins
-
- *  mixin: [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
- *  mixin: [GenomicEntity](GenomicEntity.md)
- *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
- *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
- *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
-
-## Referenced by class
-
- *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[condition associated with gene](condition_associated_with_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GeneProductMixin](GeneProductMixin.md)** *[gene product of](gene_product_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship➞subject](gene_to_gene_product_relationship_subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association➞subject](gene_to_go_term_association_subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association➞object](genotype_to_gene_association_object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[NamedThing](NamedThing.md)** *[has gene](has_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[NamedThing](NamedThing.md)** *[has gene or gene product](has_gene_or_gene_product.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is frameshift variant of](is_frameshift_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is missense variant of](is_missense_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is nearby variant of](is_nearby_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is non coding variant of](is_non_coding_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is nonsense variant of](is_nonsense_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is splice site variant of](is_splice_site_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[is synonymous variant of](is_synonymous_variant_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[sequence variant➞has gene](sequence_variant_has_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[Transcript](Transcript.md)** *[transcribed from](transcribed_from.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[transcript to gene relationship➞object](transcript_to_gene_relationship_object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[VariantToGeneAssociation](VariantToGeneAssociation.md)** *[variant to gene association➞object](variant_to_gene_association_object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
-
-## Attributes
+* [Entity](Entity.md)
+    * [NamedThing](NamedThing.md)
+        * [BiologicalEntity](BiologicalEntity.md)
+            * **Gene** [ gene or gene product genomic entity chemical entity or gene or gene product physical essence ontology class]
 
 
-### Inherited from entity:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>0..1</sub>
-     * Description: An IRI for an entity. This is determined by the id using expansion rules.
-     * Range: [IriType](types/IriType.md)
-     * in subsets: (translator_minimal,samples)
- * [category](category.md)  <sub>0..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [symbol](symbol.md) | [string](string.md) | 0..1 | Symbol for a particular thing  | . |
+| [synonym](synonym.md) | [label_type](label_type.md) | 0..* | Alternate human-readable names for a thing  | . |
+| [xref](xref.md) | [uriorcurie](uriorcurie.md) | 0..* | Alternate CURIEs for a thing  | . |
+| [has_biological_sequence](has_biological_sequence.md) | [biological_sequence](biological_sequence.md) | 0..1 | connects a genomic feature to its sequence  | . |
+| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
+| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
+| [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [CategoryType](types/CategoryType.md)
-     * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal)
- * [provided by](provided_by.md)  <sub>0..\*</sub>
-     * Description: connects an association to the agent (person, organization or group) that provided it
-     * Range: [Agent](Agent.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
+| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
+| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
+| [in_taxon](in_taxon.md) | [OrganismTaxon](OrganismTaxon.md) | 0..* | connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'  | . |
 
-### Inherited from genomic entity:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
+## Usages
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [ProteinDomain](ProteinDomain.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [ProteinFamily](ProteinFamily.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [GeneGroupingMixin](GeneGroupingMixin.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [GeneFamily](GeneFamily.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [SequenceVariant](SequenceVariant.md) | [has_gene](has_gene.md) | range | gene |
+| [Snv](Snv.md) | [has_gene](has_gene.md) | range | gene |
+| [GenomicBackgroundExposure](GenomicBackgroundExposure.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) | [has_gene_or_gene_product](has_gene_or_gene_product.md) | range | gene |
+| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [object](object.md) | range | gene |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [object](object.md) | range | gene |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [object](object.md) | range | gene |
+| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [subject](subject.md) | range | gene |
+| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [object](object.md) | range | gene |
+| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [subject](subject.md) | range | gene |
 
-### Inherited from named thing:
 
- * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [NamedThing](NamedThing.md)
-     * in subsets: (translator_minimal)
 
-### Inherited from thing with taxon:
+## Identifier and Mapping Information
 
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
-## Other properties
+### Valid ID Prefixes
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | locus |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | SO:0000704 |
-|  | | SIO:010035 |
-|  | | WIKIDATA:Q7187 |
-|  | | dcid:Gene |
-| **Narrow Mappings:** | | bioschemas:gene |
+Instances of this class *should* have identifiers with one of the following prefixes:
 
+* AspGD
+
+* NCBIGene
+
+* ENSEMBL
+
+* HGNC
+
+* MGI
+
+* ZFIN
+
+* dictyBase
+
+* WB
+
+* WormBase
+
+* FB
+
+* RGD
+
+* SGD
+
+* PomBase
+
+* OMIM
+
+* KEGG.GENE
+
+* UMLS
+
+* Xenbase
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: gene
+id_prefixes:
+- AspGD
+- NCBIGene
+- ENSEMBL
+- HGNC
+- MGI
+- ZFIN
+- dictyBase
+- WB
+- WormBase
+- FB
+- RGD
+- SGD
+- PomBase
+- OMIM
+- KEGG.GENE
+- UMLS
+- Xenbase
+aliases:
+- locus
+exact_mappings:
+- SO:0000704
+- SIO:010035
+- WIKIDATA:Q7187
+- dcid:Gene
+narrow_mappings:
+- bioschemas:gene
+description: A region (or regions) that includes all of the sequence elements necessary
+  to encode a functional transcript. A gene locus may include regulatory regions,
+  transcribed regions and/or other functional sequence regions.
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: biological entity
+mixins:
+- gene or gene product
+- genomic entity
+- chemical entity or gene or gene product
+- physical essence
+- ontology class
+slots:
+- symbol
+- synonym
+- xref
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: gene
+id_prefixes:
+- AspGD
+- NCBIGene
+- ENSEMBL
+- HGNC
+- MGI
+- ZFIN
+- dictyBase
+- WB
+- WormBase
+- FB
+- RGD
+- SGD
+- PomBase
+- OMIM
+- KEGG.GENE
+- UMLS
+- Xenbase
+aliases:
+- locus
+exact_mappings:
+- SO:0000704
+- SIO:010035
+- WIKIDATA:Q7187
+- dcid:Gene
+narrow_mappings:
+- bioschemas:gene
+description: A region (or regions) that includes all of the sequence elements necessary
+  to encode a functional transcript. A gene locus may include regulatory regions,
+  transcribed regions and/or other functional sequence regions.
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: biological entity
+mixins:
+- gene or gene product
+- genomic entity
+- chemical entity or gene or gene product
+- physical essence
+- ontology class
+attributes:
+  symbol:
+    name: symbol
+    exact_mappings:
+    - alliancegenome:symbol
+    - gpi:DB_Object_Symbol
+    description: Symbol for a particular thing
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: symbol
+    owner: gene
+    range: string
+  synonym:
+    name: synonym
+    aliases:
+    - alias
+    narrow_mappings:
+    - skos:altLabel
+    - gff3:Alias
+    - alliancegenome:synonyms
+    - gpi:DB_Object_Synonyms
+    - oboInOwl:hasExactSynonym
+    - oboInOwl:hasNarrowSynonym
+    - oboInOwl:hasBroadSynonym
+    - oboInOwl:hasRelatedSynonym
+    - HANCESTRO:0330
+    - IAO:0000136
+    - RXNORM:has_tradename
+    description: Alternate human-readable names for a thing
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: synonym
+    owner: gene
+    range: label type
+  xref:
+    name: xref
+    aliases:
+    - dbxref
+    - Dbxref
+    - DbXref
+    narrow_mappings:
+    - gff3:Dbxref
+    - gpi:DB_Xrefs
+    description: Alternate CURIEs for a thing
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: xref
+    owner: gene
+    range: uriorcurie
+  has biological sequence:
+    name: has biological sequence
+    description: connects a genomic feature to its sequence
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: has_biological_sequence
+    owner: gene
+    range: biological sequence
+  id:
+    name: id
+    exact_mappings:
+    - alliancegenome:primaryId
+    - gff3:ID
+    - gpi:DB_Object_ID
+    description: A unique identifier for an entity. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    identifier: true
+    alias: id
+    owner: gene
+    range: string
+    required: true
+  iri:
+    name: iri
+    exact_mappings:
+    - WIKIDATA_PROPERTY:P854
+    description: An IRI for an entity. This is determined by the id using expansion
+      rules.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: iri
+    owner: gene
+    range: iri type
+  category:
+    name: category
+    description: "Name of the high level ontology class in which this entity is categorized.\
+      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
+      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
+      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
+      \ include values for ancestors of the biolink class; for example, a protein\
+      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
+      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
+      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
+      \ to a class more specific than something in biolink. For example, a sequence\
+      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
+      \ which is more specific than anything in biolink. Here we would have categories\
+      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: type
+    domain: entity
+    multivalued: true
+    designates_type: true
+    alias: category
+    owner: gene
+    is_class_field: true
+    range: named thing
+    required: true
+  type:
+    name: type
+    exact_mappings:
+    - alliancegenome:soTermId
+    - gff3:type
+    - gpi:DB_Object_Type
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdf:type
+    alias: type
+    owner: gene
+    range: string
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: gene
+    range: symbol type
+  description:
+    name: description
+    aliases:
+    - definition
+    exact_mappings:
+    - IAO:0000115
+    - skos:definitions
+    narrow_mappings:
+    - gff3:Description
+    description: a human-readable description of an entity
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: dct:description
+    alias: description
+    owner: gene
+    range: narrative text
+  source:
+    name: source
+    description: a lightweight analog to the association class 'provided by' slot,
+      which is the string name, or the authoritative (i.e. database) namespace, designating
+      the origin of the entity to which the slot belongs.
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: source
+    owner: gene
+    range: label type
+  provided by:
+    name: provided by
+    exact_mappings:
+    - pav:providedBy
+    description: connects an association to the agent (person, organization or group)
+      that provided it
+    deprecated: This slot is deprecated and replaced by a set of more precise slots
+      for describing the source retrieval provenance of an Association.  These include
+      'knowledge source' and its descendants 'primary knowledge source', 'original
+      knowledge source', and 'aggregator knowledge source'.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: provided_by
+    owner: gene
+    range: agent
+  has attribute:
+    name: has attribute
+    exact_mappings:
+    - SIO:000008
+    close_mappings:
+    - OBI:0001927
+    narrow_mappings:
+    - OBAN:association_has_subject_property
+    - OBAN:association_has_object_property
+    - CPT:has_possibly_included_panel_element
+    - DRUGBANK:category
+    - EFO:is_executed_in
+    - HANCESTRO:0301
+    - LOINC:has_action_guidance
+    - LOINC:has_adjustment
+    - LOINC:has_aggregation_view
+    - LOINC:has_approach_guidance
+    - LOINC:has_divisor
+    - LOINC:has_exam
+    - LOINC:has_method
+    - LOINC:has_modality_subtype
+    - LOINC:has_object_guidance
+    - LOINC:has_scale
+    - LOINC:has_suffix
+    - LOINC:has_time_aspect
+    - LOINC:has_time_modifier
+    - LOINC:has_timing_of
+    - NCIT:R88
+    - NCIT:eo_disease_has_property_or_attribute
+    - NCIT:has_data_element
+    - NCIT:has_pharmaceutical_administration_method
+    - NCIT:has_pharmaceutical_basic_dose_form
+    - NCIT:has_pharmaceutical_intended_site
+    - NCIT:has_pharmaceutical_release_characteristics
+    - NCIT:has_pharmaceutical_state_of_matter
+    - NCIT:has_pharmaceutical_transformation
+    - NCIT:is_qualified_by
+    - NCIT:qualifier_applies_to
+    - NCIT:role_has_domain
+    - NCIT:role_has_range
+    - INO:0000154
+    - HANCESTRO:0308
+    - OMIM:has_inheritance_type
+    - ORPHA:C016
+    - ORPHA:C017
+    - RO:0000053
+    - RO:0000086
+    - RO:0000087
+    - SNOMED:has_access
+    - SNOMED:has_clinical_course
+    - SNOMED:has_count_of_base_of_active_ingredient
+    - SNOMED:has_dose_form_administration_method
+    - SNOMED:has_dose_form_release_characteristic
+    - SNOMED:has_dose_form_transformation
+    - SNOMED:has_finding_context
+    - SNOMED:has_finding_informer
+    - SNOMED:has_inherent_attribute
+    - SNOMED:has_intent
+    - SNOMED:has_interpretation
+    - SNOMED:has_laterality
+    - SNOMED:has_measurement_method
+    - SNOMED:has_method
+    - SNOMED:has_priority
+    - SNOMED:has_procedure_context
+    - SNOMED:has_process_duration
+    - SNOMED:has_property
+    - SNOMED:has_revision_status
+    - SNOMED:has_scale_type
+    - SNOMED:has_severity
+    - SNOMED:has_specimen
+    - SNOMED:has_state_of_matter
+    - SNOMED:has_subject_relationship_context
+    - SNOMED:has_surgical_approach
+    - SNOMED:has_technique
+    - SNOMED:has_temporal_context
+    - SNOMED:has_time_aspect
+    - SNOMED:has_units
+    - UMLS:has_structural_class
+    - UMLS:has_supported_concept_property
+    - UMLS:has_supported_concept_relationship
+    - UMLS:may_be_qualified_by
+    description: connects any entity to an attribute
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: entity
+    multivalued: true
+    alias: has_attribute
+    owner: gene
+    range: attribute
+  in taxon:
+    name: in taxon
+    aliases:
+    - instance of
+    - is organism source of gene product
+    - organism has gene
+    - gene found in organism
+    - ' gene product has organism source'
+    exact_mappings:
+    - RO:0002162
+    - WIKIDATA_PROPERTY:P703
+    narrow_mappings:
+    - RO:0002160
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: 'True'
+    description: connects an entity to its taxonomic classification. Only certain
+      kinds of entities can be taxonomically classified; see 'thing with taxon'
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: related to at instance level
+    domain: thing with taxon
+    multivalued: true
+    inherited: true
+    alias: in_taxon
+    owner: gene
+    range: organism taxon
+
+```
+</details>

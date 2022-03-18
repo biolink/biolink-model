@@ -1,39 +1,31 @@
----
-parent: Predicates
-title: biolink:has_biomarker
-grand_parent: Slots
-layout: default
----
-
-# Relation: has_biomarker
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: has_biomarker
+_holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite_
 
 
-holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
-
-URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
-
-## Domain and Range
-
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
-
-## Parents
-
- *  is_a: [correlated with](correlated_with.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | NCIT:disease_has_molecular_abnormality |
-|  | | NCIT:disease_is_marked_by_gene |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [associated_with](associated_with.md)
+            * [correlated_with](correlated_with.md)
+                * **has_biomarker**
+
+
+
+## Properties
+
+ * Range: chemical entity or gene or gene product
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

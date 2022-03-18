@@ -1,41 +1,84 @@
----
-parent: Other Classes
-title: biolink:EnvironmentalExposure
-grand_parent: Classes
-layout: default
----
-
 # Class: EnvironmentalExposure
+_A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants._
 
 
-A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
+
+
 
 URI: [biolink:EnvironmentalExposure](https://w3id.org/biolink/vocab/EnvironmentalExposure)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeographicExposure],[ExposureEvent],[EnvironmentalExposure%7Ctimepoint:time_type%20%3F]uses%20-.-%3E[ExposureEvent],[EnvironmentalExposure]%5E-[GeographicExposure])
-
----
 
 
-## Uses Mixins
+## Inheritance
 
- *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-
-## Children
-
- * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
-
-## Referenced by class
+* **EnvironmentalExposure** [ exposure event]
+    * [GeographicExposure](GeographicExposure.md) [ exposure event]
 
 
-## Attributes
 
 
-### Inherited from exposure event:
+## Slots
 
- * [timepoint](timepoint.md)  <sub>0..1</sub>
-     * Description: a point in time
-     * Range: [TimeType](types/TimeType.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: environmental exposure
+description: A environmental exposure is a factor relating to abiotic processes in
+  the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution)
+  and water-born contaminants.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: environmental exposure
+description: A environmental exposure is a factor relating to abiotic processes in
+  the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution)
+  and water-born contaminants.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+attributes:
+  timepoint:
+    name: timepoint
+    description: a point in time
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: timepoint
+    owner: environmental exposure
+    range: time type
+
+```
+</details>

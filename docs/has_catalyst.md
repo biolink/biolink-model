@@ -1,27 +1,28 @@
----
-parent: Predicates
-title: biolink:has_catalyst
-grand_parent: Slots
-layout: default
----
+# Slot: has_catalyst
 
-# Relation: has_catalyst
+URI: [https://w3id.org/biolink/vocab/has_catalyst](https://w3id.org/biolink/vocab/has_catalyst)
 
 
 
 
-URI: [biolink:has_catalyst](https://w3id.org/biolink/vocab/has_catalyst)
+## Inheritance
 
-## Domain and Range
-
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [has participant](has_participant.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_participant](has_participant.md)
+            * **has_catalyst**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

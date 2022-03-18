@@ -1,36 +1,28 @@
----
-parent: Edge Properties
-title: biolink:mechanism_of_action
-grand_parent: Slots
-layout: default
----
-
 # Slot: mechanism_of_action
+_a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result._
 
 
-a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
-
-URI: [biolink:mechanism_of_action](https://w3id.org/biolink/vocab/mechanism_of_action)
-
-## Domain and Range
-
-[Association](Association.md) ->  <sub>0..1</sub> [Boolean](types/Boolean.md)
-
-## Parents
-
- *  is_a: [association slot](association_slot.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/mechanism_of_action](https://w3id.org/biolink/vocab/mechanism_of_action)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | NCIT:C54680 |
-|  | | MI:2044 |
-|  | | LOINC:MTHU019741 |
+* [association_slot](association_slot.md)
+    * **mechanism_of_action**
+
+
+
+## Properties
+
+ * Range: boolean
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

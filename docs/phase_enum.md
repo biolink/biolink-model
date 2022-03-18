@@ -1,5 +1,5 @@
 
-# Class: phase_enum
+# Enum: phase_enum
 
 
 phase

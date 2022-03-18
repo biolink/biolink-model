@@ -1,27 +1,29 @@
----
-parent: Predicates
-title: biolink:adverse_event_caused_by
-grand_parent: Slots
-layout: default
----
+# Slot: adverse_event_caused_by
 
-# Relation: adverse_event_caused_by
+URI: [https://w3id.org/biolink/vocab/adverse_event_caused_by](https://w3id.org/biolink/vocab/adverse_event_caused_by)
 
 
 
 
-URI: [biolink:adverse_event_caused_by](https://w3id.org/biolink/vocab/adverse_event_caused_by)
+## Inheritance
 
-## Domain and Range
-
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [Drug](Drug.md)
-
-## Parents
-
- *  is_a: [causes](causes.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [contributes_to](contributes_to.md)
+            * [causes](causes.md)
+                * **adverse_event_caused_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: drug
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

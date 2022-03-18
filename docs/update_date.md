@@ -1,27 +1,28 @@
----
-parent: Node Properties
-title: biolink:update_date
-grand_parent: Slots
-layout: default
----
-
 # Slot: update_date
+_date on which an entity was updated. This can be applied to nodes or edges_
 
 
-date on which an entity was updated. This can be applied to nodes or edges
-
-URI: [biolink:update_date](https://w3id.org/biolink/vocab/update_date)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [Date](types/Date.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/update_date](https://w3id.org/biolink/vocab/update_date)
 
 
-## Used by
+
+
+## Inheritance
+
+* [node_property](node_property.md)
+    * **update_date**
+
+
+
+## Properties
+
+ * Range: date
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

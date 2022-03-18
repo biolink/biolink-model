@@ -1,48 +1,38 @@
----
-parent: Predicates
-title: biolink:precedes
-grand_parent: Slots
-layout: default
----
-
-# Relation: precedes
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: precedes
+_holds between two processes, where one completes before the other begins_
 
 
-holds between two processes, where one completes before the other begins
-
-URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
-
-## Domain and Range
-
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
-
-## Parents
-
- *  is_a: [temporally related to](temporally_related_to.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/precedes](https://w3id.org/biolink/vocab/precedes)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | BFO:0000063 |
-|  | | SEMMEDDB:PRECEDES |
-|  | | SEMMEDDB:precedes |
-|  | | SNOMED:occurs_before |
-| **Close Mappings:** | | RO:0002263 |
-|  | | RO:0002264 |
-| **Narrow Mappings:** | | FMA:transforms_into |
-|  | | RO:0002090 |
-|  | | RO:0002411 |
-|  | | RO:0002412 |
-| **Broad Mappings:** | | WIKIDATA_PROPERTY:P156 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [temporally_related_to](temporally_related_to.md)
+            * **precedes**
+
+
+
+## Properties
+
+ * Range: occurrent
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:preceded by |
+
 

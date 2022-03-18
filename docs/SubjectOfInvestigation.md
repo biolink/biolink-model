@@ -1,31 +1,66 @@
----
-parent: Class Mixins
-title: biolink:SubjectOfInvestigation
-grand_parent: Classes
-layout: default
----
-
 # Class: SubjectOfInvestigation
+_An entity that has the role of being studied in an investigation, study, or experiment_
 
 
-An entity that has the role of being studied in an investigation, study, or experiment
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:SubjectOfInvestigation](https://w3id.org/biolink/vocab/SubjectOfInvestigation)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[MaterialSample])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [MaterialSample](MaterialSample.md) (mixin)  - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+## Slots
 
-## Referenced by class
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-## Attributes
+## Usages
 
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: subject of investigation
+description: An entity that has the role of being studied in an investigation, study,
+  or experiment
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: subject of investigation
+description: An entity that has the role of being studied in an investigation, study,
+  or experiment
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+
+```
+</details>

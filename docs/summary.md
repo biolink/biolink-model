@@ -1,41 +1,28 @@
----
-parent: Node Properties
-title: biolink:summary
-grand_parent: Slots
-layout: default
----
-
 # Slot: summary
+_executive  summary of a publication_
 
 
-executive  summary of a publication
-
-URI: [biolink:summary](https://w3id.org/biolink/vocab/summary)
-
-## Domain and Range
-
-[Publication](Publication.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/summary](https://w3id.org/biolink/vocab/summary)
 
 
-## Used by
 
- * [Article](Article.md)
- * [Book](Book.md)
- * [BookChapter](BookChapter.md)
- * [Publication](Publication.md)
- * [Serial](Serial.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | abstract |
-| **Exact Mappings:** | | dct:abstract |
-|  | | WIKIDATA:Q333291 |
+* [node_property](node_property.md)
+    * **summary**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

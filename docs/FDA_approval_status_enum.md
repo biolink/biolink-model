@@ -1,5 +1,5 @@
 
-# Class: FDA_approval_status_enum
+# Enum: FDA_approval_status_enum
 
 
 

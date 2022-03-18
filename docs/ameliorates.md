@@ -1,35 +1,38 @@
----
-parent: Predicates
-title: biolink:ameliorates
-grand_parent: Slots
-layout: default
----
-
-# Relation: ameliorates
+# Slot: ameliorates
+_A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition._
 
 
-A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
-
-URI: [biolink:ameliorates](https://w3id.org/biolink/vocab/ameliorates)
-
-## Domain and Range
-
-[BiologicalEntity](BiologicalEntity.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-
-## Parents
-
- *  is_a: [affects](affects.md)
-
-## Children
-
- *  [treats](treats.md)
-
-## Used by
+URI: [https://w3id.org/biolink/vocab/ameliorates](https://w3id.org/biolink/vocab/ameliorates)
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0003307 |
+
+## Inheritance
+
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * **ameliorates**
+
+
+
+## Properties
+
+ * Range: disease or phenotypic feature
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:exacerbates |
+
 

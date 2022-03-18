@@ -1,36 +1,30 @@
----
-parent: Edge Properties
-title: biolink:end_coordinate
-grand_parent: Slots
-layout: default
----
-
 # Slot: end_coordinate
+_The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on._
 
 
-The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
-
-URI: [biolink:end_coordinate](https://w3id.org/biolink/vocab/end_coordinate)
-
-## Domain and Range
-
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [Integer](types/Integer.md)
-
-## Parents
-
- *  is_a: [base coordinate](base_coordinate.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/end_coordinate](https://w3id.org/biolink/vocab/end_coordinate)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | end |
-| **Exact Mappings:** | | gff3:end |
-| **Close Mappings:** | | faldo:end |
+* [association_slot](association_slot.md)
+    * [sequence_localization_attribute](sequence_localization_attribute.md)
+        * [base_coordinate](base_coordinate.md)
+            * **end_coordinate**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

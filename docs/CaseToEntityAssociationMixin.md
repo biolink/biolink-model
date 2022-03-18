@@ -1,43 +1,78 @@
----
-parent: Class Mixins
-title: biolink:CaseToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: CaseToEntityAssociationMixin
+_An abstract association for use where the case is the subject_
 
 
-An abstract association for use where the case is the subject
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Case]%3Csubject%201..1-%20[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[CaseToEntityAssociationMixin],[CaseToPhenotypicFeatureAssociation],[Case])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the case (e.g. patient) that has the property
-     * Range: [Case](Case.md)
 
-### Domain for slot:
 
- * [case to entity association mixin➞subject](case_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the case (e.g. patient) that has the property
-     * Range: [Case](Case.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: case to entity association mixin
+description: An abstract association for use where the case is the subject
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the case (e.g. patient) that has the property
+    range: case
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: case to entity association mixin
+description: An abstract association for use where the case is the subject
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the case (e.g. patient) that has the property
+    range: case
+defining_slots:
+- subject
+
+```
+</details>

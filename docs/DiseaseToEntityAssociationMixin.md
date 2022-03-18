@@ -1,46 +1,92 @@
----
-parent: Class Mixins
-title: biolink:DiseaseToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: DiseaseToEntityAssociationMixin
 
 
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:DiseaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Disease]%3Csubject%201..1-%20[DiseaseToEntityAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureEventAssociation],[Disease])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) (mixin)  - An association between an exposure event and a disease.
- * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [disease to entity association mixin➞subject](disease_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: disease class
-     * Range: [Disease](Disease.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
 
-### Domain for slot:
 
- * [disease to entity association mixin➞subject](disease_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: disease class
-     * Range: [Disease](Disease.md)
-     * Example: MONDO:0017314 Ehlers-Danlos syndrome, vascular type
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: disease to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: disease class
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    values_from:
+    - mondo
+    - omim
+    - orphanet
+    - ncit
+    - doid
+    range: disease
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: disease to entity association mixin
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: disease class
+    examples:
+    - value: MONDO:0017314
+      description: Ehlers-Danlos syndrome, vascular type
+    values_from:
+    - mondo
+    - omim
+    - orphanet
+    - ncit
+    - doid
+    range: disease
+defining_slots:
+- subject
+
+```
+</details>

@@ -1,5 +1,5 @@
 
-# Class: translator_minimal
+# Subset: translator_minimal
 
 
 Minimum subset of translator work

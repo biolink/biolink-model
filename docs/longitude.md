@@ -1,36 +1,35 @@
----
-parent: Node Properties
-title: biolink:longitude
-grand_parent: Slots
-layout: default
----
-
 # Slot: longitude
+_longitude_
 
 
-longitude
-
-URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
-
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [Float](types/Float.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/longitude](https://w3id.org/biolink/vocab/longitude)
 
 
-## Used by
 
- * [GeographicLocation](GeographicLocation.md)
- * [GeographicLocationAtTime](GeographicLocationAtTime.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | wgs:long |
+* [node_property](node_property.md)
+    * **longitude**
+
+
+
+## Properties
+
+ * Range: float
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:opposite_of | biolink:lattitude |
+
 

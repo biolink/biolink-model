@@ -1,51 +1,132 @@
----
-parent: Class Mixins
-title: biolink:MacromolecularComplexMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: MacromolecularComplexMixin
+_A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together._
 
 
-A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:MacromolecularComplexMixin](https://w3id.org/biolink/vocab/MacromolecularComplexMixin)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MacromolecularMachineMixin],[MacromolecularMachineMixin]%5E-[MacromolecularComplexMixin%7Cname(i):symbol_type%20%3F])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * INTACT
- * GO
- * PR
- * REACT
-
-## Parents
-
- *  is_a: [MacromolecularMachineMixin](MacromolecularMachineMixin.md) - A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
-
-## Attributes
+* [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
+    * **MacromolecularComplexMixin**
 
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
 
-## Other properties
+## Slots
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | GO:0032991 |
-|  | | WIKIDATA:Q22325163 |
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
 
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+### Valid ID Prefixes
+
+Instances of this class *should* have identifiers with one of the following prefixes:
+
+* INTACT
+
+* GO
+
+* PR
+
+* REACT
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: macromolecular complex mixin
+id_prefixes:
+- INTACT
+- GO
+- PR
+- REACT
+exact_mappings:
+- GO:0032991
+- WIKIDATA:Q22325163
+description: A stable assembly of two or more macromolecules, i.e. proteins, nucleic
+  acids, carbohydrates or lipids, in which at least one component is a protein and
+  the constituent parts function together.
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: macromolecular machine mixin
+mixin: true
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: macromolecular complex mixin
+id_prefixes:
+- INTACT
+- GO
+- PR
+- REACT
+exact_mappings:
+- GO:0032991
+- WIKIDATA:Q22325163
+description: A stable assembly of two or more macromolecules, i.e. proteins, nucleic
+  acids, carbohydrates or lipids, in which at least one component is a protein and
+  the constituent parts function together.
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: macromolecular machine mixin
+mixin: true
+attributes:
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: macromolecular complex mixin
+    range: symbol type
+
+```
+</details>

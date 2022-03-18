@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:NarrativeText
-layout: default
----
 
-# Type: NarrativeText
+# Type: narrative text
 
 
 A string that provides a human-readable description of something
 
-URI: [biolink:NarrativeText](https://w3id.org/biolink/vocab/types/biolink:NarrativeText)
+URI: [biolink:NarrativeText](https://w3id.org/biolink/vocab/NarrativeText)
 
 |  |  |  |
 | --- | --- | --- |

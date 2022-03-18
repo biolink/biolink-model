@@ -1,34 +1,28 @@
----
-parent: Node Properties
-title: biolink:has_receptor
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_receptor
+_the organism or organism part being exposed_
 
 
-the organism or organism part being exposed
-
-URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
-
-## Domain and Range
-
-[ExposureEvent](ExposureEvent.md) ->  <sub>0..1</sub> [OrganismalEntity](OrganismalEntity.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_receptor](https://w3id.org/biolink/vocab/has_receptor)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | ExO:0000001 |
+* [node_property](node_property.md)
+    * **has_receptor**
+
+
+
+## Properties
+
+ * Range: organismal entity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

@@ -1,16 +1,10 @@
----
-parent: Defined Types
-grand_parent: Types
-title: biolink:TimeType
-layout: default
----
 
-# Type: TimeType
+# Type: time type
 
 
 
 
-URI: [biolink:TimeType](https://w3id.org/biolink/vocab/types/biolink:TimeType)
+URI: [biolink:TimeType](https://w3id.org/biolink/vocab/TimeType)
 
 |  |  |  |
 | --- | --- | --- |

@@ -1,179 +1,519 @@
----
-parent: Entities
-title: biolink:SequenceVariant
-grand_parent: Classes
-layout: default
----
-
 # Class: SequenceVariant
+_An allele that varies in its sequence from what is considered the reference allele at that locus._
 
 
-An allele that varies in its sequence from what is considered the reference allele at that locus.
+
+
 
 URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[VariantAsAModelOfDiseaseAssociation],[Snv],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..%2A-%20[SequenceVariant%7Chas_biological_sequence:biological_sequence%20%3F;id:string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier%200..1%3E[SequenceVariant],[VariantAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToEntityAssociationMixin]-%20subject%201..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[SequenceVariant]uses%20-.-%3E[GenomicEntity],[SequenceVariant]uses%20-.-%3E[PhysicalEssence],[SequenceVariant]uses%20-.-%3E[OntologyClass],[SequenceVariant]%5E-[Snv],[BiologicalEntity]%5E-[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NucleicAcidEntity],[NamedThing],[GenotypeToVariantAssociation],[GenomicEntity],[GeneHasVariantThatContributesToDiseaseAssociation],[Gene],[BiologicalEntity],[Attribute],[Association],[Agent])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * CAID
- * CLINVAR
- * ClinVarVariant
- * WIKIDATA
- * DBSNP
- * MGI
- * ZFIN
- * FB
- * WB
- * WormBase
-
-## Parents
-
- *  is_a: [BiologicalEntity](BiologicalEntity.md)
-
-## Uses Mixins
-
- *  mixin: [GenomicEntity](GenomicEntity.md)
- *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
- *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
-
-## Children
-
- * [Snv](Snv.md) - SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
-
-## Referenced by class
-
- *  **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[genotype to variant association➞object](genotype_to_variant_association_object.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has frameshift variant](has_frameshift_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has missense variant](has_missense_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has nearby variant](has_nearby_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has non coding variant](has_non_coding_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has nonsense variant](has_nonsense_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[has sequence variant](has_sequence_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has splice site variant](has_splice_site_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Gene](Gene.md)** *[has synonymous variant](has_synonymous_variant.md)*  <sub>0..\*</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[Association](Association.md)** *[sequence variant qualifier](sequence_variant_qualifier.md)*  <sub>0..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)** *[variant as a model of disease association➞subject](variant_as_a_model_of_disease_association_subject.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[VariantToEntityAssociationMixin](VariantToEntityAssociationMixin.md)** *[variant to entity association mixin➞subject](variant_to_entity_association_mixin_subject.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)** *[variant to phenotypic feature association➞subject](variant_to_phenotypic_feature_association_subject.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association➞subject](variant_to_population_association_subject.md)*  <sub>1..1</sub>  **[SequenceVariant](SequenceVariant.md)**
-
-## Attributes
+* [Entity](Entity.md)
+    * [NamedThing](NamedThing.md)
+        * [BiologicalEntity](BiologicalEntity.md)
+            * **SequenceVariant** [ genomic entity physical essence ontology class]
+                * [Snv](Snv.md)
 
 
-### Own
 
- * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: The state of the sequence w.r.t a reference sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
- * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..\*</sub>
-     * Description: Each allele can be associated with any number of genes
-     * Range: [Gene](Gene.md)
- * [sequence variant➞id](sequence_variant_id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * Example: ZFIN:ZDB-ALT-980203-1091 ti282a allele from ZFIN
-     * Example: ClinVarVariant:17681 NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
-     * in subsets: (translator_minimal)
 
-### Inherited from entity:
+## Slots
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>0..1</sub>
-     * Description: An IRI for an entity. This is determined by the id using expansion rules.
-     * Range: [IriType](types/IriType.md)
-     * in subsets: (translator_minimal,samples)
- * [category](category.md)  <sub>0..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [has_gene](has_gene.md) | [Gene](Gene.md) | 0..* | Each allele can be associated with any number of genes  | . |
+| [has_biological_sequence](has_biological_sequence.md) | [biological_sequence](biological_sequence.md) | 0..1 | The state of the sequence w.r.t a reference sequence  | . |
+| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
+| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
+| [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [CategoryType](types/CategoryType.md)
-     * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal)
- * [provided by](provided_by.md)  <sub>0..\*</sub>
-     * Description: connects an association to the agent (person, organization or group) that provided it
-     * Range: [Agent](Agent.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
+| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
+| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
+| [in_taxon](in_taxon.md) | [OrganismTaxon](OrganismTaxon.md) | 0..* | connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'  | . |
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+## Usages
 
-### Inherited from named thing:
 
- * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [NamedThing](NamedThing.md)
-     * in subsets: (translator_minimal)
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [object](object.md) | range | sequence variant |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [subject](subject.md) | range | sequence variant |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [sequence_variant_qualifier](sequence_variant_qualifier.md) | range | sequence variant |
+| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [subject](subject.md) | range | sequence variant |
 
-### Inherited from thing with taxon:
 
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
-### Domain for slot:
+## Identifier and Mapping Information
 
- * [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: The state of the sequence w.r.t a reference sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
- * [sequence variant➞has gene](sequence_variant_has_gene.md)  <sub>0..\*</sub>
-     * Description: Each allele can be associated with any number of genes
-     * Range: [Gene](Gene.md)
- * [sequence variant➞id](sequence_variant_id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * Example: ZFIN:ZDB-ALT-980203-1091 ti282a allele from ZFIN
-     * Example: ClinVarVariant:17681 NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
-     * in subsets: (translator_minimal)
 
-## Other properties
+### Valid ID Prefixes
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | allele |
-| **Local names:** | | allele (agr) |
-| **Alt Descriptions:** | | An entity that describes a single affected, endogenous allele. These can be of any type that matches that definition (AGR) |
-|  | | A contiguous change at a Location (VMC) |
-| **Comments:** | | This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | GENO:0000002 |
-|  | | WIKIDATA:Q15304597 |
-|  | | SIO:010277 |
-|  | | VMC:Allele |
-|  | | SO:0001059 |
-| **Close Mappings:** | | dcid:Allele |
-| **Broad Mappings:** | | SO:0001060 |
+Instances of this class *should* have identifiers with one of the following prefixes:
 
+* CAID
+
+* CLINVAR
+
+* ClinVarVariant
+
+* WIKIDATA
+
+* DBSNP
+
+* MGI
+
+* ZFIN
+
+* FB
+
+* WB
+
+* WormBase
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: sequence variant
+id_prefixes:
+- CAID
+- CLINVAR
+- ClinVarVariant
+- WIKIDATA
+- DBSNP
+- MGI
+- ZFIN
+- FB
+- WB
+- WormBase
+aliases:
+- allele
+local_names:
+  agr:
+    local_name_source: agr
+    local_name_value: allele
+exact_mappings:
+- GENO:0000002
+- WIKIDATA:Q15304597
+- SIO:010277
+- VMC:Allele
+- SO:0001059
+close_mappings:
+- dcid:Allele
+broad_mappings:
+- SO:0001060
+description: An allele that varies in its sequence from what is considered the reference
+  allele at that locus.
+alt_descriptions:
+  AGR:
+    source: AGR
+    description: An entity that describes a single affected, endogenous allele. These
+      can be of any type that matches that definition
+  VMC:
+    source: VMC
+    description: A contiguous change at a Location
+comments:
+- This class is for modeling the specific state at a locus. A single DBSNP rs ID could
+  correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two
+  distinct BRCA2 alleles for rs28897743)
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: biological entity
+mixins:
+- genomic entity
+- physical essence
+- ontology class
+slots:
+- has gene
+slot_usage:
+  has gene:
+    name: has gene
+    description: Each allele can be associated with any number of genes
+    multivalued: true
+  has biological sequence:
+    name: has biological sequence
+    description: The state of the sequence w.r.t a reference sequence
+  id:
+    name: id
+    examples:
+    - value: ZFIN:ZDB-ALT-980203-1091
+      description: ti282a allele from ZFIN
+    - value: ClinVarVariant:17681
+      description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: sequence variant
+id_prefixes:
+- CAID
+- CLINVAR
+- ClinVarVariant
+- WIKIDATA
+- DBSNP
+- MGI
+- ZFIN
+- FB
+- WB
+- WormBase
+aliases:
+- allele
+local_names:
+  agr:
+    local_name_source: agr
+    local_name_value: allele
+exact_mappings:
+- GENO:0000002
+- WIKIDATA:Q15304597
+- SIO:010277
+- VMC:Allele
+- SO:0001059
+close_mappings:
+- dcid:Allele
+broad_mappings:
+- SO:0001060
+description: An allele that varies in its sequence from what is considered the reference
+  allele at that locus.
+alt_descriptions:
+  AGR:
+    source: AGR
+    description: An entity that describes a single affected, endogenous allele. These
+      can be of any type that matches that definition
+  VMC:
+    source: VMC
+    description: A contiguous change at a Location
+comments:
+- This class is for modeling the specific state at a locus. A single DBSNP rs ID could
+  correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two
+  distinct BRCA2 alleles for rs28897743)
+in_subset:
+- model_organism_database
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: biological entity
+mixins:
+- genomic entity
+- physical essence
+- ontology class
+slot_usage:
+  has gene:
+    name: has gene
+    description: Each allele can be associated with any number of genes
+    multivalued: true
+  has biological sequence:
+    name: has biological sequence
+    description: The state of the sequence w.r.t a reference sequence
+  id:
+    name: id
+    examples:
+    - value: ZFIN:ZDB-ALT-980203-1091
+      description: ti282a allele from ZFIN
+    - value: ClinVarVariant:17681
+      description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+attributes:
+  has gene:
+    name: has gene
+    description: Each allele can be associated with any number of genes
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: has gene or gene product
+    domain: named thing
+    multivalued: true
+    alias: has_gene
+    owner: sequence variant
+    range: gene
+  has biological sequence:
+    name: has biological sequence
+    description: The state of the sequence w.r.t a reference sequence
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: has_biological_sequence
+    owner: sequence variant
+    range: biological sequence
+  id:
+    name: id
+    description: A unique identifier for an entity. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    examples:
+    - value: ZFIN:ZDB-ALT-980203-1091
+      description: ti282a allele from ZFIN
+    - value: ClinVarVariant:17681
+      description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
+    from_schema: https://w3id.org/biolink/biolink-model
+    identifier: true
+    alias: id
+    owner: sequence variant
+    range: string
+    required: true
+  iri:
+    name: iri
+    exact_mappings:
+    - WIKIDATA_PROPERTY:P854
+    description: An IRI for an entity. This is determined by the id using expansion
+      rules.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: iri
+    owner: sequence variant
+    range: iri type
+  category:
+    name: category
+    description: "Name of the high level ontology class in which this entity is categorized.\
+      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
+      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
+      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
+      \ include values for ancestors of the biolink class; for example, a protein\
+      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
+      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
+      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
+      \ to a class more specific than something in biolink. For example, a sequence\
+      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
+      \ which is more specific than anything in biolink. Here we would have categories\
+      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: type
+    domain: entity
+    multivalued: true
+    designates_type: true
+    alias: category
+    owner: sequence variant
+    is_class_field: true
+    range: named thing
+    required: true
+  type:
+    name: type
+    exact_mappings:
+    - alliancegenome:soTermId
+    - gff3:type
+    - gpi:DB_Object_Type
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdf:type
+    alias: type
+    owner: sequence variant
+    range: string
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: sequence variant
+    range: label type
+  description:
+    name: description
+    aliases:
+    - definition
+    exact_mappings:
+    - IAO:0000115
+    - skos:definitions
+    narrow_mappings:
+    - gff3:Description
+    description: a human-readable description of an entity
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: dct:description
+    alias: description
+    owner: sequence variant
+    range: narrative text
+  source:
+    name: source
+    description: a lightweight analog to the association class 'provided by' slot,
+      which is the string name, or the authoritative (i.e. database) namespace, designating
+      the origin of the entity to which the slot belongs.
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: source
+    owner: sequence variant
+    range: label type
+  provided by:
+    name: provided by
+    exact_mappings:
+    - pav:providedBy
+    description: connects an association to the agent (person, organization or group)
+      that provided it
+    deprecated: This slot is deprecated and replaced by a set of more precise slots
+      for describing the source retrieval provenance of an Association.  These include
+      'knowledge source' and its descendants 'primary knowledge source', 'original
+      knowledge source', and 'aggregator knowledge source'.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: provided_by
+    owner: sequence variant
+    range: agent
+  has attribute:
+    name: has attribute
+    exact_mappings:
+    - SIO:000008
+    close_mappings:
+    - OBI:0001927
+    narrow_mappings:
+    - OBAN:association_has_subject_property
+    - OBAN:association_has_object_property
+    - CPT:has_possibly_included_panel_element
+    - DRUGBANK:category
+    - EFO:is_executed_in
+    - HANCESTRO:0301
+    - LOINC:has_action_guidance
+    - LOINC:has_adjustment
+    - LOINC:has_aggregation_view
+    - LOINC:has_approach_guidance
+    - LOINC:has_divisor
+    - LOINC:has_exam
+    - LOINC:has_method
+    - LOINC:has_modality_subtype
+    - LOINC:has_object_guidance
+    - LOINC:has_scale
+    - LOINC:has_suffix
+    - LOINC:has_time_aspect
+    - LOINC:has_time_modifier
+    - LOINC:has_timing_of
+    - NCIT:R88
+    - NCIT:eo_disease_has_property_or_attribute
+    - NCIT:has_data_element
+    - NCIT:has_pharmaceutical_administration_method
+    - NCIT:has_pharmaceutical_basic_dose_form
+    - NCIT:has_pharmaceutical_intended_site
+    - NCIT:has_pharmaceutical_release_characteristics
+    - NCIT:has_pharmaceutical_state_of_matter
+    - NCIT:has_pharmaceutical_transformation
+    - NCIT:is_qualified_by
+    - NCIT:qualifier_applies_to
+    - NCIT:role_has_domain
+    - NCIT:role_has_range
+    - INO:0000154
+    - HANCESTRO:0308
+    - OMIM:has_inheritance_type
+    - ORPHA:C016
+    - ORPHA:C017
+    - RO:0000053
+    - RO:0000086
+    - RO:0000087
+    - SNOMED:has_access
+    - SNOMED:has_clinical_course
+    - SNOMED:has_count_of_base_of_active_ingredient
+    - SNOMED:has_dose_form_administration_method
+    - SNOMED:has_dose_form_release_characteristic
+    - SNOMED:has_dose_form_transformation
+    - SNOMED:has_finding_context
+    - SNOMED:has_finding_informer
+    - SNOMED:has_inherent_attribute
+    - SNOMED:has_intent
+    - SNOMED:has_interpretation
+    - SNOMED:has_laterality
+    - SNOMED:has_measurement_method
+    - SNOMED:has_method
+    - SNOMED:has_priority
+    - SNOMED:has_procedure_context
+    - SNOMED:has_process_duration
+    - SNOMED:has_property
+    - SNOMED:has_revision_status
+    - SNOMED:has_scale_type
+    - SNOMED:has_severity
+    - SNOMED:has_specimen
+    - SNOMED:has_state_of_matter
+    - SNOMED:has_subject_relationship_context
+    - SNOMED:has_surgical_approach
+    - SNOMED:has_technique
+    - SNOMED:has_temporal_context
+    - SNOMED:has_time_aspect
+    - SNOMED:has_units
+    - UMLS:has_structural_class
+    - UMLS:has_supported_concept_property
+    - UMLS:has_supported_concept_relationship
+    - UMLS:may_be_qualified_by
+    description: connects any entity to an attribute
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: entity
+    multivalued: true
+    alias: has_attribute
+    owner: sequence variant
+    range: attribute
+  in taxon:
+    name: in taxon
+    aliases:
+    - instance of
+    - is organism source of gene product
+    - organism has gene
+    - gene found in organism
+    - ' gene product has organism source'
+    exact_mappings:
+    - RO:0002162
+    - WIKIDATA_PROPERTY:P703
+    narrow_mappings:
+    - RO:0002160
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: 'True'
+    description: connects an entity to its taxonomic classification. Only certain
+      kinds of entities can be taxonomically classified; see 'thing with taxon'
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: related to at instance level
+    domain: thing with taxon
+    multivalued: true
+    inherited: true
+    alias: in_taxon
+    owner: sequence variant
+    range: organism taxon
+
+```
+</details>

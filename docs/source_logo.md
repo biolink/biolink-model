@@ -1,35 +1,26 @@
----
-parent: Node Properties
-title: biolink:source_logo
-grand_parent: Slots
-layout: default
----
-
 # Slot: source_logo
 
+URI: [http://schema.org/logo](http://schema.org/logo)
 
 
 
-URI: [biolink:source_logo](https://w3id.org/biolink/vocab/source_logo)
 
-## Domain and Range
+## Inheritance
 
-[DatasetSummary](DatasetSummary.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+* [node_property](node_property.md)
+    * **source_logo**
 
 
-## Used by
 
- * [DatasetSummary](DatasetSummary.md)
+## Properties
 
-## Other properties
+ * Range: None
 
-|  |  |  |
-| --- | --- | --- |
-| **Mappings:** | | schema:logo |
+
+
+## Identifier and Mapping Information
+
+
+
+
 

@@ -1,43 +1,78 @@
----
-parent: Class Mixins
-title: biolink:MaterialSampleToEntityAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: MaterialSampleToEntityAssociationMixin
+_An association between a material sample and something._
 
 
-An association between a material sample and something.
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:MaterialSampleToEntityAssociationMixin](https://w3id.org/biolink/vocab/MaterialSampleToEntityAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MaterialSample]%3Csubject%201..1-%20[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[MaterialSampleToEntityAssociationMixin],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSample])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An association between a material sample and a disease or phenotype.
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the material sample being described
-     * Range: [MaterialSample](MaterialSample.md)
 
-### Domain for slot:
 
- * [material sample to entity association mixin➞subject](material_sample_to_entity_association_mixin_subject.md)  <sub>1..1</sub>
-     * Description: the material sample being described
-     * Range: [MaterialSample](MaterialSample.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: material sample to entity association mixin
+description: An association between a material sample and something.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the material sample being described
+    range: material sample
+defining_slots:
+- subject
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: material sample to entity association mixin
+description: An association between a material sample and something.
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  subject:
+    name: subject
+    description: the material sample being described
+    range: material sample
+defining_slots:
+- subject
+
+```
+</details>

@@ -1,27 +1,28 @@
----
-parent: Predicates
-title: biolink:has_missense_variant
-grand_parent: Slots
-layout: default
----
+# Slot: has_missense_variant
 
-# Relation: has_missense_variant
+URI: [https://w3id.org/biolink/vocab/has_missense_variant](https://w3id.org/biolink/vocab/has_missense_variant)
 
 
 
 
-URI: [biolink:has_missense_variant](https://w3id.org/biolink/vocab/has_missense_variant)
+## Inheritance
 
-## Domain and Range
-
-[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
-
-## Parents
-
- *  is_a: [has sequence variant](has_sequence_variant.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_sequence_variant](has_sequence_variant.md)
+            * **has_missense_variant**
 
 
-## Used by
+
+## Properties
+
+ * Range: sequence variant
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

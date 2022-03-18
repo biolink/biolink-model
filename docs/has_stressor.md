@@ -1,35 +1,28 @@
----
-parent: Node Properties
-title: biolink:has_stressor
-grand_parent: Slots
-layout: default
----
-
 # Slot: has_stressor
+_the process or entity that the receptor is being exposed to_
 
 
-the process or entity that the receptor is being exposed to
-
-URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)
-
-## Domain and Range
-
-[ExposureEvent](ExposureEvent.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/has_stressor](https://w3id.org/biolink/vocab/has_stressor)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | has stimulus |
-| **Exact Mappings:** | | ExO:0000000 |
+* [node_property](node_property.md)
+    * **has_stressor**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

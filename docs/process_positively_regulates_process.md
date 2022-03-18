@@ -1,34 +1,37 @@
----
-parent: Predicates
-title: biolink:process_positively_regulates_process
-grand_parent: Slots
-layout: default
----
+# Slot: process_positively_regulates_process
 
-# Relation: process_positively_regulates_process
+URI: [https://w3id.org/biolink/vocab/process_positively_regulates_process](https://w3id.org/biolink/vocab/process_positively_regulates_process)
 
 
 
 
-URI: [biolink:process_positively_regulates_process](https://w3id.org/biolink/vocab/process_positively_regulates_process)
+## Inheritance
 
-## Domain and Range
-
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
-
-## Parents
-
- *  is_a: [process regulates process](process_regulates_process.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [affects](affects.md)
+            * [process_regulates_process](process_regulates_process.md) [ regulates]
+                * **process_positively_regulates_process** [ positively regulates]
 
 
-## Used by
+
+## Properties
+
+ * Range: None
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | RO:0002213 |
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:process negatively regulates process |
+
 

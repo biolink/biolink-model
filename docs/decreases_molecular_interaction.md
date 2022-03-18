@@ -1,34 +1,40 @@
----
-parent: Predicates
-title: biolink:decreases_molecular_interaction
-grand_parent: Slots
-layout: default
----
-
-# Relation: decreases_molecular_interaction
+# Slot: decreases_molecular_interaction
+_indicates that the source decreases the molecular interaction between the target and some other chemical entity_
 
 
-indicates that the source decreases the molecular interaction between the target and some other chemical entity
-
-URI: [biolink:decreases_molecular_interaction](https://w3id.org/biolink/vocab/decreases_molecular_interaction)
-
-## Domain and Range
-
-[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
-
-## Parents
-
- *  is_a: [molecularly interacts with](molecularly_interacts_with.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/decreases_molecular_interaction](https://w3id.org/biolink/vocab/decreases_molecular_interaction)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | CTD:decreases_molecular_interaction_with |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [interacts_with](interacts_with.md)
+            * [physically_interacts_with](physically_interacts_with.md)
+                * [molecularly_interacts_with](molecularly_interacts_with.md)
+                    * **decreases_molecular_interaction** [ decreases amount or activity of]
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+| biolink:opposite_of | biolink:increases molecular interaction |
+
 

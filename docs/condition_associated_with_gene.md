@@ -1,39 +1,30 @@
----
-parent: Predicates
-title: biolink:condition_associated_with_gene
-grand_parent: Slots
-layout: default
----
-
-# Relation: condition_associated_with_gene
-
-translator_minimal
-{: .translator_minimal-subset-label }
+# Slot: condition_associated_with_gene
+_holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products_
 
 
-holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-
-URI: [biolink:condition_associated_with_gene](https://w3id.org/biolink/vocab/condition_associated_with_gene)
-
-## Domain and Range
-
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [genetic association](genetic_association.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/condition_associated_with_gene](https://w3id.org/biolink/vocab/condition_associated_with_gene)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | disease associated with gene |
-| **In Subsets:** | | translator_minimal |
-| **Narrow Mappings:** | | NCIT:R176 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [genetic_association](genetic_association.md)
+            * **condition_associated_with_gene**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

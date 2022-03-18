@@ -1,27 +1,27 @@
----
-parent: Predicates
-title: biolink:models
-grand_parent: Slots
-layout: default
----
+# Slot: models
 
-# Relation: models
+URI: [https://w3id.org/biolink/vocab/models](https://w3id.org/biolink/vocab/models)
 
 
 
 
-URI: [biolink:models](https://w3id.org/biolink/vocab/models)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **models**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

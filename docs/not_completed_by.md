@@ -1,27 +1,27 @@
----
-parent: Predicates
-title: biolink:not_completed_by
-grand_parent: Slots
-layout: default
----
+# Slot: not_completed_by
 
-# Relation: not_completed_by
+URI: [https://w3id.org/biolink/vocab/not_completed_by](https://w3id.org/biolink/vocab/not_completed_by)
 
 
 
 
-URI: [biolink:not_completed_by](https://w3id.org/biolink/vocab/not_completed_by)
+## Inheritance
 
-## Domain and Range
-
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
-
-## Parents
-
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
-
-## Children
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * **not_completed_by**
 
 
-## Used by
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

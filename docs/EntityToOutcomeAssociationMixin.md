@@ -1,43 +1,76 @@
----
-parent: Class Mixins
-title: biolink:EntityToOutcomeAssociationMixin
-grand_parent: Classes
-layout: default
----
-
 # Class: EntityToOutcomeAssociationMixin
+_An association between some entity and an outcome_
 
 
-An association between some entity and an outcome
+
+
+* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
+
 
 URI: [biolink:EntityToOutcomeAssociationMixin](https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin)
 
 
----
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[Outcome]%3Cobject%201..1-++[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[EntityToOutcomeAssociationMixin],[ExposureEventToOutcomeAssociation])
-
----
+<!-- no inheritance hierarchy -->
 
 
-## Mixin for
 
- * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) (mixin)  - An association between an exposure event and an outcome.
+## Slots
 
-## Referenced by class
-
-
-## Attributes
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
 
 
-### Own
+## Usages
 
- * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [Outcome](Outcome.md)
 
-### Domain for slot:
 
- * [entity to outcome association mixin➞object](entity_to_outcome_association_mixin_object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [Outcome](Outcome.md)
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: entity to outcome association mixin
+description: An association between some entity and an outcome
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  object:
+    name: object
+    range: outcome
+defining_slots:
+- object
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: entity to outcome association mixin
+description: An association between some entity and an outcome
+from_schema: https://w3id.org/biolink/biolink-model
+mixin: true
+slot_usage:
+  object:
+    name: object
+    range: outcome
+defining_slots:
+- object
+
+```
+</details>

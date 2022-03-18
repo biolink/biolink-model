@@ -1,49 +1,86 @@
----
-parent: Other Classes
-title: biolink:ChemicalExposure
-grand_parent: Classes
-layout: default
----
-
 # Class: ChemicalExposure
+_A chemical exposure is an intake of a particular chemical entity._
 
 
-A chemical exposure is an intake of a particular chemical entity.
+
+
 
 URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[DrugExposure],[ChemicalExposure%7Ctimepoint:time_type%20%3F]uses%20-.-%3E[ExposureEvent],[ChemicalExposure]%5E-[DrugExposure])
-
----
 
 
-## Uses Mixins
+## Inheritance
 
- *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-
-## Children
-
- * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
-
-## Referenced by class
+* **ChemicalExposure** [ exposure event]
+    * [DrugExposure](DrugExposure.md) [ exposure event]
 
 
-## Attributes
 
 
-### Inherited from exposure event:
+## Slots
 
- * [timepoint](timepoint.md)  <sub>0..1</sub>
-     * Description: a point in time
-     * Range: [TimeType](types/TimeType.md)
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | ECTO:9000000 |
-|  | | SIO:001399 |
+## Usages
 
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: chemical exposure
+exact_mappings:
+- ECTO:9000000
+- SIO:001399
+description: A chemical exposure is an intake of a particular chemical entity.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: chemical exposure
+exact_mappings:
+- ECTO:9000000
+- SIO:001399
+description: A chemical exposure is an intake of a particular chemical entity.
+from_schema: https://w3id.org/biolink/biolink-model
+mixins:
+- exposure event
+attributes:
+  timepoint:
+    name: timepoint
+    description: a point in time
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: timepoint
+    owner: chemical exposure
+    range: time type
+
+```
+</details>

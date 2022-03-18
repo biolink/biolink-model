@@ -1,35 +1,28 @@
----
-parent: Node Properties
-title: biolink:chapter
-grand_parent: Slots
-layout: default
----
-
 # Slot: chapter
+_chapter of a book_
 
 
-chapter of a book
-
-URI: [biolink:chapter](https://w3id.org/biolink/vocab/chapter)
-
-## Domain and Range
-
-[BookChapter](BookChapter.md) ->  <sub>0..1</sub> [String](types/String.md)
-
-## Parents
-
- *  is_a: [node property](node_property.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/chapter](https://w3id.org/biolink/vocab/chapter)
 
 
-## Used by
 
- * [BookChapter](BookChapter.md)
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q1980247 |
+* [node_property](node_property.md)
+    * **chapter**
+
+
+
+## Properties
+
+ * Range: None
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

@@ -1,39 +1,28 @@
----
-parent: Predicates
-title: biolink:actively_involves
-grand_parent: Slots
-layout: default
----
+# Slot: actively_involves
 
-# Relation: actively_involves
-
-translator_minimal
-{: .translator_minimal-subset-label }
+URI: [https://w3id.org/biolink/vocab/actively_involves](https://w3id.org/biolink/vocab/actively_involves)
 
 
 
 
-URI: [biolink:actively_involves](https://w3id.org/biolink/vocab/actively_involves)
+## Inheritance
 
-## Domain and Range
-
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [MolecularActivity](MolecularActivity.md)
-
-## Parents
-
- *  is_a: [has participant](has_participant.md)
-
-## Children
-
- *  [capability of](capability_of.md)
-
-## Used by
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [has_participant](has_participant.md)
+            * **actively_involves**
 
 
-## Other properties
 
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:0002331 |
+## Properties
+
+ * Range: molecular activity
+
+
+
+## Identifier and Mapping Information
+
+
+
+
 

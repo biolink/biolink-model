@@ -1,5 +1,5 @@
 
-# Class: reaction_side_enum
+# Enum: reaction_side_enum
 
 
 

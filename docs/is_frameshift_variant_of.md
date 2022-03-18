@@ -1,37 +1,37 @@
----
-parent: Predicates
-title: biolink:is_frameshift_variant_of
-grand_parent: Slots
-layout: default
----
-
-# Relation: is_frameshift_variant_of
+# Slot: is_frameshift_variant_of
+_holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three._
 
 
-holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
-
-URI: [biolink:is_frameshift_variant_of](https://w3id.org/biolink/vocab/is_frameshift_variant_of)
-
-## Domain and Range
-
-[SequenceVariant](SequenceVariant.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
-
-## Parents
-
- *  is_a: [is sequence variant of](is_sequence_variant_of.md)
-
-## Children
+URI: [https://w3id.org/biolink/vocab/is_frameshift_variant_of](https://w3id.org/biolink/vocab/is_frameshift_variant_of)
 
 
-## Used by
 
 
-## Other properties
+## Inheritance
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | frameshift variant |
-|  | | start lost |
-|  | | stop lost |
-| **Exact Mappings:** | | SO:0001589 |
+* [related_to](related_to.md)
+    * [related_to_at_instance_level](related_to_at_instance_level.md)
+        * [is_sequence_variant_of](is_sequence_variant_of.md)
+            * **is_frameshift_variant_of**
+
+
+
+## Properties
+
+ * Range: gene
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| biolink:canonical_predicate | True |
+
 

@@ -1,144 +1,469 @@
----
-parent: Entities
-title: biolink:InformationContentEntity
-grand_parent: Classes
-layout: default
----
-
 # Class: InformationContentEntity
+_a piece of information that typically describes some topic of discourse or is used as support._
 
 
-a piece of information that typically describes some topic of discourse or is used as support.
+
+* __NOTE__: this is an abstract class and should not be instantiated directly
+
+
 
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
 
----
-
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[NamedThing],[InformationResource],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Clicense:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):label_type%20%3F],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary],[InformationContentEntity]%5E-[DatasetDistribution],[InformationContentEntity]%5E-[Dataset],[InformationContentEntity]%5E-[ConfidenceLevel],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DatasetVersion],[DatasetSummary],[DatasetDistribution],[Dataset],[ContributorAssociation],[ConfidenceLevel],[Attribute],[Agent])
-
----
 
 
-## Identifier prefixes
+## Inheritance
 
- * doi
-
-## Parents
-
- *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
-
-## Children
-
- * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
- * [Dataset](Dataset.md) - an item that refers to a collection of data from a data source.
- * [DatasetDistribution](DatasetDistribution.md) - an item that holds distribution level information about a dataset.
- * [DatasetSummary](DatasetSummary.md) - an item that holds summary level information about a dataset.
- * [DatasetVersion](DatasetVersion.md) - an item that holds version level information about a dataset.
- * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
- * [InformationResource](InformationResource.md) - A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
- * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
-
-## Referenced by class
-
- *  **[ContributorAssociation](ContributorAssociation.md)** *[contributor association➞subject](contributor_association_subject.md)*  <sub>1..1</sub>  **[InformationContentEntity](InformationContentEntity.md)**
-
-## Attributes
+* [Entity](Entity.md)
+    * [NamedThing](NamedThing.md)
+        * **InformationContentEntity**
+            * [Dataset](Dataset.md)
+            * [DatasetDistribution](DatasetDistribution.md)
+            * [DatasetVersion](DatasetVersion.md)
+            * [DatasetSummary](DatasetSummary.md)
+            * [ConfidenceLevel](ConfidenceLevel.md)
+            * [EvidenceType](EvidenceType.md)
+            * [InformationResource](InformationResource.md)
+            * [Publication](Publication.md)
 
 
-### Own
 
- * [creation date](creation_date.md)  <sub>0..1</sub>
-     * Description: date on which an entity was created. This can be applied to nodes or edges
-     * Range: [Date](types/Date.md)
- * [format](format.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [license](license.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [rights](rights.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
 
-### Inherited from entity:
+## Slots
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>0..1</sub>
-     * Description: An IRI for an entity. This is determined by the id using expansion rules.
-     * Range: [IriType](types/IriType.md)
-     * in subsets: (translator_minimal,samples)
- * [category](category.md)  <sub>0..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [license](license.md) | [string](string.md) | 0..1 | None  | . |
+| [rights](rights.md) | [string](string.md) | 0..1 | None  | . |
+| [format](format.md) | [string](string.md) | 0..1 | None  | . |
+| [creation_date](creation_date.md) | [date](date.md) | 0..1 | date on which an entity was created. This can be applied to nodes or edges  | . |
+| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
+| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
+| [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [CategoryType](types/CategoryType.md)
-     * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Description: a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-     * Range: [LabelType](types/LabelType.md)
-     * in subsets: (translator_minimal)
- * [provided by](provided_by.md)  <sub>0..\*</sub>
-     * Description: connects an association to the agent (person, organization or group) that provided it
-     * Range: [Agent](Agent.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
+| [type](type.md) | [string](string.md) | 0..1 | None  | . |
+| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
+| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
-### Inherited from macromolecular machine mixin:
 
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md)  <sub>0..1</sub>
-     * Description: genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * Range: [SymbolType](types/SymbolType.md)
-     * in subsets: (translator_minimal,samples)
+## Usages
 
-### Inherited from named thing:
 
- * [named thing➞category](named_thing_category.md)  <sub>1..\*</sub>
-     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
-     * Range: [NamedThing](NamedThing.md)
-     * in subsets: (translator_minimal)
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [InformationContentEntity](InformationContentEntity.md) | [license](license.md) | domain | information content entity |
+| [InformationContentEntity](InformationContentEntity.md) | [rights](rights.md) | domain | information content entity |
+| [InformationContentEntity](InformationContentEntity.md) | [format](format.md) | domain | information content entity |
+| [Dataset](Dataset.md) | [license](license.md) | domain | information content entity |
+| [Dataset](Dataset.md) | [rights](rights.md) | domain | information content entity |
+| [Dataset](Dataset.md) | [format](format.md) | domain | information content entity |
+| [DatasetDistribution](DatasetDistribution.md) | [license](license.md) | domain | information content entity |
+| [DatasetDistribution](DatasetDistribution.md) | [rights](rights.md) | domain | information content entity |
+| [DatasetDistribution](DatasetDistribution.md) | [format](format.md) | domain | information content entity |
+| [DatasetVersion](DatasetVersion.md) | [license](license.md) | domain | information content entity |
+| [DatasetVersion](DatasetVersion.md) | [rights](rights.md) | domain | information content entity |
+| [DatasetVersion](DatasetVersion.md) | [format](format.md) | domain | information content entity |
+| [DatasetSummary](DatasetSummary.md) | [license](license.md) | domain | information content entity |
+| [DatasetSummary](DatasetSummary.md) | [rights](rights.md) | domain | information content entity |
+| [DatasetSummary](DatasetSummary.md) | [format](format.md) | domain | information content entity |
+| [ConfidenceLevel](ConfidenceLevel.md) | [license](license.md) | domain | information content entity |
+| [ConfidenceLevel](ConfidenceLevel.md) | [rights](rights.md) | domain | information content entity |
+| [ConfidenceLevel](ConfidenceLevel.md) | [format](format.md) | domain | information content entity |
+| [EvidenceType](EvidenceType.md) | [license](license.md) | domain | information content entity |
+| [EvidenceType](EvidenceType.md) | [rights](rights.md) | domain | information content entity |
+| [EvidenceType](EvidenceType.md) | [format](format.md) | domain | information content entity |
+| [InformationResource](InformationResource.md) | [license](license.md) | domain | information content entity |
+| [InformationResource](InformationResource.md) | [rights](rights.md) | domain | information content entity |
+| [InformationResource](InformationResource.md) | [format](format.md) | domain | information content entity |
+| [Publication](Publication.md) | [license](license.md) | domain | information content entity |
+| [Publication](Publication.md) | [rights](rights.md) | domain | information content entity |
+| [Publication](Publication.md) | [format](format.md) | domain | information content entity |
+| [Book](Book.md) | [license](license.md) | domain | information content entity |
+| [Book](Book.md) | [rights](rights.md) | domain | information content entity |
+| [Book](Book.md) | [format](format.md) | domain | information content entity |
+| [BookChapter](BookChapter.md) | [license](license.md) | domain | information content entity |
+| [BookChapter](BookChapter.md) | [rights](rights.md) | domain | information content entity |
+| [BookChapter](BookChapter.md) | [format](format.md) | domain | information content entity |
+| [Serial](Serial.md) | [license](license.md) | domain | information content entity |
+| [Serial](Serial.md) | [rights](rights.md) | domain | information content entity |
+| [Serial](Serial.md) | [format](format.md) | domain | information content entity |
+| [Article](Article.md) | [license](license.md) | domain | information content entity |
+| [Article](Article.md) | [rights](rights.md) | domain | information content entity |
+| [Article](Article.md) | [format](format.md) | domain | information content entity |
+| [ContributorAssociation](ContributorAssociation.md) | [subject](subject.md) | range | information content entity |
 
-### Domain for slot:
 
- * [format](format.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [license](license.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [rights](rights.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
 
-## Other properties
+## Identifier and Mapping Information
 
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | information |
-|  | | information artefact |
-|  | | information entity |
-| **Exact Mappings:** | | IAO:0000030 |
-| **Narrow Mappings:** | | UMLSSG:CONC |
-|  | | STY:T077 |
-|  | | STY:T078 |
-|  | | STY:T079 |
-|  | | STY:T080 |
-|  | | STY:T081 |
-|  | | STY:T082 |
-|  | | STY:T089 |
-|  | | STY:T102 |
-|  | | STY:T169 |
-|  | | STY:T171 |
-|  | | STY:T185 |
 
+### Valid ID Prefixes
+
+Instances of this class *should* have identifiers with one of the following prefixes:
+
+* doi
+
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: information content entity
+id_prefixes:
+- doi
+aliases:
+- information
+- information artefact
+- information entity
+exact_mappings:
+- IAO:0000030
+narrow_mappings:
+- UMLSSG:CONC
+- STY:T077
+- STY:T078
+- STY:T079
+- STY:T080
+- STY:T081
+- STY:T082
+- STY:T089
+- STY:T102
+- STY:T169
+- STY:T171
+- STY:T185
+description: a piece of information that typically describes some topic of discourse
+  or is used as support.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: named thing
+abstract: true
+slots:
+- license
+- rights
+- format
+- creation date
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: information content entity
+id_prefixes:
+- doi
+aliases:
+- information
+- information artefact
+- information entity
+exact_mappings:
+- IAO:0000030
+narrow_mappings:
+- UMLSSG:CONC
+- STY:T077
+- STY:T078
+- STY:T079
+- STY:T080
+- STY:T081
+- STY:T082
+- STY:T089
+- STY:T102
+- STY:T169
+- STY:T171
+- STY:T185
+description: a piece of information that typically describes some topic of discourse
+  or is used as support.
+from_schema: https://w3id.org/biolink/biolink-model
+is_a: named thing
+abstract: true
+attributes:
+  license:
+    name: license
+    exact_mappings:
+    - dct:license
+    narrow_mappings:
+    - WIKIDATA_PROPERTY:P275
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: information content entity
+    alias: license
+    owner: information content entity
+    range: string
+  rights:
+    name: rights
+    exact_mappings:
+    - dct:rights
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: information content entity
+    alias: rights
+    owner: information content entity
+    range: string
+  format:
+    name: format
+    exact_mappings:
+    - dct:format
+    - WIKIDATA_PROPERTY:P2701
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: information content entity
+    alias: format
+    owner: information content entity
+    range: string
+  creation date:
+    name: creation date
+    aliases:
+    - publication date
+    exact_mappings:
+    - dct:createdOn
+    - WIKIDATA_PROPERTY:P577
+    description: date on which an entity was created. This can be applied to nodes
+      or edges
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    alias: creation_date
+    owner: information content entity
+    range: date
+  id:
+    name: id
+    exact_mappings:
+    - alliancegenome:primaryId
+    - gff3:ID
+    - gpi:DB_Object_ID
+    description: A unique identifier for an entity. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    identifier: true
+    alias: id
+    owner: information content entity
+    range: string
+    required: true
+  iri:
+    name: iri
+    exact_mappings:
+    - WIKIDATA_PROPERTY:P854
+    description: An IRI for an entity. This is determined by the id using expansion
+      rules.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: iri
+    owner: information content entity
+    range: iri type
+  category:
+    name: category
+    description: "Name of the high level ontology class in which this entity is categorized.\
+      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
+      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
+      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
+      \ include values for ancestors of the biolink class; for example, a protein\
+      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
+      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
+      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
+      \ to a class more specific than something in biolink. For example, a sequence\
+      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
+      \ which is more specific than anything in biolink. Here we would have categories\
+      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: type
+    domain: entity
+    multivalued: true
+    designates_type: true
+    alias: category
+    owner: information content entity
+    is_class_field: true
+    range: named thing
+    required: true
+  type:
+    name: type
+    exact_mappings:
+    - alliancegenome:soTermId
+    - gff3:type
+    - gpi:DB_Object_Type
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdf:type
+    alias: type
+    owner: information content entity
+    range: string
+  name:
+    name: name
+    aliases:
+    - label
+    - display name
+    - title
+    exact_mappings:
+    - gff3:Name
+    - gpi:DB_Object_Name
+    narrow_mappings:
+    - dct:title
+    - WIKIDATA_PROPERTY:P1476
+    description: A human-readable name for an attribute or entity.
+    in_subset:
+    - translator_minimal
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: rdfs:label
+    alias: name
+    owner: information content entity
+    range: label type
+  description:
+    name: description
+    aliases:
+    - definition
+    exact_mappings:
+    - IAO:0000115
+    - skos:definitions
+    narrow_mappings:
+    - gff3:Description
+    description: a human-readable description of an entity
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    slot_uri: dct:description
+    alias: description
+    owner: information content entity
+    range: narrative text
+  source:
+    name: source
+    description: a lightweight analog to the association class 'provided by' slot,
+      which is the string name, or the authoritative (i.e. database) namespace, designating
+      the origin of the entity to which the slot belongs.
+    in_subset:
+    - translator_minimal
+    from_schema: https://w3id.org/biolink/biolink-model
+    alias: source
+    owner: information content entity
+    range: label type
+  provided by:
+    name: provided by
+    exact_mappings:
+    - pav:providedBy
+    description: connects an association to the agent (person, organization or group)
+      that provided it
+    deprecated: This slot is deprecated and replaced by a set of more precise slots
+      for describing the source retrieval provenance of an Association.  These include
+      'knowledge source' and its descendants 'primary knowledge source', 'original
+      knowledge source', and 'aggregator knowledge source'.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: provided_by
+    owner: information content entity
+    range: agent
+  has attribute:
+    name: has attribute
+    exact_mappings:
+    - SIO:000008
+    close_mappings:
+    - OBI:0001927
+    narrow_mappings:
+    - OBAN:association_has_subject_property
+    - OBAN:association_has_object_property
+    - CPT:has_possibly_included_panel_element
+    - DRUGBANK:category
+    - EFO:is_executed_in
+    - HANCESTRO:0301
+    - LOINC:has_action_guidance
+    - LOINC:has_adjustment
+    - LOINC:has_aggregation_view
+    - LOINC:has_approach_guidance
+    - LOINC:has_divisor
+    - LOINC:has_exam
+    - LOINC:has_method
+    - LOINC:has_modality_subtype
+    - LOINC:has_object_guidance
+    - LOINC:has_scale
+    - LOINC:has_suffix
+    - LOINC:has_time_aspect
+    - LOINC:has_time_modifier
+    - LOINC:has_timing_of
+    - NCIT:R88
+    - NCIT:eo_disease_has_property_or_attribute
+    - NCIT:has_data_element
+    - NCIT:has_pharmaceutical_administration_method
+    - NCIT:has_pharmaceutical_basic_dose_form
+    - NCIT:has_pharmaceutical_intended_site
+    - NCIT:has_pharmaceutical_release_characteristics
+    - NCIT:has_pharmaceutical_state_of_matter
+    - NCIT:has_pharmaceutical_transformation
+    - NCIT:is_qualified_by
+    - NCIT:qualifier_applies_to
+    - NCIT:role_has_domain
+    - NCIT:role_has_range
+    - INO:0000154
+    - HANCESTRO:0308
+    - OMIM:has_inheritance_type
+    - ORPHA:C016
+    - ORPHA:C017
+    - RO:0000053
+    - RO:0000086
+    - RO:0000087
+    - SNOMED:has_access
+    - SNOMED:has_clinical_course
+    - SNOMED:has_count_of_base_of_active_ingredient
+    - SNOMED:has_dose_form_administration_method
+    - SNOMED:has_dose_form_release_characteristic
+    - SNOMED:has_dose_form_transformation
+    - SNOMED:has_finding_context
+    - SNOMED:has_finding_informer
+    - SNOMED:has_inherent_attribute
+    - SNOMED:has_intent
+    - SNOMED:has_interpretation
+    - SNOMED:has_laterality
+    - SNOMED:has_measurement_method
+    - SNOMED:has_method
+    - SNOMED:has_priority
+    - SNOMED:has_procedure_context
+    - SNOMED:has_process_duration
+    - SNOMED:has_property
+    - SNOMED:has_revision_status
+    - SNOMED:has_scale_type
+    - SNOMED:has_severity
+    - SNOMED:has_specimen
+    - SNOMED:has_state_of_matter
+    - SNOMED:has_subject_relationship_context
+    - SNOMED:has_surgical_approach
+    - SNOMED:has_technique
+    - SNOMED:has_temporal_context
+    - SNOMED:has_time_aspect
+    - SNOMED:has_units
+    - UMLS:has_structural_class
+    - UMLS:has_supported_concept_property
+    - UMLS:has_supported_concept_relationship
+    - UMLS:may_be_qualified_by
+    description: connects any entity to an attribute
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: entity
+    multivalued: true
+    alias: has_attribute
+    owner: information content entity
+    range: attribute
+
+```
+</details>
