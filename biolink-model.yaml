@@ -692,12 +692,7 @@ slots:
       - WIKIDATA_PROPERTY:P1476
 
   source:
-    description: >-
-      a lightweight analog to the association class 'provided by' slot, which is the string name, or
-      the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
-    range: label type
-    in_subset:
-      - translator_minimal
+    deprecated: true
 
   stoichiometry:
     description: >-
@@ -839,9 +834,6 @@ slots:
       latitude
     exact_mappings:
       - wgs:lat
-    annotations:
-      - tag: biolink:opposite_of
-        value: biolink:longitude
 
   longitude:
     is_a: node property
@@ -850,9 +842,6 @@ slots:
       longitude
     exact_mappings:
       - wgs:long
-    annotations:
-      - tag: biolink:opposite_of
-        value: biolink:lattitude
 
   ## Time
 
@@ -1287,7 +1276,8 @@ slots:
     inherited: true
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - skos:relatedMatch
@@ -1409,7 +1399,8 @@ slots:
     description: >-
       Represents a relationship held between terminology components that describe the conceptual model of a domain.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
 
@@ -1419,7 +1410,8 @@ slots:
       Represents a relationship held between two instances of a data classes.  Much like an assertion component,
       in an ABox, these represent facts associated with the conceptual model.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
 
@@ -1430,7 +1422,8 @@ slots:
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
       'related to'.
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     symmetric: true
     domain: named thing
@@ -1464,7 +1457,8 @@ slots:
       - SNOMED:has_basic_dose_form
       - UMLS:RB
     annotations:
-      - tag: biolink:opposite_of
+      biolink:opposite_of:
+        tag: biolink:opposite_of
         value: biolink:subclass of
 
   subclass of:
@@ -1477,7 +1471,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:superclass of
@@ -1524,7 +1519,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       # identical class extension with identical sets of individuals
@@ -1554,7 +1550,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - skos:closeMatch
@@ -1579,7 +1576,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - skos:exactMatch
@@ -1595,7 +1593,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:narrow match
@@ -1626,7 +1625,8 @@ slots:
     is_a: related to at instance level
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002604
@@ -1651,7 +1651,8 @@ slots:
     domain: gene or gene product
     range: cellular component
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002432
@@ -1661,7 +1662,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002263
@@ -1677,7 +1679,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0004034
@@ -1693,7 +1696,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0004035
@@ -1709,7 +1713,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002264
@@ -1725,7 +1730,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0004032
@@ -1741,7 +1747,8 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0004033
@@ -1833,7 +1840,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002434
@@ -1852,7 +1860,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
@@ -1892,7 +1901,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - DGIdb:antibody
@@ -1911,8 +1921,9 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
     symmetric: true
     exact_mappings:
       - RO:0002435
@@ -1928,7 +1939,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
@@ -1984,7 +1996,8 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     broad_mappings:
       - PATO:0000085 # sensitivity toward
@@ -2006,7 +2019,8 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   resistance associated with:
@@ -2022,7 +2036,8 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       - NCIT:C15220 # diagnosis
@@ -2076,7 +2091,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_abundance_of
@@ -2098,9 +2114,11 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
-      - tag: biolink:opposite_of
+      biolink:opposite_of:
+        tag: biolink:opposite_of
         value: biolink:decreases abundance of
     related_mappings:
       - UBERGRAPH:is_increase_of
@@ -2123,7 +2141,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases abundance of
@@ -2181,7 +2200,8 @@ slots:
       other within a system of interest
     is_a: affects
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     in_subset:
       - translator_minimal
@@ -2221,7 +2241,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases activity of
@@ -2306,6 +2327,10 @@ slots:
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - RO:0003003
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
 
   expression increased by:
     is_a: expression affected by
@@ -2333,6 +2358,10 @@ slots:
       - RO:0003002
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
 
   expression decreased by:
     is_a: expression affected by
@@ -2352,7 +2381,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: nucleic acid entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_folding_of
@@ -2376,7 +2406,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases folding of
@@ -2402,7 +2433,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases folding of
@@ -2425,7 +2457,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GAMMA:storage
@@ -2452,7 +2485,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases localization of
@@ -2478,7 +2512,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases localization of
@@ -2504,7 +2539,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     related_mappings:
       - GAMMA:catalytic_activity
@@ -2529,7 +2565,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases metabolic processing of
@@ -2558,7 +2595,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases metabolic processing of
@@ -2584,7 +2622,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_molecular_modification_of
@@ -2642,7 +2681,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases molecular modification of
@@ -2704,7 +2744,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases molecular modification of
@@ -2762,7 +2803,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_synthesis_of
@@ -2787,7 +2829,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases synthesis of
@@ -2814,7 +2857,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases synthesis of
@@ -2842,7 +2886,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_degradation_of
@@ -2870,7 +2915,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: decreases degredation of
@@ -2909,7 +2955,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: increases degredation of
@@ -2941,7 +2988,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_mutation_rate_of
@@ -2966,7 +3014,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases mutation rate of
@@ -2996,7 +3045,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases mutation rate of
@@ -3023,7 +3073,8 @@ slots:
     range: chemical entity or gene or gene product
     inverse: response affected by
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_response_to
@@ -3039,7 +3090,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   increases response to:
@@ -3056,7 +3108,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases response to
@@ -3086,7 +3139,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases response to
@@ -3114,7 +3168,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: transcript
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_RNA_splicing
@@ -3141,7 +3196,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases splicing of
@@ -3170,7 +3226,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases splicing of
@@ -3197,7 +3254,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       - GAMMA:stabilization
@@ -3222,7 +3280,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: decreases stability of
@@ -3250,7 +3309,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: increases stability of
@@ -3275,7 +3335,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_transport_of
@@ -3304,7 +3365,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases transport of
@@ -3332,7 +3394,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases transport of
@@ -3357,7 +3420,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_secretion_of
@@ -3385,7 +3449,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases secretion of
@@ -3415,7 +3480,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases secretion of
@@ -3443,7 +3509,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_uptake_of
@@ -3471,7 +3538,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:decreases uptake of
@@ -3501,7 +3569,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:increases uptake of
@@ -3530,7 +3599,8 @@ slots:
     domain: physical essence or occurrent
     range: physical essence or occurrent
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       - RO:0002334
@@ -3556,7 +3626,8 @@ slots:
     is_a: regulates
     mixin: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:negatively regulates
@@ -3584,7 +3655,8 @@ slots:
     is_a: regulates
     mixin: true
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
@@ -3615,7 +3687,8 @@ slots:
     domain: occurrent
     range: occurrent
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - RO:0002211
@@ -3631,7 +3704,8 @@ slots:
     mixins:
       - positively regulates
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:process negatively regulates process
@@ -3647,7 +3721,8 @@ slots:
     mixins:
       - negatively regulates
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:process positively regulates process
@@ -3667,7 +3742,8 @@ slots:
     range: chemical entity or gene or gene product
     inverse: entity regulated by entity
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     local_names:
       translator: regulates
@@ -3695,7 +3771,8 @@ slots:
     mixins:
       - positively regulates
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:entity negatively regulates entity
@@ -3725,7 +3802,8 @@ slots:
     mixins:
       - negatively regulates
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:entity positively regulates entity
@@ -3754,7 +3832,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
       - tag: biolink:opposite_of
         value: biolink:enables
@@ -3784,7 +3863,8 @@ slots:
     domain: gene product mixin
     range: gene
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     inverse: has gene product
     in_subset:
@@ -6331,19 +6411,12 @@ slots:
       - pav:providedBy
 
   provided by:
-    is_a: association slot
-    deprecated: >-
-      This slot is deprecated and replaced by a set of more precise slots for describing
-      the source retrieval provenance of an Association.  These include 'knowledge source'
-      and its descendants 'primary knowledge source', 'original knowledge source', and
-      'aggregator knowledge source'.
-    # deprecated_element_has_exact_replacement: knowledge source
+    is_a: node property
     description: >-
-      connects an association to the agent (person, organization or group) that provided it
-    range: agent
+      The value in this node property represents the knowledge provider that created or assembled the
+      node and all of its attributes.  Used internally to represent how a particular node made its way into a
+      knowledge provider or graph.
     multivalued: true
-    exact_mappings:
-      - pav:providedBy
 
   primary knowledge source:
      is_a: knowledge source
@@ -6805,13 +6878,13 @@ classes:
       - name
       - description
       - source
-      - provided by
       - has attribute
       # evidence code(s)?
 
-  named thing:
     is_a: entity
     description: "a databased entity or concept/class"
+    slots:
+      - provided by
     slot_usage:
       category:
         range: named thing
@@ -9246,6 +9319,10 @@ classes:
       - qualifiers
       - publications
       - has evidence
+      - knowledge source
+      - original knowledge source
+      - primary knowledge source
+      - aggregator knowledge source
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
