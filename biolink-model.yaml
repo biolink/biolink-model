@@ -2950,7 +2950,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_mutation_rate_of
@@ -3032,7 +3033,8 @@ slots:
     range: chemical entity or gene or gene product
     inverse: response affected by
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_response_to
@@ -3048,7 +3050,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
 
   increases response to:
@@ -3123,7 +3126,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: transcript
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_RNA_splicing
@@ -3206,7 +3210,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     close_mappings:
       - GAMMA:stabilization
@@ -3284,7 +3289,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_transport_of
@@ -3366,7 +3372,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      - tag: biolink:canonical_predicate
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
         value: true
     exact_mappings:
       - CTD:affects_secretion_of
