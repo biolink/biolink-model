@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.14
+version: 2.2.15
 
 ## ------------
 ## PREFIXES
@@ -839,10 +839,6 @@ slots:
       latitude
     exact_mappings:
       - wgs:lat
-    annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:longitude
 
   longitude:
     is_a: node property
@@ -851,10 +847,6 @@ slots:
       longitude
     exact_mappings:
       - wgs:long
-    annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:lattitude
 
   ## Time
 
