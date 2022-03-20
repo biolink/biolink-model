@@ -99,10 +99,6 @@ attributes:
     name: latitude
     exact_mappings:
     - wgs:lat
-    annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:longitude
     description: latitude
     from_schema: https://w3id.org/biolink/biolink-model
     is_a: node property
@@ -114,10 +110,6 @@ attributes:
     name: longitude
     exact_mappings:
     - wgs:long
-    annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:lattitude
     description: longitude
     from_schema: https://w3id.org/biolink/biolink-model
     is_a: node property

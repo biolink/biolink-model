@@ -26,10 +26,3 @@ URI: [https://w3id.org/biolink/vocab/longitude](https://w3id.org/biolink/vocab/l
 
 
 
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:lattitude |
-
-

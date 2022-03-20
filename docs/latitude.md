@@ -26,10 +26,3 @@ URI: [https://w3id.org/biolink/vocab/latitude](https://w3id.org/biolink/vocab/la
 
 
 
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:longitude |
-
-

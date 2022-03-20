@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-17T15:48:51
+# Generation date: 2022-03-18T23:09:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8340,6 +8340,9 @@ slots.has_quotient = Slot(uri=BIOLINK.has_quotient, name="has quotient", curie=B
 slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", curie=BIOLINK.curie('has_percentage'),
                    model_uri=BIOLINK.has_percentage, domain=NamedThing, range=Optional[float])
 
+slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
+                   model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[dict, "TaxonomicRank"]], mappings = [WIKIDATA.P105])
+
 slots.has_dataset = Slot(uri=DCT.source, name="has dataset", curie=DCT.curie('source'),
                    model_uri=BIOLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
 
@@ -9557,9 +9560,6 @@ slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase')
 
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
-
-slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
-                   model_uri=BIOLINK.has_taxonomic_rank, domain=None, range=Optional[Union[dict, TaxonomicRank]], mappings = [WIKIDATA.P105])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
