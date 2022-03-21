@@ -33,7 +33,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 | [has_quantitative_value](has_quantitative_value.md) | [QuantityValue](QuantityValue.md) | 0..* | connects an attribute to a value  | . |
 | [has_qualitative_value](has_qualitative_value.md) | [NamedThing](NamedThing.md) | 0..1 | connects an attribute to a value  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 
 
 ## Usages
@@ -424,15 +424,11 @@ attributes:
     range: iri type
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: attribute
-    range: label type
+    range: string
 
 ```
 </details>

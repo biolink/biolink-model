@@ -31,6 +31,10 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 | [qualifiers](qualifiers.md) | [OntologyClass](OntologyClass.md) | 0..* | connects an association to qualifiers that modify or qualify the meaning of that association  | . |
 | [publications](publications.md) | [Publication](Publication.md) | 0..* | connects an association to publications supporting the association  | . |
 | [has_evidence](has_evidence.md) | [EvidenceType](EvidenceType.md) | 0..* | connects an association to an instance of supporting evidence  | . |
+| [knowledge_source](knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.  | . |
+| [original_knowledge_source](original_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).  | . |
+| [primary_knowledge_source](primary_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).  | . |
+| [aggregator_knowledge_source](aggregator_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.  | . |
 | [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
 | [category](category.md) | [category_type](category_type.md) | 0..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -41,8 +45,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
 | [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
-| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 | [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
 
@@ -201,6 +204,58 @@ attributes:
     alias: has_evidence
     owner: gene regulatory relationship
     range: evidence type
+  knowledge source:
+    name: knowledge source
+    close_mappings:
+    - pav:providedBy
+    description: An Information Resource from which the knowledge expressed in an
+      Association was retrieved, directly or indirectly. This can be any resource
+      through which the knowledge passed on its way to its currently serialized form.
+      In practice, implementers should use one of the more specific subtypes of this
+      generic property.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: knowledge_source
+    owner: gene regulatory relationship
+    range: information resource
+  original knowledge source:
+    name: original knowledge source
+    description: The Information Resource that created the original record of the
+      knowledge expressed in an Association (e.g. via curation of the knowledge from
+      the literature, or generation of the knowledge de novo through computation,
+      reasoning, inference over data).
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: primary knowledge source
+    domain: association
+    multivalued: true
+    alias: original_knowledge_source
+    owner: gene regulatory relationship
+    range: information resource
+  primary knowledge source:
+    name: primary knowledge source
+    description: The most upstream source of the knowledge expressed in an Association
+      that an implementer can identify (may or may not be the 'original' source).
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: knowledge source
+    domain: association
+    multivalued: true
+    alias: primary_knowledge_source
+    owner: gene regulatory relationship
+    range: information resource
+  aggregator knowledge source:
+    name: aggregator knowledge source
+    description: An intermediate aggregator resource from which knowledge expressed
+      in an Association was retrieved downstream of the original source, on its path
+      to its current serialized form.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: knowledge source
+    domain: association
+    multivalued: true
+    alias: aggregator_knowledge_source
+    owner: gene regulatory relationship
+    range: information resource
   id:
     name: id
     exact_mappings:
@@ -307,32 +362,11 @@ attributes:
     range: narrative text
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: gene regulatory relationship
-    range: label type
-  provided by:
-    name: provided by
-    exact_mappings:
-    - pav:providedBy
-    description: connects an association to the agent (person, organization or group)
-      that provided it
-    deprecated: This slot is deprecated and replaced by a set of more precise slots
-      for describing the source retrieval provenance of an Association.  These include
-      'knowledge source' and its descendants 'primary knowledge source', 'original
-      knowledge source', and 'aggregator knowledge source'.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: provided_by
-    owner: gene regulatory relationship
-    range: agent
+    range: string
   has attribute:
     name: has attribute
     exact_mappings:

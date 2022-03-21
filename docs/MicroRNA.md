@@ -35,6 +35,7 @@ URI: [biolink:MicroRNA](https://w3id.org/biolink/vocab/MicroRNA)
 | [available_from](available_from.md) | [DrugAvailabilityEnum](DrugAvailabilityEnum.md) | 0..* |   | . |
 | [max_tolerated_dose](max_tolerated_dose.md) | [string](string.md) | 0..1 | The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.  | . |
 | [is_toxic](is_toxic.md) | [boolean](boolean.md) | 0..1 |   | . |
+| [provided_by](provided_by.md) | [string](string.md) | 0..* | The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.  | . |
 | [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
 | [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -45,8 +46,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
 | [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
-| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 | [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 | [in_taxon](in_taxon.md) | [OrganismTaxon](OrganismTaxon.md) | 0..* | connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'  | . |
 
@@ -227,6 +227,19 @@ attributes:
     alias: is_toxic
     owner: microRNA
     range: boolean
+  provided by:
+    name: provided by
+    description: The value in this node property represents the knowledge provider
+      that created or assembled the node and all of its attributes.  Used internally
+      to represent how a particular node made its way into a knowledge provider or
+      graph.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: provided_by
+    owner: microRNA
+    range: string
   id:
     name: id
     exact_mappings:
@@ -333,32 +346,11 @@ attributes:
     range: narrative text
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: microRNA
-    range: label type
-  provided by:
-    name: provided by
-    exact_mappings:
-    - pav:providedBy
-    description: connects an association to the agent (person, organization or group)
-      that provided it
-    deprecated: This slot is deprecated and replaced by a set of more precise slots
-      for describing the source retrieval provenance of an Association.  These include
-      'knowledge source' and its descendants 'primary knowledge source', 'original
-      knowledge source', and 'aggregator knowledge source'.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: provided_by
-    owner: microRNA
-    range: agent
+    range: string
   has attribute:
     name: has attribute
     exact_mappings:

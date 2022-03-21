@@ -203,7 +203,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
  * [small molecule➞id](small_molecule_id.md)
- * [source](source.md) - a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.
  * [splicing affected by](splicing_affected_by.md)
  * [splicing decreased by](splicing_decreased_by.md)
  * [splicing increased by](splicing_increased_by.md)

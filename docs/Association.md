@@ -76,6 +76,10 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 | [qualifiers](qualifiers.md) | [OntologyClass](OntologyClass.md) | 0..* | connects an association to qualifiers that modify or qualify the meaning of that association  | . |
 | [publications](publications.md) | [Publication](Publication.md) | 0..* | connects an association to publications supporting the association  | . |
 | [has_evidence](has_evidence.md) | [EvidenceType](EvidenceType.md) | 0..* | connects an association to an instance of supporting evidence  | . |
+| [knowledge_source](knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.  | . |
+| [original_knowledge_source](original_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).  | . |
+| [primary_knowledge_source](primary_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).  | . |
+| [aggregator_knowledge_source](aggregator_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.  | . |
 | [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
 | [category](category.md) | [category_type](category_type.md) | 0..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -86,8 +90,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [type](type.md) | [string](string.md) | 0..1 | rdf:type of biolink:Association should be fixed at rdf:Statement  | . |
 | [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
 | [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
-| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 | [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
 
@@ -96,105 +99,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Entity](Entity.md) | [provided_by](provided_by.md) | domain | association |
-| [NamedThing](NamedThing.md) | [provided_by](provided_by.md) | domain | association |
-| [OrganismTaxon](OrganismTaxon.md) | [provided_by](provided_by.md) | domain | association |
-| [Event](Event.md) | [provided_by](provided_by.md) | domain | association |
-| [AdministrativeEntity](AdministrativeEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [Agent](Agent.md) | [provided_by](provided_by.md) | domain | association |
-| [InformationContentEntity](InformationContentEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [Dataset](Dataset.md) | [provided_by](provided_by.md) | domain | association |
-| [DatasetDistribution](DatasetDistribution.md) | [provided_by](provided_by.md) | domain | association |
-| [DatasetVersion](DatasetVersion.md) | [provided_by](provided_by.md) | domain | association |
-| [DatasetSummary](DatasetSummary.md) | [provided_by](provided_by.md) | domain | association |
-| [ConfidenceLevel](ConfidenceLevel.md) | [provided_by](provided_by.md) | domain | association |
-| [EvidenceType](EvidenceType.md) | [provided_by](provided_by.md) | domain | association |
-| [InformationResource](InformationResource.md) | [provided_by](provided_by.md) | domain | association |
-| [Publication](Publication.md) | [provided_by](provided_by.md) | domain | association |
-| [Book](Book.md) | [provided_by](provided_by.md) | domain | association |
-| [BookChapter](BookChapter.md) | [provided_by](provided_by.md) | domain | association |
-| [Serial](Serial.md) | [provided_by](provided_by.md) | domain | association |
-| [Article](Article.md) | [provided_by](provided_by.md) | domain | association |
-| [PhysicalEntity](PhysicalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [Activity](Activity.md) | [provided_by](provided_by.md) | domain | association |
-| [Procedure](Procedure.md) | [provided_by](provided_by.md) | domain | association |
-| [Phenomenon](Phenomenon.md) | [provided_by](provided_by.md) | domain | association |
-| [Device](Device.md) | [provided_by](provided_by.md) | domain | association |
-| [StudyPopulation](StudyPopulation.md) | [provided_by](provided_by.md) | domain | association |
-| [MaterialSample](MaterialSample.md) | [provided_by](provided_by.md) | domain | association |
-| [PlanetaryEntity](PlanetaryEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [EnvironmentalProcess](EnvironmentalProcess.md) | [provided_by](provided_by.md) | domain | association |
-| [EnvironmentalFeature](EnvironmentalFeature.md) | [provided_by](provided_by.md) | domain | association |
-| [GeographicLocation](GeographicLocation.md) | [provided_by](provided_by.md) | domain | association |
-| [GeographicLocationAtTime](GeographicLocationAtTime.md) | [provided_by](provided_by.md) | domain | association |
-| [BiologicalEntity](BiologicalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [MolecularEntity](MolecularEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [ChemicalEntity](ChemicalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [SmallMolecule](SmallMolecule.md) | [provided_by](provided_by.md) | domain | association |
-| [ChemicalMixture](ChemicalMixture.md) | [provided_by](provided_by.md) | domain | association |
-| [NucleicAcidEntity](NucleicAcidEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [MolecularMixture](MolecularMixture.md) | [provided_by](provided_by.md) | domain | association |
-| [ComplexMolecularMixture](ComplexMolecularMixture.md) | [provided_by](provided_by.md) | domain | association |
-| [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) | [provided_by](provided_by.md) | domain | association |
-| [MolecularActivity](MolecularActivity.md) | [provided_by](provided_by.md) | domain | association |
-| [BiologicalProcess](BiologicalProcess.md) | [provided_by](provided_by.md) | domain | association |
-| [Pathway](Pathway.md) | [provided_by](provided_by.md) | domain | association |
-| [PhysiologicalProcess](PhysiologicalProcess.md) | [provided_by](provided_by.md) | domain | association |
-| [Behavior](Behavior.md) | [provided_by](provided_by.md) | domain | association |
-| [ProcessedMaterial](ProcessedMaterial.md) | [provided_by](provided_by.md) | domain | association |
-| [Drug](Drug.md) | [provided_by](provided_by.md) | domain | association |
-| [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md) | [provided_by](provided_by.md) | domain | association |
-| [FoodAdditive](FoodAdditive.md) | [provided_by](provided_by.md) | domain | association |
-| [Nutrient](Nutrient.md) | [provided_by](provided_by.md) | domain | association |
-| [Macronutrient](Macronutrient.md) | [provided_by](provided_by.md) | domain | association |
-| [Micronutrient](Micronutrient.md) | [provided_by](provided_by.md) | domain | association |
-| [Vitamin](Vitamin.md) | [provided_by](provided_by.md) | domain | association |
-| [Food](Food.md) | [provided_by](provided_by.md) | domain | association |
-| [OrganismalEntity](OrganismalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [LifeStage](LifeStage.md) | [provided_by](provided_by.md) | domain | association |
-| [IndividualOrganism](IndividualOrganism.md) | [provided_by](provided_by.md) | domain | association |
-| [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) | [provided_by](provided_by.md) | domain | association |
-| [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) | [provided_by](provided_by.md) | domain | association |
-| [Disease](Disease.md) | [provided_by](provided_by.md) | domain | association |
-| [PhenotypicFeature](PhenotypicFeature.md) | [provided_by](provided_by.md) | domain | association |
-| [BehavioralFeature](BehavioralFeature.md) | [provided_by](provided_by.md) | domain | association |
-| [AnatomicalEntity](AnatomicalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [CellularComponent](CellularComponent.md) | [provided_by](provided_by.md) | domain | association |
-| [Cell](Cell.md) | [provided_by](provided_by.md) | domain | association |
-| [CellLine](CellLine.md) | [provided_by](provided_by.md) | domain | association |
-| [GrossAnatomicalStructure](GrossAnatomicalStructure.md) | [provided_by](provided_by.md) | domain | association |
-| [Gene](Gene.md) | [provided_by](provided_by.md) | domain | association |
-| [Genome](Genome.md) | [provided_by](provided_by.md) | domain | association |
-| [Exon](Exon.md) | [provided_by](provided_by.md) | domain | association |
-| [Transcript](Transcript.md) | [provided_by](provided_by.md) | domain | association |
-| [CodingSequence](CodingSequence.md) | [provided_by](provided_by.md) | domain | association |
-| [Polypeptide](Polypeptide.md) | [provided_by](provided_by.md) | domain | association |
-| [Protein](Protein.md) | [provided_by](provided_by.md) | domain | association |
-| [ProteinIsoform](ProteinIsoform.md) | [provided_by](provided_by.md) | domain | association |
-| [ProteinDomain](ProteinDomain.md) | [provided_by](provided_by.md) | domain | association |
-| [ProteinFamily](ProteinFamily.md) | [provided_by](provided_by.md) | domain | association |
-| [NucleicAcidSequenceMotif](NucleicAcidSequenceMotif.md) | [provided_by](provided_by.md) | domain | association |
-| [RNAProduct](RNAProduct.md) | [provided_by](provided_by.md) | domain | association |
-| [RNAProductIsoform](RNAProductIsoform.md) | [provided_by](provided_by.md) | domain | association |
-| [NoncodingRNAProduct](NoncodingRNAProduct.md) | [provided_by](provided_by.md) | domain | association |
-| [MicroRNA](MicroRNA.md) | [provided_by](provided_by.md) | domain | association |
-| [SiRNA](SiRNA.md) | [provided_by](provided_by.md) | domain | association |
-| [GeneFamily](GeneFamily.md) | [provided_by](provided_by.md) | domain | association |
-| [Genotype](Genotype.md) | [provided_by](provided_by.md) | domain | association |
-| [Haplotype](Haplotype.md) | [provided_by](provided_by.md) | domain | association |
-| [SequenceVariant](SequenceVariant.md) | [provided_by](provided_by.md) | domain | association |
-| [Snv](Snv.md) | [provided_by](provided_by.md) | domain | association |
-| [ReagentTargetedGene](ReagentTargetedGene.md) | [provided_by](provided_by.md) | domain | association |
-| [ClinicalEntity](ClinicalEntity.md) | [provided_by](provided_by.md) | domain | association |
-| [ClinicalTrial](ClinicalTrial.md) | [provided_by](provided_by.md) | domain | association |
-| [ClinicalIntervention](ClinicalIntervention.md) | [provided_by](provided_by.md) | domain | association |
-| [ClinicalFinding](ClinicalFinding.md) | [provided_by](provided_by.md) | domain | association |
-| [Hospitalization](Hospitalization.md) | [provided_by](provided_by.md) | domain | association |
-| [Case](Case.md) | [provided_by](provided_by.md) | domain | association |
-| [Cohort](Cohort.md) | [provided_by](provided_by.md) | domain | association |
-| [PathologicalProcess](PathologicalProcess.md) | [provided_by](provided_by.md) | domain | association |
-| [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) | [provided_by](provided_by.md) | domain | association |
-| [Treatment](Treatment.md) | [provided_by](provided_by.md) | domain | association |
 | [Association](Association.md) | [subject](subject.md) | domain | association |
 | [Association](Association.md) | [predicate](predicate.md) | domain | association |
 | [Association](Association.md) | [object](object.md) | domain | association |
@@ -202,7 +106,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [Association](Association.md) | [qualifiers](qualifiers.md) | domain | association |
 | [Association](Association.md) | [publications](publications.md) | domain | association |
 | [Association](Association.md) | [has_evidence](has_evidence.md) | domain | association |
-| [Association](Association.md) | [provided_by](provided_by.md) | domain | association |
+| [Association](Association.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [Association](Association.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [Association](Association.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [Association](Association.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ContributorAssociation](ContributorAssociation.md) | [subject](subject.md) | domain | association |
 | [ContributorAssociation](ContributorAssociation.md) | [predicate](predicate.md) | domain | association |
 | [ContributorAssociation](ContributorAssociation.md) | [object](object.md) | domain | association |
@@ -210,7 +117,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ContributorAssociation](ContributorAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ContributorAssociation](ContributorAssociation.md) | [publications](publications.md) | domain | association |
 | [ContributorAssociation](ContributorAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ContributorAssociation](ContributorAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ContributorAssociation](ContributorAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ContributorAssociation](ContributorAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ContributorAssociation](ContributorAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ContributorAssociation](ContributorAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [subject](subject.md) | domain | association |
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [object](object.md) | domain | association |
@@ -218,7 +128,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [subject](subject.md) | domain | association |
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [object](object.md) | domain | association |
@@ -226,7 +139,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [subject](subject.md) | domain | association |
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [object](object.md) | domain | association |
@@ -234,7 +150,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [subject](subject.md) | domain | association |
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [object](object.md) | domain | association |
@@ -242,7 +161,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToGeneAssociation](GeneToGeneAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [subject](subject.md) | domain | association |
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [object](object.md) | domain | association |
@@ -250,7 +172,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneExpressionMixin](GeneExpressionMixin.md) | [quantifier_qualifier](quantifier_qualifier.md) | domain | association |
 | [GeneExpressionMixin](GeneExpressionMixin.md) | [expression_site](expression_site.md) | domain | association |
 | [GeneExpressionMixin](GeneExpressionMixin.md) | [stage_qualifier](stage_qualifier.md) | domain | association |
@@ -266,7 +191,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [subject](subject.md) | domain | association |
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [predicate](predicate.md) | domain | association |
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [object](object.md) | domain | association |
@@ -274,7 +202,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [qualifiers](qualifiers.md) | domain | association |
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [publications](publications.md) | domain | association |
 | [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [has_evidence](has_evidence.md) | domain | association |
-| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [provided_by](provided_by.md) | domain | association |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [interacting_molecules_category](interacting_molecules_category.md) | domain | association |
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [subject](subject.md) | domain | association |
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [predicate](predicate.md) | domain | association |
@@ -283,7 +214,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [qualifiers](qualifiers.md) | domain | association |
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [publications](publications.md) | domain | association |
 | [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [has_evidence](has_evidence.md) | domain | association |
-| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [provided_by](provided_by.md) | domain | association |
+| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [object](object.md) | domain | association |
@@ -291,7 +225,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [subject](subject.md) | domain | association |
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [predicate](predicate.md) | domain | association |
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [object](object.md) | domain | association |
@@ -299,7 +236,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [publications](publications.md) | domain | association |
 | [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [stoichiometry](stoichiometry.md) | domain | association |
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [reaction_direction](reaction_direction.md) | domain | association |
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [reaction_side](reaction_side.md) | domain | association |
@@ -310,7 +250,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [publications](publications.md) | domain | association |
 | [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [stoichiometry](stoichiometry.md) | domain | association |
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [reaction_direction](reaction_direction.md) | domain | association |
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [reaction_side](reaction_side.md) | domain | association |
@@ -321,7 +264,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [publications](publications.md) | domain | association |
 | [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [catalyst_qualifier](catalyst_qualifier.md) | domain | association |
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [subject](subject.md) | domain | association |
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -330,7 +276,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [publications](publications.md) | domain | association |
 | [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [object](object.md) | domain | association |
@@ -338,7 +287,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [subject](subject.md) | domain | association |
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [predicate](predicate.md) | domain | association |
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [object](object.md) | domain | association |
@@ -346,7 +298,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [publications](publications.md) | domain | association |
 | [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [subject](subject.md) | domain | association |
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [predicate](predicate.md) | domain | association |
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [object](object.md) | domain | association |
@@ -354,7 +309,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [publications](publications.md) | domain | association |
 | [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [subject](subject.md) | domain | association |
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [predicate](predicate.md) | domain | association |
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [object](object.md) | domain | association |
@@ -362,7 +320,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [publications](publications.md) | domain | association |
 | [DrugToGeneAssociation](DrugToGeneAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [subject](subject.md) | domain | association |
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [object](object.md) | domain | association |
@@ -370,7 +331,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [publications](publications.md) | domain | association |
 | [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [object](object.md) | domain | association |
@@ -378,7 +342,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [subject](subject.md) | domain | association |
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [predicate](predicate.md) | domain | association |
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [object](object.md) | domain | association |
@@ -386,7 +353,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [publications](publications.md) | domain | association |
 | [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [has_population_context](has_population_context.md) | domain | association |
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [has_temporal_context](has_temporal_context.md) | domain | association |
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [subject](subject.md) | domain | association |
@@ -396,7 +366,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [publications](publications.md) | domain | association |
 | [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [FrequencyQualifierMixin](FrequencyQualifierMixin.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
 | [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
@@ -411,7 +384,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [publications](publications.md) | domain | association |
 | [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -422,7 +398,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [publications](publications.md) | domain | association |
 | [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [sex_qualifier](sex_qualifier.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -431,7 +410,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -443,7 +425,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -455,7 +440,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -467,7 +455,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -479,7 +470,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -491,7 +485,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -502,7 +499,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -513,7 +513,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantToGeneAssociation](VariantToGeneAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantToGeneAssociation](VariantToGeneAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantToGeneAssociation](VariantToGeneAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [quantifier_qualifier](quantifier_qualifier.md) | domain | association |
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [expression_site](expression_site.md) | domain | association |
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [stage_qualifier](stage_qualifier.md) | domain | association |
@@ -525,7 +528,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [subject](subject.md) | domain | association |
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -534,7 +540,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [subject](subject.md) | domain | association |
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [predicate](predicate.md) | domain | association |
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [object](object.md) | domain | association |
@@ -542,7 +551,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [publications](publications.md) | domain | association |
 | [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [sex_qualifier](sex_qualifier.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -551,7 +563,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -562,7 +577,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -573,7 +591,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -584,7 +605,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -595,7 +619,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -606,7 +633,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -617,7 +647,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -628,7 +661,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -639,7 +675,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [publications](publications.md) | domain | association |
 | [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [subject](subject.md) | domain | association |
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [predicate](predicate.md) | domain | association |
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [object](object.md) | domain | association |
@@ -647,7 +686,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [publications](publications.md) | domain | association |
 | [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [sequence_variant_qualifier](sequence_variant_qualifier.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [subject](subject.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -656,7 +698,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [severity_qualifier](severity_qualifier.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [onset_qualifier](onset_qualifier.md) | domain | association |
 | [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [frequency_qualifier](frequency_qualifier.md) | domain | association |
@@ -669,7 +714,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [subject](subject.md) | domain | association |
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [predicate](predicate.md) | domain | association |
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [object](object.md) | domain | association |
@@ -677,7 +725,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [publications](publications.md) | domain | association |
 | [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [FunctionalAssociation](FunctionalAssociation.md) | [subject](subject.md) | domain | association |
 | [FunctionalAssociation](FunctionalAssociation.md) | [predicate](predicate.md) | domain | association |
 | [FunctionalAssociation](FunctionalAssociation.md) | [object](object.md) | domain | association |
@@ -685,28 +736,40 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [FunctionalAssociation](FunctionalAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [FunctionalAssociation](FunctionalAssociation.md) | [publications](publications.md) | domain | association |
 | [FunctionalAssociation](FunctionalAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [FunctionalAssociation](FunctionalAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [FunctionalAssociation](FunctionalAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [FunctionalAssociation](FunctionalAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [FunctionalAssociation](FunctionalAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [FunctionalAssociation](FunctionalAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [object](object.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [negated](negated.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [publications](publications.md) | domain | association |
 | [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [object](object.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [negated](negated.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [publications](publications.md) | domain | association |
 | [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [object](object.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [negated](negated.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [publications](publications.md) | domain | association |
 | [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [subject](subject.md) | domain | association |
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [object](object.md) | domain | association |
@@ -714,7 +777,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [publications](publications.md) | domain | association |
 | [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [subject](subject.md) | domain | association |
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [predicate](predicate.md) | domain | association |
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [object](object.md) | domain | association |
@@ -722,7 +788,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [publications](publications.md) | domain | association |
 | [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [subject](subject.md) | domain | association |
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [predicate](predicate.md) | domain | association |
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [object](object.md) | domain | association |
@@ -730,7 +799,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [publications](publications.md) | domain | association |
 | [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [FDA_approval_status](FDA_approval_status.md) | domain | association |
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [subject](subject.md) | domain | association |
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -739,7 +811,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [publications](publications.md) | domain | association |
 | [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [FDA_approval_status](FDA_approval_status.md) | domain | association |
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [subject](subject.md) | domain | association |
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [predicate](predicate.md) | domain | association |
@@ -748,7 +823,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [publications](publications.md) | domain | association |
 | [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [SequenceAssociation](SequenceAssociation.md) | [subject](subject.md) | domain | association |
 | [SequenceAssociation](SequenceAssociation.md) | [predicate](predicate.md) | domain | association |
 | [SequenceAssociation](SequenceAssociation.md) | [object](object.md) | domain | association |
@@ -756,7 +834,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [SequenceAssociation](SequenceAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [SequenceAssociation](SequenceAssociation.md) | [publications](publications.md) | domain | association |
 | [SequenceAssociation](SequenceAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [SequenceAssociation](SequenceAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [SequenceAssociation](SequenceAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [SequenceAssociation](SequenceAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [SequenceAssociation](SequenceAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [SequenceAssociation](SequenceAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [subject](subject.md) | domain | association |
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [predicate](predicate.md) | domain | association |
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [object](object.md) | domain | association |
@@ -764,7 +845,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [publications](publications.md) | domain | association |
 | [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [provided_by](provided_by.md) | domain | association |
+| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [subject](subject.md) | domain | association |
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [predicate](predicate.md) | domain | association |
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [object](object.md) | domain | association |
@@ -772,7 +856,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [qualifiers](qualifiers.md) | domain | association |
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [publications](publications.md) | domain | association |
 | [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [has_evidence](has_evidence.md) | domain | association |
-| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [provided_by](provided_by.md) | domain | association |
+| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [subject](subject.md) | domain | association |
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [predicate](predicate.md) | domain | association |
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [object](object.md) | domain | association |
@@ -780,7 +867,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [qualifiers](qualifiers.md) | domain | association |
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [publications](publications.md) | domain | association |
 | [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [has_evidence](has_evidence.md) | domain | association |
-| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [provided_by](provided_by.md) | domain | association |
+| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [subject](subject.md) | domain | association |
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [predicate](predicate.md) | domain | association |
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [object](object.md) | domain | association |
@@ -788,7 +878,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [publications](publications.md) | domain | association |
 | [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [subject](subject.md) | domain | association |
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [predicate](predicate.md) | domain | association |
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [object](object.md) | domain | association |
@@ -796,7 +889,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [qualifiers](qualifiers.md) | domain | association |
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [publications](publications.md) | domain | association |
 | [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [has_evidence](has_evidence.md) | domain | association |
-| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [provided_by](provided_by.md) | domain | association |
+| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [subject](subject.md) | domain | association |
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [predicate](predicate.md) | domain | association |
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [object](object.md) | domain | association |
@@ -804,7 +900,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [qualifiers](qualifiers.md) | domain | association |
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [publications](publications.md) | domain | association |
 | [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [has_evidence](has_evidence.md) | domain | association |
-| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [provided_by](provided_by.md) | domain | association |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [subject](subject.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [predicate](predicate.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [object](object.md) | domain | association |
@@ -812,7 +911,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [publications](publications.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [subject](subject.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [predicate](predicate.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [object](object.md) | domain | association |
@@ -820,7 +922,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [publications](publications.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [subject](subject.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [predicate](predicate.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [object](object.md) | domain | association |
@@ -828,7 +933,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [publications](publications.md) | domain | association |
 | [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [subject](subject.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [predicate](predicate.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [object](object.md) | domain | association |
@@ -836,7 +944,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [publications](publications.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [subject](subject.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [predicate](predicate.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [object](object.md) | domain | association |
@@ -844,7 +955,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [publications](publications.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [associated_environmental_context](associated_environmental_context.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [subject](subject.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [predicate](predicate.md) | domain | association |
@@ -853,7 +967,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [publications](publications.md) | domain | association |
 | [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [subject](subject.md) | domain | association |
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [predicate](predicate.md) | domain | association |
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [object](object.md) | domain | association |
@@ -861,7 +978,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [qualifiers](qualifiers.md) | domain | association |
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [publications](publications.md) | domain | association |
 | [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [has_evidence](has_evidence.md) | domain | association |
-| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [provided_by](provided_by.md) | domain | association |
+| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [knowledge_source](knowledge_source.md) | domain | association |
+| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [original_knowledge_source](original_knowledge_source.md) | domain | association |
+| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [primary_knowledge_source](primary_knowledge_source.md) | domain | association |
+| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [aggregator_knowledge_source](aggregator_knowledge_source.md) | domain | association |
 
 
 
@@ -902,6 +1022,10 @@ slots:
 - qualifiers
 - publications
 - has evidence
+- knowledge source
+- original knowledge source
+- primary knowledge source
+- aggregator knowledge source
 slot_usage:
   type:
     name: type
@@ -1063,6 +1187,58 @@ attributes:
     alias: has_evidence
     owner: association
     range: evidence type
+  knowledge source:
+    name: knowledge source
+    close_mappings:
+    - pav:providedBy
+    description: An Information Resource from which the knowledge expressed in an
+      Association was retrieved, directly or indirectly. This can be any resource
+      through which the knowledge passed on its way to its currently serialized form.
+      In practice, implementers should use one of the more specific subtypes of this
+      generic property.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: association slot
+    domain: association
+    multivalued: true
+    alias: knowledge_source
+    owner: association
+    range: information resource
+  original knowledge source:
+    name: original knowledge source
+    description: The Information Resource that created the original record of the
+      knowledge expressed in an Association (e.g. via curation of the knowledge from
+      the literature, or generation of the knowledge de novo through computation,
+      reasoning, inference over data).
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: primary knowledge source
+    domain: association
+    multivalued: true
+    alias: original_knowledge_source
+    owner: association
+    range: information resource
+  primary knowledge source:
+    name: primary knowledge source
+    description: The most upstream source of the knowledge expressed in an Association
+      that an implementer can identify (may or may not be the 'original' source).
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: knowledge source
+    domain: association
+    multivalued: true
+    alias: primary_knowledge_source
+    owner: association
+    range: information resource
+  aggregator knowledge source:
+    name: aggregator knowledge source
+    description: An intermediate aggregator resource from which knowledge expressed
+      in an Association was retrieved downstream of the original source, on its path
+      to its current serialized form.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: knowledge source
+    domain: association
+    multivalued: true
+    alias: aggregator_knowledge_source
+    owner: association
+    range: information resource
   id:
     name: id
     exact_mappings:
@@ -1164,32 +1340,11 @@ attributes:
     range: narrative text
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: association
-    range: label type
-  provided by:
-    name: provided by
-    exact_mappings:
-    - pav:providedBy
-    description: connects an association to the agent (person, organization or group)
-      that provided it
-    deprecated: This slot is deprecated and replaced by a set of more precise slots
-      for describing the source retrieval provenance of an Association.  These include
-      'knowledge source' and its descendants 'primary knowledge source', 'original
-      knowledge source', and 'aggregator knowledge source'.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: provided_by
-    owner: association
-    range: agent
+    range: string
   has attribute:
     name: has attribute
     exact_mappings:

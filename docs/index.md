@@ -300,7 +300,7 @@ URI: https://w3id.org/biolink/biolink-model
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing} | 
 | [name](name.md) | A human-readable name for an attribute or entity. | 
-| [source](source.md) | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs. | 
+| [source](source.md) | None | 
 | [stoichiometry](stoichiometry.md) | the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers. | 
 | [reaction_direction](reaction_direction.md) | the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.) | 
 | [reaction_balanced](reaction_balanced.md) | None | 
@@ -698,7 +698,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [has_evidence](has_evidence.md) | connects an association to an instance of supporting evidence | 
 | [mechanism_of_action](mechanism_of_action.md) | a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result. | 
 | [knowledge_source](knowledge_source.md) | An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property. | 
-| [provided_by](provided_by.md) | connects an association to the agent (person, organization or group) that provided it | 
+| [provided_by](provided_by.md) | The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph. | 
 | [primary_knowledge_source](primary_knowledge_source.md) | The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source). | 
 | [original_knowledge_source](original_knowledge_source.md) | The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data). | 
 | [aggregator_knowledge_source](aggregator_knowledge_source.md) | An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form. | 

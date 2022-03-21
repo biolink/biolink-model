@@ -38,6 +38,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 | [rights](rights.md) | [string](string.md) | 0..1 | None  | . |
 | [format](format.md) | [string](string.md) | 0..1 | None  | . |
 | [creation_date](creation_date.md) | [date](date.md) | 0..1 | date on which an entity was created. This can be applied to nodes or edges  | . |
+| [provided_by](provided_by.md) | [string](string.md) | 0..* | The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.  | . |
 | [id](id.md) | [string](string.md) | 1..1 | Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
 | [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -48,8 +49,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [type](type.md) | [string](string.md) | 1..1 | Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.  | . |
 | [name](name.md) | [label_type](label_type.md) | 0..1 | the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).  | . |
 | [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
-| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 | [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
 
@@ -461,6 +461,19 @@ attributes:
     alias: creation_date
     owner: publication
     range: date
+  provided by:
+    name: provided by
+    description: The value in this node property represents the knowledge provider
+      that created or assembled the node and all of its attributes.  Used internally
+      to represent how a particular node made its way into a knowledge provider or
+      graph.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: provided_by
+    owner: publication
+    range: string
   id:
     name: id
     description: 'Different kinds of publication subtypes will have different preferred
@@ -567,32 +580,11 @@ attributes:
     range: narrative text
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: publication
-    range: label type
-  provided by:
-    name: provided by
-    exact_mappings:
-    - pav:providedBy
-    description: connects an association to the agent (person, organization or group)
-      that provided it
-    deprecated: This slot is deprecated and replaced by a set of more precise slots
-      for describing the source retrieval provenance of an Association.  These include
-      'knowledge source' and its descendants 'primary knowledge source', 'original
-      knowledge source', and 'aggregator knowledge source'.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: provided_by
-    owner: publication
-    range: agent
+    range: string
   has attribute:
     name: has attribute
     exact_mappings:

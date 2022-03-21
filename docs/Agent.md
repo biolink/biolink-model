@@ -26,6 +26,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
 | ---  | --- | --- | --- | --- |
 | [affiliation](affiliation.md) | [uriorcurie](uriorcurie.md) | 0..* | a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.  | . |
 | [address](address.md) | [string](string.md) | 0..1 | the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).  | . |
+| [provided_by](provided_by.md) | [string](string.md) | 0..* | The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.  | . |
 | [id](id.md) | [string](string.md) | 1..1 | Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.  | . |
 | [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
 | [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -36,8 +37,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | [type](type.md) | [string](string.md) | 0..1 | None  | . |
 | [name](name.md) | [label_type](label_type.md) | 0..1 | it is recommended that an author's 'name' property be formatted as "surname, firstname initial."  | . |
 | [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [label_type](label_type.md) | 0..1 | a lightweight analog to the association class 'provided by' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.  | . |
-| [provided_by](provided_by.md) | [Agent](Agent.md) | 0..* | connects an association to the agent (person, organization or group) that provided it  | . |
+| [source](source.md) | [string](string.md) | 0..1 | None  | . |
 | [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
 
 
@@ -46,179 +46,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Entity](Entity.md) | [provided_by](provided_by.md) | range | agent |
-| [NamedThing](NamedThing.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismTaxon](OrganismTaxon.md) | [provided_by](provided_by.md) | range | agent |
-| [Event](Event.md) | [provided_by](provided_by.md) | range | agent |
-| [AdministrativeEntity](AdministrativeEntity.md) | [provided_by](provided_by.md) | range | agent |
 | [Agent](Agent.md) | [affiliation](affiliation.md) | domain | agent |
-| [Agent](Agent.md) | [provided_by](provided_by.md) | range | agent |
-| [InformationContentEntity](InformationContentEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [Dataset](Dataset.md) | [provided_by](provided_by.md) | range | agent |
-| [DatasetDistribution](DatasetDistribution.md) | [provided_by](provided_by.md) | range | agent |
-| [DatasetVersion](DatasetVersion.md) | [provided_by](provided_by.md) | range | agent |
-| [DatasetSummary](DatasetSummary.md) | [provided_by](provided_by.md) | range | agent |
-| [ConfidenceLevel](ConfidenceLevel.md) | [provided_by](provided_by.md) | range | agent |
-| [EvidenceType](EvidenceType.md) | [provided_by](provided_by.md) | range | agent |
-| [InformationResource](InformationResource.md) | [provided_by](provided_by.md) | range | agent |
-| [Publication](Publication.md) | [provided_by](provided_by.md) | range | agent |
-| [Book](Book.md) | [provided_by](provided_by.md) | range | agent |
-| [BookChapter](BookChapter.md) | [provided_by](provided_by.md) | range | agent |
-| [Serial](Serial.md) | [provided_by](provided_by.md) | range | agent |
-| [Article](Article.md) | [provided_by](provided_by.md) | range | agent |
-| [PhysicalEntity](PhysicalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [Activity](Activity.md) | [provided_by](provided_by.md) | range | agent |
-| [Procedure](Procedure.md) | [provided_by](provided_by.md) | range | agent |
-| [Phenomenon](Phenomenon.md) | [provided_by](provided_by.md) | range | agent |
-| [Device](Device.md) | [provided_by](provided_by.md) | range | agent |
-| [StudyPopulation](StudyPopulation.md) | [provided_by](provided_by.md) | range | agent |
-| [MaterialSample](MaterialSample.md) | [provided_by](provided_by.md) | range | agent |
-| [PlanetaryEntity](PlanetaryEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [EnvironmentalProcess](EnvironmentalProcess.md) | [provided_by](provided_by.md) | range | agent |
-| [EnvironmentalFeature](EnvironmentalFeature.md) | [provided_by](provided_by.md) | range | agent |
-| [GeographicLocation](GeographicLocation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeographicLocationAtTime](GeographicLocationAtTime.md) | [provided_by](provided_by.md) | range | agent |
-| [BiologicalEntity](BiologicalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [MolecularEntity](MolecularEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalEntity](ChemicalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [SmallMolecule](SmallMolecule.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalMixture](ChemicalMixture.md) | [provided_by](provided_by.md) | range | agent |
-| [NucleicAcidEntity](NucleicAcidEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [MolecularMixture](MolecularMixture.md) | [provided_by](provided_by.md) | range | agent |
-| [ComplexMolecularMixture](ComplexMolecularMixture.md) | [provided_by](provided_by.md) | range | agent |
-| [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) | [provided_by](provided_by.md) | range | agent |
-| [MolecularActivity](MolecularActivity.md) | [provided_by](provided_by.md) | range | agent |
-| [BiologicalProcess](BiologicalProcess.md) | [provided_by](provided_by.md) | range | agent |
-| [Pathway](Pathway.md) | [provided_by](provided_by.md) | range | agent |
-| [PhysiologicalProcess](PhysiologicalProcess.md) | [provided_by](provided_by.md) | range | agent |
-| [Behavior](Behavior.md) | [provided_by](provided_by.md) | range | agent |
-| [ProcessedMaterial](ProcessedMaterial.md) | [provided_by](provided_by.md) | range | agent |
-| [Drug](Drug.md) | [provided_by](provided_by.md) | range | agent |
-| [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md) | [provided_by](provided_by.md) | range | agent |
-| [FoodAdditive](FoodAdditive.md) | [provided_by](provided_by.md) | range | agent |
-| [Nutrient](Nutrient.md) | [provided_by](provided_by.md) | range | agent |
-| [Macronutrient](Macronutrient.md) | [provided_by](provided_by.md) | range | agent |
-| [Micronutrient](Micronutrient.md) | [provided_by](provided_by.md) | range | agent |
-| [Vitamin](Vitamin.md) | [provided_by](provided_by.md) | range | agent |
-| [Food](Food.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismalEntity](OrganismalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [LifeStage](LifeStage.md) | [provided_by](provided_by.md) | range | agent |
-| [IndividualOrganism](IndividualOrganism.md) | [provided_by](provided_by.md) | range | agent |
-| [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) | [provided_by](provided_by.md) | range | agent |
-| [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) | [provided_by](provided_by.md) | range | agent |
-| [Disease](Disease.md) | [provided_by](provided_by.md) | range | agent |
-| [PhenotypicFeature](PhenotypicFeature.md) | [provided_by](provided_by.md) | range | agent |
-| [BehavioralFeature](BehavioralFeature.md) | [provided_by](provided_by.md) | range | agent |
-| [AnatomicalEntity](AnatomicalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [CellularComponent](CellularComponent.md) | [provided_by](provided_by.md) | range | agent |
-| [Cell](Cell.md) | [provided_by](provided_by.md) | range | agent |
-| [CellLine](CellLine.md) | [provided_by](provided_by.md) | range | agent |
-| [GrossAnatomicalStructure](GrossAnatomicalStructure.md) | [provided_by](provided_by.md) | range | agent |
-| [Gene](Gene.md) | [provided_by](provided_by.md) | range | agent |
-| [Genome](Genome.md) | [provided_by](provided_by.md) | range | agent |
-| [Exon](Exon.md) | [provided_by](provided_by.md) | range | agent |
-| [Transcript](Transcript.md) | [provided_by](provided_by.md) | range | agent |
-| [CodingSequence](CodingSequence.md) | [provided_by](provided_by.md) | range | agent |
-| [Polypeptide](Polypeptide.md) | [provided_by](provided_by.md) | range | agent |
-| [Protein](Protein.md) | [provided_by](provided_by.md) | range | agent |
-| [ProteinIsoform](ProteinIsoform.md) | [provided_by](provided_by.md) | range | agent |
-| [ProteinDomain](ProteinDomain.md) | [provided_by](provided_by.md) | range | agent |
-| [ProteinFamily](ProteinFamily.md) | [provided_by](provided_by.md) | range | agent |
-| [NucleicAcidSequenceMotif](NucleicAcidSequenceMotif.md) | [provided_by](provided_by.md) | range | agent |
-| [RNAProduct](RNAProduct.md) | [provided_by](provided_by.md) | range | agent |
-| [RNAProductIsoform](RNAProductIsoform.md) | [provided_by](provided_by.md) | range | agent |
-| [NoncodingRNAProduct](NoncodingRNAProduct.md) | [provided_by](provided_by.md) | range | agent |
-| [MicroRNA](MicroRNA.md) | [provided_by](provided_by.md) | range | agent |
-| [SiRNA](SiRNA.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneFamily](GeneFamily.md) | [provided_by](provided_by.md) | range | agent |
-| [Genotype](Genotype.md) | [provided_by](provided_by.md) | range | agent |
-| [Haplotype](Haplotype.md) | [provided_by](provided_by.md) | range | agent |
-| [SequenceVariant](SequenceVariant.md) | [provided_by](provided_by.md) | range | agent |
-| [Snv](Snv.md) | [provided_by](provided_by.md) | range | agent |
-| [ReagentTargetedGene](ReagentTargetedGene.md) | [provided_by](provided_by.md) | range | agent |
-| [ClinicalEntity](ClinicalEntity.md) | [provided_by](provided_by.md) | range | agent |
-| [ClinicalTrial](ClinicalTrial.md) | [provided_by](provided_by.md) | range | agent |
-| [ClinicalIntervention](ClinicalIntervention.md) | [provided_by](provided_by.md) | range | agent |
-| [ClinicalFinding](ClinicalFinding.md) | [provided_by](provided_by.md) | range | agent |
-| [Hospitalization](Hospitalization.md) | [provided_by](provided_by.md) | range | agent |
-| [Case](Case.md) | [provided_by](provided_by.md) | range | agent |
-| [Cohort](Cohort.md) | [provided_by](provided_by.md) | range | agent |
-| [PathologicalProcess](PathologicalProcess.md) | [provided_by](provided_by.md) | range | agent |
-| [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) | [provided_by](provided_by.md) | range | agent |
-| [Treatment](Treatment.md) | [provided_by](provided_by.md) | range | agent |
-| [Association](Association.md) | [provided_by](provided_by.md) | range | agent |
 | [ContributorAssociation](ContributorAssociation.md) | [object](object.md) | range | agent |
-| [ContributorAssociation](ContributorAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToGeneAssociation](GeneToGeneAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) | [provided_by](provided_by.md) | range | agent |
-| [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) | [provided_by](provided_by.md) | range | agent |
-| [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [DrugToGeneAssociation](DrugToGeneAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [InformationContentEntityToNamedThingAssociation](InformationContentEntityToNamedThingAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantToGeneAssociation](VariantToGeneAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantToPopulationAssociation](VariantToPopulationAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismToOrganismAssociation](OrganismToOrganismAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [TaxonToTaxonAssociation](TaxonToTaxonAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [FunctionalAssociation](FunctionalAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToGoTermAssociation](GeneToGoTermAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [SequenceAssociation](SequenceAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [GenomicSequenceLocalization](GenomicSequenceLocalization.md) | [provided_by](provided_by.md) | range | agent |
-| [SequenceFeatureRelationship](SequenceFeatureRelationship.md) | [provided_by](provided_by.md) | range | agent |
-| [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [provided_by](provided_by.md) | range | agent |
-| [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) | [provided_by](provided_by.md) | range | agent |
-| [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) | [provided_by](provided_by.md) | range | agent |
-| [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismTaxonToOrganismTaxonSpecialization](OrganismTaxonToOrganismTaxonSpecialization.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) | [provided_by](provided_by.md) | range | agent |
-| [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) | [provided_by](provided_by.md) | range | agent |
 
 
 
@@ -386,6 +215,19 @@ attributes:
     alias: address
     owner: agent
     range: string
+  provided by:
+    name: provided by
+    description: The value in this node property represents the knowledge provider
+      that created or assembled the node and all of its attributes.  Used internally
+      to represent how a particular node made its way into a knowledge provider or
+      graph.
+    from_schema: https://w3id.org/biolink/biolink-model
+    is_a: node property
+    domain: named thing
+    multivalued: true
+    alias: provided_by
+    owner: agent
+    range: string
   id:
     name: id
     description: Different classes of agents have distinct preferred identifiers.
@@ -486,32 +328,11 @@ attributes:
     range: narrative text
   source:
     name: source
-    description: a lightweight analog to the association class 'provided by' slot,
-      which is the string name, or the authoritative (i.e. database) namespace, designating
-      the origin of the entity to which the slot belongs.
-    in_subset:
-    - translator_minimal
+    deprecated: 'True'
     from_schema: https://w3id.org/biolink/biolink-model
     alias: source
     owner: agent
-    range: label type
-  provided by:
-    name: provided by
-    exact_mappings:
-    - pav:providedBy
-    description: connects an association to the agent (person, organization or group)
-      that provided it
-    deprecated: This slot is deprecated and replaced by a set of more precise slots
-      for describing the source retrieval provenance of an Association.  These include
-      'knowledge source' and its descendants 'primary knowledge source', 'original
-      knowledge source', and 'aggregator knowledge source'.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: provided_by
-    owner: agent
-    range: agent
+    range: string
   has attribute:
     name: has attribute
     exact_mappings:
