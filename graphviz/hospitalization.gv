@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1269.7,123"];
+	graph [bb="0,0,1235.7,123"];
 	node [label="\N"];
 	hospitalization	[height=0.5,
 		label=hospitalization,
@@ -64,44 +64,44 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="878.34,18",
-		width=1.5707];
+		label=string,
+		pos="860.34,18",
+		width=1.0652];
 	hospitalization -> source	[color=blue,
 		label=source,
-		lp="838.34,61.5",
-		pos="e,852.39,34.075 707.26,91.718 730.14,85.848 756.89,78.106 780.34,69 801.97,60.602 825.14,48.916 843.52,38.953",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="990.34,18",
-		width=1.0291];
-	hospitalization -> "provided by"	[color=blue,
-		label="provided by",
-		lp="954.84,61.5",
-		pos="e,964.84,31.396 711.02,92.448 721.11,90.544 731.52,88.655 741.34,87 796.69,77.674 812.14,83.6 866.34,69 897.41,60.631 931.18,46.668 \
-955.62,35.621",
+		lp="832.34,61.5",
+		pos="e,840.53,33.664 709.56,92.231 732.07,86.567 757.93,78.839 780.34,69 798.52,61.018 817.42,49.386 832.28,39.349",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1097.3,18",
+		pos="968.34,18",
 		width=1.4443];
 	hospitalization -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1084.3,61.5",
-		pos="e,1074.4,34.4 709.04,92.18 719.72,90.214 730.85,88.371 741.34,87 856.2,71.987 889.85,100.41 1001.3,69 1024,62.62 1047.4,50.524 1065.5,\
-39.828",
+		lp="947.34,61.5",
+		pos="e,942.1,33.722 711.03,92.507 721.12,90.597 731.53,88.689 741.34,87 794.06,77.925 809.11,84.391 860.34,69 885.57,61.422 912.45,48.993 \
+933.08,38.423",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1076.3,18",
+		width=1.0652];
+	hospitalization -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1070.8,61.5",
+		pos="e,1058.5,34.19 709.04,92.187 719.72,90.22 730.85,88.376 741.34,87 854.87,72.114 889.65,105.02 998.34,69 1017.1,62.799 1035.7,51.075 \
+1050.1,40.538",
 		style=solid];
 	category	[height=0.5,
-		pos="1218.3,18",
+		pos="1184.3,18",
 		width=1.4263];
 	hospitalization -> category	[color=blue,
 		label=category,
-		lp="1199.8,61.5",
-		pos="e,1198.6,34.82 708.54,92.067 719.37,90.085 730.68,88.267 741.34,87 828.38,76.661 1051.5,94.392 1135.3,69 1155,63.052 1174.8,51.411 \
-1190.1,40.857",
+		lp="1174.8,61.5",
+		pos="e,1168.4,35.284 709.01,91.999 719.7,90.05 730.84,88.26 741.34,87 824.4,77.041 1038.6,97.249 1117.3,69 1133.3,63.265 1148.7,52.329 \
+1160.7,42.143",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

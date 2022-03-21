@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1201.9,123"];
+	graph [bb="0,0,1167.9,123"];
 	node [label="\N"];
 	"administrative entity"	[height=0.5,
 		label="administrative entity",
@@ -64,43 +64,43 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="810.54,18",
-		width=1.5707];
+		label=string,
+		pos="792.54,18",
+		width=1.0652];
 	"administrative entity" -> source	[color=blue,
 		label=source,
-		lp="770.54,61.5",
-		pos="e,784.59,34.075 646.12,89.986 667.42,84.358 691.33,77.236 712.54,69 734.17,60.602 757.34,48.916 775.72,38.953",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="922.54,18",
-		width=1.0291];
-	"administrative entity" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="883.04,61.5",
-		pos="e,897,31.24 662.43,92.21 717.94,83.554 785.37,72.689 798.54,69 829.52,60.323 863.31,46.386 887.77,35.427",
+		lp="764.54,61.5",
+		pos="e,772.73,33.664 649.13,90.333 669.79,84.882 692.55,77.781 712.54,69 730.72,61.018 749.62,49.386 764.48,39.349",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1029.5,18",
+		pos="900.54,18",
 		width=1.4443];
 	"administrative entity" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1014.5,61.5",
-		pos="e,1005.9,34.077 661.92,92.171 675.43,90.287 689.39,88.476 702.54,87 803.12,75.718 832.04,96.13 929.54,69 953.33,62.382 978.16,49.998 \
-997.13,39.211",
+		lp="876.54,61.5",
+		pos="e,874.26,33.584 665.35,92.735 713.18,85.549 769.13,76.256 792.54,69 817.7,61.203 844.58,48.773 865.24,38.257",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1008.5,18",
+		width=1.0652];
+	"administrative entity" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1001,61.5",
+		pos="e,990.19,33.887 661.92,92.179 675.43,90.294 689.39,88.48 702.54,87 802.23,75.782 832.2,100.22 927.54,69 947.11,62.595 966.81,50.586 \
+981.88,39.943",
 		style=solid];
 	category	[height=0.5,
-		pos="1150.5,18",
+		pos="1116.5,18",
 		width=1.4263];
 	"administrative entity" -> category	[color=blue,
 		label=category,
-		lp="1129,61.5",
-		pos="e,1130.2,34.794 660.94,91.973 674.75,90.076 689.06,88.311 702.54,87 782.93,79.185 988.17,92.144 1065.5,69 1085.7,62.956 1106.2,51.151 \
-1122,40.529",
+		lp="1105,61.5",
+		pos="e,1100,35.262 660.94,92.002 674.76,90.102 689.06,88.328 702.54,87 778.94,79.473 975.16,94.573 1047.5,69 1064,63.179 1080,52.084 \
+1092.4,41.822",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

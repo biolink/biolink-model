@@ -20,15 +20,7 @@ fields:
   description: a human-readable description of an entity
   display_name: description
 - id: source
-  description: a lightweight analog to the association class 'provided by' slot, which
-    is the string name, or the authoritative (i.e. database) namespace, designating
-    the origin of the entity to which the slot belongs.
   display_name: source
-- id: provided_by
-  description: connects an association to the agent (person, organization or group)
-    that provided it
-  display_name: provided by
-  cardinality: multi
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
@@ -62,6 +54,29 @@ fields:
 - id: has_evidence
   description: connects an association to an instance of supporting evidence
   display_name: has evidence
+  cardinality: multi
+- id: knowledge_source
+  description: An Information Resource from which the knowledge expressed in an Association
+    was retrieved, directly or indirectly. This can be any resource through which
+    the knowledge passed on its way to its currently serialized form. In practice,
+    implementers should use one of the more specific subtypes of this generic property.
+  display_name: knowledge source
+  cardinality: multi
+- id: original_knowledge_source
+  description: The Information Resource that created the original record of the knowledge
+    expressed in an Association (e.g. via curation of the knowledge from the literature,
+    or generation of the knowledge de novo through computation, reasoning, inference
+    over data).
+  display_name: original knowledge source
+- id: primary_knowledge_source
+  description: The most upstream source of the knowledge expressed in an Association
+    that an implementer can identify (may or may not be the 'original' source).
+  display_name: primary knowledge source
+- id: aggregator_knowledge_source
+  description: An intermediate aggregator resource from which knowledge expressed
+    in an Association was retrieved downstream of the original source, on its path
+    to its current serialized form.
+  display_name: aggregator knowledge source
   cardinality: multi
 - id: type
   description: rdf:type of biolink:Association should be fixed at rdf:Statement

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2321.4,123"];
+	graph [bb="0,0,2287.4,123"];
 	node [label="\N"];
 	"biological process or activity"	[height=0.5,
 		label="biological process or activity",
@@ -78,75 +78,75 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="1143.1,18",
-		width=1.5707];
+		label=string,
+		pos="1125.1,18",
+		width=1.0652];
 	"biological process or activity" -> source	[color=blue,
 		label=source,
-		lp="1125.1,61.5",
-		pos="e,1125,35.051 1038.8,87.809 1051.8,82.489 1065.8,76.096 1078.1,69 1091.7,61.158 1105.7,50.798 1117.1,41.543",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="1255.1,18",
-		width=1.0291];
-	"biological process or activity" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="1230.6,61.5",
-		pos="e,1231.9,32.385 1074.8,90.092 1100.2,84.708 1128.2,77.708 1153.1,69 1177.4,60.534 1203.4,47.726 1223.1,37.192",
+		lp="1120.1,61.5",
+		pos="e,1113,35.129 1042.2,87.95 1054.5,82.839 1067.2,76.517 1078.1,69 1088.6,61.784 1098.5,51.893 1106.5,42.813",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1362.1,18",
+		pos="1233.1,18",
 		width=1.4443];
 	"biological process or activity" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1356.1,61.5",
-		pos="e,1341.3,34.549 1095.5,92.372 1173.3,83.38 1268.4,71.978 1277.1,69 1296.8,62.331 1316.9,50.768 1332.6,40.441",
+		lp="1225.1,61.5",
+		pos="e,1211.4,34.359 1076.2,90.197 1099.9,84.941 1125.4,77.986 1148.1,69 1167.2,61.468 1187,50.068 1202.7,40.054",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1341.1,18",
+		width=1.0652];
+	"biological process or activity" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1344.6,61.5",
+		pos="e,1325.9,34.629 1096.8,92.469 1174.1,83.669 1267.7,72.483 1276.1,69 1291.7,62.633 1306.7,51.537 1318.3,41.412",
 		style=solid];
 	category	[height=0.5,
-		pos="1483.1,18",
+		pos="1449.1,18",
 		width=1.4263];
 	"biological process or activity" -> category	[color=blue,
 		label=category,
-		lp="1468.6,61.5",
-		pos="e,1464.9,34.921 1094.1,92.101 1111.1,90.268 1128.6,88.491 1145.1,87 1203.3,81.755 1351.8,87.649 1407.1,69 1425.1,62.94 1442.9,51.564 \
-1456.8,41.193",
+		lp="1446.6,61.5",
+		pos="e,1435.3,35.622 1094.1,92.164 1111.1,90.323 1128.6,88.528 1145.1,87 1199.7,81.953 1340.5,89.953 1391.1,69 1405,63.249 1418,52.813 \
+1428.1,42.958",
 		style=solid];
 	"has input"	[color=blue,
 		height=0.5,
 		label="biological process or activity",
-		pos="1696.1,18",
+		pos="1662.1,18",
 		width=3.9899];
 	"biological process or activity" -> "has input"	[color=blue,
 		label="has input",
-		lp="1607.6,61.5",
-		pos="e,1646.2,35.012 1092.8,91.969 1110.2,90.118 1128.2,88.371 1145.1,87 1304.4,74.116 1346.2,93.257 1504.1,69 1549.1,62.086 1598.9,48.981 \
-1636.4,37.922",
+		lp="1581.6,61.5",
+		pos="e,1615,35.128 1092.8,92.016 1110.2,90.16 1128.2,88.398 1145.1,87 1294.6,74.659 1334.1,93.215 1482.1,69 1524.1,62.132 1570.3,49.175 \
+1605.4,38.173",
 		style=solid];
 	"has output"	[color=blue,
 		height=0.5,
 		label="biological process or activity",
-		pos="2001.1,18",
+		pos="1967.1,18",
 		width=3.9899];
 	"biological process or activity" -> "has output"	[color=blue,
 		label="has output",
-		lp="1811.6,61.5",
-		pos="e,1919.8,32.877 1092,91.853 1109.7,89.992 1127.9,88.271 1145.1,87 1366.9,70.63 1423.6,88.49 1645.1,69 1735.5,61.046 1838.1,45.996 \
-1909.8,34.477",
+		lp="1782.6,61.5",
+		pos="e,1886.9,32.965 1092,91.882 1109.7,90.017 1127.9,88.288 1145.1,87 1355.4,71.273 1409.2,88.017 1619.1,69 1707.1,61.036 1806.7,46.111 \
+1876.8,34.632",
 		style=solid];
 	"enabled by"	[color=blue,
 		height=0.5,
 		label="physical entity",
-		pos="2242.1,18",
+		pos="2208.1,18",
 		width=2.2026];
 	"biological process or activity" -> "enabled by"	[color=blue,
 		label="enabled by",
-		lp="2064.6,61.5",
-		pos="e,2185.5,30.653 1091.1,91.786 1109.1,89.907 1127.7,88.197 1145.1,87 1459.6,65.462 1539.6,90.252 1854.1,69 1988,59.956 2021.5,56.071 \
-2154.1,36 2161,34.968 2168.1,33.783 2175.1,32.529",
+		lp="2032.6,61.5",
+		pos="e,2151.5,30.638 1091.2,91.802 1109.1,89.921 1127.7,88.207 1145.1,87 1446.8,66.179 1523.5,89.824 1825.1,69 1956.8,59.913 1989.7,55.861 \
+2120.1,36 2127,34.961 2134.1,33.772 2141.1,32.516",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

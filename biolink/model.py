@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-20T18:05:56
+# Generation date: 2022-03-21T21:47:33
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1130,7 +1130,7 @@ class Attribute(Annotation):
     has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
     has_qualitative_value: Optional[Union[str, NamedThingId]] = None
     iri: Optional[Union[str, IriType]] = None
-    source: Optional[Union[str, LabelType]] = None
+    source: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.has_attribute_type):
@@ -1151,8 +1151,8 @@ class Attribute(Annotation):
         if self.iri is not None and not isinstance(self.iri, IriType):
             self.iri = IriType(self.iri)
 
-        if self.source is not None and not isinstance(self.source, LabelType):
-            self.source = LabelType(self.source)
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         super().__post_init__(**kwargs)
 
@@ -1308,8 +1308,7 @@ class Entity(YAMLRoot):
     type: Optional[str] = None
     name: Optional[Union[str, LabelType]] = None
     description: Optional[Union[str, NarrativeText]] = None
-    source: Optional[Union[str, LabelType]] = None
-    provided_by: Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]] = empty_list()
+    source: Optional[str] = None
     has_attribute: Optional[Union[Union[dict, Attribute], List[Union[dict, Attribute]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1334,12 +1333,8 @@ class Entity(YAMLRoot):
         if self.description is not None and not isinstance(self.description, NarrativeText):
             self.description = NarrativeText(self.description)
 
-        if self.source is not None and not isinstance(self.source, LabelType):
-            self.source = LabelType(self.source)
-
-        if not isinstance(self.provided_by, list):
-            self.provided_by = [self.provided_by] if self.provided_by is not None else []
-        self.provided_by = [v if isinstance(v, AgentId) else AgentId(v) for v in self.provided_by]
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
 
         self._normalize_inlined_as_dict(slot_name="has_attribute", slot_type=Attribute, key_name="has attribute type", keyed=False)
 
@@ -1360,6 +1355,7 @@ class NamedThing(Entity):
 
     id: Union[str, NamedThingId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    provided_by: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1372,6 +1368,10 @@ class NamedThing(Entity):
         if not isinstance(self.category, list):
             self.category = [self.category] if self.category is not None else []
         self.category = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.category]
+
+        if not isinstance(self.provided_by, list):
+            self.provided_by = [self.provided_by] if self.provided_by is not None else []
+        self.provided_by = [v if isinstance(v, str) else str(v) for v in self.provided_by]
 
         super().__post_init__(**kwargs)
 
@@ -4913,6 +4913,10 @@ class Association(Entity):
     qualifiers: Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
+    knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
+    original_knowledge_source: Optional[Union[str, InformationResourceId]] = None
+    primary_knowledge_source: Optional[Union[str, InformationResourceId]] = None
+    aggregator_knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
     type: Optional[str] = None
     category: Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]] = empty_list()
 
@@ -4954,6 +4958,20 @@ class Association(Entity):
         if not isinstance(self.has_evidence, list):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
         self.has_evidence = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence]
+
+        if not isinstance(self.knowledge_source, list):
+            self.knowledge_source = [self.knowledge_source] if self.knowledge_source is not None else []
+        self.knowledge_source = [v if isinstance(v, InformationResourceId) else InformationResourceId(v) for v in self.knowledge_source]
+
+        if self.original_knowledge_source is not None and not isinstance(self.original_knowledge_source, InformationResourceId):
+            self.original_knowledge_source = InformationResourceId(self.original_knowledge_source)
+
+        if self.primary_knowledge_source is not None and not isinstance(self.primary_knowledge_source, InformationResourceId):
+            self.primary_knowledge_source = InformationResourceId(self.primary_knowledge_source)
+
+        if not isinstance(self.aggregator_knowledge_source, list):
+            self.aggregator_knowledge_source = [self.aggregator_knowledge_source] if self.aggregator_knowledge_source is not None else []
+        self.aggregator_knowledge_source = [v if isinstance(v, InformationResourceId) else InformationResourceId(v) for v in self.aggregator_knowledge_source]
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -8269,7 +8287,7 @@ slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('source'),
-                   model_uri=BIOLINK.source, domain=None, range=Optional[Union[str, LabelType]])
+                   model_uri=BIOLINK.source, domain=None, range=Optional[str])
 
 slots.stoichiometry = Slot(uri=BIOLINK.stoichiometry, name="stoichiometry", curie=BIOLINK.curie('stoichiometry'),
                    model_uri=BIOLINK.stoichiometry, domain=Association, range=Optional[int])
@@ -9463,7 +9481,7 @@ slots.knowledge_source = Slot(uri=BIOLINK.knowledge_source, name="knowledge sour
                    model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
 
 slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOLINK.curie('provided_by'),
-                   model_uri=BIOLINK.provided_by, domain=Association, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+                   model_uri=BIOLINK.provided_by, domain=NamedThing, range=Optional[Union[str, List[str]]])
 
 slots.primary_knowledge_source = Slot(uri=BIOLINK.primary_knowledge_source, name="primary knowledge source", curie=BIOLINK.curie('primary_knowledge_source'),
                    model_uri=BIOLINK.primary_knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])

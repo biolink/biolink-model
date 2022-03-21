@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1232.5,123"];
+	graph [bb="0,0,1198.5,123"];
 	node [label="\N"];
 	"environmental feature"	[height=0.5,
 		label="environmental feature",
@@ -64,43 +64,43 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="841.14,18",
-		width=1.5707];
+		label=string,
+		pos="823.14,18",
+		width=1.0652];
 	"environmental feature" -> source	[color=blue,
 		label=source,
-		lp="801.14,61.5",
-		pos="e,815.19,34.075 677.68,89.731 698.74,84.143 722.25,77.112 743.14,69 764.77,60.602 787.94,48.916 806.32,38.953",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="953.14,18",
-		width=1.0291];
-	"environmental feature" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="913.64,61.5",
-		pos="e,927.6,31.24 698.14,92.425 747.31,85.113 804.87,75.797 829.14,69 860.12,60.323 893.9,46.386 918.37,35.427",
+		lp="795.14,61.5",
+		pos="e,803.33,33.664 680.7,90.075 701.11,84.658 723.46,77.643 743.14,69 761.32,61.018 780.22,49.386 795.08,39.349",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1060.1,18",
+		pos="931.14,18",
 		width=1.4443];
 	"environmental feature" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1045.1,61.5",
-		pos="e,1036.5,34.061 696.78,92.196 710.88,90.32 725.43,88.505 739.14,87 837.1,76.25 865.23,95.519 960.14,69 983.92,62.357 1008.8,49.973 \
-1027.7,39.192",
+		lp="907.14,61.5",
+		pos="e,904.86,33.584 698.08,92.413 745.44,85.273 800.08,76.148 823.14,69 848.3,61.203 875.18,48.773 895.83,38.257",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1039.1,18",
+		width=1.0652];
+	"environmental feature" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1031.6,61.5",
+		pos="e,1020.8,33.874 696.78,92.205 710.88,90.328 725.43,88.51 739.14,87 836.22,76.31 865.36,99.491 958.14,69 977.7,62.574 997.4,50.564 \
+1012.5,39.926",
 		style=solid];
 	category	[height=0.5,
-		pos="1181.1,18",
+		pos="1147.1,18",
 		width=1.4263];
 	"environmental feature" -> category	[color=blue,
 		label=category,
-		lp="1159.6,61.5",
-		pos="e,1160.8,34.788 695.42,92.011 709.94,90.109 724.98,88.333 739.14,87 818.23,79.555 1020,91.794 1096.1,69 1116.3,62.948 1136.8,51.143 \
-1152.6,40.522",
+		lp="1135.6,61.5",
+		pos="e,1130.6,35.257 695.76,91.999 710.17,90.11 725.09,88.342 739.14,87 814.24,79.829 1007,94.162 1078.1,69 1094.6,63.171 1110.6,52.076 \
+1123,41.815",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
