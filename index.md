@@ -16,7 +16,7 @@ where the KG may be either a property graph or RDF triple store.
 The schema is expressed as a [YAML](https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml), which is translated to:
 
  * Individual pages for each class in the model, e.g [https://w3id.org/biolink/vocab/Gene](https://w3id.org/biolink/vocab/Gene)
- * An [OWL ontology](biolink-model.owl), also available on [BioPortal](https://bioportal.bioontology.org/ontologies/BLM)
+ * An [OWL ontology](biolink-model.owl.ttl), also available on [BioPortal](https://bioportal.bioontology.org/ontologies/BIOLINK)
  * [Python dataclasses](biolink/model.py), also available on [PyPI](https://pypi.org/project/biolink-model/)
  * [ShEx](biolink-model.shex) (RDF shape constraints)
  * [graphql](biolink-model.graphql) 
