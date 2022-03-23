@@ -100,6 +100,7 @@ prefixes:
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
   oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
+  OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
   OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORCID: 'https://orcid.org/'
   ORPHA: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -8349,6 +8350,7 @@ classes:
       - MONDO
       - DOID
       - OMIM
+      - OMIM.PS
       - ORPHANET
       - EFO
       - UMLS
@@ -8399,6 +8401,7 @@ classes:
       - MESH
       - XPO
       - FYPO
+      - TO
     in_subset:
       - model_organism_database
 
