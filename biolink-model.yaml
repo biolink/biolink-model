@@ -848,6 +848,7 @@ slots:
 
   timepoint:
     is_a: node property
+    aliases: ['duration']
     range: time type
     description: >-
       a point in time
@@ -9273,6 +9274,8 @@ classes:
   chemical exposure:
     mixins:
       - exposure event
+    slots:
+      - has quantitative value
     description: >-
       A chemical exposure is an intake of a particular
       chemical entity.
