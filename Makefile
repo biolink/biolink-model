@@ -23,7 +23,7 @@ shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.
 json-schema: json-schema/biolink-model.json
 prefix-map: prefix-map/biolink-model-prefix-map.json
 
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
 prefix-map/biolink-model-prefix-map.json
 
