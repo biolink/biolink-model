@@ -50,7 +50,7 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
-	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
+	export PIPENV_DONT_LOAD_ENV=1 && pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
