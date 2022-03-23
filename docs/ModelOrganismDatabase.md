@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Subsets
+title: biolink:model_organism_database
+layout: default
+---
 
-# Subset: model_organism_database
+# Class: model_organism_database
 
 
 Subset that is relevant for a typical Model Organism Database (MOD)

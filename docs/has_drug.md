@@ -1,28 +1,28 @@
+---
+parent: Node Properties
+title: biolink:has_drug
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_drug
-_connects an entity to one or more drugs_
 
 
-URI: [https://w3id.org/biolink/vocab/has_drug](https://w3id.org/biolink/vocab/has_drug)
+connects an entity to one or more drugs
+
+URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Drug](Drug.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [node_property](node_property.md)
-    * **has_drug**
-
-
-
-## Properties
-
- * Range: drug
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [Treatment](Treatment.md)

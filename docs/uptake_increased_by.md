@@ -1,29 +1,37 @@
-# Slot: uptake_increased_by
+---
+parent: Predicates
+title: biolink:uptake_increased_by
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/uptake_increased_by](https://w3id.org/biolink/vocab/uptake_increased_by)
+# Relation: uptake_increased_by
 
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affected_by](affected_by.md)
-            * [uptake_affected_by](uptake_affected_by.md)
-                * **uptake_increased_by**
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
+URI: [biolink:uptake_increased_by](https://w3id.org/biolink/vocab/uptake_increased_by)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [uptake affected by](uptake_affected_by.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

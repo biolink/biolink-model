@@ -1,39 +1,38 @@
-# Slot: increases_folding_of
-_holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other_
+---
+parent: Predicates
+title: biolink:increases_folding_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: increases_folding_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/increases_folding_of](https://w3id.org/biolink/vocab/increases_folding_of)
+holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the rate or quality of folding of the other
+
+URI: [biolink:increases_folding_of](https://w3id.org/biolink/vocab/increases_folding_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+
+## Parents
+
+ *  is_a: [affects folding of](affects_folding_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_folding_of](affects_folding_of.md)
-                * **increases_folding_of** [ increases amount or activity of]
-
-
-
-## Properties
-
- * Range: nucleic acid entity
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:decreases folding of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_folding_of |
 

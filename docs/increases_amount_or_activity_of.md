@@ -1,29 +1,27 @@
-# Slot: increases_amount_or_activity_of
-_A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object._
+---
+parent: Slot Mixins
+title: biolink:increases_amount_or_activity_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: increases_amount_or_activity_of
 
 
-URI: [https://w3id.org/biolink/vocab/increases_amount_or_activity_of](https://w3id.org/biolink/vocab/increases_amount_or_activity_of)
+A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.
+
+URI: [biolink:increases_amount_or_activity_of](https://w3id.org/biolink/vocab/increases_amount_or_activity_of)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
 
 
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **increases_amount_or_activity_of**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+## Used by
 

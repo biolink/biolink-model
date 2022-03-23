@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Subsets
+title: biolink:testing
+layout: default
+---
 
-# Subset: testing
+# Class: testing
 
 
 TBD

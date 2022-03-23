@@ -1,10 +1,16 @@
+---
+parent: Built-in Types
+grand_parent: Types
+title: metatype:Nodeidentifier
+layout: default
+---
 
-# Type: nodeidentifier
+# Type: Nodeidentifier
 
 
 A URI, CURIE or BNODE that represents a node in a model.
 
-URI: [linkml:Nodeidentifier](https://w3id.org/linkml/Nodeidentifier)
+URI: [metatype:Nodeidentifier](https://linkml.github.io/linkml-model/docs/types/Nodeidentifier)
 
 |  |  |  |
 | --- | --- | --- |

@@ -1,74 +1,35 @@
+---
+parent: Other Classes
+title: biolink:EpidemiologicalOutcome
+grand_parent: Classes
+layout: default
+---
+
 # Class: EpidemiologicalOutcome
-_An epidemiological outcome, such as societal disease burden, resulting from an exposure event._
 
 
-
-
+An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
 
 URI: [biolink:EpidemiologicalOutcome](https://w3id.org/biolink/vocab/EpidemiologicalOutcome)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[EpidemiologicalOutcome]uses%20-.-%3E[Outcome])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **EpidemiologicalOutcome** [ outcome]
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
-
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+## Attributes
 
 
-## Usages
+## Other properties
 
+|  |  |  |
+| --- | --- | --- |
+| **Related Mappings:** | | NCIT:C19291 |
 
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: epidemiological outcome
-related_mappings:
-- NCIT:C19291
-description: An epidemiological outcome, such as societal disease burden, resulting
-  from an exposure event.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: epidemiological outcome
-related_mappings:
-- NCIT:C19291
-description: An epidemiological outcome, such as societal disease burden, resulting
-  from an exposure event.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>

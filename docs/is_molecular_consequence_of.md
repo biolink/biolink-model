@@ -1,27 +1,27 @@
-# Slot: is_molecular_consequence_of
+---
+parent: Predicates
+title: biolink:is_molecular_consequence_of
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/is_molecular_consequence_of](https://w3id.org/biolink/vocab/is_molecular_consequence_of)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **is_molecular_consequence_of**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+# Relation: is_molecular_consequence_of
 
 
 
 
+URI: [biolink:is_molecular_consequence_of](https://w3id.org/biolink/vocab/is_molecular_consequence_of)
+
+## Domain and Range
+
+[OntologyClass](OntologyClass.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+
+## Used by
 

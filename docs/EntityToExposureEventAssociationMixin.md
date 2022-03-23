@@ -1,76 +1,43 @@
+---
+parent: Class Mixins
+title: biolink:EntityToExposureEventAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: EntityToExposureEventAssociationMixin
-_An association between some entity and an exposure event._
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+An association between some entity and an exposure event.
 
 URI: [biolink:EntityToExposureEventAssociationMixin](https://w3id.org/biolink/vocab/EntityToExposureEventAssociationMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[ExposureEvent]%3Cobject%201..1-++[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) (mixin)  - An association between an exposure event and a disease.
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: entity to exposure event association mixin
-description: An association between some entity and an exposure event.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  object:
-    name: object
-    range: exposure event
-defining_slots:
-- object
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: entity to exposure event association mixin
-description: An association between some entity and an exposure event.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  object:
-    name: object
-    range: exposure event
-defining_slots:
-- object
-
-```
-</details>
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:FDA_approval_status_enum
+layout: default
+---
 
-# Enum: FDA_approval_status_enum
+# Class: FDA_approval_status_enum
 
 
 

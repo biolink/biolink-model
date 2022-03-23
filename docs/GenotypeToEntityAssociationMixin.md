@@ -1,74 +1,44 @@
+---
+parent: Class Mixins
+title: biolink:GenotypeToEntityAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: GenotypeToEntityAssociationMixin
 
 
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:GenotypeToEntityAssociationMixin](https://w3id.org/biolink/vocab/GenotypeToEntityAssociationMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Genotype]%3Csubject%201..1-%20[GenotypeToEntityAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[GenotypeToEntityAssociationMixin],[GenotypeToDiseaseAssociation]uses%20-.-%3E[GenotypeToEntityAssociationMixin],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToDiseaseAssociation],[Genotype])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md) (mixin) 
+ * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: genotype to entity association mixin
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: genotype that is the subject of the association
-    range: genotype
-defining_slots:
-- subject
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: genotype to entity association mixin
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: genotype that is the subject of the association
-    range: genotype
-defining_slots:
-- subject
-
-```
-</details>
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

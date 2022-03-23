@@ -1,25 +1,28 @@
+---
+parent: Slot Mixins
+title: biolink:regulated_by
+grand_parent: Slots
+layout: default
+---
+
 # Slot: regulated_by
 
-URI: [https://w3id.org/biolink/vocab/regulated_by](https://w3id.org/biolink/vocab/regulated_by)
 
 
 
+URI: [biolink:regulated_by](https://w3id.org/biolink/vocab/regulated_by)
 
-## Inheritance
+## Domain and Range
 
-* **regulated_by**
+[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>0..1</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
 
-
-
-## Properties
-
- * Range: physical essence or occurrent
+## Parents
 
 
+## Children
 
-## Identifier and Mapping Information
+ *  [negatively regulated by](negatively_regulated_by.md)
+ *  [positively regulated by](positively_regulated_by.md)
 
-
-
-
+## Used by
 

@@ -1,0 +1,14 @@
+# metamodel_version: 1.7.0# version: 2.2.15id: drug_exposure
+schema_generating: true
+description: A drug exposure is an intake of a particular drug.
+display_name: drug exposure
+document_category: drug exposure
+weight: 20
+fields:
+- id: has_quantitative_value
+  description: connects an attribute to a value
+  display_name: has quantitative value
+  cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint

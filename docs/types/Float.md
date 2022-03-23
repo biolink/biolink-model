@@ -1,10 +1,16 @@
+---
+parent: Built-in Types
+grand_parent: Types
+title: metatype:Float
+layout: default
+---
 
-# Type: float
+# Type: Float
 
 
 A real number that conforms to the xsd:float specification
 
-URI: [linkml:Float](https://w3id.org/linkml/Float)
+URI: [metatype:Float](https://linkml.github.io/linkml-model/docs/types/Float)
 
 |  |  |  |
 | --- | --- | --- |

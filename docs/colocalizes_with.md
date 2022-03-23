@@ -1,37 +1,38 @@
-# Slot: colocalizes_with
-_holds between two entities that are observed to be located in the same place._
+---
+parent: Predicates
+title: biolink:colocalizes_with
+grand_parent: Slots
+layout: default
+---
+
+# Relation: colocalizes_with
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
+holds between two entities that are observed to be located in the same place.
+
+URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [coexists with](coexists_with.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [coexists_with](coexists_with.md)
-            * **colocalizes_with**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:00002325 |
 

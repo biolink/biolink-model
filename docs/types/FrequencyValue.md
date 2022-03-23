@@ -1,10 +1,16 @@
+---
+parent: Defined Types
+grand_parent: Types
+title: biolink:FrequencyValue
+layout: default
+---
 
-# Type: frequency value
+# Type: FrequencyValue
 
 
 
 
-URI: [biolink:FrequencyValue](https://w3id.org/biolink/vocab/FrequencyValue)
+URI: [biolink:FrequencyValue](https://w3id.org/biolink/vocab/types/biolink:FrequencyValue)
 
 |  |  |  |
 | --- | --- | --- |

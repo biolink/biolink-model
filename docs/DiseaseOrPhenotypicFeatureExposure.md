@@ -1,89 +1,35 @@
+---
+parent: Other Classes
+title: biolink:DiseaseOrPhenotypicFeatureExposure
+grand_parent: Classes
+layout: default
+---
+
 # Class: DiseaseOrPhenotypicFeatureExposure
-_A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer._
 
 
-
-
+A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 
 URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PathologicalEntityMixin],[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure%7Ctimepoint:time_type%20%3F]uses%20-.-%3E[ExposureEvent],[DiseaseOrPhenotypicFeatureExposure]uses%20-.-%3E[PathologicalEntityMixin])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **DiseaseOrPhenotypicFeatureExposure** [ exposure event pathological entity mixin]
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ *  mixin: [PathologicalEntityMixin](PathologicalEntityMixin.md) - A pathological (abnormal) structure or process.
 
-
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+## Attributes
 
 
-## Usages
+### Inherited from exposure event:
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: disease or phenotypic feature exposure
-description: A disease or phenotypic feature state, when viewed as an exposure, represents
-  an precondition, leading to or influencing an outcome, e.g. HIV predisposing an
-  individual to infections; a relative deficiency of skin pigmentation predisposing
-  an individual to skin cancer.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- exposure event
-- pathological entity mixin
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: disease or phenotypic feature exposure
-description: A disease or phenotypic feature state, when viewed as an exposure, represents
-  an precondition, leading to or influencing an outcome, e.g. HIV predisposing an
-  individual to infections; a relative deficiency of skin pigmentation predisposing
-  an individual to skin cancer.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- exposure event
-- pathological entity mixin
-attributes:
-  timepoint:
-    name: timepoint
-    aliases:
-    - duration
-    description: a point in time
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    alias: timepoint
-    owner: disease or phenotypic feature exposure
-    range: time type
-
-```
-</details>
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)

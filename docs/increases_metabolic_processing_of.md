@@ -1,39 +1,39 @@
-# Slot: increases_metabolic_processing_of
-_holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:increases_metabolic_processing_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: increases_metabolic_processing_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/increases_metabolic_processing_of](https://w3id.org/biolink/vocab/increases_metabolic_processing_of)
+holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+
+URI: [biolink:increases_metabolic_processing_of](https://w3id.org/biolink/vocab/increases_metabolic_processing_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects metabolic processing of](affects_metabolic_processing_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_metabolic_processing_of](affects_metabolic_processing_of.md)
-                * **increases_metabolic_processing_of** [ increases amount or activity of]
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:decreases metabolic processing of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:increases_metabolic_processing_of |
+| **Narrow Mappings:** | | NCIT:enzyme_metabolizes_chemical_or_drug |
 

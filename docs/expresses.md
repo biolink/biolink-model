@@ -1,29 +1,39 @@
-# Slot: expresses
-_holds between an anatomical entity and gene or gene product that is expressed there_
+---
+parent: Predicates
+title: biolink:expresses
+grand_parent: Slots
+layout: default
+---
+
+# Relation: expresses
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/expresses](https://w3id.org/biolink/vocab/expresses)
+holds between an anatomical entity and gene or gene product that is expressed there
+
+URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
+
+## Domain and Range
+
+[AnatomicalEntity](AnatomicalEntity.md) ->  <sub>0..\*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **expresses**
-
-
-
-## Properties
-
- * Range: gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | anatomy expresses gene |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002292 |
 

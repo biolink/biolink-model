@@ -1,151 +1,71 @@
+---
+parent: Class Mixins
+title: biolink:EntityToPhenotypicFeatureAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: EntityToPhenotypicFeatureAssociationMixin
 
 
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:EntityToPhenotypicFeatureAssociationMixin](https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociationMixin)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[PhenotypicFeature],[Onset],[PhenotypicFeature]%3Cobject%201..1-%20[EntityToPhenotypicFeatureAssociationMixin%7Cfrequency_qualifier(i):frequency_value%20%3F],[BiologicalSex]%3Csex%20qualifier%200..1-++[EntityToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GenotypeToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[ExposureEventToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[CaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[BehaviorToBehavioralFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[VariantToPhenotypicFeatureAssociation],[GenotypeToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation],[ExposureEventToPhenotypicFeatureAssociation],[EntityToFeatureOrDiseaseQualifiersMixin],[DiseaseToPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BiologicalSex],[BehaviorToBehavioralFeatureAssociation])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [FrequencyQualifierMixin](FrequencyQualifierMixin.md)
-    * [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md)
-        * **EntityToPhenotypicFeatureAssociationMixin**
+ *  is_a: [EntityToFeatureOrDiseaseQualifiersMixin](EntityToFeatureOrDiseaseQualifiersMixin.md) - Qualifiers for entity to disease or phenotype associations.
 
+## Mixin for
 
+ * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md) (mixin)  - An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
+ * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
+ * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) (mixin)  - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) (mixin) 
+ * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+ * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [sex_qualifier](sex_qualifier.md) | [BiologicalSex](BiologicalSex.md) | 0..1 | a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.  | . |
-| [severity_qualifier](severity_qualifier.md) | [SeverityValue](SeverityValue.md) | 0..1 | a qualifier used in a phenotypic association to state how severe the phenotype is in the subject  | . |
-| [onset_qualifier](onset_qualifier.md) | [Onset](Onset.md) | 0..1 | a qualifier used in a phenotypic association to state when the phenotype appears is in the subject  | . |
-| [frequency_qualifier](frequency_qualifier.md) | [frequency_value](frequency_value.md) | 0..1 | a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject  | . |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
 
+### Own
 
-## Identifier and Mapping Information
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [sex qualifier](sex_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * Range: [BiologicalSex](BiologicalSex.md)
 
+### Inherited from entity to feature or disease qualifiers mixin:
 
+ * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * Range: [SeverityValue](SeverityValue.md)
+ * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * Range: [Onset](Onset.md)
 
+### Inherited from frequency qualifier mixin:
 
+ * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * Range: [FrequencyValue](types/FrequencyValue.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: entity to phenotypic feature association mixin
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: entity to feature or disease qualifiers mixin
-mixin: true
-slots:
-- sex qualifier
-slot_usage:
-  object:
-    name: object
-    examples:
-    - value: HP:0002487
-      description: Hyperkinesis
-    - value: WBPhenotype:0000180
-      description: axon morphology variant
-    - value: MP:0001569
-      description: abnormal circulating bilirubin level
-    values_from:
-    - upheno
-    - hp
-    - mp
-    - wbphenotype
-    range: phenotypic feature
-defining_slots:
-- object
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: entity to phenotypic feature association mixin
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: entity to feature or disease qualifiers mixin
-mixin: true
-slot_usage:
-  object:
-    name: object
-    examples:
-    - value: HP:0002487
-      description: Hyperkinesis
-    - value: WBPhenotype:0000180
-      description: axon morphology variant
-    - value: MP:0001569
-      description: abnormal circulating bilirubin level
-    values_from:
-    - upheno
-    - hp
-    - mp
-    - wbphenotype
-    range: phenotypic feature
-attributes:
-  sex qualifier:
-    name: sex qualifier
-    description: a qualifier used in a phenotypic association to state whether the
-      association is specific to a particular sex.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: sex_qualifier
-    owner: entity to phenotypic feature association mixin
-    range: biological sex
-  severity qualifier:
-    name: severity qualifier
-    description: a qualifier used in a phenotypic association to state how severe
-      the phenotype is in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: severity_qualifier
-    owner: entity to phenotypic feature association mixin
-    range: severity value
-  onset qualifier:
-    name: onset qualifier
-    description: a qualifier used in a phenotypic association to state when the phenotype
-      appears is in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: onset_qualifier
-    owner: entity to phenotypic feature association mixin
-    range: onset
-  frequency qualifier:
-    name: frequency qualifier
-    description: a qualifier used in a phenotypic association to state how frequent
-      the phenotype is observed in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: frequency_qualifier
-    owner: entity to phenotypic feature association mixin
-    range: frequency value
-defining_slots:
-- object
-
-```
-</details>
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

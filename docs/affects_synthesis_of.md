@@ -1,37 +1,40 @@
-# Slot: affects_synthesis_of
-_holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other_
+---
+parent: Predicates
+title: biolink:affects_synthesis_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: affects_synthesis_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synthesis_of)
+holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
+
+URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synthesis_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
+
+ *  [decreases synthesis of](decreases_synthesis_of.md)
+ *  [increases synthesis of](increases_synthesis_of.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * **affects_synthesis_of**
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_synthesis_of |
 

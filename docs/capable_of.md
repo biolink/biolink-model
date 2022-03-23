@@ -1,38 +1,40 @@
-# Slot: capable_of
-_holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function._
+---
+parent: Predicates
+title: biolink:capable_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: capable_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/capable_of](https://w3id.org/biolink/vocab/capable_of)
+holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
+
+URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
+
+## Domain and Range
+
+[MolecularActivity](MolecularActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+
+## Parents
+
+ *  is_a: [actively involved in](actively_involved_in.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [participates_in](participates_in.md)
-            * [actively_involved_in](actively_involved_in.md)
-                * **capable_of**
-
-
-
-## Properties
-
- * Range: occurrent
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002215 |
+| **Narrow Mappings:** | | NCIT:R52 |
+|  | | RO:0002500 |
 

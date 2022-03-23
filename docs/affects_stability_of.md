@@ -1,37 +1,40 @@
-# Slot: affects_stability_of
-_holds between two entities where the action or effect of one impacts the stability of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:affects_stability_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: affects_stability_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/affects_stability_of](https://w3id.org/biolink/vocab/affects_stability_of)
+holds between two entities where the action or effect of one impacts the stability of the other within a system of interest
+
+URI: [biolink:affects_stability_of](https://w3id.org/biolink/vocab/affects_stability_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
+
+ *  [decreases stability of](decreases_stability_of.md)
+ *  [increases stability of](increases_stability_of.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * **affects_stability_of**
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Close Mappings:** | | GAMMA:stabilization |
 

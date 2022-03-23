@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:strand_enum
+layout: default
+---
 
-# Enum: strand_enum
+# Class: strand_enum
 
 
 strand

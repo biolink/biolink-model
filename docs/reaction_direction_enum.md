@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:reaction_direction_enum
+layout: default
+---
 
-# Enum: reaction_direction_enum
+# Class: reaction_direction_enum
 
 
 

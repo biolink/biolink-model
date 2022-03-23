@@ -1,10 +1,16 @@
+---
+parent: Built-in Types
+grand_parent: Types
+title: metatype:Date
+layout: default
+---
 
-# Type: date
+# Type: Date
 
 
 a date (year, month and day) in an idealized calendar
 
-URI: [linkml:Date](https://w3id.org/linkml/Date)
+URI: [metatype:Date](https://linkml.github.io/linkml-model/docs/types/Date)
 
 |  |  |  |
 | --- | --- | --- |

@@ -1,31 +1,38 @@
-# Slot: food_component_of
-_holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)_
+---
+parent: Predicates
+title: biolink:food_component_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: food_component_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/food_component_of](https://w3id.org/biolink/vocab/food_component_of)
+holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
+
+URI: [biolink:food_component_of](https://w3id.org/biolink/vocab/food_component_of)
+
+## Domain and Range
+
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+
+## Parents
+
+ *  is_a: [part of](part_of.md)
+
+## Children
+
+ *  [nutrient of](nutrient_of.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [overlaps](overlaps.md)
-            * [part_of](part_of.md)
-                * **food_component_of**
-
-
-
-## Properties
-
- * Range: chemical entity
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

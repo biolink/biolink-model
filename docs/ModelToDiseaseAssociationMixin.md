@@ -1,90 +1,53 @@
+---
+parent: Class Mixins
+title: biolink:ModelToDiseaseAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: ModelToDiseaseAssociationMixin
-_This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease_
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
 
 URI: [biolink:ModelToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/ModelToDiseaseAssociationMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[NamedThing]%3Csubject%201..1-%20[ModelToDiseaseAssociationMixin%7Cpredicate:predicate_type],[VariantAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[OrganismalEntityAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[VariantAsAModelOfDiseaseAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[GenotypeAsAModelOfDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md) (mixin) 
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: model to disease association mixin
-description: This mixin is used for any association class for which the subject (source
-  node) plays the role of a 'model', in that it recapitulates some features of the
-  disease in a way that is useful for studying the disease outside a patient carrying
-  the disease
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: The entity that serves as the model of the disease. This may be an
-      organism, a strain of organism, a genotype or variant that exhibits similar
-      features, or a gene that when mutated exhibits features of the disease
-  predicate:
-    name: predicate
-    description: The relationship to the disease
-    subproperty_of: model of
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: model to disease association mixin
-description: This mixin is used for any association class for which the subject (source
-  node) plays the role of a 'model', in that it recapitulates some features of the
-  disease in a way that is useful for studying the disease outside a patient carrying
-  the disease
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: The entity that serves as the model of the disease. This may be an
-      organism, a strain of organism, a genotype or variant that exhibits similar
-      features, or a gene that when mutated exhibits features of the disease
-  predicate:
-    name: predicate
-    description: The relationship to the disease
-    subproperty_of: model of
-
-```
-</details>
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

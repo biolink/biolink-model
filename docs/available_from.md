@@ -1,26 +1,51 @@
+---
+parent: Node Properties
+title: biolink:available_from
+grand_parent: Slots
+layout: default
+---
+
 # Slot: available_from
 
-URI: [https://w3id.org/biolink/vocab/available_from](https://w3id.org/biolink/vocab/available_from)
 
 
 
+URI: [biolink:available_from](https://w3id.org/biolink/vocab/available_from)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **available_from**
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [drug_availability_enum](drug_availability_enum.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: drug_availability_enum
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
-
-
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [ChemicalEntity](ChemicalEntity.md)
+ * [ChemicalMixture](ChemicalMixture.md)
+ * [CodingSequence](CodingSequence.md)
+ * [ComplexMolecularMixture](ComplexMolecularMixture.md)
+ * [Drug](Drug.md)
+ * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+ * [Exon](Exon.md)
+ * [Food](Food.md)
+ * [FoodAdditive](FoodAdditive.md)
+ * [Macronutrient](Macronutrient.md)
+ * [MicroRNA](MicroRNA.md)
+ * [Micronutrient](Micronutrient.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [MolecularMixture](MolecularMixture.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [NucleicAcidEntity](NucleicAcidEntity.md)
+ * [Nutrient](Nutrient.md)
+ * [ProcessedMaterial](ProcessedMaterial.md)
+ * [SiRNA](SiRNA.md)
+ * [SmallMolecule](SmallMolecule.md)
+ * [Transcript](Transcript.md)
+ * [Vitamin](Vitamin.md)

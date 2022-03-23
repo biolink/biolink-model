@@ -1,31 +1,38 @@
-# Slot: is_active_ingredient_of
-_holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component_
+---
+parent: Predicates
+title: biolink:is_active_ingredient_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: is_active_ingredient_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/is_active_ingredient_of](https://w3id.org/biolink/vocab/is_active_ingredient_of)
+holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
+
+URI: [biolink:is_active_ingredient_of](https://w3id.org/biolink/vocab/is_active_ingredient_of)
+
+## Domain and Range
+
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [Drug](Drug.md)
+
+## Parents
+
+ *  is_a: [part of](part_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [overlaps](overlaps.md)
-            * [part_of](part_of.md)
-                * **is_active_ingredient_of**
-
-
-
-## Properties
-
- * Range: drug
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002249 |
+| **In Subsets:** | | translator_minimal |
 

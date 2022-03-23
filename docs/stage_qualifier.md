@@ -1,28 +1,37 @@
+---
+parent: Edge Properties
+title: biolink:stage_qualifier
+grand_parent: Slots
+layout: default
+---
+
 # Slot: stage_qualifier
-_stage during which gene or protein expression of takes place._
 
 
-URI: [https://w3id.org/biolink/vocab/stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
+stage during which gene or protein expression of takes place.
+
+URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
+
+## Domain and Range
+
+[Association](Association.md) ->  <sub>0..1</sub> [LifeStage](LifeStage.md)
+
+## Parents
+
+ *  is_a: [association slot](association_slot.md)
+
+## Children
 
 
+## Used by
 
+ * [GeneExpressionMixin](GeneExpressionMixin.md)
+ * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
+ * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
 
-## Inheritance
+## Other properties
 
-* [association_slot](association_slot.md)
-    * **stage_qualifier**
-
-
-
-## Properties
-
- * Range: life stage
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
 

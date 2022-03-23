@@ -1,28 +1,27 @@
-# Slot: resistance_associated_with
+---
+parent: Predicates
+title: biolink:resistance_associated_with
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/resistance_associated_with](https://w3id.org/biolink/vocab/resistance_associated_with)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [associated_with](associated_with.md)
-            * **resistance_associated_with**
-
-
-
-## Properties
-
- * Range: named thing
-
-
-
-## Identifier and Mapping Information
+# Relation: resistance_associated_with
 
 
 
 
+URI: [biolink:resistance_associated_with](https://w3id.org/biolink/vocab/resistance_associated_with)
+
+## Domain and Range
+
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [associated with](associated_with.md)
+
+## Children
+
+
+## Used by
 

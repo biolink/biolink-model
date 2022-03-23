@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:reaction_side_enum
+layout: default
+---
 
-# Enum: reaction_side_enum
+# Class: reaction_side_enum
 
 
 

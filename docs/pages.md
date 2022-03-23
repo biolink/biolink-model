@@ -1,28 +1,34 @@
+---
+parent: Node Properties
+title: biolink:pages
+grand_parent: Slots
+layout: default
+---
+
 # Slot: pages
-_page number of source referenced for statement or publication_
 
 
-URI: [https://w3id.org/biolink/vocab/pages](https://w3id.org/biolink/vocab/pages)
+page number of source referenced for statement or publication
+
+URI: [biolink:pages](https://w3id.org/biolink/vocab/pages)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..\*</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **pages**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P304 |
 

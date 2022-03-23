@@ -1,26 +1,48 @@
+---
+parent: Node Properties
+title: biolink:format
+grand_parent: Slots
+layout: default
+---
+
 # Slot: format
 
-URI: [https://w3id.org/biolink/vocab/format](https://w3id.org/biolink/vocab/format)
 
 
 
+URI: [biolink:format](https://w3id.org/biolink/vocab/format)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **format**
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
+ * [ConfidenceLevel](ConfidenceLevel.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetSummary](DatasetSummary.md)
+ * [DatasetVersion](DatasetVersion.md)
+ * [EvidenceType](EvidenceType.md)
+ * [InformationContentEntity](InformationContentEntity.md)
+ * [InformationResource](InformationResource.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dct:format |
+|  | | WIKIDATA_PROPERTY:P2701 |
 

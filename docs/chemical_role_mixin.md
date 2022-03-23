@@ -1,23 +1,33 @@
+---
+parent: Slot Mixins
+title: biolink:chemical_role_mixin
+grand_parent: Slots
+layout: default
+---
+
 # Slot: chemical_role_mixin
-_A role played by the chemical entity or part thereof within a chemical context._
 
 
-URI: [https://w3id.org/biolink/vocab/chemical_role_mixin](https://w3id.org/biolink/vocab/chemical_role_mixin)
+A role played by the chemical entity or part thereof within a chemical context.
+
+URI: [biolink:chemical_role_mixin](https://w3id.org/biolink/vocab/chemical_role_mixin)
+
+## Domain and Range
+
+None ->  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
 
 
-
-<!-- no inheritance hierarchy -->
-
-
-## Properties
-
- * Range: None
+## Children
 
 
-
-## Identifier and Mapping Information
-
+## Used by
 
 
+## Other properties
 
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | CHEBI:51086 |
 

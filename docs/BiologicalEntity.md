@@ -1,322 +1,111 @@
+---
+parent: Entities
+title: biolink:BiologicalEntity
+grand_parent: Classes
+layout: default
+---
+
 # Class: BiologicalEntity
 
-
-* __NOTE__: this is an abstract class and should not be instantiated directly
 
 
 
 URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[ReagentTargetedGene],[ProteinFamily],[ProteinDomain],[Polypeptide],[PhenotypicFeature],[OrganismalEntity],[NucleicAcidSequenceMotif],[NamedThing],[Haplotype],[Genotype],[Genome],[GeneFamily],[Gene],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cprovided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[SequenceVariant],[BiologicalEntity]%5E-[ReagentTargetedGene],[BiologicalEntity]%5E-[ProteinFamily],[BiologicalEntity]%5E-[ProteinDomain],[BiologicalEntity]%5E-[Polypeptide],[BiologicalEntity]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[NucleicAcidSequenceMotif],[BiologicalEntity]%5E-[Haplotype],[BiologicalEntity]%5E-[Genotype],[BiologicalEntity]%5E-[Genome],[BiologicalEntity]%5E-[GeneFamily],[BiologicalEntity]%5E-[Gene],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [Entity](Entity.md)
-    * [NamedThing](NamedThing.md)
-        * **BiologicalEntity**
-            * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) [ occurrent ontology class]
-            * [OrganismalEntity](OrganismalEntity.md)
-            * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [ thing with taxon]
-            * [Gene](Gene.md) [ gene or gene product genomic entity chemical entity or gene or gene product physical essence ontology class]
-            * [Genome](Genome.md) [ genomic entity physical essence ontology class]
-            * [Polypeptide](Polypeptide.md) [ thing with taxon chemical entity or gene or gene product chemical entity or protein or polypeptide]
-            * [ProteinDomain](ProteinDomain.md) [ gene grouping mixin chemical entity or gene or gene product]
-            * [ProteinFamily](ProteinFamily.md) [ gene grouping mixin chemical entity or gene or gene product]
-            * [NucleicAcidSequenceMotif](NucleicAcidSequenceMotif.md)
-            * [GeneFamily](GeneFamily.md) [ gene grouping mixin chemical entity or gene or gene product]
-            * [Genotype](Genotype.md) [ physical essence genomic entity ontology class]
-            * [Haplotype](Haplotype.md) [ genomic entity physical essence ontology class]
-            * [SequenceVariant](SequenceVariant.md) [ genomic entity physical essence ontology class]
-            * [ReagentTargetedGene](ReagentTargetedGene.md) [ genomic entity physical essence ontology class]
+ *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+
+## Children
+
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+ * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
+ * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
+ * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
+ * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
+ * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
+ * [NucleicAcidSequenceMotif](NucleicAcidSequenceMotif.md) - A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
+ * [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
+ * [Polypeptide](Polypeptide.md) - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ * [ProteinDomain](ProteinDomain.md) - A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
+ * [ProteinFamily](ProteinFamily.md)
+ * [ReagentTargetedGene](ReagentTargetedGene.md) - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
+ * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
+
+## Referenced by class
+
+ *  **[PhenotypicFeature](PhenotypicFeature.md)** *[phenotype of](phenotype_of.md)*  <sub>0..\*</sub>  **[BiologicalEntity](BiologicalEntity.md)**
+
+## Attributes
 
 
+### Inherited from entity:
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [provided_by](provided_by.md) | [string](string.md) | 0..* | The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.  | . |
-| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
-| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
-| [category](category.md) | [NamedThing](NamedThing.md) | 1..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>0..1</sub>
+     * Description: An IRI for an entity. This is determined by the id using expansion rules.
+     * Range: [IriType](types/IriType.md)
+     * in subsets: (translator_minimal,samples)
+ * [category](category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
-| [type](type.md) | [string](string.md) | 0..1 | None  | . |
-| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
-| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [string](string.md) | 0..1 | None  | . |
-| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+     * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
+ * [type](type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
+ * [source](source.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
+### Inherited from macromolecular machine mixin:
 
-## Usages
+ * [name](name.md)  <sub>0..1</sub>
+     * Description: A human-readable name for an attribute or entity.
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal,samples)
 
+### Inherited from named thing:
 
+ * [provided by](provided_by.md)  <sub>0..\*</sub>
+     * Description: The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
+     * Range: [String](types/String.md)
+ * [category](category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+     * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
 
-## Identifier and Mapping Information
+## Other properties
 
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | bioentity |
+| **Narrow Mappings:** | | WIKIDATA:Q28845870 |
+|  | | STY:T050 |
+|  | | SIO:010046 |
 
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: biological entity
-aliases:
-- bioentity
-narrow_mappings:
-- WIKIDATA:Q28845870
-- STY:T050
-- SIO:010046
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: named thing
-abstract: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: biological entity
-aliases:
-- bioentity
-narrow_mappings:
-- WIKIDATA:Q28845870
-- STY:T050
-- SIO:010046
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: named thing
-abstract: true
-attributes:
-  provided by:
-    name: provided by
-    description: The value in this node property represents the knowledge provider
-      that created or assembled the node and all of its attributes.  Used internally
-      to represent how a particular node made its way into a knowledge provider or
-      graph.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    multivalued: true
-    alias: provided_by
-    owner: biological entity
-    range: string
-  id:
-    name: id
-    exact_mappings:
-    - alliancegenome:primaryId
-    - gff3:ID
-    - gpi:DB_Object_ID
-    description: A unique identifier for an entity. Must be either a CURIE shorthand
-      for a URI or a complete URI
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    identifier: true
-    alias: id
-    owner: biological entity
-    range: string
-    required: true
-  iri:
-    name: iri
-    exact_mappings:
-    - WIKIDATA_PROPERTY:P854
-    description: An IRI for an entity. This is determined by the id using expansion
-      rules.
-    in_subset:
-    - translator_minimal
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    alias: iri
-    owner: biological entity
-    range: iri type
-  category:
-    name: category
-    description: "Name of the high level ontology class in which this entity is categorized.\
-      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
-      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
-      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
-      \ include values for ancestors of the biolink class; for example, a protein\
-      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
-      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
-      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
-      \ to a class more specific than something in biolink. For example, a sequence\
-      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
-      \ which is more specific than anything in biolink. Here we would have categories\
-      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: type
-    domain: entity
-    multivalued: true
-    designates_type: true
-    alias: category
-    owner: biological entity
-    is_class_field: true
-    range: named thing
-    required: true
-  type:
-    name: type
-    exact_mappings:
-    - alliancegenome:soTermId
-    - gff3:type
-    - gpi:DB_Object_Type
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: rdf:type
-    alias: type
-    owner: biological entity
-    range: string
-  name:
-    name: name
-    aliases:
-    - label
-    - display name
-    - title
-    exact_mappings:
-    - gff3:Name
-    - gpi:DB_Object_Name
-    narrow_mappings:
-    - dct:title
-    - WIKIDATA_PROPERTY:P1476
-    description: A human-readable name for an attribute or entity.
-    in_subset:
-    - translator_minimal
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: rdfs:label
-    alias: name
-    owner: biological entity
-    range: label type
-  description:
-    name: description
-    aliases:
-    - definition
-    exact_mappings:
-    - IAO:0000115
-    - skos:definitions
-    narrow_mappings:
-    - gff3:Description
-    description: a human-readable description of an entity
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: dct:description
-    alias: description
-    owner: biological entity
-    range: narrative text
-  source:
-    name: source
-    deprecated: 'True'
-    from_schema: https://w3id.org/biolink/biolink-model
-    alias: source
-    owner: biological entity
-    range: string
-  has attribute:
-    name: has attribute
-    exact_mappings:
-    - SIO:000008
-    close_mappings:
-    - OBI:0001927
-    narrow_mappings:
-    - OBAN:association_has_subject_property
-    - OBAN:association_has_object_property
-    - CPT:has_possibly_included_panel_element
-    - DRUGBANK:category
-    - EFO:is_executed_in
-    - HANCESTRO:0301
-    - LOINC:has_action_guidance
-    - LOINC:has_adjustment
-    - LOINC:has_aggregation_view
-    - LOINC:has_approach_guidance
-    - LOINC:has_divisor
-    - LOINC:has_exam
-    - LOINC:has_method
-    - LOINC:has_modality_subtype
-    - LOINC:has_object_guidance
-    - LOINC:has_scale
-    - LOINC:has_suffix
-    - LOINC:has_time_aspect
-    - LOINC:has_time_modifier
-    - LOINC:has_timing_of
-    - NCIT:R88
-    - NCIT:eo_disease_has_property_or_attribute
-    - NCIT:has_data_element
-    - NCIT:has_pharmaceutical_administration_method
-    - NCIT:has_pharmaceutical_basic_dose_form
-    - NCIT:has_pharmaceutical_intended_site
-    - NCIT:has_pharmaceutical_release_characteristics
-    - NCIT:has_pharmaceutical_state_of_matter
-    - NCIT:has_pharmaceutical_transformation
-    - NCIT:is_qualified_by
-    - NCIT:qualifier_applies_to
-    - NCIT:role_has_domain
-    - NCIT:role_has_range
-    - INO:0000154
-    - HANCESTRO:0308
-    - OMIM:has_inheritance_type
-    - ORPHA:C016
-    - ORPHA:C017
-    - RO:0000053
-    - RO:0000086
-    - RO:0000087
-    - SNOMED:has_access
-    - SNOMED:has_clinical_course
-    - SNOMED:has_count_of_base_of_active_ingredient
-    - SNOMED:has_dose_form_administration_method
-    - SNOMED:has_dose_form_release_characteristic
-    - SNOMED:has_dose_form_transformation
-    - SNOMED:has_finding_context
-    - SNOMED:has_finding_informer
-    - SNOMED:has_inherent_attribute
-    - SNOMED:has_intent
-    - SNOMED:has_interpretation
-    - SNOMED:has_laterality
-    - SNOMED:has_measurement_method
-    - SNOMED:has_method
-    - SNOMED:has_priority
-    - SNOMED:has_procedure_context
-    - SNOMED:has_process_duration
-    - SNOMED:has_property
-    - SNOMED:has_revision_status
-    - SNOMED:has_scale_type
-    - SNOMED:has_severity
-    - SNOMED:has_specimen
-    - SNOMED:has_state_of_matter
-    - SNOMED:has_subject_relationship_context
-    - SNOMED:has_surgical_approach
-    - SNOMED:has_technique
-    - SNOMED:has_temporal_context
-    - SNOMED:has_time_aspect
-    - SNOMED:has_units
-    - UMLS:has_structural_class
-    - UMLS:has_supported_concept_property
-    - UMLS:has_supported_concept_relationship
-    - UMLS:may_be_qualified_by
-    description: connects any entity to an attribute
-    in_subset:
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    domain: entity
-    multivalued: true
-    alias: has_attribute
-    owner: biological entity
-    range: attribute
-
-```
-</details>

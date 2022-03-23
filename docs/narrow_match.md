@@ -1,36 +1,39 @@
-# Slot: narrow_match
-_a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree._
+---
+parent: Predicates
+title: biolink:narrow_match
+grand_parent: Slots
+layout: default
+---
+
+# Relation: narrow_match
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/narrow_match](https://w3id.org/biolink/vocab/narrow_match)
+a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+
+URI: [biolink:narrow_match](https://w3id.org/biolink/vocab/narrow_match)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at concept level](related_to_at_concept_level.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_concept_level](related_to_at_concept_level.md)
-        * **narrow_match**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:broad match |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | skos:narrowMatch |
+|  | | WIKIDATA:Q39893967 |
 

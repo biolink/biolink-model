@@ -1,10 +1,16 @@
+---
+parent: Built-in Types
+grand_parent: Types
+title: metatype:String
+layout: default
+---
 
-# Type: string
+# Type: String
 
 
 A character string
 
-URI: [linkml:String](https://w3id.org/linkml/String)
+URI: [metatype:String](https://linkml.github.io/linkml-model/docs/types/String)
 
 |  |  |  |
 | --- | --- | --- |

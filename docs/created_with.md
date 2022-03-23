@@ -1,26 +1,34 @@
+---
+parent: Node Properties
+title: biolink:created_with
+grand_parent: Slots
+layout: default
+---
+
 # Slot: created_with
 
-URI: [https://w3id.org/biolink/vocab/created_with](https://w3id.org/biolink/vocab/created_with)
 
 
 
+URI: [biolink:created_with](https://w3id.org/biolink/vocab/created_with)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **created_with**
+[Dataset](Dataset.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | pav:createdWith |
 

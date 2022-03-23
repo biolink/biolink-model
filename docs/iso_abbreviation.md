@@ -1,28 +1,35 @@
+---
+parent: Node Properties
+title: biolink:iso_abbreviation
+grand_parent: Slots
+layout: default
+---
+
 # Slot: iso_abbreviation
-_Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself._
 
 
-URI: [https://w3id.org/biolink/vocab/iso_abbreviation](https://w3id.org/biolink/vocab/iso_abbreviation)
+Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.
+
+URI: [biolink:iso_abbreviation](https://w3id.org/biolink/vocab/iso_abbreviation)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
+ * [Serial](Serial.md)
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **iso_abbreviation**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P1160 |
 

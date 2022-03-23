@@ -1,10 +1,16 @@
+---
+parent: Built-in Types
+grand_parent: Types
+title: metatype:Uri
+layout: default
+---
 
-# Type: uri
+# Type: Uri
 
 
 a complete URI
 
-URI: [linkml:Uri](https://w3id.org/linkml/Uri)
+URI: [metatype:Uri](https://linkml.github.io/linkml-model/docs/types/Uri)
 
 |  |  |  |
 | --- | --- | --- |

@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Subsets
+title: biolink:translator_minimal
+layout: default
+---
 
-# Subset: translator_minimal
+# Class: translator_minimal
 
 
 Minimum subset of translator work
@@ -46,15 +52,12 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [affects synthesis of](affects_synthesis_of.md) - holds between two chemical entities where the action or effect  of one impacts the rate of chemical synthesis of the other
  * [affects transport of](affects_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
  * [affects uptake of](affects_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
- * [agent➞id](agent_id.md) - Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.
- * [agent➞name](agent_name.md) - it is recommended that an author's 'name' property be formatted as "surname, firstname initial."
- * [association➞category](association_category.md)
- * [attribute➞name](attribute_name.md) - The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.
+ * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+ * [name](name.md) - A human-readable name for an attribute or entity.
+ * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
- * [book➞id](book_id.md) - Books should have industry-standard identifier such as from ISBN.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
- * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
  * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
  * [chemically interacts with](chemically_interacts_with.md)
@@ -120,7 +123,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
- * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
  * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
@@ -153,15 +155,11 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [localization increased by](localization_increased_by.md)
  * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
  * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
- * [macromolecular machine mixin➞name](macromolecular_machine_mixin_name.md) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
  * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
  * [metabolic processing affected by](metabolic_processing_affected_by.md)
  * [metabolic processing decreased by](metabolic_processing_decreased_by.md)
  * [metabolic processing increased by](metabolic_processing_increased_by.md)
  * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
- * [molecular activity➞enabled by](molecular_activity_enabled_by.md) - The gene product, gene, or complex that catalyzes the reaction
- * [molecular activity➞has input](molecular_activity_has_input.md) - A chemical entity that is the input for the reaction
- * [molecular activity➞has output](molecular_activity_has_output.md) - A chemical entity that is the output for the reaction
  * [molecular modification affected by](molecular_modification_affected_by.md)
  * [molecular modification decreased by](molecular_modification_decreased_by.md)
  * [molecular modification increased by](molecular_modification_increased_by.md)
@@ -169,8 +167,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [mutation rate affected by](mutation_rate_affected_by.md)
  * [mutation rate decreased by](mutation_rate_decreased_by.md)
  * [mutation rate increased by](mutation_rate_increased_by.md)
- * [name](name.md) - A human-readable name for an attribute or entity.
- * [named thing➞category](named_thing_category.md)
  * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
  * [nutrient of](nutrient_of.md)
@@ -178,7 +174,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
  * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
- * [pairwise molecular interaction➞id](pairwise_molecular_interaction_id.md) - identifier for the interaction. This may come from an interaction database such as IMEX.
  * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
  * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
@@ -190,8 +185,6 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
  * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
  * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
- * [publication➞id](publication_id.md) - Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.
- * [publication➞name](publication_name.md) - the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).
  * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
  * [response decreased by](response_decreased_by.md)
  * [response increased by](response_increased_by.md)
@@ -199,10 +192,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [secretion affected by](secretion_affected_by.md)
  * [secretion decreased by](secretion_decreased_by.md)
  * [secretion increased by](secretion_increased_by.md)
- * [sequence variant➞id](sequence_variant_id.md)
- * [serial➞id](serial_id.md) - Serials (journals) should have industry-standard identifier such as from ISSN.
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.
- * [small molecule➞id](small_molecule_id.md)
  * [splicing affected by](splicing_affected_by.md)
  * [splicing decreased by](splicing_decreased_by.md)
  * [splicing increased by](splicing_increased_by.md)

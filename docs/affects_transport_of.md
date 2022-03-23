@@ -1,37 +1,43 @@
-# Slot: affects_transport_of
-_holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest_
+---
+parent: Predicates
+title: biolink:affects_transport_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: affects_transport_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/affects_transport_of](https://w3id.org/biolink/vocab/affects_transport_of)
+holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+
+URI: [biolink:affects_transport_of](https://w3id.org/biolink/vocab/affects_transport_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
+
+ *  [decreases transport of](decreases_transport_of.md)
+ *  [increases transport of](increases_transport_of.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * **affects_transport_of**
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_transport_of |
+| **Narrow Mappings:** | | RO:0002313 |
+|  | | RO:0002340 |
+|  | | RO:0002345 |
 

@@ -1,38 +1,44 @@
-# Slot: same_as
-_holds between two entities that are considered equivalent to each other_
+---
+parent: Predicates
+title: biolink:same_as
+grand_parent: Slots
+layout: default
+---
+
+# Relation: same_as
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/same_as](https://w3id.org/biolink/vocab/same_as)
+holds between two entities that are considered equivalent to each other
+
+URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [exact match](exact_match.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_concept_level](related_to_at_concept_level.md)
-        * [close_match](close_match.md)
-            * [exact_match](exact_match.md)
-                * **same_as**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | owl:sameAs |
+|  | | skos:exactMatch |
+|  | | WIKIDATA_PROPERTY:P2888 |
+|  | | CHEMBL.MECHANISM:equivalent_to |
+|  | | MONDO:equivalentTo |
+| **Close Mappings:** | | owl:equivalentClass |
+| **Narrow Mappings:** | | DRUGBANK:external-identifier |
 

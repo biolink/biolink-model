@@ -1,38 +1,44 @@
-# Slot: biomarker_for
-_holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._
+---
+parent: Predicates
+title: biolink:biomarker_for
+grand_parent: Slots
+layout: default
+---
+
+# Relation: biomarker_for
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
+holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+
+URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+## Parents
+
+ *  is_a: [correlated with](correlated_with.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [associated_with](associated_with.md)
-            * [correlated_with](correlated_with.md)
-                * **biomarker_for**
-
-
-
-## Properties
-
- * Range: disease or phenotypic feature
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | NCIT:R39 |
+| **Narrow Mappings:** | | NCIT:R47 |
+|  | | NCIT:genetic_biomarker_related_to |
+|  | | NCIT:is_molecular_abnormality_of_disease |
+|  | | ORPHA:465410 |
+|  | | SEMMEDDB:diagnoses |
+| **Broad Mappings:** | | RO:0002607 |
 

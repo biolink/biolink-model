@@ -1,148 +1,56 @@
+---
+parent: Class Mixins
+title: biolink:ThingWithTaxon
+grand_parent: Classes
+layout: default
+---
+
 # Class: ThingWithTaxon
-_A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes_
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
 URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[Protein]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[Polypeptide]uses%20-.-%3E[ThingWithTaxon],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[ThingWithTaxon]%5E-[GenomicEntity],[Protein],[PopulationOfIndividualOrganisms],[Polypeptide],[OrganismTaxon],[LifeStage],[IndividualOrganism],[GenomicEntity],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
+
+---
 
 
-## Inheritance
+## Children
 
-* **ThingWithTaxon**
-    * [GenomicEntity](GenomicEntity.md)
+ * [GenomicEntity](GenomicEntity.md)
 
+## Mixin for
 
+ * [AnatomicalEntity](AnatomicalEntity.md) (mixin)  - A subcellular location, cell type or gross anatomical part
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) (mixin)  - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+ * [IndividualOrganism](IndividualOrganism.md) (mixin)  - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
+ * [LifeStage](LifeStage.md) (mixin)  - A stage of development or growth of an organism, including post-natal adult stages
+ * [Polypeptide](Polypeptide.md) (mixin)  - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
+ * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) (mixin)  - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
+ * [Protein](Protein.md) (mixin)  - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
+## Referenced by class
 
-## Slots
+ *  **[OrganismTaxon](OrganismTaxon.md)** *[taxon of](taxon_of.md)*  <sub>0..\*</sub>  **[ThingWithTaxon](ThingWithTaxon.md)**
 
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [in_taxon](in_taxon.md) | [OrganismTaxon](OrganismTaxon.md) | 0..* | connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'  | . |
-
-
-## Usages
-
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [StudyPopulation](StudyPopulation.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [ThingWithTaxon](ThingWithTaxon.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [GenomicEntity](GenomicEntity.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [NucleicAcidEntity](NucleicAcidEntity.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [LifeStage](LifeStage.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [IndividualOrganism](IndividualOrganism.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Disease](Disease.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [PhenotypicFeature](PhenotypicFeature.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [BehavioralFeature](BehavioralFeature.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [AnatomicalEntity](AnatomicalEntity.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [CellularComponent](CellularComponent.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Cell](Cell.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [GrossAnatomicalStructure](GrossAnatomicalStructure.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Gene](Gene.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Genome](Genome.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Exon](Exon.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Transcript](Transcript.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [CodingSequence](CodingSequence.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Polypeptide](Polypeptide.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Protein](Protein.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [ProteinIsoform](ProteinIsoform.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [RNAProduct](RNAProduct.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [RNAProductIsoform](RNAProductIsoform.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [NoncodingRNAProduct](NoncodingRNAProduct.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [MicroRNA](MicroRNA.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [SiRNA](SiRNA.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Genotype](Genotype.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Haplotype](Haplotype.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [SequenceVariant](SequenceVariant.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Snv](Snv.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [ReagentTargetedGene](ReagentTargetedGene.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [ClinicalFinding](ClinicalFinding.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Case](Case.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [Cohort](Cohort.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [GenomicBackgroundExposure](GenomicBackgroundExposure.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
-| [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) | [in_taxon](in_taxon.md) | domain | thing with taxon |
+## Attributes
 
 
+### Own
 
-## Identifier and Mapping Information
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
+### Domain for slot:
 
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: thing with taxon
-description: A mixin that can be used on any entity that can be taxonomically classified.
-  This includes individual organisms; genes, their products and other molecular entities;
-  body parts; biological processes
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slots:
-- in taxon
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: thing with taxon
-description: A mixin that can be used on any entity that can be taxonomically classified.
-  This includes individual organisms; genes, their products and other molecular entities;
-  body parts; biological processes
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-attributes:
-  in taxon:
-    name: in taxon
-    aliases:
-    - instance of
-    - is organism source of gene product
-    - organism has gene
-    - gene found in organism
-    - ' gene product has organism source'
-    exact_mappings:
-    - RO:0002162
-    - WIKIDATA_PROPERTY:P703
-    narrow_mappings:
-    - RO:0002160
-    annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: 'True'
-    description: connects an entity to its taxonomic classification. Only certain
-      kinds of entities can be taxonomically classified; see 'thing with taxon'
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: related to at instance level
-    domain: thing with taxon
-    multivalued: true
-    inherited: true
-    alias: in_taxon
-    owner: thing with taxon
-    range: organism taxon
-
-```
-</details>
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)

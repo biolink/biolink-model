@@ -1,23 +1,46 @@
+---
+parent: Other Slots
+title: biolink:has_unit
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_unit
-_connects a quantity value to a unit_
+
+samples
+{: .samples-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/has_unit](https://w3id.org/biolink/vocab/has_unit)
+connects a quantity value to a unit
+
+URI: [biolink:has_unit](https://w3id.org/biolink/vocab/has_unit)
+
+## Domain and Range
+
+[QuantityValue](QuantityValue.md) ->  <sub>0..1</sub> [Unit](types/Unit.md)
+
+## Parents
 
 
-
-<!-- no inheritance hierarchy -->
-
-
-## Properties
-
- * Range: unit
+## Children
 
 
+## Used by
 
-## Identifier and Mapping Information
+ * [QuantityValue](QuantityValue.md)
 
+## Other properties
 
-
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | samples |
+| **Exact Mappings:** | | qud:unit |
+|  | | IAO:0000039 |
+| **Close Mappings:** | | EFO:0001697 |
+|  | | UO-PROPERTY:is_unit_of |
+| **Narrow Mappings:** | | SNOMED:has_concentration_strength_denominator_unit |
+|  | | SNOMED:has_concentration_strength_numerator_unit |
+|  | | SNOMED:has_presentation_strength_denominator_unit |
+|  | | SNOMED:has_presentation_strength_numerator_unit |
+|  | | SNOMED:has_unit_of_presentation |
 

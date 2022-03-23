@@ -1,3 +1,4 @@
+Loading .env environment variables...
 # metamodel_version: 1.7.0
 # version: 2.2.15
 {
@@ -2409,6 +2410,13 @@
                                  ]
                               },
                               "min": 0
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/has_quantitative_value",
+                              "valueExpr": "https://w3id.org/biolink/vocab/QuantityValue",
+                              "min": 0,
+                              "max": -1
                            },
                            {
                               "type": "TripleConstraint",

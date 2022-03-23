@@ -1,30 +1,35 @@
-# Slot: publisher
-_organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node)._
+---
+parent: Predicates
+title: biolink:publisher
+grand_parent: Slots
+layout: default
+---
+
+# Relation: publisher
 
 
-URI: [https://w3id.org/biolink/vocab/publisher](https://w3id.org/biolink/vocab/publisher)
+organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
+
+URI: [biolink:publisher](https://w3id.org/biolink/vocab/publisher)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..\*</sub> [Agent](Agent.md)
+
+## Parents
+
+ *  is_a: [contributor](contributor.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [contributor](contributor.md)
-            * **publisher**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dct:publisher |
+|  | | WIKIDATA_PROPERTY:P123 |
 

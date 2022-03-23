@@ -1,0 +1,14 @@
+# metamodel_version: 1.7.0# version: 2.2.15id: chemical_exposure
+schema_generating: true
+description: A chemical exposure is an intake of a particular chemical entity.
+display_name: chemical exposure
+document_category: chemical exposure
+weight: 20
+fields:
+- id: has_quantitative_value
+  description: connects an attribute to a value
+  display_name: has quantitative value
+  cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint

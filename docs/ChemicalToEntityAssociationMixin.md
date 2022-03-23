@@ -1,85 +1,50 @@
+---
+parent: Class Mixins
+title: biolink:ChemicalToEntityAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: ChemicalToEntityAssociationMixin
-_An interaction between a chemical entity and another entity_
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+An interaction between a chemical entity and another entity
 
 URI: [biolink:ChemicalToEntityAssociationMixin](https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ChemicalEntityOrGeneOrGeneProduct]%3Csubject%201..1-++[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToGeneAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalToChemicalAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalEntityToEntityAssociationMixin]%5E-[ChemicalToEntityAssociationMixin],[ChemicalToPathwayAssociation],[ChemicalToGeneAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalEntityToEntityAssociationMixin],[ChemicalEntityOrGeneOrGeneProduct])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md)
-    * **ChemicalToEntityAssociationMixin**
+ *  is_a: [ChemicalEntityToEntityAssociationMixin](ChemicalEntityToEntityAssociationMixin.md) - An interaction between a chemical entity and another entity
 
+## Mixin for
 
+ * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) (mixin)  - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+ * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
+ * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) (mixin)  - An interaction between a chemical entity and a gene or gene product.
+ * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) (mixin)  - An interaction between a chemical entity and a biological process or pathway.
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-
-
-## Usages
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: chemical to entity association mixin
-description: An interaction between a chemical entity and another entity
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: chemical entity to entity association mixin
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: the chemical entity or entity that is an interactor
-    range: chemical entity or gene or gene product
-defining_slots:
-- subject
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: chemical to entity association mixin
-description: An interaction between a chemical entity and another entity
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: chemical entity to entity association mixin
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: the chemical entity or entity that is an interactor
-    range: chemical entity or gene or gene product
-defining_slots:
-- subject
-
-```
-</details>
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

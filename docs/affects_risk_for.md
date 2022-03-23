@@ -1,36 +1,39 @@
-# Slot: affects_risk_for
-_holds between two entities where exposure to one entity alters the chance of developing the other_
+---
+parent: Predicates
+title: biolink:affects_risk_for
+grand_parent: Slots
+layout: default
+---
+
+# Relation: affects_risk_for
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
+holds between two entities where exposure to one entity alters the chance of developing the other
+
+URI: [biolink:affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+ *  [predisposes](predisposes.md)
+ *  [prevents](prevents.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **affects_risk_for**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

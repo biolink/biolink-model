@@ -1,70 +1,28 @@
+---
+parent: Other Classes
+title: biolink:BehavioralOutcome
+grand_parent: Classes
+layout: default
+---
+
 # Class: BehavioralOutcome
-_An outcome resulting from an exposure event which is the manifestation of human behavior._
 
 
-
-
+An outcome resulting from an exposure event which is the manifestation of human behavior.
 
 URI: [biolink:BehavioralOutcome](https://w3id.org/biolink/vocab/BehavioralOutcome)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[BehavioralOutcome]uses%20-.-%3E[Outcome])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **BehavioralOutcome** [ outcome]
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
+## Attributes
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-
-
-## Usages
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: behavioral outcome
-description: An outcome resulting from an exposure event which is the manifestation
-  of human behavior.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: behavioral outcome
-description: An outcome resulting from an exposure event which is the manifestation
-  of human behavior.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>

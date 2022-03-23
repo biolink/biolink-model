@@ -1,26 +1,35 @@
+---
+parent: Node Properties
+title: biolink:has_dataset
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_dataset
 
-URI: [http://purl.org/dc/terms/source](http://purl.org/dc/terms/source)
 
 
 
+URI: [biolink:has_dataset](https://w3id.org/biolink/vocab/has_dataset)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **has_dataset**
+[DatasetVersion](DatasetVersion.md) ->  <sub>0..1</sub> [Dataset](Dataset.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: dataset
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
+ * [DatasetVersion](DatasetVersion.md)
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dct:source |
 

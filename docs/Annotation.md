@@ -1,70 +1,32 @@
+---
+parent: Other Classes
+title: biolink:Annotation
+grand_parent: Classes
+layout: default
+---
+
 # Class: Annotation
-_Biolink Model root class for entity annotations._
 
 
-
-* __NOTE__: this is an abstract class and should not be instantiated directly
-
-
+Biolink Model root class for entity annotations.
 
 URI: [biolink:Annotation](https://w3id.org/biolink/vocab/Annotation)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[Attribute],[Annotation]%5E-[QuantityValue],[Annotation]%5E-[Attribute])
+
+---
 
 
-## Inheritance
+## Children
 
-* **Annotation**
-    * [QuantityValue](QuantityValue.md)
-    * [Attribute](Attribute.md) [ ontology class]
+ * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+ * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 
-
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: annotation
-description: Biolink Model root class for entity annotations.
-from_schema: https://w3id.org/biolink/biolink-model
-abstract: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: annotation
-description: Biolink Model root class for entity annotations.
-from_schema: https://w3id.org/biolink/biolink-model
-abstract: true
-
-```
-</details>

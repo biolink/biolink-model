@@ -1,38 +1,27 @@
-# Slot: causes_adverse_event
-_holds between a drug and a disease or phenotype that can be caused by the drug_
+---
+parent: Predicates
+title: biolink:causes_adverse_event
+grand_parent: Slots
+layout: default
+---
+
+# Relation: causes_adverse_event
 
 
-URI: [https://w3id.org/biolink/vocab/causes_adverse_event](https://w3id.org/biolink/vocab/causes_adverse_event)
+holds between a drug and a disease or phenotype that can be caused by the drug
+
+URI: [biolink:causes_adverse_event](https://w3id.org/biolink/vocab/causes_adverse_event)
+
+## Domain and Range
+
+[Drug](Drug.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+## Parents
+
+ *  is_a: [causes](causes.md)
+
+## Children
 
 
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [contributes_to](contributes_to.md)
-            * [causes](causes.md)
-                * **causes_adverse_event**
-
-
-
-## Properties
-
- * Range: disease or phenotypic feature
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+## Used by
 

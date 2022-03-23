@@ -1,3 +1,4 @@
+Loading .env environment variables...
 // metamodel_version: 1.7.0
 // version: 2.2.15
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
@@ -457,7 +458,8 @@ message ChemicalEntity
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
-  optional timepoint TimeType = 1
+  repeated hasQuantitativeValue QuantityValue = 1
+  optional timepoint TimeType = 2
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -1010,7 +1012,8 @@ message Drug
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
-  optional timepoint TimeType = 1
+  repeated hasQuantitativeValue QuantityValue = 1
+  optional timepoint TimeType = 2
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1039,8 +1042,9 @@ message DrugToGeneAssociation
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
  {
-  optional timepoint TimeType = 1
-  repeated hasGeneOrGeneProduct Gene = 2
+  repeated hasQuantitativeValue QuantityValue = 1
+  optional timepoint TimeType = 2
+  repeated hasGeneOrGeneProduct Gene = 3
  }
 message EntityToDiseaseAssociation
  {

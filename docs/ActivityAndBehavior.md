@@ -1,78 +1,44 @@
+---
+parent: Class Mixins
+title: biolink:ActivityAndBehavior
+grand_parent: Classes
+layout: default
+---
+
 # Class: ActivityAndBehavior
-_Activity or behavior of any independent integral living, organization or mechanical actor in the world_
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Occurrent],[Procedure]uses%20-.-%3E[ActivityAndBehavior],[Behavior]uses%20-.-%3E[ActivityAndBehavior],[Activity]uses%20-.-%3E[ActivityAndBehavior],[Occurrent]%5E-[ActivityAndBehavior],[Procedure],[Behavior],[Activity])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
-    * [Occurrent](Occurrent.md)
-        * **ActivityAndBehavior**
+ *  is_a: [Occurrent](Occurrent.md) - A processual entity.
 
+## Mixin for
 
+ * [Activity](Activity.md) (mixin)  - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+ * [Behavior](Behavior.md) (mixin) 
+ * [Procedure](Procedure.md) (mixin)  - A series of actions conducted in a certain order or manner
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
 
+## Other properties
 
-## Identifier and Mapping Information
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | UMLSSG:ACTI |
 
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: activity and behavior
-exact_mappings:
-- UMLSSG:ACTI
-description: Activity or behavior of any independent integral living, organization
-  or mechanical actor in the world
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: occurrent
-mixin: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: activity and behavior
-exact_mappings:
-- UMLSSG:ACTI
-description: Activity or behavior of any independent integral living, organization
-  or mechanical actor in the world
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: occurrent
-mixin: true
-
-```
-</details>

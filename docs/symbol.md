@@ -1,28 +1,36 @@
+---
+parent: Node Properties
+title: biolink:symbol
+grand_parent: Slots
+layout: default
+---
+
 # Slot: symbol
-_Symbol for a particular thing_
 
 
-URI: [https://w3id.org/biolink/vocab/symbol](https://w3id.org/biolink/vocab/symbol)
+Symbol for a particular thing
+
+URI: [biolink:symbol](https://w3id.org/biolink/vocab/symbol)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
+ * [Gene](Gene.md)
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **symbol**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | alliancegenome:symbol |
+|  | | gpi:DB_Object_Symbol |
 

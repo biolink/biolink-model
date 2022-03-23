@@ -1,34 +1,34 @@
-# Slot: active_in
+---
+parent: Predicates
+title: biolink:active_in
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/active_in](https://w3id.org/biolink/vocab/active_in)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **active_in**
-
-
-
-## Properties
-
- * Range: cellular component
-
-
-
-## Identifier and Mapping Information
+# Relation: active_in
 
 
 
 
+URI: [biolink:active_in](https://w3id.org/biolink/vocab/active_in)
 
-### Annotations
+## Domain and Range
 
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
+[GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..\*</sub> [CellularComponent](CellularComponent.md)
 
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | RO:0002432 |
 

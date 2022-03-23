@@ -1,28 +1,34 @@
+---
+parent: Node Properties
+title: biolink:has_gene_or_gene_product
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_gene_or_gene_product
-_connects an entity with one or more gene or gene products_
 
 
-URI: [https://w3id.org/biolink/vocab/has_gene_or_gene_product](https://w3id.org/biolink/vocab/has_gene_or_gene_product)
+connects an entity with one or more gene or gene products
 
+URI: [biolink:has_gene_or_gene_product](https://w3id.org/biolink/vocab/has_gene_or_gene_product)
 
+## Domain and Range
 
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
 
-## Inheritance
+## Parents
 
-* [node_property](node_property.md)
-    * **has_gene_or_gene_product**
+ *  is_a: [node property](node_property.md)
 
+## Children
 
+ *  [has gene](has_gene.md)
 
-## Properties
+## Used by
 
- * Range: gene
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneGroupingMixin](GeneGroupingMixin.md)
+ * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)
+ * [ProteinDomain](ProteinDomain.md)
+ * [ProteinFamily](ProteinFamily.md)

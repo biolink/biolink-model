@@ -1,39 +1,67 @@
-# Slot: treats
-_holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat_
+---
+parent: Predicates
+title: biolink:treats
+grand_parent: Slots
+layout: default
+---
+
+# Relation: treats
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/treats](https://w3id.org/biolink/vocab/treats)
+holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
+
+URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
+
+## Domain and Range
+
+[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+## Parents
+
+ *  is_a: [ameliorates](ameliorates.md)
+
+## Children
+
+ *  [approved to treat](approved_to_treat.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [ameliorates](ameliorates.md)
-                * **treats**
-
-
-
-## Properties
-
- * Range: disease or phenotypic feature
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:contraindicated for |
-
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | is substance that treats |
+|  | | indicated for |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | DRUGBANK:treats |
+|  | | SEMMEDDB:TREATS |
+|  | | SEMMEDDB:treats |
+|  | | WIKIDATA_PROPERTY:P2175 |
+| **Narrow Mappings:** | | RO:0002606 |
+|  | | NCIT:regimen_has_accepted_use_for_disease |
+|  | | REPODB:clinically_tested_approved_unknown_phase |
+|  | | REPODB:clinically_tested_suspended_phase_0 |
+|  | | REPODB:clinically_tested_suspended_phase_1 |
+|  | | REPODB:clinically_tested_suspended_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_suspended_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_0 |
+|  | | REPODB:clinically_tested_terminated_phase_1 |
+|  | | REPODB:clinically_tested_terminated_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_0 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_3 |
+|  | | SNOMED:plays_role |
+| **Related Mappings:** | | MONDO:disease_responds_to |
 

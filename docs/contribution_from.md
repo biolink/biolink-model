@@ -1,27 +1,37 @@
-# Slot: contribution_from
+---
+parent: Predicates
+title: biolink:contribution_from
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/contribution_from](https://w3id.org/biolink/vocab/contribution_from)
+# Relation: contribution_from
 
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **contribution_from**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
+URI: [biolink:contribution_from](https://w3id.org/biolink/vocab/contribution_from)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

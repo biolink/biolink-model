@@ -1,28 +1,57 @@
+---
+parent: Node Properties
+title: biolink:xref
+grand_parent: Slots
+layout: default
+---
+
 # Slot: xref
-_Alternate CURIEs for a thing_
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/xref](https://w3id.org/biolink/vocab/xref)
+Alternate CURIEs for a thing
+
+URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Uriorcurie](types/Uriorcurie.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
+ * [Gene](Gene.md)
+ * [GeneProductIsoformMixin](GeneProductIsoformMixin.md)
+ * [GeneProductMixin](GeneProductMixin.md)
+ * [MicroRNA](MicroRNA.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)
+ * [SiRNA](SiRNA.md)
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **xref**
-
-
-
-## Properties
-
- * Range: uriorcurie
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | dbxref |
+|  | | Dbxref |
+|  | | DbXref |
+| **In Subsets:** | | translator_minimal |
+| **Narrow Mappings:** | | gff3:Dbxref |
+|  | | gpi:DB_Xrefs |
 

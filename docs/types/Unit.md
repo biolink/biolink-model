@@ -1,19 +1,18 @@
+---
+parent: Defined Types
+grand_parent: Types
+title: biolink:Unit
+layout: default
+---
 
-# Type: unit
+# Type: Unit
 
 
 
 
-URI: [biolink:Unit](https://w3id.org/biolink/vocab/Unit)
+URI: [biolink:Unit](https://w3id.org/biolink/vocab/types/biolink:Unit)
 
 |  |  |  |
 | --- | --- | --- |
 | Parent type | | [String](types/String.md) |
 | Root (builtin) type | | **str** |
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | qud:Unit |
-

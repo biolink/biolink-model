@@ -1,28 +1,28 @@
+---
+parent: Node Properties
+title: biolink:has_procedure
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_procedure
-_connects an entity to one or more (medical) procedures_
 
 
-URI: [https://w3id.org/biolink/vocab/has_procedure](https://w3id.org/biolink/vocab/has_procedure)
+connects an entity to one or more (medical) procedures
+
+URI: [biolink:has_procedure](https://w3id.org/biolink/vocab/has_procedure)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Procedure](Procedure.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [node_property](node_property.md)
-    * **has_procedure**
-
-
-
-## Properties
-
- * Range: procedure
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [Treatment](Treatment.md)

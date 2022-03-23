@@ -1,29 +1,27 @@
-# Slot: entity_negatively_regulated_by_entity
+---
+parent: Predicates
+title: biolink:entity_negatively_regulated_by_entity
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/entity_negatively_regulated_by_entity](https://w3id.org/biolink/vocab/entity_negatively_regulated_by_entity)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affected_by](affected_by.md)
-            * [entity_regulated_by_entity](entity_regulated_by_entity.md)
-                * **entity_negatively_regulated_by_entity**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+# Relation: entity_negatively_regulated_by_entity
 
 
 
 
+URI: [biolink:entity_negatively_regulated_by_entity](https://w3id.org/biolink/vocab/entity_negatively_regulated_by_entity)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [entity regulated by entity](entity_regulated_by_entity.md)
+
+## Children
+
+
+## Used by
 

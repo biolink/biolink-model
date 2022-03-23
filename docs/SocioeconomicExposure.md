@@ -1,93 +1,51 @@
+---
+parent: Other Classes
+title: biolink:SocioeconomicExposure
+grand_parent: Classes
+layout: default
+---
+
 # Class: SocioeconomicExposure
-_A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty)._
 
 
-
-
+A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 
 URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/vocab/SocioeconomicExposure)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicAttribute]%3Chas%20attribute%201..%2A-++[SocioeconomicExposure%7Ctimepoint:time_type%20%3F],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[SocioeconomicAttribute],[ExposureEvent])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **SocioeconomicExposure** [ exposure event]
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
-
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
 
+### Own
 
-## Identifier and Mapping Information
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
+### Inherited from exposure event:
 
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
 
+### Domain for slot:
 
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: socioeconomic exposure
-description: A socioeconomic exposure is a factor relating to social and financial
-  status of an affected individual (e.g. poverty).
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- exposure event
-slot_usage:
-  has attribute:
-    name: has attribute
-    range: socioeconomic attribute
-    required: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: socioeconomic exposure
-description: A socioeconomic exposure is a factor relating to social and financial
-  status of an affected individual (e.g. poverty).
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- exposure event
-slot_usage:
-  has attribute:
-    name: has attribute
-    range: socioeconomic attribute
-    required: true
-attributes:
-  timepoint:
-    name: timepoint
-    aliases:
-    - duration
-    description: a point in time
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    alias: timepoint
-    owner: socioeconomic exposure
-    range: time type
-
-```
-</details>
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)

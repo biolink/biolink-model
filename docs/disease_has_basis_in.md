@@ -1,36 +1,35 @@
-# Slot: disease_has_basis_in
-_A relation that holds between a disease and an entity where the state of the entity has contribution to the disease._
+---
+parent: Predicates
+title: biolink:disease_has_basis_in
+grand_parent: Slots
+layout: default
+---
+
+# Relation: disease_has_basis_in
 
 
-URI: [https://w3id.org/biolink/vocab/disease_has_basis_in](https://w3id.org/biolink/vocab/disease_has_basis_in)
+A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
+
+URI: [biolink:disease_has_basis_in](https://w3id.org/biolink/vocab/disease_has_basis_in)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **disease_has_basis_in**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **Narrow Mappings:** | | MONDO:disease_has_basis_in_development_of |
+|  | | MONDO:disease_has_basis_in_accumulation_of |
 

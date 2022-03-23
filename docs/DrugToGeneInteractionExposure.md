@@ -1,118 +1,51 @@
+---
+parent: Other Classes
+title: biolink:DrugToGeneInteractionExposure
+grand_parent: Classes
+layout: default
+---
+
 # Class: DrugToGeneInteractionExposure
-_drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome._
 
 
-
-
+drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 
 URI: [biolink:DrugToGeneInteractionExposure](https://w3id.org/biolink/vocab/DrugToGeneInteractionExposure)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[GeneGroupingMixin],[Gene],[DrugToGeneInteractionExposure%7Ctimepoint(i):time_type%20%3F]uses%20-.-%3E[GeneGroupingMixin],[DrugExposure]%5E-[DrugToGeneInteractionExposure],[DrugExposure])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [ChemicalExposure](ChemicalExposure.md) [ exposure event]
-    * [DrugExposure](DrugExposure.md) [ exposure event]
-        * **DrugToGeneInteractionExposure** [ gene grouping mixin]
+ *  is_a: [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
 
+## Uses Mixins
 
+ *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [has_gene_or_gene_product](has_gene_or_gene_product.md) | [Gene](Gene.md) | 0..* | connects an entity with one or more gene or gene products  | . |
-| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
-| [has_quantitative_value](has_quantitative_value.md) | [QuantityValue](QuantityValue.md) | 0..* | connects an attribute to a value  | . |
+## Attributes
 
 
-## Usages
+### Inherited from chemical exposure:
 
+ * [has quantitative value](has_quantitative_value.md)  <sub>0..\*</sub>
+     * Description: connects an attribute to a value
+     * Range: [QuantityValue](QuantityValue.md)
+     * in subsets: (samples)
 
+### Inherited from exposure event:
 
-## Identifier and Mapping Information
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
 
+### Inherited from gene grouping mixin:
 
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: drug to gene interaction exposure
-description: drug to gene interaction exposure is a drug exposure is where the interactions
-  of the drug with specific genes are known to constitute an 'exposure' to the organism,
-  leading to or influencing an outcome.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: drug exposure
-mixins:
-- gene grouping mixin
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: drug to gene interaction exposure
-description: drug to gene interaction exposure is a drug exposure is where the interactions
-  of the drug with specific genes are known to constitute an 'exposure' to the organism,
-  leading to or influencing an outcome.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: drug exposure
-mixins:
-- gene grouping mixin
-attributes:
-  has gene or gene product:
-    name: has gene or gene product
-    description: connects an entity with one or more gene or gene products
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    multivalued: true
-    alias: has_gene_or_gene_product
-    owner: drug to gene interaction exposure
-    range: gene
-  timepoint:
-    name: timepoint
-    aliases:
-    - duration
-    description: a point in time
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    alias: timepoint
-    owner: drug to gene interaction exposure
-    range: time type
-  has quantitative value:
-    name: has quantitative value
-    exact_mappings:
-    - qud:quantityValue
-    narrow_mappings:
-    - SNOMED:has_concentration_strength_numerator_value
-    - SNOMED:has_presentation_strength_denominator_value
-    - SNOMED:has_presentation_strength_numerator_value
-    description: connects an attribute to a value
-    in_subset:
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    domain: attribute
-    multivalued: true
-    alias: has_quantitative_value
-    owner: drug to gene interaction exposure
-    range: quantity value
-
-```
-</details>
+ * [has gene or gene product](has_gene_or_gene_product.md)  <sub>0..\*</sub>
+     * Description: connects an entity with one or more gene or gene products
+     * Range: [Gene](Gene.md)

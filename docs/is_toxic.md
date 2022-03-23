@@ -1,26 +1,51 @@
+---
+parent: Node Properties
+title: biolink:is_toxic
+grand_parent: Slots
+layout: default
+---
+
 # Slot: is_toxic
 
-URI: [https://w3id.org/biolink/vocab/is_toxic](https://w3id.org/biolink/vocab/is_toxic)
 
 
 
+URI: [biolink:is_toxic](https://w3id.org/biolink/vocab/is_toxic)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **is_toxic**
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [Boolean](types/Boolean.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: boolean
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
-
-
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [ChemicalEntity](ChemicalEntity.md)
+ * [ChemicalMixture](ChemicalMixture.md)
+ * [CodingSequence](CodingSequence.md)
+ * [ComplexMolecularMixture](ComplexMolecularMixture.md)
+ * [Drug](Drug.md)
+ * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
+ * [Exon](Exon.md)
+ * [Food](Food.md)
+ * [FoodAdditive](FoodAdditive.md)
+ * [Macronutrient](Macronutrient.md)
+ * [MicroRNA](MicroRNA.md)
+ * [Micronutrient](Micronutrient.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [MolecularMixture](MolecularMixture.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [NucleicAcidEntity](NucleicAcidEntity.md)
+ * [Nutrient](Nutrient.md)
+ * [ProcessedMaterial](ProcessedMaterial.md)
+ * [SiRNA](SiRNA.md)
+ * [SmallMolecule](SmallMolecule.md)
+ * [Transcript](Transcript.md)
+ * [Vitamin](Vitamin.md)

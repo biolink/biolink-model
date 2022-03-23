@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:sequence_enum
+layout: default
+---
 
-# Enum: sequence_enum
+# Class: sequence_enum
 
 
 type of sequence

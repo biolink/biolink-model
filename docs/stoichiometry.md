@@ -1,28 +1,29 @@
+---
+parent: Edge Properties
+title: biolink:stoichiometry
+grand_parent: Slots
+layout: default
+---
+
 # Slot: stoichiometry
-_the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers._
 
 
-URI: [https://w3id.org/biolink/vocab/stoichiometry](https://w3id.org/biolink/vocab/stoichiometry)
+the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
+
+URI: [biolink:stoichiometry](https://w3id.org/biolink/vocab/stoichiometry)
+
+## Domain and Range
+
+[Association](Association.md) ->  <sub>0..1</sub> [Integer](types/Integer.md)
+
+## Parents
+
+ *  is_a: [association slot](association_slot.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [association_slot](association_slot.md)
-    * **stoichiometry**
-
-
-
-## Properties
-
- * Range: integer
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md)
+ * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)

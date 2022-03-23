@@ -1,4 +1,11 @@
-# Class: ExposureEventToEntityAssociationMixin
+---
+parent: Other Classes
+title: biolink:ExposureEventToEntityAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
+# Class: ExposureEventToEntityAssociationMixin _(deprecated)_
 
 
 
@@ -6,53 +13,19 @@
 URI: [biolink:ExposureEventToEntityAssociationMixin](https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEventToOutcomeAssociation]uses%20-.-%3E[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) (mixin)  - An association between an exposure event and an outcome.
+
+## Referenced by class
 
 
+## Attributes
 
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: exposure event to entity association mixin
-deprecated: 'True'
-from_schema: https://w3id.org/biolink/biolink-model
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: exposure event to entity association mixin
-deprecated: 'True'
-from_schema: https://w3id.org/biolink/biolink-model
-
-```
-</details>

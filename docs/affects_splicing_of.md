@@ -1,37 +1,41 @@
-# Slot: affects_splicing_of
-_holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA_
+---
+parent: Predicates
+title: biolink:affects_splicing_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: affects_splicing_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
+holds between a chemical entity and an mRNA where the action or effect of the chemical entity impacts the splicing of the mRNA
+
+URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
+
+ *  [decreases splicing of](decreases_splicing_of.md)
+ *  [increases splicing of](increases_splicing_of.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * **affects_splicing_of**
-
-
-
-## Properties
-
- * Range: transcript
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:affects_RNA_splicing |
+| **Broad Mappings:** | | CTD:affects_splicing_of |
 

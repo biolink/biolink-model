@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-21T21:47:33
+# Generation date: 2022-03-23T22:02:46
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -159,6 +159,7 @@ OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
+OMIM_PS = CurieNamespace('OMIM_PS', 'https://www.omim.org/phenotypicSeries/')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 ORPHA = CurieNamespace('ORPHA', 'http://www.orpha.net/ORDO/Orphanet_')
 ORPHANET = CurieNamespace('ORPHANET', 'http://identifiers.org/orphanet/')
@@ -209,6 +210,7 @@ SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?
 TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
 TCDB = CurieNamespace('TCDB', 'http://identifiers.org/tcdb/')
 TIGRFAM = CurieNamespace('TIGRFAM', 'http://identifiers.org/tigrfam/')
+TO = CurieNamespace('TO', 'http://purl.obolibrary.org/obo/TO_')
 UBERGRAPH = CurieNamespace('UBERGRAPH', 'http://translator.renci.org/ubergraph-axioms.ofn#')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
@@ -4559,9 +4561,14 @@ class ChemicalExposure(YAMLRoot):
     class_name: ClassVar[str] = "chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
 
+    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.has_quantitative_value, list):
+            self.has_quantitative_value = [self.has_quantitative_value] if self.has_quantitative_value is not None else []
+        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.has_quantitative_value]
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 

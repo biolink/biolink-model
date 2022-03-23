@@ -1,39 +1,55 @@
-# Slot: approved_to_treat
-_holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted._
+---
+parent: Predicates
+title: biolink:approved_to_treat
+grand_parent: Slots
+layout: default
+---
+
+# Relation: approved_to_treat
 
 
-URI: [https://w3id.org/biolink/vocab/approved_to_treat](https://w3id.org/biolink/vocab/approved_to_treat)
+holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
+
+URI: [biolink:approved_to_treat](https://w3id.org/biolink/vocab/approved_to_treat)
+
+## Domain and Range
+
+[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+## Parents
+
+ *  is_a: [treats](treats.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [ameliorates](ameliorates.md)
-                * [treats](treats.md)
-                    * **approved_to_treat**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | NCIT:C172573 |
+| **Narrow Mappings:** | | NCIT:R172 |
+|  | | NCIT:regimen_has_accepted_use_for_disease |
+|  | | REPODB:clinically_tested_approved_unknown_phase |
+|  | | REPODB:clinically_tested_suspended_phase_0 |
+|  | | REPODB:clinically_tested_suspended_phase_1 |
+|  | | REPODB:clinically_tested_suspended_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_suspended_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_0 |
+|  | | REPODB:clinically_tested_terminated_phase_1 |
+|  | | REPODB:clinically_tested_terminated_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_0 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_3 |
 

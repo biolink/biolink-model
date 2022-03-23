@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:drug_availability_enum
+layout: default
+---
 
-# Enum: drug_availability_enum
+# Class: drug_availability_enum
 
 
 

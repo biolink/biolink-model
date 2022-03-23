@@ -1,28 +1,36 @@
+---
+parent: Node Properties
+title: biolink:issue
+grand_parent: Slots
+layout: default
+---
+
 # Slot: issue
-_issue of a newspaper, a scientific journal or magazine for reference purpose_
 
 
-URI: [https://w3id.org/biolink/vocab/issue](https://w3id.org/biolink/vocab/issue)
+issue of a newspaper, a scientific journal or magazine for reference purpose
+
+URI: [biolink:issue](https://w3id.org/biolink/vocab/issue)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
+ * [Article](Article.md)
+ * [Serial](Serial.md)
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **issue**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P433 |
 

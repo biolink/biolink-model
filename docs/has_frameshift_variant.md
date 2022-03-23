@@ -1,28 +1,36 @@
-# Slot: has_frameshift_variant
+---
+parent: Predicates
+title: biolink:has_frameshift_variant
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/has_frameshift_variant](https://w3id.org/biolink/vocab/has_frameshift_variant)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [has_sequence_variant](has_sequence_variant.md)
-            * **has_frameshift_variant**
-
-
-
-## Properties
-
- * Range: sequence variant
-
-
-
-## Identifier and Mapping Information
+# Relation: has_frameshift_variant
 
 
 
 
+URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/vocab/has_frameshift_variant)
+
+## Domain and Range
+
+[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
+
+## Parents
+
+ *  is_a: [has sequence variant](has_sequence_variant.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | splice region variant |
+|  | | splice acceptor variant |
+|  | | splice donor variant |
 

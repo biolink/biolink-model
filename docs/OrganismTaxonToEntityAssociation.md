@@ -1,78 +1,44 @@
+---
+parent: Class Mixins
+title: biolink:OrganismTaxonToEntityAssociation
+grand_parent: Classes
+layout: default
+---
+
 # Class: OrganismTaxonToEntityAssociation
-_An association between an organism taxon and another entity_
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+An association between an organism taxon and another entity
 
 URI: [biolink:OrganismTaxonToEntityAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToEntityAssociation)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToEnvironmentAssociation]uses%20-.-%3E[OrganismTaxonToEntityAssociation],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxon])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md) (mixin) 
+ * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) (mixin)  - A relationship between two organism taxon nodes
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: organism taxon to entity association
-description: An association between an organism taxon and another entity
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: organism taxon that is the subject of the association
-    range: organism taxon
-defining_slots:
-- subject
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: organism taxon to entity association
-description: An association between an organism taxon and another entity
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: organism taxon that is the subject of the association
-    range: organism taxon
-defining_slots:
-- subject
-
-```
-</details>
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

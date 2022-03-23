@@ -1,534 +1,174 @@
+---
+parent: Associations
+title: biolink:VariantToGeneExpressionAssociation
+grand_parent: Classes
+layout: default
+---
+
 # Class: VariantToGeneExpressionAssociation
-_An association between a variant and expression of a gene (i.e. e-QTL)_
 
 
-
-
+An association between a variant and expression of a gene (i.e. e-QTL)
 
 URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab/VariantToGeneExpressionAssociation)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneExpressionAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneAssociation]%5E-[VariantToGeneExpressionAssociation],[VariantToGeneAssociation],[Publication],[OntologyClass],[NamedThing],[LifeStage],[InformationResource],[GeneExpressionMixin],[Gene],[EvidenceType],[DiseaseOrPhenotypicFeature],[Attribute],[AnatomicalEntity])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [Entity](Entity.md)
-    * [Association](Association.md)
-        * [VariantToGeneAssociation](VariantToGeneAssociation.md) [ variant to entity association mixin]
-            * **VariantToGeneExpressionAssociation** [ gene expression mixin]
+ *  is_a: [VariantToGeneAssociation](VariantToGeneAssociation.md) - An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
+
+## Uses Mixins
+
+ *  mixin: [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
+
+## Referenced by class
 
 
+## Attributes
 
 
-## Slots
+### Own
 
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [quantifier_qualifier](quantifier_qualifier.md) | [OntologyClass](OntologyClass.md) | 0..1 | A measurable quantity for the object of the association  | . |
-| [expression_site](expression_site.md) | [AnatomicalEntity](AnatomicalEntity.md) | 0..1 | location in which gene or protein expression takes place. May be cell, tissue, or organ.  | . |
-| [stage_qualifier](stage_qualifier.md) | [LifeStage](LifeStage.md) | 0..1 | stage during which gene or protein expression of takes place.  | . |
-| [phenotypic_state](phenotypic_state.md) | [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) | 0..1 | in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.  | . |
-| [subject](subject.md) | [SequenceVariant](SequenceVariant.md) | 1..1 | connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.  | . |
-| [predicate](predicate.md) | [predicate_type](predicate_type.md) | 1..1 | A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.  | . |
-| [object](object.md) | [Gene](Gene.md) | 1..1 | connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.  | . |
-| [relation](relation.md) | [string](string.md) | 0..1 | None  | . |
-| [negated](negated.md) | [boolean](boolean.md) | 0..1 | if set to true, then the association is negated i.e. is not true  | . |
-| [qualifiers](qualifiers.md) | [OntologyClass](OntologyClass.md) | 0..* | connects an association to qualifiers that modify or qualify the meaning of that association  | . |
-| [publications](publications.md) | [Publication](Publication.md) | 0..* | connects an association to publications supporting the association  | . |
-| [has_evidence](has_evidence.md) | [EvidenceType](EvidenceType.md) | 0..* | connects an association to an instance of supporting evidence  | . |
-| [knowledge_source](knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.  | . |
-| [original_knowledge_source](original_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).  | . |
-| [primary_knowledge_source](primary_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).  | . |
-| [aggregator_knowledge_source](aggregator_knowledge_source.md) | [InformationResource](InformationResource.md) | 0..* | An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.  | . |
-| [id](id.md) | [string](string.md) | 1..1 | A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI  | . |
-| [iri](iri.md) | [iri_type](iri_type.md) | 0..1 | An IRI for an entity. This is determined by the id using expansion rules.  | . |
-| [category](category.md) | [category_type](category_type.md) | 0..* | Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+
+### Inherited from association:
+
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [relation](relation.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [negated](negated.md)  <sub>0..1</sub>
+     * Description: if set to true, then the association is negated i.e. is not true
+     * Range: [Boolean](types/Boolean.md)
+ * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
+     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
+     * Range: [OntologyClass](OntologyClass.md)
+ * [publications](publications.md)  <sub>0..\*</sub>
+     * Description: connects an association to publications supporting the association
+     * Range: [Publication](Publication.md)
+ * [has evidence](has_evidence.md)  <sub>0..\*</sub>
+     * Description: connects an association to an instance of supporting evidence
+     * Range: [EvidenceType](EvidenceType.md)
+ * [knowledge source](knowledge_source.md)  <sub>0..\*</sub>
+     * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
+     * Range: [InformationResource](InformationResource.md)
+ * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
+     * Description: The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
+     * Range: [InformationResource](InformationResource.md)
+ * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
+     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
+     * Range: [InformationResource](InformationResource.md)
+ * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
+     * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
+     * Range: [InformationResource](InformationResource.md)
+ * [type](type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [category](category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}  | . |
-| [type](type.md) | [string](string.md) | 0..1 | None  | . |
-| [name](name.md) | [label_type](label_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
-| [description](description.md) | [narrative_text](narrative_text.md) | 0..1 | a human-readable description of an entity  | . |
-| [source](source.md) | [string](string.md) | 0..1 | None  | . |
-| [has_attribute](has_attribute.md) | [Attribute](Attribute.md) | 0..* | connects any entity to an attribute  | . |
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+     * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
 
+### Inherited from entity:
 
-## Usages
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>0..1</sub>
+     * Description: An IRI for an entity. This is determined by the id using expansion rules.
+     * Range: [IriType](types/IriType.md)
+     * in subsets: (translator_minimal,samples)
+ * [category](category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+     * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
+ * [type](type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
+ * [source](source.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
+### Inherited from gene expression mixin:
 
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
+     * Description: A measurable quantity for the object of the association
+     * Range: [OntologyClass](OntologyClass.md)
+ * [expression site](expression_site.md)  <sub>0..1</sub>
+     * Description: location in which gene or protein expression takes place. May be cell, tissue, or organ.
+     * Range: [AnatomicalEntity](AnatomicalEntity.md)
+     * Example: UBERON:0002037 cerebellum
+ * [phenotypic state](phenotypic_state.md)  <sub>0..1</sub>
+     * Description: in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
+     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
-## Identifier and Mapping Information
+### Inherited from gene to expression site association:
 
+ * [stage qualifier](stage_qualifier.md)  <sub>0..1</sub>
+     * Description: stage during which gene or protein expression of takes place.
+     * Range: [LifeStage](LifeStage.md)
+     * Example: UBERON:0000069 larval stage
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
+     * Description: A measurable quantity for the object of the association
+     * Range: [OntologyClass](OntologyClass.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
 
+### Inherited from macromolecular machine mixin:
 
+ * [name](name.md)  <sub>0..1</sub>
+     * Description: A human-readable name for an attribute or entity.
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal,samples)
 
+### Inherited from variant to gene association:
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
 
+### Domain for slot:
 
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: variant to gene expression association
-description: An association between a variant and expression of a gene (i.e. e-QTL)
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: variant to gene association
-mixins:
-- gene expression mixin
-slot_usage:
-  predicate:
-    name: predicate
-    subproperty_of: affects expression of
-defining_slots:
-- subject
-- predicate
-- object
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: variant to gene expression association
-description: An association between a variant and expression of a gene (i.e. e-QTL)
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: variant to gene association
-mixins:
-- gene expression mixin
-slot_usage:
-  predicate:
-    name: predicate
-    subproperty_of: affects expression of
-attributes:
-  quantifier qualifier:
-    name: quantifier qualifier
-    narrow_mappings:
-    - LOINC:analyzes
-    - LOINC:measured_by
-    - LOINC:property_of
-    - SEMMEDDB:measures
-    - UMLS:measures
-    description: A measurable quantity for the object of the association
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: quantifier_qualifier
-    owner: variant to gene expression association
-    range: ontology class
-  expression site:
-    name: expression site
-    description: location in which gene or protein expression takes place. May be
-      cell, tissue, or organ.
-    examples:
-    - value: UBERON:0002037
-      description: cerebellum
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: expression_site
-    owner: variant to gene expression association
-    range: anatomical entity
-  stage qualifier:
-    name: stage qualifier
-    description: stage during which gene or protein expression of takes place.
-    examples:
-    - value: UBERON:0000069
-      description: larval stage
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: stage_qualifier
-    owner: variant to gene expression association
-    range: life stage
-  phenotypic state:
-    name: phenotypic state
-    description: in experiments (e.g. gene expression) assaying diseased or unhealthy
-      tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues,
-      use XXX.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: phenotypic_state
-    owner: variant to gene expression association
-    range: disease or phenotypic feature
-  subject:
-    name: subject
-    local_names:
-      ga4gh:
-        local_name_source: ga4gh
-        local_name_value: annotation subject
-      neo4j:
-        local_name_source: neo4j
-        local_name_value: node with outgoing relationship
-    exact_mappings:
-    - owl:annotatedSource
-    - OBAN:association_has_subject
-    description: connects an association to the subject of the association. For example,
-      in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    slot_uri: rdf:subject
-    alias: subject
-    owner: variant to gene expression association
-    range: sequence variant
-    required: true
-  predicate:
-    name: predicate
-    description: A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    slot_uri: rdf:predicate
-    alias: predicate
-    owner: variant to gene expression association
-    subproperty_of: affects expression of
-    range: predicate type
-    required: true
-  object:
-    name: object
-    local_names:
-      ga4gh:
-        local_name_source: ga4gh
-        local_name_value: descriptor
-      neo4j:
-        local_name_source: neo4j
-        local_name_value: node with incoming relationship
-    exact_mappings:
-    - owl:annotatedTarget
-    - OBAN:association_has_object
-    description: connects an association to the object of the association. For example,
-      in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    slot_uri: rdf:object
-    alias: object
-    owner: variant to gene expression association
-    range: gene
-    required: true
-  relation:
-    name: relation
-    deprecated: 'True'
-    from_schema: https://w3id.org/biolink/biolink-model
-    alias: relation
-    owner: variant to gene expression association
-    range: string
-  negated:
-    name: negated
-    description: if set to true, then the association is negated i.e. is not true
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: negated
-    owner: variant to gene expression association
-    range: boolean
-  qualifiers:
-    name: qualifiers
-    local_names:
-      ga4gh:
-        local_name_source: ga4gh
-        local_name_value: annotation qualifier
-    description: connects an association to qualifiers that modify or qualify the
-      meaning of that association
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    singular_name: qualifier
-    domain: association
-    multivalued: true
-    alias: qualifiers
-    owner: variant to gene expression association
-    range: ontology class
-  publications:
-    name: publications
-    description: connects an association to publications supporting the association
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    singular_name: publication
-    domain: association
-    multivalued: true
-    alias: publications
-    owner: variant to gene expression association
-    range: publication
-  has evidence:
-    name: has evidence
-    exact_mappings:
-    - RO:0002558
-    description: connects an association to an instance of supporting evidence
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: has_evidence
-    owner: variant to gene expression association
-    range: evidence type
-  knowledge source:
-    name: knowledge source
-    close_mappings:
-    - pav:providedBy
-    description: An Information Resource from which the knowledge expressed in an
-      Association was retrieved, directly or indirectly. This can be any resource
-      through which the knowledge passed on its way to its currently serialized form.
-      In practice, implementers should use one of the more specific subtypes of this
-      generic property.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    multivalued: true
-    alias: knowledge_source
-    owner: variant to gene expression association
-    range: information resource
-  original knowledge source:
-    name: original knowledge source
-    description: The Information Resource that created the original record of the
-      knowledge expressed in an Association (e.g. via curation of the knowledge from
-      the literature, or generation of the knowledge de novo through computation,
-      reasoning, inference over data).
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: primary knowledge source
-    domain: association
-    multivalued: true
-    alias: original_knowledge_source
-    owner: variant to gene expression association
-    range: information resource
-  primary knowledge source:
-    name: primary knowledge source
-    description: The most upstream source of the knowledge expressed in an Association
-      that an implementer can identify (may or may not be the 'original' source).
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: knowledge source
-    domain: association
-    multivalued: true
-    alias: primary_knowledge_source
-    owner: variant to gene expression association
-    range: information resource
-  aggregator knowledge source:
-    name: aggregator knowledge source
-    description: An intermediate aggregator resource from which knowledge expressed
-      in an Association was retrieved downstream of the original source, on its path
-      to its current serialized form.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: knowledge source
-    domain: association
-    multivalued: true
-    alias: aggregator_knowledge_source
-    owner: variant to gene expression association
-    range: information resource
-  id:
-    name: id
-    exact_mappings:
-    - alliancegenome:primaryId
-    - gff3:ID
-    - gpi:DB_Object_ID
-    description: A unique identifier for an entity. Must be either a CURIE shorthand
-      for a URI or a complete URI
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    identifier: true
-    alias: id
-    owner: variant to gene expression association
-    range: string
-    required: true
-  iri:
-    name: iri
-    exact_mappings:
-    - WIKIDATA_PROPERTY:P854
-    description: An IRI for an entity. This is determined by the id using expansion
-      rules.
-    in_subset:
-    - translator_minimal
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    alias: iri
-    owner: variant to gene expression association
-    range: iri type
-  category:
-    name: category
-    description: "Name of the high level ontology class in which this entity is categorized.\
-      \ Corresponds to the label for the biolink entity type class.\n * In a neo4j\
-      \ database this MAY correspond to the neo4j label tag.\n * In an RDF database\
-      \ it should be a biolink model class URI.\nThis field is multi-valued. It should\
-      \ include values for ancestors of the biolink class; for example, a protein\
-      \ such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`,\
-      \ `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have\
-      \ an rdf:type triples. This can be to the most specific biolink class, or potentially\
-      \ to a class more specific than something in biolink. For example, a sequence\
-      \ feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site,\
-      \ which is more specific than anything in biolink. Here we would have categories\
-      \ {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}"
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: type
-    domain: entity
-    multivalued: true
-    designates_type: true
-    alias: category
-    owner: variant to gene expression association
-    is_class_field: true
-    range: category type
-    required: false
-  type:
-    name: type
-    exact_mappings:
-    - alliancegenome:soTermId
-    - gff3:type
-    - gpi:DB_Object_Type
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: rdf:type
-    alias: type
-    owner: variant to gene expression association
-    range: string
-  name:
-    name: name
-    aliases:
-    - label
-    - display name
-    - title
-    exact_mappings:
-    - gff3:Name
-    - gpi:DB_Object_Name
-    narrow_mappings:
-    - dct:title
-    - WIKIDATA_PROPERTY:P1476
-    description: A human-readable name for an attribute or entity.
-    in_subset:
-    - translator_minimal
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: rdfs:label
-    alias: name
-    owner: variant to gene expression association
-    range: label type
-  description:
-    name: description
-    aliases:
-    - definition
-    exact_mappings:
-    - IAO:0000115
-    - skos:definitions
-    narrow_mappings:
-    - gff3:Description
-    description: a human-readable description of an entity
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: dct:description
-    alias: description
-    owner: variant to gene expression association
-    range: narrative text
-  source:
-    name: source
-    deprecated: 'True'
-    from_schema: https://w3id.org/biolink/biolink-model
-    alias: source
-    owner: variant to gene expression association
-    range: string
-  has attribute:
-    name: has attribute
-    exact_mappings:
-    - SIO:000008
-    close_mappings:
-    - OBI:0001927
-    narrow_mappings:
-    - OBAN:association_has_subject_property
-    - OBAN:association_has_object_property
-    - CPT:has_possibly_included_panel_element
-    - DRUGBANK:category
-    - EFO:is_executed_in
-    - HANCESTRO:0301
-    - LOINC:has_action_guidance
-    - LOINC:has_adjustment
-    - LOINC:has_aggregation_view
-    - LOINC:has_approach_guidance
-    - LOINC:has_divisor
-    - LOINC:has_exam
-    - LOINC:has_method
-    - LOINC:has_modality_subtype
-    - LOINC:has_object_guidance
-    - LOINC:has_scale
-    - LOINC:has_suffix
-    - LOINC:has_time_aspect
-    - LOINC:has_time_modifier
-    - LOINC:has_timing_of
-    - NCIT:R88
-    - NCIT:eo_disease_has_property_or_attribute
-    - NCIT:has_data_element
-    - NCIT:has_pharmaceutical_administration_method
-    - NCIT:has_pharmaceutical_basic_dose_form
-    - NCIT:has_pharmaceutical_intended_site
-    - NCIT:has_pharmaceutical_release_characteristics
-    - NCIT:has_pharmaceutical_state_of_matter
-    - NCIT:has_pharmaceutical_transformation
-    - NCIT:is_qualified_by
-    - NCIT:qualifier_applies_to
-    - NCIT:role_has_domain
-    - NCIT:role_has_range
-    - INO:0000154
-    - HANCESTRO:0308
-    - OMIM:has_inheritance_type
-    - ORPHA:C016
-    - ORPHA:C017
-    - RO:0000053
-    - RO:0000086
-    - RO:0000087
-    - SNOMED:has_access
-    - SNOMED:has_clinical_course
-    - SNOMED:has_count_of_base_of_active_ingredient
-    - SNOMED:has_dose_form_administration_method
-    - SNOMED:has_dose_form_release_characteristic
-    - SNOMED:has_dose_form_transformation
-    - SNOMED:has_finding_context
-    - SNOMED:has_finding_informer
-    - SNOMED:has_inherent_attribute
-    - SNOMED:has_intent
-    - SNOMED:has_interpretation
-    - SNOMED:has_laterality
-    - SNOMED:has_measurement_method
-    - SNOMED:has_method
-    - SNOMED:has_priority
-    - SNOMED:has_procedure_context
-    - SNOMED:has_process_duration
-    - SNOMED:has_property
-    - SNOMED:has_revision_status
-    - SNOMED:has_scale_type
-    - SNOMED:has_severity
-    - SNOMED:has_specimen
-    - SNOMED:has_state_of_matter
-    - SNOMED:has_subject_relationship_context
-    - SNOMED:has_surgical_approach
-    - SNOMED:has_technique
-    - SNOMED:has_temporal_context
-    - SNOMED:has_time_aspect
-    - SNOMED:has_units
-    - UMLS:has_structural_class
-    - UMLS:has_supported_concept_property
-    - UMLS:has_supported_concept_relationship
-    - UMLS:may_be_qualified_by
-    description: connects any entity to an attribute
-    in_subset:
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    domain: entity
-    multivalued: true
-    alias: has_attribute
-    owner: variant to gene expression association
-    range: attribute
-defining_slots:
-- subject
-- predicate
-- object
-
-```
-</details>
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)

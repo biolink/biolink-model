@@ -1,70 +1,28 @@
+---
+parent: Other Classes
+title: biolink:DiseaseOrPhenotypicFeatureOutcome
+grand_parent: Classes
+layout: default
+---
+
 # Class: DiseaseOrPhenotypicFeatureOutcome
-_Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype._
 
 
-
-
+Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
 
 URI: [biolink:DiseaseOrPhenotypicFeatureOutcome](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureOutcome)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Outcome],[DiseaseOrPhenotypicFeatureOutcome]uses%20-.-%3E[Outcome])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **DiseaseOrPhenotypicFeatureOutcome** [ outcome]
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
+## Attributes
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-
-
-## Usages
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: disease or phenotypic feature outcome
-description: Physiological outcomes resulting from an exposure event which is the
-  manifestation of a disease or other characteristic phenotype.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: disease or phenotypic feature outcome
-description: Physiological outcomes resulting from an exposure event which is the
-  manifestation of a disease or other characteristic phenotype.
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>

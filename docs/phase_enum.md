@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:phase_enum
+layout: default
+---
 
-# Enum: phase_enum
+# Class: phase_enum
 
 
 phase

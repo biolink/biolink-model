@@ -1,38 +1,58 @@
-# Slot: increases_activity_of
-_holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:increases_activity_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: increases_activity_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/increases_activity_of](https://w3id.org/biolink/vocab/increases_activity_of)
+holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
+
+URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_activity_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects activity of](affects_activity_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_activity_of](affects_activity_of.md)
-                * **increases_activity_of** [ increases amount or activity of]
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:decreases activity of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Narrow Mappings:** | | GAMMA:activator |
+|  | | GAMMA:partial_agonist |
+|  | | GAMMA:agonist |
+|  | | GAMMA:opener |
+|  | | GAMMA:positive_allosteric_modulator |
+|  | | GAMMA:positive_modulator |
+|  | | GAMMA:inducer |
+|  | | GAMMA:potentiator |
+|  | | GAMMA:stimulator |
+|  | | CHEMBL.MECHANISM:agonist |
+|  | | CHEMBL.MECHANISM:opener |
+|  | | CHEMBL.MECHANISM:partial_agonist |
+|  | | CHEMBL.MECHANISM:positive_allosteric_modulator |
+|  | | CHEMBL.MECHANISM:positive_modulator |
+|  | | DGIdb:agonist |
+|  | | DGIdb:partial_agonist |
+|  | | DGIdb:inducer |
+|  | | DGIdb:positive_allosteric_modulator |
+|  | | DGIdb:stimulator |
+| **Related Mappings:** | | GAMMA:ec50 |
+|  | | GAMMA:ac50 |
 

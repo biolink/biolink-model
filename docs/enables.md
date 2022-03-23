@@ -1,38 +1,38 @@
-# Slot: enables
-_holds between a physical entity and a process, where the physical entity executes the process_
+---
+parent: Predicates
+title: biolink:enables
+grand_parent: Slots
+layout: default
+---
+
+# Relation: enables
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/enables](https://w3id.org/biolink/vocab/enables)
+holds between a physical entity and a process, where the physical entity executes the process
+
+URI: [biolink:enables](https://w3id.org/biolink/vocab/enables)
+
+## Domain and Range
+
+[PhysicalEntity](PhysicalEntity.md) ->  <sub>0..\*</sub> [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
+
+## Parents
+
+ *  is_a: [participates in](participates_in.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [participates_in](participates_in.md)
-            * **enables**
-
-
-
-## Properties
-
- * Range: biological process or activity
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:prevents |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002327 |
 

@@ -1,110 +1,51 @@
+---
+parent: Class Mixins
+title: biolink:EntityToFeatureOrDiseaseQualifiersMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: EntityToFeatureOrDiseaseQualifiersMixin
-_Qualifiers for entity to disease or phenotype associations._
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+Qualifiers for entity to disease or phenotype associations.
 
 URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Onset],[FrequencyQualifierMixin],[EntityToPhenotypicFeatureAssociationMixin],[Onset]%3Conset%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin%7Cfrequency_qualifier(i):frequency_value%20%3F],[SeverityValue]%3Cseverity%20qualifier%200..1-++[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToPhenotypicFeatureAssociationMixin],[EntityToFeatureOrDiseaseQualifiersMixin]%5E-[EntityToDiseaseAssociationMixin],[FrequencyQualifierMixin]%5E-[EntityToFeatureOrDiseaseQualifiersMixin],[EntityToDiseaseAssociationMixin])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [FrequencyQualifierMixin](FrequencyQualifierMixin.md)
-    * **EntityToFeatureOrDiseaseQualifiersMixin**
-        * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
-        * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md)
+ *  is_a: [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
 
+## Children
 
+ * [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
+ * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [severity_qualifier](severity_qualifier.md) | [SeverityValue](SeverityValue.md) | 0..1 | a qualifier used in a phenotypic association to state how severe the phenotype is in the subject  | . |
-| [onset_qualifier](onset_qualifier.md) | [Onset](Onset.md) | 0..1 | a qualifier used in a phenotypic association to state when the phenotype appears is in the subject  | . |
-| [frequency_qualifier](frequency_qualifier.md) | [frequency_value](frequency_value.md) | 0..1 | a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject  | . |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
 
+### Own
 
-## Identifier and Mapping Information
+ * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * Range: [Onset](Onset.md)
+ * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * Range: [SeverityValue](SeverityValue.md)
 
+### Inherited from frequency qualifier mixin:
 
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: entity to feature or disease qualifiers mixin
-description: Qualifiers for entity to disease or phenotype associations.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: frequency qualifier mixin
-mixin: true
-slots:
-- severity qualifier
-- onset qualifier
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: entity to feature or disease qualifiers mixin
-description: Qualifiers for entity to disease or phenotype associations.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: frequency qualifier mixin
-mixin: true
-attributes:
-  severity qualifier:
-    name: severity qualifier
-    description: a qualifier used in a phenotypic association to state how severe
-      the phenotype is in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: severity_qualifier
-    owner: entity to feature or disease qualifiers mixin
-    range: severity value
-  onset qualifier:
-    name: onset qualifier
-    description: a qualifier used in a phenotypic association to state when the phenotype
-      appears is in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: onset_qualifier
-    owner: entity to feature or disease qualifiers mixin
-    range: onset
-  frequency qualifier:
-    name: frequency qualifier
-    description: a qualifier used in a phenotypic association to state how frequent
-      the phenotype is observed in the subject
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: frequency_qualifier
-    owner: entity to feature or disease qualifiers mixin
-    range: frequency value
-
-```
-</details>
+ * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * Range: [FrequencyValue](types/FrequencyValue.md)

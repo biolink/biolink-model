@@ -1,26 +1,33 @@
+---
+parent: Node Properties
+title: biolink:is_supplement
+grand_parent: Slots
+layout: default
+---
+
 # Slot: is_supplement
 
-URI: [https://w3id.org/biolink/vocab/is_supplement](https://w3id.org/biolink/vocab/is_supplement)
 
 
 
+URI: [biolink:is_supplement](https://w3id.org/biolink/vocab/is_supplement)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **is_supplement**
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [ChemicalMixture](ChemicalMixture.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: chemical mixture
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
-
-
+ * [ChemicalMixture](ChemicalMixture.md)
+ * [ComplexMolecularMixture](ComplexMolecularMixture.md)
+ * [Drug](Drug.md)
+ * [Food](Food.md)
+ * [MolecularMixture](MolecularMixture.md)
+ * [ProcessedMaterial](ProcessedMaterial.md)

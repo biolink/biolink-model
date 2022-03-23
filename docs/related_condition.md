@@ -1,34 +1,34 @@
-# Slot: related_condition
+---
+parent: Predicates
+title: biolink:related_condition
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/related_condition](https://w3id.org/biolink/vocab/related_condition)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **related_condition**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+# Relation: related_condition
 
 
 
 
+URI: [biolink:related_condition](https://w3id.org/biolink/vocab/related_condition)
 
-### Annotations
+## Domain and Range
 
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | GENO:0000790 |
 

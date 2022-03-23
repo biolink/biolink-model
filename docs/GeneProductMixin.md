@@ -1,181 +1,64 @@
+---
+parent: Class Mixins
+title: biolink:GeneProductMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: GeneProductMixin
-_The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules._
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
 
 URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneToGeneProductRelationship],[GeneToGeneProductRelationship]++-%20object%201..1%3E[GeneProductMixin%7Csynonym:label_type%20%2A;xref:uriorcurie%20%2A;name(i):symbol_type%20%3F],[Protein]uses%20-.-%3E[GeneProductMixin],[RNAProduct]uses%20-.-%3E[GeneProductMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[GeneOrGeneProduct]%5E-[GeneProductMixin],[Protein],[GeneProductIsoformMixin],[GeneOrGeneProduct],[Gene],[RNAProduct])
+
+---
 
 
-## Inheritance
+## Identifier prefixes
 
-* [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
-    * [GeneOrGeneProduct](GeneOrGeneProduct.md)
-        * **GeneProductMixin**
-            * [GeneProductIsoformMixin](GeneProductIsoformMixin.md)
+ * UniProtKB
+ * gtpo
+ * PR
 
+## Parents
 
+ *  is_a: [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
 
+## Children
 
-## Slots
+ * [GeneProductIsoformMixin](GeneProductIsoformMixin.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
 
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [synonym](synonym.md) | [label_type](label_type.md) | 0..* | Alternate human-readable names for a thing  | . |
-| [xref](xref.md) | [uriorcurie](uriorcurie.md) | 0..* | Alternate CURIEs for a thing  | . |
-| [name](name.md) | [symbol_type](symbol_type.md) | 0..1 | A human-readable name for an attribute or entity.  | . |
+## Mixin for
 
+ * [RNAProduct](RNAProduct.md) (mixin) 
+ * [Protein](Protein.md) (mixin)  - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
-## Usages
+## Referenced by class
 
+ *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[object](object.md)*  <sub>1..1</sub>  **[GeneProductMixin](GeneProductMixin.md)**
+ *  **[Gene](Gene.md)** *[has gene product](has_gene_product.md)*  <sub>0..\*</sub>  **[GeneProductMixin](GeneProductMixin.md)**
 
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) | [object](object.md) | range | gene product mixin |
-
-
-
-## Identifier and Mapping Information
+## Attributes
 
 
-### Valid ID Prefixes
+### Inherited from macromolecular machine mixin:
 
-Instances of this class *should* have identifiers with one of the following prefixes:
+ * [name](name.md)  <sub>0..1</sub>
+     * Description: A human-readable name for an attribute or entity.
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal,samples)
 
-* UniProtKB
+## Other properties
 
-* gtpo
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | WIKIDATA:Q424689 |
+|  | | GENO:0000907 |
+|  | | NCIT:C26548 |
 
-* PR
-
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: gene product mixin
-id_prefixes:
-- UniProtKB
-- gtpo
-- PR
-exact_mappings:
-- WIKIDATA:Q424689
-- GENO:0000907
-- NCIT:C26548
-description: The functional molecular product of a single gene locus. Gene products
-  are either proteins or functional RNA molecules.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: gene or gene product
-mixin: true
-slots:
-- synonym
-- xref
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: gene product mixin
-id_prefixes:
-- UniProtKB
-- gtpo
-- PR
-exact_mappings:
-- WIKIDATA:Q424689
-- GENO:0000907
-- NCIT:C26548
-description: The functional molecular product of a single gene locus. Gene products
-  are either proteins or functional RNA molecules.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: gene or gene product
-mixin: true
-attributes:
-  synonym:
-    name: synonym
-    aliases:
-    - alias
-    narrow_mappings:
-    - skos:altLabel
-    - gff3:Alias
-    - alliancegenome:synonyms
-    - gpi:DB_Object_Synonyms
-    - oboInOwl:hasExactSynonym
-    - oboInOwl:hasNarrowSynonym
-    - oboInOwl:hasBroadSynonym
-    - oboInOwl:hasRelatedSynonym
-    - HANCESTRO:0330
-    - IAO:0000136
-    - RXNORM:has_tradename
-    description: Alternate human-readable names for a thing
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    multivalued: true
-    alias: synonym
-    owner: gene product mixin
-    range: label type
-  xref:
-    name: xref
-    aliases:
-    - dbxref
-    - Dbxref
-    - DbXref
-    narrow_mappings:
-    - gff3:Dbxref
-    - gpi:DB_Xrefs
-    description: Alternate CURIEs for a thing
-    in_subset:
-    - translator_minimal
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    multivalued: true
-    alias: xref
-    owner: gene product mixin
-    range: uriorcurie
-  name:
-    name: name
-    aliases:
-    - label
-    - display name
-    - title
-    exact_mappings:
-    - gff3:Name
-    - gpi:DB_Object_Name
-    narrow_mappings:
-    - dct:title
-    - WIKIDATA_PROPERTY:P1476
-    description: A human-readable name for an attribute or entity.
-    in_subset:
-    - translator_minimal
-    - samples
-    from_schema: https://w3id.org/biolink/biolink-model
-    slot_uri: rdfs:label
-    alias: name
-    owner: gene product mixin
-    range: symbol type
-
-```
-</details>

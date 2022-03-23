@@ -1,29 +1,35 @@
+---
+parent: Edge Properties
+title: biolink:strand
+grand_parent: Slots
+layout: default
+---
+
 # Slot: strand
-_The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand)._
 
 
-URI: [https://w3id.org/biolink/vocab/strand](https://w3id.org/biolink/vocab/strand)
+The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
+
+URI: [biolink:strand](https://w3id.org/biolink/vocab/strand)
+
+## Domain and Range
+
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [strand_enum](strand_enum.md)
+
+## Parents
+
+ *  is_a: [sequence localization attribute](sequence_localization_attribute.md)
+
+## Children
 
 
+## Used by
 
+ * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
 
-## Inheritance
+## Other properties
 
-* [association_slot](association_slot.md)
-    * [sequence_localization_attribute](sequence_localization_attribute.md)
-        * **strand**
-
-
-
-## Properties
-
- * Range: strand_enum
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | gff3:strand |
 

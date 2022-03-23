@@ -1,28 +1,32 @@
+---
+parent: Node Properties
+title: biolink:keywords
+grand_parent: Slots
+layout: default
+---
+
 # Slot: keywords
-_keywords tagging a publication_
 
 
-URI: [https://w3id.org/biolink/vocab/keywords](https://w3id.org/biolink/vocab/keywords)
+keywords tagging a publication
+
+URI: [biolink:keywords](https://w3id.org/biolink/vocab/keywords)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..\*</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [node_property](node_property.md)
-    * **keywords**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [Article](Article.md)
+ * [Book](Book.md)
+ * [BookChapter](BookChapter.md)
+ * [Publication](Publication.md)
+ * [Serial](Serial.md)

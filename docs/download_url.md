@@ -1,26 +1,34 @@
+---
+parent: Node Properties
+title: biolink:download_url
+grand_parent: Slots
+layout: default
+---
+
 # Slot: download_url
 
-URI: [http://www.w3.org/ns/dcat#downloadURL](http://www.w3.org/ns/dcat#downloadURL)
 
 
 
+URI: [biolink:download_url](https://w3id.org/biolink/vocab/download_url)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **download_url**
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dcat:downloadURL |
 

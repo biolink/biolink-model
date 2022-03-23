@@ -1,94 +1,53 @@
+---
+parent: Class Mixins
+title: biolink:VariantToEntityAssociationMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: VariantToEntityAssociationMixin
 
 
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToEntityAssociationMixin],[VariantToPopulationAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToGeneAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToDiseaseAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[SequenceVariant])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+---
 
 
-## Usages
+## Mixin for
+
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
+ * [VariantToGeneAssociation](VariantToGeneAssociation.md) (mixin)  - An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
+ * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+### Domain for slot:
 
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
+## Other properties
 
+|  |  |  |
+| --- | --- | --- |
+| **Local names:** | | variant annotation (ga4gh) |
 
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: variant to entity association mixin
-local_names:
-  ga4gh:
-    local_name_source: ga4gh
-    local_name_value: variant annotation
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: a sequence variant in which the allele state is associated with some
-      other entity
-    examples:
-    - value: ClinVar:38077
-      description: ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
-    - value: ClinGen:CA024716
-      description: chr13:g.32921033G>C (hg19) in ClinGen
-    range: sequence variant
-defining_slots:
-- subject
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: variant to entity association mixin
-local_names:
-  ga4gh:
-    local_name_source: ga4gh
-    local_name_value: variant annotation
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  subject:
-    name: subject
-    description: a sequence variant in which the allele state is associated with some
-      other entity
-    examples:
-    - value: ClinVar:38077
-      description: ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
-    - value: ClinGen:CA024716
-      description: chr13:g.32921033G>C (hg19) in ClinGen
-    range: sequence variant
-defining_slots:
-- subject
-
-```
-</details>

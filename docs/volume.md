@@ -1,28 +1,37 @@
+---
+parent: Node Properties
+title: biolink:volume
+grand_parent: Slots
+layout: default
+---
+
 # Slot: volume
-_volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication_
 
 
-URI: [https://w3id.org/biolink/vocab/volume](https://w3id.org/biolink/vocab/volume)
+volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
+
+URI: [biolink:volume](https://w3id.org/biolink/vocab/volume)
+
+## Domain and Range
+
+[Publication](Publication.md) ->  <sub>0..1</sub> [String](types/String.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
+ * [Article](Article.md)
+ * [BookChapter](BookChapter.md)
+ * [Serial](Serial.md)
 
-## Inheritance
+## Other properties
 
-* [node_property](node_property.md)
-    * **volume**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | WIKIDATA_PROPERTY:P478 |
 

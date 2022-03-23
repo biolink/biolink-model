@@ -1,31 +1,41 @@
-# Slot: decreases_expression_of
-_holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:decreases_expression_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: decreases_expression_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/decreases_expression_of](https://w3id.org/biolink/vocab/decreases_expression_of)
+holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the other within a system of interest
+
+URI: [biolink:decreases_expression_of](https://w3id.org/biolink/vocab/decreases_expression_of)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
+
+## Parents
+
+ *  is_a: [affects expression of](affects_expression_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_expression_of](affects_expression_of.md)
-                * **decreases_expression_of** [ decreases amount or activity of]
-
-
-
-## Properties
-
- * Range: nucleic acid entity
-
-
-
-## Identifier and Mapping Information
-
-
-
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0003002 |
+| **Narrow Mappings:** | | CHEMBL.MECHANISM:antisense_inhibitor |
+| **Related Mappings:** | | DGIdb:antisense |
+|  | | DGIdb:antisense_oligonucleotide |
 

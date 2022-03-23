@@ -1,26 +1,31 @@
+---
+parent: Node Properties
+title: biolink:aggregate_statistic
+grand_parent: Slots
+layout: default
+---
+
 # Slot: aggregate_statistic
 
-URI: [https://w3id.org/biolink/vocab/aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_statistic)
 
 
 
+URI: [biolink:aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_statistic)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **aggregate_statistic**
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
+## Children
 
- * Range: None
+ *  [has count](has_count.md)
+ *  [has percentage](has_percentage.md)
+ *  [has quotient](has_quotient.md)
+ *  [has total](has_total.md)
 
-
-
-## Identifier and Mapping Information
-
-
-
-
+## Used by
 

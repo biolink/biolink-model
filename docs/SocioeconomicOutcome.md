@@ -1,70 +1,28 @@
+---
+parent: Other Classes
+title: biolink:SocioeconomicOutcome
+grand_parent: Classes
+layout: default
+---
+
 # Class: SocioeconomicOutcome
-_An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event_
 
 
-
-
+An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
 
 URI: [biolink:SocioeconomicOutcome](https://w3id.org/biolink/vocab/SocioeconomicOutcome)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicOutcome]uses%20-.-%3E[Outcome],[Outcome])
+
+---
 
 
-## Inheritance
+## Uses Mixins
 
-* **SocioeconomicOutcome** [ outcome]
+ *  mixin: [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
 
+## Attributes
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-
-
-## Usages
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: socioeconomic outcome
-description: An general social or economic outcome, such as healthcare costs, utilization,
-  etc., resulting from an exposure event
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: socioeconomic outcome
-description: An general social or economic outcome, such as healthcare costs, utilization,
-  etc., resulting from an exposure event
-from_schema: https://w3id.org/biolink/biolink-model
-mixins:
-- outcome
-
-```
-</details>

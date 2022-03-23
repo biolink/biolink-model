@@ -1,26 +1,35 @@
+---
+parent: Node Properties
+title: biolink:version
+grand_parent: Slots
+layout: default
+---
+
 # Slot: version
 
-URI: [https://w3id.org/biolink/vocab/version](https://w3id.org/biolink/vocab/version)
 
 
 
+URI: [biolink:version](https://w3id.org/biolink/vocab/version)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **version**
+[Dataset](Dataset.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Broad Mappings:** | | pav:version |
+|  | | owl:versionInfo |
 

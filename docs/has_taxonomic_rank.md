@@ -1,26 +1,34 @@
+---
+parent: Node Properties
+title: biolink:has_taxonomic_rank
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_taxonomic_rank
 
-URI: [https://w3id.org/biolink/vocab/has_taxonomic_rank](https://w3id.org/biolink/vocab/has_taxonomic_rank)
 
 
 
+URI: [biolink:has_taxonomic_rank](https://w3id.org/biolink/vocab/has_taxonomic_rank)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **has_taxonomic_rank**
+[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [TaxonomicRank](TaxonomicRank.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: taxonomic rank
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | WIKIDATA:P105 |
 

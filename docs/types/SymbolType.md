@@ -1,10 +1,16 @@
+---
+parent: Defined Types
+grand_parent: Types
+title: biolink:SymbolType
+layout: default
+---
 
-# Type: symbol type
+# Type: SymbolType
 
 
 
 
-URI: [biolink:SymbolType](https://w3id.org/biolink/vocab/SymbolType)
+URI: [biolink:SymbolType](https://w3id.org/biolink/vocab/types/biolink:SymbolType)
 
 |  |  |  |
 | --- | --- | --- |

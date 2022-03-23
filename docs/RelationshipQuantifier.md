@@ -1,67 +1,33 @@
+---
+parent: Class Mixins
+title: biolink:RelationshipQuantifier
+grand_parent: Classes
+layout: default
+---
+
 # Class: RelationshipQuantifier
 
 
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/RelationshipQuantifier)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpecificityQuantifier],[SensitivityQuantifier],[RelationshipQuantifier]%5E-[SpecificityQuantifier],[RelationshipQuantifier]%5E-[SensitivityQuantifier],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[FrequencyQuantifier])
+
+---
 
 
-## Inheritance
+## Children
 
-* **RelationshipQuantifier**
-    * [SensitivityQuantifier](SensitivityQuantifier.md)
-    * [SpecificityQuantifier](SpecificityQuantifier.md)
-    * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [SensitivityQuantifier](SensitivityQuantifier.md)
+ * [SpecificityQuantifier](SpecificityQuantifier.md)
 
-
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: relationship quantifier
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: relationship quantifier
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-
-```
-</details>

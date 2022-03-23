@@ -1,70 +1,38 @@
+---
+parent: Class Mixins
+title: biolink:PhysicalEssenceOrOccurrent
+grand_parent: Classes
+layout: default
+---
+
 # Class: PhysicalEssenceOrOccurrent
-_Either a physical or processual entity._
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+Either a physical or processual entity.
 
 URI: [biolink:PhysicalEssenceOrOccurrent](https://w3id.org/biolink/vocab/PhysicalEssenceOrOccurrent)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent]%5E-[PhysicalEssence],[PhysicalEssenceOrOccurrent]%5E-[Occurrent],[PhysicalEssence],[Occurrent])
+
+---
 
 
-## Inheritance
+## Children
 
-* **PhysicalEssenceOrOccurrent**
-    * [PhysicalEssence](PhysicalEssence.md)
-    * [Occurrent](Occurrent.md)
+ * [Occurrent](Occurrent.md) - A processual entity.
+ * [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
 
+## Referenced by class
 
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[negatively regulated by](negatively_regulated_by.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[negatively regulates](negatively_regulates.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[positively regulated by](positively_regulated_by.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[positively regulates](positively_regulates.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[regulated by](regulated_by.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
+ *  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)** *[regulates](regulates.md)*  <sub>0..1</sub>  **[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)**
 
+## Attributes
 
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-
-
-## Usages
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: physical essence or occurrent
-description: Either a physical or processual entity.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: physical essence or occurrent
-description: Either a physical or processual entity.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-
-```
-</details>

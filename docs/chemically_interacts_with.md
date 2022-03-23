@@ -1,29 +1,37 @@
-# Slot: chemically_interacts_with
+---
+parent: Predicates
+title: biolink:chemically_interacts_with
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/chemically_interacts_with](https://w3id.org/biolink/vocab/chemically_interacts_with)
+# Relation: chemically_interacts_with
 
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [interacts_with](interacts_with.md)
-            * [physically_interacts_with](physically_interacts_with.md)
-                * **chemically_interacts_with**
-
-
-
-## Properties
-
- * Range: chemical entity
-
-
-
-## Identifier and Mapping Information
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
+URI: [biolink:chemically_interacts_with](https://w3id.org/biolink/vocab/chemically_interacts_with)
+
+## Domain and Range
+
+[ChemicalEntity](ChemicalEntity.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+
+## Parents
+
+ *  is_a: [physically interacts with](physically_interacts_with.md)
+
+## Children
+
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

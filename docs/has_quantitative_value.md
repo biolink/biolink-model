@@ -1,23 +1,58 @@
+---
+parent: Other Slots
+title: biolink:has_quantitative_value
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_quantitative_value
-_connects an attribute to a value_
+
+samples
+{: .samples-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/has_quantitative_value](https://w3id.org/biolink/vocab/has_quantitative_value)
+connects an attribute to a value
+
+URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantitative_value)
+
+## Domain and Range
+
+[Attribute](Attribute.md) ->  <sub>0..\*</sub> [QuantityValue](QuantityValue.md)
+
+## Parents
 
 
-
-<!-- no inheritance hierarchy -->
-
-
-## Properties
-
- * Range: quantity value
+## Children
 
 
+## Used by
 
-## Identifier and Mapping Information
+ * [Attribute](Attribute.md)
+ * [BiologicalSex](BiologicalSex.md)
+ * [ChemicalExposure](ChemicalExposure.md)
+ * [ClinicalAttribute](ClinicalAttribute.md)
+ * [ClinicalCourse](ClinicalCourse.md)
+ * [ClinicalMeasurement](ClinicalMeasurement.md)
+ * [ClinicalModifier](ClinicalModifier.md)
+ * [DrugExposure](DrugExposure.md)
+ * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md)
+ * [GenotypicSex](GenotypicSex.md)
+ * [Inheritance](Inheritance.md)
+ * [Onset](Onset.md)
+ * [OrganismAttribute](OrganismAttribute.md)
+ * [PhenotypicQuality](PhenotypicQuality.md)
+ * [PhenotypicSex](PhenotypicSex.md)
+ * [SeverityValue](SeverityValue.md)
+ * [SocioeconomicAttribute](SocioeconomicAttribute.md)
+ * [Zygosity](Zygosity.md)
 
+## Other properties
 
-
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | samples |
+| **Exact Mappings:** | | qud:quantityValue |
+| **Narrow Mappings:** | | SNOMED:has_concentration_strength_numerator_value |
+|  | | SNOMED:has_presentation_strength_denominator_value |
+|  | | SNOMED:has_presentation_strength_numerator_value |
 

@@ -1,28 +1,29 @@
+---
+parent: Edge Properties
+title: biolink:reaction_side
+grand_parent: Slots
+layout: default
+---
+
 # Slot: reaction_side
-_the side of a reaction being modeled (ie: left or right)_
 
 
-URI: [https://w3id.org/biolink/vocab/reaction_side](https://w3id.org/biolink/vocab/reaction_side)
+the side of a reaction being modeled (ie: left or right)
+
+URI: [biolink:reaction_side](https://w3id.org/biolink/vocab/reaction_side)
+
+## Domain and Range
+
+[Association](Association.md) ->  <sub>0..1</sub> [reaction_side_enum](reaction_side_enum.md)
+
+## Parents
+
+ *  is_a: [association slot](association_slot.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [association_slot](association_slot.md)
-    * **reaction_side**
-
-
-
-## Properties
-
- * Range: reaction_side_enum
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [ReactionToCatalystAssociation](ReactionToCatalystAssociation.md)
+ * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)

@@ -1,28 +1,27 @@
-# Slot: has_non_coding_variant
+---
+parent: Predicates
+title: biolink:has_non_coding_variant
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/has_non_coding_variant](https://w3id.org/biolink/vocab/has_non_coding_variant)
-
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [has_sequence_variant](has_sequence_variant.md)
-            * **has_non_coding_variant**
-
-
-
-## Properties
-
- * Range: sequence variant
-
-
-
-## Identifier and Mapping Information
+# Relation: has_non_coding_variant
 
 
 
 
+URI: [biolink:has_non_coding_variant](https://w3id.org/biolink/vocab/has_non_coding_variant)
+
+## Domain and Range
+
+[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
+
+## Parents
+
+ *  is_a: [has sequence variant](has_sequence_variant.md)
+
+## Children
+
+
+## Used by
 

@@ -1,26 +1,36 @@
+---
+parent: Edge Properties
+title: biolink:interacting_molecules_category
+grand_parent: Slots
+layout: default
+---
+
 # Slot: interacting_molecules_category
 
-URI: [https://w3id.org/biolink/vocab/interacting_molecules_category](https://w3id.org/biolink/vocab/interacting_molecules_category)
 
 
 
+URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/interacting_molecules_category)
 
-## Inheritance
+## Domain and Range
 
-* [association_slot](association_slot.md)
-    * **interacting_molecules_category**
+[Association](Association.md) ->  <sub>0..1</sub> [OntologyClass](OntologyClass.md)
 
+## Parents
 
+ *  is_a: [association slot](association_slot.md)
 
-## Properties
-
- * Range: ontology class
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
+ * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein') |
+| **Exact Mappings:** | | MI:1046 |
 

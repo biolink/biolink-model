@@ -1,37 +1,34 @@
-# Slot: exacerbates
-_A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition._
+---
+parent: Predicates
+title: biolink:exacerbates
+grand_parent: Slots
+layout: default
+---
+
+# Relation: exacerbates
 
 
-URI: [https://w3id.org/biolink/vocab/exacerbates](https://w3id.org/biolink/vocab/exacerbates)
+A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+
+URI: [biolink:exacerbates](https://w3id.org/biolink/vocab/exacerbates)
+
+## Domain and Range
+
+[BiologicalEntity](BiologicalEntity.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
+## Parents
+
+ *  is_a: [affects](affects.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * **exacerbates**
-
-
-
-## Properties
-
- * Range: disease or phenotypic feature
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | RO:0003309 |
 

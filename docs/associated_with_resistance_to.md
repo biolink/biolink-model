@@ -1,37 +1,27 @@
-# Slot: associated_with_resistance_to
-_A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical._
+---
+parent: Predicates
+title: biolink:associated_with_resistance_to
+grand_parent: Slots
+layout: default
+---
+
+# Relation: associated_with_resistance_to
 
 
-URI: [https://w3id.org/biolink/vocab/associated_with_resistance_to](https://w3id.org/biolink/vocab/associated_with_resistance_to)
+A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
+
+URI: [biolink:associated_with_resistance_to](https://w3id.org/biolink/vocab/associated_with_resistance_to)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [ChemicalEntity](ChemicalEntity.md)
+
+## Parents
+
+ *  is_a: [associated with](associated_with.md)
+
+## Children
 
 
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [associated_with](associated_with.md)
-            * **associated_with_resistance_to**
-
-
-
-## Properties
-
- * Range: chemical entity
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+## Used by
 

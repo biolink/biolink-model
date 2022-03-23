@@ -1,39 +1,43 @@
-# Slot: increases_degradation_of
-_holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:increases_degradation_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: increases_degradation_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/increases_degradation_of](https://w3id.org/biolink/vocab/increases_degradation_of)
+holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
+
+URI: [biolink:increases_degradation_of](https://w3id.org/biolink/vocab/increases_degradation_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects degradation of](affects_degradation_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_degradation_of](affects_degradation_of.md)
-                * **increases_degradation_of** [ decreases amount or activity of]
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | decreases degredation of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Close Mappings:** | | CHEMBL.MECHANISM:degrader |
+| **Narrow Mappings:** | | CTD:increases_cleavage |
+|  | | CTD:increases_hydrolysis |
+|  | | GOREL:0002004 |
+| **Related Mappings:** | | GAMMA:substrate |
+|  | | CHEMBL.MECHANISM:substrate |
 

@@ -1,39 +1,39 @@
-# Slot: decreases_splicing_of
-_holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA_
+---
+parent: Predicates
+title: biolink:decreases_splicing_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: decreases_splicing_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/decreases_splicing_of](https://w3id.org/biolink/vocab/decreases_splicing_of)
+holds between a chemical entity and an mRNA where the action or effect of the chemical entity decreases the proper splicing of the mRNA
+
+URI: [biolink:decreases_splicing_of](https://w3id.org/biolink/vocab/decreases_splicing_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
+
+## Parents
+
+ *  is_a: [affects splicing of](affects_splicing_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_splicing_of](affects_splicing_of.md)
-                * **decreases_splicing_of** [ decreases amount or activity of]
-
-
-
-## Properties
-
- * Range: transcript
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:increases splicing of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | CTD:decreases_RNA_splicing |
+| **Broad Mappings:** | | CTD:decreases_splicing_of |
 

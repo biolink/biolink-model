@@ -1,5 +1,11 @@
+---
+grand_parent: Browse Biolink Model
+parent: Enums
+title: biolink:logical_interpretation_enum
+layout: default
+---
 
-# Enum: logical_interpretation_enum
+# Class: logical_interpretation_enum
 
 
 

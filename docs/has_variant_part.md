@@ -1,38 +1,34 @@
-# Slot: has_variant_part
-_holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it_
+---
+parent: Predicates
+title: biolink:has_variant_part
+grand_parent: Slots
+layout: default
+---
+
+# Relation: has_variant_part
 
 
-URI: [https://w3id.org/biolink/vocab/has_variant_part](https://w3id.org/biolink/vocab/has_variant_part)
+holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
+
+URI: [biolink:has_variant_part](https://w3id.org/biolink/vocab/has_variant_part)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [has part](has_part.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [overlaps](overlaps.md)
-            * [has_part](has_part.md)
-                * **has_variant_part**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | GENO:0000382 |
 

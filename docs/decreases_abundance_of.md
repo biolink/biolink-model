@@ -1,39 +1,38 @@
-# Slot: decreases_abundance_of
-_holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest_
+---
+parent: Predicates
+title: biolink:decreases_abundance_of
+grand_parent: Slots
+layout: default
+---
+
+# Relation: decreases_abundance_of
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/decreases_abundance_of](https://w3id.org/biolink/vocab/decreases_abundance_of)
+holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
+
+URI: [biolink:decreases_abundance_of](https://w3id.org/biolink/vocab/decreases_abundance_of)
+
+## Domain and Range
+
+[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) ->  <sub>0..\*</sub> [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)
+
+## Parents
+
+ *  is_a: [affects abundance of](affects_abundance_of.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [affects](affects.md)
-            * [affects_abundance_of](affects_abundance_of.md)
-                * **decreases_abundance_of** [ decreases amount or activity of]
-
-
-
-## Properties
-
- * Range: chemical entity or gene or gene product
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
-| biolink:opposite_of | biolink:increases abundance of |
-
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+| **Related Mappings:** | | UBERGRAPH:is_decrease_of |
 

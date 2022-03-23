@@ -1,3 +1,4 @@
+Loading .env environment variables...
 # metamodel_version: 1.7.0
 # version: 2.2.15
 type Activity implements ActivityAndBehavior
@@ -548,6 +549,7 @@ interface ChemicalEntityToEntityAssociationMixin
 
 type ChemicalExposure implements ExposureEvent
   {
+    hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
 
@@ -1129,6 +1131,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
 
 type DrugExposure implements ExposureEvent
   {
+    hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
 
@@ -1163,6 +1166,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
 
 type DrugToGeneInteractionExposure implements GeneGroupingMixin
   {
+    hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
   }

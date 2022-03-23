@@ -1,26 +1,35 @@
+---
+parent: Node Properties
+title: biolink:has_distribution
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_distribution
 
-URI: [http://purl.org/dc/terms/distribution](http://purl.org/dc/terms/distribution)
 
 
 
+URI: [biolink:has_distribution](https://w3id.org/biolink/vocab/has_distribution)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **has_distribution**
+[DatasetVersion](DatasetVersion.md) ->  <sub>0..1</sub> [DatasetDistribution](DatasetDistribution.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: dataset distribution
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
+ * [DatasetVersion](DatasetVersion.md)
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dct:distribution |
 

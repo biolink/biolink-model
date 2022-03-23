@@ -1,68 +1,35 @@
+---
+parent: Class Mixins
+title: biolink:SpecificityQuantifier
+grand_parent: Classes
+layout: default
+---
+
 # Class: SpecificityQuantifier
 
 
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
 
 
 URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SpecificityQuantifier]%5E-[PathognomonicityQuantifier],[RelationshipQuantifier]%5E-[SpecificityQuantifier],[RelationshipQuantifier],[PathognomonicityQuantifier])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [RelationshipQuantifier](RelationshipQuantifier.md)
-    * **SpecificityQuantifier**
-        * [PathognomonicityQuantifier](PathognomonicityQuantifier.md)
+ *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
 
+## Children
 
+ * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
+## Referenced by class
 
 
-## Usages
+## Attributes
 
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: specificity quantifier
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: relationship quantifier
-mixin: true
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: specificity quantifier
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: relationship quantifier
-mixin: true
-
-```
-</details>

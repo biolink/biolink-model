@@ -1,120 +1,59 @@
+---
+parent: Other Classes
+title: biolink:GeographicExposure
+grand_parent: Classes
+layout: default
+---
+
 # Class: GeographicExposure
-_A geographic exposure is a factor relating to geographic proximity to some impactful entity._
 
 
-
-
+A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 
 URI: [biolink:GeographicExposure](https://w3id.org/biolink/vocab/GeographicExposure)
 
 
+---
+
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeographicExposure%7Ctimepoint(i):time_type%20%3F]uses%20-.-%3E[ExposureEvent],[EnvironmentalExposure]%5E-[GeographicExposure],[ExposureEvent],[EnvironmentalExposure])
+
+---
 
 
-## Inheritance
+## Parents
 
-* [EnvironmentalExposure](EnvironmentalExposure.md) [ exposure event]
-    * **GeographicExposure** [ exposure event]
+ *  is_a: [EnvironmentalExposure](EnvironmentalExposure.md) - A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 
+## Uses Mixins
 
+ *  mixin: [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+## Attributes
 
 
-## Usages
+### Inherited from exposure event:
 
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
 
+## Other properties
 
-## Identifier and Mapping Information
+|  |  |  |
+| --- | --- | --- |
+| **Close Mappings:** | | dcid:GeologicalEvent |
+| **Narrow Mappings:** | | dcid:IceStoremEvent |
+|  | | dcid:LakeEffectSnowEvent |
+|  | | dcid:LandslideEvent |
+|  | | dcid:MarineDenseFogEvent |
+|  | | dcid:MarineLighteningEvent |
+|  | | dcid:MarineStrongWindEvent |
+|  | | dcid:MarineThunderstormWindEvent |
+|  | | dcid:StormEvent |
+|  | | dcid:StormSurgeTideEvent |
+|  | | dcid:StrongWindEvent |
+|  | | dcid:ThunderstormWindEvent |
+|  | | dcid:TornadoEvent |
+|  | | dcid:TropicalDepressionEvent |
+|  | | dcid:WinterStoremEvent |
 
-
-
-
-
-
-
-
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: geographic exposure
-close_mappings:
-- dcid:GeologicalEvent
-narrow_mappings:
-- dcid:IceStoremEvent
-- dcid:LakeEffectSnowEvent
-- dcid:LandslideEvent
-- dcid:MarineDenseFogEvent
-- dcid:MarineLighteningEvent
-- dcid:MarineStrongWindEvent
-- dcid:MarineThunderstormWindEvent
-- dcid:StormEvent
-- dcid:StormSurgeTideEvent
-- dcid:StrongWindEvent
-- dcid:ThunderstormWindEvent
-- dcid:TornadoEvent
-- dcid:TropicalDepressionEvent
-- dcid:WinterStoremEvent
-description: A geographic exposure is a factor relating to geographic proximity to
-  some impactful entity.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: environmental exposure
-mixins:
-- exposure event
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: geographic exposure
-close_mappings:
-- dcid:GeologicalEvent
-narrow_mappings:
-- dcid:IceStoremEvent
-- dcid:LakeEffectSnowEvent
-- dcid:LandslideEvent
-- dcid:MarineDenseFogEvent
-- dcid:MarineLighteningEvent
-- dcid:MarineStrongWindEvent
-- dcid:MarineThunderstormWindEvent
-- dcid:StormEvent
-- dcid:StormSurgeTideEvent
-- dcid:StrongWindEvent
-- dcid:ThunderstormWindEvent
-- dcid:TornadoEvent
-- dcid:TropicalDepressionEvent
-- dcid:WinterStoremEvent
-description: A geographic exposure is a factor relating to geographic proximity to
-  some impactful entity.
-from_schema: https://w3id.org/biolink/biolink-model
-is_a: environmental exposure
-mixins:
-- exposure event
-attributes:
-  timepoint:
-    name: timepoint
-    aliases:
-    - duration
-    description: a point in time
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: node property
-    domain: named thing
-    alias: timepoint
-    owner: geographic exposure
-    range: time type
-
-```
-</details>

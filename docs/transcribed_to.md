@@ -1,36 +1,35 @@
-# Slot: transcribed_to
-_inverse of transcribed from_
+---
+parent: Predicates
+title: biolink:transcribed_to
+grand_parent: Slots
+layout: default
+---
+
+# Relation: transcribed_to
 
 
-URI: [https://w3id.org/biolink/vocab/transcribed_to](https://w3id.org/biolink/vocab/transcribed_to)
+inverse of transcribed from
+
+URI: [biolink:transcribed_to](https://w3id.org/biolink/vocab/transcribed_to)
+
+## Domain and Range
+
+[Gene](Gene.md) ->  <sub>0..\*</sub> [Transcript](Transcript.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
 
 
+## Used by
 
 
-## Inheritance
+## Other properties
 
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **transcribed_to**
-
-
-
-## Properties
-
- * Range: transcript
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:transcribed from |
-
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | RO:0002511 |
+|  | | SIO:010080 |
 

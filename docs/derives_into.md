@@ -1,36 +1,44 @@
-# Slot: derives_into
-_holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity_
+---
+parent: Predicates
+title: biolink:derives_into
+grand_parent: Slots
+layout: default
+---
+
+# Relation: derives_into
+
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
-URI: [https://w3id.org/biolink/vocab/derives_into](https://w3id.org/biolink/vocab/derives_into)
+holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+
+URI: [biolink:derives_into](https://w3id.org/biolink/vocab/derives_into)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+
+## Parents
+
+ *  is_a: [related to at instance level](related_to_at_instance_level.md)
+
+## Children
+
+ *  [has metabolite](has_metabolite.md)
+
+## Used by
 
 
+## Other properties
 
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * **derives_into**
-
-
-
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-### Annotations
-
-| property | value |
-| --- | --- |
-| biolink:opposite_of | biolink:subclass of |
-
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | is normal cell origin of disease |
+|  | | may be normal cell origin of disease |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0001001 |
+|  | | SEMMEDDB:CONVERTS_TO |
+|  | | SEMMEDDB:converts_to |
+|  | | FMA:derives |
 

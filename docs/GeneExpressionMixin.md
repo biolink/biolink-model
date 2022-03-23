@@ -1,129 +1,70 @@
+---
+parent: Class Mixins
+title: biolink:GeneExpressionMixin
+grand_parent: Classes
+layout: default
+---
+
 # Class: GeneExpressionMixin
-_Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs._
 
 
-
-
-* __NOTE__: this is a mixin class intended to be used in combination with other classes, and not used directly
-
+Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
 
 URI: [biolink:GeneExpressionMixin](https://w3id.org/biolink/vocab/GeneExpressionMixin)
 
 
+---
 
-<!-- no inheritance hierarchy -->
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[LifeStage],[DiseaseOrPhenotypicFeature]%3Cphenotypic%20state%200..1-%20[GeneExpressionMixin],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneExpressionMixin],[AnatomicalEntity]%3Cexpression%20site%200..1-%20[GeneExpressionMixin],[OntologyClass]%3Cquantifier%20qualifier%200..1-++[GeneExpressionMixin],[VariantToGeneExpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[GeneToGeneCoexpressionAssociation]uses%20-.-%3E[GeneExpressionMixin],[VariantToGeneExpressionAssociation],[GeneToGeneCoexpressionAssociation],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
 
-
-
-## Slots
-
-| Name | Range | Cardinality | Description  | Info |
-| ---  | --- | --- | --- | --- |
-| [quantifier_qualifier](quantifier_qualifier.md) | [OntologyClass](OntologyClass.md) | 0..1 | Optional quantitative value indicating degree of expression.  | . |
-| [expression_site](expression_site.md) | [AnatomicalEntity](AnatomicalEntity.md) | 0..1 | location in which gene or protein expression takes place. May be cell, tissue, or organ.  | . |
-| [stage_qualifier](stage_qualifier.md) | [LifeStage](LifeStage.md) | 0..1 | stage during which gene or protein expression of takes place.  | . |
-| [phenotypic_state](phenotypic_state.md) | [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) | 0..1 | in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.  | . |
+---
 
 
-## Usages
+## Mixin for
+
+ * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) (mixin)  - Indicates that two genes are co-expressed, generally under the same conditions.
+ * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md) (mixin)  - An association between a variant and expression of a gene (i.e. e-QTL)
+
+## Referenced by class
 
 
-
-## Identifier and Mapping Information
-
+## Attributes
 
 
+### Own
 
+ * [expression site](expression_site.md)  <sub>0..1</sub>
+     * Description: location in which gene or protein expression takes place. May be cell, tissue, or organ.
+     * Range: [AnatomicalEntity](AnatomicalEntity.md)
+     * Example: UBERON:0002037 cerebellum
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
+     * Description: A measurable quantity for the object of the association
+     * Range: [OntologyClass](OntologyClass.md)
+ * [phenotypic state](phenotypic_state.md)  <sub>0..1</sub>
+     * Description: in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
+     * Range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
+### Inherited from gene to expression site association:
 
+ * [stage qualifier](stage_qualifier.md)  <sub>0..1</sub>
+     * Description: stage during which gene or protein expression of takes place.
+     * Range: [LifeStage](LifeStage.md)
+     * Example: UBERON:0000069 larval stage
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
+     * Description: A measurable quantity for the object of the association
+     * Range: [OntologyClass](OntologyClass.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
 
+### Domain for slot:
 
-
-## LinkML Specification
-
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-
-### Direct
-
-<details>
-```yaml
-name: gene expression mixin
-description: Observed gene expression intensity, context (site, stage) and associated
-  phenotypic status within which the expression occurs.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slots:
-- quantifier qualifier
-- expression site
-- stage qualifier
-- phenotypic state
-slot_usage:
-  quantifier qualifier:
-    name: quantifier qualifier
-    description: Optional quantitative value indicating degree of expression.
-
-```
-</details>
-
-### Induced
-
-<details>
-```yaml
-name: gene expression mixin
-description: Observed gene expression intensity, context (site, stage) and associated
-  phenotypic status within which the expression occurs.
-from_schema: https://w3id.org/biolink/biolink-model
-mixin: true
-slot_usage:
-  quantifier qualifier:
-    name: quantifier qualifier
-    description: Optional quantitative value indicating degree of expression.
-attributes:
-  quantifier qualifier:
-    name: quantifier qualifier
-    description: Optional quantitative value indicating degree of expression.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: quantifier_qualifier
-    owner: gene expression mixin
-    range: ontology class
-  expression site:
-    name: expression site
-    description: location in which gene or protein expression takes place. May be
-      cell, tissue, or organ.
-    examples:
-    - value: UBERON:0002037
-      description: cerebellum
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: expression_site
-    owner: gene expression mixin
-    range: anatomical entity
-  stage qualifier:
-    name: stage qualifier
-    description: stage during which gene or protein expression of takes place.
-    examples:
-    - value: UBERON:0000069
-      description: larval stage
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: stage_qualifier
-    owner: gene expression mixin
-    range: life stage
-  phenotypic state:
-    name: phenotypic state
-    description: in experiments (e.g. gene expression) assaying diseased or unhealthy
-      tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues,
-      use XXX.
-    from_schema: https://w3id.org/biolink/biolink-model
-    is_a: association slot
-    domain: association
-    alias: phenotypic_state
-    owner: gene expression mixin
-    range: disease or phenotypic feature
-
-```
-</details>
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
+     * Description: A measurable quantity for the object of the association
+     * Range: [OntologyClass](OntologyClass.md)

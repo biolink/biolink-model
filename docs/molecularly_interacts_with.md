@@ -1,36 +1,44 @@
-# Slot: molecularly_interacts_with
+---
+parent: Predicates
+title: biolink:molecularly_interacts_with
+grand_parent: Slots
+layout: default
+---
 
-URI: [https://w3id.org/biolink/vocab/molecularly_interacts_with](https://w3id.org/biolink/vocab/molecularly_interacts_with)
+# Relation: molecularly_interacts_with
 
-
-
-
-## Inheritance
-
-* [related_to](related_to.md)
-    * [related_to_at_instance_level](related_to_at_instance_level.md)
-        * [interacts_with](interacts_with.md)
-            * [physically_interacts_with](physically_interacts_with.md)
-                * **molecularly_interacts_with**
-
-
-
-## Properties
-
- * Range: molecular entity
-
-
-
-## Identifier and Mapping Information
+translator_minimal
+{: .translator_minimal-subset-label }
 
 
 
 
+URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecularly_interacts_with)
 
-### Annotations
+## Domain and Range
 
-| property | value |
-| --- | --- |
-| biolink:canonical_predicate | True |
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..\*</sub> [MolecularEntity](MolecularEntity.md)
 
+## Parents
+
+ *  is_a: [physically interacts with](physically_interacts_with.md)
+
+## Children
+
+ *  [decreases molecular interaction](decreases_molecular_interaction.md)
+ *  [increases molecular interaction](increases_molecular_interaction.md)
+ *  [molecular interaction decreased by](molecular_interaction_decreased_by.md)
+ *  [molecular interaction increased by](molecular_interaction_increased_by.md)
+
+## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | targets |
+| **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002436 |
+| **Related Mappings:** | | DGIdb:antibody |
 

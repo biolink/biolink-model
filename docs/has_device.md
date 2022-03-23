@@ -1,28 +1,28 @@
+---
+parent: Node Properties
+title: biolink:has_device
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_device
-_connects an entity to one or more (medical) devices_
 
 
-URI: [https://w3id.org/biolink/vocab/has_device](https://w3id.org/biolink/vocab/has_device)
+connects an entity to one or more (medical) devices
+
+URI: [biolink:has_device](https://w3id.org/biolink/vocab/has_device)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Device](Device.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
 
 
+## Used by
 
-
-## Inheritance
-
-* [node_property](node_property.md)
-    * **has_device**
-
-
-
-## Properties
-
- * Range: device
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
+ * [Treatment](Treatment.md)

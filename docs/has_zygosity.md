@@ -1,26 +1,28 @@
+---
+parent: Node Properties
+title: biolink:has_zygosity
+grand_parent: Slots
+layout: default
+---
+
 # Slot: has_zygosity
 
-URI: [https://w3id.org/biolink/vocab/has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 
 
 
+URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **has_zygosity**
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..1</sub> [Zygosity](Zygosity.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: zygosity
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
-
-
+ * [Genotype](Genotype.md)

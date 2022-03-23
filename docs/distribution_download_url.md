@@ -1,26 +1,35 @@
+---
+parent: Node Properties
+title: biolink:distribution_download_url
+grand_parent: Slots
+layout: default
+---
+
 # Slot: distribution_download_url
 
-URI: [https://w3id.org/biolink/vocab/distribution_download_url](https://w3id.org/biolink/vocab/distribution_download_url)
 
 
 
+URI: [biolink:distribution_download_url](https://w3id.org/biolink/vocab/distribution_download_url)
 
-## Inheritance
+## Domain and Range
 
-* [node_property](node_property.md)
-    * **distribution_download_url**
+[DatasetDistribution](DatasetDistribution.md) ->  <sub>0..1</sub> [String](types/String.md)
 
+## Parents
 
+ *  is_a: [node property](node_property.md)
 
-## Properties
-
- * Range: None
-
-
-
-## Identifier and Mapping Information
+## Children
 
 
+## Used by
 
+ * [DatasetDistribution](DatasetDistribution.md)
 
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | dcat:downloadURL |
 
