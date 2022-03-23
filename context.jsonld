@@ -1,5 +1,6 @@
+Loading .env environment variables...
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-21T21:47:06\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.15\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-23T22:02:12\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.15\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -308,6 +309,7 @@
          "@id": "http://purl.obolibrary.org/obo/OMIM_",
          "@prefix": true
       },
+      "OMIM.PS": "https://www.omim.org/phenotypicSeries/",
       "ORCID": "https://orcid.org/",
       "ORPHA": {
          "@id": "http://www.orpha.net/ORDO/Orphanet_",
@@ -409,6 +411,10 @@
       },
       "TCDB": "http://identifiers.org/tcdb/",
       "TIGRFAM": "http://identifiers.org/tigrfam/",
+      "TO": {
+         "@id": "http://purl.obolibrary.org/obo/TO_",
+         "@prefix": true
+      },
       "UBERGRAPH": "http://translator.renci.org/ubergraph-axioms.ofn#",
       "UBERON": {
          "@id": "http://purl.obolibrary.org/obo/UBERON_",

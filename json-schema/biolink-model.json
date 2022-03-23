@@ -1,3 +1,4 @@
+Loading .env environment variables...
 {
    "$defs": {
       "Activity": {
@@ -2094,6 +2095,13 @@
          "additionalProperties": false,
          "description": "A chemical exposure is an intake of a particular chemical entity.",
          "properties": {
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
@@ -4506,6 +4514,13 @@
          "additionalProperties": false,
          "description": "A drug exposure is an intake of a particular drug.",
          "properties": {
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
@@ -4637,6 +4652,13 @@
                "description": "connects an entity with one or more gene or gene products",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },

@@ -1,3 +1,4 @@
+Loading .env environment variables...
 # metamodel_version: 1.7.0
 # version: 2.2.15
 BASE <https://w3id.org/biolink/vocab/>
@@ -513,6 +514,7 @@ linkml:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<ChemicalExposure_tes> (  &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ? ;
+             <has_quantitative_value> @<QuantityValue> * ;
              <timepoint> @<TimeType> ?
           ) ;
           rdf:type [ <ChemicalExposure> ] ?
