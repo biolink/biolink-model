@@ -71,6 +71,8 @@ Instances of this class *should* have identifiers with one of the following pref
 
 * OMIM
 
+* OMIM.PS
+
 * ORPHANET
 
 * EFO
@@ -119,6 +121,7 @@ id_prefixes:
 - MONDO
 - DOID
 - OMIM
+- OMIM.PS
 - ORPHANET
 - EFO
 - UMLS
@@ -170,6 +173,7 @@ id_prefixes:
 - MONDO
 - DOID
 - OMIM
+- OMIM.PS
 - ORPHANET
 - EFO
 - UMLS

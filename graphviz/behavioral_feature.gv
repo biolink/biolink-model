@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1445,123"];
+	graph [bb="0,0,1411,123"];
 	node [label="\N"];
 	"behavioral feature"	[height=0.5,
 		label="behavioral feature",
@@ -65,54 +65,54 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="868.79,18",
-		width=1.5707];
+		label=string,
+		pos="850.79,18",
+		width=1.0652];
 	"behavioral feature" -> source	[color=blue,
 		label=source,
-		lp="850.79,61.5",
-		pos="e,850.67,35.051 761.78,88.87 775.57,83.347 790.66,76.575 803.79,69 817.39,61.158 831.33,50.798 842.79,41.543",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="980.79,18",
-		width=1.0291];
-	"behavioral feature" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="956.29,61.5",
-		pos="e,957.58,32.385 788.71,92.493 817.09,86.85 849.93,79.066 878.79,69 903.07,60.534 929.07,47.726 948.74,37.192",
+		lp="845.79,61.5",
+		pos="e,838.67,35.129 765.18,89.04 778.26,83.747 792.1,77.06 803.79,69 814.26,61.784 824.17,51.893 832.17,42.813",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1087.8,18",
+		pos="958.79,18",
 		width=1.4443];
 	"behavioral feature" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1082.8,61.5",
-		pos="e,1067,34.698 787.33,92.293 799.46,90.396 811.98,88.548 823.79,87 903.07,76.606 926.79,93.846 1002.8,69 1022.5,62.551 1042.6,51 \
-1058.3,40.624",
+		lp="950.79,61.5",
+		pos="e,937.03,34.359 789.62,92.804 816.53,87.316 847.11,79.559 873.79,69 892.82,61.468 912.61,50.068 928.3,40.054",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1066.8,18",
+		width=1.0652];
+	"behavioral feature" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1070.3,61.5",
+		pos="e,1051.5,34.749 787.33,92.299 799.46,90.401 811.98,88.552 823.79,87 902.63,76.641 927.9,98.363 1001.8,69 1017.4,62.806 1032.4,51.724 \
+1044,41.564",
 		style=solid];
 	category	[height=0.5,
-		pos="1208.8,18",
+		pos="1174.8,18",
 		width=1.4263];
 	"behavioral feature" -> category	[color=blue,
 		label=category,
-		lp="1194.3,61.5",
-		pos="e,1190.9,34.987 785.87,92.09 798.44,90.156 811.49,88.349 823.79,87 892.38,79.476 1068.4,90.903 1133.8,69 1151.6,63.035 1169.2,51.666 \
-1182.9,41.274",
+		lp="1172.3,61.5",
+		pos="e,1160.9,35.682 786.15,92.08 798.64,90.16 811.59,88.36 823.79,87 888.62,79.778 1056.4,93.584 1116.8,69 1130.7,63.331 1143.7,52.904 \
+1153.8,43.034",
 		style=solid];
 	"in taxon"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="1361.8,18",
+		pos="1327.8,18",
 		width=2.3109];
 	"behavioral feature" -> "in taxon"	[color=blue,
 		label="in taxon",
-		lp="1306.8,61.5",
-		pos="e,1329.3,34.641 785.57,91.995 798.23,90.058 811.39,88.274 823.79,87 1003.5,68.535 1052.9,105.45 1229.8,69 1261,62.576 1294.5,49.797 \
-1320,38.766",
+		lp="1280.8,61.5",
+		pos="e,1297.7,35.006 785.58,92.021 798.23,90.082 811.39,88.29 823.79,87 993.73,69.318 1041.1,106.42 1207.8,69 1235.9,62.7 1265.7,50.282 \
+1288.6,39.397",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1232.5,123"];
+	graph [bb="0,0,1198.5,123"];
 	node [label="\N"];
 	"nucleic acid sequence motif"	[height=0.5,
 		label="nucleic acid sequence motif",
@@ -64,43 +64,43 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="841.14,18",
-		width=1.5707];
+		label=string,
+		pos="823.14,18",
+		width=1.0652];
 	"nucleic acid sequence motif" -> source	[color=blue,
 		label=source,
-		lp="801.14,61.5",
-		pos="e,815.19,34.075 680.6,88.952 700.89,83.495 723.21,76.74 743.14,69 764.77,60.602 787.94,48.916 806.32,38.953",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="953.14,18",
-		width=1.0291];
-	"nucleic acid sequence motif" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="913.64,61.5",
-		pos="e,927.6,31.24 715.22,92.352 751.45,86.884 792.51,79.258 829.14,69 860.12,60.323 893.9,46.386 918.37,35.427",
+		lp="795.14,61.5",
+		pos="e,803.33,33.664 683.97,89.197 703.48,83.907 724.51,77.184 743.14,69 761.32,61.018 780.22,49.386 795.08,39.349",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1060.1,18",
+		pos="931.14,18",
 		width=1.4443];
 	"nucleic acid sequence motif" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1045.1,61.5",
-		pos="e,1036.1,34.222 715.22,92.303 731.56,90.466 748.32,88.635 764.14,87 851.16,78.008 876.01,92.974 960.14,69 983.72,62.28 1008.4,50.016 \
-1027.3,39.317",
+		lp="907.14,61.5",
+		pos="e,904.86,33.584 716.64,92.503 750.89,87.143 789.11,79.547 823.14,69 848.3,61.203 875.18,48.773 895.83,38.257",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1039.1,18",
+		width=1.0652];
+	"nucleic acid sequence motif" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1031.6,61.5",
+		pos="e,1020.8,33.809 715.22,92.316 731.56,90.477 748.32,88.642 764.14,87 850.27,78.059 876.02,96.467 958.14,69 977.66,62.471 997.36,50.459 \
+1012.4,39.845",
 		style=solid];
 	category	[height=0.5,
-		pos="1181.1,18",
+		pos="1147.1,18",
 		width=1.4263];
 	"nucleic acid sequence motif" -> category	[color=blue,
 		label=category,
-		lp="1159.6,61.5",
-		pos="e,1160.8,34.763 712.79,92.051 729.88,90.18 747.52,88.404 764.14,87 837.77,80.781 1025.4,90.336 1096.1,69 1116.3,62.91 1136.8,51.103 \
-1152.6,40.492",
+		lp="1135.6,61.5",
+		pos="e,1130.6,35.233 713.19,92.05 730.15,90.191 747.65,88.419 764.14,87 833.78,81.01 1012.3,92.451 1078.1,69 1094.6,63.137 1110.6,52.039 \
+1123,41.785",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

@@ -183,6 +183,9 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 | [Cohort](Cohort.md) | [has_attribute](has_attribute.md) | range | attribute |
 | [PathologicalProcess](PathologicalProcess.md) | [has_attribute](has_attribute.md) | range | attribute |
 | [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) | [has_attribute](has_attribute.md) | range | attribute |
+| [ChemicalExposure](ChemicalExposure.md) | [has_quantitative_value](has_quantitative_value.md) | domain | attribute |
+| [DrugExposure](DrugExposure.md) | [has_quantitative_value](has_quantitative_value.md) | domain | attribute |
+| [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) | [has_quantitative_value](has_quantitative_value.md) | domain | attribute |
 | [Treatment](Treatment.md) | [has_attribute](has_attribute.md) | range | attribute |
 | [Association](Association.md) | [has_attribute](has_attribute.md) | range | attribute |
 | [ContributorAssociation](ContributorAssociation.md) | [has_attribute](has_attribute.md) | range | attribute |

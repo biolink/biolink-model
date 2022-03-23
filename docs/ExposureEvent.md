@@ -89,6 +89,8 @@ mixin: true
 attributes:
   timepoint:
     name: timepoint
+    aliases:
+    - duration
     description: a point in time
     from_schema: https://w3id.org/biolink/biolink-model
     is_a: node property

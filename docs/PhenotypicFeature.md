@@ -94,6 +94,8 @@ Instances of this class *should* have identifiers with one of the following pref
 
 * FYPO
 
+* TO
+
 
 
 
@@ -128,6 +130,7 @@ id_prefixes:
 - MESH
 - XPO
 - FYPO
+- TO
 aliases:
 - sign
 - symptom
@@ -175,6 +178,7 @@ id_prefixes:
 - MESH
 - XPO
 - FYPO
+- TO
 aliases:
 - sign
 - symptom

@@ -786,6 +786,34 @@
                            },
                            {
                               "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/knowledge_source",
+                              "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/original_knowledge_source",
+                              "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/primary_knowledge_source",
+                              "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/aggregator_knowledge_source",
+                              "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
                               "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
@@ -938,7 +966,7 @@
                            {
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/source",
-                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                              "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
                               "max": 1
                            }
@@ -4548,16 +4576,9 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/source",
-                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                        "valueExpr": "https://w3id.org/linkml/String",
                         "min": 0,
                         "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/provided_by",
-                        "valueExpr": "https://w3id.org/biolink/vocab/Agent",
-                        "min": 0,
-                        "max": -1
                      },
                      {
                         "type": "TripleConstraint",
@@ -9708,6 +9729,13 @@
                                  ]
                               },
                               "min": 0
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/provided_by",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": -1
                            },
                            {
                               "type": "TripleConstraint",

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1362.5,123"];
+	graph [bb="0,0,1328.5,123"];
 	node [label="\N"];
 	"environmental process"	[height=0.5,
 		label="environmental process",
@@ -69,44 +69,44 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="971.14,18",
-		width=1.5707];
+		label=string,
+		pos="953.14,18",
+		width=1.0652];
 	"environmental process" -> source	[color=blue,
 		label=source,
-		lp="908.14,61.5",
-		pos="e,939.07,32.902 746.23,91.13 775.77,85.373 809.8,77.87 840.14,69 870.7,60.066 904.23,47.21 929.72,36.771",
-		style=solid];
-	"provided by"	[color=blue,
-		height=0.5,
-		label=agent,
-		pos="1083.1,18",
-		width=1.0291];
-	"environmental process" -> "provided by"	[color=blue,
-		label="provided by",
-		lp="1030.6,61.5",
-		pos="e,1054.5,29.78 755.18,92.485 768.87,90.634 782.9,88.752 796.14,87 858.34,78.773 874.95,82.803 936.14,69 982.21,58.61 992.54,51.521 \
-1037.1,36 1039.7,35.112 1042.3,34.184 1045,33.238",
+		lp="903.14,61.5",
+		pos="e,928.16,31.9 748.59,91.539 777.66,85.933 810.76,78.426 840.14,69 867.37,60.267 896.87,47.075 918.9,36.434",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1190.1,18",
+		pos="1061.1,18",
 		width=1.4443];
 	"environmental process" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1166.1,61.5",
-		pos="e,1164.1,33.679 752.4,92.095 766.95,90.208 781.98,88.415 796.14,87 920.67,74.56 955.59,98.781 1077.1,69 1104.4,62.329 1133.2,49.443 \
-1155,38.423",
+		lp="1026.1,61.5",
+		pos="e,1031.3,32.778 755.19,92.539 768.87,90.682 782.9,88.783 796.14,87 856.13,78.921 872.49,83.968 931.14,69 962.51,60.994 996.63,47.685 \
+1022,36.81",
+		style=solid];
+	"provided by"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1169.1,18",
+		width=1.0652];
+	"environmental process" -> "provided by"	[color=blue,
+		label="provided by",
+		lp="1154.6,61.5",
+		pos="e,1148.7,33.494 752.4,92.095 766.95,90.208 781.98,88.415 796.14,87 920.67,74.56 956.9,103.69 1077.1,69 1099.6,62.52 1122.7,49.935 \
+1140.1,39.013",
 		style=solid];
 	category	[height=0.5,
-		pos="1311.1,18",
+		pos="1277.1,18",
 		width=1.4263];
 	"environmental process" -> category	[color=blue,
 		label=category,
-		lp="1285.6,61.5",
-		pos="e,1289.2,34.351 751.71,91.929 766.46,90.036 781.74,88.284 796.14,87 889.41,78.682 1126.8,93.597 1217.1,69 1239.6,62.881 1262.7,50.668 \
-1280.4,39.845",
+		lp="1263.6,61.5",
+		pos="e,1259,35.07 751.71,91.949 766.46,90.054 781.75,88.296 796.14,87 885.87,78.922 1115.4,96.753 1201.1,69 1219.2,63.158 1237,51.795 \
+1250.9,41.377",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

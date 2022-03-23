@@ -48,6 +48,9 @@ URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 | [ClinicalCourse](ClinicalCourse.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
 | [Onset](Onset.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
 | [SocioeconomicAttribute](SocioeconomicAttribute.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
+| [ChemicalExposure](ChemicalExposure.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
+| [DrugExposure](DrugExposure.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
+| [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) | [has_quantitative_value](has_quantitative_value.md) | range | quantity value |
 
 
 

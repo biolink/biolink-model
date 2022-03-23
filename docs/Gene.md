@@ -73,8 +73,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 Instances of this class *should* have identifiers with one of the following prefixes:
 
-* AspGD
-
 * NCBIGene
 
 * ENSEMBL
@@ -107,6 +105,8 @@ Instances of this class *should* have identifiers with one of the following pref
 
 * Xenbase
 
+* AspGD
+
 
 
 
@@ -126,7 +126,6 @@ Instances of this class *should* have identifiers with one of the following pref
 ```yaml
 name: gene
 id_prefixes:
-- AspGD
 - NCBIGene
 - ENSEMBL
 - HGNC
@@ -143,6 +142,7 @@ id_prefixes:
 - KEGG.GENE
 - UMLS
 - Xenbase
+- AspGD
 aliases:
 - locus
 exact_mappings:
@@ -179,7 +179,6 @@ slots:
 ```yaml
 name: gene
 id_prefixes:
-- AspGD
 - NCBIGene
 - ENSEMBL
 - HGNC
@@ -196,6 +195,7 @@ id_prefixes:
 - KEGG.GENE
 - UMLS
 - Xenbase
+- AspGD
 aliases:
 - locus
 exact_mappings:

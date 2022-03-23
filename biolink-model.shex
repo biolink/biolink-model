@@ -189,6 +189,10 @@ linkml:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <has_evidence> @<EvidenceType> * ;
+             <knowledge_source> @<InformationResource> * ;
+             <original_knowledge_source> @<InformationResource> ? ;
+             <primary_knowledge_source> @<InformationResource> ? ;
+             <aggregator_knowledge_source> @<InformationResource> * ;
              rdf:type @linkml:String ? ;
              <category> @<CategoryType> *
           ) ;
@@ -225,7 +229,7 @@ linkml:Nodeidentifier NONLITERAL
              <has_quantitative_value> @<QuantityValue> * ;
              <has_qualitative_value> @<NamedThing> ? ;
              <iri> @<IriType> ? ;
-             <source> @<LabelType> ?
+             <source> @linkml:String ?
           ) ;
           rdf:type [ <Attribute> ] ?
        )
@@ -936,8 +940,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type @linkml:String ? ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
-          <source> @<LabelType> ? ;
-          <provided_by> @<Agent> * ;
+          <source> @linkml:String ? ;
           <has_attribute> @<Attribute> *
        ) ;
        rdf:type [ <Entity> ]
@@ -1932,6 +1935,7 @@ linkml:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<NamedThing_tes> (  &<Entity_tes> ;
              rdf:type [ <Entity> ] ? ;
+             <provided_by> @linkml:String * ;
              <category> @<NamedThing> +
           ) ;
           rdf:type [ <NamedThing> ]

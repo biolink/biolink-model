@@ -25,6 +25,7 @@ URI: [biolink:DrugToGeneInteractionExposure](https://w3id.org/biolink/vocab/Drug
 | ---  | --- | --- | --- | --- |
 | [has_gene_or_gene_product](has_gene_or_gene_product.md) | [Gene](Gene.md) | 0..* | connects an entity with one or more gene or gene products  | . |
 | [timepoint](timepoint.md) | [time_type](time_type.md) | 0..1 | a point in time  | . |
+| [has_quantitative_value](has_quantitative_value.md) | [QuantityValue](QuantityValue.md) | 0..* | connects an attribute to a value  | . |
 
 
 ## Usages
@@ -86,6 +87,8 @@ attributes:
     range: gene
   timepoint:
     name: timepoint
+    aliases:
+    - duration
     description: a point in time
     from_schema: https://w3id.org/biolink/biolink-model
     is_a: node property
@@ -93,6 +96,23 @@ attributes:
     alias: timepoint
     owner: drug to gene interaction exposure
     range: time type
+  has quantitative value:
+    name: has quantitative value
+    exact_mappings:
+    - qud:quantityValue
+    narrow_mappings:
+    - SNOMED:has_concentration_strength_numerator_value
+    - SNOMED:has_presentation_strength_denominator_value
+    - SNOMED:has_presentation_strength_numerator_value
+    description: connects an attribute to a value
+    in_subset:
+    - samples
+    from_schema: https://w3id.org/biolink/biolink-model
+    domain: attribute
+    multivalued: true
+    alias: has_quantitative_value
+    owner: drug to gene interaction exposure
+    range: quantity value
 
 ```
 </details>

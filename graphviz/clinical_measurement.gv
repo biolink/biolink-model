@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1070.6,123"];
+	graph [bb="0,0,1034.6,123"];
 	node [label="\N"];
 	"clinical measurement"	[height=0.5,
 		label="clinical measurement",
@@ -51,22 +51,22 @@ digraph {
 		style=solid];
 	source	[color=blue,
 		height=0.5,
-		label="label type",
-		pos="806.74,18",
-		width=1.5707];
+		label=string,
+		pos="788.74,18",
+		width=1.0652];
 	"clinical measurement" -> source	[color=blue,
 		label=source,
-		lp="769.74,61.5",
-		pos="e,782.52,34.443 618.16,92.875 648.43,87.45 682.64,79.716 712.74,69 733.95,61.45 756.25,49.77 773.8,39.596",
+		lp="765.74,61.5",
+		pos="e,770.53,33.922 612.19,91.874 651.32,85.072 694.48,76.476 712.74,69 730.41,61.765 748.35,50.212 762.35,40.032",
 		style=solid];
 	"has attribute type"	[height=0.5,
-		pos="975.74,18",
+		pos="939.74,18",
 		width=2.6359];
 	"clinical measurement" -> "has attribute type"	[color=blue,
 		label="has attribute type",
-		lp="922.74,61.5",
-		pos="e,930.1,33.846 615.41,92.432 628.55,90.578 642.02,88.709 654.74,87 718.23,78.47 734.96,81.697 797.74,69 839.26,60.604 885.28,47.576 \
-920.12,36.924",
+		lp="907.74,61.5",
+		pos="e,901.32,34.534 615.42,92.471 628.55,90.613 642.02,88.732 654.74,87 716.47,78.595 733.08,83.163 793.74,69 827.12,61.208 863.59,48.719 \
+891.74,38.172",
 		style=solid];
 	attribute_name	[color=blue,
 		height=0.5,
