@@ -1,4 +1,3 @@
-Loading .env environment variables...
 // metamodel_version: 1.7.0
 // version: 2.2.15
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
@@ -480,6 +479,7 @@ message ChemicalMixture
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -752,6 +752,7 @@ message ComplexMolecularMixture
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -1008,6 +1009,7 @@ message Drug
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1286,6 +1288,7 @@ message Food
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 message FoodAdditive
  {
@@ -2286,6 +2289,7 @@ message MolecularMixture
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2778,6 +2782,7 @@ message ProcessedMaterial
   optional isSupplement ChemicalMixture = 14
   optional highestFDAApprovalStatus String = 15
   optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein

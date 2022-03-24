@@ -1,4 +1,3 @@
-Loading .env environment variables...
 {
    "$defs": {
       "Activity": {
@@ -2177,6 +2176,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -3370,6 +3376,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -4484,6 +4497,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -4508,6 +4528,17 @@ Loading .env environment variables...
             "prescription"
          ],
          "title": "DrugAvailabilityEnum",
+         "type": "string"
+      },
+      "DrugDeliveryEnum": {
+         "description": "",
+         "enum": [
+            "inhalation",
+            "oral",
+            "absorbtion through the skin",
+            "intravenous injection"
+         ],
+         "title": "DrugDeliveryEnum",
          "type": "string"
       },
       "DrugExposure": {
@@ -5773,6 +5804,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },
@@ -10381,6 +10419,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -12614,6 +12659,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },

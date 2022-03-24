@@ -1,4 +1,3 @@
-Loading .env environment variables...
 # metamodel_version: 1.7.0
 # version: 2.2.15
 BASE <https://w3id.org/biolink/vocab/>
@@ -528,7 +527,8 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <ChemicalEntity> ] ? ;
              <is_supplement> @<ChemicalMixture> ? ;
              <highest_FDA_approval_status> @linkml:String ? ;
-             <drug_regulatory_status_world_wide> @linkml:String ?
+             <drug_regulatory_status_world_wide> @linkml:String ? ;
+             <routes_of_delivery> @<DrugDeliveryEnum> *
           ) ;
           rdf:type [ <ChemicalMixture> ]
        )
