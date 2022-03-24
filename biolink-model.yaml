@@ -242,6 +242,13 @@ enums:
         description:
           chemical entity is available by prescription.
 
+  drug_delivery_enum:
+    permissible_values:
+      "inhalation":
+      "oral":
+      "absorbtion through the skin":
+      "intravenous injection":
+
   FDA_approval_status_enum:
     description: >-
     permissible_values:
@@ -326,6 +333,8 @@ enums:
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
       "Regular FDA Approval":
       "Post-Approval Withdrawal":
+
+
 
 subsets:
 
@@ -1271,6 +1280,14 @@ slots:
     aliases: ['max phase']
     description: >-
       An agglomeration of drug regulatory status worldwide. Not specific to FDA.
+
+  routes of delivery:
+    description: >-
+      the method or process of administering a pharmaceutical compound to achieve a therapeutic
+      effect in humans or animals.
+    multivalued: true
+    range: drug_delivery_enum
+
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -7832,6 +7849,7 @@ classes:
       - is supplement
       - highest FDA approval status
       - drug regulatory status world wide
+      - routes of delivery
     in_subset:
       - translator_minimal
     id_prefixes:

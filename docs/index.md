@@ -1830,6 +1830,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [name](name.md) - A human-readable name for an attribute or entity.
  * [relation](relation.md)
+ * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [source](source.md)
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1893,6 +1894,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 ## Enums
 
  * [drug_availability_enum](drug_availability_enum.md)
+ * [drug_delivery_enum](drug_delivery_enum.md)
  * [FDA_approval_status_enum](FDA_approval_status_enum.md)
  * [logical_interpretation_enum](logical_interpretation_enum.md)
  * [phase_enum](phase_enum.md) - phase

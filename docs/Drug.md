@@ -15,7 +15,7 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[NamedThing],[MolecularMixture],[MolecularEntity],[DrugToEntityAssociationMixin],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug%7Chighest_FDA_approval_status(i):string%20%3F;drug_regulatory_status_world_wide(i):string%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[OntologyClass],[MolecularMixture]%5E-[Drug],[Treatment],[DiseaseOrPhenotypicFeature],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[NamedThing],[MolecularMixture],[MolecularEntity],[DrugToEntityAssociationMixin],[DrugToEntityAssociationMixin]-%20subject%201..1%3E[Drug%7Chighest_FDA_approval_status(i):string%20%3F;drug_regulatory_status_world_wide(i):string%20%3F;routes_of_delivery(i):drug_delivery_enum%20%2A;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Treatment]-%20has%20drug%200..%2A%3E[Drug],[Drug]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[Drug]uses%20-.-%3E[OntologyClass],[MolecularMixture]%5E-[Drug],[Treatment],[DiseaseOrPhenotypicFeature],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -69,6 +69,9 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
  * [drug regulatory status world wide](drug_regulatory_status_world_wide.md)  <sub>0..1</sub>
      * Description: An agglomeration of drug regulatory status worldwide. Not specific to FDA.
      * Range: [String](types/String.md)
+ * [routes of delivery](routes_of_delivery.md)  <sub>0..\*</sub>
+     * Description: the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+     * Range: [drug_delivery_enum](drug_delivery_enum.md)
 
 ### Inherited from entity:
 
