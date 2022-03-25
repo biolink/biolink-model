@@ -1048,6 +1048,32 @@ message DrugToGeneInteractionExposure
   optional timepoint TimeType = 2
   repeated hasGeneOrGeneProduct Gene = 3
  }
+message DruggableGeneToDiseaseAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  object NamedThing = 7
+  optional relation String = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  repeated knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource InformationResource = 13
+  optional primaryKnowledgeSource InformationResource = 14
+  repeated aggregatorKnowledgeSource InformationResource = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional frequencyQualifier FrequencyValue = 18
+  optional severityQualifier SeverityValue = 19
+  optional onsetQualifier Onset = 20
+  subject GeneOrGeneProduct = 21
+  predicate PredicateType = 22
+  repeated hasEvidence DruggableGeneCategoryEnum = 23
+ }
 message EntityToDiseaseAssociation
  {
   id String = 1

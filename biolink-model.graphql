@@ -1173,6 +1173,33 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     hasGeneOrGeneProduct: [Gene]
   }
 
+type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    object: NamedThing!
+    relation: String
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    knowledgeSource: [InformationResource]
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    type: String
+    category: [CategoryType]
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    subject: GeneOrGeneProduct!
+    predicate: PredicateType!
+    hasEvidence: [DruggableGeneCategoryEnum]
+  }
+
 interface Entity
   {
     id: String!

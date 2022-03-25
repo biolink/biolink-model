@@ -928,6 +928,21 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<DruggableGeneToDiseaseAssociation> CLOSED {
+    (  $<DruggableGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <predicate> @<PredicateType> ;
+          <has_evidence> @<DruggableGeneCategoryEnum> *
+       ) ;
+       rdf:type [ <DruggableGeneToDiseaseAssociation> ]
+    )
+}
+
 <Entity>  (
     @<Association> OR @<NamedThing>
 )
@@ -1322,7 +1337,8 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
+    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
+    @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
 <GeneToEntityAssociationMixin> {
