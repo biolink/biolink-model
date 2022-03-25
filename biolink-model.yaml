@@ -233,6 +233,30 @@ enums:
       "supported by real-world evidence":
       "supported by clinical evidence":
 
+  druggable_gene_category:
+    permissible_values:
+      "Tclin":
+        description: >-
+          These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
+      "Tbio":
+        description: >-
+          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
+          the activity thresholds detailed below.
+      "Tchem":
+        description: >-
+          These targets do not have known drug or small molecule activities that satisfy the activity
+          thresholds detailed below AND satisfy one or more of the following criteria:
+          target is above the cutoff criteria for Tdark
+          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
+          with an Experimental Evidence code
+      "Tdark":
+        description: >-
+          These are targets about which virtually nothing is known. They do not have known drug or small
+          molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
+          more of the following criteria:
+          A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
+          less than or equal to 50 Antibodies available according to http://antibodypedia.com.
+
   drug_availability_enum:
     description: >-
     permissible_values:
@@ -1675,6 +1699,24 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+
+  target for:
+    is_a: related to at instance level
+    description: >-
+      A gene is a target of a disease when its products are druggable and when a drug interaction with the gene
+      product could have a therapeutic effect
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
+    domain: Gene
+    range: Disease
+
+  has target:
+    is_a: related to at instance level
+    inverse: target of
+    domain: Disease
+    range: Gene
 
   active in:
     is_a: related to at instance level
@@ -10322,6 +10364,25 @@ classes:
         description: >-
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
+
+  druggable gene to disease association:
+    is_a: gene to disease association
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: >-
+          gene in which variation is correlated with the disease
+          in a protective manner, or if the product produced by the gene can be targeted by a small molecule and
+          this leads to a protective or improving disease state.
+      predicate:
+        subproperty_of: target for
+    defining_slots:
+      - subject
+      - object
+      - predicate
+    mixins:
+      - entity to disease association mixin
+      - gene to entity association mixin
 
   variant to gene association:
     description: >-
