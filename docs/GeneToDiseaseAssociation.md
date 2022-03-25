@@ -15,7 +15,7 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[GeneToEntityAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToDiseaseAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[GeneToEntityAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToDiseaseAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[DruggableGeneToDiseaseAssociation],[Attribute],[Association])
 
 ---
 
@@ -31,6 +31,7 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 
 ## Children
 
+ * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
 

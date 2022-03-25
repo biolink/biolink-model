@@ -42,6 +42,7 @@ URI: [biolink:association_category](https://w3id.org/biolink/vocab/association_c
  * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DrugToGeneAssociation](DrugToGeneAssociation.md)
+ * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)

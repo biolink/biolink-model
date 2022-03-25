@@ -150,6 +150,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
      * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
      * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+         * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
          * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
          * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
      * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and an expression site, possibly qualified by stage/timing info.
@@ -702,6 +703,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has splice site variant](has_splice_site_variant.md)
  * [has substrate](has_substrate.md)
  * [has synonymous variant](has_synonymous_variant.md)
+ * [has target](has_target.md)
  * [has upstream actor](has_upstream_actor.md)
      * [has negative upstream actor](has_negative_upstream_actor.md)
      * [has positive upstream actor](has_positive_upstream_actor.md)
@@ -1092,6 +1094,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has nonsense variant](has_nonsense_variant.md)
              * [has splice site variant](has_splice_site_variant.md)
              * [has synonymous variant](has_synonymous_variant.md)
+         * [has target](has_target.md)
          * [has upstream actor](has_upstream_actor.md)
              * [has negative upstream actor](has_negative_upstream_actor.md)
              * [has positive upstream actor](has_positive_upstream_actor.md)
@@ -1170,6 +1173,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
                  * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
                  * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+         * [target for](target_for.md) - A gene is a target of a disease when its products are druggable and when a drug interaction with the gene product could have a therapeutic effect
          * [taxon of](taxon_of.md)
          * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
              * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
@@ -1390,6 +1394,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has nonsense variant](has_nonsense_variant.md)
          * [has splice site variant](has_splice_site_variant.md)
          * [has synonymous variant](has_synonymous_variant.md)
+     * [has target](has_target.md)
      * [has upstream actor](has_upstream_actor.md)
          * [has negative upstream actor](has_negative_upstream_actor.md)
          * [has positive upstream actor](has_positive_upstream_actor.md)
@@ -1468,6 +1473,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
              * [paralogous to](paralogous_to.md) - a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
              * [xenologous to](xenologous_to.md) - a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+     * [target for](target_for.md) - A gene is a target of a disease when its products are druggable and when a drug interaction with the gene product could have a therapeutic effect
      * [taxon of](taxon_of.md)
      * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
          * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
@@ -1517,6 +1523,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [synthesis increased by](synthesis_increased_by.md)
  * [synthesis decreased by](synthesis_decreased_by.md)
  * [synthesis increased by](synthesis_increased_by.md)
+ * [target for](target_for.md) - A gene is a target of a disease when its products are druggable and when a drug interaction with the gene product could have a therapeutic effect
  * [taxon of](taxon_of.md)
  * [temporally related to](temporally_related_to.md) - holds between two entities with a temporal relationship
      * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
@@ -1895,6 +1902,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [drug_availability_enum](drug_availability_enum.md)
  * [drug_delivery_enum](drug_delivery_enum.md)
+ * [druggable_gene_category_enum](druggable_gene_category_enum.md)
  * [FDA_approval_status_enum](FDA_approval_status_enum.md)
  * [logical_interpretation_enum](logical_interpretation_enum.md)
  * [phase_enum](phase_enum.md) - phase
