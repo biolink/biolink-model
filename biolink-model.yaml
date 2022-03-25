@@ -1709,14 +1709,14 @@ slots:
       biolink:canonical_predicate:
         tag: biolink:canonical_predicate
         value: true
-    domain: Gene
-    range: Disease
+    domain: gene
+    range: disease
 
   has target:
     is_a: related to at instance level
     inverse: target of
-    domain: Disease
-    range: Gene
+    domain: disease
+    range: gene
 
   active in:
     is_a: related to at instance level
