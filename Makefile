@@ -65,6 +65,29 @@ docs/index.md: biolink-model.yaml env.lock
 docs/Classes.md: biolink-model.yaml env.lock
 	pipenv run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
+# ~~~~~~~~~~~~~~~~~~~~~~
+# doc-gen with templates
+# ~~~~~~~~~~~~~~~~~~~~~~
+
+gendoc:
+	pipenv run gen-doc biolink-model.yaml --directory docs --template-directory doc_templates
+
+guidelines/%.md: docs/index.md
+	cp -R guidelines/* $(dir $@)
+
+# add more logging?
+# some docs pages not being created
+# usage of mkdocs.yml attributes like analytics?
+
+mkdocs_html/index.html: generated/docs/index.md
+	pipenv run mkdocs build
+
+# test docs locally.
+# repeats build
+docserve:
+	$(RUN) mkdocs serve
+
+
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr

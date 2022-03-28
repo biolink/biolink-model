@@ -2,7 +2,7 @@ import os
 from contextlib import redirect_stdout
 from typing import Union, TextIO, Set, Dict
 
-from linkml.generators.markdowngen import MarkdownGenerator
+from linkml.generators.docgen import DocGenerator
 from linkml.generators.yumlgen import YumlGenerator
 
 from linkml_runtime.utils.schemaview import SchemaView
@@ -12,7 +12,7 @@ from linkml_runtime.utils.formatutils import camelcase, be, underscore, sfx
 import argparse
 
 
-class JekyllMarkdownGenerator(MarkdownGenerator):
+class JekyllMarkdownGenerator(DocGenerator):
     """
     Extends linkml.generators.markdowngen.MarkdownGenerator to add new styles
     and override certain existing styles.

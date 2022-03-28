@@ -1,0 +1,26 @@
+site_name: "Biolink Model Documentation"
+
+theme: readthedocs
+highlightjs: true
+
+plugins:
+  - search
+
+html_logo: biolink-logo.png
+docs_dir: docs
+site_dir: mkdocs_html
+
+nav:
+  - Overview: guidelines/understanding-the-model.md
+  - Browse the Model: index.md
+  - Working With The Model: guidelines/working-with-the-model.md
+  - Updating: guidelines/curating-the-model.md
+  - Maintaining The Model: guidelines/maintaining-the-model.md
+  - FAQ: guidelines/faq.md
+
+
+site_url: https://sierra-moxon.github.io/biolink-model/
+repo_url: https://github.com/sierra-moxon/biolink-model/
+
+extra_css:
+  - extra_css.css
