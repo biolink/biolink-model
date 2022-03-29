@@ -8,7 +8,7 @@ layout: default
 # Class: GeneToExpressionSiteAssociation
 
 
-An association between a gene and an expression site, possibly qualified by stage/timing info.
+An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 
 URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
 

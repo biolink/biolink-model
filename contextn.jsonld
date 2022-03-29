@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-24T02:12:19\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.16\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-25T22:54:18\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.16\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -1127,6 +1127,9 @@
       "has_synonymous_variant": {
          "@type": "@id"
       },
+      "has_target": {
+         "@type": "@id"
+      },
       "has_taxonomic_rank": {
          "@type": "@id"
       },
@@ -1695,6 +1698,9 @@
          "@type": "@id"
       },
       "synthesis_increased_by": {
+         "@type": "@id"
+      },
+      "target_for": {
          "@type": "@id"
       },
       "taxon_of": {

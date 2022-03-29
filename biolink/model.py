@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-24T02:12:44
+# Generation date: 2022-03-25T22:54:43
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -898,6 +898,10 @@ class GeneToPhenotypicFeatureAssociationId(AssociationId):
 
 
 class GeneToDiseaseAssociationId(AssociationId):
+    pass
+
+
+class DruggableGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
     pass
 
 
@@ -6550,6 +6554,44 @@ class GeneToDiseaseAssociation(Association):
 
 
 @dataclass
+class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:DruggableGeneToDiseaseAssociation"
+    class_name: ClassVar[str] = "druggable gene to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
+
+    id: Union[str, DruggableGeneToDiseaseAssociationId] = None
+    object: Union[str, NamedThingId] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    predicate: Union[str, PredicateType] = None
+    has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DruggableGeneToDiseaseAssociationId):
+            self.id = DruggableGeneToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if not isinstance(self.has_evidence, list):
+            self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
+        self.has_evidence = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class VariantToGeneAssociation(Association):
     """
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in
@@ -8188,6 +8230,21 @@ class PredicateQualifierEnum(EnumDefinitionImpl):
         setattr(cls, "supported by clinical evidence",
                 PermissibleValue(text="supported by clinical evidence") )
 
+class DruggableGeneCategoryEnum(EnumDefinitionImpl):
+
+    Tclin = PermissibleValue(text="Tclin",
+                                 description="These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.")
+    Tbio = PermissibleValue(text="Tbio",
+                               description="These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.")
+    Tchem = PermissibleValue(text="Tchem",
+                                 description="These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code")
+    Tdark = PermissibleValue(text="Tdark",
+                                 description="These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.")
+
+    _defn = EnumDefinition(
+        name="DruggableGeneCategoryEnum",
+    )
+
 class DrugAvailabilityEnum(EnumDefinitionImpl):
 
     prescription = PermissibleValue(text="prescription",
@@ -8574,6 +8631,12 @@ slots.opposite_of = Slot(uri=BIOLINK.opposite_of, name="opposite of", curie=BIOL
 
 slots.has_real_world_evidence_of_association_with = Slot(uri=BIOLINK.has_real_world_evidence_of_association_with, name="has real world evidence of association with", curie=BIOLINK.curie('has_real_world_evidence_of_association_with'),
                    model_uri=BIOLINK.has_real_world_evidence_of_association_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.target_for = Slot(uri=BIOLINK.target_for, name="target for", curie=BIOLINK.curie('target_for'),
+                   model_uri=BIOLINK.target_for, domain=Gene, range=Optional[Union[Union[str, DiseaseId], List[Union[str, DiseaseId]]]])
+
+slots.has_target = Slot(uri=BIOLINK.has_target, name="has target", curie=BIOLINK.curie('has_target'),
+                   model_uri=BIOLINK.has_target, domain=Disease, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])
@@ -9894,6 +9957,15 @@ slots.gene_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, nam
 
 slots.gene_to_disease_association_subject = Slot(uri=RDF.subject, name="gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="druggable gene to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, PredicateType])
+
+slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]])
 
 slots.variant_to_gene_association_object = Slot(uri=RDF.object, name="variant to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.variant_to_gene_association_object, domain=VariantToGeneAssociation, range=Union[str, GeneId])
