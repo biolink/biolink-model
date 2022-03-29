@@ -5,13 +5,6 @@ on:
   push:
     branches:
     - master
-    paths:
-    - '*.md'
-    - 'biolink-model.ttl'
-    - 'biolink-model.owl'
-    - 'biolink-model.shex'
-    - 'about/*'
-    - 'context.jsonld'
   repository_dispatch:
     types: trigger-build-documentation
 
