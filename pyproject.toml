@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "biolink-model"
+version = "2.2.16"
+description = "Schema and generated objects for biolink data model and upper ontology"
+authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+linkml = "^1.2.4"
+
+[tool.poetry.dev-dependencies]
+linkml = "^1.2.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
