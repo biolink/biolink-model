@@ -25,20 +25,14 @@ None
 
 | Name | Description  |
 | ---  | ---  |
-element.name
-{% for s in schemaview.class_slots(element.name) -%}
+{% for s in schemaview.class_induced_slots(element.name) -%}
 | {{gen.link(s)}} | {{ s.description }} |
 {% endfor %}
 
-## Usages
+## Mappings
 
-{% if schemaview.usage_index().get(element.name) %}
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-{% for usage in schemaview.usage_index().get(element.name) -%}
-| {{gen.link(usage.used_by)}} | {{gen.link(usage.slot)}} | {{usage.metaslot}} | {{usage.used }} |
-{% endfor %}
-{% endif %}
+
+
 
 {% include "common_metadata.md.jinja2" %}
 
