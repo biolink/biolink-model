@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-25T22:54:43
+# Generation date: 2022-03-29T19:10:25
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7152,7 +7152,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
 @dataclass
 class GeneToExpressionSiteAssociation(Association):
     """
-    An association between a gene and an expression site, possibly qualified by stage/timing info.
+    An association between a gene and a gene expression site, possibly qualified by stage/timing info.
     """
     _inherited_slots: ClassVar[List[str]] = []
 

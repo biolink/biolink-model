@@ -21,7 +21,7 @@ URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [location of](location_of.md)
 
 ## Children
 

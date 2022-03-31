@@ -21,7 +21,7 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [located in](located_in.md)
 
 ## Children
 

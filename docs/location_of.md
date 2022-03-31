@@ -25,6 +25,7 @@ URI: [biolink:location_of](https://w3id.org/biolink/vocab/location_of)
 
 ## Children
 
+ *  [expresses](expresses.md)
 
 ## Used by
 

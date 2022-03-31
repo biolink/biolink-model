@@ -1,6 +1,6 @@
 # metamodel_version: 1.7.0# version: 2.2.16id: gene_to_expression_site_association
 schema_generating: true
-description: An association between a gene and an expression site, possibly qualified
+description: An association between a gene and a gene expression site, possibly qualified
   by stage/timing info.
 display_name: gene to expression site association
 document_category: gene to expression site association
@@ -92,7 +92,8 @@ fields:
   description: can be used to indicate magnitude, or also ranking
   display_name: gene to expression site association_quantifier qualifier
 - id: subject
-  description: gene in which variation is correlated with the phenotypic feature
+  description: Gene or gene product positively within the specified anatomical entity
+    (or subclass, i.e. cellular component) location.
   display_name: gene to expression site association_subject
 - id: object
   description: location in which the gene is expressed

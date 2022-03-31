@@ -25,6 +25,7 @@ URI: [biolink:located_in](https://w3id.org/biolink/vocab/located_in)
 
 ## Children
 
+ *  [expressed in](expressed_in.md)
 
 ## Used by
 

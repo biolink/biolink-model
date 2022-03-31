@@ -44,8 +44,6 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [develops into](develops_into.md)
  *  [diagnoses](diagnoses.md)
  *  [disease has basis in](disease_has_basis_in.md)
- *  [expressed in](expressed_in.md)
- *  [expresses](expresses.md)
  *  [gene product of](gene_product_of.md)
  *  [genetic association](genetic_association.md)
  *  [has completed](has_completed.md)

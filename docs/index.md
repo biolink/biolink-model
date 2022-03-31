@@ -782,7 +782,9 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [localization decreased by](localization_decreased_by.md)
  * [localization increased by](localization_increased_by.md)
  * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+     * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
  * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
+     * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
  * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
  * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
  * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
@@ -1060,8 +1062,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [develops into](develops_into.md)
          * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
          * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
-         * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
-         * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
          * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
          * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
              * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
@@ -1126,7 +1126,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
          * [lacks part](lacks_part.md)
          * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+             * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
          * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
+             * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
          * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
          * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
          * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
@@ -1360,8 +1362,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [develops into](develops_into.md)
      * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
      * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
-     * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
-     * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
      * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
      * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
          * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
@@ -1426,7 +1426,9 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
      * [lacks part](lacks_part.md)
      * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+         * [expressed in](expressed_in.md) - holds between a gene or gene product and an anatomical entity in which it is expressed
      * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
+         * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
      * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
      * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
      * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.

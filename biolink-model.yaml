@@ -4890,7 +4890,7 @@ slots:
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
   # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
   expressed in:
-    is_a: related to at instance level
+    is_a: located in
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
@@ -4909,7 +4909,7 @@ slots:
       - NCIT:R46
 
   expresses:
-    is_a: related to at instance level
+    is_a: location of
     aliases: ['anatomy expresses gene']
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
