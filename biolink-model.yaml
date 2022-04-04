@@ -1279,6 +1279,15 @@ slots:
     multivalued: false
     range: boolean
 
+  has role:
+    description: >-
+      	A role is particular behaviour which a material entity may exhibit.  Has role should be a curie from ChEBI
+    exact_mapping:
+      - CHEBI:50906
+    range: uriorcurie
+    pattern:  "^CHEBI:\\d{7}"
+
+
   max tolerated dose:
     description: >-
       The highest dose of a drug or treatment that does not cause unacceptable side effects.
@@ -7817,6 +7826,7 @@ classes:
       - available from
       - max tolerated dose
       - is toxic
+      - has role
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
@@ -8220,24 +8230,28 @@ classes:
       - CHEBI:64047
 
   nutrient:
+    deprecated: true
     is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
+    deprecated: true
     is_a: micronutrient
     related_mappings:
       # substance role
@@ -8246,6 +8260,7 @@ classes:
       - STY:T127
 
   food:
+    deprecated: true
     is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
