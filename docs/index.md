@@ -270,6 +270,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [BiologicalSex](BiologicalSex.md)
              * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
              * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+         * [ChemicalRole](ChemicalRole.md)
          * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
              * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
                  * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
@@ -1573,6 +1574,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [full name](full_name.md) - a long-form human readable name for a thing
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
+ * [has chemical role](has_chemical_role.md) - 	A role is particular behaviour which a material entity may exhibit.
  * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
  * [has count](has_count.md) - number of things with a particular property
  * [has dataset](has_dataset.md)
@@ -1625,6 +1627,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [full name](full_name.md) - a long-form human readable name for a thing
      * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
      * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
+     * [has chemical role](has_chemical_role.md) - 	A role is particular behaviour which a material entity may exhibit.
      * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
      * [has dataset](has_dataset.md)
      * [has device](has_device.md) - connects an entity to one or more (medical) devices

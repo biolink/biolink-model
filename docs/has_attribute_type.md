@@ -29,6 +29,7 @@ URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_t
 
  * [Attribute](Attribute.md)
  * [BiologicalSex](BiologicalSex.md)
+ * [ChemicalRole](ChemicalRole.md)
  * [ClinicalAttribute](ClinicalAttribute.md)
  * [ClinicalCourse](ClinicalCourse.md)
  * [ClinicalModifier](ClinicalModifier.md)

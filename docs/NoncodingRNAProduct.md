@@ -15,7 +15,7 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):uriorcurie%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[ChemicalEntity],[Attribute],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SiRNA],[OrganismTaxon],[NoncodingRNAProduct%7Csynonym(i):label_type%20%2A;xref(i):uriorcurie%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[SiRNA],[NoncodingRNAProduct]%5E-[MicroRNA],[RNAProduct]%5E-[NoncodingRNAProduct],[NamedThing],[MicroRNA],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
 
 ---
 
@@ -52,6 +52,9 @@ URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAPr
      * Range: [String](types/String.md)
  * [is toxic](is_toxic.md)  <sub>0..1</sub>
      * Range: [Boolean](types/Boolean.md)
+ * [has chemical role](has_chemical_role.md)  <sub>0..\*</sub>
+     * Description: 	A role is particular behaviour which a material entity may exhibit.
+     * Range: [ChemicalRole](ChemicalRole.md)
 
 ### Inherited from entity:
 

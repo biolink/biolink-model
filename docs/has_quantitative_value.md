@@ -30,6 +30,7 @@ URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantit
  * [Attribute](Attribute.md)
  * [BiologicalSex](BiologicalSex.md)
  * [ChemicalExposure](ChemicalExposure.md)
+ * [ChemicalRole](ChemicalRole.md)
  * [ClinicalAttribute](ClinicalAttribute.md)
  * [ClinicalCourse](ClinicalCourse.md)
  * [ClinicalMeasurement](ClinicalMeasurement.md)

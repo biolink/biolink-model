@@ -93,6 +93,7 @@ prefixes:
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
+  mmmp.biomaps: 'https://bioregistry.io/mmmp.biomaps:'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
@@ -1278,6 +1279,13 @@ slots:
     is_a: node property
     multivalued: false
     range: boolean
+
+  has chemical role:
+    is_a: node property
+    description: >-
+      	A role is particular behaviour which a material entity may exhibit.
+    range: chemical role
+    multivalued: true
 
   max tolerated dose:
     description: >-
@@ -7020,6 +7028,9 @@ classes:
     in_subset:
       - samples
 
+  chemical role:
+    is_a: attribute
+
   biological sex:
     is_a: attribute
     exact_mappings:
@@ -7817,6 +7828,7 @@ classes:
       - available from
       - max tolerated dose
       - is toxic
+      - has chemical role
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
@@ -8220,24 +8232,28 @@ classes:
       - CHEBI:64047
 
   nutrient:
+    deprecated: true
     is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
+    deprecated: true
     is_a: micronutrient
     related_mappings:
       # substance role
@@ -8246,6 +8262,7 @@ classes:
       - STY:T127
 
   food:
+    deprecated: true
     is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition

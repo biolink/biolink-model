@@ -1,5 +1,7 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-29T19:10:25
+
+# Generation date: 2022-03-31T18:51:00
+
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -262,6 +264,7 @@ LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 METACYC_REACTION = CurieNamespace('metacyc_reaction', 'https://identifiers.org/metacyc.reaction:')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
+MMMP_BIOMAPS = CurieNamespace('mmmp_biomaps', 'https://bioregistry.io/mmmp.biomaps:')
 OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOwl#')
 OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
@@ -2381,6 +2384,7 @@ class ChemicalEntity(NamedThing):
     available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
+    has_role: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2400,6 +2404,10 @@ class ChemicalEntity(NamedThing):
 
         if self.is_toxic is not None and not isinstance(self.is_toxic, Bool):
             self.is_toxic = Bool(self.is_toxic)
+
+        if not isinstance(self.has_role, list):
+            self.has_role = [self.has_role] if self.has_role is not None else []
+        self.has_role = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.has_role]
 
         super().__post_init__(**kwargs)
 
@@ -8577,6 +8585,10 @@ slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", c
 
 slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie('is_toxic'),
                    model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
+slots.has_role = Slot(uri=BIOLINK.has_role, name="has role", curie=BIOLINK.curie('has_role'),
+                   model_uri=BIOLINK.has_role, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
+                   pattern=re.compile(r'^CHEBI:\d{7}'))
 
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
