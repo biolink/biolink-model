@@ -1280,12 +1280,11 @@ slots:
     multivalued: false
     range: boolean
 
-  has role:
+  has chemical role:
     is_a: node property
     description: >-
-      	A role is particular behaviour which a material entity may exhibit.  Has role should be a curie from ChEBI
-    range: uriorcurie
-    pattern:  "^CHEBI:\\d{7}"
+      	A role is particular behaviour which a material entity may exhibit.
+    range: chemical role
     multivalued: true
 
   max tolerated dose:
@@ -7029,6 +7028,9 @@ classes:
     in_subset:
       - samples
 
+  chemical role:
+    is_a: attribute
+
   biological sex:
     is_a: attribute
     exact_mappings:
@@ -7826,7 +7828,7 @@ classes:
       - available from
       - max tolerated dose
       - is toxic
-      - has role
+      - has chemical role
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
