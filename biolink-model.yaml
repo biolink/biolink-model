@@ -1284,6 +1284,7 @@ slots:
       	A role is particular behaviour which a material entity may exhibit.  Has role should be a curie from ChEBI
     range: uriorcurie
     pattern:  "^CHEBI:\\d{7}"
+    multivalued: true
 
   max tolerated dose:
     description: >-
