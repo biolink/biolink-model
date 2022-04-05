@@ -1,7 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-
-# Generation date: 2022-03-31T18:51:00
-
+# Generation date: 2022-04-05T23:52:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1165,6 +1163,17 @@ class Attribute(Annotation):
 
         super().__post_init__(**kwargs)
 
+
+@dataclass
+class ChemicalRole(Attribute):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+    class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
+    class_name: ClassVar[str] = "chemical role"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+
+    has_attribute_type: Union[dict, OntologyClass] = None
 
 @dataclass
 class BiologicalSex(Attribute):
@@ -2384,7 +2393,7 @@ class ChemicalEntity(NamedThing):
     available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
-    has_role: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    has_chemical_role: Optional[Union[Union[dict, ChemicalRole], List[Union[dict, ChemicalRole]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2405,9 +2414,7 @@ class ChemicalEntity(NamedThing):
         if self.is_toxic is not None and not isinstance(self.is_toxic, Bool):
             self.is_toxic = Bool(self.is_toxic)
 
-        if not isinstance(self.has_role, list):
-            self.has_role = [self.has_role] if self.has_role is not None else []
-        self.has_role = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.has_role]
+        self._normalize_inlined_as_dict(slot_name="has_chemical_role", slot_type=ChemicalRole, key_name="has attribute type", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -8586,9 +8593,8 @@ slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", c
 slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie('is_toxic'),
                    model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
 
-slots.has_role = Slot(uri=BIOLINK.has_role, name="has role", curie=BIOLINK.curie('has_role'),
-                   model_uri=BIOLINK.has_role, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
-                   pattern=re.compile(r'^CHEBI:\d{7}'))
+slots.has_chemical_role = Slot(uri=BIOLINK.has_chemical_role, name="has chemical role", curie=BIOLINK.curie('has_chemical_role'),
+                   model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[dict, ChemicalRole], List[Union[dict, ChemicalRole]]]])
 
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
