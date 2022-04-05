@@ -1280,6 +1280,7 @@ slots:
     range: boolean
 
   has role:
+    is_a: node property
     description: >-
       	A role is particular behaviour which a material entity may exhibit.  Has role should be a curie from ChEBI
     range: uriorcurie
