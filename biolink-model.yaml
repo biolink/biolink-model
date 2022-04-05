@@ -1282,11 +1282,8 @@ slots:
   has role:
     description: >-
       	A role is particular behaviour which a material entity may exhibit.  Has role should be a curie from ChEBI
-    exact_mapping:
-      - CHEBI:50906
     range: uriorcurie
     pattern:  "^CHEBI:\\d{7}"
-
 
   max tolerated dose:
     description: >-
