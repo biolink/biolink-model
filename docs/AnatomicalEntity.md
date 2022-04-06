@@ -28,6 +28,10 @@ URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
  * UMLS
  * MESH
  * NCIT
+ * EMAPA
+ * ZFA
+ * FBbt
+ * WBbt
 
 ## Parents
 
