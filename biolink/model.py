@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-04-06T01:19:31
+# Generation date: 2022-04-06T01:31:06
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -81,11 +81,13 @@ EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/opera
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/EFO_')
 EGGNOG = CurieNamespace('EGGNOG', 'http://identifiers.org/eggnog/')
+EMAPA = CurieNamespace('EMAPA', 'http://purl.obolibrary.org/obo/EMAPA_')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
 FAO = CurieNamespace('FAO', 'http://purl.obolibrary.org/obo/FAO_')
 FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
+FBBT = CurieNamespace('FBbt', 'http://purl.obolibrary.org/obo/FBbt_')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
 FBDV = CurieNamespace('FBdv', 'http://purl.obolibrary.org/obo/FBdv_')
 FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
@@ -230,6 +232,7 @@ VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
 WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
+WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBBT_')
 WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBLS_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
@@ -238,6 +241,7 @@ WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
 XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 XPO = CurieNamespace('XPO', 'http://purl.obolibrary.org/obo/XPO_')
 XENBASE = CurieNamespace('Xenbase', 'http://www.xenbase.org/gene/showgene.do?method=display&geneId=')
+ZFA = CurieNamespace('ZFA', 'http://purl.obolibrary.org/obo/ZFA_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZFS = CurieNamespace('ZFS', 'http://purl.obolibrary.org/obo/ZFS_')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
