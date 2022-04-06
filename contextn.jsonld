@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-04-05T23:52:00\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.16\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-04-06T01:18:57\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.16\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -146,6 +146,10 @@
          "@id": "http://purl.obolibrary.org/obo/FBcv_",
          "@prefix": true
       },
+      "FBdv": {
+         "@id": "http://purl.obolibrary.org/obo/FBdv_",
+         "@prefix": true
+      },
       "FMA": {
          "@id": "http://purl.obolibrary.org/obo/FMA_",
          "@prefix": true
@@ -269,6 +273,10 @@
          "@prefix": true
       },
       "MSigDB": "https://www.gsea-msigdb.org/gsea/msigdb/",
+      "MmusDv": {
+         "@id": "http://purl.obolibrary.org/obo/MMUSDV_",
+         "@prefix": true
+      },
       "NBO": {
          "@id": "http://purl.obolibrary.org/obo/NBO_",
          "@prefix": true
@@ -445,6 +453,10 @@
          "@id": "http://bio2rdf.org/wormbase_vocabulary",
          "@prefix": true
       },
+      "WBls": {
+         "@id": "http://purl.obolibrary.org/obo/WBLS_",
+         "@prefix": true
+      },
       "WIKIDATA": "https://www.wikidata.org/wiki/",
       "WIKIDATA_PROPERTY": "https://www.wikidata.org/wiki/Property:",
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
@@ -465,6 +477,10 @@
          "@prefix": true
       },
       "ZFIN": "http://identifiers.org/zfin/",
+      "ZFS": {
+         "@id": "http://purl.obolibrary.org/obo/ZFS_",
+         "@prefix": true
+      },
       "ZP": {
          "@id": "http://purl.obolibrary.org/obo/ZP_",
          "@prefix": true
