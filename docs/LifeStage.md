@@ -20,6 +20,15 @@ URI: [biolink:LifeStage](https://w3id.org/biolink/vocab/LifeStage)
 ---
 
 
+## Identifier prefixes
+
+ * HsapDv
+ * MmusDv
+ * ZFS
+ * FBdv
+ * WBls
+ * UBERON
+
 ## Parents
 
  *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities

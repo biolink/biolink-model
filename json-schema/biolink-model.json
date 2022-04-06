@@ -2047,6 +2047,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -2143,6 +2150,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -2198,6 +2212,43 @@
             "category"
          ],
          "title": "ChemicalMixture",
+         "type": "object"
+      },
+      "ChemicalRole": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_attribute_type": {
+               "$ref": "#/$defs/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "ChemicalRole",
          "type": "object"
       },
       "ChemicalSubstance": {
@@ -3187,6 +3238,13 @@
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -3340,6 +3398,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -4464,6 +4529,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -5168,6 +5240,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5429,6 +5508,13 @@
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -5910,6 +5996,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -5992,6 +6085,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -9618,6 +9718,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -9974,6 +10081,13 @@
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -10067,6 +10181,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -10443,6 +10564,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -10519,6 +10647,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -10674,6 +10809,13 @@
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -10773,6 +10915,13 @@
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -10908,6 +11057,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -12765,6 +12921,13 @@
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -13257,6 +13420,13 @@
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -13356,6 +13526,13 @@
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -14268,6 +14445,13 @@
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -14361,6 +14545,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -14777,6 +14968,13 @@
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -15805,6 +16003,13 @@
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },

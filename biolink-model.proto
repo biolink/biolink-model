@@ -453,6 +453,7 @@ message ChemicalEntity
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
@@ -476,10 +477,20 @@ message ChemicalMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
+ }
+message ChemicalRole
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source String = 6
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -715,9 +726,10 @@ message CodingSequence
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -749,10 +761,11 @@ message ComplexMolecularMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -1006,10 +1019,11 @@ message Drug
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1154,6 +1168,7 @@ message EnvironmentalFoodContaminant
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 message EnvironmentalProcess
  {
@@ -1213,9 +1228,10 @@ message Exon
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1311,10 +1327,11 @@ message Food
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
  }
 message FoodAdditive
  {
@@ -1331,6 +1348,7 @@ message FoodAdditive
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
@@ -2115,6 +2133,7 @@ message Macronutrient
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -2192,6 +2211,7 @@ message Micronutrient
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 message MicroRNA
  {
@@ -2208,11 +2228,12 @@ message MicroRNA
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
-  repeated synonym LabelType = 17
-  repeated xref Uriorcurie = 18
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated synonym LabelType = 18
+  repeated xref Uriorcurie = 19
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -2294,7 +2315,8 @@ message MolecularEntity
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 message MolecularMixture
@@ -2312,10 +2334,11 @@ message MolecularMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2345,11 +2368,12 @@ message NoncodingRNAProduct
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
-  repeated synonym LabelType = 17
-  repeated xref Uriorcurie = 18
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated synonym LabelType = 18
+  repeated xref Uriorcurie = 19
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 message NucleicAcidEntity
@@ -2367,9 +2391,10 @@ message NucleicAcidEntity
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -2399,6 +2424,7 @@ message Nutrient
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 // The age group in which (disease) symptom manifestations appear
 message Onset
@@ -2805,10 +2831,11 @@ message ProcessedMaterial
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isSupplement ChemicalMixture = 14
-  optional highestFDAApprovalStatus String = 15
-  optional drugRegulatoryStatusWorldWide String = 16
-  repeated routesOfDelivery DrugDeliveryEnum = 17
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isSupplement ChemicalMixture = 15
+  optional highestFDAApprovalStatus String = 16
+  optional drugRegulatoryStatusWorldWide String = 17
+  repeated routesOfDelivery DrugDeliveryEnum = 18
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -2980,11 +3007,12 @@ message RNAProduct
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
-  repeated synonym LabelType = 17
-  repeated xref Uriorcurie = 18
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated synonym LabelType = 18
+  repeated xref Uriorcurie = 19
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
@@ -3002,11 +3030,12 @@ message RNAProductIsoform
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
-  repeated synonym LabelType = 17
-  repeated xref Uriorcurie = 18
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated synonym LabelType = 18
+  repeated xref Uriorcurie = 19
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
 message SequenceAssociation
@@ -3124,11 +3153,12 @@ message SiRNA
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
-  repeated synonym LabelType = 17
-  repeated xref Uriorcurie = 18
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated synonym LabelType = 18
+  repeated xref Uriorcurie = 19
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 message SmallMolecule
@@ -3145,8 +3175,9 @@ message SmallMolecule
   repeated availableFrom DrugAvailabilityEnum = 10
   optional maxToleratedDose String = 11
   optional isToxic Boolean = 12
-  optional isMetabolite Boolean = 13
-  id String = 14
+  repeated hasChemicalRole ChemicalRole = 13
+  optional isMetabolite Boolean = 14
+  id String = 15
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -3233,9 +3264,10 @@ message Transcript
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
-  optional isMetabolite Boolean = 14
-  repeated inTaxon OrganismTaxon = 15
-  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -3453,6 +3485,7 @@ message Vitamin
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
  }
 message Zygosity
  {
