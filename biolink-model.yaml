@@ -7933,6 +7933,9 @@ classes:
       - UMLS
     close_mappings:
       - dcid:ChemicalCompound
+    narrow_mappings:
+      - NCIT:C20401 # monoclonal antibody
+      - SNOMEDCT:49616005 # monoclonal antibody (substance)
 
   nucleic acid entity:
     is_a: molecular entity
