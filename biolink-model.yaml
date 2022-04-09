@@ -2124,6 +2124,7 @@ slots:
       - SIO:001331 # diagnosis
     exact_mappings:
       - DrugCentral:5271
+      - SEMMEDDB:diagnoses
 
   is diagnosed by:
     is_a: related to at instance level
@@ -4892,7 +4893,6 @@ slots:
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
       - ORPHA:465410
-      - SEMMEDDB:diagnoses
 
   # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
@@ -5073,10 +5073,14 @@ slots:
       - SNOMED:has_finding_site
       - SNOMED:has_indirect_procedure_site
       - SNOMED:has_inherent_location
+    domain: named thing
+    range: named thing
 
   location of:
     is_a: related to at instance level
     aliases: ['site of']
+    domain: named thing
+    range: named thing
     description: >-
       holds between material entity or site and a material entity
       that is located within it (but not considered a part of it)
@@ -7933,6 +7937,9 @@ classes:
       - UMLS
     close_mappings:
       - dcid:ChemicalCompound
+    narrow_mappings:
+      - NCIT:C20401 # monoclonal antibody
+      - SNOMEDCT:49616005 # monoclonal antibody (substance)
 
   nucleic acid entity:
     is_a: molecular entity
