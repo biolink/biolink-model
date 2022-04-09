@@ -2124,6 +2124,7 @@ slots:
       - SIO:001331 # diagnosis
     exact_mappings:
       - DrugCentral:5271
+      - SEMMEDDB:diagnoses
 
   is diagnosed by:
     is_a: related to at instance level
@@ -4892,7 +4893,6 @@ slots:
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
       - ORPHA:465410
-      - SEMMEDDB:diagnoses
 
   # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
