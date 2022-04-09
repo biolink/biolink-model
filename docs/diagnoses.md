@@ -31,6 +31,7 @@ URI: [biolink:diagnoses](https://w3id.org/biolink/vocab/diagnoses)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | DrugCentral:5271 |
+|  | | SEMMEDDB:diagnoses |
 | **Close Mappings:** | | NCIT:C15220 |
 |  | | SIO:001331 |
 

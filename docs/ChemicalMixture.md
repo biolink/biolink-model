@@ -149,4 +149,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Close Mappings:** | | dcid:ChemicalCompound |
+| **Narrow Mappings:** | | NCIT:C20401 |
+|  | | SNOMEDCT:49616005 |
 

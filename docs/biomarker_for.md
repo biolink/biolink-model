@@ -39,6 +39,5 @@ URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
 |  | | NCIT:genetic_biomarker_related_to |
 |  | | NCIT:is_molecular_abnormality_of_disease |
 |  | | ORPHA:465410 |
-|  | | SEMMEDDB:diagnoses |
 | **Broad Mappings:** | | RO:0002607 |
 
