@@ -20,6 +20,10 @@ URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
 ---
 
 
+## Identifier prefixes
+
+ * CPT
+
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
