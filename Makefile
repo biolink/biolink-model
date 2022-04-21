@@ -12,35 +12,11 @@ imgflags?=-i
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: install tests build
+all: build tests
 
-# Build the biolink model python library
-python: biolink/model.py
-docs: docs/index.md
-jekyll-docs: docs/Classes.md
-
-shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
-json-schema: json-schema/biolink-model.json
-prefix-map: prefix-map/biolink-model-prefix-map.json
-
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
+build: python gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
 prefix-map/biolink-model-prefix-map.json
-
-# TODO: Get this working
-build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
-
-install: env.lock
-
-
-
-# ---------------------------------------
-# Install package into build environment
-# ---------------------------------------
-env.lock:
-	poetry install --dev
-	cp /dev/null env.lock
-
 
 # ----------------------------------------
 # BUILD/COMPILATION
@@ -48,22 +24,13 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
-biolink/model.py: biolink-model.yaml env.lock
+
+# Build the biolink model python library
+python: biolink/model.py
+
+biolink/model.py: biolink-model.yaml
 	mkdir biolink 2>/dev/null || true
 	export poetry_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# DOCS
-# ~~~~~~~~~~~~~~~~~~~~
-docs/index.md: biolink-model.yaml env.lock
-	poetry run gen-markdown --dir docs $(imgflags) $<
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JEKYLL DOCS
-# ~~~~~~~~~~~~~~~~~~~~
-docs/Classes.md: biolink-model.yaml env.lock
-	poetry run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
 # ~~~~~~~~~~~~~~~~~~~~~~
 # doc-gen with templates
@@ -72,43 +39,23 @@ docs/Classes.md: biolink-model.yaml env.lock
 gendoc:
 	poetry run gen-doc biolink-model.yaml --directory docs --template-directory doc_templates
 
-guidelines/%.md: docs/index.md
-	cp -R guidelines/* $(dir $@)
-
-# add more logging?
-# some docs pages not being created
-# usage of mkdocs.yml attributes like analytics?
-
-mkdocs_html/index.html: generated/docs/index.md
-	poetry run mkdocs build
-
-# test docs locally.
-# repeats build
-docserve:
-	$(RUN) mkdocs serve
-
-gh-deploy:
-# deploy documentation (note: requires documentation is in docs dir)
-    poetry run mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
-
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views: biolink-model.yaml dir-golr-views env.lock
+gen-golr-views: biolink-model.yaml dir-golr-views
 	poetry run gen-golr-views -d golr-views $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.graphql: biolink-model.yaml env.lock
+biolink-model.graphql: biolink-model.yaml
 	poetry run gen-graphql $< > $@
-
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphviz
 # ~~~~~~~~~~~~~~~~~~~~
-gen-graphviz: biolink-model.yaml dir-graphviz env.lock
+gen-graphviz: biolink-model.yaml dir-graphviz
 	poetry run gen-graphviz  -d graphviz $< -f gv
 	poetry run gen-graphviz  -d graphviz $< -f svg
 
@@ -116,18 +63,18 @@ gen-graphviz: biolink-model.yaml dir-graphviz env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 # Java
 # ~~~~~~~~~~~~~~~~~~~~
-java: json-schema/biolink-model.json dir-java env.lock
+java: json-schema/biolink-model.json dir-java
 	jsonschema2pojo --source $< -T JSONSCHEMA -t java
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
-context.jsonld: biolink-model.yaml env.lock
+context.jsonld: biolink-model.yaml
 	touch $@
 	poetry run gen-jsonld-context $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
-contextn.jsonld: biolink-model.yaml env.lock
+contextn.jsonld: biolink-model.yaml
 	touch $@
 	poetry run gen-jsonld-context --metauris $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
@@ -135,7 +82,9 @@ contextn.jsonld: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 # JSON-SCHEMA
 # ~~~~~~~~~~~~~~~~~~~~
-json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
+json-schema: json-schema/biolink-model.json
+
+json-schema/biolink-model.json: biolink-model.yaml dir-json-schema
 	poetry run gen-json-schema $< > $@
 
 
@@ -143,31 +92,37 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 # prefix-map
 # ~~~~~~~~~~~~~~~~~~~~
 
-prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
+prefix-map: prefix-map/biolink-model-prefix-map.json
+
+prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map
 	poetry run gen-prefix-map $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.owl.ttl: biolink-model.yaml env.lock
+biolink-model.owl.ttl: biolink-model.yaml
 	poetry run gen-owl --no-metaclasses -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Proto
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.proto: biolink-model.yaml env.lock
+biolink-model.proto: biolink-model.yaml
 	poetry run gen-proto $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.ttl: biolink-model.yaml env.lock
+biolink-model.ttl: biolink-model.yaml
 	poetry run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
 # ~~~~~~~~~~~~~~~~~~~~
+
+
+shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
+
 biolink-model.shex: biolink-model.yaml
 	poetry run gen-shex $< > $@
 biolink-modeln.shex: biolink-model.yaml
@@ -179,62 +134,6 @@ biolink-model.shexj: biolink-model.yaml
 biolink-modeln.shexj: biolink-model.yaml
 	touch $@
 	poetry run gen-shex --metauris --format json $< > $@
-
-
-# ----------------------------------------
-# Ontology conversion
-# ----------------------------------------
-
-# ontology/%.json: ontology/%.ttl
-# 	owltools $< -o -f json $@
-
-# ontology/%.obo: ontology/%.ttl
-# 	owltools $< -o -f obo --no-check $@
-
-# ontology/%.omn: ontology/%.ttl
-# 	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
-
-# ontology/%.tree: ontology/%.json
-# 	ogr --showdefs -t tree -r $< % > $@
-
-# ontology/%.png: ontology/%.json
-# 	ogr-tree -t png -o $@ -r $< %
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Contrib
-# ~~~~~~~~~~~~~~~~~~~~
-contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/%.graphql \
-contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex
-	echo
-
-contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml env.lock
-	poetry run gen-py-classes contrib/$*.yaml > tmp.py && (poetry run comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
-
-contrib/%/docs/index.md: contrib/%.yaml
-	poetry run gen-markdown --dir contrib/$*/docs $<
-
-contrib/%/datamodel.py: contrib/%.yaml
-	poetry run gen-py-classes contrib/$*.yaml > $@
-
-contrib-golr-%: contrib-dir-% contrib/%.yaml
-	poetry run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
-
-contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
-	poetry run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
-
-contrib-java-%: contrib-dir-% contrib/%/schema.json
-	mkdir -p contrib/$*/java
-	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
-
-contrib/%/schema.json: contrib-dir-% contrib/%.yaml
-	poetry run gen-json-schema contrib/$*.yaml > $@
-
-contrib/%/%.owl: contrib/%.yaml
-	poetry run gen-owl -o $@ contrib/$*.yaml
-
-contrib/%/%.shex: contrib-dir-% contrib/%.yaml
-	poetry run gen-shex contrib/*.yaml > $@
 
 # ----------------------------------------
 # TESTS
@@ -253,7 +152,7 @@ pytest: biolink/model.py
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json
+	rm -rf docs/images/* docs/*.md golr-views graphql graphviz java json
 	rm -rf json-schema ontology proto rdf shex
 
 # ----------------------------------------
@@ -261,6 +160,3 @@ clean:
 # ----------------------------------------
 dir-%:
 	mkdir -p $*
-
-contrib-dir-%:
-	mkdir -p contrib/$*
