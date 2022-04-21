@@ -80,12 +80,12 @@ The yaml definition is currently used to derive:
 
 ## Make and build instructions
 
-Prerequisites: Python 3.7+ and pipenv
+Prerequisites: Python 3.7+ and poetry
 
-To install pipenv,
+To install poetry,
 
 ```sh
-pip3 install pipenv
+pip3 install poetry
 ```
 
 To install the project,
