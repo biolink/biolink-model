@@ -1,31 +1,55 @@
 name: Build and Deploy Static Mkdocs Documentation
 
-# Controls when the action will run. Triggers the workflow on pull request
-on:
-  pull_request:
-    branches:
-      - master
-      - main
-  push:
+on: [pull_request]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  github-pages:
+  test:
+
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+
+      #----------------------------------------------
+      #       check-out repo and set-up python
+      #----------------------------------------------
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: ${{ matrix.python-version }}
 
-      # Install poetry
-      - name: Install poetry
-        run: python3 -m pip install --no-cache-dir poetry
+      #----------------------------------------------
+      #          install & configure poetry
+      #----------------------------------------------
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
 
-      # If cache was not loaded, install dependencies
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
       - name: Install dependencies
-        # if: steps.cache-poetry.outputs.cache-hit != 'true'
-        run: poetry install
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      #----------------------------------------------
+      #    install your root project, if required
+      #----------------------------------------------
+      - name: Install library
+        run: poetry install --no-interaction
+
+      #----------------------------------------------
+      #              run test suite
+      #----------------------------------------------
+      - name: Run tests
+        run: poetry run python -m unittest discover
 
       # generate markdown files
       #----------------------------------------------
