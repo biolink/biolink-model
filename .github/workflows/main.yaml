@@ -25,7 +25,7 @@ jobs:
       # If cache was not loaded, install dependencies
       - name: Install dependencies
         # if: steps.cache-poetry.outputs.cache-hit != 'true'
-        run: poetry install -d
+        run: poetry install
 
       # generate markdown files
       #----------------------------------------------
