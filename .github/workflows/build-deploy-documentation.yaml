@@ -45,7 +45,7 @@ jobs:
 
       # generate markdown files
       - run: |
-          mkdir docs
+          make clean-docs
           poetry run gen-doc biolink-model.yaml --directory docs --template-directory doc_templates
           cp css/extra_css.css docs
           cp guidelines/*.md docs
