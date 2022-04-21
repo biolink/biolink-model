@@ -151,6 +151,9 @@ pytest: biolink/model.py
 # ----------------------------------------
 # CLEAN
 # ----------------------------------------
+clean-docs:
+	rm -rf docs/images/* docs/*.md
+
 clean:
 	rm -rf docs/images/* docs/*.md golr-views graphql graphviz java json
 	rm -rf json-schema ontology proto rdf shex
