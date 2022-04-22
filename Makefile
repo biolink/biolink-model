@@ -148,6 +148,13 @@ pytest: biolink/model.py
 # jsonschema_test: json-schema/biolink-model.json
 #	jsonschema $<
 
+
+### gh pages ###
+gh-deploy:
+# deploy documentation (note: requires documentation is in docs dir)
+	poetry run mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
+
+
 # ----------------------------------------
 # CLEAN
 # ----------------------------------------
