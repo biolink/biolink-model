@@ -1,4 +1,3 @@
-Loading .env environment variables...
 # metamodel_version: 1.7.0
 # version: 2.2.15
 type Activity implements ActivityAndBehavior
@@ -571,6 +570,7 @@ type ChemicalMixture
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 interface ChemicalOrDrugOrTreatment
@@ -856,6 +856,7 @@ type ComplexMolecularMixture
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type ConfidenceLevel
@@ -1127,6 +1128,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type DrugExposure implements ExposureEvent
@@ -1479,6 +1481,7 @@ type Food
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type FoodAdditive
@@ -2628,6 +2631,7 @@ type MolecularMixture
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type MortalityOutcome implements Outcome
@@ -3232,6 +3236,7 @@ type ProcessedMaterial
     isSupplement: ChemicalMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
+    routesOfDelivery: [DrugDeliveryEnum]
   }
 
 type Protein implements GeneProductMixin, ThingWithTaxon

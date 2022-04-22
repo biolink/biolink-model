@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-23T22:02:46
+# Generation date: 2022-04-22T17:01:14
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1284,6 +1284,9 @@ class FrequencyQuantifier(RelationshipQuantifier):
 
 
 class ChemicalOrDrugOrTreatment(YAMLRoot):
+    """
+    grouping class for chemicals, drugs, and treatments used for search.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
@@ -2481,6 +2484,7 @@ class ChemicalMixture(ChemicalEntity):
     is_supplement: Optional[Union[str, ChemicalMixtureId]] = None
     highest_FDA_approval_status: Optional[str] = None
     drug_regulatory_status_world_wide: Optional[str] = None
+    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2496,6 +2500,10 @@ class ChemicalMixture(ChemicalEntity):
 
         if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, str):
             self.drug_regulatory_status_world_wide = str(self.drug_regulatory_status_world_wide)
+
+        if not isinstance(self.routes_of_delivery, list):
+            self.routes_of_delivery = [self.routes_of_delivery] if self.routes_of_delivery is not None else []
+        self.routes_of_delivery = [v if isinstance(v, DrugDeliveryEnum) else DrugDeliveryEnum(v) for v in self.routes_of_delivery]
 
         super().__post_init__(**kwargs)
 
@@ -5633,14 +5641,8 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
-    object represents the downstream. For any such association there is an implicit reaction:
-    IF
-    R has-input C1 AND
-    R has-output C2 AND
-    R enabled-by P AND
-    R type Reaction
-    THEN
-    C1 derives-into C2 <<catalyst qualifier P>>
+    object represents the downstream. For any such association there is an implicit reaction IF R has-input C1 AND R
+    has-output C2 AND R enabled-by P AND R type Reaction THENC1 derives-into C2 <<catalyst qualifier P>>
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8198,6 +8200,24 @@ class DrugAvailabilityEnum(EnumDefinitionImpl):
                 PermissibleValue(text="over the counter",
                                  description="chemical entity is available over the counter without a prescription.") )
 
+class DrugDeliveryEnum(EnumDefinitionImpl):
+
+    inhalation = PermissibleValue(text="inhalation")
+    oral = PermissibleValue(text="oral")
+
+    _defn = EnumDefinition(
+        name="DrugDeliveryEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "delivery method",
+                PermissibleValue(text="delivery method") )
+        setattr(cls, "absorbtion through the skin",
+                PermissibleValue(text="absorbtion through the skin") )
+        setattr(cls, "intravenous injection",
+                PermissibleValue(text="intravenous injection") )
+
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -8511,6 +8531,9 @@ slots.highest_FDA_approval_status = Slot(uri=BIOLINK.highest_FDA_approval_status
 
 slots.drug_regulatory_status_world_wide = Slot(uri=BIOLINK.drug_regulatory_status_world_wide, name="drug regulatory status world wide", curie=BIOLINK.curie('drug_regulatory_status_world_wide'),
                    model_uri=BIOLINK.drug_regulatory_status_world_wide, domain=None, range=Optional[str])
+
+slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of delivery", curie=BIOLINK.curie('routes_of_delivery'),
+                   model_uri=BIOLINK.routes_of_delivery, domain=None, range=Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]])
 
 slots.related_to = Slot(uri=BIOLINK.related_to, name="related to", curie=BIOLINK.curie('related_to'),
                    model_uri=BIOLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
