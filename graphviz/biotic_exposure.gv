@@ -1,24 +1,24 @@
 digraph {
-	graph [bb="0,0,292.14,123"];
+	graph [bb="0,0,233.89,123"];
 	node [label="\N"];
 	"biotic exposure"	[height=0.5,
 		label="biotic exposure",
-		pos="158.89,105",
-		width=2.2748];
+		pos="126.69,105",
+		width=1.8054];
 	"exposure event"	[height=0.5,
-		pos="81.893,18",
-		width=2.2748];
+		pos="63.694,18",
+		width=1.7693];
 	"biotic exposure" -> "exposure event"	[label=uses,
-		lp="142.39,61.5",
-		pos="e,97.074,35.758 143.68,87.207 132.29,74.633 116.54,57.252 103.8,43.182"];
+		lp="111.69,61.5",
+		pos="e,76.115,35.758 114.25,87.207 105.1,74.866 92.522,57.894 82.2,43.967"];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="236.89,18",
-		width=1.5346];
+		pos="189.69,18",
+		width=1.2277];
 	"biotic exposure" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="236.89,61.5",
-		pos="e,221.78,35.469 174.3,87.207 185.92,74.552 202,57.026 214.95,42.909",
+		lp="188.19,61.5",
+		pos="e,177.49,35.469 139.14,87.207 148.35,74.786 161.03,57.673 171.39,43.697",
 		style=solid];
 }

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-04-14T23:07:01
+# Generation date: 2022-04-23T12:26:37
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1309,6 +1309,9 @@ class FrequencyQuantifier(RelationshipQuantifier):
 
 
 class ChemicalOrDrugOrTreatment(YAMLRoot):
+    """
+    grouping class for chemicals, drugs, and treatments used for search.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalOrDrugOrTreatment
@@ -5666,14 +5669,8 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
 class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     """
     A causal relationship between two chemical entities, where the subject represents the upstream entity and the
-    object represents the downstream. For any such association there is an implicit reaction:
-    IF
-    R has-input C1 AND
-    R has-output C2 AND
-    R enabled-by P AND
-    R type Reaction
-    THEN
-    C1 derives-into C2 <<catalyst qualifier P>>
+    object represents the downstream. For any such association there is an implicit reaction IF R has-input C1 AND R
+    has-output C2 AND R enabled-by P AND R type Reaction THENC1 derives-into C2 <<catalyst qualifier P>>
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8295,6 +8292,8 @@ class DrugDeliveryEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "delivery method",
+                PermissibleValue(text="delivery method") )
         setattr(cls, "absorbtion through the skin",
                 PermissibleValue(text="absorbtion through the skin") )
         setattr(cls, "intravenous injection",

@@ -1,14 +1,14 @@
 digraph {
-	graph [bb="0,0,252.18,123"];
+	graph [bb="0,0,201.48,123"];
 	node [label="\N"];
 	"epidemiological outcome"	[height=0.5,
 		label="epidemiological outcome",
-		pos="126.09,105",
-		width=3.5025];
+		pos="100.74,105",
+		width=2.7984];
 	outcome	[height=0.5,
-		pos="126.09,18",
-		width=1.3902];
+		pos="100.74,18",
+		width=1.1555];
 	"epidemiological outcome" -> outcome	[label=uses,
-		lp="142.59,61.5",
-		pos="e,126.09,36.175 126.09,86.799 126.09,75.163 126.09,59.548 126.09,46.237"];
+		lp="112.74,61.5",
+		pos="e,100.74,36.175 100.74,86.799 100.74,75.163 100.74,59.548 100.74,46.237"];
 }
