@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-03-23T22:02:46
+# Generation date: 2022-04-14T23:07:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.2.15"
+version = "2.2.16"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -81,14 +81,18 @@ EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/opera
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/EFO_')
 EGGNOG = CurieNamespace('EGGNOG', 'http://identifiers.org/eggnog/')
+EMAPA = CurieNamespace('EMAPA', 'http://purl.obolibrary.org/obo/EMAPA_')
 ENSEMBL = CurieNamespace('ENSEMBL', 'http://identifiers.org/ensembl/')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
 FAO = CurieNamespace('FAO', 'http://purl.obolibrary.org/obo/FAO_')
 FB = CurieNamespace('FB', 'http://identifiers.org/fb/')
+FBBT = CurieNamespace('FBbt', 'http://purl.obolibrary.org/obo/FBbt_')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
+FBDV = CurieNamespace('FBdv', 'http://purl.obolibrary.org/obo/FBdv_')
 FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
 FOODON = CurieNamespace('FOODON', 'http://purl.obolibrary.org/obo/FOODON_')
+FYECO = CurieNamespace('FYECO', 'https://www.pombase.org/term/')
 FYPO = CurieNamespace('FYPO', 'http://purl.obolibrary.org/obo/FYPO_')
 GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
 GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
@@ -144,6 +148,7 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
+MMUSDV = CurieNamespace('MmusDv', 'http://purl.obolibrary.org/obo/MMUSDV_')
 NBO = CurieNamespace('NBO', 'http://purl.obolibrary.org/obo/NBO_')
 NBO_PROPERTY = CurieNamespace('NBO-PROPERTY', 'http://purl.obolibrary.org/obo/nbo#')
 NCBIGENE = CurieNamespace('NCBIGene', 'http://identifiers.org/ncbigene/')
@@ -228,6 +233,8 @@ VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
 WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
+WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBBT_')
+WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBLS_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
@@ -235,7 +242,9 @@ WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
 XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 XPO = CurieNamespace('XPO', 'http://purl.obolibrary.org/obo/XPO_')
 XENBASE = CurieNamespace('Xenbase', 'http://www.xenbase.org/gene/showgene.do?method=display&geneId=')
+ZFA = CurieNamespace('ZFA', 'http://purl.obolibrary.org/obo/ZFA_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
+ZFS = CurieNamespace('ZFS', 'http://purl.obolibrary.org/obo/ZFS_')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
@@ -262,6 +271,7 @@ LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
 METACYC_REACTION = CurieNamespace('metacyc_reaction', 'https://identifiers.org/metacyc.reaction:')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
+MMMP_BIOMAPS = CurieNamespace('mmmp_biomaps', 'https://bioregistry.io/mmmp.biomaps:')
 OBOINOWL = CurieNamespace('oboInOwl', 'http://www.geneontology.org/formats/oboInOwl#')
 OBOFORMAT = CurieNamespace('oboformat', 'http://www.geneontology.org/formats/oboInOwl#')
 OS = CurieNamespace('os', 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl')
@@ -901,6 +911,10 @@ class GeneToDiseaseAssociationId(AssociationId):
     pass
 
 
+class DruggableGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
+    pass
+
+
 class VariantToGeneAssociationId(AssociationId):
     pass
 
@@ -1158,6 +1172,17 @@ class Attribute(Annotation):
 
         super().__post_init__(**kwargs)
 
+
+@dataclass
+class ChemicalRole(Attribute):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+    class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
+    class_name: ClassVar[str] = "chemical role"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+
+    has_attribute_type: Union[dict, OntologyClass] = None
 
 @dataclass
 class BiologicalSex(Attribute):
@@ -2377,6 +2402,7 @@ class ChemicalEntity(NamedThing):
     available_from: Optional[Union[Union[str, "DrugAvailabilityEnum"], List[Union[str, "DrugAvailabilityEnum"]]]] = empty_list()
     max_tolerated_dose: Optional[str] = None
     is_toxic: Optional[Union[bool, Bool]] = None
+    has_chemical_role: Optional[Union[Union[dict, ChemicalRole], List[Union[dict, ChemicalRole]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2396,6 +2422,8 @@ class ChemicalEntity(NamedThing):
 
         if self.is_toxic is not None and not isinstance(self.is_toxic, Bool):
             self.is_toxic = Bool(self.is_toxic)
+
+        self._normalize_inlined_as_dict(slot_name="has_chemical_role", slot_type=ChemicalRole, key_name="has attribute type", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -2481,6 +2509,7 @@ class ChemicalMixture(ChemicalEntity):
     is_supplement: Optional[Union[str, ChemicalMixtureId]] = None
     highest_FDA_approval_status: Optional[str] = None
     drug_regulatory_status_world_wide: Optional[str] = None
+    routes_of_delivery: Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2496,6 +2525,10 @@ class ChemicalMixture(ChemicalEntity):
 
         if self.drug_regulatory_status_world_wide is not None and not isinstance(self.drug_regulatory_status_world_wide, str):
             self.drug_regulatory_status_world_wide = str(self.drug_regulatory_status_world_wide)
+
+        if not isinstance(self.routes_of_delivery, list):
+            self.routes_of_delivery = [self.routes_of_delivery] if self.routes_of_delivery is not None else []
+        self.routes_of_delivery = [v if isinstance(v, DrugDeliveryEnum) else DrugDeliveryEnum(v) for v in self.routes_of_delivery]
 
         super().__post_init__(**kwargs)
 
@@ -6545,6 +6578,44 @@ class GeneToDiseaseAssociation(Association):
 
 
 @dataclass
+class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:DruggableGeneToDiseaseAssociation"
+    class_name: ClassVar[str] = "druggable gene to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DruggableGeneToDiseaseAssociation
+
+    id: Union[str, DruggableGeneToDiseaseAssociationId] = None
+    object: Union[str, NamedThingId] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    predicate: Union[str, PredicateType] = None
+    has_evidence: Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DruggableGeneToDiseaseAssociationId):
+            self.id = DruggableGeneToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if not isinstance(self.has_evidence, list):
+            self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
+        self.has_evidence = [v if isinstance(v, DruggableGeneCategoryEnum) else DruggableGeneCategoryEnum(v) for v in self.has_evidence]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class VariantToGeneAssociation(Association):
     """
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in
@@ -7105,7 +7176,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
 @dataclass
 class GeneToExpressionSiteAssociation(Association):
     """
-    An association between a gene and an expression site, possibly qualified by stage/timing info.
+    An association between a gene and a gene expression site, possibly qualified by stage/timing info.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -8183,6 +8254,21 @@ class PredicateQualifierEnum(EnumDefinitionImpl):
         setattr(cls, "supported by clinical evidence",
                 PermissibleValue(text="supported by clinical evidence") )
 
+class DruggableGeneCategoryEnum(EnumDefinitionImpl):
+
+    Tclin = PermissibleValue(text="Tclin",
+                                 description="These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.")
+    Tbio = PermissibleValue(text="Tbio",
+                               description="These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.")
+    Tchem = PermissibleValue(text="Tchem",
+                                 description="These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code")
+    Tdark = PermissibleValue(text="Tdark",
+                                 description="These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.")
+
+    _defn = EnumDefinition(
+        name="DruggableGeneCategoryEnum",
+    )
+
 class DrugAvailabilityEnum(EnumDefinitionImpl):
 
     prescription = PermissibleValue(text="prescription",
@@ -8197,6 +8283,22 @@ class DrugAvailabilityEnum(EnumDefinitionImpl):
         setattr(cls, "over the counter",
                 PermissibleValue(text="over the counter",
                                  description="chemical entity is available over the counter without a prescription.") )
+
+class DrugDeliveryEnum(EnumDefinitionImpl):
+
+    inhalation = PermissibleValue(text="inhalation")
+    oral = PermissibleValue(text="oral")
+
+    _defn = EnumDefinition(
+        name="DrugDeliveryEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "absorbtion through the skin",
+                PermissibleValue(text="absorbtion through the skin") )
+        setattr(cls, "intravenous injection",
+                PermissibleValue(text="intravenous injection") )
 
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
 
@@ -8500,6 +8602,9 @@ slots.available_from = Slot(uri=BIOLINK.available_from, name="available from", c
 slots.is_toxic = Slot(uri=BIOLINK.is_toxic, name="is toxic", curie=BIOLINK.curie('is_toxic'),
                    model_uri=BIOLINK.is_toxic, domain=NamedThing, range=Optional[Union[bool, Bool]])
 
+slots.has_chemical_role = Slot(uri=BIOLINK.has_chemical_role, name="has chemical role", curie=BIOLINK.curie('has_chemical_role'),
+                   model_uri=BIOLINK.has_chemical_role, domain=NamedThing, range=Optional[Union[Union[dict, ChemicalRole], List[Union[dict, ChemicalRole]]]])
+
 slots.max_tolerated_dose = Slot(uri=BIOLINK.max_tolerated_dose, name="max tolerated dose", curie=BIOLINK.curie('max_tolerated_dose'),
                    model_uri=BIOLINK.max_tolerated_dose, domain=NamedThing, range=Optional[str])
 
@@ -8511,6 +8616,9 @@ slots.highest_FDA_approval_status = Slot(uri=BIOLINK.highest_FDA_approval_status
 
 slots.drug_regulatory_status_world_wide = Slot(uri=BIOLINK.drug_regulatory_status_world_wide, name="drug regulatory status world wide", curie=BIOLINK.curie('drug_regulatory_status_world_wide'),
                    model_uri=BIOLINK.drug_regulatory_status_world_wide, domain=None, range=Optional[str])
+
+slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of delivery", curie=BIOLINK.curie('routes_of_delivery'),
+                   model_uri=BIOLINK.routes_of_delivery, domain=None, range=Optional[Union[Union[str, "DrugDeliveryEnum"], List[Union[str, "DrugDeliveryEnum"]]]])
 
 slots.related_to = Slot(uri=BIOLINK.related_to, name="related to", curie=BIOLINK.curie('related_to'),
                    model_uri=BIOLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -8550,6 +8658,12 @@ slots.opposite_of = Slot(uri=BIOLINK.opposite_of, name="opposite of", curie=BIOL
 
 slots.has_real_world_evidence_of_association_with = Slot(uri=BIOLINK.has_real_world_evidence_of_association_with, name="has real world evidence of association with", curie=BIOLINK.curie('has_real_world_evidence_of_association_with'),
                    model_uri=BIOLINK.has_real_world_evidence_of_association_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.target_for = Slot(uri=BIOLINK.target_for, name="target for", curie=BIOLINK.curie('target_for'),
+                   model_uri=BIOLINK.target_for, domain=Gene, range=Optional[Union[Union[str, DiseaseId], List[Union[str, DiseaseId]]]])
+
+slots.has_target = Slot(uri=BIOLINK.has_target, name="has target", curie=BIOLINK.curie('has_target'),
+                   model_uri=BIOLINK.has_target, domain=Disease, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])
@@ -9870,6 +9984,15 @@ slots.gene_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, nam
 
 slots.gene_to_disease_association_subject = Slot(uri=RDF.subject, name="gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_disease_association_subject, domain=GeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="druggable gene to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.druggable_gene_to_disease_association_predicate = Slot(uri=RDF.predicate, name="druggable gene to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_predicate, domain=DruggableGeneToDiseaseAssociation, range=Union[str, PredicateType])
+
+slots.druggable_gene_to_disease_association_has_evidence = Slot(uri=BIOLINK.has_evidence, name="druggable gene to disease association_has evidence", curie=BIOLINK.curie('has_evidence'),
+                   model_uri=BIOLINK.druggable_gene_to_disease_association_has_evidence, domain=DruggableGeneToDiseaseAssociation, range=Optional[Union[Union[str, "DruggableGeneCategoryEnum"], List[Union[str, "DruggableGeneCategoryEnum"]]]])
 
 slots.variant_to_gene_association_object = Slot(uri=RDF.object, name="variant to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.variant_to_gene_association_object, domain=VariantToGeneAssociation, range=Union[str, GeneId])

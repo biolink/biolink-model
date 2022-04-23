@@ -1,6 +1,5 @@
-Loading .env environment variables...
 # metamodel_version: 1.7.0
-# version: 2.2.15
+# version: 2.2.16
 {
    "type": "Schema",
    "@context": [
@@ -988,6 +987,7 @@ Loading .env environment variables...
                }
             },
             "https://w3id.org/biolink/vocab/BiologicalSex",
+            "https://w3id.org/biolink/vocab/ChemicalRole",
             "https://w3id.org/biolink/vocab/ClinicalAttribute",
             "https://w3id.org/biolink/vocab/OrganismAttribute",
             "https://w3id.org/biolink/vocab/SeverityValue",
@@ -2268,6 +2268,13 @@ Loading .env environment variables...
                               "valueExpr": "https://w3id.org/linkml/Boolean",
                               "min": 0,
                               "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/has_chemical_role",
+                              "valueExpr": "https://w3id.org/biolink/vocab/ChemicalRole",
+                              "min": 0,
+                              "max": -1
                            }
                         ]
                      },
@@ -2490,6 +2497,13 @@ Loading .env environment variables...
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
                               "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/routes_of_delivery",
+                              "valueExpr": "https://w3id.org/biolink/vocab/DrugDeliveryEnum",
+                              "min": 0,
+                              "max": -1
                            }
                         ]
                      },
@@ -2534,6 +2548,45 @@ Loading .env environment variables...
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment"
+                     ]
+                  },
+                  "min": 0
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ChemicalRole",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ChemicalRole_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ChemicalRole"
                      ]
                   },
                   "min": 0
@@ -4523,6 +4576,90 @@ Loading .env environment variables...
                      ]
                   },
                   "min": 0
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_evidence",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum",
+                        "min": 0,
+                        "max": -1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation"
+                     ]
+                  },
+                  "min": 1
                }
             ]
          }
@@ -6549,6 +6686,7 @@ Loading .env environment variables...
                   ]
                }
             },
+            "https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation"
          ]

@@ -1,4 +1,3 @@
-Loading .env environment variables...
 {
    "$defs": {
       "Activity": {
@@ -2048,6 +2047,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -2144,6 +2150,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -2177,6 +2190,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -2192,6 +2212,43 @@ Loading .env environment variables...
             "category"
          ],
          "title": "ChemicalMixture",
+         "type": "object"
+      },
+      "ChemicalRole": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_attribute_type": {
+               "$ref": "#/$defs/OntologyClass",
+               "description": "connects an attribute to a class that describes it"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "ChemicalRole",
          "type": "object"
       },
       "ChemicalSubstance": {
@@ -3181,6 +3238,13 @@ Loading .env environment variables...
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -3337,6 +3401,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -3367,6 +3438,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },
@@ -4451,6 +4529,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -4484,6 +4569,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
             },
@@ -4508,6 +4600,17 @@ Loading .env environment variables...
             "prescription"
          ],
          "title": "DrugAvailabilityEnum",
+         "type": "string"
+      },
+      "DrugDeliveryEnum": {
+         "description": "",
+         "enum": [
+            "inhalation",
+            "oral",
+            "absorbtion through the skin",
+            "intravenous injection"
+         ],
+         "title": "DrugDeliveryEnum",
          "type": "string"
       },
       "DrugExposure": {
@@ -4670,6 +4773,142 @@ Loading .env environment variables...
          },
          "required": [],
          "title": "DrugToGeneInteractionExposure",
+         "type": "object"
+      },
+      "DruggableGeneCategoryEnum": {
+         "description": "",
+         "enum": [
+            "Tclin",
+            "Tbio",
+            "Tchem",
+            "Tdark"
+         ],
+         "title": "DruggableGeneCategoryEnum",
+         "type": "string"
+      },
+      "DruggableGeneToDiseaseAssociation": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "aggregator_knowledge_source": {
+               "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_evidence": {
+               "description": "connects an association to an instance of supporting evidence",
+               "items": {
+                  "$ref": "#/$defs/DruggableGeneCategoryEnum"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "knowledge_source": {
+               "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "$ref": "#/$defs/Onset",
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+            },
+            "original_knowledge_source": {
+               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "primary_knowledge_source": {
+               "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "$ref": "#/$defs/OntologyClass"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "$ref": "#/$defs/SeverityValue",
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+            },
+            "source": {
+               "type": "string"
+            },
+            "subject": {
+               "$ref": "#/$defs/GeneOrGeneProduct",
+               "description": "gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state."
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "object",
+            "subject",
+            "predicate"
+         ],
+         "title": "DruggableGeneToDiseaseAssociation",
          "type": "object"
       },
       "EntityToDiseaseAssociation": {
@@ -5001,6 +5240,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -5262,6 +5508,13 @@ Loading .env environment variables...
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -5743,6 +5996,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -5773,6 +6033,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },
@@ -5818,6 +6085,13 @@ Loading .env environment variables...
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -6617,7 +6891,7 @@ Loading .env environment variables...
       },
       "GeneToExpressionSiteAssociation": {
          "additionalProperties": false,
-         "description": "An association between a gene and an expression site, possibly qualified by stage/timing info.",
+         "description": "An association between a gene and a gene expression site, possibly qualified by stage/timing info.",
          "properties": {
             "aggregator_knowledge_source": {
                "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
@@ -6720,7 +6994,7 @@ Loading .env environment variables...
             },
             "subject": {
                "$ref": "#/$defs/GeneOrGeneProduct",
-               "description": "gene in which variation is correlated with the phenotypic feature"
+               "description": "Gene or gene product positively within the specified anatomical entity (or subclass, i.e. cellular component) location."
             },
             "type": {
                "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
@@ -9444,6 +9718,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -9800,6 +10081,13 @@ Loading .env environment variables...
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -9893,6 +10181,13 @@ Loading .env environment variables...
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -10269,6 +10564,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -10348,6 +10650,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -10378,6 +10687,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },
@@ -10493,6 +10809,13 @@ Loading .env environment variables...
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -10592,6 +10915,13 @@ Loading .env environment variables...
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -10727,6 +11057,13 @@ Loading .env environment variables...
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -12584,6 +12921,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "highest_FDA_approval_status": {
                "description": "Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'",
                "type": "string"
@@ -12614,6 +12958,13 @@ Loading .env environment variables...
                "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "routes_of_delivery": {
+               "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
+               "items": {
+                  "$ref": "#/$defs/DrugDeliveryEnum"
                },
                "type": "array"
             },
@@ -13069,6 +13420,13 @@ Loading .env environment variables...
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -13168,6 +13526,13 @@ Loading .env environment variables...
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -14080,6 +14445,13 @@ Loading .env environment variables...
                "description": "connects a genomic feature to its sequence",
                "type": "string"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -14173,6 +14545,13 @@ Loading .env environment variables...
                "description": "connects any entity to an attribute",
                "items": {
                   "$ref": "#/$defs/Attribute"
+               },
+               "type": "array"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
                },
                "type": "array"
             },
@@ -14589,6 +14968,13 @@ Loading .env environment variables...
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
+            },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -15620,6 +16006,13 @@ Loading .env environment variables...
                },
                "type": "array"
             },
+            "has_chemical_role": {
+               "description": "\tA role is particular behaviour which a material entity may exhibit.",
+               "items": {
+                  "$ref": "#/$defs/ChemicalRole"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
@@ -15709,6 +16102,6 @@ Loading .env environment variables...
    "required": [],
    "title": "Biolink-Model",
    "type": "object",
-   "version": "2.2.15"
+   "version": "2.2.16"
 }
 

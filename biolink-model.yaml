@@ -5,7 +5,8 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.15
+version: 2.2.16
+
 
 ## ------------
 ## PREFIXES
@@ -57,6 +58,7 @@ prefixes:
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
   foodb.compound: 'http://foodb.ca/compounds/'
+  FYECO: 'https://www.pombase.org/term/'
   FYPO: 'http://purl.obolibrary.org/obo/FYPO_'  # Fission Yeast Phenotype Ontology
   GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
@@ -92,6 +94,7 @@ prefixes:
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
+  mmmp.biomaps: 'https://bioregistry.io/mmmp.biomaps:'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
@@ -231,6 +234,30 @@ enums:
       "validated":
       "supported by real-world evidence":
       "supported by clinical evidence":
+
+  druggable_gene_category_enum:
+    permissible_values:
+      "Tclin":
+        description: >-
+          These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
+      "Tbio":
+        description: >-
+          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
+          the activity thresholds detailed below.
+      "Tchem":
+        description: >-
+          These targets do not have known drug or small molecule activities that satisfy the activity
+          thresholds detailed below AND satisfy one or more of the following criteria:
+          target is above the cutoff criteria for Tdark
+          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
+          with an Experimental Evidence code
+      "Tdark":
+        description: >-
+          These are targets about which virtually nothing is known. They do not have known drug or small
+          molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
+          more of the following criteria:
+          A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
+          less than or equal to 50 Antibodies available according to http://antibodypedia.com.
 
   drug_availability_enum:
     description: >-
@@ -1252,6 +1279,13 @@ slots:
     multivalued: false
     range: boolean
 
+  has chemical role:
+    is_a: node property
+    description: >-
+      	A role is particular behaviour which a material entity may exhibit.
+    range: chemical role
+    multivalued: true
+
   max tolerated dose:
     description: >-
       The highest dose of a drug or treatment that does not cause unacceptable side effects.
@@ -1673,6 +1707,24 @@ slots:
       tag: biolink:canonical_predicate
       value: true
 
+  target for:
+    is_a: related to at instance level
+    description: >-
+      A gene is a target of a disease when its products are druggable and when a drug interaction with the gene
+      product could have a therapeutic effect
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
+    domain: gene
+    range: disease
+
+  has target:
+    is_a: related to at instance level
+    inverse: target for
+    domain: disease
+    range: gene
+
   active in:
     is_a: related to at instance level
     domain: gene or gene product
@@ -2071,6 +2123,7 @@ slots:
       - SIO:001331 # diagnosis
     exact_mappings:
       - DrugCentral:5271
+      - SEMMEDDB:diagnoses
 
   is diagnosed by:
     is_a: related to at instance level
@@ -4839,13 +4892,12 @@ slots:
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
       - ORPHA:465410
-      - SEMMEDDB:diagnoses
 
   # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
   # which are biological which have manifestation in an anatomical site, e.g. RO:0004026, RO:0004027 and others
   expressed in:
-    is_a: related to at instance level
+    is_a: located in
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
@@ -4864,7 +4916,7 @@ slots:
       - NCIT:R46
 
   expresses:
-    is_a: related to at instance level
+    is_a: location of
     aliases: ['anatomy expresses gene']
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
@@ -5020,10 +5072,14 @@ slots:
       - SNOMED:has_finding_site
       - SNOMED:has_indirect_procedure_site
       - SNOMED:has_inherent_location
+    domain: named thing
+    range: named thing
 
   location of:
     is_a: related to at instance level
     aliases: ['site of']
+    domain: named thing
+    range: named thing
     description: >-
       holds between material entity or site and a material entity
       that is located within it (but not considered a part of it)
@@ -6976,6 +7032,9 @@ classes:
     in_subset:
       - samples
 
+  chemical role:
+    is_a: attribute
+
   biological sex:
     is_a: attribute
     exact_mappings:
@@ -7572,7 +7631,9 @@ classes:
       - STY:T061
       # Molecular Biology Research Technique
       - STY:T063
-
+    id_prefixes:
+      - CPT
+      
   phenomenon:
     is_a: named thing
     mixins:
@@ -7774,6 +7835,7 @@ classes:
       - available from
       - max tolerated dose
       - is toxic
+      - has chemical role
     exact_mappings:
       - CHEBI:24431
       - SIO:010004 # Chemical entity
@@ -7878,6 +7940,9 @@ classes:
       - UMLS
     close_mappings:
       - dcid:ChemicalCompound
+    narrow_mappings:
+      - NCIT:C20401 # monoclonal antibody
+      - SNOMEDCT:49616005 # monoclonal antibody (substance)
 
   nucleic acid entity:
     is_a: molecular entity
@@ -8177,24 +8242,28 @@ classes:
       - CHEBI:64047
 
   nutrient:
+    deprecated: true
     is_a: chemical entity
     related_mappings:
       # substance role
       - CHEBI:33284
 
   macronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:33937
 
   micronutrient:
+    deprecated: true
     is_a: nutrient
     related_mappings:
       # substance role
       - CHEBI:27027
 
   vitamin:
+    deprecated: true
     is_a: micronutrient
     related_mappings:
       # substance role
@@ -8203,6 +8272,7 @@ classes:
       - STY:T127
 
   food:
+    deprecated: true
     is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
@@ -8278,6 +8348,13 @@ classes:
       - HsapDv:0000000
     in_subset:
       - model_organism_database
+    id_prefixes:
+      - HsapDv
+      - MmusDv
+      - ZFS
+      - FBdv
+      - WBls
+      - UBERON
 
   individual organism:
     aliases: ['organism']
@@ -8452,6 +8529,10 @@ classes:
       - UMLS
       - MESH
       - NCIT
+      - EMAPA
+      - ZFA
+      - FBbt
+      - WBbt
     in_subset:
       - model_organism_database
 
@@ -10317,6 +10398,27 @@ classes:
           gene in which variation is correlated with the disease,
           may be protective or causative or associative, or as a model
 
+  druggable gene to disease association:
+    is_a: gene to disease association
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: >-
+          gene in which variation is correlated with the disease
+          in a protective manner, or if the product produced by the gene can be targeted by a small molecule and
+          this leads to a protective or improving disease state.
+      predicate:
+        subproperty_of: target for
+      has evidence:
+        range: druggable_gene_category_enum
+    defining_slots:
+      - subject
+      - object
+      - predicate
+    mixins:
+      - entity to disease association mixin
+      - gene to entity association mixin
+
   variant to gene association:
     description: >-
       An association between a variant and a gene, where the variant has
@@ -10642,7 +10744,7 @@ classes:
       - predicate
       - object
     description: >-
-      An association between a gene and an expression site,
+      An association between a gene and a gene expression site,
       possibly qualified by stage/timing info.
     notes:
       - "TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
@@ -10653,7 +10755,9 @@ classes:
     slot_usage:
       subject:
         range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
+        description: >-
+          Gene or gene product positively within the specified
+          anatomical entity (or subclass, i.e. cellular component) location.
       object:
         range: anatomical entity
         description: "location in which the gene is expressed"

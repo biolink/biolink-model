@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: nucleic_acid_entity
+# metamodel_version: 1.7.0# version: 2.2.16id: nucleic_acid_entity
 schema_generating: true
 description: A nucleic acid entity is a molecular entity characterized by availability
   in gene databases of nucleotide-based sequence representations of its precise sequence;
@@ -66,6 +66,10 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi
 - id: is_metabolite
   description: indicates whether a molecular entity is a metabolite
   display_name: is metabolite

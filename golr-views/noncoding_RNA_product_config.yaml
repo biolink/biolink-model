@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: noncoding_RNA_product
+# metamodel_version: 1.7.0# version: 2.2.16id: noncoding_RNA_product
 schema_generating: true
 display_name: noncoding RNA product
 document_category: noncoding RNA product
@@ -63,6 +63,10 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi
 - id: is_metabolite
   description: indicates whether a molecular entity is a metabolite
   display_name: is metabolite

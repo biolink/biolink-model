@@ -1,6 +1,5 @@
-Loading .env environment variables...
 # metamodel_version: 1.7.0
-# version: 2.2.15
+# version: 2.2.16
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -230,8 +229,8 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Attribute> ] ?
        )
-    } OR @<BiologicalSex> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR @<SocioeconomicAttribute> OR
-    @<Zygosity>
+    } OR @<BiologicalSex> OR @<ChemicalRole> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR
+    @<SocioeconomicAttribute> OR @<Zygosity>
 )
 
 <Behavior> CLOSED {
@@ -477,7 +476,8 @@ linkml:Nodeidentifier NONLITERAL
              <trade_name> @<ChemicalEntity> ? ;
              <available_from> @<DrugAvailabilityEnum> * ;
              <max_tolerated_dose> @linkml:String ? ;
-             <is_toxic> @linkml:Boolean ?
+             <is_toxic> @linkml:Boolean ? ;
+             <has_chemical_role> @<ChemicalRole> *
           ) ;
           rdf:type [ <ChemicalEntity> ]
        )
@@ -524,7 +524,8 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <ChemicalEntity> ] ? ;
              <is_supplement> @<ChemicalMixture> ? ;
              <highest_FDA_approval_status> @linkml:String ? ;
-             <drug_regulatory_status_world_wide> @linkml:String ?
+             <drug_regulatory_status_world_wide> @linkml:String ? ;
+             <routes_of_delivery> @<DrugDeliveryEnum> *
           ) ;
           rdf:type [ <ChemicalMixture> ]
        )
@@ -534,6 +535,14 @@ linkml:Nodeidentifier NONLITERAL
 <ChemicalOrDrugOrTreatment> {
     (  $<ChemicalOrDrugOrTreatment_tes> rdf:type . * ;
        rdf:type [ <ChemicalOrDrugOrTreatment> ] ?
+    )
+}
+
+<ChemicalRole> CLOSED {
+    (  $<ChemicalRole_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <ChemicalRole> ] ?
     )
 }
 
@@ -925,6 +934,21 @@ linkml:Nodeidentifier NONLITERAL
           <has_gene_or_gene_product> @<Gene> *
        ) ;
        rdf:type [ <DrugToGeneInteractionExposure> ] ?
+    )
+}
+
+<DruggableGeneToDiseaseAssociation> CLOSED {
+    (  $<DruggableGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <predicate> @<PredicateType> ;
+          <has_evidence> @<DruggableGeneCategoryEnum> *
+       ) ;
+       rdf:type [ <DruggableGeneToDiseaseAssociation> ]
     )
 }
 
@@ -1322,7 +1346,8 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
+    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
+    @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
 <GeneToEntityAssociationMixin> {

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: molecular_mixture
+# metamodel_version: 1.7.0# version: 2.2.16id: molecular_mixture
 schema_generating: true
 description: A molecular mixture is a chemical mixture composed of two or more molecular
   entities with known concentration and stoichiometry.
@@ -65,6 +65,10 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi
 - id: is_supplement
   description: ''
   display_name: is supplement
@@ -78,3 +82,8 @@ fields:
   description: An agglomeration of drug regulatory status worldwide. Not specific
     to FDA.
   display_name: drug regulatory status world wide
+- id: routes_of_delivery
+  description: the method or process of administering a pharmaceutical compound to
+    achieve a therapeutic effect in humans or animals.
+  display_name: routes of delivery
+  cardinality: multi

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: food
+# metamodel_version: 1.7.0# version: 2.2.16id: food
 schema_generating: true
 description: A substance consumed by a living organism as a source of nutrition
 display_name: food
@@ -64,6 +64,10 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi
 - id: is_supplement
   description: ''
   display_name: is supplement
@@ -77,3 +81,8 @@ fields:
   description: An agglomeration of drug regulatory status worldwide. Not specific
     to FDA.
   display_name: drug regulatory status world wide
+- id: routes_of_delivery
+  description: the method or process of administering a pharmaceutical compound to
+    achieve a therapeutic effect in humans or animals.
+  display_name: routes of delivery
+  cardinality: multi

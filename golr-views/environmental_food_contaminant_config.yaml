@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: environmental_food_contaminant
+# metamodel_version: 1.7.0# version: 2.2.16id: environmental_food_contaminant
 schema_generating: true
 display_name: environmental food contaminant
 document_category: environmental food contaminant
@@ -63,3 +63,7 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi

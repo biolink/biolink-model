@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.2.15id: siRNA
+# metamodel_version: 1.7.0# version: 2.2.16id: siRNA
 schema_generating: true
 description: A small RNA molecule that is the product of a longer exogenous or endogenous
   dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via
@@ -67,6 +67,10 @@ fields:
 - id: is_toxic
   description: ''
   display_name: is toxic
+- id: has_chemical_role
+  description: "\tA role is particular behaviour which a material entity may exhibit."
+  display_name: has chemical role
+  cardinality: multi
 - id: is_metabolite
   description: indicates whether a molecular entity is a metabolite
   display_name: is metabolite

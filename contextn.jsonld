@@ -1,6 +1,5 @@
-Loading .env environment variables...
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-03-23T22:02:16\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.15\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-04-14T23:06:30\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.16\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -129,6 +128,10 @@ Loading .env environment variables...
          "@prefix": true
       },
       "EGGNOG": "http://identifiers.org/eggnog/",
+      "EMAPA": {
+         "@id": "http://purl.obolibrary.org/obo/EMAPA_",
+         "@prefix": true
+      },
       "ENSEMBL": "http://identifiers.org/ensembl/",
       "ENVO": {
          "@id": "http://purl.obolibrary.org/obo/ENVO_",
@@ -143,8 +146,16 @@ Loading .env environment variables...
          "@prefix": true
       },
       "FB": "http://identifiers.org/fb/",
+      "FBbt": {
+         "@id": "http://purl.obolibrary.org/obo/FBbt_",
+         "@prefix": true
+      },
       "FBcv": {
          "@id": "http://purl.obolibrary.org/obo/FBcv_",
+         "@prefix": true
+      },
+      "FBdv": {
+         "@id": "http://purl.obolibrary.org/obo/FBdv_",
          "@prefix": true
       },
       "FMA": {
@@ -155,6 +166,7 @@ Loading .env environment variables...
          "@id": "http://purl.obolibrary.org/obo/FOODON_",
          "@prefix": true
       },
+      "FYECO": "https://www.pombase.org/term/",
       "FYPO": {
          "@id": "http://purl.obolibrary.org/obo/FYPO_",
          "@prefix": true
@@ -270,6 +282,10 @@ Loading .env environment variables...
          "@prefix": true
       },
       "MSigDB": "https://www.gsea-msigdb.org/gsea/msigdb/",
+      "MmusDv": {
+         "@id": "http://purl.obolibrary.org/obo/MMUSDV_",
+         "@prefix": true
+      },
       "NBO": {
          "@id": "http://purl.obolibrary.org/obo/NBO_",
          "@prefix": true
@@ -446,6 +462,14 @@ Loading .env environment variables...
          "@id": "http://bio2rdf.org/wormbase_vocabulary",
          "@prefix": true
       },
+      "WBbt": {
+         "@id": "http://purl.obolibrary.org/obo/WBBT_",
+         "@prefix": true
+      },
+      "WBls": {
+         "@id": "http://purl.obolibrary.org/obo/WBLS_",
+         "@prefix": true
+      },
       "WIKIDATA": "https://www.wikidata.org/wiki/",
       "WIKIDATA_PROPERTY": "https://www.wikidata.org/wiki/Property:",
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
@@ -465,7 +489,15 @@ Loading .env environment variables...
          "@id": "http://www.xenbase.org/gene/showgene.do?method=display&geneId=",
          "@prefix": true
       },
+      "ZFA": {
+         "@id": "http://purl.obolibrary.org/obo/ZFA_",
+         "@prefix": true
+      },
       "ZFIN": "http://identifiers.org/zfin/",
+      "ZFS": {
+         "@id": "http://purl.obolibrary.org/obo/ZFS_",
+         "@prefix": true
+      },
       "ZP": {
          "@id": "http://purl.obolibrary.org/obo/ZP_",
          "@prefix": true
@@ -501,6 +533,7 @@ Loading .env environment variables...
          "@id": "http://identifiers.org/mirbase",
          "@prefix": true
       },
+      "mmmp.biomaps": "https://bioregistry.io/mmmp.biomaps:",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "oboformat": "http://www.geneontology.org/formats/oboInOwl#",
       "os": {
@@ -975,6 +1008,9 @@ Loading .env environment variables...
       "has_catalyst": {
          "@type": "@id"
       },
+      "has_chemical_role": {
+         "@type": "@id"
+      },
       "has_completed": {
          "@type": "@id"
       },
@@ -1126,6 +1162,9 @@ Loading .env environment variables...
          "@type": "@id"
       },
       "has_synonymous_variant": {
+         "@type": "@id"
+      },
+      "has_target": {
          "@type": "@id"
       },
       "has_taxonomic_rank": {
@@ -1601,6 +1640,14 @@ Loading .env environment variables...
       "risk_affected_by": {
          "@type": "@id"
       },
+      "routes_of_delivery": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "same_as": {
          "@type": "@id"
       },
@@ -1688,6 +1735,9 @@ Loading .env environment variables...
          "@type": "@id"
       },
       "synthesis_increased_by": {
+         "@type": "@id"
+      },
+      "target_for": {
          "@type": "@id"
       },
       "taxon_of": {
