@@ -15,7 +15,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneToGeneAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct]%3Cobject%201..1-++[GeneToGeneHomologyAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToGeneHomologyAssociation],[GeneToGeneAssociation]%5E-[GeneToGeneHomologyAssociation],[GeneToGeneAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute])
 
 ---
 
@@ -32,9 +32,15 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
 
 ### Own
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from association:
 
@@ -115,15 +121,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from gene to gene association:
-
- * [subject](subject.md)  <sub>1..1</sub>
-     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
- * [object](object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
-
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>
@@ -133,6 +130,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)

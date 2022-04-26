@@ -17,13 +17,13 @@ URI: [biolink:gene_to_gene_association_object](https://w3id.org/biolink/vocab/ge
 
 ## Children
 
+ *  [gene to gene homology association➞object](gene_to_gene_homology_association_object.md)
  *  [pairwise molecular interaction➞object](pairwise_molecular_interaction_object.md)
 
 ## Used by
 
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
- * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
 
 ## Other properties

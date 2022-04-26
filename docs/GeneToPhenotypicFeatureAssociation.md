@@ -15,7 +15,7 @@ URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneToEntityAssociationMixin],[GeneOrGeneProduct],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[PhenotypicFeature],[OntologyClass],[Onset],[InformationResource],[PhenotypicFeature]%3Cobject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[Association]%5E-[GeneToPhenotypicFeatureAssociation],[GeneToEntityAssociationMixin],[GeneOrGeneProduct],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association])
 
 ---
 
@@ -37,6 +37,9 @@ URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
 
 ### Own
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -153,6 +156,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

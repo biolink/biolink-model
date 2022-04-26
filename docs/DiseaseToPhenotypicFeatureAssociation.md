@@ -15,7 +15,7 @@ URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[DiseaseToEntityAssociationMixin],[BiologicalSex],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[PhenotypicFeature],[OntologyClass],[Onset],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[PhenotypicFeature]%3Cobject%201..1-%20[DiseaseToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Disease]%3Csubject%201..1-%20[DiseaseToPhenotypicFeatureAssociation],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation]uses%20-.-%3E[DiseaseToEntityAssociationMixin],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[DiseaseToEntityAssociationMixin],[Disease],[BiologicalSex],[Attribute],[Association])
 
 ---
 
@@ -29,8 +29,20 @@ URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
  *  mixin: [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  *  mixin: [DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)
 
+## Referenced by class
+
+
 ## Attributes
 
+
+### Own
+
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from association:
 
@@ -141,6 +153,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
+
+### Domain for slot:
+
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
 ## Other properties
 
