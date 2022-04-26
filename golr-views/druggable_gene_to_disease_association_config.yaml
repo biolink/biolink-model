@@ -24,10 +24,6 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: object
 - id: relation
   display_name: relation
 - id: negated
@@ -83,6 +79,10 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: gene to disease association_object
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject

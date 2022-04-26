@@ -703,7 +703,6 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     description: NarrativeText
     source: String
     hasAttribute: [Attribute]
-    subject: NamedThing!
     predicate: PredicateType!
     relation: String
     negated: Boolean
@@ -716,6 +715,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     aggregatorKnowledgeSource: [InformationResource]
     type: String
     category: [CategoryType]
+    subject: ChemicalEntity!
     object: Pathway!
   }
 
@@ -1104,9 +1104,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     description: NarrativeText
     source: String
     hasAttribute: [Attribute]
-    subject: NamedThing!
     predicate: PredicateType!
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1118,6 +1116,8 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     aggregatorKnowledgeSource: [InformationResource]
     type: String
     category: [CategoryType]
+    subject: Disease!
+    object: PhenotypicFeature!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1196,7 +1196,6 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     description: NarrativeText
     source: String
     hasAttribute: [Attribute]
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1207,6 +1206,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     aggregatorKnowledgeSource: [InformationResource]
     type: String
     category: [CategoryType]
+    object: Disease!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1611,7 +1611,6 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1623,6 +1622,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     aggregatorKnowledgeSource: [InformationResource]
     type: String
     category: [CategoryType]
+    object: Disease!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1665,7 +1665,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1677,6 +1676,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     aggregatorKnowledgeSource: [InformationResource]
     type: String
     category: [CategoryType]
+    object: Disease!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1740,7 +1740,6 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1753,6 +1752,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
+    object: Disease!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -1861,8 +1861,8 @@ type GeneToGeneHomologyAssociation
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
-    object: GeneOrGeneProduct!
     predicate: PredicateType!
+    object: GeneOrGeneProduct!
   }
 
 type GeneToGeneProductRelationship
@@ -1922,7 +1922,6 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
-    object: NamedThing!
     relation: String
     negated: Boolean
     qualifiers: [OntologyClass]
@@ -1935,6 +1934,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
+    object: PhenotypicFeature!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
