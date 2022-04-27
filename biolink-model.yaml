@@ -7118,8 +7118,8 @@ classes:
       - provided by
     slot_usage:
       category:
-        range: named thing
         required: true
+        pattern: '^biolink:\d+$'
     exact_mappings:
       - BFO:0000001
       - WIKIDATA:Q35120
