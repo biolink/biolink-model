@@ -7,7 +7,7 @@
         {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
       {% endfor %}
       {% for s in schemaview.class_induced_slots(element.name) -%}
-        {{ gen.name(element) }} : {{gen.link(s)}}
+        {{ gen.name(element) }} : {{gen.name(s)}}
       {% endfor %}
 
 ```
