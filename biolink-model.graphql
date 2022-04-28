@@ -10,7 +10,7 @@ type Activity implements ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 interface ActivityAndBehavior
@@ -27,7 +27,7 @@ interface AdministrativeEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type Agent
@@ -38,7 +38,7 @@ type Agent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     affiliation: [Uriorcurie]
     address: String
     id: String!
@@ -54,7 +54,7 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -142,7 +142,7 @@ type Article
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -206,7 +206,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -255,7 +255,7 @@ type BehavioralFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
 
@@ -273,7 +273,7 @@ interface BiologicalEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type BiologicalProcess implements Occurrent, OntologyClass
@@ -286,7 +286,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -302,7 +302,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -330,7 +330,7 @@ type Book
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -353,7 +353,7 @@ type BookChapter
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -381,7 +381,7 @@ type Case
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -428,7 +428,7 @@ type Cell
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -442,7 +442,7 @@ type CellLine
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
   }
 
@@ -511,7 +511,7 @@ type CellularComponent
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -526,7 +526,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -563,7 +563,7 @@ type ChemicalMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -749,7 +749,7 @@ type ClinicalEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type ClinicalFinding
@@ -761,7 +761,7 @@ type ClinicalFinding
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasAttribute: [ClinicalAttribute]
   }
@@ -776,7 +776,7 @@ type ClinicalIntervention
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type ClinicalMeasurement
@@ -809,7 +809,7 @@ type ClinicalTrial
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type CodingSequence
@@ -822,7 +822,7 @@ type CodingSequence
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -842,7 +842,7 @@ type Cohort
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -861,7 +861,7 @@ type ComplexMolecularMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -883,7 +883,7 @@ type ConfidenceLevel
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -924,7 +924,7 @@ type Dataset
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -941,7 +941,7 @@ type DatasetDistribution
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -959,7 +959,7 @@ type DatasetSummary
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -978,7 +978,7 @@ type DatasetVersion
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -998,7 +998,7 @@ type Device
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type Disease
@@ -1011,7 +1011,7 @@ type Disease
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
 
@@ -1025,7 +1025,7 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
 
@@ -1134,7 +1134,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -1331,7 +1331,7 @@ type EnvironmentalFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type EnvironmentalFoodContaminant
@@ -1344,7 +1344,7 @@ type EnvironmentalFoodContaminant
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -1362,7 +1362,7 @@ type EnvironmentalProcess implements Occurrent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type EpidemiologicalOutcome implements Outcome
@@ -1379,7 +1379,7 @@ type Event
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type EvidenceType
@@ -1392,7 +1392,7 @@ type EvidenceType
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -1409,7 +1409,7 @@ type Exon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -1517,7 +1517,7 @@ type Food
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -1539,7 +1539,7 @@ type FoodAdditive
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -1594,7 +1594,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     symbol: String
     synonym: [LabelType]
     xref: [Uriorcurie]
@@ -1647,7 +1647,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -1951,7 +1951,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -2009,7 +2009,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasZygosity: Zygosity
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2199,7 +2199,7 @@ type GeographicLocation
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     latitude: Float
     longitude: Float
   }
@@ -2214,7 +2214,7 @@ type GeographicLocationAtTime
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     latitude: Float
     longitude: Float
     timepoint: TimeType
@@ -2229,7 +2229,7 @@ type GrossAnatomicalStructure
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -2244,7 +2244,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -2259,7 +2259,7 @@ type Hospitalization
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type HospitalizationOutcome implements Outcome
@@ -2275,7 +2275,7 @@ type IndividualOrganism implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -2290,7 +2290,7 @@ interface InformationContentEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -2331,7 +2331,7 @@ type InformationResource
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -2357,7 +2357,7 @@ type LifeStage implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -2459,7 +2459,7 @@ type Macronutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2477,7 +2477,7 @@ type MaterialSample implements SubjectOfInvestigation
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type MaterialSampleDerivationAssociation
@@ -2543,7 +2543,7 @@ type Micronutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2561,7 +2561,7 @@ type MicroRNA
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2590,7 +2590,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
     enabledBy: [MacromolecularMachineMixin]
@@ -2654,7 +2654,7 @@ type MolecularEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2673,7 +2673,7 @@ type MolecularMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2699,7 +2699,7 @@ type NamedThing
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type NoncodingRNAProduct
@@ -2712,7 +2712,7 @@ type NoncodingRNAProduct
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2735,7 +2735,7 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2756,7 +2756,7 @@ type NucleicAcidSequenceMotif
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type Nutrient
@@ -2769,7 +2769,7 @@ type Nutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -2815,7 +2815,7 @@ type OrganismTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasTaxonomicRank: TaxonomicRank
   }
 
@@ -2954,7 +2954,7 @@ interface OrganismalEntity
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
   }
 
@@ -3060,7 +3060,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -3079,7 +3079,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3104,7 +3104,7 @@ type Pathway implements OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3120,7 +3120,7 @@ type Phenomenon implements Occurrent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type PhenotypicFeature
@@ -3133,7 +3133,7 @@ type PhenotypicFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
 
@@ -3167,7 +3167,7 @@ type PhysicalEntity implements PhysicalEssence
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 interface PhysicalEssence
@@ -3188,7 +3188,7 @@ type PhysiologicalProcess implements OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3204,7 +3204,7 @@ type PlanetaryEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -3217,7 +3217,7 @@ type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, C
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
 
@@ -3230,7 +3230,7 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -3269,7 +3269,7 @@ type Procedure implements ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
   }
 
 type ProcessedMaterial
@@ -3282,7 +3282,7 @@ type ProcessedMaterial
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3304,7 +3304,7 @@ type Protein implements GeneProductMixin, ThingWithTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
     xref: [Uriorcurie]
@@ -3320,7 +3320,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3334,7 +3334,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3348,7 +3348,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
     xref: [Uriorcurie]
@@ -3361,7 +3361,7 @@ type Publication
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -3447,7 +3447,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -3470,7 +3470,7 @@ type RNAProduct implements GeneProductMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3493,7 +3493,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3567,7 +3567,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -3605,7 +3605,7 @@ type Serial
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     license: String
     rights: String
     format: String
@@ -3644,7 +3644,7 @@ type SiRNA
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3666,7 +3666,7 @@ type SmallMolecule
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3685,7 +3685,7 @@ type Snv
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -3725,7 +3725,7 @@ type StudyPopulation
     description: NarrativeText
     source: String
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
   }
@@ -3777,7 +3777,7 @@ type Transcript
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String
@@ -3822,7 +3822,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     hasDrug: [Drug]
     hasDevice: [Device]
     hasProcedure: [Procedure]
@@ -4011,7 +4011,7 @@ type Vitamin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
-    category: [NamedThing]!
+    category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
     maxToleratedDose: String

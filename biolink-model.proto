@@ -11,7 +11,7 @@ message Activity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
@@ -22,7 +22,7 @@ message Agent
   optional source String = 4
   repeated hasAttribute Attribute = 5
   repeated providedBy String = 6
-  repeated category NamedThing = 7
+  repeated category CategoryType = 7
   repeated affiliation Uriorcurie = 8
   optional address String = 9
   id String = 10
@@ -38,7 +38,7 @@ message AnatomicalEntity
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -97,7 +97,7 @@ message Article
   optional source String = 3
   repeated hasAttribute Attribute = 4
   repeated providedBy String = 5
-  repeated category NamedThing = 6
+  repeated category CategoryType = 6
   optional license String = 7
   optional rights String = 8
   optional format String = 9
@@ -160,7 +160,7 @@ message Behavior
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -209,7 +209,7 @@ message BehavioralFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
  }
 // One or more causally connected executions of molecular functions
@@ -223,7 +223,7 @@ message BiologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -239,7 +239,7 @@ message BiologicalProcessOrActivity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -266,7 +266,7 @@ message Book
   optional source String = 3
   repeated hasAttribute Attribute = 4
   repeated providedBy String = 5
-  repeated category NamedThing = 6
+  repeated category CategoryType = 6
   optional license String = 7
   optional rights String = 8
   optional format String = 9
@@ -288,7 +288,7 @@ message BookChapter
   optional source String = 3
   repeated hasAttribute Attribute = 4
   repeated providedBy String = 5
-  repeated category NamedThing = 6
+  repeated category CategoryType = 6
   optional license String = 7
   optional rights String = 8
   optional format String = 9
@@ -316,7 +316,7 @@ message Case
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -357,7 +357,7 @@ message Cell
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -370,7 +370,7 @@ message CellLine
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
  }
 message CellLineAsAModelOfDiseaseAssociation
@@ -433,7 +433,7 @@ message CellularComponent
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -448,7 +448,7 @@ message ChemicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -472,7 +472,7 @@ message ChemicalMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -651,7 +651,7 @@ message ClinicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
 message ClinicalFinding
@@ -663,7 +663,7 @@ message ClinicalFinding
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated inTaxon OrganismTaxon = 9
   repeated hasAttribute ClinicalAttribute = 10
  }
@@ -677,7 +677,7 @@ message ClinicalIntervention
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
 message ClinicalMeasurement
@@ -709,7 +709,7 @@ message ClinicalTrial
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message CodingSequence
  {
@@ -721,7 +721,7 @@ message CodingSequence
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -741,7 +741,7 @@ message Cohort
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -756,7 +756,7 @@ message ComplexMolecularMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -778,7 +778,7 @@ message ConfidenceLevel
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -819,7 +819,7 @@ message Dataset
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -836,7 +836,7 @@ message DatasetDistribution
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -854,7 +854,7 @@ message DatasetSummary
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -873,7 +873,7 @@ message DatasetVersion
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -893,7 +893,7 @@ message Device
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message Disease
  {
@@ -905,7 +905,7 @@ message Disease
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
@@ -919,7 +919,7 @@ message DiseaseOrPhenotypicFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
@@ -1014,7 +1014,7 @@ message Drug
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -1151,7 +1151,7 @@ message EnvironmentalFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message EnvironmentalFoodContaminant
  {
@@ -1163,7 +1163,7 @@ message EnvironmentalFoodContaminant
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -1180,7 +1180,7 @@ message EnvironmentalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // Something that happens at a given place and time.
 message Event
@@ -1193,7 +1193,7 @@ message Event
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // Class of evidence that supports an association
 message EvidenceType
@@ -1206,7 +1206,7 @@ message EvidenceType
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -1223,7 +1223,7 @@ message Exon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -1322,7 +1322,7 @@ message Food
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -1343,7 +1343,7 @@ message FoodAdditive
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -1385,7 +1385,7 @@ message Gene
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional symbol String = 10
   repeated synonym LabelType = 11
   repeated xref Uriorcurie = 12
@@ -1429,7 +1429,7 @@ message GeneFamily
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasGeneOrGeneProduct Gene = 10
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
@@ -1672,7 +1672,7 @@ message Genome
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
@@ -1724,7 +1724,7 @@ message Genotype
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional hasZygosity Zygosity = 10
   repeated inTaxon OrganismTaxon = 11
   optional hasBiologicalSequence BiologicalSequence = 12
@@ -1907,7 +1907,7 @@ message GeographicLocation
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional latitude Float = 10
   optional longitude Float = 11
  }
@@ -1922,7 +1922,7 @@ message GeographicLocationAtTime
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional latitude Float = 10
   optional longitude Float = 11
   optional timepoint TimeType = 12
@@ -1936,7 +1936,7 @@ message GrossAnatomicalStructure
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -1951,7 +1951,7 @@ message Haplotype
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
@@ -1965,7 +1965,7 @@ message Hospitalization
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
@@ -1977,7 +1977,7 @@ message IndividualOrganism
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -2016,7 +2016,7 @@ message InformationResource
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional license String = 10
   optional rights String = 11
   optional format String = 12
@@ -2042,7 +2042,7 @@ message LifeStage
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -2128,7 +2128,7 @@ message Macronutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2146,7 +2146,7 @@ message MaterialSample
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // An association between a material sample and the material entity from which it is derived.
 message MaterialSampleDerivationAssociation
@@ -2206,7 +2206,7 @@ message Micronutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2223,7 +2223,7 @@ message MicroRNA
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2246,7 +2246,7 @@ message MolecularActivity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput MolecularEntity = 10
   repeated hasOutput MolecularEntity = 11
   repeated enabledBy MacromolecularMachineMixin = 12
@@ -2310,7 +2310,7 @@ message MolecularEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2329,7 +2329,7 @@ message MolecularMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2351,7 +2351,7 @@ message NamedThing
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message NoncodingRNAProduct
  {
@@ -2363,7 +2363,7 @@ message NoncodingRNAProduct
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2386,7 +2386,7 @@ message NucleicAcidEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2407,7 +2407,7 @@ message NucleicAcidSequenceMotif
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message Nutrient
  {
@@ -2419,7 +2419,7 @@ message Nutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2457,7 +2457,7 @@ message OrganismTaxon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional hasTaxonomicRank TaxonomicRank = 10
  }
 // An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
@@ -2622,7 +2622,7 @@ message PathologicalAnatomicalStructure
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -2637,7 +2637,7 @@ message PathologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -2657,7 +2657,7 @@ message Pathway
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -2673,7 +2673,7 @@ message Phenomenon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // A combination of entity and quality that makes up a phenotyping statement.
 message PhenotypicFeature
@@ -2686,7 +2686,7 @@ message PhenotypicFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
  }
 // A property of a phenotype
@@ -2720,7 +2720,7 @@ message PhysicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 message PhysiologicalProcess
  {
@@ -2732,7 +2732,7 @@ message PhysiologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasInput BiologicalProcessOrActivity = 10
   repeated hasOutput BiologicalProcessOrActivity = 11
   repeated enabledBy PhysicalEntity = 12
@@ -2748,7 +2748,7 @@ message PlanetaryEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 message Polypeptide
@@ -2761,7 +2761,7 @@ message Polypeptide
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
@@ -2774,7 +2774,7 @@ message PopulationOfIndividualOrganisms
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -2813,7 +2813,7 @@ message Procedure
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
  }
 // A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
 message ProcessedMaterial
@@ -2826,7 +2826,7 @@ message ProcessedMaterial
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -2848,7 +2848,7 @@ message Protein
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
   repeated xref Uriorcurie = 12
@@ -2864,7 +2864,7 @@ message ProteinDomain
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasGeneOrGeneProduct Gene = 10
  }
 message ProteinFamily
@@ -2877,7 +2877,7 @@ message ProteinFamily
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasGeneOrGeneProduct Gene = 10
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
@@ -2891,7 +2891,7 @@ message ProteinIsoform
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
   repeated synonym LabelType = 11
   repeated xref Uriorcurie = 12
@@ -2904,7 +2904,7 @@ message Publication
   optional source String = 3
   repeated hasAttribute Attribute = 4
   repeated providedBy String = 5
-  repeated category NamedThing = 6
+  repeated category CategoryType = 6
   optional license String = 7
   optional rights String = 8
   optional format String = 9
@@ -2988,7 +2988,7 @@ message ReagentTargetedGene
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated inTaxon OrganismTaxon = 10
   optional hasBiologicalSequence BiologicalSequence = 11
  }
@@ -3002,7 +3002,7 @@ message RNAProduct
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -3025,7 +3025,7 @@ message RNAProductIsoform
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -3095,7 +3095,7 @@ message SequenceVariant
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasGene Gene = 9
   optional hasBiologicalSequence BiologicalSequence = 10
   id String = 11
@@ -3109,7 +3109,7 @@ message Serial
   optional source String = 3
   repeated hasAttribute Attribute = 4
   repeated providedBy String = 5
-  repeated category NamedThing = 6
+  repeated category CategoryType = 6
   optional license String = 7
   optional rights String = 8
   optional format String = 9
@@ -3148,7 +3148,7 @@ message SiRNA
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -3170,7 +3170,7 @@ message SmallMolecule
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   optional tradeName ChemicalEntity = 9
   repeated availableFrom DrugAvailabilityEnum = 10
   optional maxToleratedDose String = 11
@@ -3189,7 +3189,7 @@ message Snv
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasGene Gene = 9
   optional hasBiologicalSequence BiologicalSequence = 10
   id String = 11
@@ -3221,7 +3221,7 @@ message StudyPopulation
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category NamedThing = 8
+  repeated category CategoryType = 8
   repeated hasAttribute Attribute = 9
   repeated inTaxon OrganismTaxon = 10
  }
@@ -3259,7 +3259,7 @@ message Transcript
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
@@ -3304,7 +3304,7 @@ message Treatment
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   repeated hasDrug Drug = 10
   repeated hasDevice Device = 11
   repeated hasProcedure Procedure = 12
@@ -3480,7 +3480,7 @@ message Vitamin
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category NamedThing = 9
+  repeated category CategoryType = 9
   optional tradeName ChemicalEntity = 10
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
