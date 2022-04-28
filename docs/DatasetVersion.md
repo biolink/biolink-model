@@ -15,7 +15,7 @@ URI: [biolink:DatasetVersion](https://w3id.org/biolink/vocab/DatasetVersion)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DatasetDistribution]%3Chas%20distribution%200..1-%20[DatasetVersion%7Cingest_date:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Dataset]%3Chas%20dataset%200..1-%20[DatasetVersion],[InformationContentEntity]%5E-[DatasetVersion],[DatasetDistribution],[Dataset],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[DatasetDistribution]%3Chas%20distribution%200..1-%20[DatasetVersion%7Cingest_date:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Dataset]%3Chas%20dataset%200..1-%20[DatasetVersion],[InformationContentEntity]%5E-[DatasetVersion],[DatasetDistribution],[Dataset],[Attribute])
 
 ---
 

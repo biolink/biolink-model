@@ -15,7 +15,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Cauthors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:uriorcurie%20%2A;id:string;name:label_type%20%3F;type:string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[NamedThing],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Cauthors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;xref:uriorcurie%20%2A;id:string;name:label_type%20%3F;type:string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article])
 
 ---
 

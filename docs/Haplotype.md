@@ -15,7 +15,7 @@ URI: [biolink:Haplotype](https://w3id.org/biolink/vocab/Haplotype)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[Haplotype%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[PhysicalEssence],[Haplotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Haplotype],[GenomicEntity],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[OrganismTaxon],[OntologyClass],[Haplotype%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[PhysicalEssence],[Haplotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Haplotype],[GenomicEntity],[BiologicalEntity],[Attribute])
 
 ---
 

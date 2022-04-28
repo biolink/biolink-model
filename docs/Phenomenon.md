@@ -15,7 +15,7 @@ URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Phenomenon%7Cprovided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[Occurrent],[NamedThing]%5E-[Phenomenon],[Occurrent],[NamedThing],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Phenomenon%7Cprovided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[Occurrent],[NamedThing]%5E-[Phenomenon],[Occurrent],[NamedThing],[Attribute])
 
 ---
 

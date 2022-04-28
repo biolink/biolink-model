@@ -15,7 +15,7 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%5E-[SmallMolecule%7Cid:string;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[NamedThing],[MolecularEntity],[ChemicalRole],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%5E-[SmallMolecule%7Cid:string;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MolecularEntity],[ChemicalRole],[ChemicalEntity],[Attribute])
 
 ---
 

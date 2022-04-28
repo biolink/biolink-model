@@ -15,7 +15,7 @@ URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrgan
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismToOrganismAssociation],[OrganismTaxon],[NamedThing],[OrganismToOrganismAssociation]-%20object%201..1%3E[IndividualOrganism%7Cprovided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismToOrganismAssociation]-%20subject%201..1%3E[IndividualOrganism],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismalEntity],[OrganismToOrganismAssociation],[OrganismTaxon],[OrganismToOrganismAssociation]-%20object%201..1%3E[IndividualOrganism%7Cprovided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismToOrganismAssociation]-%20subject%201..1%3E[IndividualOrganism],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]%5E-[Case],[OrganismalEntity]%5E-[IndividualOrganism],[Case],[Attribute])
 
 ---
 

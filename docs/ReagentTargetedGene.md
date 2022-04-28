@@ -15,7 +15,7 @@ URI: [biolink:ReagentTargetedGene](https://w3id.org/biolink/vocab/ReagentTargete
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ReagentTargetedGene%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene]uses%20-.-%3E[PhysicalEssence],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[ReagentTargetedGene],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenomicEntity],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ReagentTargetedGene%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene]uses%20-.-%3E[PhysicalEssence],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[ReagentTargetedGene],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenomicEntity],[BiologicalEntity],[Attribute])
 
 ---
 

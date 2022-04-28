@@ -15,7 +15,7 @@ URI: [biolink:RNAProduct](https://w3id.org/biolink/vocab/RNAProduct)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[OrganismTaxon],[NoncodingRNAProduct],[NamedThing],[GeneProductMixin],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProductIsoform],[RNAProduct%7Csynonym:label_type%20%2A;xref:uriorcurie%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneProductMixin],[RNAProduct]%5E-[NoncodingRNAProduct],[RNAProduct]%5E-[RNAProductIsoform],[Transcript]%5E-[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[OrganismTaxon],[NoncodingRNAProduct],[GeneProductMixin],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProductIsoform],[RNAProduct%7Csynonym:label_type%20%2A;xref:uriorcurie%20%2A;has_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneProductMixin],[RNAProduct]%5E-[NoncodingRNAProduct],[RNAProduct]%5E-[RNAProductIsoform],[Transcript]%5E-[RNAProduct])
 
 ---
 

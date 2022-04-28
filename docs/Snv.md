@@ -15,7 +15,7 @@ URI: [biolink:Snv](https://w3id.org/biolink/vocab/Snv)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;provided_by(i):string%20%2A;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[SequenceVariant],[OrganismTaxon],[NamedThing],[Gene],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%5E-[Snv%7Chas_biological_sequence(i):biological_sequence%20%3F;id(i):string;provided_by(i):string%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[SequenceVariant],[OrganismTaxon],[Gene],[Attribute])
 
 ---
 

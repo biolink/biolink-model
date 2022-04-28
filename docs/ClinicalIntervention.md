@@ -15,7 +15,7 @@ URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalInter
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Hospitalization],[ClinicalIntervention%7Cprovided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[Hospitalization],[ClinicalEntity]%5E-[ClinicalIntervention],[ClinicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Hospitalization],[ClinicalIntervention%7Cprovided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[Hospitalization],[ClinicalEntity]%5E-[ClinicalIntervention],[ClinicalEntity],[Attribute])
 
 ---
 

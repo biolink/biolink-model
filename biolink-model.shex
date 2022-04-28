@@ -619,6 +619,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <Association> ] ? ;
           &<ChemicalToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
+          rdf:subject @<ChemicalEntity> ;
           rdf:object @<Pathway>
        ) ;
        rdf:type [ <ChemicalToPathwayAssociation> ]
@@ -877,6 +878,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<DiseaseToEntityAssociationMixin_tes> ;
           rdf:type [ <DiseaseToEntityAssociationMixin> ] ? ;
+          rdf:subject @<Disease> ;
+          rdf:object @<PhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
@@ -1344,6 +1347,7 @@ linkml:Nodeidentifier NONLITERAL
              &<GeneToEntityAssociationMixin_tes> ;
              rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
              rdf:subject @<GeneOrGeneProduct> ;
+             rdf:object @<Disease> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
              <severity_qualifier> @<SeverityValue> ? ;
              <onset_qualifier> @<Onset> ?
@@ -1405,7 +1409,9 @@ linkml:Nodeidentifier NONLITERAL
 <GeneToGeneHomologyAssociation> CLOSED {
     (  $<GeneToGeneHomologyAssociation_tes> (  &<GeneToGeneAssociation_tes> ;
           rdf:type [ <GeneToGeneAssociation> ] ? ;
-          rdf:predicate @<PredicateType>
+          rdf:subject @<GeneOrGeneProduct> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneToGeneHomologyAssociation> ]
     )
@@ -1440,6 +1446,7 @@ linkml:Nodeidentifier NONLITERAL
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           rdf:subject @<GeneOrGeneProduct> ;
+          rdf:object @<PhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;

@@ -15,7 +15,7 @@ URI: [biolink:DatasetSummary](https://w3id.org/biolink/vocab/DatasetSummary)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[InformationContentEntity],[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary%7Csource_web_page:string%20%3F;source_logo:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary%7Csource_web_page:string%20%3F;source_logo:string%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Attribute])
 
 ---
 

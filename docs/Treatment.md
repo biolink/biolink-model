@@ -15,7 +15,7 @@ URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]%3Chas%20procedure%200..%2A-%20[Treatment%7Ctimepoint:time_type%20%3F;provided_by(i):string%20%2A;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Device]%3Chas%20device%200..%2A-%20[Treatment],[Drug]%3Chas%20drug%200..%2A-%20[Treatment],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[Treatment]uses%20-.-%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[NamedThing]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[Procedure],[NamedThing],[ExposureEvent],[Drug],[Device],[ChemicalOrDrugOrTreatment],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]%3Chas%20procedure%200..%2A-%20[Treatment%7Ctimepoint:time_type%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Device]%3Chas%20device%200..%2A-%20[Treatment],[Drug]%3Chas%20drug%200..%2A-%20[Treatment],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[Treatment]uses%20-.-%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[NamedThing]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[Procedure],[NamedThing],[ExposureEvent],[Drug],[Device],[ChemicalOrDrugOrTreatment],[Attribute])
 
 ---
 
