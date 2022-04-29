@@ -1,21 +1,44 @@
-SRC_DIR = model
+SRC_DIR = .
 SCHEMA_DIR = $(SRC_DIR)
-SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
-SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
+SOURCE_FILES = biolink-model.yaml
+SCHEMA_NAMES = biolink-model
 
 SCHEMA_NAME = biolink-model
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #TGTS = graphql jsonschema docs shex owl csv  python
-TGTS = jsonschema
-ARTIFACT_TGTS = python jsonschema jsonld-context python sqlddl owl shex
-JAVA_GEN_OPTS = --output_directory org/alliancegenome/curation/model --package org.alliancegenome.curation.model
+TGTS = json-schema
+ARTIFACT_TGTS = python json-schema jsonld-context python sqlddl owl shex prefix-map rdf
+JAVA_GEN_OPTS = --output_directory org/biolink/model --package org.biolink.model
 DDL_GEN_OPTS = --sqla-file target/sqla-files/
-
 
 all: clean gen stage
 artifacts: clean-artifacts gen-artifacts stage-artifacts
 gen: $(patsubst %,gen-%,$(TGTS))
 .PHONY: all gen clean t echo test install gh-deploy clean-artifacts clean-doc clean-artifacts gen-artifacts clean-docs .FORCE
+
+gen-artifacts: $(patsubst %,gen-%,$(ARTIFACT_TGTS))
+	cp -pr target/* .
+	cp -pr target/shex/* .
+	cp -pr target/owl/* .
+	cp -pr jsonld-context/* .
+	cp -pr python/* biolink/model.py
+	cp -pr owl/* .
+	cp -pr rdf/* .
+
+clean: clean-json-schema
+
+clean-json-schema:
+	rm -rf target/*
+	rm -rf json-schema/*
+
+clean-artifacts:
+	rm -rf target/*
+	rm -rf python/*
+	rm -rf jsonld-context/*
+	rm -rf json-schema/*
+	rm -rf sqlddl/*
+	rm -rf rdf/*
+	rm -rf owl/*
 
 docs:
 	mkdir -p $@
@@ -26,25 +49,42 @@ clean-docs:
 	rm -rf docs/images/*
 	rm -rf docs/types/*
 	rm -rf docs/
+	mkdir -p docs
+	mkdir -p docs/images
+	mkdir -p docs/types
 
-docs:
-	mkdir -p $@
-	mkdir -p $@/images
-	mkdir -p $@/types
 
 gen-docs:
 	poetry run gen-doc biolink-model.yaml --directory target/docs --template-directory doc_templates
 	cp css/extra_css.css docs/
 	cp README.md docs/
-	cp images/biolink-model.logo docs/
+	cp images/biolink-logo.png docs/
+
+t:
+	echo $(SCHEMA_NAMES)
+
+echo:
+	echo $(patsubst %,gen-%,$(TGTS))
+
+install:
+	poetry install
+
+tdir-%:
+	mkdir -p target/$*
 
 
+stage: $(patsubst %,stage-%,$(TGTS))
 
-prefix-map: prefix-map/biolink-model-prefix-map.json
+stage-artifacts: $(patsubst %,stage-%,$(ARTIFACT_TGTS))
 
+stage-%: gen-%
+	cp -pr target/$* .
 
-guidelines/%.md: docs/index.md
-	cp -R guidelines/* $(dir $@)
+###  -- PYTHON --
+gen-prefix-map: target/prefix-map/$(SCHEMA_NAME)-prefix-map.json
+.PHONY: gen-prefix-map
+target/prefix-map/%.json: $(SCHEMA_DIR)/biolink-model.yaml  tdir-prefix-map
+	poetry run gen-prefix-map $(GEN_OPTS) $< > $@
 
 # add more logging?
 # some docs pages not being created
@@ -53,62 +93,59 @@ guidelines/%.md: docs/index.md
 ###  -- PYTHON --
 gen-python: $(patsubst %, target/python/%.py, $(SCHEMA_NAMES))
 .PHONY: gen-python
-target/python/%.py: $(SCHEMA_DIR)/%.yaml  tdir-python
-# --no-mergeimports was causing an import error
-#	gen-py-classes --no-mergeimports $(GEN_OPTS) $< > $@
+target/python/%.py: $(SCHEMA_DIR)/biolink-model.yaml  tdir-python
 	poetry run gen-py-classes --mergeimports $(GEN_OPTS) $< > $@
 
-###  -- GRAPHQL --
-gen-graphql:target/graphql/$(SCHEMA_NAME).graphql
-.PHONY: gen-graphql
-target/graphql/%.graphql: $(SCHEMA_DIR)/%.yaml tdir-graphql
-	poetry run gen-graphql $(GEN_OPTS) $< > $@
-
 ###  -- JSON SCHEMA --
-gen-jsonschema: target/jsonschema/$(SCHEMA_NAME).schema.json
-.PHONY: gen-jsonschema
-target/jsonschema/%.schema.json: $(SCHEMA_DIR)/%.yaml tdir-jsonschema
+gen-json-schema: target/json-schema/$(SCHEMA_NAME).json
+.PHONY: gen-json-schema
+target/json-schema/%.json: $(SCHEMA_DIR)/biolink-model.yaml tdir-json-schema
 	poetry run gen-json-schema $(GEN_OPTS) --closed -t ingest $< > $@
 
+###  -- GRAPHQL --
+gen-graphql: target/graphql/$(SCHEMA_NAME).graphql
+.PHONY: gen-graphql
+target/graphql/%.graphql: $(SCHEMA_DIR)/biolink-model.yaml tdir-graphql
+	poetry run gen-graphql $(GEN_OPTS) $< > $@
 
 ###  -- SQL --
 gen-sqlddl: target/sqlddl/$(SCHEMA_NAME).sql
 .PHONY: gen-sqlddl
-target/sqlddl/%.sql: $(SCHEMA_DIR)/%.yaml tdir-sqlddl
+target/sqlddl/%.sql: $(SCHEMA_DIR)/biolink-model.yaml tdir-sqlddl
 	poetry run gen-sqlddl $(GEN_OPTS) $< > $@
 
 ###  -- JSONLD Context --
 gen-jsonld-context: target/jsonld-context/$(SCHEMA_NAME).context.jsonld
 .PHONY: gen-jsonld-context
-target/jsonld-context/%.context.jsonld: $(SCHEMA_DIR)/%.yaml tdir-jsonld-context
+target/jsonld-context/%.context.jsonld: $(SCHEMA_DIR)/biolink-model.yaml tdir-jsonld-context
 	poetry run gen-jsonld-context $(GEN_OPTS) $< > $@
 
 ###  -- SHEX --
 # one file per module
 gen-shex: $(patsubst %, target/shex/%.shex, $(SCHEMA_NAMES))
 .PHONY: gen-shex
-target/shex/%.shex: $(SCHEMA_DIR)/%.yaml tdir-shex
+target/shex/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shex
 	poetry run gen-shex --no-mergeimports $(GEN_OPTS) $< > $@
 
 ###  -- CSV --
 # one file per module
 gen-csv: $(patsubst %, target/csv/%.csv, $(SCHEMA_NAMES))
 .PHONY: gen-csv
-target/csv/%.csv: $(SCHEMA_DIR)/%.yaml tdir-csv
+target/csv/%.csv: $(SCHEMA_DIR)/biolink-model.yaml tdir-csv
 	poetry run gen-csv $(GEN_OPTS) $< > $@
 
 ###  -- OWL --
 # TODO: modularize imports. For now imports are merged.
 gen-owl: target/owl/$(SCHEMA_NAME).owl.ttl
 .PHONY: gen-owl
-target/owl/%.owl.ttl: $(SCHEMA_DIR)/%.yaml tdir-owl
+target/owl/%.owl.ttl: $(SCHEMA_DIR)/biolink-model.yaml tdir-owl
 	poetry run gen-owl $(GEN_OPTS) $< > $@
 
 ###  -- RDF (direct mapping) --
 # TODO: modularize imports. For now imports are merged.
 gen-rdf: target/rdf/$(SCHEMA_NAME).ttl
 .PHONY: gen-rdf
-target/rdf/%.ttl: $(SCHEMA_DIR)/%.yaml tdir-rdf
+target/rdf/%.ttl: $(SCHEMA_DIR)/biolink-model.yaml tdir-rdf
 	poetry run gen-rdf $(GEN_OPTS) $< > $@
 
 ###  -- LINKML --
@@ -116,8 +153,26 @@ target/rdf/%.ttl: $(SCHEMA_DIR)/%.yaml tdir-rdf
 # one file per module
 gen-linkml: target/linkml/$(SCHEMA_NAME).yaml
 .PHONY: gen-linkml
-target/linkml/%.yaml: $(SCHEMA_DIR)/%.yaml tdir-limkml
+target/linkml/%.yaml: $(SCHEMA_DIR)/biolink-model.yaml tdir-limkml
 	cp $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Solr
+# ~~~~~~~~~~~~~~~~~~~~
+gen-golr-views: target/golr-views/$(SCHEMA_NAME).yaml
+.PHONY: gen-golr-views
+	poetry run gen-golr-views -d golr-views $<
+target/golr-views/%.yaml: $(SCHEMA_DIR)/biolink-model.yaml tdir-golr-views
+	poetry run gen-golr-views $(GEN_OPTS) $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Graphql
+# ~~~~~~~~~~~~~~~~~~~~
+gen-graphql: target/graphql/$(SCHEMA_NAME).yaml
+.PHONY: gen-grpahql
+	poetry run gen-graphql -d graphql $<
+target/graphql/%.graphql: $(SCHEMA_DIR)/biolink-model.yaml tdir-graphql
+	poetry run gen-graphql $< > $@
 
 gh-deploy:
 # deploy documentation (note: requires documentation is in docs dir)
@@ -135,26 +190,6 @@ deploy-testpypi:
 # or properly configured .pypirc file
 	twine upload -r testpypi dist/* --verbose
 
-##  -- TEST/VALIDATE JSONSCHEMA
-
-# datasets used test/validate the schema
-SCHEMA_TEST_EXAMPLES := \
-
-SCHEMA_TEST_EXAMPLES_INVALID := \
-
-
-.PHONY: test-jsonschema
-test-jsonschema: $(foreach example, $(SCHEMA_TEST_EXAMPLES), validate-$(example))
-
-.PHONY: test-jsonschema_invalid
-test-jsonschema_invalid: $(foreach example, $(SCHEMA_TEST_EXAMPLES_INVALID), validate-invalid-$(example))
-
-validate-%: test/data/%.json jsonschema/allianceModel.schema.json
-# util/validate_allianceModel_json.py -i $< # example of validating data using the cli
-	poetry run jsonschema -i $< $(word 2, $^)
-
-validate-invalid-%: test/data/invalid/%.json jsonschema/allianceModel.schema.json
-	! poetry run jsonschema -i $< $(word 2, $^)
 
 # ---------------------------------------
 # Java
@@ -162,8 +197,9 @@ validate-invalid-%: test/data/invalid/%.json jsonschema/allianceModel.schema.jso
 gen-java: $(patsubst %, target/java/%.java, $(SCHEMA_NAMES))
 .PHONY: gen-java
 
-target/java/%.java: $(SCHEMA_DIR)/%.yaml tdir-java
+target/java/%.java: $(SCHEMA_DIR)/biolink-model.yaml tdir-java
 	poetry run gen-java $(JAVA_GEN_OPTS)  $< > $@
+
 
 # ----------------------------------------
 # TESTS
