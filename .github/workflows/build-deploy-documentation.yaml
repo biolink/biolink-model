@@ -7,9 +7,6 @@ on:
       - master
       - main
 
-  repository_dispatch:
-    types: trigger-build-deploy-documentation
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   github-pages:
