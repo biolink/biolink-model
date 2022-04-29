@@ -115,9 +115,9 @@ target/sqlddl/%.sql: $(SCHEMA_DIR)/biolink-model.yaml tdir-sqlddl
 	poetry run gen-sqlddl $(GEN_OPTS) $< > $@
 
 ###  -- JSONLD Context --
-gen-jsonld-context: target/jsonld-context/$(SCHEMA_NAME).context.jsonld
+gen-jsonld-context: target/jsonld-context/context.jsonld
 .PHONY: gen-jsonld-context
-target/jsonld-context/%.context.jsonld: $(SCHEMA_DIR)/biolink-model.yaml tdir-jsonld-context
+target/jsonld-context/context.jsonld: $(SCHEMA_DIR)/biolink-model.yaml tdir-jsonld-context
 	poetry run gen-jsonld-context $(GEN_OPTS) $< > $@
 
 ###  -- SHEX --
