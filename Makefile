@@ -1,139 +1,169 @@
-# All artifacts of the build should be preserved
-.SECONDARY:
+SRC_DIR = model
+SCHEMA_DIR = $(SRC_DIR)
+SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
+SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
 
-# It can be fairly expensive to regenerate the various png's in the markdown.
-# There are three alternatives:
-#   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
-#   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
-#   3) make imgflags=""               -- genrate uml images as inline url's
-imgflags?=-i
-
-
-# ----------------------------------------
-# TOP LEVEL TARGETS
-# ----------------------------------------
-all: build tests
-
-build: python gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
-json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
-prefix-map/biolink-model-prefix-map.json
-
-# ----------------------------------------
-# BUILD/COMPILATION
-# ----------------------------------------
-# ~~~~~~~~~~~~~~~~~~~~
-# Python
-# ~~~~~~~~~~~~~~~~~~~~
-
-# Build the biolink model python library
-python: biolink/model.py
-
-biolink/model.py: biolink-model.yaml
-	mkdir biolink 2>/dev/null || true
-	export poetry_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
-
-# ~~~~~~~~~~~~~~~~~~~~~~
-# doc-gen with templates
-# ~~~~~~~~~~~~~~~~~~~~~~
-
-gendoc:
-	poetry run gen-doc biolink-model.yaml --directory docs --template-directory doc_templates
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Solr
-# ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views: biolink-model.yaml dir-golr-views
-	poetry run gen-golr-views -d golr-views $<
+SCHEMA_NAME = biolink-model
+SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
+#TGTS = graphql jsonschema docs shex owl csv  python
+TGTS = jsonschema
+ARTIFACT_TGTS = python jsonschema jsonld-context python sqlddl owl shex
+JAVA_GEN_OPTS = --output_directory org/alliancegenome/curation/model --package org.alliancegenome.curation.model
+DDL_GEN_OPTS = --sqla-file target/sqla-files/
 
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Graphql
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.graphql: biolink-model.yaml
-	poetry run gen-graphql $< > $@
+all: clean gen stage
+artifacts: clean-artifacts gen-artifacts stage-artifacts
+gen: $(patsubst %,gen-%,$(TGTS))
+.PHONY: all gen clean t echo test install gh-deploy clean-artifacts clean-doc clean-artifacts gen-artifacts clean-docs .FORCE
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Graphviz
-# ~~~~~~~~~~~~~~~~~~~~
-gen-graphviz: biolink-model.yaml dir-graphviz
-	poetry run gen-graphviz  -d graphviz $< -f gv
-	poetry run gen-graphviz  -d graphviz $< -f svg
+docs:
+	mkdir -p $@
+	mkdir -p $@/images
+	mkdir -p $@/types
 
+clean-docs:
+	rm -rf docs/images/*
+	rm -rf docs/types/*
+	rm -rf docs/
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Java
-# ~~~~~~~~~~~~~~~~~~~~
-java: json-schema/biolink-model.json dir-java
-	jsonschema2pojo --source $< -T JSONSCHEMA -t java
+docs:
+	mkdir -p $@
+	mkdir -p $@/images
+	mkdir -p $@/types
 
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JSON-LD CONTEXT
-# ~~~~~~~~~~~~~~~~~~~~
-context.jsonld: biolink-model.yaml
-	touch $@
-	poetry run gen-jsonld-context $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
-
-contextn.jsonld: biolink-model.yaml
-	touch $@
-	poetry run gen-jsonld-context --metauris $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
+gen-docs:
+	poetry run gen-doc biolink-model.yaml --directory target/docs --template-directory doc_templates
+	cp css/extra_css.css docs/
+	cp README.md docs/
+	cp images/biolink-model.logo docs/
 
 
-# ~~~~~~~~~~~~~~~~~~~~
-# JSON-SCHEMA
-# ~~~~~~~~~~~~~~~~~~~~
-json-schema: json-schema/biolink-model.json
-
-json-schema/biolink-model.json: biolink-model.yaml dir-json-schema
-	poetry run gen-json-schema $< > $@
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# prefix-map
-# ~~~~~~~~~~~~~~~~~~~~
 
 prefix-map: prefix-map/biolink-model-prefix-map.json
 
-prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map
-	poetry run gen-prefix-map $< > $@
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Ontology
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.owl.ttl: biolink-model.yaml
-	poetry run gen-owl --no-metaclasses -o $@ $<
+guidelines/%.md: docs/index.md
+	cp -R guidelines/* $(dir $@)
+
+# add more logging?
+# some docs pages not being created
+# usage of mkdocs.yml attributes like analytics?
+
+###  -- PYTHON --
+gen-python: $(patsubst %, target/python/%.py, $(SCHEMA_NAMES))
+.PHONY: gen-python
+target/python/%.py: $(SCHEMA_DIR)/%.yaml  tdir-python
+# --no-mergeimports was causing an import error
+#	gen-py-classes --no-mergeimports $(GEN_OPTS) $< > $@
+	poetry run gen-py-classes --mergeimports $(GEN_OPTS) $< > $@
+
+###  -- GRAPHQL --
+gen-graphql:target/graphql/$(SCHEMA_NAME).graphql
+.PHONY: gen-graphql
+target/graphql/%.graphql: $(SCHEMA_DIR)/%.yaml tdir-graphql
+	poetry run gen-graphql $(GEN_OPTS) $< > $@
+
+###  -- JSON SCHEMA --
+gen-jsonschema: target/jsonschema/$(SCHEMA_NAME).schema.json
+.PHONY: gen-jsonschema
+target/jsonschema/%.schema.json: $(SCHEMA_DIR)/%.yaml tdir-jsonschema
+	poetry run gen-json-schema $(GEN_OPTS) --closed -t ingest $< > $@
 
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Proto
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.proto: biolink-model.yaml
-	poetry run gen-proto $< > $@
+###  -- SQL --
+gen-sqlddl: target/sqlddl/$(SCHEMA_NAME).sql
+.PHONY: gen-sqlddl
+target/sqlddl/%.sql: $(SCHEMA_DIR)/%.yaml tdir-sqlddl
+	poetry run gen-sqlddl $(GEN_OPTS) $< > $@
 
-# ~~~~~~~~~~~~~~~~~~~~
-# RDF
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.ttl: biolink-model.yaml
-	poetry run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
+###  -- JSONLD Context --
+gen-jsonld-context: target/jsonld-context/$(SCHEMA_NAME).context.jsonld
+.PHONY: gen-jsonld-context
+target/jsonld-context/%.context.jsonld: $(SCHEMA_DIR)/%.yaml tdir-jsonld-context
+	poetry run gen-jsonld-context $(GEN_OPTS) $< > $@
 
-# ~~~~~~~~~~~~~~~~~~~~
-# ShEx
-# ~~~~~~~~~~~~~~~~~~~~
+###  -- SHEX --
+# one file per module
+gen-shex: $(patsubst %, target/shex/%.shex, $(SCHEMA_NAMES))
+.PHONY: gen-shex
+target/shex/%.shex: $(SCHEMA_DIR)/%.yaml tdir-shex
+	poetry run gen-shex --no-mergeimports $(GEN_OPTS) $< > $@
+
+###  -- CSV --
+# one file per module
+gen-csv: $(patsubst %, target/csv/%.csv, $(SCHEMA_NAMES))
+.PHONY: gen-csv
+target/csv/%.csv: $(SCHEMA_DIR)/%.yaml tdir-csv
+	poetry run gen-csv $(GEN_OPTS) $< > $@
+
+###  -- OWL --
+# TODO: modularize imports. For now imports are merged.
+gen-owl: target/owl/$(SCHEMA_NAME).owl.ttl
+.PHONY: gen-owl
+target/owl/%.owl.ttl: $(SCHEMA_DIR)/%.yaml tdir-owl
+	poetry run gen-owl $(GEN_OPTS) $< > $@
+
+###  -- RDF (direct mapping) --
+# TODO: modularize imports. For now imports are merged.
+gen-rdf: target/rdf/$(SCHEMA_NAME).ttl
+.PHONY: gen-rdf
+target/rdf/%.ttl: $(SCHEMA_DIR)/%.yaml tdir-rdf
+	poetry run gen-rdf $(GEN_OPTS) $< > $@
+
+###  -- LINKML --
+# linkml (copy)
+# one file per module
+gen-linkml: target/linkml/$(SCHEMA_NAME).yaml
+.PHONY: gen-linkml
+target/linkml/%.yaml: $(SCHEMA_DIR)/%.yaml tdir-limkml
+	cp $< > $@
+
+gh-deploy:
+# deploy documentation (note: requires documentation is in docs dir)
+	poetry run mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
+
+deploy-pypi:
+# deploys package to pypi
+# note: you need to have a pypi account
+# properly configured .pypirc file
+	twine upload dist/* --verbose
+
+deploy-testpypi:
+# deploys package to testpypi
+# note: you need to have a testpypi account
+# or properly configured .pypirc file
+	twine upload -r testpypi dist/* --verbose
+
+##  -- TEST/VALIDATE JSONSCHEMA
+
+# datasets used test/validate the schema
+SCHEMA_TEST_EXAMPLES := \
+
+SCHEMA_TEST_EXAMPLES_INVALID := \
 
 
-shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
+.PHONY: test-jsonschema
+test-jsonschema: $(foreach example, $(SCHEMA_TEST_EXAMPLES), validate-$(example))
 
-biolink-model.shex: biolink-model.yaml
-	poetry run gen-shex $< > $@
-biolink-modeln.shex: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --metauris $< > $@
-biolink-model.shexj: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --format json $< > $@
-biolink-modeln.shexj: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --metauris --format json $< > $@
+.PHONY: test-jsonschema_invalid
+test-jsonschema_invalid: $(foreach example, $(SCHEMA_TEST_EXAMPLES_INVALID), validate-invalid-$(example))
+
+validate-%: test/data/%.json jsonschema/allianceModel.schema.json
+# util/validate_allianceModel_json.py -i $< # example of validating data using the cli
+	poetry run jsonschema -i $< $(word 2, $^)
+
+validate-invalid-%: test/data/invalid/%.json jsonschema/allianceModel.schema.json
+	! poetry run jsonschema -i $< $(word 2, $^)
+
+# ---------------------------------------
+# Java
+# ---------------------------------------
+gen-java: $(patsubst %, target/java/%.java, $(SCHEMA_NAMES))
+.PHONY: gen-java
+
+target/java/%.java: $(SCHEMA_DIR)/%.yaml tdir-java
+	poetry run gen-java $(JAVA_GEN_OPTS)  $< > $@
 
 # ----------------------------------------
 # TESTS
@@ -144,29 +174,3 @@ tests: biolink-model.yaml env.lock pytest # jsonschema_test
 
 pytest: biolink/model.py
 	poetry run python $<
-
-# jsonschema_test: json-schema/biolink-model.json
-#	jsonschema $<
-
-
-### gh pages ###
-gh-deploy:
-# deploy documentation (note: requires documentation is in docs dir)
-	poetry run mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
-
-
-# ----------------------------------------
-# CLEAN
-# ----------------------------------------
-clean-docs:
-	rm -rf docs/images/* docs/*.md
-
-clean:
-	rm -rf docs/images/* docs/*.md golr-views graphql graphviz java json
-	rm -rf json-schema ontology proto rdf shex
-
-# ----------------------------------------
-# UTILS
-# ----------------------------------------
-dir-%:
-	mkdir -p $*
