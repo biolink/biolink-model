@@ -7,9 +7,6 @@ on:
       - master
       - main
 
-  repository_dispatch:
-    types: trigger-build-deploy-documentation
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   github-pages:
@@ -46,7 +43,7 @@ jobs:
       # generate markdown files
       - run: |
           make clean-docs
-          poetry run gen-doc biolink-model.yaml --directory docs --template-directory doc_templates
+          make gen-docs
           cp css/extra_css.css docs
           cp guidelines/*.md docs
 

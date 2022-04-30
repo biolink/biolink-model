@@ -1,6 +1,16 @@
 # {{ gen.name(element) }}
 
 {{ element.description }}
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_ancestors(element.name, reflexive=false) -%}
+        {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+
+```
 
 URI: {{ gen.uri_link(element) }}
 
