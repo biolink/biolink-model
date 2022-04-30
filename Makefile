@@ -56,6 +56,7 @@ clean-docs:
 
 gen-docs:
 	poetry run gen-doc biolink-model.yaml --directory target/docs --template-directory doc_templates
+	cp -pr target/docs/ .
 	cp css/extra_css.css docs/
 	cp README.md docs/
 	cp images/biolink-logo.png docs/
