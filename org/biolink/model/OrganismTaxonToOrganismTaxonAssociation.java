@@ -1,0 +1,19 @@
+package org.biolink.model;
+
+import java.util.List;
+import lombok.*;
+
+
+
+/* version: 2.2.16 */
+
+
+/**
+  A relationship between two organism taxon nodes
+**/
+@Data
+@EqualsAndHashCode(callSuper=false)
+public abstractclass OrganismTaxonToOrganismTaxonAssociation extends Association {
+
+
+}
