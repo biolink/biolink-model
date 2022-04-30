@@ -5,15 +5,15 @@ SCHEMA_NAMES = biolink-model
 
 SCHEMA_NAME = biolink-model
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-#TGTS = graphql jsonschema docs shex owl csv  python
-TGTS = json-schema
+TGTS = python json-schema jsonld-context python sqlddl owl shex prefix-map rdf java
 ARTIFACT_TGTS = python json-schema jsonld-context python sqlddl owl shex prefix-map rdf java
 JAVA_GEN_OPTS = --output_directory org/biolink/model --package org.biolink.model
 DDL_GEN_OPTS = --sqla-file target/sqla-files/
 
-all: clean gen stage
+all: clean gen test
 artifacts: clean-artifacts gen-artifacts stage-artifacts
 gen: $(patsubst %,gen-%,$(TGTS))
+
 .PHONY: all gen clean t echo test install gh-deploy clean-artifacts clean-doc clean-artifacts gen-artifacts clean-docs .FORCE
 
 gen-artifacts: $(patsubst %,gen-%,$(ARTIFACT_TGTS))
@@ -25,7 +25,8 @@ gen-artifacts: $(patsubst %,gen-%,$(ARTIFACT_TGTS))
 	cp -pr owl/* .
 	cp -pr rdf/* .
 
-clean: clean-json-schema
+clean:
+	rm -rf target/*
 
 clean-json-schema:
 	rm -rf target/*
@@ -72,14 +73,6 @@ install:
 
 tdir-%:
 	mkdir -p target/$*
-
-
-stage: $(patsubst %,stage-%,$(TGTS))
-
-stage-artifacts: $(patsubst %,stage-%,$(ARTIFACT_TGTS))
-
-stage-%: gen-%
-	cp -pr target/$* .
 
 ###  -- PYTHON --
 gen-prefix-map: target/prefix-map/$(SCHEMA_NAME)-prefix-map.json
@@ -205,7 +198,8 @@ target/java/%.java: $(SCHEMA_DIR)/biolink-model.yaml tdir-java
 # TESTS
 # ----------------------------------------
 test: tests
-tests: biolink-model.yaml env.lock pytest # jsonschema_test
+
+tests: biolink-model.yaml pytest # jsonschema_test
 	poetry run python -m unittest discover -p 'test_*.py'
 
 pytest: biolink/model.py
