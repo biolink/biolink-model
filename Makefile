@@ -7,7 +7,7 @@ SCHEMA_NAME = biolink-model
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 #TGTS = graphql jsonschema docs shex owl csv  python
 TGTS = json-schema
-ARTIFACT_TGTS = python json-schema jsonld-context python sqlddl owl shex prefix-map rdf
+ARTIFACT_TGTS = python json-schema jsonld-context python sqlddl owl shex prefix-map rdf java
 JAVA_GEN_OPTS = --output_directory org/biolink/model --package org.biolink.model
 DDL_GEN_OPTS = --sqla-file target/sqla-files/
 
@@ -196,7 +196,6 @@ deploy-testpypi:
 # ---------------------------------------
 gen-java: $(patsubst %, target/java/%.java, $(SCHEMA_NAMES))
 .PHONY: gen-java
-
 target/java/%.java: $(SCHEMA_DIR)/biolink-model.yaml tdir-java
 	poetry run gen-java $(JAVA_GEN_OPTS)  $< > $@
 

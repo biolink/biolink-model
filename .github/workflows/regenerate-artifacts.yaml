@@ -62,7 +62,6 @@ jobs:
           git add biolink-modeln.*
           git add context*
           git add biolink/model.py
-          git add java/BiolinkModel.java
           git add graphviz/*
           git add golr-views/*
           git add json-schema/biolink-model.json
@@ -70,7 +69,8 @@ jobs:
           git add owl/*
           git add rdf/*
           git add shex/*
-          git add sqlddl/* 
+          git add sqlddl/*
+          git add org/*
           git commit -m "Regenerate artifacts from biolink-model.yaml"
           git push
         else
