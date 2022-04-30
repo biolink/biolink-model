@@ -4,10 +4,6 @@ on:
   push:
     branches:
     - master
-    paths:
-    - 'biolink-model.yaml'
-  repository_dispatch:
-    types: trigger-build-artifacts
 
 jobs:
   build:
@@ -57,7 +53,8 @@ jobs:
     - name: Generate Biolink Model artifacts
       run: |
         export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
-        make -B build
+        make clean-artifacts
+        make gen-artifacts
         if [ $? -eq 0 ]; then
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -70,6 +67,10 @@ jobs:
           git add golr-views/*
           git add json-schema/biolink-model.json
           git add prefix-map/biolink-model-prefix-map.json
+          git add owl/*
+          git add rdf/*
+          git add shex/*
+          git add sqlddl/* 
           git commit -m "Regenerate artifacts from biolink-model.yaml"
           git push
         else
