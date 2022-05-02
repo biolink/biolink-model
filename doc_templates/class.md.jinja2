@@ -13,6 +13,16 @@
       {% endfor %}
 
 ```
+{% elif schemaview.class_children(element.name)  %}
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_children(element.name) -%}
+        {{ gen.name(element) }} <|-- {{ gen.name(schemaview.get_element(s)) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+```
 {% else %}
 ```mermaid
  classDiagram
@@ -20,8 +30,9 @@
       {% for s in schemaview.class_induced_slots(element.name) -%}
         {{ gen.name(element) }} : {{gen.name(s)}}
       {% endfor %}
-```
+
 {% endif %}
+
 
 URI: {{ gen.uri_link(element) }}
 
