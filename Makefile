@@ -78,63 +78,63 @@ tdir-%:
 gen-prefix-map: target/prefix-map/$(SCHEMA_NAME)-prefix-map.json
 .PHONY: gen-prefix-map
 target/prefix-map/%.json: $(SCHEMA_DIR)/biolink-model.yaml  tdir-prefix-map
-	poetry run gen-prefix-map $(GEN_OPTS) $< > $@
+	poetry run gen-prefix-map $< > $@
 
 # add more logging?
 # some docs pages not being created
 # usage of mkdocs.yml attributes like analytics?
 
 ###  -- PYTHON --
-gen-python: $(patsubst %, target/python/%.py, $(SCHEMA_NAMES))
+gen-python: biolink/model.py
 .PHONY: gen-python
 target/python/%.py: $(SCHEMA_DIR)/biolink-model.yaml  tdir-python
-	poetry run gen-py-classes --mergeimports $(GEN_OPTS) $< > $@
+	poetry run gen-py-classes --mergeimports $< > $@
 
 ###  -- JSON SCHEMA --
 gen-json-schema: target/json-schema/$(SCHEMA_NAME).json
 .PHONY: gen-json-schema
 target/json-schema/%.json: $(SCHEMA_DIR)/biolink-model.yaml tdir-json-schema
-	poetry run gen-json-schema $(GEN_OPTS) --closed -t ingest $< > $@
+	poetry run gen-json-schema --closed -t ingest $< > $@
 
 ###  -- SQL --
 gen-sqlddl: target/sqlddl/$(SCHEMA_NAME).sql
 .PHONY: gen-sqlddl
 target/sqlddl/%.sql: $(SCHEMA_DIR)/biolink-model.yaml tdir-sqlddl
-	poetry run gen-sqlddl $(GEN_OPTS) $< > $@
+	poetry run gen-sqlddl $(DDL_GEN_OPTS) $< > $@
 
 ###  -- JSONLD Context --
 gen-jsonld-context: target/jsonld-context/context.jsonld
 .PHONY: gen-jsonld-context
 target/jsonld-context/context.jsonld: $(SCHEMA_DIR)/biolink-model.yaml tdir-jsonld-context
-	poetry run gen-jsonld-context $(GEN_OPTS) $< > $@
+	poetry run gen-jsonld-context  $< > $@
 
 ###  -- SHEX --
 # one file per module
 gen-shex: $(patsubst %, target/shex/%.shex, $(SCHEMA_NAMES))
 .PHONY: gen-shex
 target/shex/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shex
-	poetry run gen-shex --no-mergeimports $(GEN_OPTS) $< > $@
+	poetry run gen-shex --no-mergeimports $< > $@
 
 ###  -- CSV --
 # one file per module
 gen-csv: $(patsubst %, target/csv/%.csv, $(SCHEMA_NAMES))
 .PHONY: gen-csv
 target/csv/%.csv: $(SCHEMA_DIR)/biolink-model.yaml tdir-csv
-	poetry run gen-csv $(GEN_OPTS) $< > $@
+	poetry run gen-csv $< > $@
 
 ###  -- OWL --
 # TODO: modularize imports. For now imports are merged.
 gen-owl: target/owl/$(SCHEMA_NAME).owl.ttl
 .PHONY: gen-owl
 target/owl/%.owl.ttl: $(SCHEMA_DIR)/biolink-model.yaml tdir-owl
-	poetry run gen-owl $(GEN_OPTS) $< > $@
+	poetry run gen-owl $< > $@
 
 ###  -- RDF (direct mapping) --
 # TODO: modularize imports. For now imports are merged.
 gen-rdf: target/rdf/$(SCHEMA_NAME).ttl
 .PHONY: gen-rdf
 target/rdf/%.ttl: $(SCHEMA_DIR)/biolink-model.yaml tdir-rdf
-	poetry run gen-rdf $(GEN_OPTS) $< > $@
+	poetry run gen-rdf $< > $@
 
 ###  -- LINKML --
 # linkml (copy)
@@ -151,12 +151,12 @@ gen-golr-views: target/golr-views/$(SCHEMA_NAME).yaml
 .PHONY: gen-golr-views
 	poetry run gen-golr-views -d golr-views $<
 target/golr-views/%.yaml: $(SCHEMA_DIR)/biolink-model.yaml tdir-golr-views
-	poetry run gen-golr-views $(GEN_OPTS) $< > $@
+	poetry run gen-golr-views $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
-gen-graphql: target/graphql/$(SCHEMA_NAME).yaml
+gen-graphql: target/graphql/$(SCHEMA_NAME).graphql
 .PHONY: gen-graphql
 	poetry run gen-graphql -d graphql $<
 target/graphql/%.graphql: $(SCHEMA_DIR)/biolink-model.yaml tdir-graphql
