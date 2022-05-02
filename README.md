@@ -90,48 +90,17 @@ pip3 install poetry
 
 To install the project,
 ```sh
+poetry shell
 poetry install
 ```
 
 To regenerate artifacts from the Biolink Model YAML run:
-**Note:** 
+**Note:** This will be done automatically with github actions.  In general
 
 ```sh
 make clean-artifacts
 make gen-artifacts
 ```
-
-**Note:** the Makefile requires the following dependencies to be installed:
-
-### jsonschema
-
-[jsonschema](https://json-schema.org/)
-
-Generally install using 
-
-```sh
-pip3 install jsonschema
-```
-
-### jsonschema2pojo
-
-[jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo)
-
-If you are on a Mac, it can be installed using `brew`:
-```sh
-brew install jsonschema2pojo
-```
-For other OS environments, download the latest release then extract it into your execution path. eg
-```sh
-wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
-tar -xvzf jsonschema2pojo-1.0.2.tar.gz
-export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
-```
-
-### GraphViz
-
-See [GraphViz site](https://graphviz.org/) for installation in your operating system.
-
 
 
 ## How do I use Biolink Model YAML programatically?
