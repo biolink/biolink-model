@@ -1,0 +1,70 @@
+# {{ gen.name(element) }}
+
+{{ element.description }}
+
+{% if schemaview.class_parents(element.name) %}
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_parents(element.name) -%}
+        {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+
+```
+{% elif schemaview.class_children(element.name)  %}
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_children(element.name) -%}
+        {{ gen.name(element) }} <|-- {{ gen.name(schemaview.get_element(s)) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+```
+{% else %}
+```mermaid
+ classDiagram
+    class {{ gen.name(element) }}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+
+{% endif %}
+
+
+URI: {{ gen.uri_link(element) }}
+
+## Parent Classes
+{% if schemaview.class_parents(element.name) %}
+{{ gen.inheritance_tree(element, mixins=True) }}
+{% else %}
+None
+{% endif %}
+
+
+{% if schemaview.class_children(element.name, mixins=False) %}
+
+## Children
+
+{{ gen.inheritance_tree(element, mixins=True) }}
+{% else %}
+<!-- no inheritance hierarchy -->
+{% endif %}
+
+## Slots
+
+| Name | Description  |
+| ---  | ---  |
+{% for s in schemaview.class_induced_slots(element.name) -%}
+| {{gen.link(s)}} | {{ s.description }} |
+{% endfor %}
+
+## Mappings
+
+
+
+
+{% include "common_metadata.md.jinja2" %}
+

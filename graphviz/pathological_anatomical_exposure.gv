@@ -1,24 +1,24 @@
 digraph {
-	graph [bb="0,0,332.77,123"];
+	graph [bb="0,0,259.98,123"];
 	node [label="\N"];
 	"pathological anatomical exposure"	[height=0.5,
 		label="pathological anatomical exposure",
-		pos="166.39,105",
-		width=4.6218];
+		pos="129.99,105",
+		width=3.6108];
 	"exposure event"	[height=0.5,
-		pos="89.385,18",
-		width=2.2748];
+		pos="66.988,18",
+		width=1.7693];
 	"pathological anatomical exposure" -> "exposure event"	[label=uses,
-		lp="149.89,61.5",
-		pos="e,104.68,35.885 150.8,86.799 139.56,74.39 124.22,57.458 111.69,43.618"];
+		lp="114.99,61.5",
+		pos="e,79.503,35.885 117.24,86.799 108.13,74.506 95.727,57.774 85.523,44.007"];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="244.39,18",
-		width=1.5346];
+		pos="192.99,18",
+		width=1.2277];
 	"pathological anatomical exposure" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="244.39,61.5",
-		pos="e,229.16,35.597 182.17,86.799 193.63,74.309 209.3,57.236 222.04,43.348",
+		lp="191.49,61.5",
+		pos="e,180.69,35.597 142.74,86.799 151.91,74.426 164.41,57.555 174.65,43.738",
 		style=solid];
 }

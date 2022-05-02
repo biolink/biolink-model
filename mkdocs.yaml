@@ -1,0 +1,23 @@
+site_name: "Biolink Model Documentation"
+
+theme:
+  name: material
+  logo: biolink-logo.png
+plugins:
+  - search
+  - mermaid2
+
+docs_dir: docs
+site_dir: mkdocs_html
+
+nav:
+  - Overview: understanding-the-model.md
+  - Browse the Model: index.md
+  - Working With The Model: working-with-the-model.md
+  - Updating: curating-the-model.md
+  - Maintaining The Model: maintaining-the-model.md
+  - FAQ: faq.md
+
+
+site_url: https://sierra-moxon.github.io/biolink-model/
+repo_url: https://github.com/sierra-moxon/biolink-model/

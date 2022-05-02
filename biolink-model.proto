@@ -477,6 +477,7 @@ message ChemicalMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
@@ -491,6 +492,12 @@ message ChemicalRole
   optional hasQualitativeValue NamedThing = 4
   optional iri IriType = 5
   optional source String = 6
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -516,14 +523,7 @@ message ChemicalToChemicalAssociation
   repeated category CategoryType = 19
   object ChemicalEntity = 20
  }
-// A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
-//   IF
-//   R has-input C1 AND
-//   R has-output C2 AND
-//   R enabled-by P AND
-//   R type Reaction
-//   THEN
-//   C1 derives-into C2 <<catalyst qualifier P>>
+// A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction IF R has-input C1 AND R has-output C2 AND R enabled-by P AND R type Reaction THENC1 derives-into C2 <<catalyst qualifier P>>
 message ChemicalToChemicalDerivationAssociation
  {
   id String = 1
@@ -761,11 +761,18 @@ message ComplexMolecularMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
   optional drugRegulatoryStatusWorldWide String = 17
   repeated routesOfDelivery DrugDeliveryEnum = 18
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -1019,11 +1026,18 @@ message Drug
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
   optional drugRegulatoryStatusWorldWide String = 17
   repeated routesOfDelivery DrugDeliveryEnum = 18
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1327,11 +1341,18 @@ message Food
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
   optional drugRegulatoryStatusWorldWide String = 17
   repeated routesOfDelivery DrugDeliveryEnum = 18
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 message FoodAdditive
  {
@@ -2334,11 +2355,18 @@ message MolecularMixture
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
   optional drugRegulatoryStatusWorldWide String = 17
   repeated routesOfDelivery DrugDeliveryEnum = 18
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2831,11 +2859,18 @@ message ProcessedMaterial
   repeated availableFrom DrugAvailabilityEnum = 11
   optional maxToleratedDose String = 12
   optional isToxic Boolean = 13
+<<<<<<< HEAD
   repeated hasChemicalRole ChemicalRole = 14
   optional isSupplement ChemicalMixture = 15
   optional highestFDAApprovalStatus String = 16
   optional drugRegulatoryStatusWorldWide String = 17
   repeated routesOfDelivery DrugDeliveryEnum = 18
+=======
+  optional isSupplement ChemicalMixture = 14
+  optional highestFDAApprovalStatus String = 15
+  optional drugRegulatoryStatusWorldWide String = 16
+  repeated routesOfDelivery DrugDeliveryEnum = 17
+>>>>>>> 129415c2ccf885ec574ab83dac8c17fd713f7df2
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein

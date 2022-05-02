@@ -1,0 +1,51 @@
+name: Build and Deploy Static Mkdocs Documentation
+
+# Controls when the action will run. Triggers the workflow on pull request
+on:
+  push:
+    branches:
+      - master
+      - main
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      #----------------------------------------------
+      #          install & configure poetry
+      #----------------------------------------------
+      - name: Install Poetry
+        uses: snok/install-poetry@v1.3
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      #----------------------------------------------
+      #    install your root project, if required
+      #----------------------------------------------
+      - name: Install library
+        run: poetry install --no-interaction
+
+
+      # generate markdown files
+      - run: |
+          make clean-docs
+          make gen-docs
+          cp css/extra_css.css docs
+          cp guidelines/*.md docs
+
+      # deploy documentation (note: requires documentation is in docs dir)
+      - run: make gh-deploy

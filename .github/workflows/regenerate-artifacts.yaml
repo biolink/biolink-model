@@ -1,0 +1,78 @@
+name: Regenerate Biolink Model Artifacts
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Python Environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Setup build environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential git wget curl
+        sudo apt-get install -y openjdk-8-jre
+        sudo apt-get install -y graphviz
+        wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
+        tar -xvzf jsonschema2pojo-1.0.2.tar.gz
+
+      #----------------------------------------------
+      #          install & configure poetry
+      #----------------------------------------------
+    - name: Install Poetry
+      uses: snok/install-poetry@v1.3
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root
+
+      #----------------------------------------------
+      #    install your root project, if required
+      #----------------------------------------------
+    - name: Install library
+      run: poetry install --no-interaction
+
+
+    - name: Generate Biolink Model artifacts
+      run: |
+        export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
+        make clean-artifacts
+        make gen-artifacts
+        if [ $? -eq 0 ]; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add biolink-model.*
+          git add biolink-modeln.*
+          git add context*
+          git add biolink/model.py
+          git add graphviz/*
+          git add golr-views/*
+          git add json-schema/biolink-model.json
+          git add prefix-map/biolink-model-prefix-map.json
+          git add owl/*
+          git add rdf/*
+          git add shex/*
+          git add sqlddl/*
+          git add org/*
+          git commit -m "Regenerate artifacts from biolink-model.yaml"
+          git push
+        else
+          echo "'make' failed to finish successfully"
+        fi

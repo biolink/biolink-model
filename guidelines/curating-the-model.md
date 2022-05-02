@@ -24,7 +24,6 @@ Biolink Model has several entity classes like `gene`, `disease`, `phenotypic fea
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
-
 To add an entity class to Biolink Model you need to determine the following,
   - What is an appropriate name for this entity?
     - The name for an entity should be clear and concise. It should describe instances of this class
@@ -110,24 +109,6 @@ Biolink Model has several Association classes like `gene to gene association`, `
 All these classes are arranged in a hierarchy with the root of all associations being the `association` class.
 
 
-
-To add an Association class to Biolink Model you need to determine the following,
-  - What is an appropriate name for this association
-    - The name for an association should be clear and concise. It should capture the type of assertion that it is trying to represent
-  - What type of nodes does this association link?
-    - Determine what the subject and the object classes are in this assertion
-  - Where in the hierarchy does the new class fit?
-    - Determine where in the [`association slot` hierarchy]() does this new assocation class fit
-  - What are the slots that this association class can have (in addition to inherited slots)?
-    - Determine what additional properties that this class ought to have
-  - Do certain slots have to be constrained on what values it ought to have?
-    - Determine whethere there are properties (new or inherited)  whose value have to be constrained to a certain value space
-  - What are the mapping(s) for this class?
-    - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-
-
-
 As an example, let's consider the definition of class  `variant to disease association`:
 
 ```yaml
@@ -167,22 +148,7 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 ### Adding a predicate/relation
 
-A predicate is a slot that links two instances of a class. 
-
-To add a predicate to Biolink Model you need to determine the following,
-  - What is an appropriate name for this predicate?
-    - A human readable name for this predicate. It should capture the nature of the relationship
-  - Where in the hierarchy does the new slot fit?
-    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to) does this new predicate slot fit
-  - What are the domain and range constraints (if any)?
-    - Determine which type of entity classes can this predicate link
-  - What are the mapping(s) for this slot?
-    - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-    # TODO: add the predicate discussion about inverse of cannon to this document.
-  - Determine the inverse of the predicate, and add it (specifying the inverse property on each of the two predicates)
-    - In general, the canonical direction of the predicate should contain the descriptive information about the predicate while its inverse can be minimally defined.
-
+A predicate is a slot that links two instances of a class.
 
 As an example, let's consider the definition of slot `interacts with`:
 
@@ -214,25 +180,6 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 You can add slots that represent node properties or edge properties.
 
-
-To add a node/edge property to Biolink Model you need to determine the following,
-  - What is an appropriate name for this slot?
-    - A human readable name for this property
-  - Is it a node property or an edge property (association slot)?
-    - Determine whether the property is a node or an edge property
-  - Where in the hierarchy does the new property fit?
-    - Determine where in the property hierarchy does this new property fit
-    - If you want to add a node property then it should be added as part of the [`node property` hierarchy](https://biolink.github.io/biolink-model/docs/node_property)
-    - If you want to add an edge property then it should be added as part of the [`association slot` hierarchy](https://biolink.github.io/biolink-model/docs/association_slot)
-  - Is this a required property?
-    - Determine whether all instances of a class must have a value for this property
-  - What are the domain and range constraints (if any)?
-    - Determine which type of classes can have this property and what the value space for this property should be
-  - What are the mapping(s) for this slot?
-    - Mappings are a way of rooting this new property in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-
-
 As an example, let's consider the slot `name` which is a node property:
 
 ```yaml
@@ -252,19 +199,6 @@ As an example, let's consider the slot `name` which is a node property:
       - gpi:DB_Object_Name
 ```
 
-
-As another example, let's consider the slot `relation` which is an edge property:
-
-```yaml
-  relation:
-    is_a: association slot
-    description: >-
-      The relation which describes an association between a subject and an object in a more granular manner.
-      Usually this is a term from Relation Ontology, but it can be any edge CURIE.
-    domain: association
-    range: uriorcurie
-    required: true
-```
 
 In the above YAML snippets, `is_a`, `aliases`, `domain`, `range`, `description`, `in_subset`, `required`, `slot_uri`, `exact_mappings` are slots from linkML where each slot has a specific meaning and they add semantics to the slot definition.
 
