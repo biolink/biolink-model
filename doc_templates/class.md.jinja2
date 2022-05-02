@@ -1,9 +1,11 @@
 # {{ gen.name(element) }}
 
 {{ element.description }}
+
+{% if schemaview.class_parents(element.name) %}
 ```mermaid
  classDiagram
-      {% for s in schemaview.class_ancestors(element.name, reflexive=false) -%}
+      {% for s in schemaview.class_parents(element.name) -%}
         {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
       {% endfor %}
       {% for s in schemaview.class_induced_slots(element.name) -%}
@@ -11,6 +13,26 @@
       {% endfor %}
 
 ```
+{% elif schemaview.class_children(element.name)  %}
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_children(element.name) -%}
+        {{ gen.name(element) }} <|-- {{ gen.name(schemaview.get_element(s)) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+```
+{% else %}
+```mermaid
+ classDiagram
+    class {{ gen.name(element) }}
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+
+{% endif %}
+
 
 URI: {{ gen.uri_link(element) }}
 

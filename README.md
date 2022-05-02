@@ -90,15 +90,16 @@ pip3 install poetry
 
 To install the project,
 ```sh
-make install
+poetry install
 ```
 
-To regenerate artifacts from the Biolink Model YAML,
+To regenerate artifacts from the Biolink Model YAML run:
+**Note:** 
 
 ```sh
-make
+make clean-artifacts
+make gen-artifacts
 ```
-
 
 **Note:** the Makefile requires the following dependencies to be installed:
 
