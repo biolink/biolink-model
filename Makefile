@@ -19,6 +19,9 @@ gen: $(patsubst %,gen-%,$(TGTS))
 gen-artifacts: $(patsubst %,gen-%,$(ARTIFACT_TGTS))
 	cp -pr target/* .
 	cp -pr target/shex/* .
+	cp -pr target/shexj/biolink-model.shexj
+	cp -pr target/shexn/biolink-modeln.shex
+	cp -pr target/shexnj/biolink-modeln.shexj
 	cp -pr target/owl/* .
 	cp -pr jsonld-context/* .
 	cp -pr jsonld-contextn/* .
@@ -129,6 +132,22 @@ gen-shex: $(patsubst %, target/shex/%.shex, $(SCHEMA_NAMES))
 .PHONY: gen-shex
 target/shex/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shex
 	poetry run gen-shex --no-mergeimports $(GEN_OPTS) $< > $@
+
+gen-shexn: $(patsubst %, target/shexn/%.shex, $(SCHEMA_NAMES))
+.PHONY: gen-shexn
+target/shexn/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shexn
+	poetry run gen-shex --no-mergeimports --metauris $(GEN_OPTS) $< > $@
+
+gen-shexj: $(patsubst %, target/shexj/%.shex, $(SCHEMA_NAMES))
+.PHONY: gen-shexj
+target/shexj/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shexj
+	poetry run gen-shex --no-mergeimports --format json $(GEN_OPTS) $< > $@
+
+gen-shexjn: $(patsubst %, target/shexjn/%.shex, $(SCHEMA_NAMES))
+.PHONY: gen-shexjn
+target/shexjn/%.shex: $(SCHEMA_DIR)/biolink-model.yaml tdir-shexjn
+	poetry run gen-shex --no-mergeimports --metauris --format json $(GEN_OPTS) $< > $@
+
 
 ###  -- CSV --
 # one file per module
