@@ -214,5 +214,5 @@ test: tests
 tests: biolink-model.yaml pytest # jsonschema_test
 	poetry run python -m unittest discover -p 'test_*.py'
 
-pytest: biolink/model.py
+pytest: target/python/biolink-model.py
 	poetry run python $<
