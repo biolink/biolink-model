@@ -1354,6 +1354,7 @@
 --     * Slot: source Description: 
 --     * Slot: subject_id Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 -- # Class: "chemical to pathway association" Description: "An interaction between a chemical entity and a biological process or pathway."
+--     * Slot: subject Description: the chemical entity that is affecting the pathway
 --     * Slot: predicate Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 --     * Slot: object Description: the pathway that is affected by the chemical
 --     * Slot: relation Description: 
@@ -1364,7 +1365,6 @@
 --     * Slot: name Description: A human-readable name for an attribute or entity.
 --     * Slot: description Description: a human-readable description of an entity
 --     * Slot: source Description: 
---     * Slot: subject_id Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 -- # Class: "chemical to gene association" Description: "An interaction between a chemical entity and a gene or gene product."
 --     * Slot: predicate Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 --     * Slot: relation Description: 
@@ -7290,6 +7290,7 @@ CREATE TABLE "chemical to disease or phenotypic feature association" (
 	FOREIGN KEY(subject_id) REFERENCES "chemical entity or gene or gene product" (id)
 );
 CREATE TABLE "chemical to pathway association" (
+	subject TEXT NOT NULL, 
 	predicate TEXT NOT NULL, 
 	object TEXT NOT NULL, 
 	relation TEXT, 
@@ -7300,10 +7301,9 @@ CREATE TABLE "chemical to pathway association" (
 	name TEXT, 
 	description TEXT, 
 	source TEXT, 
-	subject_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(object) REFERENCES pathway (id), 
-	FOREIGN KEY(subject_id) REFERENCES "chemical entity or gene or gene product" (id)
+	FOREIGN KEY(subject) REFERENCES "chemical entity" (id), 
+	FOREIGN KEY(object) REFERENCES pathway (id)
 );
 CREATE TABLE "chemical to gene association" (
 	predicate TEXT NOT NULL, 
@@ -7888,8 +7888,7 @@ CREATE TABLE "named thing_category" (
 	"named thing_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("named thing_id", category), 
-	FOREIGN KEY("named thing_id") REFERENCES "named thing" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("named thing_id") REFERENCES "named thing" (id)
 );
 CREATE TABLE "organism taxon_provided_by" (
 	"organism taxon_id" TEXT, 
@@ -7901,8 +7900,7 @@ CREATE TABLE "organism taxon_category" (
 	"organism taxon_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("organism taxon_id", category), 
-	FOREIGN KEY("organism taxon_id") REFERENCES "organism taxon" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("organism taxon_id") REFERENCES "organism taxon" (id)
 );
 CREATE TABLE event_provided_by (
 	event_id TEXT, 
@@ -7914,8 +7912,7 @@ CREATE TABLE event_category (
 	event_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (event_id, category), 
-	FOREIGN KEY(event_id) REFERENCES event (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(event_id) REFERENCES event (id)
 );
 CREATE TABLE "administrative entity_provided_by" (
 	"administrative entity_id" TEXT, 
@@ -7927,8 +7924,7 @@ CREATE TABLE "administrative entity_category" (
 	"administrative entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("administrative entity_id", category), 
-	FOREIGN KEY("administrative entity_id") REFERENCES "administrative entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("administrative entity_id") REFERENCES "administrative entity" (id)
 );
 CREATE TABLE agent_affiliation (
 	agent_id TEXT, 
@@ -7946,8 +7942,7 @@ CREATE TABLE agent_category (
 	agent_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (agent_id, category), 
-	FOREIGN KEY(agent_id) REFERENCES agent (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(agent_id) REFERENCES agent (id)
 );
 CREATE TABLE "information content entity_provided_by" (
 	"information content entity_id" TEXT, 
@@ -7959,8 +7954,7 @@ CREATE TABLE "information content entity_category" (
 	"information content entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("information content entity_id", category), 
-	FOREIGN KEY("information content entity_id") REFERENCES "information content entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("information content entity_id") REFERENCES "information content entity" (id)
 );
 CREATE TABLE dataset_provided_by (
 	dataset_id TEXT, 
@@ -7972,8 +7966,7 @@ CREATE TABLE dataset_category (
 	dataset_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (dataset_id, category), 
-	FOREIGN KEY(dataset_id) REFERENCES dataset (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(dataset_id) REFERENCES dataset (id)
 );
 CREATE TABLE "dataset distribution_provided_by" (
 	"dataset distribution_id" TEXT, 
@@ -7985,8 +7978,7 @@ CREATE TABLE "dataset distribution_category" (
 	"dataset distribution_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("dataset distribution_id", category), 
-	FOREIGN KEY("dataset distribution_id") REFERENCES "dataset distribution" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("dataset distribution_id") REFERENCES "dataset distribution" (id)
 );
 CREATE TABLE "dataset summary_provided_by" (
 	"dataset summary_id" TEXT, 
@@ -7998,8 +7990,7 @@ CREATE TABLE "dataset summary_category" (
 	"dataset summary_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("dataset summary_id", category), 
-	FOREIGN KEY("dataset summary_id") REFERENCES "dataset summary" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("dataset summary_id") REFERENCES "dataset summary" (id)
 );
 CREATE TABLE "confidence level_provided_by" (
 	"confidence level_id" TEXT, 
@@ -8011,8 +8002,7 @@ CREATE TABLE "confidence level_category" (
 	"confidence level_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("confidence level_id", category), 
-	FOREIGN KEY("confidence level_id") REFERENCES "confidence level" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("confidence level_id") REFERENCES "confidence level" (id)
 );
 CREATE TABLE "evidence type_provided_by" (
 	"evidence type_id" TEXT, 
@@ -8024,8 +8014,7 @@ CREATE TABLE "evidence type_category" (
 	"evidence type_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("evidence type_id", category), 
-	FOREIGN KEY("evidence type_id") REFERENCES "evidence type" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("evidence type_id") REFERENCES "evidence type" (id)
 );
 CREATE TABLE "information resource_provided_by" (
 	"information resource_id" TEXT, 
@@ -8037,8 +8026,7 @@ CREATE TABLE "information resource_category" (
 	"information resource_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("information resource_id", category), 
-	FOREIGN KEY("information resource_id") REFERENCES "information resource" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("information resource_id") REFERENCES "information resource" (id)
 );
 CREATE TABLE publication_author (
 	publication_id TEXT, 
@@ -8080,8 +8068,7 @@ CREATE TABLE publication_category (
 	publication_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (publication_id, category), 
-	FOREIGN KEY(publication_id) REFERENCES publication (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(publication_id) REFERENCES publication (id)
 );
 CREATE TABLE book_author (
 	book_id TEXT, 
@@ -8123,8 +8110,7 @@ CREATE TABLE book_category (
 	book_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (book_id, category), 
-	FOREIGN KEY(book_id) REFERENCES book (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(book_id) REFERENCES book (id)
 );
 CREATE TABLE "book chapter_author" (
 	"book chapter_id" TEXT, 
@@ -8166,8 +8152,7 @@ CREATE TABLE "book chapter_category" (
 	"book chapter_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("book chapter_id", category), 
-	FOREIGN KEY("book chapter_id") REFERENCES "book chapter" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("book chapter_id") REFERENCES "book chapter" (id)
 );
 CREATE TABLE serial_author (
 	serial_id TEXT, 
@@ -8209,8 +8194,7 @@ CREATE TABLE serial_category (
 	serial_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (serial_id, category), 
-	FOREIGN KEY(serial_id) REFERENCES serial (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(serial_id) REFERENCES serial (id)
 );
 CREATE TABLE article_author (
 	article_id TEXT, 
@@ -8252,8 +8236,7 @@ CREATE TABLE article_category (
 	article_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (article_id, category), 
-	FOREIGN KEY(article_id) REFERENCES article (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(article_id) REFERENCES article (id)
 );
 CREATE TABLE "physical entity_provided_by" (
 	"physical entity_id" TEXT, 
@@ -8265,8 +8248,7 @@ CREATE TABLE "physical entity_category" (
 	"physical entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("physical entity_id", category), 
-	FOREIGN KEY("physical entity_id") REFERENCES "physical entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("physical entity_id") REFERENCES "physical entity" (id)
 );
 CREATE TABLE activity_provided_by (
 	activity_id TEXT, 
@@ -8278,8 +8260,7 @@ CREATE TABLE activity_category (
 	activity_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (activity_id, category), 
-	FOREIGN KEY(activity_id) REFERENCES activity (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(activity_id) REFERENCES activity (id)
 );
 CREATE TABLE procedure_provided_by (
 	procedure_id TEXT, 
@@ -8291,8 +8272,7 @@ CREATE TABLE procedure_category (
 	procedure_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (procedure_id, category), 
-	FOREIGN KEY(procedure_id) REFERENCES procedure (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(procedure_id) REFERENCES procedure (id)
 );
 CREATE TABLE phenomenon_provided_by (
 	phenomenon_id TEXT, 
@@ -8304,8 +8284,7 @@ CREATE TABLE phenomenon_category (
 	phenomenon_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (phenomenon_id, category), 
-	FOREIGN KEY(phenomenon_id) REFERENCES phenomenon (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(phenomenon_id) REFERENCES phenomenon (id)
 );
 CREATE TABLE device_provided_by (
 	device_id TEXT, 
@@ -8317,8 +8296,7 @@ CREATE TABLE device_category (
 	device_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (device_id, category), 
-	FOREIGN KEY(device_id) REFERENCES device (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(device_id) REFERENCES device (id)
 );
 CREATE TABLE "study population_in_taxon" (
 	"study population_id" TEXT, 
@@ -8337,8 +8315,7 @@ CREATE TABLE "study population_category" (
 	"study population_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("study population_id", category), 
-	FOREIGN KEY("study population_id") REFERENCES "study population" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("study population_id") REFERENCES "study population" (id)
 );
 CREATE TABLE "material sample_provided_by" (
 	"material sample_id" TEXT, 
@@ -8350,8 +8327,7 @@ CREATE TABLE "material sample_category" (
 	"material sample_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("material sample_id", category), 
-	FOREIGN KEY("material sample_id") REFERENCES "material sample" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("material sample_id") REFERENCES "material sample" (id)
 );
 CREATE TABLE "planetary entity_provided_by" (
 	"planetary entity_id" TEXT, 
@@ -8363,8 +8339,7 @@ CREATE TABLE "planetary entity_category" (
 	"planetary entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("planetary entity_id", category), 
-	FOREIGN KEY("planetary entity_id") REFERENCES "planetary entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("planetary entity_id") REFERENCES "planetary entity" (id)
 );
 CREATE TABLE "environmental process_provided_by" (
 	"environmental process_id" TEXT, 
@@ -8376,8 +8351,7 @@ CREATE TABLE "environmental process_category" (
 	"environmental process_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("environmental process_id", category), 
-	FOREIGN KEY("environmental process_id") REFERENCES "environmental process" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("environmental process_id") REFERENCES "environmental process" (id)
 );
 CREATE TABLE "environmental feature_provided_by" (
 	"environmental feature_id" TEXT, 
@@ -8389,8 +8363,7 @@ CREATE TABLE "environmental feature_category" (
 	"environmental feature_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("environmental feature_id", category), 
-	FOREIGN KEY("environmental feature_id") REFERENCES "environmental feature" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("environmental feature_id") REFERENCES "environmental feature" (id)
 );
 CREATE TABLE "geographic location_provided_by" (
 	"geographic location_id" TEXT, 
@@ -8402,8 +8375,7 @@ CREATE TABLE "geographic location_category" (
 	"geographic location_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("geographic location_id", category), 
-	FOREIGN KEY("geographic location_id") REFERENCES "geographic location" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("geographic location_id") REFERENCES "geographic location" (id)
 );
 CREATE TABLE "geographic location at time_provided_by" (
 	"geographic location at time_id" TEXT, 
@@ -8415,8 +8387,7 @@ CREATE TABLE "geographic location at time_category" (
 	"geographic location at time_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("geographic location at time_id", category), 
-	FOREIGN KEY("geographic location at time_id") REFERENCES "geographic location at time" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("geographic location at time_id") REFERENCES "geographic location at time" (id)
 );
 CREATE TABLE "biological entity_provided_by" (
 	"biological entity_id" TEXT, 
@@ -8428,8 +8399,7 @@ CREATE TABLE "biological entity_category" (
 	"biological entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("biological entity_id", category), 
-	FOREIGN KEY("biological entity_id") REFERENCES "biological entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("biological entity_id") REFERENCES "biological entity" (id)
 );
 CREATE TABLE "thing with taxon_in_taxon" (
 	"thing with taxon_id" TEXT, 
@@ -8461,8 +8431,7 @@ CREATE TABLE "chemical entity_category" (
 	"chemical entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("chemical entity_id", category), 
-	FOREIGN KEY("chemical entity_id") REFERENCES "chemical entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("chemical entity_id") REFERENCES "chemical entity" (id)
 );
 CREATE TABLE "biological process or activity_has_input" (
 	"biological process or activity_id" TEXT, 
@@ -8495,8 +8464,7 @@ CREATE TABLE "biological process or activity_category" (
 	"biological process or activity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("biological process or activity_id", category), 
-	FOREIGN KEY("biological process or activity_id") REFERENCES "biological process or activity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("biological process or activity_id") REFERENCES "biological process or activity" (id)
 );
 CREATE TABLE "molecular activity_enabled_by" (
 	"molecular activity_id" TEXT, 
@@ -8515,8 +8483,7 @@ CREATE TABLE "molecular activity_category" (
 	"molecular activity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("molecular activity_id", category), 
-	FOREIGN KEY("molecular activity_id") REFERENCES "molecular activity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("molecular activity_id") REFERENCES "molecular activity" (id)
 );
 CREATE TABLE "biological process_has_input" (
 	"biological process_id" TEXT, 
@@ -8549,8 +8516,7 @@ CREATE TABLE "biological process_category" (
 	"biological process_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("biological process_id", category), 
-	FOREIGN KEY("biological process_id") REFERENCES "biological process" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("biological process_id") REFERENCES "biological process" (id)
 );
 CREATE TABLE pathway_has_input (
 	pathway_id TEXT, 
@@ -8583,8 +8549,7 @@ CREATE TABLE pathway_category (
 	pathway_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (pathway_id, category), 
-	FOREIGN KEY(pathway_id) REFERENCES pathway (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(pathway_id) REFERENCES pathway (id)
 );
 CREATE TABLE "physiological process_has_input" (
 	"physiological process_id" TEXT, 
@@ -8617,8 +8582,7 @@ CREATE TABLE "physiological process_category" (
 	"physiological process_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("physiological process_id", category), 
-	FOREIGN KEY("physiological process_id") REFERENCES "physiological process" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("physiological process_id") REFERENCES "physiological process" (id)
 );
 CREATE TABLE behavior_has_input (
 	behavior_id TEXT, 
@@ -8651,8 +8615,7 @@ CREATE TABLE behavior_category (
 	behavior_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (behavior_id, category), 
-	FOREIGN KEY(behavior_id) REFERENCES behavior (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(behavior_id) REFERENCES behavior (id)
 );
 CREATE TABLE "organismal entity_provided_by" (
 	"organismal entity_id" TEXT, 
@@ -8664,8 +8627,7 @@ CREATE TABLE "organismal entity_category" (
 	"organismal entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("organismal entity_id", category), 
-	FOREIGN KEY("organismal entity_id") REFERENCES "organismal entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("organismal entity_id") REFERENCES "organismal entity" (id)
 );
 CREATE TABLE "life stage_in_taxon" (
 	"life stage_id" TEXT, 
@@ -8684,8 +8646,7 @@ CREATE TABLE "life stage_category" (
 	"life stage_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("life stage_id", category), 
-	FOREIGN KEY("life stage_id") REFERENCES "life stage" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("life stage_id") REFERENCES "life stage" (id)
 );
 CREATE TABLE "individual organism_in_taxon" (
 	"individual organism_id" TEXT, 
@@ -8704,8 +8665,7 @@ CREATE TABLE "individual organism_category" (
 	"individual organism_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("individual organism_id", category), 
-	FOREIGN KEY("individual organism_id") REFERENCES "individual organism" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("individual organism_id") REFERENCES "individual organism" (id)
 );
 CREATE TABLE "population of individual organisms_in_taxon" (
 	"population of individual organisms_id" TEXT, 
@@ -8724,8 +8684,7 @@ CREATE TABLE "population of individual organisms_category" (
 	"population of individual organisms_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("population of individual organisms_id", category), 
-	FOREIGN KEY("population of individual organisms_id") REFERENCES "population of individual organisms" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("population of individual organisms_id") REFERENCES "population of individual organisms" (id)
 );
 CREATE TABLE "disease or phenotypic feature_in_taxon" (
 	"disease or phenotypic feature_id" TEXT, 
@@ -8744,8 +8703,7 @@ CREATE TABLE "disease or phenotypic feature_category" (
 	"disease or phenotypic feature_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("disease or phenotypic feature_id", category), 
-	FOREIGN KEY("disease or phenotypic feature_id") REFERENCES "disease or phenotypic feature" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("disease or phenotypic feature_id") REFERENCES "disease or phenotypic feature" (id)
 );
 CREATE TABLE disease_in_taxon (
 	disease_id TEXT, 
@@ -8764,8 +8722,7 @@ CREATE TABLE disease_category (
 	disease_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (disease_id, category), 
-	FOREIGN KEY(disease_id) REFERENCES disease (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(disease_id) REFERENCES disease (id)
 );
 CREATE TABLE "phenotypic feature_in_taxon" (
 	"phenotypic feature_id" TEXT, 
@@ -8784,8 +8741,7 @@ CREATE TABLE "phenotypic feature_category" (
 	"phenotypic feature_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("phenotypic feature_id", category), 
-	FOREIGN KEY("phenotypic feature_id") REFERENCES "phenotypic feature" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("phenotypic feature_id") REFERENCES "phenotypic feature" (id)
 );
 CREATE TABLE "behavioral feature_in_taxon" (
 	"behavioral feature_id" TEXT, 
@@ -8804,8 +8760,7 @@ CREATE TABLE "behavioral feature_category" (
 	"behavioral feature_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("behavioral feature_id", category), 
-	FOREIGN KEY("behavioral feature_id") REFERENCES "behavioral feature" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("behavioral feature_id") REFERENCES "behavioral feature" (id)
 );
 CREATE TABLE "anatomical entity_in_taxon" (
 	"anatomical entity_id" TEXT, 
@@ -8824,8 +8779,7 @@ CREATE TABLE "anatomical entity_category" (
 	"anatomical entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("anatomical entity_id", category), 
-	FOREIGN KEY("anatomical entity_id") REFERENCES "anatomical entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("anatomical entity_id") REFERENCES "anatomical entity" (id)
 );
 CREATE TABLE "cellular component_in_taxon" (
 	"cellular component_id" TEXT, 
@@ -8844,8 +8798,7 @@ CREATE TABLE "cellular component_category" (
 	"cellular component_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("cellular component_id", category), 
-	FOREIGN KEY("cellular component_id") REFERENCES "cellular component" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("cellular component_id") REFERENCES "cellular component" (id)
 );
 CREATE TABLE cell_in_taxon (
 	cell_id TEXT, 
@@ -8864,8 +8817,7 @@ CREATE TABLE cell_category (
 	cell_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (cell_id, category), 
-	FOREIGN KEY(cell_id) REFERENCES cell (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(cell_id) REFERENCES cell (id)
 );
 CREATE TABLE "cell line_provided_by" (
 	"cell line_id" TEXT, 
@@ -8877,8 +8829,7 @@ CREATE TABLE "cell line_category" (
 	"cell line_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("cell line_id", category), 
-	FOREIGN KEY("cell line_id") REFERENCES "cell line" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("cell line_id") REFERENCES "cell line" (id)
 );
 CREATE TABLE "gross anatomical structure_in_taxon" (
 	"gross anatomical structure_id" TEXT, 
@@ -8897,8 +8848,7 @@ CREATE TABLE "gross anatomical structure_category" (
 	"gross anatomical structure_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("gross anatomical structure_id", category), 
-	FOREIGN KEY("gross anatomical structure_id") REFERENCES "gross anatomical structure" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("gross anatomical structure_id") REFERENCES "gross anatomical structure" (id)
 );
 CREATE TABLE gene_synonym (
 	gene_id TEXT, 
@@ -8922,8 +8872,7 @@ CREATE TABLE gene_category (
 	gene_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (gene_id, category), 
-	FOREIGN KEY(gene_id) REFERENCES gene (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(gene_id) REFERENCES gene (id)
 );
 CREATE TABLE gene_in_taxon (
 	gene_id TEXT, 
@@ -8966,8 +8915,7 @@ CREATE TABLE genome_category (
 	genome_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (genome_id, category), 
-	FOREIGN KEY(genome_id) REFERENCES genome (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(genome_id) REFERENCES genome (id)
 );
 CREATE TABLE genome_in_taxon (
 	genome_id TEXT, 
@@ -8993,8 +8941,7 @@ CREATE TABLE polypeptide_category (
 	polypeptide_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (polypeptide_id, category), 
-	FOREIGN KEY(polypeptide_id) REFERENCES polypeptide (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(polypeptide_id) REFERENCES polypeptide (id)
 );
 CREATE TABLE protein_synonym (
 	protein_id TEXT, 
@@ -9025,8 +8972,7 @@ CREATE TABLE protein_category (
 	protein_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (protein_id, category), 
-	FOREIGN KEY(protein_id) REFERENCES protein (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(protein_id) REFERENCES protein (id)
 );
 CREATE TABLE "protein isoform_synonym" (
 	"protein isoform_id" TEXT, 
@@ -9057,8 +9003,7 @@ CREATE TABLE "protein isoform_category" (
 	"protein isoform_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("protein isoform_id", category), 
-	FOREIGN KEY("protein isoform_id") REFERENCES "protein isoform" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("protein isoform_id") REFERENCES "protein isoform" (id)
 );
 CREATE TABLE "protein domain_has_gene_or_gene_product" (
 	"protein domain_id" TEXT, 
@@ -9077,8 +9022,7 @@ CREATE TABLE "protein domain_category" (
 	"protein domain_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("protein domain_id", category), 
-	FOREIGN KEY("protein domain_id") REFERENCES "protein domain" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("protein domain_id") REFERENCES "protein domain" (id)
 );
 CREATE TABLE "protein family_has_gene_or_gene_product" (
 	"protein family_id" TEXT, 
@@ -9097,8 +9041,7 @@ CREATE TABLE "protein family_category" (
 	"protein family_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("protein family_id", category), 
-	FOREIGN KEY("protein family_id") REFERENCES "protein family" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("protein family_id") REFERENCES "protein family" (id)
 );
 CREATE TABLE "nucleic acid sequence motif_provided_by" (
 	"nucleic acid sequence motif_id" TEXT, 
@@ -9110,8 +9053,7 @@ CREATE TABLE "nucleic acid sequence motif_category" (
 	"nucleic acid sequence motif_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("nucleic acid sequence motif_id", category), 
-	FOREIGN KEY("nucleic acid sequence motif_id") REFERENCES "nucleic acid sequence motif" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("nucleic acid sequence motif_id") REFERENCES "nucleic acid sequence motif" (id)
 );
 CREATE TABLE "gene grouping mixin_has_gene_or_gene_product" (
 	"gene grouping mixin_id" TEXT, 
@@ -9137,8 +9079,7 @@ CREATE TABLE "gene family_category" (
 	"gene family_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("gene family_id", category), 
-	FOREIGN KEY("gene family_id") REFERENCES "gene family" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("gene family_id") REFERENCES "gene family" (id)
 );
 CREATE TABLE haplotype_provided_by (
 	haplotype_id TEXT, 
@@ -9150,8 +9091,7 @@ CREATE TABLE haplotype_category (
 	haplotype_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (haplotype_id, category), 
-	FOREIGN KEY(haplotype_id) REFERENCES haplotype (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(haplotype_id) REFERENCES haplotype (id)
 );
 CREATE TABLE haplotype_in_taxon (
 	haplotype_id TEXT, 
@@ -9177,8 +9117,7 @@ CREATE TABLE "sequence variant_category" (
 	"sequence variant_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("sequence variant_id", category), 
-	FOREIGN KEY("sequence variant_id") REFERENCES "sequence variant" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("sequence variant_id") REFERENCES "sequence variant" (id)
 );
 CREATE TABLE "sequence variant_in_taxon" (
 	"sequence variant_id" TEXT, 
@@ -9204,8 +9143,7 @@ CREATE TABLE snv_category (
 	snv_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (snv_id, category), 
-	FOREIGN KEY(snv_id) REFERENCES snv (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(snv_id) REFERENCES snv (id)
 );
 CREATE TABLE snv_in_taxon (
 	snv_id TEXT, 
@@ -9224,8 +9162,7 @@ CREATE TABLE "reagent targeted gene_category" (
 	"reagent targeted gene_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("reagent targeted gene_id", category), 
-	FOREIGN KEY("reagent targeted gene_id") REFERENCES "reagent targeted gene" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("reagent targeted gene_id") REFERENCES "reagent targeted gene" (id)
 );
 CREATE TABLE "reagent targeted gene_in_taxon" (
 	"reagent targeted gene_id" TEXT, 
@@ -9244,8 +9181,7 @@ CREATE TABLE "clinical entity_category" (
 	"clinical entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("clinical entity_id", category), 
-	FOREIGN KEY("clinical entity_id") REFERENCES "clinical entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("clinical entity_id") REFERENCES "clinical entity" (id)
 );
 CREATE TABLE "clinical trial_provided_by" (
 	"clinical trial_id" TEXT, 
@@ -9257,8 +9193,7 @@ CREATE TABLE "clinical trial_category" (
 	"clinical trial_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("clinical trial_id", category), 
-	FOREIGN KEY("clinical trial_id") REFERENCES "clinical trial" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("clinical trial_id") REFERENCES "clinical trial" (id)
 );
 CREATE TABLE "clinical intervention_provided_by" (
 	"clinical intervention_id" TEXT, 
@@ -9270,8 +9205,7 @@ CREATE TABLE "clinical intervention_category" (
 	"clinical intervention_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("clinical intervention_id", category), 
-	FOREIGN KEY("clinical intervention_id") REFERENCES "clinical intervention" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("clinical intervention_id") REFERENCES "clinical intervention" (id)
 );
 CREATE TABLE "clinical finding_in_taxon" (
 	"clinical finding_id" TEXT, 
@@ -9290,8 +9224,7 @@ CREATE TABLE "clinical finding_category" (
 	"clinical finding_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("clinical finding_id", category), 
-	FOREIGN KEY("clinical finding_id") REFERENCES "clinical finding" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("clinical finding_id") REFERENCES "clinical finding" (id)
 );
 CREATE TABLE hospitalization_provided_by (
 	hospitalization_id TEXT, 
@@ -9303,8 +9236,7 @@ CREATE TABLE hospitalization_category (
 	hospitalization_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (hospitalization_id, category), 
-	FOREIGN KEY(hospitalization_id) REFERENCES hospitalization (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(hospitalization_id) REFERENCES hospitalization (id)
 );
 CREATE TABLE case_in_taxon (
 	case_id TEXT, 
@@ -9323,8 +9255,7 @@ CREATE TABLE case_category (
 	case_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (case_id, category), 
-	FOREIGN KEY(case_id) REFERENCES "case" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(case_id) REFERENCES "case" (id)
 );
 CREATE TABLE cohort_in_taxon (
 	cohort_id TEXT, 
@@ -9343,8 +9274,7 @@ CREATE TABLE cohort_category (
 	cohort_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (cohort_id, category), 
-	FOREIGN KEY(cohort_id) REFERENCES cohort (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(cohort_id) REFERENCES cohort (id)
 );
 CREATE TABLE "genomic background exposure_has_gene_or_gene_product" (
 	"genomic background exposure_id" TEXT, 
@@ -9391,8 +9321,7 @@ CREATE TABLE "pathological process_category" (
 	"pathological process_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("pathological process_id", category), 
-	FOREIGN KEY("pathological process_id") REFERENCES "pathological process" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("pathological process_id") REFERENCES "pathological process" (id)
 );
 CREATE TABLE "pathological anatomical structure_in_taxon" (
 	"pathological anatomical structure_id" TEXT, 
@@ -9411,8 +9340,7 @@ CREATE TABLE "pathological anatomical structure_category" (
 	"pathological anatomical structure_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("pathological anatomical structure_id", category), 
-	FOREIGN KEY("pathological anatomical structure_id") REFERENCES "pathological anatomical structure" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("pathological anatomical structure_id") REFERENCES "pathological anatomical structure" (id)
 );
 CREATE TABLE "chemical exposure_has_quantitative_value" (
 	"chemical exposure_id" TEXT, 
@@ -9466,8 +9394,7 @@ CREATE TABLE treatment_category (
 	treatment_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (treatment_id, category), 
-	FOREIGN KEY(treatment_id) REFERENCES treatment (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(treatment_id) REFERENCES treatment (id)
 );
 CREATE TABLE "molecular mixture" (
 	is_supplement TEXT, 
@@ -10143,8 +10070,7 @@ CREATE TABLE "dataset version_category" (
 	"dataset version_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("dataset version_id", category), 
-	FOREIGN KEY("dataset version_id") REFERENCES "dataset version" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("dataset version_id") REFERENCES "dataset version" (id)
 );
 CREATE TABLE "dataset version_has_attribute" (
 	"dataset version_id" TEXT, 
@@ -10330,8 +10256,7 @@ CREATE TABLE "molecular entity_category" (
 	"molecular entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("molecular entity_id", category), 
-	FOREIGN KEY("molecular entity_id") REFERENCES "molecular entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("molecular entity_id") REFERENCES "molecular entity" (id)
 );
 CREATE TABLE "molecular entity_has_attribute" (
 	"molecular entity_id" TEXT, 
@@ -10377,8 +10302,7 @@ CREATE TABLE "small molecule_category" (
 	"small molecule_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("small molecule_id", category), 
-	FOREIGN KEY("small molecule_id") REFERENCES "small molecule" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("small molecule_id") REFERENCES "small molecule" (id)
 );
 CREATE TABLE "small molecule_has_attribute" (
 	"small molecule_id" TEXT, 
@@ -10416,8 +10340,7 @@ CREATE TABLE "chemical mixture_category" (
 	"chemical mixture_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("chemical mixture_id", category), 
-	FOREIGN KEY("chemical mixture_id") REFERENCES "chemical mixture" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("chemical mixture_id") REFERENCES "chemical mixture" (id)
 );
 CREATE TABLE "chemical mixture_has_attribute" (
 	"chemical mixture_id" TEXT, 
@@ -10449,8 +10372,7 @@ CREATE TABLE "nucleic acid entity_category" (
 	"nucleic acid entity_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("nucleic acid entity_id", category), 
-	FOREIGN KEY("nucleic acid entity_id") REFERENCES "nucleic acid entity" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("nucleic acid entity_id") REFERENCES "nucleic acid entity" (id)
 );
 CREATE TABLE "nucleic acid entity_has_attribute" (
 	"nucleic acid entity_id" TEXT, 
@@ -10545,8 +10467,7 @@ CREATE TABLE "environmental food contaminant_category" (
 	"environmental food contaminant_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("environmental food contaminant_id", category), 
-	FOREIGN KEY("environmental food contaminant_id") REFERENCES "environmental food contaminant" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("environmental food contaminant_id") REFERENCES "environmental food contaminant" (id)
 );
 CREATE TABLE "environmental food contaminant_has_attribute" (
 	"environmental food contaminant_id" TEXT, 
@@ -10578,8 +10499,7 @@ CREATE TABLE "food additive_category" (
 	"food additive_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("food additive_id", category), 
-	FOREIGN KEY("food additive_id") REFERENCES "food additive" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("food additive_id") REFERENCES "food additive" (id)
 );
 CREATE TABLE "food additive_has_attribute" (
 	"food additive_id" TEXT, 
@@ -10611,8 +10531,7 @@ CREATE TABLE nutrient_category (
 	nutrient_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (nutrient_id, category), 
-	FOREIGN KEY(nutrient_id) REFERENCES nutrient (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(nutrient_id) REFERENCES nutrient (id)
 );
 CREATE TABLE nutrient_has_attribute (
 	nutrient_id TEXT, 
@@ -10644,8 +10563,7 @@ CREATE TABLE macronutrient_category (
 	macronutrient_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (macronutrient_id, category), 
-	FOREIGN KEY(macronutrient_id) REFERENCES macronutrient (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(macronutrient_id) REFERENCES macronutrient (id)
 );
 CREATE TABLE macronutrient_has_attribute (
 	macronutrient_id TEXT, 
@@ -10677,8 +10595,7 @@ CREATE TABLE micronutrient_category (
 	micronutrient_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (micronutrient_id, category), 
-	FOREIGN KEY(micronutrient_id) REFERENCES micronutrient (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(micronutrient_id) REFERENCES micronutrient (id)
 );
 CREATE TABLE micronutrient_has_attribute (
 	micronutrient_id TEXT, 
@@ -10710,8 +10627,7 @@ CREATE TABLE vitamin_category (
 	vitamin_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (vitamin_id, category), 
-	FOREIGN KEY(vitamin_id) REFERENCES vitamin (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(vitamin_id) REFERENCES vitamin (id)
 );
 CREATE TABLE vitamin_has_attribute (
 	vitamin_id TEXT, 
@@ -10869,8 +10785,7 @@ CREATE TABLE exon_category (
 	exon_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (exon_id, category), 
-	FOREIGN KEY(exon_id) REFERENCES exon (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(exon_id) REFERENCES exon (id)
 );
 CREATE TABLE exon_has_attribute (
 	exon_id TEXT, 
@@ -10909,8 +10824,7 @@ CREATE TABLE transcript_category (
 	transcript_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (transcript_id, category), 
-	FOREIGN KEY(transcript_id) REFERENCES transcript (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(transcript_id) REFERENCES transcript (id)
 );
 CREATE TABLE transcript_has_attribute (
 	transcript_id TEXT, 
@@ -10949,8 +10863,7 @@ CREATE TABLE "coding sequence_category" (
 	"coding sequence_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("coding sequence_id", category), 
-	FOREIGN KEY("coding sequence_id") REFERENCES "coding sequence" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("coding sequence_id") REFERENCES "coding sequence" (id)
 );
 CREATE TABLE "coding sequence_has_attribute" (
 	"coding sequence_id" TEXT, 
@@ -11043,8 +10956,7 @@ CREATE TABLE "RNA product_category" (
 	"RNA product_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("RNA product_id", category), 
-	FOREIGN KEY("RNA product_id") REFERENCES "RNA product" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("RNA product_id") REFERENCES "RNA product" (id)
 );
 CREATE TABLE "RNA product_has_attribute" (
 	"RNA product_id" TEXT, 
@@ -11095,8 +11007,7 @@ CREATE TABLE "RNA product isoform_category" (
 	"RNA product isoform_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("RNA product isoform_id", category), 
-	FOREIGN KEY("RNA product isoform_id") REFERENCES "RNA product isoform" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("RNA product isoform_id") REFERENCES "RNA product isoform" (id)
 );
 CREATE TABLE "RNA product isoform_has_attribute" (
 	"RNA product isoform_id" TEXT, 
@@ -11147,8 +11058,7 @@ CREATE TABLE "noncoding RNA product_category" (
 	"noncoding RNA product_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("noncoding RNA product_id", category), 
-	FOREIGN KEY("noncoding RNA product_id") REFERENCES "noncoding RNA product" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("noncoding RNA product_id") REFERENCES "noncoding RNA product" (id)
 );
 CREATE TABLE "noncoding RNA product_has_attribute" (
 	"noncoding RNA product_id" TEXT, 
@@ -11199,8 +11109,7 @@ CREATE TABLE "microRNA_category" (
 	"microRNA_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("microRNA_id", category), 
-	FOREIGN KEY("microRNA_id") REFERENCES "microRNA" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("microRNA_id") REFERENCES "microRNA" (id)
 );
 CREATE TABLE "microRNA_has_attribute" (
 	"microRNA_id" TEXT, 
@@ -11251,8 +11160,7 @@ CREATE TABLE "siRNA_category" (
 	"siRNA_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("siRNA_id", category), 
-	FOREIGN KEY("siRNA_id") REFERENCES "siRNA" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("siRNA_id") REFERENCES "siRNA" (id)
 );
 CREATE TABLE "siRNA_has_attribute" (
 	"siRNA_id" TEXT, 
@@ -14377,8 +14285,7 @@ CREATE TABLE "molecular mixture_category" (
 	"molecular mixture_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("molecular mixture_id", category), 
-	FOREIGN KEY("molecular mixture_id") REFERENCES "molecular mixture" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("molecular mixture_id") REFERENCES "molecular mixture" (id)
 );
 CREATE TABLE "molecular mixture_has_attribute" (
 	"molecular mixture_id" TEXT, 
@@ -14416,8 +14323,7 @@ CREATE TABLE "complex molecular mixture_category" (
 	"complex molecular mixture_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("complex molecular mixture_id", category), 
-	FOREIGN KEY("complex molecular mixture_id") REFERENCES "complex molecular mixture" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("complex molecular mixture_id") REFERENCES "complex molecular mixture" (id)
 );
 CREATE TABLE "complex molecular mixture_has_attribute" (
 	"complex molecular mixture_id" TEXT, 
@@ -14455,8 +14361,7 @@ CREATE TABLE "processed material_category" (
 	"processed material_id" TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY ("processed material_id", category), 
-	FOREIGN KEY("processed material_id") REFERENCES "processed material" (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY("processed material_id") REFERENCES "processed material" (id)
 );
 CREATE TABLE "processed material_has_attribute" (
 	"processed material_id" TEXT, 
@@ -14494,8 +14399,7 @@ CREATE TABLE drug_category (
 	drug_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (drug_id, category), 
-	FOREIGN KEY(drug_id) REFERENCES drug (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(drug_id) REFERENCES drug (id)
 );
 CREATE TABLE drug_has_attribute (
 	drug_id TEXT, 
@@ -14533,8 +14437,7 @@ CREATE TABLE food_category (
 	food_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (food_id, category), 
-	FOREIGN KEY(food_id) REFERENCES food (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(food_id) REFERENCES food (id)
 );
 CREATE TABLE food_has_attribute (
 	food_id TEXT, 
@@ -14553,8 +14456,7 @@ CREATE TABLE genotype_category (
 	genotype_id TEXT, 
 	category TEXT NOT NULL, 
 	PRIMARY KEY (genotype_id, category), 
-	FOREIGN KEY(genotype_id) REFERENCES genotype (id), 
-	FOREIGN KEY(category) REFERENCES "named thing" (id)
+	FOREIGN KEY(genotype_id) REFERENCES genotype (id)
 );
 CREATE TABLE genotype_has_attribute (
 	genotype_id TEXT, 
