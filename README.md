@@ -64,15 +64,10 @@ The yaml definition is currently used to derive:
   - [Python dataclasses](biolink/model.py)
   - [Java code gen](java)
   - [ProtoBuf definitions](biolink-model.proto)
-  - [GraphQL](biolink-model.graphql)
   - [RDF](biolink-model.ttl)
   - [OWL](biolink-model.owl.ttl)
   - [RDF Shape Expressions](biolink-model.shex)
   - [JSON-LD context](context.jsonld)
-  - [Graphviz](graphviz)
-  - [GOlr YAML schemas](golr-views)
-    - these can be compiled down to Solr XML schemas
-    - these are also intermediate targets used within the BBOP/AmiGO framework
   - [Markdown documentation](docs)
 
 
@@ -94,14 +89,16 @@ poetry shell
 poetry install
 ```
 
-To regenerate artifacts from the Biolink Model YAML run:
-**Note:** This will be done automatically with github actions.  In general
+To make model changes, edit biolink-model.yaml then regenerate the python and 
+json-schema artifacts and run the tests.
 
 ```sh
-make clean-artifacts
-make gen-artifacts
+make 
+make test 
 ```
 
+
+Artifacts are generated automatically via GitHub actions. 
 
 ## How do I use Biolink Model YAML programatically?
 
