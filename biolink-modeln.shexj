@@ -2965,6 +2965,13 @@
                      },
                      {
                         "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntity",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/object",
                         "valueExpr": "https://w3id.org/biolink/vocab/Pathway",
                         "min": 1,
@@ -4253,6 +4260,20 @@
                            ]
                         },
                         "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/Disease",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PhenotypicFeature",
+                        "min": 1,
+                        "max": 1
                      },
                      {
                         "type": "TripleConstraint",
@@ -6651,6 +6672,13 @@
                            },
                            {
                               "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object",
+                              "valueExpr": "https://w3id.org/biolink/vocab/Disease",
+                              "min": 1,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/frequency_qualifier",
                               "valueExpr": "https://w3id.org/biolink/vocab/FrequencyValue",
                               "min": 0,
@@ -6967,8 +6995,22 @@
                      },
                      {
                         "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/predicate",
                         "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
                      }
@@ -7152,6 +7194,13 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject",
                         "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PhenotypicFeature",
                         "min": 1,
                         "max": 1
                      },
@@ -9886,7 +9935,7 @@
                            {
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/category",
-                              "valueExpr": "https://w3id.org/biolink/vocab/NamedThing",
+                              "valueExpr": "https://w3id.org/biolink/vocab/CategoryType",
                               "min": 1,
                               "max": -1
                            }

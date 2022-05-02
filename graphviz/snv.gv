@@ -132,6 +132,7 @@ digraph {
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
+<<<<<<< HEAD
 		label="named thing",
 		pos="787.54,105",
 		width=1.5346];
@@ -150,4 +151,24 @@ digraph {
 		label=string,
 		pos="1143.5,105",
 		width=0.84854];
+=======
+		label="category type",
+		pos="958.34,105",
+		width=2.0762];
+	"sequence variant_has gene"	[color=blue,
+		height=0.5,
+		label=gene,
+		pos="1084.3,105",
+		width=0.92075];
+	"sequence variant_has biological sequence"	[color=blue,
+		height=0.5,
+		label="biological sequence",
+		pos="1237.3,105",
+		width=2.8164];
+	"sequence variant_id"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1395.3,105",
+		width=1.0652];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 }
