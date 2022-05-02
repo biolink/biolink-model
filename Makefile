@@ -5,8 +5,8 @@ SCHEMA_NAMES = biolink-model
 
 SCHEMA_NAME = biolink-model
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-TGTS = python json-schema jsonld-context jsonld-contextn python sqlddl owl shex prefix-map rdf java
-ARTIFACT_TGTS = python json-schema jsonld-context jsonld-contextn python sqlddl owl shex prefix-map rdf java
+TGTS = python json-schema jsonld-context jsonld-contextn python sqlddl owl shex shexn shexj shexjn prefix-map rdf java
+ARTIFACT_TGTS = python json-schema jsonld-context jsonld-contextn python sqlddl owl shex shexn shexj shexjn prefix-map rdf java
 JAVA_GEN_OPTS = --output_directory org/biolink/model --package org.biolink.model
 DDL_GEN_OPTS = --sqla-file target/sqla-files/
 
@@ -19,9 +19,9 @@ gen: $(patsubst %,gen-%,$(TGTS))
 gen-artifacts: $(patsubst %,gen-%,$(ARTIFACT_TGTS))
 	cp -pr target/* .
 	cp -pr target/shex/* .
-	cp -pr target/shexj/biolink-model.shexj
-	cp -pr target/shexn/biolink-modeln.shex
-	cp -pr target/shexnj/biolink-modeln.shexj
+	cp -pr target/shexj/biolink-model.shexj .
+	cp -pr target/shexn/biolink-modeln.shex .
+	cp -pr target/shexnj/biolink-modeln.shexj .
 	cp -pr target/owl/* .
 	cp -pr jsonld-context/* .
 	cp -pr jsonld-contextn/* .
@@ -45,6 +45,11 @@ clean-artifacts:
 	rm -rf sqlddl/*
 	rm -rf rdf/*
 	rm -rf owl/*
+	rm -rf shex/*
+	rm -rf shexj/*
+	rm -rf shexjn/*
+	rm -rf prefix-map/*
+
 
 docs:
 	mkdir -p $@
