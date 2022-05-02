@@ -96,12 +96,6 @@ gen-json-schema: target/json-schema/$(SCHEMA_NAME).json
 target/json-schema/%.json: $(SCHEMA_DIR)/biolink-model.yaml tdir-json-schema
 	poetry run gen-json-schema $(GEN_OPTS) --closed -t ingest $< > $@
 
-###  -- GRAPHQL --
-gen-graphql: target/graphql/$(SCHEMA_NAME).graphql
-.PHONY: gen-graphql
-target/graphql/%.graphql: $(SCHEMA_DIR)/biolink-model.yaml tdir-graphql
-	poetry run gen-graphql $(GEN_OPTS) $< > $@
-
 ###  -- SQL --
 gen-sqlddl: target/sqlddl/$(SCHEMA_NAME).sql
 .PHONY: gen-sqlddl
@@ -163,7 +157,7 @@ target/golr-views/%.yaml: $(SCHEMA_DIR)/biolink-model.yaml tdir-golr-views
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 gen-graphql: target/graphql/$(SCHEMA_NAME).yaml
-.PHONY: gen-grpahql
+.PHONY: gen-graphql
 	poetry run gen-graphql -d graphql $<
 target/graphql/%.graphql: $(SCHEMA_DIR)/biolink-model.yaml tdir-graphql
 	poetry run gen-graphql $< > $@
