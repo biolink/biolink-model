@@ -1,9 +1,7 @@
 [![](https://img.shields.io/github/license/biolink/biolink-model)](https://img.shields.io/github/license/biolink/biolink-model)
 [![Biolink Model](https://img.shields.io/github/v/release/biolink/biolink-model?style=flat-square)](https://img.shields.io/github/v/release/biolink/biolink-model?style=flat-square)
 [![Python 3.7](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
-[![Build Status](https://travis-ci.com/biolink/biolink-model.svg?branch=master)](https://travis-ci.com/biolink/biolink-model)
 [![DOI](https://zenodo.org/badge/112995625.svg)](https://zenodo.org/badge/latestdoi/112995625)
-[![Join the chat at https://gitter.im/biolink-model/community](https://badges.gitter.im/biolink-model/community.svg)](https://gitter.im/biolink-model/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![Regenerate Biolink Model Artifacts](https://github.com/biolink/biolink-model/workflows/Regenerate%20Biolink%20Model%20Artifacts/badge.svg)
 ![Deploy Documentation](https://github.com/biolink/biolink-model/workflows/Deploy%20Documentation/badge.svg)
 
@@ -50,8 +48,7 @@ The model itself is being used in the following projects:
 - [Monarch Initiative](https://monarchinitiative.org/)
 - [KG-COVID-19](https://github.com/Knowledge-Graph-Hub/kg-covid-19/wiki)
 - [KG Microbe](https://github.com/Knowledge-Graph-Hub/kg-microbe)
-- [Illuminating the Druggable Genome]()
-
+- [Illuminating the Druggable Genome](https://github.com/Knowledge-Graph-Hub/kg-idg)
 
 ## Organization
 
@@ -69,8 +66,6 @@ The yaml definition is currently used to derive:
   - [RDF Shape Expressions](biolink-model.shex)
   - [JSON-LD context](context.jsonld)
   - [Markdown documentation](docs)
-
-
 
 
 ## Make and build instructions
