@@ -182,7 +182,7 @@ target/golr-views/%.yaml: $(SCHEMA_DIR)/biolink-model.yaml tdir-golr-views
 
 gh-deploy:
 # deploy documentation (note: requires documentation is in docs dir)
-	poetry run mkdocs gh-deploy --remote-branch gh-pages --force --theme readthedocs
+	poetry run mkdocs gh-deploy --remote-branch gh-pages --force
 
 deploy-pypi:
 # deploys package to pypi
