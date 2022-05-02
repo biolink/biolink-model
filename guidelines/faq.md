@@ -31,10 +31,9 @@ Alternatively, for a more structured representation it is recommended to use the
 
 Refer to [Working with the Model](working-with-the-model.md) for an example on how a Biolink Model graph can be represented as labelled property graphs and RDF graphs.
 
-### What is the difference between `predicate`, `relation`, `category`?
+### What is the difference between `predicate`, `category`?
 
 - `predicate` is an association slot and must have a value from the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to)
-- `relation` is an association slot and can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - `category` (or `rdf:type`) is a slot and must have a value from the [`named thing`](https://biolink.github.io/biolink-model/docs/NamedThing)
 or the [`association`](https://biolink.github.io/biolink-model/docs/Association) hierarchy.
 
