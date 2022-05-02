@@ -16,6 +16,7 @@
 {% else %}
 ```mermaid
  classDiagram
+    class {{ gen.name(element) }}
       {% for s in schemaview.class_induced_slots(element.name) -%}
         {{ gen.name(element) }} : {{gen.name(s)}}
       {% endfor %}
