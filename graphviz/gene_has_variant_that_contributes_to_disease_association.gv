@@ -1,16 +1,30 @@
 digraph {
+<<<<<<< HEAD
 	graph [bb="0,0,3077.7,283"];
 	node [label="\N"];
 	"gene has variant that contributes to disease association"	[height=0.5,
 		label="gene has variant that contributes to disease association",
 		pos="1351.9,265",
 		width=5.6689];
+=======
+	graph [bb="0,0,3782.8,283"];
+	node [label="\N"];
+	"gene has variant that contributes to disease association"	[height=0.5,
+		label="gene has variant that contributes to disease association",
+		pos="1724.8,265",
+		width=7.5104];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	"gene to disease association"	[height=0.5,
 		pos="105.94,178",
 		width=2.9428];
 	"gene has variant that contributes to disease association" -> "gene to disease association"	[label=is_a,
+<<<<<<< HEAD
 		lp="342.94,221.5",
 		pos="e,158.88,193.6 1151.6,261.48 900.53,257.57 484.76,248.36 331.94,229 276.16,221.93 213.84,207.66 168.8,196.16"];
+=======
+		lp="429.79,221.5",
+		pos="e,203.95,193.81 1459,261.64 1136.2,257.94 610.63,249.01 415.79,229 347.02,221.94 269.68,207.49 214.07,195.93"];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +32,15 @@ digraph {
 		width=0.84854];
 	"gene has variant that contributes to disease association" -> id	[color=blue,
 		label=id,
+<<<<<<< HEAD
 		lp="439.44,221.5",
 		pos="e,283.39,189.71 1152.4,261.13 924.98,257.02 567.45,247.78 433.94,229 373.2,220.45 358.13,215.39 299.94,196 297.56,195.21 295.12,\
 194.33 292.69,193.41",
+=======
+		lp="543.79,221.5",
+		pos="e,360.78,189.97 1458.9,261.66 1164.4,258.09 708.45,249.41 536.79,229 465.98,220.58 448.43,215.28 379.79,196 376.68,195.13 373.48,\
+194.16 370.29,193.14",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +49,15 @@ digraph {
 		width=1.011];
 	"gene has variant that contributes to disease association" -> iri	[color=blue,
 		label=iri,
+<<<<<<< HEAD
 		lp="527.44,221.5",
 		pos="e,373,189.9 1154.4,260.37 948.07,255.75 638.46,246.2 520.94,229 461.96,220.37 447.87,213.69 390.94,196 388.2,195.15 385.38,194.22 \
 382.55,193.26",
+=======
+		lp="647.79,221.5",
+		pos="e,465.72,190.12 1461.5,260.91 1192.3,256.78 792.6,247.69 639.79,229 570.31,220.5 553.42,214.05 485.79,196 482.42,195.1 478.94,194.12 \
+475.46,193.09",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +66,13 @@ digraph {
 		width=1.2638];
 	"gene has variant that contributes to disease association" -> name	[color=blue,
 		label=name,
+<<<<<<< HEAD
 		lp="606.44,221.5",
 		pos="e,474.46,191.89 1152.3,261.21 963.62,257.42 694.4,248.68 590.94,229 553.58,221.89 512.76,207.29 483.81,195.7",
+=======
+		lp="740.79,221.5",
+		pos="e,586.79,192.19 1457.3,262.28 1208.7,259.3 857.05,251.17 720.79,229 677.63,221.98 630,207.22 596.33,195.55",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +81,13 @@ digraph {
 		width=1.6068];
 	"gene has variant that contributes to disease association" -> description	[color=blue,
 		label=description,
+<<<<<<< HEAD
 		lp="691.44,221.5",
 		pos="e,588.95,194.78 1148.6,263.35 978.32,261.02 749.42,253.25 660.94,229 638.59,222.87 615.54,210.91 597.75,200.21",
+=======
+		lp="846.29,221.5",
+		pos="e,727.59,195.1 1466.8,259.55 1217.5,254.38 868.33,244.51 805.79,229 781.45,222.96 756.05,210.88 736.44,200.1",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -60,8 +96,13 @@ digraph {
 		width=0.84854];
 	"gene has variant that contributes to disease association" -> source	[color=blue,
 		label=source,
+<<<<<<< HEAD
 		lp="775.94,221.5",
 		pos="e,689.89,192.83 1150.5,262.07 1007.6,258.83 829.03,250.43 757.94,229 736.45,222.52 714.62,209.74 698.33,198.72",
+=======
+		lp="951.79,221.5",
+		pos="e,854.3,193.39 1472.6,258.5 1259,252.91 979.4,243.08 927.79,229 904.71,222.7 880.93,209.99 863.07,198.96",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -70,8 +111,13 @@ digraph {
 		width=1.1193];
 	"gene has variant that contributes to disease association" -> "has attribute"	[color=blue,
 		label="has attribute",
+<<<<<<< HEAD
 		lp="854.44,221.5",
 		pos="e,774.93,195.18 1148.4,263.48 1024.4,260.68 879.06,252.23 820.94,229 806.35,223.17 792.68,212.37 782.08,202.3",
+=======
+		lp="1050.8,221.5",
+		pos="e,956.8,195.76 1467.9,259.29 1278.6,254.5 1046.9,245.39 1003.8,229 989.02,223.38 975.08,212.82 964.18,202.84",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -80,6 +126,7 @@ digraph {
 		width=1.679];
 	"gene has variant that contributes to disease association" -> predicate	[color=blue,
 		label=predicate,
+<<<<<<< HEAD
 		lp="928.94,221.5",
 		pos="e,883.55,196.29 1163.6,258.03 1051.1,252.95 925.84,244 903.94,229 895.98,223.54 890.57,214.69 886.94,205.94",
 		style=solid];
@@ -92,10 +139,15 @@ digraph {
 		label=object,
 		lp="1039.9,178",
 		pos="e,1949.6,91.543 1171,256.63 1066.7,245.99 966.49,220.49 1022.9,160 1085.3,93.151 1729.7,90.548 1939.4,91.493",
+=======
+		lp="1147.8,221.5",
+		pos="e,1093.3,196.36 1460.1,261.21 1308.8,257.44 1143.3,248.77 1113.8,229 1105.8,223.63 1100.3,214.79 1096.7,206.03",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
 		label=string,
+<<<<<<< HEAD
 		pos="2004.9,18",
 		width=0.84854];
 	"gene has variant that contributes to disease association" -> relation	[color=blue,
@@ -103,70 +155,135 @@ digraph {
 		lp="1036.9,134.5",
 		pos="e,1974.6,20.462 1186.7,254.38 1109.1,248.48 1030.4,239.95 1015.9,229 979.84,201.58 979.91,154.51 1015.9,127 1092.6,68.478 1788.1,\
 29.874 1964.4,20.97",
+=======
+		pos="3156.8,18",
+		width=1.0652];
+	"gene has variant that contributes to disease association" -> relation	[color=blue,
+		label=relation,
+		lp="1296.8,134.5",
+		pos="e,3118.4,18.732 1558.8,250.75 1501.1,245.22 1435.9,237.97 1376.8,229 1299.4,217.26 1161.5,217.31 1214.8,160 1347.7,17.113 2820.7,\
+17.274 3108.3,18.68",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
 		label=boolean,
+<<<<<<< HEAD
 		pos="1103.9,178",
 		width=1.0652];
 	"gene has variant that contributes to disease association" -> negated	[color=blue,
 		label=negated,
 		lp="1249.4,221.5",
 		pos="e,1131.2,190.98 1289.4,247.77 1269.6,242.25 1247.7,235.76 1227.9,229 1198.1,218.8 1165,205.33 1140.5,194.94",
+=======
+		pos="1270.8,178",
+		width=1.2999];
+	"gene has variant that contributes to disease association" -> negated	[color=blue,
+		label=negated,
+		lp="1464.8,221.5",
+		pos="e,1306,189.93 1570.3,250.23 1526.5,245 1479.1,238.05 1435.8,229 1385.8,218.56 1374.6,210.87 1325.8,196 1322.5,194.99 1319.1,193.95 \
+1315.6,192.9",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
 		label="ontology class",
+<<<<<<< HEAD
 		pos="1221.9,178",
 		width=1.7151];
 	"gene has variant that contributes to disease association" -> qualifiers	[color=blue,
 		label=qualifiers,
 		lp="1322.4,221.5",
 		pos="e,1245.5,194.89 1325,247.02 1316.1,241.34 1306,234.93 1296.9,229 1282.7,219.75 1267.1,209.38 1253.9,200.49",
+=======
+		pos="1411.8,178",
+		width=2.1304];
+	"gene has variant that contributes to disease association" -> qualifiers	[color=blue,
+		label=qualifiers,
+		lp="1573.3,221.5",
+		pos="e,1445.7,194.24 1623.2,248.28 1595.9,243.11 1566.5,236.67 1539.8,229 1510.9,220.71 1479.5,208.5 1455.1,198.21",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
 		label=publication,
+<<<<<<< HEAD
 		pos="1351.9,178",
 		width=1.3902];
 	"gene has variant that contributes to disease association" -> publications	[color=blue,
 		label=publications,
 		lp="1385.4,221.5",
 		pos="e,1351.9,196.18 1351.9,246.8 1351.9,235.16 1351.9,219.55 1351.9,206.24",
+=======
+		pos="1568.8,178",
+		width=1.7332];
+	"gene has variant that contributes to disease association" -> publications	[color=blue,
+		label=publications,
+		lp="1676.8,221.5",
+		pos="e,1586.8,195.45 1672.5,247.2 1659.2,242.09 1645.1,235.97 1632.8,229 1619.3,221.42 1605.7,211.19 1594.5,201.95",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
 		label="evidence type",
+<<<<<<< HEAD
 		pos="1479.9,178",
 		width=1.661];
 	"gene has variant that contributes to disease association" -> "has evidence"	[color=blue,
 		label="has evidence",
 		lp="1476.9,221.5",
 		pos="e,1463.4,195.57 1390.5,247.24 1401.4,241.95 1412.9,235.72 1422.9,229 1434.5,221.27 1446.3,211.39 1456,202.46",
+=======
+		pos="1724.8,178",
+		width=2.0943];
+	"gene has variant that contributes to disease association" -> "has evidence"	[color=blue,
+		label="has evidence",
+		lp="1771.3,221.5",
+		pos="e,1724.8,196.18 1724.8,246.8 1724.8,235.16 1724.8,219.55 1724.8,206.24",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="1642.9,178",
 		width=2.3651];
 	"gene has variant that contributes to disease association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
 		lp="1608.4,221.5",
 		pos="e,1608.2,194.48 1437.3,248.56 1462.8,243.2 1490.7,236.6 1515.9,229 1544.1,220.52 1574.8,208.52 1598.9,198.4",
+=======
+		pos="1926.8,178",
+		width=3.015];
+	"gene has variant that contributes to disease association" -> "knowledge source"	[color=blue,
+		label="knowledge source",
+		lp="1919.3,221.5",
+		pos="e,1894.5,195.37 1774,247.3 1789.4,241.78 1806.4,235.41 1821.8,229 1843.1,220.11 1866.3,209.19 1885.5,199.83",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="1830.9,178",
 		width=2.3651];
 	"gene has variant that contributes to disease association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
 		lp="1791.4,221.5",
 		pos="e,1788.7,193.73 1500.2,252.6 1551.7,247.23 1609.7,239.6 1661.9,229 1701.8,220.93 1745.7,207.78 1778.8,196.99",
+=======
+		pos="2161.8,178",
+		width=3.015];
+	"gene has variant that contributes to disease association" -> "original knowledge source"	[color=blue,
+		label="original knowledge source",
+		lp="2140.8,221.5",
+		pos="e,2115.4,194.37 1863,249.5 1903.4,244.21 1947.5,237.41 1987.8,229 2027.7,220.66 2071.8,207.94 2105.7,197.41",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="2018.9,178",
 		width=2.3651];
 	"gene has variant that contributes to disease association" -> "primary knowledge source"	[color=blue,
@@ -174,10 +291,19 @@ digraph {
 		lp="1995.9,221.5",
 		pos="e,1981.8,194.31 1495.1,252.17 1518.5,250.36 1542.4,248.57 1564.9,247 1699.5,237.63 1735.5,254.42 1867.9,229 1903.8,222.13 1942.8,\
 209.04 1972.2,197.98",
+=======
+		pos="2396.8,178",
+		width=3.015];
+	"gene has variant that contributes to disease association" -> "primary knowledge source"	[color=blue,
+		label="primary knowledge source",
+		lp="2391.8,221.5",
+		pos="e,2356.2,194.79 1914.4,252.14 2054.1,243.24 2222.6,232.07 2238.8,229 2275.6,222.02 2315.9,209.18 2346.6,198.26",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="2206.9,178",
 		width=2.3651];
 	"gene has variant that contributes to disease association" -> "aggregator knowledge source"	[color=blue,
@@ -203,6 +329,42 @@ digraph {
 		lp="2397.4,221.5",
 		pos="e,2404.2,194.24 1490.8,251.78 1515.5,249.93 1541,248.23 1564.9,247 1651,242.57 2257.2,253.03 2339.9,229 2360.1,223.16 2380.3,211.16 \
 2395.7,200.39",
+=======
+		pos="2631.8,178",
+		width=3.015];
+	"gene has variant that contributes to disease association" -> "aggregator knowledge source"	[color=blue,
+		label="aggregator knowledge source",
+		lp="2649.3,221.5",
+		pos="e,2596.1,195.06 1912.3,252 1943.2,250.2 1974.9,248.46 2004.8,247 2112.7,241.72 2384.6,249.29 2490.8,229 2523.9,222.67 2559.6,209.92 \
+2586.9,198.88",
+		style=solid];
+	type	[height=0.5,
+		pos="2789.8,178",
+		width=0.86659];
+	"gene has variant that contributes to disease association" -> type	[color=blue,
+		label=type,
+		lp="2790.8,221.5",
+		pos="e,2784.4,196.1 1909.2,251.83 1941.1,250.01 1973.9,248.31 2004.8,247 2046.7,245.23 2723.5,250.11 2759.8,229 2768.9,223.71 2775.5,\
+214.48 2780.2,205.37",
+		style=solid];
+	category	[height=0.5,
+		pos="2890.8,178",
+		width=1.4263];
+	"gene has variant that contributes to disease association" -> category	[color=blue,
+		label=category,
+		lp="2875.3,221.5",
+		pos="e,2871.9,194.97 1909.2,251.79 1941.1,249.97 1973.9,248.28 2004.8,247 2094.3,243.28 2725,254.65 2810.8,229 2829.9,223.28 2849,211.64 \
+2863.7,201.04",
+		style=solid];
+	object	[height=0.5,
+		pos="3156.8,91",
+		width=1.0832];
+	"gene has variant that contributes to disease association" -> object	[color=blue,
+		label=object,
+		lp="3008.8,178",
+		pos="e,3123.9,100.82 1908.5,251.77 1940.6,249.94 1973.6,248.25 2004.8,247 2055.1,244.97 2863.6,246.49 2910.8,229 2953.6,213.15 2948.7,\
+185.11 2986.8,160 3026.7,133.69 3078.4,114.83 3114.2,103.74",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
@@ -211,9 +373,15 @@ digraph {
 		width=1.8776];
 	"gene has variant that contributes to disease association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
+<<<<<<< HEAD
 		lp="2526.4,221.5",
 		pos="e,2520.6,194.26 1490.5,251.76 1515.3,249.9 1540.9,248.21 1564.9,247 1660.4,242.2 2331.3,248.06 2424.9,229 2455.1,222.87 2487.2,209.84 \
 2511.4,198.62",
+=======
+		lp="3112.8,221.5",
+		pos="e,3092.4,194.77 1908.1,251.75 1940.3,249.92 1973.5,248.23 2004.8,247 2114.4,242.68 2884.1,249.6 2991.8,229 3023.4,222.96 3057.3,\
+210.11 3082.9,198.95",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
@@ -222,9 +390,15 @@ digraph {
 		width=1.661];
 	"gene has variant that contributes to disease association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
+<<<<<<< HEAD
 		lp="2672.9,221.5",
 		pos="e,2668.6,194.29 1489.9,251.73 1514.9,249.87 1540.7,248.18 1564.9,247 1677.8,241.5 2471.6,253.35 2581.9,229 2609.1,223 2637.8,210.23 \
 2659.5,199.1",
+=======
+		lp="3293.8,221.5",
+		pos="e,3275,194.8 1907.4,251.72 1939.8,249.87 1973.3,248.2 2004.8,247 2135.8,242.03 3056.4,255.89 3184.8,229 3213.1,223.06 3243.2,210.38 \
+3266,199.28",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
@@ -233,9 +407,15 @@ digraph {
 		width=0.81243];
 	"gene has variant that contributes to disease association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
+<<<<<<< HEAD
 		lp="2794.9,221.5",
 		pos="e,2785.7,193.08 1489.6,251.71 1514.7,249.85 1540.6,248.16 1564.9,247 1629.2,243.94 2661.3,247.39 2722.9,229 2743,223.03 2762.8,210.42 \
 2777.6,199.36",
+=======
+		lp="3442.3,221.5",
+		pos="e,3417.1,194.28 1907,251.69 1939.5,249.84 1973.2,248.17 2004.8,247 2080,244.22 3286.9,251.28 3358.8,229 3377.2,223.28 3395.3,211.46 \
+3409.1,200.75",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"sequence variant qualifier"	[color=blue,
 		height=0.5,
@@ -244,15 +424,22 @@ digraph {
 		width=1.9318];
 	"gene has variant that contributes to disease association" -> "sequence variant qualifier"	[color=blue,
 		label="sequence variant qualifier",
+<<<<<<< HEAD
 		lp="2940.9,221.5",
 		pos="e,2899.1,195.51 1489.6,251.68 1514.7,249.82 1540.6,248.14 1564.9,247 1635.6,243.68 2770,248.79 2837.9,229 2857,223.43 2876.1,212.05 \
 2890.9,201.54",
+=======
+		lp="3624.3,221.5",
+		pos="e,3558.6,195.77 1906.6,251.67 1939.3,249.83 1973,248.15 2004.8,247 2087.7,243.99 3418.1,252.13 3497.8,229 3516.8,223.49 3535.7,212.23 \
+3550.4,201.78",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	subject	[height=0.5,
 		pos="3041.9,178",
 		width=0.99297];
 	"gene has variant that contributes to disease association" -> subject	[color=blue,
 		label=subject,
+<<<<<<< HEAD
 		lp="3047.4,221.5",
 		pos="e,3037.6,196.09 1489.4,251.67 1514.5,249.8 1540.5,248.13 1564.9,247 1605.2,245.15 2980.5,249.85 3014.9,229 3023.6,223.75 3029.7,\
 214.65 3033.8,205.64",
@@ -274,10 +461,43 @@ digraph {
 		pos="e,2056,98.125 3015.8,165.29 3010.1,163.16 3003.9,161.22 2997.9,160 2891.4,138.1 2617.4,149.37 2508.9,142 2348.8,131.12 2160.7,110.32 \
 2066,99.291"];
 	subject -> relation	[pos="e,2035.5,20.798 3015.3,165.58 3009.6,163.48 3003.6,161.49 2997.9,160 2635.8,65.656 2181.9,30.346 2045.5,21.441",
+=======
+		lp="3756.8,221.5",
+		pos="e,3733.4,196.11 1906.2,251.65 1939,249.8 1972.9,248.13 2004.8,247 2028.6,246.15 3703.4,244.22 3721.8,229 3728.5,223.46 3731.5,214.82 \
+3732.7,206.27",
+		style=solid];
+	association_type	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2051.8,265",
+		width=1.0652];
+	association_category	[color=blue,
+		height=0.5,
+		label="category type",
+		pos="2182.8,265",
+		width=2.0762];
+	object -> relation	[pos="e,3156.8,36.029 3156.8,72.813 3156.8,64.789 3156.8,55.047 3156.8,46.069",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=dotted];
+	"gene to disease association_object"	[color=blue,
+		height=0.5,
+		label=disease,
+		pos="2320.8,265",
+		width=1.2638];
+	subject -> relation	[pos="e,3189.8,27.445 3698.1,166.18 3691.4,164.08 3684.4,161.93 3677.8,160 3501.1,108.31 3288.8,52.93 3199.6,29.955",
+		style=dotted];
+	subject -> object	[label=relation,
+		lp="3526.8,134.5",
+		pos="e,3192.9,97.826 3699.5,165.66 3692.4,163.5 3684.9,161.46 3677.8,160 3599.5,143.91 3578.1,151.79 3498.8,142 3392.7,128.91 3268.5,\
+109.81 3202.9,99.418"];
 	"gene has variant that contributes to disease association_subject"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
+<<<<<<< HEAD
 		pos="1873.9,265",
 		width=2.3651];
+=======
+		pos="2494.8,265",
+		width=3.0692];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 }

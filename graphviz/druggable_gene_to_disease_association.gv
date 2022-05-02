@@ -3,27 +3,48 @@ digraph {
 	node [label="\N"];
 	"druggable gene to disease association"	[height=0.5,
 		label="druggable gene to disease association",
+<<<<<<< HEAD
 		pos="1698.9,265",
 		width=3.9899];
+=======
+		pos="2185.8,265",
+		width=5.2176];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	"gene to disease association"	[height=0.5,
 		pos="105.94,178",
 		width=2.9428];
 	"druggable gene to disease association" -> "gene to disease association"	[label=is_a,
+<<<<<<< HEAD
 		lp="606.94,221.5",
 		pos="e,181.02,190.75 1556.9,262.04 1346.8,258.55 940.66,249.62 595.94,229 428.93,219.01 387.1,215.58 220.94,196 211.24,194.86 201.11,\
 193.54 191.04,192.15"];
+=======
+		lp="768.79,221.5",
+		pos="e,234.59,190.82 2000.2,262.16 1727.2,258.85 1201.5,250.13 754.79,229 545.62,219.1 493.29,215.37 284.79,196 271.84,194.8 258.27,193.41 \
+244.83,191.95"];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	"entity to disease association mixin"	[height=0.5,
 		pos="362.94,178",
 		width=3.683];
 	"druggable gene to disease association" -> "entity to disease association mixin"	[label=uses,
+<<<<<<< HEAD
 		lp="777.94,221.5",
 		pos="e,448.41,191.77 1556.5,262.46 1373.3,259.6 1045.5,251.54 765.94,229 660.47,220.49 540.16,204.78 458.65,193.23"];
+=======
+		lp="982.29,221.5",
+		pos="e,572.6,191.99 1999.3,262.75 1759.8,260.2 1331.5,252.46 965.79,229 834.3,220.56 683.97,204.73 582.56,193.13"];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	"gene to entity association mixin"	[height=0.5,
 		pos="637.94,178",
 		width=3.4483];
 	"druggable gene to disease association" -> "gene to entity association mixin"	[label=uses,
+<<<<<<< HEAD
 		lp="892.94,221.5",
 		pos="e,696.92,193.9 1555,264.79 1391.2,264.08 1115.8,258 880.94,229 821.55,221.67 755.06,207.57 706.66,196.21"];
+=======
+		lp="1125.3,221.5",
+		pos="e,885.4,194.08 2002.5,261.03 1741.7,256.3 1276.5,245.81 1108.8,229 1036.2,221.73 954.58,207.47 895.44,196.03"];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -31,9 +52,15 @@ digraph {
 		width=0.84854];
 	"druggable gene to disease association" -> id	[color=blue,
 		label=id,
+<<<<<<< HEAD
 		lp="986.44,221.5",
 		pos="e,834.4,189.68 1559.7,260.52 1383.1,255.53 1088.6,245.13 980.94,229 921.99,220.17 907.43,215.05 850.94,196 848.56,195.2 846.13,194.32 \
 843.69,193.39",
+=======
+		lp="1237.8,221.5",
+		pos="e,1057.8,189.95 2002.2,261.08 1767.7,256.69 1374.7,246.92 1230.8,229 1161.3,220.35 1144.1,215.06 1076.8,196 1073.7,195.12 1070.5,\
+194.15 1067.3,193.12",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -42,8 +69,13 @@ digraph {
 		width=1.011];
 	"druggable gene to disease association" -> iri	[color=blue,
 		label=iri,
+<<<<<<< HEAD
 		lp="1065.4,221.5",
 		pos="e,923.38,189.88 1560.6,260 1402,254.78 1151.9,244.46 1058.9,229 1014.6,221.63 965.55,205.42 932.94,193.45",
+=======
+		lp="1331.8,221.5",
+		pos="e,1163,190.09 2003.4,260.65 1790.2,256.01 1450.2,246.2 1323.8,229 1271,221.81 1211.8,205.3 1172.9,193.21",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -52,8 +84,13 @@ digraph {
 		width=1.2638];
 	"druggable gene to disease association" -> name	[color=blue,
 		label=name,
+<<<<<<< HEAD
 		lp="1136.4,221.5",
 		pos="e,1022.9,192.74 1559.5,260.66 1415.6,256.31 1201.3,247.02 1120.9,229 1089.9,222.05 1056.6,208.38 1032.2,197.09",
+=======
+		lp="1417.8,221.5",
+		pos="e,1281.2,192.82 2000.9,261.73 1805,258.27 1509,249.71 1397.8,229 1360.7,222.09 1320.2,208.04 1290.8,196.59",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -62,8 +99,13 @@ digraph {
 		width=1.6068];
 	"druggable gene to disease association" -> description	[color=blue,
 		label=description,
+<<<<<<< HEAD
 		lp="1210.4,221.5",
 		pos="e,1132,195.41 1555.5,263.82 1426,261.93 1246,254.56 1179.9,229 1165,223.2 1150.7,212.52 1139.6,202.5",
+=======
+		lp="1508.3,221.5",
+		pos="e,1415.9,195.77 2003.6,260.51 1807.5,255.9 1516.9,246.27 1467.8,229 1451.7,223.34 1436.1,212.63 1423.8,202.56",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -72,8 +114,13 @@ digraph {
 		width=0.84854];
 	"druggable gene to disease association" -> source	[color=blue,
 		label=source,
+<<<<<<< HEAD
 		lp="1278.9,221.5",
 		pos="e,1230.8,195.5 1564,258.75 1445.2,253.23 1287.1,243.33 1260.9,229 1250.6,223.37 1242.3,213.64 1236.1,204.25",
+=======
+		lp="1593.8,221.5",
+		pos="e,1538.9,195.6 2002.2,261.21 1834.6,257.42 1607.4,248.7 1569.8,229 1559.3,223.5 1550.7,213.79 1544.3,204.38",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -82,6 +129,7 @@ digraph {
 		width=1.1193];
 	"druggable gene to disease association" -> "has attribute"	[color=blue,
 		label="has attribute",
+<<<<<<< HEAD
 		lp="1339.4,221.5",
 		pos="e,1303.9,195.88 1559.4,260.63 1453.5,256.59 1323.2,247.83 1305.9,229 1300.2,222.76 1299.7,214.11 1301.2,205.74",
 		style=solid];
@@ -94,10 +142,15 @@ digraph {
 		label=object,
 		lp="1451.9,178",
 		pos="e,2213.5,92.273 1583,254.31 1490.2,242.26 1383.4,215.96 1434.9,160 1486.7,103.88 2015.5,94.075 2203.2,92.362",
+=======
+		lp="1672.8,221.5",
+		pos="e,1627.4,195.8 2009.3,258.74 1850.2,253.12 1639,243.06 1625.8,229 1619.7,222.54 1620.3,213.62 1623.2,205.1",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	relation	[color=blue,
 		height=0.5,
 		label=string,
+<<<<<<< HEAD
 		pos="2268.9,18",
 		width=0.84854];
 	"druggable gene to disease association" -> relation	[color=blue,
@@ -105,60 +158,116 @@ digraph {
 		lp="1448.9,134.5",
 		pos="e,2238.2,18.646 1567,257.8 1512.4,252.96 1456.7,244.34 1434.9,229 1397.8,202.84 1393.2,156.35 1427.9,127 1550.7,23.129 2076.6,17.893 \
 2228,18.587",
+=======
+		pos="3460.8,18",
+		width=1.0652];
+	"druggable gene to disease association" -> relation	[color=blue,
+		label=relation,
+		lp="1828.8,134.5",
+		pos="e,3422.5,19.105 2003.9,260.37 1895.1,253.83 1771.6,237.2 1737.8,196 1727.6,183.63 1726.9,171.77 1737.8,160 1854.4,33.471 3144.6,\
+20.485 3412.3,19.152",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
 		label=boolean,
+<<<<<<< HEAD
 		pos="1515.9,178",
 		width=1.0652];
 	"druggable gene to disease association" -> negated	[color=blue,
 		label=negated,
 		lp="1637.4,221.5",
 		pos="e,1540.8,191.99 1658.6,247.61 1645,241.9 1629.7,235.34 1615.9,229 1593.7,218.75 1569,206.44 1549.8,196.6",
+=======
+		pos="1793.8,178",
+		width=1.2999];
+	"druggable gene to disease association" -> negated	[color=blue,
+		label=negated,
+		lp="1990.8,221.5",
+		pos="e,1829,189.96 2079,250.19 2041.7,244.61 1999.7,237.47 1961.8,229 1910.7,217.6 1898.9,211.06 1848.8,196 1845.5,195.01 1842.1,193.97 \
+1838.6,192.92",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
 		label="ontology class",
+<<<<<<< HEAD
 		pos="1633.9,178",
 		width=1.7151];
 	"druggable gene to disease association" -> qualifiers	[color=blue,
 		label=qualifiers,
 		lp="1696.4,221.5",
 		pos="e,1646.9,195.89 1685.8,246.8 1676.4,234.51 1663.6,217.77 1653.1,204.01",
+=======
+		pos="1934.8,178",
+		width=2.1304];
+	"druggable gene to disease association" -> qualifiers	[color=blue,
+		label=qualifiers,
+		lp="2096.3,221.5",
+		pos="e,1970.6,194.04 2125.1,247.96 2105.1,242.36 2082.9,235.77 2062.8,229 2034.9,219.62 2004.3,207.7 1979.9,197.84",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
 		label=publication,
+<<<<<<< HEAD
 		pos="1763.9,178",
 		width=1.3902];
 	"druggable gene to disease association" -> publications	[color=blue,
 		label=publications,
 		lp="1770.4,221.5",
 		pos="e,1751.3,195.69 1712.1,246.93 1716.5,241.23 1721.5,234.85 1725.9,229 1732.2,220.78 1739.1,211.77 1745.2,203.7",
+=======
+		pos="2091.8,178",
+		width=1.7332];
+	"druggable gene to disease association" -> publications	[color=blue,
+		label=publications,
+		lp="2188.8,221.5",
+		pos="e,2109.8,195.31 2166.8,246.8 2152.6,233.99 2133.1,216.37 2117.6,202.3",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="1916.9,178",
 		width=2.3651];
 	"druggable gene to disease association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
 		lp="1891.4,221.5",
 		pos="e,1884.9,194.9 1752.3,248.26 1770.2,242.62 1790.1,235.94 1807.9,229 1830.7,220.15 1855.5,208.9 1875.7,199.32",
+=======
+		pos="2280.8,178",
+		width=3.015];
+	"druggable gene to disease association" -> "knowledge source"	[color=blue,
+		label="knowledge source",
+		lp="2316.3,221.5",
+		pos="e,2267.5,196.17 2213.2,247.02 2221.1,241.64 2229.6,235.41 2236.8,229 2245.3,221.44 2253.8,212.3 2261,203.91",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="2104.9,178",
 		width=2.3651];
 	"druggable gene to disease association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
 		lp="2071.4,221.5",
 		pos="e,2064,193.81 1804.7,252.76 1848.4,247.13 1899.4,239.29 1944.9,229 1982.1,220.61 2023.1,207.74 2054.2,197.15",
+=======
+		pos="2515.8,178",
+		width=3.015];
+	"druggable gene to disease association" -> "original knowledge source"	[color=blue,
+		label="original knowledge source",
+		lp="2522.8,221.5",
+		pos="e,2479.4,195.03 2287.9,249.89 2319.2,244.52 2353.7,237.59 2384.8,229 2413.7,221.02 2445.1,209.15 2469.9,198.97",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="2292.9,178",
 		width=2.3651];
 	"druggable gene to disease association" -> "primary knowledge source"	[color=blue,
@@ -166,10 +275,20 @@ digraph {
 		lp="2273.9,221.5",
 		pos="e,2257,194.44 1799,252.07 1816.3,250.22 1834.1,248.45 1850.9,247 1982.7,235.65 2018.2,254.79 2147.9,229 2182.2,222.19 2219.3,209.25 \
 2247.5,198.24",
+=======
+		pos="2750.8,178",
+		width=3.015];
+	"druggable gene to disease association" -> "primary knowledge source"	[color=blue,
+		label="primary knowledge source",
+		lp="2763.8,221.5",
+		pos="e,2716.9,195.19 2319,252.31 2340.3,250.49 2362.2,248.67 2382.8,247 2488.5,238.44 2517.3,252.29 2620.8,229 2650.6,222.3 2682.6,210.05 \
+2707.4,199.35",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
+<<<<<<< HEAD
 		pos="2480.9,178",
 		width=2.3651];
 	"druggable gene to disease association" -> "aggregator knowledge source"	[color=blue,
@@ -195,6 +314,42 @@ digraph {
 		lp="2671.4,221.5",
 		pos="e,2678.2,194.24 1796.9,251.76 1814.9,249.88 1833.5,248.18 1850.9,247 1935.5,241.28 2532.5,252.67 2613.9,229 2634.1,223.15 2654.3,\
 211.16 2669.7,200.38",
+=======
+		pos="2985.8,178",
+		width=3.015];
+	"druggable gene to disease association" -> "aggregator knowledge source"	[color=blue,
+		label="aggregator knowledge source",
+		lp="3018.3,221.5",
+		pos="e,2954.4,195.33 2315.3,251.92 2337.8,250.08 2360.9,248.35 2382.8,247 2489.3,240.41 2758.4,251.44 2862.8,229 2891.3,222.87 2921.7,\
+210.58 2945.1,199.72",
+		style=solid];
+	type	[height=0.5,
+		pos="3143.8,178",
+		width=0.86659];
+	"druggable gene to disease association" -> type	[color=blue,
+		label=type,
+		lp="3155.8,221.5",
+		pos="e,3143.5,196.24 2313.7,251.8 2336.7,249.94 2360.4,248.23 2382.8,247 2424.2,244.72 3095.8,254.15 3128.8,229 3135.9,223.55 3139.8,\
+214.81 3141.8,206.16",
+		style=solid];
+	category	[height=0.5,
+		pos="3244.8,178",
+		width=1.4263];
+	"druggable gene to disease association" -> category	[color=blue,
+		label=category,
+		lp="3236.3,221.5",
+		pos="e,3228.6,195.19 2313.7,251.78 2336.7,249.92 2360.4,248.22 2382.8,247 2470.8,242.21 3092.3,257.13 3175.8,229 3192.5,223.38 3208.5,\
+212.19 3221,201.82",
+		style=solid];
+	object	[height=0.5,
+		pos="3460.8,91",
+		width=1.0832];
+	"druggable gene to disease association" -> object	[color=blue,
+		label=object,
+		lp="3362.8,178",
+		pos="e,3434.3,104.43 2313.4,251.75 2336.5,249.89 2360.3,248.19 2382.8,247 2432.1,244.38 3226.3,248.37 3271.8,229 3311.7,212 3306.3,186.26 \
+3340.8,160 3367.3,139.81 3400.5,121.47 3425.2,108.94",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
@@ -203,9 +358,15 @@ digraph {
 		width=1.8776];
 	"druggable gene to disease association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
+<<<<<<< HEAD
 		lp="2800.4,221.5",
 		pos="e,2794.6,194.26 1796.5,251.77 1814.6,249.88 1833.3,248.17 1850.9,247 1945,240.76 2606.6,247.8 2698.9,229 2729.1,222.87 2761.2,209.83 \
 2785.4,198.61",
+=======
+		lp="3466.8,221.5",
+		pos="e,3446.4,194.77 2313.1,251.75 2336.3,249.88 2360.2,248.18 2382.8,247 2489.7,241.4 3240.7,249.12 3345.8,229 3377.4,222.95 3411.3,\
+210.1 3436.9,198.94",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
@@ -214,9 +375,15 @@ digraph {
 		width=1.661];
 	"druggable gene to disease association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
+<<<<<<< HEAD
 		lp="2946.9,221.5",
 		pos="e,2942.6,194.29 1796.5,251.72 1814.6,249.84 1833.3,248.14 1850.9,247 1962.4,239.79 2746.9,253.07 2855.9,229 2883.1,223 2911.8,210.23 \
 2933.5,199.1",
+=======
+		lp="3647.8,221.5",
+		pos="e,3629,194.8 2312.9,251.71 2336.1,249.84 2360.2,248.15 2382.8,247 2511.1,240.47 3413.1,255.36 3538.8,229 3567.1,223.06 3597.2,210.38 \
+3620,199.28",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
@@ -225,33 +392,52 @@ digraph {
 		width=0.81243];
 	"druggable gene to disease association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
+<<<<<<< HEAD
 		lp="3068.9,221.5",
 		pos="e,3059.7,193.08 1796.1,251.73 1814.3,249.83 1833.2,248.13 1850.9,247 1914.5,242.96 2935.9,247.21 2996.9,229 3017,223.03 3036.8,210.42 \
 3051.6,199.35",
+=======
+		lp="3796.3,221.5",
+		pos="e,3771.1,194.28 2312.6,251.69 2335.9,249.82 2360.1,248.13 2382.8,247 2456.6,243.32 3642.2,250.89 3712.8,229 3731.2,223.28 3749.3,\
+211.46 3763.1,200.74",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	subject	[height=0.5,
 		pos="3158.9,178",
 		width=0.99297];
 	"druggable gene to disease association" -> subject	[color=blue,
 		label=subject,
+<<<<<<< HEAD
 		lp="3153.4,221.5",
 		pos="e,3148.8,195.36 1796.1,251.71 1814.3,249.81 1833.2,248.12 1850.9,247 1920.9,242.6 3047.8,257.27 3111.9,229 3124.2,223.59 3134.8,\
 213.28 3142.8,203.42",
+=======
+		lp="3894.8,221.5",
+		pos="e,3879.8,196.23 2312.3,251.69 2335.7,249.81 2360,248.12 2382.8,247 2423.5,244.99 3815.7,248.07 3851.8,229 3861.6,223.8 3869.3,214.46 \
+3874.9,205.24",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	predicate	[height=0.5,
 		pos="3255.9,178",
 		width=1.1916];
 	"druggable gene to disease association" -> predicate	[color=blue,
 		label=predicate,
+<<<<<<< HEAD
 		lp="3234.9,221.5",
 		pos="e,3237.9,194.53 1796.1,251.7 1814.3,249.8 1833.2,248.11 1850.9,247 1924.5,242.4 3106.3,249.99 3176.9,229 3196.2,223.28 3215.3,211.41 \
 3229.9,200.67",
+=======
+		lp="3991.8,221.5",
+		pos="e,3985.2,195.03 2312.3,251.68 2335.7,249.8 2360,248.12 2382.8,247 2468.4,242.81 3842.6,253.33 3924.8,229 3943.8,223.37 3962.6,211.75 \
+3977.1,201.12",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=solid];
 	"has evidence"	[height=0.5,
 		pos="3372.9,178",
 		width=1.5526];
 	"druggable gene to disease association" -> "has evidence"	[color=blue,
 		label="has evidence",
+<<<<<<< HEAD
 		lp="3341.9,221.5",
 		pos="e,3347.6,194.33 1796.1,251.69 1814.3,249.79 1833.2,248.1 1850.9,247 1929.3,242.13 3187.4,246.24 3263.9,229 3290.3,223.07 3318,210.3 \
 3338.8,199.15",
@@ -273,10 +459,39 @@ digraph {
 		pos="e,2318.8,98.988 3132.7,165.5 3126.7,163.29 3120.2,161.28 3113.9,160 3023.5,141.46 2791,149.34 2698.9,142 2566.4,131.44 2411.8,111.6 \
 2328.8,100.35"];
 	subject -> relation	[pos="e,2299,21.858 3132.1,165.88 3126.2,163.71 3119.9,161.61 3113.9,160 2810.1,78.105 2431.3,35.265 2309,22.865",
+=======
+		lp="4122.3,221.5",
+		pos="e,4119,194.59 2312.3,251.66 2335.7,249.79 2360,248.11 2382.8,247 2474.2,242.56 3940.2,247.84 4029.8,229 4057.8,223.11 4087.4,210.38 \
+4109.8,199.25",
+		style=solid];
+	association_type	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2429.8,265",
+		width=1.0652];
+	association_category	[color=blue,
+		height=0.5,
+		label="category type",
+		pos="2560.8,265",
+		width=2.0762];
+	object -> relation	[pos="e,3460.8,36.029 3460.8,72.813 3460.8,64.789 3460.8,55.047 3460.8,46.069",
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 		style=dotted];
+	"gene to disease association_object"	[color=blue,
+		height=0.5,
+		label=disease,
+		pos="2698.8,265",
+		width=1.2638];
+	subject -> relation	[pos="e,3490.6,29.451 3856.6,164.84 3830.9,154.56 3793,139.55 3759.8,127 3667.2,92.073 3557.7,53.112 3500.4,32.887",
+		style=dotted];
+	subject -> object	[label=relation,
+		lp="3731.8,134.5",
+		pos="e,3495.3,99.822 3854.2,165.78 3847.2,163.64 3839.8,161.58 3832.8,160 3776.3,147.26 3760.8,151.84 3703.8,142 3634,129.97 3553.7,112.79 \
+3505.1,102.02"];
 	"druggable gene to disease association_subject"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
+<<<<<<< HEAD
 		pos="2159.9,265",
 		width=2.3651];
 	"druggable gene to disease association_predicate"	[color=blue,
@@ -289,4 +504,18 @@ digraph {
 		label=druggable_gene_category_enum,
 		pos="2528.9,265",
 		width=3.5025];
+=======
+		pos="2872.8,265",
+		width=3.0692];
+	"druggable gene to disease association_predicate"	[color=blue,
+		height=0.5,
+		label="predicate type",
+		pos="3078.8,265",
+		width=2.1665];
+	"druggable gene to disease association_has evidence"	[color=blue,
+		height=0.5,
+		label=druggable_gene_category_enum,
+		pos="3334.8,265",
+		width=4.4413];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 }

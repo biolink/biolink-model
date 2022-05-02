@@ -615,6 +615,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <Association> ] ? ;
           &<ChemicalToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
+          <subject> @<ChemicalEntity> ;
           <object> @<Pathway>
        ) ;
        rdf:type [ <ChemicalToPathwayAssociation> ]
@@ -873,6 +874,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
           &<DiseaseToEntityAssociationMixin_tes> ;
           rdf:type [ <DiseaseToEntityAssociationMixin> ] ? ;
+          <subject> @<Disease> ;
+          <object> @<PhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
@@ -1340,6 +1343,7 @@ linkml:Nodeidentifier NONLITERAL
              &<GeneToEntityAssociationMixin_tes> ;
              rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
              <subject> @<GeneOrGeneProduct> ;
+             <object> @<Disease> ;
              <frequency_qualifier> @<FrequencyValue> ? ;
              <severity_qualifier> @<SeverityValue> ? ;
              <onset_qualifier> @<Onset> ?
@@ -1401,7 +1405,9 @@ linkml:Nodeidentifier NONLITERAL
 <GeneToGeneHomologyAssociation> CLOSED {
     (  $<GeneToGeneHomologyAssociation_tes> (  &<GeneToGeneAssociation_tes> ;
           rdf:type [ <GeneToGeneAssociation> ] ? ;
-          <predicate> @<PredicateType>
+          <subject> @<GeneOrGeneProduct> ;
+          <predicate> @<PredicateType> ;
+          <object> @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneToGeneHomologyAssociation> ]
     )
@@ -1436,6 +1442,7 @@ linkml:Nodeidentifier NONLITERAL
           &<GeneToEntityAssociationMixin_tes> ;
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           <subject> @<GeneOrGeneProduct> ;
+          <object> @<PhenotypicFeature> ;
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
@@ -1959,7 +1966,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<NamedThing_tes> (  &<Entity_tes> ;
              rdf:type [ <Entity> ] ? ;
              <provided_by> @linkml:String * ;
-             <category> @<NamedThing> +
+             <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]
        )

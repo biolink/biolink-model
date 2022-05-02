@@ -230,6 +230,7 @@ digraph {
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
+<<<<<<< HEAD
 		label="named thing",
 		pos="1184,105",
 		width=1.5346];
@@ -258,4 +259,34 @@ digraph {
 		label=uriorcurie,
 		pos="1649,105",
 		width=1.2638];
+=======
+		label="category type",
+		pos="1436.4,105",
+		width=2.0762];
+	publication_pages	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1567.4,105",
+		width=1.0652];
+	publication_id	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1662.4,105",
+		width=1.0652];
+	publication_name	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="1775.4,105",
+		width=1.5707];
+	publication_type	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1888.4,105",
+		width=1.0652];
+	"book chapter_published in"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2002.4,105",
+		width=1.5887];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 }

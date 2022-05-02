@@ -1,5 +1,9 @@
 digraph {
+<<<<<<< HEAD
 	graph [bb="0,0,1690.9,123"];
+=======
+	graph [bb="0,0,2086.6,123"];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 	node [label="\N"];
 	"molecular activity"	[height=0.5,
 		label="molecular activity",
@@ -145,6 +149,7 @@ digraph {
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
+<<<<<<< HEAD
 		label="named thing",
 		pos="1056.1,105",
 		width=1.5346];
@@ -163,4 +168,24 @@ digraph {
 		label="macromolecular machine mixin",
 		pos="1566.1,105",
 		width=3.4664];
+=======
+		label="category type",
+		pos="1297.6,105",
+		width=2.0762];
+	"molecular activity_has input"	[color=blue,
+		height=0.5,
+		label="molecular entity",
+		pos="1477.6,105",
+		width=2.4192];
+	"molecular activity_has output"	[color=blue,
+		height=0.5,
+		label="molecular entity",
+		pos="1669.6,105",
+		width=2.4192];
+	"molecular activity_enabled by"	[color=blue,
+		height=0.5,
+		label="macromolecular machine mixin",
+		pos="1930.6,105",
+		width=4.3329];
+>>>>>>> 4104f989ce2121133605e54dca2dc67f38f7f3be
 }
