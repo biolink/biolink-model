@@ -14,7 +14,12 @@
 
 ```
 {% else %}
-None
+```mermaid
+ classDiagram
+      {% for s in schemaview.class_induced_slots(element.name) -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+```
 {% endif %}
 
 URI: {{ gen.uri_link(element) }}
