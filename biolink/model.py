@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-03T15:06:10
+# Generation date: 2022-05-10T23:13:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5231,7 +5231,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     A homology association between two genes. May be orthology (in which case the species of subject and object should
     differ) or paralogy (in which case the species may be the same)
     """
-    _inherited_slots: ClassVar[List[str]] = ["predicate"]
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneHomologyAssociation"
@@ -5240,7 +5240,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
     id: Union[str, GeneToGeneHomologyAssociationId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    predicate: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    predicate: Union[str, PredicateType] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5256,9 +5256,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, list):
-            self.predicate = [self.predicate] if self.predicate is not None else []
-        self.predicate = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.predicate]
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -8533,7 +8532,7 @@ slots.rights = Slot(uri=BIOLINK.rights, name="rights", curie=BIOLINK.curie('righ
 slots.format = Slot(uri=BIOLINK.format, name="format", curie=BIOLINK.curie('format'),
                    model_uri=BIOLINK.format, domain=InformationContentEntity, range=Optional[str])
 
-slots.created_with = Slot(uri=BIOLINK.created_with, name="created_with", curie=BIOLINK.curie('created_with'),
+slots.created_with = Slot(uri=BIOLINK.created_with, name="created with", curie=BIOLINK.curie('created_with'),
                    model_uri=BIOLINK.created_with, domain=Dataset, range=Optional[str])
 
 slots.download_url = Slot(uri=DCAT.downloadURL, name="download url", curie=DCAT.curie('downloadURL'),
@@ -9334,7 +9333,7 @@ slots.has_part = Slot(uri=BIOLINK.has_part, name="has part", curie=BIOLINK.curie
 slots.has_plasma_membrane_part = Slot(uri=BIOLINK.has_plasma_membrane_part, name="has plasma membrane part", curie=BIOLINK.curie('has_plasma_membrane_part'),
                    model_uri=BIOLINK.has_plasma_membrane_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.composed_primarily_of = Slot(uri=BIOLINK.composed_primarily_of, name="composed_primarily_of", curie=BIOLINK.curie('composed_primarily_of'),
+slots.composed_primarily_of = Slot(uri=BIOLINK.composed_primarily_of, name="composed primarily of", curie=BIOLINK.curie('composed_primarily_of'),
                    model_uri=BIOLINK.composed_primarily_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.plasma_membrane_part_of = Slot(uri=BIOLINK.plasma_membrane_part_of, name="plasma membrane part of", curie=BIOLINK.curie('plasma_membrane_part_of'),
@@ -9598,13 +9597,13 @@ slots.is_molecular_consequence_of = Slot(uri=BIOLINK.is_molecular_consequence_of
 slots.association_slot = Slot(uri=BIOLINK.association_slot, name="association slot", curie=BIOLINK.curie('association_slot'),
                    model_uri=BIOLINK.association_slot, domain=Association, range=Optional[str])
 
-slots.original_subject = Slot(uri=BIOLINK.original_subject, name="original_subject", curie=BIOLINK.curie('original_subject'),
+slots.original_subject = Slot(uri=BIOLINK.original_subject, name="original subject", curie=BIOLINK.curie('original_subject'),
                    model_uri=BIOLINK.original_subject, domain=Association, range=Optional[str])
 
-slots.original_object = Slot(uri=BIOLINK.original_object, name="original_object", curie=BIOLINK.curie('original_object'),
+slots.original_object = Slot(uri=BIOLINK.original_object, name="original object", curie=BIOLINK.curie('original_object'),
                    model_uri=BIOLINK.original_object, domain=Association, range=Optional[str])
 
-slots.original_predicate = Slot(uri=BIOLINK.original_predicate, name="original_predicate", curie=BIOLINK.curie('original_predicate'),
+slots.original_predicate = Slot(uri=BIOLINK.original_predicate, name="original predicate", curie=BIOLINK.curie('original_predicate'),
                    model_uri=BIOLINK.original_predicate, domain=Association, range=Optional[Union[str, URIorCURIE]])
 
 slots.subject = Slot(uri=RDF.subject, name="subject", curie=RDF.curie('subject'),
@@ -9876,7 +9875,7 @@ slots.gene_to_gene_homology_association_subject = Slot(uri=RDF.subject, name="ge
                    model_uri=BIOLINK.gene_to_gene_homology_association_subject, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
 
 slots.gene_to_gene_homology_association_predicate = Slot(uri=RDF.predicate, name="gene to gene homology association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]])
+                   model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[str, PredicateType])
 
 slots.gene_to_gene_homology_association_object = Slot(uri=RDF.object, name="gene to gene homology association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_gene_homology_association_object, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
