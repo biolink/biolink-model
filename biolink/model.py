@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-04-28T00:17:14
+# Generation date: 2022-05-03T15:06:10
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.2.16"
+version = "2.2.17"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -5231,7 +5231,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     A homology association between two genes. May be orthology (in which case the species of subject and object should
     differ) or paralogy (in which case the species may be the same)
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["predicate"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToGeneHomologyAssociation
     class_class_curie: ClassVar[str] = "biolink:GeneToGeneHomologyAssociation"
@@ -5240,7 +5240,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
     id: Union[str, GeneToGeneHomologyAssociationId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    predicate: Union[str, PredicateType] = None
+    predicate: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     object: Union[dict, GeneOrGeneProduct] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -5256,8 +5256,9 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
         if self._is_empty(self.predicate):
             self.MissingRequiredField("predicate")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
+        if not isinstance(self.predicate, list):
+            self.predicate = [self.predicate] if self.predicate is not None else []
+        self.predicate = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.predicate]
 
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
@@ -9875,7 +9876,7 @@ slots.gene_to_gene_homology_association_subject = Slot(uri=RDF.subject, name="ge
                    model_uri=BIOLINK.gene_to_gene_homology_association_subject, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
 
 slots.gene_to_gene_homology_association_predicate = Slot(uri=RDF.predicate, name="gene to gene homology association_predicate", curie=RDF.curie('predicate'),
-                   model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[str, PredicateType])
+                   model_uri=BIOLINK.gene_to_gene_homology_association_predicate, domain=GeneToGeneHomologyAssociation, range=Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]])
 
 slots.gene_to_gene_homology_association_object = Slot(uri=RDF.object, name="gene to gene homology association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_gene_homology_association_object, domain=GeneToGeneHomologyAssociation, range=Union[dict, GeneOrGeneProduct])
