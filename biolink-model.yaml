@@ -1956,7 +1956,6 @@ slots:
       - RO:0002103
       - RO:0002120
       - RO:0002130
-      - SEMMEDDB:complicates
 
   physically interacts with:
     is_a: interacts with
@@ -3754,9 +3753,6 @@ slots:
     is_a: regulates
     mixin: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
       biolink:opposite_of:
         tag: biolink:opposite_of
         value: biolink:negatively regulates
@@ -3771,7 +3767,6 @@ slots:
       - RO:0004032
       - RO:0004034
       - RO:0002629
-      - SEMMEDDB:augments
 
   positively regulated by:
     is_a: regulated by
@@ -3923,6 +3918,7 @@ slots:
       # action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
       - SEMMEDDB:STIMULATES
       - SEMMEDDB:stimulates
+      - SEMMEDDB:augments
 
   entity positively regulated by entity:
     is_a: entity regulated by entity
@@ -4495,6 +4491,8 @@ slots:
       - SEMMEDDB:PREDISPOSES
       - SEMMEDDB:predisposes
 
+  
+
   # TODO: inverse of predisposes
 
   contributes to:
@@ -4636,6 +4634,15 @@ slots:
         value: true
     exact_mappings:
       - RO:0003309
+    broad_mappings:
+      - SEMMEDDB:complicates
+
+  is exacerbated by:
+    inverse: exacerbates
+    domain: disease or phenotypic feature
+    range: biological entity
+    in_subset:
+      - translator_minimal
 
   treats:
     aliases: ['is substance that treats', 'indicated for']
