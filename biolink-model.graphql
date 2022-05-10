@@ -10,6 +10,7 @@ type Activity implements ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -27,6 +28,7 @@ interface AdministrativeEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -38,6 +40,7 @@ type Agent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     affiliation: [Uriorcurie]
     address: String
@@ -54,6 +57,7 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -206,6 +210,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -255,6 +260,7 @@ type BehavioralFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
@@ -273,6 +279,7 @@ interface BiologicalEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -286,6 +293,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -302,6 +310,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -381,6 +390,7 @@ type Case
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -428,6 +438,7 @@ type Cell
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -442,6 +453,7 @@ type CellLine
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
   }
@@ -511,6 +523,7 @@ type CellularComponent
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -526,6 +539,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -563,6 +577,7 @@ type ChemicalMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -749,6 +764,7 @@ type ClinicalEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -761,6 +777,7 @@ type ClinicalFinding
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasAttribute: [ClinicalAttribute]
@@ -776,6 +793,7 @@ type ClinicalIntervention
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -809,6 +827,7 @@ type ClinicalTrial
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -822,6 +841,7 @@ type CodingSequence
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -842,6 +862,7 @@ type Cohort
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -861,6 +882,7 @@ type ComplexMolecularMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -883,6 +905,7 @@ type ConfidenceLevel
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -924,6 +947,7 @@ type Dataset
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -941,6 +965,7 @@ type DatasetDistribution
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -959,6 +984,7 @@ type DatasetSummary
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -978,6 +1004,7 @@ type DatasetVersion
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -998,6 +1025,7 @@ type Device
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -1011,6 +1039,7 @@ type Disease
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
@@ -1025,6 +1054,7 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
@@ -1134,6 +1164,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1331,6 +1362,7 @@ type EnvironmentalFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -1344,6 +1376,7 @@ type EnvironmentalFoodContaminant
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1362,6 +1395,7 @@ type EnvironmentalProcess implements Occurrent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -1379,6 +1413,7 @@ type Event
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -1392,6 +1427,7 @@ type EvidenceType
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -1409,6 +1445,7 @@ type Exon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1517,6 +1554,7 @@ type Food
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1539,6 +1577,7 @@ type FoodAdditive
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1647,6 +1686,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
@@ -1951,6 +1991,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2009,6 +2050,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasZygosity: Zygosity
     inTaxon: [OrganismTaxon]
@@ -2199,6 +2241,7 @@ type GeographicLocation
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     latitude: Float
     longitude: Float
@@ -2214,6 +2257,7 @@ type GeographicLocationAtTime
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     latitude: Float
     longitude: Float
@@ -2229,6 +2273,7 @@ type GrossAnatomicalStructure
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -2244,6 +2289,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -2259,6 +2305,7 @@ type Hospitalization
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -2275,6 +2322,7 @@ type IndividualOrganism implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -2290,6 +2338,7 @@ interface InformationContentEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -2331,6 +2380,7 @@ type InformationResource
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
@@ -2357,6 +2407,7 @@ type LifeStage implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -2459,6 +2510,7 @@ type Macronutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2477,6 +2529,7 @@ type MaterialSample implements SubjectOfInvestigation
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -2543,6 +2596,7 @@ type Micronutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2561,6 +2615,7 @@ type MicroRNA
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2571,7 +2626,6 @@ type MicroRNA
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 interface ModelToDiseaseAssociationMixin
@@ -2590,6 +2644,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
@@ -2654,6 +2709,7 @@ type MolecularEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2673,6 +2729,7 @@ type MolecularMixture
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2699,6 +2756,7 @@ type NamedThing
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -2712,6 +2770,7 @@ type NoncodingRNAProduct
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2722,7 +2781,6 @@ type NoncodingRNAProduct
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -2735,6 +2793,7 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2756,6 +2815,7 @@ type NucleicAcidSequenceMotif
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -2769,6 +2829,7 @@ type Nutrient
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2815,6 +2876,7 @@ type OrganismTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasTaxonomicRank: TaxonomicRank
   }
@@ -2954,6 +3016,7 @@ interface OrganismalEntity
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
   }
@@ -3060,6 +3123,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -3079,6 +3143,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -3104,6 +3169,7 @@ type Pathway implements OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -3120,6 +3186,7 @@ type Phenomenon implements Occurrent
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -3133,6 +3200,7 @@ type PhenotypicFeature
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
@@ -3167,6 +3235,7 @@ type PhysicalEntity implements PhysicalEssence
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -3188,6 +3257,7 @@ type PhysiologicalProcess implements OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
@@ -3204,6 +3274,7 @@ type PlanetaryEntity
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -3217,6 +3288,7 @@ type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, C
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
   }
@@ -3230,6 +3302,7 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -3269,6 +3342,7 @@ type Procedure implements ActivityAndBehavior
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
   }
 
@@ -3282,6 +3356,7 @@ type ProcessedMaterial
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3304,10 +3379,10 @@ type Protein implements GeneProductMixin, ThingWithTaxon
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
@@ -3320,6 +3395,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
@@ -3334,6 +3410,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasGeneOrGeneProduct: [Gene]
   }
@@ -3348,10 +3425,10 @@ type ProteinIsoform implements GeneProductIsoformMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 type Publication
@@ -3447,6 +3524,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
@@ -3470,6 +3548,7 @@ type RNAProduct implements GeneProductMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3480,7 +3559,6 @@ type RNAProduct implements GeneProductMixin
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 type RNAProductIsoform implements GeneProductIsoformMixin
@@ -3493,6 +3571,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3503,7 +3582,6 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 interface SensitivityQuantifier
@@ -3567,6 +3645,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
@@ -3644,6 +3723,7 @@ type SiRNA
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3654,7 +3734,6 @@ type SiRNA
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
     synonym: [LabelType]
-    xref: [Uriorcurie]
   }
 
 type SmallMolecule
@@ -3666,6 +3745,7 @@ type SmallMolecule
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3685,6 +3765,7 @@ type Snv
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
@@ -3725,6 +3806,7 @@ type StudyPopulation
     description: NarrativeText
     source: String
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
@@ -3777,6 +3859,7 @@ type Transcript
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -3822,6 +3905,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     hasDrug: [Drug]
     hasDevice: [Device]
@@ -4011,6 +4095,7 @@ type Vitamin
     source: String
     hasAttribute: [Attribute]
     providedBy: [String]
+    xref: [Uriorcurie]
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]

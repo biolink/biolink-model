@@ -11,7 +11,8 @@ message Activity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 message Agent
@@ -22,11 +23,12 @@ message Agent
   optional source String = 4
   repeated hasAttribute Attribute = 5
   repeated providedBy String = 6
-  repeated category CategoryType = 7
-  repeated affiliation Uriorcurie = 8
-  optional address String = 9
-  id String = 10
-  optional name LabelType = 11
+  repeated xref Uriorcurie = 7
+  repeated category CategoryType = 8
+  repeated affiliation Uriorcurie = 9
+  optional address String = 10
+  id String = 11
+  optional name LabelType = 12
  }
 // A subcellular location, cell type or gross anatomical part
 message AnatomicalEntity
@@ -38,9 +40,10 @@ message AnatomicalEntity
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -160,10 +163,11 @@ message Behavior
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
@@ -209,8 +213,9 @@ message BehavioralFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -223,10 +228,11 @@ message BiologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
@@ -239,10 +245,11 @@ message BiologicalProcessOrActivity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 message BiologicalSex
  {
@@ -316,9 +323,10 @@ message Case
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 message CaseToPhenotypicFeatureAssociation
@@ -357,9 +365,10 @@ message Cell
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 message CellLine
  {
@@ -370,8 +379,9 @@ message CellLine
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
  }
 message CellLineAsAModelOfDiseaseAssociation
  {
@@ -433,9 +443,10 @@ message CellularComponent
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
@@ -448,12 +459,13 @@ message ChemicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
@@ -472,16 +484,17 @@ message ChemicalMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 message ChemicalRole
  {
@@ -651,7 +664,8 @@ message ClinicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
 message ClinicalFinding
@@ -663,9 +677,10 @@ message ClinicalFinding
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated inTaxon OrganismTaxon = 9
-  repeated hasAttribute ClinicalAttribute = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute ClinicalAttribute = 11
  }
 message ClinicalIntervention
  {
@@ -677,7 +692,8 @@ message ClinicalIntervention
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
 message ClinicalMeasurement
@@ -709,7 +725,8 @@ message ClinicalTrial
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message CodingSequence
  {
@@ -721,15 +738,16 @@ message CodingSequence
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -741,9 +759,10 @@ message Cohort
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
@@ -756,16 +775,17 @@ message ComplexMolecularMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -778,11 +798,12 @@ message ConfidenceLevel
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
  }
 // Any association between an entity (such as a publication) and various agents that contribute to its realisation
 message ContributorAssociation
@@ -819,11 +840,12 @@ message Dataset
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
  }
 // an item that holds distribution level information about a dataset.
 message DatasetDistribution
@@ -836,12 +858,13 @@ message DatasetDistribution
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
-  optional distributionDownloadUrl String = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
+  optional distributionDownloadUrl String = 15
  }
 // an item that holds summary level information about a dataset.
 message DatasetSummary
@@ -854,13 +877,14 @@ message DatasetSummary
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
-  optional sourceWebPage String = 14
-  optional sourceLogo String = 15
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
+  optional sourceWebPage String = 15
+  optional sourceLogo String = 16
  }
 // an item that holds version level information about a dataset.
 message DatasetVersion
@@ -873,14 +897,15 @@ message DatasetVersion
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
-  optional hasDataset Dataset = 14
-  optional ingestDate String = 15
-  optional hasDistribution DatasetDistribution = 16
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
+  optional hasDataset Dataset = 15
+  optional ingestDate String = 16
+  optional hasDistribution DatasetDistribution = 17
  }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 message Device
@@ -893,7 +918,8 @@ message Device
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message Disease
  {
@@ -905,8 +931,9 @@ message Disease
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 message DiseaseOrPhenotypicFeature
@@ -919,8 +946,9 @@ message DiseaseOrPhenotypicFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -1014,16 +1042,17 @@ message Drug
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
@@ -1151,7 +1180,8 @@ message EnvironmentalFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message EnvironmentalFoodContaminant
  {
@@ -1163,12 +1193,13 @@ message EnvironmentalFoodContaminant
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 message EnvironmentalProcess
  {
@@ -1180,7 +1211,8 @@ message EnvironmentalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // Something that happens at a given place and time.
 message Event
@@ -1193,7 +1225,8 @@ message Event
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // Class of evidence that supports an association
 message EvidenceType
@@ -1206,11 +1239,12 @@ message EvidenceType
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
  }
 // A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
 message Exon
@@ -1223,15 +1257,16 @@ message Exon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1322,16 +1357,17 @@ message Food
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 message FoodAdditive
  {
@@ -1343,12 +1379,13 @@ message FoodAdditive
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 // An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
 message FunctionalAssociation
@@ -1429,8 +1466,9 @@ message GeneFamily
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasGeneOrGeneProduct Gene = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasGeneOrGeneProduct Gene = 11
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1672,9 +1710,10 @@ message Genome
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
@@ -1724,10 +1763,11 @@ message Genotype
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional hasZygosity Zygosity = 10
-  repeated inTaxon OrganismTaxon = 11
-  optional hasBiologicalSequence BiologicalSequence = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional hasZygosity Zygosity = 11
+  repeated inTaxon OrganismTaxon = 12
+  optional hasBiologicalSequence BiologicalSequence = 13
  }
 message GenotypeAsAModelOfDiseaseAssociation
  {
@@ -1907,9 +1947,10 @@ message GeographicLocation
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional latitude Float = 10
-  optional longitude Float = 11
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional latitude Float = 11
+  optional longitude Float = 12
  }
 // a location that can be described in lat/long coordinates, for a particular time
 message GeographicLocationAtTime
@@ -1922,10 +1963,11 @@ message GeographicLocationAtTime
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional latitude Float = 10
-  optional longitude Float = 11
-  optional timepoint TimeType = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional latitude Float = 11
+  optional longitude Float = 12
+  optional timepoint TimeType = 13
  }
 message GrossAnatomicalStructure
  {
@@ -1936,9 +1978,10 @@ message GrossAnatomicalStructure
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
@@ -1951,9 +1994,10 @@ message Haplotype
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
  }
 message Hospitalization
  {
@@ -1965,7 +2009,8 @@ message Hospitalization
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
@@ -1977,9 +2022,10 @@ message IndividualOrganism
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
 message InformationContentEntityToNamedThingAssociation
@@ -2016,11 +2062,12 @@ message InformationResource
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional license String = 10
-  optional rights String = 11
-  optional format String = 12
-  optional creationDate Date = 13
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional license String = 11
+  optional rights String = 12
+  optional format String = 13
+  optional creationDate Date = 14
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message Inheritance
@@ -2042,9 +2089,10 @@ message LifeStage
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -2128,12 +2176,13 @@ message Macronutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -2146,7 +2195,8 @@ message MaterialSample
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // An association between a material sample and the material entity from which it is derived.
 message MaterialSampleDerivationAssociation
@@ -2206,12 +2256,13 @@ message Micronutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 message MicroRNA
  {
@@ -2223,17 +2274,17 @@ message MicroRNA
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
-  repeated synonym LabelType = 18
-  repeated xref Uriorcurie = 19
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
+  repeated synonym LabelType = 19
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
 message MolecularActivity
@@ -2246,10 +2297,11 @@ message MolecularActivity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput MolecularEntity = 10
-  repeated hasOutput MolecularEntity = 11
-  repeated enabledBy MacromolecularMachineMixin = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput MolecularEntity = 11
+  repeated hasOutput MolecularEntity = 12
+  repeated enabledBy MacromolecularMachineMixin = 13
  }
 // Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
 message MolecularActivityToChemicalEntityAssociation
@@ -2310,13 +2362,14 @@ message MolecularEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
  }
 // A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 message MolecularMixture
@@ -2329,16 +2382,17 @@ message MolecularMixture
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 // a databased entity or concept/class
 message NamedThing
@@ -2351,7 +2405,8 @@ message NamedThing
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message NoncodingRNAProduct
  {
@@ -2363,17 +2418,17 @@ message NoncodingRNAProduct
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
-  repeated synonym LabelType = 18
-  repeated xref Uriorcurie = 19
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
+  repeated synonym LabelType = 19
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 message NucleicAcidEntity
@@ -2386,15 +2441,16 @@ message NucleicAcidEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -2407,7 +2463,8 @@ message NucleicAcidSequenceMotif
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message Nutrient
  {
@@ -2419,12 +2476,13 @@ message Nutrient
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 // The age group in which (disease) symptom manifestations appear
 message Onset
@@ -2457,8 +2515,9 @@ message OrganismTaxon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional hasTaxonomicRank TaxonomicRank = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional hasTaxonomicRank TaxonomicRank = 11
  }
 // An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
 message OrganismTaxonToOrganismTaxonInteraction
@@ -2622,9 +2681,10 @@ message PathologicalAnatomicalStructure
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
@@ -2637,10 +2697,11 @@ message PathologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
@@ -2657,10 +2718,11 @@ message Pathway
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -2673,7 +2735,8 @@ message Phenomenon
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // A combination of entity and quality that makes up a phenotyping statement.
 message PhenotypicFeature
@@ -2686,8 +2749,9 @@ message PhenotypicFeature
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -2720,7 +2784,8 @@ message PhysicalEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 message PhysiologicalProcess
  {
@@ -2732,10 +2797,11 @@ message PhysiologicalProcess
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasInput BiologicalProcessOrActivity = 10
-  repeated hasOutput BiologicalProcessOrActivity = 11
-  repeated enabledBy PhysicalEntity = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasInput BiologicalProcessOrActivity = 11
+  repeated hasOutput BiologicalProcessOrActivity = 12
+  repeated enabledBy PhysicalEntity = 13
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -2748,7 +2814,8 @@ message PlanetaryEntity
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 message Polypeptide
@@ -2761,8 +2828,9 @@ message Polypeptide
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 message PopulationOfIndividualOrganisms
@@ -2774,9 +2842,10 @@ message PopulationOfIndividualOrganisms
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
@@ -2813,7 +2882,8 @@ message Procedure
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
  }
 // A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
 message ProcessedMaterial
@@ -2826,16 +2896,17 @@ message ProcessedMaterial
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isSupplement ChemicalMixture = 15
-  optional highestFDAApprovalStatus String = 16
-  optional drugRegulatoryStatusWorldWide String = 17
-  repeated routesOfDelivery DrugDeliveryEnum = 18
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isSupplement ChemicalMixture = 16
+  optional highestFDAApprovalStatus String = 17
+  optional drugRegulatoryStatusWorldWide String = 18
+  repeated routesOfDelivery DrugDeliveryEnum = 19
  }
 // A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 message Protein
@@ -2848,10 +2919,10 @@ message Protein
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated synonym LabelType = 11
-  repeated xref Uriorcurie = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
+  repeated synonym LabelType = 12
  }
 // A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
 message ProteinDomain
@@ -2864,8 +2935,9 @@ message ProteinDomain
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasGeneOrGeneProduct Gene = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasGeneOrGeneProduct Gene = 11
  }
 message ProteinFamily
  {
@@ -2877,8 +2949,9 @@ message ProteinFamily
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasGeneOrGeneProduct Gene = 10
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasGeneOrGeneProduct Gene = 11
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -2891,10 +2964,10 @@ message ProteinIsoform
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
-  repeated synonym LabelType = 11
-  repeated xref Uriorcurie = 12
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
+  repeated synonym LabelType = 12
  }
 // Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
 message Publication
@@ -2988,9 +3061,10 @@ message ReagentTargetedGene
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated inTaxon OrganismTaxon = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
  }
 message RNAProduct
  {
@@ -3002,17 +3076,17 @@ message RNAProduct
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
-  repeated synonym LabelType = 18
-  repeated xref Uriorcurie = 19
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
+  repeated synonym LabelType = 19
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
 message RNAProductIsoform
@@ -3025,17 +3099,17 @@ message RNAProductIsoform
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
-  repeated synonym LabelType = 18
-  repeated xref Uriorcurie = 19
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
+  repeated synonym LabelType = 19
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
 message SequenceAssociation
@@ -3095,11 +3169,12 @@ message SequenceVariant
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasGene Gene = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  id String = 11
-  repeated inTaxon OrganismTaxon = 12
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasGene Gene = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
+  id String = 12
+  repeated inTaxon OrganismTaxon = 13
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -3148,17 +3223,17 @@ message SiRNA
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
-  repeated synonym LabelType = 18
-  repeated xref Uriorcurie = 19
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
+  repeated synonym LabelType = 19
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 message SmallMolecule
@@ -3170,14 +3245,15 @@ message SmallMolecule
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  optional tradeName ChemicalEntity = 9
-  repeated availableFrom DrugAvailabilityEnum = 10
-  optional maxToleratedDose String = 11
-  optional isToxic Boolean = 12
-  repeated hasChemicalRole ChemicalRole = 13
-  optional isMetabolite Boolean = 14
-  id String = 15
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  optional tradeName ChemicalEntity = 10
+  repeated availableFrom DrugAvailabilityEnum = 11
+  optional maxToleratedDose String = 12
+  optional isToxic Boolean = 13
+  repeated hasChemicalRole ChemicalRole = 14
+  optional isMetabolite Boolean = 15
+  id String = 16
  }
 // SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 message Snv
@@ -3189,11 +3265,12 @@ message Snv
   optional source String = 5
   repeated hasAttribute Attribute = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasGene Gene = 9
-  optional hasBiologicalSequence BiologicalSequence = 10
-  id String = 11
-  repeated inTaxon OrganismTaxon = 12
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasGene Gene = 10
+  optional hasBiologicalSequence BiologicalSequence = 11
+  id String = 12
+  repeated inTaxon OrganismTaxon = 13
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -3221,9 +3298,10 @@ message StudyPopulation
   optional description NarrativeText = 5
   optional source String = 6
   repeated providedBy String = 7
-  repeated category CategoryType = 8
-  repeated hasAttribute Attribute = 9
-  repeated inTaxon OrganismTaxon = 10
+  repeated xref Uriorcurie = 8
+  repeated category CategoryType = 9
+  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 message TaxonToTaxonAssociation
  {
@@ -3259,15 +3337,16 @@ message Transcript
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
-  optional isMetabolite Boolean = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
+  optional isMetabolite Boolean = 16
+  repeated inTaxon OrganismTaxon = 17
+  optional hasBiologicalSequence BiologicalSequence = 18
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -3304,11 +3383,12 @@ message Treatment
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  repeated hasDrug Drug = 10
-  repeated hasDevice Device = 11
-  repeated hasProcedure Procedure = 12
-  optional timepoint TimeType = 13
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  repeated hasDrug Drug = 11
+  repeated hasDevice Device = 12
+  repeated hasProcedure Procedure = 13
+  optional timepoint TimeType = 14
  }
 message VariantAsAModelOfDiseaseAssociation
  {
@@ -3480,12 +3560,13 @@ message Vitamin
   optional source String = 6
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
-  repeated category CategoryType = 9
-  optional tradeName ChemicalEntity = 10
-  repeated availableFrom DrugAvailabilityEnum = 11
-  optional maxToleratedDose String = 12
-  optional isToxic Boolean = 13
-  repeated hasChemicalRole ChemicalRole = 14
+  repeated xref Uriorcurie = 9
+  repeated category CategoryType = 10
+  optional tradeName ChemicalEntity = 11
+  repeated availableFrom DrugAvailabilityEnum = 12
+  optional maxToleratedDose String = 13
+  optional isToxic Boolean = 14
+  repeated hasChemicalRole ChemicalRole = 15
  }
 message Zygosity
  {
