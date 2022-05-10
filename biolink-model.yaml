@@ -7854,6 +7854,7 @@ classes:
       - STY:T103 # Chemical
     narrow_mappings:
       - WIKIDATA:Q43460564
+      - STY:T129 # (imft, full name: Immunologic Factor
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -7879,6 +7880,18 @@ classes:
       - STY:T196 # Element, Ion, or Isotope
       - CHEBI:59999
       - bioschemas:ChemicalSubstance
+      - STY:T123 #(bacs, full name: Biologically Active Substance)
+      - STY:T131 #(hops, full name: Hazardous or Poisonous Substance)
+      - STY:T125 #(horm, full name: Hormone)
+      - STY:T197 #(inch, full name: Inorganic Chemical)
+      - STY:T109 #(orch, full name: Organic Chemical)
+      - STY:T118 #(carb, full name: Carbohydrate) - note that this term is missing from newer SRDEF files (depreciated?), but is still used by the SEMMEDDB data files)
+      - STY:T111 #(eico, full name: Eicosanoid) - same note as above
+      - STY:T119 #(lipd, full name: Lipid) - same note as above
+      - STY:T124 #(nsba, full name: Neuroreactive Substance or Biogenic Amine) - same note as above
+      - STY:T115 #(opco, full name: Organophosphorus Compound) - same note as above
+      - STY:T110 #(strd, full name: Steroid) - same note as above
+      - STY:T127 # vitamin
     id_prefixes:
       - PUBCHEM.COMPOUND
       - CHEMBL.COMPOUND
@@ -7912,6 +7925,7 @@ classes:
     in_subset:
       - model_organism_database
       - translator_minimal
+
 
   chemical mixture:
     is_a: chemical entity
