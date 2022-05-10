@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.2.16
+version: 2.2.17
 
 
 ## ------------
@@ -1003,7 +1003,7 @@ slots:
       - dct:format
       - WIKIDATA_PROPERTY:P2701
 
-  created_with:
+  created with:
     is_a: node property
     domain: dataset
     exact_mappings:
@@ -1314,6 +1314,31 @@ slots:
     aliases: ['max phase']
     description: >-
       An agglomeration of drug regulatory status worldwide. Not specific to FDA.
+    exact_mappings:
+      - NCIT:C172573
+    narrow_mappings:
+      - NCIT:R172
+      - NCIT:regimen_has_accepted_use_for_disease
+      # RTX mapped REPODB terms
+      - REPODB:clinically_tested_approved_unknown_phase
+      - REPODB:clinically_tested_suspended_phase_0
+      - REPODB:clinically_tested_suspended_phase_1
+      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
+      - REPODB:clinically_tested_suspended_phase_2
+      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
+      - REPODB:clinically_tested_suspended_phase_3
+      - REPODB:clinically_tested_terminated_phase_0
+      - REPODB:clinically_tested_terminated_phase_1
+      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
+      - REPODB:clinically_tested_terminated_phase_2
+      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
+      - REPODB:clinically_tested_terminated_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_0
+      - REPODB:clinically_tested_withdrawn_phase_1
+      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_3
 
   routes of delivery:
     description: >-
@@ -4684,6 +4709,7 @@ slots:
       - RO:0002302
 
   approved to treat:
+    deprecated: true
     description: >-
       holds between a therapeutic procedure or chemical entity
       and a disease or phenotypic feature for which it is approved
@@ -4697,31 +4723,6 @@ slots:
       biolink:canonical_predicate:
         tag: biolink:canonical_predicate
         value: true
-    exact_mappings:
-      - NCIT:C172573
-    narrow_mappings:
-      - NCIT:R172
-      - NCIT:regimen_has_accepted_use_for_disease
-      # RTX mapped REPODB terms
-      - REPODB:clinically_tested_approved_unknown_phase
-      - REPODB:clinically_tested_suspended_phase_0
-      - REPODB:clinically_tested_suspended_phase_1
-      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
-      - REPODB:clinically_tested_suspended_phase_2
-      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
-      - REPODB:clinically_tested_suspended_phase_3
-      - REPODB:clinically_tested_terminated_phase_0
-      - REPODB:clinically_tested_terminated_phase_1
-      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
-      - REPODB:clinically_tested_terminated_phase_2
-      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
-      - REPODB:clinically_tested_terminated_phase_3
-      - REPODB:clinically_tested_withdrawn_phase_0
-      - REPODB:clinically_tested_withdrawn_phase_1
-      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
-      - REPODB:clinically_tested_withdrawn_phase_2
-      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
-      - REPODB:clinically_tested_withdrawn_phase_3
 
   approved for treatment by:
     description: >-
@@ -5276,7 +5277,7 @@ slots:
     in_subset:
       - translator_minimal
 
-  composed_primarily_of:
+  composed primarily of:
     is_a: related to
     description: >-
       x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
@@ -6504,19 +6505,19 @@ slots:
     description: >-
       any slot that relates an association to another entity
 
-  original_subject:
+  original subject:
     is_a: association slot
     description: >-
       used to hold the original subject of a relation (or predicate) that an external knowledge
       source uses before transformation to match the biolink-model specification.
 
-  original_object:
+  original object:
     is_a: association slot
     description: >-
       used to hold the original object of a relation (or predicate) that an external knowledge
       source uses before transformation to match the biolink-model specification.
 
-  original_predicate:
+  original predicate:
     aliases: ['original relation', 'relation']
     is_a: association slot
     description: >-

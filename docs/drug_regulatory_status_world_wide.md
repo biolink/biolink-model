@@ -36,4 +36,26 @@ None ->  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | max phase |
+| **Exact Mappings:** | | NCIT:C172573 |
+| **Narrow Mappings:** | | NCIT:R172 |
+|  | | NCIT:regimen_has_accepted_use_for_disease |
+|  | | REPODB:clinically_tested_approved_unknown_phase |
+|  | | REPODB:clinically_tested_suspended_phase_0 |
+|  | | REPODB:clinically_tested_suspended_phase_1 |
+|  | | REPODB:clinically_tested_suspended_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2 |
+|  | | REPODB:clinically_tested_suspended_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_suspended_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_0 |
+|  | | REPODB:clinically_tested_terminated_phase_1 |
+|  | | REPODB:clinically_tested_terminated_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2 |
+|  | | REPODB:clinically_tested_terminated_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_terminated_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_0 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1 |
+|  | | REPODB:clinically_tested_withdrawn_phase_1_or_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2 |
+|  | | REPODB:clinically_tested_withdrawn_phase_2_or_phase_3 |
+|  | | REPODB:clinically_tested_withdrawn_phase_3 |
 
