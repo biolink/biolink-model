@@ -159,4 +159,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Narrow Mappings:** | | STY:T196 |
 |  | | CHEBI:59999 |
 |  | | bioschemas:ChemicalSubstance |
+|  | | STY:T123 |
+|  | | STY:T131 |
+|  | | STY:T125 |
+|  | | STY:T197 |
+|  | | STY:T109 |
+|  | | STY:T118 |
+|  | | STY:T111 |
+|  | | STY:T119 |
+|  | | STY:T124 |
+|  | | STY:T115 |
+|  | | STY:T110 |
+|  | | STY:T127 |
 

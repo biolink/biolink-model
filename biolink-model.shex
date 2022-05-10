@@ -1229,7 +1229,6 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <OntologyClass> ] ? ;
           <symbol> @linkml:String ? ;
           <synonym> @<LabelType> * ;
-          <xref> @linkml:Uriorcurie * ;
           <in_taxon> @<OrganismTaxon> * ;
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
@@ -1970,6 +1969,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<NamedThing_tes> (  &<Entity_tes> ;
              rdf:type [ <Entity> ] ? ;
              <provided_by> @linkml:String * ;
+             <xref> @linkml:Uriorcurie * ;
              <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]
@@ -2429,8 +2429,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <GeneProductMixin> ] ? ;
              &<ThingWithTaxon_tes> ;
              rdf:type [ <ThingWithTaxon> ] ? ;
-             <synonym> @<LabelType> * ;
-             <xref> @linkml:Uriorcurie *
+             <synonym> @<LabelType> *
           ) ;
           rdf:type [ <Protein> ]
        )
@@ -2482,7 +2481,6 @@ linkml:Nodeidentifier NONLITERAL
              <summary> @linkml:String ? ;
              <keywords> @linkml:String * ;
              <mesh_terms> @linkml:Uriorcurie * ;
-             <xref> @linkml:Uriorcurie * ;
              rdfs:label @<LabelType> ? ;
              dcterms:type @linkml:String
           ) ;
@@ -2564,8 +2562,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Transcript> ] ? ;
              &<GeneProductMixin_tes> ;
              rdf:type [ <GeneProductMixin> ] ? ;
-             <synonym> @<LabelType> * ;
-             <xref> @linkml:Uriorcurie *
+             <synonym> @<LabelType> *
           ) ;
           rdf:type [ <RNAProduct> ]
        )

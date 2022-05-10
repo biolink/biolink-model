@@ -38,5 +38,4 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 |  | | RO:0004032 |
 |  | | RO:0004034 |
 |  | | RO:0002629 |
-|  | | SEMMEDDB:augments |
 

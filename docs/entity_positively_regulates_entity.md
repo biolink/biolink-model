@@ -42,5 +42,6 @@ URI: [biolink:entity_positively_regulates_entity](https://w3id.org/biolink/vocab
 | **Exact Mappings:** | | RO:0002450 |
 | **Narrow Mappings:** | | SEMMEDDB:STIMULATES |
 |  | | SEMMEDDB:stimulates |
+|  | | SEMMEDDB:augments |
 | **Broad Mappings:** | | RO:0004034 |
 

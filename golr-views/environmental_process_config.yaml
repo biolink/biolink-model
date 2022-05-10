@@ -32,6 +32,10 @@ fields:
     how a particular node made its way into a knowledge provider or graph.
   display_name: provided by
   cardinality: multi
+- id: xref
+  description: Alternate CURIEs for a thing
+  display_name: xref
+  cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\

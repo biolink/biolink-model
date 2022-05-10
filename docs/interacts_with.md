@@ -38,8 +38,8 @@ URI: [biolink:interacts_with](https://w3id.org/biolink/vocab/interacts_with)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002434 |
+|  | | SEMMEDDB:interacts_with |
 | **Narrow Mappings:** | | RO:0002103 |
 |  | | RO:0002120 |
 |  | | RO:0002130 |
-|  | | SEMMEDDB:complicates |
 

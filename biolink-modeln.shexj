@@ -6059,13 +6059,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/xref",
-                        "valueExpr": "https://w3id.org/linkml/Uriorcurie",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/in_taxon",
                         "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
                         "min": 0,
@@ -9934,6 +9927,13 @@
                            },
                            {
                               "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/xref",
+                              "valueExpr": "https://w3id.org/linkml/Uriorcurie",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/category",
                               "valueExpr": "https://w3id.org/biolink/vocab/CategoryType",
                               "min": 1,
@@ -12215,13 +12215,6 @@
                               "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
                               "min": 0,
                               "max": -1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/xref",
-                              "valueExpr": "https://w3id.org/linkml/Uriorcurie",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -12490,13 +12483,6 @@
                            {
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/mesh_terms",
-                              "valueExpr": "https://w3id.org/linkml/Uriorcurie",
-                              "min": 0,
-                              "max": -1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/xref",
                               "valueExpr": "https://w3id.org/linkml/Uriorcurie",
                               "min": 0,
                               "max": -1
@@ -12916,13 +12902,6 @@
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/synonym",
                               "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                              "min": 0,
-                              "max": -1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/xref",
-                              "valueExpr": "https://w3id.org/linkml/Uriorcurie",
                               "min": 0,
                               "max": -1
                            }

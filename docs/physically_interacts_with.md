@@ -44,9 +44,7 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 |  | | CHEMBL.MECHANISM:sequestering_agent |
 |  | | CHEMBL.MECHANISM:substrate |
 |  | | DRUGBANK:target |
-| **Narrow Mappings:** | | SEMMEDDB:INTERACTS_WITH |
-|  | | SEMMEDDB:interacts_with |
-|  | | DRUGBANK:drug-interaction |
+| **Narrow Mappings:** | | DRUGBANK:drug-interaction |
 |  | | FMA:adheres_to |
 |  | | NCIT:A7 |
 |  | | PR:non-covalently_bound_to |

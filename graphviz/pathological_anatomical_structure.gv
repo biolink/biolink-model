@@ -1,22 +1,23 @@
 digraph {
-	graph [bb="0,0,1706.8,123"];
+	graph [bb="0,0,1839.8,123"];
 	node [label="\N"];
 	"pathological anatomical structure"	[height=0.5,
 		label="pathological anatomical structure",
-		pos="899.64,105",
+		pos="974.64,105",
 		width=4.6399];
 	"anatomical entity"	[height=0.5,
 		pos="91.642,18",
 		width=2.5456];
 	"pathological anatomical structure" -> "anatomical entity"	[label=is_a,
-		lp="478.64,61.5",
-		pos="e,157.58,30.589 763.01,94.584 620.28,83.876 390.1,64.153 192.64,36 184.48,34.836 175.96,33.537 167.49,32.189"];
+		lp="491.64,61.5",
+		pos="e,157.58,30.6 831.77,95.647 732.37,89.417 596.82,80.09 477.64,69 350.68,57.185 318.89,53.922 192.64,36 184.48,34.841 175.96,33.545 \
+167.49,32.199"];
 	"pathological entity mixin"	[height=0.5,
 		pos="327.64,18",
 		width=3.5025];
 	"pathological anatomical structure" -> "pathological entity mixin"	[label=uses,
-		lp="611.14,61.5",
-		pos="e,396.01,33.185 780.61,92.319 724.13,86.271 655.78,78.22 594.64,69 530.9,59.387 459.11,45.784 406.03,35.194"];
+		lp="616.14,61.5",
+		pos="e,395.56,33.216 839.8,94.325 768.26,88.459 678.99,79.973 599.64,69 533.82,59.897 459.68,46.025 405.45,35.2"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -24,8 +25,8 @@ digraph {
 		width=1.0652];
 	"pathological anatomical structure" -> id	[color=blue,
 		label=id,
-		lp="695.64,61.5",
-		pos="e,538.65,29.922 807.58,89.919 738.17,78.29 641.02,59.838 557.64,36 554.54,35.113 551.35,34.133 548.15,33.106",
+		lp="700.64,61.5",
+		pos="e,538.64,29.948 857.59,92.154 773.14,81.864 656.98,64.109 557.64,36 554.54,35.121 551.34,34.148 548.14,33.124",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -34,9 +35,9 @@ digraph {
 		width=1.2277];
 	"pathological anatomical structure" -> iri	[color=blue,
 		label=iri,
-		lp="782.64,61.5",
-		pos="e,644.32,29.681 842.02,88.104 820.81,82.191 796.61,75.37 774.64,69 725.62,54.785 713.43,50.997 664.64,36 661.15,34.926 657.53,33.805 \
-653.9,32.674",
+		lp="798.64,61.5",
+		pos="e,644.27,29.865 891.04,89.343 859.48,83.483 823.31,76.376 790.64,69 734.17,56.251 720.27,52.03 664.64,36 661.13,34.988 657.5,33.911 \
+653.86,32.81",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -45,8 +46,9 @@ digraph {
 		width=1.0652];
 	"pathological anatomical structure" -> type	[color=blue,
 		label=type,
-		lp="833.64,61.5",
-		pos="e,738.23,31.023 862.95,87.409 829.59,72.327 780.66,50.204 747.55,35.234",
+		lp="871.64,61.5",
+		pos="e,740.94,29.697 918.5,88.011 898.59,82.204 876.07,75.475 855.64,69 812.23,55.239 801.61,51.079 758.64,36 755.96,35.057 753.19,34.077 \
+750.4,33.084",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -55,8 +57,8 @@ digraph {
 		width=1.5707];
 	"pathological anatomical structure" -> name	[color=blue,
 		label=name,
-		lp="886.64,61.5",
-		pos="e,839.29,35.597 884.46,86.799 873.44,74.309 858.38,57.236 846.12,43.348",
+		lp="928.64,61.5",
+		pos="e,851.2,34.049 945.01,87.207 920.57,73.357 885.83,53.674 859.95,39.01",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -65,8 +67,8 @@ digraph {
 		width=2.0943];
 	"pathological anatomical structure" -> description	[color=blue,
 		label=description,
-		lp="982.14,61.5",
-		pos="e,959.74,35.885 914.82,86.799 925.77,74.39 940.71,57.458 952.92,43.618",
+		lp="1015.1,61.5",
+		pos="e,974.64,36.175 974.64,86.799 974.64,75.163 974.64,59.548 974.64,46.237",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -75,8 +77,8 @@ digraph {
 		width=1.0652];
 	"pathological anatomical structure" -> source	[color=blue,
 		label=source,
-		lp="1078.6,61.5",
-		pos="e,1086.8,33.664 969.78,88.567 988.63,83.376 1008.7,76.862 1026.6,69 1044.8,61.018 1063.7,49.386 1078.6,39.349",
+		lp="1101.6,61.5",
+		pos="e,1094.5,35.129 1024.1,87.765 1036.3,82.686 1048.9,76.426 1059.6,69 1070.1,61.784 1080,51.893 1088,42.813",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -85,45 +87,55 @@ digraph {
 		width=1.0652];
 	"pathological anatomical structure" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="1185.1,61.5",
-		pos="e,1179.9,33.013 1011.9,91.656 1043.1,86.45 1076.6,79.155 1106.6,69 1129.2,61.376 1152.9,48.912 1171,38.336",
+		lp="1198.1,61.5",
+		pos="e,1184.2,34.036 1064.6,89.817 1086.4,84.725 1109.3,77.944 1129.6,69 1146.2,61.709 1162.9,50.399 1176.1,40.379",
+		style=solid];
+	xref	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="1315.6,18",
+		width=1.5887];
+	"pathological anatomical structure" -> xref	[color=blue,
+		label=xref,
+		lp="1287.1,61.5",
+		pos="e,1297.8,35.295 1088.6,91.813 1155.5,84.204 1229.8,74.787 1244.6,69 1261,62.629 1277.2,51.704 1289.9,41.688",
 		style=solid];
 	category	[height=0.5,
-		pos="1309.6,18",
+		pos="1442.6,18",
 		width=1.4263];
 	"pathological anatomical structure" -> category	[color=blue,
 		label=category,
-		lp="1293.1,61.5",
-		pos="e,1290.5,34.932 1017.4,92.22 1110.8,82.781 1226.5,70.82 1231.6,69 1249.7,62.648 1267.9,51.364 1282.1,41.122",
+		lp="1387.1,61.5",
+		pos="e,1412.3,32.523 1092.5,92.225 1183.3,83.041 1295.1,71.445 1305.6,69 1339.3,61.214 1375.9,47.55 1402.8,36.472",
 		style=solid];
 	"has attribute"	[height=0.5,
-		pos="1450.6,18",
+		pos="1583.6,18",
 		width=1.9859];
 	"pathological anatomical structure" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1420.6,61.5",
-		pos="e,1420.4,34.541 1017.5,92.204 1036.9,90.378 1056.8,88.578 1075.6,87 1188,77.58 1218.9,94.699 1328.6,69 1357.2,62.304 1387.8,49.758 \
-1411.2,38.909",
+		lp="1528.6,61.5",
+		pos="e,1546.2,33.379 1092,92.168 1111.6,90.336 1131.7,88.543 1150.6,87 1271.4,77.175 1303.5,91.119 1422.6,69 1461.9,61.712 1505,47.997 \
+1536.7,36.772",
 		style=solid];
 	"in taxon"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="1623.6,18",
+		pos="1756.6,18",
 		width=2.3109];
 	"pathological anatomical structure" -> "in taxon"	[color=blue,
 		label="in taxon",
-		lp="1555.6,61.5",
-		pos="e,1586.9,34.223 1015.5,91.96 1035.6,90.121 1056.2,88.38 1075.6,87 1251.4,74.527 1298.4,100.82 1471.6,69 1508,62.328 1547.6,49.098 \
-1577.2,37.922",
+		lp="1672.6,61.5",
+		pos="e,1715.1,33.727 1090.1,91.946 1110.2,90.098 1131,88.357 1150.6,87 1341,73.821 1391.2,99.144 1579.6,69 1622.9,62.084 1670.6,48.234 \
+1705.5,36.861",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1159.6,105",
+		pos="1234.6,105",
 		width=2.0762];
 	"organismal entity_has attribute"	[color=blue,
 		height=0.5,
 		label=attribute,
-		pos="1304.6,105",
+		pos="1379.6,105",
 		width=1.4443];
 }
