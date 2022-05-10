@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[MolecularActivityToChemicalEntityAssociation],[FoodAdditive],[EnvironmentalFoodContaminant],[ChemicalToPathwayAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalRole],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalRole]%3Chas%20chemical%20role%200..%2A-++[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;max_tolerated_dose:string%20%3F;is_toxic:boolean%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToPathwayAssociation]-%20subject%201..1%3E[ChemicalEntity],[MolecularActivityToChemicalEntityAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[MolecularActivityToChemicalEntityAssociation],[FoodAdditive],[EnvironmentalFoodContaminant],[ChemicalToPathwayAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalRole],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalRole]%3Chas%20chemical%20role%200..%2A-++[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;max_tolerated_dose:string%20%3F;is_toxic:boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToPathwayAssociation]-%20subject%201..1%3E[ChemicalEntity],[MolecularActivityToChemicalEntityAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[Attribute])
 
 ---
 
@@ -112,6 +112,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

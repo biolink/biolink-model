@@ -15,7 +15,7 @@ URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;xref(i):uriorcurie%20%2A;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[GeneProductIsoformMixin],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProteinIsoform%7Csynonym(i):label_type%20%2A;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneProductIsoformMixin],[Protein]%5E-[ProteinIsoform],[Protein],[OrganismTaxon],[GeneProductIsoformMixin],[Attribute])
 
 ---
 
@@ -68,6 +68,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

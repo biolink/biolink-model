@@ -47,6 +47,13 @@ URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
 ## Attributes
 
 
+### Own
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
+
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>

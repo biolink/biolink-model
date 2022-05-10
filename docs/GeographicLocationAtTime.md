@@ -15,7 +15,7 @@ URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/vocab/Geographi
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeographicLocation]%5E-[GeographicLocationAtTime%7Ctimepoint:time_type%20%3F;latitude(i):float%20%3F;longitude(i):float%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeographicLocation],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeographicLocation]%5E-[GeographicLocationAtTime%7Ctimepoint:time_type%20%3F;latitude(i):float%20%3F;longitude(i):float%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeographicLocation],[Attribute])
 
 ---
 
@@ -63,6 +63,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
+
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from geographic location:
 

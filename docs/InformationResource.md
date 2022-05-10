@@ -15,7 +15,7 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Association]-%20knowledge%20source%200..%2A%3E[InformationResource],[Association]-%20original%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Association]-%20knowledge%20source%200..%2A%3E[InformationResource],[Association]-%20original%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
 
 ---
 
@@ -65,6 +65,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from information content entity:
 

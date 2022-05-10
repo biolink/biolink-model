@@ -15,7 +15,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Treatment],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxon],[OntologyClass],[Occurrent],[NucleicAcidEntity],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cprovided_by:string%20%2A;category:category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[InformationContentEntityToNamedThingAssociation]-%20object%201..1%3E[NamedThing],[InformationContentEntityToNamedThingAssociation]-%20subject%201..1%3E[NamedThing],[MacromolecularMachineToEntityAssociationMixin]-%20subject%201..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[OrganismTaxonToEnvironmentAssociation]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Treatment],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OrganismTaxon],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Event],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[ChemicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[Activity],[Entity]%5E-[NamedThing],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[MacromolecularMachineToEntityAssociationMixin],[InformationContentEntityToNamedThingAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Event],[Entity],[Disease],[Device],[ClinicalEntity],[ChemicalEntity],[BiologicalEntity],[Attribute],[Association],[AdministrativeEntity],[Activity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToDiseaseAssociation],[Treatment],[Procedure],[PlanetaryEntity],[PhysicalEntity],[Phenomenon],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxon],[OntologyClass],[Occurrent],[NucleicAcidEntity],[GenotypeToDiseaseAssociation]-%20object%201..1%3E[NamedThing%7Cprovided_by:string%20%2A;xref:uriorcurie%20%2A;category:category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GenotypeToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[Attribute]-%20has%20qualitative%20value%200..1%3E[NamedThing],[InformationContentEntityToNamedThingAssociation]-%20object%201..1%3E[NamedThing],[InformationContentEntityToNamedThingAssociation]-%20subject%201..1%3E[NamedThing],[MacromolecularMachineToEntityAssociationMixin]-%20subject%201..1%3E[NamedThing],[MaterialSampleDerivationAssociation]-%20object%201..1%3E[NamedThing],[ModelToDiseaseAssociationMixin]-%20subject%201..1%3E[NamedThing],[Association]-%20object%201..1%3E[NamedThing],[OrganismTaxonToEnvironmentAssociation]-%20object%201..1%3E[NamedThing],[Association]-%20subject%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20object%201..1%3E[NamedThing],[VariantToDiseaseAssociation]-%20subject%201..1%3E[NamedThing],[NamedThing]%5E-[Treatment],[NamedThing]%5E-[Procedure],[NamedThing]%5E-[PlanetaryEntity],[NamedThing]%5E-[PhysicalEntity],[NamedThing]%5E-[Phenomenon],[NamedThing]%5E-[OrganismTaxon],[NamedThing]%5E-[InformationContentEntity],[NamedThing]%5E-[Event],[NamedThing]%5E-[Device],[NamedThing]%5E-[ClinicalEntity],[NamedThing]%5E-[ChemicalEntity],[NamedThing]%5E-[BiologicalEntity],[NamedThing]%5E-[AdministrativeEntity],[NamedThing]%5E-[Activity],[Entity]%5E-[NamedThing],[ModelToDiseaseAssociationMixin],[MaterialSampleDerivationAssociation],[MacromolecularMachineToEntityAssociationMixin],[InformationContentEntityToNamedThingAssociation],[InformationContentEntity],[GenotypeToDiseaseAssociation],[Event],[Entity],[Disease],[Device],[ClinicalEntity],[ChemicalEntity],[BiologicalEntity],[Attribute],[Association],[AdministrativeEntity],[Activity])
 
 ---
 
@@ -193,6 +193,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
+
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>
@@ -213,6 +220,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [provided by](provided_by.md)  <sub>0..\*</sub>
      * Description: The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * Range: [String](types/String.md)
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 

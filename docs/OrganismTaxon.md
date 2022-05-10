@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon%7Cprovided_by(i):string%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[TaxonomicRank],[TaxonToTaxonAssociation],[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonInteraction],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OrganismTaxonToEntityAssociation],[TaxonomicRank]%3Chas%20taxonomic%20rank%200..1-++[OrganismTaxon%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ThingWithTaxon]-%20in%20taxon%200..%2A%3E[OrganismTaxon],[OrganismTaxonToEntityAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToEnvironmentAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonInteraction]-%20subject%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20object%201..1%3E[OrganismTaxon],[OrganismTaxonToOrganismTaxonSpecialization]-%20subject%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20object%201..1%3E[OrganismTaxon],[TaxonToTaxonAssociation]-%20subject%201..1%3E[OrganismTaxon],[NamedThing]%5E-[OrganismTaxon],[NamedThing],[Attribute])
 
 ---
 
@@ -81,6 +81,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

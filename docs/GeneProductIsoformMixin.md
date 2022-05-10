@@ -35,6 +35,13 @@ URI: [biolink:GeneProductIsoformMixin](https://w3id.org/biolink/vocab/GeneProduc
 ## Attributes
 
 
+### Inherited from gene product mixin:
+
+ * [xref](xref.md)  <sub>0..\*</sub>
+     * Description: Alternate CURIEs for a thing
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
+
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>
