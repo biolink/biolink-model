@@ -1513,6 +1513,8 @@ slots:
     symmetric: true
     domain: named thing
     range: named thing
+    exact_mappings:
+      - SEMMEDDB:associated_with
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
@@ -1951,6 +1953,7 @@ slots:
         value: true
     exact_mappings:
       - RO:0002434
+      - SEMMEDDB:interacts_with
     narrow_mappings:
       # RO terms RTX mapped to 'biolink:related_to' but which imply a chemical interaction
       - RO:0002103
@@ -1982,8 +1985,6 @@ slots:
       - DRUGBANK:target
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
-      - SEMMEDDB:INTERACTS_WITH
-      - SEMMEDDB:interacts_with
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:A7
@@ -4491,7 +4492,10 @@ slots:
       - SEMMEDDB:PREDISPOSES
       - SEMMEDDB:predisposes
 
-  
+  has predisposing factor:
+    inverse: predisposes
+    in_subset:
+      - translator_minimal
 
   # TODO: inverse of predisposes
 
