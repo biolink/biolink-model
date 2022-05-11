@@ -321,7 +321,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
      * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [actively involves](actively_involves.md)
-     * [capability of](capability_of.md)
+     * [has capability](has_capability.md)
  * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
      * [activity decreased by](activity_decreased_by.md)
      * [activity increased by](activity_increased_by.md)
@@ -359,6 +359,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [folding affected by](folding_affected_by.md)
          * [folding decreased by](folding_decreased_by.md)
          * [folding increased by](folding_increased_by.md)
+     * [is ameliorated by](is_ameliorated_by.md)
+     * [is exacerbated by](is_exacerbated_by.md)
      * [localization affected by](localization_affected_by.md)
          * [localization decreased by](localization_decreased_by.md)
          * [localization increased by](localization_increased_by.md)
@@ -530,7 +532,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
- * [capability of](capability_of.md)
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [catalyzes](catalyzes.md)
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -646,11 +647,19 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
  * [has active ingredient](has_active_ingredient.md) - holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
+ * [has author](has_author.md)
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+ * [has capability](has_capability.md)
  * [has catalyst](has_catalyst.md)
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has contraindication](has_contraindication.md)
+ * [has contributor](has_contributor.md)
+     * [has author](has_author.md)
+     * [has editor](has_editor.md)
+     * [has provider](has_provider.md)
+     * [has publisher](has_publisher.md)
  * [has decreased amount](has_decreased_amount.md)
+ * [has editor](has_editor.md)
  * [has excipient](has_excipient.md) - holds between a drug and a molecular entities in which the latter is a part of the former, and is a biologically inactive component
  * [has food component](has_food_component.md) - holds between food and one or more chemical entities composing it, irrespective of nutritional value (i.e. could also be a contaminant or additive)
      * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
@@ -680,7 +689,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
      * [actively involves](actively_involves.md)
-         * [capability of](capability_of.md)
+         * [has capability](has_capability.md)
      * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
      * [has catalyst](has_catalyst.md)
      * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
@@ -691,6 +700,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has positive upstream actor](has_positive_upstream_actor.md)
  * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
+ * [has provider](has_provider.md)
+ * [has publisher](has_publisher.md)
  * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
  * [has sequence variant](has_sequence_variant.md)
@@ -753,7 +764,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
              * [molecular interaction increased by](molecular_interaction_increased_by.md)
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
+ * [is ameliorated by](is_ameliorated_by.md)
  * [is diagnosed by](is_diagnosed_by.md)
+ * [is exacerbated by](is_exacerbated_by.md)
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
  * [is frameshift variant of](is_frameshift_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.
  * [is input of](is_input_of.md)
@@ -819,6 +832,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [not completed by](not_completed_by.md)
  * [nutrient of](nutrient_of.md)
  * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+ * [occurs in disease](occurs_in_disease.md)
  * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
  * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
  * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
@@ -923,6 +937,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [folding affected by](folding_affected_by.md)
                  * [folding decreased by](folding_decreased_by.md)
                  * [folding increased by](folding_increased_by.md)
+             * [is ameliorated by](is_ameliorated_by.md)
+             * [is exacerbated by](is_exacerbated_by.md)
              * [localization affected by](localization_affected_by.md)
                  * [localization decreased by](localization_decreased_by.md)
                  * [localization increased by](localization_increased_by.md)
@@ -1069,6 +1085,11 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
          * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
          * [has contraindication](has_contraindication.md)
+         * [has contributor](has_contributor.md)
+             * [has author](has_author.md)
+             * [has editor](has_editor.md)
+             * [has provider](has_provider.md)
+             * [has publisher](has_publisher.md)
          * [has decreased amount](has_decreased_amount.md)
          * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
          * [has increased amount](has_increased_amount.md)
@@ -1077,7 +1098,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
          * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
              * [actively involves](actively_involves.md)
-                 * [capability of](capability_of.md)
+                 * [has capability](has_capability.md)
              * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
              * [has catalyst](has_catalyst.md)
              * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
@@ -1138,6 +1159,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [models](models.md)
          * [not completed by](not_completed_by.md)
          * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+         * [occurs in disease](occurs_in_disease.md)
          * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
          * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
              * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
@@ -1223,6 +1245,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [folding affected by](folding_affected_by.md)
              * [folding decreased by](folding_decreased_by.md)
              * [folding increased by](folding_increased_by.md)
+         * [is ameliorated by](is_ameliorated_by.md)
+         * [is exacerbated by](is_exacerbated_by.md)
          * [localization affected by](localization_affected_by.md)
              * [localization decreased by](localization_decreased_by.md)
              * [localization increased by](localization_increased_by.md)
@@ -1369,6 +1393,11 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
      * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
      * [has contraindication](has_contraindication.md)
+     * [has contributor](has_contributor.md)
+         * [has author](has_author.md)
+         * [has editor](has_editor.md)
+         * [has provider](has_provider.md)
+         * [has publisher](has_publisher.md)
      * [has decreased amount](has_decreased_amount.md)
      * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
      * [has increased amount](has_increased_amount.md)
@@ -1377,7 +1406,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
      * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
          * [actively involves](actively_involves.md)
-             * [capability of](capability_of.md)
+             * [has capability](has_capability.md)
          * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
          * [has catalyst](has_catalyst.md)
          * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
@@ -1438,6 +1467,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [models](models.md)
      * [not completed by](not_completed_by.md)
      * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
+     * [occurs in disease](occurs_in_disease.md)
      * [opposite of](opposite_of.md) - x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
      * [overlaps](overlaps.md) - holds between entities that overlap in their extents (materials or processes)
          * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
@@ -1831,6 +1861,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [description](description.md) - a human-readable description of an entity
  * [drug regulatory status world wide](drug_regulatory_status_world_wide.md) - An agglomeration of drug regulatory status worldwide. Not specific to FDA.
+ * [has active component](has_active_component.md)
  * [has attribute](has_attribute.md) - connects any entity to an attribute
  * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
@@ -1841,7 +1872,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [highest FDA approval status](highest_FDA_approval_status.md) - Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
- * [is exacerbated by](is_exacerbated_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.

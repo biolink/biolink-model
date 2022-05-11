@@ -1,16 +1,16 @@
 ---
 parent: Predicates
-title: biolink:capability_of
+title: biolink:has_capability
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: capability_of
+# Relation: has_capability
 
 
 
 
-URI: [biolink:capability_of](https://w3id.org/biolink/vocab/capability_of)
+URI: [biolink:has_capability](https://w3id.org/biolink/vocab/has_capability)
 
 ## Domain and Range
 

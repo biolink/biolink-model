@@ -1,11 +1,11 @@
 ---
-parent: Other Slots
+parent: Predicates
 title: biolink:is_exacerbated_by
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: is_exacerbated_by
+# Relation: is_exacerbated_by
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -17,10 +17,11 @@ URI: [biolink:is_exacerbated_by](https://w3id.org/biolink/vocab/is_exacerbated_b
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..1</sub> [BiologicalEntity](BiologicalEntity.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [BiologicalEntity](BiologicalEntity.md)
 
 ## Parents
 
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 

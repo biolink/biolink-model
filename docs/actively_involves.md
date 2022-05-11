@@ -25,7 +25,7 @@ URI: [biolink:actively_involves](https://w3id.org/biolink/vocab/actively_involve
 
 ## Children
 
- *  [capability of](capability_of.md)
+ *  [has capability](has_capability.md)
 
 ## Used by
 

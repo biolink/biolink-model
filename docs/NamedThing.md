@@ -116,6 +116,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[not completed by](not_completed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Association](Association.md)** *[object](object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs in](occurs_in.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[occurs in disease](occurs_in_disease.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[occurs together in literature with](occurs_together_in_literature_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[opposite of](opposite_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[NamedThing](NamedThing.md)**

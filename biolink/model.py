@@ -1,5 +1,6 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-10T23:52:27
+
+# Generation date: 2022-05-11T00:06:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -234,7 +235,7 @@ WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
 WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
 WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBBT_')
-WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBLS_')
+WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBBL_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
@@ -4953,7 +4954,6 @@ class Association(Entity):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    relation: Optional[str] = None
     negated: Optional[Union[bool, Bool]] = None
     qualifiers: Optional[Union[Union[dict, OntologyClass], List[Union[dict, OntologyClass]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
@@ -4985,9 +4985,6 @@ class Association(Entity):
             self.MissingRequiredField("object")
         if not isinstance(self.object, NamedThingId):
             self.object = NamedThingId(self.object)
-
-        if self.relation is not None and not isinstance(self.relation, str):
-            self.relation = str(self.relation)
 
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
@@ -8708,6 +8705,9 @@ slots.has_target = Slot(uri=BIOLINK.has_target, name="has target", curie=BIOLINK
 slots.active_in = Slot(uri=BIOLINK.active_in, name="active in", curie=BIOLINK.curie('active_in'),
                    model_uri=BIOLINK.active_in, domain=None, range=Optional[Union[Union[str, CellularComponentId], List[Union[str, CellularComponentId]]]])
 
+slots.has_active_component = Slot(uri=BIOLINK.has_active_component, name="has active component", curie=BIOLINK.curie('has_active_component'),
+                   model_uri=BIOLINK.has_active_component, domain=CellularComponent, range=Optional[Union[dict, GeneOrGeneProduct]])
+
 slots.acts_upstream_of = Slot(uri=BIOLINK.acts_upstream_of, name="acts upstream of", curie=BIOLINK.curie('acts_upstream_of'),
                    model_uri=BIOLINK.acts_upstream_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessId], List[Union[str, BiologicalProcessId]]]])
 
@@ -8753,17 +8753,32 @@ slots.mentioned_by = Slot(uri=BIOLINK.mentioned_by, name="mentioned by", curie=B
 slots.contributor = Slot(uri=BIOLINK.contributor, name="contributor", curie=BIOLINK.curie('contributor'),
                    model_uri=BIOLINK.contributor, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
+slots.has_contributor = Slot(uri=BIOLINK.has_contributor, name="has contributor", curie=BIOLINK.curie('has_contributor'),
+                   model_uri=BIOLINK.has_contributor, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+
 slots.provider = Slot(uri=BIOLINK.provider, name="provider", curie=BIOLINK.curie('provider'),
                    model_uri=BIOLINK.provider, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+
+slots.has_provider = Slot(uri=BIOLINK.has_provider, name="has provider", curie=BIOLINK.curie('has_provider'),
+                   model_uri=BIOLINK.has_provider, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
 
 slots.publisher = Slot(uri=BIOLINK.publisher, name="publisher", curie=BIOLINK.curie('publisher'),
                    model_uri=BIOLINK.publisher, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
+slots.has_publisher = Slot(uri=BIOLINK.has_publisher, name="has publisher", curie=BIOLINK.curie('has_publisher'),
+                   model_uri=BIOLINK.has_publisher, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+
 slots.editor = Slot(uri=BIOLINK.editor, name="editor", curie=BIOLINK.curie('editor'),
                    model_uri=BIOLINK.editor, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
+slots.has_editor = Slot(uri=BIOLINK.has_editor, name="has editor", curie=BIOLINK.curie('has_editor'),
+                   model_uri=BIOLINK.has_editor, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
+
 slots.author = Slot(uri=BIOLINK.author, name="author", curie=BIOLINK.curie('author'),
                    model_uri=BIOLINK.author, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
+
+slots.has_author = Slot(uri=BIOLINK.has_author, name="has author", curie=BIOLINK.curie('has_author'),
+                   model_uri=BIOLINK.has_author, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
 slots.interacts_with = Slot(uri=BIOLINK.interacts_with, name="interacts with", curie=BIOLINK.curie('interacts_with'),
                    model_uri=BIOLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -9245,11 +9260,14 @@ slots.caused_by = Slot(uri=BIOLINK.caused_by, name="caused by", curie=BIOLINK.cu
 slots.ameliorates = Slot(uri=BIOLINK.ameliorates, name="ameliorates", curie=BIOLINK.curie('ameliorates'),
                    model_uri=BIOLINK.ameliorates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
+slots.is_ameliorated_by = Slot(uri=BIOLINK.is_ameliorated_by, name="is ameliorated by", curie=BIOLINK.curie('is_ameliorated_by'),
+                   model_uri=BIOLINK.is_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
+
 slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOLINK.curie('exacerbates'),
                    model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.is_exacerbated_by = Slot(uri=BIOLINK.is_exacerbated_by, name="is exacerbated by", curie=BIOLINK.curie('is_exacerbated_by'),
-                   model_uri=BIOLINK.is_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[str, BiologicalEntityId]])
+                   model_uri=BIOLINK.is_exacerbated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
 
 slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('treats'),
                    model_uri=BIOLINK.treats, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
@@ -9392,8 +9410,8 @@ slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively inv
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
                    model_uri=BIOLINK.capable_of, domain=MolecularActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
-slots.capability_of = Slot(uri=BIOLINK.capability_of, name="capability of", curie=BIOLINK.curie('capability_of'),
-                   model_uri=BIOLINK.capability_of, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+slots.has_capability = Slot(uri=BIOLINK.has_capability, name="has capability", curie=BIOLINK.curie('has_capability'),
+                   model_uri=BIOLINK.has_capability, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
                    model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
@@ -9529,6 +9547,9 @@ slots.has_non_coding_variant = Slot(uri=BIOLINK.has_non_coding_variant, name="ha
 
 slots.disease_has_basis_in = Slot(uri=BIOLINK.disease_has_basis_in, name="disease has basis in", curie=BIOLINK.curie('disease_has_basis_in'),
                    model_uri=BIOLINK.disease_has_basis_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.occurs_in_disease = Slot(uri=BIOLINK.occurs_in_disease, name="occurs in disease", curie=BIOLINK.curie('occurs_in_disease'),
+                   model_uri=BIOLINK.occurs_in_disease, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.causes_adverse_event = Slot(uri=BIOLINK.causes_adverse_event, name="causes adverse event", curie=BIOLINK.curie('causes_adverse_event'),
                    model_uri=BIOLINK.causes_adverse_event, domain=Drug, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])

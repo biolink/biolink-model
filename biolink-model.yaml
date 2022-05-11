@@ -95,6 +95,7 @@ prefixes:
   MI: 'http://purl.obolibrary.org/obo/MI_'
   mirbase: 'http://identifiers.org/mirbase'
   mmmp.biomaps: 'https://bioregistry.io/mmmp.biomaps:'
+  MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
   NCBIGene: 'http://identifiers.org/ncbigene/'
@@ -140,6 +141,8 @@ prefixes:
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
+  WBls: 'http://purl.obolibrary.org/obo/WBBL_'
+  WBbt: 'http://purl.obolibrary.org/obo/WBBT_'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
   WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
   WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
@@ -1765,6 +1768,10 @@ slots:
     exact_mappings:
       - RO:0002432
 
+  has active component:
+    inverse: active in
+
+
   acts upstream of:
     is_a: related to at instance level
     domain: gene or gene product
@@ -1897,10 +1904,22 @@ slots:
     exact_mappings:
       - dct:contributor
 
+  has contributor:
+    inverse: contributor
+    is_a: related to at instance level
+    domain: agent
+    range: information content entity
+
   provider:
     is_a: contributor
     description: >-
       person, group, organization or project that provides a piece of information (e.g. a knowledge association).
+
+  has provider:
+    inverse: provider
+    is_a: has contributor
+    domain: agent
+    range: information content entity
 
   publisher:
     is_a: contributor
@@ -1915,6 +1934,12 @@ slots:
       - dct:publisher
       - WIKIDATA_PROPERTY:P123
 
+  has publisher:
+    is_a: has contributor
+    inverse: publisher
+    domain: agent
+    range: publication
+
   editor:
     is_a: contributor
     domain: publication
@@ -1927,6 +1952,12 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P98
 
+  has editor:
+    inverse: editor
+    is_a: has contributor
+    domain: agent
+    range: publication
+
   author:
     is_a: contributor
     domain: publication
@@ -1935,6 +1966,12 @@ slots:
     exact_mappings:
       - dct:creator
       - WIKIDATA_PROPERTY:P50
+
+  has author:
+    inverse: author
+    is_a: has contributor
+    domain: agent
+    range: publication
 
   ## end of Publication related predicates
 
@@ -4621,6 +4658,12 @@ slots:
     exact_mappings:
       - RO:0003307
 
+  is ameliorated by:
+    inverse: ameliorates
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: biological entity
+
   exacerbates:
     is_a: affects
     description: >-
@@ -4642,6 +4685,7 @@ slots:
 
   is exacerbated by:
     inverse: exacerbates
+    is_a: affected by
     domain: disease or phenotypic feature
     range: biological entity
     in_subset:
@@ -5602,7 +5646,7 @@ slots:
       - NCIT:R52
       - RO:0002500
 
-  capability of:
+  has capability:
     is_a: actively involves
     inverse: capable of
 
@@ -6247,6 +6291,9 @@ slots:
       - MONDO:disease_has_basis_in_development_of
       - MONDO:disease_has_basis_in_accumulation_of
 
+  occurs in disease:
+    is_a: related to at instance level
+    inverse: disease has basis in
 
   # These may be pushable to causal relationships, but seem important for clarity
   # Also because causes adverse event tends to be very noisy and it's useful to be able

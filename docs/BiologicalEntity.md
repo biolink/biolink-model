@@ -43,7 +43,8 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
 ## Referenced by class
 
- *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[is exacerbated by](is_exacerbated_by.md)*  <sub>0..1</sub>  **[BiologicalEntity](BiologicalEntity.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[is ameliorated by](is_ameliorated_by.md)*  <sub>0..\*</sub>  **[BiologicalEntity](BiologicalEntity.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[is exacerbated by](is_exacerbated_by.md)*  <sub>0..\*</sub>  **[BiologicalEntity](BiologicalEntity.md)**
  *  **[PhenotypicFeature](PhenotypicFeature.md)** *[phenotype of](phenotype_of.md)*  <sub>0..\*</sub>  **[BiologicalEntity](BiologicalEntity.md)**
 
 ## Attributes
