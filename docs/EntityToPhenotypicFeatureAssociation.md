@@ -15,7 +15,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[Association]%5E-[EntityToPhenotypicFeatureAssociation%7CFDA_approval_status:FDA_approval_status_enum%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[Association]%5E-[EntityToPhenotypicFeatureAssociation%7CFDA_approval_status:FDA_approval_status_enum%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Attribute],[Association])
 
 ---
 
@@ -43,8 +43,6 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)

@@ -15,7 +15,7 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachineMixin],[InformationResource],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-++[FunctionalAssociation%7Cpredicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MacromolecularMachineMixin]%3Csubject%201..1-++[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[EvidenceType],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToMolecularActivityAssociation],[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineToBiologicalProcessAssociation],[MacromolecularMachineMixin],[InformationResource],[GeneToGoTermAssociation],[GeneOntologyClass],[GeneOntologyClass]%3Cobject%201..1-++[FunctionalAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MacromolecularMachineMixin]%3Csubject%201..1-++[FunctionalAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToMolecularActivityAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[FunctionalAssociation]%5E-[MacromolecularMachineToBiologicalProcessAssociation],[FunctionalAssociation]%5E-[GeneToGoTermAssociation],[Association]%5E-[FunctionalAssociation],[EvidenceType],[Attribute],[Association])
 
 ---
 
@@ -57,8 +57,6 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)

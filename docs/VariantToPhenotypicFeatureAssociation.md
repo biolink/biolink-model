@@ -15,7 +15,7 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]%3Csubject%201..1-%20[VariantToPhenotypicFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[VariantToEntityAssociationMixin],[VariantToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[SeverityValue],[SequenceVariant],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute],[Association])
 
 ---
 
@@ -52,8 +52,6 @@ URI: [biolink:VariantToPhenotypicFeatureAssociation](https://w3id.org/biolink/vo
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)

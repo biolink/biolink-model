@@ -15,7 +15,7 @@ URI: [biolink:OrganismTaxonToOrganismTaxonSpecialization](https://w3id.org/bioli
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-%20[OrganismTaxonToOrganismTaxonSpecialization%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[InformationResource],[EvidenceType],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon]%3Cobject%201..1-%20[OrganismTaxonToOrganismTaxonSpecialization%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonAssociation]%5E-[OrganismTaxonToOrganismTaxonSpecialization],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxon],[OntologyClass],[InformationResource],[EvidenceType],[Attribute])
 
 ---
 
@@ -53,8 +53,6 @@ URI: [biolink:OrganismTaxonToOrganismTaxonSpecialization](https://w3id.org/bioli
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)

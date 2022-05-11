@@ -15,7 +15,7 @@ URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/Contributor
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[InformationContentEntity],[EvidenceType],[OntologyClass]%3Cqualifiers%200..%2A-++[ContributorAssociation%7Cpredicate:predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[InformationContentEntity],[EvidenceType],[OntologyClass]%3Cqualifiers%200..%2A-++[ContributorAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Attribute],[Association],[Agent])
 
 ---
 
@@ -56,8 +56,6 @@ URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/Contributor
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)

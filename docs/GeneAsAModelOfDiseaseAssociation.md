@@ -15,7 +15,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;relation(i):string%20%3F;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
 
 ---
 
@@ -52,8 +52,6 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
- * [relation](relation.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
