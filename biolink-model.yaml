@@ -9601,7 +9601,6 @@ classes:
       - subject
       - predicate
       - object
-      - relation
       - negated
       - qualifiers
       - publications
@@ -9699,7 +9698,6 @@ classes:
       - object
     slot_usage:
       predicate:
-        # subproperty_of: ???
         description: >-
           the relationship type used to connect genotype to gene
       subject:
@@ -9801,10 +9799,6 @@ classes:
       predicate:
         subproperty_of: interacts with
         symmetric: true
-      # relation:
-      #  values_from:
-      #    - ro
-      #    - mi
         description: "interaction relationship type"
     narrow_mappings:
       - dcid:ProteinProteinInteraction
@@ -9834,10 +9828,6 @@ classes:
           - BioGRID
       predicate:
         subproperty_of: molecularly interacts with
-      # relation:
-       # values_from:
-        #  - ro
-        #  - mi
         description: "interaction relationship type"
         examples:
           - value: RO:0002447
@@ -10746,9 +10736,6 @@ classes:
     slot_usage:
       subject:
         range: individual organism
-      # relation:
-      #  values_from:
-      #    - ro
       object:
         range: individual organism
         description: >-
@@ -10763,9 +10750,6 @@ classes:
     slot_usage:
       subject:
         range: organism taxon
-      # relation:
-      #  values_from:
-      #    - ro
       object:
         range: organism taxon
         description: >-
@@ -11087,7 +11071,6 @@ classes:
       A regulatory relationship between two genes
     slot_usage:
       predicate:
-        # subproperty_of: ???
         description: >-
           the direction is always from regulator to regulated
       subject:
@@ -11097,8 +11080,7 @@ classes:
         range: gene or gene product
         role: regulated gene
 
-  anatomical entity to anatomical entity association:
-    # schema: gocam
+  anatomical entity to anatomical entity association: # schema: gocam
     is_a: association
     abstract: true
     defining_slots:
