@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-10T17:10:20
+# Generation date: 2022-05-10T17:11:40
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -148,7 +148,6 @@ MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/MONDO_')
 MP = CurieNamespace('MP', 'http://purl.obolibrary.org/obo/MP_')
 MPATH = CurieNamespace('MPATH', 'http://purl.obolibrary.org/obo/MPATH_')
 MSIGDB = CurieNamespace('MSigDB', 'https://www.gsea-msigdb.org/gsea/msigdb/')
-MMUSDV = CurieNamespace('MmusDV', 'http://purl.obolibrary.org/obo/MMUSDV_')
 MMUSDV = CurieNamespace('MmusDv', 'http://purl.obolibrary.org/obo/MMUSDV_')
 NBO = CurieNamespace('NBO', 'http://purl.obolibrary.org/obo/NBO_')
 NBO_PROPERTY = CurieNamespace('NBO-PROPERTY', 'http://purl.obolibrary.org/obo/nbo#')
@@ -234,9 +233,8 @@ VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
 WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
-WBBL = CurieNamespace('WBbl', 'http://purl.obolibrary.org/obo/WBBL_')
 WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBBT_')
-WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBLS_')
+WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBBL_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
