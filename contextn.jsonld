@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-11T00:06:30\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.17\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-11T00:16:43\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.2.17\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
@@ -467,7 +467,7 @@
          "@prefix": true
       },
       "WBls": {
-         "@id": "http://purl.obolibrary.org/obo/WBLS_",
+         "@id": "http://purl.obolibrary.org/obo/WBBL_",
          "@prefix": true
       },
       "WIKIDATA": "https://www.wikidata.org/wiki/",
@@ -711,9 +711,6 @@
          "@type": "@id"
       },
       "broad_match": {
-         "@type": "@id"
-      },
-      "capability_of": {
          "@type": "@id"
       },
       "capable_of": {
@@ -993,6 +990,9 @@
             "meaning": "@id"
          }
       },
+      "has_active_component": {
+         "@type": "@id"
+      },
       "has_active_ingredient": {
          "@type": "@id"
       },
@@ -1002,7 +1002,13 @@
       "has_attribute_type": {
          "@type": "@id"
       },
+      "has_author": {
+         "@type": "@id"
+      },
       "has_biomarker": {
+         "@type": "@id"
+      },
+      "has_capability": {
          "@type": "@id"
       },
       "has_catalyst": {
@@ -1023,6 +1029,9 @@
       "has_contraindication": {
          "@type": "@id"
       },
+      "has_contributor": {
+         "@type": "@id"
+      },
       "has_count": {
          "@type": "xsd:integer"
       },
@@ -1039,6 +1048,9 @@
          "@type": "@id"
       },
       "has_drug": {
+         "@type": "@id"
+      },
+      "has_editor": {
          "@type": "@id"
       },
       "has_evidence": {
@@ -1135,6 +1147,12 @@
          "@type": "@id"
       },
       "has_procedure": {
+         "@type": "@id"
+      },
+      "has_provider": {
+         "@type": "@id"
+      },
+      "has_publisher": {
          "@type": "@id"
       },
       "has_qualitative_value": {
@@ -1285,6 +1303,9 @@
          "@type": "@id"
       },
       "is_active_ingredient_of": {
+         "@type": "@id"
+      },
+      "is_ameliorated_by": {
          "@type": "@id"
       },
       "is_diagnosed_by": {
@@ -1464,6 +1485,9 @@
          "@type": "@id"
       },
       "occurs_in": {
+         "@type": "@id"
+      },
+      "occurs_in_disease": {
          "@type": "@id"
       },
       "occurs_together_in_literature_with": {
