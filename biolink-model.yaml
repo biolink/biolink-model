@@ -7967,6 +7967,7 @@ classes:
       - KEGG.ENVIRON ## E number
       - BIGG.METABOLITE
       - UMLS
+      - foodb.compound
     slot_usage:
       id:
         examples:
@@ -8347,13 +8348,12 @@ classes:
       - STY:T127
 
   food:
-    deprecated: true
     is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
+      - foodb.food
       - FOODON
-      - foodb.compound
       - UMLS
       - NCIT
     exact_mappings:
