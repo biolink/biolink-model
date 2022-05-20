@@ -5,7 +5,7 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: Food _(deprecated)_
+# Class: Food
 
 
 A substance consumed by a living organism as a source of nutrition
@@ -22,8 +22,8 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 ## Identifier prefixes
 
+ * foodb.food
  * FOODON
- * foodb.compound
  * UMLS
  * NCIT
 
