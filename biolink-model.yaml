@@ -7926,8 +7926,6 @@ classes:
         unambiguous representation of its precise chemical structure; for
         convenience of representation, any valid chemical representation is
         included, even if it is not strictly molecular (e.g., sodium ion).
-    broad_mappings:
-      - foodb.compound
     narrow_mappings:
       - STY:T196 # Element, Ion, or Isotope
       - CHEBI:59999
@@ -7969,6 +7967,7 @@ classes:
       - KEGG.ENVIRON ## E number
       - BIGG.METABOLITE
       - UMLS
+      - foodb.compound
     slot_usage:
       id:
         examples:
