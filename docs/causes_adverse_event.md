@@ -25,3 +25,10 @@ URI: [biolink:causes_adverse_event](https://w3id.org/biolink/vocab/causes_advers
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Narrow Mappings:** | | NCIT:C2861 |
+

@@ -22,7 +22,10 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 ## Identifier prefixes
 
+ * FOODON
  * foodb.compound
+ * UMLS
+ * NCIT
 
 ## Parents
 
