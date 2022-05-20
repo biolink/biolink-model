@@ -7924,6 +7924,8 @@ classes:
         unambiguous representation of its precise chemical structure; for
         convenience of representation, any valid chemical representation is
         included, even if it is not strictly molecular (e.g., sodium ion).
+    broad_mappings:
+      - foodb.compound
     narrow_mappings:
       - STY:T196 # Element, Ion, or Isotope
       - CHEBI:59999
@@ -8345,12 +8347,11 @@ classes:
       - STY:T127
 
   food:
-    deprecated: true
     is_a: chemical mixture
     description: >-
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
-      - foodb.compound
+      - foodb.food
     exact_mappings:
       # Food
       - STY:T168
