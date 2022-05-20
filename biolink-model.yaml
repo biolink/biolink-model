@@ -6309,6 +6309,8 @@ slots:
       biolink:canonical_predicate:
         tag: biolink:canonical_predicate
         value: true
+    narrow_mappings:
+      - NCIT:C2861 # side effect
 
   adverse event caused by:
     is_a: causes
@@ -8352,6 +8354,9 @@ classes:
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
       - foodb.food
+      - FOODON
+      - UMLS
+      - NCIT
     exact_mappings:
       # Food
       - STY:T168
