@@ -1,7 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-
-# Generation date: 2022-05-23T16:31:53
-
+# Generation date: 2022-05-23T22:58:14
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -28,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.3.1"
+version = "2.4.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -394,7 +392,15 @@ class OntologyClassId(extended_str):
     pass
 
 
-class AttributeId(extended_str):
+class EntityId(extended_str):
+    pass
+
+
+class NamedThingId(EntityId):
+    pass
+
+
+class AttributeId(NamedThingId):
     pass
 
 
@@ -415,14 +421,6 @@ class GenotypicSexId(BiologicalSexId):
 
 
 class SeverityValueId(AttributeId):
-    pass
-
-
-class EntityId(extended_str):
-    pass
-
-
-class NamedThingId(EntityId):
     pass
 
 
@@ -1222,172 +1220,6 @@ class QuantityValue(Annotation):
         super().__post_init__(**kwargs)
 
 
-@dataclass
-class Attribute(Annotation):
-    """
-    A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
-    crispiness. An environmental sample may have attributes such as depth, lat, long, material.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Attribute
-    class_class_curie: ClassVar[str] = "biolink:Attribute"
-    class_name: ClassVar[str] = "attribute"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Attribute
-
-    id: Union[str, AttributeId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-    name: Optional[Union[str, LabelType]] = None
-    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
-    has_qualitative_value: Optional[Union[str, NamedThingId]] = None
-    iri: Optional[Union[str, IriType]] = None
-    source: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, AttributeId):
-            self.id = AttributeId(self.id)
-
-        if self._is_empty(self.has_attribute_type):
-            self.MissingRequiredField("has_attribute_type")
-        if not isinstance(self.has_attribute_type, OntologyClassId):
-            self.has_attribute_type = OntologyClassId(self.has_attribute_type)
-
-        if self.name is not None and not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
-
-        if not isinstance(self.has_quantitative_value, list):
-            self.has_quantitative_value = [self.has_quantitative_value] if self.has_quantitative_value is not None else []
-        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.has_quantitative_value]
-
-        if self.has_qualitative_value is not None and not isinstance(self.has_qualitative_value, NamedThingId):
-            self.has_qualitative_value = NamedThingId(self.has_qualitative_value)
-
-        if self.iri is not None and not isinstance(self.iri, IriType):
-            self.iri = IriType(self.iri)
-
-        if self.source is not None and not isinstance(self.source, str):
-            self.source = str(self.source)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ChemicalRole(Attribute):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
-    class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
-    class_name: ClassVar[str] = "chemical role"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
-
-    id: Union[str, ChemicalRoleId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ChemicalRoleId):
-            self.id = ChemicalRoleId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BiologicalSex(Attribute):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
-    class_class_curie: ClassVar[str] = "biolink:BiologicalSex"
-    class_name: ClassVar[str] = "biological sex"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
-
-    id: Union[str, BiologicalSexId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, BiologicalSexId):
-            self.id = BiologicalSexId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PhenotypicSex(BiologicalSex):
-    """
-    An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
-    class_class_curie: ClassVar[str] = "biolink:PhenotypicSex"
-    class_name: ClassVar[str] = "phenotypic sex"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
-
-    id: Union[str, PhenotypicSexId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, PhenotypicSexId):
-            self.id = PhenotypicSexId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GenotypicSex(BiologicalSex):
-    """
-    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
-    chromosomes.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
-    class_class_curie: ClassVar[str] = "biolink:GenotypicSex"
-    class_name: ClassVar[str] = "genotypic sex"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
-
-    id: Union[str, GenotypicSexId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, GenotypicSexId):
-            self.id = GenotypicSexId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SeverityValue(Attribute):
-    """
-    describes the severity of a phenotypic feature or disease
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
-    class_class_curie: ClassVar[str] = "biolink:SeverityValue"
-    class_name: ClassVar[str] = "severity value"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
-
-    id: Union[str, SeverityValueId] = None
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, SeverityValueId):
-            self.id = SeverityValueId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
 class RelationshipQuantifier(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1556,6 +1388,178 @@ class NamedThing(Entity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Attribute(NamedThing):
+    """
+    A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
+    crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Attribute
+    class_class_curie: ClassVar[str] = "biolink:Attribute"
+    class_name: ClassVar[str] = "attribute"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Attribute
+
+    id: Union[str, AttributeId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+    name: Optional[Union[str, LabelType]] = None
+    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
+    has_qualitative_value: Optional[Union[str, NamedThingId]] = None
+    iri: Optional[Union[str, IriType]] = None
+    source: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AttributeId):
+            self.id = AttributeId(self.id)
+
+        if self._is_empty(self.has_attribute_type):
+            self.MissingRequiredField("has_attribute_type")
+        if not isinstance(self.has_attribute_type, OntologyClassId):
+            self.has_attribute_type = OntologyClassId(self.has_attribute_type)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        if not isinstance(self.has_quantitative_value, list):
+            self.has_quantitative_value = [self.has_quantitative_value] if self.has_quantitative_value is not None else []
+        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.has_quantitative_value]
+
+        if self.has_qualitative_value is not None and not isinstance(self.has_qualitative_value, NamedThingId):
+            self.has_qualitative_value = NamedThingId(self.has_qualitative_value)
+
+        if self.iri is not None and not isinstance(self.iri, IriType):
+            self.iri = IriType(self.iri)
+
+        if self.source is not None and not isinstance(self.source, str):
+            self.source = str(self.source)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ChemicalRole(Attribute):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+    class_class_curie: ClassVar[str] = "biolink:ChemicalRole"
+    class_name: ClassVar[str] = "chemical role"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
+
+    id: Union[str, ChemicalRoleId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalRoleId):
+            self.id = ChemicalRoleId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BiologicalSex(Attribute):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
+    class_class_curie: ClassVar[str] = "biolink:BiologicalSex"
+    class_name: ClassVar[str] = "biological sex"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalSex
+
+    id: Union[str, BiologicalSexId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BiologicalSexId):
+            self.id = BiologicalSexId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PhenotypicSex(BiologicalSex):
+    """
+    An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
+    class_class_curie: ClassVar[str] = "biolink:PhenotypicSex"
+    class_name: ClassVar[str] = "phenotypic sex"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicSex
+
+    id: Union[str, PhenotypicSexId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PhenotypicSexId):
+            self.id = PhenotypicSexId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GenotypicSex(BiologicalSex):
+    """
+    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
+    chromosomes.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
+    class_class_curie: ClassVar[str] = "biolink:GenotypicSex"
+    class_name: ClassVar[str] = "genotypic sex"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GenotypicSex
+
+    id: Union[str, GenotypicSexId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GenotypicSexId):
+            self.id = GenotypicSexId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SeverityValue(Attribute):
+    """
+    describes the severity of a phenotypic feature or disease
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
+    class_class_curie: ClassVar[str] = "biolink:SeverityValue"
+    class_name: ClassVar[str] = "severity value"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.SeverityValue
+
+    id: Union[str, SeverityValueId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SeverityValueId):
+            self.id = SeverityValueId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -3166,6 +3170,7 @@ class OrganismAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.OrganismAttribute
 
     id: Union[str, OrganismAttributeId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3190,6 +3195,7 @@ class PhenotypicQuality(OrganismAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.PhenotypicQuality
 
     id: Union[str, PhenotypicQualityId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3215,6 +3221,7 @@ class Inheritance(OrganismAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Inheritance
 
     id: Union[str, InheritanceId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4197,6 +4204,7 @@ class Zygosity(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Zygosity
 
     id: Union[str, ZygosityId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4368,6 +4376,7 @@ class ClinicalAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalAttribute
 
     id: Union[str, ClinicalAttributeId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4393,6 +4402,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalMeasurement
 
     id: Union[str, ClinicalMeasurementId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4423,6 +4433,7 @@ class ClinicalModifier(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalModifier
 
     id: Union[str, ClinicalModifierId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4448,6 +4459,7 @@ class ClinicalCourse(ClinicalAttribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ClinicalCourse
 
     id: Union[str, ClinicalCourseId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4472,6 +4484,7 @@ class Onset(ClinicalCourse):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Onset
 
     id: Union[str, OnsetId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4614,6 +4627,7 @@ class SocioeconomicAttribute(Attribute):
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicAttribute
 
     id: Union[str, SocioeconomicAttributeId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_attribute_type: Union[str, OntologyClassId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):

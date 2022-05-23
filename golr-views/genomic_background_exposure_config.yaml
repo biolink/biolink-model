@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.3.1id: genomic_background_exposure
+# metamodel_version: 1.7.0# version: 2.4.0id: genomic_background_exposure
 schema_generating: true
 description: A genomic background exposure is where an individual's specific genomic
   background of genes, sequence variants or other pre-existing genomic conditions
@@ -22,3 +22,7 @@ fields:
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id

@@ -1,5 +1,5 @@
 // metamodel_version: 1.7.0
-// version: 2.3.1
+// version: 2.4.0
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -143,12 +143,19 @@ message Association
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 message Behavior
  {
@@ -249,12 +256,19 @@ message BiologicalProcessOrActivity
  }
 message BiologicalSex
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
@@ -491,12 +505,19 @@ message ChemicalMixture
  }
 message ChemicalRole
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 message ChemicalToChemicalAssociation
@@ -624,22 +645,36 @@ message ChemicalToPathwayAssociation
 // Attributes relating to a clinical manifestation
 message ClinicalAttribute
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
 message ClinicalCourse
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 message ClinicalEntity
@@ -686,22 +721,36 @@ message ClinicalIntervention
 // A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
 message ClinicalMeasurement
  {
-  optional name LabelType = 1
-  repeated hasQuantitativeValue QuantityValue = 2
-  optional hasQualitativeValue NamedThing = 3
-  optional iri IriType = 4
-  optional source String = 5
-  hasAttributeType OntologyClass = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  repeated hasQuantitativeValue QuantityValue = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  hasAttributeType OntologyClass = 13
  }
 // Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
 message ClinicalModifier
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 message ClinicalTrial
  {
@@ -1688,6 +1737,7 @@ message GenomicBackgroundExposure
   repeated hasGeneOrGeneProduct Gene = 2
   repeated inTaxon OrganismTaxon = 3
   optional hasBiologicalSequence BiologicalSequence = 4
+  id String = 5
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -1883,12 +1933,19 @@ message GenotypeToVariantAssociation
 // An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 message GenotypicSex
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
@@ -2030,12 +2087,19 @@ message InformationResource
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message Inheritance
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
@@ -2438,22 +2502,36 @@ message Nutrient
 // The age group in which (disease) symptom manifestations appear
 message Onset
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // describes a characteristic of an organismal entity.
 message OrganismAttribute
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 message OrganismTaxon
@@ -2701,22 +2779,36 @@ message PhenotypicFeature
 // A property of a phenotype
 message PhenotypicQuality
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // An entity that has material reality (a.k.a. physical essence).
 message PhysicalEntity
@@ -3008,6 +3100,11 @@ message ReagentTargetedGene
   repeated inTaxon OrganismTaxon = 11
   optional hasBiologicalSequence BiologicalSequence = 12
  }
+// An OWL property used as an edge label
+message RelationshipType
+ {
+  id String = 1
+ }
 message RNAProduct
  {
   id String = 1
@@ -3145,12 +3242,19 @@ message Serial
 // describes the severity of a phenotypic feature or disease
 message SeverityValue
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
 message SiRNA
@@ -3215,12 +3319,19 @@ message Snv
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 message SocioeconomicExposure
@@ -3264,6 +3375,11 @@ message TaxonToTaxonAssociation
   repeated category CategoryType = 17
   subject OrganismTaxon = 18
   object OrganismTaxon = 19
+ }
+// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
+message TaxonomicRank
+ {
+  id String = 1
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript
@@ -3502,11 +3618,18 @@ message Vitamin
  }
 message Zygosity
  {
-  optional name LabelType = 1
-  hasAttributeType OntologyClass = 2
-  repeated hasQuantitativeValue QuantityValue = 3
-  optional hasQualitativeValue NamedThing = 4
-  optional iri IriType = 5
-  optional source String = 6
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 

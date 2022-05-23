@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.3.1
+# version: 2.4.0
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -188,6 +188,13 @@ type Association
 
 type Attribute implements OntologyClass
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -314,6 +321,13 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
 
 type BiologicalSex
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -588,6 +602,13 @@ interface ChemicalOrDrugOrTreatment
 
 type ChemicalRole
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -723,6 +744,13 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
 
 type ClinicalAttribute
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -733,6 +761,13 @@ type ClinicalAttribute
 
 type ClinicalCourse
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -786,6 +821,13 @@ type ClinicalIntervention
 
 type ClinicalMeasurement
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
@@ -796,6 +838,13 @@ type ClinicalMeasurement
 
 type ClinicalModifier
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -1697,7 +1746,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     subject: GeneOrGeneProduct!
   }
 
-interface GeneOntologyClass
+type GeneOntologyClass
   {
   }
 
@@ -1967,6 +2016,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     hasGeneOrGeneProduct: [Gene]
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    id: String!
   }
 
 interface GenomicEntity
@@ -2175,6 +2225,13 @@ type GenotypeToVariantAssociation
 
 type GenotypicSex
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -2346,6 +2403,13 @@ type InformationResource
 
 type Inheritance
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -2793,6 +2857,13 @@ interface Occurrent
 
 type Onset
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -2803,10 +2874,18 @@ type Onset
 
 interface OntologyClass
   {
+    id: String!
   }
 
 type OrganismAttribute
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -3148,6 +3227,13 @@ type PhenotypicFeature
 
 type PhenotypicQuality
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -3158,6 +3244,13 @@ type PhenotypicQuality
 
 type PhenotypicSex
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -3474,6 +3567,7 @@ interface RelationshipQuantifier
 
 type RelationshipType
   {
+    id: String!
   }
 
 type RNAProduct implements GeneProductMixin
@@ -3640,6 +3734,13 @@ type Serial
 
 type SeverityValue
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -3710,6 +3811,13 @@ type Snv
 
 type SocioeconomicAttribute
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
@@ -3776,6 +3884,7 @@ type TaxonToTaxonAssociation
 
 type TaxonomicRank
   {
+    id: String!
   }
 
 interface ThingWithTaxon
@@ -3846,7 +3955,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     timepoint: TimeType
   }
 
-interface UnclassifiedOntologyClass
+type UnclassifiedOntologyClass
   {
   }
 
@@ -4033,6 +4142,13 @@ type Vitamin
 
 type Zygosity
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
     hasQuantitativeValue: [QuantityValue]
