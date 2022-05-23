@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,4131.4,283"];
+	graph [bb="0,0,4257.4,283"];
 	node [label="\N"];
 	"organismal entity as a model of disease association"	[height=0.5,
 		label="organismal entity as a model of disease association",
-		pos="2025.4,265",
+		pos="2103.4,265",
 		width=6.9147];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"organismal entity as a model of disease association" -> association	[label=is_a,
 		lp="632.39,221.5",
-		pos="e,106.73,190.67 1782.2,261.14 1501.6,257.1 1026.5,247.98 618.39,229 403.02,218.98 347.58,228.21 134.39,196 128.62,195.13 122.62,\
-194.03 116.67,192.81"];
+		pos="e,106.73,190.67 1858.9,261.57 1564.5,257.87 1055,249.02 618.39,229 403.01,219.12 347.58,228.21 134.39,196 128.62,195.13 122.62,194.03 \
+116.67,192.81"];
 	"model to disease association mixin"	[height=0.5,
 		pos="315.39,178",
 		width=4.7843];
 	"organismal entity as a model of disease association" -> "model to disease association mixin"	[label=uses,
 		lp="852.89,221.5",
-		pos="e,426.26,191.79 1781,261.53 1540.4,257.99 1162.8,249.45 836.39,229 699.01,220.4 541.78,204.47 436.3,192.89"];
+		pos="e,426,191.82 1857.3,262.16 1601.9,259.08 1190.8,250.88 836.39,229 698.89,220.51 541.53,204.54 436.05,192.93"];
 	"entity to disease association mixin"	[height=0.5,
 		pos="676.39,178",
 		width=4.7482];
 	"organismal entity as a model of disease association" -> "entity to disease association mixin"	[label=uses,
-		lp="999.89,221.5",
-		pos="e,752.37,194.15 1776.4,264.56 1564.9,262.91 1253.6,255.43 983.39,229 908.3,221.65 823.73,207.43 762.39,196.03"];
+		lp="998.89,221.5",
+		pos="e,752.11,194.2 1863.4,260.19 1586.1,255.13 1146.9,244.94 982.39,229 907.53,221.75 823.24,207.52 762.1,196.09"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -31,9 +31,9 @@ digraph {
 		width=1.0652];
 	"organismal entity as a model of disease association" -> id	[color=blue,
 		label=id,
-		lp="1117.4,221.5",
-		pos="e,932.38,189.98 1788.6,259.41 1562,254.21 1236.5,244.39 1110.4,229 1038.8,220.26 1020.9,215.43 951.39,196 948.29,195.13 945.09,194.17 \
-941.89,193.15",
+		lp="1116.4,221.5",
+		pos="e,932.38,189.97 1863,260.25 1616.4,255.55 1249.6,245.98 1109.4,229 1038.2,220.37 1020.5,215.35 951.39,196 948.29,195.13 945.09,194.16 \
+941.89,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -42,8 +42,8 @@ digraph {
 		width=1.2277];
 	"organismal entity as a model of disease association" -> iri	[color=blue,
 		label=iri,
-		lp="1223.4,221.5",
-		pos="e,1037.3,190.15 1776.8,263.7 1616.1,260.94 1402.7,252.45 1215.4,229 1144.2,220.09 1126.8,214.31 1057.4,196 1054,195.11 1050.5,194.13 \
+		lp="1222.4,221.5",
+		pos="e,1037.3,190.14 1867.6,259.19 1647.7,253.88 1335.9,244.05 1214.4,229 1143.6,220.23 1126.3,214.25 1057.4,196 1054,195.11 1050.5,194.13 \
 1047.1,193.11",
 		style=solid];
 	name	[color=blue,
@@ -53,8 +53,8 @@ digraph {
 		width=1.5707];
 	"organismal entity as a model of disease association" -> name	[color=blue,
 		label=name,
-		lp="1318.4,221.5",
-		pos="e,1159.4,191.92 1792.5,258.59 1616.5,253.41 1390.1,244.1 1298.4,229 1253.7,221.64 1204.2,206.85 1169.3,195.25",
+		lp="1317.4,221.5",
+		pos="e,1159.2,191.97 1864.4,259.84 1666.9,255.26 1402.5,246.13 1297.4,229 1252.9,221.75 1203.7,206.94 1169,195.31",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -63,8 +63,8 @@ digraph {
 		width=2.0943];
 	"organismal entity as a model of disease association" -> description	[color=blue,
 		label=description,
-		lp="1422.9,221.5",
-		pos="e,1300.6,194.96 1785.1,260.23 1635,256.07 1456.6,247.34 1382.4,229 1357,222.72 1330.2,210.55 1309.6,199.78",
+		lp="1421.9,221.5",
+		pos="e,1300.3,195.02 1857.4,262.1 1684.4,258.86 1468.7,250.45 1381.4,229 1356.2,222.8 1329.7,210.63 1309.2,199.84",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -73,8 +73,8 @@ digraph {
 		width=1.0652];
 	"organismal entity as a model of disease association" -> source	[color=blue,
 		label=source,
-		lp="1527.4,221.5",
-		pos="e,1426.9,193.23 1797.5,257.72 1683.3,252.77 1558,244.08 1503.4,229 1479.3,222.36 1454.3,209.48 1435.6,198.45",
+		lp="1526.4,221.5",
+		pos="e,1426.7,193.29 1863.4,260.12 1726.3,255.92 1568.9,247.19 1502.4,229 1478.5,222.47 1453.8,209.59 1435.2,198.53",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -83,8 +83,8 @@ digraph {
 		width=1.4443];
 	"organismal entity as a model of disease association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1628.4,221.5",
-		pos="e,1529.7,195.11 1799,257.49 1711,252.6 1621.7,244.02 1581.4,229 1565.3,223.02 1549.7,212.06 1537.6,201.92",
+		lp="1627.4,221.5",
+		pos="e,1529.4,195.18 1860.8,260.89 1749.7,256.8 1631.6,247.93 1580.4,229 1564.5,223.11 1549.1,212.16 1537.1,202.01",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -94,17 +94,17 @@ digraph {
 	"organismal entity as a model of disease association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1727.4,221.5",
-		pos="e,1667.8,196.31 1811.3,255.79 1760.6,250.63 1715,242.32 1693.4,229 1684.4,223.45 1677.5,214.34 1672.4,205.41",
+		pos="e,1667.8,196.39 1900.2,254.58 1806.6,248.79 1712.1,240.3 1693.4,229 1684.4,223.54 1677.4,214.45 1672.4,205.5",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="3520.4,91",
+		pos="3648.4,91",
 		width=1.9318];
 	"organismal entity as a model of disease association" -> object	[color=blue,
 		label=object,
 		lp="1806.4,178",
-		pos="e,3450.9,92.064 1903.3,249.24 1822.3,234.76 1738.5,207.71 1784.4,160 1842.5,99.598 3108.3,92.822 3440.9,92.085",
+		pos="e,3578.8,91.868 1913.3,253.33 1817.2,241.17 1731.1,215.25 1784.4,160 1847.2,94.894 3220.2,91.636 3568.6,91.86",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -113,8 +113,8 @@ digraph {
 		width=1.2999];
 	"organismal entity as a model of disease association" -> negated	[color=blue,
 		label=negated,
-		lp="1992.4,221.5",
-		pos="e,1907.4,193.97 1994.6,247.04 1984.6,241.4 1973.5,235.03 1963.4,229 1947.6,219.55 1930.3,208.65 1915.9,199.45",
+		lp="2027.4,221.5",
+		pos="e,1913.1,192.48 2050.4,247.4 2033.7,241.86 2015.2,235.46 1998.4,229 1972.7,219.12 1944.4,206.72 1922.5,196.74",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -123,8 +123,8 @@ digraph {
 		width=2.1304];
 	"organismal entity as a model of disease association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2058.9,221.5",
-		pos="e,2025.4,196.18 2025.4,246.8 2025.4,235.16 2025.4,219.55 2025.4,206.24",
+		lp="2102.9,221.5",
+		pos="e,2040.9,195.89 2087.6,246.8 2076.2,234.39 2060.7,217.46 2048,203.62",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -133,8 +133,8 @@ digraph {
 		width=1.7332];
 	"organismal entity as a model of disease association" -> publications	[color=blue,
 		label=publications,
-		lp="2167.4,221.5",
-		pos="e,2156.7,194.57 2061,247.03 2072.4,241.45 2085,235.11 2096.4,229 2113.6,219.79 2132.3,208.98 2147.9,199.78",
+		lp="2198.4,221.5",
+		pos="e,2169.2,195.62 2122.2,246.96 2128.2,241.37 2134.7,235.05 2140.4,229 2148,220.96 2155.9,211.79 2162.8,203.52",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -143,8 +143,8 @@ digraph {
 		width=2.0943];
 	"organismal entity as a model of disease association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2303.9,221.5",
-		pos="e,2305.9,194.34 2130.3,248.62 2158.2,243.46 2188.2,236.95 2215.4,229 2243.1,220.91 2273.1,208.77 2296.6,198.47",
+		lp="2324.9,221.5",
+		pos="e,2313.1,195.08 2184.7,247.95 2205.1,242.87 2226.8,236.56 2246.4,229 2266.3,221.31 2287.3,210.17 2304.1,200.36",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -153,8 +153,8 @@ digraph {
 		width=3.015];
 	"organismal entity as a model of disease association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2480.9,221.5",
-		pos="e,2492.3,194.15 2191,251.49 2243.5,246.16 2301.6,238.84 2354.4,229 2397.8,220.91 2445.9,207.85 2482.4,197.12",
+		lp="2495.9,221.5",
+		pos="e,2496.4,194.5 2245.7,250.22 2287.7,244.93 2333.6,237.95 2375.4,229 2413.2,220.9 2454.8,208.25 2486.8,197.7",
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
@@ -163,8 +163,8 @@ digraph {
 		width=3.015];
 	"organismal entity as a model of disease association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2725.4,221.5",
-		pos="e,2720.6,193.57 2202.6,252.32 2352.9,242.39 2545,229.63 2549.4,229 2604.3,221.14 2665.7,207.21 2710.7,196.05",
+		lp="2735.4,221.5",
+		pos="e,2723,193.85 2277.3,252.12 2395.8,243.79 2536.1,233.4 2564.4,229 2615,221.13 2671.4,207.5 2713.2,196.45",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -173,9 +173,9 @@ digraph {
 		width=3.015];
 	"organismal entity as a model of disease association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2986.4,221.5",
-		pos="e,2964.5,194.41 2196.7,251.93 2225.7,250.11 2255.4,248.39 2283.4,247 2403.3,241.05 2704.6,246.62 2823.4,229 2868.4,222.32 2918.1,\
-208.72 2955,197.39",
+		lp="2993.4,221.5",
+		pos="e,2966.7,194.49 2275.8,251.98 2304.4,250.17 2333.7,248.44 2361.4,247 2571,236.1 2626,261.76 2833.4,229 2875.6,222.33 2922,208.98 \
+2956.7,197.75",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -184,93 +184,104 @@ digraph {
 		width=3.015];
 	"organismal entity as a model of disease association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3254.9,221.5",
-		pos="e,3205.7,194.83 2194.6,251.79 2224.2,249.96 2254.7,248.27 2283.4,247 2461.5,239.14 2909.5,257.87 3085.4,229 3123.4,222.77 3164.8,\
-209.64 3196,198.4",
+		lp="3258.9,221.5",
+		pos="e,3207.2,194.93 2273.3,251.8 2302.7,249.98 2332.9,248.29 2361.4,247 2523.7,239.66 2932.2,256.53 3092.4,229 3128.5,222.79 3167.8,\
+209.82 3197.5,198.64",
+		style=solid];
+	timepoint	[color=blue,
+		height=0.5,
+		label="time type",
+		pos="3427.4,178",
+		width=1.5346];
+	"organismal entity as a model of disease association" -> timepoint	[color=blue,
+		label=timepoint,
+		lp="3429.4,221.5",
+		pos="e,3413.6,195.91 2272,251.73 2301.7,249.89 2332.5,248.21 2361.4,247 2417.4,244.66 3317.1,248.97 3369.4,229 3383.4,223.63 3396.4,213.24 \
+3406.5,203.32",
 		style=solid];
 	type	[height=0.5,
-		pos="3403.4,178",
+		pos="3531.4,178",
 		width=0.86659];
 	"organismal entity as a model of disease association" -> type	[color=blue,
 		label=type,
-		lp="3399.4,221.5",
-		pos="e,3395.7,195.75 2193.6,251.72 2223.5,249.88 2254.4,248.2 2283.4,247 2313.4,245.76 3338.6,242.58 3365.4,229 3375.9,223.7 3384.2,214.02 \
-3390.4,204.58",
+		lp="3511.4,221.5",
+		pos="e,3517.6,194.47 2271.6,251.71 2301.5,249.87 2332.4,248.19 2361.4,247 2422.9,244.48 3410.5,249.72 3468.4,229 3484.2,223.34 3499.1,\
+211.97 3510.4,201.5",
 		style=solid];
 	category	[height=0.5,
-		pos="3504.4,178",
+		pos="3632.4,178",
 		width=1.4263];
 	"organismal entity as a model of disease association" -> category	[color=blue,
 		label=category,
-		lp="3485.9,221.5",
-		pos="e,3484.5,194.77 2193.6,251.7 2223.5,249.86 2254.4,248.19 2283.4,247 2346.5,244.42 3358.6,246.07 3419.4,229 3439.8,223.26 3460.4,\
-211.34 3476.2,200.59",
+		lp="3603.9,221.5",
+		pos="e,3609.1,194.31 2271.6,251.69 2301.5,249.85 2332.4,248.18 2361.4,247 2426.3,244.36 3468.2,244.3 3531.4,229 3555.9,223.08 3581.2,\
+210.48 3600.4,199.42",
 		style=solid];
 	subject	[height=0.5,
-		pos="3618.4,178",
+		pos="3746.4,178",
 		width=1.2277];
 	"organismal entity as a model of disease association" -> subject	[color=blue,
 		label=subject,
-		lp="3587.4,221.5",
-		pos="e,3596.8,193.83 2193.3,251.69 2223.3,249.84 2254.2,248.17 2283.4,247 2352.1,244.24 3454.7,245.7 3521.4,229 3545.2,223.03 3569.8,\
-210.27 3588.3,199.13",
+		lp="3708.4,221.5",
+		pos="e,3723.2,193.36 2271.3,251.68 2301.3,249.83 2332.2,248.17 2361.4,247 2432.3,244.16 3570.2,244.88 3639.4,229 3665.9,222.91 3693.7,\
+209.71 3714.3,198.39",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="3765.4,178",
+		pos="3893.4,178",
 		width=2.3651];
 	"organismal entity as a model of disease association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3744.4,221.5",
-		pos="e,3730,194.45 2192.9,251.68 2223,249.83 2254.1,248.16 2283.4,247 2431.5,241.12 3471.3,254.03 3617.4,229 3653.1,222.89 3691.7,209.57 \
-3720.6,198.21",
+		lp="3867.4,221.5",
+		pos="e,3856.6,194.33 2270.9,251.67 2301,249.83 2332.1,248.15 2361.4,247 2514.3,240.97 3587.4,253.76 3738.4,229 3775.9,222.85 3816.8,209.37 \
+3847.1,197.95",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
 		label="severity value",
-		pos="3944.4,178",
+		pos="4072.4,178",
 		width=2.1123];
 	"organismal entity as a model of disease association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="3928.4,221.5",
-		pos="e,3913.8,194.59 2192.6,251.66 2222.8,249.81 2254,248.14 2283.4,247 2368.5,243.7 3732.8,245.26 3816.4,229 3847,223.05 3879.7,210.15 \
-3904.4,198.94",
+		lp="4053.4,221.5",
+		pos="e,4040.8,194.47 2270.6,251.65 2300.8,249.8 2332,248.13 2361.4,247 2449,243.62 3853.2,245.17 3939.4,229 3971.3,223.01 4005.6,209.95 \
+4031.3,198.68",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
 		label=onset,
-		pos="4081.4,178",
+		pos="4209.4,178",
 		width=1.011];
 	"organismal entity as a model of disease association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="4079.9,221.5",
-		pos="e,4062.4,193.61 2192.6,251.63 2222.8,249.78 2254,248.12 2283.4,247 2378.3,243.38 3901.7,253.76 3993.4,229 4015.2,223.13 4037.2,210.59 \
-4053.8,199.54",
+		lp="4205.9,221.5",
+		pos="e,4190,193.37 2270.6,251.63 2300.8,249.78 2332,248.12 2361.4,247 2458.9,243.29 4024,253.75 4118.4,229 4141.1,223.05 4164.3,210.2 \
+4181.6,199.02",
 		style=solid];
 	relation	[height=0.5,
-		pos="3569.4,18",
+		pos="3697.4,18",
 		width=1.2999];
-	object -> relation	[pos="e,3557.9,35.705 3532,73.174 3538,64.509 3545.4,53.768 3552,44.141",
+	object -> relation	[pos="e,3685.9,35.705 3660,73.174 3666,64.509 3673.4,53.768 3680,44.141",
 		style=dotted];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2330.4,265",
+		pos="2408.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2461.4,265",
+		pos="2539.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3576.4,134.5",
-		pos="e,3526.8,108.97 3585.9,165.59 3573.1,159.94 3559,152.13 3548.4,142 3541.4,135.31 3535.7,126.48 3531.3,118.1"];
-	subject -> relation	[pos="e,3580.6,35.828 3617,159.99 3614.9,139.02 3610,102.55 3599.4,73 3595.9,63.258 3590.8,53.189 3585.8,44.423",
+		lp="3704.4,134.5",
+		pos="e,3654.8,108.97 3713.9,165.59 3701.1,159.94 3687,152.13 3676.4,142 3669.4,135.31 3663.7,126.48 3659.3,118.1"];
+	subject -> relation	[pos="e,3708.6,35.828 3745,159.99 3742.9,139.02 3738,102.55 3727.4,73 3723.9,63.258 3718.8,53.189 3713.8,44.423",
 		style=dotted];
 	"organismal entity as a model of disease association_subject"	[color=blue,
 		height=0.5,
 		label="organismal entity",
-		pos="2647.4,265",
+		pos="2725.4,265",
 		width=2.5817];
 }

@@ -80,6 +80,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -102,6 +103,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -125,6 +127,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -182,6 +185,7 @@ type Association
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
   }
@@ -237,6 +241,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Behavior!
@@ -429,6 +434,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -484,6 +490,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: CellLine!
@@ -510,6 +517,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
@@ -639,6 +647,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -660,6 +669,7 @@ type ChemicalToChemicalDerivationAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -686,6 +696,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
@@ -714,6 +725,7 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -736,6 +748,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: ChemicalEntity!
@@ -964,6 +977,7 @@ type ContributorAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: InformationContentEntity!
@@ -1126,6 +1140,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: AnatomicalEntity!
@@ -1155,6 +1170,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
   }
@@ -1176,6 +1192,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Disease!
@@ -1238,6 +1255,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -1265,6 +1283,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: Disease!
@@ -1307,6 +1326,7 @@ type EntityToDiseaseAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1361,6 +1381,7 @@ type EntityToPhenotypicFeatureAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1502,6 +1523,7 @@ type ExonToTranscriptRelationship
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Exon!
@@ -1536,6 +1558,7 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     hasPopulationContext: PopulationOfIndividualOrganisms
@@ -1560,6 +1583,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: ExposureEvent!
@@ -1641,6 +1665,7 @@ type FunctionalAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -1682,6 +1707,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: Disease!
@@ -1736,6 +1762,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: Disease!
@@ -1785,6 +1812,7 @@ type GeneRegulatoryRelationship
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1809,6 +1837,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1839,6 +1868,7 @@ type GeneToExpressionSiteAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     stageQualifier: LifeStage
@@ -1865,6 +1895,7 @@ interface GeneToGeneAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1887,6 +1918,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1914,6 +1946,7 @@ type GeneToGeneHomologyAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -1937,6 +1970,7 @@ type GeneToGeneProductRelationship
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1961,6 +1995,7 @@ type GeneToGoTermAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -1984,6 +2019,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2041,6 +2077,7 @@ type GenomicSequenceLocalization
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     startInterbaseCoordinate: Integer
@@ -2086,6 +2123,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2112,6 +2150,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -2143,6 +2182,7 @@ type GenotypeToGeneAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2166,6 +2206,7 @@ type GenotypeToGenotypePartAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2190,6 +2231,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2216,6 +2258,7 @@ type GenotypeToVariantAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2376,6 +2419,7 @@ type InformationContentEntityToNamedThingAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -2460,6 +2504,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2483,6 +2528,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2511,6 +2557,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2566,6 +2613,7 @@ type MaterialSampleDerivationAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MaterialSample!
@@ -2592,6 +2640,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
   }
@@ -2683,6 +2732,7 @@ type MolecularActivityToChemicalEntityAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MolecularActivity!
@@ -2706,6 +2756,7 @@ type MolecularActivityToMolecularActivityAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MolecularActivity!
@@ -2930,6 +2981,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2954,6 +3006,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -2976,6 +3029,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     associatedEnvironmentalContext: String
@@ -3000,6 +3054,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3024,6 +3079,7 @@ type OrganismToOrganismAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: IndividualOrganism!
@@ -3062,6 +3118,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: OrganismalEntity!
@@ -3090,6 +3147,7 @@ type PairwiseGeneToGeneInteraction
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -3112,6 +3170,7 @@ type PairwiseMolecularInteraction
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
@@ -3358,6 +3417,7 @@ type PopulationToPopulationAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
@@ -3510,6 +3570,7 @@ type ReactionToCatalystAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     stoichiometry: Integer
@@ -3536,6 +3597,7 @@ type ReactionToParticipantAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -3639,6 +3701,7 @@ type SequenceAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
   }
@@ -3660,6 +3723,7 @@ type SequenceFeatureRelationship
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: NucleicAcidEntity!
@@ -3700,6 +3764,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -3876,6 +3941,7 @@ type TaxonToTaxonAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3931,6 +3997,7 @@ type TranscriptToGeneRelationship
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Transcript!
@@ -3975,6 +4042,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -4001,6 +4069,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -4033,6 +4102,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: Gene!
@@ -4056,6 +4126,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     object: Gene!
@@ -4084,6 +4155,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4110,6 +4182,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     originalKnowledgeSource: InformationResource
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: SequenceVariant!

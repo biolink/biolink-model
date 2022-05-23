@@ -76,6 +76,9 @@ fields:
     to its current serialized form.
   display_name: aggregator knowledge source
   cardinality: multi
+- id: timepoint
+  description: a point in time
+  display_name: timepoint
 - id: type
   description: rdf:type of biolink:Association should be fixed at rdf:Statement
   display_name: association_type
