@@ -887,7 +887,6 @@ slots:
   ## Time
 
   timepoint:
-    is_a: node property
     aliases: ['duration']
     range: time type
     description: >-
@@ -9651,6 +9650,7 @@ classes:
       - original knowledge source
       - primary knowledge source
       - aggregator knowledge source
+      - timepoint
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
