@@ -15,7 +15,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[UnclassifiedOntologyClass],[TaxonomicRank],[RelationshipType],[ClinicalMeasurement]++-%20has%20attribute%20type%201..1%3E[OntologyClass],[ContributorAssociation]++-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]++-%20quantifier%20qualifier%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]++-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]++-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]++-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]++-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]++-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]++-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[SequenceVariant]uses%20-.-%3E[OntologyClass],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[PhysiologicalProcess]uses%20-.-%3E[OntologyClass],[Pathway]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[MolecularActivity]uses%20-.-%3E[OntologyClass],[Haplotype]uses%20-.-%3E[OntologyClass],[Genotype]uses%20-.-%3E[OntologyClass],[GenomicBackgroundExposure]uses%20-.-%3E[OntologyClass],[Genome]uses%20-.-%3E[OntologyClass],[Gene]uses%20-.-%3E[OntologyClass],[Drug]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[UnclassifiedOntologyClass],[OntologyClass]%5E-[TaxonomicRank],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[GeneOntologyClass],[SequenceVariant],[ReagentTargetedGene],[PhysiologicalProcess],[Pathway],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[GeneToExpressionSiteAssociation],[GeneOntologyClass],[GeneExpressionMixin],[Gene],[Drug],[ContributorAssociation],[ClinicalMeasurement],[BiologicalProcessOrActivity],[BiologicalProcess],[Behavior],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonomicRank],[RelationshipType],[ClinicalMeasurement]-%20has%20attribute%20type%201..1%3E[OntologyClass%7Cid:string],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[SequenceVariant]uses%20-.-%3E[OntologyClass],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[PhysiologicalProcess]uses%20-.-%3E[OntologyClass],[Pathway]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[MolecularActivity]uses%20-.-%3E[OntologyClass],[Haplotype]uses%20-.-%3E[OntologyClass],[Genotype]uses%20-.-%3E[OntologyClass],[GenomicBackgroundExposure]uses%20-.-%3E[OntologyClass],[Genome]uses%20-.-%3E[OntologyClass],[Gene]uses%20-.-%3E[OntologyClass],[Drug]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[TaxonomicRank],[OntologyClass]%5E-[RelationshipType],[SequenceVariant],[ReagentTargetedGene],[PhysiologicalProcess],[Pathway],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[GeneToExpressionSiteAssociation],[GeneExpressionMixin],[Gene],[Drug],[ContributorAssociation],[ClinicalMeasurement],[BiologicalProcessOrActivity],[BiologicalProcess],[Behavior],[Attribute],[Association])
 
 ---
 
@@ -28,10 +28,8 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ## Children
 
- * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
  * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
  * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
- * [UnclassifiedOntologyClass](UnclassifiedOntologyClass.md) - this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
 
 ## Mixin for
 
@@ -69,6 +67,37 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ## Attributes
 
+
+### Inherited from entity:
+
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>0..1</sub>
+     * Description: An IRI for an entity. This is determined by the id using expansion rules.
+     * Range: [IriType](types/IriType.md)
+     * in subsets: (translator_minimal,samples)
+ * [category](category.md)  <sub>0..\*</sub>
+     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
+     * Range: [CategoryType](types/CategoryType.md)
+     * in subsets: (translator_minimal)
+ * [type](type.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
+ * [source](source.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
 ## Other properties
 

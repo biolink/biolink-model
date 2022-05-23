@@ -15,7 +15,7 @@ URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/vocab/Socioeconomi
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicAttribute]%3Chas%20attribute%201..%2A-++[SocioeconomicExposure%7Ctimepoint:time_type%20%3F],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[SocioeconomicAttribute],[ExposureEvent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SocioeconomicAttribute]%3Chas%20attribute%201..%2A-%20[SocioeconomicExposure%7Ctimepoint:time_type%20%3F],[SocioeconomicExposure]uses%20-.-%3E[ExposureEvent],[SocioeconomicAttribute],[ExposureEvent])
 
 ---
 

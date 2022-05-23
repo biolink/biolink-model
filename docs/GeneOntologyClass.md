@@ -1,28 +1,24 @@
 ---
-parent: Class Mixins
+parent: Other Classes
 title: biolink:GeneOntologyClass
 grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneOntologyClass
+# Class: GeneOntologyClass _(deprecated)_
 
 
-an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+
 
 URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClass)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyClass],[GeneToGoTermAssociation],[FunctionalAssociation]++-%20object%201..1%3E[GeneOntologyClass],[GeneToGoTermAssociation]++-%20object%201..1%3E[GeneOntologyClass],[OntologyClass]%5E-[GeneOntologyClass],[FunctionalAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneToGoTermAssociation],[FunctionalAssociation]++-%20object%201..1%3E[GeneOntologyClass],[GeneToGoTermAssociation]++-%20object%201..1%3E[GeneOntologyClass],[FunctionalAssociation])
 
 ---
 
-
-## Parents
-
- *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
 ## Referenced by class
 
@@ -30,11 +26,4 @@ URI: [biolink:GeneOntologyClass](https://w3id.org/biolink/vocab/GeneOntologyClas
  *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[GeneOntologyClass](GeneOntologyClass.md)**
 
 ## Attributes
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | testing |
 

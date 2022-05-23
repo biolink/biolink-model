@@ -15,7 +15,7 @@ URI: [biolink:Entity](https://w3id.org/biolink/vocab/Entity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-++[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2A;type:string%20%3F;name:label_type%20%3F;description:narrative_text%20%3F;source:string%20%3F],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-%20[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2A;type:string%20%3F;name:label_type%20%3F;description:narrative_text%20%3F;source:string%20%3F],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association])
 
 ---
 

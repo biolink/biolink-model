@@ -15,7 +15,7 @@ URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/Contributor
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[InformationContentEntity],[EvidenceType],[OntologyClass]%3Cqualifiers%200..%2A-++[ContributorAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Attribute],[Association],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[InformationContentEntity],[EvidenceType],[OntologyClass]%3Cqualifiers%200..%2A-%20[ContributorAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Agent]%3Cobject%201..1-%20[ContributorAssociation],[InformationContentEntity]%3Csubject%201..1-%20[ContributorAssociation],[Association]%5E-[ContributorAssociation],[Attribute],[Association],[Agent])
 
 ---
 

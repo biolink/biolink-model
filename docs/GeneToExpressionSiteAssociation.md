@@ -15,7 +15,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[InformationResource],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-++[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Association],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[LifeStage],[InformationResource],[AnatomicalEntity]%3Cobject%201..1-%20[GeneToExpressionSiteAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToExpressionSiteAssociation],[OntologyClass]%3Cquantifier%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[LifeStage]%3Cstage%20qualifier%200..1-%20[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Association],[AnatomicalEntity])
 
 ---
 

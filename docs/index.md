@@ -22,6 +22,22 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [Activity](Activity.md) - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
      * [AdministrativeEntity](AdministrativeEntity.md)
          * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
+     * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+         * [BiologicalSex](BiologicalSex.md)
+             * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+             * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+         * [ChemicalRole](ChemicalRole.md)
+         * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
+             * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
+                 * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
+             * [ClinicalMeasurement](ClinicalMeasurement.md) - A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
+             * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
+         * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
+             * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+             * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
+         * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+         * [SocioeconomicAttribute](SocioeconomicAttribute.md) - Attributes relating to a socioeconomic manifestation
+         * [Zygosity](Zygosity.md)
      * [BiologicalEntity](BiologicalEntity.md)
          * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
              * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
@@ -221,7 +237,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [FrequencyQuantifier](FrequencyQuantifier.md)
  * [GeneExpressionMixin](GeneExpressionMixin.md) - Observed gene expression intensity, context (site, stage) and associated phenotypic status within which the expression occurs.
  * [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
- * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
  * [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
      * [GeneProductMixin](GeneProductMixin.md) - The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
          * [GeneProductIsoformMixin](GeneProductIsoformMixin.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
@@ -240,10 +255,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Occurrent](Occurrent.md) - A processual entity.
      * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
  * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
-     * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
      * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
      * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
-     * [UnclassifiedOntologyClass](UnclassifiedOntologyClass.md) - this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
  * [OrganismTaxonToEntityAssociation](OrganismTaxonToEntityAssociation.md) - An association between an organism taxon and another entity
  * [Outcome](Outcome.md) - An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of various categories of possible biological or non-biological (e.g. clinical) outcomes.
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
@@ -266,22 +279,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Other Classes
 
  * [Annotation](Annotation.md) - Biolink Model root class for entity annotations.
-     * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
-         * [BiologicalSex](BiologicalSex.md)
-             * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-             * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-         * [ChemicalRole](ChemicalRole.md)
-         * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
-             * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
-                 * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
-             * [ClinicalMeasurement](ClinicalMeasurement.md) - A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
-             * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
-         * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
-             * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
-             * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
-         * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
-         * [SocioeconomicAttribute](SocioeconomicAttribute.md) - Attributes relating to a socioeconomic manifestation
-         * [Zygosity](Zygosity.md)
      * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
  * [BehavioralExposure](BehavioralExposure.md) - A behavioral exposure is a factor relating to behavior impacting an individual.
  * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
@@ -297,6 +294,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
  * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
  * [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)
+ * [GeneOntologyClass](GeneOntologyClass.md)
  * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
  * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
  * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
@@ -306,6 +304,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [PathologicalProcessOutcome](PathologicalProcessOutcome.md) - An outcome resulting from an exposure event which is the manifestation of a pathological process.
  * [SocioeconomicExposure](SocioeconomicExposure.md) - A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
  * [SocioeconomicOutcome](SocioeconomicOutcome.md) - An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
+ * [UnclassifiedOntologyClass](UnclassifiedOntologyClass.md)
 
 ## Slots
 
