@@ -1976,6 +1976,7 @@ slots:
   ## end of Publication related predicates
 
   assesses:
+    aliases: ['was assayed against']
     description: >-
       The effect of a thing on a target was interrogated in some assay.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
@@ -9680,6 +9681,15 @@ classes:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
+
+  chemical entity assesses named thing association:
+    is_a: association
+    domain: chemical entity
+    range: named thing
+    slot_usage:
+      predicate:
+        subclass_of: assesses
+
 
   contributor association:
     is_a: association
