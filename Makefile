@@ -74,6 +74,13 @@ gen-golr-views: biolink-model.yaml dir-golr-views env.lock
 
 
 # ~~~~~~~~~~~~~~~~~~~~
+# pydantic
+# ~~~~~~~~~~~~~~~~~~~~
+gen-pydantic: biolink-model.yaml dir-pydantic env.lock
+	pipenv run gen-pydantic $< > pydantic/biolink-model.py
+
+
+# ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.graphql: biolink-model.yaml env.lock
@@ -195,6 +202,10 @@ contrib/%/datamodel.py: contrib/%.yaml
 contrib-golr-%: contrib-dir-% contrib/%.yaml
 	pipenv run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
+contrib-pydantic-%: contrib-dir-% contrib/%.yaml
+	pipenv run gen-pydantic -d contrib/$*/pydantic contrib/$*.yaml
+
+
 contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
 	pipenv run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
 
@@ -228,7 +239,7 @@ pytest: biolink/model.py
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex
+	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex pydantic
 	rm -f env.lock
 	pipenv --rm
 

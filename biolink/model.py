@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-20T14:26:28
+# Generation date: 2022-05-20T22:59:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -260,6 +260,7 @@ FABIO = CurieNamespace('fabio', 'http://purl.org/spar/fabio/')
 FALDO = CurieNamespace('faldo', 'http://biohackathon.org/resource/faldo#')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
 FOODB_COMPOUND = CurieNamespace('foodb_compound', 'http://foodb.ca/compounds/')
+FOODB_FOOD = CurieNamespace('foodb_food', 'http://example.org/UNKNOWN/foodb.food/')
 GFF3 = CurieNamespace('gff3', 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#')
 GPI = CurieNamespace('gpi', 'https://github.com/geneontology/go-annotation/blob/master/specs/gpad-gpi-2-0.md#')
 GTPO = CurieNamespace('gtpo', 'https://rdf.guidetopharmacology.org/ns/gtpo#')
