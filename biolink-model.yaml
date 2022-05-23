@@ -57,7 +57,8 @@ prefixes:
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
   foaf: 'http://xmlns.com/foaf/0.1/'
-  foodb.compound: 'http://foodb.ca/compounds/'
+  foodb.food: 'http://foodb.ca/compounds/'
+  foodb.compound: 'http://foodb.ca/foods/'
   FYECO: 'https://www.pombase.org/term/'
   FYPO: 'http://purl.obolibrary.org/obo/FYPO_'  # Fission Yeast Phenotype Ontology
   GAMMA: 'http://translator.renci.org/GAMMA_'
@@ -7005,6 +7006,8 @@ classes:
 
   ontology class:
     mixin: true
+    slots:
+      - id
     description: >-
       a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in
       a biolink compatible KG can be considered both instances of biolink classes, and
@@ -7061,7 +7064,7 @@ classes:
   # source: ORCID
 
   attribute:
-    is_a: annotation
+    is_a: named thing
     mixins:
       - ontology class
     description: >-
@@ -7196,20 +7199,10 @@ classes:
       An OWL property used as an edge label
 
   gene ontology class:
-    mixin: true
-    description: >-
-      an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    is_a: ontology class
-    in_subset:
-      - testing
+    deprecated: true
 
   unclassified ontology class:
-    mixin: true
-    description: >-
-      this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
-    is_a: ontology class
-    in_subset:
-      - testing
+    deprecated: true
 
   taxonomic rank:
     description: >-
