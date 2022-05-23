@@ -7198,20 +7198,10 @@ classes:
       An OWL property used as an edge label
 
   gene ontology class:
-    mixin: true
-    description: >-
-      an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    is_a: ontology class
-    in_subset:
-      - testing
+    deprecated: true
 
   unclassified ontology class:
-    mixin: true
-    description: >-
-      this is used for nodes that are taken from an ontology but are not typed using an existing biolink class
-    is_a: ontology class
-    in_subset:
-      - testing
+    deprecated: true
 
   taxonomic rank:
     description: >-
