@@ -56,6 +56,7 @@ jobs:
           git add java/BiolinkModel.java
           git add graphviz/*
           git add golr-views/*
+          git add pydantic/*
           git add json-schema/biolink-model.json
           git add prefix-map/biolink-model-prefix-map.json
           git commit -m "Regenerate artifacts from biolink-model.yaml"
