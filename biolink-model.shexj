@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.3.1
+# version: 2.4.0
 {
    "type": "Schema",
    "@context": [
@@ -603,37 +603,35 @@
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/Annotation",
          "shapeExprs": [
-            "https://w3id.org/biolink/vocab/Attribute",
+            {
+               "type": "Shape",
+               "closed": false,
+               "expression": {
+                  "type": "EachOf",
+                  "expressions": [
+                     {
+                        "type": "TripleConstraint",
+                        "id": "https://w3id.org/biolink/vocab/Annotation_tes",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "min": 0,
+                        "max": -1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Annotation"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               }
+            },
             "https://w3id.org/biolink/vocab/QuantityValue"
          ]
-      },
-      {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/Annotation_struct",
-         "closed": false,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "TripleConstraint",
-                  "id": "https://w3id.org/biolink/vocab/Annotation_tes",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "min": 0,
-                  "max": -1
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/Annotation"
-                     ]
-                  },
-                  "min": 0
-               }
-            ]
-         }
       },
       {
          "type": "Shape",
@@ -897,14 +895,14 @@
                         "type": "EachOf",
                         "id": "https://w3id.org/biolink/vocab/Attribute_tes",
                         "expressions": [
-                           "https://w3id.org/biolink/vocab/Annotation_tes",
+                           "https://w3id.org/biolink/vocab/NamedThing_tes",
                            {
                               "type": "TripleConstraint",
                               "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                               "valueExpr": {
                                  "type": "NodeConstraint",
                                  "values": [
-                                    "https://w3id.org/biolink/vocab/Annotation"
+                                    "https://w3id.org/biolink/vocab/NamedThing"
                                  ]
                               },
                               "min": 0
@@ -948,20 +946,6 @@
                               "valueExpr": "https://w3id.org/biolink/vocab/NamedThing",
                               "min": 0,
                               "max": 1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/iri",
-                              "valueExpr": "https://w3id.org/biolink/vocab/IriType",
-                              "min": 0,
-                              "max": 1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/source",
-                              "valueExpr": "https://w3id.org/linkml/String",
-                              "min": 0,
-                              "max": 1
                            }
                         ]
                      },
@@ -974,7 +958,7 @@
                               "https://w3id.org/biolink/vocab/Attribute"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -1527,7 +1511,7 @@
                               "https://w3id.org/biolink/vocab/BiologicalSex"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -2582,7 +2566,7 @@
                         "https://w3id.org/biolink/vocab/ChemicalRole"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -3023,7 +3007,7 @@
                               "https://w3id.org/biolink/vocab/ClinicalAttribute"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -3070,7 +3054,7 @@
                               "https://w3id.org/biolink/vocab/ClinicalCourse"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -3256,7 +3240,7 @@
                         "https://w3id.org/biolink/vocab/ClinicalMeasurement"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -3295,7 +3279,7 @@
                         "https://w3id.org/biolink/vocab/ClinicalModifier"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -6360,27 +6344,16 @@
       {
          "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/GeneOntologyClass",
-         "closed": false,
+         "closed": true,
          "expression": {
             "type": "EachOf",
             "expressions": [
                {
-                  "type": "EachOf",
+                  "type": "TripleConstraint",
                   "id": "https://w3id.org/biolink/vocab/GeneOntologyClass_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/OntologyClass_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/OntologyClass"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "min": 0,
+                  "max": -1
                },
                {
                   "type": "TripleConstraint",
@@ -7433,7 +7406,7 @@
                         "https://w3id.org/biolink/vocab/GenomicBackgroundExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -8204,7 +8177,7 @@
                         "https://w3id.org/biolink/vocab/GenotypicSex"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -8849,7 +8822,7 @@
                         "https://w3id.org/biolink/vocab/Inheritance"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -9950,6 +9923,7 @@
             },
             "https://w3id.org/biolink/vocab/Activity",
             "https://w3id.org/biolink/vocab/AdministrativeEntity",
+            "https://w3id.org/biolink/vocab/Attribute",
             "https://w3id.org/biolink/vocab/BiologicalEntity",
             "https://w3id.org/biolink/vocab/ChemicalEntity",
             "https://w3id.org/biolink/vocab/ClinicalEntity",
@@ -10271,7 +10245,7 @@
                         "https://w3id.org/biolink/vocab/Onset"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -10280,10 +10254,8 @@
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/OntologyClass",
          "shapeExprs": [
-            "https://w3id.org/biolink/vocab/GeneOntologyClass",
             "https://w3id.org/biolink/vocab/RelationshipType",
-            "https://w3id.org/biolink/vocab/TaxonomicRank",
-            "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass"
+            "https://w3id.org/biolink/vocab/TaxonomicRank"
          ]
       },
       {
@@ -10309,7 +10281,7 @@
                         "https://w3id.org/biolink/vocab/OntologyClass"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -10351,7 +10323,7 @@
                               "https://w3id.org/biolink/vocab/OrganismAttribute"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -11576,7 +11548,7 @@
                         "https://w3id.org/biolink/vocab/PhenotypicQuality"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -11615,7 +11587,7 @@
                         "https://w3id.org/biolink/vocab/PhenotypicSex"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -12848,7 +12820,7 @@
                         "https://w3id.org/biolink/vocab/RelationshipType"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -13370,7 +13342,7 @@
                         "https://w3id.org/biolink/vocab/SeverityValue"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -13526,7 +13498,7 @@
                         "https://w3id.org/biolink/vocab/SocioeconomicAttribute"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -13828,7 +13800,7 @@
                         "https://w3id.org/biolink/vocab/TaxonomicRank"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -14060,27 +14032,16 @@
       {
          "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass",
-         "closed": false,
+         "closed": true,
          "expression": {
             "type": "EachOf",
             "expressions": [
                {
-                  "type": "EachOf",
+                  "type": "TripleConstraint",
                   "id": "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/OntologyClass_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/OntologyClass"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "min": 0,
+                  "max": -1
                },
                {
                   "type": "TripleConstraint",
@@ -14758,7 +14719,7 @@
                         "https://w3id.org/biolink/vocab/Zygosity"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }

@@ -15,7 +15,7 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[EvidenceType],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[Gene]%3Cobject%201..1-%20[GenotypeToGeneAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Genotype]%3Csubject%201..1-%20[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Genotype],[Gene],[EvidenceType],[Attribute],[Association])
 
 ---
 
@@ -77,6 +77,9 @@ URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/Genotype
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * Range: [InformationResource](InformationResource.md)
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>

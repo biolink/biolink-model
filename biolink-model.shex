@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.3.1
+# version: 2.4.0
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -156,14 +156,12 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <Annotation>  (
-    @<Attribute> OR @<QuantityValue>
+    {
+       (  $<Annotation_tes> rdf:type . * ;
+          rdf:type [ <Annotation> ] ?
+       )
+    } OR @<QuantityValue>
 )
-
-<Annotation_struct> {
-    (  $<Annotation_tes> rdf:type . * ;
-       rdf:type [ <Annotation> ] ?
-    )
-}
 
 <Article> CLOSED {
     (  $<Article_tes> (  &<Publication_tes> ;
@@ -219,18 +217,16 @@ linkml:Nodeidentifier NONLITERAL
 
 <Attribute>  (
     CLOSED {
-       (  $<Attribute_tes> (  &<Annotation_tes> ;
-             rdf:type [ <Annotation> ] ? ;
+       (  $<Attribute_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              rdfs:label @<LabelType> ? ;
              <has_attribute_type> @<OntologyClass> ;
              <has_quantitative_value> @<QuantityValue> * ;
-             <has_qualitative_value> @<NamedThing> ? ;
-             <iri> @<IriType> ? ;
-             <source> @linkml:String ?
+             <has_qualitative_value> @<NamedThing> ?
           ) ;
-          rdf:type [ <Attribute> ] ?
+          rdf:type [ <Attribute> ]
        )
     } OR @<BiologicalSex> OR @<ChemicalRole> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR
     @<SocioeconomicAttribute> OR @<Zygosity>
@@ -339,7 +335,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<BiologicalSex_tes> (  &<Attribute_tes> ;
              rdf:type [ <Attribute> ] ?
           ) ;
-          rdf:type [ <BiologicalSex> ] ?
+          rdf:type [ <BiologicalSex> ]
        )
     } OR @<GenotypicSex> OR @<PhenotypicSex>
 )
@@ -545,7 +541,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<ChemicalRole_tes> (  &<Attribute_tes> ;
           rdf:type [ <Attribute> ] ?
        ) ;
-       rdf:type [ <ChemicalRole> ] ?
+       rdf:type [ <ChemicalRole> ]
     )
 }
 
@@ -630,7 +626,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<ClinicalAttribute_tes> (  &<Attribute_tes> ;
              rdf:type [ <Attribute> ] ?
           ) ;
-          rdf:type [ <ClinicalAttribute> ] ?
+          rdf:type [ <ClinicalAttribute> ]
        )
     } OR @<ClinicalCourse> OR @<ClinicalMeasurement> OR @<ClinicalModifier>
 )
@@ -640,7 +636,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<ClinicalCourse_tes> (  &<ClinicalAttribute_tes> ;
              rdf:type [ <ClinicalAttribute> ] ?
           ) ;
-          rdf:type [ <ClinicalCourse> ] ?
+          rdf:type [ <ClinicalCourse> ]
        )
     } OR @<Onset>
 )
@@ -679,7 +675,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <ClinicalAttribute> ] ? ;
           <has_attribute_type> @<OntologyClass>
        ) ;
-       rdf:type [ <ClinicalMeasurement> ] ?
+       rdf:type [ <ClinicalMeasurement> ]
     )
 }
 
@@ -687,7 +683,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<ClinicalModifier_tes> (  &<ClinicalAttribute_tes> ;
           rdf:type [ <ClinicalAttribute> ] ?
        ) ;
-       rdf:type [ <ClinicalModifier> ] ?
+       rdf:type [ <ClinicalModifier> ]
     )
 }
 
@@ -1287,10 +1283,8 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<GeneOntologyClass> {
-    (  $<GeneOntologyClass_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
-       ) ;
+<GeneOntologyClass> CLOSED {
+    (  $<GeneOntologyClass_tes> rdf:type . * ;
        rdf:type [ <GeneOntologyClass> ] ?
     )
 }
@@ -1486,7 +1480,7 @@ linkml:Nodeidentifier NONLITERAL
           <in_taxon> @<OrganismTaxon> * ;
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
-       rdf:type [ <GenomicBackgroundExposure> ] ?
+       rdf:type [ <GenomicBackgroundExposure> ]
     )
 }
 
@@ -1626,7 +1620,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<GenotypicSex_tes> (  &<BiologicalSex_tes> ;
           rdf:type [ <BiologicalSex> ] ?
        ) ;
-       rdf:type [ <GenotypicSex> ] ?
+       rdf:type [ <GenotypicSex> ]
     )
 }
 
@@ -1754,7 +1748,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Inheritance_tes> (  &<OrganismAttribute_tes> ;
           rdf:type [ <OrganismAttribute> ] ?
        ) ;
-       rdf:type [ <Inheritance> ] ?
+       rdf:type [ <Inheritance> ]
     )
 }
 
@@ -1973,9 +1967,9 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <NamedThing> ]
        )
-    } OR @<Activity> OR @<AdministrativeEntity> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR @<Device> OR
-    @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR @<PlanetaryEntity> OR
-    @<Procedure> OR @<Treatment>
+    } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
+    @<Device> OR @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR
+    @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
 )
 
 <NoncodingRNAProduct>  (
@@ -2038,17 +2032,17 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Onset_tes> (  &<ClinicalCourse_tes> ;
           rdf:type [ <ClinicalCourse> ] ?
        ) ;
-       rdf:type [ <Onset> ] ?
+       rdf:type [ <Onset> ]
     )
 }
 
 <OntologyClass>  (
-    @<GeneOntologyClass> OR @<RelationshipType> OR @<TaxonomicRank> OR @<UnclassifiedOntologyClass>
+    @<RelationshipType> OR @<TaxonomicRank>
 )
 
 <OntologyClass_struct> {
     (  $<OntologyClass_tes> rdf:type . * ;
-       rdf:type [ <OntologyClass> ] ?
+       rdf:type [ <OntologyClass> ]
     )
 }
 
@@ -2057,7 +2051,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<OrganismAttribute_tes> (  &<Attribute_tes> ;
              rdf:type [ <Attribute> ] ?
           ) ;
-          rdf:type [ <OrganismAttribute> ] ?
+          rdf:type [ <OrganismAttribute> ]
        )
     } OR @<Inheritance> OR @<PhenotypicQuality>
 )
@@ -2299,7 +2293,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<PhenotypicQuality_tes> (  &<OrganismAttribute_tes> ;
           rdf:type [ <OrganismAttribute> ] ?
        ) ;
-       rdf:type [ <PhenotypicQuality> ] ?
+       rdf:type [ <PhenotypicQuality> ]
     )
 }
 
@@ -2307,7 +2301,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<PhenotypicSex_tes> (  &<BiologicalSex_tes> ;
           rdf:type [ <BiologicalSex> ] ?
        ) ;
-       rdf:type [ <PhenotypicSex> ] ?
+       rdf:type [ <PhenotypicSex> ]
     )
 }
 
@@ -2551,7 +2545,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<RelationshipType_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <RelationshipType> ] ?
+       rdf:type [ <RelationshipType> ]
     )
 }
 
@@ -2653,7 +2647,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<SeverityValue_tes> (  &<Attribute_tes> ;
           rdf:type [ <Attribute> ] ?
        ) ;
-       rdf:type [ <SeverityValue> ] ?
+       rdf:type [ <SeverityValue> ]
     )
 }
 
@@ -2685,7 +2679,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<SocioeconomicAttribute_tes> (  &<Attribute_tes> ;
           rdf:type [ <Attribute> ] ?
        ) ;
-       rdf:type [ <SocioeconomicAttribute> ] ?
+       rdf:type [ <SocioeconomicAttribute> ]
     )
 }
 
@@ -2747,7 +2741,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ?
        ) ;
-       rdf:type [ <TaxonomicRank> ] ?
+       rdf:type [ <TaxonomicRank> ]
     )
 }
 
@@ -2795,10 +2789,8 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<UnclassifiedOntologyClass> {
-    (  $<UnclassifiedOntologyClass_tes> (  &<OntologyClass_tes> ;
-          rdf:type [ <OntologyClass> ] ?
-       ) ;
+<UnclassifiedOntologyClass> CLOSED {
+    (  $<UnclassifiedOntologyClass_tes> rdf:type . * ;
        rdf:type [ <UnclassifiedOntologyClass> ] ?
     )
 }
@@ -2921,7 +2913,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Zygosity_tes> (  &<Attribute_tes> ;
           rdf:type [ <Attribute> ] ?
        ) ;
-       rdf:type [ <Zygosity> ] ?
+       rdf:type [ <Zygosity> ]
     )
 }
 

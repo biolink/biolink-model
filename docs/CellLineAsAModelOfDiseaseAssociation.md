@@ -15,7 +15,7 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseAssociationMixin],[InformationResource],[EvidenceType],[EntityToDiseaseAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine]%3Csubject%201..1-%20[CellLineAsAModelOfDiseaseAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[CellLine],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[NamedThing],[ModelToDiseaseAssociationMixin],[InformationResource],[EvidenceType],[EntityToDiseaseAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CellLine]%3Csubject%201..1-%20[CellLineAsAModelOfDiseaseAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[CellLineAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[CellLineToDiseaseOrPhenotypicFeatureAssociation]%5E-[CellLineAsAModelOfDiseaseAssociation],[CellLine],[Attribute])
 
 ---
 
@@ -76,6 +76,9 @@ URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/voc
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * Range: [InformationResource](InformationResource.md)
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>

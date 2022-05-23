@@ -1694,7 +1694,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [symbol](symbol.md) - Symbol for a particular thing
      * [synonym](synonym.md) - Alternate human-readable names for a thing
      * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
-     * [timepoint](timepoint.md) - a point in time
      * [trade name](trade_name.md)
      * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
      * [version](version.md)
@@ -1712,7 +1711,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [symbol](symbol.md) - Symbol for a particular thing
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
- * [timepoint](timepoint.md) - a point in time
  * [trade name](trade_name.md)
  * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
  * [version](version.md)
@@ -1875,6 +1873,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [source](source.md)
+ * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
 

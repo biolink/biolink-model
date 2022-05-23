@@ -19,7 +19,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -93,7 +93,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -156,7 +156,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -232,7 +232,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -292,7 +292,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -342,7 +342,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -402,7 +402,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -461,7 +461,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -580,7 +580,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -640,7 +640,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -669,9 +669,28 @@
          "additionalProperties": false,
          "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -684,6 +703,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -692,11 +715,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "Attribute",
@@ -728,7 +770,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -815,7 +857,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -854,8 +896,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -879,17 +921,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -945,7 +987,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1030,7 +1072,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1114,7 +1156,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1176,9 +1218,28 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -1191,6 +1252,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -1199,11 +1264,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "BiologicalSex",
@@ -1257,7 +1341,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1372,7 +1456,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1477,7 +1561,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1557,7 +1641,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1596,8 +1680,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -1621,17 +1705,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -1673,7 +1757,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1743,7 +1827,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1816,7 +1900,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1855,8 +1939,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -1880,13 +1964,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -1934,7 +2018,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -1994,7 +2078,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2038,7 +2122,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2114,14 +2198,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2225,14 +2309,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2304,9 +2388,28 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2319,6 +2422,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -2327,11 +2434,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "ChemicalRole",
@@ -2370,7 +2496,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2430,7 +2556,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2487,7 +2613,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2547,7 +2673,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2597,7 +2723,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2657,7 +2783,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2707,7 +2833,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2767,7 +2893,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2817,7 +2943,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2877,7 +3003,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -2906,9 +3032,28 @@
          "additionalProperties": false,
          "description": "Attributes relating to a clinical manifestation",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2921,6 +3066,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -2929,11 +3078,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "ClinicalAttribute",
@@ -2943,9 +3111,28 @@
          "additionalProperties": false,
          "description": "The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -2958,6 +3145,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -2966,11 +3157,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "ClinicalCourse",
@@ -2995,7 +3205,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3058,7 +3268,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/ClinicalAttribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3128,7 +3338,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3176,9 +3386,28 @@
          "additionalProperties": false,
          "description": "A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -3191,6 +3420,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -3199,11 +3432,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "ClinicalMeasurement",
@@ -3213,9 +3465,28 @@
          "additionalProperties": false,
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -3228,6 +3499,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -3236,11 +3511,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "ClinicalModifier",
@@ -3265,7 +3559,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3334,7 +3628,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3345,7 +3639,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3429,7 +3723,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3517,14 +3811,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3619,7 +3913,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3694,7 +3988,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3754,7 +4048,7 @@
             "qualifiers": {
                "description": "this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3806,7 +4100,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3886,7 +4180,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -3963,7 +4257,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4046,7 +4340,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4124,7 +4418,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4187,7 +4481,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4257,7 +4551,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4355,7 +4649,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4415,7 +4709,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4465,7 +4759,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4525,7 +4819,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4579,7 +4873,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4618,8 +4912,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -4643,17 +4937,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -4705,14 +4999,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4846,7 +5140,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4906,7 +5200,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -4999,7 +5293,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5038,8 +5332,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -5063,13 +5357,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -5120,7 +5414,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5180,7 +5474,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5233,7 +5527,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5293,7 +5587,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5351,7 +5645,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5420,14 +5714,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5500,7 +5794,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5571,7 +5865,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5642,7 +5936,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5717,7 +6011,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5728,7 +6022,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5818,7 +6112,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5878,7 +6172,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -5936,7 +6230,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6005,7 +6299,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6059,7 +6353,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6098,8 +6392,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -6123,17 +6417,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -6207,14 +6501,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6307,14 +6601,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6393,7 +6687,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6453,7 +6747,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6497,7 +6791,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6592,7 +6886,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6631,8 +6925,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -6656,13 +6950,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -6704,7 +6998,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6784,7 +7078,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6823,8 +7117,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -6848,7 +7142,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6857,8 +7151,8 @@
                "type": "string"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -6879,6 +7173,14 @@
             "subject"
          ],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
+         "type": "object"
+      },
+      "GeneOntologyClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "GeneOntologyClass",
          "type": "object"
       },
       "GeneRegulatoryRelationship": {
@@ -6906,7 +7208,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -6966,7 +7268,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7020,7 +7322,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7059,8 +7361,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -7084,13 +7386,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -7138,7 +7440,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7198,13 +7500,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "can be used to indicate magnitude, or also ranking"
+               "description": "can be used to indicate magnitude, or also ranking",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -7260,7 +7562,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7324,13 +7626,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "Optional quantitative value indicating degree of expression."
+               "description": "Optional quantitative value indicating degree of expression.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -7382,7 +7684,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7442,7 +7744,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7492,7 +7794,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7552,7 +7854,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7602,7 +7904,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7662,7 +7964,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7716,7 +8018,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7755,8 +8057,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -7780,17 +8082,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -7832,7 +8134,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -7902,6 +8204,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "in_taxon": {
                "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
                "items": {
@@ -7915,7 +8221,9 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "id"
+         ],
          "title": "GenomicBackgroundExposure",
          "type": "object"
       },
@@ -7952,7 +8260,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8016,7 +8324,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8068,7 +8376,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8077,7 +8385,7 @@
                "type": "string"
             },
             "has_zygosity": {
-               "$ref": "#/$defs/Zygosity"
+               "type": "string"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -8155,7 +8463,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8194,8 +8502,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -8219,13 +8527,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -8277,7 +8585,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8316,8 +8624,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -8341,13 +8649,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -8395,7 +8703,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8455,7 +8763,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8505,7 +8813,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8565,7 +8873,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8619,7 +8927,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8658,8 +8966,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -8683,17 +8991,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -8741,7 +9049,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8801,7 +9109,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8830,9 +9138,28 @@
          "additionalProperties": false,
          "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -8845,6 +9172,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -8853,11 +9184,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "GenotypicSex",
@@ -8896,7 +9246,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -8967,7 +9317,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9043,7 +9393,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9113,7 +9463,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9187,7 +9537,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9258,7 +9608,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9334,7 +9684,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9394,7 +9744,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9446,7 +9796,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9500,9 +9850,28 @@
          "additionalProperties": false,
          "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -9515,6 +9884,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -9523,11 +9896,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "Inheritance",
@@ -9552,7 +9944,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9638,7 +10030,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9698,7 +10090,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9748,7 +10140,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9808,7 +10200,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9858,7 +10250,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9918,7 +10310,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -9968,14 +10360,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10048,7 +10440,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10117,7 +10509,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10177,7 +10569,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10227,7 +10619,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10287,7 +10679,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10337,7 +10729,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10348,7 +10740,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10445,14 +10837,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10532,7 +10924,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10615,7 +11007,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10675,7 +11067,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10725,7 +11117,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10785,7 +11177,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10835,14 +11227,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -10929,14 +11321,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11031,7 +11423,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11100,7 +11492,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11111,7 +11503,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11208,7 +11600,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11219,7 +11611,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11303,7 +11695,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11372,14 +11764,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11437,9 +11829,28 @@
          "additionalProperties": false,
          "description": "The age group in which (disease) symptom manifestations appear",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -11452,6 +11863,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -11460,11 +11875,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "Onset",
@@ -11474,9 +11908,28 @@
          "additionalProperties": false,
          "description": "describes a characteristic of an organismal entity.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -11489,6 +11942,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -11497,11 +11954,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "OrganismAttribute",
@@ -11526,12 +12002,12 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_taxonomic_rank": {
-               "$ref": "#/$defs/TaxonomicRank"
+               "type": "string"
             },
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -11602,7 +12078,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11662,7 +12138,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11712,7 +12188,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11772,7 +12248,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11822,7 +12298,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11882,7 +12358,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11936,7 +12412,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -11975,8 +12451,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -12000,13 +12476,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -12054,7 +12530,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12114,7 +12590,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12164,7 +12640,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12180,7 +12656,7 @@
                "type": "string"
             },
             "interacting_molecules_category": {
-               "$ref": "#/$defs/OntologyClass"
+               "type": "string"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -12227,7 +12703,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12293,7 +12769,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12370,7 +12846,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12476,7 +12952,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12563,7 +13039,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12626,7 +13102,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12681,9 +13157,28 @@
          "additionalProperties": false,
          "description": "A property of a phenotype",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -12696,6 +13191,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -12704,11 +13203,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "PhenotypicQuality",
@@ -12718,9 +13236,28 @@
          "additionalProperties": false,
          "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -12733,6 +13270,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -12741,11 +13282,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "PhenotypicSex",
@@ -12770,7 +13330,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12840,7 +13400,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12917,7 +13477,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -12980,7 +13540,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13050,7 +13610,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13126,7 +13686,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13186,7 +13746,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13243,7 +13803,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13316,14 +13876,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13410,7 +13970,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13487,7 +14047,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13557,7 +14117,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13627,7 +14187,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13719,7 +14279,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13838,7 +14398,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13849,7 +14409,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13946,7 +14506,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -13957,7 +14517,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14074,7 +14634,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14134,7 +14694,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14196,7 +14756,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14256,7 +14816,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14312,7 +14872,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14370,8 +14930,15 @@
       "RelationshipType": {
          "additionalProperties": false,
          "description": "An OWL property used as an edge label",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "RelationshipType",
          "type": "object"
       },
@@ -14400,7 +14967,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14460,7 +15027,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14519,7 +15086,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14579,7 +15146,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14623,7 +15190,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14719,7 +15286,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14812,9 +15379,28 @@
          "additionalProperties": false,
          "description": "describes the severity of a phenotypic feature or disease",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -14827,6 +15413,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -14835,11 +15425,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "SeverityValue",
@@ -14870,7 +15479,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14881,7 +15490,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -14978,14 +15587,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15062,7 +15671,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15128,9 +15737,28 @@
          "additionalProperties": false,
          "description": "Attributes relating to a socioeconomic manifestation",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -15143,6 +15771,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -15151,11 +15783,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "SocioeconomicAttribute",
@@ -15168,7 +15819,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/SocioeconomicAttribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15222,7 +15873,7 @@
             "has_attribute": {
                "description": "may often be an organism attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15298,7 +15949,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15358,7 +16009,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15386,8 +16037,15 @@
       "TaxonomicRank": {
          "additionalProperties": false,
          "description": "A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id"
+         ],
          "title": "TaxonomicRank",
          "type": "object"
       },
@@ -15416,7 +16074,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15427,7 +16085,7 @@
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15517,7 +16175,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15577,7 +16235,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15621,7 +16279,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15691,6 +16349,14 @@
          "title": "Treatment",
          "type": "object"
       },
+      "UnclassifiedOntologyClass": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "UnclassifiedOntologyClass",
+         "type": "object"
+      },
       "VariantAsAModelOfDiseaseAssociation": {
          "additionalProperties": false,
          "description": "",
@@ -15720,7 +16386,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15759,8 +16425,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -15784,13 +16450,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -15842,7 +16508,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -15881,8 +16547,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -15906,13 +16572,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -15960,7 +16626,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16020,7 +16686,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16074,7 +16740,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16138,13 +16804,13 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "quantifier_qualifier": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "Optional quantitative value indicating degree of expression."
+               "description": "Optional quantitative value indicating degree of expression.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -16200,7 +16866,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16239,8 +16905,8 @@
                "type": "string"
             },
             "onset_qualifier": {
-               "$ref": "#/$defs/Onset",
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
             },
             "original_knowledge_source": {
                "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
@@ -16264,17 +16930,17 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
             "severity_qualifier": {
-               "$ref": "#/$defs/SeverityValue",
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
             },
             "sex_qualifier": {
-               "$ref": "#/$defs/BiologicalSex",
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex."
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
             },
             "source": {
                "type": "string"
@@ -16326,7 +16992,7 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16402,7 +17068,7 @@
             "qualifiers": {
                "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
                "items": {
-                  "$ref": "#/$defs/OntologyClass"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16452,14 +17118,14 @@
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
-                  "$ref": "#/$defs/Attribute"
+                  "type": "string"
                },
                "type": "array"
             },
             "has_chemical_role": {
                "description": "\tA role is particular behaviour which a material entity may exhibit.",
                "items": {
-                  "$ref": "#/$defs/ChemicalRole"
+                  "type": "string"
                },
                "type": "array"
             },
@@ -16517,9 +17183,28 @@
          "additionalProperties": false,
          "description": "",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_attribute_type": {
-               "$ref": "#/$defs/OntologyClass",
-               "description": "connects an attribute to a class that describes it"
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
             },
             "has_qualitative_value": {
                "description": "connects an attribute to a value",
@@ -16532,6 +17217,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -16540,11 +17229,30 @@
                "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
                "type": "string"
             },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "source": {
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
             "has_attribute_type"
          ],
          "title": "Zygosity",
@@ -16559,6 +17267,6 @@
    "required": [],
    "title": "Biolink-Model",
    "type": "object",
-   "version": "2.3.1"
+   "version": "2.4.0"
 }
 

@@ -15,7 +15,7 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToEntityAssociationMixin],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MacromolecularMachineToCellularComponentAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineMixin],[InformationResource],[FunctionalAssociation],[EvidenceType],[CellularComponent],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[MacromolecularMachineToEntityAssociationMixin],[CellularComponent]%3Cobject%201..1-%20[MacromolecularMachineToCellularComponentAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MacromolecularMachineToCellularComponentAssociation]uses%20-.-%3E[MacromolecularMachineToEntityAssociationMixin],[FunctionalAssociation]%5E-[MacromolecularMachineToCellularComponentAssociation],[MacromolecularMachineMixin],[InformationResource],[FunctionalAssociation],[EvidenceType],[CellularComponent],[Attribute])
 
 ---
 
@@ -75,6 +75,9 @@ URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * Range: [InformationResource](InformationResource.md)
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>

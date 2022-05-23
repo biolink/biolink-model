@@ -15,7 +15,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct]%3Cobject%201..1-++[GeneRegulatoryRelationship%7Cpredicate:predicate_type;negated(i):boolean%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct]%3Cobject%201..1-++[GeneRegulatoryRelationship%7Cpredicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneRegulatoryRelationship],[Association]%5E-[GeneRegulatoryRelationship],[GeneOrGeneProduct],[EvidenceType],[Attribute],[Association])
 
 ---
 
@@ -77,6 +77,9 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * Range: [InformationResource](InformationResource.md)
+ * [timepoint](timepoint.md)  <sub>0..1</sub>
+     * Description: a point in time
+     * Range: [TimeType](types/TimeType.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
