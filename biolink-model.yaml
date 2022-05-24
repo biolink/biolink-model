@@ -8750,13 +8750,14 @@ classes:
       - chemical entity or gene or gene product
       - physical essence
       - ontology class
-    aliases: ['locus']
     slots:
       - symbol
       - synonym
       - xref
     narrow_mappings:
       - bioschemas:gene
+    broad_mappings:
+      - NCIT:C45822
     exact_mappings:
       - SO:0000704
       - SIO:010035
