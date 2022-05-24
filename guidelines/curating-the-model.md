@@ -23,12 +23,12 @@ An entity class represents entities like Genes, Diseases, Chemical Substances, e
 
 Instances of these Entity classes are represented as nodes in a graph.
 
-Biolink Model has several entity classes like `gene`, `disease`, `phenotypic feature`, `chemical substance`.
+Biolink Model has several entity classes such as `gene`, `disease`, `phenotypic feature`, `chemical substance`.
 
 All these classes are arranged in a hierarchy with the root of all entities being the `named thing` class.
 
 
-To add an entity class to Biolink Model you need to determine the following,
+To add an entity class to Biolink Model you need to determine the following:
   - What is an appropriate name for this entity?
     - The name for an entity should be clear and concise. It should describe instances of this class
   - Where in the [`named thing` hierarchy](https://biolink.github.io/biolink-model/docs/NamedThing) does the new class fit?
@@ -172,17 +172,17 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 A predicate is a slot that links two instances of a class. 
 
-To add a predicate to Biolink Model you need to determine the following,
+To add a predicate to Biolink Model you need to determine the following:
   - What is an appropriate name for this predicate?
-    - A human readable name for this predicate. It should capture the nature of the relationship
+    - A human-readable name for this predicate that captures the nature of the relationship
   - Where in the hierarchy does the new slot fit?
-    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to) does this new predicate slot fit
+    - Determine where in the [`related to` hierarchy](https://biolink.github.io/biolink-model/docs/related_to) this new predicate slot fits
   - What are the domain and range constraints (if any)?
-    - Determine which type of entity classes can this predicate link
+    - Determine which type of entity classes this predicate can link
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-    # TODO: add the predicate discussion about inverse of cannon to this document.
+    - Determine the level of granularity for your mappings--they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    # TODO: add the predicate discussion about inverse of canon to this document.
   - Determine the inverse of the predicate, and add it (specifying the inverse property on each of the two predicates)
     - In general, the canonical direction of the predicate should contain the descriptive information about the predicate while its inverse can be minimally defined.
 
@@ -218,9 +218,9 @@ For more information on what each slot means and how to use them in Biolink Mode
 You can add slots that represent node properties or edge properties.
 
 
-To add a node/edge property to Biolink Model you need to determine the following,
+To add a node/edge property to Biolink Model you need to determine the following:
   - What is an appropriate name for this slot?
-    - A human readable name for this property
+    - A human-readable name for this property
   - Is it a node property or an edge property (association slot)?
     - Determine whether the property is a node or an edge property
   - Where in the hierarchy does the new property fit?
@@ -233,7 +233,7 @@ To add a node/edge property to Biolink Model you need to determine the following
     - Determine which type of classes can have this property and what the value space for this property should be
   - What are the mapping(s) for this slot?
     - Mappings are a way of rooting this new property in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
+    - Determine the level of granularity for your mappings--they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 
 As an example, let's consider the slot `name` which is a node property:
@@ -283,7 +283,7 @@ In the previous sections there were references to mappings and differentiating t
 What does it mean for a external concept (or predicate or property) to be one of `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`?
 
 Here is a rule of thumb on how to determine the granularity of mapping:
-- An external concept can be considered as an exact mapping to a Biolink Model class or slot if the former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
+- An external concept can be considered an exact mapping to a Biolink Model class or slot if the former can be used interchangeably with the latter. That is, the semantics are identical and any transitive property that the external concept might bring into the model should not violate the internal consistency of the model
 - If it is difficult to determine if an external concept can be considered an exact mapping then it is much safer to treat it as a close mapping
 - If an external concept can be treated a sub-class of the Biolink Model class or slot then it can be treated as a narrow mapping
 - If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
@@ -291,13 +291,13 @@ Here is a rule of thumb on how to determine the granularity of mapping:
 
 ### Examples
 
-The Translator Consortium has adopted Biolink Model as an open-source upper-level data model that supports semantic harmonization and 
-reasoning across diverse Translator ‘knowledge sources’15. The model serves a central role in the Translator program and forms the 
+The [NCATS Biomedical Translator Consortium](https://ncats.nih.gov/translator) has adopted Biolink Model as an open-source upper-level data model that supports semantic harmonization and 
+reasoning across diverse Translator ‘knowledge sources’. The model serves a central role in the Translator program and forms the 
 architectural basis of the Translator system, as described below. 
 
 The Translator program aims to develop a comprehensive, relational, N-dimensional infrastructure designed to integrate disparate data 
 sources—including objective signs and symptoms of disease, drug effects, chemical and genetic interactions, cell and organ pathology, 
-and other relevant biological entities and relations—and reason over the integrated data to rapidly derive biomedical insights22. 
+and other relevant biological entities and relations—and reason over the integrated data to rapidly derive biomedical insights. 
 The ultimate goal of Translator is to augment human reasoning and thereby accelerate translational science and knowledge discovery. 
 
 To achieve its ambitious goal, the Translator project assembled a diverse interdisciplinary team and a variety of biomedical data 
@@ -318,8 +318,10 @@ variants of RHOBTB2? The investigators noted that RHOBTB2 variants cause an accu
 accumulation is believed to be the cause of the neurological disorder. 
 
 To answer the PMI investigator’s question, Translator team members structured the following query: 
-NCBIGene:23221 (CURIE for RHOBTB2) -> [biolink:entity_regulates_entity, biolink:genetically_interacts_with] -> biolink:Protein, 
-biolink:Gene -> [biolink:related_to] -> biolink:SmallMolecule (Figure 2). Because of the hierarchical structure of the Biolink model,
+> NCBIGene:23221 (CURIE for RHOBTB2) -> [biolink:entity_regulates_entity, biolink:genetically_interacts_with] -> biolink:Protein, 
+biolink:Gene -> [biolink:related_to] -> biolink:SmallMolecule
+
+(see Figure 2 below). Because of the hierarchical structure of the Biolink model,
 the use of biolink:related_to also will return more specific predicates such as biolink:negatively_regulates and biolink:positively_regulates. 
 The objective was to identify drugs or chemicals that might regulate RHOBTB2 in some manner and thereby reduce the variant-induced 
 accumulation of RHOBTB2 and associated neurological symptoms. As all nodes and edges within the Translator KG ecosystem are 
@@ -334,8 +336,8 @@ When Translator team members sent the query to the Translator system, it returne
 including fostamatinib disodium (CHEMBL.COMPOUND:CHEMBL3989516) and ruxolitinib (CHEMBL.COMPOUND:CHEMBL1789941). 
 A review of the supporting evidence provided by Translator indicates that these are approved drugs that either directly or 
 indirectly reduce or otherwise regulate the expression of RHOBTB2. Thus, Biolink Model helped Translator teams bring data 
-together into a single system, thereby reducing the burden on the user to find and manually assemble data from these independent resources. 
-(see citation below)
+together into a single system, thereby reducing the burden on the user to find and manually assemble data from these independent resources 
+(see citation below).
 
 ![Figure 2](../images/translator_example_figure2.png)
 Figure 2. An overview of the Translator architecture that supports biomedical KG-based question-answering, including the 
@@ -346,13 +348,13 @@ Translator standard machine query (not shown). The KG shown in the second panel 
 of diverse ‘knowledge sources’, a subset of which are displayed in the figure, that are exposed by Translator ‘knowledge providers’. 
 Biolink Model provides standardization and semantic harmonization across the disparate knowledge sources, thereby allowing 
 them to be integrated into a KG capable of supporting question-answering. In this example, Translator provided two answers or 
-results of interest to the investigative team who posed the question, namely, fostamatinib disodium and ruxolitinib, as shown 
+results of interest to the investigative team that posed the question, namely, fostamatinib disodium and ruxolitinib, as shown 
 in the bottom left panel. 
 
 
 Example is taken directly from: 
-Biolink Model: A Universal Schema for Knowledge Graphs in Clinical, Biomedical, and Translational Science
+Biolink Model: A Universal Schema for Knowledge Graphs in Clinical, Biomedical, and Translational Science (2022).
 Deepak R. Unni, Sierra A.T. Moxon, Michael Bada, Matthew Brush, Richard Bruskiewich, Paul Clemons, Vlado Dancik, 
 Michel Dumontier, Karamarie Fecho, Gustavo Glusman, Jennifer J. Hadlock, Nomi L. Harris, Arpita Joshi, Tim Putman, 
 Guangrong Qin, Stephen A. Ramsey, Kent A. Shefchek, Harold Solbrig, Karthik Soman, Anne T. Thessen, Melissa A. Haendel, 
-Chris Bizon, Christopher J. Mungall, the Biomedical Data Translator Consortium https://arxiv.org/abs/2203.13906
+Chris Bizon, Christopher J. Mungall, the Biomedical Data Translator Consortium. [https://arxiv.org/abs/2203.13906](https://arxiv.org/abs/2203.13906)
