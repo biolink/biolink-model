@@ -1975,6 +1975,26 @@ slots:
 
   ## end of Publication related predicates
 
+  assesses:
+    aliases: ['was assayed against']
+    description: >-
+      The effect of a thing on a target was interrogated in some assay.
+      A relationship between some perturbing agent (usually a chemical compound) and some target entity,
+      where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
+      The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
+      of biological entity.
+    domain: named thing
+    range: named thing
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
+
+  is assessed by:
+    inverse: assesses
+    domain: named thing
+    range: named thing
+
   interacts with:
     domain: named thing
     range: named thing
@@ -9661,6 +9681,17 @@ classes:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
+
+  chemical entity assesses named thing association:
+    is_a: association
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: named thing
+      predicate:
+        subproperty_of: assesses
+
 
   contributor association:
     is_a: association
