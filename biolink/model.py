@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-23T23:50:21
+# Generation date: 2022-05-24T00:52:40
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.4.0"
+version = "2.4.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -865,6 +865,10 @@ class TreatmentId(NamedThingId):
 
 
 class AssociationId(EntityId):
+    pass
+
+
+class ChemicalEntityAssessesNamedThingAssociationId(AssociationId):
     pass
 
 
@@ -5321,6 +5325,44 @@ class Association(Entity):
 
 
 @dataclass
+class ChemicalEntityAssessesNamedThingAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityAssessesNamedThingAssociation
+    class_class_curie: ClassVar[str] = "biolink:ChemicalEntityAssessesNamedThingAssociation"
+    class_name: ClassVar[str] = "chemical entity assesses named thing association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalEntityAssessesNamedThingAssociation
+
+    id: Union[str, ChemicalEntityAssessesNamedThingAssociationId] = None
+    subject: Union[str, ChemicalEntityId] = None
+    object: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalEntityAssessesNamedThingAssociationId):
+            self.id = ChemicalEntityAssessesNamedThingAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, ChemicalEntityId):
+            self.subject = ChemicalEntityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ContributorAssociation(Association):
     """
     Any association between an entity (such as a publication) and various agents that contribute to its realisation
@@ -9075,6 +9117,12 @@ slots.author = Slot(uri=BIOLINK.author, name="author", curie=BIOLINK.curie('auth
 slots.has_author = Slot(uri=BIOLINK.has_author, name="has author", curie=BIOLINK.curie('has_author'),
                    model_uri=BIOLINK.has_author, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
+slots.assesses = Slot(uri=BIOLINK.assesses, name="assesses", curie=BIOLINK.curie('assesses'),
+                   model_uri=BIOLINK.assesses, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
+
+slots.is_assessed_by = Slot(uri=BIOLINK.is_assessed_by, name="is assessed by", curie=BIOLINK.curie('is_assessed_by'),
+                   model_uri=BIOLINK.is_assessed_by, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
+
 slots.interacts_with = Slot(uri=BIOLINK.interacts_with, name="interacts with", curie=BIOLINK.curie('interacts_with'),
                    model_uri=BIOLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -10152,6 +10200,15 @@ slots.association_type = Slot(uri=RDF.type, name="association_type", curie=RDF.c
 
 slots.association_category = Slot(uri=BIOLINK.category, name="association_category", curie=BIOLINK.curie('category'),
                    model_uri=BIOLINK.association_category, domain=Association, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
+
+slots.chemical_entity_assesses_named_thing_association_subject = Slot(uri=RDF.subject, name="chemical entity assesses named thing association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.chemical_entity_assesses_named_thing_association_subject, domain=ChemicalEntityAssessesNamedThingAssociation, range=Union[str, ChemicalEntityId])
+
+slots.chemical_entity_assesses_named_thing_association_object = Slot(uri=RDF.object, name="chemical entity assesses named thing association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.chemical_entity_assesses_named_thing_association_object, domain=ChemicalEntityAssessesNamedThingAssociation, range=Union[str, NamedThingId])
+
+slots.chemical_entity_assesses_named_thing_association_predicate = Slot(uri=RDF.predicate, name="chemical entity assesses named thing association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.chemical_entity_assesses_named_thing_association_predicate, domain=ChemicalEntityAssessesNamedThingAssociation, range=Union[str, PredicateType])
 
 slots.contributor_association_subject = Slot(uri=RDF.subject, name="contributor association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.contributor_association_subject, domain=ContributorAssociation, range=Union[str, InformationContentEntityId])

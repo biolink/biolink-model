@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.0
+# version: 2.4.1
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -560,6 +560,30 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     maxToleratedDose: String
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
+  }
+
+type ChemicalEntityAssessesNamedThingAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: [InformationResource]
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: ChemicalEntity!
+    object: NamedThing!
+    predicate: PredicateType!
   }
 
 interface ChemicalEntityOrGeneOrGeneProduct

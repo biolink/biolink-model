@@ -1,8 +1,7 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: association
+# metamodel_version: 1.7.0# version: 2.4.1id: chemical_entity_assesses_named_thing_association
 schema_generating: true
-description: A typed association between two entities, supported by evidence
-display_name: association
-document_category: association
+display_name: chemical entity assesses named thing association
+document_category: chemical entity assesses named thing association
 weight: 20
 fields:
 - id: id
@@ -25,18 +24,6 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: subject
-  description: connects an association to the subject of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: subject
-- id: predicate
-  description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: predicate
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: object
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -97,3 +84,15 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
+- id: subject
+  description: connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: chemical entity assesses named thing association_subject
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: chemical entity assesses named thing association_object
+- id: predicate
+  description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
+  display_name: chemical entity assesses named thing association_predicate
