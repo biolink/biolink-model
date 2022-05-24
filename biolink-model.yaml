@@ -1991,7 +1991,7 @@ slots:
         value: true
 
   is assessed by:
-    inverse: assess
+    inverse: assesses
     domain: named thing
     range: named thing
 
@@ -9684,11 +9684,13 @@ classes:
 
   chemical entity assesses named thing association:
     is_a: association
-    domain: chemical entity
-    range: named thing
     slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: named thing
       predicate:
-        subclass_of: assesses
+        subproperty_of: assesses
 
 
   contributor association:
