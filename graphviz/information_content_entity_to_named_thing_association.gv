@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,2894,283"];
+	graph [bb="0,0,3022,283"];
 	node [label="\N"];
 	"information content entity to named thing association"	[height=0.5,
 		label="information content entity to named thing association",
-		pos="1284.4,265",
+		pos="1362.4,265",
 		width=7.2577];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"information content entity to named thing association" -> association	[label=is_a,
 		lp="282.39,221.5",
-		pos="e,103.74,191.67 1029,261.13 776.99,257.22 409.59,248.36 268.39,229 214.84,221.66 154.92,206.28 113.57,194.5"];
+		pos="e,103.35,191.59 1104.9,261.88 833.31,258.55 423.74,250.11 268.39,229 214.66,221.7 154.54,206.24 113.18,194.43"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -19,8 +19,8 @@ digraph {
 	"information content entity to named thing association" -> id	[color=blue,
 		label=id,
 		lp="400.39,221.5",
-		pos="e,210.37,190.01 1039.2,258.75 819.39,253.24 513.58,243.36 393.39,229 319.57,220.18 301.06,215.79 229.39,196 226.28,195.14 223.08,\
-194.18 219.89,193.17",
+		pos="e,210.37,190.01 1113.1,259.59 873.03,254.52 527.3,244.78 393.39,229 319.56,220.3 301.06,215.79 229.39,196 226.28,195.14 223.08,194.18 \
+219.89,193.17",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"information content entity to named thing association" -> iri	[color=blue,
 		label=iri,
-		lp="513.39,221.5",
-		pos="e,315.3,190.22 1026.6,261.9 874.5,258.31 678.48,249.57 505.39,229 428.97,219.91 409.95,215.12 335.39,196 332.02,195.13 328.54,194.17 \
-325.05,193.16",
+		lp="512.39,221.5",
+		pos="e,315.3,190.21 1101.6,263.64 931.11,260.87 703.91,252.41 504.39,229 428.39,220.08 409.51,215.05 335.39,196 332.02,195.13 328.54,\
+194.17 325.05,193.16",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"information content entity to named thing association" -> name	[color=blue,
 		label=name,
-		lp="614.39,221.5",
-		pos="e,439.73,191.39 1048.9,257.14 884.17,251.37 679.09,241.98 594.39,229 544.3,221.32 488.37,206.07 449.67,194.42",
+		lp="613.39,221.5",
+		pos="e,439.52,191.46 1119,258.45 932.51,253.16 691.1,243.78 593.39,229 543.53,221.46 487.9,206.19 449.41,194.5",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"information content entity to named thing association" -> description	[color=blue,
 		label=description,
-		lp="727.89,221.5",
-		pos="e,584.4,194.25 1048.6,257.22 912.29,251.91 754.73,243.03 687.39,229 655.04,222.26 620.08,209.27 593.71,198.22",
+		lp="726.89,221.5",
+		pos="e,584.13,194.32 1115.8,259.02 957.08,254.31 766.03,245.41 686.39,229 654.24,222.37 619.53,209.38 593.37,198.3",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.0652];
 	"information content entity to named thing association" -> source	[color=blue,
 		label=source,
-		lp="846.39,221.5",
-		pos="e,710.19,191.1 1043.5,258.02 971.75,252.95 893.39,244.13 822.39,229 786.38,221.32 747.04,206.53 719.44,195.02",
+		lp="845.39,221.5",
+		pos="e,709.97,191.19 1137.5,255.81 1016.7,250.15 880.59,241.38 821.39,229 785.74,221.55 746.88,206.83 719.5,195.28",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.4443];
 	"information content entity to named thing association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="968.39,221.5",
-		pos="e,820.87,192.99 1078.3,253.9 1026.7,248.7 971.62,240.85 921.39,229 889.78,221.54 855.54,208.14 830.15,197.09",
+		lp="967.39,221.5",
+		pos="e,820.34,193.03 1123.1,257.77 1056.8,252.62 985.31,243.82 920.39,229 888.83,221.8 854.75,208.32 829.54,197.17",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -80,9 +80,9 @@ digraph {
 		width=1.2999];
 	"information content entity to named thing association" -> negated	[color=blue,
 		label=negated,
-		lp="1101.4,221.5",
-		pos="e,943.59,189.91 1174.4,248.63 1141.4,243.27 1105.3,236.66 1072.4,229 1023.1,217.52 1011.8,210.81 963.39,196 960.09,194.99 956.68,\
-193.94 953.25,192.89",
+		lp="1102.4,221.5",
+		pos="e,943.59,189.93 1209.4,250.41 1165.2,245.15 1117.2,238.15 1073.4,229 1023.4,218.56 1012.2,210.87 963.39,196 960.09,194.99 956.68,\
+193.95 953.25,192.9",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -91,8 +91,8 @@ digraph {
 		width=2.1304];
 	"information content entity to named thing association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1203.9,221.5",
-		pos="e,1083.7,194.2 1226.6,247.42 1208.5,241.91 1188.5,235.51 1170.4,229 1144.5,219.69 1116,207.99 1093.2,198.25",
+		lp="1210.9,221.5",
+		pos="e,1083.3,194.24 1261.3,248.37 1233.8,243.18 1204.3,236.72 1177.4,229 1148.5,220.71 1117.1,208.5 1092.7,198.21",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -101,8 +101,8 @@ digraph {
 		width=1.7332];
 	"information content entity to named thing association" -> publications	[color=blue,
 		label=publications,
-		lp="1294.4,221.5",
-		pos="e,1221.6,195.6 1268.6,246.8 1257.1,234.31 1241.5,217.24 1228.7,203.35",
+		lp="1314.4,221.5",
+		pos="e,1224.4,195.45 1310.1,247.2 1296.8,242.09 1282.7,235.97 1270.4,229 1257,221.42 1243.3,211.19 1232.1,201.95",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -111,8 +111,8 @@ digraph {
 		width=2.0943];
 	"information content entity to named thing association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1396.9,221.5",
-		pos="e,1357.7,196.17 1318.6,247.14 1326.5,242.1 1334.3,236.02 1340.4,229 1346.2,222.27 1350.7,213.76 1354.1,205.67",
+		lp="1408.9,221.5",
+		pos="e,1362.4,196.18 1362.4,246.8 1362.4,235.16 1362.4,219.55 1362.4,206.24",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -121,8 +121,8 @@ digraph {
 		width=3.015];
 	"information content entity to named thing association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1551.9,221.5",
-		pos="e,1531.3,195.19 1373.6,248.08 1397.8,242.89 1423.8,236.49 1447.4,229 1472.7,220.96 1500,209.44 1521.9,199.49",
+		lp="1556.9,221.5",
+		pos="e,1532.1,195.37 1411.6,247.3 1427,241.78 1444,235.41 1459.4,229 1480.7,220.11 1503.9,209.19 1523.1,199.83",
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
@@ -131,8 +131,8 @@ digraph {
 		width=3.015];
 	"information content entity to named thing association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="1779.4,221.5",
-		pos="e,1752.8,194.35 1458.3,251.52 1510.7,246.25 1568.1,238.95 1620.4,229 1662.1,221.06 1708.3,208.07 1743.2,197.31",
+		lp="1778.4,221.5",
+		pos="e,1753,194.37 1499.5,249.64 1540.3,244.33 1584.8,237.48 1625.4,229 1665.3,220.66 1709.4,207.94 1743.3,197.41",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -141,9 +141,8 @@ digraph {
 		width=3.015];
 	"information content entity to named thing association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2030.4,221.5",
-		pos="e,1994.4,194.81 1469.2,252.24 1498,250.45 1527.5,248.65 1555.4,247 1698.5,238.51 1736.4,254.95 1877.4,229 1914.2,222.22 1954.4,209.31 \
-1984.9,198.31",
+		lp="2029.4,221.5",
+		pos="e,1993.8,194.79 1548.8,252.35 1689.2,243.41 1860.1,232.1 1876.4,229 1913.3,222.02 1953.6,209.18 1984.2,198.26",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -152,89 +151,99 @@ digraph {
 		width=3.015];
 	"information content entity to named thing association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2291.9,221.5",
-		pos="e,2234,195.12 1464.4,251.92 1494.8,250.11 1526,248.38 1555.4,247 1682.9,241 2004,252.75 2129.4,229 2162.1,222.8 2197.5,210.13 2224.5,\
-199.1",
+		lp="2290.9,221.5",
+		pos="e,2233.7,195.07 1543.1,252 1573.3,250.19 1604.2,248.45 1633.4,247 1743.3,241.55 2020.3,249.63 2128.4,229 2161.5,222.69 2197.2,209.93 \
+2224.5,198.89",
+		style=solid];
+	timepoint	[color=blue,
+		height=0.5,
+		label="time type",
+		pos="2451.4,178",
+		width=1.5346];
+	"information content entity to named thing association" -> timepoint	[color=blue,
+		label=timepoint,
+		lp="2459.4,221.5",
+		pos="e,2440,195.83 1540.5,251.83 1571.5,250 1603.4,248.29 1633.4,247 1676,245.16 2362.2,245.79 2401.4,229 2413.9,223.64 2425,213.54 2433.5,\
+203.81",
 		style=solid];
 	type	[height=0.5,
-		pos="2427.4,178",
+		pos="2555.4,178",
 		width=0.86659];
 	"information content entity to named thing association" -> type	[color=blue,
 		label=type,
-		lp="2432.4,221.5",
-		pos="e,2423.7,196.02 1462.2,251.79 1493.2,249.96 1525.3,248.27 1555.4,247 1578.9,246.01 2382.5,241.58 2402.4,229 2410.8,223.66 2416.5,\
-214.55 2420.3,205.55",
+		lp="2539.4,221.5",
+		pos="e,2542.8,194.91 1540.2,251.78 1571.2,249.95 1603.3,248.26 1633.4,247 1681.4,244.99 2453.6,246.4 2498.4,229 2512.7,223.46 2525.7,\
+212.62 2535.8,202.46",
 		style=solid];
 	category	[height=0.5,
-		pos="2528.4,178",
+		pos="2656.4,178",
 		width=1.4263];
 	"information content entity to named thing association" -> category	[color=blue,
 		label=category,
-		lp="2515.9,221.5",
-		pos="e,2510.6,194.97 1461.8,251.78 1493,249.95 1525.1,248.25 1555.4,247 1605.2,244.94 2404.8,243.78 2452.4,229 2470.6,223.34 2488.6,211.87 \
-2502.5,201.35",
+		lp="2630.9,221.5",
+		pos="e,2634.1,194.28 1539.8,251.77 1571,249.93 1603.1,248.24 1633.4,247 1736.2,242.78 2459.6,254.23 2559.4,229 2582.9,223.05 2607.2,210.55 \
+2625.5,199.53",
 		style=solid];
 	subject	[height=0.5,
-		pos="2642.4,178",
+		pos="2770.4,178",
 		width=1.2277];
 	"information content entity to named thing association" -> subject	[color=blue,
 		label=subject,
-		lp="2614.4,221.5",
-		pos="e,2621.9,194.04 1461.5,251.75 1492.7,249.91 1525,248.23 1555.4,247 1610.7,244.77 2497.9,243.24 2551.4,229 2573.6,223.08 2596.3,210.61 \
-2613.5,199.62",
+		lp="2734.4,221.5",
+		pos="e,2747.5,193.57 1539.5,251.74 1570.7,249.9 1603,248.22 1633.4,247 1748.1,242.41 2554.7,255.48 2666.4,229 2692.1,222.91 2718.9,209.83 \
+2738.9,198.58",
 		style=solid];
 	object	[height=0.5,
-		pos="2685.4,91",
+		pos="2813.4,91",
 		width=1.0832];
 	"information content entity to named thing association" -> object	[color=blue,
 		label=object,
-		lp="2729.4,178",
-		pos="e,2698.8,108.09 1461.1,251.74 1492.5,249.89 1524.9,248.21 1555.4,247 1615.9,244.61 2586.5,246.62 2644.4,229 2670.2,221.14 2679.8,\
-218.03 2695.4,196 2709.7,175.86 2705.5,166.51 2708.4,142 2709.2,135.38 2710.3,133.39 2708.4,127 2707.4,123.55 2705.9,120.13 2704.1,\
-116.85",
+		lp="2863.4,178",
+		pos="e,2826.8,108.09 1539.1,251.72 1570.5,249.88 1602.9,248.2 1633.4,247 1696.2,244.53 2703.7,245.33 2764.4,229 2793.4,221.19 2805.2,\
+219.95 2823.4,196 2842.2,171.13 2845.3,156.9 2836.4,127 2835.4,123.55 2833.9,120.13 2832.1,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2839.4,178",
+		pos="2967.4,178",
 		width=1.5165];
 	"information content entity to named thing association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2812.4,221.5",
-		pos="e,2815.6,194.31 1461.1,251.7 1492.5,249.86 1524.9,248.19 1555.4,247 1621,244.45 2672.6,244.19 2736.4,229 2761.3,223.08 2787.1,210.49 \
-2806.7,199.42",
+		lp="2940.4,221.5",
+		pos="e,2943.6,194.31 1538.7,251.71 1570.2,249.86 1602.8,248.18 1633.4,247 1701.7,244.36 2797.9,244.81 2864.4,229 2889.3,223.09 2915.2,\
+210.5 2934.7,199.43",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1602.4,265",
+		pos="1680.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1733.4,265",
+		pos="1811.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2680.4,134.5",
-		pos="e,2667.5,107.23 2643.5,159.55 2644.7,149.57 2647.2,137.07 2652.4,127 2654.6,122.68 2657.5,118.52 2660.7,114.66"];
+		lp="2808.4,134.5",
+		pos="e,2795.5,107.23 2771.5,159.55 2772.7,149.57 2775.2,137.07 2780.4,127 2782.6,122.68 2785.5,118.52 2788.7,114.66"];
 	relation	[height=0.5,
-		pos="2630.4,18",
+		pos="2758.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2631.7,36.188 2641.1,159.79 2639,132.48 2635,78.994 2632.5,46.38",
+	subject -> relation	[pos="e,2759.7,36.188 2769.1,159.79 2767,132.48 2763,78.994 2760.5,46.38",
 		style=dotted];
 	"information content entity to named thing association_subject"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1895.4,265",
+		pos="1973.4,265",
 		width=1.9318];
-	object -> relation	[pos="e,2643.2,35.54 2672.9,73.889 2666,64.939 2657.2,53.617 2649.4,43.584",
+	object -> relation	[pos="e,2771.2,35.54 2800.9,73.889 2794,64.939 2785.2,53.617 2777.4,43.584",
 		style=dotted];
 	"information content entity to named thing association_object"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="2052.4,265",
+		pos="2130.4,265",
 		width=1.9318];
 	"information content entity to named thing association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2218.4,265",
+		pos="2296.4,265",
 		width=2.1665];
 }

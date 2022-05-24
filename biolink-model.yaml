@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.4.0
+version: 2.4.1
 
 
 ## ------------
@@ -1974,6 +1974,26 @@ slots:
     range: publication
 
   ## end of Publication related predicates
+
+  assesses:
+    aliases: ['was assayed against']
+    description: >-
+      The effect of a thing on a target was interrogated in some assay.
+      A relationship between some perturbing agent (usually a chemical compound) and some target entity,
+      where the affect of the perturbing agent on the target entity was interrogated in a particular assay.
+      The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type
+      of biological entity.
+    domain: named thing
+    range: named thing
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
+
+  is assessed by:
+    inverse: assesses
+    domain: named thing
+    range: named thing
 
   interacts with:
     domain: named thing
@@ -8730,13 +8750,14 @@ classes:
       - chemical entity or gene or gene product
       - physical essence
       - ontology class
-    aliases: ['locus']
     slots:
       - symbol
       - synonym
       - xref
     narrow_mappings:
       - bioschemas:gene
+    broad_mappings:
+      - NCIT:C45822
     exact_mappings:
       - SO:0000704
       - SIO:010035
@@ -9661,6 +9682,17 @@ classes:
       - OBAN:association
       - rdf:Statement
       - owl:Axiom
+
+  chemical entity assesses named thing association:
+    is_a: association
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: named thing
+      predicate:
+        subproperty_of: assesses
+
 
   contributor association:
     is_a: association

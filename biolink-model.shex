@@ -190,6 +190,7 @@ linkml:Nodeidentifier NONLITERAL
              <original_knowledge_source> @<InformationResource> ? ;
              <primary_knowledge_source> @<InformationResource> ? ;
              <aggregator_knowledge_source> @<InformationResource> * ;
+             <timepoint> @<TimeType> ? ;
              rdf:type @linkml:String ? ;
              <category> @<CategoryType> *
           ) ;

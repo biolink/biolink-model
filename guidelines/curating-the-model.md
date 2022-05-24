@@ -14,6 +14,9 @@ This is the one source of truth for the model.
 
 This section explores how to go about adding new classes and slots to the model.
 
+![Modeling Components](../images/model_onion.png)
+
+
 ### Adding an Entity class
 
 An entity class represents entities like Genes, Diseases, Chemical Substances, etc.
@@ -286,3 +289,70 @@ Here is a rule of thumb on how to determine the granularity of mapping:
 - If an external concept can be treated as a super-class of the Biolink Model class or slot then it can be treated as a broad mapping
 - If an external concept is distantly related to a Biolink Model class or slot then it can be treated as a related mapping
 
+### Examples
+
+The Translator Consortium has adopted Biolink Model as an open-source upper-level data model that supports semantic harmonization and 
+reasoning across diverse Translator ‘knowledge sources’15. The model serves a central role in the Translator program and forms the 
+architectural basis of the Translator system, as described below. 
+
+The Translator program aims to develop a comprehensive, relational, N-dimensional infrastructure designed to integrate disparate data 
+sources—including objective signs and symptoms of disease, drug effects, chemical and genetic interactions, cell and organ pathology, 
+and other relevant biological entities and relations—and reason over the integrated data to rapidly derive biomedical insights22. 
+The ultimate goal of Translator is to augment human reasoning and thereby accelerate translational science and knowledge discovery. 
+
+To achieve its ambitious goal, the Translator project assembled a diverse interdisciplinary team and a variety of biomedical data 
+sources, including electronic health record data, clinical trial data, genomic and other -omics data, chemical reaction data, and 
+drug data. There are hundreds of data sources in the Translator ecosystem, each of which had its own data representation and were 
+in formats that were not compatible or interoperable. Moreover, groups within the Translator Consortium had integrated the data 
+sources as knowledge sources within independent KGs, but these KGs were developed using different technologies and formalisms 
+such as property graphs in Neo4j and semantically-linked data via RDF and OWL. 
+
+In order to interoperate between knowledge sources and reason across KGs, Biolink Model was adopted as the common dialect, thus 
+enabling queries over the entire Translator KG ecosystem. The result was a federated, harmonized ecosystem that supports advanced 
+reasoning and inference to derive biomedical insights based on user queries.
+
+An example Translator use case involved a collaboration with investigators at the Hugh Kaul Precision Medicine Institute (PMI) at 
+the University of Alabama at Birmingham. PMI investigators posed the following natural-language question to the Translator Consortium: 
+what chemicals or drugs might be used to treat neurological disorders such as epilepsy that are associated with genomic 
+variants of RHOBTB2? The investigators noted that RHOBTB2 variants cause an accumulation of RHOBTB2 protein and that this 
+accumulation is believed to be the cause of the neurological disorder. 
+
+To answer the PMI investigator’s question, Translator team members structured the following query: 
+NCBIGene:23221 (CURIE for RHOBTB2) -> [biolink:entity_regulates_entity, biolink:genetically_interacts_with] -> biolink:Protein, 
+biolink:Gene -> [biolink:related_to] -> biolink:SmallMolecule (Figure 2). Because of the hierarchical structure of the Biolink model,
+the use of biolink:related_to also will return more specific predicates such as biolink:negatively_regulates and biolink:positively_regulates. 
+The objective was to identify drugs or chemicals that might regulate RHOBTB2 in some manner and thereby reduce the variant-induced 
+accumulation of RHOBTB2 and associated neurological symptoms. As all nodes and edges within the Translator KG ecosystem are 
+annotated to Biolink Model classes and attributes, a Translator query can be constructed from a natural-language user question 
+and return results across a multitude of independent data sources. In addition, because the model employs hierarchical classes, 
+with inheritance and polymorphism, natural-language queries translated to graph queries using Biolink Model syntax can be 
+constructed at varying levels of granularity and return results from all levels of the hierarchy. Finally, because Biolink 
+Model provides attributes on both edges and nodes that record provenance and evidence for these knowledge statements, each 
+result is annotated with the trail of evidence that supports it.
+
+When Translator team members sent the query to the Translator system, it returned several candidates of interest to PMI investigators, 
+including fostamatinib disodium (CHEMBL.COMPOUND:CHEMBL3989516) and ruxolitinib (CHEMBL.COMPOUND:CHEMBL1789941). 
+A review of the supporting evidence provided by Translator indicates that these are approved drugs that either directly or 
+indirectly reduce or otherwise regulate the expression of RHOBTB2. Thus, Biolink Model helped Translator teams bring data 
+together into a single system, thereby reducing the burden on the user to find and manually assemble data from these independent resources. 
+(see citation below)
+
+![Figure 2](../images/translator_example_figure2.png)
+Figure 2. An overview of the Translator architecture that supports biomedical KG-based question-answering, including the 
+role of Biolink Model, in the context of an example question. In this example, a user has posed the natural-language question: 
+what chemicals or drugs might be used to treat neurological disorders such as epilepsy that are associated with genomic variants of 
+RHOBTB2? The question is translated into a graph query, as shown in the top left panel, which is then translated into a 
+Translator standard machine query (not shown). The KG shown in the second panel from the left is derived from a variety
+of diverse ‘knowledge sources’, a subset of which are displayed in the figure, that are exposed by Translator ‘knowledge providers’. 
+Biolink Model provides standardization and semantic harmonization across the disparate knowledge sources, thereby allowing 
+them to be integrated into a KG capable of supporting question-answering. In this example, Translator provided two answers or 
+results of interest to the investigative team who posed the question, namely, fostamatinib disodium and ruxolitinib, as shown 
+in the bottom left panel. 
+
+
+Example is taken directly from: 
+Biolink Model: A Universal Schema for Knowledge Graphs in Clinical, Biomedical, and Translational Science
+Deepak R. Unni, Sierra A.T. Moxon, Michael Bada, Matthew Brush, Richard Bruskiewich, Paul Clemons, Vlado Dancik, 
+Michel Dumontier, Karamarie Fecho, Gustavo Glusman, Jennifer J. Hadlock, Nomi L. Harris, Arpita Joshi, Tim Putman, 
+Guangrong Qin, Stephen A. Ramsey, Kent A. Shefchek, Harold Solbrig, Karthik Soman, Anne T. Thessen, Melissa A. Haendel, 
+Chris Bizon, Christopher J. Mungall, the Biomedical Data Translator Consortium https://arxiv.org/abs/2203.13906

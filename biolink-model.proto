@@ -62,11 +62,12 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject AnatomicalEntity = 17
-  object AnatomicalEntity = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject AnatomicalEntity = 18
+  object AnatomicalEntity = 19
+  predicate PredicateType = 20
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 message AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -85,11 +86,12 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject AnatomicalEntity = 17
-  object AnatomicalEntity = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject AnatomicalEntity = 18
+  object AnatomicalEntity = 19
+  predicate PredicateType = 20
  }
 message Article
  {
@@ -137,8 +139,9 @@ message Association
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
  }
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
@@ -191,14 +194,15 @@ message BehaviorToBehavioralFeatureAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject Behavior = 18
-  object BehavioralFeature = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject Behavior = 19
+  object BehavioralFeature = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
@@ -358,12 +362,13 @@ message CaseToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 message Cell
  {
@@ -410,12 +415,13 @@ message CellLineAsAModelOfDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  subject CellLine = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  subject CellLine = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -436,9 +442,10 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  subject DiseaseOrPhenotypicFeature = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  subject DiseaseOrPhenotypicFeature = 20
  }
 // A location in or around a cell
 message CellularComponent
@@ -538,9 +545,10 @@ message ChemicalToChemicalAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  object ChemicalEntity = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  object ChemicalEntity = 20
  }
 // A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
 //   IF
@@ -566,12 +574,13 @@ message ChemicalToChemicalDerivationAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  repeated catalystQualifier MacromolecularMachineMixin = 17
-  subject ChemicalEntity = 18
-  object ChemicalEntity = 19
-  predicate PredicateType = 20
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  repeated catalystQualifier MacromolecularMachineMixin = 18
+  subject ChemicalEntity = 19
+  object ChemicalEntity = 20
+  predicate PredicateType = 21
  }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
@@ -592,9 +601,10 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  object DiseaseOrPhenotypicFeature = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  object DiseaseOrPhenotypicFeature = 20
  }
 // An interaction between a chemical entity and a gene or gene product.
 message ChemicalToGeneAssociation
@@ -615,9 +625,10 @@ message ChemicalToGeneAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  object GeneOrGeneProduct = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  object GeneOrGeneProduct = 20
  }
 // An interaction between a chemical entity and a biological process or pathway.
 message ChemicalToPathwayAssociation
@@ -637,10 +648,11 @@ message ChemicalToPathwayAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject ChemicalEntity = 18
-  object Pathway = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject ChemicalEntity = 19
+  object Pathway = 20
  }
 // Attributes relating to a clinical manifestation
 message ClinicalAttribute
@@ -858,12 +870,13 @@ message ContributorAssociation
   optional originalKnowledgeSource InformationResource = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
-  optional type String = 14
-  repeated category CategoryType = 15
-  subject InformationContentEntity = 16
-  predicate PredicateType = 17
-  object Agent = 18
-  repeated qualifiers OntologyClass = 19
+  optional timepoint TimeType = 14
+  optional type String = 15
+  repeated category CategoryType = 16
+  subject InformationContentEntity = 17
+  predicate PredicateType = 18
+  object Agent = 19
+  repeated qualifiers OntologyClass = 20
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -1010,9 +1023,10 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  object AnatomicalEntity = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  object AnatomicalEntity = 20
  }
 // An association between an exposure event and a disease.
 message DiseaseToExposureEventAssociation
@@ -1034,8 +1048,9 @@ message DiseaseToExposureEventAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
  }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
 message DiseaseToPhenotypicFeatureAssociation
@@ -1055,14 +1070,15 @@ message DiseaseToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject Disease = 18
-  object PhenotypicFeature = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject Disease = 19
+  object PhenotypicFeature = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -1112,9 +1128,10 @@ message DrugToGeneAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  object GeneOrGeneProduct = 19
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  object GeneOrGeneProduct = 20
  }
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
@@ -1138,15 +1155,16 @@ message DruggableGeneToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
-  optional type String = 14
-  repeated category CategoryType = 15
-  object Disease = 16
-  optional frequencyQualifier FrequencyValue = 17
-  optional severityQualifier SeverityValue = 18
-  optional onsetQualifier Onset = 19
-  subject GeneOrGeneProduct = 20
-  predicate PredicateType = 21
-  repeated hasEvidence DruggableGeneCategoryEnum = 22
+  optional timepoint TimeType = 14
+  optional type String = 15
+  repeated category CategoryType = 16
+  object Disease = 17
+  optional frequencyQualifier FrequencyValue = 18
+  optional severityQualifier SeverityValue = 19
+  optional onsetQualifier Onset = 20
+  subject GeneOrGeneProduct = 21
+  predicate PredicateType = 22
+  repeated hasEvidence DruggableGeneCategoryEnum = 23
  }
 message EntityToDiseaseAssociation
  {
@@ -1167,9 +1185,10 @@ message EntityToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
-  optional fDAApprovalStatus FDAApprovalStatusEnum = 20
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
+  optional fDAApprovalStatus FDAApprovalStatusEnum = 21
  }
 message EntityToPhenotypicFeatureAssociation
  {
@@ -1190,9 +1209,10 @@ message EntityToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
-  optional fDAApprovalStatus FDAApprovalStatusEnum = 20
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
+  optional fDAApprovalStatus FDAApprovalStatusEnum = 21
  }
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
@@ -1315,10 +1335,11 @@ message ExonToTranscriptRelationship
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject Exon = 18
-  object Transcript = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject Exon = 19
+  object Transcript = 20
  }
 // An association between an exposure event and an outcome.
 message ExposureEventToOutcomeAssociation
@@ -1340,10 +1361,11 @@ message ExposureEventToOutcomeAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
-  optional hasPopulationContext PopulationOfIndividualOrganisms = 20
-  optional hasTemporalContext TimeType = 21
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
+  optional hasPopulationContext PopulationOfIndividualOrganisms = 21
+  optional hasTemporalContext TimeType = 22
  }
 // Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
 message ExposureEventToPhenotypicFeatureAssociation
@@ -1364,13 +1386,14 @@ message ExposureEventToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  subject ExposureEvent = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  subject ExposureEvent = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // A substance consumed by a living organism as a source of nutrition
 message Food
@@ -1431,10 +1454,11 @@ message FunctionalAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MacromolecularMachineMixin = 18
-  object GeneOntologyClass = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MacromolecularMachineMixin = 19
+  object GeneOntologyClass = 20
  }
 // A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
 message Gene
@@ -1471,13 +1495,14 @@ message GeneAsAModelOfDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  object Disease = 18
-  optional frequencyQualifier FrequencyValue = 19
-  optional severityQualifier SeverityValue = 20
-  optional onsetQualifier Onset = 21
-  subject GeneOrGeneProduct = 22
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  object Disease = 19
+  optional frequencyQualifier FrequencyValue = 20
+  optional severityQualifier SeverityValue = 21
+  optional onsetQualifier Onset = 22
+  subject GeneOrGeneProduct = 23
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -1511,14 +1536,15 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  object Disease = 18
-  optional frequencyQualifier FrequencyValue = 19
-  optional severityQualifier SeverityValue = 20
-  optional onsetQualifier Onset = 21
-  optional sequenceVariantQualifier SequenceVariant = 22
-  subject GeneOrGeneProduct = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  object Disease = 19
+  optional frequencyQualifier FrequencyValue = 20
+  optional severityQualifier SeverityValue = 21
+  optional onsetQualifier Onset = 22
+  optional sequenceVariantQualifier SequenceVariant = 23
+  subject GeneOrGeneProduct = 24
  }
 // A regulatory relationship between two genes
 message GeneRegulatoryRelationship
@@ -1537,11 +1563,12 @@ message GeneRegulatoryRelationship
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  subject GeneOrGeneProduct = 18
-  object GeneOrGeneProduct = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  subject GeneOrGeneProduct = 19
+  object GeneOrGeneProduct = 20
  }
 message GeneToDiseaseAssociation
  {
@@ -1560,13 +1587,14 @@ message GeneToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject GeneOrGeneProduct = 18
-  object Disease = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject GeneOrGeneProduct = 19
+  object Disease = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -1585,13 +1613,14 @@ message GeneToExpressionSiteAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  optional stageQualifier LifeStage = 17
-  optional quantifierQualifier OntologyClass = 18
-  subject GeneOrGeneProduct = 19
-  object AnatomicalEntity = 20
-  predicate PredicateType = 21
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional stageQualifier LifeStage = 18
+  optional quantifierQualifier OntologyClass = 19
+  subject GeneOrGeneProduct = 20
+  object AnatomicalEntity = 21
+  predicate PredicateType = 22
  }
 // Indicates that two genes are co-expressed, generally under the same conditions.
 message GeneToGeneCoexpressionAssociation
@@ -1610,15 +1639,16 @@ message GeneToGeneCoexpressionAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject GeneOrGeneProduct = 17
-  object GeneOrGeneProduct = 18
-  predicate PredicateType = 19
-  optional quantifierQualifier OntologyClass = 20
-  optional expressionSite AnatomicalEntity = 21
-  optional stageQualifier LifeStage = 22
-  optional phenotypicState DiseaseOrPhenotypicFeature = 23
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject GeneOrGeneProduct = 18
+  object GeneOrGeneProduct = 19
+  predicate PredicateType = 20
+  optional quantifierQualifier OntologyClass = 21
+  optional expressionSite AnatomicalEntity = 22
+  optional stageQualifier LifeStage = 23
+  optional phenotypicState DiseaseOrPhenotypicFeature = 24
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
@@ -1637,11 +1667,12 @@ message GeneToGeneHomologyAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject GeneOrGeneProduct = 17
-  predicate PredicateType = 18
-  object GeneOrGeneProduct = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject GeneOrGeneProduct = 18
+  predicate PredicateType = 19
+  object GeneOrGeneProduct = 20
  }
 // A gene is transcribed and potentially translated to a gene product
 message GeneToGeneProductRelationship
@@ -1660,11 +1691,12 @@ message GeneToGeneProductRelationship
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject Gene = 17
-  object GeneProductMixin = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject Gene = 18
+  object GeneProductMixin = 19
+  predicate PredicateType = 20
  }
 message GeneToGoTermAssociation
  {
@@ -1683,10 +1715,11 @@ message GeneToGoTermAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject Gene = 18
-  object GeneOntologyClass = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject Gene = 19
+  object GeneOntologyClass = 20
  }
 message GeneToPhenotypicFeatureAssociation
  {
@@ -1705,14 +1738,15 @@ message GeneToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject GeneOrGeneProduct = 18
-  object PhenotypicFeature = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject GeneOrGeneProduct = 19
+  object PhenotypicFeature = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // A genome is the sum of genetic material within a cell or virion.
 message Genome
@@ -1756,16 +1790,17 @@ message GenomicSequenceLocalization
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  optional startInterbaseCoordinate Integer = 17
-  optional endInterbaseCoordinate Integer = 18
-  optional genomeBuild StrandEnum = 19
-  optional strand StrandEnum = 20
-  optional phase PhaseEnum = 21
-  subject NucleicAcidEntity = 22
-  object NucleicAcidEntity = 23
-  predicate PredicateType = 24
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional startInterbaseCoordinate Integer = 18
+  optional endInterbaseCoordinate Integer = 19
+  optional genomeBuild StrandEnum = 20
+  optional strand StrandEnum = 21
+  optional phase PhaseEnum = 22
+  subject NucleicAcidEntity = 23
+  object NucleicAcidEntity = 24
+  predicate PredicateType = 25
  }
 // An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
 message Genotype
@@ -1800,14 +1835,15 @@ message GenotypeAsAModelOfDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  object NamedThing = 18
-  optional frequencyQualifier FrequencyValue = 19
-  optional severityQualifier SeverityValue = 20
-  optional onsetQualifier Onset = 21
-  subject Genotype = 22
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  object NamedThing = 19
+  optional frequencyQualifier FrequencyValue = 20
+  optional severityQualifier SeverityValue = 21
+  optional onsetQualifier Onset = 22
+  subject Genotype = 23
  }
 message GenotypeToDiseaseAssociation
  {
@@ -1825,14 +1861,15 @@ message GenotypeToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject NamedThing = 17
-  predicate PredicateType = 18
-  object NamedThing = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject NamedThing = 18
+  predicate PredicateType = 19
+  object NamedThing = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
  }
 // Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 message GenotypeToGeneAssociation
@@ -1851,11 +1888,12 @@ message GenotypeToGeneAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  subject Genotype = 18
-  object Gene = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  subject Genotype = 19
+  object Gene = 20
  }
 // Any association between one genotype and a genotypic entity that is a sub-component of it
 message GenotypeToGenotypePartAssociation
@@ -1874,11 +1912,12 @@ message GenotypeToGenotypePartAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  subject Genotype = 18
-  object Genotype = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  subject Genotype = 19
+  object Genotype = 20
  }
 // Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 message GenotypeToPhenotypicFeatureAssociation
@@ -1898,14 +1937,15 @@ message GenotypeToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  predicate PredicateType = 18
-  subject Genotype = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  predicate PredicateType = 19
+  subject Genotype = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
@@ -1924,11 +1964,12 @@ message GenotypeToVariantAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  subject Genotype = 18
-  object SequenceVariant = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  subject Genotype = 19
+  object SequenceVariant = 20
  }
 // An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 message GenotypicSex
@@ -2060,11 +2101,12 @@ message InformationContentEntityToNamedThingAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject NamedThing = 17
-  object NamedThing = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject NamedThing = 18
+  object NamedThing = 19
+  predicate PredicateType = 20
  }
 // A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
 message InformationResource
@@ -2134,10 +2176,11 @@ message MacromolecularMachineToBiologicalProcessAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MacromolecularMachineMixin = 18
-  object BiologicalProcess = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MacromolecularMachineMixin = 19
+  object BiologicalProcess = 20
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
 message MacromolecularMachineToCellularComponentAssociation
@@ -2157,10 +2200,11 @@ message MacromolecularMachineToCellularComponentAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MacromolecularMachineMixin = 18
-  object CellularComponent = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MacromolecularMachineMixin = 19
+  object CellularComponent = 20
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 message MacromolecularMachineToMolecularActivityAssociation
@@ -2180,10 +2224,11 @@ message MacromolecularMachineToMolecularActivityAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MacromolecularMachineMixin = 18
-  object MolecularActivity = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MacromolecularMachineMixin = 19
+  object MolecularActivity = 20
  }
 message Macronutrient
  {
@@ -2234,11 +2279,12 @@ message MaterialSampleDerivationAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject MaterialSample = 17
-  object NamedThing = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject MaterialSample = 18
+  object NamedThing = 19
+  predicate PredicateType = 20
  }
 // An association between a material sample and a disease or phenotype.
 message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
@@ -2260,8 +2306,9 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
  }
 message Micronutrient
  {
@@ -2338,10 +2385,11 @@ message MolecularActivityToChemicalEntityAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MolecularActivity = 18
-  object ChemicalEntity = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MolecularActivity = 19
+  object ChemicalEntity = 20
  }
 // Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
 message MolecularActivityToMolecularActivityAssociation
@@ -2361,10 +2409,11 @@ message MolecularActivityToMolecularActivityAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject MolecularActivity = 18
-  object MolecularActivity = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject MolecularActivity = 19
+  object MolecularActivity = 20
  }
 // A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
@@ -2565,12 +2614,13 @@ message OrganismTaxonToOrganismTaxonInteraction
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  optional associatedEnvironmentalContext String = 17
-  subject OrganismTaxon = 18
-  object OrganismTaxon = 19
-  predicate PredicateType = 20
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional associatedEnvironmentalContext String = 18
+  subject OrganismTaxon = 19
+  object OrganismTaxon = 20
+  predicate PredicateType = 21
  }
 // A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 message OrganismTaxonToOrganismTaxonSpecialization
@@ -2589,11 +2639,12 @@ message OrganismTaxonToOrganismTaxonSpecialization
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject OrganismTaxon = 17
-  object OrganismTaxon = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject OrganismTaxon = 18
+  object OrganismTaxon = 19
+  predicate PredicateType = 20
  }
 message OrganismToOrganismAssociation
  {
@@ -2612,10 +2663,11 @@ message OrganismToOrganismAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject IndividualOrganism = 18
-  object IndividualOrganism = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject IndividualOrganism = 19
+  object IndividualOrganism = 20
  }
 message OrganismalEntityAsAModelOfDiseaseAssociation
  {
@@ -2635,12 +2687,13 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  subject OrganismalEntity = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  subject OrganismalEntity = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneToGeneInteraction
@@ -2659,11 +2712,12 @@ message PairwiseGeneToGeneInteraction
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject GeneOrGeneProduct = 17
-  object GeneOrGeneProduct = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject GeneOrGeneProduct = 18
+  object GeneOrGeneProduct = 19
+  predicate PredicateType = 20
  }
 // An interaction at the molecular level between two physical entities
 message PairwiseMolecularInteraction
@@ -2681,13 +2735,14 @@ message PairwiseMolecularInteraction
   optional originalKnowledgeSource InformationResource = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
-  optional type String = 14
-  repeated category CategoryType = 15
-  optional interactingMoleculesCategory OntologyClass = 16
-  subject MolecularEntity = 17
-  id String = 18
-  predicate PredicateType = 19
-  object MolecularEntity = 20
+  optional timepoint TimeType = 14
+  optional type String = 15
+  repeated category CategoryType = 16
+  optional interactingMoleculesCategory OntologyClass = 17
+  subject MolecularEntity = 18
+  id String = 19
+  predicate PredicateType = 20
+  object MolecularEntity = 21
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
@@ -2901,11 +2956,12 @@ message PopulationToPopulationAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject PopulationOfIndividualOrganisms = 17
-  object PopulationOfIndividualOrganisms = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject PopulationOfIndividualOrganisms = 18
+  object PopulationOfIndividualOrganisms = 19
+  predicate PredicateType = 20
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
@@ -3051,13 +3107,14 @@ message ReactionToCatalystAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  optional stoichiometry Integer = 18
-  optional reactionDirection ReactionDirectionEnum = 19
-  optional reactionSide ReactionSideEnum = 20
-  subject MolecularEntity = 21
-  object GeneOrGeneProduct = 22
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  optional stoichiometry Integer = 19
+  optional reactionDirection ReactionDirectionEnum = 20
+  optional reactionSide ReactionSideEnum = 21
+  subject MolecularEntity = 22
+  object GeneOrGeneProduct = 23
  }
 message ReactionToParticipantAssociation
  {
@@ -3076,13 +3133,14 @@ message ReactionToParticipantAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  object ChemicalEntity = 18
-  optional stoichiometry Integer = 19
-  optional reactionDirection ReactionDirectionEnum = 20
-  optional reactionSide ReactionSideEnum = 21
-  subject MolecularEntity = 22
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  object ChemicalEntity = 19
+  optional stoichiometry Integer = 20
+  optional reactionDirection ReactionDirectionEnum = 21
+  optional reactionSide ReactionSideEnum = 22
+  subject MolecularEntity = 23
  }
 // A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
 message ReagentTargetedGene
@@ -3170,8 +3228,9 @@ message SequenceAssociation
   optional originalKnowledgeSource InformationResource = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
-  optional type String = 18
-  repeated category CategoryType = 19
+  optional timepoint TimeType = 18
+  optional type String = 19
+  repeated category CategoryType = 20
  }
 // For example, a particular exon is part of a particular transcript or gene
 message SequenceFeatureRelationship
@@ -3191,10 +3250,11 @@ message SequenceFeatureRelationship
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject NucleicAcidEntity = 18
-  object NucleicAcidEntity = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject NucleicAcidEntity = 19
+  object NucleicAcidEntity = 20
  }
 // An allele that varies in its sequence from what is considered the reference allele at that locus.
 message SequenceVariant
@@ -3371,10 +3431,11 @@ message TaxonToTaxonAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject OrganismTaxon = 18
-  object OrganismTaxon = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject OrganismTaxon = 19
+  object OrganismTaxon = 20
  }
 // A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 message TaxonomicRank
@@ -3421,10 +3482,11 @@ message TranscriptToGeneRelationship
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject Transcript = 18
-  object Gene = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject Transcript = 19
+  object Gene = 20
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
@@ -3460,14 +3522,15 @@ message VariantAsAModelOfDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  predicate PredicateType = 17
-  object NamedThing = 18
-  optional frequencyQualifier FrequencyValue = 19
-  optional severityQualifier SeverityValue = 20
-  optional onsetQualifier Onset = 21
-  subject SequenceVariant = 22
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  predicate PredicateType = 18
+  object NamedThing = 19
+  optional frequencyQualifier FrequencyValue = 20
+  optional severityQualifier SeverityValue = 21
+  optional onsetQualifier Onset = 22
+  subject SequenceVariant = 23
  }
 message VariantToDiseaseAssociation
  {
@@ -3485,14 +3548,15 @@ message VariantToDiseaseAssociation
   optional originalKnowledgeSource InformationResource = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
-  optional type String = 15
-  repeated category CategoryType = 16
-  subject NamedThing = 17
-  predicate PredicateType = 18
-  object NamedThing = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject NamedThing = 18
+  predicate PredicateType = 19
+  object NamedThing = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
  }
 // An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 message VariantToGeneAssociation
@@ -3512,10 +3576,11 @@ message VariantToGeneAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  object Gene = 18
-  predicate PredicateType = 19
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  object Gene = 19
+  predicate PredicateType = 20
  }
 // An association between a variant and expression of a gene (i.e. e-QTL)
 message VariantToGeneExpressionAssociation
@@ -3535,14 +3600,15 @@ message VariantToGeneExpressionAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  object Gene = 18
-  predicate PredicateType = 19
-  optional quantifierQualifier OntologyClass = 20
-  optional expressionSite AnatomicalEntity = 21
-  optional stageQualifier LifeStage = 22
-  optional phenotypicState DiseaseOrPhenotypicFeature = 23
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  object Gene = 19
+  predicate PredicateType = 20
+  optional quantifierQualifier OntologyClass = 21
+  optional expressionSite AnatomicalEntity = 22
+  optional stageQualifier LifeStage = 23
+  optional phenotypicState DiseaseOrPhenotypicFeature = 24
  }
 message VariantToPhenotypicFeatureAssociation
  {
@@ -3562,13 +3628,14 @@ message VariantToPhenotypicFeatureAssociation
   optional originalKnowledgeSource InformationResource = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
-  optional type String = 17
-  repeated category CategoryType = 18
-  subject SequenceVariant = 19
-  optional frequencyQualifier FrequencyValue = 20
-  optional severityQualifier SeverityValue = 21
-  optional onsetQualifier Onset = 22
-  optional sexQualifier BiologicalSex = 23
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  subject SequenceVariant = 20
+  optional frequencyQualifier FrequencyValue = 21
+  optional severityQualifier SeverityValue = 22
+  optional onsetQualifier Onset = 23
+  optional sexQualifier BiologicalSex = 24
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
@@ -3588,15 +3655,16 @@ message VariantToPopulationAssociation
   optional originalKnowledgeSource InformationResource = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
-  optional type String = 16
-  repeated category CategoryType = 17
-  subject SequenceVariant = 18
-  object PopulationOfIndividualOrganisms = 19
-  optional hasQuotient Double = 20
-  optional hasCount Integer = 21
-  optional hasTotal Integer = 22
-  optional hasPercentage Double = 23
-  optional frequencyQualifier FrequencyValue = 24
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject SequenceVariant = 19
+  object PopulationOfIndividualOrganisms = 20
+  optional hasQuotient Double = 21
+  optional hasCount Integer = 22
+  optional hasTotal Integer = 23
+  optional hasPercentage Double = 24
+  optional frequencyQualifier FrequencyValue = 25
  }
 message Vitamin
  {

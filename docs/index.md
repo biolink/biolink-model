@@ -143,6 +143,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
      * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
          * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
+     * [ChemicalEntityAssessesNamedThingAssociation](ChemicalEntityAssessesNamedThingAssociation.md)
      * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
          * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
          * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)
@@ -1856,6 +1857,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Other Slots
 
+ * [assesses](assesses.md) - The effect of a thing on a target was interrogated in some assay. A relationship between some perturbing agent (usually a chemical compound) and some target entity, where the affect of the perturbing agent on the target entity was interrogated in a particular assay. The target might be a particular protein, tissue, phenotype, whole organism, cell line, or other type of biological entity.
  * [description](description.md) - a human-readable description of an entity
  * [drug regulatory status world wide](drug_regulatory_status_world_wide.md) - An agglomeration of drug regulatory status worldwide. Not specific to FDA.
  * [has active component](has_active_component.md)
@@ -1869,6 +1871,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [highest FDA approval status](highest_FDA_approval_status.md) - Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
+ * [is assessed by](is_assessed_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.

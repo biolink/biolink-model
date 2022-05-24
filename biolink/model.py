@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-23T22:58:14
+# Generation date: 2022-05-23T23:50:21
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5253,6 +5253,7 @@ class Association(Entity):
     original_knowledge_source: Optional[Union[str, InformationResourceId]] = None
     primary_knowledge_source: Optional[Union[str, InformationResourceId]] = None
     aggregator_knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
+    timepoint: Optional[Union[str, TimeType]] = None
     type: Optional[str] = None
     category: Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]] = empty_list()
 
@@ -5305,6 +5306,9 @@ class Association(Entity):
         if not isinstance(self.aggregator_knowledge_source, list):
             self.aggregator_knowledge_source = [self.aggregator_knowledge_source] if self.aggregator_knowledge_source is not None else []
         self.aggregator_knowledge_source = [v if isinstance(v, InformationResourceId) else InformationResourceId(v) for v in self.aggregator_knowledge_source]
+
+        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
+            self.timepoint = TimeType(self.timepoint)
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)
@@ -8772,7 +8776,7 @@ slots.longitude = Slot(uri=BIOLINK.longitude, name="longitude", curie=BIOLINK.cu
                    model_uri=BIOLINK.longitude, domain=NamedThing, range=Optional[float])
 
 slots.timepoint = Slot(uri=BIOLINK.timepoint, name="timepoint", curie=BIOLINK.curie('timepoint'),
-                   model_uri=BIOLINK.timepoint, domain=NamedThing, range=Optional[Union[str, TimeType]])
+                   model_uri=BIOLINK.timepoint, domain=None, range=Optional[Union[str, TimeType]])
 
 slots.creation_date = Slot(uri=BIOLINK.creation_date, name="creation date", curie=BIOLINK.curie('creation_date'),
                    model_uri=BIOLINK.creation_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
