@@ -9376,6 +9376,7 @@ classes:
   ## Exposures
 
   exposure event:
+    is_a: named thing
     aliases: ['exposure', 'experimental condition']
     mixin: true
     slots:
@@ -9390,6 +9391,7 @@ classes:
 
   # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
+    is_a: named thing
     mixins:
       - exposure event
       - gene grouping mixin
@@ -9428,6 +9430,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
+    is_a: named thing
     mixins:
       - exposure event
     description: >-
