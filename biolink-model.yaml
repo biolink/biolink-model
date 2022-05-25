@@ -9946,7 +9946,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        range: physically interacts with
+        # TODO make this physically interacts with
       subject form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
       subject part qualifier:
@@ -9962,7 +9962,7 @@ classes:
       object context qualifier:
         range: anatomical entity
       interaction mechanism qualifier:
-        range: interaction_mechanism_qualifier_enum
+        range: molecular_control_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -9988,7 +9988,6 @@ classes:
     slot_usage:
       subject:
         range: chemical entity
-        # TODO add related to
       subject form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
       subject part qualifier:
@@ -10000,9 +9999,9 @@ classes:
       subject direction qualifier:
         range: direction_qualifier_enum
       predicate:
-        range: affects
+        # TODO make this affects and related to
       qualified predicate:
-        range: causes
+        # TODO make this causes
       object:
         range: gene or gene product
       object form or variant qualifier:
