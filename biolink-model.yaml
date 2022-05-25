@@ -181,15 +181,32 @@ enums:
       increases:
       decreases:
 
-  gene_or_gene_product_aspect_enum:
+  chemical_entity_derivative:
+    permissible_values:
+      metabolite:
+
+  chemical_or_gene_or_gene_product_form_enum:
+    permissible_values:
+      modified form:
+      mutant form:
+      polymorphism:
+      SNP:
+      analog:
+
+  part_qualifier_enum:
+    permissible_values:
+      3' UTR:
+      5' UTR:
+      polyA tail:
+      promoter:
+      enhancer:
+      exon:
+      intron:
+
+  gene_or_gene_product_or_chemical_entity_aspect_enum:
     permissible_values:
       expression:
-      degredation:
-      synthesis:
-      
-
-  chemical_entity_aspect_enum:
-    permissible_values:
+      mutation rate:
       abundance:
       synthesis:
       degredation:
@@ -234,6 +251,22 @@ enums:
       oxidation:
       reduction:
       carboxylation:
+
+  molecular_control_mechanism_qualifier_enum:
+    permissible_values:
+      binding:
+      inactivation:
+      neutralization:
+      inhibition:
+      antagonism:
+      molecular channel blockage:
+      antibody inhibitor:
+      inverse agonism:
+      negative allosteric modulation:
+      agonism:
+      molecular channel opening:
+      positive allosteric modulation:
+      potentiation:
 
 
   logical_interpretation_enum:
@@ -3260,6 +3293,7 @@ slots:
     inverse: decreases degradation of
 
   affects mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
@@ -3280,6 +3314,7 @@ slots:
       - CTD:affects_mutation_rate_of
 
   mutation rate affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3288,6 +3323,7 @@ slots:
     inverse: affects mutation rate of
 
   increases mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
@@ -3312,6 +3348,7 @@ slots:
       - CTD:increases_mutagenesis
 
   mutation rate increased by:
+    deprecated: true
     is_a: mutation rate affected by
     in_subset:
       - translator_minimal
@@ -3320,6 +3357,7 @@ slots:
     inverse: increases mutation rate of
 
   decreases mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
@@ -3344,6 +3382,7 @@ slots:
       - CTD:decreases_mutagenesis
 
   mutation rate decreased by:
+    deprecated: true
     is_a: mutation rate affected by
     in_subset:
       - translator_minimal
