@@ -978,13 +978,83 @@
          "additionalProperties": false,
          "description": "A behavioral exposure is a factor relating to behavior impacting an individual.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "BehavioralExposure",
          "type": "object"
       },
@@ -1317,13 +1387,83 @@
          "additionalProperties": false,
          "description": "An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "BioticExposure",
          "type": "object"
       },
@@ -2413,6 +2553,33 @@
          "additionalProperties": false,
          "description": "A chemical exposure is an intake of a particular chemical entity.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
@@ -2420,13 +2587,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "ChemicalExposure",
          "type": "object"
       },
@@ -3952,8 +4155,79 @@
       "ComplexChemicalExposure": {
          "additionalProperties": false,
          "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "ComplexChemicalExposure",
          "type": "object"
       },
@@ -4786,13 +5060,83 @@
          "additionalProperties": false,
          "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DiseaseOrPhenotypicFeatureExposure",
          "type": "object"
       },
@@ -5293,6 +5637,33 @@
          "additionalProperties": false,
          "description": "A drug exposure is an intake of a particular drug.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
@@ -5300,13 +5671,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DrugExposure",
          "type": "object"
       },
@@ -5429,12 +5836,39 @@
          "additionalProperties": false,
          "description": "drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
                   "type": "string"
                },
                "type": "array"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
             },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
@@ -5443,13 +5877,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DrugToGeneInteractionExposure",
          "type": "object"
       },
@@ -5831,13 +6301,83 @@
          "additionalProperties": false,
          "description": "A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "EnvironmentalExposure",
          "type": "object"
       },
@@ -6658,8 +7198,8 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/$defs/ExposureEvent",
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
             },
             "timepoint": {
                "description": "a point in time",
@@ -8478,6 +9018,29 @@
          "additionalProperties": false,
          "description": "A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -8486,6 +9049,17 @@
                "description": "connects an entity with one or more gene or gene products",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -8500,14 +9074,44 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
-            "id"
+            "id",
+            "category",
+            "has_attribute_type"
          ],
          "title": "GenomicBackgroundExposure",
          "type": "object"
@@ -9537,13 +10141,83 @@
          "additionalProperties": false,
          "description": "A geographic exposure is a factor relating to geographic proximity to some impactful entity.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "GeographicExposure",
          "type": "object"
       },
@@ -13122,13 +13796,83 @@
          "additionalProperties": false,
          "description": "An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "PathologicalAnatomicalExposure",
          "type": "object"
       },
@@ -13298,13 +14042,83 @@
          "additionalProperties": false,
          "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "PathologicalProcessExposure",
          "type": "object"
       },
@@ -16231,6 +17045,18 @@
          "additionalProperties": false,
          "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
@@ -16238,13 +17064,63 @@
                },
                "type": "array"
             },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
+            "has_attribute_type",
             "has_attribute"
          ],
          "title": "SocioeconomicExposure",
@@ -17722,6 +18598,6 @@
    "required": [],
    "title": "Biolink-Model",
    "type": "object",
-   "version": "2.4.1"
+   "version": "2.4.2"
 }
 

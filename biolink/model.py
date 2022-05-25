@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-24T00:52:40
+# Generation date: 2022-05-25T23:48:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.4.1"
+version = "2.4.2"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -848,7 +848,11 @@ class CohortId(StudyPopulationId):
     pass
 
 
-class GenomicBackgroundExposureId(extended_str):
+class ExposureEventId(NamedThingId):
+    pass
+
+
+class GenomicBackgroundExposureId(AttributeId):
     pass
 
 
@@ -856,11 +860,59 @@ class PathologicalProcessId(BiologicalProcessId):
     pass
 
 
+class PathologicalProcessExposureId(AttributeId):
+    pass
+
+
 class PathologicalAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
+class PathologicalAnatomicalExposureId(AttributeId):
+    pass
+
+
+class DiseaseOrPhenotypicFeatureExposureId(AttributeId):
+    pass
+
+
+class ChemicalExposureId(AttributeId):
+    pass
+
+
+class ComplexChemicalExposureId(AttributeId):
+    pass
+
+
+class DrugExposureId(ChemicalExposureId):
+    pass
+
+
+class DrugToGeneInteractionExposureId(DrugExposureId):
+    pass
+
+
 class TreatmentId(NamedThingId):
+    pass
+
+
+class BioticExposureId(AttributeId):
+    pass
+
+
+class EnvironmentalExposureId(AttributeId):
+    pass
+
+
+class GeographicExposureId(EnvironmentalExposureId):
+    pass
+
+
+class BehavioralExposureId(AttributeId):
+    pass
+
+
+class SocioeconomicExposureId(AttributeId):
     pass
 
 
@@ -4693,7 +4745,7 @@ class Cohort(StudyPopulation):
 
 
 @dataclass
-class ExposureEvent(YAMLRoot):
+class ExposureEvent(NamedThing):
     """
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more
     phenotypic features of that organism, potentially mediated by genes
@@ -4705,6 +4757,8 @@ class ExposureEvent(YAMLRoot):
     class_name: ClassVar[str] = "exposure event"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ExposureEvent
 
+    id: Union[str, ExposureEventId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4715,7 +4769,7 @@ class ExposureEvent(YAMLRoot):
 
 
 @dataclass
-class GenomicBackgroundExposure(YAMLRoot):
+class GenomicBackgroundExposure(Attribute):
     """
     A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or
     other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing
@@ -4729,6 +4783,8 @@ class GenomicBackgroundExposure(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GenomicBackgroundExposure
 
     id: Union[str, GenomicBackgroundExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
@@ -4790,7 +4846,7 @@ class PathologicalProcess(BiologicalProcess):
 
 
 @dataclass
-class PathologicalProcessExposure(YAMLRoot):
+class PathologicalProcessExposure(Attribute):
     """
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an
     outcome, e.g. autoimmunity leading to disease.
@@ -4802,9 +4858,17 @@ class PathologicalProcessExposure(YAMLRoot):
     class_name: ClassVar[str] = "pathological process exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcessExposure
 
+    id: Union[str, PathologicalProcessExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PathologicalProcessExposureId):
+            self.id = PathologicalProcessExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4837,7 +4901,7 @@ class PathologicalAnatomicalStructure(AnatomicalEntity):
 
 
 @dataclass
-class PathologicalAnatomicalExposure(YAMLRoot):
+class PathologicalAnatomicalExposure(Attribute):
     """
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or
     influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
@@ -4849,9 +4913,17 @@ class PathologicalAnatomicalExposure(YAMLRoot):
     class_name: ClassVar[str] = "pathological anatomical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.PathologicalAnatomicalExposure
 
+    id: Union[str, PathologicalAnatomicalExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PathologicalAnatomicalExposureId):
+            self.id = PathologicalAnatomicalExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4859,7 +4931,7 @@ class PathologicalAnatomicalExposure(YAMLRoot):
 
 
 @dataclass
-class DiseaseOrPhenotypicFeatureExposure(YAMLRoot):
+class DiseaseOrPhenotypicFeatureExposure(Attribute):
     """
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or
     influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin
@@ -4872,9 +4944,17 @@ class DiseaseOrPhenotypicFeatureExposure(YAMLRoot):
     class_name: ClassVar[str] = "disease or phenotypic feature exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureExposure
 
+    id: Union[str, DiseaseOrPhenotypicFeatureExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DiseaseOrPhenotypicFeatureExposureId):
+            self.id = DiseaseOrPhenotypicFeatureExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4882,7 +4962,7 @@ class DiseaseOrPhenotypicFeatureExposure(YAMLRoot):
 
 
 @dataclass
-class ChemicalExposure(YAMLRoot):
+class ChemicalExposure(Attribute):
     """
     A chemical exposure is an intake of a particular chemical entity.
     """
@@ -4893,10 +4973,18 @@ class ChemicalExposure(YAMLRoot):
     class_name: ClassVar[str] = "chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalExposure
 
+    id: Union[str, ChemicalExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChemicalExposureId):
+            self.id = ChemicalExposureId(self.id)
+
         if not isinstance(self.has_quantitative_value, list):
             self.has_quantitative_value = [self.has_quantitative_value] if self.has_quantitative_value is not None else []
         self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**as_dict(v)) for v in self.has_quantitative_value]
@@ -4907,7 +4995,8 @@ class ChemicalExposure(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-class ComplexChemicalExposure(YAMLRoot):
+@dataclass
+class ComplexChemicalExposure(Attribute):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     """
@@ -4917,6 +5006,18 @@ class ComplexChemicalExposure(YAMLRoot):
     class_class_curie: ClassVar[str] = "biolink:ComplexChemicalExposure"
     class_name: ClassVar[str] = "complex chemical exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.ComplexChemicalExposure
+
+    id: Union[str, ComplexChemicalExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ComplexChemicalExposureId):
+            self.id = ComplexChemicalExposureId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -4931,9 +5032,17 @@ class DrugExposure(ChemicalExposure):
     class_name: ClassVar[str] = "drug exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugExposure
 
+    id: Union[str, DrugExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DrugExposureId):
+            self.id = DrugExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4953,9 +5062,17 @@ class DrugToGeneInteractionExposure(DrugExposure):
     class_name: ClassVar[str] = "drug to gene interaction exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.DrugToGeneInteractionExposure
 
+    id: Union[str, DrugToGeneInteractionExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DrugToGeneInteractionExposureId):
+            self.id = DrugToGeneInteractionExposureId(self.id)
+
         if not isinstance(self.has_gene_or_gene_product, list):
             self.has_gene_or_gene_product = [self.has_gene_or_gene_product] if self.has_gene_or_gene_product is not None else []
         self.has_gene_or_gene_product = [v if isinstance(v, GeneId) else GeneId(v) for v in self.has_gene_or_gene_product]
@@ -5008,7 +5125,7 @@ class Treatment(NamedThing):
 
 
 @dataclass
-class BioticExposure(YAMLRoot):
+class BioticExposure(Attribute):
     """
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
     """
@@ -5019,9 +5136,17 @@ class BioticExposure(YAMLRoot):
     class_name: ClassVar[str] = "biotic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BioticExposure
 
+    id: Union[str, BioticExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BioticExposureId):
+            self.id = BioticExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -5029,7 +5154,7 @@ class BioticExposure(YAMLRoot):
 
 
 @dataclass
-class EnvironmentalExposure(YAMLRoot):
+class EnvironmentalExposure(Attribute):
     """
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B),
     atmospheric (heat, cold, general pollution) and water-born contaminants.
@@ -5041,9 +5166,17 @@ class EnvironmentalExposure(YAMLRoot):
     class_name: ClassVar[str] = "environmental exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EnvironmentalExposure
 
+    id: Union[str, EnvironmentalExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, EnvironmentalExposureId):
+            self.id = EnvironmentalExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -5062,9 +5195,17 @@ class GeographicExposure(EnvironmentalExposure):
     class_name: ClassVar[str] = "geographic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeographicExposure
 
+    id: Union[str, GeographicExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeographicExposureId):
+            self.id = GeographicExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -5072,7 +5213,7 @@ class GeographicExposure(EnvironmentalExposure):
 
 
 @dataclass
-class BehavioralExposure(YAMLRoot):
+class BehavioralExposure(Attribute):
     """
     A behavioral exposure is a factor relating to behavior impacting an individual.
     """
@@ -5083,9 +5224,17 @@ class BehavioralExposure(YAMLRoot):
     class_name: ClassVar[str] = "behavioral exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.BehavioralExposure
 
+    id: Union[str, BehavioralExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BehavioralExposureId):
+            self.id = BehavioralExposureId(self.id)
+
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -5093,7 +5242,7 @@ class BehavioralExposure(YAMLRoot):
 
 
 @dataclass
-class SocioeconomicExposure(YAMLRoot):
+class SocioeconomicExposure(Attribute):
     """
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g.
     poverty).
@@ -5105,10 +5254,18 @@ class SocioeconomicExposure(YAMLRoot):
     class_name: ClassVar[str] = "socioeconomic exposure"
     class_model_uri: ClassVar[URIRef] = BIOLINK.SocioeconomicExposure
 
+    id: Union[str, SocioeconomicExposureId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_attribute_type: Union[str, OntologyClassId] = None
     has_attribute: Union[Union[str, SocioeconomicAttributeId], List[Union[str, SocioeconomicAttributeId]]] = None
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SocioeconomicExposureId):
+            self.id = SocioeconomicExposureId(self.id)
+
         if self._is_empty(self.has_attribute):
             self.MissingRequiredField("has_attribute")
         if not isinstance(self.has_attribute, list):
@@ -6317,13 +6474,13 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
     class_name: ClassVar[str] = "entity to exposure event association mixin"
     class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToExposureEventAssociationMixin
 
-    object: Union[dict, ExposureEvent] = None
+    object: Union[str, ExposureEventId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.object):
             self.MissingRequiredField("object")
-        if not isinstance(self.object, ExposureEvent):
-            self.object = ExposureEvent(**as_dict(self.object))
+        if not isinstance(self.object, ExposureEventId):
+            self.object = ExposureEventId(self.object)
 
         super().__post_init__(**kwargs)
 
@@ -6708,7 +6865,7 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
     id: Union[str, ExposureEventToPhenotypicFeatureAssociationId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    subject: Union[dict, ExposureEvent] = None
+    subject: Union[str, ExposureEventId] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6719,8 +6876,8 @@ class ExposureEventToPhenotypicFeatureAssociation(Association):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-        if not isinstance(self.subject, ExposureEvent):
-            self.subject = ExposureEvent(**as_dict(self.subject))
+        if not isinstance(self.subject, ExposureEventId):
+            self.subject = ExposureEventId(self.subject)
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
@@ -10355,7 +10512,7 @@ slots.disease_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="
                    model_uri=BIOLINK.disease_to_entity_association_mixin_subject, domain=None, range=Union[str, DiseaseId])
 
 slots.entity_to_exposure_event_association_mixin_object = Slot(uri=RDF.object, name="entity to exposure event association mixin_object", curie=RDF.curie('object'),
-                   model_uri=BIOLINK.entity_to_exposure_event_association_mixin_object, domain=None, range=Union[dict, ExposureEvent])
+                   model_uri=BIOLINK.entity_to_exposure_event_association_mixin_object, domain=None, range=Union[str, ExposureEventId])
 
 slots.entity_to_outcome_association_mixin_object = Slot(uri=RDF.object, name="entity to outcome association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_outcome_association_mixin_object, domain=None, range=Union[dict, Outcome])
@@ -10394,7 +10551,7 @@ slots.genotype_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject,
                    model_uri=BIOLINK.genotype_to_phenotypic_feature_association_subject, domain=GenotypeToPhenotypicFeatureAssociation, range=Union[str, GenotypeId])
 
 slots.exposure_event_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="exposure event to phenotypic feature association_subject", curie=RDF.curie('subject'),
-                   model_uri=BIOLINK.exposure_event_to_phenotypic_feature_association_subject, domain=ExposureEventToPhenotypicFeatureAssociation, range=Union[dict, ExposureEvent])
+                   model_uri=BIOLINK.exposure_event_to_phenotypic_feature_association_subject, domain=ExposureEventToPhenotypicFeatureAssociation, range=Union[str, ExposureEventId])
 
 slots.disease_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="disease to phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.disease_to_phenotypic_feature_association_subject, domain=DiseaseToPhenotypicFeatureAssociation, range=Union[str, DiseaseId])

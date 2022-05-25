@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.1
+# version: 2.4.2
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -254,6 +254,19 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
 
 type BehavioralExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -343,6 +356,19 @@ type BiologicalSex
 
 type BioticExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -601,6 +627,18 @@ interface ChemicalEntityToEntityAssociationMixin
 
 type ChemicalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -943,6 +981,19 @@ type Cohort
 
 type ComplexChemicalExposure
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
   }
 
 type ComplexMolecularMixture
@@ -1134,6 +1185,19 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -1252,6 +1316,18 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
 
 type DrugExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -1287,6 +1363,18 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
 
 type DrugToGeneInteractionExposure implements GeneGroupingMixin
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
@@ -1422,6 +1510,19 @@ interface EntityToPhenotypicFeatureAssociationMixin
 
 type EnvironmentalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -1556,6 +1657,16 @@ type ExonToTranscriptRelationship
 
 interface ExposureEvent
   {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     timepoint: TimeType
   }
 
@@ -2072,11 +2183,23 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
 
 type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, OntologyClass
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
     inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    id: String!
   }
 
 interface GenomicEntity
@@ -2309,6 +2432,19 @@ type GenotypicSex
 
 type GeographicExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -3210,6 +3346,19 @@ interface PathognomonicityQuantifier
 
 type PathologicalAnatomicalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -3255,6 +3404,19 @@ type PathologicalProcess implements PathologicalEntityMixin
 
 type PathologicalProcessExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -3917,6 +4079,18 @@ type SocioeconomicAttribute
 
 type SocioeconomicExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasAttribute: [SocioeconomicAttribute]!
     timepoint: TimeType
   }
