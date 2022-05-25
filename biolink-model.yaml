@@ -10173,19 +10173,17 @@ classes:
       - subject derivative qualifier
       - subject aspect qualifier
       - subject context qualifier
+      - subject direction qualifier
       - object form or variant qualifier
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
       - effect mechanism qualifier
       - anatomical context qualifier
+      - qualified predicate
     slot_usage:
       subject:
         range: chemical entity
-      object:
-        range: gene or gene product
-      predicate:
-        range: affects
         # TODO add related to
       subject form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
@@ -10195,14 +10193,26 @@ classes:
         range: chemical_entity_derivative_enum
       subject context qualifier:
         range: anatomical entity
+      subject direction qualifier:
+        range: direction_qualifier_enum
+      predicate:
+        range: affects
+      qualified predicate:
+        range: causes
+      object:
+        range: gene or gene product
       object form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
       object part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      object aspect qualifier:
+        range: gene_or_gene_product_or_chemical_entity_aspect_enum
       object context qualifier:
         range: anatomical entity
-      interaction mechanism qualifier:
-        range: interaction_mechanism_qualifier_enum
+      object direction qualifier:
+        range: direction_qualifier_enum
+      effect mechanism qualifier:
+        range: molecular_control_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
