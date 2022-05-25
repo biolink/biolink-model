@@ -9567,6 +9567,7 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9575,12 +9576,14 @@ classes:
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
