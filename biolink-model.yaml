@@ -176,6 +176,66 @@ emit_prefixes:
 ## SUBSETS
 ## ------------
 enums:
+  direction_qualifier_enum:
+    permissible_values:
+      increases:
+      decreases:
+
+  gene_or_gene_product_aspect_enum:
+    permissible_values:
+      expression:
+      degredation:
+      synthesis:
+      
+
+  chemical_entity_aspect_enum:
+    permissible_values:
+      abundance:
+      synthesis:
+      degredation:
+      cleavage:
+      hydrolisis:
+      activity:
+      metabolic processing:
+      stability:
+      localization:
+      transport:
+      secretion:
+      update:
+      molecular modification:
+      acetylation:
+      acylation:
+      alkylation:
+      amination:
+      carbamoylation:
+      ethylation:
+      glutathionylation:
+      glycation:
+      glycosylation:
+      glucuronidation:
+      N-linked glycosylation:
+      O-linked glycosylation:
+      hydroxylation:
+      lipidation:
+      farnesylation:
+      geranoylation:
+      myristoylation:
+      palmitoylation:
+      prenylation:
+      methylation:
+      nitrosation:
+      nucleotidylation:
+      phosphorylation:
+      ribosylation:
+      ADP-ribosylation:
+      sulfation:
+      sumoylation:
+      ubiquitination:
+      oxidation:
+      reduction:
+      carboxylation:
+
+
   logical_interpretation_enum:
     permissible_values:
       SomeSome:
@@ -6793,6 +6853,7 @@ slots:
 
   object direction:
     is_a: direction qualifier
+    range: direction_qualifier_enum
 
   predicate:
     is_a: association slot
@@ -6818,24 +6879,28 @@ slots:
   qualified predicate:
     is_a: association slot
 
-  effect mechanism qualifier:
+  statement qualifier:
     is_a: association slot
+    description: >-
+
+  effect mechanism qualifier:
+    is_a: statement qualifier
     description: >-
       A statement qualifier representing a type of molecular control mechanism through which an
       effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
       'allosteric modulation', 'channel blocker')
   interaction mechanism qualifier:
-    is_a: association slot
+    is_a: statement qualifier
     description: >-
       A statement qualifier representing a type of molecular interaction mechanism through which a
       physical interaction between chemical entities, genes, or gene products  occurred.
   anatomical context qualifier:
-    is_a: association slot
+    is_a: statement qualifier
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or subcellular location).
   species context qualifier:
-    is_a: association slot
+    is_a: statement qualifier
     description: >-
       A statement qualifier representing a taxonomic category of species in which a relationship
       expressed in an association took place.
