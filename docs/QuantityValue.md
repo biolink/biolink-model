@@ -15,7 +15,7 @@ URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]++-%20has%20quantitative%20value%200..%2A%3E[QuantityValue%7Chas_unit:unit%20%3F;has_numeric_value:double%20%3F],[ChemicalExposure]++-%20has%20quantitative%20value%200..%2A%3E[QuantityValue],[Annotation]%5E-[QuantityValue],[ChemicalExposure],[Attribute],[Annotation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Attribute]++-%20has%20quantitative%20value%200..%2A%3E[QuantityValue%7Chas_unit:unit%20%3F;has_numeric_value:double%20%3F],[ChemicalExposure]++-%20has%20quantitative%20value(i)%200..%2A%3E[QuantityValue],[Annotation]%5E-[QuantityValue],[ChemicalExposure],[Attribute],[Annotation])
 
 ---
 

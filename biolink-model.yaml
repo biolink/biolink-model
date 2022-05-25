@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.4.1
+version: 2.4.2
 
 
 ## ------------
@@ -9376,6 +9376,7 @@ classes:
   ## Exposures
 
   exposure event:
+    is_a: named thing
     aliases: ['exposure', 'experimental condition']
     mixin: true
     slots:
@@ -9390,6 +9391,7 @@ classes:
 
   # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
+    is_a: attribute
     mixins:
       - exposure event
       - gene grouping mixin
@@ -9428,6 +9430,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9444,6 +9447,7 @@ classes:
       - pathological entity mixin
 
   pathological anatomical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9452,6 +9456,7 @@ classes:
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
+    is_a: attribute
     mixins:
       - exposure event
       - pathological entity mixin
@@ -9462,6 +9467,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     slots:
@@ -9477,6 +9483,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
+    is_a: attribute
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9525,6 +9532,7 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
+    is_a: attribute
     aliases: ['viral exposure','bacterial exposure']
     mixins:
       - exposure event
@@ -9558,6 +9566,7 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9566,12 +9575,14 @@ classes:
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-

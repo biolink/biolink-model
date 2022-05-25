@@ -15,7 +15,7 @@ URI: [biolink:EntityToExposureEventAssociationMixin](https://w3id.org/biolink/vo
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[ExposureEvent]%3Cobject%201..1-++[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ExposureEvent],[ExposureEvent]%3Cobject%201..1-%20[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation]uses%20-.-%3E[EntityToExposureEventAssociationMixin],[DiseaseToExposureEventAssociation])
 
 ---
 
