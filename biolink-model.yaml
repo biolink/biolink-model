@@ -9391,7 +9391,7 @@ classes:
 
   # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
-    is_a: named thing
+    is_a: attribute
     mixins:
       - exposure event
       - gene grouping mixin
@@ -9430,7 +9430,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
-    is_a: named thing
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9447,6 +9447,7 @@ classes:
       - pathological entity mixin
 
   pathological anatomical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9455,6 +9456,7 @@ classes:
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
+    is_a: attribute
     mixins:
       - exposure event
       - pathological entity mixin
@@ -9465,6 +9467,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     slots:
@@ -9480,6 +9483,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
+    is_a: attribute
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9499,6 +9503,7 @@ classes:
 
   # TODO: deprecate?
   drug to gene interaction exposure:
+    is_a: attribute
     description: >-
       drug to gene interaction exposure is a drug exposure is where the
       interactions of the drug with specific genes are known to constitute
@@ -9528,6 +9533,7 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
+    is_a: attribute
     aliases: ['viral exposure','bacterial exposure']
     mixins:
       - exposure event
