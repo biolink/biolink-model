@@ -175,289 +175,6 @@ emit_prefixes:
 ## ------------
 ## SUBSETS
 ## ------------
-enums:
-  direction_qualifier_enum:
-    permissible_values:
-      increases:
-      decreases:
-
-  chemical_entity_derivative:
-    permissible_values:
-      metabolite:
-
-  chemical_or_gene_or_gene_product_form_enum:
-    permissible_values:
-      modified form:
-      mutant form:
-      polymorphism:
-      SNP:
-      analog:
-
-  part_qualifier_enum:
-    permissible_values:
-      3' UTR:
-      5' UTR:
-      polyA tail:
-      promoter:
-      enhancer:
-      exon:
-      intron:
-
-  gene_or_gene_product_or_chemical_entity_aspect_enum:
-    permissible_values:
-      expression:
-      mutation rate:
-      abundance:
-      synthesis:
-      degredation:
-      cleavage:
-      hydrolisis:
-      activity:
-      metabolic processing:
-      stability:
-      localization:
-      transport:
-      secretion:
-      update:
-      molecular modification:
-      acetylation:
-      acylation:
-      alkylation:
-      amination:
-      carbamoylation:
-      ethylation:
-      glutathionylation:
-      glycation:
-      glycosylation:
-      glucuronidation:
-      N-linked glycosylation:
-      O-linked glycosylation:
-      hydroxylation:
-      lipidation:
-      farnesylation:
-      geranoylation:
-      myristoylation:
-      palmitoylation:
-      prenylation:
-      methylation:
-      nitrosation:
-      nucleotidylation:
-      phosphorylation:
-      ribosylation:
-      ADP-ribosylation:
-      sulfation:
-      sumoylation:
-      ubiquitination:
-      oxidation:
-      reduction:
-      carboxylation:
-
-  molecular_control_mechanism_qualifier_enum:
-    permissible_values:
-      binding:
-      inactivation:
-      neutralization:
-      inhibition:
-      antagonism:
-      molecular channel blockage:
-      antibody inhibitor:
-      inverse agonism:
-      negative allosteric modulation:
-      agonism:
-      molecular channel opening:
-      positive allosteric modulation:
-      potentiation:
-
-  logical_interpretation_enum:
-    permissible_values:
-      SomeSome:
-        description: >-
-          A modifier on a triple that causes the triple to be interpreted as a some-some statement
-        meaning: os:SomeSomeInterpretation
-      AllSome:
-        description: >-
-          A modifier on a triple that causes the triple to be interpreted as an all-some statement.
-        meaning: os:AllSomeInterpretation
-      InverseAllSome:
-
-  reaction_direction_enum:
-    permissible_values:
-      left_to_right:
-      right_to_left:
-      bidirectional:
-      neutral:
-
-  reaction_side_enum:
-    permissible_values:
-      left:
-      right:
-
-  phase_enum:
-    description: phase
-    permissible_values:
-      0:
-      1:
-      2:
-
-  strand_enum:
-    description: strand
-    permissible_values:
-      "+":
-        description: Positive
-      "-":
-        description: Negative
-      ".":
-        description: Unstranded
-      "?":
-        description: Unknown
-
-  sequence_enum:
-    description: type of sequence
-    permissible_values:
-      "NA":
-        description: nucleic acid
-      "AA":
-        description: amino acid
-
-  predicate_qualifier_enum:
-    description: >-
-      constrained list of qualifying terms that soften or expand the definition of the predicate used.
-      can be used to constrain or qualify any predicate (any child of related_to).
-    permissible_values:
-      "predicted":
-      "possibly":
-      "hypothesized":
-      "validated":
-      "supported by real-world evidence":
-      "supported by clinical evidence":
-
-  druggable_gene_category_enum:
-    permissible_values:
-      "Tclin":
-        description: >-
-          These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
-      "Tbio":
-        description: >-
-          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
-          the activity thresholds detailed below.
-      "Tchem":
-        description: >-
-          These targets do not have known drug or small molecule activities that satisfy the activity
-          thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
-      "Tdark":
-        description: >-
-          These are targets about which virtually nothing is known. They do not have known drug or small
-          molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
-          more of the following criteria:
-          A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
-          less than or equal to 50 Antibodies available according to http://antibodypedia.com.
-
-  drug_availability_enum:
-    description: >-
-    permissible_values:
-      "over the counter":
-        description: >-
-          chemical entity is available over the counter without a prescription.
-      "prescription":
-        description:
-          chemical entity is available by prescription.
-
-  drug_delivery_enum:
-    permissible_values:
-      "inhalation":
-      "oral":
-      "absorbtion through the skin":
-      "intravenous injection":
-
-  FDA_approval_status_enum:
-    description: >-
-    permissible_values:
-      "Discovery & Development Phase":
-        description: >-
-          Discovery & Development Phase. Discovery involves researchers finding new possibilities
-          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
-          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
-          Drug development occurs after researchers identify potential compounds for experiments.
-      "Preclinical Research Phase":
-        description: >-
-          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
-          they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA Clinical Research Phase":
-        description: >-
-          Clinical Research Phase. Clinical research involves trials of the drug on people,
-          and it is one of the most involved stages in the drug development and approval process.
-          Clinical trials must answer specific questions and follow a protocol determined by
-          the drug researcher or manufacturer.
-      "FDA Review Phase 4":
-        description: >-
-          FDA Review
-      "FDA Post-Market Safety Monitoring":
-        description: >-
-          FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
-          while the drug is on the marketplace. If a developer wants to change anything about the
-          drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
-          frequently reviews the drug’s advertising and its manufacturing facility to make sure
-          everything involved in its creation and marketing is in compliance with regulations.
-      "FDA Clinical Research Phase 1":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
-          lasts several months. This phase is used to determine the safety and dosage of the drug,
-          and about 70% of these drugs move on to the next clinical research phase.
-      "FDA Clinical Research Phase 2":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
-          who must have the disease or condition the drug supposes to treat. This phase can last
-          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
-          as well as note side effects that may occur.
-      "FDA Clinical Research Phase 3":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
-          and can last up to four years. It is used to continue monitoring the efficacy of
-          the drug, as well as exploring any longer-term adverse reactions.
-      "FDA Clinical Research Phase 4":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
-          volunteers who have the disease or condition and continues to monitor safety and efficacy.
-          If a drug passes this phase, it goes on to FDA review.
-      "FDA Fast Track":
-        description: >-
-          Fast track is a process designed to facilitate the development, and expedite the
-          review of drugs to treat serious conditions and fill an unmet medical need.
-          The purpose is to get important new drugs to the patient earlier. Fast Track
-          addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "FDA Breakthrough Therapy":
-        description: >-
-          Breakthrough Therapy designation is a process designed to expedite the
-          development and review of drugs that are intended to treat a serious
-          condition and preliminary clinical evidence indicates that the drug may
-          demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "FDA Accelerated Approval":
-        description: >-
-          When studying a new drug, it can sometimes take many years to learn whether a drug actually
-          provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
-          effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”.
-          Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical
-          benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs
-          for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
-          Using a surrogate endpoint enabled the FDA to approve these drugs faster.
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "FDA Priority Review":
-        description: >-
-          Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
-          In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
-          the drug review time and created a two-tiered system of review times – Standard Review and Priority
-          Review. A Priority Review designation means FDA’s goal is to take action on an application
-          within 6 months (compared to 10 months under standard review).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "Regular FDA Approval":
-      "Post-Approval Withdrawal":
-
-
 
 subsets:
 
@@ -484,6 +201,7 @@ subsets:
 
 imports:
   - linkml:types
+  - enums
 
 types:
 
@@ -6805,7 +6523,7 @@ slots:
       - owl:annotatedSource
       - OBAN:association_has_subject
 
-  aspect qualifier:
+  form or variant qualifier:
     is_a: association slot
     abstract: true
     description: >-
@@ -6813,6 +6531,16 @@ slots:
       alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
       For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
       ‘a mutation of Gene X’.
+
+  aspect qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit
+      into the other S/O qualifier categories.
+
 
   derivative qualifier:
     is_a: association slot
@@ -6827,36 +6555,36 @@ slots:
     abstract: true
     description: >-
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
-      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail)
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
 
   context qualifier:
     is_a: association slot
     abstract: true
     description: >-
-      Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs
+      Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
 
   direction qualifier:
     is_a: association slot
     abstract: true
     description: >-
-      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-  subject aspect:
+  subject aspect qualifier:
     is_a: aspect qualifier
 
-  subject form or variant:
+  subject form or variant qualifier:
     is_a: form or variant qualifier
 
-  subject part:
+  subject part qualifier:
     is_a: part qualifier
 
-  subject derivative:
+  subject derivative qualifier:
     is_a: derivative qualifier
 
-  subject context:
+  subject context qualifier:
     is_a: context qualifier
 
-  subject direction:
+  subject direction qualifier:
     is_a: direction qualifier
 
   object:
@@ -6874,22 +6602,22 @@ slots:
       - owl:annotatedTarget
       - OBAN:association_has_object
 
-  object aspect:
+  object aspect qualifier:
     is_a: aspect qualifier
 
-  object form or variant:
+  object form or variant qualifier:
     is_a: form or variant qualifier
 
-  object part:
+  object part qualifier:
     is_a: part qualifier
 
-  object derivative:
+  object derivative qualifier:
     is_a: derivative qualifier
 
-  object context:
+  object context qualifier:
     is_a: context qualifier
 
-  object direction:
+  object direction qualifier:
     is_a: direction qualifier
     range: direction_qualifier_enum
 
@@ -9966,7 +9694,7 @@ classes:
       - rdf:Statement
       - owl:Axiom
 
-  
+
   chemical entity assesses named thing association:
     is_a: association
     slot_usage:
@@ -10375,6 +10103,7 @@ classes:
         description: "the pathway that is affected by the chemical"
 
   chemical to gene association:
+    deprecated: true
     description: >-
       An interaction between a chemical entity and a gene or gene product.
     is_a: association
@@ -10390,6 +10119,33 @@ classes:
         range: gene or gene product
         description: >-
           the gene or gene product that is affected by the chemical.
+
+  chemical gene interaction association:
+    description: >-
+      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
+      (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+    is_a: association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject context qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object context qualifier
+      - interaction mechanism qualifier
+      - anatomical context qualifier
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: gene or gene product
+      predicate:
+        range: uriorcurie
+      subject form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_enum
+
 
   drug to gene association:
     description: >-
