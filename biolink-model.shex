@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.0
+# version: 2.4.1
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -197,8 +197,9 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <Association> ]
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
-    @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation>
-    OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
+    @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
+    @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalToChemicalAssociation> OR
+    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
     @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
     @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
     @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
@@ -483,6 +484,17 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<ChemicalMixture> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<MolecularEntity> OR @<Nutrient>
 )
+
+<ChemicalEntityAssessesNamedThingAssociation> CLOSED {
+    (  $<ChemicalEntityAssessesNamedThingAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<NamedThing> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <ChemicalEntityAssessesNamedThingAssociation> ]
+    )
+}
 
 <ChemicalEntityOrGeneOrGeneProduct> {
     (  $<ChemicalEntityOrGeneOrGeneProduct_tes> rdf:type . * ;

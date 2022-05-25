@@ -79,7 +79,7 @@ additional edge property `publication=PMID:123` would be represented
 in RDF* as:
 
 ```
-:x :p :y <<bl:publication http://identifiers.org/pmid/123>>
+<<:x :p :y>> bl:publication <http://identifiers.org/pmid/123>.
 ```
 
 This is syntactic sugar for the more verbose reification triples:
@@ -93,6 +93,16 @@ This is syntactic sugar for the more verbose reification triples:
    bl:publication http://identifiers.org/pmid/123 ].
 ```
 
+The jury is still out on the question whether referring to an RDF* triple also asserts the triple. Therefore in some 
+RDF* implementations you need to assert it explicitly if you need to have it as a direct triple, similar to the 
+RDF Reification example below:
+
+```
+:x :p :y.
+<<:x :p :y>> bl:publication <http://identifiers.org/pmid/123>.
+```
+
+(For example, GraphDB's RDF* does not assert automatically.)
 
 See [biolink:Association](../docs/Association) for a taxonomy of associations defined by the model, and 
 to see a list of generic properties that are associated with an edge.
