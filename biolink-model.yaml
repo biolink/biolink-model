@@ -2246,6 +2246,7 @@ slots:
       - CHEBI:24432
 
   affects abundance of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the
       other within a system of interest
@@ -2262,12 +2263,14 @@ slots:
       - CTD:affects_abundance_of
 
   abundance affected by:
+    deprecated: true
     is_a: affected by
     inverse: affects abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   increases abundance of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
     is_a: affects abundance of
@@ -2288,12 +2291,14 @@ slots:
       - UBERGRAPH:is_increase_of
 
   abundance increased by:
+    deprecated: true
     is_a: abundance affected by
     inverse: increases abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   decreases abundance of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one
       decreases the amount of the other within a system of interest
@@ -2316,12 +2321,14 @@ slots:
       - UBERGRAPH:is_decrease_of
 
   abundance decreased by:
+    deprecated: true
     is_a: abundance affected by
     inverse: decreases abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   increases activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one
       increases the activity of the other within a system of interest
@@ -2361,6 +2368,7 @@ slots:
         value: biolink:decreases activity of
 
   affects activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one changes the activity of the
       other within a system of interest
@@ -2381,6 +2389,7 @@ slots:
       - DGIdb:allosteric_modulator
 
   activity affected by:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one is changed by the
       activity of the other within a system of interest
@@ -2390,6 +2399,7 @@ slots:
     inverse: affects activity of
 
   activity increased by:
+    deprecated: true
     is_a: activity affected by
     in_subset:
       - translator_minimal
@@ -2398,6 +2408,7 @@ slots:
     inverse: increases activity of
 
   decreases activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one decreases the
       activity of the other within a system of interest
@@ -2450,6 +2461,7 @@ slots:
       - DGIdb:inverse_agonist
 
   activity decreased by:
+    deprecated: true
     is_a: activity affected by
     in_subset:
       - translator_minimal
@@ -2459,6 +2471,7 @@ slots:
 
 
   affects expression of:
+    deprecated: true
     description: >-
       holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an
       environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the
@@ -2470,6 +2483,7 @@ slots:
     range: nucleic acid entity
 
   expression affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2478,6 +2492,7 @@ slots:
     inverse: affects expression of
 
   increases expression of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity
       where the action or effect of one increases the level of expression of the
@@ -2496,6 +2511,7 @@ slots:
       - RO:0003003
 
   expression increased by:
+    deprecated: true
     is_a: expression affected by
     in_subset:
       - translator_minimal
@@ -2504,6 +2520,7 @@ slots:
     inverse: increases expression of
 
   decreases expression of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the
       other within a system of interest
@@ -2523,6 +2540,7 @@ slots:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
   expression decreased by:
+    deprecated: true
     is_a: expression affected by
     in_subset:
       - translator_minimal
@@ -2531,6 +2549,7 @@ slots:
     inverse: decreases expression of
 
   affects folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate
       or quality of folding of the other
@@ -2548,12 +2567,14 @@ slots:
 
 
   folding affected by:
+    deprecated: true
     is_a: affected by
     inverse: affects folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   increases folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one
       increases the rate or quality of folding of the other
@@ -2575,12 +2596,14 @@ slots:
       - CTD:increases_folding_of
 
   folding increased by:
+    deprecated: true
     is_a: folding affected by
     inverse: increases folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   decreases folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene or gene product entity and a
       nucleic acid entity where the action or effect of one
@@ -2603,12 +2626,14 @@ slots:
       - CTD:decreases_folding_of
 
   folding decreased by:
+    deprecated: true
     is_a: folding affected by
     inverse: decreases folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   affects localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one changes the
       localization of the other within a system of interest
@@ -2627,6 +2652,7 @@ slots:
       - GOREL:0002003
 
   localization affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2635,6 +2661,7 @@ slots:
     inverse: affects localization of
 
   increases localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one increases the proper
       localization of the other within a system of interest
@@ -2656,6 +2683,7 @@ slots:
       - CTD:increases_localization_of
 
   localization increased by:
+    deprecated: true
     is_a: localization affected by
     in_subset:
       - translator_minimal
@@ -2664,6 +2692,7 @@ slots:
     inverse: increases localization of
 
   decreases localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
     is_a: affects localization of
@@ -2685,6 +2714,7 @@ slots:
 
 
   localization decreased by:
+    deprecated: true
     is_a: localization affected by
     in_subset:
       - translator_minimal
@@ -2693,6 +2723,7 @@ slots:
     inverse: decreases localization of
 
   affects metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the
       metabolic processing of the other within a system of interest
@@ -2709,6 +2740,7 @@ slots:
       - GAMMA:catalytic_activity
 
   metabolic processing affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2717,6 +2749,7 @@ slots:
     inverse: affects metabolic processing of
 
   increases metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of
       metabolic processing of the other within a system of interest
@@ -2740,6 +2773,7 @@ slots:
       - NCIT:enzyme_metabolizes_chemical_or_drug
 
   metabolic processing increased by:
+    deprecated: true
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
@@ -2748,6 +2782,7 @@ slots:
     inverse: increases metabolic processing of
 
   decreases metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of
       metabolic processing of the other within a system of interest
@@ -2769,6 +2804,7 @@ slots:
       - CTD:decreases_metabolic_processing_of
 
   metabolic processing decreased by:
+    deprecated: true
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
@@ -2777,6 +2813,7 @@ slots:
     inverse: decreases metabolic processing of
 
   affects molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular
       modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
@@ -2826,6 +2863,7 @@ slots:
       - CTD:affects_carboxylation
 
   molecular modification affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2834,6 +2872,7 @@ slots:
     inverse: affects molecular modification of
 
   increases molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one leads to
       increased molecular modification(s) of the other (e.g. via post-translational modifications of
@@ -2890,6 +2929,7 @@ slots:
       - GAMMA:oxidizer
 
   molecular modification increased by:
+    deprecated: true
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
@@ -2898,6 +2938,7 @@ slots:
     inverse: increases molecular modification of
 
   decreases molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical entities  where the action or effect of one leads to
       decreased molecular modification(s) of the other (e.g. via post-translational modifications of
@@ -2953,6 +2994,7 @@ slots:
       - GAMMA:deoxidizer
 
   molecular modification decreased by:
+    deprecated: true
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
@@ -2961,6 +3003,7 @@ slots:
     inverse: decreases molecular modification of
 
   affects synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect 
       of one impacts the rate of chemical synthesis of the other
@@ -2977,6 +3020,7 @@ slots:
       - CTD:affects_synthesis_of
 
   synthesis affected by:
+    deprecated: true
     is_a: affected by
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
@@ -2985,6 +3029,7 @@ slots:
       - translator_minimal
 
   increases synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect
       of one increases the rate of chemical synthesis of the other
@@ -3006,6 +3051,7 @@ slots:
       - CTD:increases_synthesis_of
 
   synthesis increased by:
+    deprecated: true
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
@@ -3014,6 +3060,7 @@ slots:
     inverse: increases synthesis of
 
   decreases synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect
       of one decreases the rate of chemical synthesis of the other
@@ -3035,6 +3082,7 @@ slots:
       - GAMMA:inhibition_of_synthesis
 
   synthesis decreased by:
+    deprecated: true
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
@@ -3043,6 +3091,7 @@ slots:
     inverse: decreases synthesis of
 
   affects degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       impacts the rate of degradation of the other within a system of interest,
@@ -3065,6 +3114,7 @@ slots:
       - CTD:affects_hydrolysis
 
   degradation affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3073,6 +3123,7 @@ slots:
     inverse: affects degradation of
 
   increases degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       increases the rate of degradation of the other within a system of interest
@@ -3106,6 +3157,7 @@ slots:
       - GOREL:0002004
 
   degradation increased by:
+    deprecated: true
     is_a: degradation affected by
     in_subset:
       - translator_minimal
@@ -3114,6 +3166,7 @@ slots:
     inverse: increases degradation of
 
   decreases degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       decreases the rate of degradation of the other within a system of interest
@@ -3138,6 +3191,7 @@ slots:
       - CTD:decreases_hydrolysis
 
   degradation decreased by:
+    deprecated: true
     is_a: degradation affected by
     in_subset:
       - translator_minimal
@@ -3334,6 +3388,7 @@ slots:
     inverse: decreases response to
 
   affects splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or effect
       of the chemical entity impacts the splicing of the mRNA
@@ -3352,6 +3407,7 @@ slots:
       - CTD:affects_splicing_of
 
   splicing affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3360,6 +3416,7 @@ slots:
     inverse: affects splicing of
 
   increases splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or effect
       of the chemical entity increases the proper splicing of the mRNA
@@ -3383,6 +3440,7 @@ slots:
       - CTD:increases_splicing_of
 
   splicing increased by:
+    deprecated: true
     is_a: splicing affected by
     in_subset:
       - translator_minimal
@@ -3391,6 +3449,7 @@ slots:
     inverse: increases splicing of
 
   decreases splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or
       effect of the chemical entity decreases the proper splicing of the mRNA
@@ -3414,6 +3473,7 @@ slots:
       - CTD:decreases_splicing_of
 
   splicing decreased by:
+    deprecated: true
     is_a: splicing affected by
     in_subset:
       - translator_minimal
@@ -3422,6 +3482,7 @@ slots:
     inverse: decreases splicing of
 
   affects stability of:
+    deprecated: true
     description: >-
       holds between two entities where the action or effect of one impacts
       the stability of the other within a system of interest
@@ -3438,6 +3499,7 @@ slots:
       - GAMMA:stabilization
 
   stability affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3468,6 +3530,7 @@ slots:
       - CHEMBL.MECHANISM:stabiliser
 
   stability increased by:
+    deprecated: true
     is_a: stability affected by
     in_subset:
       - translator_minimal
@@ -3476,6 +3539,7 @@ slots:
     inverse: increases stability of
 
   decreases stability of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases
       the stability of the other within a system of interest
@@ -3497,6 +3561,7 @@ slots:
       - CTD:decreases_stability_of
 
   stability decreased by:
+    deprecated: true
     is_a: stability affected by
     in_subset:
       - translator_minimal
@@ -3505,6 +3570,7 @@ slots:
     inverse: decreases stability of
 
   affects transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts
       the rate of transport of the other across some boundary in a system of interest
@@ -3525,6 +3591,7 @@ slots:
       - RO:0002345
 
   transport affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3533,6 +3600,7 @@ slots:
     inverse: affects transport of
 
   increases transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       increases the rate of transport of the other across some boundary in a system of interest
@@ -3555,6 +3623,7 @@ slots:
       - GAMMA:transporter
 
   transport increased by:
+    deprecated: true
     is_a: transport affected by
     in_subset:
       - translator_minimal
@@ -3563,6 +3632,7 @@ slots:
     inverse: increases transport of
 
   decreases transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       decreases the rate of transport of the other across some boundary in a system of interest
@@ -3584,6 +3654,7 @@ slots:
       - CTD:decreases_transport_of
 
   transport decreased by:
+    deprecated: true
     is_a: transport affected by
     in_subset:
       - translator_minimal
@@ -3592,6 +3663,7 @@ slots:
     inverse: decreases transport of
 
   affects secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3611,6 +3683,7 @@ slots:
       - CTD:affects_export
 
   secretion affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3619,6 +3692,7 @@ slots:
     inverse: affects secretion of
 
   increases secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3643,6 +3717,7 @@ slots:
       - CTD:increases_export
 
   secretion increased by:
+    deprecated: true
     is_a: secretion affected by
     in_subset:
       - translator_minimal
@@ -3651,6 +3726,7 @@ slots:
     inverse: increases secretion of
 
   decreases secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3675,6 +3751,7 @@ slots:
       - CTD:decreases_export
 
   secretion decreased by:
+    deprecated: true
     is_a: secretion affected by
     in_subset:
       - translator_minimal
@@ -3683,6 +3760,7 @@ slots:
     inverse: decreases secretion of
 
   affects uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of
       uptake of the other into of a cell, gland, or organ
@@ -3702,6 +3780,7 @@ slots:
       - CTD:affects_import
 
   uptake affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3710,6 +3789,7 @@ slots:
     inverse: affects uptake of
 
   increases uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of
       uptake of the other into of a cell, gland, or organ
@@ -3734,6 +3814,7 @@ slots:
       - CTD:increases_import
 
   uptake increased by:
+    deprecated: true
     is_a: uptake affected by
     in_subset:
       - translator_minimal
@@ -3742,6 +3823,7 @@ slots:
     inverse: increases uptake of
 
   decreases uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect
       of one decreases the rate of uptake of the other into of a cell, gland, or organ
@@ -3766,6 +3848,7 @@ slots:
       - CTD:decreases_import
 
   uptake decreased by:
+    deprecated: true
     is_a: uptake affected by
     in_subset:
       - translator_minimal
@@ -6624,6 +6707,60 @@ slots:
       - owl:annotatedSource
       - OBAN:association_has_subject
 
+  aspect qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.
+
+  derivative qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object  concept to describe something that is derived from the
+      core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
+      the composed concept ‘a metabolite of Chemical X’.
+
+  part qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail)
+
+  context qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs
+
+  direction qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree
+
+  subject aspect:
+    is_a: aspect qualifier
+
+  subject form or variant:
+    is_a: form or variant qualifier
+
+  subject part:
+    is_a: part qualifier
+
+  subject derivative:
+    is_a: derivative qualifier
+
+  subject context:
+    is_a: context qualifier
+
+  subject direction:
+    is_a: direction qualifier
+
   object:
     is_a: association slot
     description: >-
@@ -6638,6 +6775,24 @@ slots:
     exact_mappings:
       - owl:annotatedTarget
       - OBAN:association_has_object
+
+  object aspect:
+    is_a: aspect qualifier
+
+  object form or variant:
+    is_a: form or variant qualifier
+
+  object part:
+    is_a: part qualifier
+
+  object derivative:
+    is_a: derivative qualifier
+
+  object context:
+    is_a: context qualifier
+
+  object direction:
+    is_a: direction qualifier
 
   predicate:
     is_a: association slot
@@ -6659,6 +6814,31 @@ slots:
     exact_mappings:
       - owl:annotatedProperty
       - OBAN:association_has_predicate
+
+  qualified predicate:
+    is_a: association slot
+
+  effect mechanism qualifier:
+    is_a: association slot
+    description: >-
+      A statement qualifier representing a type of molecular control mechanism through which an
+      effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
+      'allosteric modulation', 'channel blocker')
+  interaction mechanism qualifier:
+    is_a: association slot
+    description: >-
+      A statement qualifier representing a type of molecular interaction mechanism through which a
+      physical interaction between chemical entities, genes, or gene products  occurred.
+  anatomical context qualifier:
+    is_a: association slot
+    description: >-
+      A statement qualifier representing an anatomical location where an relationship expressed in an
+      association took place (can be a tissue, cell type, or subcellular location).
+  species context qualifier:
+    is_a: association slot
+    description: >-
+      A statement qualifier representing a taxonomic category of species in which a relationship
+      expressed in an association took place.
 
   logical interpretation:
     is_a: association slot
