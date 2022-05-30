@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1839.8,123"];
+	graph [bb="0,0,1840.1,123"];
 	node [label="\N"];
 	"pathological anatomical structure"	[height=0.5,
 		label="pathological anatomical structure",
@@ -108,25 +108,25 @@ digraph {
 		lp="1387.1,61.5",
 		pos="e,1412.3,32.523 1092.5,92.225 1183.3,83.041 1295.1,71.445 1305.6,69 1339.3,61.214 1375.9,47.55 1402.8,36.472",
 		style=solid];
-	"has attribute"	[height=0.5,
-		pos="1583.6,18",
-		width=1.9859];
-	"pathological anatomical structure" -> "has attribute"	[color=blue,
-		label="has attribute",
-		lp="1528.6,61.5",
-		pos="e,1546.2,33.379 1092,92.168 1111.6,90.336 1131.7,88.543 1150.6,87 1271.4,77.175 1303.5,91.119 1422.6,69 1461.9,61.712 1505,47.997 \
-1536.7,36.772",
-		style=solid];
 	"in taxon"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="1756.6,18",
+		pos="1595.6,18",
 		width=2.3109];
 	"pathological anatomical structure" -> "in taxon"	[color=blue,
 		label="in taxon",
-		lp="1672.6,61.5",
-		pos="e,1715.1,33.727 1090.1,91.946 1110.2,90.098 1131,88.357 1150.6,87 1341,73.821 1391.2,99.144 1579.6,69 1622.9,62.084 1670.6,48.234 \
-1705.5,36.861",
+		lp="1514.6,61.5",
+		pos="e,1554.3,33.683 1092,92.168 1111.6,90.336 1131.7,88.543 1150.6,87 1271.4,77.175 1303.3,89.941 1422.6,69 1464.4,61.672 1510.5,48.076 \
+1544.6,36.91",
+		style=solid];
+	"has attribute"	[height=0.5,
+		pos="1768.6,18",
+		width=1.9859];
+	"pathological anatomical structure" -> "has attribute"	[color=blue,
+		label="has attribute",
+		lp="1674.6,61.5",
+		pos="e,1722.5,31.95 1090.5,91.958 1110.6,90.12 1131.2,88.379 1150.6,87 1326.8,74.505 1372.6,92.58 1547.6,69 1604.5,61.334 1668.4,46.156 \
+1712.8,34.524",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
