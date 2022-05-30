@@ -60,6 +60,7 @@ URI: [biolink:association_category](https://w3id.org/biolink/vocab/association_c
  * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+ * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)

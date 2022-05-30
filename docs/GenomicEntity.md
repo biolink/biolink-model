@@ -15,14 +15,10 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[OrganismTaxon],[SequenceVariant]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[ThingWithTaxon]%5E-[GenomicEntity],[SequenceVariant],[ReagentTargetedGene],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[SequenceVariant],[ReagentTargetedGene],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene])
 
 ---
 
-
-## Parents
-
- *  is_a: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
 ## Mixin for
 
@@ -46,13 +42,6 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
  * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
      * Description: connects a genomic feature to its sequence
      * Range: [BiologicalSequence](types/BiologicalSequence.md)
-
-### Inherited from thing with taxon:
-
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
-     * in subsets: (translator_minimal)
 
 ## Other properties
 

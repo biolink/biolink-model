@@ -190,6 +190,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
          * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
              * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) - An interaction at the molecular level between two physical entities
+     * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) - An interaction between a gene or gene product and a biological process or pathway.
      * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
      * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
          * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
@@ -287,7 +288,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
-     * [GenomicEntity](GenomicEntity.md)
  * [VariantToEntityAssociationMixin](VariantToEntityAssociationMixin.md)
 
 ### Other Classes

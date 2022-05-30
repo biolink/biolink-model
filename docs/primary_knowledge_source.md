@@ -62,6 +62,7 @@ URI: [biolink:primary_knowledge_source](https://w3id.org/biolink/vocab/primary_k
  * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+ * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)

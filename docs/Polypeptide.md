@@ -15,7 +15,7 @@ URI: [biolink:Polypeptide](https://w3id.org/biolink/vocab/Polypeptide)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[Protein],[Polypeptide%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[ThingWithTaxon],[Polypeptide]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Polypeptide]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[Polypeptide]%5E-[Protein],[BiologicalEntity]%5E-[Polypeptide],[OrganismTaxon],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Protein],[Polypeptide%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Polypeptide]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[Polypeptide]%5E-[Protein],[BiologicalEntity]%5E-[Polypeptide],[OrganismTaxon],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -34,7 +34,6 @@ URI: [biolink:Polypeptide](https://w3id.org/biolink/vocab/Polypeptide)
 
 ## Uses Mixins
 
- *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
  *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
  *  mixin: [ChemicalEntityOrProteinOrPolypeptide](ChemicalEntityOrProteinOrPolypeptide.md) - A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 

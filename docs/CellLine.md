@@ -15,7 +15,7 @@ URI: [biolink:CellLine](https://w3id.org/biolink/vocab/CellLine)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[CellLineToEntityAssociationMixin],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[CellLineToEntityAssociationMixin]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[OrganismTaxon],[CellLineToEntityAssociationMixin],[CellLineAsAModelOfDiseaseAssociation],[CellLineAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[CellLine%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[CellLineToEntityAssociationMixin]-%20subject%201..1%3E[CellLine],[OrganismalEntity]%5E-[CellLine],[Attribute])
 
 ---
 
@@ -101,6 +101,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..\*</sub>
+     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
+     * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 

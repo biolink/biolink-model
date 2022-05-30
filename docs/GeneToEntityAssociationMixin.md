@@ -15,7 +15,7 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[DruggableGeneToDiseaseAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPathwayAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypicFeatureAssociation],[GeneToPathwayAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[DruggableGeneToDiseaseAssociation])
 
 ---
 
@@ -24,6 +24,7 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 
  * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md) (mixin) 
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) (mixin) 
+ * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) (mixin)  - An interaction between a gene or gene product and a biological process or pathway.
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) (mixin) 
 
 ## Referenced by class

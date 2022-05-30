@@ -30,7 +30,7 @@
 <g class='graph' id='graph0' transform='scale(1 1) rotate(0) translate(4 568)'><title>structs</title><g class='node' id='node1'><title>VariantToPopulationAssociation</title>
 <polygon fill='white' points='0,-399 0,-435 192,-435 192,-399 0,-399' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='96' y='-413.3'>VariantToPopulationAssociation</text>
-</g><g class='node' id='node6'><title>PopulationOfIndividualOrganisms</title>
+</g><g class='node' id='node5'><title>PopulationOfIndividualOrganisms</title>
 <polygon fill='white' points='214,-129 214,-307 416,-307 416,-129 214,-129' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='315' y='-288.8'>PopulationOfIndividualOrganisms</text>
 <polyline fill='none' points='214,-278 416,-278 ' stroke='black'/>
@@ -47,13 +47,10 @@
 <path d='M115.052,-398.862C136.523,-379.548 173.159,-346.592 209.251,-314.126' fill='none' stroke='black'/>
 <polygon fill='black' points='216.939,-307.21 212.514,-317.244 213.221,-310.554 209.504,-313.898 209.504,-313.898 209.504,-313.898 213.221,-310.554 206.495,-310.553 216.939,-307.21 216.939,-307.21' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='198.392' y='-310.994'> object 1..1</text>
-</g><g class='node' id='node2'><title>ThingWithTaxon</title>
-<polygon fill='white' points='198.5,-1 198.5,-37 307.5,-37 307.5,-1 198.5,-1' stroke='black' style='fill:white;stroke:black;'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='253' y='-15.3'>ThingWithTaxon</text>
-</g><g class='node' id='node3'><title>StudyPopulation</title>
-<polygon fill='white' points='325.5,-1 325.5,-37 430.5,-37 430.5,-1 325.5,-1' stroke='black' style='fill:white;stroke:black;'/>
-<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='378' y='-15.3'>StudyPopulation</text>
-</g><g class='node' id='node4'><title>PopulationToPopulationAssociation</title>
+</g><g class='node' id='node2'><title>StudyPopulation</title>
+<polygon fill='white' points='262.5,-1 262.5,-37 367.5,-37 367.5,-1 262.5,-1' stroke='black' style='fill:white;stroke:black;'/>
+<text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='315' y='-15.3'>StudyPopulation</text>
+</g><g class='node' id='node3'><title>PopulationToPopulationAssociation</title>
 <polygon fill='white' points='210,-399 210,-435 420,-435 420,-399 210,-399' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='315' y='-413.3'>PopulationToPopulationAssociation</text>
 </g><g class='edge' id='edge2'><title>PopulationToPopulationAssociation-&gt;PopulationOfIndividualOrganisms</title>
@@ -64,33 +61,29 @@
 <path d='M319.013,-398.862C320.84,-380.194 321.752,-348.783 321.75,-317.387' fill='none' stroke='black'/>
 <polygon fill='black' points='321.717,-307.21 326.249,-317.196 321.733,-312.21 321.75,-317.21 321.75,-317.21 321.75,-317.21 321.733,-312.21 317.25,-317.225 321.717,-307.21 321.717,-307.21' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='314.937' y='-322.326'> subject 1..1</text>
-</g><g class='node' id='node5'><title>ExposureEventToOutcomeAssociation</title>
+</g><g class='node' id='node4'><title>ExposureEventToOutcomeAssociation</title>
 <polygon fill='white' points='335,-527 335,-563 561,-563 561,-527 335,-527' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='448' y='-541.3'>ExposureEventToOutcomeAssociation</text>
 </g><g class='edge' id='edge1'><title>ExposureEventToOutcomeAssociation-&gt;PopulationOfIndividualOrganisms</title>
 <path d='M448.15,-526.796C447.873,-498.901 445.137,-442.449 429,-398 418.777,-369.841 403.548,-341.513 387.524,-315.963' fill='none' stroke='black'/>
 <polygon fill='black' points='382.065,-307.408 391.238,-313.418 384.755,-311.623 387.445,-315.838 387.445,-315.838 387.445,-315.838 384.755,-311.623 383.651,-318.259 382.065,-307.408 382.065,-307.408' stroke='black'/>
 <text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='390.752' y='-342.754'> has population context 0..1</text>
-</g><g class='edge' id='edge5'><title>PopulationOfIndividualOrganisms-&gt;ThingWithTaxon</title>
-<path d='M287.264,-128.872C277.899,-99.1142 268.132,-68.0801 261.433,-46.7954' fill='none' stroke='black' stroke-dasharray='5,2'/>
-<polygon fill='black' points='258.406,-37.1781 265.701,-45.3659 259.907,-41.9474 261.408,-46.7168 261.408,-46.7168 261.408,-46.7168 259.907,-41.9474 257.116,-48.0678 258.406,-37.1781 258.406,-37.1781' stroke='black'/>
-<text style='font-size:8px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='288.147' y='-105.191'>uses </text>
-</g><g class='edge' id='edge6'><title>PopulationOfIndividualOrganisms-&gt;StudyPopulation</title>
-<path d='M346.308,-119.102C356.393,-87.5657 366.504,-55.9476 372.507,-37.1781' fill='none' stroke='black'/>
-<polygon fill='none' points='342.896,-118.281 343.183,-128.872 349.563,-120.413 342.896,-118.281' stroke='black'/>
-</g><g class='node' id='node7'><title>OrganismalEntity</title>
+</g><g class='edge' id='edge5'><title>PopulationOfIndividualOrganisms-&gt;StudyPopulation</title>
+<path d='M315,-118.694C315,-87.2934 315,-55.8667 315,-37.1781' fill='none' stroke='black'/>
+<polygon fill='none' points='311.5,-118.872 315,-128.872 318.5,-118.872 311.5,-118.872' stroke='black'/>
+</g><g class='node' id='node6'><title>OrganismalEntity</title>
 <polygon fill='white' points='476.5,-399 476.5,-435 587.5,-435 587.5,-399 476.5,-399' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='532' y='-413.3'>OrganismalEntity</text>
-</g><g class='edge' id='edge7'><title>OrganismalEntity-&gt;PopulationOfIndividualOrganisms</title>
+</g><g class='edge' id='edge6'><title>OrganismalEntity-&gt;PopulationOfIndividualOrganisms</title>
 <path d='M505.665,-392.093C482.223,-370.81 446.432,-338.318 412.166,-307.21' fill='none' stroke='black'/>
 <polygon fill='none' points='503.366,-394.732 513.122,-398.862 508.071,-389.549 503.366,-394.732' stroke='black'/>
-</g><g class='node' id='node8'><title>OrganismTaxon</title>
+</g><g class='node' id='node7'><title>OrganismTaxon</title>
 <polygon fill='white' points='579.5,-527 579.5,-563 682.5,-563 682.5,-527 579.5,-527' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='631' y='-541.3'>OrganismTaxon</text>
-</g><g class='node' id='node9'><title>Attribute</title>
+</g><g class='node' id='node8'><title>Attribute</title>
 <polygon fill='white' points='700.5,-527 700.5,-563 763.5,-563 763.5,-527 700.5,-527' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='732' y='-541.3'>Attribute</text>
-</g><g class='node' id='node10'><title>Association</title>
+</g><g class='node' id='node9'><title>Association</title>
 <polygon fill='white' points='782,-527 782,-563 860,-563 860,-527 782,-527' stroke='black' style='fill:white;stroke:black;'/>
 <text style='font-size:10px; font-family:Verdana;' text-anchor='middle' transform='translate(0,0)' x='821' y='-541.3'>Association</text>
 </g></g>

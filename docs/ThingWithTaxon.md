@@ -15,24 +15,16 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[Protein]uses%20-.-%3E[ThingWithTaxon],[PopulationOfIndividualOrganisms]uses%20-.-%3E[ThingWithTaxon],[Polypeptide]uses%20-.-%3E[ThingWithTaxon],[LifeStage]uses%20-.-%3E[ThingWithTaxon],[IndividualOrganism]uses%20-.-%3E[ThingWithTaxon],[DiseaseOrPhenotypicFeature]uses%20-.-%3E[ThingWithTaxon],[AnatomicalEntity]uses%20-.-%3E[ThingWithTaxon],[ThingWithTaxon]%5E-[GenomicEntity],[Protein],[PopulationOfIndividualOrganisms],[Polypeptide],[OrganismTaxon],[LifeStage],[IndividualOrganism],[GenomicEntity],[DiseaseOrPhenotypicFeature],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[NucleicAcidEntity]uses%20-.-%3E[ThingWithTaxon],[GenomicBackgroundExposure]uses%20-.-%3E[ThingWithTaxon],[BiologicalEntity]uses%20-.-%3E[ThingWithTaxon],[OrganismTaxon],[NucleicAcidEntity],[GenomicBackgroundExposure],[BiologicalEntity])
 
 ---
 
 
-## Children
-
- * [GenomicEntity](GenomicEntity.md)
-
 ## Mixin for
 
- * [AnatomicalEntity](AnatomicalEntity.md) (mixin)  - A subcellular location, cell type or gross anatomical part
- * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) (mixin)  - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
- * [IndividualOrganism](IndividualOrganism.md) (mixin)  - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
- * [LifeStage](LifeStage.md) (mixin)  - A stage of development or growth of an organism, including post-natal adult stages
- * [Polypeptide](Polypeptide.md) (mixin)  - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
- * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) (mixin)  - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
- * [Protein](Protein.md) (mixin)  - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+ * [BiologicalEntity](BiologicalEntity.md) (mixin) 
+ * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) (mixin)  - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
+ * [NucleicAcidEntity](NucleicAcidEntity.md) (mixin)  - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 
 ## Referenced by class
 
