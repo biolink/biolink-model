@@ -7822,17 +7822,6 @@ classes:
 
   ## Biological Sciences
 
-  biological entity:
-    is_a: named thing
-    aliases: ['bioentity']
-    abstract: true
-    narrow_mappings:
-      - WIKIDATA:Q28845870
-      # UMLS Semantic Type "Experimental Model of Disease"
-      - STY:T050
-      # SIO term is 'biological entity' but less inclusive than the Biolink scope
-      - SIO:010046
-
   thing with taxon:
     mixin: true
     description: >-
@@ -7842,9 +7831,21 @@ classes:
     slots:
       - in taxon
 
+  biological entity:
+    is_a: named thing
+    aliases: ['bioentity']
+    abstract: true
+    mixins:
+      - thing with taxon
+    narrow_mappings:
+      - WIKIDATA:Q28845870
+      # UMLS Semantic Type "Experimental Model of Disease"
+      - STY:T050
+      # SIO term is 'biological entity' but less inclusive than the Biolink scope
+      - SIO:010046
+
   genomic entity:
     mixin: true
-    is_a: thing with taxon
     slots:
       - has biological sequence
     in_subset:
@@ -8042,6 +8043,7 @@ classes:
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
+      - thing with taxon
       - physical essence
       - ontology class
     exact_mappings:
@@ -8426,8 +8428,6 @@ classes:
 
   life stage:
     is_a: organismal entity
-    mixins:
-      - thing with taxon
     description: >-
       A stage of development or growth of an organism,
       including post-natal adult stages
@@ -8451,8 +8451,6 @@ classes:
     description: >-
       An instance of an organism. For example, Richard Nixon,
       Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
-    mixins:
-      - thing with taxon
     is_a: organismal entity
     exact_mappings:
       - SIO:010000
@@ -8473,8 +8471,6 @@ classes:
       phenotypes.
     local_names:
       ga4gh: population
-    mixins:
-      - thing with taxon
     is_a: organismal entity
     exact_mappings:
       - PCO:0000001
@@ -8494,8 +8490,6 @@ classes:
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
       distinct, others such as MESH conflate.
-    mixins:
-      - thing with taxon
     union_of:
       - disease
       - phenotypic feature
@@ -8601,7 +8595,6 @@ classes:
   anatomical entity:
     is_a: organismal entity
     mixins:
-      - thing with taxon
       - physical essence
     description: >-
       A subcellular location, cell type or gross anatomical part
@@ -8892,7 +8885,6 @@ classes:
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
     mixins:
-      - thing with taxon
       - chemical entity or gene or gene product
       - chemical entity or protein or polypeptide
     id_prefixes:
@@ -8917,7 +8909,6 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-      - thing with taxon
     id_prefixes:
       - UniProtKB
       - PR
@@ -9397,6 +9388,7 @@ classes:
       - gene grouping mixin
       - physical essence
       - genomic entity
+      - thing with taxon
       - ontology class
     description: >-
       A genomic background exposure is where an individual's specific genomic background
