@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.1
+# version: 2.4.2
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -226,8 +226,10 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Attribute> ]
        )
-    } OR @<BiologicalSex> OR @<ChemicalRole> OR @<ClinicalAttribute> OR @<OrganismAttribute> OR @<SeverityValue> OR
-    @<SocioeconomicAttribute> OR @<Zygosity>
+    } OR @<BehavioralExposure> OR @<BiologicalSex> OR @<BioticExposure> OR @<ChemicalExposure> OR @<ChemicalRole> OR
+    @<ClinicalAttribute> OR @<ComplexChemicalExposure> OR @<DiseaseOrPhenotypicFeatureExposure> OR @<EnvironmentalExposure> OR
+    @<GenomicBackgroundExposure> OR @<OrganismAttribute> OR @<PathologicalAnatomicalExposure> OR @<PathologicalProcessExposure> OR
+    @<SeverityValue> OR @<SocioeconomicAttribute> OR @<SocioeconomicExposure> OR @<Zygosity>
 )
 
 <Behavior> CLOSED {
@@ -259,11 +261,13 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <BehavioralExposure> CLOSED {
-    (  $<BehavioralExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<BehavioralExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <BehavioralExposure> ] ?
+       rdf:type [ <BehavioralExposure> ]
     )
 }
 
@@ -339,11 +343,13 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <BioticExposure> CLOSED {
-    (  $<BioticExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<BioticExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <BioticExposure> ] ?
+       rdf:type [ <BioticExposure> ]
     )
 }
 
@@ -516,12 +522,13 @@ linkml:Nodeidentifier NONLITERAL
 
 <ChemicalExposure>  (
     CLOSED {
-       (  $<ChemicalExposure_tes> (  &<ExposureEvent_tes> ;
+       (  $<ChemicalExposure_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ? ;
+             &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ? ;
-             <has_quantitative_value> @<QuantityValue> * ;
              <timepoint> @<TimeType> ?
           ) ;
-          rdf:type [ <ChemicalExposure> ] ?
+          rdf:type [ <ChemicalExposure> ]
        )
     } OR @<DrugExposure>
 )
@@ -721,8 +728,10 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ComplexChemicalExposure> CLOSED {
-    (  $<ComplexChemicalExposure_tes> rdf:type . * ;
-       rdf:type [ <ComplexChemicalExposure> ] ?
+    (  $<ComplexChemicalExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <ComplexChemicalExposure> ]
     )
 }
 
@@ -822,13 +831,15 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <DiseaseOrPhenotypicFeatureExposure> CLOSED {
-    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<DiseaseOrPhenotypicFeatureExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<PathologicalEntityMixin_tes> ;
           rdf:type [ <PathologicalEntityMixin> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <DiseaseOrPhenotypicFeatureExposure> ] ?
+       rdf:type [ <DiseaseOrPhenotypicFeatureExposure> ]
     )
 }
 
@@ -912,7 +923,7 @@ linkml:Nodeidentifier NONLITERAL
              &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ?
           ) ;
-          rdf:type [ <DrugExposure> ] ?
+          rdf:type [ <DrugExposure> ]
        )
     } OR @<DrugToGeneInteractionExposure>
 )
@@ -944,7 +955,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <GeneGroupingMixin> ] ? ;
           <has_gene_or_gene_product> @<Gene> *
        ) ;
-       rdf:type [ <DrugToGeneInteractionExposure> ] ?
+       rdf:type [ <DrugToGeneInteractionExposure> ]
     )
 }
 
@@ -1051,11 +1062,13 @@ linkml:Nodeidentifier NONLITERAL
 
 <EnvironmentalExposure>  (
     CLOSED {
-       (  $<EnvironmentalExposure_tes> (  &<ExposureEvent_tes> ;
+       (  $<EnvironmentalExposure_tes> (  &<Attribute_tes> ;
+             rdf:type [ <Attribute> ] ? ;
+             &<ExposureEvent_tes> ;
              rdf:type [ <ExposureEvent> ] ? ;
              <timepoint> @<TimeType> ?
           ) ;
-          rdf:type [ <EnvironmentalExposure> ] ?
+          rdf:type [ <EnvironmentalExposure> ]
        )
     } OR @<GeographicExposure>
 )
@@ -1129,8 +1142,11 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ExposureEvent> {
-    (  $<ExposureEvent_tes> <timepoint> @<TimeType> ? ;
-       rdf:type [ <ExposureEvent> ] ?
+    (  $<ExposureEvent_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <ExposureEvent> ]
     )
 }
 
@@ -1474,7 +1490,9 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <GenomicBackgroundExposure> CLOSED {
-    (  $<GenomicBackgroundExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<GenomicBackgroundExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           &<GeneGroupingMixin_tes> ;
           rdf:type [ <GeneGroupingMixin> ] ? ;
@@ -1639,7 +1657,7 @@ linkml:Nodeidentifier NONLITERAL
           &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ?
        ) ;
-       rdf:type [ <GeographicExposure> ] ?
+       rdf:type [ <GeographicExposure> ]
     )
 }
 
@@ -1977,8 +1995,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ]
        )
     } OR @<Activity> OR @<AdministrativeEntity> OR @<Attribute> OR @<BiologicalEntity> OR @<ChemicalEntity> OR @<ClinicalEntity> OR
-    @<Device> OR @<Event> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR @<PhysicalEntity> OR
-    @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
+    @<Device> OR @<Event> OR @<ExposureEvent> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR
+    @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
 )
 
 <NoncodingRNAProduct>  (
@@ -2209,11 +2227,13 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <PathologicalAnatomicalExposure> CLOSED {
-    (  $<PathologicalAnatomicalExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<PathologicalAnatomicalExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <PathologicalAnatomicalExposure> ] ?
+       rdf:type [ <PathologicalAnatomicalExposure> ]
     )
 }
 
@@ -2252,11 +2272,13 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <PathologicalProcessExposure> CLOSED {
-    (  $<PathologicalProcessExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<PathologicalProcessExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <PathologicalProcessExposure> ] ?
+       rdf:type [ <PathologicalProcessExposure> ]
     )
 }
 
@@ -2693,12 +2715,14 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <SocioeconomicExposure> CLOSED {
-    (  $<SocioeconomicExposure_tes> (  &<ExposureEvent_tes> ;
+    (  $<SocioeconomicExposure_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ? ;
+          &<ExposureEvent_tes> ;
           rdf:type [ <ExposureEvent> ] ? ;
           <has_attribute> @<SocioeconomicAttribute> + ;
           <timepoint> @<TimeType> ?
        ) ;
-       rdf:type [ <SocioeconomicExposure> ] ?
+       rdf:type [ <SocioeconomicExposure> ]
     )
 }
 

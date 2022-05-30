@@ -1,5 +1,5 @@
 // metamodel_version: 1.7.0
-// version: 2.4.1
+// version: 2.4.2
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -207,7 +207,20 @@ message BehaviorToBehavioralFeatureAssociation
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -277,7 +290,20 @@ message BiologicalSex
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -507,8 +533,20 @@ message ChemicalEntityAssessesNamedThingAssociation
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -836,6 +874,23 @@ message Cohort
   repeated hasAttribute Attribute = 10
   repeated inTaxon OrganismTaxon = 11
  }
+// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+message ComplexChemicalExposure
+ {
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+ }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
  {
@@ -1025,7 +1080,20 @@ message DiseaseOrPhenotypicFeature
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureToLocationAssociation
@@ -1129,8 +1197,20 @@ message Drug
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1159,9 +1239,21 @@ message DrugToGeneAssociation
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
-  repeated hasGeneOrGeneProduct Gene = 3
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
+  repeated hasGeneOrGeneProduct Gene = 15
  }
 message DruggableGeneToDiseaseAssociation
  {
@@ -1240,7 +1332,20 @@ message EntityToPhenotypicFeatureAssociation
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 message EnvironmentalFeature
  {
@@ -1790,11 +1895,23 @@ message Genome
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
  {
-  optional timepoint TimeType = 1
-  repeated hasGeneOrGeneProduct Gene = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  id String = 5
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
+  repeated hasGeneOrGeneProduct Gene = 15
+  repeated inTaxon OrganismTaxon = 16
+  optional hasBiologicalSequence BiologicalSequence = 17
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -2014,7 +2131,20 @@ message GenotypicSex
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -2770,7 +2900,20 @@ message PairwiseMolecularInteraction
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -2807,7 +2950,20 @@ message PathologicalProcess
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 message Pathway
  {
@@ -3419,8 +3575,20 @@ message SocioeconomicAttribute
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 message SocioeconomicExposure
  {
-  repeated hasAttribute SocioeconomicAttribute = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated providedBy String = 4
+  repeated xref Uriorcurie = 5
+  repeated category CategoryType = 6
+  optional name LabelType = 7
+  hasAttributeType OntologyClass = 8
+  repeated hasQuantitativeValue QuantityValue = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasAttribute SocioeconomicAttribute = 13
+  optional timepoint TimeType = 14
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation

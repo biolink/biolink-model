@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.1
+# version: 2.4.2
 {
    "type": "Schema",
    "@context": [
@@ -971,12 +971,22 @@
                   ]
                }
             },
+            "https://w3id.org/biolink/vocab/BehavioralExposure",
             "https://w3id.org/biolink/vocab/BiologicalSex",
+            "https://w3id.org/biolink/vocab/BioticExposure",
+            "https://w3id.org/biolink/vocab/ChemicalExposure",
             "https://w3id.org/biolink/vocab/ChemicalRole",
             "https://w3id.org/biolink/vocab/ClinicalAttribute",
+            "https://w3id.org/biolink/vocab/ComplexChemicalExposure",
+            "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure",
+            "https://w3id.org/biolink/vocab/EnvironmentalExposure",
+            "https://w3id.org/biolink/vocab/GenomicBackgroundExposure",
             "https://w3id.org/biolink/vocab/OrganismAttribute",
+            "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure",
+            "https://w3id.org/biolink/vocab/PathologicalProcessExposure",
             "https://w3id.org/biolink/vocab/SeverityValue",
             "https://w3id.org/biolink/vocab/SocioeconomicAttribute",
+            "https://w3id.org/biolink/vocab/SocioeconomicExposure",
             "https://w3id.org/biolink/vocab/Zygosity"
          ]
       },
@@ -1147,6 +1157,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/BehavioralExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -1177,7 +1199,7 @@
                         "https://w3id.org/biolink/vocab/BehavioralExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -1539,6 +1561,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/BioticExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -1569,7 +1603,7 @@
                         "https://w3id.org/biolink/vocab/BioticExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -2451,6 +2485,18 @@
                         "type": "EachOf",
                         "id": "https://w3id.org/biolink/vocab/ChemicalExposure_tes",
                         "expressions": [
+                           "https://w3id.org/biolink/vocab/Attribute_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/Attribute"
+                                 ]
+                              },
+                              "min": 0
+                           },
                            "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                            {
                               "type": "TripleConstraint",
@@ -2462,13 +2508,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/has_quantitative_value",
-                              "valueExpr": "https://w3id.org/biolink/vocab/QuantityValue",
-                              "min": 0,
-                              "max": -1
                            },
                            {
                               "type": "TripleConstraint",
@@ -2488,7 +2527,7 @@
                               "https://w3id.org/biolink/vocab/ChemicalExposure"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -3477,11 +3516,22 @@
             "type": "EachOf",
             "expressions": [
                {
-                  "type": "TripleConstraint",
+                  "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/ComplexChemicalExposure_tes",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "min": 0,
-                  "max": -1
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
                },
                {
                   "type": "TripleConstraint",
@@ -3492,7 +3542,7 @@
                         "https://w3id.org/biolink/vocab/ComplexChemicalExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -3994,6 +4044,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -4036,7 +4098,7 @@
                         "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -4476,7 +4538,7 @@
                               "https://w3id.org/biolink/vocab/DrugExposure"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -4641,7 +4703,7 @@
                         "https://w3id.org/biolink/vocab/DrugToGeneInteractionExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -5167,6 +5229,18 @@
                         "type": "EachOf",
                         "id": "https://w3id.org/biolink/vocab/EnvironmentalExposure_tes",
                         "expressions": [
+                           "https://w3id.org/biolink/vocab/Attribute_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/Attribute"
+                                 ]
+                              },
+                              "min": 0
+                           },
                            "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                            {
                               "type": "TripleConstraint",
@@ -5197,7 +5271,7 @@
                               "https://w3id.org/biolink/vocab/EnvironmentalExposure"
                            ]
                         },
-                        "min": 0
+                        "min": 1
                      }
                   ]
                }
@@ -5551,12 +5625,29 @@
             "type": "EachOf",
             "expressions": [
                {
-                  "type": "TripleConstraint",
+                  "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/ExposureEvent_tes",
-                  "predicate": "https://w3id.org/biolink/vocab/timepoint",
-                  "valueExpr": "https://w3id.org/biolink/vocab/TimeType",
-                  "min": 0,
-                  "max": 1
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/NamedThing_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/NamedThing"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/timepoint",
+                        "valueExpr": "https://w3id.org/biolink/vocab/TimeType",
+                        "min": 0,
+                        "max": 1
+                     }
+                  ]
                },
                {
                   "type": "TripleConstraint",
@@ -5567,7 +5658,7 @@
                         "https://w3id.org/biolink/vocab/ExposureEvent"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -7375,6 +7466,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/GenomicBackgroundExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -8296,7 +8399,7 @@
                         "https://w3id.org/biolink/vocab/GeographicExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -9997,6 +10100,7 @@
             "https://w3id.org/biolink/vocab/ClinicalEntity",
             "https://w3id.org/biolink/vocab/Device",
             "https://w3id.org/biolink/vocab/Event",
+            "https://w3id.org/biolink/vocab/ExposureEvent",
             "https://w3id.org/biolink/vocab/InformationContentEntity",
             "https://w3id.org/biolink/vocab/OrganismTaxon",
             "https://w3id.org/biolink/vocab/Phenomenon",
@@ -11145,6 +11249,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -11175,7 +11291,7 @@
                         "https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -11360,6 +11476,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/PathologicalProcessExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -11390,7 +11518,7 @@
                         "https://w3id.org/biolink/vocab/PathologicalProcessExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -13582,6 +13710,18 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/SocioeconomicExposure_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/Attribute_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Attribute"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                      {
                         "type": "TripleConstraint",
@@ -13619,7 +13759,7 @@
                         "https://w3id.org/biolink/vocab/SocioeconomicExposure"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
