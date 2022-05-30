@@ -10074,6 +10074,23 @@ classes:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
 
+  gene to pathway association:
+    description: >-
+      An interaction between a gene or gene product and a biological process or pathway.
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - gene to entity association mixin
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: "the gene or gene product entity that participates or influences the pathway"
+      object:
+        range: pathway
+        description: "the pathway that includes or is affected by the gene or gene product"
+
   chemical to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
