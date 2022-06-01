@@ -55,6 +55,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
 - id: has_gene_or_gene_product
   description: connects an entity with one or more gene or gene products
   display_name: has gene or gene product

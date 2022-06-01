@@ -48,7 +48,7 @@ type Agent
     name: LabelType
   }
 
-type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
+type AnatomicalEntity implements PhysicalEssence
   {
     id: String!
     iri: IriType
@@ -59,8 +59,8 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface AnatomicalEntityToAnatomicalEntityAssociation
@@ -219,6 +219,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -289,7 +290,7 @@ type BehavioralOutcome implements Outcome
   {
   }
 
-interface BiologicalEntity
+type BiologicalEntity implements ThingWithTaxon
   {
     id: String!
     iri: IriType
@@ -301,6 +302,7 @@ interface BiologicalEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type BiologicalProcess implements Occurrent, OntologyClass
@@ -315,6 +317,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -332,6 +335,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -432,8 +436,8 @@ type Case
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface CaseToEntityAssociationMixin
@@ -480,8 +484,8 @@ type Cell
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type CellLine
@@ -495,6 +499,7 @@ type CellLine
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
   }
 
@@ -565,8 +570,8 @@ type CellularComponent
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -960,8 +965,8 @@ type CodingSequence
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type Cohort
@@ -975,8 +980,8 @@ type Cohort
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type ComplexChemicalExposure
@@ -1168,7 +1173,7 @@ type Disease
     inTaxon: [OrganismTaxon]
   }
 
-type DiseaseOrPhenotypicFeature implements ThingWithTaxon
+type DiseaseOrPhenotypicFeature
   {
     id: String!
     iri: IriType
@@ -1627,8 +1632,8 @@ type Exon
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type ExonToTranscriptRelationship
@@ -1818,10 +1823,10 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     symbol: String
     synonym: [LabelType]
     xref: [Uriorcurie]
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -1872,6 +1877,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -2137,6 +2143,30 @@ type GeneToGoTermAssociation
     object: GeneOntologyClass!
   }
 
+type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: [InformationResource]
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: GeneOrGeneProduct!
+    object: Pathway!
+  }
+
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
   {
     id: String!
@@ -2181,7 +2211,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     hasBiologicalSequence: BiologicalSequence
   }
 
-type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, OntologyClass
+type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, ThingWithTaxon, OntologyClass
   {
     id: String!
     type: String
@@ -2198,13 +2228,12 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     source: String
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 interface GenomicEntity
   {
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -2249,8 +2278,8 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasZygosity: Zygosity
     inTaxon: [OrganismTaxon]
+    hasZygosity: Zygosity
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -2492,8 +2521,8 @@ type GrossAnatomicalStructure
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -2530,7 +2559,7 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
-type IndividualOrganism implements ThingWithTaxon
+type IndividualOrganism
   {
     id: String!
     iri: IriType
@@ -2541,8 +2570,8 @@ type IndividualOrganism implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface InformationContentEntity
@@ -2622,7 +2651,7 @@ type Inheritance
     source: String
   }
 
-type LifeStage implements ThingWithTaxon
+type LifeStage
   {
     id: String!
     iri: IriType
@@ -2633,8 +2662,8 @@ type LifeStage implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface MacromolecularComplexMixin
@@ -2847,8 +2876,8 @@ type MicroRNA
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -2870,6 +2899,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
     enabledBy: [MacromolecularMachineMixin]
@@ -3002,12 +3032,12 @@ type NoncodingRNAProduct
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
-type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
+type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -3025,8 +3055,8 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type NucleicAcidSequenceMotif
@@ -3041,6 +3071,7 @@ type NucleicAcidSequenceMotif
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type Nutrient
@@ -3257,6 +3288,7 @@ interface OrganismalEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
   }
 
@@ -3377,8 +3409,8 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface PathologicalEntityMixin
@@ -3397,6 +3429,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3436,6 +3469,7 @@ type Pathway implements OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3538,6 +3572,7 @@ type PhysiologicalProcess implements OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3557,7 +3592,7 @@ type PlanetaryEntity
     category: [CategoryType]!
   }
 
-type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
+type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
   {
     id: String!
     iri: IriType
@@ -3572,7 +3607,7 @@ type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, C
     inTaxon: [OrganismTaxon]
   }
 
-type PopulationOfIndividualOrganisms implements ThingWithTaxon
+type PopulationOfIndividualOrganisms
   {
     id: String!
     iri: IriType
@@ -3583,8 +3618,8 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type PopulationToPopulationAssociation
@@ -3648,7 +3683,7 @@ type ProcessedMaterial
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
-type Protein implements GeneProductMixin, ThingWithTaxon
+type Protein implements GeneProductMixin
   {
     id: String!
     iri: IriType
@@ -3676,6 +3711,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3691,6 +3727,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3836,8 +3873,8 @@ type RNAProduct implements GeneProductMixin
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -3859,8 +3896,8 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -3927,10 +3964,10 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
-    inTaxon: [OrganismTaxon]
   }
 
 interface SequenceVariantModulatesTreatmentAssociation
@@ -4018,8 +4055,8 @@ type SiRNA
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -4054,10 +4091,10 @@ type Snv
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
-    inTaxon: [OrganismTaxon]
   }
 
 type SocioeconomicAttribute
@@ -4114,8 +4151,8 @@ type StudyPopulation
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface SubjectOfInvestigation
@@ -4174,8 +4211,8 @@ type Transcript
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type TranscriptToGeneRelationship

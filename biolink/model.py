@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-30T15:01:31
+# Generation date: 2022-05-30T20:55:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -981,6 +981,10 @@ class ChemicalToChemicalDerivationAssociationId(ChemicalToChemicalAssociationId)
 
 
 class ChemicalToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
+    pass
+
+
+class GeneToPathwayAssociationId(AssociationId):
     pass
 
 
@@ -2565,18 +2569,6 @@ class GeographicLocationAtTime(GeographicLocation):
 
 
 @dataclass
-class BiologicalEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
-    class_class_curie: ClassVar[str] = "biolink:BiologicalEntity"
-    class_name: ClassVar[str] = "biological entity"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
-
-    id: Union[str, BiologicalEntityId] = None
-    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-
-@dataclass
 class ThingWithTaxon(YAMLRoot):
     """
     A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms;
@@ -2600,8 +2592,29 @@ class ThingWithTaxon(YAMLRoot):
 
 
 @dataclass
-class GenomicEntity(ThingWithTaxon):
+class BiologicalEntity(NamedThing):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
+    class_class_curie: ClassVar[str] = "biolink:BiologicalEntity"
+    class_name: ClassVar[str] = "biological entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.BiologicalEntity
+
+    id: Union[str, BiologicalEntityId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GenomicEntity(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GenomicEntity
     class_class_curie: ClassVar[str] = "biolink:GenomicEntity"
@@ -2785,6 +2798,7 @@ class NucleicAcidEntity(MolecularEntity):
     id: Union[str, NucleicAcidEntityId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2794,6 +2808,10 @@ class NucleicAcidEntity(MolecularEntity):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -2854,7 +2872,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     Either an individual molecular activity, or a collection of causally connected molecular activities in a
     biological system.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcessOrActivity
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcessOrActivity"
@@ -2893,7 +2911,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivity
     class_class_curie: ClassVar[str] = "biolink:MolecularActivity"
@@ -2932,7 +2950,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.BiologicalProcess
     class_class_curie: ClassVar[str] = "biolink:BiologicalProcess"
@@ -2953,7 +2971,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
 @dataclass
 class Pathway(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Pathway
     class_class_curie: ClassVar[str] = "biolink:Pathway"
@@ -2974,7 +2992,7 @@ class Pathway(BiologicalProcess):
 
 @dataclass
 class PhysiologicalProcess(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PhysiologicalProcess
     class_class_curie: ClassVar[str] = "biolink:PhysiologicalProcess"
@@ -2995,7 +3013,7 @@ class PhysiologicalProcess(BiologicalProcess):
 
 @dataclass
 class Behavior(BiologicalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Behavior
     class_class_curie: ClassVar[str] = "biolink:Behavior"
@@ -3295,7 +3313,7 @@ class OrganismalEntity(BiologicalEntity):
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
     chemical entities
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.OrganismalEntity
     class_class_curie: ClassVar[str] = "biolink:OrganismalEntity"
@@ -3328,17 +3346,12 @@ class LifeStage(OrganismalEntity):
 
     id: Union[str, LifeStageId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, LifeStageId):
             self.id = LifeStageId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3358,17 +3371,12 @@ class IndividualOrganism(OrganismalEntity):
 
     id: Union[str, IndividualOrganismId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, IndividualOrganismId):
             self.id = IndividualOrganismId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3388,17 +3396,12 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
 
     id: Union[str, PopulationOfIndividualOrganismsId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PopulationOfIndividualOrganismsId):
             self.id = PopulationOfIndividualOrganismsId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3442,17 +3445,12 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureId):
             self.id = DiseaseOrPhenotypicFeatureId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3540,17 +3538,12 @@ class AnatomicalEntity(OrganismalEntity):
 
     id: Union[str, AnatomicalEntityId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, AnatomicalEntityId):
             self.id = AnatomicalEntityId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3602,7 +3595,7 @@ class Cell(AnatomicalEntity):
 
 @dataclass
 class CellLine(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.CellLine
     class_class_curie: ClassVar[str] = "biolink:CellLine"
@@ -3914,17 +3907,12 @@ class Polypeptide(BiologicalEntity):
 
     id: Union[str, PolypeptideId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, PolypeptideId):
             self.id = PolypeptideId(self.id)
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -3945,7 +3933,6 @@ class Protein(Polypeptide):
     id: Union[str, ProteinId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
     synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3957,10 +3944,6 @@ class Protein(Polypeptide):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
-
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
-        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         if not isinstance(self.synonym, list):
             self.synonym = [self.synonym] if self.synonym is not None else []
@@ -4001,7 +3984,7 @@ class ProteinDomain(BiologicalEntity):
     of the rest of the protein chain. Protein domains maintain their structure and function independently of the
     proteins in which they are found. e.g. an SH3 domain.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinDomain
     class_class_curie: ClassVar[str] = "biolink:ProteinDomain"
@@ -4027,7 +4010,7 @@ class ProteinDomain(BiologicalEntity):
 
 @dataclass
 class ProteinFamily(BiologicalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ProteinFamily
     class_class_curie: ClassVar[str] = "biolink:ProteinFamily"
@@ -4057,7 +4040,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological
     significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.NucleicAcidSequenceMotif
     class_class_curie: ClassVar[str] = "biolink:NucleicAcidSequenceMotif"
@@ -4226,7 +4209,7 @@ class GeneFamily(BiologicalEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneFamily
     class_class_curie: ClassVar[str] = "biolink:GeneFamily"
@@ -4788,6 +4771,7 @@ class GenomicBackgroundExposure(Attribute):
     timepoint: Optional[Union[str, TimeType]] = None
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+    in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -4804,6 +4788,10 @@ class GenomicBackgroundExposure(Attribute):
 
         if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        if not isinstance(self.in_taxon, list):
+            self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
+        self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
 
         super().__post_init__(**kwargs)
 
@@ -4826,7 +4814,7 @@ class PathologicalProcess(BiologicalProcess):
     A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular,
     multicellular, or organismal level.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon", "has_input", "has_output", "enabled_by"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.PathologicalProcess
     class_class_curie: ClassVar[str] = "biolink:PathologicalProcess"
@@ -6250,6 +6238,42 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
             self.MissingRequiredField("object")
         if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
             self.object = DiseaseOrPhenotypicFeatureId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeneToPathwayAssociation(Association):
+    """
+    An interaction between a gene or gene product and a biological process or pathway.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToPathwayAssociation
+    class_class_curie: ClassVar[str] = "biolink:GeneToPathwayAssociation"
+    class_name: ClassVar[str] = "gene to pathway association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToPathwayAssociation
+
+    id: Union[str, GeneToPathwayAssociationId] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, PathwayId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneToPathwayAssociationId):
+            self.id = GeneToPathwayAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, PathwayId):
+            self.object = PathwayId(self.object)
 
         super().__post_init__(**kwargs)
 
@@ -10483,6 +10507,12 @@ slots.chemical_to_chemical_derivation_association_catalyst_qualifier = Slot(uri=
 
 slots.chemical_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="chemical to disease or phenotypic feature association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.chemical_to_disease_or_phenotypic_feature_association_object, domain=ChemicalToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
+
+slots.gene_to_pathway_association_subject = Slot(uri=RDF.subject, name="gene to pathway association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.gene_to_pathway_association_subject, domain=GeneToPathwayAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_to_pathway_association_object = Slot(uri=RDF.object, name="gene to pathway association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.gene_to_pathway_association_object, domain=GeneToPathwayAssociation, range=Union[str, PathwayId])
 
 slots.chemical_to_pathway_association_subject = Slot(uri=RDF.subject, name="chemical to pathway association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_to_pathway_association_subject, domain=ChemicalToPathwayAssociation, range=Union[str, ChemicalEntityId])

@@ -50,6 +50,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
 - id: symbol
   description: Symbol for a particular thing
   display_name: symbol
@@ -60,11 +65,6 @@ fields:
 - id: xref
   description: Alternate CURIEs for a thing
   display_name: xref
-  cardinality: multi
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
   cardinality: multi
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence

@@ -365,18 +365,6 @@
                               },
                               "min": 0
                            },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
                            "https://w3id.org/biolink/vocab/PhysicalEssence_tes",
                            {
                               "type": "TripleConstraint",
@@ -388,13 +376,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -863,6 +844,7 @@
             "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation",
             "https://w3id.org/biolink/vocab/GeneToGeneAssociation",
+            "https://w3id.org/biolink/vocab/GeneToPathwayAssociation",
             "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GenotypeToGeneAssociation",
@@ -1324,6 +1306,25 @@
                            ]
                         },
                         "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                        "min": 0,
+                        "max": -1
                      }
                   ]
                },
@@ -3993,25 +3994,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -6195,13 +6177,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
@@ -7263,6 +7238,71 @@
       },
       {
          "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/GeneToPathwayAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/GeneToPathwayAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GeneToEntityAssociationMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/Pathway",
+                        "min": 1,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/GeneToPathwayAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
          "closed": true,
          "expression": {
@@ -7427,13 +7467,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
@@ -7526,6 +7559,18 @@
                         },
                         "min": 0
                      },
+                     "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/OntologyClass_tes",
                      {
                         "type": "TripleConstraint",
@@ -7554,17 +7599,17 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
                         "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                        "min": 0,
+                        "max": -1
                      }
                   ]
                },
@@ -7590,29 +7635,12 @@
             "type": "EachOf",
             "expressions": [
                {
-                  "type": "EachOf",
+                  "type": "TripleConstraint",
                   "id": "https://w3id.org/biolink/vocab/GenomicEntity_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                           ]
-                        },
-                        "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
-                        "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
-                        "min": 0,
-                        "max": 1
-                     }
-                  ]
+                  "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
+                  "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
+                  "min": 0,
+                  "max": 1
                },
                {
                   "type": "TripleConstraint",
@@ -7788,13 +7816,6 @@
                         "valueExpr": "https://w3id.org/biolink/vocab/Zygosity",
                         "min": 0,
                         "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
                      },
                      {
                         "type": "TripleConstraint",
@@ -8609,13 +8630,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
@@ -8740,25 +8754,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -9020,25 +9015,6 @@
                            ]
                         },
                         "min": 0
-                     },
-                     "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                           ]
-                        },
-                        "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
                      }
                   ]
                },
@@ -10194,6 +10170,18 @@
                               },
                               "min": 0
                            },
+                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
+                                 ]
+                              },
+                              "min": 0
+                           },
                            "https://w3id.org/biolink/vocab/PhysicalEssence_tes",
                            {
                               "type": "TripleConstraint",
@@ -10220,17 +10208,17 @@
                            },
                            {
                               "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
-                           },
-                           {
-                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                               "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                               "min": 0,
                               "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                              "min": 0,
+                              "max": -1
                            }
                         ]
                      },
@@ -12044,18 +12032,6 @@
                               },
                               "min": 0
                            },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
                            "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct_tes",
                            {
                               "type": "TripleConstraint",
@@ -12079,13 +12055,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -12131,25 +12100,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -12354,18 +12304,6 @@
                                  "type": "NodeConstraint",
                                  "values": [
                                     "https://w3id.org/biolink/vocab/GeneProductMixin"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
                                  ]
                               },
                               "min": 0
@@ -12917,13 +12855,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
@@ -13357,13 +13288,6 @@
                               "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                               "min": 0,
                               "max": 1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -14014,39 +13938,33 @@
          }
       },
       {
-         "type": "ShapeOr",
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/ThingWithTaxon",
-         "shapeExprs": [
-            {
-               "type": "Shape",
-               "closed": false,
-               "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                     {
-                        "type": "TripleConstraint",
-                        "id": "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
+         "closed": false,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "id": "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                  "predicate": "https://w3id.org/biolink/vocab/in_taxon",
+                  "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ThingWithTaxon"
+                     ]
+                  },
+                  "min": 0
                }
-            },
-            "https://w3id.org/biolink/vocab/GenomicEntity"
-         ]
+            ]
+         }
       },
       {
          "type": "ShapeOr",

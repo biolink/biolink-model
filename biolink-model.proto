@@ -42,8 +42,8 @@ message AnatomicalEntity
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -172,9 +172,10 @@ message Behavior
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
@@ -250,9 +251,10 @@ message BiologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
@@ -267,9 +269,10 @@ message BiologicalProcessOrActivity
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 message BiologicalSex
  {
@@ -365,8 +368,8 @@ message Case
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 message CaseToPhenotypicFeatureAssociation
@@ -407,8 +410,8 @@ message Cell
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message CellLine
  {
@@ -421,7 +424,8 @@ message CellLine
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message CellLineAsAModelOfDiseaseAssociation
  {
@@ -485,8 +489,8 @@ message CellularComponent
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
@@ -856,8 +860,8 @@ message CodingSequence
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -871,8 +875,8 @@ message Cohort
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
 message ComplexChemicalExposure
@@ -1442,8 +1446,8 @@ message Exon
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1600,10 +1604,10 @@ message Gene
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
   repeated category CategoryType = 9
-  optional symbol String = 10
-  repeated synonym LabelType = 11
-  repeated xref Uriorcurie = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  optional symbol String = 11
+  repeated synonym LabelType = 12
+  repeated xref Uriorcurie = 13
   optional hasBiologicalSequence BiologicalSequence = 14
  }
 message GeneAsAModelOfDiseaseAssociation
@@ -1645,7 +1649,8 @@ message GeneFamily
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1849,6 +1854,30 @@ message GeneToGoTermAssociation
   subject Gene = 19
   object GeneOntologyClass = 20
  }
+// An interaction between a gene or gene product and a biological process or pathway.
+message GeneToPathwayAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  predicate PredicateType = 7
+  optional negated Boolean = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  repeated hasEvidence EvidenceType = 11
+  repeated knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource InformationResource = 13
+  optional primaryKnowledgeSource InformationResource = 14
+  repeated aggregatorKnowledgeSource InformationResource = 15
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject GeneOrGeneProduct = 19
+  object Pathway = 20
+ }
 message GeneToPhenotypicFeatureAssociation
  {
   id String = 1
@@ -1910,8 +1939,8 @@ message GenomicBackgroundExposure
   optional source String = 13
   optional timepoint TimeType = 14
   repeated hasGeneOrGeneProduct Gene = 15
-  repeated inTaxon OrganismTaxon = 16
-  optional hasBiologicalSequence BiologicalSequence = 17
+  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated inTaxon OrganismTaxon = 17
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -1955,8 +1984,8 @@ message Genotype
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  optional hasZygosity Zygosity = 11
-  repeated inTaxon OrganismTaxon = 12
+  repeated inTaxon OrganismTaxon = 11
+  optional hasZygosity Zygosity = 12
   optional hasBiologicalSequence BiologicalSequence = 13
  }
 message GenotypeAsAModelOfDiseaseAssociation
@@ -2190,8 +2219,8 @@ message GrossAnatomicalStructure
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
@@ -2234,8 +2263,8 @@ message IndividualOrganism
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
 message InformationContentEntityToNamedThingAssociation
@@ -2308,8 +2337,8 @@ message LifeStage
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -2499,8 +2528,8 @@ message MicroRNA
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -2516,9 +2545,10 @@ message MolecularActivity
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput MolecularEntity = 11
-  repeated hasOutput MolecularEntity = 12
-  repeated enabledBy MacromolecularMachineMixin = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput MolecularEntity = 12
+  repeated hasOutput MolecularEntity = 13
+  repeated enabledBy MacromolecularMachineMixin = 14
  }
 // Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
 message MolecularActivityToChemicalEntityAssociation
@@ -2643,8 +2673,8 @@ message NoncodingRNAProduct
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
@@ -2666,8 +2696,8 @@ message NucleicAcidEntity
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -2682,6 +2712,7 @@ message NucleicAcidSequenceMotif
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 message Nutrient
  {
@@ -2927,8 +2958,8 @@ message PathologicalAnatomicalStructure
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
@@ -2943,9 +2974,10 @@ message PathologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
@@ -2977,9 +3009,10 @@ message Pathway
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -3070,9 +3103,10 @@ message PhysiologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -3115,8 +3149,8 @@ message PopulationOfIndividualOrganisms
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
@@ -3208,7 +3242,8 @@ message ProteinDomain
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 message ProteinFamily
  {
@@ -3222,7 +3257,8 @@ message ProteinFamily
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -3360,8 +3396,8 @@ message RNAProduct
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -3383,8 +3419,8 @@ message RNAProductIsoform
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -3447,10 +3483,10 @@ message SequenceVariant
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -3514,8 +3550,8 @@ message SiRNA
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
@@ -3550,10 +3586,10 @@ message Snv
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -3602,8 +3638,8 @@ message StudyPopulation
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message TaxonToTaxonAssociation
  {
@@ -3652,8 +3688,8 @@ message Transcript
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
