@@ -10091,6 +10091,18 @@ classes:
         range: pathway
         description: "the pathway that includes or is affected by the gene or gene product"
 
+  molecular activity to pathway association:
+    description: >-
+      Association that holds the relationship between a reaction and the pathway it participates in.
+    is_a: association
+    slot_usage:
+      subject:
+        range: molecular activity
+      object:
+        range: pathway
+      predicate:
+        subproperty_of: part of
+
   chemical to pathway association:
     description: >-
       An interaction between a chemical entity and a biological process or pathway.
