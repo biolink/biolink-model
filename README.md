@@ -27,7 +27,7 @@ Refer to the following resources for a quick introduction to the Biolink Model:
     - Slides: https://bit.ly/biolink-model-workshop-biocuration-2020
     - Video: https://www.youtube.com/watch?v=RE1hFm8lvJA
 
-See also [Biolink Model Guidelines](guidelines/README.md) for understanding, curating, and working with the model.
+See also [Biolink Model Guidelines](guidelines/README.md) for help understanding, curating, and working with the model.
 
 
 ## Introduction
@@ -135,4 +135,8 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 
 ## How do I use Biolink Model YAML programatically?
 
-For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing Biolink Model.
+For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides convenience methods for traversing Biolink Model.
+
+## Citing Biolink Model
+Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G, Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA, Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022).
+Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; https://onlinelibrary.wiley.com/doi/10.1111/cts.13302 

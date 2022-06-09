@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-05-30T20:55:32
+# Generation date: 2022-06-01T15:06:43
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "2.4.2"
+version = "2.4.3"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
