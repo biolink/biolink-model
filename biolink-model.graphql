@@ -2953,6 +2953,30 @@ type MolecularActivityToMolecularActivityAssociation
     object: MolecularActivity!
   }
 
+type MolecularActivityToPathwayAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: [InformationResource]
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: Pathway!
+    predicate: PredicateType!
+  }
+
 type MolecularEntity
   {
     id: String!
