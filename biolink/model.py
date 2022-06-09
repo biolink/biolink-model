@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-06-01T15:06:43
+# Generation date: 2022-06-09T21:07:07
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -985,6 +985,10 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
 
 
 class GeneToPathwayAssociationId(AssociationId):
+    pass
+
+
+class MolecularActivityToPathwayAssociationId(AssociationId):
     pass
 
 
@@ -6279,6 +6283,47 @@ class GeneToPathwayAssociation(Association):
 
 
 @dataclass
+class MolecularActivityToPathwayAssociation(Association):
+    """
+    Association that holds the relationship between a reaction and the pathway it participates in.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToPathwayAssociation
+    class_class_curie: ClassVar[str] = "biolink:MolecularActivityToPathwayAssociation"
+    class_name: ClassVar[str] = "molecular activity to pathway association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MolecularActivityToPathwayAssociation
+
+    id: Union[str, MolecularActivityToPathwayAssociationId] = None
+    subject: Union[str, MolecularActivityId] = None
+    object: Union[str, PathwayId] = None
+    predicate: Union[str, PredicateType] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MolecularActivityToPathwayAssociationId):
+            self.id = MolecularActivityToPathwayAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, MolecularActivityId):
+            self.subject = MolecularActivityId(self.subject)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, PathwayId):
+            self.object = PathwayId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway.
@@ -10513,6 +10558,15 @@ slots.gene_to_pathway_association_subject = Slot(uri=RDF.subject, name="gene to 
 
 slots.gene_to_pathway_association_object = Slot(uri=RDF.object, name="gene to pathway association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_pathway_association_object, domain=GeneToPathwayAssociation, range=Union[str, PathwayId])
+
+slots.molecular_activity_to_pathway_association_subject = Slot(uri=RDF.subject, name="molecular activity to pathway association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.molecular_activity_to_pathway_association_subject, domain=MolecularActivityToPathwayAssociation, range=Union[str, MolecularActivityId])
+
+slots.molecular_activity_to_pathway_association_object = Slot(uri=RDF.object, name="molecular activity to pathway association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.molecular_activity_to_pathway_association_object, domain=MolecularActivityToPathwayAssociation, range=Union[str, PathwayId])
+
+slots.molecular_activity_to_pathway_association_predicate = Slot(uri=RDF.predicate, name="molecular activity to pathway association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.molecular_activity_to_pathway_association_predicate, domain=MolecularActivityToPathwayAssociation, range=Union[str, PredicateType])
 
 slots.chemical_to_pathway_association_subject = Slot(uri=RDF.subject, name="chemical to pathway association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_to_pathway_association_subject, domain=ChemicalToPathwayAssociation, range=Union[str, ChemicalEntityId])

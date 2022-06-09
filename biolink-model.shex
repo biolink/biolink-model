@@ -206,8 +206,8 @@ linkml:Nodeidentifier NONLITERAL
     @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
     @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
     @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
-    @<MolecularActivityToMolecularActivityAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
-    @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
+    @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
+    @<OrganismTaxonToEnvironmentAssociation> OR @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
     @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR
     @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR
@@ -1954,6 +1954,17 @@ linkml:Nodeidentifier NONLITERAL
           rdf:object @<MolecularActivity>
        ) ;
        rdf:type [ <MolecularActivityToMolecularActivityAssociation> ]
+    )
+}
+
+<MolecularActivityToPathwayAssociation> CLOSED {
+    (  $<MolecularActivityToPathwayAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:subject @<MolecularActivity> ;
+          rdf:object @<Pathway> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <MolecularActivityToPathwayAssociation> ]
     )
 }
 

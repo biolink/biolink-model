@@ -2598,6 +2598,30 @@ message MolecularActivityToMolecularActivityAssociation
   subject MolecularActivity = 19
   object MolecularActivity = 20
  }
+// Association that holds the relationship between a reaction and the pathway it participates in.
+message MolecularActivityToPathwayAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  optional negated Boolean = 7
+  repeated qualifiers OntologyClass = 8
+  repeated publications Publication = 9
+  repeated hasEvidence EvidenceType = 10
+  repeated knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource InformationResource = 12
+  optional primaryKnowledgeSource InformationResource = 13
+  repeated aggregatorKnowledgeSource InformationResource = 14
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject MolecularActivity = 18
+  object Pathway = 19
+  predicate PredicateType = 20
+ }
 // A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
  {
