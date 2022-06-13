@@ -6724,16 +6724,15 @@ slots:
 
   primary knowledge source:
     deprecated: true
+     is_a: knowledge source
+     description: >-
+       The most upstream source of the knowledge expressed in an Association that an
+       implementer can identify (may or may not be the 'original' source).
+     range: information resource
+     multivalued: false
 
   original knowledge source:
-    is_a: primary knowledge source
-    description: >-
-      The Information Resource that created the original record of the knowledge expressed
-      in an Association (e.g. via curation of the knowledge from the literature, or
-      generation of the knowledge de novo through computation, reasoning, inference over
-      data).
-    range: information resource
-    multivalued: false
+    deprecated: true
 
   aggregator knowledge source:
     is_a: knowledge source
