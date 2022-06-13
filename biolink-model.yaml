@@ -6711,7 +6711,6 @@ slots:
       knowledge passed on its way to its currently serialized form. In practice,
       implementers should use one of the more specific subtypes of this generic property.
     range: information resource
-    multivalued: true
     close_mappings:
       - pav:providedBy
 
@@ -6724,12 +6723,7 @@ slots:
     multivalued: true
 
   primary knowledge source:
-     is_a: knowledge source
-     description: >-
-       The most upstream source of the knowledge expressed in an Association that an
-       implementer can identify (may or may not be the 'original' source).
-     range: information resource
-     multivalued: false
+    deprecated: true
 
   original knowledge source:
     is_a: primary knowledge source
