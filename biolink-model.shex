@@ -183,8 +183,8 @@ linkml:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <has_evidence> @<EvidenceType> * ;
-             <knowledge_source> @<InformationResource> * ;
-             <original_knowledge_source> @<InformationResource> ? ;
+             <knowledge_source> @<InformationResource> ? ;
+             <original_knowledge_source> @linkml:String ? ;
              <primary_knowledge_source> @<InformationResource> ? ;
              <aggregator_knowledge_source> @<InformationResource> * ;
              <timepoint> @<TimeType> ? ;
