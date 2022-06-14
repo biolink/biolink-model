@@ -54,12 +54,11 @@ URI: [biolink:GeographicExposure](https://w3id.org/biolink/vocab/GeographicExpos
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence
      * Range: [EvidenceType](EvidenceType.md)
- * [knowledge source](knowledge_source.md)  <sub>0..\*</sub>
+ * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
  * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
-     * Description: The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
      * Range: [InformationResource](InformationResource.md)

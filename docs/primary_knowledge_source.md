@@ -22,7 +22,6 @@ URI: [biolink:primary_knowledge_source](https://w3id.org/biolink/vocab/primary_k
 
 ## Children
 
- *  [original knowledge source](original_knowledge_source.md)
 
 ## Used by
 

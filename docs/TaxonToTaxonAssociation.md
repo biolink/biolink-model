@@ -15,7 +15,7 @@ URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/vocab/TaxonToTax
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cobject%201..1-%20[TaxonToTaxonAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[TaxonToTaxonAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Publication],[OrganismTaxon],[OntologyClass],[InformationResource],[EvidenceType],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cobject%201..1-%20[TaxonToTaxonAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismTaxon]%3Csubject%201..1-%20[TaxonToTaxonAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Publication],[OrganismTaxon],[OntologyClass],[InformationResource],[EvidenceType],[Attribute],[Association])
 
 ---
 
@@ -62,12 +62,11 @@ URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/vocab/TaxonToTax
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence
      * Range: [EvidenceType](EvidenceType.md)
- * [knowledge source](knowledge_source.md)  <sub>0..\*</sub>
+ * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
  * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
-     * Description: The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
      * Range: [InformationResource](InformationResource.md)

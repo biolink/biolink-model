@@ -1741,7 +1741,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [knowledge source](knowledge_source.md) - An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
          * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
          * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
-             * [original knowledge source](original_knowledge_source.md) - The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
      * [logical interpretation](logical_interpretation.md)
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1800,13 +1799,11 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [knowledge source](knowledge_source.md) - An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
-         * [original knowledge source](original_knowledge_source.md) - The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
  * [logical interpretation](logical_interpretation.md)
  * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
  * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
- * [original knowledge source](original_knowledge_source.md) - The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
  * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
@@ -1815,7 +1812,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [phenotypic state](phenotypic_state.md) - in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
  * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
  * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
-     * [original knowledge source](original_knowledge_source.md) - The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).
  * [publications](publications.md) - connects an association to publications supporting the association
  * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
  * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
@@ -1874,6 +1870,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [is assessed by](is_assessed_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
+ * [original knowledge source](original_knowledge_source.md)
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [source](source.md)
