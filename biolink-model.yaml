@@ -81,6 +81,7 @@ prefixes:
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
+  ncats.drug: 'https://drugs.ncats.io/drug/'
   KEGG.BRITE: 'http://www.kegg.jp/entry/'
   KEGG.DGROUP: 'http://www.kegg.jp/entry/'
   KEGG.ENZYME: 'http://www.kegg.jp/entry/'
@@ -7917,6 +7918,7 @@ classes:
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
+      - ncats.drug
 
   chemical substance:
     deprecated: >-
@@ -8096,6 +8098,7 @@ classes:
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
       - UMLS
+      - ncats.drug
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -8305,6 +8308,7 @@ classes:
       # Antibiotic
       - STY:T195
     id_prefixes:
+      - ncats.drug
       - RXCUI
       - NDC
       - UMLS
@@ -8908,6 +8912,7 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
       - MESH
+      - ncats.drug
     broad_mappings:
       - bioschemas:Protein
     exact_mappings:
