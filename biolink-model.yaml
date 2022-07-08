@@ -99,6 +99,7 @@ prefixes:
   MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
+  ncats.bioplanet: 'https://tripod.nih.gov/bioplanet/detail.jsp?pid='
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NCIT-OBO: 'http://purl.obolibrary.org/obo/ncit#'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -8227,6 +8228,7 @@ classes:
       - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
       - KEGG.PATHWAY
+      - ncats.bioplanet
 
   physiological process:
     aliases: ['physiology']
