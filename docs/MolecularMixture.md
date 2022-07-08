@@ -43,6 +43,7 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
  * KEGG.DGROUP
  * KEGG.ENVIRON
  * UMLS
+ * ncats.drug
 
 ## Parents
 

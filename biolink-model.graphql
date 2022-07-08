@@ -76,8 +76,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -99,8 +99,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -123,8 +123,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -181,8 +181,8 @@ type Association
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -238,8 +238,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -460,8 +460,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -517,8 +517,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -544,8 +544,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -605,8 +605,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -710,8 +710,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -732,8 +732,8 @@ type ChemicalToChemicalDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -759,8 +759,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -788,8 +788,8 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -811,8 +811,8 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1053,8 +1053,8 @@ type ContributorAssociation
     negated: Boolean
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1229,8 +1229,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1259,8 +1259,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1281,8 +1281,8 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1356,8 +1356,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1396,8 +1396,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1439,8 +1439,8 @@ type EntityToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1494,8 +1494,8 @@ type EntityToPhenotypicFeatureAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1649,8 +1649,8 @@ type ExonToTranscriptRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1694,8 +1694,8 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1719,8 +1719,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1801,8 +1801,8 @@ type FunctionalAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1843,8 +1843,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1899,8 +1899,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1949,8 +1949,8 @@ type GeneRegulatoryRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1974,8 +1974,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2005,8 +2005,8 @@ type GeneToExpressionSiteAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2032,8 +2032,8 @@ interface GeneToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2055,8 +2055,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2083,8 +2083,8 @@ type GeneToGeneHomologyAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2107,8 +2107,8 @@ type GeneToGeneProductRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2132,8 +2132,8 @@ type GeneToGoTermAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2156,8 +2156,8 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2180,8 +2180,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2249,8 +2249,8 @@ type GenomicSequenceLocalization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2295,8 +2295,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2322,8 +2322,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2354,8 +2354,8 @@ type GenotypeToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2378,8 +2378,8 @@ type GenotypeToGenotypePartAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2403,8 +2403,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2430,8 +2430,8 @@ type GenotypeToVariantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2604,8 +2604,8 @@ type InformationContentEntityToNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2689,8 +2689,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2713,8 +2713,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2742,8 +2742,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2798,8 +2798,8 @@ type MaterialSampleDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2825,8 +2825,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2918,8 +2918,8 @@ type MolecularActivityToChemicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2942,8 +2942,8 @@ type MolecularActivityToMolecularActivityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2965,8 +2965,8 @@ type MolecularActivityToPathwayAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3192,8 +3192,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3217,8 +3217,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3240,8 +3240,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3265,8 +3265,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3290,8 +3290,8 @@ type OrganismToOrganismAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3330,8 +3330,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3359,8 +3359,8 @@ type PairwiseGeneToGeneInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3382,8 +3382,8 @@ type PairwiseMolecularInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3658,8 +3658,8 @@ type PopulationToPopulationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3813,8 +3813,8 @@ type ReactionToCatalystAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3840,8 +3840,8 @@ type ReactionToParticipantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3944,8 +3944,8 @@ type SequenceAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3966,8 +3966,8 @@ type SequenceFeatureRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4007,8 +4007,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4196,8 +4196,8 @@ type TaxonToTaxonAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4252,8 +4252,8 @@ type TranscriptToGeneRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4297,8 +4297,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4324,8 +4324,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4357,8 +4357,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4381,8 +4381,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4410,8 +4410,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4437,8 +4437,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType

@@ -1911,6 +1911,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [CategoryType](types/CategoryType.md)  ([Uriorcurie](types/Uriorcurie.md))  - A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene
  * [ChemicalFormulaValue](types/ChemicalFormulaValue.md)  (**str**)  - A chemical formula
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
+ * [DateOrDatetime](types/DateOrDatetime.md)  (**str**)  - Either a date or a datetime
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
  * [Decimal](types/Decimal.md)  (**Decimal**)  - A real number with arbitrary precision that conforms to the xsd:decimal specification
  * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification

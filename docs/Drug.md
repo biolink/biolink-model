@@ -22,6 +22,7 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ## Identifier prefixes
 
+ * ncats.drug
  * RXCUI
  * NDC
  * UMLS

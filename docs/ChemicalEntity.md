@@ -26,6 +26,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  * MESH
  * CAS
  * UMLS
+ * ncats.drug
 
 ## Parents
 

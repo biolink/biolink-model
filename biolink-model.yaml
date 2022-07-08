@@ -81,6 +81,7 @@ prefixes:
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
+  ncats.drug: 'https://drugs.ncats.io/drug/'
   KEGG.BRITE: 'http://www.kegg.jp/entry/'
   KEGG.DGROUP: 'http://www.kegg.jp/entry/'
   KEGG.ENZYME: 'http://www.kegg.jp/entry/'
@@ -99,6 +100,7 @@ prefixes:
   MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
+  ncats.bioplanet: 'https://tripod.nih.gov/bioplanet/detail.jsp?pid='
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NCIT-OBO: 'http://purl.obolibrary.org/obo/ncit#'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -7917,6 +7919,7 @@ classes:
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
+      - ncats.drug
 
   chemical substance:
     deprecated: >-
@@ -8096,6 +8099,7 @@ classes:
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
       - UMLS
+      - ncats.drug
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -8227,6 +8231,7 @@ classes:
       - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
       - KEGG.PATHWAY
+      - ncats.bioplanet
 
   physiological process:
     aliases: ['physiology']
@@ -8305,6 +8310,7 @@ classes:
       # Antibiotic
       - STY:T195
     id_prefixes:
+      - ncats.drug
       - RXCUI
       - NDC
       - UMLS
@@ -8908,6 +8914,7 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
       - MESH
+      - ncats.drug
     broad_mappings:
       - bioschemas:Protein
     exact_mappings:

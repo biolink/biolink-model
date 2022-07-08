@@ -32,6 +32,7 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
  * FB
  * PANTHER.PATHWAY
  * KEGG.PATHWAY
+ * ncats.bioplanet
 
 ## Parents
 
