@@ -10085,10 +10085,11 @@ classes:
         description: "the disease or phenotype that is affected by the chemical"
 
   chemical or drug or treatment to disease or phenotypic feature association:
+    # TODO add constraining qualifiers for the phenotypic feature or disease that specify the FDA level of side-effect.
     description: >-
-      This association defines a relationship between a chemical or treatment (procedure) and a disease or phenotypic feature
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the disesae or phenotypic feature is a secondary, typically undesirable effect.  However, it can be that a
-      the
+      the phenotypic feature is a positive result of the chemical or treatment.
     is_a: association
     defining_slots:
       - subject
