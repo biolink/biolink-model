@@ -288,14 +288,12 @@ enums:
       https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     permissible_values:
       "Life-threatening adverse event":
-        aliases: ["life-threatening suspected adverse reaction"]
         description: >-
           An adverse event or suspected adverse reaction is considered "life-threatening" if, in the view of either 
           the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. 
           It does not include an adverse event or suspected adverse reaction that, had it occurred in a more 
           severe form, might have caused death.
       "Serious adverse event":
-        aliases: ["serious suspected adverse reaction"]
         description: >-
           An adverse event or suspected adverse reaction is considered "serious" if, in the view of either the 
           investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event,
@@ -314,7 +312,6 @@ enums:
            causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser 
            degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
       "Unexpected adverse event":
-        aliases: ["unexpected suspected adverse reaction"]
         description: >-
           An adverse event or suspected adverse reaction is considered "unexpected" if it is not listed in the 
           investigator brochure or is not listed at the specificity or severity that has been observed; or, if an 
