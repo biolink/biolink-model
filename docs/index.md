@@ -361,6 +361,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [folding decreased by](folding_decreased_by.md)
          * [folding increased by](folding_increased_by.md)
      * [is ameliorated by](is_ameliorated_by.md)
+         * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
+             * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
      * [is exacerbated by](is_exacerbated_by.md)
      * [localization affected by](localization_affected_by.md)
          * [localization decreased by](localization_decreased_by.md)
@@ -766,6 +768,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [molecular interaction increased by](molecular_interaction_increased_by.md)
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
  * [is ameliorated by](is_ameliorated_by.md)
+     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
+         * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [is diagnosed by](is_diagnosed_by.md)
  * [is exacerbated by](is_exacerbated_by.md)
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
@@ -939,6 +943,8 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [folding decreased by](folding_decreased_by.md)
                  * [folding increased by](folding_increased_by.md)
              * [is ameliorated by](is_ameliorated_by.md)
+                 * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
+                     * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
              * [is exacerbated by](is_exacerbated_by.md)
              * [localization affected by](localization_affected_by.md)
                  * [localization decreased by](localization_decreased_by.md)
@@ -1208,8 +1214,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [transcribed to](transcribed_to.md) - inverse of transcribed from
          * [translates to](translates_to.md) - x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
          * [translation of](translation_of.md) - inverse of translates to
-         * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-             * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [related to at concept level](related_to_at_concept_level.md) - Represents a relationship held between terminology components that describe the conceptual model of a domain.
      * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
      * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
@@ -1247,6 +1251,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [folding decreased by](folding_decreased_by.md)
              * [folding increased by](folding_increased_by.md)
          * [is ameliorated by](is_ameliorated_by.md)
+             * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
+                 * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
          * [is exacerbated by](is_exacerbated_by.md)
          * [localization affected by](localization_affected_by.md)
              * [localization decreased by](localization_decreased_by.md)
@@ -1516,8 +1522,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [transcribed to](transcribed_to.md) - inverse of transcribed from
      * [translates to](translates_to.md) - x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533) and produces x (amino acid chain/polypeptide)
      * [translation of](translation_of.md) - inverse of translates to
-     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-         * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [resistance associated with](resistance_associated_with.md)
  * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
      * [response decreased by](response_decreased_by.md)

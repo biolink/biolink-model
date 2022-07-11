@@ -22,6 +22,7 @@ URI: [biolink:is_ameliorated_by](https://w3id.org/biolink/vocab/is_ameliorated_b
 
 ## Children
 
+ *  [treated by](treated_by.md)
 
 ## Used by
 

@@ -99,7 +99,6 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [transcribed to](transcribed_to.md)
  *  [translates to](translates_to.md)
  *  [translation of](translation_of.md)
- *  [treated by](treated_by.md)
 
 ## Used by
 

@@ -21,7 +21,7 @@ URI: [biolink:treated_by](https://w3id.org/biolink/vocab/treated_by)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [is ameliorated by](is_ameliorated_by.md)
 
 ## Children
 
