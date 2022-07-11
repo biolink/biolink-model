@@ -6322,23 +6322,26 @@ slots:
   # to distinguish it.  maybe not the best way to do that though.
 
   causes adverse event:
+    deprecated: true
+
+  adverse event caused by:
+    deprecated: true
+
+  has side effect:
     is_a: causes
-    description: holds between a drug and a disease or phenotype that can be caused
-      by the drug
-    domain: drug
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       biolink:canonical_predicate:
         tag: biolink:canonical_predicate
         value: true
-    narrow_mappings:
+    exact_mappings:
       - NCIT:C2861 # side effect
 
-  adverse event caused by:
-    is_a: causes
+  is side effect of:
+    is_a: caused by
     domain: disease or phenotypic feature
-    range: drug
-    inverse: causes adverse event
+    range: chemical or drug or treatment
 
   contraindicated for:
     is_a: related to at instance level
