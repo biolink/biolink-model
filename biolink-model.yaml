@@ -1183,7 +1183,6 @@ slots:
       inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit
       into the other S/O qualifier categories.
 
-
   derivative qualifier:
     is_a: association slot
     abstract: true
@@ -1248,6 +1247,11 @@ slots:
     is_a: direction qualifier
     range: direction_qualifier_enum
 
+  object relative timing qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+
   qualified predicate:
     is_a: association slot
 
@@ -1265,7 +1269,6 @@ slots:
         A statement qualifier representing a type of molecular control mechanism through which an
         effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
         'allosteric modulation', 'channel blocker')
-    
 
   anatomical context qualifier:
     is_a: statement qualifier
@@ -1330,7 +1333,6 @@ slots:
       a qualifier used in an association with the variant
     is_a: association slot
     range: sequence variant
-
 
   quantifier qualifier:
     is_a: association slot
@@ -1742,16 +1744,16 @@ slots:
       - https://github.com/biolink/biolink-model/issues/657
 
   has real world evidence of association with:
-    is_a: related to at instance level
-    description: >-
-      this means that the assertion was derived by applying statistical and machine learning models to
-      clinical data such as EHR data, survey data, etc
-    in_subset:
-      - translator_minimal
-    symmetric: true
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
+    deprecated: true
+
+  associated with likelihood of:
+  likelihood associated wiht:
+
+  associated with increased likelihood of:
+
+  associated with decreased likelihood of:
+
+
 
   target for:
     is_a: related to at instance level
