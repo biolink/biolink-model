@@ -1230,6 +1230,14 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
+  variable state qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+
+  subject variable state qualifier:
+    is_a: variable state qualifier
+
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -1247,6 +1255,9 @@ slots:
 
   subject direction qualifier:
     is_a: direction qualifier
+
+  object variable state qualifier:
+    is_a: variable state qualifier
 
   object aspect qualifier:
     is_a: aspect qualifier
