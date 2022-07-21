@@ -3190,7 +3190,6 @@ slots:
     inverse: decreases mutation rate of
 
   affects response to:
-    deprecated: true
     is_a: affects
     in_subset:
       - translator_minimal
@@ -3216,7 +3215,6 @@ slots:
       canonical_predicate: true
 
   increases response to:
-    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       increases the susceptibility of a biological entity or system (e.g. an
@@ -3235,9 +3233,7 @@ slots:
     exact_mappings:
       - CTD:increases_response_to
 
-
   response increased by:
-    deprecated: true
     is_a: response affected by
     in_subset:
       - translator_minimal
@@ -3246,7 +3242,6 @@ slots:
     inverse: increases response to
 
   decreases response to:
-    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       decreases the susceptibility of a biological entity or system (e.g. an
@@ -3269,7 +3264,6 @@ slots:
       - GAMMA:desensitize_the_target
 
   response decreased by:
-    deprecated: true
     is_a: response affected by
     in_subset:
       - translator_minimal
@@ -4505,7 +4499,8 @@ slots:
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
     is_a: related to at instance level
-    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of', 'realized in response to', 'realized in response to stimulus']
+    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of',
+              'realized in response to', 'realized in response to stimulus']
     in_subset:
       - translator_minimal
     inverse: causes
