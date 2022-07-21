@@ -1285,6 +1285,10 @@ slots:
 
   qualified predicate:
     is_a: association slot
+    description: >- 
+      predicate to be used in an association when subject and object qualifiers are present and the full
+      reading of the statement requires a qualification to the predicate in use in order to refine or 
+      increase the specificity of the full statement reading
 
   statement qualifier:
     is_a: association slot
