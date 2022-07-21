@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: study_population
+# metamodel_version: 1.7.0# version: 2.4.7id: study_population
 schema_generating: true
 description: A group of people banded together or treated as a group as participants
   in a research study.
@@ -49,12 +49,12 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
-- id: has_attribute
-  description: may often be an organism attribute
-  display_name: organismal entity_has attribute
-  cardinality: multi
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
+  cardinality: multi
+- id: has_attribute
+  description: may often be an organism attribute
+  display_name: organismal entity_has attribute
   cardinality: multi

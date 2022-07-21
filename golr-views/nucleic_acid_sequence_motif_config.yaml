@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: nucleic_acid_sequence_motif
+# metamodel_version: 1.7.0# version: 2.4.7id: nucleic_acid_sequence_motif
 schema_generating: true
 description: A linear nucleotide sequence pattern that is widespread and has, or is
   conjectured to have, a biological significance. e.g. the TATA box promoter motif,
@@ -53,4 +53,9 @@ fields:
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
   display_name: named thing_category
+  cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
   cardinality: multi

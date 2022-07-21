@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2676.9,123"];
+	graph [bb="0,0,2676.7,123"];
 	node [label="\N"];
 	transcript	[height=0.5,
 		label=transcript,
@@ -177,27 +177,27 @@ digraph {
 		pos="e,2204.4,34.505 1215.7,92.069 1224.2,90.006 1233.1,88.156 1241.5,87 1340.2,73.49 2041.6,95.642 2137.5,69 2158.5,63.18 2179.7,51.14 \
 2195.9,40.334",
 		style=solid];
-	"in taxon"	[color=blue,
-		height=0.5,
-		label="organism taxon",
-		pos="2372.5,18",
-		width=2.3109];
-	transcript -> "in taxon"	[color=blue,
-		label="in taxon",
-		lp="2341.5,61.5",
-		pos="e,2347.6,35.267 1215.7,92.052 1224.2,89.99 1233.1,88.145 1241.5,87 1355,71.619 2160.3,96.05 2271.5,69 2295.2,63.238 2319.8,51.239 \
-2338.8,40.44",
-		style=solid];
 	"has biological sequence"	[color=blue,
 		height=0.5,
 		label="biological sequence",
-		pos="2575.5,18",
+		pos="2390.5,18",
 		width=2.8164];
 	transcript -> "has biological sequence"	[color=blue,
 		label="has biological sequence",
-		lp="2538,61.5",
-		pos="e,2528.2,34.026 1215.7,92.042 1224.2,89.981 1233.1,88.138 1241.5,87 1491.1,53.361 2124.9,101.6 2374.5,69 2423.8,62.562 2478.5,48.49 \
-2518.4,36.91",
+		lp="2404,61.5",
+		pos="e,2360.8,35.271 1215.7,92.052 1224.2,89.99 1233.1,88.145 1241.5,87 1355,71.619 2159.5,92.594 2271.5,69 2299.5,63.113 2329.1,50.696 \
+2351.8,39.71",
+		style=solid];
+	"in taxon"	[color=blue,
+		height=0.5,
+		label="organism taxon",
+		pos="2593.5,18",
+		width=2.3109];
+	transcript -> "in taxon"	[color=blue,
+		label="in taxon",
+		lp="2561.5,61.5",
+		pos="e,2568.6,35.291 1215.7,92.032 1224.2,89.972 1233.1,88.132 1241.5,87 1379.3,68.532 2357.4,101.64 2492.5,69 2516.2,63.275 2540.8,51.277 \
+2559.8,40.469",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

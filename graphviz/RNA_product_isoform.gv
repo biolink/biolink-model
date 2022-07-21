@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3062.4,123"];
+	graph [bb="0,0,3054.4,123"];
 	node [label="\N"];
 	"RNA product isoform"	[height=0.5,
 		label="RNA product isoform",
@@ -183,38 +183,38 @@ digraph {
 		pos="e,2450.7,34.497 1496,91.829 1510.2,89.895 1524.9,88.154 1538.8,87 1632.4,79.234 2293.4,94.181 2383.8,69 2404.8,63.167 2426,51.127 \
 2442.2,40.324",
 		style=solid];
-	"in taxon"	[color=blue,
-		height=0.5,
-		label="organism taxon",
-		pos="2618.8,18",
-		width=2.3109];
-	"RNA product isoform" -> "in taxon"	[color=blue,
-		label="in taxon",
-		lp="2587.8,61.5",
-		pos="e,2593.9,35.26 1496,91.796 1510.2,89.865 1524.9,88.134 1538.8,87 1647.3,78.161 2412.1,94.759 2517.8,69 2541.5,63.228 2566.1,51.228 \
-2585.1,40.431",
-		style=solid];
 	"has biological sequence"	[color=blue,
 		height=0.5,
 		label="biological sequence",
-		pos="2821.8,18",
+		pos="2636.8,18",
 		width=2.8164];
 	"RNA product isoform" -> "has biological sequence"	[color=blue,
 		label="has biological sequence",
-		lp="2784.3,61.5",
-		pos="e,2774.5,34.016 1496,91.776 1510.2,89.847 1524.9,88.122 1538.8,87 1778.5,67.672 2382.4,100.23 2620.8,69 2670.1,62.543 2724.8,48.473 \
-2764.7,36.898",
+		lp="2650.3,61.5",
+		pos="e,2607.1,35.263 1496,91.796 1510.2,89.865 1524.9,88.134 1538.8,87 1647.3,78.161 2411.4,91.475 2517.8,69 2545.8,63.1 2575.4,50.683 \
+2598.1,39.7",
+		style=solid];
+	"in taxon"	[color=blue,
+		height=0.5,
+		label="organism taxon",
+		pos="2839.8,18",
+		width=2.3109];
+	"RNA product isoform" -> "in taxon"	[color=blue,
+		label="in taxon",
+		lp="2808.8,61.5",
+		pos="e,2814.9,35.287 1495.6,91.8 1509.9,89.856 1524.8,88.119 1538.8,87 1671.8,76.391 2609.2,100.35 2738.8,69 2762.5,63.268 2787.1,51.269 \
+2806.1,40.463",
 		style=solid];
 	synonym	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="3005.8,18",
+		pos="2997.8,18",
 		width=1.5707];
 	"RNA product isoform" -> synonym	[color=blue,
 		label=synonym,
-		lp="2956.8,61.5",
-		pos="e,2976.3,33.489 1495.6,91.783 1509.9,89.84 1524.8,88.108 1538.8,87 1686.6,75.318 2727.2,96.492 2872.8,69 2905.8,62.786 2941.2,49.092 \
-2967.2,37.603",
+		lp="2935.8,61.5",
+		pos="e,2964.8,32.769 1495.6,91.787 1509.9,89.844 1524.8,88.11 1538.8,87 1683.2,75.566 2698.9,92.352 2841.8,69 2881.2,62.564 2924.3,48.162 \
+2955.2,36.46",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

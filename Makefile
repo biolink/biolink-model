@@ -77,7 +77,7 @@ gen-golr-views: biolink-model.yaml dir-golr-views env.lock
 # pydantic
 # ~~~~~~~~~~~~~~~~~~~~
 gen-pydantic: biolink-model.yaml dir-pydantic env.lock
-	pipenv run gen-pydantic $< > pydantic/biolink-model.py
+	pipenv run gen-pydantic $< > biolink/pydanticmodel.py
 
 
 # ~~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,5 @@
 // metamodel_version: 1.7.0
-// version: 2.4.1
+// version: 2.4.7
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -42,8 +42,8 @@ message AnatomicalEntity
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
 message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
@@ -58,8 +58,8 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -82,8 +82,8 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -135,8 +135,8 @@ message Association
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -172,9 +172,10 @@ message Behavior
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 message BehaviorToBehavioralFeatureAssociation
@@ -190,8 +191,8 @@ message BehaviorToBehavioralFeatureAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -207,7 +208,20 @@ message BehaviorToBehavioralFeatureAssociation
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // A phenotypic feature which is behavioral in nature.
 message BehavioralFeature
@@ -237,9 +251,10 @@ message BiologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 message BiologicalProcessOrActivity
@@ -254,9 +269,10 @@ message BiologicalProcessOrActivity
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 message BiologicalSex
  {
@@ -277,7 +293,20 @@ message BiologicalSex
 // An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 message BioticExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Book
@@ -339,8 +368,8 @@ message Case
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
 message CaseToPhenotypicFeatureAssociation
@@ -358,8 +387,8 @@ message CaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -381,8 +410,8 @@ message Cell
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message CellLine
  {
@@ -395,7 +424,8 @@ message CellLine
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message CellLineAsAModelOfDiseaseAssociation
  {
@@ -411,8 +441,8 @@ message CellLineAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -438,8 +468,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -459,8 +489,8 @@ message CellularComponent
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
@@ -493,8 +523,8 @@ message ChemicalEntityAssessesNamedThingAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -507,8 +537,20 @@ message ChemicalEntityAssessesNamedThingAssociation
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -564,8 +606,8 @@ message ChemicalToChemicalAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -593,8 +635,8 @@ message ChemicalToChemicalDerivationAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -620,8 +662,8 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -644,8 +686,8 @@ message ChemicalToGeneAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -667,8 +709,8 @@ message ChemicalToPathwayAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -818,8 +860,8 @@ message CodingSequence
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -833,8 +875,25 @@ message Cohort
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
+ }
+// A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
+message ComplexChemicalExposure
+ {
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
  }
 // A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 message ComplexMolecularMixture
@@ -889,8 +948,8 @@ message ContributorAssociation
   optional negated Boolean = 7
   repeated publications Publication = 8
   repeated hasEvidence EvidenceType = 9
-  repeated knowledgeSource InformationResource = 10
-  optional originalKnowledgeSource InformationResource = 11
+  optional knowledgeSource InformationResource = 10
+  optional originalKnowledgeSource String = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
   optional timepoint TimeType = 14
@@ -1025,7 +1084,20 @@ message DiseaseOrPhenotypicFeature
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureToLocationAssociation
@@ -1042,8 +1114,8 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -1067,8 +1139,8 @@ message DiseaseToExposureEventAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -1089,8 +1161,8 @@ message DiseaseToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1129,8 +1201,20 @@ message Drug
 // A drug exposure is an intake of a particular drug.
 message DrugExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
  }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
@@ -1147,8 +1231,8 @@ message DrugToGeneAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -1159,9 +1243,21 @@ message DrugToGeneAssociation
 // drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 message DrugToGeneInteractionExposure
  {
-  repeated hasQuantitativeValue QuantityValue = 1
-  optional timepoint TimeType = 2
-  repeated hasGeneOrGeneProduct Gene = 3
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional timepoint TimeType = 14
+  repeated hasGeneOrGeneProduct Gene = 15
  }
 message DruggableGeneToDiseaseAssociation
  {
@@ -1174,8 +1270,8 @@ message DruggableGeneToDiseaseAssociation
   optional negated Boolean = 7
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
-  repeated knowledgeSource InformationResource = 10
-  optional originalKnowledgeSource InformationResource = 11
+  optional knowledgeSource InformationResource = 10
+  optional originalKnowledgeSource String = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
   optional timepoint TimeType = 14
@@ -1204,8 +1300,8 @@ message EntityToDiseaseAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -1228,8 +1324,8 @@ message EntityToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -1240,7 +1336,20 @@ message EntityToPhenotypicFeatureAssociation
 // A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
 message EnvironmentalExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 message EnvironmentalFeature
  {
@@ -1337,8 +1446,8 @@ message Exon
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1354,8 +1463,8 @@ message ExonToTranscriptRelationship
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1380,8 +1489,8 @@ message ExposureEventToOutcomeAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -1405,8 +1514,8 @@ message ExposureEventToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -1473,8 +1582,8 @@ message FunctionalAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1495,10 +1604,10 @@ message Gene
   repeated hasAttribute Attribute = 7
   repeated providedBy String = 8
   repeated category CategoryType = 9
-  optional symbol String = 10
-  repeated synonym LabelType = 11
-  repeated xref Uriorcurie = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  optional symbol String = 11
+  repeated synonym LabelType = 12
+  repeated xref Uriorcurie = 13
   optional hasBiologicalSequence BiologicalSequence = 14
  }
 message GeneAsAModelOfDiseaseAssociation
@@ -1514,8 +1623,8 @@ message GeneAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1540,7 +1649,8 @@ message GeneFamily
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -1555,8 +1665,8 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1582,8 +1692,8 @@ message GeneRegulatoryRelationship
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1606,8 +1716,8 @@ message GeneToDiseaseAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1632,8 +1742,8 @@ message GeneToExpressionSiteAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1658,8 +1768,8 @@ message GeneToGeneCoexpressionAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1686,8 +1796,8 @@ message GeneToGeneHomologyAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1710,8 +1820,8 @@ message GeneToGeneProductRelationship
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1734,8 +1844,8 @@ message GeneToGoTermAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1743,6 +1853,30 @@ message GeneToGoTermAssociation
   repeated category CategoryType = 18
   subject Gene = 19
   object GeneOntologyClass = 20
+ }
+// An interaction between a gene or gene product and a biological process or pathway.
+message GeneToPathwayAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  predicate PredicateType = 7
+  optional negated Boolean = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  repeated hasEvidence EvidenceType = 11
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
+  optional primaryKnowledgeSource InformationResource = 14
+  repeated aggregatorKnowledgeSource InformationResource = 15
+  optional timepoint TimeType = 16
+  optional type String = 17
+  repeated category CategoryType = 18
+  subject GeneOrGeneProduct = 19
+  object Pathway = 20
  }
 message GeneToPhenotypicFeatureAssociation
  {
@@ -1757,8 +1891,8 @@ message GeneToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1790,11 +1924,23 @@ message Genome
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
 message GenomicBackgroundExposure
  {
-  optional timepoint TimeType = 1
-  repeated hasGeneOrGeneProduct Gene = 2
-  repeated inTaxon OrganismTaxon = 3
-  optional hasBiologicalSequence BiologicalSequence = 4
-  id String = 5
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
+  repeated hasGeneOrGeneProduct Gene = 15
+  optional hasBiologicalSequence BiologicalSequence = 16
+  repeated inTaxon OrganismTaxon = 17
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -1809,8 +1955,8 @@ message GenomicSequenceLocalization
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1838,8 +1984,8 @@ message Genotype
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  optional hasZygosity Zygosity = 11
-  repeated inTaxon OrganismTaxon = 12
+  repeated inTaxon OrganismTaxon = 11
+  optional hasZygosity Zygosity = 12
   optional hasBiologicalSequence BiologicalSequence = 13
  }
 message GenotypeAsAModelOfDiseaseAssociation
@@ -1854,8 +2000,8 @@ message GenotypeAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1880,8 +2026,8 @@ message GenotypeToDiseaseAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1907,8 +2053,8 @@ message GenotypeToGeneAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1931,8 +2077,8 @@ message GenotypeToGenotypePartAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -1956,8 +2102,8 @@ message GenotypeToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -1983,8 +2129,8 @@ message GenotypeToVariantAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2014,7 +2160,20 @@ message GenotypicSex
 // A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 message GeographicExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -2060,8 +2219,8 @@ message GrossAnatomicalStructure
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
 message Haplotype
@@ -2104,8 +2263,8 @@ message IndividualOrganism
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
 message InformationContentEntityToNamedThingAssociation
@@ -2120,8 +2279,8 @@ message InformationContentEntityToNamedThingAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2178,8 +2337,8 @@ message LifeStage
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -2195,8 +2354,8 @@ message MacromolecularMachineToBiologicalProcessAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2219,8 +2378,8 @@ message MacromolecularMachineToCellularComponentAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2243,8 +2402,8 @@ message MacromolecularMachineToMolecularActivityAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2298,8 +2457,8 @@ message MaterialSampleDerivationAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2325,8 +2484,8 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -2369,8 +2528,8 @@ message MicroRNA
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -2386,9 +2545,10 @@ message MolecularActivity
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput MolecularEntity = 11
-  repeated hasOutput MolecularEntity = 12
-  repeated enabledBy MacromolecularMachineMixin = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput MolecularEntity = 12
+  repeated hasOutput MolecularEntity = 13
+  repeated enabledBy MacromolecularMachineMixin = 14
  }
 // Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
 message MolecularActivityToChemicalEntityAssociation
@@ -2404,8 +2564,8 @@ message MolecularActivityToChemicalEntityAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2428,8 +2588,8 @@ message MolecularActivityToMolecularActivityAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2437,6 +2597,30 @@ message MolecularActivityToMolecularActivityAssociation
   repeated category CategoryType = 18
   subject MolecularActivity = 19
   object MolecularActivity = 20
+ }
+// Association that holds the relationship between a reaction and the pathway it participates in.
+message MolecularActivityToPathwayAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  optional negated Boolean = 7
+  repeated qualifiers OntologyClass = 8
+  repeated publications Publication = 9
+  repeated hasEvidence EvidenceType = 10
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
+  optional primaryKnowledgeSource InformationResource = 13
+  repeated aggregatorKnowledgeSource InformationResource = 14
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  subject MolecularActivity = 18
+  object Pathway = 19
+  predicate PredicateType = 20
  }
 // A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 message MolecularEntity
@@ -2513,8 +2697,8 @@ message NoncodingRNAProduct
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
@@ -2536,8 +2720,8 @@ message NucleicAcidEntity
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -2552,6 +2736,7 @@ message NucleicAcidSequenceMotif
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
+  repeated inTaxon OrganismTaxon = 11
  }
 message Nutrient
  {
@@ -2633,8 +2818,8 @@ message OrganismTaxonToOrganismTaxonInteraction
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2658,8 +2843,8 @@ message OrganismTaxonToOrganismTaxonSpecialization
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2682,8 +2867,8 @@ message OrganismToOrganismAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -2706,8 +2891,8 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -2731,8 +2916,8 @@ message PairwiseGeneToGeneInteraction
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -2754,8 +2939,8 @@ message PairwiseMolecularInteraction
   repeated qualifiers OntologyClass = 7
   repeated publications Publication = 8
   repeated hasEvidence EvidenceType = 9
-  repeated knowledgeSource InformationResource = 10
-  optional originalKnowledgeSource InformationResource = 11
+  optional knowledgeSource InformationResource = 10
+  optional originalKnowledgeSource String = 11
   optional primaryKnowledgeSource InformationResource = 12
   repeated aggregatorKnowledgeSource InformationResource = 13
   optional timepoint TimeType = 14
@@ -2770,7 +2955,20 @@ message PairwiseMolecularInteraction
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 // An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalAnatomicalStructure
@@ -2784,8 +2982,8 @@ message PathologicalAnatomicalStructure
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 message PathologicalProcess
@@ -2800,14 +2998,28 @@ message PathologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 message PathologicalProcessExposure
  {
-  optional timepoint TimeType = 1
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated hasAttribute Attribute = 4
+  repeated providedBy String = 5
+  repeated xref Uriorcurie = 6
+  repeated category CategoryType = 7
+  optional name LabelType = 8
+  hasAttributeType OntologyClass = 9
+  repeated hasQuantitativeValue QuantityValue = 10
+  optional hasQualitativeValue NamedThing = 11
+  optional iri IriType = 12
+  optional source String = 13
+  optional timepoint TimeType = 14
  }
 message Pathway
  {
@@ -2821,9 +3033,10 @@ message Pathway
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 message Phenomenon
@@ -2914,9 +3127,10 @@ message PhysiologicalProcess
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasInput BiologicalProcessOrActivity = 11
-  repeated hasOutput BiologicalProcessOrActivity = 12
-  repeated enabledBy PhysicalEntity = 13
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasInput BiologicalProcessOrActivity = 12
+  repeated hasOutput BiologicalProcessOrActivity = 13
+  repeated enabledBy PhysicalEntity = 14
  }
 // Any entity or process that exists at the level of the whole planet
 message PlanetaryEntity
@@ -2959,8 +3173,8 @@ message PopulationOfIndividualOrganisms
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
@@ -2975,8 +3189,8 @@ message PopulationToPopulationAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -3052,7 +3266,8 @@ message ProteinDomain
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 message ProteinFamily
  {
@@ -3066,7 +3281,8 @@ message ProteinFamily
   repeated providedBy String = 8
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
-  repeated hasGeneOrGeneProduct Gene = 11
+  repeated inTaxon OrganismTaxon = 11
+  repeated hasGeneOrGeneProduct Gene = 12
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 message ProteinIsoform
@@ -3126,8 +3342,8 @@ message ReactionToCatalystAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3152,8 +3368,8 @@ message ReactionToParticipantAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3204,8 +3420,8 @@ message RNAProduct
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -3227,8 +3443,8 @@ message RNAProductIsoform
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -3247,8 +3463,8 @@ message SequenceAssociation
   repeated qualifiers OntologyClass = 11
   repeated publications Publication = 12
   repeated hasEvidence EvidenceType = 13
-  repeated knowledgeSource InformationResource = 14
-  optional originalKnowledgeSource InformationResource = 15
+  optional knowledgeSource InformationResource = 14
+  optional originalKnowledgeSource String = 15
   optional primaryKnowledgeSource InformationResource = 16
   repeated aggregatorKnowledgeSource InformationResource = 17
   optional timepoint TimeType = 18
@@ -3269,8 +3485,8 @@ message SequenceFeatureRelationship
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3291,10 +3507,10 @@ message SequenceVariant
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 message Serial
@@ -3358,8 +3574,8 @@ message SiRNA
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
   repeated synonym LabelType = 19
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
@@ -3394,10 +3610,10 @@ message Snv
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasGene Gene = 10
-  optional hasBiologicalSequence BiologicalSequence = 11
-  id String = 12
-  repeated inTaxon OrganismTaxon = 13
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasGene Gene = 11
+  optional hasBiologicalSequence BiologicalSequence = 12
+  id String = 13
  }
 // Attributes relating to a socioeconomic manifestation
 message SocioeconomicAttribute
@@ -3419,8 +3635,20 @@ message SocioeconomicAttribute
 // A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 message SocioeconomicExposure
  {
-  repeated hasAttribute SocioeconomicAttribute = 1
-  optional timepoint TimeType = 2
+  id String = 1
+  optional type String = 2
+  optional description NarrativeText = 3
+  repeated providedBy String = 4
+  repeated xref Uriorcurie = 5
+  repeated category CategoryType = 6
+  optional name LabelType = 7
+  hasAttributeType OntologyClass = 8
+  repeated hasQuantitativeValue QuantityValue = 9
+  optional hasQualitativeValue NamedThing = 10
+  optional iri IriType = 11
+  optional source String = 12
+  repeated hasAttribute SocioeconomicAttribute = 13
+  optional timepoint TimeType = 14
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation
@@ -3434,8 +3662,8 @@ message StudyPopulation
   repeated providedBy String = 7
   repeated xref Uriorcurie = 8
   repeated category CategoryType = 9
-  repeated hasAttribute Attribute = 10
-  repeated inTaxon OrganismTaxon = 11
+  repeated inTaxon OrganismTaxon = 10
+  repeated hasAttribute Attribute = 11
  }
 message TaxonToTaxonAssociation
  {
@@ -3450,8 +3678,8 @@ message TaxonToTaxonAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3484,8 +3712,8 @@ message Transcript
   optional isToxic Boolean = 14
   repeated hasChemicalRole ChemicalRole = 15
   optional isMetabolite Boolean = 16
-  repeated inTaxon OrganismTaxon = 17
-  optional hasBiologicalSequence BiologicalSequence = 18
+  optional hasBiologicalSequence BiologicalSequence = 17
+  repeated inTaxon OrganismTaxon = 18
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -3501,8 +3729,8 @@ message TranscriptToGeneRelationship
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3541,8 +3769,8 @@ message VariantAsAModelOfDiseaseAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -3567,8 +3795,8 @@ message VariantToDiseaseAssociation
   repeated qualifiers OntologyClass = 8
   repeated publications Publication = 9
   repeated hasEvidence EvidenceType = 10
-  repeated knowledgeSource InformationResource = 11
-  optional originalKnowledgeSource InformationResource = 12
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
   optional primaryKnowledgeSource InformationResource = 13
   repeated aggregatorKnowledgeSource InformationResource = 14
   optional timepoint TimeType = 15
@@ -3595,8 +3823,8 @@ message VariantToGeneAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3619,8 +3847,8 @@ message VariantToGeneExpressionAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16
@@ -3647,8 +3875,8 @@ message VariantToPhenotypicFeatureAssociation
   repeated qualifiers OntologyClass = 10
   repeated publications Publication = 11
   repeated hasEvidence EvidenceType = 12
-  repeated knowledgeSource InformationResource = 13
-  optional originalKnowledgeSource InformationResource = 14
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
   optional primaryKnowledgeSource InformationResource = 15
   repeated aggregatorKnowledgeSource InformationResource = 16
   optional timepoint TimeType = 17
@@ -3674,8 +3902,8 @@ message VariantToPopulationAssociation
   repeated qualifiers OntologyClass = 9
   repeated publications Publication = 10
   repeated hasEvidence EvidenceType = 11
-  repeated knowledgeSource InformationResource = 12
-  optional originalKnowledgeSource InformationResource = 13
+  optional knowledgeSource InformationResource = 12
+  optional originalKnowledgeSource String = 13
   optional primaryKnowledgeSource InformationResource = 14
   repeated aggregatorKnowledgeSource InformationResource = 15
   optional timepoint TimeType = 16

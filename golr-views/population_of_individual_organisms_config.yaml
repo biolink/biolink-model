@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: population_of_individual_organisms
+# metamodel_version: 1.7.0# version: 2.4.7id: population_of_individual_organisms
 schema_generating: true
 description: A collection of individuals from the same taxonomic class distinguished
   by one or more characteristics.  Characteristics can include, but are not limited
@@ -50,12 +50,12 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
-- id: has_attribute
-  description: may often be an organism attribute
-  display_name: organismal entity_has attribute
-  cardinality: multi
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
+  cardinality: multi
+- id: has_attribute
+  description: may often be an organism attribute
+  display_name: organismal entity_has attribute
   cardinality: multi

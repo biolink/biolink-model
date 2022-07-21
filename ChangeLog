@@ -1,15 +1,44 @@
 CHANGES
 =======
+
 3.0.0
 -----
 deprecated/refactored predicate hierarchy to move semantics from predicates into qualifiers (edge properties)
 added several enumerations for qualifiers, depending on their usage in associations
 added gene->chemical associations with restrictions on subject/predicate/object values (as defined in enumerations)
 
+2.4.7
+-----
+* add pydantic class to the wheel
+* update LinkML dependency
+
+2.4.5
+-----
+* add BioPlanet and Inxight prefixes
+* rename pydantic class to model.py
+
+2.4.4
+-----
+* updated documentation to reference the Biolink Model publication
+* added molecular activity to pathway association
+* added gene to pathway association
+
+2.4.3
+-----
+* DRY refactoring of the biolink:ThingWithTaxon mixin by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1033
+* Adding a biolink:GeneToPathwayAssociation  by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1031
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v2.4.2...v2.4.3
+
+2.4.2
+-----
+* fix exposure classes
+* more documenation
+
+
 2.4.1
 -----
 * bug fixes
-
 
 2.4.0
 -----

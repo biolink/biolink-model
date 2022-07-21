@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: gene_family
+# metamodel_version: 1.7.0# version: 2.4.7id: gene_family
 schema_generating: true
 description: any grouping of multiple genes or gene products related by common descent
 display_name: gene family
@@ -51,6 +51,11 @@ fields:
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
   display_name: named thing_category
+  cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
   cardinality: multi
 - id: has_gene_or_gene_product
   description: connects an entity with one or more gene or gene products

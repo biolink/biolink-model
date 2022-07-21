@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: exposure_event_to_phenotypic_feature_association
+# metamodel_version: 1.7.0# version: 2.4.7id: exposure_event_to_phenotypic_feature_association
 schema_generating: true
 description: Any association between an environment and a phenotypic feature, where
   being in the environment influences the phenotype.
@@ -56,12 +56,7 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-  cardinality: multi
 - id: original_knowledge_source
-  description: The Information Resource that created the original record of the knowledge
-    expressed in an Association (e.g. via curation of the knowledge from the literature,
-    or generation of the knowledge de novo through computation, reasoning, inference
-    over data).
   display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association

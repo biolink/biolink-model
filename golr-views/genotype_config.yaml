@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: genotype
+# metamodel_version: 1.7.0# version: 2.4.7id: genotype
 schema_generating: true
 description: An information content entity that describes a genome by specifying the
   total variation in genomic sequence and/or gene expression, relative to some established
@@ -54,13 +54,13 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
-- id: has_zygosity
-  display_name: has zygosity
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: has_zygosity
+  display_name: has zygosity
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence

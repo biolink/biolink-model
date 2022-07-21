@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: life_stage
+# metamodel_version: 1.7.0# version: 2.4.7id: life_stage
 schema_generating: true
 description: A stage of development or growth of an organism, including post-natal
   adult stages
@@ -49,12 +49,12 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
-- id: has_attribute
-  description: may often be an organism attribute
-  display_name: organismal entity_has attribute
-  cardinality: multi
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
+  cardinality: multi
+- id: has_attribute
+  description: may often be an organism attribute
+  display_name: organismal entity_has attribute
   cardinality: multi
