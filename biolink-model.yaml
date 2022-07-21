@@ -20,7 +20,7 @@ version: 2.4.7
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
 prefixes:
-  alliancegenome: 'https://www.alliancegenome.org/'
+  AGRKB: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
   biolink: 'https://w3id.org/biolink/vocab/'
@@ -131,6 +131,7 @@ prefixes:
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNOMED: 'http://www.snomedbrowser.com/Codes/Details/'
   SNOMEDCT: 'http://www.snomedbrowser.com/Codes/Details/'
+  SPDI: 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
@@ -670,7 +671,7 @@ slots:
       - translator_minimal
     required: true
     exact_mappings:
-      - alliancegenome:primaryId
+      - agrkb:primaryId
       - gff3:ID
       - gpi:DB_Object_ID
 
@@ -687,7 +688,7 @@ slots:
   type:
     slot_uri: rdf:type
     exact_mappings:
-      - alliancegenome:soTermId
+      - agrkb:soTermId
       - gff3:type
       - gpi:DB_Object_Type
 
@@ -768,7 +769,7 @@ slots:
     description: >-
       Symbol for a particular thing
     exact_mappings:
-      - alliancegenome:symbol
+      - agrkb:symbol
       - gpi:DB_Object_Symbol
 
   synonym:
@@ -787,7 +788,7 @@ slots:
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
-      - alliancegenome:synonyms
+      - agrkb:synonyms
       - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
@@ -8764,7 +8765,7 @@ classes:
       - WB
       - WormBase # we have two prefixes here as wormbase supports WormBase:WBGene00000898
                  # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
-      - FB  # FlyBase FBgn*
+      - FB
       - RGD
       - SGD
       - PomBase
@@ -8773,7 +8774,6 @@ classes:
       - UMLS
       - Xenbase
       - AspGD
-      # - IUPHAR
     in_subset:
       - model_organism_database
 
@@ -9169,14 +9169,14 @@ classes:
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
-      # - MYVARIANT_HG19 needs IRI mapping
-      # - MYVARIANT_HG38 needs IRI mapping
-      # - HGVS needs IRI mapping
       - MGI
-      - ZFIN # ZFIN:ZDB-ALT-*
-      - FB   # FlyBase FBal*
+      - ZFIN
+      - FB
+      - RGD
+      - AGRKB
+      - SPDI
       - WB
-      - WormBase ## WormBase:WBVar*
+      - WormBase
     alt_descriptions:
       AGR: >-
         An entity that describes a single affected, endogenous allele.
