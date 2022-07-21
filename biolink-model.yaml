@@ -8,6 +8,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 3.0.0
 
 
+
 ## ------------
 ## PREFIXES
 ## ------------
@@ -20,7 +21,7 @@ version: 3.0.0
 # 1. The following 'prefixes:' delimited list has first precedence in resolution.
 #
 prefixes:
-  alliancegenome: 'https://www.alliancegenome.org/'
+  AGRKB: 'https://www.alliancegenome.org/'
   apollo: 'https://github.com/GMOD/Apollo'
   AspGD: 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid='
   biolink: 'https://w3id.org/biolink/vocab/'
@@ -81,6 +82,7 @@ prefixes:
   isbn: 'https://www.isbn-international.org/identifier/' # note: a resolvable base URI not available from isbn-international
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
+  ncats.drug: 'https://drugs.ncats.io/drug/'
   KEGG.BRITE: 'http://www.kegg.jp/entry/'
   KEGG.DGROUP: 'http://www.kegg.jp/entry/'
   KEGG.ENZYME: 'http://www.kegg.jp/entry/'
@@ -99,6 +101,7 @@ prefixes:
   MmusDv: 'http://purl.obolibrary.org/obo/MMUSDV_'
   MSigDB: 'https://www.gsea-msigdb.org/gsea/msigdb/'
   NBO-PROPERTY: 'http://purl.obolibrary.org/obo/nbo#'
+  ncats.bioplanet: 'https://tripod.nih.gov/bioplanet/detail.jsp?pid='
   NCBIGene: 'http://identifiers.org/ncbigene/'
   NCIT-OBO: 'http://purl.obolibrary.org/obo/ncit#'
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
@@ -129,6 +132,7 @@ prefixes:
   SIO: 'http://semanticscience.org/resource/SIO_'
   SNOMED: 'http://www.snomedbrowser.com/Codes/Details/'
   SNOMEDCT: 'http://www.snomedbrowser.com/Codes/Details/'
+  SPDI: 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/'
   UBERGRAPH: 'http://translator.renci.org/ubergraph-axioms.ofn#'
   UBERON_CORE: 'http://purl.obolibrary.org/obo/uberon/core#'
   UBERON_NONAMESPACE: 'http://purl.obolibrary.org/obo/core#'
@@ -477,7 +481,7 @@ slots:
       - translator_minimal
     required: true
     exact_mappings:
-      - alliancegenome:primaryId
+      - agrkb:primaryId
       - gff3:ID
       - gpi:DB_Object_ID
 
@@ -494,7 +498,7 @@ slots:
   type:
     slot_uri: rdf:type
     exact_mappings:
-      - alliancegenome:soTermId
+      - agrkb:soTermId
       - gff3:type
       - gpi:DB_Object_Type
 
@@ -575,7 +579,7 @@ slots:
     description: >-
       Symbol for a particular thing
     exact_mappings:
-      - alliancegenome:symbol
+      - agrkb:symbol
       - gpi:DB_Object_Symbol
 
   synonym:
@@ -594,7 +598,7 @@ slots:
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
-      - alliancegenome:synonyms
+      - agrkb:synonyms
       - gpi:DB_Object_Synonyms
       - oboInOwl:hasExactSynonym
       - oboInOwl:hasNarrowSynonym
@@ -4589,7 +4593,7 @@ slots:
       - SNOMED:plays_role
 
   treated by:
-    is_a: related to at instance level
+    is_a: is ameliorated by
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical entity that is used to treat the condition
@@ -6367,7 +6371,6 @@ slots:
       knowledge passed on its way to its currently serialized form. In practice,
       implementers should use one of the more specific subtypes of this generic property.
     range: information resource
-    multivalued: true
     close_mappings:
       - pav:providedBy
 
@@ -6388,14 +6391,7 @@ slots:
      multivalued: false
 
   original knowledge source:
-    is_a: primary knowledge source
-    description: >-
-      The Information Resource that created the original record of the knowledge expressed
-      in an Association (e.g. via curation of the knowledge from the literature, or
-      generation of the knowledge de novo through computation, reasoning, inference over
-      data).
-    range: information resource
-    multivalued: false
+    deprecated: true
 
   aggregator knowledge source:
     is_a: knowledge source
@@ -7389,17 +7385,6 @@ classes:
 
   ## Biological Sciences
 
-  biological entity:
-    is_a: named thing
-    aliases: ['bioentity']
-    abstract: true
-    narrow_mappings:
-      - WIKIDATA:Q28845870
-      # UMLS Semantic Type "Experimental Model of Disease"
-      - STY:T050
-      # SIO term is 'biological entity' but less inclusive than the Biolink scope
-      - SIO:010046
-
   thing with taxon:
     mixin: true
     description: >-
@@ -7409,9 +7394,21 @@ classes:
     slots:
       - in taxon
 
+  biological entity:
+    is_a: named thing
+    aliases: ['bioentity']
+    abstract: true
+    mixins:
+      - thing with taxon
+    narrow_mappings:
+      - WIKIDATA:Q28845870
+      # UMLS Semantic Type "Experimental Model of Disease"
+      - STY:T050
+      # SIO term is 'biological entity' but less inclusive than the Biolink scope
+      - SIO:010046
+
   genomic entity:
     mixin: true
-    is_a: thing with taxon
     slots:
       - has biological sequence
     in_subset:
@@ -7491,6 +7488,7 @@ classes:
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
+      - ncats.drug
 
   chemical substance:
     deprecated: >-
@@ -7609,6 +7607,7 @@ classes:
     aliases: [ 'sequence feature', 'genomic entity' ]
     mixins:
       - genomic entity
+      - thing with taxon
       - physical essence
       - ontology class
     exact_mappings:
@@ -7669,6 +7668,7 @@ classes:
       - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
       - UMLS
+      - ncats.drug
 
   complex molecular mixture:
     is_a: chemical mixture
@@ -7800,6 +7800,7 @@ classes:
       - FB  # FlyBase FBgg*
       - PANTHER.PATHWAY
       - KEGG.PATHWAY
+      - ncats.bioplanet
 
   physiological process:
     aliases: ['physiology']
@@ -7878,6 +7879,7 @@ classes:
       # Antibiotic
       - STY:T195
     id_prefixes:
+      - ncats.drug
       - RXCUI
       - NDC
       - UMLS
@@ -7993,8 +7995,6 @@ classes:
 
   life stage:
     is_a: organismal entity
-    mixins:
-      - thing with taxon
     description: >-
       A stage of development or growth of an organism,
       including post-natal adult stages
@@ -8018,8 +8018,6 @@ classes:
     description: >-
       An instance of an organism. For example, Richard Nixon,
       Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
-    mixins:
-      - thing with taxon
     is_a: organismal entity
     exact_mappings:
       - SIO:010000
@@ -8040,8 +8038,6 @@ classes:
       phenotypes.
     local_names:
       ga4gh: population
-    mixins:
-      - thing with taxon
     is_a: organismal entity
     exact_mappings:
       - PCO:0000001
@@ -8059,7 +8055,7 @@ classes:
     is_a: biological entity
     description: >-
       Either one of a disease or an individual phenotypic feature.
-      Some knowledge resources such as Monarch treat these as
+      Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
       distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
       for their independent descriptions.  This class is helpful to enforce domains and ranges  
       that may involve either a disease or a phenotypic feature.
@@ -8177,7 +8173,6 @@ classes:
   anatomical entity:
     is_a: organismal entity
     mixins:
-      - thing with taxon
       - physical essence
     description: >-
       A subcellular location, cell type or gross anatomical part
@@ -8347,9 +8342,9 @@ classes:
       - ZFIN
       - dictyBase
       - WB
-      - WormBase # we have two prefixes here as worbase supports WormBase:WBGene00000898
+      - WormBase # we have two prefixes here as wormbase supports WormBase:WBGene00000898
                  # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
-      - FB  # FlyBase FBgn*
+      - FB
       - RGD
       - SGD
       - PomBase
@@ -8358,7 +8353,6 @@ classes:
       - UMLS
       - Xenbase
       - AspGD
-      # - IUPHAR
     in_subset:
       - model_organism_database
 
@@ -8468,7 +8462,6 @@ classes:
       partial sequences of various kinds are included, even if they do not
       represent a physical molecule.
     mixins:
-      - thing with taxon
       - chemical entity or gene or gene product
       - chemical entity or protein or polypeptide
     id_prefixes:
@@ -8493,7 +8486,6 @@ classes:
     is_a: polypeptide
     mixins:
       - gene product mixin
-      - thing with taxon
     id_prefixes:
       - UniProtKB
       - PR
@@ -8501,6 +8493,7 @@ classes:
       - FB      # FlyBase FBpp*
       - UMLS
       - MESH
+      - ncats.drug
     broad_mappings:
       - bioschemas:Protein
     exact_mappings:
@@ -8755,14 +8748,14 @@ classes:
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
-      # - MYVARIANT_HG19 needs IRI mapping
-      # - MYVARIANT_HG38 needs IRI mapping
-      # - HGVS needs IRI mapping
       - MGI
-      - ZFIN # ZFIN:ZDB-ALT-*
-      - FB   # FlyBase FBal*
+      - ZFIN
+      - FB
+      - RGD
+      - AGRKB
+      - SPDI
       - WB
-      - WormBase ## WormBase:WBVar*
+      - WormBase
     alt_descriptions:
       AGR: >-
         An entity that describes a single affected, endogenous allele.
@@ -8952,6 +8945,7 @@ classes:
   ## Exposures
 
   exposure event:
+    is_a: named thing
     aliases: ['exposure', 'experimental condition']
     mixin: true
     slots:
@@ -8966,11 +8960,13 @@ classes:
 
   # TODO - confirm that genomic backgrounds are exposures
   genomic background exposure:
+    is_a: attribute
     mixins:
       - exposure event
       - gene grouping mixin
       - physical essence
       - genomic entity
+      - thing with taxon
       - ontology class
     description: >-
       A genomic background exposure is where an individual's specific genomic background
@@ -9004,6 +9000,7 @@ classes:
       - STY:T037
 
   pathological process exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9020,6 +9017,7 @@ classes:
       - pathological entity mixin
 
   pathological anatomical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9028,6 +9026,7 @@ classes:
       e.g. thrombosis leading to an ischemic disease outcome.
 
   disease or phenotypic feature exposure:
+    is_a: attribute
     mixins:
       - exposure event
       - pathological entity mixin
@@ -9038,6 +9037,7 @@ classes:
       of skin pigmentation predisposing an individual to skin cancer.
 
   chemical exposure:
+    is_a: attribute
     mixins:
       - exposure event
     slots:
@@ -9053,6 +9053,7 @@ classes:
       - SIO:001399
 
   complex chemical exposure:
+    is_a: attribute
     description: >-
       A complex chemical exposure is an intake of a chemical
       mixture (e.g. gasoline), other than a drug.
@@ -9101,6 +9102,7 @@ classes:
       - MAXO:0000058
 
   biotic exposure:
+    is_a: attribute
     aliases: ['viral exposure','bacterial exposure']
     mixins:
       - exposure event
@@ -9134,6 +9136,7 @@ classes:
       - dcid:WinterStoremEvent
 
   environmental exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9142,12 +9145,14 @@ classes:
       cold, general pollution) and water-born contaminants.
 
   behavioral exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
       A behavioral exposure is a factor relating to behavior impacting an individual.
 
   socioeconomic exposure:
+    is_a: attribute
     mixins:
       - exposure event
     description: >-
@@ -9647,6 +9652,35 @@ classes:
       object:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
+
+  gene to pathway association:
+    description: >-
+      An interaction between a gene or gene product and a biological process or pathway.
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - gene to entity association mixin
+    slot_usage:
+      subject:
+        range: gene or gene product
+        description: "the gene or gene product entity that participates or influences the pathway"
+      object:
+        range: pathway
+        description: "the pathway that includes or is affected by the gene or gene product"
+
+  molecular activity to pathway association:
+    description: >-
+      Association that holds the relationship between a reaction and the pathway it participates in.
+    is_a: association
+    slot_usage:
+      subject:
+        range: molecular activity
+      object:
+        range: pathway
+      predicate:
+        subproperty_of: part of
 
   chemical to pathway association:
     description: >-

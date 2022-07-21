@@ -253,10 +253,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -271,7 +268,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -368,10 +364,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -386,7 +379,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -611,10 +603,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -629,7 +618,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -807,6 +795,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -893,10 +888,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -915,7 +907,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -978,13 +969,83 @@
          "additionalProperties": false,
          "description": "A behavioral exposure is a factor relating to behavior impacting an individual.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "BehavioralExposure",
          "type": "object"
       },
@@ -1114,6 +1175,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -1197,6 +1265,13 @@
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -1317,13 +1392,83 @@
          "additionalProperties": false,
          "description": "An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "BioticExposure",
          "type": "object"
       },
@@ -1682,10 +1827,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -1704,7 +1846,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -1860,6 +2001,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -1946,10 +2094,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -1968,7 +2113,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -2069,10 +2213,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2087,7 +2228,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -2340,10 +2480,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2358,7 +2495,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -2413,6 +2549,33 @@
          "additionalProperties": false,
          "description": "A chemical exposure is an intake of a particular chemical entity.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
@@ -2420,13 +2583,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "ChemicalExposure",
          "type": "object"
       },
@@ -2667,10 +2866,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2685,7 +2881,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -2789,10 +2984,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2807,7 +2999,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -2904,10 +3095,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -2922,7 +3110,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -3019,10 +3206,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -3037,7 +3221,6 @@
                "description": "the gene or gene product that is affected by the chemical."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -3134,10 +3317,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -3152,7 +3332,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -3952,8 +4131,79 @@
       "ComplexChemicalExposure": {
          "additionalProperties": false,
          "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
-         "properties": {},
-         "required": [],
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "ComplexChemicalExposure",
          "type": "object"
       },
@@ -4184,10 +4434,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -4202,7 +4449,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -4786,13 +5032,83 @@
          "additionalProperties": false,
          "description": "A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DiseaseOrPhenotypicFeatureExposure",
          "type": "object"
       },
@@ -4850,10 +5166,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -4868,7 +5181,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -4965,10 +5277,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -4983,7 +5292,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5084,10 +5392,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5106,7 +5411,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5293,6 +5597,33 @@
          "additionalProperties": false,
          "description": "A drug exposure is an intake of a particular drug.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
                "items": {
@@ -5300,13 +5631,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DrugExposure",
          "type": "object"
       },
@@ -5356,10 +5723,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5374,7 +5738,6 @@
                "description": "the gene or gene product that is affected by the drug"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5429,12 +5792,39 @@
          "additionalProperties": false,
          "description": "drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
             "has_gene_or_gene_product": {
                "description": "connects an entity with one or more gene or gene products",
                "items": {
                   "type": "string"
                },
                "type": "array"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
             },
             "has_quantitative_value": {
                "description": "connects an attribute to a value",
@@ -5443,13 +5833,49 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "DrugToGeneInteractionExposure",
          "type": "object"
       },
@@ -5514,10 +5940,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5536,7 +5959,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5640,10 +6062,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5658,7 +6077,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5758,10 +6176,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -5776,7 +6191,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -5831,13 +6245,83 @@
          "additionalProperties": false,
          "description": "A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "EnvironmentalExposure",
          "type": "object"
       },
@@ -6348,10 +6832,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6366,7 +6847,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -6480,10 +6960,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6498,7 +6975,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -6599,10 +7075,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6621,7 +7094,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -6658,8 +7130,8 @@
                "type": "string"
             },
             "subject": {
-               "$ref": "#/$defs/ExposureEvent",
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
             },
             "timepoint": {
                "description": "a point in time",
@@ -6938,10 +7410,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -6956,7 +7425,6 @@
                "description": "class describing the activity, process or localization of the gene product"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7142,10 +7610,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7164,7 +7629,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7253,6 +7717,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -7339,10 +7810,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7361,7 +7829,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7474,10 +7941,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7492,7 +7956,6 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7593,10 +8056,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7615,7 +8075,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7716,10 +8175,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7734,7 +8190,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -7843,10 +8298,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7861,7 +8313,6 @@
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "phenotypic_state": {
@@ -7970,10 +8421,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -7988,7 +8436,6 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -8085,10 +8532,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8103,7 +8547,6 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -8200,10 +8643,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8218,7 +8658,6 @@
                "description": "class describing the activity, process or localization of the gene product"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -8267,6 +8706,117 @@
             "object"
          ],
          "title": "GeneToGoTermAssociation",
+         "type": "object"
+      },
+      "GeneToPathwayAssociation": {
+         "additionalProperties": false,
+         "description": "An interaction between a gene or gene product and a biological process or pathway.",
+         "properties": {
+            "aggregator_knowledge_source": {
+               "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_evidence": {
+               "description": "connects an association to an instance of supporting evidence",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "knowledge_source": {
+               "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "the pathway that includes or is affected by the gene or gene product",
+               "type": "string"
+            },
+            "original_knowledge_source": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "primary_knowledge_source": {
+               "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "subject": {
+               "$ref": "#/$defs/GeneOrGeneProduct",
+               "description": "the gene or gene product entity that participates or influences the pathway"
+            },
+            "timepoint": {
+               "description": "a point in time",
+               "format": "time",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "GeneToPathwayAssociation",
          "type": "object"
       },
       "GeneToPhenotypicFeatureAssociation": {
@@ -8319,10 +8869,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8341,7 +8888,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -8478,6 +9024,29 @@
          "additionalProperties": false,
          "description": "A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
             "has_biological_sequence": {
                "description": "connects a genomic feature to its sequence",
                "type": "string"
@@ -8486,6 +9055,17 @@
                "description": "connects an entity with one or more gene or gene products",
                "items": {
                   "type": "string"
+               },
+               "type": "array"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
                },
                "type": "array"
             },
@@ -8500,14 +9080,44 @@
                },
                "type": "array"
             },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
-            "id"
+            "id",
+            "category",
+            "has_attribute_type"
          ],
          "title": "GenomicBackgroundExposure",
          "type": "object"
@@ -8566,10 +9176,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8584,7 +9191,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "phase": {
@@ -8774,10 +9380,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8796,7 +9399,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -8901,10 +9503,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -8923,7 +9522,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -9024,10 +9622,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9042,7 +9637,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -9139,10 +9733,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9157,7 +9748,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -9258,10 +9848,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9280,7 +9867,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -9385,10 +9971,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -9403,7 +9986,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -9537,13 +10119,83 @@
          "additionalProperties": false,
          "description": "A geographic exposure is a factor relating to geographic proximity to some impactful entity.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "GeographicExposure",
          "type": "object"
       },
@@ -10025,10 +10677,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10043,7 +10692,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -10376,10 +11024,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10394,7 +11039,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -10491,10 +11135,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10509,7 +11150,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -10606,10 +11246,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10624,7 +11261,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -10870,10 +11506,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -10888,7 +11521,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -10985,10 +11617,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11003,7 +11632,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -11296,6 +11924,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -11378,10 +12013,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11396,7 +12028,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -11493,10 +12124,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -11511,7 +12139,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -11560,6 +12187,117 @@
             "object"
          ],
          "title": "MolecularActivityToMolecularActivityAssociation",
+         "type": "object"
+      },
+      "MolecularActivityToPathwayAssociation": {
+         "additionalProperties": false,
+         "description": "Association that holds the relationship between a reaction and the pathway it participates in.",
+         "properties": {
+            "aggregator_knowledge_source": {
+               "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_evidence": {
+               "description": "connects an association to an instance of supporting evidence",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "knowledge_source": {
+               "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_knowledge_source": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "primary_knowledge_source": {
+               "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "timepoint": {
+               "description": "a point in time",
+               "format": "time",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "subject",
+            "object",
+            "predicate"
+         ],
+         "title": "MolecularActivityToPathwayAssociation",
          "type": "object"
       },
       "MolecularEntity": {
@@ -12063,6 +12801,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -12459,10 +13204,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12477,7 +13219,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -12574,10 +13315,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12592,7 +13330,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -12689,10 +13426,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12707,7 +13441,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -12808,10 +13541,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12830,7 +13560,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -12931,10 +13660,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -12949,7 +13675,6 @@
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -13049,10 +13774,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -13067,7 +13789,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -13122,13 +13843,83 @@
          "additionalProperties": false,
          "description": "An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "PathologicalAnatomicalExposure",
          "type": "object"
       },
@@ -13258,6 +14049,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -13298,13 +14096,83 @@
          "additionalProperties": false,
          "description": "A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
-         "required": [],
+         "required": [
+            "id",
+            "category",
+            "has_attribute_type"
+         ],
          "title": "PathologicalProcessExposure",
          "type": "object"
       },
@@ -13363,6 +14231,13 @@
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -13812,6 +14687,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -14097,10 +14979,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -14115,7 +14994,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -14457,6 +15335,13 @@
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
             },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                "type": "string"
@@ -14526,6 +15411,13 @@
             "id": {
                "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "iri": {
                "description": "An IRI for an entity. This is determined by the id using expansion rules.",
@@ -15050,10 +15942,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -15068,7 +15957,6 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -15177,10 +16065,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -15195,7 +16080,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -15393,10 +16277,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -15411,7 +16292,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -15517,10 +16397,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -15535,7 +16412,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -16231,6 +17107,18 @@
          "additionalProperties": false,
          "description": "A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).",
          "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
             "has_attribute": {
                "description": "connects any entity to an attribute",
                "items": {
@@ -16238,13 +17126,63 @@
                },
                "type": "array"
             },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/$defs/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
             "timepoint": {
                "description": "a point in time",
                "format": "time",
                "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "required": [
+            "id",
+            "category",
+            "has_attribute_type",
             "has_attribute"
          ],
          "title": "SocioeconomicExposure",
@@ -16385,10 +17323,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -16403,7 +17338,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -16616,10 +17550,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -16634,7 +17565,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -16832,10 +17762,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -16854,7 +17781,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -16959,10 +17885,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -16981,7 +17904,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -17082,10 +18004,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -17100,7 +18019,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -17201,10 +18119,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -17219,7 +18134,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "phenotypic_state": {
@@ -17332,10 +18246,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -17354,7 +18265,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -17479,10 +18389,7 @@
             },
             "knowledge_source": {
                "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
+               "type": "string"
             },
             "name": {
                "description": "A human-readable name for an attribute or entity.",
@@ -17497,7 +18404,6 @@
                "type": "string"
             },
             "original_knowledge_source": {
-               "description": "The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).",
                "type": "string"
             },
             "predicate": {
@@ -17722,6 +18628,6 @@
    "required": [],
    "title": "Biolink-Model",
    "type": "object",
-   "version": "2.4.1"
+   "version": "2.4.7"
 }
 

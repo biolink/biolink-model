@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: genomic_sequence_localization
+# metamodel_version: 1.7.0# version: 2.4.7id: genomic_sequence_localization
 schema_generating: true
 description: A relationship between a sequence feature and a nucleic acid entity it
   is localized to. The reference entity may be a chromosome, chromosome region or
@@ -49,12 +49,7 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-  cardinality: multi
 - id: original_knowledge_source
-  description: The Information Resource that created the original record of the knowledge
-    expressed in an Association (e.g. via curation of the knowledge from the literature,
-    or generation of the knowledge de novo through computation, reasoning, inference
-    over data).
   display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association

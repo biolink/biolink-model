@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.1
+# version: 2.4.7
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -48,7 +48,7 @@ type Agent
     name: LabelType
   }
 
-type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
+type AnatomicalEntity implements PhysicalEssence
   {
     id: String!
     iri: IriType
@@ -59,8 +59,8 @@ type AnatomicalEntity implements ThingWithTaxon, PhysicalEssence
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface AnatomicalEntityToAnatomicalEntityAssociation
@@ -76,8 +76,8 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -99,8 +99,8 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -123,8 +123,8 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -181,8 +181,8 @@ type Association
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -219,6 +219,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -237,8 +238,8 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -254,6 +255,19 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
 
 type BehavioralExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -276,7 +290,7 @@ type BehavioralOutcome implements Outcome
   {
   }
 
-interface BiologicalEntity
+type BiologicalEntity implements ThingWithTaxon
   {
     id: String!
     iri: IriType
@@ -288,6 +302,7 @@ interface BiologicalEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type BiologicalProcess implements Occurrent, OntologyClass
@@ -302,6 +317,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -319,6 +335,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -343,6 +360,19 @@ type BiologicalSex
 
 type BioticExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -406,8 +436,8 @@ type Case
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface CaseToEntityAssociationMixin
@@ -430,8 +460,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -454,8 +484,8 @@ type Cell
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type CellLine
@@ -469,6 +499,7 @@ type CellLine
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
   }
 
@@ -486,8 +517,8 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -513,8 +544,8 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -539,8 +570,8 @@ type CellularComponent
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -574,8 +605,8 @@ type ChemicalEntityAssessesNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -601,6 +632,18 @@ interface ChemicalEntityToEntityAssociationMixin
 
 type ChemicalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -667,8 +710,8 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -689,8 +732,8 @@ type ChemicalToChemicalDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -716,8 +759,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -745,8 +788,8 @@ type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -768,8 +811,8 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -922,8 +965,8 @@ type CodingSequence
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type Cohort
@@ -937,12 +980,25 @@ type Cohort
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type ComplexChemicalExposure
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
   }
 
 type ComplexMolecularMixture
@@ -997,8 +1053,8 @@ type ContributorAssociation
     negated: Boolean
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1117,7 +1173,7 @@ type Disease
     inTaxon: [OrganismTaxon]
   }
 
-type DiseaseOrPhenotypicFeature implements ThingWithTaxon
+type DiseaseOrPhenotypicFeature
   {
     id: String!
     iri: IriType
@@ -1134,6 +1190,19 @@ type DiseaseOrPhenotypicFeature implements ThingWithTaxon
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -1160,8 +1229,8 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1190,8 +1259,8 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1212,8 +1281,8 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1252,6 +1321,18 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
 
 type DrugExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -1275,8 +1356,8 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1287,6 +1368,18 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
 
 type DrugToGeneInteractionExposure implements GeneGroupingMixin
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
@@ -1303,8 +1396,8 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1346,8 +1439,8 @@ type EntityToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1401,8 +1494,8 @@ type EntityToPhenotypicFeatureAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1422,6 +1515,19 @@ interface EntityToPhenotypicFeatureAssociationMixin
 
 type EnvironmentalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -1526,8 +1632,8 @@ type Exon
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type ExonToTranscriptRelationship
@@ -1543,8 +1649,8 @@ type ExonToTranscriptRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1556,6 +1662,16 @@ type ExonToTranscriptRelationship
 
 interface ExposureEvent
   {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
     timepoint: TimeType
   }
 
@@ -1578,8 +1694,8 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1603,8 +1719,8 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1685,8 +1801,8 @@ type FunctionalAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1707,10 +1823,10 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     symbol: String
     synonym: [LabelType]
     xref: [Uriorcurie]
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -1727,8 +1843,8 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1761,6 +1877,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -1782,8 +1899,8 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1832,8 +1949,8 @@ type GeneRegulatoryRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1857,8 +1974,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1888,8 +2005,8 @@ type GeneToExpressionSiteAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1915,8 +2032,8 @@ interface GeneToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1938,8 +2055,8 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1966,8 +2083,8 @@ type GeneToGeneHomologyAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1990,8 +2107,8 @@ type GeneToGeneProductRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2015,8 +2132,8 @@ type GeneToGoTermAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2024,6 +2141,30 @@ type GeneToGoTermAssociation
     category: [CategoryType]
     subject: Gene!
     object: GeneOntologyClass!
+  }
+
+type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    predicate: PredicateType!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: GeneOrGeneProduct!
+    object: Pathway!
   }
 
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
@@ -2039,8 +2180,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2070,18 +2211,29 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     hasBiologicalSequence: BiologicalSequence
   }
 
-type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, OntologyClass
+type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, ThingWithTaxon, OntologyClass
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
-    id: String!
+    inTaxon: [OrganismTaxon]
   }
 
 interface GenomicEntity
   {
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -2097,8 +2249,8 @@ type GenomicSequenceLocalization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2126,8 +2278,8 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasZygosity: Zygosity
     inTaxon: [OrganismTaxon]
+    hasZygosity: Zygosity
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -2143,8 +2295,8 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2170,8 +2322,8 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2202,8 +2354,8 @@ type GenotypeToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2226,8 +2378,8 @@ type GenotypeToGenotypePartAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2251,8 +2403,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2278,8 +2430,8 @@ type GenotypeToVariantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2309,6 +2461,19 @@ type GenotypicSex
 
 type GeographicExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -2356,8 +2521,8 @@ type GrossAnatomicalStructure
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -2394,7 +2559,7 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
-type IndividualOrganism implements ThingWithTaxon
+type IndividualOrganism
   {
     id: String!
     iri: IriType
@@ -2405,8 +2570,8 @@ type IndividualOrganism implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface InformationContentEntity
@@ -2439,8 +2604,8 @@ type InformationContentEntityToNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2486,7 +2651,7 @@ type Inheritance
     source: String
   }
 
-type LifeStage implements ThingWithTaxon
+type LifeStage
   {
     id: String!
     iri: IriType
@@ -2497,8 +2662,8 @@ type LifeStage implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface MacromolecularComplexMixin
@@ -2524,8 +2689,8 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2548,8 +2713,8 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2577,8 +2742,8 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2633,8 +2798,8 @@ type MaterialSampleDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2660,8 +2825,8 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2711,8 +2876,8 @@ type MicroRNA
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -2734,6 +2899,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
     enabledBy: [MacromolecularMachineMixin]
@@ -2752,8 +2918,8 @@ type MolecularActivityToChemicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2776,8 +2942,8 @@ type MolecularActivityToMolecularActivityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2785,6 +2951,30 @@ type MolecularActivityToMolecularActivityAssociation
     category: [CategoryType]
     subject: MolecularActivity!
     object: MolecularActivity!
+  }
+
+type MolecularActivityToPathwayAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: MolecularActivity!
+    object: Pathway!
+    predicate: PredicateType!
   }
 
 type MolecularEntity
@@ -2866,12 +3056,12 @@ type NoncodingRNAProduct
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
-type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
+type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
@@ -2889,8 +3079,8 @@ type NucleicAcidEntity implements GenomicEntity, PhysicalEssence, OntologyClass
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type NucleicAcidSequenceMotif
@@ -2905,6 +3095,7 @@ type NucleicAcidSequenceMotif
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type Nutrient
@@ -3001,8 +3192,8 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3026,8 +3217,8 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3049,8 +3240,8 @@ type OrganismTaxonToOrganismTaxonInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3074,8 +3265,8 @@ type OrganismTaxonToOrganismTaxonSpecialization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3099,8 +3290,8 @@ type OrganismToOrganismAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3121,6 +3312,7 @@ interface OrganismalEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
   }
 
@@ -3138,8 +3330,8 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3167,8 +3359,8 @@ type PairwiseGeneToGeneInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3190,8 +3382,8 @@ type PairwiseMolecularInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3210,6 +3402,19 @@ interface PathognomonicityQuantifier
 
 type PathologicalAnatomicalExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -3228,8 +3433,8 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface PathologicalEntityMixin
@@ -3248,6 +3453,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3255,6 +3461,19 @@ type PathologicalProcess implements PathologicalEntityMixin
 
 type PathologicalProcessExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     timepoint: TimeType
   }
 
@@ -3274,6 +3493,7 @@ type Pathway implements OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3376,6 +3596,7 @@ type PhysiologicalProcess implements OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasInput: [BiologicalProcessOrActivity]
     hasOutput: [BiologicalProcessOrActivity]
     enabledBy: [PhysicalEntity]
@@ -3395,7 +3616,7 @@ type PlanetaryEntity
     category: [CategoryType]!
   }
 
-type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
+type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
   {
     id: String!
     iri: IriType
@@ -3410,7 +3631,7 @@ type Polypeptide implements ThingWithTaxon, ChemicalEntityOrGeneOrGeneProduct, C
     inTaxon: [OrganismTaxon]
   }
 
-type PopulationOfIndividualOrganisms implements ThingWithTaxon
+type PopulationOfIndividualOrganisms
   {
     id: String!
     iri: IriType
@@ -3421,8 +3642,8 @@ type PopulationOfIndividualOrganisms implements ThingWithTaxon
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type PopulationToPopulationAssociation
@@ -3437,8 +3658,8 @@ type PopulationToPopulationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3486,7 +3707,7 @@ type ProcessedMaterial
     routesOfDelivery: [DrugDeliveryEnum]
   }
 
-type Protein implements GeneProductMixin, ThingWithTaxon
+type Protein implements GeneProductMixin
   {
     id: String!
     iri: IriType
@@ -3514,6 +3735,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3529,6 +3751,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3590,8 +3813,8 @@ type ReactionToCatalystAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3617,8 +3840,8 @@ type ReactionToParticipantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3674,8 +3897,8 @@ type RNAProduct implements GeneProductMixin
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -3697,8 +3920,8 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -3721,8 +3944,8 @@ type SequenceAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3743,8 +3966,8 @@ type SequenceFeatureRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3765,10 +3988,10 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
-    inTaxon: [OrganismTaxon]
   }
 
 interface SequenceVariantModulatesTreatmentAssociation
@@ -3784,8 +4007,8 @@ interface SequenceVariantModulatesTreatmentAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3856,8 +4079,8 @@ type SiRNA
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
     synonym: [LabelType]
   }
 
@@ -3892,10 +4115,10 @@ type Snv
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
-    inTaxon: [OrganismTaxon]
   }
 
 type SocioeconomicAttribute
@@ -3917,6 +4140,18 @@ type SocioeconomicAttribute
 
 type SocioeconomicExposure implements ExposureEvent
   {
+    id: String!
+    type: String
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: String
     hasAttribute: [SocioeconomicAttribute]!
     timepoint: TimeType
   }
@@ -3940,8 +4175,8 @@ type StudyPopulation
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    hasAttribute: [Attribute]
     inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface SubjectOfInvestigation
@@ -3961,8 +4196,8 @@ type TaxonToTaxonAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4000,8 +4235,8 @@ type Transcript
     isToxic: Boolean
     hasChemicalRole: [ChemicalRole]
     isMetabolite: Boolean
-    inTaxon: [OrganismTaxon]
     hasBiologicalSequence: BiologicalSequence
+    inTaxon: [OrganismTaxon]
   }
 
 type TranscriptToGeneRelationship
@@ -4017,8 +4252,8 @@ type TranscriptToGeneRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4062,8 +4297,8 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4089,8 +4324,8 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4122,8 +4357,8 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4146,8 +4381,8 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4175,8 +4410,8 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4202,8 +4437,8 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: [InformationResource]
-    originalKnowledgeSource: InformationResource
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: sequence_variant
+# metamodel_version: 1.7.0# version: 2.4.7id: sequence_variant
 schema_generating: true
 description: An allele that varies in its sequence from what is considered the reference
   allele at that locus.
@@ -49,6 +49,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: named thing_category
   cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi
 - id: has_gene
   description: Each allele can be associated with any number of genes
   display_name: sequence variant_has gene
@@ -60,8 +65,3 @@ fields:
   description: A unique identifier for an entity. Must be either a CURIE shorthand
     for a URI or a complete URI
   display_name: sequence variant_id
-- id: in_taxon
-  description: connects an entity to its taxonomic classification. Only certain kinds
-    of entities can be taxonomically classified; see 'thing with taxon'
-  display_name: in taxon
-  cardinality: multi

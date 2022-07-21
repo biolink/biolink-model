@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: biological_process_or_activity
+# metamodel_version: 1.7.0# version: 2.4.7id: biological_process_or_activity
 schema_generating: true
 description: Either an individual molecular activity, or a collection of causally
   connected molecular activities in a biological system.
@@ -52,6 +52,11 @@ fields:
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
   display_name: named thing_category
+  cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
   cardinality: multi
 - id: has_input
   description: holds between a process and a continuant, where the continuant is an

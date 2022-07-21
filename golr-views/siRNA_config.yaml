@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: siRNA
+# metamodel_version: 1.7.0# version: 2.4.7id: siRNA
 schema_generating: true
 description: A small RNA molecule that is the product of a longer exogenous or endogenous
   dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via
@@ -78,14 +78,14 @@ fields:
 - id: is_metabolite
   description: indicates whether a molecular entity is a metabolite
   display_name: is metabolite
+- id: has_biological_sequence
+  description: connects a genomic feature to its sequence
+  display_name: has biological sequence
 - id: in_taxon
   description: connects an entity to its taxonomic classification. Only certain kinds
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
-- id: has_biological_sequence
-  description: connects a genomic feature to its sequence
-  display_name: has biological sequence
 - id: synonym
   description: Alternate human-readable names for a thing
   display_name: synonym

@@ -38,7 +38,7 @@ The model itself can be divided into a few parts,
 * Entity Slots (node properties)
 * Edge Slots (edge properties)
 
-<img src="../images/model-onion.png" width="20%">
+<img src="images/model_onion.png" width="50%">
 
 
 ### Entities
@@ -112,3 +112,7 @@ Following are some recommendations when attempting to use Biolink Model with eac
 
 - **Neo4J**: see [Mapping to Neo4j](about/mapping-neo4j)
 - **RDF**: see [Mapping to RDF](about/mapping-rdf)
+
+# Citing Biolink Model
+Unni DR, Moxon SAT, Bada M, Brush M, Bruskiewich R, Caufield JH, Clemons PA, Dancik V, Dumontier M, Fecho K, Glusman G, Hadlock JJ, Harris NL, Joshi A, Putman T, Qin G, Ramsey SA, Shefchek KA, Solbrig H, Soman K, Thessen AE, Haendel MA, Bizon C, Mungall CJ, The Biomedical Data Translator Consortium (2022). 
+Biolink Model: A universal schema for knowledge graphs in clinical, biomedical, and translational science. Clin Transl Sci. Wiley; 2022 Jun 6; [https://onlinelibrary.wiley.com/doi/10.1111/cts.13302](https://onlinelibrary.wiley.com/doi/10.1111/cts.13302)

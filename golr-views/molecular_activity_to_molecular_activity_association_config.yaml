@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.1id: molecular_activity_to_molecular_activity_association
+# metamodel_version: 1.7.0# version: 2.4.7id: molecular_activity_to_molecular_activity_association
 schema_generating: true
 description: Added in response to capturing relationship between microbiome activities
   as measured via measurements of blood analytes as collected via blood and stool
@@ -53,12 +53,7 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-  cardinality: multi
 - id: original_knowledge_source
-  description: The Information Resource that created the original record of the knowledge
-    expressed in an Association (e.g. via curation of the knowledge from the literature,
-    or generation of the knowledge de novo through computation, reasoning, inference
-    over data).
   display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association

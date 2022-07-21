@@ -1,6 +1,7 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-24T00:52:11\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.4.1\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-21T19:32:05\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.4.7\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
+      "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
          "@prefix": true
@@ -411,6 +412,7 @@
          "@id": "http://purl.obolibrary.org/obo/SO_",
          "@prefix": true
       },
+      "SPDI": "https://api.ncbi.nlm.nih.gov/variation/v0/spdi/",
       "STATO": {
          "@id": "http://purl.obolibrary.org/obo/STATO_",
          "@prefix": true
@@ -502,7 +504,7 @@
          "@id": "http://purl.obolibrary.org/obo/ZP_",
          "@prefix": true
       },
-      "alliancegenome": "https://www.alliancegenome.org/",
+      "agrkb": "https://www.alliancegenome.org/",
       "apollo": {
          "@id": "https://github.com/GMOD/Apollo",
          "@prefix": true
@@ -535,6 +537,11 @@
          "@prefix": true
       },
       "mmmp.biomaps": "https://bioregistry.io/mmmp.biomaps:",
+      "ncats.bioplanet": {
+         "@id": "https://tripod.nih.gov/bioplanet/detail.jsp?pid=",
+         "@prefix": true
+      },
+      "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
       "oboformat": "http://www.geneontology.org/formats/oboInOwl#",
       "os": {
@@ -1504,9 +1511,6 @@
          "@type": "@id"
       },
       "opposite_of": {
-         "@type": "@id"
-      },
-      "original_knowledge_source": {
          "@type": "@id"
       },
       "original_predicate": {

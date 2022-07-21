@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3415.5,283"];
+	graph [bb="0,0,3285.5,283"];
 	node [label="\N"];
 	"entity to phenotypic feature association"	[height=0.5,
 		label="entity to phenotypic feature association",
@@ -156,76 +156,76 @@ digraph {
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
-		label="information resource",
-		pos="2211.4,178",
-		width=3.015];
+		label=string,
+		pos="2141.4,178",
+		width=1.0652];
 	"entity to phenotypic feature association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2160.4,221.5",
-		pos="e,2157,193.65 1526.3,252.03 1549.3,250.2 1573,248.45 1595.4,247 1767.7,235.86 1812.2,251.57 1983.4,229 2039.4,221.62 2101.9,207.47 \
-2147.3,196.1",
+		lp="2139.4,221.5",
+		pos="e,2113.4,190.46 1526.3,252.03 1549.3,250.2 1573,248.45 1595.4,247 1767.7,235.86 1813.2,257.81 1983.4,229 2025.6,221.85 2072.2,206.11 \
+2103.7,194.18",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2446.4,178",
+		pos="2306.4,178",
 		width=3.015];
 	"entity to phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2427.4,221.5",
-		pos="e,2400.7,194.37 1524,251.84 1547.8,249.98 1572.3,248.27 1595.4,247 1742.6,238.91 2112.5,250.08 2258.4,229 2303.8,222.44 2354,208.76 \
-2391,197.36",
+		lp="2361.4,221.5",
+		pos="e,2289.4,195.89 1524.3,251.83 1548,249.99 1572.4,248.28 1595.4,247 1666.6,243.05 2169.8,251.96 2237.4,229 2253.7,223.46 2269.5,212.61 \
+2281.8,202.42",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2681.4,178",
+		pos="2541.4,178",
 		width=3.015];
 	"entity to phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2693.9,221.5",
-		pos="e,2643,194.87 1523.2,251.75 1547.2,249.89 1572,248.19 1595.4,247 1698.7,241.72 2424.3,246.06 2526.4,229 2563.3,222.84 2603.4,209.7 \
-2633.6,198.45",
+		lp="2600.9,221.5",
+		pos="e,2521.2,195.72 1523.2,251.78 1547.2,249.91 1572,248.21 1595.4,247 1691.4,242.03 2368.2,256.21 2460.4,229 2479.3,223.41 2498.3,212.14 \
+2513,201.71",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2863.4,178",
+		pos="2733.4,178",
 		width=1.5346];
 	"entity to phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2865.4,221.5",
-		pos="e,2849.3,195.93 1522.6,251.71 1546.8,249.84 1571.9,248.15 1595.4,247 1662.5,243.72 2741.5,252.6 2804.4,229 2818.6,223.66 2831.8,\
-213.27 2842.1,203.34",
+		lp="2759.4,221.5",
+		pos="e,2730.6,196.46 1522.6,251.73 1546.8,249.86 1571.9,248.16 1595.4,247 1626.4,245.47 2685.6,246.15 2711.4,229 2719.3,223.74 2724.4,\
+214.93 2727.7,206.16",
 		style=solid];
 	type	[height=0.5,
-		pos="2967.4,178",
+		pos="2837.4,178",
 		width=0.86659];
 	"entity to phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="2947.4,221.5",
-		pos="e,2953.6,194.48 1522.4,251.71 1546.6,249.83 1571.8,248.14 1595.4,247 1668,243.49 2835.9,253.41 2904.4,229 2920.2,223.36 2935.1,211.99 \
-2946.4,201.51",
+		lp="2832.4,221.5",
+		pos="e,2829.4,195.77 1522.6,251.71 1546.8,249.84 1571.9,248.15 1595.4,247 1628.8,245.37 2768.5,243.89 2798.4,229 2809.1,223.67 2817.8,\
+213.85 2824.2,204.31",
 		style=solid];
 	category	[height=0.5,
-		pos="3068.4,178",
+		pos="2938.4,178",
 		width=1.4263];
 	"entity to phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3039.9,221.5",
-		pos="e,3045.1,194.32 1522.4,251.69 1546.6,249.82 1571.8,248.13 1595.4,247 1671.5,243.35 2893.3,246.85 2967.4,229 2991.9,223.11 3017.2,\
-210.51 3036.4,199.44",
+		lp="2919.9,221.5",
+		pos="e,2918.2,194.79 1522.6,251.7 1546.8,249.83 1571.9,248.14 1595.4,247 1665.2,243.61 2785.1,247.66 2852.4,229 2873,223.28 2893.9,211.36 \
+2909.9,200.6",
 		style=solid];
 	"FDA approval status"	[color=blue,
 		height=0.5,
 		label=FDA_approval_status_enum,
-		pos="3276.4,178",
+		pos="3146.4,178",
 		width=3.8635];
 	"entity to phenotypic feature association" -> "FDA approval status"	[color=blue,
 		label="FDA approval status",
-		lp="3227.9,221.5",
-		pos="e,3226.2,194.93 1522.4,251.68 1546.6,249.8 1571.8,248.12 1595.4,247 1759.7,239.2 2912.3,249.99 3075.4,229 3123.6,222.8 3176.8,209.23 \
-3216.4,197.78",
+		lp="3103.9,221.5",
+		pos="e,3098.8,194.92 1522.4,251.7 1546.6,249.82 1571.8,248.13 1595.4,247 1746.3,239.75 2805.6,249.29 2955.4,229 3001.1,222.81 3051.5,\
+209.33 3089,197.92",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1014.4,134.5",
