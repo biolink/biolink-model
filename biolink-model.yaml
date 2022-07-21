@@ -2249,7 +2249,8 @@ slots:
   increases abundance of:
     deprecated: true
     description: >-
-      holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+      holds between two chemical or gene/gene product entities where the action or effect of one increases the 
+      amount of the other within a system of interest
     is_a: affects abundance of
     in_subset:
       - translator_minimal
@@ -3188,8 +3189,8 @@ slots:
     range: chemical entity
     inverse: decreases mutation rate of
 
-  # original definition of this predicate used molecular entity which was a
   affects response to:
+    deprecated: true
     is_a: affects
     in_subset:
       - translator_minimal
@@ -3215,6 +3216,7 @@ slots:
       canonical_predicate: true
 
   increases response to:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       increases the susceptibility of a biological entity or system (e.g. an
@@ -3235,6 +3237,7 @@ slots:
 
 
   response increased by:
+    deprecated: true
     is_a: response affected by
     in_subset:
       - translator_minimal
@@ -3243,6 +3246,7 @@ slots:
     inverse: increases response to
 
   decreases response to:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       decreases the susceptibility of a biological entity or system (e.g. an
@@ -3265,6 +3269,7 @@ slots:
       - GAMMA:desensitize_the_target
 
   response decreased by:
+    deprecated: true
     is_a: response affected by
     in_subset:
       - translator_minimal
@@ -3381,6 +3386,7 @@ slots:
     inverse: affects stability of
 
   increases stability of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       increases the stability of the other within a system of interest
@@ -5842,6 +5848,7 @@ slots:
       - DGIdb:cofactor
 
   affects expression in:
+    deprecated: true
     is_a: affects
     annotations:
       canonical_predicate: true
