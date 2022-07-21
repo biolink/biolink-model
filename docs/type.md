@@ -155,7 +155,7 @@ None ->  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | rdf:type |
-| **Exact Mappings:** | | alliancegenome:soTermId |
+| **Exact Mappings:** | | agrkb:soTermId |
 |  | | gff3:type |
 |  | | gpi:DB_Object_Type |
 

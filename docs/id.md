@@ -231,7 +231,7 @@ None ->  <sub>1..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | alliancegenome:primaryId |
+| **Exact Mappings:** | | agrkb:primaryId |
 |  | | gff3:ID |
 |  | | gpi:DB_Object_ID |
 

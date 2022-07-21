@@ -47,7 +47,7 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 | **In Subsets:** | | translator_minimal |
 | **Narrow Mappings:** | | skos:altLabel |
 |  | | gff3:Alias |
-|  | | alliancegenome:synonyms |
+|  | | agrkb:synonyms |
 |  | | gpi:DB_Object_Synonyms |
 |  | | oboInOwl:hasExactSynonym |
 |  | | oboInOwl:hasNarrowSynonym |

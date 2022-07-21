@@ -30,6 +30,9 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
  * MGI
  * ZFIN
  * FB
+ * RGD
+ * AGRKB
+ * SPDI
  * WB
  * WormBase
 
