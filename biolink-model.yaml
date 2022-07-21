@@ -8061,7 +8061,9 @@ classes:
     description: >-
       Either one of a disease or an individual phenotypic feature.
       Some knowledge resources such as Monarch treat these as
-      distinct, others such as MESH conflate.
+      distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
+      for their independent descriptions.  This class is helpful to enforce domains and ranges  
+      that may involve either a disease or a phenotypic feature.
     mixins:
       - thing with taxon
     union_of:
@@ -8073,6 +8075,11 @@ classes:
 
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
+    description: >-
+      A disorder of structure or function, especially one that produces specific 
+      signs, phenotypes or symptoms or that affects a specific location and is not simply a 
+      direct result of physical injury.  A disposition to undergo pathological processes that exists in an 
+      organism because of one or more disorders in that organism.
     is_a: disease or phenotypic feature
     exact_mappings:
       - MONDO:0000001
@@ -8125,6 +8132,8 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     description: >-
+      A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an 
+      individual resulting from the interaction of its genotype with its molecular and physical environment.
       A combination of entity and quality that makes up a phenotyping statement.
     examples:
       - value: MP:0001262
