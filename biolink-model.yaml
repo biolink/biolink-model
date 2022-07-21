@@ -1747,13 +1747,37 @@ slots:
     deprecated: true
 
   associated with likelihood of:
-  likelihood associated wiht:
+    is_a: associated with
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is probable. 
+
+  likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with likelihood of
 
   associated with increased likelihood of:
+    is_a: associated with
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is more probable. 
+
+  increased likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with increased likelihood of
 
   associated with decreased likelihood of:
+    is_a: associated with
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is less probable. 
 
-
+  decreased likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with decreased likelihood of
 
   target for:
     is_a: related to at instance level
