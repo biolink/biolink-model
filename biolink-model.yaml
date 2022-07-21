@@ -1061,13 +1061,31 @@ slots:
       - SNOMED:has_route_of_administration
 
   has population context:
+    deprecated: true
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: association slot
     range: population of individual organisms
 
+  population context qualifier:
+    description: >-
+      a biological population (general, study, cohort, etc.) with a specific
+      set of characteristics to constrain an association.
+    is_a: association slot
+    range: population of individual organisms
+
+
   has temporal context:
+    deprecated: true
+    description: >-
+      a constraint of time placed upon the truth value of an association.
+    is_a: association slot
+    # this resolves to the 'time' datatype, but not sure
+    # if this also represents an interval of time.
+    range: time type
+
+  temporal context qualifier:
     description: >-
       a constraint of time placed upon the truth value of an association.
     is_a: association slot
