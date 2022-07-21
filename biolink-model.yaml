@@ -3692,8 +3692,13 @@ slots:
     inverse: decreases uptake of
 
   regulates:
-    comments:
-      - This is a grouping for process-process and entity-entity regulation.
+    is_a: affects
+    description: >-
+      A more specific form of affects, that implies the effect results from a biologically evolved control mechanism.
+      Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships 
+      may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule 
+      created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships 
+      are usually not cases of regulation
     mixin: true
     domain: physical essence or occurrent
     range: physical essence or occurrent
@@ -10859,6 +10864,7 @@ classes:
         range: transcript
 
   gene regulatory relationship:
+    deprecated: true
     is_a: association
     description: >-
       A regulatory relationship between two genes
@@ -10872,6 +10878,29 @@ classes:
       object:
         range: gene or gene product
         role: regulated gene
+
+  gene regulates gene association:
+    is_a: association
+    description: >-
+      A regulatory relationship between two genes
+    slots:
+      - object_direction
+    slot_usage:
+      predicate:
+        description: >-
+          the direction is always from regulator to regulated
+        subproperty_of: regulates
+      subject:
+        range: gene or gene product
+        role: regulatory gene
+      object:
+        range: gene or gene product
+        role: regulated gene
+      object_direction:
+        range: direction_qualifier_enum
+        description: used to record upregulation or downregulation.
+
+
 
   anatomical entity to anatomical entity association: # schema: gocam
     is_a: association
