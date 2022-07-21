@@ -1255,18 +1255,17 @@ slots:
     is_a: association slot
     description: >-
 
-  effect mechanism qualifier:
-    is_a: statement qualifier
-    description: >-
-      A statement qualifier representing a type of molecular control mechanism through which an
-      effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
-      'allosteric modulation', 'channel blocker')
-
   interaction mechanism qualifier:
     is_a: statement qualifier
-    description: >-
-      A statement qualifier representing a type of molecular interaction mechanism through which a
-      physical interaction between chemical entities, genes, or gene products  occurred.
+      description: >-
+
+  affect mechanism qualifier:
+    is_a: statement qualifier
+      description: >-
+        A statement qualifier representing a type of molecular control mechanism through which an
+        effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
+        'allosteric modulation', 'channel blocker')
+    
 
   anatomical context qualifier:
     is_a: statement qualifier
@@ -1279,7 +1278,6 @@ slots:
     description: >-
       A statement qualifier representing a taxonomic category of species in which a relationship
       expressed in an association took place.
-
 
   qualifiers:
     singular_name: qualifier
@@ -6685,7 +6683,7 @@ slots:
   association slot:
     abstract: true
     domain: association
-    aliases: ['edge property','statement property']
+    aliases: ['edge property','statement property','node qualifier','edge qualifier','statement qualifier']
     description: >-
       any slot that relates an association to another entity
 
