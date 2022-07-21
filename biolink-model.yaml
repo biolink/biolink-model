@@ -10886,7 +10886,7 @@ classes:
     description: >-
       A regulatory relationship between two genes
     slots:
-      - object_direction
+      - object direction qualifier
     slot_usage:
       predicate:
         description: >-
@@ -10898,7 +10898,7 @@ classes:
       object:
         range: gene or gene product
         role: regulated gene
-      object_direction:
+      object direction qualifier:
         range: direction_qualifier_enum
         description: used to record upregulation or downregulation.
 
@@ -11060,8 +11060,10 @@ enums:
     permissible_values:
       increases:
       upregulate:
+        is_a: increases
       decreases:
       downregulate:
+        is_a: decreases
 
 
 
