@@ -201,8 +201,6 @@ subsets:
 
 imports:
   - linkml:types
-  - enums
-  - qualifiers
 
 types:
 
@@ -1261,11 +1259,11 @@ slots:
 
   interaction mechanism qualifier:
     is_a: statement qualifier
-      description: >-
+    description: >-
 
-  affect mechanism qualifier:
+  effect mechanism qualifier:
     is_a: statement qualifier
-      description: >-
+    description: >-
         A statement qualifier representing a type of molecular control mechanism through which an
         effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
         'allosteric modulation', 'channel blocker')
