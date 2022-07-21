@@ -1751,7 +1751,7 @@ slots:
   associated with likelihood of:
     is_a: associated with
     description: >-
-      Expresses a relationship between two named things where the relationship is typically generated statistically
+      Expresses a relationship between two named things wh1ere the relationship is typically generated statistically
       and the state or fact of something is probable. 
 
   likelihood associated with:
@@ -1808,7 +1808,6 @@ slots:
 
   has active component:
     inverse: active in
-
 
   acts upstream of:
     is_a: related to at instance level
@@ -9749,6 +9748,38 @@ classes:
         range: pathway
         description: "the pathway that is affected by the chemical"
 
+  named thing associated with likelihood of named thing association:
+    description: >-
+    is_a: association
+    defining_slots:
+      - subject
+      - subject aspect qualifier
+      - subject location qualifier
+      - subject variable state qualifier
+      - predicate
+      - object
+      - object aspect qualifier
+      - object location qualifier
+      - object variable state qualifier
+      - object relative timing qualifier
+      - population context qualifier
+    slot_usage:
+      predicate:
+        subproperty_of: associated with
+      subject aspect qualifier:
+        # TODO: range
+      subject location qualifier:
+        range: ontology class
+      subject variable state qualifier:
+        range: variable_state_qualifier_enum
+      object aspect qualifier:
+        # TODO: range
+      object location qualifier:
+        range: ontology class
+      object variable state qualifier:
+        range: variable_state_qualifier_enum
+
+
   chemical to gene association:
     deprecated: true
     description: >-
@@ -11094,7 +11125,13 @@ enums:
       downregulate:
         is_a: decreases
 
+  relative_timing_qualifier_enum:
+    permissible_values:
+      future:
 
+  variable_state_qualifier_enum:
+    permissible_values:
+      present:
 
   chemical_entity_derivative_enum:
     permissible_values:
