@@ -3692,10 +3692,6 @@ slots:
     inverse: decreases uptake of
 
   regulates:
-    # direct is_a inheritance from a non-mixin class is not allowed
-    # we defer this inheritance to the classes which this mixin in its mixins
-    # is_a: affects
-    aliases: ['regulates activity of', 'regulates expression of']
     comments:
       - This is a grouping for process-process and entity-entity regulation.
     mixin: true
@@ -3722,6 +3718,7 @@ slots:
     inverse: regulates
 
   positively regulates:
+    deprecated: true
     comments:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
@@ -3741,11 +3738,13 @@ slots:
       - RO:0002629
 
   positively regulated by:
+    deprecated: true
     is_a: regulated by
     mixin: true
     inverse: positively regulates
 
   negatively regulates:
+    deprecated: true
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
@@ -3770,11 +3769,13 @@ slots:
       - RO:0002630
   
   negatively regulated by:
+    deprecated: true
     is_a: regulated by
     mixin: true
     inverse: negatively regulates
 
   process regulates process:
+    deprecated: true
     is_a: affects
     mixins:
       - regulates
@@ -3786,12 +3787,14 @@ slots:
       - RO:0002211
 
   process regulated by process:
+    deprecated: true
     is_a: affected by
     domain: occurrent
     range: occurrent
     inverse: process regulates process
 
   process positively regulates process:
+    deprecated: true
     is_a: process regulates process
     mixins:
       - positively regulates
@@ -3802,10 +3805,12 @@ slots:
       - RO:0002213
 
   process positively regulated by process:
+    deprecated: true
     is_a: process regulated by process
     inverse: process positively regulates process
 
   process negatively regulates process:
+    deprecated: true
     is_a: process regulates process
     mixins:
       - negatively regulates
@@ -3816,10 +3821,12 @@ slots:
       - RO:0002212
 
   process negatively regulated by process:
+    deprecated: true
     is_a: process regulated by process
     inverse: process negatively regulates process
 
   entity regulates entity:
+    deprecated: true
     aliases: ['activity directly regulates activity of']
     is_a: affects
     mixins:
@@ -3844,12 +3851,14 @@ slots:
       - WIKIDATA_PROPERTY:P128
 
   entity regulated by entity:
+    deprecated: true
     is_a: affected by
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     inverse: entity regulates entity
 
   entity positively regulates entity:
+    deprecated: true
     aliases: ['activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene']
     is_a: entity regulates entity
     mixins:
@@ -3875,10 +3884,12 @@ slots:
       - SEMMEDDB:augments
 
   entity positively regulated by entity:
+    deprecated: true
     is_a: entity regulated by entity
     inverse: entity positively regulates entity
 
   entity negatively regulates entity:
+    deprecated: true
     aliases: ['activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene']
     is_a: entity regulates entity
     mixins:
@@ -3899,6 +3910,7 @@ slots:
       - SEMMEDDB:inhibits
 
   entity negatively regulated by entity:
+    deprecated: true
     is_a: entity regulated by entity
     inverse: entity negatively regulates entity
 
@@ -11016,7 +11028,17 @@ enums:
   direction_qualifier_enum:
     permissible_values:
       increases:
+        upregulate:
+          description: >-
+            increase the rate or level of (a process such as gene expression, or 
+            sensitivity to a physiologically active substance) by upregulation.
       decreases:
+        downregulate:
+          description: >-
+            lower the rate or level of (a process such as gene expression, or sensitivity 
+            to a physiologically active substance) by downregulation.
+
+
 
   chemical_entity_derivative_enum:
     permissible_values:
