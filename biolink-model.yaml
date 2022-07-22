@@ -1075,7 +1075,6 @@ slots:
     is_a: association slot
     range: population of individual organisms
 
-
   has temporal context:
     deprecated: true
     description: >-
@@ -1092,6 +1091,12 @@ slots:
     # this resolves to the 'time' datatype, but not sure
     # if this also represents an interval of time.
     range: time type
+
+  temporal interval qualifier:
+    is_a: temporal context qualifier
+    description: >- 
+      a constraint of a time interval placed upon the truth value of an
+      association.
 
   is supplement:
     description: >-
