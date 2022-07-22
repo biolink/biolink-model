@@ -1251,14 +1251,6 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-  variable state qualifier:
-    is_a: association slot
-    abstract: true
-    description: >-
-
-  subject variable state qualifier:
-    is_a: variable state qualifier
-
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -1276,9 +1268,6 @@ slots:
 
   subject direction qualifier:
     is_a: direction qualifier
-
-  object variable state qualifier:
-    is_a: variable state qualifier
 
   object aspect qualifier:
     is_a: aspect qualifier
@@ -1298,11 +1287,6 @@ slots:
   object direction qualifier:
     is_a: direction qualifier
     range: direction_qualifier_enum
-
-  object relative timing qualifier:
-    is_a: association slot
-    abstract: true
-    description: >-
 
   qualified predicate:
     is_a: association slot
@@ -9834,13 +9818,10 @@ classes:
       - subject
       - subject aspect qualifier
       - subject context qualifier
-      - subject variable state qualifier
       - predicate
       - object
       - object aspect qualifier
       - object context qualifier
-      - object variable state qualifier
-      - object relative timing qualifier
       - population context qualifier
     slot_usage:
       predicate:
@@ -9849,14 +9830,10 @@ classes:
         # TODO: range
       subject context qualifier:
         range: ontology class
-      subject variable state qualifier:
-        range: variable_state_qualifier_enum
       object aspect qualifier:
         # TODO: range
       object context qualifier:
         range: ontology class
-      object variable state qualifier:
-        range: variable_state_qualifier_enum
 
   chemical to gene association:
     deprecated: true
@@ -11207,14 +11184,6 @@ enums:
       decreased:
       downregulated:
         is_a: decreased
-
-  relative_timing_qualifier_enum:
-    permissible_values:
-      future:
-
-  variable_state_qualifier_enum:
-    permissible_values:
-      present:
 
   chemical_entity_derivative_enum:
     permissible_values:

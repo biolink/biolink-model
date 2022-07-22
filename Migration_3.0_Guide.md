@@ -6,12 +6,16 @@ and object) is qualified in one layer and provenance is added in another.
 
 ![](images/onion.png)
 
-An example of this is is below, modeling the knowledge statement: 
+An example of this is below, modeling the knowledge statement: 
 ```bash
 Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 ```
 
 ![](images/example_onion.png)
+
+## For a guide to migrate existing predicates, please refer to: 
+
+[predicate tranformation table](./images/predicate_transformation.pdf)
 
 ## Deprecated Predicates:
  * affects abundance of
