@@ -27,3 +27,11 @@ URI: [biolink:part_qualifier](https://w3id.org/biolink/vocab/part_qualifier)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='polyA tail', description=None) |
+|  | | Example(value='upstream control region', description=None) |
+

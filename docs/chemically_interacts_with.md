@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: chemically_interacts_with
+# Relation: chemically_interacts_with _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

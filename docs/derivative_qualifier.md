@@ -27,3 +27,10 @@ URI: [biolink:derivative_qualifier](https://w3id.org/biolink/vocab/derivative_qu
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='metabolite', description=None) |
+

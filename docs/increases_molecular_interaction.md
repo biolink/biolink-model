@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: increases_molecular_interaction
+# Relation: increases_molecular_interaction _(deprecated)_
 
 
 indicates that the source increases the molecular interaction between the target and some other chemical entity

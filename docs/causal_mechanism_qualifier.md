@@ -1,16 +1,16 @@
 ---
 parent: Edge Properties
-title: biolink:effect_mechanism_qualifier
+title: biolink:causal_mechanism_qualifier
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: effect_mechanism_qualifier
+# Slot: causal_mechanism_qualifier
 
 
 A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
 
-URI: [biolink:effect_mechanism_qualifier](https://w3id.org/biolink/vocab/effect_mechanism_qualifier)
+URI: [biolink:causal_mechanism_qualifier](https://w3id.org/biolink/vocab/causal_mechanism_qualifier)
 
 ## Domain and Range
 

@@ -522,13 +522,13 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
- * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+ * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).
      * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
      * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
-     * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
+     * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. This is a relationship that holds between two concepts represented by  variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is  associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
      * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
      * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
-     * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+     * [correlated with](correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
          * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
          * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
          * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
@@ -542,10 +542,11 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [sensitivity associated with](sensitivity_associated_with.md)
  * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
  * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
- * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
+ * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. This is a relationship that holds between two concepts represented by  variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is  associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
  * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
  * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
+ * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
@@ -584,7 +585,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
      * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
      * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
- * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+ * [correlated with](correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
      * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
      * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
      * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
@@ -623,6 +624,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [develops into](develops_into.md)
  * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
  * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
+ * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+     * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
  * [disease has location](disease_has_location.md) - A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.
  * [disrupted by](disrupted_by.md) - describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
@@ -770,11 +773,15 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
  * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
  * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+ * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
  * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
      * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
      * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-     * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+     * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
          * [chemically interacts with](chemically_interacts_with.md)
+         * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+             * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
+         * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
          * [molecularly interacts with](molecularly_interacts_with.md)
              * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
              * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -889,8 +896,11 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [is output of](is_output_of.md)
      * [is substrate of](is_substrate_of.md)
  * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
- * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+ * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
      * [chemically interacts with](chemically_interacts_with.md)
+     * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+         * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
+     * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
      * [molecularly interacts with](molecularly_interacts_with.md)
          * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
          * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -1061,13 +1071,13 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
              * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
              * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
-         * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+         * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).
              * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
              * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
-             * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
+             * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. This is a relationship that holds between two concepts represented by  variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is  associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
              * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
              * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
-             * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+             * [correlated with](correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
                  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
                  * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
                  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
@@ -1156,8 +1166,11 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
              * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
              * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-             * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+             * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
                  * [chemically interacts with](chemically_interacts_with.md)
+                 * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+                     * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
+                 * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
                  * [molecularly interacts with](molecularly_interacts_with.md)
                      * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
                      * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -1374,13 +1387,13 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
-     * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+     * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).
          * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
          * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
-         * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
+         * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. This is a relationship that holds between two concepts represented by  variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is  associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
          * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
          * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
-         * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+         * [correlated with](correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
              * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
              * [coexpressed with](coexpressed_with.md) - holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
              * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
@@ -1469,8 +1482,11 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
          * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
          * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-         * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+         * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
              * [chemically interacts with](chemically_interacts_with.md)
+             * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+                 * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
+             * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
              * [molecularly interacts with](molecularly_interacts_with.md)
                  * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
                  * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -1753,13 +1769,13 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
  * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
- * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit into the other S/O qualifier categories.
+ * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
      * [object aspect qualifier](object_aspect_qualifier.md)
      * [subject aspect qualifier](subject_aspect_qualifier.md)
  * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
  * [association slot](association_slot.md) - any slot that relates an association to another entity
      * [FDA approval status](FDA_approval_status.md)
-     * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit into the other S/O qualifier categories.
+     * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
          * [object aspect qualifier](object_aspect_qualifier.md)
          * [subject aspect qualifier](subject_aspect_qualifier.md)
      * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
@@ -1828,7 +1844,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
      * [statement qualifier](statement_qualifier.md)
          * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-         * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+         * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
          * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
          * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
@@ -1851,6 +1867,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
      * [start coordinate](start_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
  * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+ * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
  * [clinical modifier qualifier](clinical_modifier_qualifier.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
@@ -1862,7 +1879,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
      * [object direction qualifier](object_direction_qualifier.md)
      * [subject direction qualifier](subject_direction_qualifier.md)
- * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
  * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
  * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
  * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
@@ -1935,7 +1951,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
  * [statement qualifier](statement_qualifier.md)
      * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+     * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
      * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
  * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
@@ -2001,12 +2017,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [is assessed by](is_assessed_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
- * [object location qualifier](object_location_qualifier.md)
  * [original knowledge source](original_knowledge_source.md)
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [source](source.md)
- * [subject location qualifier](subject_location_qualifier.md)
  * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2070,6 +2084,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ## Enums
 
+ * [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+ * [causal_mechanism_qualifier_enum](causal_mechanism_qualifier_enum.md)
  * [chemical_entity_derivative_enum](chemical_entity_derivative_enum.md)
  * [chemical_or_gene_or_gene_product_form_enum](chemical_or_gene_or_gene_product_form_enum.md)
  * [direction_qualifier_enum](direction_qualifier_enum.md)
@@ -2080,9 +2096,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [gene_or_gene_product_or_chemical_entity_aspect_enum](gene_or_gene_product_or_chemical_entity_aspect_enum.md)
  * [gene_or_gene_product_or_chemical_part_qualifier_enum](gene_or_gene_product_or_chemical_part_qualifier_enum.md)
  * [logical_interpretation_enum](logical_interpretation_enum.md)
- * [molecular_control_mechanism_qualifier_enum](molecular_control_mechanism_qualifier_enum.md)
  * [phase_enum](phase_enum.md) - phase
- * [predicate_qualifier_enum](predicate_qualifier_enum.md) - constrained list of qualifying terms that soften or expand the definition of the predicate used. can be used to constrain or qualify any predicate (any child of related_to).
  * [reaction_direction_enum](reaction_direction_enum.md)
  * [reaction_side_enum](reaction_side_enum.md)
  * [relative_timing_qualifier_enum](relative_timing_qualifier_enum.md)

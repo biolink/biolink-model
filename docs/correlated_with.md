@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
 
 URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 

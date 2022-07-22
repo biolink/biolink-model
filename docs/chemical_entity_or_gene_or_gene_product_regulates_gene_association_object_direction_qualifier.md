@@ -2,7 +2,7 @@
 # Slot: object direction qualifier
 
 
-used to record upregulation or downregulation.
+
 
 URI: [biolink:chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier](https://w3id.org/biolink/vocab/chemical_entity_or_gene_or_gene_product_regulates_gene_association_object_direction_qualifier)
 

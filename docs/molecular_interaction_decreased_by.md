@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: molecular_interaction_decreased_by
+# Relation: molecular_interaction_decreased_by _(deprecated)_
 
 
 

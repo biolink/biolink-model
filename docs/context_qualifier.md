@@ -27,3 +27,12 @@ URI: [biolink:context_qualifier](https://w3id.org/biolink/vocab/context_qualifie
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='cohort x', description=None) |
+|  | | Example(value='blood', description=None) |
+|  | | Example(value='gut microbiome', description=None) |
+

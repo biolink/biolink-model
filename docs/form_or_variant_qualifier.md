@@ -27,3 +27,10 @@ URI: [biolink:form_or_variant_qualifier](https://w3id.org/biolink/vocab/form_or_
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='mutation', description=None) |
+

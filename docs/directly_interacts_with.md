@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: directly_interacts_with
+# Relation: directly_interacts_with _(deprecated)_
 
 
 Holds between chemical entities that physically and directly interact with each other

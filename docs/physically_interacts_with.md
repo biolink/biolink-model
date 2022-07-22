@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two entities that make physical contact as part of some interaction
+holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
 
 URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physically_interacts_with)
 
@@ -26,6 +26,8 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 ## Children
 
  *  [chemically interacts with](chemically_interacts_with.md)
+ *  [directly physically interacts with](directly_physically_interacts_with.md)
+ *  [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
  *  [molecularly interacts with](molecularly_interacts_with.md)
 
 ## Used by

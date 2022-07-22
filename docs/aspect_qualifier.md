@@ -8,7 +8,7 @@ layout: default
 # Slot: aspect_qualifier
 
 
-Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit into the other S/O qualifier categories.
+Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
 
 URI: [biolink:aspect_qualifier](https://w3id.org/biolink/vocab/aspect_qualifier)
 
@@ -26,4 +26,14 @@ URI: [biolink:aspect_qualifier](https://w3id.org/biolink/vocab/aspect_qualifier)
  *  [subject aspect qualifier](subject_aspect_qualifier.md)
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='stability', description=None) |
+|  | | Example(value='abundance', description=None) |
+|  | | Example(value='expression', description=None) |
+|  | | Example(value='exposure', description=None) |
 

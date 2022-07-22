@@ -22,8 +22,8 @@ URI: [biolink:direction_qualifier_enum](https://w3id.org/biolink/vocab/direction
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| increases |  |  |  |
-| upregulate |  |  | {'is_a': 'increases'} |
-| decreases |  |  |  |
-| downregulate |  |  | {'is_a': 'decreases'} |
+| increased |  |  |  |
+| upregulated |  |  | {'is_a': 'increased'} |
+| decreased |  |  |  |
+| downregulated |  |  | {'is_a': 'decreased'} |
 

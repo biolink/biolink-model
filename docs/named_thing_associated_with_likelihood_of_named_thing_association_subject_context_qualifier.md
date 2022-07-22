@@ -1,10 +1,10 @@
 
-# Slot: subject location qualifier
+# Slot: subject context qualifier
 
 
 
 
-URI: [biolink:named_thing_associated_with_likelihood_of_named_thing_association_subject_location_qualifier](https://w3id.org/biolink/vocab/named_thing_associated_with_likelihood_of_named_thing_association_subject_location_qualifier)
+URI: [biolink:named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier](https://w3id.org/biolink/vocab/named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier)
 
 
 ## Domain and Range
@@ -13,7 +13,7 @@ URI: [biolink:named_thing_associated_with_likelihood_of_named_thing_association_
 
 ## Parents
 
- *  is_a: [subject location qualifier](subject_location_qualifier.md)
+ *  is_a: [subject context qualifier](subject_context_qualifier.md)
 
 ## Children
 

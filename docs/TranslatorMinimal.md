@@ -69,7 +69,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
  * [contribution from](contribution_from.md)
- * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+ * [correlated with](correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
  * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
  * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
  * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
@@ -179,7 +179,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
  * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
  * [phenotype of](phenotype_of.md) - holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
- * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction
+ * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
  * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
  * [preceded by](preceded_by.md) - holds between two processes, where the other is completed before the one begins
  * [precedes](precedes.md) - holds between two processes, where one completes before the other begins

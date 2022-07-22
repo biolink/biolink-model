@@ -15,7 +15,7 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalEntity],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalAffectsGeneAssociation%7Csubject_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;subject_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;subject_derivative_qualifier:chemical_entity_derivative_enum%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:direction_qualifier_enum%20%3F;object_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;object_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;object_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;effect_mechanism_qualifier:molecular_control_mechanism_qualifier_enum%20%3F;qualified_predicate:string%20%3F;predicate:predicate_type;object_direction_qualifier:direction_qualifier_enum%20%3F;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Attribute],[Association],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalEntity],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalAffectsGeneAssociation%7Csubject_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;subject_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;subject_derivative_qualifier:chemical_entity_derivative_enum%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:direction_qualifier_enum%20%3F;object_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;object_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;object_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;causal_mechanism_qualifier:causal_mechanism_qualifier_enum%20%3F;qualified_predicate:string%20%3F;predicate:predicate_type;object_direction_qualifier:direction_qualifier_enum%20%3F;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Attribute],[Association],[AnatomicalEntity])
 
 ---
 
@@ -34,8 +34,8 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * Range: [String](types/String.md)
- * [effect mechanism qualifier](effect_mechanism_qualifier.md)  <sub>0..1</sub>
+     * Range: [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+ * [causal mechanism qualifier](causal_mechanism_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
@@ -163,8 +163,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * Range: [String](types/String.md)
- * [effect mechanism qualifier](effect_mechanism_qualifier.md)  <sub>0..1</sub>
+     * Range: [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+ * [causal mechanism qualifier](causal_mechanism_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
