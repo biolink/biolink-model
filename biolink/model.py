@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-22T22:03:31
+# Generation date: 2022-07-22T23:40:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2726,15 +2726,6 @@ class MolecularEntity(ChemicalEntity):
             self.is_metabolite = Bool(self.is_metabolite)
 
         super().__post_init__(**kwargs)
-
-
-class ChemicalSubstance(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalSubstance
-    class_class_curie: ClassVar[str] = "biolink:ChemicalSubstance"
-    class_name: ClassVar[str] = "chemical substance"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.ChemicalSubstance
 
 
 @dataclass
@@ -6407,10 +6398,8 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     predicate: Union[str, PredicateType] = None
     subject_aspect_qualifier: Optional[str] = None
     subject_context_qualifier: Optional[Union[str, OntologyClassId]] = None
-    subject_variable_state_qualifier: Optional[Union[str, "VariableStateQualifierEnum"]] = None
     object_aspect_qualifier: Optional[str] = None
     object_context_qualifier: Optional[Union[str, OntologyClassId]] = None
-    object_variable_state_qualifier: Optional[Union[str, "VariableStateQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -6429,17 +6418,11 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
         if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, OntologyClassId):
             self.subject_context_qualifier = OntologyClassId(self.subject_context_qualifier)
 
-        if self.subject_variable_state_qualifier is not None and not isinstance(self.subject_variable_state_qualifier, VariableStateQualifierEnum):
-            self.subject_variable_state_qualifier = VariableStateQualifierEnum(self.subject_variable_state_qualifier)
-
         if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, str):
             self.object_aspect_qualifier = str(self.object_aspect_qualifier)
 
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, OntologyClassId):
             self.object_context_qualifier = OntologyClassId(self.object_context_qualifier)
-
-        if self.object_variable_state_qualifier is not None and not isinstance(self.object_variable_state_qualifier, VariableStateQualifierEnum):
-            self.object_variable_state_qualifier = VariableStateQualifierEnum(self.object_variable_state_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -9062,22 +9045,6 @@ class DirectionQualifierEnum(EnumDefinitionImpl):
         name="DirectionQualifierEnum",
     )
 
-class RelativeTimingQualifierEnum(EnumDefinitionImpl):
-
-    future = PermissibleValue(text="future")
-
-    _defn = EnumDefinition(
-        name="RelativeTimingQualifierEnum",
-    )
-
-class VariableStateQualifierEnum(EnumDefinitionImpl):
-
-    present = PermissibleValue(text="present")
-
-    _defn = EnumDefinition(
-        name="VariableStateQualifierEnum",
-    )
-
 class ChemicalEntityDerivativeEnum(EnumDefinitionImpl):
 
     metabolite = PermissibleValue(text="metabolite")
@@ -9464,9 +9431,6 @@ slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
 
-slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('source'),
-                   model_uri=BIOLINK.source, domain=None, range=Optional[str])
-
 slots.stoichiometry = Slot(uri=BIOLINK.stoichiometry, name="stoichiometry", curie=BIOLINK.curie('stoichiometry'),
                    model_uri=BIOLINK.stoichiometry, domain=Association, range=Optional[int])
 
@@ -9716,12 +9680,6 @@ slots.context_qualifier = Slot(uri=BIOLINK.context_qualifier, name="context qual
 slots.direction_qualifier = Slot(uri=BIOLINK.direction_qualifier, name="direction qualifier", curie=BIOLINK.curie('direction_qualifier'),
                    model_uri=BIOLINK.direction_qualifier, domain=Association, range=Optional[str])
 
-slots.variable_state_qualifier = Slot(uri=BIOLINK.variable_state_qualifier, name="variable state qualifier", curie=BIOLINK.curie('variable_state_qualifier'),
-                   model_uri=BIOLINK.variable_state_qualifier, domain=Association, range=Optional[str])
-
-slots.subject_variable_state_qualifier = Slot(uri=BIOLINK.subject_variable_state_qualifier, name="subject variable state qualifier", curie=BIOLINK.curie('subject_variable_state_qualifier'),
-                   model_uri=BIOLINK.subject_variable_state_qualifier, domain=Association, range=Optional[str])
-
 slots.subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
                    model_uri=BIOLINK.subject_aspect_qualifier, domain=Association, range=Optional[str])
 
@@ -9739,9 +9697,6 @@ slots.subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, na
 
 slots.subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="subject direction qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
                    model_uri=BIOLINK.subject_direction_qualifier, domain=Association, range=Optional[str])
-
-slots.object_variable_state_qualifier = Slot(uri=BIOLINK.object_variable_state_qualifier, name="object variable state qualifier", curie=BIOLINK.curie('object_variable_state_qualifier'),
-                   model_uri=BIOLINK.object_variable_state_qualifier, domain=Association, range=Optional[str])
 
 slots.object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
                    model_uri=BIOLINK.object_aspect_qualifier, domain=Association, range=Optional[str])
@@ -9761,17 +9716,11 @@ slots.object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name
 slots.object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
                    model_uri=BIOLINK.object_direction_qualifier, domain=Association, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
-slots.object_relative_timing_qualifier = Slot(uri=BIOLINK.object_relative_timing_qualifier, name="object relative timing qualifier", curie=BIOLINK.curie('object_relative_timing_qualifier'),
-                   model_uri=BIOLINK.object_relative_timing_qualifier, domain=Association, range=Optional[str])
-
 slots.qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
                    model_uri=BIOLINK.qualified_predicate, domain=Association, range=Optional[str])
 
 slots.statement_qualifier = Slot(uri=BIOLINK.statement_qualifier, name="statement qualifier", curie=BIOLINK.curie('statement_qualifier'),
                    model_uri=BIOLINK.statement_qualifier, domain=Association, range=Optional[str])
-
-slots.interaction_mechanism_qualifier = Slot(uri=BIOLINK.interaction_mechanism_qualifier, name="interaction mechanism qualifier", curie=BIOLINK.curie('interaction_mechanism_qualifier'),
-                   model_uri=BIOLINK.interaction_mechanism_qualifier, domain=Association, range=Optional[str])
 
 slots.causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
                    model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[str])
@@ -10463,12 +10412,6 @@ slots.treats = Slot(uri=BIOLINK.treats, name="treats", curie=BIOLINK.curie('trea
 slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK.curie('treated_by'),
                    model_uri=BIOLINK.treated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
-slots.approved_to_treat = Slot(uri=BIOLINK.approved_to_treat, name="approved to treat", curie=BIOLINK.curie('approved_to_treat'),
-                   model_uri=BIOLINK.approved_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
-
-slots.approved_for_treatment_by = Slot(uri=BIOLINK.approved_for_treatment_by, name="approved for treatment by", curie=BIOLINK.curie('approved_for_treatment_by'),
-                   model_uri=BIOLINK.approved_for_treatment_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
-
 slots.prevents = Slot(uri=BIOLINK.prevents, name="prevents", curie=BIOLINK.curie('prevents'),
                    model_uri=BIOLINK.prevents, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -10856,6 +10799,9 @@ slots.mechanism_of_action = Slot(uri=BIOLINK.mechanism_of_action, name="mechanis
 slots.knowledge_source = Slot(uri=BIOLINK.knowledge_source, name="knowledge source", curie=BIOLINK.curie('knowledge_source'),
                    model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])
 
+slots.source = Slot(uri=BIOLINK.source, name="source", curie=BIOLINK.curie('source'),
+                   model_uri=BIOLINK.source, domain=None, range=Optional[str])
+
 slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOLINK.curie('provided_by'),
                    model_uri=BIOLINK.provided_by, domain=NamedThing, range=Optional[Union[str, List[str]]])
 
@@ -11193,17 +11139,11 @@ slots.named_thing_associated_with_likelihood_of_named_thing_association_subject_
 slots.named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="named thing associated with likelihood of named thing association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
                    model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_subject_context_qualifier, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Optional[Union[str, OntologyClassId]])
 
-slots.named_thing_associated_with_likelihood_of_named_thing_association_subject_variable_state_qualifier = Slot(uri=BIOLINK.subject_variable_state_qualifier, name="named thing associated with likelihood of named thing association_subject variable state qualifier", curie=BIOLINK.curie('subject_variable_state_qualifier'),
-                   model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_subject_variable_state_qualifier, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Optional[Union[str, "VariableStateQualifierEnum"]])
-
 slots.named_thing_associated_with_likelihood_of_named_thing_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="named thing associated with likelihood of named thing association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
                    model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_object_aspect_qualifier, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Optional[str])
 
 slots.named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="named thing associated with likelihood of named thing association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
                    model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_object_context_qualifier, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Optional[Union[str, OntologyClassId]])
-
-slots.named_thing_associated_with_likelihood_of_named_thing_association_object_variable_state_qualifier = Slot(uri=BIOLINK.object_variable_state_qualifier, name="named thing associated with likelihood of named thing association_object variable state qualifier", curie=BIOLINK.curie('object_variable_state_qualifier'),
-                   model_uri=BIOLINK.named_thing_associated_with_likelihood_of_named_thing_association_object_variable_state_qualifier, domain=NamedThingAssociatedWithLikelihoodOfNamedThingAssociation, range=Optional[Union[str, "VariableStateQualifierEnum"]])
 
 slots.chemical_to_gene_association_object = Slot(uri=RDF.object, name="chemical to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.chemical_to_gene_association_object, domain=ChemicalToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
