@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,8227.8,283"];
+	graph [bb="0,0,8121.8,283"];
 	node [label="\N"];
 	"chemical affects gene association"	[height=0.5,
 		label="chemical affects gene association",
@@ -270,68 +270,68 @@ digraph {
 		pos="e,4948.1,194.49 2631.7,251.64 2652.5,249.75 2674.1,248.08 2694.4,247 2927.3,234.65 4562,257.95 4793.4,229 4843,222.79 4898.1,208.88 \
 4938.4,197.3",
 		style=solid];
-	"effect mechanism qualifier"	[height=0.5,
-		pos="5267.4,178",
-		width=3.7191];
-	"chemical affects gene association" -> "effect mechanism qualifier"	[color=blue,
-		label="effect mechanism qualifier",
-		lp="5225.4,221.5",
-		pos="e,5213.2,194.5 2631.7,251.63 2652.5,249.74 2674.1,248.07 2694.4,247 2955,233.3 4784.1,258.6 5043.4,229 5098.1,222.76 5158.9,208.71 \
-5203.4,197.09",
+	"causal mechanism qualifier"	[height=0.5,
+		pos="5270.4,178",
+		width=3.8094];
+	"chemical affects gene association" -> "causal mechanism qualifier"	[color=blue,
+		label="causal mechanism qualifier",
+		lp="5229.9,221.5",
+		pos="e,5215.4,194.5 2631.7,251.63 2652.5,249.74 2674.1,248.07 2694.4,247 2955,233.3 4784,258.23 5043.4,229 5098.8,222.76 5160.4,208.71 \
+5205.5,197.09",
 		style=solid];
 	"anatomical context qualifier"	[height=0.5,
-		pos="5559.4,178",
+		pos="5566.4,178",
 		width=3.8997];
 	"chemical affects gene association" -> "anatomical context qualifier"	[color=blue,
 		label="anatomical context qualifier",
-		lp="5516.4,221.5",
-		pos="e,5502.5,194.51 2631.7,251.62 2652.5,249.73 2674.1,248.06 2694.4,247 2986.2,231.78 5033.9,260.57 5324.4,229 5381.9,222.75 5446,208.61 \
-5492.8,196.95",
+		lp="5523.4,221.5",
+		pos="e,5509.5,194.51 2631.7,251.62 2652.5,249.73 2674.1,248.06 2694.4,247 2987,231.74 5040.1,260.65 5331.4,229 5388.9,222.75 5453,208.61 \
+5499.8,196.95",
 		style=solid];
 	"qualified predicate"	[height=0.5,
-		pos="5815.4,178",
+		pos="5822.4,178",
 		width=2.7081];
 	"chemical affects gene association" -> "qualified predicate"	[color=blue,
 		label="qualified predicate",
-		lp="5763.4,221.5",
-		pos="e,5769.9,194.04 2631.2,251.65 2652.2,249.74 2673.9,248.06 2694.4,247 2856.7,238.59 5459.2,249.84 5620.4,229 5668.3,222.81 5721.3,\
-208.74 5759.9,197.1",
+		lp="5770.4,221.5",
+		pos="e,5776.9,194.04 2631.2,251.65 2652.2,249.74 2673.9,248.06 2694.4,247 2857.1,238.57 5465.8,249.89 5627.4,229 5675.3,222.81 5728.3,\
+208.74 5766.9,197.1",
 		style=solid];
 	subject	[height=0.5,
-		pos="5975.4,178",
+		pos="5982.4,178",
 		width=1.2277];
 	"chemical affects gene association" -> subject	[color=blue,
 		label=subject,
-		lp="5916.4,221.5",
-		pos="e,5947.5,192.03 2631.2,251.64 2652.2,249.74 2673.9,248.06 2694.4,247 2868.6,238.01 5662.6,259.07 5834.4,229 5870.8,222.63 5910.3,\
-207.91 5938.2,196.07",
+		lp="5923.4,221.5",
+		pos="e,5954.5,192.03 2631.2,251.64 2652.2,249.74 2673.9,248.06 2694.4,247 2869,237.99 5669.2,259.14 5841.4,229 5877.8,222.63 5917.3,207.91 \
+5945.2,196.08",
 		style=solid];
 	predicate	[height=0.5,
-		pos="6092.4,178",
+		pos="6099.4,178",
 		width=1.5165];
 	"chemical affects gene association" -> predicate	[color=blue,
 		label=predicate,
-		lp="6038.4,221.5",
-		pos="e,6061.3,192.97 2631.2,251.64 2652.2,249.73 2673.9,248.05 2694.4,247 2874.8,237.71 5768.3,259.16 5946.4,229 5983.2,222.77 6023.1,\
-208.52 6052,196.82",
+		lp="6045.4,221.5",
+		pos="e,6068.3,192.97 2631.2,251.64 2652.2,249.73 2673.9,248.05 2694.4,247 2875.2,237.69 5774.9,259.23 5953.4,229 5990.2,222.77 6030.1,\
+208.52 6059,196.82",
 		style=solid];
 	object	[height=0.5,
-		pos="6042.4,91",
+		pos="6049.4,91",
 		width=1.0832];
 	"chemical affects gene association" -> object	[color=blue,
 		label=object,
-		lp="6185.4,178",
-		pos="e,6072.3,102.89 2631.2,251.63 2652.2,249.73 2673.9,248.05 2694.4,247 2788.2,242.18 5984.3,247.51 6076.4,229 6114.1,221.42 6135,227.96 \
-6156.4,196 6181.6,158.33 6123.7,125.02 6081.5,106.77",
+		lp="6192.4,178",
+		pos="e,6079.3,102.89 2631.2,251.63 2652.2,249.73 2673.9,248.05 2694.4,247 2788.4,242.17 5991.1,247.54 6083.4,229 6121.1,221.42 6142,227.96 \
+6163.4,196 6188.6,158.33 6130.7,125.02 6088.5,106.77",
 		style=solid];
 	"object direction qualifier"	[height=0.5,
-		pos="6370.4,178",
+		pos="6377.4,178",
 		width=3.4664];
 	"chemical affects gene association" -> "object direction qualifier"	[color=blue,
 		label="object direction qualifier",
-		lp="6352.4,221.5",
-		pos="e,6327.4,195.03 2631.2,251.63 2652.2,249.73 2673.9,248.05 2694.4,247 2888.8,237.03 6004.8,256.78 6197.4,229 6238.7,223.05 6283.9,\
-209.73 6317.7,198.34",
+		lp="6359.4,221.5",
+		pos="e,6334.4,195.03 2631.2,251.63 2652.2,249.73 2673.9,248.05 2694.4,247 2889.1,237.01 6011.4,256.84 6204.4,229 6245.7,223.05 6290.9,\
+209.73 6324.7,198.34",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
@@ -388,49 +388,49 @@ digraph {
 		label="anatomical entity",
 		pos="6512.4,265",
 		width=2.5456];
-	"chemical affects gene association_effect mechanism qualifier"	[color=blue,
+	"chemical affects gene association_causal mechanism qualifier"	[color=blue,
 		height=0.5,
-		label=molecular_control_mechanism_qualifier_enum,
-		pos="6845.4,265",
-		width=6.2106];
+		label=causal_mechanism_qualifier_enum,
+		pos="6792.4,265",
+		width=4.7301];
 	"chemical affects gene association_anatomical context qualifier"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="7178.4,265",
+		pos="7072.4,265",
 		width=2.5456];
 	"chemical affects gene association_qualified predicate"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="7326.4,265",
+		pos="7220.4,265",
 		width=1.0652];
 	subject -> object	[label=relation,
-		lp="6041.4,134.5",
-		pos="e,6029.7,108.05 5988.3,160.61 5998.3,147.95 6012.3,130.24 6023.5,115.98"];
+		lp="6048.4,134.5",
+		pos="e,6036.7,108.05 5995.3,160.61 6005.3,147.95 6019.3,130.24 6030.5,115.98"];
 	relation	[height=0.5,
-		pos="5987.4,18",
+		pos="5994.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,5986.1,36.188 5976.7,159.79 5978.8,132.48 5982.8,78.994 5985.3,46.38",
+	subject -> relation	[pos="e,5993.1,36.188 5983.7,159.79 5985.8,132.48 5989.8,78.994 5992.3,46.38",
 		style=dotted];
 	"chemical affects gene association_subject"	[color=blue,
 		height=0.5,
 		label="chemical entity",
-		pos="7464.4,265",
+		pos="7358.4,265",
 		width=2.2748];
 	"chemical affects gene association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="7642.4,265",
+		pos="7536.4,265",
 		width=2.1665];
-	object -> relation	[pos="e,6000.2,35.54 6029.9,73.889 6023,64.939 6014.2,53.617 6006.4,43.584",
+	object -> relation	[pos="e,6007.2,35.54 6036.9,73.889 6030,64.939 6021.2,53.617 6013.4,43.584",
 		style=dotted];
 	"chemical affects gene association_object"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="7848.4,265",
+		pos="7742.4,265",
 		width=3.0692];
 	"chemical affects gene association_object direction qualifier"	[color=blue,
 		height=0.5,
 		label=direction_qualifier_enum,
-		pos="8102.4,265",
+		pos="7996.4,265",
 		width=3.4844];
 }

@@ -44,7 +44,6 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
  *  [mechanism of action](mechanism_of_action.md)
  *  [negated](negated.md)
  *  [object](object.md)
- *  [object relative timing qualifier](object_relative_timing_qualifier.md)
  *  [onset qualifier](onset_qualifier.md)
  *  [original object](original_object.md)
  *  [original predicate](original_predicate.md)
@@ -72,7 +71,6 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
  *  [supporting data source](supporting_data_source.md)
  *  [supporting study metadata](supporting_study_metadata.md)
  *  [temporal context qualifier](temporal_context_qualifier.md)
- *  [variable state qualifier](variable_state_qualifier.md)
 
 ## Used by
 

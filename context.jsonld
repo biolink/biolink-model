@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-22T16:41:19\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-22T22:02:57\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -680,6 +680,14 @@
       "ameliorates": {
          "@type": "@id"
       },
+      "anatomical_context_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "animal_model_available_from": {
          "@type": "@id"
       },
@@ -726,6 +734,9 @@
       },
       "base_coordinate": {
          "@type": "xsd:integer"
+      },
+      "binds": {
+         "@type": "@id"
       },
       "biomarker_for": {
          "@type": "@id"
@@ -905,6 +916,9 @@
          "@type": "@id"
       },
       "directly_interacts_with": {
+         "@type": "@id"
+      },
+      "directly_physically_interacts_with": {
          "@type": "@id"
       },
       "disease_has_basis_in": {
@@ -1324,6 +1338,9 @@
       "increases_uptake_of": {
          "@type": "@id"
       },
+      "indirectly_phsyically_interacts_with": {
+         "@type": "@id"
+      },
       "ingest_date": {
          "@id": "pav:version"
       },
@@ -1538,9 +1555,6 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          }
-      },
-      "object_location_qualifier": {
-         "@type": "@id"
       },
       "occurs_in": {
          "@type": "@id"
@@ -1814,9 +1828,6 @@
       "subject": {
          "@type": "@id",
          "@id": "rdf:subject"
-      },
-      "subject_location_qualifier": {
-         "@type": "@id"
       },
       "superclass_of": {
          "@type": "@id"

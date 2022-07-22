@@ -2292,8 +2292,8 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/effect_mechanism_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/MolecularControlMechanismQualifierEnum",
+                        "predicate": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -2794,6 +2794,18 @@
                         },
                         "min": 0
                      },
+                     "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
@@ -2840,13 +2852,6 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/object_context_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/interaction_mechanism_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/MolecularControlMechanismQualifierEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -10555,7 +10560,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/subject_location_qualifier",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_context_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
                         "min": 0,
                         "max": 1
@@ -10576,7 +10581,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/object_location_qualifier",
+                        "predicate": "https://w3id.org/biolink/vocab/object_context_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
                         "min": 0,
                         "max": 1

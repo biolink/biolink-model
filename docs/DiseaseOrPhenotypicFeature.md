@@ -37,7 +37,6 @@ URI: [biolink:DiseaseOrPhenotypicFeature](https://w3id.org/biolink/vocab/Disease
 
  *  **[BiologicalEntity](BiologicalEntity.md)** *[ameliorates](ameliorates.md)*  <sub>0..\*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  **[NamedThing](NamedThing.md)** *[animal model available from](animal_model_available_from.md)*  <sub>0..\*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  **[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)** *[approved to treat](approved_to_treat.md)*  <sub>0..\*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[biomarker for](biomarker_for.md)*  <sub>0..\*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  **[Drug](Drug.md)** *[causes adverse event](causes_adverse_event.md)*  <sub>0..\*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  **[CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**

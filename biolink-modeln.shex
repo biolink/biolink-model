@@ -481,7 +481,7 @@ linkml:Nodeidentifier NONLITERAL
           <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
-          <effect_mechanism_qualifier> @<MolecularControlMechanismQualifierEnum> ? ;
+          <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
           <qualified_predicate> @linkml:String ? ;
           <subject> @<ChemicalEntity> ;
@@ -577,6 +577,8 @@ linkml:Nodeidentifier NONLITERAL
 <ChemicalGeneInteractionAssociation> CLOSED {
     (  $<ChemicalGeneInteractionAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
+          &<ChemicalToEntityAssociationMixin_tes> ;
+          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
           <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
           <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <subject_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
@@ -584,7 +586,6 @@ linkml:Nodeidentifier NONLITERAL
           <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
           <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
-          <interaction_mechanism_qualifier> @<MolecularControlMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
           <subject> @<ChemicalEntity> ;
           <object> @<GeneOrGeneProduct> ;
@@ -2076,10 +2077,10 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <Association> ] ? ;
           <predicate> @<PredicateType> ;
           <subject_aspect_qualifier> @linkml:String ? ;
-          <subject_location_qualifier> @<OntologyClass> ? ;
+          <subject_context_qualifier> @<OntologyClass> ? ;
           <subject_variable_state_qualifier> @<VariableStateQualifierEnum> ? ;
           <object_aspect_qualifier> @linkml:String ? ;
-          <object_location_qualifier> @<OntologyClass> ? ;
+          <object_context_qualifier> @<OntologyClass> ? ;
           <object_variable_state_qualifier> @<VariableStateQualifierEnum> ?
        ) ;
        rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]

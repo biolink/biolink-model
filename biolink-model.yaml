@@ -545,9 +545,6 @@ slots:
       - dct:title
       - WIKIDATA_PROPERTY:P1476
 
-  source:
-    deprecated: true
-
   stoichiometry:
     description: >-
       the relationship between the relative quantities of substances taking part in a reaction or
@@ -1254,14 +1251,6 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-  variable state qualifier:
-    is_a: association slot
-    abstract: true
-    description: >-
-
-  subject variable state qualifier:
-    is_a: variable state qualifier
-
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -1279,9 +1268,6 @@ slots:
 
   subject direction qualifier:
     is_a: direction qualifier
-
-  object variable state qualifier:
-    is_a: variable state qualifier
 
   object aspect qualifier:
     is_a: aspect qualifier
@@ -1302,11 +1288,6 @@ slots:
     is_a: direction qualifier
     range: direction_qualifier_enum
 
-  object relative timing qualifier:
-    is_a: association slot
-    abstract: true
-    description: >-
-
   qualified predicate:
     is_a: association slot
     description: >- 
@@ -1316,10 +1297,6 @@ slots:
 
   statement qualifier:
     is_a: association slot
-    description: >-
-
-  interaction mechanism qualifier:
-    is_a: statement qualifier
     description: >-
 
   causal mechanism qualifier:
@@ -2124,7 +2101,6 @@ slots:
 
   indirectly phsyically interacts with:
     is_a: physically interacts with
-
 
   chemically interacts with:
     deprecated: true
@@ -4720,29 +4696,6 @@ slots:
       # subset of the universe of all possible treatments
       - RO:0002302
 
-  approved to treat:
-    deprecated: true
-    description: >-
-      holds between a therapeutic procedure or chemical entity
-      and a disease or phenotypic feature for which it is approved
-      for treatment to some level of clinical trial. Note that in
-      terms of REPODB narrow mappings, terms containing 'suspended',
-      'terminated' or 'withdrawn' should be mapped onto associations
-      using this term for which 'negated: true' is asserted.
-    is_a: treats
-    domain: chemical or drug or treatment
-    annotations:
-      canonical_predicate: true
-
-  approved for treatment by:
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic process
-      or chemical entity that is approved for treatment of the condition
-      (or not, if negated) to some level of clinical trial
-    is_a: treated by
-    range: chemical or drug or treatment
-    inverse: approved to treat
-
   prevents:
     is_a: affects risk for
     description: >-
@@ -6488,6 +6441,9 @@ slots:
     close_mappings:
       - pav:providedBy
 
+  source:
+    deprecated: true
+    
   provided by:
     is_a: node property
     description: >-
@@ -7651,10 +7607,6 @@ classes:
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
       - ncats.drug
-
-  chemical substance:
-    deprecated: >-
-      This class is deprecated in favor of 'small molecule.'
 
   small molecule:
     is_a: molecular entity
@@ -9869,13 +9821,10 @@ classes:
       - subject
       - subject aspect qualifier
       - subject context qualifier
-      - subject variable state qualifier
       - predicate
       - object
       - object aspect qualifier
       - object context qualifier
-      - object variable state qualifier
-      - object relative timing qualifier
       - population context qualifier
     slot_usage:
       predicate:
@@ -9884,14 +9833,10 @@ classes:
         # TODO: range
       subject context qualifier:
         range: ontology class
-      subject variable state qualifier:
-        range: variable_state_qualifier_enum
       object aspect qualifier:
         # TODO: range
       object context qualifier:
         range: ontology class
-      object variable state qualifier:
-        range: variable_state_qualifier_enum
 
   chemical to gene association:
     deprecated: true
@@ -11242,14 +11187,6 @@ enums:
       decreased:
       downregulated:
         is_a: decreased
-
-  relative_timing_qualifier_enum:
-    permissible_values:
-      future:
-
-  variable_state_qualifier_enum:
-    permissible_values:
-      present:
 
   chemical_entity_derivative_enum:
     permissible_values:

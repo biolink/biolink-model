@@ -24,7 +24,6 @@ URI: [biolink:statement_qualifier](https://w3id.org/biolink/vocab/statement_qual
 
  *  [anatomical context qualifier](anatomical_context_qualifier.md)
  *  [causal mechanism qualifier](causal_mechanism_qualifier.md)
- *  [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
  *  [species context qualifier](species_context_qualifier.md)
 
 ## Used by

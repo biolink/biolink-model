@@ -603,7 +603,7 @@ type ChemicalAffectsGeneAssociation
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectContextQualifier: AnatomicalEntity
-    effectMechanismQualifier: MolecularControlMechanismQualifierEnum
+    causalMechanismQualifier: CausalMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalEntity
     qualifiedPredicate: String
     subject: ChemicalEntity!
@@ -711,7 +711,7 @@ type ChemicalExposure implements ExposureEvent
     timepoint: TimeType
   }
 
-type ChemicalGeneInteractionAssociation
+type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
     iri: IriType
@@ -737,7 +737,6 @@ type ChemicalGeneInteractionAssociation
     objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectContextQualifier: AnatomicalEntity
-    interactionMechanismQualifier: MolecularControlMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalEntity
     subject: ChemicalEntity!
     object: GeneOrGeneProduct!
@@ -3157,10 +3156,10 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     category: [CategoryType]
     predicate: PredicateType!
     subjectAspectQualifier: String
-    subjectLocationQualifier: OntologyClass
+    subjectContextQualifier: OntologyClass
     subjectVariableStateQualifier: VariableStateQualifierEnum
     objectAspectQualifier: String
-    objectLocationQualifier: OntologyClass
+    objectContextQualifier: OntologyClass
     objectVariableStateQualifier: VariableStateQualifierEnum
   }
 

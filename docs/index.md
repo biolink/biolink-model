@@ -300,7 +300,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Annotation](Annotation.md) - Biolink Model root class for entity annotations.
      * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
  * [BehavioralOutcome](BehavioralOutcome.md) - An outcome resulting from an exposure event which is the manifestation of human behavior.
- * [ChemicalSubstance](ChemicalSubstance.md)
  * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
  * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
  * [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)
@@ -366,7 +365,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [folding increased by](folding_increased_by.md)
      * [is ameliorated by](is_ameliorated_by.md)
          * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-             * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
      * [is exacerbated by](is_exacerbated_by.md)
      * [localization affected by](localization_affected_by.md)
          * [localization decreased by](localization_decreased_by.md)
@@ -456,7 +454,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
      * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
          * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
-             * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
      * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
      * [entity regulates entity](entity_regulates_entity.md)
          * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
@@ -519,9 +516,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
  * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
      * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
-         * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
- * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
- * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).
      * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
      * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
@@ -790,7 +784,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
  * [is ameliorated by](is_ameliorated_by.md)
      * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-         * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [is diagnosed by](is_diagnosed_by.md)
  * [is exacerbated by](is_exacerbated_by.md)
  * [is excipient of](is_excipient_of.md) - holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
@@ -969,7 +962,6 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [folding increased by](folding_increased_by.md)
              * [is ameliorated by](is_ameliorated_by.md)
                  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-                     * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
              * [is exacerbated by](is_exacerbated_by.md)
              * [localization affected by](localization_affected_by.md)
                  * [localization decreased by](localization_decreased_by.md)
@@ -1059,7 +1051,6 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
              * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
                  * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
-                     * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
              * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
              * [entity regulates entity](entity_regulates_entity.md)
                  * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
@@ -1285,7 +1276,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [folding increased by](folding_increased_by.md)
          * [is ameliorated by](is_ameliorated_by.md)
              * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-                 * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
          * [is exacerbated by](is_exacerbated_by.md)
          * [localization affected by](localization_affected_by.md)
              * [localization decreased by](localization_decreased_by.md)
@@ -1375,7 +1365,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
          * [ameliorates](ameliorates.md) - A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
              * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
-                 * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
          * [disrupts](disrupts.md) - describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
          * [entity regulates entity](entity_regulates_entity.md)
              * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
@@ -1617,9 +1606,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [transport decreased by](transport_decreased_by.md)
  * [transport increased by](transport_increased_by.md)
  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
-     * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
-     * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [uptake affected by](uptake_affected_by.md)
      * [uptake decreased by](uptake_decreased_by.md)
      * [uptake increased by](uptake_increased_by.md)
@@ -1809,7 +1796,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * [object relative timing qualifier](object_relative_timing_qualifier.md)
      * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
@@ -1845,7 +1831,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [statement qualifier](statement_qualifier.md)
          * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
          * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
-         * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
          * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -1859,9 +1844,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
      * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
          * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
-     * [variable state qualifier](variable_state_qualifier.md)
-         * [object variable state qualifier](object_variable_state_qualifier.md)
-         * [subject variable state qualifier](subject_variable_state_qualifier.md)
  * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
  * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
      * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1893,7 +1875,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has population context](has_population_context.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
  * [has temporal context](has_temporal_context.md) - a constraint of time placed upon the truth value of an association.
  * [interacting molecules category](interacting_molecules_category.md)
- * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
  * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1. This is applied to a sequence localization edge.
      * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
      * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
@@ -1910,8 +1891,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [object direction qualifier](object_direction_qualifier.md)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)
  * [object part qualifier](object_part_qualifier.md)
- * [object relative timing qualifier](object_relative_timing_qualifier.md)
- * [object variable state qualifier](object_variable_state_qualifier.md)
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
  * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
@@ -1952,7 +1931,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [statement qualifier](statement_qualifier.md)
      * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
      * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
-     * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
      * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
  * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
  * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
@@ -1963,7 +1941,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [subject direction qualifier](subject_direction_qualifier.md)
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
  * [subject part qualifier](subject_part_qualifier.md)
- * [subject variable state qualifier](subject_variable_state_qualifier.md)
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
  * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
  * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
@@ -1981,9 +1958,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
      * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
- * [variable state qualifier](variable_state_qualifier.md)
-     * [object variable state qualifier](object_variable_state_qualifier.md)
-     * [subject variable state qualifier](subject_variable_state_qualifier.md)
 
 ### Slot Mixins
 
@@ -2099,7 +2073,5 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [phase_enum](phase_enum.md) - phase
  * [reaction_direction_enum](reaction_direction_enum.md)
  * [reaction_side_enum](reaction_side_enum.md)
- * [relative_timing_qualifier_enum](relative_timing_qualifier_enum.md)
  * [sequence_enum](sequence_enum.md) - type of sequence
  * [strand_enum](strand_enum.md) - strand
- * [variable_state_qualifier_enum](variable_state_qualifier_enum.md)

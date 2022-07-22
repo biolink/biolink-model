@@ -15,7 +15,7 @@ URI: [biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](https:/
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[OntologyClass]%3Cobject%20context%20qualifier%200..1-%20[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation%7Cpredicate:predicate_type;subject_aspect_qualifier:string%20%3F;subject_variable_state_qualifier:variable_state_qualifier_enum%20%3F;object_aspect_qualifier:string%20%3F;object_variable_state_qualifier:variable_state_qualifier_enum%20%3F;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OntologyClass]%3Csubject%20context%20qualifier%200..1-%20[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[Association]%5E-[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[InformationResource],[EvidenceType],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[OntologyClass]%3Cobject%20context%20qualifier%200..1-%20[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation%7Cpredicate:predicate_type;subject_aspect_qualifier:string%20%3F;object_aspect_qualifier:string%20%3F;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OntologyClass]%3Csubject%20context%20qualifier%200..1-%20[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[Association]%5E-[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[InformationResource],[EvidenceType],[Attribute],[Association])
 
 ---
 
@@ -36,16 +36,12 @@ URI: [biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](https:/
      * Range: [String](types/String.md)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [object variable state qualifier](object_variable_state_qualifier.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [subject variable state qualifier](subject_variable_state_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
 
 ### Inherited from association:
@@ -140,14 +136,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [String](types/String.md)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [object variable state qualifier](object_variable_state_qualifier.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [subject variable state qualifier](subject_variable_state_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
