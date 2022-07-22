@@ -2076,7 +2076,8 @@ slots:
   physically interacts with:
     is_a: interacts with
     description: >-
-      holds between two entities that make physical contact as part of some interaction
+      holds between two entities that make physical contact as part of some interaction. 
+      does not imply a causal relationship.
     in_subset:
       - translator_minimal
     symmetric: true
@@ -2085,8 +2086,6 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
     close_mappings:
-      # Agents of some interaction but not the relationship of interaction
-      # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
       - CHEMBL.MECHANISM:binding_agent
       - CHEMBL.MECHANISM:chelating_agent
       - CHEMBL.MECHANISM:cross-linking_agent
@@ -2095,11 +2094,27 @@ slots:
       - CHEMBL.MECHANISM:substrate
       - DRUGBANK:target
     narrow_mappings:
-      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:A7
       - PR:non-covalently_bound_to
+
+  directly physically interacts with:
+    is_a: physically interacts with
+    description: >-
+      A causal mechanism mediated by a direct contact between the effector and target entities (this contact may 
+      be weak or strong, transient or stable).
+
+  binds:
+    is_a: directly physically interacts with
+    description: >-
+      A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, 
+      which form a stable physical interaction.
+
+  indirectly phsyically interacts with:
+    is_a: physically interacts with
+
 
   chemically interacts with:
     deprecated: true
@@ -6173,6 +6188,7 @@ slots:
     inverse: has completed
 
   decreases molecular interaction:
+    deprecated: true
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other chemical entity
@@ -6184,12 +6200,13 @@ slots:
     mixins:
       - decreases amount or activity of
 
-
   molecular interaction decreased by:
+    deprecated: true
     is_a: molecularly interacts with
     inverse: decreases molecular interaction
 
   increases molecular interaction:
+    deprecated: true
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other chemical entity
@@ -6202,6 +6219,7 @@ slots:
       - increases amount or activity of
 
   molecular interaction increased by:
+    deprecated: true
     is_a: molecularly interacts with
     inverse: increases molecular interaction
 
@@ -6249,7 +6267,6 @@ slots:
       - PR:lacks_part
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
-
 
   missing from:
     is_a: related to at instance level
@@ -9597,8 +9614,6 @@ classes:
       An interaction at the molecular level between two physical entities
     is_a: pairwise gene to gene interaction
     slots:
-      # need to declare a slot before it is used,
-      # then list it in 'slots', not just a slot_usage
       - interacting molecules category
     defining_slots:
       - subject
@@ -9616,7 +9631,7 @@ classes:
           - IMEX
           - BioGRID
       predicate:
-        subproperty_of: molecularly interacts with
+        subproperty_of: interacts with
         description: "interaction relationship type"
         examples:
           - value: RO:0002447
@@ -9866,14 +9881,11 @@ classes:
       object variable state qualifier:
         range: variable_state_qualifier_enum
 
-
   chemical to gene association:
     deprecated: true
     description: >-
       An interaction between a chemical entity and a gene or gene product.
     is_a: association
-    exact_mappings:
-      - SIO:001257
     defining_slots:
       - subject
       - object
@@ -9891,6 +9903,10 @@ classes:
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
+    exact_mappings:
+      - SIO:001257
+    mixins:
+      - chemical to entity association mixin
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -9899,7 +9915,6 @@ classes:
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
-      - interaction mechanism qualifier
       - anatomical context qualifier
     slot_usage:
       subject:
@@ -9907,7 +9922,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        # TODO make this physically interacts with
+        subproperty_of: physically interacts with
       subject form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
       subject part qualifier:
@@ -9922,8 +9937,6 @@ classes:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object context qualifier:
         range: anatomical entity
-      interaction mechanism qualifier:
-        range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -9960,9 +9973,9 @@ classes:
       subject direction qualifier:
         range: direction_qualifier_enum
       predicate:
-        # TODO make this affects and related to
+        subproperty_of: affects
       qualified predicate:
-        # TODO make this causes
+        subproperty_of: causes
       object:
         range: gene or gene product
       object form or variant qualifier:
@@ -9975,7 +9988,7 @@ classes:
         range: anatomical entity
       object direction qualifier:
         range: direction_qualifier_enum
-      causal mechanism qualifier:
+      mechanism qualifier:
         range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
@@ -11298,70 +11311,25 @@ enums:
 
   causal_mechanism_qualifier_enum:
     permissible_values:
-      physical interaction:
-        description: >-
-          A causal mechanism mediated by a direct or indirect physical contact between
-          the effector and the target entities.
-      direct physical interaction:
-        is_a: physical interaction
-        description: >-
-          An affect mechanism mediated by a direct contact between the effector and target entities 
-          (this contact may be weak or strong, transient or stable)
       binding:
-        is_a: direct physical interaction
-        description: >-
-          An affect mechanism mediated by the direct contact between effector and target entities,
-          which form a stable physical interaction.
-      inactivation:
-        is_a: binding
-      neutralization:
-        is_a: binding
-      inhibition:
-        is_a: binding
-      antagonism:
-        is_a: binding
-      molecular channel blockage:
-        is_a: binding
-      antibody inhibitor:
-        is_a: binding
-      inverse agonism:
-        is_a: binding
-      negative allosteric modulation:
-        is_a: binding
-      agonism:
-        is_a: binding
-        description: >-
-          An affect mechanism mediated through the binding and activation of a receptor by a chemical entity, 
-          which mimics the effect of the endogenous ligand.
-      molecular channel opening:
-        is_a: binding
-      positive allosteric modulation:
-        is_a: binding
-      potentiation:
-        is_a: binding
-      activation:
-        is_a: binding
-      inducer:
-        is_a: binding
+      physical interaction:
+      direct physical interaction:
       indirect physical interaction:
-        description: >-
-          An affect mechanism mediated by an indirect contact between affector and target entities, which are connected 
-          through some bridging entity(ies) but do not directly touch.
-      transcriptional regulation:
-        description: >-
-          An affect mechanism mediated by direct or indirect control of gene transcription.
-      direction transcriptional regulation:
-        description: >-
-          An affect mechanism mediated by direct control of gene transcription (i.e. the effector directly binds the 
-          gene's regulatory region or transcription factors to control its rate of transcription)
-      indirect transcriptional regulation:
-        description: >-
-          An affect mechanism mediated by indirect control of gene transcription (i.e. the effector controls signalling 
-          events upstream of the factors that directly control the object gene's transcription)
-      signaling-mediated control:
-        description: >-
-          An affect mechanism mediated by the activation or control of signaling events that influence the some aspect 
-          of the target entity (e.g. its activity, processing, transport, etc)
+      inactivation:
+      neutralization:
+      inhibition:
+      antagonism:
+      molecular channel blockage:
+      antibody inhibitor:
+      inverse agonism:
+      negative allosteric modulation:
+      agonism:
+      molecular channel opening:
+      positive allosteric modulation:
+      potentiation:
+      activation:
+      inducer:
+
 
   logical_interpretation_enum:
     permissible_values:

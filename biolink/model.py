@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-22T00:04:20
+# Generation date: 2022-07-22T13:47:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6500,7 +6500,6 @@ class ChemicalGeneInteractionAssociation(Association):
     object_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormEnum"]] = None
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    interaction_mechanism_qualifier: Optional[Union[str, "MolecularControlMechanismQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -6545,9 +6544,6 @@ class ChemicalGeneInteractionAssociation(Association):
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
 
-        if self.interaction_mechanism_qualifier is not None and not isinstance(self.interaction_mechanism_qualifier, MolecularControlMechanismQualifierEnum):
-            self.interaction_mechanism_qualifier = MolecularControlMechanismQualifierEnum(self.interaction_mechanism_qualifier)
-
         if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
             self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
 
@@ -6581,10 +6577,11 @@ class ChemicalAffectsGeneAssociation(Association):
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
-    effect_mechanism_qualifier: Optional[Union[str, "MolecularControlMechanismQualifierEnum"]] = None
+    causal_mechanism_qualifier: Optional[str] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     qualified_predicate: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -6637,8 +6634,8 @@ class ChemicalAffectsGeneAssociation(Association):
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
 
-        if self.effect_mechanism_qualifier is not None and not isinstance(self.effect_mechanism_qualifier, MolecularControlMechanismQualifierEnum):
-            self.effect_mechanism_qualifier = MolecularControlMechanismQualifierEnum(self.effect_mechanism_qualifier)
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, str):
+            self.causal_mechanism_qualifier = str(self.causal_mechanism_qualifier)
 
         if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalEntityId):
             self.anatomical_context_qualifier = AnatomicalEntityId(self.anatomical_context_qualifier)
@@ -6648,6 +6645,9 @@ class ChemicalAffectsGeneAssociation(Association):
 
         if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
             self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.mechanism_qualifier is not None and not isinstance(self.mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.mechanism_qualifier = CausalMechanismQualifierEnum(self.mechanism_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -9049,12 +9049,20 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class AnatomicalContextQualifierEnum(EnumDefinitionImpl):
+
+    test = PermissibleValue(text="test")
+
+    _defn = EnumDefinition(
+        name="AnatomicalContextQualifierEnum",
+    )
+
 class DirectionQualifierEnum(EnumDefinitionImpl):
 
-    increases = PermissibleValue(text="increases")
-    upregulate = PermissibleValue(text="upregulate")
-    decreases = PermissibleValue(text="decreases")
-    downregulate = PermissibleValue(text="downregulate")
+    increased = PermissibleValue(text="increased")
+    upregulated = PermissibleValue(text="upregulated")
+    decreased = PermissibleValue(text="decreased")
+    downregulated = PermissibleValue(text="downregulated")
 
     _defn = EnumDefinition(
         name="DirectionQualifierEnum",
@@ -9183,7 +9191,7 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
         setattr(cls, "ADP-ribosylation",
                 PermissibleValue(text="ADP-ribosylation") )
 
-class MolecularControlMechanismQualifierEnum(EnumDefinitionImpl):
+class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
     binding = PermissibleValue(text="binding")
     inactivation = PermissibleValue(text="inactivation")
@@ -9192,13 +9200,21 @@ class MolecularControlMechanismQualifierEnum(EnumDefinitionImpl):
     antagonism = PermissibleValue(text="antagonism")
     agonism = PermissibleValue(text="agonism")
     potentiation = PermissibleValue(text="potentiation")
+    activation = PermissibleValue(text="activation")
+    inducer = PermissibleValue(text="inducer")
 
     _defn = EnumDefinition(
-        name="MolecularControlMechanismQualifierEnum",
+        name="CausalMechanismQualifierEnum",
     )
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "physical interaction",
+                PermissibleValue(text="physical interaction") )
+        setattr(cls, "direct physical interaction",
+                PermissibleValue(text="direct physical interaction") )
+        setattr(cls, "indirect physical interaction",
+                PermissibleValue(text="indirect physical interaction") )
         setattr(cls, "molecular channel blockage",
                 PermissibleValue(text="molecular channel blockage") )
         setattr(cls, "antibody inhibitor",
@@ -9666,6 +9682,9 @@ slots.has_temporal_context = Slot(uri=BIOLINK.has_temporal_context, name="has te
 slots.temporal_context_qualifier = Slot(uri=BIOLINK.temporal_context_qualifier, name="temporal context qualifier", curie=BIOLINK.curie('temporal_context_qualifier'),
                    model_uri=BIOLINK.temporal_context_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
 
+slots.temporal_interval_qualifier = Slot(uri=BIOLINK.temporal_interval_qualifier, name="temporal interval qualifier", curie=BIOLINK.curie('temporal_interval_qualifier'),
+                   model_uri=BIOLINK.temporal_interval_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
+
 slots.is_supplement = Slot(uri=BIOLINK.is_supplement, name="is supplement", curie=BIOLINK.curie('is_supplement'),
                    model_uri=BIOLINK.is_supplement, domain=NamedThing, range=Optional[Union[str, ChemicalMixtureId]])
 
@@ -9771,11 +9790,11 @@ slots.statement_qualifier = Slot(uri=BIOLINK.statement_qualifier, name="statemen
 slots.interaction_mechanism_qualifier = Slot(uri=BIOLINK.interaction_mechanism_qualifier, name="interaction mechanism qualifier", curie=BIOLINK.curie('interaction_mechanism_qualifier'),
                    model_uri=BIOLINK.interaction_mechanism_qualifier, domain=Association, range=Optional[str])
 
-slots.effect_mechanism_qualifier = Slot(uri=BIOLINK.effect_mechanism_qualifier, name="effect mechanism qualifier", curie=BIOLINK.curie('effect_mechanism_qualifier'),
-                   model_uri=BIOLINK.effect_mechanism_qualifier, domain=Association, range=Optional[str])
+slots.causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
+                   model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[str])
 
 slots.anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[Union[str, "AnatomicalContextQualifierEnum"]])
 
 slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
                    model_uri=BIOLINK.species_context_qualifier, domain=Association, range=Optional[str])
@@ -9962,6 +9981,15 @@ slots.interacts_with = Slot(uri=BIOLINK.interacts_with, name="interacts with", c
 
 slots.physically_interacts_with = Slot(uri=BIOLINK.physically_interacts_with, name="physically interacts with", curie=BIOLINK.curie('physically_interacts_with'),
                    model_uri=BIOLINK.physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.directly_physically_interacts_with = Slot(uri=BIOLINK.directly_physically_interacts_with, name="directly physically interacts with", curie=BIOLINK.curie('directly_physically_interacts_with'),
+                   model_uri=BIOLINK.directly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.binds = Slot(uri=BIOLINK.binds, name="binds", curie=BIOLINK.curie('binds'),
+                   model_uri=BIOLINK.binds, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.indirectly_phsyically_interacts_with = Slot(uri=BIOLINK.indirectly_phsyically_interacts_with, name="indirectly phsyically interacts with", curie=BIOLINK.curie('indirectly_phsyically_interacts_with'),
+                   model_uri=BIOLINK.indirectly_phsyically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.chemically_interacts_with = Slot(uri=BIOLINK.chemically_interacts_with, name="chemically interacts with", curie=BIOLINK.curie('chemically_interacts_with'),
                    model_uri=BIOLINK.chemically_interacts_with, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
@@ -10914,11 +10942,35 @@ slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase')
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
 
+slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
+                   model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
+
+slots.supporting_study_method_type = Slot(uri=BIOLINK.supporting_study_method_type, name="supporting study method type", curie=BIOLINK.curie('supporting_study_method_type'),
+                   model_uri=BIOLINK.supporting_study_method_type, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.supporting_study_method_description = Slot(uri=BIOLINK.supporting_study_method_description, name="supporting study method description", curie=BIOLINK.curie('supporting_study_method_description'),
+                   model_uri=BIOLINK.supporting_study_method_description, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.supporting_study_size = Slot(uri=BIOLINK.supporting_study_size, name="supporting study size", curie=BIOLINK.curie('supporting_study_size'),
+                   model_uri=BIOLINK.supporting_study_size, domain=Association, range=Optional[int])
+
+slots.supporting_study_cohort = Slot(uri=BIOLINK.supporting_study_cohort, name="supporting study cohort", curie=BIOLINK.curie('supporting_study_cohort'),
+                   model_uri=BIOLINK.supporting_study_cohort, domain=Association, range=Optional[str])
+
+slots.supporting_study_date_range = Slot(uri=BIOLINK.supporting_study_date_range, name="supporting study date range", curie=BIOLINK.curie('supporting_study_date_range'),
+                   model_uri=BIOLINK.supporting_study_date_range, domain=Association, range=Optional[str])
+
+slots.supporting_study_context = Slot(uri=BIOLINK.supporting_study_context, name="supporting study context", curie=BIOLINK.curie('supporting_study_context'),
+                   model_uri=BIOLINK.supporting_study_context, domain=Association, range=Optional[str])
+
 slots.subject_location_qualifier = Slot(uri=BIOLINK.subject_location_qualifier, name="subject location qualifier", curie=BIOLINK.curie('subject_location_qualifier'),
                    model_uri=BIOLINK.subject_location_qualifier, domain=None, range=Optional[Union[str, OntologyClassId]])
 
 slots.object_location_qualifier = Slot(uri=BIOLINK.object_location_qualifier, name="object location qualifier", curie=BIOLINK.curie('object_location_qualifier'),
                    model_uri=BIOLINK.object_location_qualifier, domain=None, range=Optional[Union[str, OntologyClassId]])
+
+slots.mechanism_qualifier = Slot(uri=BIOLINK.mechanism_qualifier, name="mechanism qualifier", curie=BIOLINK.curie('mechanism_qualifier'),
+                   model_uri=BIOLINK.mechanism_qualifier, domain=None, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
@@ -11212,9 +11264,6 @@ slots.chemical_gene_interaction_association_object_part_qualifier = Slot(uri=BIO
 slots.chemical_gene_interaction_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="chemical gene interaction association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_object_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
-slots.chemical_gene_interaction_association_interaction_mechanism_qualifier = Slot(uri=BIOLINK.interaction_mechanism_qualifier, name="chemical gene interaction association_interaction mechanism qualifier", curie=BIOLINK.curie('interaction_mechanism_qualifier'),
-                   model_uri=BIOLINK.chemical_gene_interaction_association_interaction_mechanism_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, "MolecularControlMechanismQualifierEnum"]])
-
 slots.chemical_gene_interaction_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical gene interaction association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
                    model_uri=BIOLINK.chemical_gene_interaction_association_anatomical_context_qualifier, domain=ChemicalGeneInteractionAssociation, range=Optional[Union[str, AnatomicalEntityId]])
 
@@ -11260,8 +11309,8 @@ slots.chemical_affects_gene_association_object_context_qualifier = Slot(uri=BIOL
 slots.chemical_affects_gene_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical affects gene association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_object_direction_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
-slots.chemical_affects_gene_association_effect_mechanism_qualifier = Slot(uri=BIOLINK.effect_mechanism_qualifier, name="chemical affects gene association_effect mechanism qualifier", curie=BIOLINK.curie('effect_mechanism_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_effect_mechanism_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "MolecularControlMechanismQualifierEnum"]])
+slots.chemical_affects_gene_association_mechanism_qualifier = Slot(uri=BIOLINK.mechanism_qualifier, name="chemical affects gene association_mechanism qualifier", curie=BIOLINK.curie('mechanism_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_gene_association_mechanism_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.chemical_affects_gene_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical affects gene association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_anatomical_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
