@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-22T00:04:20
+# Generation date: 2022-07-22T16:42:04
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9666,6 +9666,9 @@ slots.has_temporal_context = Slot(uri=BIOLINK.has_temporal_context, name="has te
 slots.temporal_context_qualifier = Slot(uri=BIOLINK.temporal_context_qualifier, name="temporal context qualifier", curie=BIOLINK.curie('temporal_context_qualifier'),
                    model_uri=BIOLINK.temporal_context_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
 
+slots.temporal_interval_qualifier = Slot(uri=BIOLINK.temporal_interval_qualifier, name="temporal interval qualifier", curie=BIOLINK.curie('temporal_interval_qualifier'),
+                   model_uri=BIOLINK.temporal_interval_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
+
 slots.is_supplement = Slot(uri=BIOLINK.is_supplement, name="is supplement", curie=BIOLINK.curie('is_supplement'),
                    model_uri=BIOLINK.is_supplement, domain=NamedThing, range=Optional[Union[str, ChemicalMixtureId]])
 
@@ -10913,6 +10916,27 @@ slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase')
 
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
+
+slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
+                   model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])
+
+slots.supporting_study_method_type = Slot(uri=BIOLINK.supporting_study_method_type, name="supporting study method type", curie=BIOLINK.curie('supporting_study_method_type'),
+                   model_uri=BIOLINK.supporting_study_method_type, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.supporting_study_method_description = Slot(uri=BIOLINK.supporting_study_method_description, name="supporting study method description", curie=BIOLINK.curie('supporting_study_method_description'),
+                   model_uri=BIOLINK.supporting_study_method_description, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.supporting_study_size = Slot(uri=BIOLINK.supporting_study_size, name="supporting study size", curie=BIOLINK.curie('supporting_study_size'),
+                   model_uri=BIOLINK.supporting_study_size, domain=Association, range=Optional[int])
+
+slots.supporting_study_cohort = Slot(uri=BIOLINK.supporting_study_cohort, name="supporting study cohort", curie=BIOLINK.curie('supporting_study_cohort'),
+                   model_uri=BIOLINK.supporting_study_cohort, domain=Association, range=Optional[str])
+
+slots.supporting_study_date_range = Slot(uri=BIOLINK.supporting_study_date_range, name="supporting study date range", curie=BIOLINK.curie('supporting_study_date_range'),
+                   model_uri=BIOLINK.supporting_study_date_range, domain=Association, range=Optional[str])
+
+slots.supporting_study_context = Slot(uri=BIOLINK.supporting_study_context, name="supporting study context", curie=BIOLINK.curie('supporting_study_context'),
+                   model_uri=BIOLINK.supporting_study_context, domain=Association, range=Optional[str])
 
 slots.subject_location_qualifier = Slot(uri=BIOLINK.subject_location_qualifier, name="subject location qualifier", curie=BIOLINK.curie('subject_location_qualifier'),
                    model_uri=BIOLINK.subject_location_qualifier, domain=None, range=Optional[Union[str, OntologyClassId]])
