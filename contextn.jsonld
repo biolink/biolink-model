@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-22T00:03:51\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-22T16:41:25\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -1801,6 +1801,15 @@
       "supporting_data_source": {
          "@type": "@id"
       },
+      "supporting_study_method_description": {
+         "@type": "@id"
+      },
+      "supporting_study_method_type": {
+         "@type": "@id"
+      },
+      "supporting_study_size": {
+         "@type": "xsd:integer"
+      },
       "synthesis_affected_by": {
          "@type": "@id"
       },
@@ -1817,6 +1826,9 @@
          "@type": "@id"
       },
       "temporal_context_qualifier": {
+         "@type": "xsd:dateTime"
+      },
+      "temporal_interval_qualifier": {
          "@type": "xsd:dateTime"
       },
       "temporally_related_to": {
