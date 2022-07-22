@@ -35,6 +35,7 @@ URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/Po
 ## Referenced by class
 
  *  **[Association](Association.md)** *[has population context](has_population_context.md)*  <sub>0..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
+ *  **[Association](Association.md)** *[population context qualifier](population_context_qualifier.md)*  <sub>0..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
  *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**

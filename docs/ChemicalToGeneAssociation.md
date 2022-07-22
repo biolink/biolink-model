@@ -5,7 +5,7 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: ChemicalToGeneAssociation
+# Class: ChemicalToGeneAssociation _(deprecated)_
 
 
 An interaction between a chemical entity and a gene or gene product.

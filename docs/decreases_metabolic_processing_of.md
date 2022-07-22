@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: decreases_metabolic_processing_of
+# Relation: decreases_metabolic_processing_of _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

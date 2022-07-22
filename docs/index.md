@@ -59,9 +59,9 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [Pathway](Pathway.md)
                  * [PhysiologicalProcess](PhysiologicalProcess.md)
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
-         * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
-             * [Disease](Disease.md)
-             * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement.
+         * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate. distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
+             * [Disease](Disease.md) - A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
+             * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
                  * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
                  * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
          * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -157,7 +157,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
      * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype.
          * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
+     * [ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md) - Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
      * [ChemicalEntityAssessesNamedThingAssociation](ChemicalEntityAssessesNamedThingAssociation.md)
+     * [ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.md) - A regulatory relationship between two genes
+     * [ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md) - describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
      * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
          * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
          * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)
@@ -204,6 +207,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
      * [MolecularActivityToMolecularActivityAssociation](MolecularActivityToMolecularActivityAssociation.md) - Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
      * [MolecularActivityToPathwayAssociation](MolecularActivityToPathwayAssociation.md) - Association that holds the relationship between a reaction and the pathway it participates in.
+     * [NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](NamedThingAssociatedWithLikelihoodOfNamedThingAssociation.md)
      * [OrganismTaxonToEnvironmentAssociation](OrganismTaxonToEnvironmentAssociation.md)
      * [OrganismTaxonToOrganismTaxonAssociation](OrganismTaxonToOrganismTaxonAssociation.md) - A relationship between two organism taxon nodes
          * [OrganismTaxonToOrganismTaxonInteraction](OrganismTaxonToOrganismTaxonInteraction.md) - An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
@@ -403,7 +407,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
      * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
          * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
-         * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+         * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
      * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
          * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
          * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
@@ -463,7 +467,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [process positively regulates process](process_positively_regulates_process.md)
  * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
      * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
-     * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+     * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
  * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
      * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
      * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
@@ -519,6 +523,9 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [approved for treatment by](approved_for_treatment_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is approved for treatment of the condition (or not, if negated) to some level of clinical trial
  * [approved to treat](approved_to_treat.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature for which it is approved for treatment to some level of clinical trial. Note that in terms of REPODB narrow mappings, terms containing 'suspended', 'terminated' or 'withdrawn' should be mapped onto associations using this term for which 'negated: true' is asserted.
  * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+     * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
+     * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
+     * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
      * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
      * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
      * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -528,8 +535,14 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
          * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
          * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+     * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
+     * [increased likelihood associated with](increased_likelihood_associated_with.md)
+     * [likelihood associated with](likelihood_associated_with.md)
      * [resistance associated with](resistance_associated_with.md)
      * [sensitivity associated with](sensitivity_associated_with.md)
+ * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
+ * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
+ * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
  * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
  * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
  * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
@@ -579,6 +592,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
      * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
  * [decreased amount in](decreased_amount_in.md)
+ * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
  * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
  * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
  * [decreases degradation of](decreases_degradation_of.md) - holds between two chemical entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
@@ -705,7 +719,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has positive upstream or within actor](has_positive_upstream_or_within_actor.md)
  * [has provider](has_provider.md)
  * [has publisher](has_publisher.md)
- * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
  * [has sequence variant](has_sequence_variant.md)
      * [has frameshift variant](has_frameshift_variant.md)
@@ -739,7 +752,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
  * [increased amount of](increased_amount_of.md)
- * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+ * [increased likelihood associated with](increased_likelihood_associated_with.md)
+ * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
  * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
  * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
  * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest
@@ -795,6 +809,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [is substrate of](is_substrate_of.md)
  * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
  * [lacks part](lacks_part.md)
+ * [likelihood associated with](likelihood_associated_with.md)
  * [localization affected by](localization_affected_by.md)
      * [localization decreased by](localization_decreased_by.md)
      * [localization increased by](localization_increased_by.md)
@@ -985,7 +1000,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
              * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
                  * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
-                 * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+                 * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
              * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
                  * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
                  * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
@@ -1047,6 +1062,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
              * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
          * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+             * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
+             * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
+             * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
              * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
              * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
              * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -1056,6 +1074,9 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
                  * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
                  * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+             * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
+             * [increased likelihood associated with](increased_likelihood_associated_with.md)
+             * [likelihood associated with](likelihood_associated_with.md)
              * [resistance associated with](resistance_associated_with.md)
              * [sensitivity associated with](sensitivity_associated_with.md)
          * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -1113,7 +1134,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
              * [has substrate](has_substrate.md)
          * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
-         * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
          * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
          * [has sequence variant](has_sequence_variant.md)
              * [has frameshift variant](has_frameshift_variant.md)
@@ -1293,7 +1313,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
          * [affects abundance of](affects_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the other within a system of interest
              * [decreases abundance of](decreases_abundance_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the amount of the other within a system of interest
-             * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+             * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
          * [affects activity of](affects_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one changes the activity of the other within a system of interest
              * [decreases activity of](decreases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one decreases the activity of the other within a system of interest
              * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
@@ -1355,6 +1375,9 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
      * [associated with](associated_with.md) - Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'.
+         * [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is less probable. 
+         * [associated with increased likelihood of](associated_with_increased_likelihood_of.md) - Expresses a relationship between two named things where the relationship is typically generated statistically and the state or fact of something is more probable. 
+         * [associated with likelihood of](associated_with_likelihood_of.md) - Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. 
          * [associated with resistance to](associated_with_resistance_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of resistance to treatment by the chemical.
          * [associated with sensitivity to](associated_with_sensitivity_to.md) - A relation that holds between a named thing and a chemical that specifies that the change in the named thing is found to be associated with the degree of sensitivity to treatment by the chemical.
          * [correlated with](correlated_with.md) - holds between any two named thing entities. For example, correlated_with holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -1364,6 +1387,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [negatively correlated with](negatively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a negative manner.
              * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
              * [positively correlated with](positively_correlated_with.md) - holds between any two named thing entities "correlated with" one another in a positive manner.
+         * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
+         * [increased likelihood associated with](increased_likelihood_associated_with.md)
+         * [likelihood associated with](likelihood_associated_with.md)
          * [resistance associated with](resistance_associated_with.md)
          * [sensitivity associated with](sensitivity_associated_with.md)
      * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -1421,7 +1447,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
          * [has substrate](has_substrate.md)
      * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
-     * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
      * [has sequence location](has_sequence_location.md) - holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
      * [has sequence variant](has_sequence_variant.md)
          * [has frameshift variant](has_frameshift_variant.md)
@@ -1727,15 +1752,34 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Edge Properties
 
  * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
+ * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+ * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit into the other S/O qualifier categories.
+     * [object aspect qualifier](object_aspect_qualifier.md)
+     * [subject aspect qualifier](subject_aspect_qualifier.md)
  * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
  * [association slot](association_slot.md) - any slot that relates an association to another entity
      * [FDA approval status](FDA_approval_status.md)
+     * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit into the other S/O qualifier categories.
+         * [object aspect qualifier](object_aspect_qualifier.md)
+         * [subject aspect qualifier](subject_aspect_qualifier.md)
      * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
      * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
      * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
      * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
-     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+     * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+         * [object context qualifier](object_context_qualifier.md)
+         * [subject context qualifier](subject_context_qualifier.md)
+     * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
+         * [object derivative qualifier](object_derivative_qualifier.md)
+         * [subject derivative qualifier](subject_derivative_qualifier.md)
+     * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+         * [object direction qualifier](object_direction_qualifier.md)
+         * [subject direction qualifier](subject_direction_qualifier.md)
      * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
+     * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
+         * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+         * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
      * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
      * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
@@ -1749,14 +1793,20 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * [object relative timing qualifier](object_relative_timing_qualifier.md)
      * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+     * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+         * [object part qualifier](object_part_qualifier.md)
+         * [subject part qualifier](subject_part_qualifier.md)
      * [phenotypic state](phenotypic_state.md) - in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
+     * [population context qualifier](population_context_qualifier.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
      * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * [publications](publications.md) - connects an association to publications supporting the association
+     * [qualified predicate](qualified_predicate.md) - predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading
      * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
      * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
      * [reaction balanced](reaction_balanced.md)
@@ -1776,20 +1826,42 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
      * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
+     * [statement qualifier](statement_qualifier.md)
+         * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+         * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+         * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
+         * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
+     * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association.
+     * [variable state qualifier](variable_state_qualifier.md)
+         * [object variable state qualifier](object_variable_state_qualifier.md)
+         * [subject variable state qualifier](subject_variable_state_qualifier.md)
  * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
  * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
      * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
      * [start coordinate](start_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
  * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
- * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+ * [clinical modifier qualifier](clinical_modifier_qualifier.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+ * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+     * [object context qualifier](object_context_qualifier.md)
+     * [subject context qualifier](subject_context_qualifier.md)
+ * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
+     * [object derivative qualifier](object_derivative_qualifier.md)
+     * [subject derivative qualifier](subject_derivative_qualifier.md)
+ * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+     * [object direction qualifier](object_direction_qualifier.md)
+     * [subject direction qualifier](subject_direction_qualifier.md)
+ * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
  * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
  * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
  * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
  * [FDA approval status](FDA_approval_status.md)
+ * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
+     * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+     * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
  * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
  * [genome build](genome_build.md) - The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
  * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
@@ -1797,6 +1869,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has population context](has_population_context.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
  * [has temporal context](has_temporal_context.md) - a constraint of time placed upon the truth value of an association.
  * [interacting molecules category](interacting_molecules_category.md)
+ * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
  * [interbase coordinate](interbase_coordinate.md) - A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1. This is applied to a sequence localization edge.
      * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
      * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
@@ -1807,16 +1880,29 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
  * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+ * [object aspect qualifier](object_aspect_qualifier.md)
+ * [object context qualifier](object_context_qualifier.md)
+ * [object derivative qualifier](object_derivative_qualifier.md)
+ * [object direction qualifier](object_direction_qualifier.md)
+ * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+ * [object part qualifier](object_part_qualifier.md)
+ * [object relative timing qualifier](object_relative_timing_qualifier.md)
+ * [object variable state qualifier](object_variable_state_qualifier.md)
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
  * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+ * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+     * [object part qualifier](object_part_qualifier.md)
+     * [subject part qualifier](subject_part_qualifier.md)
  * [phase](phase.md) - The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
  * [phenotypic state](phenotypic_state.md) - in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
+ * [population context qualifier](population_context_qualifier.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
  * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
  * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
  * [publications](publications.md) - connects an association to publications supporting the association
+ * [qualified predicate](qualified_predicate.md) - predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading
  * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
  * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
  * [reaction balanced](reaction_balanced.md)
@@ -1835,13 +1921,30 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association with the variant
  * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
  * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+ * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
  * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
  * [start coordinate](start_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
  * [start interbase coordinate](start_interbase_coordinate.md) - The position at which the subject nucleic acid entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 0).
+ * [statement qualifier](statement_qualifier.md)
+     * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * [effect mechanism qualifier](effect_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+     * [interaction mechanism qualifier](interaction_mechanism_qualifier.md)
+     * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
  * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
  * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
  * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+ * [subject aspect qualifier](subject_aspect_qualifier.md)
+ * [subject context qualifier](subject_context_qualifier.md)
+ * [subject derivative qualifier](subject_derivative_qualifier.md)
+ * [subject direction qualifier](subject_direction_qualifier.md)
+ * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
+ * [subject part qualifier](subject_part_qualifier.md)
+ * [subject variable state qualifier](subject_variable_state_qualifier.md)
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
+ * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association.
+ * [variable state qualifier](variable_state_qualifier.md)
+     * [object variable state qualifier](object_variable_state_qualifier.md)
+     * [subject variable state qualifier](subject_variable_state_qualifier.md)
 
 ### Slot Mixins
 
@@ -1854,7 +1957,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [positively regulated by](positively_regulated_by.md)
  * [positively regulates](positively_regulates.md)
  * [regulated by](regulated_by.md)
- * [regulates](regulates.md)
+ * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
 
 ### Other Slots
 
@@ -1868,16 +1971,19 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has predisposing factor](has_predisposing_factor.md)
  * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
  * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
+ * [has real world evidence of association with](has_real_world_evidence_of_association_with.md)
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [highest FDA approval status](highest_FDA_approval_status.md) - Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [is assessed by](is_assessed_by.md)
  * [name](name.md) - A human-readable name for an attribute or entity.
+ * [object location qualifier](object_location_qualifier.md)
  * [original knowledge source](original_knowledge_source.md)
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [source](source.md)
+ * [subject location qualifier](subject_location_qualifier.md)
  * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1941,14 +2047,22 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ## Enums
 
+ * [chemical_entity_derivative_enum](chemical_entity_derivative_enum.md)
+ * [chemical_or_gene_or_gene_product_form_enum](chemical_or_gene_or_gene_product_form_enum.md)
+ * [direction_qualifier_enum](direction_qualifier_enum.md)
  * [drug_availability_enum](drug_availability_enum.md)
  * [drug_delivery_enum](drug_delivery_enum.md)
  * [druggable_gene_category_enum](druggable_gene_category_enum.md)
  * [FDA_approval_status_enum](FDA_approval_status_enum.md)
+ * [gene_or_gene_product_or_chemical_entity_aspect_enum](gene_or_gene_product_or_chemical_entity_aspect_enum.md)
+ * [gene_or_gene_product_or_chemical_part_qualifier_enum](gene_or_gene_product_or_chemical_part_qualifier_enum.md)
  * [logical_interpretation_enum](logical_interpretation_enum.md)
+ * [molecular_control_mechanism_qualifier_enum](molecular_control_mechanism_qualifier_enum.md)
  * [phase_enum](phase_enum.md) - phase
  * [predicate_qualifier_enum](predicate_qualifier_enum.md) - constrained list of qualifying terms that soften or expand the definition of the predicate used. can be used to constrain or qualify any predicate (any child of related_to).
  * [reaction_direction_enum](reaction_direction_enum.md)
  * [reaction_side_enum](reaction_side_enum.md)
+ * [relative_timing_qualifier_enum](relative_timing_qualifier_enum.md)
  * [sequence_enum](sequence_enum.md) - type of sequence
  * [strand_enum](strand_enum.md) - strand
+ * [variable_state_qualifier_enum](variable_state_qualifier_enum.md)

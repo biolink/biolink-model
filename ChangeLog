@@ -1,5 +1,13 @@
 CHANGES
 =======
+
+3.0.0
+-----
+deprecated/refactored predicate hierarchy to move semantics from predicates into qualifiers (edge properties)
+added several enumerations for qualifiers, depending on their usage in associations
+added gene->chemical associations with restrictions on subject/predicate/object values (as defined in enumerations)
+restructured annotations syntax to comply with LinkML including a change to canonical predicate and opposite syntax
+
 2.4.7
 -----
 * add pydantic class to the wheel
@@ -27,6 +35,7 @@ CHANGES
 -----
 * fix exposure classes
 * more documenation
+
 
 2.4.1
 -----

@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: entity_regulated_by_entity
+# Relation: entity_regulated_by_entity _(deprecated)_
 
 
 

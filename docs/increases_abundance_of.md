@@ -5,13 +5,13 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: increases_abundance_of
+# Relation: increases_abundance_of _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
 
 URI: [biolink:increases_abundance_of](https://w3id.org/biolink/vocab/increases_abundance_of)
 

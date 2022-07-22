@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: negatively_regulates
+# Relation: negatively_regulates _(deprecated)_
 
 
 
@@ -14,7 +14,7 @@ URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_re
 
 ## Domain and Range
 
-[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>0..1</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
+[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>0..\*</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
 
 ## Parents
 

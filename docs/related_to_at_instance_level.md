@@ -57,7 +57,6 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [has not completed](has_not_completed.md)
  *  [has participant](has_participant.md)
  *  [has phenotype](has_phenotype.md)
- *  [has real world evidence of association with](has_real_world_evidence_of_association_with.md)
  *  [has sequence location](has_sequence_location.md)
  *  [has sequence variant](has_sequence_variant.md)
  *  [has target](has_target.md)

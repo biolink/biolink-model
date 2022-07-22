@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: entity_regulates_entity
+# Relation: entity_regulates_entity _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: affects_molecular_modification_of
+# Relation: affects_molecular_modification_of _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

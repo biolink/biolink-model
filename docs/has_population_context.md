@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_population_context
+# Slot: has_population_context _(deprecated)_
 
 
 a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.

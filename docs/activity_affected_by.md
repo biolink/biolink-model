@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: activity_affected_by
+# Relation: activity_affected_by _(deprecated)_
 
 
 holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest

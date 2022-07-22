@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: abundance_increased_by
+# Relation: abundance_increased_by _(deprecated)_
 
 
 

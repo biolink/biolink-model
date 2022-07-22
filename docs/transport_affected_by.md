@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: transport_affected_by
+# Relation: transport_affected_by _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

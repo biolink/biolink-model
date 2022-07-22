@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_temporal_context
+# Slot: has_temporal_context _(deprecated)_
 
 
 a constraint of time placed upon the truth value of an association.

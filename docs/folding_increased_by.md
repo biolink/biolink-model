@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: folding_increased_by
+# Relation: folding_increased_by _(deprecated)_
 
 
 

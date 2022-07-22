@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: affects_expression_in
+# Relation: affects_expression_in _(deprecated)_
 
 
 Holds between a variant and an anatomical entity where the expression of the variant is located in.

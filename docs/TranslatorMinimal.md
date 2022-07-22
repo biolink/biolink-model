@@ -122,13 +122,12 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
  * [has plasma membrane part](has_plasma_membrane_part.md) - Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part.
  * [has predisposing factor](has_predisposing_factor.md)
- * [has real world evidence of association with](has_real_world_evidence_of_association_with.md) - this means that the assertion was derived by applying statistical and machine learning models to clinical data such as EHR data, survey data, etc
  * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
  * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
  * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex mixin
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
- * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+ * [increases abundance of](increases_abundance_of.md) - holds between two chemical or gene/gene product entities where the action or effect of one increases the  amount of the other within a system of interest
  * [increases activity of](increases_activity_of.md) - holds between two chemical or gene/gene product where the action or effect of one increases the activity of the other within a system of interest
  * [increases degradation of](increases_degradation_of.md) - holds between two chemical entities where the action or effect of one increases the rate of degradation of the other within a system of interest
  * [increases expression of](increases_expression_of.md) - holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one increases the level of expression of the other within a system of interest

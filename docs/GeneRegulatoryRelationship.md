@@ -5,7 +5,7 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneRegulatoryRelationship
+# Class: GeneRegulatoryRelationship _(deprecated)_
 
 
 A regulatory relationship between two genes

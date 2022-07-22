@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: decreases_uptake_of
+# Relation: decreases_uptake_of _(deprecated)_
 
 translator_minimal
 {: .translator_minimal-subset-label }

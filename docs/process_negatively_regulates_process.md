@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: process_negatively_regulates_process
+# Relation: process_negatively_regulates_process _(deprecated)_
 
 
 

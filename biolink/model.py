@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-11T21:48:16
+# Generation date: 2022-07-21T19:32:42
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -32,6 +32,7 @@ version = "2.4.7"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+AGRKB = CurieNamespace('AGRKB', 'https://www.alliancegenome.org/')
 APO = CurieNamespace('APO', 'http://purl.obolibrary.org/obo/APO_')
 ASPGD = CurieNamespace('AspGD', 'http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
@@ -208,6 +209,7 @@ SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
 SNOMED = CurieNamespace('SNOMED', 'http://www.snomedbrowser.com/Codes/Details/')
 SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://www.snomedbrowser.com/Codes/Details/')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
+SPDI = CurieNamespace('SPDI', 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/')
 STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
 STY = CurieNamespace('STY', 'http://purl.bioontology.org/ontology/STY/')
 SUPFAM = CurieNamespace('SUPFAM', 'http://identifiers.org/supfam/')
@@ -246,7 +248,7 @@ ZFA = CurieNamespace('ZFA', 'http://purl.obolibrary.org/obo/ZFA_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZFS = CurieNamespace('ZFS', 'http://purl.obolibrary.org/obo/ZFS_')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
-ALLIANCEGENOME = CurieNamespace('alliancegenome', 'https://www.alliancegenome.org/')
+AGRKB = CurieNamespace('agrkb', 'https://www.alliancegenome.org/')
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOSCHEMAS = CurieNamespace('bioschemas', 'https://bioschemas.org/')

@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: positively_regulated_by
+# Slot: positively_regulated_by _(deprecated)_
 
 
 
