@@ -204,8 +204,6 @@ subject and object qualifiers:
  * part qualifier
  * context qualifier
  * direction qualifier
- * variable state qualifier
- * object relative timing qualifier
  * qualified predicate
 
 ### Association qualifiers:
@@ -219,8 +217,6 @@ subject and object qualifiers:
 
  * anatomical_context_qualifier_enum
  * direction_qualifier_enum
- * relative_timing_qualifier_enum
- * variable_state_qualifier_enum
  * chemical_entity_derivative_enum
  * chemical_or_gene_or_gene_product_form_enum
  * gene_or_gene_product_or_chemical_part_qualifier_enum
