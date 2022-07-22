@@ -7621,10 +7621,6 @@ classes:
       - UMLS
       - ncats.drug
 
-  chemical substance:
-    deprecated: >-
-      This class is deprecated in favor of 'small molecule.'
-
   small molecule:
     is_a: molecular entity
     aliases: [ 'chemical substance']
