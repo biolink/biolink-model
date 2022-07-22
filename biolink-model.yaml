@@ -1075,23 +1075,25 @@ slots:
     is_a: association slot
     range: population of individual organisms
 
-
   has temporal context:
     deprecated: true
     description: >-
       a constraint of time placed upon the truth value of an association.
     is_a: association slot
-    # this resolves to the 'time' datatype, but not sure
-    # if this also represents an interval of time.
     range: time type
 
   temporal context qualifier:
     description: >-
       a constraint of time placed upon the truth value of an association.
+      for time intervales, use temporal interval qualifier.
     is_a: association slot
-    # this resolves to the 'time' datatype, but not sure
-    # if this also represents an interval of time.
     range: time type
+
+  temporal interval qualifier:
+    is_a: temporal context qualifier
+    description: >- 
+      a constraint of a time interval placed upon the truth value of an
+      association.
 
   is supplement:
     description: >-
@@ -6628,6 +6630,54 @@ slots:
     is_a: association slot
     description: >-
     range: FDA_approval_status_enum
+
+  supporting study metadata:
+    is_a: association slot
+    description: >-
+      Information about a study used to generate information used as evidence to support the knowledge expressed in an 
+      Association. In practice, data creators should use one of the more specific subtypes of this property.
+    abstract: true
+
+  supporting study method type:
+    is_a: supporting study metadata
+    description: >- 
+      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of 
+      experimental assay, or statistical calculation, or computational analysis). 
+    range: uriorcurie
+
+  supporting study method description:
+    is_a: supporting study metadata
+    description: >-
+      A uri or curie pointing to information about the methodology used to generate data supporting an Association.
+    range: uriorcurie
+
+  supporting study size:
+    is_a: supporting study metadata
+    description: >- 
+      The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a 
+      clinical study).
+    range: integer
+
+  supporting study cohort:
+    is_a: supporting study metadata
+    description: >-
+      A description of a study population/cohort that was interrogated to provide evidence for the association 
+      (e.g. the inclusion and exclusion criteria).
+    range: string
+
+  supporting study date range:
+    is_a: supporting study metadata
+    description: >- 
+      The date range over which data was collected in a study that provided evidence for an Association.
+    range: string
+
+  supporting study context:
+    is_a: supporting study metadata
+    description: >-
+      A term or terms describing the experimental setting/context in which evidence supporting the Association was 
+      generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue 
+      type, disease, etc.).
+    range: string
 
 classes:
 
