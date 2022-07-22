@@ -18,6 +18,9 @@ Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 [predicate tranformation table](./images/predicate_transformation.pdf)
 
 ## Deprecated Predicates:
+
+Code to list deprecated predicates, classes and associations can be found here: https://tinyurl.com/ycyd3xae
+
  * affects abundance of
  * abundance affected by
  * increases abundance of
