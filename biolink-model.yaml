@@ -1195,6 +1195,11 @@ slots:
       alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
       For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
       ‘a mutation of Gene X’.
+    examples:
+      - value: mutation
+    notes: >-
+      please see the chemical_or_gene_or_gene_product_form_enum (below) for examples of 'form or variant qualifier'
+      terms in the gene->chemical association space. 
 
   aspect qualifier:
     is_a: association slot
@@ -1212,7 +1217,7 @@ slots:
       for good examples of aspects in the gene-> chemical space, please see the 
       gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify 
       the gene making the full subject a different ontological type.  
-    
+
   derivative qualifier:
     is_a: association slot
     abstract: true
