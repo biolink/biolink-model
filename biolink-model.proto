@@ -1,5 +1,5 @@
 // metamodel_version: 1.7.0
-// version: 2.4.7
+// version: 3.0.0
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -492,6 +492,44 @@ message CellularComponent
   repeated inTaxon OrganismTaxon = 10
   repeated hasAttribute Attribute = 11
  }
+// Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
+message ChemicalAffectsGeneAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  optional negated Boolean = 7
+  repeated qualifiers OntologyClass = 8
+  repeated publications Publication = 9
+  repeated hasEvidence EvidenceType = 10
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
+  optional primaryKnowledgeSource InformationResource = 13
+  repeated aggregatorKnowledgeSource InformationResource = 14
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional subjectFormOrVariantQualifier ChemicalOrGeneOrGeneProductFormEnum = 18
+  optional subjectPartQualifier GeneOrGeneProductOrChemicalPartQualifierEnum = 19
+  optional subjectDerivativeQualifier ChemicalEntityDerivativeEnum = 20
+  optional subjectAspectQualifier String = 21
+  optional subjectContextQualifier AnatomicalEntity = 22
+  optional subjectDirectionQualifier DirectionQualifierEnum = 23
+  optional objectFormOrVariantQualifier ChemicalOrGeneOrGeneProductFormEnum = 24
+  optional objectPartQualifier GeneOrGeneProductOrChemicalPartQualifierEnum = 25
+  optional objectAspectQualifier GeneOrGeneProductOrChemicalEntityAspectEnum = 26
+  optional objectContextQualifier AnatomicalEntity = 27
+  optional effectMechanismQualifier MolecularControlMechanismQualifierEnum = 28
+  optional anatomicalContextQualifier AnatomicalEntity = 29
+  optional qualifiedPredicate String = 30
+  subject ChemicalEntity = 31
+  predicate PredicateType = 32
+  object GeneOrGeneProduct = 33
+  optional objectDirectionQualifier DirectionQualifierEnum = 34
+ }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity
  {
@@ -534,6 +572,31 @@ message ChemicalEntityAssessesNamedThingAssociation
   object NamedThing = 19
   predicate PredicateType = 20
  }
+// A regulatory relationship between two genes
+message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  optional negated Boolean = 7
+  repeated qualifiers OntologyClass = 8
+  repeated publications Publication = 9
+  repeated hasEvidence EvidenceType = 10
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
+  optional primaryKnowledgeSource InformationResource = 13
+  repeated aggregatorKnowledgeSource InformationResource = 14
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional objectDirectionQualifier DirectionQualifierEnum = 18
+  predicate PredicateType = 19
+  subject ChemicalEntityOrGeneOrGeneProduct = 20
+  object GeneOrGeneProduct = 21
+ }
 // A chemical exposure is an intake of a particular chemical entity.
 message ChemicalExposure
  {
@@ -551,6 +614,39 @@ message ChemicalExposure
   optional source String = 12
   repeated hasQuantitativeValue QuantityValue = 13
   optional timepoint TimeType = 14
+ }
+// describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+message ChemicalGeneInteractionAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  optional negated Boolean = 7
+  repeated qualifiers OntologyClass = 8
+  repeated publications Publication = 9
+  repeated hasEvidence EvidenceType = 10
+  optional knowledgeSource InformationResource = 11
+  optional originalKnowledgeSource String = 12
+  optional primaryKnowledgeSource InformationResource = 13
+  repeated aggregatorKnowledgeSource InformationResource = 14
+  optional timepoint TimeType = 15
+  optional type String = 16
+  repeated category CategoryType = 17
+  optional subjectFormOrVariantQualifier ChemicalOrGeneOrGeneProductFormEnum = 18
+  optional subjectPartQualifier GeneOrGeneProductOrChemicalPartQualifierEnum = 19
+  optional subjectDerivativeQualifier ChemicalEntityDerivativeEnum = 20
+  optional subjectContextQualifier AnatomicalEntity = 21
+  optional objectFormOrVariantQualifier ChemicalOrGeneOrGeneProductFormEnum = 22
+  optional objectPartQualifier GeneOrGeneProductOrChemicalPartQualifierEnum = 23
+  optional objectContextQualifier AnatomicalEntity = 24
+  optional interactionMechanismQualifier MolecularControlMechanismQualifierEnum = 25
+  optional anatomicalContextQualifier AnatomicalEntity = 26
+  subject ChemicalEntity = 27
+  object GeneOrGeneProduct = 28
+  predicate PredicateType = 29
  }
 // A chemical mixture is a chemical entity composed of two or more molecular entities.
 message ChemicalMixture
@@ -1052,6 +1148,7 @@ message Device
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
  }
+// A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
 message Disease
  {
   id String = 1
@@ -1066,7 +1163,7 @@ message Disease
   repeated category CategoryType = 10
   repeated inTaxon OrganismTaxon = 11
  }
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate. distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
  {
   id String = 1
@@ -2679,6 +2776,35 @@ message NamedThing
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
  }
+message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
+ {
+  id String = 1
+  optional iri IriType = 2
+  optional name LabelType = 3
+  optional description NarrativeText = 4
+  optional source String = 5
+  repeated hasAttribute Attribute = 6
+  subject NamedThing = 7
+  object NamedThing = 8
+  optional negated Boolean = 9
+  repeated qualifiers OntologyClass = 10
+  repeated publications Publication = 11
+  repeated hasEvidence EvidenceType = 12
+  optional knowledgeSource InformationResource = 13
+  optional originalKnowledgeSource String = 14
+  optional primaryKnowledgeSource InformationResource = 15
+  repeated aggregatorKnowledgeSource InformationResource = 16
+  optional timepoint TimeType = 17
+  optional type String = 18
+  repeated category CategoryType = 19
+  predicate PredicateType = 20
+  optional subjectAspectQualifier String = 21
+  optional subjectLocationQualifier OntologyClass = 22
+  optional subjectVariableStateQualifier VariableStateQualifierEnum = 23
+  optional objectAspectQualifier String = 24
+  optional objectLocationQualifier OntologyClass = 25
+  optional objectVariableStateQualifier VariableStateQualifierEnum = 26
+ }
 message NoncodingRNAProduct
  {
   id String = 1
@@ -3052,7 +3178,7 @@ message Phenomenon
   repeated xref Uriorcurie = 9
   repeated category CategoryType = 10
  }
-// A combination of entity and quality that makes up a phenotyping statement.
+// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
 message PhenotypicFeature
  {
   id String = 1

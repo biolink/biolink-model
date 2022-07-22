@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-21T19:31:59\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.4.7\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-22T00:03:46\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -695,6 +695,15 @@
       "associated_with": {
          "@type": "@id"
       },
+      "associated_with_decreased_likelihood_of": {
+         "@type": "@id"
+      },
+      "associated_with_increased_likelihood_of": {
+         "@type": "@id"
+      },
+      "associated_with_likelihood_of": {
+         "@type": "@id"
+      },
       "associated_with_resistance_to": {
          "@type": "@id"
       },
@@ -809,6 +818,9 @@
          "@id": "dcat:downloadURL"
       },
       "decreased_amount_in": {
+         "@type": "@id"
+      },
+      "decreased_likelihood_associated_with": {
          "@type": "@id"
       },
       "decreases_abundance_of": {
@@ -1186,9 +1198,6 @@
       "has_quotient": {
          "@type": "xsd:double"
       },
-      "has_real_world_evidence_of_association_with": {
-         "@type": "@id"
-      },
       "has_receptor": {
          "@type": "@id"
       },
@@ -1256,6 +1265,9 @@
          "@type": "@id"
       },
       "increased_amount_of": {
+         "@type": "@id"
+      },
+      "increased_likelihood_associated_with": {
          "@type": "@id"
       },
       "increases_abundance_of": {
@@ -1402,6 +1414,9 @@
       "latitude": {
          "@type": "xsd:float"
       },
+      "likelihood_associated_with": {
+         "@type": "@id"
+      },
       "localization_affected_by": {
          "@type": "@id"
       },
@@ -1516,6 +1531,17 @@
          "@type": "@id",
          "@id": "rdf:object"
       },
+      "object_direction_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "object_location_qualifier": {
+         "@type": "@id"
+      },
       "occurs_in": {
          "@type": "@id"
       },
@@ -1570,6 +1596,9 @@
          "@type": "@id"
       },
       "plasma_membrane_part_of": {
+         "@type": "@id"
+      },
+      "population_context_qualifier": {
          "@type": "@id"
       },
       "positively_correlated_with": {
@@ -1786,6 +1815,9 @@
          "@type": "@id",
          "@id": "rdf:subject"
       },
+      "subject_location_qualifier": {
+         "@type": "@id"
+      },
       "superclass_of": {
          "@type": "@id"
       },
@@ -1809,6 +1841,9 @@
       },
       "taxon_of": {
          "@type": "@id"
+      },
+      "temporal_context_qualifier": {
+         "@type": "xsd:dateTime"
       },
       "temporally_related_to": {
          "@type": "@id"
