@@ -11219,7 +11219,7 @@ enums:
     reachable_from:
       source_ontology: bioregistry:uberon
       source_nodes:
-        - UBERON:0001062 
+        - UBERON:0001062
       is_direct: false
       relationship_types:
         - rdfs:subClassOf
@@ -11472,18 +11472,6 @@ enums:
         description: nucleic acid
       "AA":
         description: amino acid
-
-  predicate_qualifier_enum:
-    description: >-
-      constrained list of qualifying terms that soften or expand the definition of the predicate used.
-      can be used to constrain or qualify any predicate (any child of related_to).
-    permissible_values:
-      "predicted":
-      "possibly":
-      "hypothesized":
-      "validated":
-      "supported by real-world evidence":
-      "supported by clinical evidence":
 
   druggable_gene_category_enum:
     permissible_values:
