@@ -5,7 +5,8 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 2.4.7
+version: 3.0.0
+
 
 
 ## ------------
@@ -178,197 +179,6 @@ emit_prefixes:
 ## ------------
 ## SUBSETS
 ## ------------
-enums:
-  logical_interpretation_enum:
-    permissible_values:
-      SomeSome:
-        description: >-
-          A modifier on a triple that causes the triple to be interpreted as a some-some statement
-        meaning: os:SomeSomeInterpretation
-      AllSome:
-        description: >-
-          A modifier on a triple that causes the triple to be interpreted as an all-some statement.
-        meaning: os:AllSomeInterpretation
-      InverseAllSome:
-
-  reaction_direction_enum:
-    permissible_values:
-      left_to_right:
-      right_to_left:
-      bidirectional:
-      neutral:
-
-  reaction_side_enum:
-    permissible_values:
-      left:
-      right:
-
-  phase_enum:
-    description: phase
-    permissible_values:
-      0:
-      1:
-      2:
-
-  strand_enum:
-    description: strand
-    permissible_values:
-      "+":
-        description: Positive
-      "-":
-        description: Negative
-      ".":
-        description: Unstranded
-      "?":
-        description: Unknown
-
-  sequence_enum:
-    description: type of sequence
-    permissible_values:
-      "NA":
-        description: nucleic acid
-      "AA":
-        description: amino acid
-
-  predicate_qualifier_enum:
-    description: >-
-      constrained list of qualifying terms that soften or expand the definition of the predicate used.
-      can be used to constrain or qualify any predicate (any child of related_to).
-    permissible_values:
-      "predicted":
-      "possibly":
-      "hypothesized":
-      "validated":
-      "supported by real-world evidence":
-      "supported by clinical evidence":
-
-  druggable_gene_category_enum:
-    permissible_values:
-      "Tclin":
-        description: >-
-          These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
-      "Tbio":
-        description: >-
-          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
-          the activity thresholds detailed below.
-      "Tchem":
-        description: >-
-          These targets do not have known drug or small molecule activities that satisfy the activity
-          thresholds detailed below AND satisfy one or more of the following criteria:
-          target is above the cutoff criteria for Tdark
-          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
-          with an Experimental Evidence code
-      "Tdark":
-        description: >-
-          These are targets about which virtually nothing is known. They do not have known drug or small
-          molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
-          more of the following criteria:
-          A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
-          less than or equal to 50 Antibodies available according to http://antibodypedia.com.
-
-  drug_availability_enum:
-    description: >-
-    permissible_values:
-      "over the counter":
-        description: >-
-          chemical entity is available over the counter without a prescription.
-      "prescription":
-        description:
-          chemical entity is available by prescription.
-
-  drug_delivery_enum:
-    permissible_values:
-      "inhalation":
-      "oral":
-      "absorbtion through the skin":
-      "intravenous injection":
-
-  FDA_approval_status_enum:
-    description: >-
-    permissible_values:
-      "Discovery & Development Phase":
-        description: >-
-          Discovery & Development Phase. Discovery involves researchers finding new possibilities
-          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
-          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
-          Drug development occurs after researchers identify potential compounds for experiments.
-      "Preclinical Research Phase":
-        description: >-
-          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
-          they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA Clinical Research Phase":
-        description: >-
-          Clinical Research Phase. Clinical research involves trials of the drug on people,
-          and it is one of the most involved stages in the drug development and approval process.
-          Clinical trials must answer specific questions and follow a protocol determined by
-          the drug researcher or manufacturer.
-      "FDA Review Phase 4":
-        description: >-
-          FDA Review
-      "FDA Post-Market Safety Monitoring":
-        description: >-
-          FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
-          while the drug is on the marketplace. If a developer wants to change anything about the
-          drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
-          frequently reviews the drug’s advertising and its manufacturing facility to make sure
-          everything involved in its creation and marketing is in compliance with regulations.
-      "FDA Clinical Research Phase 1":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
-          lasts several months. This phase is used to determine the safety and dosage of the drug,
-          and about 70% of these drugs move on to the next clinical research phase.
-      "FDA Clinical Research Phase 2":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
-          who must have the disease or condition the drug supposes to treat. This phase can last
-          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
-          as well as note side effects that may occur.
-      "FDA Clinical Research Phase 3":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
-          and can last up to four years. It is used to continue monitoring the efficacy of
-          the drug, as well as exploring any longer-term adverse reactions.
-      "FDA Clinical Research Phase 4":
-        description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
-          volunteers who have the disease or condition and continues to monitor safety and efficacy.
-          If a drug passes this phase, it goes on to FDA review.
-      "FDA Fast Track":
-        description: >-
-          Fast track is a process designed to facilitate the development, and expedite the
-          review of drugs to treat serious conditions and fill an unmet medical need.
-          The purpose is to get important new drugs to the patient earlier. Fast Track
-          addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "FDA Breakthrough Therapy":
-        description: >-
-          Breakthrough Therapy designation is a process designed to expedite the
-          development and review of drugs that are intended to treat a serious
-          condition and preliminary clinical evidence indicates that the drug may
-          demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "FDA Accelerated Approval":
-        description: >-
-          When studying a new drug, it can sometimes take many years to learn whether a drug actually
-          provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
-          effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”.
-          Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical
-          benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs
-          for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
-          Using a surrogate endpoint enabled the FDA to approve these drugs faster.
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "FDA Priority Review":
-        description: >-
-          Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
-          In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
-          the drug review time and created a two-tiered system of review times – Standard Review and Priority
-          Review. A Priority Review designation means FDA’s goal is to take action on an application
-          within 6 months (compared to 10 months under standard review).
-          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "Regular FDA Approval":
-      "Post-Approval Withdrawal":
-
-
 
 subsets:
 
@@ -1251,13 +1061,31 @@ slots:
       - SNOMED:has_route_of_administration
 
   has population context:
+    deprecated: true
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
     is_a: association slot
     range: population of individual organisms
 
+  population context qualifier:
+    description: >-
+      a biological population (general, study, cohort, etc.) with a specific
+      set of characteristics to constrain an association.
+    is_a: association slot
+    range: population of individual organisms
+
+
   has temporal context:
+    deprecated: true
+    description: >-
+      a constraint of time placed upon the truth value of an association.
+    is_a: association slot
+    # this resolves to the 'time' datatype, but not sure
+    # if this also represents an interval of time.
+    range: time type
+
+  temporal context qualifier:
     description: >-
       a constraint of time placed upon the truth value of an association.
     is_a: association slot
@@ -1353,6 +1181,225 @@ slots:
     multivalued: true
     range: drug_delivery_enum
 
+## -------------------
+## QUALIFIERS
+## -------------------
+
+  form or variant qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object concept to define a specific type, variant,
+      alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
+      For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
+      ‘a mutation of Gene X’.
+
+  aspect qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
+      the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
+      inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit
+      into the other S/O qualifier categories.
+
+  derivative qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      A qualifier that composes with a core subject/object  concept to describe something that is derived from the
+      core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
+      the composed concept ‘a metabolite of Chemical X’.
+
+  part qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
+      use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+
+  context qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+
+  direction qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+      Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+
+  variable state qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+
+  subject variable state qualifier:
+    is_a: variable state qualifier
+
+  subject aspect qualifier:
+    is_a: aspect qualifier
+
+  subject form or variant qualifier:
+    is_a: form or variant qualifier
+
+  subject part qualifier:
+    is_a: part qualifier
+
+  subject derivative qualifier:
+    is_a: derivative qualifier
+
+  subject context qualifier:
+    is_a: context qualifier
+
+  subject direction qualifier:
+    is_a: direction qualifier
+
+  object variable state qualifier:
+    is_a: variable state qualifier
+
+  object aspect qualifier:
+    is_a: aspect qualifier
+
+  object form or variant qualifier:
+    is_a: form or variant qualifier
+
+  object part qualifier:
+    is_a: part qualifier
+
+  object derivative qualifier:
+    is_a: derivative qualifier
+
+  object context qualifier:
+    is_a: context qualifier
+
+  object direction qualifier:
+    is_a: direction qualifier
+    range: direction_qualifier_enum
+
+  object relative timing qualifier:
+    is_a: association slot
+    abstract: true
+    description: >-
+
+  qualified predicate:
+    is_a: association slot
+    description: >- 
+      predicate to be used in an association when subject and object qualifiers are present and the full
+      reading of the statement requires a qualification to the predicate in use in order to refine or 
+      increase the specificity of the full statement reading
+
+  statement qualifier:
+    is_a: association slot
+    description: >-
+
+  interaction mechanism qualifier:
+    is_a: statement qualifier
+    description: >-
+
+  effect mechanism qualifier:
+    is_a: statement qualifier
+    description: >-
+        A statement qualifier representing a type of molecular control mechanism through which an
+        effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
+        'allosteric modulation', 'channel blocker')
+
+  anatomical context qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier representing an anatomical location where an relationship expressed in an
+      association took place (can be a tissue, cell type, or subcellular location).
+
+  species context qualifier:
+    is_a: statement qualifier
+    description: >-
+      A statement qualifier representing a taxonomic category of species in which a relationship
+      expressed in an association took place.
+
+  qualifiers:
+    singular_name: qualifier
+    description: >-
+      connects an association to qualifiers that modify or
+      qualify the meaning of that association
+    local_names:
+      ga4gh: annotation qualifier
+    is_a: association slot
+    multivalued: true
+    range: ontology class
+
+  frequency qualifier:
+    description: >-
+      a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    is_a: association slot
+    range: frequency value
+
+  severity qualifier:
+    description: >-
+      a qualifier used in a phenotypic association to state
+      how severe the phenotype is in the subject
+    is_a: association slot
+    range: severity value
+
+  sex qualifier:
+    description: >-
+      a qualifier used in a phenotypic association to state whether
+      the association is specific to a particular sex.
+    is_a: association slot
+    range: biological sex
+
+  onset qualifier:
+    description: >-
+      a qualifier used in a phenotypic association to state
+      when the phenotype appears is in the subject
+    is_a: association slot
+    range: onset
+
+  clinical modifier qualifier:
+    description: >-
+      the method or process of administering a pharmaceutical compound to achieve a therapeutic
+      effect in humans or animals.
+    is_a: association slot
+    range: clinical modifier
+
+  sequence variant qualifier:
+    description: >-
+      a qualifier used in an association with the variant
+    is_a: association slot
+    range: sequence variant
+
+  quantifier qualifier:
+    is_a: association slot
+    range: ontology class
+    description: >-
+      A measurable quantity for the object of the association
+    narrow_mappings:
+      # TODO: RTX contributed terms mapped here... May need review?
+      - LOINC:analyzes
+      - LOINC:measured_by
+      - LOINC:property_of
+      - SEMMEDDB:measures
+      - UMLS:measures
+
+  catalyst qualifier:
+    is_a: association slot
+    multivalued: true
+    range: macromolecular machine mixin
+    description: >-
+      a qualifier that connects an association between two causally connected
+      entities (for example, two chemical entities, or a chemical entity in
+      that changes location) and the gene product, gene, or complex that
+      enables or catalyzes the change.
+
+  stage qualifier:
+    description: >-
+      stage during which gene or protein expression of takes place.
+    is_a: association slot
+    range: life stage
+    # path: "object/during"
+    examples:
+      - value: UBERON:0000069
+        description: larval stage
 
 ## --------------------
 ## PREDICATES/RELATIONS
@@ -1367,9 +1414,7 @@ slots:
     inherited: true
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - skos:relatedMatch
       - UMLS:related_to
@@ -1490,9 +1535,7 @@ slots:
     description: >-
       Represents a relationship held between terminology components that describe the conceptual model of a domain.
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     symmetric: true
 
   related to at instance level:
@@ -1501,9 +1544,7 @@ slots:
       Represents a relationship held between two instances of a data classes.  Much like an assertion component,
       in an ABox, these represent facts associated with the conceptual model.
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     symmetric: true
 
   associated with:
@@ -1513,9 +1554,7 @@ slots:
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
       'related to'.
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     symmetric: true
     domain: named thing
     range: named thing
@@ -1550,9 +1589,7 @@ slots:
       - SNOMED:has_basic_dose_form
       - UMLS:RB
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:subclass of
+      opposite_of: subclass of
 
   subclass of:
     is_a: related to at concept level
@@ -1564,12 +1601,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:superclass of
+      canonical_predicate: true
+      opposite_of: superclass of
     close_mappings:
       # RTX
       - LOINC:class_of
@@ -1613,9 +1646,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       # identical class extension with identical sets of individuals
       - owl:equivalentClass
@@ -1644,9 +1675,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
@@ -1670,9 +1699,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - skos:exactMatch
       - WIKIDATA:Q39893449
@@ -1687,12 +1714,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:narrow match
+      canonical_predicate: true
+      opposite_of: narrow match
     exact_mappings:
       - skos:broadMatch
       - WIKIDATA:Q39894595
@@ -1710,9 +1733,7 @@ slots:
       - skos:narrowMatch
       - WIKIDATA:Q39893967
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:broad match
+      opposite_of: broad match
 
   opposite of:
     description: >-
@@ -1721,9 +1742,7 @@ slots:
     is_a: related to at instance level
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002604
     see_also:
@@ -1731,16 +1750,40 @@ slots:
       - https://github.com/biolink/biolink-model/issues/657
 
   has real world evidence of association with:
-    is_a: related to at instance level
+    deprecated: true
+
+  associated with likelihood of:
+    is_a: associated with
     description: >-
-      this means that the assertion was derived by applying statistical and machine learning models to
-      clinical data such as EHR data, survey data, etc
-    in_subset:
-      - translator_minimal
-    symmetric: true
-    annotations:
-      tag: biolink:canonical_predicate
-      value: true
+      Expresses a relationship between two named things wh1ere the relationship is typically generated statistically
+      and the state or fact of something is probable. 
+
+  likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with likelihood of
+
+  associated with increased likelihood of:
+    is_a: associated with
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is more probable. 
+
+  increased likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with increased likelihood of
+
+  associated with decreased likelihood of:
+    is_a: associated with
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is less probable. 
+
+  decreased likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with decreased likelihood of
 
   target for:
     is_a: related to at instance level
@@ -1748,9 +1791,7 @@ slots:
       A gene is a target of a disease when its products are druggable and when a drug interaction with the gene
       product could have a therapeutic effect
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     domain: gene
     range: disease
 
@@ -1765,24 +1806,19 @@ slots:
     domain: gene or gene product
     range: cellular component
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002432
 
   has active component:
     inverse: active in
 
-
   acts upstream of:
     is_a: related to at instance level
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002263
 
@@ -1797,9 +1833,7 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0004034
 
@@ -1814,9 +1848,7 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0004035
 
@@ -1831,9 +1863,7 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002264
 
@@ -1848,9 +1878,7 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0004032
 
@@ -1865,9 +1893,7 @@ slots:
     domain: gene or gene product
     range: biological process
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0004033
 
@@ -1989,9 +2015,7 @@ slots:
     domain: named thing
     range: named thing
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   is assessed by:
     inverse: assesses
@@ -2008,9 +2032,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002434
       - SEMMEDDB:interacts_with
@@ -2028,9 +2050,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
     close_mappings:
@@ -2067,9 +2087,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       - DGIdb:antibody
     exact_mappings:
@@ -2087,9 +2105,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     symmetric: true
     exact_mappings:
       - RO:0002435
@@ -2105,9 +2121,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       # Contributed by RTX. Seems possible that a new predicate "biolink:in_pathway" could be justified?
       - DRUGBANK:pathway
@@ -2162,9 +2176,7 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     broad_mappings:
       - PATO:0000085 # sensitivity toward
     narrow_mappings:
@@ -2185,9 +2197,7 @@ slots:
     domain: named thing
     range: chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   resistance associated with:
     is_a: associated with
@@ -2202,9 +2212,7 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       - NCIT:C15220 # diagnosis
       - SIO:001331 # diagnosis
@@ -2249,6 +2257,7 @@ slots:
       - CHEBI:24432
 
   affects abundance of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the
       other within a system of interest
@@ -2258,21 +2267,22 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_abundance_of
 
   abundance affected by:
+    deprecated: true
     is_a: affected by
     inverse: affects abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   increases abundance of:
+    deprecated: true
     description: >-
-      holds between two chemical or gene/gene product entities where the action or effect of one increases the amount of the other within a system of interest
+      holds between two chemical or gene/gene product entities where the action or effect of one increases the 
+      amount of the other within a system of interest
     is_a: affects abundance of
     in_subset:
       - translator_minimal
@@ -2281,22 +2291,20 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases abundance of
+      canonical_predicate: true
+      opposite_of: decreases abundance of
     related_mappings:
       - UBERGRAPH:is_increase_of
 
   abundance increased by:
+    deprecated: true
     is_a: abundance affected by
     inverse: increases abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   decreases abundance of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one
       decreases the amount of the other within a system of interest
@@ -2308,23 +2316,21 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases abundance of
+      canonical_predicate: true
+      opposite_of: increases abundance of
 
     related_mappings:
       - UBERGRAPH:is_decrease_of
 
   abundance decreased by:
+    deprecated: true
     is_a: abundance affected by
     inverse: decreases abundance of
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
 
   increases activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one
       increases the activity of the other within a system of interest
@@ -2359,19 +2365,16 @@ slots:
       - DGIdb:positive_allosteric_modulator
       - DGIdb:stimulator
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases activity of
+      opposite_of: decreases activity of
 
   affects activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one changes the activity of the
       other within a system of interest
     is_a: affects
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     domain: chemical entity or gene or gene product
@@ -2384,6 +2387,7 @@ slots:
       - DGIdb:allosteric_modulator
 
   activity affected by:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one is changed by the
       activity of the other within a system of interest
@@ -2393,6 +2397,7 @@ slots:
     inverse: affects activity of
 
   activity increased by:
+    deprecated: true
     is_a: activity affected by
     in_subset:
       - translator_minimal
@@ -2401,6 +2406,7 @@ slots:
     inverse: increases activity of
 
   decreases activity of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product where the action or effect of one decreases the
       activity of the other within a system of interest
@@ -2410,12 +2416,8 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases activity of
+      canonical_predicate: true
+      opposite_of: increases activity of
     mixins:
       - decreases amount or activity of
     related_mappings:
@@ -2453,6 +2455,7 @@ slots:
       - DGIdb:inverse_agonist
 
   activity decreased by:
+    deprecated: true
     is_a: activity affected by
     in_subset:
       - translator_minimal
@@ -2462,6 +2465,7 @@ slots:
 
 
   affects expression of:
+    deprecated: true
     description: >-
       holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an
       environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the
@@ -2473,6 +2477,7 @@ slots:
     range: nucleic acid entity
 
   expression affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2481,6 +2486,7 @@ slots:
     inverse: affects expression of
 
   increases expression of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity
       where the action or effect of one increases the level of expression of the
@@ -2499,6 +2505,7 @@ slots:
       - RO:0003003
 
   expression increased by:
+    deprecated: true
     is_a: expression affected by
     in_subset:
       - translator_minimal
@@ -2507,6 +2514,7 @@ slots:
     inverse: increases expression of
 
   decreases expression of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the
       other within a system of interest
@@ -2526,6 +2534,7 @@ slots:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
   expression decreased by:
+    deprecated: true
     is_a: expression affected by
     in_subset:
       - translator_minimal
@@ -2534,6 +2543,7 @@ slots:
     inverse: decreases expression of
 
   affects folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one changes the rate
       or quality of folding of the other
@@ -2543,20 +2553,20 @@ slots:
     domain: chemical entity or gene or gene product
     range: nucleic acid entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_folding_of
 
 
   folding affected by:
+    deprecated: true
     is_a: affected by
     inverse: affects folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   increases folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one
       increases the rate or quality of folding of the other
@@ -2568,22 +2578,20 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases folding of
+      canonical_predicate: true
+      opposite_of: decreases folding of
     exact_mappings:
       - CTD:increases_folding_of
 
   folding increased by:
+    deprecated: true
     is_a: folding affected by
     inverse: increases folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   decreases folding of:
+    deprecated: true
     description: >-
       holds between a chemical or gene or gene product entity and a
       nucleic acid entity where the action or effect of one
@@ -2596,22 +2604,20 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases folding of
+      canonical_predicate: true
+      opposite_of: increases folding of
     exact_mappings:
       - CTD:decreases_folding_of
 
   folding decreased by:
+    deprecated: true
     is_a: folding affected by
     inverse: decreases folding of
     domain: nucleic acid entity
     range: chemical entity or gene or gene product
 
   affects localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one changes the
       localization of the other within a system of interest
@@ -2621,15 +2627,14 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       - GAMMA:storage
     exact_mappings:
       - GOREL:0002003
 
   localization affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2638,6 +2643,7 @@ slots:
     inverse: affects localization of
 
   increases localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one increases the proper
       localization of the other within a system of interest
@@ -2649,16 +2655,13 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases localization of
+      canonical_predicate: true
+      opposite_of: decreases localization of
     exact_mappings:
       - CTD:increases_localization_of
 
   localization increased by:
+    deprecated: true
     is_a: localization affected by
     in_subset:
       - translator_minimal
@@ -2667,6 +2670,7 @@ slots:
     inverse: increases localization of
 
   decreases localization of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities where the action or effect of one decreases the proper localization of the other within a system of interest
     is_a: affects localization of
@@ -2677,17 +2681,14 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases localization of
+      canonical_predicate: true
+      opposite_of: increases localization of
     exact_mappings:
       - CTD:decreases_localization_of
 
 
   localization decreased by:
+    deprecated: true
     is_a: localization affected by
     in_subset:
       - translator_minimal
@@ -2696,6 +2697,7 @@ slots:
     inverse: decreases localization of
 
   affects metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the
       metabolic processing of the other within a system of interest
@@ -2705,13 +2707,12 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       - GAMMA:catalytic_activity
 
   metabolic processing affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2720,6 +2721,7 @@ slots:
     inverse: affects metabolic processing of
 
   increases metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of
       metabolic processing of the other within a system of interest
@@ -2731,18 +2733,15 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases metabolic processing of
+      canonical_predicate: true
+      opposite_of: decreases metabolic processing of
     exact_mappings:
       - CTD:increases_metabolic_processing_of
     narrow_mappings:
       - NCIT:enzyme_metabolizes_chemical_or_drug
 
   metabolic processing increased by:
+    deprecated: true
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
@@ -2751,6 +2750,7 @@ slots:
     inverse: increases metabolic processing of
 
   decreases metabolic processing of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases the rate of
       metabolic processing of the other within a system of interest
@@ -2762,16 +2762,13 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases metabolic processing of
+      canonical_predicate: true
+      opposite_of: increases metabolic processing of
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
 
   metabolic processing decreased by:
+    deprecated: true
     is_a: metabolic processing affected by
     in_subset:
       - translator_minimal
@@ -2780,6 +2777,7 @@ slots:
     inverse: decreases metabolic processing of
 
   affects molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one leads changes in the molecular
       modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of
@@ -2790,9 +2788,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_molecular_modification_of
     narrow_mappings:
@@ -2829,6 +2825,7 @@ slots:
       - CTD:affects_carboxylation
 
   molecular modification affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -2837,6 +2834,7 @@ slots:
     inverse: affects molecular modification of
 
   increases molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one leads to
       increased molecular modification(s) of the other (e.g. via post-translational modifications of
@@ -2849,12 +2847,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases molecular modification of
+      canonical_predicate: true
+      opposite_of: decreases molecular modification of
     exact_mappings:
       - CTD:increases_molecular_modification_of
     narrow_mappings:
@@ -2893,6 +2887,7 @@ slots:
       - GAMMA:oxidizer
 
   molecular modification increased by:
+    deprecated: true
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
@@ -2901,6 +2896,7 @@ slots:
     inverse: increases molecular modification of
 
   decreases molecular modification of:
+    deprecated: true
     description: >-
       holds between two chemical entities  where the action or effect of one leads to
       decreased molecular modification(s) of the other (e.g. via post-translational modifications of
@@ -2913,12 +2909,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases molecular modification of
+      canonical_predicate: true
+      opposite_of: increases molecular modification of
     exact_mappings:
       - CTD:decreases_molecular_modification_of
     narrow_mappings:
@@ -2956,6 +2948,7 @@ slots:
       - GAMMA:deoxidizer
 
   molecular modification decreased by:
+    deprecated: true
     is_a: molecular modification affected by
     in_subset:
       - translator_minimal
@@ -2964,6 +2957,7 @@ slots:
     inverse: decreases molecular modification of
 
   affects synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect 
       of one impacts the rate of chemical synthesis of the other
@@ -2973,13 +2967,12 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_synthesis_of
 
   synthesis affected by:
+    deprecated: true
     is_a: affected by
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
@@ -2988,6 +2981,7 @@ slots:
       - translator_minimal
 
   increases synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect
       of one increases the rate of chemical synthesis of the other
@@ -2999,16 +2993,13 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases synthesis of
+      canonical_predicate: true
+      opposite_of: decreases synthesis of
     exact_mappings:
       - CTD:increases_synthesis_of
 
   synthesis increased by:
+    deprecated: true
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
@@ -3017,6 +3008,7 @@ slots:
     inverse: increases synthesis of
 
   decreases synthesis of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect
       of one decreases the rate of chemical synthesis of the other
@@ -3028,16 +3020,13 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases synthesis of
+      canonical_predicate: true
+      opposite_of: increases synthesis of
     exact_mappings:
       - GAMMA:inhibition_of_synthesis
 
   synthesis decreased by:
+    deprecated: true
     is_a: synthesis affected by
     in_subset:
       - translator_minimal
@@ -3046,6 +3035,7 @@ slots:
     inverse: decreases synthesis of
 
   affects degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       impacts the rate of degradation of the other within a system of interest,
@@ -3058,9 +3048,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_degradation_of
     narrow_mappings:
@@ -3068,6 +3056,7 @@ slots:
       - CTD:affects_hydrolysis
 
   degradation affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3076,6 +3065,7 @@ slots:
     inverse: affects degradation of
 
   increases degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       increases the rate of degradation of the other within a system of interest
@@ -3087,12 +3077,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: decreases degredation of
+      canonical_predicate: true
+      opposite_of: decreases degredation of
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
@@ -3109,6 +3095,7 @@ slots:
       - GOREL:0002004
 
   degradation increased by:
+    deprecated: true
     is_a: degradation affected by
     in_subset:
       - translator_minimal
@@ -3117,6 +3104,7 @@ slots:
     inverse: increases degradation of
 
   decreases degradation of:
+    deprecated: true
     description: >-
       holds between two chemical entities where the action or effect of one
       decreases the rate of degradation of the other within a system of interest
@@ -3128,12 +3116,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: increases degredation of
+      canonical_predicate: true
+      opposite_of: increases degredation of
     exact_mappings:
       - CTD:decreases_degradation_of
     narrow_mappings:
@@ -3141,6 +3125,7 @@ slots:
       - CTD:decreases_hydrolysis
 
   degradation decreased by:
+    deprecated: true
     is_a: degradation affected by
     in_subset:
       - translator_minimal
@@ -3149,6 +3134,7 @@ slots:
     inverse: decreases degradation of
 
   affects mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity impacts the rate of mutation of the nucleic acid entity within a system of interest
@@ -3162,13 +3148,12 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_mutation_rate_of
 
   mutation rate affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3177,6 +3162,7 @@ slots:
     inverse: affects mutation rate of
 
   increases mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity increases the rate of mutation of the nucleic acid entity within a system of interest
@@ -3188,12 +3174,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases mutation rate of
+      canonical_predicate: true
+      opposite_of: decreases mutation rate of
     exact_mappings:
       - CTD:increases_mutation_rate_of
     broad_mappings:
@@ -3201,6 +3183,7 @@ slots:
       - CTD:increases_mutagenesis
 
   mutation rate increased by:
+    deprecated: true
     is_a: mutation rate affected by
     in_subset:
       - translator_minimal
@@ -3209,6 +3192,7 @@ slots:
     inverse: increases mutation rate of
 
   decreases mutation rate of:
+    deprecated: true
     description: >-
       holds between a chemical entity and a nucleic acid entity where the action or effect of the
       chemical entity decreases the rate of mutation of the nucleic acid entity within a system of interest
@@ -3220,12 +3204,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases mutation rate of
+      canonical_predicate: true
+      opposite_of: increases mutation rate of
     exact_mappings:
       - CTD:decreases_mutation_rate_of
     broad_mappings:
@@ -3233,6 +3213,7 @@ slots:
       - CTD:decreases_mutagenesis
 
   mutation rate decreased by:
+    deprecated: true
     is_a: mutation rate affected by
     in_subset:
       - translator_minimal
@@ -3240,7 +3221,6 @@ slots:
     range: chemical entity
     inverse: decreases mutation rate of
 
-  # original definition of this predicate used molecular entity which was a
   affects response to:
     is_a: affects
     in_subset:
@@ -3249,9 +3229,7 @@ slots:
     range: chemical entity or gene or gene product
     inverse: response affected by
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_response_to
 
@@ -3266,9 +3244,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   increases response to:
     description: >-
@@ -3284,15 +3260,10 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases response to
+      canonical_predicate: true
+      opposite_of: decreases response to
     exact_mappings:
       - CTD:increases_response_to
-
 
   response increased by:
     is_a: response affected by
@@ -3316,12 +3287,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases response to
+      canonical_predicate: true
+      opposite_of: increases response to
     exact_mappings:
       - CTD:decreases_response_to
     narrow_mappings:
@@ -3337,6 +3304,7 @@ slots:
     inverse: decreases response to
 
   affects splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or effect
       of the chemical entity impacts the splicing of the mRNA
@@ -3346,15 +3314,14 @@ slots:
     domain: chemical entity or gene or gene product
     range: transcript
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
 
   splicing affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3363,6 +3330,7 @@ slots:
     inverse: affects splicing of
 
   increases splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or effect
       of the chemical entity increases the proper splicing of the mRNA
@@ -3374,18 +3342,15 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases splicing of
+      canonical_predicate: true
+      opposite_of: decreases splicing of
     exact_mappings:
       - CTD:increases_RNA_splicing
     broad_mappings:
       - CTD:increases_splicing_of
 
   splicing increased by:
+    deprecated: true
     is_a: splicing affected by
     in_subset:
       - translator_minimal
@@ -3394,6 +3359,7 @@ slots:
     inverse: increases splicing of
 
   decreases splicing of:
+    deprecated: true
     description: >-
       holds between a chemical entity and an mRNA where the action or
       effect of the chemical entity decreases the proper splicing of the mRNA
@@ -3405,18 +3371,15 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases splicing of
+      canonical_predicate: true
+      opposite_of: increases splicing of
     exact_mappings:
       - CTD:decreases_RNA_splicing
     broad_mappings:
       - CTD:decreases_splicing_of
 
   splicing decreased by:
+    deprecated: true
     is_a: splicing affected by
     in_subset:
       - translator_minimal
@@ -3425,6 +3388,7 @@ slots:
     inverse: decreases splicing of
 
   affects stability of:
+    deprecated: true
     description: >-
       holds between two entities where the action or effect of one impacts
       the stability of the other within a system of interest
@@ -3434,13 +3398,12 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       - GAMMA:stabilization
 
   stability affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3449,6 +3412,7 @@ slots:
     inverse: affects stability of
 
   increases stability of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       increases the stability of the other within a system of interest
@@ -3460,17 +3424,14 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: decreases stability of
+      canonical_predicate: true
+      opposite_of: decreases stability of
     close_mappings:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
 
   stability increased by:
+    deprecated: true
     is_a: stability affected by
     in_subset:
       - translator_minimal
@@ -3479,6 +3440,7 @@ slots:
     inverse: increases stability of
 
   decreases stability of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases
       the stability of the other within a system of interest
@@ -3490,16 +3452,13 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: increases stability of
+      canonical_predicate: true
+      opposite_of: increases stability of
     exact_mappings:
       - CTD:decreases_stability_of
 
   stability decreased by:
+    deprecated: true
     is_a: stability affected by
     in_subset:
       - translator_minimal
@@ -3508,6 +3467,7 @@ slots:
     inverse: decreases stability of
 
   affects transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts
       the rate of transport of the other across some boundary in a system of interest
@@ -3517,9 +3477,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_transport_of
     narrow_mappings:
@@ -3528,6 +3486,7 @@ slots:
       - RO:0002345
 
   transport affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3536,6 +3495,7 @@ slots:
     inverse: affects transport of
 
   increases transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       increases the rate of transport of the other across some boundary in a system of interest
@@ -3547,17 +3507,14 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases transport of
+      canonical_predicate: true
+      opposite_of: decreases transport of
     close_mappings:
       - GAMMA:carrier
       - GAMMA:transporter
 
   transport increased by:
+    deprecated: true
     is_a: transport affected by
     in_subset:
       - translator_minimal
@@ -3566,6 +3523,7 @@ slots:
     inverse: increases transport of
 
   decreases transport of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one
       decreases the rate of transport of the other across some boundary in a system of interest
@@ -3577,16 +3535,13 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases transport of
+      canonical_predicate: true
+      opposite_of: increases transport of
     exact_mappings:
       - CTD:decreases_transport_of
 
   transport decreased by:
+    deprecated: true
     is_a: transport affected by
     in_subset:
       - translator_minimal
@@ -3595,6 +3550,7 @@ slots:
     inverse: decreases transport of
 
   affects secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3604,9 +3560,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_secretion_of
     broad_mappings:
@@ -3614,6 +3568,7 @@ slots:
       - CTD:affects_export
 
   secretion affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3622,6 +3577,7 @@ slots:
     inverse: affects secretion of
 
   increases secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3633,12 +3589,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases secretion of
+      canonical_predicate: true
+      opposite_of: decreases secretion of
     exact_mappings:
       - CTD:increases_secretion_of
     broad_mappings:
@@ -3646,6 +3598,7 @@ slots:
       - CTD:increases_export
 
   secretion increased by:
+    deprecated: true
     is_a: secretion affected by
     in_subset:
       - translator_minimal
@@ -3654,6 +3607,7 @@ slots:
     inverse: increases secretion of
 
   decreases secretion of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one decreases the
       rate of secretion of the other out of a cell, gland, or organ
@@ -3665,12 +3619,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases secretion of
+      canonical_predicate: true
+      opposite_of: increases secretion of
     exact_mappings:
       - CTD:decreases_secretion_of
     broad_mappings:
@@ -3678,6 +3628,7 @@ slots:
       - CTD:decreases_export
 
   secretion decreased by:
+    deprecated: true
     is_a: secretion affected by
     in_subset:
       - translator_minimal
@@ -3686,6 +3637,7 @@ slots:
     inverse: decreases secretion of
 
   affects uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one impacts the rate of
       uptake of the other into of a cell, gland, or organ
@@ -3695,9 +3647,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - CTD:affects_uptake_of
     broad_mappings:
@@ -3705,6 +3655,7 @@ slots:
       - CTD:affects_import
 
   uptake affected by:
+    deprecated: true
     is_a: affected by
     in_subset:
       - translator_minimal
@@ -3713,6 +3664,7 @@ slots:
     inverse: affects uptake of
 
   increases uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of
       uptake of the other into of a cell, gland, or organ
@@ -3724,12 +3676,8 @@ slots:
     mixins:
       - increases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases uptake of
+      canonical_predicate: true
+      opposite_of: decreases uptake of
     exact_mappings:
       - CTD:increases_uptake_of
     broad_mappings:
@@ -3737,6 +3685,7 @@ slots:
       - CTD:increases_import
 
   uptake increased by:
+    deprecated: true
     is_a: uptake affected by
     in_subset:
       - translator_minimal
@@ -3745,6 +3694,7 @@ slots:
     inverse: increases uptake of
 
   decreases uptake of:
+    deprecated: true
     description: >-
       holds between two chemical or gene/gene product entities  where the action or effect
       of one decreases the rate of uptake of the other into of a cell, gland, or organ
@@ -3756,12 +3706,8 @@ slots:
     mixins:
       - decreases amount or activity of
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases uptake of
+      canonical_predicate: true
+      opposite_of: increases uptake of
     exact_mappings:
       - CTD:decreases_uptake_of
     broad_mappings:
@@ -3769,6 +3715,7 @@ slots:
       - CTD:decreases_import
 
   uptake decreased by:
+    deprecated: true
     is_a: uptake affected by
     in_subset:
       - translator_minimal
@@ -3777,19 +3724,18 @@ slots:
     inverse: decreases uptake of
 
   regulates:
-    # direct is_a inheritance from a non-mixin class is not allowed
-    # we defer this inheritance to the classes which this mixin in its mixins
-    # is_a: affects
-    aliases: ['regulates activity of', 'regulates expression of']
-    comments:
-      - This is a grouping for process-process and entity-entity regulation.
+    is_a: affects
+    description: >-
+      A more specific form of affects, that implies the effect results from a biologically evolved control mechanism.
+      Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships 
+      may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule 
+      created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships 
+      are usually not cases of regulation.
     mixin: true
     domain: physical essence or occurrent
     range: physical essence or occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       - RO:0002334
     exact_mappings:
@@ -3809,14 +3755,13 @@ slots:
     inverse: regulates
 
   positively regulates:
+    deprecated: true
     comments:
       - This is a grouping for positive process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:negatively regulates
+      opposite_of: negatively regulates
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002336
@@ -3830,19 +3775,19 @@ slots:
       - RO:0002629
 
   positively regulated by:
+    deprecated: true
     is_a: regulated by
     mixin: true
     inverse: positively regulates
 
   negatively regulates:
+    deprecated: true
     comments:
       - This is a grouping for negative process-process and entity-entity regulation.
     is_a: regulates
     mixin: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       # This RTX contributed term is tagged as a inverse of this Biolink predicate
       - RO:0002335
@@ -3861,66 +3806,64 @@ slots:
       - RO:0002630
   
   negatively regulated by:
+    deprecated: true
     is_a: regulated by
     mixin: true
     inverse: negatively regulates
 
   process regulates process:
+    deprecated: true
     is_a: affects
     mixins:
       - regulates
     domain: occurrent
     range: occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002211
 
   process regulated by process:
+    deprecated: true
     is_a: affected by
     domain: occurrent
     range: occurrent
     inverse: process regulates process
 
   process positively regulates process:
+    deprecated: true
     is_a: process regulates process
     mixins:
       - positively regulates
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:process negatively regulates process
+      canonical_predicate: true
+      opposite_of: process negatively regulates process
     exact_mappings:
       - RO:0002213
 
   process positively regulated by process:
+    deprecated: true
     is_a: process regulated by process
     inverse: process positively regulates process
 
   process negatively regulates process:
+    deprecated: true
     is_a: process regulates process
     mixins:
       - negatively regulates
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:process positively regulates process
+      canonical_predicate: true
+      opposite_of: process positively regulates process
     exact_mappings:
       - RO:0002212
 
   process negatively regulated by process:
+    deprecated: true
     is_a: process regulated by process
     inverse: process negatively regulates process
 
   entity regulates entity:
+    deprecated: true
     aliases: ['activity directly regulates activity of']
     is_a: affects
     mixins:
@@ -3929,9 +3872,7 @@ slots:
     range: chemical entity or gene or gene product
     inverse: entity regulated by entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
@@ -3947,23 +3888,21 @@ slots:
       - WIKIDATA_PROPERTY:P128
 
   entity regulated by entity:
+    deprecated: true
     is_a: affected by
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     inverse: entity regulates entity
 
   entity positively regulates entity:
+    deprecated: true
     aliases: ['activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene']
     is_a: entity regulates entity
     mixins:
       - positively regulates
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:entity negatively regulates entity
+      canonical_predicate: true
+      opposite_of: entity negatively regulates entity
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -3982,21 +3921,19 @@ slots:
       - SEMMEDDB:augments
 
   entity positively regulated by entity:
+    deprecated: true
     is_a: entity regulated by entity
     inverse: entity positively regulates entity
 
   entity negatively regulates entity:
+    deprecated: true
     aliases: ['activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene']
     is_a: entity regulates entity
     mixins:
       - negatively regulates
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:entity positively regulates entity
+      canonical_predicate: true
+      opposite_of: entity positively regulates entity
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -4010,6 +3947,7 @@ slots:
       - SEMMEDDB:inhibits
 
   entity negatively regulated by entity:
+    deprecated: true
     is_a: entity regulated by entity
     inverse: entity negatively regulates entity
 
@@ -4022,12 +3960,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:enables
+      canonical_predicate: true
+      opposite_of: enables
     exact_mappings:
       - SEMMEDDB:DISRUPTS
       - SEMMEDDB:disrupts
@@ -4054,9 +3988,7 @@ slots:
     domain: gene product mixin
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     inverse: has gene product
     in_subset:
       - translator_minimal
@@ -4089,9 +4021,7 @@ slots:
       inverse of transcribed from
     inverse: transcribed from
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:transcribed from
+      opposite_of: transcribed from
     exact_mappings:
       - RO:0002511
       - SIO:010080
@@ -4101,12 +4031,8 @@ slots:
     domain: transcript
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:transcribed to
+      canonical_predicate: true
+      opposite_of: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -4118,12 +4044,8 @@ slots:
     domain: transcript
     range: protein
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:translation of
+      canonical_predicate: true
+      opposite_of: translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -4143,9 +4065,7 @@ slots:
       - RO:0002512
       - SIO:010083
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:translates to
+      opposite_of: translates to
 
   homologous to:
     is_a: similar to
@@ -4158,9 +4078,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -4176,9 +4094,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:HOM0000011
 
@@ -4190,9 +4106,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:HOM0000017
       - WIKIDATA_PROPERTY:P684
@@ -4205,9 +4119,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:HOM0000018
 
@@ -4219,9 +4131,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
       - SEMMEDDB:coexists_with
@@ -4412,9 +4322,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       # generally pertains to membership of a (subject) component - gene,
       # metabolite, etc? - in an (object) metabolic pathway
@@ -4431,9 +4339,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       # generally pertains to membership of a (subject) protein in an (object) protein complex (doesn't cover RNA-Protein, Lipid-Protein, etc complexes though)
       - SIO:010497
@@ -4451,9 +4357,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   colocalizes with:
     description: >-
@@ -4463,9 +4367,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:00002325
 
@@ -4475,9 +4377,7 @@ slots:
     is_a: related to at instance level
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     description: >-
       Co-occurrence of a certain allele of a genetic marker and the phenotype
       of interest in the same individuals at above-chance level
@@ -4492,9 +4392,7 @@ slots:
     domain: gene
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     broad_mappings:
@@ -4525,9 +4423,7 @@ slots:
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
 
@@ -4542,12 +4438,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:prevents
+      canonical_predicate: true
+      opposite_of: prevents
     exact_mappings:
       - SEMMEDDB:predisposes
 
@@ -4566,9 +4458,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       # RTX contributed mapping tagged as 'inverse' of this Biolink predicate
       - IDO:0000664
@@ -4596,12 +4486,8 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:prevents
+      canonical_predicate: true
+      opposite_of: prevents
     exact_mappings:
       - SEMMEDDB:CAUSES
       - SEMMEDDB:causes
@@ -4645,7 +4531,8 @@ slots:
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
     is_a: related to at instance level
-    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of', 'realized in response to', 'realized in response to stimulus']
+    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of',
+              'realized in response to', 'realized in response to stimulus']
     in_subset:
       - translator_minimal
     inverse: causes
@@ -4672,12 +4559,8 @@ slots:
     domain: biological entity
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:exacerbates
+      canonical_predicate: true
+      opposite_of: exacerbates
     exact_mappings:
       - RO:0003307
 
@@ -4698,9 +4581,7 @@ slots:
     domain: biological entity
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0003309
     broad_mappings:
@@ -4723,12 +4604,8 @@ slots:
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:contraindicated for
+      canonical_predicate: true
+      opposite_of: contraindicated for
     in_subset:
       - translator_minimal
     related_mappings:
@@ -4797,9 +4674,7 @@ slots:
     is_a: treats
     domain: chemical or drug or treatment
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   approved for treatment by:
     description: >-
@@ -4818,12 +4693,8 @@ slots:
       a chemical entity, exposure, activity, or medical intervention
       that can prevent the onset a disease or phenotypic feature.
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:predisposes
+      canonical_predicate: true
+      opposite_of: predisposes
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4840,9 +4711,7 @@ slots:
       was reduced by the application or use of an entity.
     inverse: prevents
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:enabled by
+      opposite_of: enabled by
 
   correlated with:
     is_a: associated with
@@ -4856,9 +4725,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002610
       - PATO:correlates_with
@@ -4875,12 +4742,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:negatively correlated with
+      canonical_predicate: true
+      opposite_of: negatively correlated with
     exact_mappings:
       - CTD:positive_correlation
 
@@ -4894,12 +4757,8 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:positively correlated with
+      canonical_predicate: true
+      opposite_of: positively correlated with
     exact_mappings:
       - CTD:negative_correlation
 
@@ -4913,9 +4772,7 @@ slots:
     in_subset: translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   coexpressed with:
     is_a: correlated with
@@ -4926,9 +4783,7 @@ slots:
     range: gene or gene product
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   has biomarker:
     is_a: correlated with
@@ -4956,9 +4811,7 @@ slots:
     domain: chemical entity or gene or gene product
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -4984,9 +4837,7 @@ slots:
     range: anatomical entity
     multivalued: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5022,9 +4873,7 @@ slots:
     range: phenotypic feature
     multivalued: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     notes:
       - check the range
     in_subset:
@@ -5063,9 +4912,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
       - BFO:0000067
@@ -5104,9 +4951,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0001025
       - FMA:has_location
@@ -5194,9 +5039,7 @@ slots:
         - translator_minimal
       symmetric: true
       annotations:
-        biolink:canonical_predicate:
-          tag: biolink:canonical_predicate
-          value: true
+        canonical_predicate: true
       exact_mappings:
         - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
         - SO:similar_to               #equivalent
@@ -5211,9 +5054,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       - CHEBI:has_parent_hydride    #subproperty
       - CHEBI:has_functional_parent #subproperty
@@ -5232,9 +5073,7 @@ slots:
     domain: nucleic acid entity
     range: nucleic acid entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - faldo:location
 
@@ -5251,9 +5090,7 @@ slots:
       for purposes of scientific study, in virtue of its exhibiting
       similar features of the studied entity.
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5273,9 +5110,7 @@ slots:
       - translator_minimal
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - RO:0002131
     narrow_mappings:
@@ -5288,12 +5123,8 @@ slots:
   has part:
     is_a: overlaps
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:lacks part
+      canonical_predicate: true
+      opposite_of: lacks part
     description: >-
       holds between wholes and their parts (material entities or processes)
     in_subset:
@@ -5348,9 +5179,7 @@ slots:
     exact_mappings:
       - RO:0002104
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
 
@@ -5361,9 +5190,7 @@ slots:
     exact_mappings:
       - RO:0002473
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
 
@@ -5449,12 +5276,8 @@ slots:
     domain: occurrent
     range: biological process or activity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has output
+      canonical_predicate: true
+      opposite_of: has output
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5494,12 +5317,8 @@ slots:
     domain: occurrent
     range: biological process or activity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has input
+      canonical_predicate: true
+      opposite_of: has input
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5532,9 +5351,7 @@ slots:
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5568,9 +5385,7 @@ slots:
     # domain: nucleic acid entity
     # range: molecular activity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   has catalyst:
     is_a: has participant
@@ -5581,9 +5396,7 @@ slots:
     # domain: molecular activity
     # range: chemical entity or gene or gene product
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
 
   is substrate of:
     is_a: participates in
@@ -5626,9 +5439,7 @@ slots:
     domain: molecular activity
     range: occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5658,9 +5469,7 @@ slots:
       continuant alone has the ability to carry out the process or function.
     range: occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5680,12 +5489,8 @@ slots:
     domain: physical entity
     range: biological process or activity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:prevents
+      canonical_predicate: true
+      opposite_of: prevents
     in_subset:
       - translator_minimal
     inverse: enabled by
@@ -5704,9 +5509,7 @@ slots:
     exact_mappings:
       - RO:0002333
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:prevented by
+      opposite_of: prevented by
 
   derives into:
     is_a: related to at instance level
@@ -5721,9 +5524,7 @@ slots:
     inverse: derives from
     # TODO: fix this according to WG notes. Example of both opposite and inverse
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:subclass of
+      opposite_of: subclass of
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
@@ -5734,9 +5535,7 @@ slots:
   derives from:
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     description: >-
       holds between two distinct material entities, the new entity
       and the old entity, in which the new entity begins to exist
@@ -5777,9 +5576,7 @@ slots:
     domain: molecular entity
     range: molecular entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     comments:
@@ -5808,9 +5605,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
 
@@ -5834,9 +5629,7 @@ slots:
     domain: chemical entity
     range: chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5863,12 +5656,8 @@ slots:
     domain: drug
     range: molecular entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:is excipient of
+      canonical_predicate: true
+      opposite_of: is excipient of
     in_subset:
       - translator_minimal
     inverse: is active ingredient of
@@ -5896,9 +5685,7 @@ slots:
     domain: drug
     range: molecular entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     mappings:
@@ -5913,9 +5700,7 @@ slots:
       and processes to some disease or syndrome
     range: disease
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -5941,9 +5726,7 @@ slots:
     in_subset:
       - translator_minimal
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       - GOREL:0001010
     exact_mappings:
@@ -5965,9 +5748,7 @@ slots:
   consumes:
     is_a: has input
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       - RO:0004009
 
@@ -5983,9 +5764,7 @@ slots:
     range: occurrent
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SNOMED:temporally_related_to
     narrow_mappings:
@@ -6012,12 +5791,8 @@ slots:
     domain: occurrent
     range: occurrent
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:preceded by
+      canonical_predicate: true
+      opposite_of: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -6067,9 +5842,7 @@ slots:
     range: chemical entity or gene or gene product
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     related_mappings:
       - GAMMA:kd
       - GAMMA:kb
@@ -6102,11 +5875,10 @@ slots:
       - DGIdb:cofactor
 
   affects expression in:
+    deprecated: true
     is_a: affects
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     description: Holds between a variant and an anatomical entity where the expression of the variant
        is located in.
     exact_mappings:
@@ -6116,9 +5888,7 @@ slots:
     is_a: has part
     description: holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - GENO:0000382
 
@@ -6130,9 +5900,7 @@ slots:
     is_a: related to at instance level
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - GENO:0000790
 
@@ -6145,9 +5913,7 @@ slots:
     domain: sequence variant
     range: nucleic acid entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       - WIKIDATA:P3433
 
@@ -6164,9 +5930,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SO:0001583
 
@@ -6183,9 +5947,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SO:0001819
 
@@ -6203,9 +5965,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     broad_mappings:
       # Term definition broader than nonsense codon: A sequence variant whereby
       # the gene product has diminished or abolished function.
@@ -6225,9 +5985,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SO:0001589
     aliases: ['frameshift variant', 'start lost', 'stop lost']
@@ -6246,9 +6004,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - SO:0001629
 
@@ -6267,9 +6023,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - GAMMA:0000102
 
@@ -6287,9 +6041,7 @@ slots:
     domain: sequence variant
     range: gene
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - GAMMA:0000103
 
@@ -6306,9 +6058,7 @@ slots:
       of the entity has contribution to the disease.
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       # These two MONDO terms seem more particular than the predicate
       - MONDO:disease_has_basis_in_development_of
@@ -6329,9 +6079,7 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       - NCIT:C2861 # side effect
 
@@ -6348,12 +6096,8 @@ slots:
     domain: drug
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:treats
+      canonical_predicate: true
+      opposite_of: treats
     exact_mappings:
       - NCIT:C37933
 
@@ -6373,12 +6117,8 @@ slots:
     exact_mappings:
       - CL:has_not_completed
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has completed
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      opposite_of: has completed
+      canonical_predicate: true
 
   not completed by:
     is_a: related to at instance level
@@ -6389,12 +6129,8 @@ slots:
     description: holds between an entity and a process that the entity is capable of
       and has completed
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has not completed
+      canonical_predicate: true
+      opposite_of: has not completed
     exact_mappings:
       - CL:has_completed
 
@@ -6407,12 +6143,8 @@ slots:
     description: indicates that the source decreases the molecular interaction between
       the target and some other chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:increases molecular interaction
+      canonical_predicate: true
+      opposite_of: increases molecular interaction
     exact_mappings:
       - CTD:decreases_molecular_interaction_with
     mixins:
@@ -6428,12 +6160,8 @@ slots:
     description: indicates that the source increases the molecular interaction between
       the target and some other chemical entity
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:decreases molecular interaction
+      canonical_predicate: true
+      opposite_of: decreases molecular interaction
     exact_mappings:
       - CTD:increases_molecular_interaction_with
     mixins:
@@ -6449,21 +6177,15 @@ slots:
       in a population
     symmetric: true
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - NCIT:C16798
 
   has increased amount:
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has decreased amount
+      canonical_predicate: true
+      opposite_of: has decreased amount
     narrow_mappings:
       - CL:has_high_plasma_membrane_amount
 
@@ -6474,12 +6196,8 @@ slots:
   has decreased amount:
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has increased amount
+      canonical_predicate: true
+      opposite_of: has increased amount
     narrow_mappings:
       - CL:has_low_plasma_membrane_amount
 
@@ -6490,12 +6208,8 @@ slots:
   lacks part:
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:has part
+      canonical_predicate: true
+      opposite_of: has part
     exact_mappings:
       - CL:lacks_part
       - PR:lacks_part
@@ -6510,9 +6224,7 @@ slots:
   develops from:
     is_a: related to at instance level
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     close_mappings:
       # RTX mapping seems to be inverse of 'biolink:develops_from'
       - RO:0002203
@@ -6537,9 +6249,7 @@ slots:
     domain: thing with taxon
     range: organism taxon
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     description: >-
       connects an entity to its taxonomic classification. Only certain kinds
       of entities can be taxonomically classified; see 'thing with taxon'
@@ -6565,9 +6275,7 @@ slots:
       consequence. E.g.  SO:0001583
     range: ontology class
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     narrow_mappings:
       - NCIT:allele_has_activity
 
@@ -6583,7 +6291,7 @@ slots:
   association slot:
     abstract: true
     domain: association
-    aliases: ['edge property','statement property']
+    aliases: ['edge property','statement property','node qualifier','edge qualifier','statement qualifier']
     description: >-
       any slot that relates an association to another entity
 
@@ -6793,29 +6501,6 @@ slots:
       - value: MI:1048
         description: smallmolecule-protein
 
-  quantifier qualifier:
-    is_a: association slot
-    range: ontology class
-    description: >-
-      A measurable quantity for the object of the association
-    narrow_mappings:
-      # TODO: RTX contributed terms mapped here... May need review?
-      - LOINC:analyzes
-      - LOINC:measured_by
-      - LOINC:property_of
-      - SEMMEDDB:measures
-      - UMLS:measures
-
-  catalyst qualifier:
-    is_a: association slot
-    multivalued: true
-    range: macromolecular machine mixin
-    description: >-
-      a qualifier that connects an association between two causally connected
-      entities (for example, two chemical entities, or a chemical entity in
-      that changes location) and the gene product, gene, or complex that
-      enables or catalyzes the change.
-
   expression site:
     description: >-
       location in which gene or protein expression takes place.
@@ -6826,16 +6511,6 @@ slots:
       - value: UBERON:0002037
         description: cerebellum
 
-  stage qualifier:
-    description: >-
-      stage during which gene or protein expression of takes place.
-    is_a: association slot
-    range: life stage
-    # path: "object/during"
-    examples:
-      - value: UBERON:0000069
-        description: larval stage
-
   phenotypic state:
     description: >-
       in experiments (e.g. gene expression) assaying diseased or unhealthy
@@ -6843,58 +6518,6 @@ slots:
       For healthy tissues, use XXX.
     is_a: association slot
     range: disease or phenotypic feature
-
-  qualifiers:
-    singular_name: qualifier
-    description: >-
-      connects an association to qualifiers that modify or
-      qualify the meaning of that association
-    local_names:
-      ga4gh: annotation qualifier
-    is_a: association slot
-    multivalued: true
-    range: ontology class
-
-  frequency qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    is_a: association slot
-    range: frequency value
-
-  severity qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state
-      how severe the phenotype is in the subject
-    is_a: association slot
-    range: severity value
-
-  sex qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state whether
-      the association is specific to a particular sex.
-    is_a: association slot
-    range: biological sex
-
-  onset qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state
-      when the phenotype appears is in the subject
-    is_a: association slot
-    range: onset
-
-  clinical modifier qualifier:
-    description: >-
-      Used to characterize and specify the phenotypic abnormalities
-      defined in the Phenotypic abnormality subontology,
-      with respect to severity, laterality, age of onset, and other aspects
-    is_a: association slot
-    range: clinical modifier
-
-  sequence variant qualifier:
-    description: >-
-      a qualifier used in an association with the variant
-    is_a: association slot
-    range: sequence variant
 
   publications:
     singular_name: publication
@@ -6938,9 +6561,7 @@ slots:
     close_mappings:
       - faldo:begin
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:end interbase coordinate
+      opposite_of: end interbase coordinate
 
   end interbase coordinate:
     is_a: interbase coordinate
@@ -6950,9 +6571,7 @@ slots:
     close_mappings:
       - faldo:end
     annotations:
-      biolink:opposite_of:
-        tag: biolink:opposite_of
-        value: biolink:start interbase coordinate
+      opposite_of: start interbase coordinate
 
   start coordinate:
     is_a: base coordinate
@@ -8487,8 +8106,12 @@ classes:
     is_a: biological entity
     description: >-
       Either one of a disease or an individual phenotypic feature.
-      Some knowledge resources such as Monarch treat these as
-      distinct, others such as MESH conflate.
+      Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+      distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model
+      for their independent descriptions.  This class is helpful to enforce domains and ranges  
+      that may involve either a disease or a phenotypic feature.
+    mixins:
+      - thing with taxon
     union_of:
       - disease
       - phenotypic feature
@@ -8498,6 +8121,11 @@ classes:
 
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
+    description: >-
+      A disorder of structure or function, especially one that produces specific 
+      signs, phenotypes or symptoms or that affects a specific location and is not simply a 
+      direct result of physical injury.  A disposition to undergo pathological processes that exists in an 
+      organism because of one or more disorders in that organism.
     is_a: disease or phenotypic feature
     exact_mappings:
       - MONDO:0000001
@@ -8550,6 +8178,8 @@ classes:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     description: >-
+      A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an 
+      individual resulting from the interaction of its genotype with its molecular and physical environment.
       A combination of entity and quality that makes up a phenotyping statement.
     examples:
       - value: MP:0001262
@@ -9685,6 +9315,7 @@ classes:
       - rdf:Statement
       - owl:Axiom
 
+
   chemical entity assesses named thing association:
     is_a: association
     slot_usage:
@@ -10121,7 +9752,41 @@ classes:
         range: pathway
         description: "the pathway that is affected by the chemical"
 
+  named thing associated with likelihood of named thing association:
+    # TODO: better name
+    description: >-
+    is_a: association
+    defining_slots:
+      - subject
+      - subject aspect qualifier
+      - subject location qualifier
+      - subject variable state qualifier
+      - predicate
+      - object
+      - object aspect qualifier
+      - object location qualifier
+      - object variable state qualifier
+      - object relative timing qualifier
+      - population context qualifier
+    slot_usage:
+      predicate:
+        subproperty_of: associated with
+      subject aspect qualifier:
+        # TODO: range
+      subject location qualifier:
+        range: ontology class
+      subject variable state qualifier:
+        range: variable_state_qualifier_enum
+      object aspect qualifier:
+        # TODO: range
+      object location qualifier:
+        range: ontology class
+      object variable state qualifier:
+        range: variable_state_qualifier_enum
+
+
   chemical to gene association:
+    deprecated: true
     description: >-
       An interaction between a chemical entity and a gene or gene product.
     is_a: association
@@ -10137,6 +9802,101 @@ classes:
         range: gene or gene product
         description: >-
           the gene or gene product that is affected by the chemical.
+
+  chemical gene interaction association:
+    description: >-
+      describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
+      effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
+      (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+    is_a: association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject context qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object context qualifier
+      - interaction mechanism qualifier
+      - anatomical context qualifier
+    slot_usage:
+      subject:
+        range: chemical entity
+      object:
+        range: gene or gene product
+      predicate:
+        # TODO make this physically interacts with
+      subject form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_enum
+      subject part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      subject derivative qualifier:
+        range: chemical_entity_derivative_enum
+      subject context qualifier:
+        range: anatomical entity
+      object form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_enum
+      object part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      object context qualifier:
+        range: anatomical entity
+      interaction mechanism qualifier:
+        range: molecular_control_mechanism_qualifier_enum
+      anatomical context qualifier:
+        range: anatomical entity
+
+  chemical affects gene association:
+    description: >-
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,
+      localization, processing, expression, etc.)
+    is_a: association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject context qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object aspect qualifier
+      - object context qualifier
+      - effect mechanism qualifier
+      - anatomical context qualifier
+      - qualified predicate
+    slot_usage:
+      subject:
+        range: chemical entity
+      subject form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_enum
+      subject part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      subject derivative qualifier:
+        range: chemical_entity_derivative_enum
+      subject context qualifier:
+        range: anatomical entity
+      subject direction qualifier:
+        range: direction_qualifier_enum
+      predicate:
+        # TODO make this affects and related to
+      qualified predicate:
+        # TODO make this causes
+      object:
+        range: gene or gene product
+      object form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_enum
+      object part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      object aspect qualifier:
+        range: gene_or_gene_product_or_chemical_entity_aspect_enum
+      object context qualifier:
+        range: anatomical entity
+      object direction qualifier:
+        range: direction_qualifier_enum
+      effect mechanism qualifier:
+        range: molecular_control_mechanism_qualifier_enum
+      anatomical context qualifier:
+        range: anatomical entity
 
   drug to gene association:
     description: >-
@@ -11171,6 +10931,7 @@ classes:
         range: transcript
 
   gene regulatory relationship:
+    deprecated: true
     is_a: association
     description: >-
       A regulatory relationship between two genes
@@ -11184,6 +10945,29 @@ classes:
       object:
         range: gene or gene product
         role: regulated gene
+
+  chemical entity or gene or gene product regulates gene association:
+    is_a: association
+    description: >-
+      A regulatory relationship between two genes
+    slots:
+      - object direction qualifier
+    slot_usage:
+      predicate:
+        description: >-
+          the direction is always from regulator to regulated
+        subproperty_of: regulates
+      subject:
+        range: chemical entity or gene or gene product
+        role: regulatory gene
+      object:
+        range: gene or gene product
+        role: regulated gene
+      object direction qualifier:
+        range: direction_qualifier_enum
+        description: used to record upregulation or downregulation.
+
+
 
   anatomical entity to anatomical entity association: # schema: gocam
     is_a: association
@@ -11335,3 +11119,297 @@ classes:
         description: >-
           predicate describing the relationship between the taxon and the environment
            
+enums:
+
+  direction_qualifier_enum:
+    permissible_values:
+      increases:
+      upregulate:
+        is_a: increases
+      decreases:
+      downregulate:
+        is_a: decreases
+
+  relative_timing_qualifier_enum:
+    permissible_values:
+      future:
+
+  variable_state_qualifier_enum:
+    permissible_values:
+      present:
+
+  chemical_entity_derivative_enum:
+    permissible_values:
+      metabolite:
+
+  chemical_or_gene_or_gene_product_form_enum:
+    permissible_values:
+      modified form:
+      mutant form:
+      polymorphism:
+      SNP:
+      analog:
+
+  gene_or_gene_product_or_chemical_part_qualifier_enum:
+    permissible_values:
+      3' UTR:
+      5' UTR:
+      polyA tail:
+      promoter:
+      enhancer:
+      exon:
+      intron:
+
+  gene_or_gene_product_or_chemical_entity_aspect_enum:
+    permissible_values:
+      expression:
+      mutation rate:
+      abundance:
+      synthesis:
+      degredation:
+      cleavage:
+      hydrolisis:
+      activity:
+      metabolic processing:
+      stability:
+      localization:
+      transport:
+      secretion:
+      uptake:
+      molecular modification:
+      acetylation:
+      acylation:
+      alkylation:
+      amination:
+      carbamoylation:
+      ethylation:
+      glutathionylation:
+      glycation:
+      glycosylation:
+      glucuronidation:
+      N-linked glycosylation:
+      O-linked glycosylation:
+      hydroxylation:
+      lipidation:
+      farnesylation:
+      geranoylation:
+      myristoylation:
+      palmitoylation:
+      prenylation:
+      methylation:
+      nitrosation:
+      nucleotidylation:
+      phosphorylation:
+      ribosylation:
+      ADP-ribosylation:
+      sulfation:
+      sumoylation:
+      ubiquitination:
+      oxidation:
+      reduction:
+      carboxylation:
+
+  molecular_control_mechanism_qualifier_enum:
+    permissible_values:
+      binding:
+      inactivation:
+      neutralization:
+      inhibition:
+      antagonism:
+      molecular channel blockage:
+      antibody inhibitor:
+      inverse agonism:
+      negative allosteric modulation:
+      agonism:
+      molecular channel opening:
+      positive allosteric modulation:
+      potentiation:
+
+  logical_interpretation_enum:
+    permissible_values:
+      SomeSome:
+        description: >-
+          A modifier on a triple that causes the triple to be interpreted as a some-some statement
+        meaning: os:SomeSomeInterpretation
+      AllSome:
+        description: >-
+          A modifier on a triple that causes the triple to be interpreted as an all-some statement.
+        meaning: os:AllSomeInterpretation
+      InverseAllSome:
+
+  reaction_direction_enum:
+    permissible_values:
+      left_to_right:
+      right_to_left:
+      bidirectional:
+      neutral:
+
+  reaction_side_enum:
+    permissible_values:
+      left:
+      right:
+
+  phase_enum:
+    description: phase
+    permissible_values:
+      0:
+      1:
+      2:
+
+  strand_enum:
+    description: strand
+    permissible_values:
+      "+":
+        description: Positive
+      "-":
+        description: Negative
+      ".":
+        description: Unstranded
+      "?":
+        description: Unknown
+
+  sequence_enum:
+    description: type of sequence
+    permissible_values:
+      "NA":
+        description: nucleic acid
+      "AA":
+        description: amino acid
+
+  predicate_qualifier_enum:
+    description: >-
+      constrained list of qualifying terms that soften or expand the definition of the predicate used.
+      can be used to constrain or qualify any predicate (any child of related_to).
+    permissible_values:
+      "predicted":
+      "possibly":
+      "hypothesized":
+      "validated":
+      "supported by real-world evidence":
+      "supported by clinical evidence":
+
+  druggable_gene_category_enum:
+    permissible_values:
+      "Tclin":
+        description: >-
+          These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
+      "Tbio":
+        description: >-
+          These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
+          the activity thresholds detailed below.
+      "Tchem":
+        description: >-
+          These targets do not have known drug or small molecule activities that satisfy the activity
+          thresholds detailed below AND satisfy one or more of the following criteria:
+          target is above the cutoff criteria for Tdark
+          target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
+          with an Experimental Evidence code
+      "Tdark":
+        description: >-
+          These are targets about which virtually nothing is known. They do not have known drug or small
+          molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
+          more of the following criteria:
+          A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
+          less than or equal to 50 Antibodies available according to http://antibodypedia.com.
+
+  drug_availability_enum:
+    description: >-
+    permissible_values:
+      "over the counter":
+        description: >-
+          chemical entity is available over the counter without a prescription.
+      "prescription":
+        description:
+          chemical entity is available by prescription.
+
+  drug_delivery_enum:
+    permissible_values:
+      "inhalation":
+      "oral":
+      "absorbtion through the skin":
+      "intravenous injection":
+
+  FDA_approval_status_enum:
+    description: >-
+    permissible_values:
+      "Discovery & Development Phase":
+        description: >-
+          Discovery & Development Phase. Discovery involves researchers finding new possibilities
+          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
+          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
+          Drug development occurs after researchers identify potential compounds for experiments.
+      "Preclinical Research Phase":
+        description: >-
+          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
+          they must do preliminary research to determine its potential for harm (toxicity).
+          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
+      "FDA Clinical Research Phase":
+        description: >-
+          Clinical Research Phase. Clinical research involves trials of the drug on people,
+          and it is one of the most involved stages in the drug development and approval process.
+          Clinical trials must answer specific questions and follow a protocol determined by
+          the drug researcher or manufacturer.
+      "FDA Review Phase 4":
+        description: >-
+          FDA Review
+      "FDA Post-Market Safety Monitoring":
+        description: >-
+          FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
+          while the drug is on the marketplace. If a developer wants to change anything about the
+          drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
+          frequently reviews the drug’s advertising and its manufacturing facility to make sure
+          everything involved in its creation and marketing is in compliance with regulations.
+      "FDA Clinical Research Phase 1":
+        description: >-
+          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
+          lasts several months. This phase is used to determine the safety and dosage of the drug,
+          and about 70% of these drugs move on to the next clinical research phase.
+      "FDA Clinical Research Phase 2":
+        description: >-
+          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
+          who must have the disease or condition the drug supposes to treat. This phase can last
+          from a few months to two years, and its purpose is to monitor the efficacy of the drug,
+          as well as note side effects that may occur.
+      "FDA Clinical Research Phase 3":
+        description: >-
+          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
+          and can last up to four years. It is used to continue monitoring the efficacy of
+          the drug, as well as exploring any longer-term adverse reactions.
+      "FDA Clinical Research Phase 4":
+        description: >-
+          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
+          volunteers who have the disease or condition and continues to monitor safety and efficacy.
+          If a drug passes this phase, it goes on to FDA review.
+      "FDA Fast Track":
+        description: >-
+          Fast track is a process designed to facilitate the development, and expedite the
+          review of drugs to treat serious conditions and fill an unmet medical need.
+          The purpose is to get important new drugs to the patient earlier. Fast Track
+          addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
+      "FDA Breakthrough Therapy":
+        description: >-
+          Breakthrough Therapy designation is a process designed to expedite the
+          development and review of drugs that are intended to treat a serious
+          condition and preliminary clinical evidence indicates that the drug may
+          demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
+          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
+      "FDA Accelerated Approval":
+        description: >-
+          When studying a new drug, it can sometimes take many years to learn whether a drug actually
+          provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
+          effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”.
+          Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical
+          benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs
+          for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
+          Using a surrogate endpoint enabled the FDA to approve these drugs faster.
+          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
+      "FDA Priority Review":
+        description: >-
+          Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
+          In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
+          the drug review time and created a two-tiered system of review times – Standard Review and Priority
+          Review. A Priority Review designation means FDA’s goal is to take action on an application
+          within 6 months (compared to 10 months under standard review).
+          For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
+      "Regular FDA Approval":
+      "Post-Approval Withdrawal":
