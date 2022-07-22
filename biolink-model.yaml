@@ -1245,7 +1245,8 @@ slots:
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
     examples:
       - value: cohort x
-      - value:
+      - value: blood
+      - value: gut microbiome
 
   direction qualifier:
     is_a: association slot
@@ -9856,12 +9857,12 @@ classes:
     defining_slots:
       - subject
       - subject aspect qualifier
-      - subject location qualifier
+      - subject context qualifier
       - subject variable state qualifier
       - predicate
       - object
       - object aspect qualifier
-      - object location qualifier
+      - object context qualifier
       - object variable state qualifier
       - object relative timing qualifier
       - population context qualifier
@@ -9870,13 +9871,13 @@ classes:
         subproperty_of: associated with
       subject aspect qualifier:
         # TODO: range
-      subject location qualifier:
+      subject context qualifier:
         range: ontology class
       subject variable state qualifier:
         range: variable_state_qualifier_enum
       object aspect qualifier:
         # TODO: range
-      object location qualifier:
+      object context qualifier:
         range: ontology class
       object variable state qualifier:
         range: variable_state_qualifier_enum
@@ -9988,7 +9989,7 @@ classes:
         range: anatomical entity
       object direction qualifier:
         range: direction_qualifier_enum
-      mechanism qualifier:
+      causal mechanism qualifier:
         range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
@@ -11215,9 +11216,13 @@ classes:
 enums:
 
   anatomical_context_qualifier_enum:
-    permissible_values:
-      test:
-      #TODO: see syntax for adding permissible values from an ontology
+    reachable_from:
+      source_ontology: bioregistry:uberon
+      source_nodes:
+        - UBERON:0001062 
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
 
   direction_qualifier_enum:
     permissible_values:

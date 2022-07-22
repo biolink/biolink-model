@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-22T13:47:34
+# Generation date: 2022-07-22T14:23:37
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9193,15 +9193,20 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
-    binding = PermissibleValue(text="binding")
-    inactivation = PermissibleValue(text="inactivation")
-    neutralization = PermissibleValue(text="neutralization")
-    inhibition = PermissibleValue(text="inhibition")
-    antagonism = PermissibleValue(text="antagonism")
-    agonism = PermissibleValue(text="agonism")
-    potentiation = PermissibleValue(text="potentiation")
-    activation = PermissibleValue(text="activation")
-    inducer = PermissibleValue(text="inducer")
+    binding = PermissibleValue(text="binding",
+                                     description="A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction.")
+    inhibition = PermissibleValue(text="inhibition",
+                                           description="A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.")
+    antagonism = PermissibleValue(text="antagonism",
+                                           description="A causal mecahnism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.")
+    agonism = PermissibleValue(text="agonism",
+                                     description="A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.")
+    potentiation = PermissibleValue(text="potentiation",
+                                               description="A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.")
+    activation = PermissibleValue(text="activation",
+                                           description="A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.")
+    inducer = PermissibleValue(text="inducer",
+                                     description="A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.")
 
     _defn = EnumDefinition(
         name="CausalMechanismQualifierEnum",
@@ -9209,24 +9214,30 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "physical interaction",
-                PermissibleValue(text="physical interaction") )
-        setattr(cls, "direct physical interaction",
-                PermissibleValue(text="direct physical interaction") )
-        setattr(cls, "indirect physical interaction",
-                PermissibleValue(text="indirect physical interaction") )
+        setattr(cls, "antibody inhibition",
+                PermissibleValue(text="antibody inhibition",
+                                 description="A causal mechanism in which an antibody specifically binds to and interferes with the target.") )
         setattr(cls, "molecular channel blockage",
-                PermissibleValue(text="molecular channel blockage") )
-        setattr(cls, "antibody inhibitor",
-                PermissibleValue(text="antibody inhibitor") )
+                PermissibleValue(text="molecular channel blockage",
+                                 description="A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.") )
         setattr(cls, "inverse agonism",
-                PermissibleValue(text="inverse agonism") )
+                PermissibleValue(text="inverse agonism",
+                                 description="A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.") )
         setattr(cls, "negative allosteric modulation",
-                PermissibleValue(text="negative allosteric modulation") )
+                PermissibleValue(text="negative allosteric modulation",
+                                 description="A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)") )
         setattr(cls, "molecular channel opening",
-                PermissibleValue(text="molecular channel opening") )
+                PermissibleValue(text="molecular channel opening",
+                                 description="A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.") )
         setattr(cls, "positive allosteric modulation",
-                PermissibleValue(text="positive allosteric modulation") )
+                PermissibleValue(text="positive allosteric modulation",
+                                 description="A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)") )
+        setattr(cls, "transcriptional regulation",
+                PermissibleValue(text="transcriptional regulation",
+                                 description="A causal mechanism mediated by through the control of target gene transcription") )
+        setattr(cls, "signaling-mediated control",
+                PermissibleValue(text="signaling-mediated control",
+                                 description="A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)") )
 
 class LogicalInterpretationEnum(EnumDefinitionImpl):
 
