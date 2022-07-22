@@ -1195,6 +1195,11 @@ slots:
       alternative version of this concept. The composed concept remains a subtype or instance of the core concept.
       For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept
       ‘a mutation of Gene X’.
+    examples:
+      - value: mutation
+    notes: >-
+      please see the chemical_or_gene_or_gene_product_form_enum (below) for examples of 'form or variant qualifier'
+      terms in the gene->chemical association space. 
 
   aspect qualifier:
     is_a: association slot
@@ -1202,8 +1207,16 @@ slots:
     description: >-
       Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
       the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
-      inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit
-      into the other S/O qualifier categories.
+      inheres in the core concept.
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
+    notes: >-
+      for good examples of aspects in the gene-> chemical space, please see the 
+      gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify 
+      the gene making the full subject a different ontological type.  
 
   derivative qualifier:
     is_a: association slot
@@ -1212,6 +1225,8 @@ slots:
       A qualifier that composes with a core subject/object  concept to describe something that is derived from the
       core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express
       the composed concept ‘a metabolite of Chemical X’.
+    examples:
+      - value: metabolite
 
   part qualifier:
     is_a: association slot
@@ -1219,12 +1234,19 @@ slots:
     description: >-
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
       use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+    examples:
+      - value: polyA tail
+      - value: upstream control region
 
   context qualifier:
     is_a: association slot
     abstract: true
     description: >-
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+    examples:
+      - value: cohort x
+      - value: blood
+      - value: gut microbiome
 
   direction qualifier:
     is_a: association slot
@@ -1300,7 +1322,7 @@ slots:
     is_a: statement qualifier
     description: >-
 
-  effect mechanism qualifier:
+  causal mechanism qualifier:
     is_a: statement qualifier
     description: >-
         A statement qualifier representing a type of molecular control mechanism through which an
@@ -1312,6 +1334,10 @@ slots:
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or subcellular location).
+    range: anatomical_context_qualifier_enum
+    notes: >- 
+      Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more
+      details.
 
   species context qualifier:
     is_a: statement qualifier
@@ -1554,7 +1580,12 @@ slots:
     description: >-
       Expresses a relationship between two named things where the relationship is typically generated statistically
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
-      'related to'.
+      'related to'. This relationship holds between two concepts represented by variables for which a statistical 
+      dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial 
+      Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient 
+      will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to 
+      the statistical variables, or represent related entities for which the variables serve as proxies in an 
+      Association (e.g. diseases, chemical entities or processes).
     annotations:
       canonical_predicate: true
     symmetric: true
@@ -1758,7 +1789,11 @@ slots:
     is_a: associated with
     description: >-
       Expresses a relationship between two named things wh1ere the relationship is typically generated statistically
-      and the state or fact of something is probable. 
+      and the state or fact of something is probable. This is a relationship that holds between two concepts represented by 
+      variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts
+      the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is 
+      associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
+      is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
 
   likelihood associated with:
     is_a: associated with
@@ -2025,6 +2060,7 @@ slots:
     range: named thing
 
   interacts with:
+    abstract: true
     domain: named thing
     range: named thing
     description: >-
@@ -2043,11 +2079,15 @@ slots:
       - RO:0002103
       - RO:0002120
       - RO:0002130
+    notes: >-
+      please use a more specific child predicate of interacts with, either physically interacts with
+      or genetically interacts with. 
 
   physically interacts with:
     is_a: interacts with
     description: >-
-      holds between two entities that make physical contact as part of some interaction
+      holds between two entities that make physical contact as part of some interaction. 
+      does not imply a causal relationship.
     in_subset:
       - translator_minimal
     symmetric: true
@@ -2056,8 +2096,6 @@ slots:
     exact_mappings:
       - WIKIDATA_PROPERTY:P129
     close_mappings:
-      # Agents of some interaction but not the relationship of interaction
-      # These RTX mapped terms may need to be reclassified to more meaningful terms (perhaps not yet created)
       - CHEMBL.MECHANISM:binding_agent
       - CHEMBL.MECHANISM:chelating_agent
       - CHEMBL.MECHANISM:cross-linking_agent
@@ -2066,13 +2104,30 @@ slots:
       - CHEMBL.MECHANISM:substrate
       - DRUGBANK:target
     narrow_mappings:
-      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities?
+      # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:A7
       - PR:non-covalently_bound_to
 
+  directly physically interacts with:
+    is_a: physically interacts with
+    description: >-
+      A causal mechanism mediated by a direct contact between the effector and target entities (this contact may 
+      be weak or strong, transient or stable).
+
+  binds:
+    is_a: directly physically interacts with
+    description: >-
+      A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, 
+      which form a stable physical interaction.
+
+  indirectly phsyically interacts with:
+    is_a: physically interacts with
+
+
   chemically interacts with:
+    deprecated: true
     is_a: physically interacts with
     domain: chemical entity
     range: chemical entity
@@ -2081,6 +2136,7 @@ slots:
     symmetric: true
 
   molecularly interacts with:
+    deprecated: true
     is_a: physically interacts with
     aliases: ['targets']
     domain: molecular entity
@@ -4718,9 +4774,11 @@ slots:
   correlated with:
     is_a: associated with
     description: >-
-      holds between any two named thing entities. For example, correlated_with
-      holds between a disease or phenotypic feature and a measurable molecular
-      entity that is used as an indicator of the presence or state of the disease or feature.
+      A relationship that holds between two concepts represented by variables for which a statistical dependence is 
+      demonstrated using a correlation analysis method.
+    notes: >-
+      These concepts may map exactly to the statistical variables, or represent related entities for which the 
+      variables serve as proxies in an Association (e.g. diseases, chemical entities or processes).
     domain: named thing
     range: named thing
     in_subset:
@@ -5837,6 +5895,7 @@ slots:
       - RO:0002285
 
   directly interacts with:
+    deprecated: true
     is_a: interacts with
     description: Holds between chemical entities that physically and directly interact
       with each other
@@ -6141,6 +6200,7 @@ slots:
     inverse: has completed
 
   decreases molecular interaction:
+    deprecated: true
     is_a: molecularly interacts with
     description: indicates that the source decreases the molecular interaction between
       the target and some other chemical entity
@@ -6152,12 +6212,13 @@ slots:
     mixins:
       - decreases amount or activity of
 
-
   molecular interaction decreased by:
+    deprecated: true
     is_a: molecularly interacts with
     inverse: decreases molecular interaction
 
   increases molecular interaction:
+    deprecated: true
     is_a: molecularly interacts with
     description: indicates that the source increases the molecular interaction between
       the target and some other chemical entity
@@ -6170,6 +6231,7 @@ slots:
       - increases amount or activity of
 
   molecular interaction increased by:
+    deprecated: true
     is_a: molecularly interacts with
     inverse: increases molecular interaction
 
@@ -6217,7 +6279,6 @@ slots:
       - PR:lacks_part
     narrow_mappings:
       - CL:lacks_plasma_membrane_part
-
 
   missing from:
     is_a: related to at instance level
@@ -9565,8 +9626,6 @@ classes:
       An interaction at the molecular level between two physical entities
     is_a: pairwise gene to gene interaction
     slots:
-      # need to declare a slot before it is used,
-      # then list it in 'slots', not just a slot_usage
       - interacting molecules category
     defining_slots:
       - subject
@@ -9584,7 +9643,7 @@ classes:
           - IMEX
           - BioGRID
       predicate:
-        subproperty_of: molecularly interacts with
+        subproperty_of: interacts with
         description: "interaction relationship type"
         examples:
           - value: RO:0002447
@@ -9809,12 +9868,12 @@ classes:
     defining_slots:
       - subject
       - subject aspect qualifier
-      - subject location qualifier
+      - subject context qualifier
       - subject variable state qualifier
       - predicate
       - object
       - object aspect qualifier
-      - object location qualifier
+      - object context qualifier
       - object variable state qualifier
       - object relative timing qualifier
       - population context qualifier
@@ -9823,25 +9882,22 @@ classes:
         subproperty_of: associated with
       subject aspect qualifier:
         # TODO: range
-      subject location qualifier:
+      subject context qualifier:
         range: ontology class
       subject variable state qualifier:
         range: variable_state_qualifier_enum
       object aspect qualifier:
         # TODO: range
-      object location qualifier:
+      object context qualifier:
         range: ontology class
       object variable state qualifier:
         range: variable_state_qualifier_enum
-
 
   chemical to gene association:
     deprecated: true
     description: >-
       An interaction between a chemical entity and a gene or gene product.
     is_a: association
-    exact_mappings:
-      - SIO:001257
     defining_slots:
       - subject
       - object
@@ -9859,6 +9915,10 @@ classes:
       effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type
       (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     is_a: association
+    exact_mappings:
+      - SIO:001257
+    mixins:
+      - chemical to entity association mixin
     slots:
       - subject form or variant qualifier
       - subject part qualifier
@@ -9867,7 +9927,6 @@ classes:
       - object form or variant qualifier
       - object part qualifier
       - object context qualifier
-      - interaction mechanism qualifier
       - anatomical context qualifier
     slot_usage:
       subject:
@@ -9875,7 +9934,7 @@ classes:
       object:
         range: gene or gene product
       predicate:
-        # TODO make this physically interacts with
+        subproperty_of: physically interacts with
       subject form or variant qualifier:
         range: chemical_or_gene_or_gene_product_form_enum
       subject part qualifier:
@@ -9890,8 +9949,6 @@ classes:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object context qualifier:
         range: anatomical entity
-      interaction mechanism qualifier:
-        range: molecular_control_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -9911,7 +9968,7 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
-      - effect mechanism qualifier
+      - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
     slot_usage:
@@ -9928,9 +9985,9 @@ classes:
       subject direction qualifier:
         range: direction_qualifier_enum
       predicate:
-        # TODO make this affects and related to
+        subproperty_of: affects
       qualified predicate:
-        # TODO make this causes
+        subproperty_of: causes
       object:
         range: gene or gene product
       object form or variant qualifier:
@@ -9943,8 +10000,8 @@ classes:
         range: anatomical entity
       object direction qualifier:
         range: direction_qualifier_enum
-      effect mechanism qualifier:
-        range: molecular_control_mechanism_qualifier_enum
+      causal mechanism qualifier:
+        range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -11015,9 +11072,6 @@ classes:
         role: regulated gene
       object direction qualifier:
         range: direction_qualifier_enum
-        description: used to record upregulation or downregulation.
-
-
 
   anatomical entity to anatomical entity association: # schema: gocam
     is_a: association
@@ -11171,14 +11225,23 @@ classes:
            
 enums:
 
+  anatomical_context_qualifier_enum:
+    reachable_from:
+      source_ontology: bioregistry:uberon
+      source_nodes:
+        - UBERON:0001062
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
+
   direction_qualifier_enum:
     permissible_values:
-      increases:
-      upregulate:
-        is_a: increases
-      decreases:
-      downregulate:
-        is_a: decreases
+      increased:
+      upregulated:
+        is_a: increased
+      decreased:
+      downregulated:
+        is_a: decreased
 
   relative_timing_qualifier_enum:
     permissible_values:
@@ -11213,67 +11276,161 @@ enums:
   gene_or_gene_product_or_chemical_entity_aspect_enum:
     permissible_values:
       expression:
+        is_a: abundance
       mutation rate:
       abundance:
       synthesis:
+        is_a: synthesis
       degredation:
+        is_a: abundance
       cleavage:
+        is_a: degredation
       hydrolisis:
+        is_a: degredation
       activity:
       metabolic processing:
       stability:
       localization:
       transport:
       secretion:
+        is_a: transport
       uptake:
+        is_a: transport
       molecular modification:
       acetylation:
+        is_a: molecular modification
       acylation:
+        is_a: molecular modification
       alkylation:
+        is_a: molecular modification
       amination:
+        is_a: molecular modification
       carbamoylation:
+        is_a: molecular modification
       ethylation:
+        is_a: molecular modification
       glutathionylation:
+        is_a: molecular modification
       glycation:
+        is_a: molecular modification
       glycosylation:
+        is_a: molecular modification
       glucuronidation:
+        is_a: molecular modification
       N-linked glycosylation:
+        is_a: molecular modification
       O-linked glycosylation:
+        is_a: molecular modification
       hydroxylation:
+        is_a: molecular modification
       lipidation:
+        is_a: molecular modification
       farnesylation:
+        is_a: molecular modification
       geranoylation:
+        is_a: molecular modification
       myristoylation:
+        is_a: molecular modification
       palmitoylation:
+        is_a: molecular modification
       prenylation:
+        is_a: molecular modification
       methylation:
+        is_a: molecular modification
       nitrosation:
+        is_a: molecular modification
       nucleotidylation:
+        is_a: molecular modification
       phosphorylation:
+        is_a: molecular modification
       ribosylation:
+        is_a: molecular modification
       ADP-ribosylation:
+        is_a: molecular modification
       sulfation:
+        is_a: molecular modification
       sumoylation:
+        is_a: molecular modification
       ubiquitination:
+        is_a: molecular modification
       oxidation:
+        is_a: molecular modification
       reduction:
+        is_a: molecular modification
       carboxylation:
+        is_a: molecular modification
 
-  molecular_control_mechanism_qualifier_enum:
+  causal_mechanism_qualifier_enum:
     permissible_values:
       binding:
-      inactivation:
-      neutralization:
+        description: >-
+          A causal mechanism mediated by the direct contact between effector and target chemical or 
+          biomolecular entity, which form a stable physical interaction.
       inhibition:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector binds to the target and negatively effects its normal function, 
+          e.g. prevention of enzymatic reaction or activation of downstream pathway.
+      antibody inhibition:
+        is_a: inhibition
+        description: >- 
+          A causal mechanism in which an antibody specifically binds to and interferes with the target.
       antagonism:
+        is_a: inhibition
+        description: >-
+          A causal mecahnism in which the effector binds to a receptor and prevents activation by an agonist 
+          through competing for the binding site.
       molecular channel blockage:
-      antibody inhibitor:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which the effector binds to a molecular channel and prevents or reduces 
+          transport of ions through it.
       inverse agonism:
+        is_a: inhibition
+        description: >- 
+          A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
+          its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
       negative allosteric modulation:
+        is_a: inhibition
+        description: >-
+          A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a 
+          receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
       agonism:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an 
+          endogenous ligand.
       molecular channel opening:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector binds to a molecular channel and facilitates transport of 
+          ions through it.
       positive allosteric modulation:
+        is_a: activation
+        description: >-
+          A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by 
+          binding to a site distinct from that ligand (i.e. non-competitive inhibition)
       potentiation:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some 
+          other chemical or drug on its target.
+      activation:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+      inducer:
+        is_a: binding
+        description: >-
+          A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that 
+          processes drugs in the body.
+      transcriptional regulation:
+        description: >-
+          A causal mechanism mediated by through the control of target gene transcription
+      signaling-mediated control:
+        description: >- 
+          A causal mechanism mediated by the activation or control of signaling events that influence the some aspect 
+          of the target entity (e.g. its activity, processing, transport, etc)
 
   logical_interpretation_enum:
     permissible_values:
@@ -11325,18 +11482,6 @@ enums:
         description: nucleic acid
       "AA":
         description: amino acid
-
-  predicate_qualifier_enum:
-    description: >-
-      constrained list of qualifying terms that soften or expand the definition of the predicate used.
-      can be used to constrain or qualify any predicate (any child of related_to).
-    permissible_values:
-      "predicted":
-      "possibly":
-      "hypothesized":
-      "validated":
-      "supported by real-world evidence":
-      "supported by clinical evidence":
 
   druggable_gene_category_enum:
     permissible_values:
