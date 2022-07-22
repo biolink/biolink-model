@@ -1243,6 +1243,9 @@ slots:
     abstract: true
     description: >-
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+    examples:
+      - value: cohort x
+      - value:
 
   direction qualifier:
     is_a: association slot
@@ -1318,7 +1321,7 @@ slots:
     is_a: statement qualifier
     description: >-
 
-  effect mechanism qualifier:
+  causal mechanism qualifier:
     is_a: statement qualifier
     description: >-
         A statement qualifier representing a type of molecular control mechanism through which an
@@ -1330,6 +1333,10 @@ slots:
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or subcellular location).
+    range: anatomical_context_qualifier_enum
+    notes: >- 
+      Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more
+      details.
 
   species context qualifier:
     is_a: statement qualifier
@@ -2043,6 +2050,7 @@ slots:
     range: named thing
 
   interacts with:
+    abstract: true
     domain: named thing
     range: named thing
     description: >-
@@ -2061,6 +2069,9 @@ slots:
       - RO:0002103
       - RO:0002120
       - RO:0002130
+    notes: >-
+      please use a more specific child predicate of interacts with, either physically interacts with
+      or genetically interacts with. 
 
   physically interacts with:
     is_a: interacts with
@@ -2091,6 +2102,7 @@ slots:
       - PR:non-covalently_bound_to
 
   chemically interacts with:
+    deprecated: true
     is_a: physically interacts with
     domain: chemical entity
     range: chemical entity
@@ -2099,6 +2111,7 @@ slots:
     symmetric: true
 
   molecularly interacts with:
+    deprecated: true
     is_a: physically interacts with
     aliases: ['targets']
     domain: molecular entity
@@ -5855,6 +5868,7 @@ slots:
       - RO:0002285
 
   directly interacts with:
+    deprecated: true
     is_a: interacts with
     description: Holds between chemical entities that physically and directly interact
       with each other
@@ -9909,7 +9923,7 @@ classes:
       object context qualifier:
         range: anatomical entity
       interaction mechanism qualifier:
-        range: molecular_control_mechanism_qualifier_enum
+        range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -9929,7 +9943,7 @@ classes:
       - object part qualifier
       - object aspect qualifier
       - object context qualifier
-      - effect mechanism qualifier
+      - causal mechanism qualifier
       - anatomical context qualifier
       - qualified predicate
     slot_usage:
@@ -9961,8 +9975,8 @@ classes:
         range: anatomical entity
       object direction qualifier:
         range: direction_qualifier_enum
-      effect mechanism qualifier:
-        range: molecular_control_mechanism_qualifier_enum
+      causal mechanism qualifier:
+        range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
 
@@ -11189,14 +11203,19 @@ classes:
            
 enums:
 
+  anatomical_context_qualifier_enum:
+    permissible_values:
+      test:
+      #TODO: see syntax for adding permissible values from an ontology
+
   direction_qualifier_enum:
     permissible_values:
-      increases:
-      upregulate:
-        is_a: increases
-      decreases:
-      downregulate:
-        is_a: decreases
+      increased:
+      upregulated:
+        is_a: increased
+      decreased:
+      downregulated:
+        is_a: decreased
 
   relative_timing_qualifier_enum:
     permissible_values:
@@ -11277,21 +11296,72 @@ enums:
       reduction:
       carboxylation:
 
-  molecular_control_mechanism_qualifier_enum:
+  causal_mechanism_qualifier_enum:
     permissible_values:
+      physical interaction:
+        description: >-
+          A causal mechanism mediated by a direct or indirect physical contact between
+          the effector and the target entities.
+      direct physical interaction:
+        is_a: physical interaction
+        description: >-
+          An affect mechanism mediated by a direct contact between the effector and target entities 
+          (this contact may be weak or strong, transient or stable)
       binding:
+        is_a: direct physical interaction
+        description: >-
+          An affect mechanism mediated by the direct contact between effector and target entities,
+          which form a stable physical interaction.
       inactivation:
+        is_a: binding
       neutralization:
+        is_a: binding
       inhibition:
+        is_a: binding
       antagonism:
+        is_a: binding
       molecular channel blockage:
+        is_a: binding
       antibody inhibitor:
+        is_a: binding
       inverse agonism:
+        is_a: binding
       negative allosteric modulation:
+        is_a: binding
       agonism:
+        is_a: binding
+        description: >-
+          An affect mechanism mediated through the binding and activation of a receptor by a chemical entity, 
+          which mimics the effect of the endogenous ligand.
       molecular channel opening:
+        is_a: binding
       positive allosteric modulation:
+        is_a: binding
       potentiation:
+        is_a: binding
+      activation:
+        is_a: binding
+      inducer:
+        is_a: binding
+      indirect physical interaction:
+        description: >-
+          An affect mechanism mediated by an indirect contact between affector and target entities, which are connected 
+          through some bridging entity(ies) but do not directly touch.
+      transcriptional regulation:
+        description: >-
+          An affect mechanism mediated by direct or indirect control of gene transcription.
+      direction transcriptional regulation:
+        description: >-
+          An affect mechanism mediated by direct control of gene transcription (i.e. the effector directly binds the 
+          gene's regulatory region or transcription factors to control its rate of transcription)
+      indirect transcriptional regulation:
+        description: >-
+          An affect mechanism mediated by indirect control of gene transcription (i.e. the effector controls signalling 
+          events upstream of the factors that directly control the object gene's transcription)
+      signaling-mediated control:
+        description: >-
+          An affect mechanism mediated by the activation or control of signaling events that influence the some aspect 
+          of the target entity (e.g. its activity, processing, transport, etc)
 
   logical_interpretation_enum:
     permissible_values:
