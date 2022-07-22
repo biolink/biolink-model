@@ -1,5 +1,18 @@
 # Biolink Model 3.0 Migration Guide
 
+Please feel free to contact the data modeling team for advice, there are a lot of changes!
+In general, we represent statements of knowledge using the "onion" model, where the core triple (the subject, predicate
+and object) is qualified in one layer and provenance is added in another.
+
+![](images/onion.png)
+
+An example of this is is below, modeling the knowledge statement: 
+```bash
+Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
+```
+
+![](images/example_onion.png)
+
 ## Deprecated Predicates:
  * affects abundance of
  * abundance affected by
@@ -157,63 +170,65 @@ Associated with likelihood of
 
 Instead of these predicates please use one of the following:
 
-physically interacts with
-binds
-directly physically interacts with
-indirectly physically interacts with
+ * physically interacts with
+ * binds
+ * directly physically interacts with
+ * indirectly physically interacts with
 
-Deprecated edge properties (qualifiers):
-has population context
-has temporal context
+### Deprecated edge properties (qualifiers):
 
-Instead of these qualifiers, please use:
-context qualifier
-anatomical context qualifier 
-temporal context qualifier
+ * has population context
+ * has temporal context
 
-Deprecate classes and associations:
+Instead of these qualifiers, please use one of the following qualifiers:
+ * context qualifier
+ * anatomical context qualifier 
+ * temporal context qualifier
 
-chemical to gene association
+### Deprecate classes and associations:
 
-Deprecations in previous releases, now removed:
-source
+ * chemical to gene association
+
+### Deprecations in previous releases, now removed:
+ * source
+
+# Additions:
+
+subject and object qualifiers:
+ * aspect qualifier
+ * derivative qualifier
+ * part qualifier
+ * context qualifier
+ * direction qualifier
+ * variable state qualifier
+ * object relative timing qualifier
+ * qualified predicate
+
+### Association qualifiers:
+
+ * statement qualifier
+ * causal mechanism qualifier
+ * anatomical context qualifier
+ * species context qualifier 
+
+### Enumerations:
+
+ * anatomical_context_qualifier_enum
+ * direction_qualifier_enum
+ * relative_timing_qualifier_enum
+ * variable_state_qualifier_enum
+ * chemical_entity_derivative_enum
+ * chemical_or_gene_or_gene_product_form_enum
+ * gene_or_gene_product_or_chemical_part_qualifier_enum
+ * gene_or_gene_product_or_chemical_entity_aspect_enum
+ * causal_mechanism_qualifier_enum
 
 
-Additions
-Subject and object qualifiers:
-Aspect qualifier
-derivative qualifier
-Part qualifier
-Context qualifier
-Direction qualifier
-Variable state qualifier
-Object relative timing qualifier
-Qualified predicate
+### Associations: 
 
-Association qualifiers:
-
-Statement qualifier
-Causal mechanism qualifier
-Anatomical context qualifier
-Species context qualifier 
-
-Enumerations:
-anatomical_context_qualifier_enum
-direction_qualifier_enum
-relative_timing_qualifier_enum
-variable_state_qualifier_enum
-chemical_entity_derivative_enum
-chemical_or_gene_or_gene_product_form_enum
-gene_or_gene_product_or_chemical_part_qualifier_enum
-gene_or_gene_product_or_chemical_entity_aspect_enum
-causal_mechanism_qualifier_enum
-
-
-Associations: 
-
-chemical gene interaction association
-chemical affects gene association
-named thing associated with likelihood of named thing association
+ * chemical gene interaction association
+ * chemical affects gene association
+ * named thing associated with likelihood of named thing association
 
 
 
