@@ -1834,7 +1834,15 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
-     * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association.
+     * [supporting study metadata](supporting_study_metadata.md) - Information about a study used to generate information used as evidence to support the knowledge expressed in an  Association. In practice, data creators should use one of the more specific subtypes of this property.
+         * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
+         * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
+         * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
+         * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
+         * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+         * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
+     * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
+         * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
      * [variable state qualifier](variable_state_qualifier.md)
          * [object variable state qualifier](object_variable_state_qualifier.md)
          * [subject variable state qualifier](subject_variable_state_qualifier.md)
@@ -1941,7 +1949,22 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [subject part qualifier](subject_part_qualifier.md)
  * [subject variable state qualifier](subject_variable_state_qualifier.md)
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
- * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association.
+ * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
+ * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
+ * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
+ * [supporting study metadata](supporting_study_metadata.md) - Information about a study used to generate information used as evidence to support the knowledge expressed in an  Association. In practice, data creators should use one of the more specific subtypes of this property.
+     * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
+     * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
+     * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
+     * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
+     * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+     * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
+ * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
+ * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+ * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
+ * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
+     * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
+ * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [variable state qualifier](variable_state_qualifier.md)
      * [object variable state qualifier](object_variable_state_qualifier.md)
      * [subject variable state qualifier](subject_variable_state_qualifier.md)

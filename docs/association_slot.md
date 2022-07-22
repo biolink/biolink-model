@@ -70,6 +70,7 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
  *  [stoichiometry](stoichiometry.md)
  *  [subject](subject.md)
  *  [supporting data source](supporting_data_source.md)
+ *  [supporting study metadata](supporting_study_metadata.md)
  *  [temporal context qualifier](temporal_context_qualifier.md)
  *  [variable state qualifier](variable_state_qualifier.md)
 

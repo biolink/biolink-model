@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.7
+# version: 3.0.0
 {
    "type": "Schema",
    "@context": [
@@ -830,7 +830,10 @@
             "https://w3id.org/biolink/vocab/BehaviorToBehavioralFeatureAssociation",
             "https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
+            "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
             "https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation",
+            "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
+            "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation",
@@ -862,6 +865,7 @@
             "https://w3id.org/biolink/vocab/MolecularActivityToChemicalEntityAssociation",
             "https://w3id.org/biolink/vocab/MolecularActivityToMolecularActivityAssociation",
             "https://w3id.org/biolink/vocab/MolecularActivityToPathwayAssociation",
+            "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
             "https://w3id.org/biolink/vocab/OrganismTaxonToEnvironmentAssociation",
             "https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonAssociation",
             "https://w3id.org/biolink/vocab/OrganismToOrganismAssociation",
@@ -2194,6 +2198,164 @@
          }
       },
       {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_part_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/effect_mechanism_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/MolecularControlMechanismQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/qualified_predicate",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntity",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/ChemicalEntity",
          "shapeExprs": [
@@ -2415,6 +2577,73 @@
       },
       {
          "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/ChemicalEntityOrProteinOrPolypeptide",
          "closed": false,
          "expression": {
@@ -2541,6 +2770,129 @@
             },
             "https://w3id.org/biolink/vocab/DrugExposure"
          ]
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_part_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/interaction_mechanism_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/MolecularControlMechanismQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalEntity",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
       },
       {
          "type": "ShapeOr",
@@ -3997,6 +4349,18 @@
                                  "type": "NodeConstraint",
                                  "values": [
                                     "https://w3id.org/biolink/vocab/BiologicalEntity"
+                                 ]
+                              },
+                              "min": 0
+                           },
+                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
                                  ]
                               },
                               "min": 0
@@ -10151,6 +10515,94 @@
             "https://w3id.org/biolink/vocab/Procedure",
             "https://w3id.org/biolink/vocab/Treatment"
          ]
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_location_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_variable_state_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/VariableStateQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_location_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_variable_state_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/VariableStateQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
       },
       {
          "type": "ShapeOr",

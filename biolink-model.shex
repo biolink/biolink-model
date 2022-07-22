@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.7
+# version: 3.0.0
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -197,11 +197,12 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<AnatomicalEntityToAnatomicalEntityAssociation> OR @<BehaviorToBehavioralFeatureAssociation> OR
     @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<ChemicalEntityAssessesNamedThingAssociation> OR @<ChemicalToChemicalAssociation> OR
-    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
-    @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
-    @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
-    @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
+    @<ChemicalAffectsGeneAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
+    @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
+    @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR
+    @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
+    @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
+    @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneRegulatoryRelationship> OR
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToPathwayAssociation> OR
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
@@ -209,7 +210,8 @@ linkml:Nodeidentifier NONLITERAL
     @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
     @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
     @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
-    @<OrganismTaxonToEnvironmentAssociation> OR @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
+    @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
+    @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
     @<OrganismalEntityAsAModelOfDiseaseAssociation> OR @<PopulationToPopulationAssociation> OR @<SequenceAssociation> OR
     @<SequenceFeatureRelationship> OR @<SequenceVariantModulatesTreatmentAssociation> OR @<TaxonToTaxonAssociation> OR
     @<VariantToDiseaseAssociation> OR @<VariantToGeneAssociation> OR @<VariantToPhenotypicFeatureAssociation> OR
@@ -470,6 +472,31 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<ChemicalAffectsGeneAssociation> CLOSED {
+    (  $<ChemicalAffectsGeneAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
+          <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <subject_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_context_qualifier> @<AnatomicalEntity> ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
+          <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+          <object_context_qualifier> @<AnatomicalEntity> ? ;
+          <effect_mechanism_qualifier> @<MolecularControlMechanismQualifierEnum> ? ;
+          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+          <qualified_predicate> @linkml:String ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:predicate @<PredicateType> ;
+          rdf:object @<GeneOrGeneProduct> ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ?
+       ) ;
+       rdf:type [ <ChemicalAffectsGeneAssociation> ]
+    )
+}
+
 <ChemicalEntity>  (
     CLOSED {
        (  $<ChemicalEntity_tes> (  &<NamedThing_tes> ;
@@ -510,6 +537,18 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> CLOSED {
+    (  $<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          rdf:predicate @<PredicateType> ;
+          rdf:subject @<ChemicalEntityOrGeneOrGeneProduct> ;
+          rdf:object @<GeneOrGeneProduct>
+       ) ;
+       rdf:type [ <ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> ]
+    )
+}
+
 <ChemicalEntityOrProteinOrPolypeptide> {
     (  $<ChemicalEntityOrProteinOrPolypeptide_tes> rdf:type . * ;
        rdf:type [ <ChemicalEntityOrProteinOrPolypeptide> ] ?
@@ -538,6 +577,26 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<DrugExposure>
 )
+
+<ChemicalGeneInteractionAssociation> CLOSED {
+    (  $<ChemicalGeneInteractionAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
+          <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <subject_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
+          <subject_context_qualifier> @<AnatomicalEntity> ? ;
+          <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
+          <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <object_context_qualifier> @<AnatomicalEntity> ? ;
+          <interaction_mechanism_qualifier> @<MolecularControlMechanismQualifierEnum> ? ;
+          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+          rdf:subject @<ChemicalEntity> ;
+          rdf:object @<GeneOrGeneProduct> ;
+          rdf:predicate @<PredicateType>
+       ) ;
+       rdf:type [ <ChemicalGeneInteractionAssociation> ]
+    )
+}
 
 <ChemicalMixture>  (
     CLOSED {
@@ -826,7 +885,9 @@ linkml:Nodeidentifier NONLITERAL
 <DiseaseOrPhenotypicFeature>  (
     CLOSED {
        (  $<DiseaseOrPhenotypicFeature_tes> (  &<BiologicalEntity_tes> ;
-             rdf:type [ <BiologicalEntity> ] ?
+             rdf:type [ <BiologicalEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ?
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )
@@ -2013,6 +2074,21 @@ linkml:Nodeidentifier NONLITERAL
     @<Device> OR @<Event> OR @<ExposureEvent> OR @<InformationContentEntity> OR @<OrganismTaxon> OR @<Phenomenon> OR
     @<PhysicalEntity> OR @<PlanetaryEntity> OR @<Procedure> OR @<Treatment>
 )
+
+<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> CLOSED {
+    (  $<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          rdf:predicate @<PredicateType> ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_location_qualifier> @<OntologyClass> ? ;
+          <subject_variable_state_qualifier> @<VariableStateQualifierEnum> ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_location_qualifier> @<OntologyClass> ? ;
+          <object_variable_state_qualifier> @<VariableStateQualifierEnum> ?
+       ) ;
+       rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]
+    )
+}
 
 <NoncodingRNAProduct>  (
     CLOSED {

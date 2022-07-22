@@ -8,7 +8,7 @@ layout: default
 # Slot: temporal_context_qualifier
 
 
-a constraint of time placed upon the truth value of an association.
+a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
 
 URI: [biolink:temporal_context_qualifier](https://w3id.org/biolink/vocab/temporal_context_qualifier)
 
@@ -22,6 +22,7 @@ URI: [biolink:temporal_context_qualifier](https://w3id.org/biolink/vocab/tempora
 
 ## Children
 
+ *  [temporal interval qualifier](temporal_interval_qualifier.md)
 
 ## Used by
 
