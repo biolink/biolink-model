@@ -1202,9 +1202,17 @@ slots:
     description: >-
       Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
       the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
-      inheres in the core concept. The aspect qualifier is loosely defined, as a catch all for qualifiers that don’t fit
-      into the other S/O qualifier categories.
-
+      inheres in the core concept.
+    examples:
+      - value: stability
+      - value: abundance
+      - value: expression
+      - value: exposure
+    notes: >-
+      for good examples of aspects in the gene-> chemical space, please see the 
+      gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify 
+      the gene making the full subject a different ontological type.  
+    
   derivative qualifier:
     is_a: association slot
     abstract: true
