@@ -596,7 +596,7 @@ type ChemicalAffectsGeneAssociation
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
-    subjectAspectQualifier: String
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     subjectContextQualifier: AnatomicalEntity
     subjectDirectionQualifier: DirectionQualifierEnum
     objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum

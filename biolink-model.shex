@@ -478,7 +478,7 @@ linkml:Nodeidentifier NONLITERAL
           <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
           <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <subject_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
-          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
           <subject_context_qualifier> @<AnatomicalEntity> ? ;
           <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormEnum> ? ;
