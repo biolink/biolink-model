@@ -1765,11 +1765,10 @@ slots:
   associated with likelihood of:
     is_a: associated with
     description: >-
-      Expresses a relationship between two named things wh1ere the relationship is typically generated statistically
-      and the state or fact of something is probable. This is a relationship that holds between two concepts represented by 
-      variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts
-      the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is 
-      associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
+      A a relationship that holds between two concepts represented by variables for which a statistical 
+      dependence is demonstrated, wherein the state or value of one variable predicts the future state 
+      or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated 
+      with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
       is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
 
   likelihood associated with:
@@ -4748,7 +4747,9 @@ slots:
   positively correlated with:
     is_a: correlated with
     description: >-
-      holds between any two named thing entities "correlated with" one another in a positive manner.
+      A relationship that holds between two concepts represented by variables for which a statistical correlation 
+      is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or 
+      presence of one correlates with an increase or presence of the other).
     domain: named thing
     range: named thing
     in_subset:
@@ -4763,7 +4764,9 @@ slots:
   negatively correlated with:
     is_a: correlated with
     description: >-
-      holds between any two named thing entities "correlated with" one another in a negative manner.
+      A relationship that holds between two concepts represented by variables for which a statistical correlation 
+      is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of 
+      one correlates with a decrease or absence of the other).
     domain: named thing
     range: named thing
     in_subset:
@@ -9925,6 +9928,8 @@ classes:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       subject derivative qualifier:
         range: chemical_entity_derivative_enum
+      subject aspect qualifier:
+        range: gene_or_gene_product_or_chemical_entity_aspect_enum
       subject context qualifier:
         range: anatomical entity
       subject direction qualifier:
@@ -11217,7 +11222,7 @@ enums:
       mutation rate:
       abundance:
       synthesis:
-        is_a: synthesis
+        is_a: abundance
       degredation:
         is_a: abundance
       cleavage:
