@@ -2801,10 +2801,8 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   predicateType predicate = 0
   string subjectAspectQualifier = 0
   ontologyClass subjectContextQualifier = 0
-  variableStateQualifierEnum subjectVariableStateQualifier = 0
   string objectAspectQualifier = 0
   ontologyClass objectContextQualifier = 0
-  variableStateQualifierEnum objectVariableStateQualifier = 0
  }
 message NoncodingRNAProduct
  {

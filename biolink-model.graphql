@@ -787,10 +787,6 @@ type ChemicalRole
     source: String
   }
 
-type ChemicalSubstance
-  {
-  }
-
 type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
@@ -3157,10 +3153,8 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     predicate: PredicateType!
     subjectAspectQualifier: String
     subjectContextQualifier: OntologyClass
-    subjectVariableStateQualifier: VariableStateQualifierEnum
     objectAspectQualifier: String
     objectContextQualifier: OntologyClass
-    objectVariableStateQualifier: VariableStateQualifierEnum
   }
 
 type NoncodingRNAProduct

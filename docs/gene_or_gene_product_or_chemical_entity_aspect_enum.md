@@ -25,7 +25,7 @@ URI: [biolink:gene_or_gene_product_or_chemical_entity_aspect_enum](https://w3id.
 | expression |  |  | {'is_a': 'abundance'} |
 | mutation rate |  |  |  |
 | abundance |  |  |  |
-| synthesis |  |  | {'is_a': 'synthesis'} |
+| synthesis |  |  | {'is_a': 'abundance'} |
 | degredation |  |  | {'is_a': 'abundance'} |
 | cleavage |  |  | {'is_a': 'degredation'} |
 | hydrolisis |  |  | {'is_a': 'degredation'} |

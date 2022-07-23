@@ -3266,14 +3266,6 @@
          "title": "ChemicalRole",
          "type": "object"
       },
-      "ChemicalSubstance": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "ChemicalSubstance",
-         "type": "object"
-      },
       "ChemicalToChemicalAssociation": {
          "additionalProperties": false,
          "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
@@ -13163,9 +13155,6 @@
             "object_context_qualifier": {
                "type": "string"
             },
-            "object_variable_state_qualifier": {
-               "$ref": "#/$defs/VariableStateQualifierEnum"
-            },
             "original_knowledge_source": {
                "type": "string"
             },
@@ -13203,9 +13192,6 @@
             },
             "subject_context_qualifier": {
                "type": "string"
-            },
-            "subject_variable_state_qualifier": {
-               "$ref": "#/$defs/VariableStateQualifierEnum"
             },
             "timepoint": {
                "description": "a point in time",
@@ -16879,14 +16865,6 @@
          "title": "RelationshipType",
          "type": "object"
       },
-      "RelativeTimingQualifierEnum": {
-         "description": "",
-         "enum": [
-            "future"
-         ],
-         "title": "RelativeTimingQualifierEnum",
-         "type": "string"
-      },
       "SequenceAssociation": {
          "additionalProperties": false,
          "description": "An association between a sequence feature and a nucleic acid entity it is localized to.",
@@ -18367,14 +18345,6 @@
          "required": [],
          "title": "UnclassifiedOntologyClass",
          "type": "object"
-      },
-      "VariableStateQualifierEnum": {
-         "description": "",
-         "enum": [
-            "present"
-         ],
-         "title": "VariableStateQualifierEnum",
-         "type": "string"
       },
       "VariantAsAModelOfDiseaseAssociation": {
          "additionalProperties": false,

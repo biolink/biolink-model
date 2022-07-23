@@ -623,12 +623,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<ChemicalSubstance> CLOSED {
-    (  $<ChemicalSubstance_tes> rdf:type . * ;
-       rdf:type [ <ChemicalSubstance> ] ?
-    )
-}
-
 <ChemicalToChemicalAssociation>  (
     CLOSED {
        (  $<ChemicalToChemicalAssociation_tes> (  &<Association_tes> ;
@@ -2078,10 +2072,8 @@ linkml:Nodeidentifier NONLITERAL
           <predicate> @<PredicateType> ;
           <subject_aspect_qualifier> @linkml:String ? ;
           <subject_context_qualifier> @<OntologyClass> ? ;
-          <subject_variable_state_qualifier> @<VariableStateQualifierEnum> ? ;
           <object_aspect_qualifier> @linkml:String ? ;
-          <object_context_qualifier> @<OntologyClass> ? ;
-          <object_variable_state_qualifier> @<VariableStateQualifierEnum> ?
+          <object_context_qualifier> @<OntologyClass> ?
        ) ;
        rdf:type [ <NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> ]
     )

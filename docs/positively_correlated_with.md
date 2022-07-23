@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between any two named thing entities "correlated with" one another in a positive manner.
+A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).
 
 URI: [biolink:positively_correlated_with](https://w3id.org/biolink/vocab/positively_correlated_with)
 

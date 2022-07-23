@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between any two named thing entities "correlated with" one another in a negative manner.
+A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).
 
 URI: [biolink:negatively_correlated_with](https://w3id.org/biolink/vocab/negatively_correlated_with)
 

@@ -8,7 +8,7 @@ layout: default
 # Relation: associated_with_likelihood_of
 
 
-Expresses a relationship between two named things wh1ere the relationship is typically generated statistically and the state or fact of something is probable. This is a relationship that holds between two concepts represented by  variables for which a statistical dependence is demonstrated, wherein the state or value of one variable predicts the future state or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is  associated with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI.
+A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI.
 
 URI: [biolink:associated_with_likelihood_of](https://w3id.org/biolink/vocab/associated_with_likelihood_of)
 

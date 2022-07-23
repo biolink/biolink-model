@@ -25,4 +25,3 @@ URI: [biolink:subject_aspect_qualifier](https://w3id.org/biolink/vocab/subject_a
 
 ## Used by
 
- * [ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md)
