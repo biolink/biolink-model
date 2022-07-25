@@ -4,6 +4,10 @@ Please feel free to contact the data modeling team for advice, there are a lot o
 In general, we represent statements of knowledge using the "onion" model, where the core triple (the subject, predicate
 and object) is qualified in one layer and provenance is added in another.
 
+Note: association object has a "qualifiers" slot that is not currently modeled to contain all qualifiers on an edge.
+instead this is a left-over property that will be deprecated when more of the qualifer methodology is 
+instantiated in the model. 
+
 ![](images/onion.png)
 
 An example of this is below, modeling the knowledge statement: 

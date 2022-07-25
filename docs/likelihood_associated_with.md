@@ -22,6 +22,8 @@ URI: [biolink:likelihood_associated_with](https://w3id.org/biolink/vocab/likelih
 
 ## Children
 
+ *  [decreased likelihood associated with](decreased_likelihood_associated_with.md)
+ *  [increased likelihood associated with](increased_likelihood_associated_with.md)
 
 ## Used by
 

@@ -517,7 +517,7 @@ message ChemicalAffectsGeneAssociation
   chemicalOrGeneOrGeneProductFormEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
-  string subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   chemicalOrGeneOrGeneProductFormEnum objectFormOrVariantQualifier = 0

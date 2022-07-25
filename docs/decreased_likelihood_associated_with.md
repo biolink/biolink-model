@@ -18,7 +18,7 @@ URI: [biolink:decreased_likelihood_associated_with](https://w3id.org/biolink/voc
 
 ## Parents
 
- *  is_a: [associated with](associated_with.md)
+ *  is_a: [likelihood associated with](likelihood_associated_with.md)
 
 ## Children
 

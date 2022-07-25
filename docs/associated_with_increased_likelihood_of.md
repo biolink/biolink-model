@@ -18,7 +18,7 @@ URI: [biolink:associated_with_increased_likelihood_of](https://w3id.org/biolink/
 
 ## Parents
 
- *  is_a: [associated with](associated_with.md)
+ *  is_a: [associated with likelihood of](associated_with_likelihood_of.md)
 
 ## Children
 

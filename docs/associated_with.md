@@ -22,14 +22,10 @@ URI: [biolink:associated_with](https://w3id.org/biolink/vocab/associated_with)
 
 ## Children
 
- *  [associated with decreased likelihood of](associated_with_decreased_likelihood_of.md)
- *  [associated with increased likelihood of](associated_with_increased_likelihood_of.md)
  *  [associated with likelihood of](associated_with_likelihood_of.md)
  *  [associated with resistance to](associated_with_resistance_to.md)
  *  [associated with sensitivity to](associated_with_sensitivity_to.md)
  *  [correlated with](correlated_with.md)
- *  [decreased likelihood associated with](decreased_likelihood_associated_with.md)
- *  [increased likelihood associated with](increased_likelihood_associated_with.md)
  *  [likelihood associated with](likelihood_associated_with.md)
  *  [resistance associated with](resistance_associated_with.md)
  *  [sensitivity associated with](sensitivity_associated_with.md)
