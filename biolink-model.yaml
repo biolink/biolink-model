@@ -1730,6 +1730,7 @@ slots:
       - https://github.com/biolink/biolink-model/issues/657
 
   has real world evidence of association with:
+    deprecated: true
     is_a: related to at instance level
     description: >-
       this means that the assertion was derived by applying statistical and machine learning models to
@@ -1740,6 +1741,39 @@ slots:
     annotations:
       tag: biolink:canonical_predicate
       value: true
+
+  associated with likelihood of:
+    is_a: associated with
+    description: >-
+      A a relationship that holds between two concepts represented by variables for which a statistical 
+      dependence is demonstrated, wherein the state or value of one variable predicts the future state 
+      or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated 
+      with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
+      is associated with an increased or decreased likelihood that a patient will later exhibit MI.
+  likelihood associated with:
+    is_a: associated with
+    description: >-
+    inverse: associated with likelihood of
+
+  associated with increased likelihood of:
+    is_a: associated with likelihood of
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is more probable.
+  increased likelihood associated with:
+    is_a: likelihood associated with
+    description: >-
+    inverse: associated with increased likelihood of
+
+  associated with decreased likelihood of:
+    is_a: associated with likelihood of
+    description: >-
+      Expresses a relationship between two named things where the relationship is typically generated statistically
+      and the state or fact of something is less probable.
+  decreased likelihood associated with:
+    is_a: likelihood associated with
+    description: >-
+    inverse: associated with decreased likelihood of
 
   target for:
     is_a: related to at instance level
@@ -7008,6 +7042,55 @@ slots:
     is_a: association slot
     description: >-
     range: FDA_approval_status_enum
+
+  supporting study metadata:
+    is_a: association slot
+    description: >-
+      Information about a study used to generate information used as evidence to support the knowledge expressed in an 
+      Association. In practice, data creators should use one of the more specific subtypes of this property.
+    abstract: true
+
+  supporting study method type:
+    is_a: supporting study metadata
+    description: >- 
+      A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of 
+      experimental assay, or statistical calculation, or computational analysis).
+    range: uriorcurie
+
+  supporting study method description:
+    is_a: supporting study metadata
+    description: >-
+      A uri or curie pointing to information about the methodology used to generate data supporting an Association.
+    range: uriorcurie
+
+  supporting study size:
+    is_a: supporting study metadata
+    description: >- 
+      The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a 
+      clinical study).
+    range: integer
+
+  supporting study cohort:
+    is_a: supporting study metadata
+    description: >-
+      A description of a study population/cohort that was interrogated to provide evidence for the association 
+      (e.g. the inclusion and exclusion criteria).
+    range: string
+
+  supporting study date range:
+    is_a: supporting study metadata
+    description: >- 
+      The date range over which data was collected in a study that provided evidence for an Association.
+    range: string
+
+  supporting study context:
+    is_a: supporting study metadata
+    description: >-
+      A term or terms describing the experimental setting/context in which evidence supporting the Association was 
+      generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue 
+      type, disease, etc.).
+    range: string
+
 
 classes:
 
