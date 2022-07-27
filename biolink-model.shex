@@ -880,9 +880,7 @@ linkml:Nodeidentifier NONLITERAL
 <DiseaseOrPhenotypicFeature>  (
     CLOSED {
        (  $<DiseaseOrPhenotypicFeature_tes> (  &<BiologicalEntity_tes> ;
-             rdf:type [ <BiologicalEntity> ] ? ;
-             &<ThingWithTaxon_tes> ;
-             rdf:type [ <ThingWithTaxon> ] ?
+             rdf:type [ <BiologicalEntity> ] ?
           ) ;
           rdf:type [ <DiseaseOrPhenotypicFeature> ]
        )

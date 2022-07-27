@@ -46,7 +46,7 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
  * [is toxic](is_toxic.md)  <sub>0..1</sub>
      * Range: [Boolean](types/Boolean.md)
  * [has chemical role](has_chemical_role.md)  <sub>0..\*</sub>
-     * Description: 	A role is particular behaviour which a material entity may exhibit.
+     * Description: A role is particular behaviour which a material entity may exhibit.
      * Range: [ChemicalRole](ChemicalRole.md)
 
 ### Inherited from chemical mixture:

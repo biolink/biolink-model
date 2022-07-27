@@ -1641,7 +1641,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [full name](full_name.md) - a long-form human readable name for a thing
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
- * [has chemical role](has_chemical_role.md) - 	A role is particular behaviour which a material entity may exhibit.
+ * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a material entity may exhibit.
  * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
  * [has count](has_count.md) - number of things with a particular property
  * [has dataset](has_dataset.md)
@@ -1694,7 +1694,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [full name](full_name.md) - a long-form human readable name for a thing
      * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
      * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
-     * [has chemical role](has_chemical_role.md) - 	A role is particular behaviour which a material entity may exhibit.
+     * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a material entity may exhibit.
      * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
      * [has dataset](has_dataset.md)
      * [has device](has_device.md) - connects an entity to one or more (medical) devices
@@ -1763,13 +1763,13 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
      * [object aspect qualifier](object_aspect_qualifier.md)
      * [subject aspect qualifier](subject_aspect_qualifier.md)
- * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+ * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
  * [association slot](association_slot.md) - any slot that relates an association to another entity
      * [FDA approval status](FDA_approval_status.md)
      * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
          * [object aspect qualifier](object_aspect_qualifier.md)
          * [subject aspect qualifier](subject_aspect_qualifier.md)
-     * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+     * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
      * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
      * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
      * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations

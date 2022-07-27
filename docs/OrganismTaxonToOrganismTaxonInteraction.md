@@ -33,7 +33,7 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
 ### Own
 
  * [associated environmental context](associated_environmental_context.md)  <sub>0..1</sub>
-     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -134,7 +134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [associated environmental context](associated_environmental_context.md)  <sub>0..1</sub>
-     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
