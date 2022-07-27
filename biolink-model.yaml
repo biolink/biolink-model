@@ -256,7 +256,7 @@ types:
     uri: UO:0000187
 
   quotient:
-    aliases: ['ratio']
+    aliases: [ 'ratio' ]
     typeof: double
     uri: UO:0010006
 
@@ -280,9 +280,9 @@ types:
 
 slots:
 
-## ---------------
-## ATTRIBUTE SLOTS
-## ---------------
+  ## ---------------
+  ## ATTRIBUTE SLOTS
+  ## ---------------
 
   has attribute:
     description: >-
@@ -463,9 +463,9 @@ slots:
       A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
     range: integer
 
-## --------------------
-## NODE PROPERTY SLOTS
-## --------------------
+  ## --------------------
+  ## NODE PROPERTY SLOTS
+  ## --------------------
 
   node property:
     description: >-
@@ -581,7 +581,7 @@ slots:
 
   synonym:
     is_a: node property
-    aliases: ['alias']
+    aliases: [ 'alias' ]
     domain: named thing
     range: label type
     description: >-
@@ -607,7 +607,7 @@ slots:
       - RXNORM:has_tradename
 
   has topic:
-    aliases: ['topic', 'descriptors']
+    aliases: [ 'topic', 'descriptors' ]
     is_a: node property
     range: ontology class
     exact_mappings:
@@ -618,7 +618,7 @@ slots:
 
   xref:
     is_a: node property
-    aliases: ['dbxref', 'Dbxref', 'DbXref']
+    aliases: [ 'dbxref', 'Dbxref', 'DbXref' ]
     domain: named thing
     range: uriorcurie
     description: >-
@@ -638,7 +638,7 @@ slots:
       a long-form human readable name for a thing
 
   description:
-    aliases: ['definition']
+    aliases: [ 'definition' ]
     range: narrative text
     description: >-
       a human-readable description of an entity
@@ -697,14 +697,14 @@ slots:
   ## Time
 
   timepoint:
-    aliases: ['duration']
+    aliases: [ 'duration' ]
     range: time type
     description: >-
       a point in time
 
   creation date:
     is_a: node property
-    aliases: ['publication date']
+    aliases: [ 'publication date' ]
     range: date
     description: >-
       date on which an entity was created. This can be applied to nodes or edges
@@ -924,7 +924,7 @@ slots:
     is_a: node property
     # since 'abstract' is a linkML keyword denoting a non-instantiable class or slot,
     # it is generally recommended that knowledge graphs use 'summary' instead to tag a Publication 'abstract'
-    aliases: ['abstract']
+    aliases: [ 'abstract' ]
     description: >-
       executive  summary of a publication
     domain: publication
@@ -1039,7 +1039,7 @@ slots:
   has stressor:
     is_a: node property
     domain: exposure event
-    aliases: ['has stimulus']
+    aliases: [ 'has stimulus' ]
     description: >-
       the process or entity that the receptor is being exposed to
     exact_mappings:
@@ -1088,7 +1088,7 @@ slots:
 
   temporal interval qualifier:
     is_a: temporal context qualifier
-    description: >- 
+    description: >-
       a constraint of a time interval placed upon the truth value of an
       association.
 
@@ -1117,7 +1117,7 @@ slots:
   has chemical role:
     is_a: node property
     description: >-
-      	A role is particular behaviour which a material entity may exhibit.
+      A role is particular behaviour which a material entity may exhibit.
     range: chemical role
     multivalued: true
 
@@ -1144,7 +1144,7 @@ slots:
       approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
 
   drug regulatory status world wide:
-    aliases: ['max phase']
+    aliases: [ 'max phase' ]
     description: >-
       An agglomeration of drug regulatory status worldwide. Not specific to FDA.
     exact_mappings:
@@ -1180,9 +1180,9 @@ slots:
     multivalued: true
     range: drug_delivery_enum
 
-## -------------------
-## QUALIFIERS
-## -------------------
+  ## -------------------
+  ## QUALIFIERS
+  ## -------------------
 
   form or variant qualifier:
     is_a: association slot
@@ -1290,7 +1290,7 @@ slots:
 
   qualified predicate:
     is_a: association slot
-    description: >- 
+    description: >-
       predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or 
       increase the specificity of the full statement reading
@@ -1302,9 +1302,9 @@ slots:
   causal mechanism qualifier:
     is_a: statement qualifier
     description: >-
-        A statement qualifier representing a type of molecular control mechanism through which an
-        effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
-        'allosteric modulation', 'channel blocker')
+      A statement qualifier representing a type of molecular control mechanism through which an
+      effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
+      'allosteric modulation', 'channel blocker')
 
   anatomical context qualifier:
     is_a: statement qualifier
@@ -1312,7 +1312,7 @@ slots:
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or subcellular location).
     range: anatomical_context_qualifier_enum
-    notes: >- 
+    notes: >-
       Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more
       details.
 
@@ -1406,9 +1406,9 @@ slots:
       - value: UBERON:0000069
         description: larval stage
 
-## --------------------
-## PREDICATES/RELATIONS
-## --------------------
+  ## --------------------
+  ## PREDICATES/RELATIONS
+  ## --------------------
 
   related to:
     description: >-
@@ -2018,7 +2018,7 @@ slots:
   ## end of Publication related predicates
 
   assesses:
-    aliases: ['was assayed against']
+    aliases: [ 'was assayed against' ]
     description: >-
       The effect of a thing on a target was interrogated in some assay.
       A relationship between some perturbing agent (usually a chemical compound) and some target entity,
@@ -2113,7 +2113,7 @@ slots:
   molecularly interacts with:
     deprecated: true
     is_a: physically interacts with
-    aliases: ['targets']
+    aliases: [ 'targets' ]
     domain: molecular entity
     range: molecular entity
     in_subset:
@@ -3175,9 +3175,9 @@ slots:
     domain: chemical entity or gene or gene product
     range: nucleic acid entity
     broad_mappings:
-      # Term 'mutagenesis' generally speaks generally of the process of
-      # 'production of genetic mutations':  this term says it is affected
-      # but not specifically how
+    # Term 'mutagenesis' generally speaks generally of the process of
+    # 'production of genetic mutations':  this term says it is affected
+    # but not specifically how
     in_subset:
       - translator_minimal
     annotations:
@@ -3897,7 +3897,7 @@ slots:
 
   entity regulates entity:
     deprecated: true
-    aliases: ['activity directly regulates activity of']
+    aliases: [ 'activity directly regulates activity of' ]
     is_a: affects
     mixins:
       - regulates
@@ -3929,7 +3929,7 @@ slots:
 
   entity positively regulates entity:
     deprecated: true
-    aliases: ['activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene']
+    aliases: [ 'activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene' ]
     is_a: entity regulates entity
     mixins:
       - positively regulates
@@ -3960,7 +3960,7 @@ slots:
 
   entity negatively regulates entity:
     deprecated: true
-    aliases: ['activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene']
+    aliases: [ 'activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene' ]
     is_a: entity regulates entity
     mixins:
       - negatively regulates
@@ -3986,7 +3986,7 @@ slots:
 
   disrupts:
     is_a: affects
-    aliases: ['disease causes disruption of']
+    aliases: [ 'disease causes disruption of' ]
     description: >-
       describes a relationship where one entity degrades or interferes
       with the structure, function, or occurrence of another.
@@ -4102,7 +4102,7 @@ slots:
 
   homologous to:
     is_a: similar to
-    aliases: ['in homology relationship with']
+    aliases: [ 'in homology relationship with' ]
     description: >-
       holds between two biological entities that have common evolutionary origin
     comments:
@@ -4439,7 +4439,7 @@ slots:
 
   condition associated with gene:
     is_a: genetic association
-    aliases: ['disease associated with gene']
+    aliases: [ 'disease associated with gene' ]
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
     domain: disease or phenotypic feature
@@ -4564,8 +4564,8 @@ slots:
       holds between two entities where the occurrence, existence,
       or activity of one is caused by the occurrence or generation of the other
     is_a: related to at instance level
-    aliases: ['disease caused by disruption of', 'disease has basis in dysfunction of',
-              'realized in response to', 'realized in response to stimulus']
+    aliases: [ 'disease caused by disruption of', 'disease has basis in dysfunction of',
+               'realized in response to', 'realized in response to stimulus' ]
     in_subset:
       - translator_minimal
     inverse: causes
@@ -4629,7 +4629,7 @@ slots:
       - translator_minimal
 
   treats:
-    aliases: ['is substance that treats', 'indicated for']
+    aliases: [ 'is substance that treats', 'indicated for' ]
     is_a: ameliorates
     description: >-
       holds between a therapeutic procedure or chemical entity
@@ -4864,7 +4864,7 @@ slots:
 
   expresses:
     is_a: location of
-    aliases: ['anatomy expresses gene']
+    aliases: [ 'anatomy expresses gene' ]
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
@@ -4878,7 +4878,7 @@ slots:
 
   has phenotype:
     is_a: related to at instance level
-    aliases: ['disease presents symptom']
+    aliases: [ 'disease presents symptom' ]
     description: >-
       holds between a biological entity and a phenotype, where a phenotype
       is construed broadly as any kind of quality of an organism part,
@@ -5018,7 +5018,7 @@ slots:
 
   location of:
     is_a: related to at instance level
-    aliases: ['site of']
+    aliases: [ 'site of' ]
     domain: named thing
     range: named thing
     description: >-
@@ -5048,17 +5048,17 @@ slots:
       - MONDO:disease_has_location
 
   similar to:
-      is_a: related to at instance level
-      description: >-
-        holds between an entity and some other entity with similar features.
-      in_subset:
-        - translator_minimal
-      symmetric: true
-      annotations:
-        canonical_predicate: true
-      exact_mappings:
-        - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
-        - SO:similar_to               #equivalent
+    is_a: related to at instance level
+    description: >-
+      holds between an entity and some other entity with similar features.
+    in_subset:
+      - translator_minimal
+    symmetric: true
+    annotations:
+      canonical_predicate: true
+    exact_mappings:
+      - RO:HOM0000000               #I don't understand this identifier, but I think it's equivalent
+      - SO:similar_to               #equivalent
 
   chemically similar to:
     is_a: similar to
@@ -5447,7 +5447,7 @@ slots:
 
   actively involved in:
     is_a: participates in
-    aliases: ['involved in']
+    aliases: [ 'involved in' ]
     description: >-
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
@@ -5529,7 +5529,7 @@ slots:
 
   derives into:
     is_a: related to at instance level
-    aliases: ['is normal cell origin of disease','may be normal cell origin of disease']
+    aliases: [ 'is normal cell origin of disease','may be normal cell origin of disease' ]
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -5897,7 +5897,7 @@ slots:
     annotations:
       canonical_predicate: true
     description: Holds between a variant and an anatomical entity where the expression of the variant
-       is located in.
+      is located in.
     exact_mappings:
       - GTEx:affects_expression_in
 
@@ -5925,7 +5925,7 @@ slots:
 
   is sequence variant of:
     is_a: related to at instance level
-    aliases: ['gene product sequence variation encoded by gene mutant', 'allelic variant of', 'gene product variant of gene product']
+    aliases: [ 'gene product sequence variation encoded by gene mutant', 'allelic variant of', 'gene product variant of gene product' ]
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
     range: nucleic acid entity
@@ -5973,7 +5973,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is synonymous variant of
-    aliases: ['stop gained']
+    aliases: [ 'stop gained' ]
 
   is nonsense variant of:
     is_a: is sequence variant of
@@ -6005,14 +6005,14 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - SO:0001589
-    aliases: ['frameshift variant', 'start lost', 'stop lost']
+    aliases: [ 'frameshift variant', 'start lost', 'stop lost' ]
 
   has frameshift variant:
     is_a: has sequence variant
     inverse: is frameshift variant of
     domain: gene
     range: sequence variant
-    aliases: ['splice region variant', 'splice acceptor variant', 'splice donor variant']
+    aliases: [ 'splice region variant', 'splice acceptor variant', 'splice donor variant' ]
 
   is splice site variant of:
     is_a: is sequence variant of
@@ -6031,7 +6031,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is splice site variant of
-    aliases: ['downstream gene variant', 'upstream gene variant']
+    aliases: [ 'downstream gene variant', 'upstream gene variant' ]
 
   is nearby variant of:
     is_a: is sequence variant of
@@ -6049,7 +6049,7 @@ slots:
     domain: gene
     range: sequence variant
     inverse: is nearby variant of
-    aliases: ['intron variant', '3 prime UTR variant', '5 prime UTR variant', '5 prime UTR premature start codon gain variant', 'non coding transcript exon variant']
+    aliases: [ 'intron variant', '3 prime UTR variant', '5 prime UTR variant', '5 prime UTR premature start codon gain variant', 'non coding transcript exon variant' ]
 
   is non coding variant of:
     is_a: is sequence variant of
@@ -6259,11 +6259,11 @@ slots:
       - RO:0002226 # x develops_in y if x is located in y whilst x is developing
 
   develops into:
-     is_a: related to at instance level
-     inverse: develops from
+    is_a: related to at instance level
+    inverse: develops from
 
   in taxon:
-    aliases: ['instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism',' gene product has organism source']
+    aliases: [ 'instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism',' gene product has organism source' ]
     is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
@@ -6288,7 +6288,7 @@ slots:
 
   has molecular consequence:
     is_a: related to at instance level
-    aliases: ['allele has activity']
+    aliases: [ 'allele has activity' ]
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -6303,14 +6303,14 @@ slots:
     domain: ontology class
     inverse: has molecular consequence
 
-## --------------------
-## ASSOCIATION SLOTS
-## --------------------
+  ## --------------------
+  ## ASSOCIATION SLOTS
+  ## --------------------
 
   association slot:
     abstract: true
     domain: association
-    aliases: ['edge property','statement property','node qualifier','edge qualifier','statement qualifier']
+    aliases: [ 'edge property','statement property','node qualifier','edge qualifier','statement qualifier' ]
     description: >-
       any slot that relates an association to another entity
 
@@ -6327,7 +6327,7 @@ slots:
       source uses before transformation to match the biolink-model specification.
 
   original predicate:
-    aliases: ['original relation', 'relation']
+    aliases: [ 'original relation', 'relation' ]
     is_a: association slot
     description: >-
       used to hold the original relation/predicate that an external knowledge
@@ -6446,7 +6446,7 @@ slots:
 
   source:
     deprecated: true
-    
+
   provided by:
     is_a: node property
     description: >-
@@ -6456,12 +6456,12 @@ slots:
     multivalued: true
 
   primary knowledge source:
-     is_a: knowledge source
-     description: >-
-       The most upstream source of the knowledge expressed in an Association that an
-       implementer can identify (may or may not be the 'original' source).
-     range: information resource
-     multivalued: false
+    is_a: knowledge source
+    description: >-
+      The most upstream source of the knowledge expressed in an Association that an
+      implementer can identify (may or may not be the 'original' source).
+    range: information resource
+    multivalued: false
 
   original knowledge source:
     deprecated: true
@@ -6555,8 +6555,8 @@ slots:
       An attribute that can be applied to an association where the association holds between two entities
       located or occurring in a particular environment. For example, two microbial taxa may interact in the context of
       a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
-  # TODO: add examples of values for this property.
-      
+      # TODO: add examples of values for this property.
+
   sequence localization attribute:
     is_a: association slot
     domain: genomic sequence localization
@@ -6568,7 +6568,7 @@ slots:
 
   interbase coordinate:
     is_a: sequence localization attribute
-    aliases: ['zero-based', 'half-open', 'space-based']
+    aliases: [ 'zero-based', 'half-open', 'space-based' ]
     description: >-
       A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1.
       This is applied to a sequence localization edge.
@@ -6597,7 +6597,7 @@ slots:
 
   start coordinate:
     is_a: base coordinate
-    aliases: ['start']
+    aliases: [ 'start' ]
     description: >-
       The position at which the subject genomic entity starts
       on the chromosome or other entity to which it is located on.
@@ -6609,7 +6609,7 @@ slots:
 
   end coordinate:
     is_a: base coordinate
-    aliases: ['end']
+    aliases: [ 'end' ]
     description: >-
       The position at which the subject genomic entity ends
       on the chromosome or other entity to which it is located on.
@@ -6660,7 +6660,7 @@ slots:
 
   supporting study method type:
     is_a: supporting study metadata
-    description: >- 
+    description: >-
       A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of 
       experimental assay, or statistical calculation, or computational analysis). 
     range: uriorcurie
@@ -6673,7 +6673,7 @@ slots:
 
   supporting study size:
     is_a: supporting study metadata
-    description: >- 
+    description: >-
       The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a 
       clinical study).
     range: integer
@@ -6687,7 +6687,7 @@ slots:
 
   supporting study date range:
     is_a: supporting study metadata
-    description: >- 
+    description: >-
       The date range over which data was collected in a study that provided evidence for an Association.
     range: string
 
@@ -6722,14 +6722,14 @@ classes:
       - schema:Class
     comments:
       - >-
-         This is modeled as a mixin. 'ontology class' should not be the primary type of a
-         node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
-         (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
+        This is modeled as a mixin. 'ontology class' should not be the primary type of a
+        node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity
+        (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc
       - >-
-         Note that formally this is a metaclass. Instances of this class are instances in the graph,
-         but can be the object of 'type' edges. For example, if we had a node in the graph representing
-         a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample,
-         and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
+        Note that formally this is a metaclass. Instances of this class are instances in the graph,
+        but can be the object of 'type' edges. For example, if we had a node in the graph representing
+        a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample,
+        and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity
     see_also:
       - https://github.com/biolink/biolink-model/issues/486
     examples:
@@ -6805,7 +6805,7 @@ classes:
   biological sex:
     is_a: attribute
     exact_mappings:
-     - PATO:0000047
+      - PATO:0000047
 
   phenotypic sex:
     is_a: biological sex
@@ -6813,7 +6813,7 @@ classes:
       An attribute corresponding to the phenotypic sex of the individual,
       based upon the reproductive organs present.
     exact_mappings:
-     - PATO:0001894
+      - PATO:0001894
 
   genotypic sex:
     is_a: biological sex
@@ -6821,7 +6821,7 @@ classes:
       An attribute corresponding to the genotypic sex of the individual,
       based upon genotypic composition of sex chromosomes.
     exact_mappings:
-     - PATO:0020000
+      - PATO:0020000
 
   severity value:
     is_a: attribute
@@ -6918,7 +6918,7 @@ classes:
       - WIKIDATA:Q427626
 
   organism taxon:
-    aliases: ['taxon', 'taxonomic classification']
+    aliases: [ 'taxon', 'taxonomic classification' ]
     description: >-
       A classification of a set of organisms. Example instances:
       NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
@@ -6963,7 +6963,7 @@ classes:
 
   agent:
     is_a: administrative entity
-    aliases: ['group']
+    aliases: [ 'group' ]
     description: >-
       person, group, organization or project that provides
       a piece of information (i.e. a knowledge association)
@@ -7022,7 +7022,7 @@ classes:
   ## General Information Entities
 
   information content entity:
-    aliases: ['information', 'information artefact', 'information entity']
+    aliases: [ 'information', 'information artefact', 'information entity' ]
     abstract: true
     is_a: named thing
     description: >-
@@ -7115,7 +7115,7 @@ classes:
 
   evidence type:
     is_a: information content entity
-    aliases: ['evidence code']
+    aliases: [ 'evidence code' ]
     description: >-
       Class of evidence that supports an association
     values_from:
@@ -7125,7 +7125,7 @@ classes:
 
   information resource:
     is_a: information content entity
-    aliases: ['knowledgebase']
+    aliases: [ 'knowledgebase' ]
     description: >-
       A database or knowledgebase and its supporting ecosystem of interfaces 
       and services that deliver content to consumers (e.g. web portals, APIs, 
@@ -7135,7 +7135,7 @@ classes:
       interfaces. Information Resources include project-specific resources
       such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
     in_subset:
-        - translator_minimal      
+      - translator_minimal
 
 
   ## Publications
@@ -7188,7 +7188,7 @@ classes:
           equivalent publication type ontology. When a given publication type ontology term
           is used within a given knowledge graph, then the CURIE identified term must be
           documented in the graph as a concept node of biolink:category biolink:OntologyClass.
-        values_from:  # Not sure which takes precedence, if any...
+        values_from: # Not sure which takes precedence, if any...
           - dctypes
           - fabio
           - MESH_PUB
@@ -7246,7 +7246,7 @@ classes:
       - model_organism_database
 
   serial:
-    aliases: ['journal']
+    aliases: [ 'journal' ]
     is_a: publication
     description: >-
       This class may rarely be instantiated except if use cases
@@ -7390,7 +7390,7 @@ classes:
       - STY:T063
     id_prefixes:
       - CPT
-      
+
   phenomenon:
     is_a: named thing
     mixins:
@@ -7450,7 +7450,7 @@ classes:
       An entity that has the role of being studied in an investigation, study, or experiment
 
   material sample:
-    aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
+    aliases: [ 'biospecimen', 'sample', 'biosample', 'physical sample' ]
     is_a: physical entity
     mixins:
       - subject of investigation
@@ -7517,7 +7517,7 @@ classes:
 
   biological entity:
     is_a: named thing
-    aliases: ['bioentity']
+    aliases: [ 'bioentity' ]
     abstract: true
     mixins:
       - thing with taxon
@@ -7549,7 +7549,7 @@ classes:
       - STY:T088 # Carbohydrate
       - STY:T085 # Molecular Sequence
       - CHEBI:23367 # Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical,
-                    # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
+      # radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.
       - bioschemas:MolecularEntity
     in_subset:
       - translator_minimal
@@ -7613,13 +7613,13 @@ classes:
 
   small molecule:
     is_a: molecular entity
-    aliases: [ 'chemical substance']
+    aliases: [ 'chemical substance' ]
     description: >-
-        A small molecule entity is a molecular entity characterized by availability
-        in small-molecule databases of SMILES, InChI, IUPAC, or other
-        unambiguous representation of its precise chemical structure; for
-        convenience of representation, any valid chemical representation is
-        included, even if it is not strictly molecular (e.g., sodium ion).
+      A small molecule entity is a molecular entity characterized by availability
+      in small-molecule databases of SMILES, InChI, IUPAC, or other
+      unambiguous representation of its precise chemical structure; for
+      convenience of representation, any valid chemical representation is
+      included, even if it is not strictly molecular (e.g., sodium ion).
     narrow_mappings:
       - STY:T196 # Element, Ion, or Isotope
       - CHEBI:59999
@@ -7840,7 +7840,7 @@ classes:
       An execution of a molecular function carried out by a
       gene product or macromolecular complex.
     is_a: biological process or activity
-    aliases: ['molecular function', 'molecular event', 'reaction']
+    aliases: [ 'molecular function', 'molecular event', 'reaction' ]
     mixins:
       - occurrent
       - ontology class
@@ -7920,7 +7920,7 @@ classes:
       - ncats.bioplanet
 
   physiological process:
-    aliases: ['physiology']
+    aliases: [ 'physiology' ]
     is_a: biological process
     mixins:
       - ontology class
@@ -8071,7 +8071,7 @@ classes:
       - STY:T032
 
   phenotypic quality:
-    aliases: ['phenotypic properties']
+    aliases: [ 'phenotypic properties' ]
     is_a: organism attribute
     description: >-
       A property of a phenotype
@@ -8131,7 +8131,7 @@ classes:
       - UBERON
 
   individual organism:
-    aliases: ['organism']
+    aliases: [ 'organism' ]
     description: >-
       An instance of an organism. For example, Richard Nixon,
       Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
@@ -8168,7 +8168,7 @@ classes:
       - model_organism_database
 
   disease or phenotypic feature:
-    aliases: ['phenome']
+    aliases: [ 'phenome' ]
     is_a: biological entity
     description: >-
       Either one of a disease or an individual phenotypic feature.
@@ -8184,7 +8184,7 @@ classes:
       - STY:T033
 
   disease:
-    aliases: ['condition', 'disorder', 'medical condition']
+    aliases: [ 'condition', 'disorder', 'medical condition' ]
     description: >-
       A disorder of structure or function, especially one that produces specific 
       signs, phenotypes or symptoms or that affects a specific location and is not simply a 
@@ -8239,7 +8239,7 @@ classes:
       - model_organism_database
 
   phenotypic feature:
-    aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
+    aliases: [ 'sign', 'symptom', 'phenotype', 'trait', 'endophenotype' ]
     is_a: disease or phenotypic feature
     description: >-
       A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an 
@@ -8313,7 +8313,7 @@ classes:
       - model_organism_database
 
   cellular component:
-    aliases: ['cell component','cell part']
+    aliases: [ 'cell component','cell part' ]
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -8360,7 +8360,7 @@ classes:
       - CLO
 
   gross anatomical structure:
-    aliases: ['tissue', 'organ']
+    aliases: [ 'tissue', 'organ' ]
     is_a: anatomical entity
     exact_mappings:
       - UBERON:0010000
@@ -8379,7 +8379,7 @@ classes:
       - NCIT
       - PO
       - FAO
-      
+
 
   ## entity mixins
 
@@ -8458,7 +8458,7 @@ classes:
       - dictyBase
       - WB
       - WormBase # we have two prefixes here as wormbase supports WormBase:WBGene00000898
-                 # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
+      # and alliancegenome.org and identifiers.org supports WB:WBGene00000898.
       - FB
       - RGD
       - SGD
@@ -8622,7 +8622,7 @@ classes:
       - STY:T192
 
   protein isoform:
-    aliases: ['proteoform']
+    aliases: [ 'proteoform' ]
     is_a: protein
     description: >-
       Represents a protein that is a specific isoform of the canonical or
@@ -8631,7 +8631,7 @@ classes:
       - gene product isoform mixin
     id_prefixes:
       - UniProtKB # UniProtKB:([A-Z0-9]+-\d+)
-      - UNIPROT.ISOFORM 
+      - UNIPROT.ISOFORM
       - PR
       - ENSEMBL
 
@@ -8664,7 +8664,7 @@ classes:
       - chemical entity or gene or gene product
 
   nucleic acid sequence motif:
-    aliases: ['consensus sequence']
+    aliases: [ 'consensus sequence' ]
     is_a: biological entity
     description: >-
       A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have,
@@ -8718,7 +8718,7 @@ classes:
       - model_organism_database
 
   siRNA:
-    aliases: ['small interfering RNA', 'RNAi']
+    aliases: [ 'small interfering RNA', 'RNAi' ]
     description: >-
       A small RNA molecule that is the product of a longer exogenous or
       endogenous dsRNA, which is either a bimolecular duplex or very long
@@ -8744,7 +8744,7 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases: ['orthogroup','protein family']
+    aliases: [ 'orthogroup','protein family' ]
     is_a: biological entity
     exact_mappings:
       - NCIT:C26004
@@ -8821,15 +8821,15 @@ classes:
       - ontology class
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
-#    slots:
-#      - completeness
+    #    slots:
+    #      - completeness
     exact_mappings:
       - GENO:0000871
       - SO:0001024
       - VMC:Haplotype
 
   sequence variant:
-    aliases: ['allele']
+    aliases: [ 'allele' ]
     local_names:
       agr: allele
     is_a: biological entity
@@ -8896,7 +8896,7 @@ classes:
       - model_organism_database
 
   snv:
-    aliases: ['single nucleotide variant','single nucleotide polymorphism', 'snp']
+    aliases: [ 'single nucleotide variant','single nucleotide polymorphism', 'snp' ]
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at
@@ -8905,7 +8905,7 @@ classes:
       - SO:0001483
 
   reagent targeted gene:
-    aliases: ['sequence targeting reagent']
+    aliases: [ 'sequence targeting reagent' ]
     is_a: biological entity
     description: >-
       A gene altered in its expression level in the context of some
@@ -9023,7 +9023,7 @@ classes:
   ## Cohorts
 
   case:
-    aliases: ['patient', 'proband']
+    aliases: [ 'patient', 'proband' ]
     is_a: individual organism
     description: >-
       An individual (human) organism that has a patient role in some clinical context.
@@ -9061,7 +9061,7 @@ classes:
 
   exposure event:
     is_a: named thing
-    aliases: ['exposure', 'experimental condition']
+    aliases: [ 'exposure', 'experimental condition' ]
     mixin: true
     slots:
       - timepoint
@@ -9175,7 +9175,7 @@ classes:
 
   drug exposure:
     is_a: chemical exposure
-    aliases: ['drug intake', 'drug dose', 'medication intake']
+    aliases: [ 'drug intake', 'drug dose', 'medication intake' ]
     description: >-
       A drug exposure is an intake of a particular drug.
     mixins:
@@ -9197,7 +9197,7 @@ classes:
       - gene grouping mixin
 
   treatment:
-    aliases: ['medical action', 'medical intervention']
+    aliases: [ 'medical action', 'medical intervention' ]
     # 'named thing' seems too generic here but not sure what applies better here
     is_a: named thing
     mixins:
@@ -9218,7 +9218,7 @@ classes:
 
   biotic exposure:
     is_a: attribute
-    aliases: ['viral exposure','bacterial exposure']
+    aliases: [ 'viral exposure','bacterial exposure' ]
     mixins:
       - exposure event
     description: >-
@@ -9481,7 +9481,7 @@ classes:
           gene implicated in genotype
 
   gene to gene association:
-    aliases: ['molecular or genetic interaction']
+    aliases: [ 'molecular or genetic interaction' ]
     description: >-
       abstract parent class for different kinds of gene-gene or gene product
       to gene product relationships. Includes homology and interaction.
@@ -9625,8 +9625,8 @@ classes:
       the cell line is derived from an individual with that disease or phenotype.
     slot_usage:
       subject:
-#        - range: cell line
-#        - range: disease or phenotypic feature
+        #        - range: cell line
+        #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
 
   chemical entity to entity association mixin:
@@ -9831,11 +9831,11 @@ classes:
       predicate:
         subproperty_of: associated with
       subject aspect qualifier:
-        # TODO: range
+      # TODO: range
       subject context qualifier:
         range: ontology class
       object aspect qualifier:
-        # TODO: range
+      # TODO: range
       object context qualifier:
         range: ontology class
 
@@ -10023,7 +10023,7 @@ classes:
       subject:
         range: disease
         description: "disease class"
-        values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
+        values_from: [ 'mondo', 'omim', 'orphanet', 'ncit', 'doid' ]
         examples:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
@@ -10100,7 +10100,7 @@ classes:
     slot_usage:
       object:
         range: phenotypic feature
-        values_from: ['upheno', 'hp', 'mp', 'wbphenotype']
+        values_from: [ 'upheno', 'hp', 'mp', 'wbphenotype' ]
         examples:
           - value: HP:0002487
             description: Hyperkinesis
@@ -10849,7 +10849,7 @@ classes:
 
 
   gene to go term association:
-    aliases: ['functional association']
+    aliases: [ 'functional association' ]
     is_a: functional association
     exact_mappings:
       - WBVocab:Gene-GO-Association
@@ -10911,10 +10911,10 @@ classes:
       chromosome region or information entity such as a contig.
     slot_usage:
       subject:
-        aliases: ['sequence feature']
+        aliases: [ 'sequence feature' ]
         range: nucleic acid entity
       object:
-        aliases: ['reference']
+        aliases: [ 'reference' ]
         range: nucleic acid entity # typically a chromosome use monochrom
       predicate:
         subproperty_of: has sequence location
@@ -11034,7 +11034,7 @@ classes:
         range: anatomical entity
 
   anatomical entity to anatomical entity part of association:
-#      schema: gocam
+    #      schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship
@@ -11074,7 +11074,7 @@ classes:
         description: >-
           the structure at an earlier time
       predicate:
-         subproperty_of: develops from
+        subproperty_of: develops from
 
   organism taxon to entity association:
     mixin: true
@@ -11087,7 +11087,7 @@ classes:
         range: organism taxon
         description: >-
           organism taxon that is the subject of the association
-      
+
   organism taxon to organism taxon association:
     is_a: association
     abstract: true
@@ -11123,7 +11123,7 @@ classes:
         description: >-
           the more general taxon
       predicate:
-         subproperty_of: subclass of
+        subproperty_of: subclass of
 
   organism taxon to organism taxon interaction:
     is_a: organism taxon to organism taxon association
@@ -11147,10 +11147,10 @@ classes:
         description: >-
           the taxon that is the subject of the association
       predicate:
-         subproperty_of: interacts with
+        subproperty_of: interacts with
       associated environmental context:
-         description: >-
-           the environment in which the two taxa interact
+        description: >-
+          the environment in which the two taxa interact
 
   organism taxon to environment association:
     is_a: association
@@ -11170,7 +11170,7 @@ classes:
       predicate:
         description: >-
           predicate describing the relationship between the taxon and the environment
-           
+
 enums:
 
   anatomical_context_qualifier_enum:
@@ -11313,7 +11313,7 @@ enums:
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
       antibody inhibition:
         is_a: inhibition
-        description: >- 
+        description: >-
           A causal mechanism in which an antibody specifically binds to and interferes with the target.
       antagonism:
         is_a: inhibition
@@ -11327,7 +11327,7 @@ enums:
           transport of ions through it.
       inverse agonism:
         is_a: inhibition
-        description: >- 
+        description: >-
           A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
       negative allosteric modulation:
@@ -11368,7 +11368,7 @@ enums:
         description: >-
           A causal mechanism mediated by through the control of target gene transcription
       signaling-mediated control:
-        description: >- 
+        description: >-
           A causal mechanism mediated by the activation or control of signaling events that influence the some aspect 
           of the target entity (e.g. its activity, processing, transport, etc)
 

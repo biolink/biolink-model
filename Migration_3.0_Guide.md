@@ -19,7 +19,7 @@ Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 
 ## For a guide to migrate existing predicates, please refer to: 
 
-[predicate tranformation table](./images/predicate_transformation.pdf)
+[predicate tranformation table](images/predicate_transformation.pdf)
 
 ## Deprecated Predicates:
 
@@ -238,6 +238,9 @@ subject and object qualifiers:
  * named thing associated with likelihood of named thing association
 
 
+### TRAPI Examples 
+
+Please see: [TRAPI examples using Biolink 3.0](guidelines/TRAPI-examples.md)
 
 # Biolink Model 2.0 Migration Guide
 
