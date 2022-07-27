@@ -14,10 +14,11 @@ To represent a query for "what decreases degredation of ESR1 protein", a TRAPI q
   "query_graph": {
     "nodes": {
       "n0": {
-        "category": "biolink:Chemical"
+        "category": "biolink:ChemicalEntity"
       },
       "n1": {
-        "category": "biolink:GeneOrGeneProduct"
+        "category": "biolink:GeneOrGeneProduct",
+        "ids": ["HGNC:3467"]
       }
     },
     "edges": {
@@ -54,11 +55,11 @@ and a TRAPI result would look like this:
   "knowledge_graph": {
     "nodes": {
       "n0": {
-        "category": "biolink:Chemical",
+        "categories": ["biolink:ChemicalEntity"],
         "name": "Bisphenol A"
       },
       "n1": {
-        "category": "biolink:Gene",
+        "categories": ["biolink:Gene"],
         "name": "ESR1"
       }
     },
