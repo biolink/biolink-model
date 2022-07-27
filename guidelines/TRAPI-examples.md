@@ -14,10 +14,10 @@ To represent a query for "what decreases degredation of ESR1 protein", a TRAPI q
   "query_graph": {
     "nodes": {
       "n0": {
-        "category": "biolink:ChemicalEntity"
+        "categories": ["biolink:ChemicalEntity"]
       },
       "n1": {
-        "category": "biolink:GeneOrGeneProduct",
+        "categories": ["biolink:GeneOrGeneProduct"],
         "ids": ["HGNC:3467"]
       }
     },
