@@ -8086,7 +8086,8 @@ classes:
 
   genetic inheritance:
     aliases: [ 'inheritance' ]
-    is_a: association slot
+    is_a: node property
+    multivalued: true
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
       generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -8098,6 +8099,24 @@ classes:
       - HP
       - GENO
       - NCIT
+
+# alternatively, if this is an edge property, it would look like this.  It's not clear to me
+# what the edge's subject and object would be if this was an edge property?
+#  genetic inheritance:
+#    aliases: [ 'inheritance' ]
+#    is_a: association slot
+#    multivalued: true
+#    description: >-
+#      The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
+#      generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+#    exact_mappings:
+#      - HP:0000005
+#      - GENO:0000141
+#      - NCIT:C45827
+#    id_prefixes:
+#      - HP
+#      - GENO
+#      - NCIT
 
   ## Biological Entities
 
