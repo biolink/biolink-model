@@ -11475,9 +11475,8 @@ enums:
           less than or equal to 50 Antibodies available according to http://antibodypedia.com.
 
   genetic_inheritence_enum:
-    permissible_values:
-      reachable_from:
-        source_ontology: bioregistry:geno
+    reachable_from:
+      source_ontology: bioregistry:geno
       source_nodes:
         - GENO:0000141  ## inheritance pattern
       is_direct: false
