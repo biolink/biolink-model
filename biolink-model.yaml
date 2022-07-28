@@ -548,6 +548,7 @@ slots:
   genetic inheritance:
     aliases: [ 'inheritance' ]
     is_a: node property
+    range: genetic_inheritence_enum
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
       generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -11472,6 +11473,16 @@ enums:
           more of the following criteria:
           A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
           less than or equal to 50 Antibodies available according to http://antibodypedia.com.
+
+  genetic_inheritence_enum:
+    permissible_values:
+      reachable_from:
+        source_ontology: bioregistry:geno
+      source_nodes:
+        - GENO:0000141  ## inheritance pattern
+      is_direct: false
+      relationship_types:
+        - rdfs:subClassOf
 
   drug_availability_enum:
     description: >-
