@@ -8083,24 +8083,10 @@ classes:
 
   inheritance:
     deprecated: true
-    is_a: organism attribute
-    description: >-
-      The name of this attribute and its inheritance from organism attribute, indeed,
-      its designation as an attribute is problematic. First, the isolated word 'inheritance'
-      is too ambiguous (especially when embedded inside an ontology with inheritance!).
-      'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here,
-      genetic inheritance would not be a direct property at the topmost organism level, but rather
-      (as hinted in the definition) is more a commentary on the nature of phenotype (including 
-      genetic disease as a characteristic set of associated phenotypes) against the (hidden)
-      context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing 
-      the term in the attribute, rather than named thing category concept hierarchy, is perhaps
-      less flexible in terms of its usage as a first class concept for semantic queries.
-      Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance', 
-      as a child of 'biological entity' (to emphasize its biological conceptual nature).
 
   genetic inheritance:
     aliases: [ 'inheritance' ]
-    is_a: biological entity
+    is_a: association slot
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
       generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -10200,23 +10186,6 @@ classes:
         examples:
           - value: UBERON:0002048
             description: "lung"
-
-  disease or phenotypic feature to genetic inheritance association:
-    description: >-
-      An association between either a disease or a phenotypic feature and
-      its mode of (genetic) inheritance
-    is_a: association
-    mixins:
-      - disease or phenotypic feature to entity association mixin
-    slot_usage:
-      object:
-        range: genetic inheritance
-        description: >-
-          genetic inheritance associated with the specified disease or phenotypic feature.
-        examples:
-          - value: HP:0001417
-            description: "X-linked inheritance"
-
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
