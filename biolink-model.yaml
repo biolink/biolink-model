@@ -1072,7 +1072,6 @@ slots:
     is_a: association slot
     range: population of individual organisms
 
-
   has temporal context:
     deprecated: true
     description: >-
@@ -1092,6 +1091,9 @@ slots:
     description: >-
       a constraint of a time interval placed upon the truth value of an
       association.
+
+  pathway context qualifier:
+    is_a: association slot
 
   is supplement:
     description: >-
@@ -1279,7 +1281,7 @@ slots:
 
   object specialization qualifier:
     is_a: specialization qualifier
-    
+
   object aspect qualifier:
     is_a: aspect qualifier
 
@@ -10081,8 +10083,8 @@ classes:
       - exposure event to entity association mixin
       - entity to outcome association mixin
     slots:
-      - has population context
-      - has temporal context
+      - population context qualifier
+      - temporal context qualifier
     defining_slots:
       - subject
       - object
