@@ -1201,9 +1201,6 @@ slots:
       please see the chemical_or_gene_or_gene_product_form_enum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
 
-  specialization qualifier:
-    is_a: association slot
-    abstract: true
 
   aspect qualifier:
     is_a: association slot
@@ -1258,9 +1255,6 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-  subject specialization qualifier:
-    is_a: specialization qualifier
-
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -1278,9 +1272,6 @@ slots:
 
   subject direction qualifier:
     is_a: direction qualifier
-
-  object specialization qualifier:
-    is_a: specialization qualifier
 
   object aspect qualifier:
     is_a: aspect qualifier

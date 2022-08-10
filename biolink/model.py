@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-27T23:39:36
+# Generation date: 2022-07-28T16:04:01
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6864,8 +6864,8 @@ class ExposureEventToOutcomeAssociation(Association):
     subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
-    has_population_context: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
-    has_temporal_context: Optional[Union[str, TimeType]] = None
+    population_context_qualifier: Optional[Union[str, PopulationOfIndividualOrganismsId]] = None
+    temporal_context_qualifier: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -6873,11 +6873,11 @@ class ExposureEventToOutcomeAssociation(Association):
         if not isinstance(self.id, ExposureEventToOutcomeAssociationId):
             self.id = ExposureEventToOutcomeAssociationId(self.id)
 
-        if self.has_population_context is not None and not isinstance(self.has_population_context, PopulationOfIndividualOrganismsId):
-            self.has_population_context = PopulationOfIndividualOrganismsId(self.has_population_context)
+        if self.population_context_qualifier is not None and not isinstance(self.population_context_qualifier, PopulationOfIndividualOrganismsId):
+            self.population_context_qualifier = PopulationOfIndividualOrganismsId(self.population_context_qualifier)
 
-        if self.has_temporal_context is not None and not isinstance(self.has_temporal_context, TimeType):
-            self.has_temporal_context = TimeType(self.has_temporal_context)
+        if self.temporal_context_qualifier is not None and not isinstance(self.temporal_context_qualifier, TimeType):
+            self.temporal_context_qualifier = TimeType(self.temporal_context_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -9627,6 +9627,9 @@ slots.temporal_context_qualifier = Slot(uri=BIOLINK.temporal_context_qualifier, 
 slots.temporal_interval_qualifier = Slot(uri=BIOLINK.temporal_interval_qualifier, name="temporal interval qualifier", curie=BIOLINK.curie('temporal_interval_qualifier'),
                    model_uri=BIOLINK.temporal_interval_qualifier, domain=Association, range=Optional[Union[str, TimeType]])
 
+slots.pathway_context_qualifier = Slot(uri=BIOLINK.pathway_context_qualifier, name="pathway context qualifier", curie=BIOLINK.curie('pathway_context_qualifier'),
+                   model_uri=BIOLINK.pathway_context_qualifier, domain=Association, range=Optional[str])
+
 slots.is_supplement = Slot(uri=BIOLINK.is_supplement, name="is supplement", curie=BIOLINK.curie('is_supplement'),
                    model_uri=BIOLINK.is_supplement, domain=NamedThing, range=Optional[Union[str, ChemicalMixtureId]])
 
@@ -9660,6 +9663,9 @@ slots.routes_of_delivery = Slot(uri=BIOLINK.routes_of_delivery, name="routes of 
 slots.form_or_variant_qualifier = Slot(uri=BIOLINK.form_or_variant_qualifier, name="form or variant qualifier", curie=BIOLINK.curie('form_or_variant_qualifier'),
                    model_uri=BIOLINK.form_or_variant_qualifier, domain=Association, range=Optional[str])
 
+slots.specialization_qualifier = Slot(uri=BIOLINK.specialization_qualifier, name="specialization qualifier", curie=BIOLINK.curie('specialization_qualifier'),
+                   model_uri=BIOLINK.specialization_qualifier, domain=Association, range=Optional[str])
+
 slots.aspect_qualifier = Slot(uri=BIOLINK.aspect_qualifier, name="aspect qualifier", curie=BIOLINK.curie('aspect_qualifier'),
                    model_uri=BIOLINK.aspect_qualifier, domain=Association, range=Optional[str])
 
@@ -9674,6 +9680,9 @@ slots.context_qualifier = Slot(uri=BIOLINK.context_qualifier, name="context qual
 
 slots.direction_qualifier = Slot(uri=BIOLINK.direction_qualifier, name="direction qualifier", curie=BIOLINK.curie('direction_qualifier'),
                    model_uri=BIOLINK.direction_qualifier, domain=Association, range=Optional[str])
+
+slots.subject_specialization_qualifier = Slot(uri=BIOLINK.subject_specialization_qualifier, name="subject specialization qualifier", curie=BIOLINK.curie('subject_specialization_qualifier'),
+                   model_uri=BIOLINK.subject_specialization_qualifier, domain=Association, range=Optional[str])
 
 slots.subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
                    model_uri=BIOLINK.subject_aspect_qualifier, domain=Association, range=Optional[str])
@@ -9692,6 +9701,9 @@ slots.subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, na
 
 slots.subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="subject direction qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
                    model_uri=BIOLINK.subject_direction_qualifier, domain=Association, range=Optional[str])
+
+slots.object_specialization_qualifier = Slot(uri=BIOLINK.object_specialization_qualifier, name="object specialization qualifier", curie=BIOLINK.curie('object_specialization_qualifier'),
+                   model_uri=BIOLINK.object_specialization_qualifier, domain=Association, range=Optional[str])
 
 slots.object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
                    model_uri=BIOLINK.object_aspect_qualifier, domain=Association, range=Optional[str])
