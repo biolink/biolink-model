@@ -3780,7 +3780,7 @@ slots:
       - RO:0002295
       - RO:0002332
       - RO:0002578
-  
+
   regulated by:
     domain: physical essence or occurrent
     range: physical essence or occurrent
@@ -3837,7 +3837,7 @@ slots:
       - CHEMBL.MECHANISM:negative_allosteric_modulator
       - CHEMBL.MECHANISM:negative_modulator
       - RO:0002630
-  
+
   negatively regulated by:
     deprecated: true
     is_a: regulated by
@@ -4713,7 +4713,7 @@ slots:
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
-  
+
   prevented by:
     is_a: risk affected by
     description: >-
@@ -5734,6 +5734,29 @@ slots:
     domain: disease
     inverse: manifestation of
 
+  mode of inheritance of:
+    is_a: manifestation of
+    description: >-
+      relates to the observed genetic segregation and phenotypic expression of a phenotypic feature
+      (or a disease, if taken as a coherent set of pathological or abnormal phenotypic features)
+    domain: genetic inheritance
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - HP:0000005
+      - UMLS:C1708511
+    close_mappings:
+      - STY:T045
+
+  has mode of inheritance:
+    is_a: has manifestation
+    domain: disease or phenotypic feature
+    range: genetic inheritance
+    inverse: mode of inheritance of
+
   produces:
     is_a: related to at instance level
     description: >-
@@ -6662,7 +6685,7 @@ slots:
     is_a: supporting study metadata
     description: >-
       A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of 
-      experimental assay, or statistical calculation, or computational analysis). 
+      experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
 
   supporting study method description:
@@ -10216,7 +10239,8 @@ classes:
         examples:
           - value: HP:0001417
             description: "X-linked inheritance"
-
+      predicate:
+        subproperty_of: mode of inheritance
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
