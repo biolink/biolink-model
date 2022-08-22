@@ -5736,26 +5736,23 @@ slots:
 
   mode of inheritance of:
     is_a: manifestation of
-    description: >-
-      relates to the observed genetic segregation and phenotypic expression of a phenotypic feature
-      (or a disease, if taken as a coherent set of pathological or abnormal phenotypic features)
     domain: genetic inheritance
     range: disease or phenotypic feature
-    annotations:
-      canonical_predicate: true
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - HP:0000005
-      - UMLS:C1708511
-    close_mappings:
-      - STY:T045
+    inverse: has mode of inheritance
 
   has mode of inheritance:
     is_a: has manifestation
+    description: >-
+      Relates a disease or phenotypic feature to its observed genetic segregation and assumed
+      associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
     domain: disease or phenotypic feature
     range: genetic inheritance
-    inverse: mode of inheritance of
+    annotations:
+      # This canonical order reverses that of its parent 'has manifestation' class
+      # but seems a more natural direction in the pertinent edge relationships.
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
 
   produces:
     is_a: related to at instance level
@@ -8131,6 +8128,8 @@ classes:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
+    close_mappings:
+      - STY:T045
     id_prefixes:
       - HP
       - GENO
@@ -10233,7 +10232,7 @@ classes:
       - disease or phenotypic feature to entity association mixin
     slot_usage:
       predicate:
-        subproperty_of: mode of inheritance of
+        subproperty_of: has mode of inheritance
       object:
         range: genetic inheritance
         description: >-
