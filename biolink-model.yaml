@@ -3780,7 +3780,7 @@ slots:
       - RO:0002295
       - RO:0002332
       - RO:0002578
-  
+
   regulated by:
     domain: physical essence or occurrent
     range: physical essence or occurrent
@@ -3837,7 +3837,7 @@ slots:
       - CHEMBL.MECHANISM:negative_allosteric_modulator
       - CHEMBL.MECHANISM:negative_modulator
       - RO:0002630
-  
+
   negatively regulated by:
     deprecated: true
     is_a: regulated by
@@ -4713,7 +4713,7 @@ slots:
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
-  
+
   prevented by:
     is_a: risk affected by
     description: >-
@@ -5734,6 +5734,26 @@ slots:
     domain: disease
     inverse: manifestation of
 
+  mode of inheritance of:
+    is_a: manifestation of
+    domain: genetic inheritance
+    range: disease or phenotypic feature
+    inverse: has mode of inheritance
+
+  has mode of inheritance:
+    is_a: has manifestation
+    description: >-
+      Relates a disease or phenotypic feature to its observed genetic segregation and assumed
+      associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
+    domain: disease or phenotypic feature
+    range: genetic inheritance
+    annotations:
+      # This canonical order reverses that of its parent 'has manifestation' class
+      # but seems a more natural direction in the pertinent edge relationships.
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
   produces:
     is_a: related to at instance level
     description: >-
@@ -6662,7 +6682,7 @@ slots:
     is_a: supporting study metadata
     description: >-
       A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of 
-      experimental assay, or statistical calculation, or computational analysis). 
+      experimental assay, or statistical calculation, or computational analysis).
     range: uriorcurie
 
   supporting study method description:
@@ -8082,7 +8102,25 @@ classes:
       - PATO:0000001
 
   inheritance:
+    deprecated: true
     is_a: organism attribute
+    description: >-
+      The name of this attribute and its inheritance from organism attribute, indeed,
+      its designation as an attribute is problematic. First, the isolated word 'inheritance'
+      is too ambiguous (especially when embedded inside an ontology with inheritance!).
+      'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here,
+      genetic inheritance would not be a direct property at the topmost organism level, but rather
+      (as hinted in the definition) is more a commentary on the nature of phenotype (including 
+      genetic disease as a characteristic set of associated phenotypes) against the (hidden)
+      context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing 
+      the term in the attribute, rather than named thing category concept hierarchy, is perhaps
+      less flexible in terms of its usage as a first class concept for semantic queries.
+      Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance', 
+      as a child of 'biological entity' (to emphasize its biological conceptual nature).
+
+  genetic inheritance:
+    aliases: [ 'inheritance' ]
+    is_a: biological entity
     description: >-
       The pattern or 'mode' in which a particular genetic trait or disorder is passed from one
       generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
@@ -8090,6 +8128,12 @@ classes:
       - HP:0000005
       - GENO:0000141
       - NCIT:C45827
+    close_mappings:
+      - STY:T045
+    id_prefixes:
+      - HP
+      - GENO
+      - NCIT
 
   ## Biological Entities
 
@@ -10178,6 +10222,24 @@ classes:
         examples:
           - value: UBERON:0002048
             description: "lung"
+
+  disease or phenotypic feature to genetic inheritance association:
+    description: >-
+      An association between either a disease or a phenotypic feature and
+      its mode of (genetic) inheritance.
+    is_a: association
+    mixins:
+      - disease or phenotypic feature to entity association mixin
+    slot_usage:
+      predicate:
+        subproperty_of: has mode of inheritance
+      object:
+        range: genetic inheritance
+        description: >-
+          genetic inheritance associated with the specified disease or phenotypic feature.
+        examples:
+          - value: HP:0001417
+            description: "X-linked inheritance"
 
   entity to disease or phenotypic feature association mixin:
     mixin: true
