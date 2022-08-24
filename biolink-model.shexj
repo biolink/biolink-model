@@ -839,6 +839,7 @@
             "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
             "https://w3id.org/biolink/vocab/ContributorAssociation",
+            "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
             "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToLocationAssociation",
             "https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation",
             "https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation",
@@ -1282,6 +1283,7 @@
             "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
             "https://w3id.org/biolink/vocab/Gene",
             "https://w3id.org/biolink/vocab/GeneFamily",
+            "https://w3id.org/biolink/vocab/GeneticInheritance",
             "https://w3id.org/biolink/vocab/Genome",
             "https://w3id.org/biolink/vocab/Genotype",
             "https://w3id.org/biolink/vocab/Haplotype",
@@ -4484,6 +4486,71 @@
                      ]
                   },
                   "min": 0
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneticInheritance",
+                        "min": 1,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
+                     ]
+                  },
+                  "min": 1
                }
             ]
          }
@@ -7734,6 +7801,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/GeneticInheritance",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/GeneticInheritance_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/GeneticInheritance"
                      ]
                   },
                   "min": 1

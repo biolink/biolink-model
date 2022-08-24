@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-27T23:39:36
+# Generation date: 2022-08-24T02:48:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -652,6 +652,10 @@ class InheritanceId(OrganismAttributeId):
     pass
 
 
+class GeneticInheritanceId(BiologicalEntityId):
+    pass
+
+
 class OrganismalEntityId(BiologicalEntityId):
     pass
 
@@ -1041,6 +1045,10 @@ class InformationContentEntityToNamedThingAssociationId(AssociationId):
 
 
 class DiseaseOrPhenotypicFeatureToLocationAssociationId(AssociationId):
+    pass
+
+
+class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId(AssociationId):
     pass
 
 
@@ -3299,8 +3307,16 @@ class PhenotypicQuality(OrganismAttribute):
 @dataclass
 class Inheritance(OrganismAttribute):
     """
-    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
-    e.g. autosomal dominant, autosomal recessive, etc.
+    The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is
+    problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology
+    with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here,
+    genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the
+    definition) is more a commentary on the nature of phenotype (including genetic disease as a characteristic set of
+    associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and
+    expression. Third, placing the term in the attribute, rather than named thing category concept hierarchy, is
+    perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this
+    term, moving it to the 'new' category of 'genetic inheritance', as a child of 'biological entity' (to emphasize
+    its biological conceptual nature).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3318,6 +3334,31 @@ class Inheritance(OrganismAttribute):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InheritanceId):
             self.id = InheritanceId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeneticInheritance(BiologicalEntity):
+    """
+    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next,
+    e.g. autosomal dominant, autosomal recessive, etc.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneticInheritance
+    class_class_curie: ClassVar[str] = "biolink:GeneticInheritance"
+    class_name: ClassVar[str] = "genetic inheritance"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneticInheritance
+
+    id: Union[str, GeneticInheritanceId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneticInheritanceId):
+            self.id = GeneticInheritanceId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -7074,6 +7115,42 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(Association):
 
 
 @dataclass
+class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(Association):
+    """
+    An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
+    class_class_curie: ClassVar[str] = "biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"
+    class_name: ClassVar[str] = "disease or phenotypic feature to genetic inheritance association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
+
+    id: Union[str, DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId] = None
+    subject: Union[str, NamedThingId] = None
+    predicate: Union[str, PredicateType] = None
+    object: Union[str, GeneticInheritanceId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId):
+            self.id = DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociationId(self.id)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, GeneticInheritanceId):
+            self.object = GeneticInheritanceId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -10587,6 +10664,12 @@ slots.manifestation_of = Slot(uri=BIOLINK.manifestation_of, name="manifestation 
 slots.has_manifestation = Slot(uri=BIOLINK.has_manifestation, name="has manifestation", curie=BIOLINK.curie('has_manifestation'),
                    model_uri=BIOLINK.has_manifestation, domain=Disease, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
+slots.mode_of_inheritance_of = Slot(uri=BIOLINK.mode_of_inheritance_of, name="mode of inheritance of", curie=BIOLINK.curie('mode_of_inheritance_of'),
+                   model_uri=BIOLINK.mode_of_inheritance_of, domain=GeneticInheritance, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+
+slots.has_mode_of_inheritance = Slot(uri=BIOLINK.has_mode_of_inheritance, name="has mode of inheritance", curie=BIOLINK.curie('has_mode_of_inheritance'),
+                   model_uri=BIOLINK.has_mode_of_inheritance, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneticInheritanceId], List[Union[str, GeneticInheritanceId]]]])
+
 slots.produces = Slot(uri=BIOLINK.produces, name="produces", curie=BIOLINK.curie('produces'),
                    model_uri=BIOLINK.produces, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -11271,6 +11354,12 @@ slots.disease_or_phenotypic_feature_to_entity_association_mixin_subject = Slot(u
 
 slots.disease_or_phenotypic_feature_to_location_association_object = Slot(uri=RDF.object, name="disease or phenotypic feature to location association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.disease_or_phenotypic_feature_to_location_association_object, domain=DiseaseOrPhenotypicFeatureToLocationAssociation, range=Union[str, AnatomicalEntityId])
+
+slots.disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate = Slot(uri=RDF.predicate, name="disease or phenotypic feature to genetic inheritance association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.disease_or_phenotypic_feature_to_genetic_inheritance_association_predicate, domain=DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation, range=Union[str, PredicateType])
+
+slots.disease_or_phenotypic_feature_to_genetic_inheritance_association_object = Slot(uri=RDF.object, name="disease or phenotypic feature to genetic inheritance association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.disease_or_phenotypic_feature_to_genetic_inheritance_association_object, domain=DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation, range=Union[str, GeneticInheritanceId])
 
 slots.entity_to_disease_or_phenotypic_feature_association_mixin_object = Slot(uri=RDF.object, name="entity to disease or phenotypic feature association mixin_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.entity_to_disease_or_phenotypic_feature_association_mixin_object, domain=None, range=Union[str, DiseaseOrPhenotypicFeatureId])
