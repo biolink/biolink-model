@@ -86,6 +86,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [FoodAdditive](FoodAdditive.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)
+ * [GeneticInheritance](GeneticInheritance.md)
  * [Genome](Genome.md)
  * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)
  * [Genotype](Genotype.md)

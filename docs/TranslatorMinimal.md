@@ -115,6 +115,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
  * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
  * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
+ * [has mode of inheritance](has_mode_of_inheritance.md) - Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
  * [has nutrient](has_nutrient.md) - one or more nutrients which are growth factors for a living organism
  * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
  * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)

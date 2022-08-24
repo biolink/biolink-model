@@ -43,6 +43,7 @@ URI: [biolink:aggregator_knowledge_source](https://w3id.org/biolink/vocab/aggreg
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [ContributorAssociation](ContributorAssociation.md)
+ * [DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.md)
  * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md)
  * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)

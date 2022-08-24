@@ -5,10 +5,10 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: Inheritance
+# Class: Inheritance _(deprecated)_
 
 
-The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).
 
 URI: [biolink:Inheritance](https://w3id.org/biolink/vocab/Inheritance)
 
@@ -100,12 +100,3 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | HP:0000005 |
-|  | | GENO:0000141 |
-|  | | NCIT:C45827 |
-

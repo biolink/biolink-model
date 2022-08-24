@@ -22,6 +22,7 @@ URI: [biolink:has_manifestation](https://w3id.org/biolink/vocab/has_manifestatio
 
 ## Children
 
+ *  [has mode of inheritance](has_mode_of_inheritance.md)
 
 ## Used by
 

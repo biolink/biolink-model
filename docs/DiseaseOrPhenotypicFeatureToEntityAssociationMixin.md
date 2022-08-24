@@ -15,13 +15,14 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.o
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeature])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseOrPhenotypicFeature]%3Csubject%201..1-%20[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[DiseaseOrPhenotypicFeature])
 
 ---
 
 
 ## Mixin for
 
+ * [DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.md) (mixin)  - An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
  * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) (mixin)  - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
 ## Referenced by class

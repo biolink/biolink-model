@@ -43,7 +43,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [GeographicExposure](GeographicExposure.md) - A geographic exposure is a factor relating to geographic proximity to some impactful entity.
          * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
          * [OrganismAttribute](OrganismAttribute.md) - describes a characteristic of an organismal entity.
-             * [Inheritance](Inheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+             * [Inheritance](Inheritance.md) - The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).
              * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
          * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md) - An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
          * [PathologicalProcessExposure](PathologicalProcessExposure.md) - A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -66,6 +66,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
          * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
          * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
+         * [GeneticInheritance](GeneticInheritance.md) - The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
          * [Genome](Genome.md) - A genome is the sum of genetic material within a cell or virion.
          * [Genotype](Genotype.md) - An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
          * [Haplotype](Haplotype.md) - A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -169,6 +170,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product.
      * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway.
      * [ContributorAssociation](ContributorAssociation.md) - Any association between an entity (such as a publication) and various agents that contribute to its realisation
+     * [DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.md) - An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
      * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
      * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md) - An association between an exposure event and a disease.
      * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
@@ -685,8 +687,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
      * [consumes](consumes.md)
  * [has manifestation](has_manifestation.md)
+     * [has mode of inheritance](has_mode_of_inheritance.md) - Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
  * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
  * [has missense variant](has_missense_variant.md)
+ * [has mode of inheritance](has_mode_of_inheritance.md) - Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
  * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
  * [has nearby variant](has_nearby_variant.md)
  * [has negative upstream actor](has_negative_upstream_actor.md)
@@ -824,6 +828,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
      * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
  * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+     * [mode of inheritance of](mode_of_inheritance_of.md)
  * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
  * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
  * [metabolic processing affected by](metabolic_processing_affected_by.md)
@@ -832,6 +837,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [metabolic processing decreased by](metabolic_processing_decreased_by.md)
  * [metabolic processing increased by](metabolic_processing_increased_by.md)
  * [missing from](missing_from.md)
+ * [mode of inheritance of](mode_of_inheritance_of.md)
  * [model of](model_of.md) - holds between a thing and some other thing it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
  * [models](models.md)
  * [molecular interaction decreased by](molecular_interaction_decreased_by.md)
@@ -1127,6 +1133,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
          * [has increased amount](has_increased_amount.md)
          * [has manifestation](has_manifestation.md)
+             * [has mode of inheritance](has_mode_of_inheritance.md) - Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
          * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
          * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
          * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
@@ -1187,6 +1194,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
              * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
          * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+             * [mode of inheritance of](mode_of_inheritance_of.md)
          * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
          * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
          * [missing from](missing_from.md)
@@ -1441,6 +1449,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
      * [has increased amount](has_increased_amount.md)
      * [has manifestation](has_manifestation.md)
+         * [has mode of inheritance](has_mode_of_inheritance.md) - Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
      * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
      * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
      * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
@@ -1501,6 +1510,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
          * [expresses](expresses.md) - holds between an anatomical entity and gene or gene product that is expressed there
      * [manifestation of](manifestation_of.md) - that part of a phenomenon which is directly observable or visibly expressed, or which gives evidence to the underlying process; used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+         * [mode of inheritance of](mode_of_inheritance_of.md)
      * [mentioned by](mentioned_by.md) - refers to is a relation between one named thing and the information content entity that it makes reference to.
      * [mentions](mentions.md) - refers to is a relation between one information content entity and the named thing that it makes reference to.
      * [missing from](missing_from.md)
@@ -1844,7 +1854,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
          * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
          * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
-         * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+         * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).
          * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
      * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
          * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
@@ -1954,10 +1964,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
      * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
      * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
-     * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+     * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).
      * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
  * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
- * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis). 
+ * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).
  * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
  * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
      * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.

@@ -25,6 +25,7 @@ URI: [biolink:manifestation_of](https://w3id.org/biolink/vocab/manifestation_of)
 
 ## Children
 
+ *  [mode of inheritance of](mode_of_inheritance_of.md)
 
 ## Used by
 
