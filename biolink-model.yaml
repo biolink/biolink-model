@@ -5593,8 +5593,8 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-    comments:
-      - The CHEBI ID represents a role rather than a predicate
+    comments: >-
+      The CHEBI ID represents a role rather than a predicate
     exact_mappings:
       - CHEBI:25212
 
@@ -6534,14 +6534,14 @@ slots:
   supporting text:
     is_a: association slot
     description: The segment of text from a document that supports the mined assertion.
-    range: measurement
+    range: string
     examples:
       - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
 
   supporting document:
     is_a: association slot
     description: The document that contains the supporting text of a Text Mining Result.
-    range: PMID identifier
+    range: uriorcurie
     examples:
       - value: PMID:12345678
 
@@ -6552,7 +6552,7 @@ slots:
       to the subject concept of the extracted assertion.
     range: string
     examples:
-      - value: 0|15;20|25
+      - value: "0|15;20|25"
     multivalued: true
 
   object location in text:
@@ -6825,13 +6825,14 @@ slots:
     examples:
       - value: 3.103
 
+
   mass spectrometry interaction statistic:
     is_a: association slot
     description: >-
-       The MiST score is a weighted sum of three measures: protein abundance
+      The MiST score is a weighted sum of three measures: protein abundance
       measured by peak intensities from the mass spectrum (abundance); invariability
       of abundance over replicated experiments (reproducibility); and uniqueness
-      of an observed host/pathogen interaction across all viral purifications (specificity)
+      of an observed host/pathogen interaction across all viral purification's (specificity)
     range: float
     examples:
       - value: 0.969888009
@@ -7091,7 +7092,7 @@ slots:
       Within the context of pharmaceutical data, the affinity_parameter
       is the unit of measurement of affinity. Affinity can be expressed in EC50, IC50,
       Ki, pKi or Kd units.
-    range: IC identifier
+    range: uriorcurie
     examples:
       - value: IC:50
 
@@ -7175,7 +7176,7 @@ slots:
       connects an association to a qualitative term denoting the level of confidence
 
   has evidence:
-    alias: ["supporting study result"]
+    aliases: ['supporting study result']
     is_a: association slot
     range: evidence type
     description: >-
@@ -7237,7 +7238,7 @@ slots:
     multivalued: true
 
   supporting data source:
-    alias: ["supporting dataset"]
+    aliases: ['supporting dataset']
     is_a: association slot
     description: >-
       An Information Resource from which data was retrieved and subsequently used as
@@ -7265,7 +7266,7 @@ slots:
 
   p value:
     is_a: association slot
-    alias: ["unadjusted p value"]
+    aliases: ['unadjusted p value']
     range: float
     description: >-
       A quantitative confidence value that represents the probability of
