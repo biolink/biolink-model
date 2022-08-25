@@ -7,8 +7,6 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 version: 3.0.0
 
-
-
 ## ------------
 ## PREFIXES
 ## ------------
@@ -6452,6 +6450,11 @@ slots:
     examples:
       - value: '1731'
 
+  expected count:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort that are expected.
+
   relative frequency subject:
     is_a: association slot
     description: >-
@@ -6490,7 +6493,19 @@ slots:
     description: >-
       The adjusted p-value is the probability of obtaining test results
       at least as extreme as the results actually observed, under the assumption that
-      the null hypothesis is correct, adjusted for multiple comparisons.
+      the null hypothesis is correct, adjusted for multiple comparisons.  
+      P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) 
+      rather than expressing a statement of inequality (P<. 05), unless P<.
+    range: string
+
+  bonferonni adjusted p value:
+    is_a: association slot
+    description: >-
+      The Bonferroni correction is an adjustment made to P values when several dependent or independent 
+      statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni 
+      correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and 
+      capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality 
+      (P<. 05), unless P<.
     range: string
 
   score:
@@ -6521,7 +6536,7 @@ slots:
     description: The segment of text from a document that supports the mined assertion.
     range: measurement
     examples:
-      - value: The administration of 50 \xB5g/ml bupivacaine promoted maximum breast cancer.
+      - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
 
   supporting document:
     is_a: association slot
@@ -6701,16 +6716,16 @@ slots:
     description: IC50 indicates how much drug is needed to inhibit a biological process
       by half, thus providing a measure of potency of an antagonist drug in pharmacological
       research
-    range: datetime
+    range: float
     examples:
-      - value: '-2.112848714'
+      - value: -2.112848714
 
   binding constant:
     is_a: association slot
     description: measure of how likely the ligand and moelcule are to bind
     range: integer
     examples:
-      - value: '421'
+      - value: 421
     exact_mappings:
       - BAO:0000587
       - OBI:0001144
@@ -6738,15 +6753,15 @@ slots:
       the population mean, a raw score is.
     range: float
     examples:
-      - value: '27.52733542'
+      - value: 27.52733542
 
   log fold change:
     is_a: association slot
     description: The log2(fold-change) is the log-ratio of a gene's or a transcript's
       expression values in two different conditions.
-    range: datetime
+    range: float
     examples:
-      - value: '1.655759833'
+      - value: 1.655759833
 
   false discovery rate:
     is_a: association slot
@@ -6754,14 +6769,14 @@ slots:
       results to the number of total positive test results.
     range: integer
     examples:
-      - value: '0'
+      - value: 0
 
   co-occurrence:
     is_a: association slot
     description: the number of articles in which the two terms co-occurred
     range: integer
     examples:
-      - value: '56'
+      - value: 56
 
   fisher exact test:
     is_a: association slot
@@ -6770,32 +6785,45 @@ slots:
       are nonrandom associations between two categorical variables
     range: float
     examples:
-      - value: '0.00001507078716'
+      - value: 0.00001507078716
 
   enrichment:
     is_a: association slot
     description: >-
       co-occurrence divided by expected. "expected" is the number of expected
       co-occurrences by chance based on each term's marginal frequency
-    range: datetime
+    range: float
     examples:
-      - value: '2.922827136'
+      - value: 2.922827136
 
   odds ratio:
     is_a: association slot
-    description: the odds of cooccurrence divided by the odds of expected
-    range: datetime
+    description: the odds of co-occurrence divided by the odds of expected
+    range: float
     examples:
-      - value: '2.94257537'
+      - value: 2.94257537
+
+  ln ratio:
+    is_a: association slot
+    description: the natural log of the ratio of co-occurrence to expected
+    range: float
+    examples:
+      - value: 2.922827136
+
+  ln ratio 99 confidence interval:
+    is_a: association slot
+    range: float
+    examples:
+      - value: 2.922827136
 
   confidence score:
     is_a: association slot
     description: >-
       numeric score that represents the confidence of disease association
       with gene
-    range: datetime
+    range: float
     examples:
-      - value: '3.103'
+      - value: 3.103
 
   mass spectrometry interaction statistic:
     is_a: association slot
@@ -6806,7 +6834,7 @@ slots:
       of an observed host/pathogen interaction across all viral purifications (specificity)
     range: float
     examples:
-      - value: '0.969888009'
+      - value: 0.969888009
 
   Significance Analysis of INTeractome bayesian false discovery rate:
     is_a: association slot
@@ -6815,7 +6843,7 @@ slots:
       interaction data from affinity purification-mass spectrometry (AP-MS) experiments
     range: float
     examples:
-      - value: '0.03'
+      - value: 0.03
 
   fold change:
     is_a: association slot
@@ -6824,7 +6852,7 @@ slots:
       values in two different conditions.
     range: integer
     examples:
-      - value: '150'
+      - value: 150
 
   has p value:
     is_a: association slot
@@ -6833,7 +6861,7 @@ slots:
       two feature variables within a cohort of a given size
     range: float
     examples:
-      - value: '0.05'
+      - value: 0.05
 
   has adjusted p value:
     is_a: association slot
@@ -6843,7 +6871,7 @@ slots:
       multiple comparison correction selected by the user (default is no correction)
     range: float
     examples:
-      - value: '0.1'
+      - value: 0.1
 
   has chi square statistic:
     is_a: association slot
@@ -6852,7 +6880,7 @@ slots:
       association between two feature variables within a cohort of a given size
     range: integer
     examples:
-      - value: '100'
+      - value: 100
 
   multivariate model auroc:
     is_a: association slot
@@ -6861,20 +6889,19 @@ slots:
       a measure of the predictive quality of a machine learning model
     range: float
     examples:
-      - value: '0.846'
+      - value: 0.846
 
   multivariate model feature importance:
     is_a: association slot
     description: >-
       Feature importance is a measure of how useful an input feature in
       a machine learning model is in predicting the target variable of the model.
-    range: datetime
+    range: float
     examples:
-      - value: '1.88'
+      - value: 1.88
 
   multivariate model feature importance type:
     is_a: association slot
-    description: ''
     range: string
     examples:
       - value: SHAP, magnitude of co-efficient
@@ -6885,9 +6912,9 @@ slots:
       A feature coefficient (in a linear or logistic regression model)
       indicates the size (coefficient magnitude) and direction (coefficient sign)
       of influence of an input feature on the model prediction.
-    range: datetime
+    range: float
     examples:
-      - value: '1.2'
+      - value: 1.2
 
   model classifier type:
     is_a: association slot
@@ -6940,16 +6967,16 @@ slots:
   median ic50 in wildtype group:
     is_a: association slot
     description: The median IC50 values for cell lines without mutation of the gene
-    range: datetime
+    range: float
     examples:
-      - value: '1.504'
+      - value: 1.504
 
   p-value:
     is_a: association slot
     description: p-value from t-test
     range: float
     examples:
-      - value: '0.000219281'
+      - value: 0.000219281
 
   tumor types or tissue types:
     is_a: association slot
@@ -7148,6 +7175,7 @@ slots:
       connects an association to a qualitative term denoting the level of confidence
 
   has evidence:
+    alias: ["supporting study result"]
     is_a: association slot
     range: evidence type
     description: >-
@@ -7209,6 +7237,7 @@ slots:
     multivalued: true
 
   supporting data source:
+    alias: ["supporting dataset"]
     is_a: association slot
     description: >-
       An Information Resource from which data was retrieved and subsequently used as
@@ -7236,6 +7265,7 @@ slots:
 
   p value:
     is_a: association slot
+    alias: ["unadjusted p value"]
     range: float
     description: >-
       A quantitative confidence value that represents the probability of
@@ -7694,6 +7724,33 @@ classes:
   administrative entity:
     is_a: named thing
     abstract: true
+
+  ## epc result sets
+  concept count analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a relative frequency analysis.
+
+  supporting study result set:
+    abstract: true
+    is_a: information content entity
+    description: >-
+      A result of a supporting study.
+
+  text mining result:
+    is_a: supporting study result set
+    description: >-
+      A result of text mining.
 
   agent:
     is_a: administrative entity
