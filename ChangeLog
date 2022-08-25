@@ -1,5 +1,115 @@
 CHANGES
 =======
+
+3.0.0
+-----
+deprecated/refactored predicate hierarchy to move semantics from predicates into qualifiers (edge properties)
+added several enumerations for qualifiers, depending on their usage in associations
+added gene->chemical associations with restrictions on subject/predicate/object values (as defined in enumerations)
+restructured annotations syntax to comply with LinkML including a change to canonical predicate and opposite syntax
+
+2.4.7
+-----
+* add pydantic class to the wheel
+* update LinkML dependency
+
+2.4.5
+-----
+* add BioPlanet and Inxight prefixes
+* rename pydantic class to model.py
+
+2.4.4
+-----
+* updated documentation to reference the Biolink Model publication
+* added molecular activity to pathway association
+* added gene to pathway association
+
+2.4.3
+-----
+* DRY refactoring of the biolink:ThingWithTaxon mixin by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1033
+* Adding a biolink:GeneToPathwayAssociation  by @RichardBruskiewich in https://github.com/biolink/biolink-model/pull/1031
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v2.4.2...v2.4.3
+
+2.4.2
+-----
+* fix exposure classes
+* more documenation
+
+
+2.4.1
+-----
+* bug fixes
+
+2.4.0
+-----
+* make attribute a child of named thing
+* add id to ontology class
+
+2.3.1
+-----
+* reinstantiate food class with correct prefixes
+* add pydantic gen to artifacts
+
+
+2.3.0
+----
+* Define subject and/or object on several associations by @kevinschaper in https://github.com/biolink/biolink-model/pull/997
+* Replace recursive category range on NamedThing with regex by @kevinschaper in https://github.com/biolink/biolink-model/pull/998
+* fixes #1002 - remove underscores from some model components by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1004
+* fixes #937 - deprecate approved_to_treat in favor of worldwide FDA status slot. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1005
+* add xref to named thing, fixes #934 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1006
+* move around SEMMED mappings according to 936, fixes #936 fixes #935 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1007
+* remove relation from association fixes #922 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1009
+* add remaining inverses fixes #831 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1010
+* Fix prefix mismatches by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1011
+
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v2.2.16...v2.3.0
+
+2.2.16
+------
+small maintenance fixes, new prefixes, roles for chemical entities
+
+2.2.15
+------
+update doc regeneration to use DocGenerator as a first pass.
+fix annotations syntax.
+
+
+2.2.14
+------
+small maintenance fixes, pin LinkML for testing purposes.
+
+2.2.13
+------
+small refactors to better use description field consistently.
+
+2.2.12
+------
+fix dependebot security announcement
+remove subclass of from slot_usage
+add canonical inverse for increased/decreased activity of pairs
+and mondo disease susceptibility term to narrow mappings of disease
+update license to apache 2.0
+
+2.2.11
+------
+Update actions to use github user
+
+2.2.10
+------
+mapping fixes - remove obsolete mappings, swap text based mappings with ids where applicable
+add associated with predicate along with associated with sensitivity to predicates. 
+
+2.2.9
+-----
+many fixes to mappings
+
+2.2.8
+-----
+add a prefix mapping file artifact generated with LinkML upgrade.
+
 2.2.7
 -----
 get pypi releases working via github actions

@@ -18,11 +18,14 @@ all: install tests build
 python: biolink/model.py
 docs: docs/index.md
 jekyll-docs: docs/Classes.md
+
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
+prefix-map: prefix-map/biolink-model-prefix-map.json
 
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
-json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto biolink-model.shex biolink-model.ttl
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
+json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
+prefix-map/biolink-model-prefix-map.json
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
@@ -46,7 +49,8 @@ env.lock:
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
-	pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
+	mkdir biolink 2>/dev/null || true
+	export PIPENV_DONT_LOAD_ENV=1 && pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -67,6 +71,13 @@ docs/Classes.md: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 gen-golr-views: biolink-model.yaml dir-golr-views env.lock
 	pipenv run gen-golr-views -d golr-views $<
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# pydantic
+# ~~~~~~~~~~~~~~~~~~~~
+gen-pydantic: biolink-model.yaml dir-pydantic env.lock
+	pipenv run gen-pydantic $< > biolink/pydanticmodel.py
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -95,9 +106,11 @@ java: json-schema/biolink-model.json dir-java env.lock
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml env.lock
+	touch $@
 	pipenv run gen-jsonld-context $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 contextn.jsonld: biolink-model.yaml env.lock
+	touch $@
 	pipenv run gen-jsonld-context --metauris $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 
@@ -107,6 +120,13 @@ contextn.jsonld: biolink-model.yaml env.lock
 json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 	pipenv run gen-json-schema $< > $@
 
+
+# ~~~~~~~~~~~~~~~~~~~~
+# prefix-map
+# ~~~~~~~~~~~~~~~~~~~~
+
+prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
+	pipenv run gen-prefix-map $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
@@ -133,10 +153,13 @@ biolink-model.ttl: biolink-model.yaml env.lock
 biolink-model.shex: biolink-model.yaml
 	pipenv run gen-shex $< > $@
 biolink-modeln.shex: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --metauris $< > $@
 biolink-model.shexj: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --format json $< > $@
 biolink-modeln.shexj: biolink-model.yaml
+	touch $@
 	pipenv run gen-shex --metauris --format json $< > $@
 
 
@@ -179,6 +202,10 @@ contrib/%/datamodel.py: contrib/%.yaml
 contrib-golr-%: contrib-dir-% contrib/%.yaml
 	pipenv run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
+contrib-pydantic-%: contrib-dir-% contrib/%.yaml
+	pipenv run gen-pydantic -d contrib/$*/pydantic contrib/$*.yaml
+
+
 contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
 	pipenv run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
 
@@ -199,20 +226,20 @@ contrib/%/%.shex: contrib-dir-% contrib/%.yaml
 # TESTS
 # ----------------------------------------
 test: tests
-tests: biolink-model.yaml env.lock pytest jsonschema_test
+tests: biolink-model.yaml env.lock pytest # jsonschema_test
 	pipenv run python -m unittest discover -p 'test_*.py'
 
 pytest: biolink/model.py
 	pipenv run python $<
 
-jsonschema_test: json-schema/biolink-model.json
-	jsonschema $<
+# jsonschema_test: json-schema/biolink-model.json
+#	jsonschema $<
 
 # ----------------------------------------
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex
+	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex pydantic
 	rm -f env.lock
 	pipenv --rm
 
