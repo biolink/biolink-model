@@ -8154,6 +8154,16 @@ classes:
       # that relevant to the Biolink world but we keep them here for now.
       - UMLSSG:LIVB
 
+  virus:
+    is_a: organismal entity
+    description: >-
+      A virus is a microorganism that replicates itself as a microRNA
+      and infects the host cell.
+    exact_mappings:
+      - obo:NCBITaxon_10239
+
+  organismal entity
+
   life stage:
     is_a: organismal entity
     description: >-
