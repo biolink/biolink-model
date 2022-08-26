@@ -622,7 +622,6 @@ slots:
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
 
-
   has topic:
     aliases: [ 'topic', 'descriptors' ]
     is_a: node property
@@ -6512,6 +6511,7 @@ slots:
     multivalued: true
 
   supporting data source:
+    aliases: ['supporting dataset']
     is_a: association slot
     description: >-
       An Information Resource from which data was retrieved and subsequently used as
@@ -6548,6 +6548,188 @@ slots:
       - OBI:0000175
       - NCIT:C44185
       - EDAM-DATA:1669
+
+  concept count subject:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the subject slot of an association.
+    range: integer
+    examples:
+      - value: 489
+
+  concept count object:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the object slot of an association.
+    range: integer
+
+  concept pair count:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      both the subject and object concept of an association.
+    range: integer
+    examples:
+      - value: 1731
+
+  expected count:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort that are expected.
+  relative frequency subject:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in EHR
+      records within a dataset/cohort, relative to the frequency at which the subject
+      concept appears in these same records.
+    range: float
+    examples:
+      - value: 0.01840490798
+
+  relative frequency object:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in EHR
+      records within a dataset/cohort, relative to the frequency at which the object
+      concept appears in these same records.
+    range: string
+
+  relative frequency subject confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_subject calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+  relative frequency object confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_object calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+  adjusted p value:
+    is_a: association slot
+    description: >-
+      The adjusted p-value is the probability of obtaining test results
+      at least as extreme as the results actually observed, under the assumption that
+      the null hypothesis is correct, adjusted for multiple comparisons.  
+      P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) 
+      rather than expressing a statement of inequality (P<. 05), unless P<.
+    range: string
+
+  bonferonni adjusted p value:
+    is_a: association slot
+    description: >-
+      The Bonferroni correction is an adjustment made to P values when several dependent or independent 
+      statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni 
+      correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and 
+      capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality 
+      (P<. 05), unless P<.
+    range: string
+
+
+  supporting text:
+    is_a: association slot
+    description: The segment of text from a document that supports the mined assertion.
+    range: string
+    examples:
+      - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
+
+  supporting document:
+    is_a: association slot
+    description: The document that contains the supporting text of a Text Mining Result.
+    range: uriorcurie
+    examples:
+      - value: PMID:12345678
+
+  subject location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the subject concept of the extracted assertion.
+    range: integer
+    examples:
+      - value: 15
+    multivalued: true
+
+  object location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the object concept of the extracted assertion
+    range: integer
+    examples:
+      - value: 15
+    multivalued: true
+
+
+  supporting document type:
+    is_a: association slot
+    description: >-
+      The document type (e.g., Journal Article, Case Study, Preprint) for
+      the supporting document used in a Text Mining Result.
+    range: string
+    examples:
+      - value: Journal Article
+
+  supporting document year:
+    is_a: association slot
+    description: >-
+      The document year (typically the publication year) for the supporting
+      document used in a Text Mining Result.
+    range: integer
+    examples:
+      - value: 1999
+
+  supporting text section type:
+    is_a: association slot
+    description: >-
+      The section of the supporting text of a Text Mining Result within
+      the supporting document. This is in the form of the name of the document section
+      (e.g., Abstract, Introduction) that contains the supporting text.
+    range: string
+    examples:
+      - value: Introduction
+
+  z-score:
+    is_a: association slot
+    description: z-score is the measure of how many standard deviations below or above
+      the population mean, a raw score is.
+    range: float
+    examples:
+      - value: 27.52733542
+
+  log fold change:
+    is_a: association slot
+    description: The log2(fold-change) is the log-ratio of a gene's or a transcript's
+      expression values in two different conditions.
+    range: float
+    examples:
+      - value: 1.655759833
+
+  odds ratio:
+    is_a: association slot
+    description: the odds of co-occurrence divided by the odds of expected
+    range: float
+    examples:
+      - value: 2.94257537
+
+  ln ratio:
+    is_a: association slot
+    description: the natural log of the ratio of co-occurrence to expected
+    range: float
+    examples:
+      - value: 2.922827136
+
+  ln ratio 99 confidence interval:
+    is_a: association slot
+    range: float
+    examples:
+      - value: 2.922827136
+
 
   interacting molecules category:
     is_a: association slot
@@ -6997,6 +7179,31 @@ classes:
   administrative entity:
     is_a: named thing
     abstract: true
+
+  supporting study result set:
+    abstract: true
+    is_a: information content entity
+    description: >-
+      A result of a supporting study.
+
+  ## epc result sets
+  concept count analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a concept count analysis.
+  observed expected frequency analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a observed expected frequency analysis.
+  relative frequency analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a relative frequency analysis.
+
+  text mining result:
+    is_a: supporting study result set
+    description: >-
+      A result of text mining.
 
   agent:
     is_a: administrative entity
