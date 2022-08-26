@@ -6432,14 +6432,14 @@ slots:
       the concept in the subject slot of an association.
     range: integer
     examples:
-      - value: '489'
+      - value: 489
 
   concept count object:
     is_a: association slot
     description: >-
       The number of instances in a dataset/cohort whose records contain
       the concept in the object slot of an association.
-    range: string
+    range: integer
 
   concept pair count:
     is_a: association slot
@@ -6448,7 +6448,7 @@ slots:
       both the subject and object concept of an association.
     range: integer
     examples:
-      - value: '1731'
+      - value: 1731
 
   expected count:
     is_a: association slot
@@ -6463,7 +6463,7 @@ slots:
       concept appears in these same records.
     range: float
     examples:
-      - value: '0.01840490798'
+      - value: 0.01840490798
 
   relative frequency object:
     is_a: association slot
@@ -6515,7 +6515,7 @@ slots:
       generated from a machine learning model.
     range: float
     examples:
-      - value: '0.82'
+      - value: 0.82
 
   tmkp result confidence score:
     is_a: association slot
@@ -6529,7 +6529,7 @@ slots:
       about the factual truthfulness of the assertion itself.
     range: float
     examples:
-      - value: '0.99871'
+      - value: 0.99871
 
   supporting text:
     is_a: association slot
@@ -6577,7 +6577,7 @@ slots:
       no claims about the factual truthfulness of the assertion itself.
     range: float
     examples:
-      - value: '0.876'
+      - value: 0.876
 
   supporting document type:
     is_a: association slot
@@ -6595,7 +6595,7 @@ slots:
       document used in a Text Mining Result.
     range: integer
     examples:
-      - value: '1999'
+      - value: 1999
 
   supporting text section type:
     is_a: association slot
@@ -6618,7 +6618,7 @@ slots:
       will have an infinite NGD score. For details see https://en.wikipedia.org/wiki/Normalized_Google_distance.
     range: float
     examples:
-      - value: '0.352'
+      - value: 0.352
 
   pointwise mutual information:
     is_a: association slot
@@ -6700,7 +6700,7 @@ slots:
       on a distribution of patient survival time.
     range: float
     examples:
-      - value: '[-1,1]: e.g. -0.23, 1, 0.75'
+      - value: -0.23
 
   probability of prolonged survival:
     is_a: association slot
@@ -6709,7 +6709,7 @@ slots:
       nodes.
     range: integer
     examples:
-      - value: 'e.g., .57, 1, .01'
+      - value: .57
 
   half maximal inhibitory concentration:
     is_a: association slot
@@ -6736,7 +6736,7 @@ slots:
       required to produce half maximum inhibition.
     range: integer
     examples:
-      - value: '3000'
+      - value: 3000
 
   dissociation constant:
     is_a: association slot
@@ -6745,7 +6745,7 @@ slots:
       yield a significant amount of interaction with the target protein.
     range: integer
     examples:
-      - value: '6800'
+      - value: 6800
 
   z score:
     is_a: association slot
@@ -6907,7 +6907,7 @@ slots:
     examples:
       - value: SHAP, magnitude of co-efficient
 
-  multivariate model feature coeffcient:
+  multivariate model feature coefficient:
     is_a: association slot
     description: >-
       A feature coefficient (in a linear or logistic regression model)
@@ -6932,7 +6932,7 @@ slots:
     description: Mutation frequency for one gene in a disease contect
     range: float
     examples:
-      - value: '0.3'
+      - value: 0.3
 
   effect size:
     is_a: association slot
@@ -6940,7 +6940,7 @@ slots:
       type group  using cohen's distance
     range: float
     examples:
-      - value: '2.00E-03'
+      - value: 2.00E-03
 
   ic50 in mutation group:
     is_a: association slot
@@ -6948,7 +6948,7 @@ slots:
       of the gene
     range: string
     examples:
-      - value: '[-1.85, -1.518, -0.109]'
+      - value: -1.85
 
   ic50 in wildtype group:
     is_a: association slot
@@ -6956,14 +6956,14 @@ slots:
       of the gene
     range: string
     examples:
-      - value: '[-1.39, -1.16, 0.024, 0.24]'
+      - value: -1.39
 
   median ic50 in mutation group:
     is_a: association slot
     description: The median IC50 values for cell lines with mutation of the geen
     range: float
     examples:
-      - value: '-0.814'
+      - value: -0.814
 
   median ic50 in wildtype group:
     is_a: association slot
@@ -6986,19 +6986,19 @@ slots:
     examples:
       - value: Lung or Lung cancer
 
-  correlation coeffiency:
+  correlation coefficiency:
     is_a: association slot
     description: Correlation coeffiency from the spearman correlation
     range: float
     examples:
-      - value: '0.621'
+      - value: 0.621
 
   sample size:
     is_a: association slot
     description: Number of samples for the samples being used
     range: integer
     examples:
-      - value: '300'
+      - value: 300
 
   bonferroni corrected pvalue:
     is_a: association slot
@@ -7008,7 +7008,7 @@ slots:
       where n is no. of hypotheses being tested.
     range: float
     examples:
-      - value: '0.018'
+      - value: 0.018
 
   statistical model type:
     is_a: association slot
@@ -7026,7 +7026,7 @@ slots:
       direction (coefficient sign) of influence between two variables.
     range: float
     examples:
-      - value: '0.65'
+      - value: 0.65
 
   qualifier value:
     is_a: association slot
@@ -7045,7 +7045,7 @@ slots:
       using an enrichment approach against the CORD19 dataset.
     range: float
     examples:
-      - value: '0.00002358560424'
+      - value: 0.00002358560424
 
   num publications:
     is_a: association slot
@@ -7054,14 +7054,14 @@ slots:
       in an edge
     range: integer
     examples:
-      - value: '0'
+      - value: 0
 
   in clinical trial for:
     is_a: association slot
     description: Count of how many clinical trials this drug is part of.
     range: integer
     examples:
-      - value: '1'
+      - value: 1
 
   slope:
     is_a: association slot
@@ -7072,7 +7072,7 @@ slots:
       in gene expression.
     range: float
     examples:
-      - value: '0.0960802'
+      - value: 0.0960802
 
   affinity:
     is_a: association slot
@@ -7084,7 +7084,7 @@ slots:
       negative affinity.
     range: integer
     examples:
-      - value: '0'
+      - value: 0
 
   affinity parameter:
     is_a: association slot
@@ -7103,7 +7103,7 @@ slots:
       to the comsumption of a pharmaceutical.
     range: integer
     examples:
-      - value: '0'
+      - value: 0
 
   endogenous:
     is_a: association slot
@@ -7114,14 +7114,6 @@ slots:
     examples:
       - value: True/False
 
-  primaryTarget:
-    is_a: association slot
-    description: >-
-      True/False flag to indicate if the pharmaceutical was attempting
-      to target a specific gene.
-    range: string
-    examples:
-      - value: Tru/False
 
   similarity bin:
     is_a: association slot
@@ -7141,7 +7133,7 @@ slots:
       nearest-neighbor Jaccard Index.
     range: float
     examples:
-      - value: '0.816'
+      - value: 0.816
 
   fisher exact test p-value:
     is_a: association slot
@@ -7152,7 +7144,7 @@ slots:
       is at least as large as the observed odds ratio.
     range: float
     examples:
-      - value: '0.000949'
+      - value: 0.000949
 
   probability:
     is_a: association slot
@@ -7160,14 +7152,14 @@ slots:
       with gene
     range: float
     examples:
-      - value: '0.5'
+      - value: 0.5
 
   standard error:
     is_a: association slot
     description: the standard error calculation of the effect size of the association
     range: float
     examples:
-      - value: '2.00E-03'
+      - value: 2.00E-03
 
   has confidence level:
     is_a: association slot
@@ -7176,7 +7168,6 @@ slots:
       connects an association to a qualitative term denoting the level of confidence
 
   has evidence:
-    aliases: ['supporting study result']
     is_a: association slot
     range: evidence type
     description: >-
