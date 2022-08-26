@@ -6853,7 +6853,7 @@ slots:
     examples:
       - value: 150
 
-  has p value:
+  has p-value:
     is_a: association slot
     description: >-
       The calculated probability value for an observed association between
@@ -6862,7 +6862,7 @@ slots:
     examples:
       - value: 0.05
 
-  has adjusted p value:
+  has adjusted p-value:
     is_a: association slot
     description: >-
       The calculated adjusted probability value for an observed association
@@ -9792,7 +9792,7 @@ classes:
     description: >-
       this category is currently considered broad enough to tag clinical lab
       measurements and other biological attributes taken as 'clinical traits'
-      with some statistical score, for example, a p value in genetic associations.
+      with some statistical score, for example, a p-value in genetic associations.
     slot_usage:
       has attribute:
         range: clinical attribute
@@ -9811,15 +9811,6 @@ classes:
     is_a: attribute
     description: >-
       Attributes relating to a socioeconomic manifestation
-    #slot_usage:
-    # need a suitable qualifying socioeconomic ontology target here?
-    # Perhaps some subset of ECTO: https://github.com/EnvironmentOntology/environmental-exposure-ontology
-    #  has attribute type:
-    #     range: socioeconomic ontology
-    # exact_mappings:
-    #  - ??
-
-  ## Cohorts
 
   case:
     aliases: [ 'patient', 'proband' ]
@@ -9833,17 +9824,6 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
-    #
-    # As of this moment (Nov. 22), the jury is still out on what metadata of a cohort
-    # will be common to all cohort descriptions versus cohort-specific annotation.
-    # The former should be embedded as explicit slots in the cohort category. The latter
-    # ought to be documented as (ontology term constrained) extended node attributes.
-    #
-    #slots:
-    #  - general disease focus,
-    #  - specific inclusion/exclusion criteria,
-    #  - year(s) of cohort creation,
-    #  - institution.
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
