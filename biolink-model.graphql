@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 2.4.7
+# version: 3.0.0
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -574,6 +574,44 @@ type CellularComponent
     hasAttribute: [Attribute]
   }
 
+type ChemicalAffectsGeneAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    subjectContextQualifier: AnatomicalEntity
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectContextQualifier: AnatomicalEntity
+    causalMechanismQualifier: CausalMechanismQualifierEnum
+    anatomicalContextQualifier: AnatomicalEntity
+    qualifiedPredicate: String
+    subject: ChemicalEntity!
+    predicate: PredicateType!
+    object: GeneOrGeneProduct!
+    objectDirectionQualifier: DirectionQualifierEnum
+  }
+
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
   {
     id: String!
@@ -621,6 +659,31 @@ interface ChemicalEntityOrGeneOrGeneProduct
   {
   }
 
+type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
+    subject: ChemicalEntityOrGeneOrGeneProduct!
+    object: GeneOrGeneProduct!
+  }
+
 interface ChemicalEntityOrProteinOrPolypeptide
   {
   }
@@ -646,6 +709,38 @@ type ChemicalExposure implements ExposureEvent
     source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
+  }
+
+type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
+    subjectContextQualifier: AnatomicalEntity
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    objectContextQualifier: AnatomicalEntity
+    anatomicalContextQualifier: AnatomicalEntity
+    subject: ChemicalEntity!
+    object: GeneOrGeneProduct!
+    predicate: PredicateType!
   }
 
 type ChemicalMixture
@@ -690,10 +785,6 @@ type ChemicalRole
     hasQualitativeValue: NamedThing
     iri: IriType
     source: String
-  }
-
-type ChemicalSubstance
-  {
   }
 
 type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
@@ -1213,6 +1304,30 @@ type DiseaseOrPhenotypicFeatureOutcome implements Outcome
 interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     subject: DiseaseOrPhenotypicFeature!
+  }
+
+type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    predicate: PredicateType!
+    object: GeneticInheritance!
   }
 
 type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
@@ -2195,6 +2310,21 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     sexQualifier: BiologicalSex
   }
 
+type GeneticInheritance
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+  }
+
 type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -3036,6 +3166,34 @@ type NamedThing
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+  }
+
+type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    object: NamedThing!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    predicate: PredicateType!
+    subjectAspectQualifier: String
+    subjectContextQualifier: OntologyClass
+    objectAspectQualifier: String
+    objectContextQualifier: OntologyClass
   }
 
 type NoncodingRNAProduct

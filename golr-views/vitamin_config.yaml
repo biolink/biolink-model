@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.7id: vitamin
+# metamodel_version: 1.7.0# version: 3.0.0id: vitamin
 schema_generating: true
 display_name: vitamin
 document_category: vitamin
@@ -68,6 +68,6 @@ fields:
   description: ''
   display_name: is toxic
 - id: has_chemical_role
-  description: "\tA role is particular behaviour which a material entity may exhibit."
+  description: A role is particular behaviour which a material entity may exhibit.
   display_name: has chemical role
   cardinality: multi

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 2.4.7id: small_molecule
+# metamodel_version: 1.7.0# version: 3.0.0id: small_molecule
 schema_generating: true
 description: A small molecule entity is a molecular entity characterized by availability
   in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation
@@ -69,7 +69,7 @@ fields:
   description: ''
   display_name: is toxic
 - id: has_chemical_role
-  description: "\tA role is particular behaviour which a material entity may exhibit."
+  description: A role is particular behaviour which a material entity may exhibit.
   display_name: has chemical role
   cardinality: multi
 - id: is_metabolite

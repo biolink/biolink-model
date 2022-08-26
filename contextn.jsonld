@@ -1,6 +1,7 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-11T18:43:27\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 2.4.7\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-24T02:48:16\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
+      "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
          "@id": "http://purl.obolibrary.org/obo/APO_",
          "@prefix": true
@@ -411,6 +412,7 @@
          "@id": "http://purl.obolibrary.org/obo/SO_",
          "@prefix": true
       },
+      "SPDI": "https://api.ncbi.nlm.nih.gov/variation/v0/spdi/",
       "STATO": {
          "@id": "http://purl.obolibrary.org/obo/STATO_",
          "@prefix": true
@@ -502,7 +504,7 @@
          "@id": "http://purl.obolibrary.org/obo/ZP_",
          "@prefix": true
       },
-      "alliancegenome": "https://www.alliancegenome.org/",
+      "agrkb": "https://www.alliancegenome.org/",
       "apollo": {
          "@id": "https://github.com/GMOD/Apollo",
          "@prefix": true
@@ -678,19 +680,30 @@
       "ameliorates": {
          "@type": "@id"
       },
+      "anatomical_context_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "animal_model_available_from": {
-         "@type": "@id"
-      },
-      "approved_for_treatment_by": {
-         "@type": "@id"
-      },
-      "approved_to_treat": {
          "@type": "@id"
       },
       "assesses": {
          "@type": "@id"
       },
       "associated_with": {
+         "@type": "@id"
+      },
+      "associated_with_decreased_likelihood_of": {
+         "@type": "@id"
+      },
+      "associated_with_increased_likelihood_of": {
+         "@type": "@id"
+      },
+      "associated_with_likelihood_of": {
          "@type": "@id"
       },
       "associated_with_resistance_to": {
@@ -715,6 +728,9 @@
       },
       "base_coordinate": {
          "@type": "xsd:integer"
+      },
+      "binds": {
+         "@type": "@id"
       },
       "biomarker_for": {
          "@type": "@id"
@@ -806,6 +822,9 @@
       "decreased_amount_in": {
          "@type": "@id"
       },
+      "decreased_likelihood_associated_with": {
+         "@type": "@id"
+      },
       "decreases_abundance_of": {
          "@type": "@id"
       },
@@ -885,6 +904,9 @@
          "@type": "@id"
       },
       "directly_interacts_with": {
+         "@type": "@id"
+      },
+      "directly_physically_interacts_with": {
          "@type": "@id"
       },
       "disease_has_basis_in": {
@@ -1098,6 +1120,9 @@
       "has_missense_variant": {
          "@type": "@id"
       },
+      "has_mode_of_inheritance": {
+         "@type": "@id"
+      },
       "has_molecular_consequence": {
          "@type": "@id"
       },
@@ -1173,9 +1198,6 @@
       "has_quotient": {
          "@type": "xsd:double"
       },
-      "has_real_world_evidence_of_association_with": {
-         "@type": "@id"
-      },
       "has_receptor": {
          "@type": "@id"
       },
@@ -1245,6 +1267,9 @@
       "increased_amount_of": {
          "@type": "@id"
       },
+      "increased_likelihood_associated_with": {
+         "@type": "@id"
+      },
       "increases_abundance_of": {
          "@type": "@id"
       },
@@ -1297,6 +1322,9 @@
          "@type": "@id"
       },
       "increases_uptake_of": {
+         "@type": "@id"
+      },
+      "indirectly_phsyically_interacts_with": {
          "@type": "@id"
       },
       "interacting_molecules_category": {
@@ -1386,6 +1414,9 @@
       "latitude": {
          "@type": "xsd:float"
       },
+      "likelihood_associated_with": {
+         "@type": "@id"
+      },
       "localization_affected_by": {
          "@type": "@id"
       },
@@ -1437,6 +1468,9 @@
          "@type": "@id"
       },
       "missing_from": {
+         "@type": "@id"
+      },
+      "mode_of_inheritance_of": {
          "@type": "@id"
       },
       "model_of": {
@@ -1496,6 +1530,14 @@
       "object": {
          "@type": "@id"
       },
+      "object_direction_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "occurs_in": {
          "@type": "@id"
       },
@@ -1550,6 +1592,9 @@
          "@type": "@id"
       },
       "plasma_membrane_part_of": {
+         "@type": "@id"
+      },
+      "population_context_qualifier": {
          "@type": "@id"
       },
       "positively_correlated_with": {
@@ -1767,6 +1812,15 @@
       "supporting_data_source": {
          "@type": "@id"
       },
+      "supporting_study_method_description": {
+         "@type": "@id"
+      },
+      "supporting_study_method_type": {
+         "@type": "@id"
+      },
+      "supporting_study_size": {
+         "@type": "xsd:integer"
+      },
       "synthesis_affected_by": {
          "@type": "@id"
       },
@@ -1781,6 +1835,12 @@
       },
       "taxon_of": {
          "@type": "@id"
+      },
+      "temporal_context_qualifier": {
+         "@type": "xsd:dateTime"
+      },
+      "temporal_interval_qualifier": {
+         "@type": "xsd:dateTime"
       },
       "temporally_related_to": {
          "@type": "@id"
