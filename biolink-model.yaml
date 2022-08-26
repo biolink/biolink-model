@@ -6626,7 +6626,7 @@ slots:
       the null hypothesis is correct, adjusted for multiple comparisons.  
       P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) 
       rather than expressing a statement of inequality (P<. 05), unless P<.
-    range: string
+    range: float
 
   bonferonni adjusted p value:
     is_a: association slot
@@ -6636,8 +6636,9 @@ slots:
       correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and 
       capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality 
       (P<. 05), unless P<.
-    range: string
-
+    range: float
+    examples:
+      - value: 0.018
 
   supporting text:
     is_a: association slot
@@ -9311,17 +9312,6 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
-    #
-    # As of this moment (Nov. 22), the jury is still out on what metadata of a cohort
-    # will be common to all cohort descriptions versus cohort-specific annotation.
-    # The former should be embedded as explicit slots in the cohort category. The latter
-    # ought to be documented as (ontology term constrained) extended node attributes.
-    #
-    #slots:
-    #  - general disease focus,
-    #  - specific inclusion/exclusion criteria,
-    #  - year(s) of cohort creation,
-    #  - institution.
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
