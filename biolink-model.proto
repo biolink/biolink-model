@@ -830,6 +830,24 @@ message ChemicalToPathwayAssociation
   chemicalEntity subject = 0
   pathway object = 0
  }
+// A result of a chi squared analysis.
+message ChiSquaredAnalysisResult
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ }
 // Attributes relating to a clinical manifestation
 message ClinicalAttribute
  {
@@ -1028,6 +1046,24 @@ message ComplexMolecularMixture
   string highestFDAApprovalStatus = 0
   string drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
+ }
+// A result of a concept count analysis.
+message ConceptCountAnalysisResult
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
  }
 // Level of confidence in a statement
 message ConfidenceLevel
@@ -2934,6 +2970,24 @@ message Nutrient
   boolean isToxic = 0
  repeated  chemicalRole hasChemicalRole = 0
  }
+// A result of a observed expected frequency analysis.
+message ObservedExpectedFrequencyAnalysisResult
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ }
 // The age group in which (disease) symptom manifestations appear
 message Onset
  {
@@ -3580,6 +3634,24 @@ message RelationshipType
  {
   string id = 0
  }
+// A result of a relative frequency analysis.
+message RelativeFrequencyAnalysisResult
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ }
 message RNAProduct
  {
   string id = 0
@@ -3870,6 +3942,24 @@ message TaxonToTaxonAssociation
 message TaxonomicRank
  {
   string id = 0
+ }
+// A result of text mining.
+message TextMiningResult
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase.
 message Transcript

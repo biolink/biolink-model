@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-26T20:02:46\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-26T21:51:21\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -611,6 +611,9 @@
       "acts_upstream_of_positive_effect": {
          "@type": "@id"
       },
+      "adjusted_p_value": {
+         "@type": "xsd:float"
+      },
       "adverse_event_caused_by": {
          "@type": "@id"
       },
@@ -739,6 +742,9 @@
       "biomarker_for": {
          "@type": "@id"
       },
+      "bonferonni_adjusted_p_value": {
+         "@type": "xsd:float"
+      },
       "broad_match": {
          "@type": "@id"
       },
@@ -792,6 +798,15 @@
       },
       "composed_primarily_of": {
          "@type": "@id"
+      },
+      "concept_count_object": {
+         "@type": "xsd:integer"
+      },
+      "concept_count_subject": {
+         "@type": "xsd:integer"
+      },
+      "concept_pair_count": {
+         "@type": "xsd:integer"
       },
       "condition_associated_with_gene": {
          "@type": "@id"
@@ -967,6 +982,9 @@
       "entity_regulates_entity": {
          "@type": "@id"
       },
+      "evidence_count": {
+         "@type": "xsd:integer"
+      },
       "exacerbates": {
          "@type": "@id"
       },
@@ -990,6 +1008,9 @@
       },
       "expression_site": {
          "@type": "@id"
+      },
+      "extraction_confidence_score": {
+         "@type": "xsd:integer"
       },
       "FDA_approval_status": {
          "@context": {
@@ -1228,6 +1249,9 @@
       "has_substrate": {
          "@type": "@id"
       },
+      "has_supporting_study_result": {
+         "@type": "@id"
+      },
       "has_synonymous_variant": {
          "@type": "@id"
       },
@@ -1435,6 +1459,12 @@
       "likelihood_associated_with": {
          "@type": "@id"
       },
+      "ln_ratio": {
+         "@type": "xsd:float"
+      },
+      "ln_ratio_confidence_interval": {
+         "@type": "xsd:float"
+      },
       "localization_affected_by": {
          "@type": "@id"
       },
@@ -1559,6 +1589,9 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          }
+      },
+      "object_location_in_text": {
+         "@type": "xsd:integer"
       },
       "occurs_in": {
          "@type": "@id"
@@ -1729,6 +1762,9 @@
       "related_to_at_instance_level": {
          "@type": "@id"
       },
+      "relative_frequency_subject": {
+         "@type": "xsd:float"
+      },
       "resistance_associated_with": {
          "@type": "@id"
       },
@@ -1833,11 +1869,23 @@
          "@type": "@id",
          "@id": "rdf:subject"
       },
+      "subject_location_in_text": {
+         "@type": "xsd:integer"
+      },
       "superclass_of": {
+         "@type": "@id"
+      },
+      "supporting_data_set": {
          "@type": "@id"
       },
       "supporting_data_source": {
          "@type": "@id"
+      },
+      "supporting_document": {
+         "@type": "@id"
+      },
+      "supporting_document_year": {
+         "@type": "xsd:integer"
       },
       "supporting_study_method_description": {
          "@type": "@id"
