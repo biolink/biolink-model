@@ -8153,7 +8153,6 @@ classes:
       # Several of the associated semantic types here are probably not
       # that relevant to the Biolink world but we keep them here for now.
       - UMLSSG:LIVB
-      - COB:0000022
       - CARO:0001010
 
   virus:
@@ -8162,7 +8161,7 @@ classes:
       A virus is a microorganism that replicates itself as a microRNA
       and infects the host cell.
     exact_mappings:
-      - obo:NCBITaxon_10239
+      - NCBITaxon:10239
 
   cellular organism:
     is_a: organismal entity
