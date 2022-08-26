@@ -6550,9 +6550,9 @@ slots:
     description: >-
       Character offsets for the text span(s) in the supporting text corresponding
       to the subject concept of the extracted assertion.
-    range: string
+    range: integer
     examples:
-      - value: "0|15;20|25"
+      - value: 15
     multivalued: true
 
   object location in text:
@@ -6562,7 +6562,7 @@ slots:
       to the object concept of the extracted assertion
     range: integer
     examples:
-      - value: 0|15
+      - value: 15
     multivalued: true
 
   tmkp aggregate confidence score:
