@@ -6458,6 +6458,11 @@ slots:
       - RO:0002558
     multivalued: true
 
+  has supporting study result:
+    is_a: related to at instance level
+    description: >-
+      connects an association to an instance of supporting study result
+
   mechanism of action:
     is_a: association slot
     range: boolean
@@ -6577,7 +6582,9 @@ slots:
   expected count:
     is_a: association slot
     description: >-
-      The number of instances in a dataset/cohort that are expected.
+      The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and 
+      object concept of an association if the subject and object concepts are independent.
+
   relative frequency subject:
     is_a: association slot
     description: >-
@@ -6724,12 +6731,14 @@ slots:
     examples:
       - value: 2.922827136
 
-  ln ratio 99 confidence interval:
+  ln ratio confidence interval:
     is_a: association slot
+    description: >-
+      The 99% confidence interval for the ln_ratio calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
     range: float
     examples:
       - value: 2.922827136
-
 
   interacting molecules category:
     is_a: association slot
@@ -7191,10 +7200,12 @@ classes:
     is_a: supporting study result set
     description: >-
       A result of a concept count analysis.
+
   observed expected frequency analysis result:
     is_a: supporting study result set
     description: >-
       A result of a observed expected frequency analysis.
+
   relative frequency analysis result:
     is_a: supporting study result set
     description: >-
@@ -7204,6 +7215,11 @@ classes:
     is_a: supporting study result set
     description: >-
       A result of text mining.
+
+  chi squared analysis result:
+    is_a: supporting study result set
+    description: >-
+      A result of a chi squared analysis.
 
   agent:
     is_a: administrative entity
