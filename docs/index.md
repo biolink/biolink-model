@@ -138,6 +138,12 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
              * [BookChapter](BookChapter.md)
              * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+         * [StudyResult](StudyResult.md) - A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
+             * [ChiSquaredAnalysisResult](ChiSquaredAnalysisResult.md) - A result of a chi squared analysis.
+             * [ConceptCountAnalysisResult](ConceptCountAnalysisResult.md) - A result of a concept count analysis.
+             * [ObservedExpectedFrequencyAnalysisResult](ObservedExpectedFrequencyAnalysisResult.md) - A result of a observed expected frequency analysis.
+             * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md) - A result of a relative frequency analysis.
+             * [TextMiningResult](TextMiningResult.md) - A result of text mining.
      * [OrganismTaxon](OrganismTaxon.md) - A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
      * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
      * [PhysicalEntity](PhysicalEntity.md) - An entity that has material reality (a.k.a. physical essence).
@@ -735,6 +741,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has synonymous variant](has_synonymous_variant.md)
  * [has splice site variant](has_splice_site_variant.md)
  * [has substrate](has_substrate.md)
+ * [has supporting study result](has_supporting_study_result.md) - connects an association to an instance of supporting study result
  * [has synonymous variant](has_synonymous_variant.md)
  * [has target](has_target.md)
  * [has upstream actor](has_upstream_actor.md)
@@ -1157,6 +1164,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has nonsense variant](has_nonsense_variant.md)
              * [has splice site variant](has_splice_site_variant.md)
              * [has synonymous variant](has_synonymous_variant.md)
+         * [has supporting study result](has_supporting_study_result.md) - connects an association to an instance of supporting study result
          * [has target](has_target.md)
          * [has upstream actor](has_upstream_actor.md)
              * [has negative upstream actor](has_negative_upstream_actor.md)
@@ -1473,6 +1481,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has nonsense variant](has_nonsense_variant.md)
          * [has splice site variant](has_splice_site_variant.md)
          * [has synonymous variant](has_synonymous_variant.md)
+     * [has supporting study result](has_supporting_study_result.md) - connects an association to an instance of supporting study result
      * [has target](has_target.md)
      * [has upstream actor](has_upstream_actor.md)
          * [has negative upstream actor](has_negative_upstream_actor.md)
@@ -1782,6 +1791,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Edge Properties
 
+ * [adjusted p value](adjusted_p_value.md) - The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons.   P is always italicized and capitalized. The actual P value* should be expressed (P=. 04)  rather than expressing a statement of inequality (P<. 05), unless P<.
+     * [bonferonni adjusted p value](bonferonni_adjusted_p_value.md) - The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.
  * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
  * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
  * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
@@ -1798,6 +1809,9 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
      * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
      * [clinical modifier qualifier](clinical_modifier_qualifier.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+     * [concept count object](concept_count_object.md) - The number of instances in a dataset/cohort whose records contain the concept in the object slot of an association.
+     * [concept count subject](concept_count_subject.md) - The number of instances in a dataset/cohort whose records contain the concept in the subject slot of an association.
+     * [concept pair count](concept_pair_count.md) - The number of instances in a dataset/cohort whose records contain both the subject and object concept of an association.
      * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
          * [object context qualifier](object_context_qualifier.md)
          * [subject context qualifier](subject_context_qualifier.md)
@@ -1807,7 +1821,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
          * [object direction qualifier](object_direction_qualifier.md)
          * [subject direction qualifier](subject_direction_qualifier.md)
+     * [evidence count](evidence_count.md) - The number of evidence instances that are connected to an association.
+     * [expected count](expected_count.md) - The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
      * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
+     * [extraction confidence score](extraction_confidence_score.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
      * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
          * [object form or variant qualifier](object_form_or_variant_qualifier.md)
          * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
@@ -1820,15 +1837,20 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [knowledge source](knowledge_source.md) - An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
          * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
          * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
+     * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
+     * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
      * [logical interpretation](logical_interpretation.md)
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * [object location in text](object_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
      * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+         * [adjusted p value](adjusted_p_value.md) - The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons.   P is always italicized and capitalized. The actual P value* should be expressed (P=. 04)  rather than expressing a statement of inequality (P<. 05), unless P<.
+             * [bonferonni adjusted p value](bonferonni_adjusted_p_value.md) - The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.
      * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
          * [object part qualifier](object_part_qualifier.md)
          * [subject part qualifier](subject_part_qualifier.md)
@@ -1842,6 +1864,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [reaction balanced](reaction_balanced.md)
      * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
      * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
+     * [relative frequency object](relative_frequency_object.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.
+     * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+     * [relative frequency subject](relative_frequency_subject.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.
+     * [relative frequency subject confidence interval](relative_frequency_subject_confidence_interval.md) - The 99% confidence interval for the relative_frequency_subject calculation (i.e. the range of values within which the true value has a 99% chance of falling)
      * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
          * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
              * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1862,7 +1888,12 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
+     * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
      * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
+     * [supporting document](supporting_document.md) - A publication or other document that reports the statement expressed in an Association, or  provides information used as evidence supporting this statement.
+     * [supporting document type](supporting_document_type.md) - The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
+     * [supporting document year](supporting_document_year.md) - The document year (typically the publication year) for the supporting document used in a Text Mining Result.
      * [supporting study metadata](supporting_study_metadata.md) - Information about a study used to generate information used as evidence to support the knowledge expressed in an  Association. In practice, data creators should use one of the more specific subtypes of this property.
          * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
          * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
@@ -1870,16 +1901,22 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
          * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).
          * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
+     * [supporting text](supporting_text.md) - The segment of text from a document that supports the mined assertion.
+     * [supporting text section type](supporting_text_section_type.md) - The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.
      * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
          * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [association type](association_type.md) - connects an association to the category of association (e.g. gene to phenotype)
  * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
      * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
      * [start coordinate](start_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
+ * [bonferonni adjusted p value](bonferonni_adjusted_p_value.md) - The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.
  * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
  * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
  * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
  * [clinical modifier qualifier](clinical_modifier_qualifier.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+ * [concept count object](concept_count_object.md) - The number of instances in a dataset/cohort whose records contain the concept in the object slot of an association.
+ * [concept count subject](concept_count_subject.md) - The number of instances in a dataset/cohort whose records contain the concept in the subject slot of an association.
+ * [concept pair count](concept_pair_count.md) - The number of instances in a dataset/cohort whose records contain both the subject and object concept of an association.
  * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
      * [object context qualifier](object_context_qualifier.md)
      * [subject context qualifier](subject_context_qualifier.md)
@@ -1891,7 +1928,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [subject direction qualifier](subject_direction_qualifier.md)
  * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
  * [end interbase coordinate](end_interbase_coordinate.md) - The position at which the subject nucleic acid entity ends on the chromosome or other entity to which it is located on.
+ * [evidence count](evidence_count.md) - The number of evidence instances that are connected to an association.
+ * [expected count](expected_count.md) - The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
  * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
+ * [extraction confidence score](extraction_confidence_score.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
  * [FDA approval status](FDA_approval_status.md)
  * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
      * [object form or variant qualifier](object_form_or_variant_qualifier.md)
@@ -1909,6 +1949,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [knowledge source](knowledge_source.md) - An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * [aggregator knowledge source](aggregator_knowledge_source.md) - An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
      * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).
+ * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
+ * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
  * [logical interpretation](logical_interpretation.md)
  * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1918,12 +1960,15 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [object derivative qualifier](object_derivative_qualifier.md)
  * [object direction qualifier](object_direction_qualifier.md)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+ * [object location in text](object_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
  * [object part qualifier](object_part_qualifier.md)
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
  * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
  * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
  * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+     * [adjusted p value](adjusted_p_value.md) - The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons.   P is always italicized and capitalized. The actual P value* should be expressed (P=. 04)  rather than expressing a statement of inequality (P<. 05), unless P<.
+         * [bonferonni adjusted p value](bonferonni_adjusted_p_value.md) - The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.
  * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
      * [object part qualifier](object_part_qualifier.md)
      * [subject part qualifier](subject_part_qualifier.md)
@@ -1939,6 +1984,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [reaction balanced](reaction_balanced.md)
  * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
  * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
+ * [relative frequency object](relative_frequency_object.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.
+ * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+ * [relative frequency subject](relative_frequency_subject.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.
+ * [relative frequency subject confidence interval](relative_frequency_subject_confidence_interval.md) - The 99% confidence interval for the relative_frequency_subject calculation (i.e. the range of values within which the true value has a 99% chance of falling)
  * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
      * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
          * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1968,8 +2017,13 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [subject derivative qualifier](subject_derivative_qualifier.md)
  * [subject direction qualifier](subject_direction_qualifier.md)
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
+ * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
  * [subject part qualifier](subject_part_qualifier.md)
+ * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
+ * [supporting document](supporting_document.md) - A publication or other document that reports the statement expressed in an Association, or  provides information used as evidence supporting this statement.
+ * [supporting document type](supporting_document_type.md) - The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
+ * [supporting document year](supporting_document_year.md) - The document year (typically the publication year) for the supporting document used in a Text Mining Result.
  * [supporting study cohort](supporting_study_cohort.md) - A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
  * [supporting study context](supporting_study_context.md) - A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
  * [supporting study date range](supporting_study_date_range.md) - The date range over which data was collected in a study that provided evidence for an Association.
@@ -1983,6 +2037,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [supporting study method description](supporting_study_method_description.md) - A uri or curie pointing to information about the methodology used to generate data supporting an Association.
  * [supporting study method type](supporting_study_method_type.md) - A type of method that was applied in a study used to generate the information used as evidence (e.g. a type of  experimental assay, or statistical calculation, or computational analysis).
  * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
+ * [supporting text](supporting_text.md) - The segment of text from a document that supports the mined assertion.
+ * [supporting text section type](supporting_text_section_type.md) - The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.
  * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
      * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.

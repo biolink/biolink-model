@@ -59,6 +59,7 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [has phenotype](has_phenotype.md)
  *  [has sequence location](has_sequence_location.md)
  *  [has sequence variant](has_sequence_variant.md)
+ *  [has supporting study result](has_supporting_study_result.md)
  *  [has target](has_target.md)
  *  [has upstream actor](has_upstream_actor.md)
  *  [in linkage disequilibrium with](in_linkage_disequilibrium_with.md)

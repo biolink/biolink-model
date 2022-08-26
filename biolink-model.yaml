@@ -622,7 +622,6 @@ slots:
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
 
-
   has topic:
     aliases: [ 'topic', 'descriptors' ]
     is_a: node property
@@ -6459,6 +6458,11 @@ slots:
       - RO:0002558
     multivalued: true
 
+  has supporting study result:
+    is_a: related to at instance level
+    description: >-
+      connects an association to an instance of supporting study result
+
   mechanism of action:
     is_a: association slot
     range: boolean
@@ -6520,6 +6524,14 @@ slots:
     range: information resource
     multivalued: true
 
+  supporting data set:
+    is_a: association slot
+    description: >-
+      A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through
+      computation on, reasoning or inference over the retrieved data).
+    range: information resource
+    multivalued: true
+
   association type:
     is_a: association slot
     range: category type
@@ -6538,6 +6550,7 @@ slots:
       - STATO:0000030
 
   p value:
+    aliases: ['unadjusted p value']
     is_a: association slot
     range: float
     description: >-
@@ -6548,6 +6561,187 @@ slots:
       - OBI:0000175
       - NCIT:C44185
       - EDAM-DATA:1669
+
+  evidence count:
+    is_a: association slot
+    description: >-
+      The number of evidence instances that are connected to an association.
+    range: integer
+
+  concept count subject:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the subject slot of an association.
+    range: integer
+    examples:
+      - value: 489
+
+  concept count object:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      the concept in the object slot of an association.
+    range: integer
+
+  concept pair count:
+    is_a: association slot
+    description: >-
+      The number of instances in a dataset/cohort whose records contain
+      both the subject and object concept of an association.
+    range: integer
+    examples:
+      - value: 1731
+
+  expected count:
+    is_a: association slot
+    description: >-
+      The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and 
+      object concept of an association if the subject and object concepts are independent.
+
+  relative frequency subject:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in 
+      records within a dataset/cohort, relative to the frequency at which the subject
+      concept appears in these same records.
+    range: float
+    examples:
+      - value: 0.01840490798
+
+  relative frequency object:
+    is_a: association slot
+    description: >-
+      The frequency at which subject and object concepts co-occur in 
+      records within a dataset/cohort, relative to the frequency at which the object
+      concept appears in these same records.
+    range: string
+
+  relative frequency subject confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_subject calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+  relative frequency object confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the relative_frequency_object calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: string
+
+  adjusted p value:
+    is_a: p value
+    description: >-
+      The adjusted p-value is the probability of obtaining test results
+      at least as extreme as the results actually observed, under the assumption that
+      the null hypothesis is correct, adjusted for multiple comparisons.  
+      P is always italicized and capitalized. The actual P value* should be expressed (P=. 04) 
+      rather than expressing a statement of inequality (P<. 05), unless P<.
+    range: float
+
+  bonferonni adjusted p value:
+    is_a: adjusted p value
+    description: >-
+      The Bonferroni correction is an adjustment made to P values when several dependent or independent 
+      statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni 
+      correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and 
+      capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality 
+      (P<. 05), unless P<.
+    range: float
+    examples:
+      - value: 0.018
+
+  supporting text:
+    is_a: association slot
+    description: The segment of text from a document that supports the mined assertion.
+    range: string
+    examples:
+      - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
+
+  supporting document:
+    is_a: association slot
+    description: >-
+      A publication or other document that reports the statement expressed in an Association, or 
+      provides information used as evidence supporting this statement.
+    range: uriorcurie
+    examples:
+      - value: PMID:12345678
+
+  subject location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the subject concept of the extracted assertion.
+    range: integer
+    examples:
+      - value: 15
+    multivalued: true
+
+  object location in text:
+    is_a: association slot
+    description: >-
+      Character offsets for the text span(s) in the supporting text corresponding
+      to the object concept of the extracted assertion
+    range: integer
+    examples:
+      - value: 15
+    multivalued: true
+
+  extraction confidence score:
+    is_a: association slot
+    description: >-
+      A quantitative confidence value that represents the probability of
+      obtaining a result at least as extreme as that actually obtained,
+      assuming that the actual value was the result of chance alone.
+    range: integer
+    examples:
+        - value: 15
+
+  supporting document type:
+    is_a: association slot
+    description: >-
+      The document type (e.g., Journal Article, Case Study, Preprint) for
+      the supporting document used in a Text Mining Result.
+    range: string
+    examples:
+      - value: Journal Article
+
+  supporting document year:
+    is_a: association slot
+    description: >-
+      The document year (typically the publication year) for the supporting
+      document used in a Text Mining Result.
+    range: integer
+    examples:
+      - value: 1999
+
+  supporting text section type:
+    is_a: association slot
+    description: >-
+      The section of the supporting text of a Text Mining Result within
+      the supporting document. This is in the form of the name of the document section
+      (e.g., Abstract, Introduction) that contains the supporting text.
+    range: string
+    examples:
+      - value: Introduction
+
+  ln ratio:
+    is_a: association slot
+    description: the natural log of the ratio of co-occurrence to expected
+    range: float
+    examples:
+      - value: 2.922827136
+
+  ln ratio confidence interval:
+    is_a: association slot
+    description: >-
+      The 99% confidence interval for the ln_ratio calculation
+      (i.e. the range of values within which the true value has a 99% chance of falling)
+    range: float
+    examples:
+      - value: 2.922827136
 
   interacting molecules category:
     is_a: association slot
@@ -6997,6 +7191,46 @@ classes:
   administrative entity:
     is_a: named thing
     abstract: true
+
+  study result:
+    abstract: true
+    description: >- 
+      A collection of data items from a study that are about a particular study subject or experimental unit (the 
+      'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
+      of this data as evidence.
+    notes:
+      The data/metadata included in a Study Result object are typically a subset of data from a larger study data set, 
+      that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific 
+      focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any 
+      scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational 
+      analyses, or a larger scale clinical trial or experimental research investigation.
+    is_a: information content entity
+
+  ## epc result sets
+  concept count analysis result:
+    is_a: study result
+    description: >-
+      A result of a concept count analysis.
+
+  observed expected frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a observed expected frequency analysis.
+
+  relative frequency analysis result:
+    is_a: study result
+    description: >-
+      A result of a relative frequency analysis.
+
+  text mining result:
+    is_a: study result
+    description: >-
+      A result of text mining.
+
+  chi squared analysis result:
+    is_a: study result
+    description: >-
+      A result of a chi squared analysis.
 
   agent:
     is_a: administrative entity
@@ -9110,17 +9344,6 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
-    #
-    # As of this moment (Nov. 22), the jury is still out on what metadata of a cohort
-    # will be common to all cohort descriptions versus cohort-specific annotation.
-    # The former should be embedded as explicit slots in the cohort category. The latter
-    # ought to be documented as (ontology term constrained) extended node attributes.
-    #
-    #slots:
-    #  - general disease focus,
-    #  - specific inclusion/exclusion criteria,
-    #  - year(s) of cohort creation,
-    #  - institution.
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:

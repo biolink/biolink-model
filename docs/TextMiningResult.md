@@ -1,36 +1,28 @@
 ---
 parent: Entities
-title: biolink:InformationResource
+title: biolink:TextMiningResult
 grand_parent: Classes
 layout: default
 ---
 
-# Class: InformationResource
+# Class: TextMiningResult
 
 
-A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
+A result of text mining.
 
-URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationResource)
+URI: [biolink:TextMiningResult](https://w3id.org/biolink/vocab/TextMiningResult)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Association]-%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[StudyResult]%5E-[TextMiningResult%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[StudyResult],[Attribute])
 
 ---
 
 
 ## Parents
 
- *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
-
-## Referenced by class
-
- *  **[Association](Association.md)** *[aggregator knowledge source](aggregator_knowledge_source.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
- *  **[Association](Association.md)** *[knowledge source](knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
- *  **[Association](Association.md)** *[primary knowledge source](primary_knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
- *  **[Association](Association.md)** *[supporting data set](supporting_data_set.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
- *  **[Association](Association.md)** *[supporting data source](supporting_data_source.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
+ *  is_a: [StudyResult](StudyResult.md) - A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
 
 ## Attributes
 
@@ -105,11 +97,3 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | knowledgebase |
-| **In Subsets:** | | translator_minimal |
-
