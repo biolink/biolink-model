@@ -6487,7 +6487,6 @@ slots:
       (i.e. the range of values within which the true value has a 99% chance of falling)
     range: string
 
-
   adjusted p-value:
     is_a: association slot
     description: >-
@@ -6686,7 +6685,7 @@ slots:
       pair of concepts in a text corpus.
     range: string
 
-  tmkp concept cooccurrence count:
+  tmkp concept co-occurrence count:
     is_a: association slot
     description: The raw count of observations of two concepts co-occurring in the
       same document (or part of a document) in a text corpus.
@@ -6824,7 +6823,6 @@ slots:
     range: float
     examples:
       - value: 3.103
-
 
   mass spectrometry interaction statistic:
     is_a: association slot
