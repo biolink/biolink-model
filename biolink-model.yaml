@@ -6488,7 +6488,7 @@ slots:
     range: string
 
 
-  adjusted p value:
+  adjusted p-value:
     is_a: association slot
     description: >-
       The adjusted p-value is the probability of obtaining test results
@@ -6498,7 +6498,7 @@ slots:
       rather than expressing a statement of inequality (P<. 05), unless P<.
     range: string
 
-  bonferonni adjusted p value:
+  bonferonni adjusted p-value:
     is_a: association slot
     description: >-
       The Bonferroni correction is an adjustment made to P values when several dependent or independent 
@@ -6974,10 +6974,16 @@ slots:
 
   p-value:
     is_a: association slot
-    description: p-value from t-test
+    aliases: [ 'unadjusted p-value' ]
     range: float
-    examples:
-      - value: 0.000219281
+    description: >-
+      A quantitative confidence value that represents the probability of
+      obtaining a result at least as extreme as that actually obtained,
+      assuming that the actual value was the result of chance alone.
+    exact_mappings:
+      - OBI:0000175
+      - NCIT:C44185
+      - EDAM-DATA:1669
 
   tumor types or tissue types:
     is_a: association slot
@@ -7047,7 +7053,7 @@ slots:
     examples:
       - value: 0.00002358560424
 
-  num publications:
+  number of publications:
     is_a: association slot
     description: >-
       The count of publications attributed to the source/object relationship
@@ -7096,11 +7102,11 @@ slots:
     examples:
       - value: IC:50
 
-  FAERS llr:
+  faers llr:
     is_a: association slot
     description: >-
-      The ratio of the (log) likelihood of an adverse event associateed
-      to the comsumption of a pharmaceutical.
+      The ratio of the (log) likelihood of an adverse event associated
+      to the consumption of a pharmaceutical.
     range: integer
     examples:
       - value: 0
@@ -7255,18 +7261,6 @@ slots:
     exact_mappings:
       - STATO:0000030
 
-  p value:
-    is_a: association slot
-    aliases: ['unadjusted p value']
-    range: float
-    description: >-
-      A quantitative confidence value that represents the probability of
-      obtaining a result at least as extreme as that actually obtained,
-      assuming that the actual value was the result of chance alone.
-    exact_mappings:
-      - OBI:0000175
-      - NCIT:C44185
-      - EDAM-DATA:1669
 
   interacting molecules category:
     is_a: association slot
