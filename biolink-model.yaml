@@ -6346,18 +6346,17 @@ slots:
   causes adverse event:
     is_a: causes
     range: disease or phenotypic feature
+    domain: chemical or drug or treatment
     annotations:
       canonical_predicate: true
-    narrow_mappings:
-      - NCIT:C2861 # side effect
 
   adverse event caused by:
     domain: disease or phenotypic feature
-    inverse: causes adverse event
     range: chemical or drug or treatment
+    inverse: causes adverse event
 
   has side effect:
-    is_a: causes
+    is_a: causes adverse event
     description: >-
       a secondary, typically undesirable effect of a drug or medical treatment.
     domain: chemical or drug or treatment
@@ -6370,7 +6369,7 @@ slots:
       - NCIT:C2861 # side effect
 
   is side effect of:
-    is_a: caused by
+    is_a: adverse event caused by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
