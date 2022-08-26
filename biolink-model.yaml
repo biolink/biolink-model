@@ -6701,29 +6701,6 @@ slots:
     examples:
       - value: Introduction
 
-  z-score:
-    is_a: association slot
-    description: z-score is the measure of how many standard deviations below or above
-      the population mean, a raw score is.
-    range: float
-    examples:
-      - value: 27.52733542
-
-  log fold change:
-    is_a: association slot
-    description: The log2(fold-change) is the log-ratio of a gene's or a transcript's
-      expression values in two different conditions.
-    range: float
-    examples:
-      - value: 1.655759833
-
-  odds ratio:
-    is_a: association slot
-    description: the odds of co-occurrence divided by the odds of expected
-    range: float
-    examples:
-      - value: 2.94257537
-
   ln ratio:
     is_a: association slot
     description: the natural log of the ratio of co-occurrence to expected
