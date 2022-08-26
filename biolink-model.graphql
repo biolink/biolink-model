@@ -574,6 +574,21 @@ type CellularComponent
     hasAttribute: [Attribute]
   }
 
+type CellularOrganism
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
 type ChemicalAffectsGeneAssociation
   {
     id: String!
@@ -4609,6 +4624,21 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasTotal: Integer
     hasPercentage: Double
     frequencyQualifier: FrequencyValue
+  }
+
+type Virus
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Vitamin

@@ -469,6 +469,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<CellularOrganism> CLOSED {
+    (  $<CellularOrganism_tes> (  &<OrganismalEntity_tes> ;
+          rdf:type [ <OrganismalEntity> ] ?
+       ) ;
+       rdf:type [ <CellularOrganism> ]
+    )
+}
+
 <ChemicalAffectsGeneAssociation> CLOSED {
     (  $<ChemicalAffectsGeneAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
@@ -2262,7 +2270,8 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <OrganismalEntity>  (
-    @<AnatomicalEntity> OR @<CellLine> OR @<IndividualOrganism> OR @<LifeStage> OR @<PopulationOfIndividualOrganisms>
+    @<AnatomicalEntity> OR @<CellLine> OR @<CellularOrganism> OR @<IndividualOrganism> OR @<LifeStage> OR
+    @<PopulationOfIndividualOrganisms> OR @<Virus>
 )
 
 <OrganismalEntity_struct> {
@@ -3020,6 +3029,14 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ?
        ) ;
        rdf:type [ <VariantToPopulationAssociation> ]
+    )
+}
+
+<Virus> CLOSED {
+    (  $<Virus_tes> (  &<OrganismalEntity_tes> ;
+          rdf:type [ <OrganismalEntity> ] ?
+       ) ;
+       rdf:type [ <Virus> ]
     )
 }
 

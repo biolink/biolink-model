@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-08-24T02:48:44
+# Generation date: 2022-08-26T19:52:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -43,6 +43,7 @@ BIOSAMPLE = CurieNamespace('BIOSAMPLE', 'http://identifiers.org/biosample/')
 BSPO = CurieNamespace('BSPO', 'http://purl.obolibrary.org/obo/BSPO_')
 BTO = CurieNamespace('BTO', 'http://purl.obolibrary.org/obo/BTO_')
 CAID = CurieNamespace('CAID', 'http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=')
+CARO = CurieNamespace('CARO', 'http://purl.obolibrary.org/obo/CARO_')
 CAS = CurieNamespace('CAS', 'http://identifiers.org/cas/')
 CATH = CurieNamespace('CATH', 'http://identifiers.org/cath/')
 CATH_SUPERFAMILY = CurieNamespace('CATH_SUPERFAMILY', 'http://identifiers.org/cath.superfamily/')
@@ -657,6 +658,14 @@ class GeneticInheritanceId(BiologicalEntityId):
 
 
 class OrganismalEntityId(BiologicalEntityId):
+    pass
+
+
+class VirusId(OrganismalEntityId):
+    pass
+
+
+class CellularOrganismId(OrganismalEntityId):
     pass
 
 
@@ -3384,6 +3393,51 @@ class OrganismalEntity(BiologicalEntity):
         if not isinstance(self.has_attribute, list):
             self.has_attribute = [self.has_attribute] if self.has_attribute is not None else []
         self.has_attribute = [v if isinstance(v, AttributeId) else AttributeId(v) for v in self.has_attribute]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Virus(OrganismalEntity):
+    """
+    A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Virus
+    class_class_curie: ClassVar[str] = "biolink:Virus"
+    class_name: ClassVar[str] = "virus"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Virus
+
+    id: Union[str, VirusId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, VirusId):
+            self.id = VirusId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CellularOrganism(OrganismalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CellularOrganism
+    class_class_curie: ClassVar[str] = "biolink:CellularOrganism"
+    class_name: ClassVar[str] = "cellular organism"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CellularOrganism
+
+    id: Union[str, CellularOrganismId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CellularOrganismId):
+            self.id = CellularOrganismId(self.id)
 
         super().__post_init__(**kwargs)
 
