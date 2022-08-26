@@ -6657,7 +6657,7 @@ slots:
   mutual dependence:
     is_a: association slot
     description: >-
-      Mutual Dependency (MD), often also known as PMI\xB2, is a variant
+      Mutual Dependency (MD), is a variant
       of PMI that attempts to overcome PMI's preference for rare events. For details,
       see Thanopoulos, A., Fakotakis, N., & Kokkinakis, G. (2002, May). Comparative
       Evaluation of Collocation Extraction Metrics. In LREC (Vol. 2, pp. 620-625).
@@ -6676,19 +6676,19 @@ slots:
 
   tmkp concept1 count:
     is_a: association slot
-    description: The raw count of observations of one member (concept1) of a cooccurring
+    description: The raw count of observations of one member (concept1) of a co-occurring
       pair of concepts in a text corpus.
     range: string
 
   tmkp concept2 count:
     is_a: association slot
-    description: The raw count of observations of one member (concept2) of a cooccurring
+    description: The raw count of observations of one member (concept2) of a co-occurring
       pair of concepts in a text corpus.
     range: string
 
   tmkp concept cooccurrence count:
     is_a: association slot
-    description: The raw count of observations of two concepts cooccurring in the
+    description: The raw count of observations of two concepts co-occurring in the
       same document (or part of a document) in a text corpus.
     range: string
 
@@ -6704,7 +6704,7 @@ slots:
 
   probability of prolonged survival:
     is_a: association slot
-    description: Reflects the posterior distribution for likliehood of survival past
+    description: Reflects the posterior distribution for likelihood of survival past
       a specified period of time, given some evidence established in the connecting
       nodes.
     range: integer
@@ -6722,7 +6722,7 @@ slots:
 
   binding constant:
     is_a: association slot
-    description: measure of how likely the ligand and moelcule are to bind
+    description: measure of how likely the ligand and molecule are to bind
     range: integer
     examples:
       - value: 421
@@ -6837,7 +6837,7 @@ slots:
     examples:
       - value: 0.969888009
 
-  Significance Analysis of INTeractome bayesian false discovery rate:
+  significance analysis of interactome bayesian false discovery rate:
     is_a: association slot
     description: >-
       statistical method for probabilistically scoring protein-protein
