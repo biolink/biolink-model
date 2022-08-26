@@ -6365,10 +6365,17 @@ slots:
   # to distinguish it.  maybe not the best way to do that though.
 
   causes adverse event:
-    deprecated: true
+    is_a: causes
+    range: disease or phenotypic feature
+    annotations:
+      biolink:canonical_predicate:
+        tag: biolink:canonical_predicate
+        value: true
 
   adverse event caused by:
-    deprecated: true
+    domain: disease or phenotypic feature
+    inverse: causes adverse event
+    range: chemical or drug or treatment
 
   has side effect:
     is_a: causes
