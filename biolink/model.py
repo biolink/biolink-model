@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-08-26T19:52:24
+# Generation date: 2022-08-26T14:31:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -454,6 +454,30 @@ class AgentId(AdministrativeEntityId):
 
 
 class InformationContentEntityId(NamedThingId):
+    pass
+
+
+class StudyResultId(InformationContentEntityId):
+    pass
+
+
+class ConceptCountAnalysisResultId(StudyResultId):
+    pass
+
+
+class ObservedExpectedFrequencyAnalysisResultId(StudyResultId):
+    pass
+
+
+class RelativeFrequencyAnalysisResultId(StudyResultId):
+    pass
+
+
+class TextMiningResultId(StudyResultId):
+    pass
+
+
+class ChiSquaredAnalysisResultId(StudyResultId):
     pass
 
 
@@ -1862,6 +1886,143 @@ class InformationContentEntity(NamedThing):
 
         if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
             self.creation_date = XSDDate(self.creation_date)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class StudyResult(InformationContentEntity):
+    """
+    A collection of data items from a study that are about a particular study subject or experimental unit (the
+    'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of
+    this data as evidence.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.StudyResult
+    class_class_curie: ClassVar[str] = "biolink:StudyResult"
+    class_name: ClassVar[str] = "study result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.StudyResult
+
+    id: Union[str, StudyResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+@dataclass
+class ConceptCountAnalysisResult(StudyResult):
+    """
+    A result of a concept count analysis.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ConceptCountAnalysisResult
+    class_class_curie: ClassVar[str] = "biolink:ConceptCountAnalysisResult"
+    class_name: ClassVar[str] = "concept count analysis result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ConceptCountAnalysisResult
+
+    id: Union[str, ConceptCountAnalysisResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ConceptCountAnalysisResultId):
+            self.id = ConceptCountAnalysisResultId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ObservedExpectedFrequencyAnalysisResult(StudyResult):
+    """
+    A result of a observed expected frequency analysis.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ObservedExpectedFrequencyAnalysisResult
+    class_class_curie: ClassVar[str] = "biolink:ObservedExpectedFrequencyAnalysisResult"
+    class_name: ClassVar[str] = "observed expected frequency analysis result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ObservedExpectedFrequencyAnalysisResult
+
+    id: Union[str, ObservedExpectedFrequencyAnalysisResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObservedExpectedFrequencyAnalysisResultId):
+            self.id = ObservedExpectedFrequencyAnalysisResultId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class RelativeFrequencyAnalysisResult(StudyResult):
+    """
+    A result of a relative frequency analysis.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.RelativeFrequencyAnalysisResult
+    class_class_curie: ClassVar[str] = "biolink:RelativeFrequencyAnalysisResult"
+    class_name: ClassVar[str] = "relative frequency analysis result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.RelativeFrequencyAnalysisResult
+
+    id: Union[str, RelativeFrequencyAnalysisResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, RelativeFrequencyAnalysisResultId):
+            self.id = RelativeFrequencyAnalysisResultId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class TextMiningResult(StudyResult):
+    """
+    A result of text mining.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
+    class_class_curie: ClassVar[str] = "biolink:TextMiningResult"
+    class_name: ClassVar[str] = "text mining result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.TextMiningResult
+
+    id: Union[str, TextMiningResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TextMiningResultId):
+            self.id = TextMiningResultId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ChiSquaredAnalysisResult(StudyResult):
+    """
+    A result of a chi squared analysis.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.ChiSquaredAnalysisResult
+    class_class_curie: ClassVar[str] = "biolink:ChiSquaredAnalysisResult"
+    class_name: ClassVar[str] = "chi squared analysis result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.ChiSquaredAnalysisResult
+
+    id: Union[str, ChiSquaredAnalysisResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ChiSquaredAnalysisResultId):
+            self.id = ChiSquaredAnalysisResultId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -9575,6 +9736,18 @@ slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symb
 slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
                    model_uri=BIOLINK.synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
+slots.exact_synonym = Slot(uri=BIOLINK.exact_synonym, name="exact_synonym", curie=BIOLINK.curie('exact_synonym'),
+                   model_uri=BIOLINK.exact_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+
+slots.broad_synonym = Slot(uri=BIOLINK.broad_synonym, name="broad_synonym", curie=BIOLINK.curie('broad_synonym'),
+                   model_uri=BIOLINK.broad_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+
+slots.narrow_synonym = Slot(uri=BIOLINK.narrow_synonym, name="narrow_synonym", curie=BIOLINK.curie('narrow_synonym'),
+                   model_uri=BIOLINK.narrow_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+
+slots.related_synonym = Slot(uri=BIOLINK.related_synonym, name="related_synonym", curie=BIOLINK.curie('related_synonym'),
+                   model_uri=BIOLINK.related_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
+
 slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.curie('has_topic'),
                    model_uri=BIOLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])
 
@@ -10925,6 +11098,9 @@ slots.has_confidence_level = Slot(uri=BIOLINK.has_confidence_level, name="has co
 slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=BIOLINK.curie('has_evidence'),
                    model_uri=BIOLINK.has_evidence, domain=Association, range=Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]])
 
+slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
+                   model_uri=BIOLINK.has_supporting_study_result, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
 slots.mechanism_of_action = Slot(uri=BIOLINK.mechanism_of_action, name="mechanism of action", curie=BIOLINK.curie('mechanism_of_action'),
                    model_uri=BIOLINK.mechanism_of_action, domain=Association, range=Optional[Union[bool, Bool]])
 
@@ -10949,6 +11125,9 @@ slots.aggregator_knowledge_source = Slot(uri=BIOLINK.aggregator_knowledge_source
 slots.supporting_data_source = Slot(uri=BIOLINK.supporting_data_source, name="supporting data source", curie=BIOLINK.curie('supporting_data_source'),
                    model_uri=BIOLINK.supporting_data_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
 
+slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporting data set", curie=BIOLINK.curie('supporting_data_set'),
+                   model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
+
 slots.association_type = Slot(uri=BIOLINK.association_type, name="association type", curie=BIOLINK.curie('association_type'),
                    model_uri=BIOLINK.association_type, domain=Association, range=Optional[Union[str, CategoryType]])
 
@@ -10957,6 +11136,69 @@ slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi 
 
 slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p_value'),
                    model_uri=BIOLINK.p_value, domain=Association, range=Optional[float])
+
+slots.evidence_count = Slot(uri=BIOLINK.evidence_count, name="evidence count", curie=BIOLINK.curie('evidence_count'),
+                   model_uri=BIOLINK.evidence_count, domain=Association, range=Optional[int])
+
+slots.concept_count_subject = Slot(uri=BIOLINK.concept_count_subject, name="concept count subject", curie=BIOLINK.curie('concept_count_subject'),
+                   model_uri=BIOLINK.concept_count_subject, domain=Association, range=Optional[int])
+
+slots.concept_count_object = Slot(uri=BIOLINK.concept_count_object, name="concept count object", curie=BIOLINK.curie('concept_count_object'),
+                   model_uri=BIOLINK.concept_count_object, domain=Association, range=Optional[int])
+
+slots.concept_pair_count = Slot(uri=BIOLINK.concept_pair_count, name="concept pair count", curie=BIOLINK.curie('concept_pair_count'),
+                   model_uri=BIOLINK.concept_pair_count, domain=Association, range=Optional[int])
+
+slots.expected_count = Slot(uri=BIOLINK.expected_count, name="expected count", curie=BIOLINK.curie('expected_count'),
+                   model_uri=BIOLINK.expected_count, domain=Association, range=Optional[str])
+
+slots.relative_frequency_subject = Slot(uri=BIOLINK.relative_frequency_subject, name="relative frequency subject", curie=BIOLINK.curie('relative_frequency_subject'),
+                   model_uri=BIOLINK.relative_frequency_subject, domain=Association, range=Optional[float])
+
+slots.relative_frequency_object = Slot(uri=BIOLINK.relative_frequency_object, name="relative frequency object", curie=BIOLINK.curie('relative_frequency_object'),
+                   model_uri=BIOLINK.relative_frequency_object, domain=Association, range=Optional[str])
+
+slots.relative_frequency_subject_confidence_interval = Slot(uri=BIOLINK.relative_frequency_subject_confidence_interval, name="relative frequency subject confidence interval", curie=BIOLINK.curie('relative_frequency_subject_confidence_interval'),
+                   model_uri=BIOLINK.relative_frequency_subject_confidence_interval, domain=Association, range=Optional[str])
+
+slots.relative_frequency_object_confidence_interval = Slot(uri=BIOLINK.relative_frequency_object_confidence_interval, name="relative frequency object confidence interval", curie=BIOLINK.curie('relative_frequency_object_confidence_interval'),
+                   model_uri=BIOLINK.relative_frequency_object_confidence_interval, domain=Association, range=Optional[str])
+
+slots.adjusted_p_value = Slot(uri=BIOLINK.adjusted_p_value, name="adjusted p value", curie=BIOLINK.curie('adjusted_p_value'),
+                   model_uri=BIOLINK.adjusted_p_value, domain=Association, range=Optional[float])
+
+slots.bonferonni_adjusted_p_value = Slot(uri=BIOLINK.bonferonni_adjusted_p_value, name="bonferonni adjusted p value", curie=BIOLINK.curie('bonferonni_adjusted_p_value'),
+                   model_uri=BIOLINK.bonferonni_adjusted_p_value, domain=Association, range=Optional[float])
+
+slots.supporting_text = Slot(uri=BIOLINK.supporting_text, name="supporting text", curie=BIOLINK.curie('supporting_text'),
+                   model_uri=BIOLINK.supporting_text, domain=Association, range=Optional[str])
+
+slots.supporting_document = Slot(uri=BIOLINK.supporting_document, name="supporting document", curie=BIOLINK.curie('supporting_document'),
+                   model_uri=BIOLINK.supporting_document, domain=Association, range=Optional[Union[str, URIorCURIE]])
+
+slots.subject_location_in_text = Slot(uri=BIOLINK.subject_location_in_text, name="subject location in text", curie=BIOLINK.curie('subject_location_in_text'),
+                   model_uri=BIOLINK.subject_location_in_text, domain=Association, range=Optional[Union[int, List[int]]])
+
+slots.object_location_in_text = Slot(uri=BIOLINK.object_location_in_text, name="object location in text", curie=BIOLINK.curie('object_location_in_text'),
+                   model_uri=BIOLINK.object_location_in_text, domain=Association, range=Optional[Union[int, List[int]]])
+
+slots.extraction_confidence_score = Slot(uri=BIOLINK.extraction_confidence_score, name="extraction confidence score", curie=BIOLINK.curie('extraction_confidence_score'),
+                   model_uri=BIOLINK.extraction_confidence_score, domain=Association, range=Optional[int])
+
+slots.supporting_document_type = Slot(uri=BIOLINK.supporting_document_type, name="supporting document type", curie=BIOLINK.curie('supporting_document_type'),
+                   model_uri=BIOLINK.supporting_document_type, domain=Association, range=Optional[str])
+
+slots.supporting_document_year = Slot(uri=BIOLINK.supporting_document_year, name="supporting document year", curie=BIOLINK.curie('supporting_document_year'),
+                   model_uri=BIOLINK.supporting_document_year, domain=Association, range=Optional[int])
+
+slots.supporting_text_section_type = Slot(uri=BIOLINK.supporting_text_section_type, name="supporting text section type", curie=BIOLINK.curie('supporting_text_section_type'),
+                   model_uri=BIOLINK.supporting_text_section_type, domain=Association, range=Optional[str])
+
+slots.ln_ratio = Slot(uri=BIOLINK.ln_ratio, name="ln ratio", curie=BIOLINK.curie('ln_ratio'),
+                   model_uri=BIOLINK.ln_ratio, domain=Association, range=Optional[float])
+
+slots.ln_ratio_confidence_interval = Slot(uri=BIOLINK.ln_ratio_confidence_interval, name="ln ratio confidence interval", curie=BIOLINK.curie('ln_ratio_confidence_interval'),
+                   model_uri=BIOLINK.ln_ratio_confidence_interval, domain=Association, range=Optional[float])
 
 slots.interacting_molecules_category = Slot(uri=BIOLINK.interacting_molecules_category, name="interacting molecules category", curie=BIOLINK.curie('interacting_molecules_category'),
                    model_uri=BIOLINK.interacting_molecules_category, domain=Association, range=Optional[Union[str, OntologyClassId]])

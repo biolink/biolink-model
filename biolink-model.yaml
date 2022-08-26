@@ -6602,7 +6602,7 @@ slots:
   relative frequency subject:
     is_a: association slot
     description: >-
-      The frequency at which subject and object concepts co-occur in EHR
+      The frequency at which subject and object concepts co-occur in 
       records within a dataset/cohort, relative to the frequency at which the subject
       concept appears in these same records.
     range: float
@@ -6612,7 +6612,7 @@ slots:
   relative frequency object:
     is_a: association slot
     description: >-
-      The frequency at which subject and object concepts co-occur in EHR
+      The frequency at which subject and object concepts co-occur in 
       records within a dataset/cohort, relative to the frequency at which the object
       concept appears in these same records.
     range: string
@@ -7205,6 +7205,7 @@ classes:
       scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational 
       analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
+
   ## epc result sets
   concept count analysis result:
     is_a: study result
