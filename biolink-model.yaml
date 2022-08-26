@@ -6555,6 +6555,12 @@ slots:
       - NCIT:C44185
       - EDAM-DATA:1669
 
+  evidence count:
+    is_a: association slot
+    description: >-
+      The number of evidence instances that are connected to an association.
+    range: integer
+
   concept count subject:
     is_a: association slot
     description: >-
@@ -6674,6 +6680,15 @@ slots:
       - value: 15
     multivalued: true
 
+  extraction confidence score:
+    is_a: association slot
+    description: >-
+      A quantitative confidence value that represents the probability of
+      obtaining a result at least as extreme as that actually obtained,
+      assuming that the actual value was the result of chance alone.
+    range: integer
+      examples:
+          - value: 15
 
   supporting document type:
     is_a: association slot
