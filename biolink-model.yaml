@@ -6110,33 +6110,32 @@ slots:
   # Also because causes adverse event tends to be very noisy and it's useful to be able
   # to distinguish it.  maybe not the best way to do that though.
 
-  causes adverse event:
-    is_a: causes
-    range: disease or phenotypic feature
+  has adverse event:
+    is_a: related to at instance level
     domain: chemical or drug or treatment
+    range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
 
-  adverse event caused by:
+  is adverse event of:
+    is_a: related to at instance level
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    inverse: causes adverse event
+    inverse: has adverse event
 
   has side effect:
-    is_a: causes adverse event
+    is_a: related to at instance level
     description: >-
       a secondary, typically undesirable effect of a drug or medical treatment.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
-      biolink:canonical_predicate:
-        tag: biolink:canonical_predicate
-        value: true
+      canonical_predicate: true
     exact_mappings:
       - NCIT:C2861 # side effect
 
   is side effect of:
-    is_a: adverse event caused by
+    is_a: related to at instance level
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
