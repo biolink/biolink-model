@@ -6110,18 +6110,18 @@ slots:
   # Also because causes adverse event tends to be very noisy and it's useful to be able
   # to distinguish it.  maybe not the best way to do that though.
 
-  has adverse event:
+  adverse event:
     is_a: related to at instance level
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
 
-  is adverse event of:
+  adverse event of:
     is_a: related to at instance level
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    inverse: has adverse event
+    inverse: adverse event
 
   has side effect:
     is_a: related to at instance level
@@ -9823,11 +9823,9 @@ classes:
         description: "the disease or phenotype that is affected by the chemical"
 
   chemical or drug or treatment to disease or phenotypic feature association:
-    # TODO add constraining qualifiers for the phenotypic feature or disease that specify the FDA level of side-effect.
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically undesirable effect.  However, it can be that a
-      the phenotypic feature is a positive result of the chemical or treatment.
+      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     is_a: association
     defining_slots:
       - subject
@@ -9838,7 +9836,8 @@ classes:
       - entity to disease or phenotypic feature association mixin
     slot_usage:
       predicate:
-        subproperty_of: has side effect
+        description: >-
+          should be one of the following: biolink:has_side_effect or biolink:adverse_event
 
   gene to pathway association:
     description: >-
