@@ -25,6 +25,10 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 
 ## Children
 
+ *  [broad_synonym](broad_synonym.md)
+ *  [exact_synonym](exact_synonym.md)
+ *  [narrow_synonym](narrow_synonym.md)
+ *  [related_synonym](related_synonym.md)
 
 ## Used by
 
@@ -49,10 +53,6 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 |  | | gff3:Alias |
 |  | | agrkb:synonyms |
 |  | | gpi:DB_Object_Synonyms |
-|  | | oboInOwl:hasExactSynonym |
-|  | | oboInOwl:hasNarrowSynonym |
-|  | | oboInOwl:hasBroadSynonym |
-|  | | oboInOwl:hasRelatedSynonym |
 |  | | HANCESTRO:0330 |
 |  | | IAO:0000136 |
 |  | | RXNORM:has_tradename |

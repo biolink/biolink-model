@@ -597,14 +597,31 @@ slots:
       - gff3:Alias
       - agrkb:synonyms
       - gpi:DB_Object_Synonyms
-      - oboInOwl:hasExactSynonym
-      - oboInOwl:hasNarrowSynonym
-      - oboInOwl:hasBroadSynonym
-      - oboInOwl:hasRelatedSynonym
       # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
       - IAO:0000136
       - RXNORM:has_tradename
+
+  exact_synonym:
+    is_a: synonym
+    exact_mappings:
+      - oboInOwl:hasExactSynonym
+
+  broad_synonym:
+    is_a: synonym
+    exact_mappings:
+      - oboInOwl:hasBroadSynonym
+
+  narrow_synonym:
+    is_a: synonym
+    exact_mappings:
+      - oboInOwl:hasNarrowSynonym
+
+  related_synonym:
+    is_a: synonym
+    exact_mappings:
+      - oboInOwl:hasRelatedSynonym
+
 
   has topic:
     aliases: [ 'topic', 'descriptors' ]

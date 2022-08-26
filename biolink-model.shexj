@@ -2201,6 +2201,45 @@
       },
       {
          "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/CellularOrganism",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/CellularOrganism_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/OrganismalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/OrganismalEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/CellularOrganism"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation",
          "closed": true,
          "expression": {
@@ -11473,9 +11512,11 @@
          "shapeExprs": [
             "https://w3id.org/biolink/vocab/AnatomicalEntity",
             "https://w3id.org/biolink/vocab/CellLine",
+            "https://w3id.org/biolink/vocab/CellularOrganism",
             "https://w3id.org/biolink/vocab/IndividualOrganism",
             "https://w3id.org/biolink/vocab/LifeStage",
-            "https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms"
+            "https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms",
+            "https://w3id.org/biolink/vocab/Virus"
          ]
       },
       {
@@ -15340,6 +15381,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/VariantToPopulationAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/Virus",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/Virus_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/OrganismalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/OrganismalEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/Virus"
                      ]
                   },
                   "min": 1

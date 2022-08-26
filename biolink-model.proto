@@ -494,6 +494,20 @@ message CellularComponent
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
  }
+message CellularOrganism
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
 // Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
 message ChemicalAffectsGeneAssociation
  {
@@ -4080,6 +4094,21 @@ message VariantToPopulationAssociation
   integer hasTotal = 0
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
+ }
+// A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
+message Virus
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 message Vitamin
  {
