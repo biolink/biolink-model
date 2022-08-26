@@ -40,6 +40,7 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [CellularOrganism](CellularOrganism.md)
  * [ClinicalFinding](ClinicalFinding.md)
  * [CodingSequence](CodingSequence.md)
  * [Cohort](Cohort.md)
@@ -80,6 +81,7 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
  * [StudyPopulation](StudyPopulation.md)
  * [ThingWithTaxon](ThingWithTaxon.md)
  * [Transcript](Transcript.md)
+ * [Virus](Virus.md)
 
 ## Other properties
 

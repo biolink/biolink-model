@@ -25,6 +25,7 @@ URI: [biolink:organismal_entity_has_attribute](https://w3id.org/biolink/vocab/or
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [CellularOrganism](CellularOrganism.md)
  * [Cohort](Cohort.md)
  * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
  * [IndividualOrganism](IndividualOrganism.md)
@@ -33,6 +34,7 @@ URI: [biolink:organismal_entity_has_attribute](https://w3id.org/biolink/vocab/or
  * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md)
  * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
  * [StudyPopulation](StudyPopulation.md)
+ * [Virus](Virus.md)
 
 ## Other properties
 

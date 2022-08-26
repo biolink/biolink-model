@@ -1306,6 +1306,30 @@ interface DiseaseOrPhenotypicFeatureToEntityAssociationMixin
     subject: DiseaseOrPhenotypicFeature!
   }
 
+type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    predicate: PredicateType!
+    object: GeneticInheritance!
+  }
+
 type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenotypicFeatureToEntityAssociationMixin
   {
     id: String!
@@ -2284,6 +2308,21 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+  }
+
+type GeneticInheritance
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 type Genome implements GenomicEntity, PhysicalEssence, OntologyClass

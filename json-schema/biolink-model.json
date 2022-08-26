@@ -5577,6 +5577,117 @@
          "title": "DiseaseOrPhenotypicFeatureOutcome",
          "type": "object"
       },
+      "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation": {
+         "additionalProperties": false,
+         "description": "An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.",
+         "properties": {
+            "aggregator_knowledge_source": {
+               "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_evidence": {
+               "description": "connects an association to an instance of supporting evidence",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "knowledge_source": {
+               "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "object": {
+               "description": "genetic inheritance associated with the specified disease or phenotypic feature.",
+               "type": "string"
+            },
+            "original_knowledge_source": {
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "primary_knowledge_source": {
+               "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "timepoint": {
+               "description": "a point in time",
+               "format": "time",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "subject",
+            "predicate",
+            "object"
+         ],
+         "title": "DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
+         "type": "object"
+      },
       "DiseaseOrPhenotypicFeatureToLocationAssociation": {
          "additionalProperties": false,
          "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
@@ -9470,6 +9581,76 @@
          "title": "GeneToPhenotypicFeatureAssociation",
          "type": "object"
       },
+      "GeneticInheritance": {
+         "additionalProperties": false,
+         "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "GeneticInheritance",
+         "type": "object"
+      },
       "Genome": {
          "additionalProperties": false,
          "description": "A genome is the sum of genetic material within a cell or virion.",
@@ -11345,7 +11526,7 @@
       },
       "Inheritance": {
          "additionalProperties": false,
-         "description": "The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.",
+         "description": "The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",

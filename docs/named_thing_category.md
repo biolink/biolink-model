@@ -46,6 +46,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [CellularOrganism](CellularOrganism.md)
  * [ChemicalEntity](ChemicalEntity.md)
  * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalMixture](ChemicalMixture.md)
@@ -151,6 +152,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [StudyPopulation](StudyPopulation.md)
  * [Transcript](Transcript.md)
  * [Treatment](Treatment.md)
+ * [Virus](Virus.md)
  * [Vitamin](Vitamin.md)
  * [Zygosity](Zygosity.md)
 

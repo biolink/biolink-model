@@ -1,53 +1,31 @@
 ---
 parent: Entities
-title: biolink:OrganismalEntity
+title: biolink:Virus
 grand_parent: Classes
 layout: default
 ---
 
-# Class: OrganismalEntity
+# Class: Virus
 
 
-A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
+A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 
-URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
+URI: [biolink:Virus](https://w3id.org/biolink/vocab/Virus)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Virus],[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[Attribute]%3Chas%20attribute%200..%2A-%20[OrganismalEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity],[OrganismalEntity]%5E-[Virus],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellularOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[OrganismTaxon],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellularOrganism],[CellLine],[BiologicalEntity],[Attribute],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity]%5E-[Virus%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[OrganismalEntity],[OrganismTaxon],[Attribute])
 
 ---
 
 
 ## Parents
 
- *  is_a: [BiologicalEntity](BiologicalEntity.md)
-
-## Children
-
- * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
- * [CellLine](CellLine.md)
- * [CellularOrganism](CellularOrganism.md)
- * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
- * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
- * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
- * [Virus](Virus.md) - A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
-
-## Referenced by class
-
- *  **[ExposureEvent](ExposureEvent.md)** *[has receptor](has_receptor.md)*  <sub>0..1</sub>  **[OrganismalEntity](OrganismalEntity.md)**
- *  **[OrganismalEntityAsAModelOfDiseaseAssociation](OrganismalEntityAsAModelOfDiseaseAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[OrganismalEntity](OrganismalEntity.md)**
+ *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
 
 ## Attributes
 
-
-### Own
-
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
 
 ### Inherited from entity:
 
@@ -108,6 +86,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
 
+### Inherited from organismal entity:
+
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
+
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
@@ -115,18 +100,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [OrganismTaxon](OrganismTaxon.md)
      * in subsets: (translator_minimal)
 
-### Domain for slot:
-
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
-
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA:Q7239 |
-|  | | UMLSSG:LIVB |
-|  | | CARO:0001010 |
+| **Exact Mappings:** | | NCBITaxon:10239 |
 

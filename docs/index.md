@@ -78,12 +78,14 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
                  * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
              * [CellLine](CellLine.md)
+             * [CellularOrganism](CellularOrganism.md)
              * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
                  * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
              * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
              * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
                  * [StudyPopulation](StudyPopulation.md) - A group of people banded together or treated as a group as participants in a research study.
                      * [Cohort](Cohort.md) - A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
+             * [Virus](Virus.md) - A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
          * [Polypeptide](Polypeptide.md) - A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
              * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
                  * [ProteinIsoform](ProteinIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/

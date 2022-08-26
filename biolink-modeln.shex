@@ -196,9 +196,10 @@ linkml:Nodeidentifier NONLITERAL
     @<ChemicalAffectsGeneAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
     @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
     @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR
-    @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
-    @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
-    @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
+    @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
+    @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
+    @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
+    @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
     @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneRegulatoryRelationship> OR
     @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToPathwayAssociation> OR
     @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
@@ -289,9 +290,9 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <BiologicalEntity>  (
-    @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<Genome> OR @<Genotype> OR
-    @<Haplotype> OR @<NucleicAcidSequenceMotif> OR @<OrganismalEntity> OR @<Polypeptide> OR @<ProteinDomain> OR @<ProteinFamily> OR
-    @<ReagentTargetedGene> OR @<SequenceVariant>
+    @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<GeneticInheritance> OR
+    @<Genome> OR @<Genotype> OR @<Haplotype> OR @<NucleicAcidSequenceMotif> OR @<OrganismalEntity> OR @<Polypeptide> OR
+    @<ProteinDomain> OR @<ProteinFamily> OR @<ReagentTargetedGene> OR @<SequenceVariant>
 )
 
 <BiologicalEntity_struct> {
@@ -907,6 +908,18 @@ linkml:Nodeidentifier NONLITERAL
 <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> {
     (  $<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> <subject> @<DiseaseOrPhenotypicFeature> ;
        rdf:type [ <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ] ?
+    )
+}
+
+<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> CLOSED {
+    (  $<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          &<DiseaseOrPhenotypicFeatureToEntityAssociationMixin_tes> ;
+          rdf:type [ <DiseaseOrPhenotypicFeatureToEntityAssociationMixin> ] ? ;
+          <predicate> @<PredicateType> ;
+          <object> @<GeneticInheritance>
+       ) ;
+       rdf:type [ <DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> ]
     )
 }
 
@@ -1534,6 +1547,14 @@ linkml:Nodeidentifier NONLITERAL
           <sex_qualifier> @<BiologicalSex> ?
        ) ;
        rdf:type [ <GeneToPhenotypicFeatureAssociation> ]
+    )
+}
+
+<GeneticInheritance> CLOSED {
+    (  $<GeneticInheritance_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ?
+       ) ;
+       rdf:type [ <GeneticInheritance> ]
     )
 }
 
