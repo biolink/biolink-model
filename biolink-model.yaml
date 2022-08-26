@@ -6632,7 +6632,7 @@ slots:
     range: string
 
   adjusted p value:
-    is_a: association slot
+    is_a: p value
     description: >-
       The adjusted p-value is the probability of obtaining test results
       at least as extreme as the results actually observed, under the assumption that
@@ -6642,7 +6642,7 @@ slots:
     range: float
 
   bonferonni adjusted p value:
-    is_a: association slot
+    is_a: adjusted p value
     description: >-
       The Bonferroni correction is an adjustment made to P values when several dependent or independent 
       statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni 
@@ -6662,7 +6662,9 @@ slots:
 
   supporting document:
     is_a: association slot
-    description: The document that contains the supporting text of a Text Mining Result.
+    description: >-
+      A publication or other document that reports the statement expressed in an Association, or 
+      provides information used as evidence supporting this statement.
     range: uriorcurie
     examples:
       - value: PMID:12345678
@@ -7190,35 +7192,42 @@ classes:
     is_a: named thing
     abstract: true
 
-  supporting study result set:
+  study result:
     abstract: true
+    description: >- 
+      A collection of data items from a study that are about a particular study subject or experimental unit (the 
+      'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation
+      of this data as evidence.
+    notes:
+      The data/metadata included in a Study Result object are typically a subset of data from a larger study data set, 
+      that are selected by a curator because they may be useful as evidence for deriving knowledge about a specific 
+      focus of the study. The notion of a 'study' here is defined broadly to include any research activity at any 
+      scale that is aimed at generating knowledge or hypotheses. This may include a single assay or computational 
+      analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
-    description: >-
-      A result of a supporting study.
-
   ## epc result sets
   concept count analysis result:
-    is_a: supporting study result set
+    is_a: study result
     description: >-
       A result of a concept count analysis.
 
   observed expected frequency analysis result:
-    is_a: supporting study result set
+    is_a: study result
     description: >-
       A result of a observed expected frequency analysis.
 
   relative frequency analysis result:
-    is_a: supporting study result set
+    is_a: study result
     description: >-
       A result of a relative frequency analysis.
 
   text mining result:
-    is_a: supporting study result set
+    is_a: study result
     description: >-
       A result of text mining.
 
   chi squared analysis result:
-    is_a: supporting study result set
+    is_a: study result
     description: >-
       A result of a chi squared analysis.
 
