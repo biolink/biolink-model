@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3900.4,283"];
+	graph [bb="0,0,4040.4,283"];
 	node [label="\N"];
 	"chemical to disease or phenotypic feature association"	[height=0.5,
 		label="chemical to disease or phenotypic feature association",
@@ -159,74 +159,74 @@ digraph {
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
-		label=string,
-		pos="3001.4,178",
-		width=1.0652];
+		label="information resource",
+		pos="3071.4,178",
+		width=3.015];
 	"chemical to disease or phenotypic feature association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2996.4,221.5",
-		pos="e,2973.1,190.26 2362,252.11 2391.2,250.31 2421.1,248.55 2449.4,247 2622.2,237.54 2667.6,256.86 2838.4,229 2882.3,221.83 2930.9,205.82 \
-2963.5,193.84",
+		lp="3016.4,221.5",
+		pos="e,3016.3,193.52 2362,252.11 2391.2,250.31 2421.1,248.55 2449.4,247 2622.2,237.54 2666.8,251.23 2838.4,229 2895.7,221.57 2959.9,207.36 \
+3006.4,195.97",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="3166.4,178",
+		pos="3306.4,178",
 		width=3.015];
 	"chemical to disease or phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="3219.4,221.5",
-		pos="e,3148.5,195.9 2358.3,251.87 2388.7,250.05 2419.9,248.34 2449.4,247 2521,243.74 3026.3,251.38 3094.4,229 3111.2,223.47 3127.7,212.62 \
-3140.6,202.43",
+		lp="3284.4,221.5",
+		pos="e,3259.7,194.37 2358,251.87 2388.4,250.05 2419.8,248.33 2449.4,247 2597.1,240.34 2968,249.76 3114.4,229 3160.7,222.43 3212,208.75 \
+3249.8,197.36",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="3401.4,178",
+		pos="3541.4,178",
 		width=3.015];
 	"chemical to disease or phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3458.9,221.5",
-		pos="e,3380.7,195.72 2356.9,251.77 2387.7,249.94 2419.5,248.25 2449.4,247 2545.9,242.95 3225.6,255.82 3318.4,229 3337.7,223.41 3357.1,\
-212.14 3372.3,201.71",
+		lp="3551.9,221.5",
+		pos="e,3502.2,194.87 2356.5,251.76 2387.4,249.93 2419.4,248.24 2449.4,247 2553.1,242.73 3281,245.83 3383.4,229 3420.9,222.83 3461.8,209.7 \
+3492.6,198.44",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="3583.4,178",
+		pos="3723.4,178",
 		width=1.5346];
 	"chemical to disease or phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3615.4,221.5",
-		pos="e,3583.5,196.23 2355.8,251.72 2386.9,249.88 2419.1,248.2 2449.4,247 2480.5,245.77 3544.8,248 3569.4,229 3576.5,223.54 3580.2,214.8 \
-3582,206.15",
+		lp="3724.4,221.5",
+		pos="e,3709.2,195.45 2355.4,251.71 2386.7,249.86 2419,248.19 2449.4,247 2516.7,244.37 3599.1,252.16 3662.4,229 3677.3,223.55 3691.2,212.79 \
+3702,202.64",
 		style=solid];
 	type	[height=0.5,
-		pos="3687.4,178",
+		pos="3827.4,178",
 		width=0.86659];
 	"chemical to disease or phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3686.4,221.5",
-		pos="e,3681.3,195.69 2355.4,251.71 2386.7,249.87 2419,248.19 2449.4,247 2482.8,245.69 3625,245.08 3654.4,229 3664.1,223.68 3671.5,214.13 \
-3676.7,204.79",
+		lp="3807.4,221.5",
+		pos="e,3813.3,194.49 2355.4,251.68 2386.7,249.84 2419,248.17 2449.4,247 2522.3,244.2 3694.5,253.24 3763.4,229 3779.4,223.37 3794.5,212 \
+3806,201.52",
 		style=solid];
 	category	[height=0.5,
-		pos="3788.4,178",
+		pos="3928.4,178",
 		width=1.4263];
 	"chemical to disease or phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3770.9,221.5",
-		pos="e,3769.3,194.78 2355.4,251.7 2386.7,249.85 2419,248.18 2449.4,247 2519.2,244.3 3639.3,248.36 3706.4,229 3726.1,223.32 3745.8,211.57 \
-3760.9,200.89",
+		lp="3899.9,221.5",
+		pos="e,3905.1,194.32 2355.1,251.69 2386.4,249.84 2418.9,248.16 2449.4,247 2525.9,244.08 3753,246.93 3827.4,229 3851.9,223.11 3877.2,210.51 \
+3896.4,199.44",
 		style=solid];
 	object	[height=0.5,
 		pos="1938.4,91",
 		width=1.0832];
 	"chemical to disease or phenotypic feature association" -> object	[color=blue,
 		label=object,
-		lp="3878.4,178",
-		pos="e,1977.6,91.871 2355.1,251.69 2386.4,249.84 2418.9,248.17 2449.4,247 2524.7,244.12 3735.3,254.12 3806.4,229 3840.2,217.04 3873.3,\
-185.83 3848.4,160 3781.9,91.089 2281.6,91.167 1988,91.845",
+		lp="4018.4,178",
+		pos="e,1977.4,91.773 2355.1,251.66 2386.4,249.82 2418.9,248.15 2449.4,247 2531.9,243.9 3856.2,252.17 3935.4,229 3972.5,218.15 4015.3,\
+187.79 3988.4,160 3916.6,85.817 2293,90.231 1987.7,91.721",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1937.4,134.5",

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-08-26T21:52:04
+# Generation date: 2022-08-27T00:08:56
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5679,7 +5679,7 @@ class Association(Entity):
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
     knowledge_source: Optional[Union[str, InformationResourceId]] = None
-    original_knowledge_source: Optional[str] = None
+    original_knowledge_source: Optional[Union[str, InformationResourceId]] = None
     primary_knowledge_source: Optional[Union[str, InformationResourceId]] = None
     aggregator_knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
@@ -5725,8 +5725,8 @@ class Association(Entity):
         if self.knowledge_source is not None and not isinstance(self.knowledge_source, InformationResourceId):
             self.knowledge_source = InformationResourceId(self.knowledge_source)
 
-        if self.original_knowledge_source is not None and not isinstance(self.original_knowledge_source, str):
-            self.original_knowledge_source = str(self.original_knowledge_source)
+        if self.original_knowledge_source is not None and not isinstance(self.original_knowledge_source, InformationResourceId):
+            self.original_knowledge_source = InformationResourceId(self.original_knowledge_source)
 
         if self.primary_knowledge_source is not None and not isinstance(self.primary_knowledge_source, InformationResourceId):
             self.primary_knowledge_source = InformationResourceId(self.primary_knowledge_source)
@@ -11117,7 +11117,7 @@ slots.primary_knowledge_source = Slot(uri=BIOLINK.primary_knowledge_source, name
                    model_uri=BIOLINK.primary_knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])
 
 slots.original_knowledge_source = Slot(uri=BIOLINK.original_knowledge_source, name="original knowledge source", curie=BIOLINK.curie('original_knowledge_source'),
-                   model_uri=BIOLINK.original_knowledge_source, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.original_knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])
 
 slots.aggregator_knowledge_source = Slot(uri=BIOLINK.aggregator_knowledge_source, name="aggregator knowledge source", curie=BIOLINK.curie('aggregator_knowledge_source'),
                    model_uri=BIOLINK.aggregator_knowledge_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
