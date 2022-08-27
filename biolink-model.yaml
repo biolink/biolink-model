@@ -1140,7 +1140,8 @@ slots:
 
   FDA adverse event level:
     description: >-
-    is_a:
+    is_a: association slot
+    range: FDA_adverse_event_enum
 
   highest FDA approval status:
     description: >-
@@ -6688,6 +6689,8 @@ slots:
     description: >-
     range: FDA_approval_status_enum
 
+
+
   supporting study metadata:
     is_a: association slot
     description: >-
@@ -9838,6 +9841,8 @@ classes:
     mixins:
       - chemical to entity association mixin
       - entity to disease or phenotypic feature association mixin
+    slots:
+      - FDA adverse event level
     slot_usage:
       predicate:
         description: >-
