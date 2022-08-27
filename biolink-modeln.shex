@@ -702,6 +702,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<ChiSquaredAnalysisResult> CLOSED {
+    (  $<ChiSquaredAnalysisResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <ChiSquaredAnalysisResult> ]
+    )
+}
+
 <ClinicalAttribute>  (
     CLOSED {
        (  $<ClinicalAttribute_tes> (  &<Attribute_tes> ;
@@ -805,6 +813,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <ChemicalMixture> ] ?
        ) ;
        rdf:type [ <ComplexMolecularMixture> ]
+    )
+}
+
+<ConceptCountAnalysisResult> CLOSED {
+    (  $<ConceptCountAnalysisResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <ConceptCountAnalysisResult> ]
     )
 }
 
@@ -1823,7 +1839,7 @@ linkml:Nodeidentifier NONLITERAL
 
 <InformationContentEntity>  (
     @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR @<EvidenceType> OR
-    @<InformationResource> OR @<Publication>
+    @<InformationResource> OR @<Publication> OR @<StudyResult>
 )
 
 <InformationContentEntity_struct> {
@@ -2153,6 +2169,14 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<Macronutrient> OR @<Micronutrient>
 )
+
+<ObservedExpectedFrequencyAnalysisResult> CLOSED {
+    (  $<ObservedExpectedFrequencyAnalysisResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <ObservedExpectedFrequencyAnalysisResult> ]
+    )
+}
 
 <Occurrent>  (
     {
@@ -2681,6 +2705,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<RelativeFrequencyAnalysisResult> CLOSED {
+    (  $<RelativeFrequencyAnalysisResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <RelativeFrequencyAnalysisResult> ]
+    )
+}
+
 <RNAProduct>  (
     CLOSED {
        (  $<RNAProduct_tes> (  &<Transcript_tes> ;
@@ -2854,6 +2886,19 @@ linkml:Nodeidentifier NONLITERAL
     } OR @<Cohort>
 )
 
+<StudyResult>  (
+    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<ObservedExpectedFrequencyAnalysisResult> OR
+    @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult>
+)
+
+<StudyResult_struct> {
+    (  $<StudyResult_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <StudyResult> ]
+    )
+}
+
 <SubjectOfInvestigation> {
     (  $<SubjectOfInvestigation_tes> rdf:type . * ;
        rdf:type [ <SubjectOfInvestigation> ] ?
@@ -2875,6 +2920,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <OntologyClass> ] ?
        ) ;
        rdf:type [ <TaxonomicRank> ]
+    )
+}
+
+<TextMiningResult> CLOSED {
+    (  $<TextMiningResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <TextMiningResult> ]
     )
 }
 

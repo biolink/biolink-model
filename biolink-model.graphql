@@ -928,6 +928,24 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     object: Pathway!
   }
 
+type ChiSquaredAnalysisResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 type ClinicalAttribute
   {
     id: String!
@@ -1128,6 +1146,24 @@ type ComplexMolecularMixture
     highestFDAApprovalStatus: String
     drugRegulatoryStatusWorldWide: String
     routesOfDelivery: [DrugDeliveryEnum]
+  }
+
+type ConceptCountAnalysisResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 type ConfidenceLevel
@@ -3290,6 +3326,24 @@ type Nutrient
     hasChemicalRole: [ChemicalRole]
   }
 
+type ObservedExpectedFrequencyAnalysisResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 interface Occurrent
   {
   }
@@ -4052,6 +4106,24 @@ type RelationshipType
     id: String!
   }
 
+type RelativeFrequencyAnalysisResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 type RNAProduct implements GeneProductMixin
   {
     id: String!
@@ -4352,6 +4424,24 @@ type StudyPopulation
     hasAttribute: [Attribute]
   }
 
+interface StudyResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 interface SubjectOfInvestigation
   {
   }
@@ -4383,6 +4473,24 @@ type TaxonToTaxonAssociation
 type TaxonomicRank
   {
     id: String!
+  }
+
+type TextMiningResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
   }
 
 interface ThingWithTaxon

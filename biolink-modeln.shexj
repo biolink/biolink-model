@@ -3455,6 +3455,45 @@
          }
       },
       {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/StudyResult_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/StudyResult"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/ClinicalAttribute",
          "shapeExprs": [
@@ -3956,6 +3995,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/ComplexMolecularMixture"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/StudyResult_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/StudyResult"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult"
                      ]
                   },
                   "min": 1
@@ -9265,7 +9343,8 @@
             "https://w3id.org/biolink/vocab/DatasetVersion",
             "https://w3id.org/biolink/vocab/EvidenceType",
             "https://w3id.org/biolink/vocab/InformationResource",
-            "https://w3id.org/biolink/vocab/Publication"
+            "https://w3id.org/biolink/vocab/Publication",
+            "https://w3id.org/biolink/vocab/StudyResult"
          ]
       },
       {
@@ -10939,6 +11018,45 @@
             "https://w3id.org/biolink/vocab/Macronutrient",
             "https://w3id.org/biolink/vocab/Micronutrient"
          ]
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/StudyResult_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/StudyResult"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
       },
       {
          "type": "ShapeOr",
@@ -13569,6 +13687,45 @@
          }
       },
       {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/StudyResult_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/StudyResult"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/RNAProduct",
          "shapeExprs": [
@@ -14434,6 +14591,56 @@
          ]
       },
       {
+         "type": "ShapeOr",
+         "id": "https://w3id.org/biolink/vocab/StudyResult",
+         "shapeExprs": [
+            "https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult",
+            "https://w3id.org/biolink/vocab/ConceptCountAnalysisResult",
+            "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
+            "https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult",
+            "https://w3id.org/biolink/vocab/TextMiningResult"
+         ]
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/StudyResult_struct",
+         "closed": false,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/StudyResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/InformationContentEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/InformationContentEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/StudyResult"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/SubjectOfInvestigation",
          "closed": false,
@@ -14546,6 +14753,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/TaxonomicRank"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/TextMiningResult",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/TextMiningResult_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/StudyResult_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/StudyResult"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/TextMiningResult"
                      ]
                   },
                   "min": 1

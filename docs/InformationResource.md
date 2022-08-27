@@ -15,7 +15,7 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Association]-%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[Association]-%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20original%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
 
 ---
 
@@ -28,6 +28,7 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 
  *  **[Association](Association.md)** *[aggregator knowledge source](aggregator_knowledge_source.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[knowledge source](knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
+ *  **[Association](Association.md)** *[original knowledge source](original_knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[primary knowledge source](primary_knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[supporting data set](supporting_data_set.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[supporting data source](supporting_data_source.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
