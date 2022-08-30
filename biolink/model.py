@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-08-27T00:08:56
+# Generation date: 2022-08-30T01:12:08
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9382,9 +9382,9 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     expression = PermissibleValue(text="expression")
     abundance = PermissibleValue(text="abundance")
     synthesis = PermissibleValue(text="synthesis")
-    degredation = PermissibleValue(text="degredation")
+    degradation = PermissibleValue(text="degradation")
     cleavage = PermissibleValue(text="cleavage")
-    hydrolisis = PermissibleValue(text="hydrolisis")
+    hydrolysis = PermissibleValue(text="hydrolysis")
     activity = PermissibleValue(text="activity")
     stability = PermissibleValue(text="stability")
     localization = PermissibleValue(text="localization")
@@ -10219,8 +10219,8 @@ slots.directly_physically_interacts_with = Slot(uri=BIOLINK.directly_physically_
 slots.binds = Slot(uri=BIOLINK.binds, name="binds", curie=BIOLINK.curie('binds'),
                    model_uri=BIOLINK.binds, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.indirectly_phsyically_interacts_with = Slot(uri=BIOLINK.indirectly_phsyically_interacts_with, name="indirectly phsyically interacts with", curie=BIOLINK.curie('indirectly_phsyically_interacts_with'),
-                   model_uri=BIOLINK.indirectly_phsyically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+slots.indirectly_physically_interacts_with = Slot(uri=BIOLINK.indirectly_physically_interacts_with, name="indirectly physically interacts with", curie=BIOLINK.curie('indirectly_physically_interacts_with'),
+                   model_uri=BIOLINK.indirectly_physically_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.chemically_interacts_with = Slot(uri=BIOLINK.chemically_interacts_with, name="chemically interacts with", curie=BIOLINK.curie('chemically_interacts_with'),
                    model_uri=BIOLINK.chemically_interacts_with, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
