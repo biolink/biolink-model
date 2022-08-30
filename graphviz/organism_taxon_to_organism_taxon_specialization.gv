@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3206.5,283"];
+	graph [bb="0,0,3346.5,283"];
 	node [label="\N"];
 	"organism taxon to organism taxon specialization"	[height=0.5,
 		label="organism taxon to organism taxon specialization",
@@ -126,90 +126,91 @@ digraph {
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
-		label=string,
-		pos="2053.9,178",
-		width=1.0652];
+		label="information resource",
+		pos="2123.9,178",
+		width=3.015];
 	"organism taxon to organism taxon specialization" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2077.9,221.5",
-		pos="e,2029.3,191.91 1843.3,251.43 1878.8,246.31 1916,239.12 1949.9,229 1963.8,224.83 1995.5,209.26 2020.2,196.59",
+		lp="2102.9,221.5",
+		pos="e,2077.5,194.37 1820.3,250.12 1862,244.74 1908.1,237.74 1949.9,229 1989.8,220.66 2033.9,207.94 2067.7,197.41",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2218.9,178",
+		pos="2358.9,178",
 		width=3.015];
 	"organism taxon to organism taxon specialization" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2289.9,221.5",
-		pos="e,2209.2,196.06 1855.3,252.32 1996,242.5 2174,229.92 2175.9,229 2186.8,223.49 2196.2,213.82 2203.3,204.45",
+		lp="2353.9,221.5",
+		pos="e,2318.3,194.8 1855.3,252.32 1881.3,250.53 1907.8,248.71 1932.9,247 2052,238.88 2083.6,251.17 2200.9,229 2237.7,222.03 2278,209.19 \
+2308.7,198.27",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2453.9,178",
+		pos="2593.9,178",
 		width=3.015];
 	"organism taxon to organism taxon specialization" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2517.4,221.5",
-		pos="e,2433.3,195.87 1850.9,251.99 1878.3,250.18 1906.4,248.44 1932.9,247 1983.5,244.25 2341.2,246.27 2388.9,229 2393.2,227.42 2410,214.5 \
-2425.4,202.19",
+		lp="2615.4,221.5",
+		pos="e,2558.2,195.09 1849.9,251.94 1877.6,250.12 1906.1,248.39 1932.9,247 2048.3,241.01 2339.3,250.57 2452.9,229 2486,222.71 2521.7,209.96 \
+2549,198.91",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2635.9,178",
+		pos="2775.9,178",
 		width=1.5346];
 	"organism taxon to organism taxon specialization" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2669.9,221.5",
-		pos="e,2637.1,196.1 1848.6,251.83 1876.7,250 1905.6,248.3 1932.9,247 1971.3,245.17 2595.2,253.48 2624.9,229 2631.6,223.45 2634.8,214.81 \
-2636.2,206.26",
+		lp="2783.9,221.5",
+		pos="e,2764.5,195.84 1847.9,251.8 1876.2,249.96 1905.4,248.26 1932.9,247 1976.9,244.98 2685.4,246.32 2725.9,229 2738.4,223.65 2749.5,\
+213.54 2758,203.81",
 		style=solid];
 	type	[height=0.5,
-		pos="2739.9,178",
+		pos="2879.9,178",
 		width=0.86659];
 	"organism taxon to organism taxon specialization" -> type	[color=blue,
 		label=type,
-		lp="2739.9,221.5",
-		pos="e,2734.2,196.12 1847.9,251.81 1876.2,249.97 1905.4,248.27 1932.9,247 1976,245.01 2671.4,250.41 2708.9,229 2718.1,223.73 2724.9,214.5 \
-2729.8,205.4",
+		lp="2863.9,221.5",
+		pos="e,2867.3,194.91 1847.6,251.76 1876,249.92 1905.3,248.23 1932.9,247 1982.3,244.79 2776.8,246.89 2822.9,229 2837.2,223.46 2850.2,212.63 \
+2860.2,202.46",
 		style=solid];
 	category	[height=0.5,
-		pos="2840.9,178",
+		pos="2980.9,178",
 		width=1.4263];
 	"organism taxon to organism taxon specialization" -> category	[color=blue,
 		label=category,
-		lp="2825.4,221.5",
-		pos="e,2821.7,194.97 1847.9,251.78 1876.2,249.94 1905.4,248.25 1932.9,247 2024.7,242.83 2671.7,255.05 2759.9,229 2779.2,223.28 2798.5,\
-211.65 2813.4,201.05",
+		lp="2955.4,221.5",
+		pos="e,2958.6,194.28 1847.3,251.75 1875.8,249.91 1905.2,248.22 1932.9,247 2038.5,242.36 2781.4,254.88 2883.9,229 2907.4,223.06 2931.7,\
+210.55 2950,199.53",
 		style=solid];
 	subject	[height=0.5,
-		pos="2954.9,178",
+		pos="3094.9,178",
 		width=1.2277];
 	"organism taxon to organism taxon specialization" -> subject	[color=blue,
 		label=subject,
-		lp="2924.9,221.5",
-		pos="e,2933.7,194.03 1847.3,251.76 1875.8,249.92 1905.2,248.22 1932.9,247 2035.9,242.44 2761.1,254.93 2860.9,229 2883.7,223.06 2907.2,\
-210.6 2924.9,199.61",
+		lp="3058.9,221.5",
+		pos="e,3072,193.58 1846.9,251.73 1875.5,249.88 1905.1,248.2 1932.9,247 2050.3,241.95 2876.5,256.1 2990.9,229 3016.6,222.91 3043.4,209.84 \
+3063.3,198.59",
 		style=solid];
 	object	[height=0.5,
-		pos="2997.9,91",
+		pos="3137.9,91",
 		width=1.0832];
 	"organism taxon to organism taxon specialization" -> object	[color=blue,
 		label=object,
-		lp="3047.9,178",
-		pos="e,3011.3,108.09 1846.9,251.74 1875.5,249.89 1905.1,248.2 1932.9,247 1989.6,244.54 2900.4,245.09 2954.9,229 2981.5,221.14 2991.6,\
-218.5 3007.9,196 3026.1,170.69 3029.8,156.9 3020.9,127 3019.8,123.55 3018.4,120.13 3016.6,116.85",
+		lp="3187.9,178",
+		pos="e,3151.3,108.09 1846.6,251.72 1875.3,249.86 1905,248.18 1932.9,247 1997.1,244.28 3026.9,245.68 3088.9,229 3117.9,221.2 3129.7,219.95 \
+3147.9,196 3166.7,171.13 3169.8,156.9 3160.9,127 3159.8,123.55 3158.4,120.13 3156.6,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3151.9,178",
+		pos="3291.9,178",
 		width=1.5165];
 	"organism taxon to organism taxon specialization" -> predicate	[color=blue,
 		label=predicate,
-		lp="3124.9,221.5",
-		pos="e,3128,194.3 1846.9,251.71 1875.5,249.86 1905.1,248.18 1932.9,247 2056.8,241.72 2928.2,257.76 3048.9,229 3073.8,223.07 3099.6,210.48 \
-3119.2,199.41",
+		lp="3264.9,221.5",
+		pos="e,3268,194.32 1846.6,251.69 1875.3,249.84 1905,248.16 1932.9,247 2002.6,244.09 3121,245.12 3188.9,229 3213.8,223.09 3239.6,210.5 \
+3259.2,199.43",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
@@ -222,19 +223,19 @@ digraph {
 		pos="2110.9,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2992.9,134.5",
-		pos="e,2980,107.23 2956,159.55 2957.2,149.57 2959.7,137.07 2964.9,127 2967.1,122.68 2970,118.52 2973.2,114.66"];
+		lp="3132.9,134.5",
+		pos="e,3120,107.23 3096,159.55 3097.2,149.57 3099.7,137.07 3104.9,127 3107.1,122.68 3110,118.52 3113.2,114.66"];
 	relation	[height=0.5,
-		pos="2942.9,18",
+		pos="3082.9,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2944.2,36.188 2953.6,159.79 2951.5,132.48 2947.4,78.994 2945,46.38",
+	subject -> relation	[pos="e,3084.2,36.188 3093.6,159.79 3091.5,132.48 3087.4,78.994 3085,46.38",
 		style=dotted];
 	"organism taxon to organism taxon specialization_subject"	[color=blue,
 		height=0.5,
 		label="organism taxon",
 		pos="2286.9,265",
 		width=2.3109];
-	object -> relation	[pos="e,2955.7,35.54 2985.4,73.889 2978.5,64.939 2969.7,53.617 2961.9,43.584",
+	object -> relation	[pos="e,3095.7,35.54 3125.4,73.889 3118.5,64.939 3109.7,53.617 3101.9,43.584",
 		style=dotted];
 	"organism taxon to organism taxon specialization_object"	[color=blue,
 		height=0.5,

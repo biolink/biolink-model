@@ -1,16 +1,16 @@
 ---
 parent: Predicates
-title: biolink:indirectly_phsyically_interacts_with
+title: biolink:indirectly_physically_interacts_with
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: indirectly_phsyically_interacts_with
+# Relation: indirectly_physically_interacts_with
 
 
 
 
-URI: [biolink:indirectly_phsyically_interacts_with](https://w3id.org/biolink/vocab/indirectly_phsyically_interacts_with)
+URI: [biolink:indirectly_physically_interacts_with](https://w3id.org/biolink/vocab/indirectly_physically_interacts_with)
 
 ## Domain and Range
 

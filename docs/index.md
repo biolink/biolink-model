@@ -782,7 +782,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [increases synthesis of](increases_synthesis_of.md) - holds between two chemical entities where the action or effect of one increases the rate of chemical synthesis of the other
  * [increases transport of](increases_transport_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
  * [increases uptake of](increases_uptake_of.md) - holds between two chemical or gene/gene product entities  where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
- * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+ * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
  * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
      * [directly interacts with](directly_interacts_with.md) - Holds between chemical entities that physically and directly interact with each other
      * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
@@ -790,7 +790,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [chemically interacts with](chemically_interacts_with.md)
          * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
              * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-         * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+         * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
          * [molecularly interacts with](molecularly_interacts_with.md)
              * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
              * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -912,7 +912,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [chemically interacts with](chemically_interacts_with.md)
      * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
          * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-     * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+     * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
      * [molecularly interacts with](molecularly_interacts_with.md)
          * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
          * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -1182,7 +1182,7 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [chemically interacts with](chemically_interacts_with.md)
                  * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
                      * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-                 * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+                 * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
                  * [molecularly interacts with](molecularly_interacts_with.md)
                      * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
                      * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity
@@ -1499,7 +1499,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [chemically interacts with](chemically_interacts_with.md)
              * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
                  * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-             * [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+             * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
              * [molecularly interacts with](molecularly_interacts_with.md)
                  * [decreases molecular interaction](decreases_molecular_interaction.md) - indicates that the source decreases the molecular interaction between the target and some other chemical entity
                  * [increases molecular interaction](increases_molecular_interaction.md) - indicates that the source increases the molecular interaction between the target and some other chemical entity

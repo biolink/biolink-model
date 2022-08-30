@@ -27,7 +27,7 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 
  *  [chemically interacts with](chemically_interacts_with.md)
  *  [directly physically interacts with](directly_physically_interacts_with.md)
- *  [indirectly phsyically interacts with](indirectly_phsyically_interacts_with.md)
+ *  [indirectly physically interacts with](indirectly_physically_interacts_with.md)
  *  [molecularly interacts with](molecularly_interacts_with.md)
 
 ## Used by
