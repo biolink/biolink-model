@@ -6133,14 +6133,14 @@ slots:
     inverse: adverse event
 
   has side effect:
+    aliases: [ 'adverse drug reaction']
     is_a: affects
     description: >-
       An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment.
       Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of 
       the medication.
     notes: >-
-      Adverse events are unintended pharmacologic effects that occur when a medication is administered correctly 
-      while a side effect is a secondary unwanted effect that occurs due to a a therapeutic agent, drug or treatment
+      Side effects are listed on drug labels.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -9855,7 +9855,7 @@ classes:
     slot_usage:
       predicate:
         description: >-
-          should be one of the following: biolink:has_side_effect or biolink:adverse_event
+          should be one of the following: biolink:has_side_effect or biolink:has_adverse_event
 
   gene to pathway association:
     description: >-
