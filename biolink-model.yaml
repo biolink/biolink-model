@@ -6130,7 +6130,7 @@ slots:
     is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    inverse: adverse event
+    inverse: has adverse event
 
   has side effect:
     aliases: [ 'adverse drug reaction']
@@ -6140,7 +6140,8 @@ slots:
       Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of 
       the medication.
     notes: >-
-      Side effects are listed on drug labels.
+      Side effects are listed on drug labels. There can be positive side effects, while adverse events are always negative.
+      Aeolus, Sider are both resources that provide side effects.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -9841,7 +9842,7 @@ classes:
   chemical or drug or treatment to disease or phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+      where the disesae or phenotypic feature is a secondary undesirable effect.
     is_a: association
     defining_slots:
       - subject
@@ -9854,8 +9855,23 @@ classes:
       - FDA adverse event level
     slot_usage:
       predicate:
-        description: >-
-          should be one of the following: biolink:has_side_effect or biolink:has_adverse_event
+        subproperty_of: has adverse event
+
+  chemical or drug or treatment side effect disease or phenotypic feature association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+    is_a: chemical or drug or treatment to disease or phenotypic feature association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - chemical to entity association mixin
+      - entity to disease or phenotypic feature association mixin
+    slot_usage:
+      predicate:
+        subproperty_of: has side effect
 
   gene to pathway association:
     description: >-
