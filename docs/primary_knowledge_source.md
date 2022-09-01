@@ -38,6 +38,8 @@ URI: [biolink:primary_knowledge_source](https://w3id.org/biolink/vocab/primary_k
  * [ChemicalEntityAssessesNamedThingAssociation](ChemicalEntityAssessesNamedThingAssociation.md)
  * [ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.md)
  * [ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md)
+ * [ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation.md)
+ * [ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
  * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)

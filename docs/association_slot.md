@@ -21,6 +21,7 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
 
 ## Children
 
+ *  [FDA adverse event level](FDA_adverse_event_level.md)
  *  [FDA approval status](FDA_approval_status.md)
  *  [aspect qualifier](aspect_qualifier.md)
  *  [associated environmental context](associated_environmental_context.md)

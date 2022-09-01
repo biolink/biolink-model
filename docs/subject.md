@@ -27,6 +27,8 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
 
  * [Association](Association.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
+ * [ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation.md)
+ * [ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)

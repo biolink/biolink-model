@@ -28,7 +28,7 @@ URI: [biolink:ClinicalFinding](https://w3id.org/biolink/vocab/ClinicalFinding)
 
 ## Parents
 
- *  is_a: [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
+ *  is_a: [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
 
 ## Referenced by class
 

@@ -28,7 +28,9 @@ URI: [biolink:ChemicalOrDrugOrTreatment](https://w3id.org/biolink/vocab/Chemical
 
 ## Referenced by class
 
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[adverse event of](adverse_event_of.md)*  <sub>0..\*</sub>  **[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[is diagnosed by](is_diagnosed_by.md)*  <sub>0..\*</sub>  **[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[is side effect of](is_side_effect_of.md)*  <sub>0..\*</sub>  **[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[treated by](treated_by.md)*  <sub>0..\*</sub>  **[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)**
 
 ## Attributes

@@ -38,7 +38,6 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
 
 ## Referenced by class
 
- *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[adverse event caused by](adverse_event_caused_by.md)*  <sub>0..\*</sub>  **[Drug](Drug.md)**
  *  **[DrugToEntityAssociationMixin](DrugToEntityAssociationMixin.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Drug](Drug.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[has contraindication](has_contraindication.md)*  <sub>0..\*</sub>  **[Drug](Drug.md)**
  *  **[NamedThing](NamedThing.md)** *[has drug](has_drug.md)*  <sub>0..\*</sub>  **[Drug](Drug.md)**

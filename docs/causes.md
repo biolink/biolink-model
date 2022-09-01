@@ -25,8 +25,6 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 
 ## Children
 
- *  [adverse event caused by](adverse_event_caused_by.md)
- *  [causes adverse event](causes_adverse_event.md)
 
 ## Used by
 

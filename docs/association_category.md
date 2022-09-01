@@ -36,6 +36,8 @@ URI: [biolink:association_category](https://w3id.org/biolink/vocab/association_c
  * [ChemicalEntityAssessesNamedThingAssociation](ChemicalEntityAssessesNamedThingAssociation.md)
  * [ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.md)
  * [ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md)
+ * [ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation.md)
+ * [ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
  * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)

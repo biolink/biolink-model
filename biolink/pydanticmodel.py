@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "2.4.5"
+version = "3.0.1"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -18,6 +18,120 @@ class ConfiguredBaseModel(WeakRefShimBaseModel,
                 arbitrary_types_allowed = True):
     pass                    
 
+
+class AnatomicalContextQualifierEnum(str, Enum):
+    
+    
+    dummy = "dummy"
+    
+
+class DirectionQualifierEnum(str, Enum):
+    
+    increased = "increased"
+    upregulated = "upregulated"
+    decreased = "decreased"
+    downregulated = "downregulated"
+    
+    
+
+class ChemicalEntityDerivativeEnum(str, Enum):
+    
+    metabolite = "metabolite"
+    
+    
+
+class ChemicalOrGeneOrGeneProductFormEnum(str, Enum):
+    
+    modified_form = "modified form"
+    mutant_form = "mutant form"
+    polymorphism = "polymorphism"
+    SNP = "SNP"
+    analog = "analog"
+    
+    
+
+class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
+    
+    number_3APOSTROPHE_UTR = "3' UTR"
+    number_5APOSTROPHE_UTR = "5' UTR"
+    polyA_tail = "polyA tail"
+    promoter = "promoter"
+    enhancer = "enhancer"
+    exon = "exon"
+    intron = "intron"
+    
+    
+
+class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
+    
+    expression = "expression"
+    mutation_rate = "mutation rate"
+    abundance = "abundance"
+    synthesis = "synthesis"
+    degradation = "degradation"
+    cleavage = "cleavage"
+    hydrolysis = "hydrolysis"
+    activity = "activity"
+    metabolic_processing = "metabolic processing"
+    stability = "stability"
+    localization = "localization"
+    transport = "transport"
+    secretion = "secretion"
+    uptake = "uptake"
+    molecular_modification = "molecular modification"
+    acetylation = "acetylation"
+    acylation = "acylation"
+    alkylation = "alkylation"
+    amination = "amination"
+    carbamoylation = "carbamoylation"
+    ethylation = "ethylation"
+    glutathionylation = "glutathionylation"
+    glycation = "glycation"
+    glycosylation = "glycosylation"
+    glucuronidation = "glucuronidation"
+    N_linked_glycosylation = "N-linked glycosylation"
+    O_linked_glycosylation = "O-linked glycosylation"
+    hydroxylation = "hydroxylation"
+    lipidation = "lipidation"
+    farnesylation = "farnesylation"
+    geranoylation = "geranoylation"
+    myristoylation = "myristoylation"
+    palmitoylation = "palmitoylation"
+    prenylation = "prenylation"
+    methylation = "methylation"
+    nitrosation = "nitrosation"
+    nucleotidylation = "nucleotidylation"
+    phosphorylation = "phosphorylation"
+    ribosylation = "ribosylation"
+    ADP_ribosylation = "ADP-ribosylation"
+    sulfation = "sulfation"
+    sumoylation = "sumoylation"
+    ubiquitination = "ubiquitination"
+    oxidation = "oxidation"
+    reduction = "reduction"
+    carboxylation = "carboxylation"
+    
+    
+
+class CausalMechanismQualifierEnum(str, Enum):
+    
+    binding = "binding"
+    inhibition = "inhibition"
+    antibody_inhibition = "antibody inhibition"
+    antagonism = "antagonism"
+    molecular_channel_blockage = "molecular channel blockage"
+    inverse_agonism = "inverse agonism"
+    negative_allosteric_modulation = "negative allosteric modulation"
+    agonism = "agonism"
+    molecular_channel_opening = "molecular channel opening"
+    positive_allosteric_modulation = "positive allosteric modulation"
+    potentiation = "potentiation"
+    activation = "activation"
+    inducer = "inducer"
+    transcriptional_regulation = "transcriptional regulation"
+    signaling_mediated_control = "signaling-mediated control"
+    
+    
 
 class LogicalInterpretationEnum(str, Enum):
     
@@ -64,17 +178,6 @@ class SequenceEnum(str, Enum):
     
     NA = "NA"
     AA = "AA"
-    
-    
-
-class PredicateQualifierEnum(str, Enum):
-    
-    predicted = "predicted"
-    possibly = "possibly"
-    hypothesized = "hypothesized"
-    validated = "validated"
-    supported_by_real_world_evidence = "supported by real-world evidence"
-    supported_by_clinical_evidence = "supported by clinical evidence"
     
     
 
@@ -494,6 +597,156 @@ class InformationContentEntity(NamedThing):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:InformationContentEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class StudyResult(InformationContentEntity):
+    """
+    A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:StudyResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ConceptCountAnalysisResult(StudyResult):
+    """
+    A result of a concept count analysis.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:ConceptCountAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ObservedExpectedFrequencyAnalysisResult(StudyResult):
+    """
+    A result of a observed expected frequency analysis.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:ObservedExpectedFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class RelativeFrequencyAnalysisResult(StudyResult):
+    """
+    A result of a relative frequency analysis.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:RelativeFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class TextMiningResult(StudyResult):
+    """
+    A result of text mining.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:TextMiningResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ChiSquaredAnalysisResult(StudyResult):
+    """
+    A result of a chi squared analysis.
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:ChiSquaredAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1149,12 +1402,6 @@ class GenomicEntity(ConfiguredBaseModel):
     
 
 
-class ChemicalSubstance(ConfiguredBaseModel):
-    
-    None
-    
-
-
 class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     """
     Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
@@ -1349,7 +1596,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class Inheritance(OrganismAttribute):
     """
-    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+    The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).
     """
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
@@ -1367,6 +1614,28 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[str] = Field(None)
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class GeneticInheritance(BiologicalEntity):
+    """
+    The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
+    """
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:GeneticInheritance"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1390,6 +1659,48 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
+    
+
+
+class Virus(OrganismalEntity):
+    """
+    A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
+    """
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:Virus"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class CellularOrganism(OrganismalEntity):
+    
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:CellularOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
@@ -1483,7 +1794,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate. distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1504,7 +1815,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 
 class Disease(DiseaseOrPhenotypicFeature):
-    
+    """
+    A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
+    """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -1525,7 +1838,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
-    A combination of entity and quality that makes up a phenotyping statement.
+    A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1695,7 +2008,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1722,7 +2035,7 @@ class MolecularEntity(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1749,7 +2062,7 @@ class SmallMolecule(MolecularEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1779,7 +2092,7 @@ class ChemicalMixture(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1809,7 +2122,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -1838,7 +2151,7 @@ class MolecularMixture(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1868,7 +2181,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1898,7 +2211,7 @@ class ProcessedMaterial(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1929,7 +2242,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -1952,7 +2265,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -1976,7 +2289,7 @@ class FoodAdditive(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2000,7 +2313,7 @@ class Nutrient(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2024,7 +2337,7 @@ class Macronutrient(Nutrient):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2048,7 +2361,7 @@ class Micronutrient(Nutrient):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2072,7 +2385,7 @@ class Vitamin(Micronutrient):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2102,7 +2415,7 @@ class Food(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2224,7 +2537,7 @@ class Exon(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2253,7 +2566,7 @@ class Transcript(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2280,7 +2593,7 @@ class CodingSequence(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2399,7 +2712,7 @@ class RNAProduct(Transcript, GeneProductMixin):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2429,7 +2742,7 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RNAProductIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2457,7 +2770,7 @@ class NoncodingRNAProduct(RNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NoncodingRNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2485,7 +2798,7 @@ class MicroRNA(NoncodingRNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MicroRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2515,7 +2828,7 @@ class SiRNA(NoncodingRNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""	A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:SiRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3548,7 +3861,7 @@ class Association(Entity):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3577,7 +3890,7 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3608,7 +3921,7 @@ class ContributorAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3639,7 +3952,7 @@ class GenotypeToGenotypePartAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3670,7 +3983,7 @@ class GenotypeToGeneAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3701,7 +4014,7 @@ class GenotypeToVariantAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3732,7 +4045,7 @@ class GeneToGeneAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3763,7 +4076,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3809,7 +4122,7 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3840,7 +4153,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3872,7 +4185,7 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3943,7 +4256,7 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3975,7 +4288,7 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4007,7 +4320,7 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4046,7 +4359,7 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4077,7 +4390,7 @@ class MolecularActivityToPathwayAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4108,13 +4421,42 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: Optional[List[str]] = Field(["biolink:ChemicalToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
+    
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -4139,13 +4481,96 @@ class ChemicalToGeneAssociation(ChemicalToEntityAssociationMixin, Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: Optional[List[str]] = Field(["biolink:ChemicalToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Association):
+    """
+    describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+    """
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
+    subject_context_qualifier: Optional[str] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    object_context_qualifier: Optional[str] = Field(None)
+    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:ChemicalGeneInteractionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ChemicalAffectsGeneAssociation(Association):
+    """
+    Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
+    """
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_context_qualifier: Optional[str] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    object_context_qualifier: Optional[str] = Field(None)
+    causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
+    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    qualified_predicate: Optional[str] = Field(None, description="""predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading""")
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:ChemicalAffectsGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -4170,7 +4595,7 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4209,7 +4634,7 @@ class MaterialSampleDerivationAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4254,7 +4679,7 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4301,7 +4726,7 @@ class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Exposur
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4359,7 +4784,7 @@ class InformationContentEntityToNamedThingAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4406,13 +4831,44 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: Optional[List[str]] = Field(["biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenotypicFeatureToEntityAssociationMixin, Association):
+    """
+    An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
+    """
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(None, description="""genetic inheritance associated with the specified disease or phenotypic feature.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -4443,7 +4899,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4474,7 +4930,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4505,7 +4961,7 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4543,7 +4999,7 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4578,7 +5034,7 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4613,7 +5069,7 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4648,7 +5104,7 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4683,7 +5139,7 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4723,7 +5179,7 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4759,7 +5215,7 @@ class GeneToPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToP
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4791,7 +5247,7 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAsso
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4823,7 +5279,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[DruggableGeneCategoryEnum]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4857,7 +5313,7 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4892,7 +5348,7 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4928,7 +5384,7 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4959,7 +5415,7 @@ class PopulationToPopulationAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4989,7 +5445,7 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5021,7 +5477,7 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5053,7 +5509,7 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5093,7 +5549,7 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5125,7 +5581,7 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5157,7 +5613,7 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5189,7 +5645,7 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5221,7 +5677,7 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5253,7 +5709,7 @@ class OrganismToOrganismAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5282,7 +5738,7 @@ class TaxonToTaxonAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5312,7 +5768,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5348,7 +5804,7 @@ class GeneToExpressionSiteAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5379,7 +5835,7 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5410,7 +5866,7 @@ class FunctionalAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5449,7 +5905,7 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5480,7 +5936,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5511,7 +5967,7 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5542,7 +5998,7 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5573,7 +6029,7 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5602,7 +6058,7 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5632,7 +6088,7 @@ class EntityToDiseaseAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5662,7 +6118,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5693,7 +6149,7 @@ class SequenceAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5729,7 +6185,7 @@ class GenomicSequenceLocalization(SequenceAssociation):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5760,7 +6216,7 @@ class SequenceFeatureRelationship(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5791,7 +6247,7 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5822,7 +6278,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5853,7 +6309,7 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5884,13 +6340,45 @@ class GeneRegulatoryRelationship(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: Optional[List[str]] = Field(["biolink:GeneRegulatoryRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
+    """
+    A regulatory relationship between two genes
+    """
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""the direction is always from regulator to regulated""")
+    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -5913,7 +6401,7 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5944,7 +6432,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5975,7 +6463,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6014,7 +6502,7 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6045,7 +6533,7 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6077,7 +6565,7 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6099,15 +6587,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, Association):
     
     subject: str = Field(None, description="""the taxon that is the subject of the association""")
-    predicate: str = Field(None, description="""predicate describing the relationship between the taxon and the environment
- """)
+    predicate: str = Field(None, description="""predicate describing the relationship between the taxon and the environment""")
     object: str = Field(None, description="""the environment in which the organism occurs""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
+    original_knowledge_source: Optional[str] = Field(None, description="""The Information Resource that created the original record of the knowledge expressed in an Association (e.g. via curation of the knowledge from the literature, or generation of the knowledge de novo through computation, reasoning, inference over data).""")
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify (may or may not be the 'original' source).""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6155,6 +6642,12 @@ Event.update_forward_refs()
 AdministrativeEntity.update_forward_refs()
 Agent.update_forward_refs()
 InformationContentEntity.update_forward_refs()
+StudyResult.update_forward_refs()
+ConceptCountAnalysisResult.update_forward_refs()
+ObservedExpectedFrequencyAnalysisResult.update_forward_refs()
+RelativeFrequencyAnalysisResult.update_forward_refs()
+TextMiningResult.update_forward_refs()
+ChiSquaredAnalysisResult.update_forward_refs()
 Dataset.update_forward_refs()
 DatasetDistribution.update_forward_refs()
 DatasetVersion.update_forward_refs()
@@ -6186,7 +6679,6 @@ GeographicLocationAtTime.update_forward_refs()
 ThingWithTaxon.update_forward_refs()
 BiologicalEntity.update_forward_refs()
 GenomicEntity.update_forward_refs()
-ChemicalSubstance.update_forward_refs()
 BiologicalProcessOrActivity.update_forward_refs()
 MolecularActivity.update_forward_refs()
 BiologicalProcess.update_forward_refs()
@@ -6196,7 +6688,10 @@ Behavior.update_forward_refs()
 OrganismAttribute.update_forward_refs()
 PhenotypicQuality.update_forward_refs()
 Inheritance.update_forward_refs()
+GeneticInheritance.update_forward_refs()
 OrganismalEntity.update_forward_refs()
+Virus.update_forward_refs()
+CellularOrganism.update_forward_refs()
 LifeStage.update_forward_refs()
 IndividualOrganism.update_forward_refs()
 PopulationOfIndividualOrganisms.update_forward_refs()
@@ -6320,7 +6815,10 @@ ReactionToCatalystAssociation.update_forward_refs()
 ChemicalToChemicalDerivationAssociation.update_forward_refs()
 MolecularActivityToPathwayAssociation.update_forward_refs()
 ChemicalToPathwayAssociation.update_forward_refs()
+NamedThingAssociatedWithLikelihoodOfNamedThingAssociation.update_forward_refs()
 ChemicalToGeneAssociation.update_forward_refs()
+ChemicalGeneInteractionAssociation.update_forward_refs()
+ChemicalAffectsGeneAssociation.update_forward_refs()
 DrugToGeneAssociation.update_forward_refs()
 MaterialSampleToEntityAssociationMixin.update_forward_refs()
 MaterialSampleDerivationAssociation.update_forward_refs()
@@ -6337,6 +6835,7 @@ InformationContentEntityToNamedThingAssociation.update_forward_refs()
 EntityToDiseaseAssociationMixin.update_forward_refs()
 DiseaseOrPhenotypicFeatureToEntityAssociationMixin.update_forward_refs()
 DiseaseOrPhenotypicFeatureToLocationAssociation.update_forward_refs()
+DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.update_forward_refs()
 EntityToDiseaseOrPhenotypicFeatureAssociationMixin.update_forward_refs()
 CellLineToDiseaseOrPhenotypicFeatureAssociation.update_forward_refs()
 ChemicalToDiseaseOrPhenotypicFeatureAssociation.update_forward_refs()
@@ -6388,6 +6887,7 @@ TranscriptToGeneRelationship.update_forward_refs()
 GeneToGeneProductRelationship.update_forward_refs()
 ExonToTranscriptRelationship.update_forward_refs()
 GeneRegulatoryRelationship.update_forward_refs()
+ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.update_forward_refs()
 AnatomicalEntityToAnatomicalEntityAssociation.update_forward_refs()
 AnatomicalEntityToAnatomicalEntityPartOfAssociation.update_forward_refs()
 AnatomicalEntityToAnatomicalEntityOntogenicAssociation.update_forward_refs()

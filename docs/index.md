@@ -59,9 +59,9 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [Pathway](Pathway.md)
                  * [PhysiologicalProcess](PhysiologicalProcess.md)
              * [MolecularActivity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
-         * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate. distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
+         * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
              * [Disease](Disease.md) - A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
-             * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
+             * [PhenotypicFeature](PhenotypicFeature.md) - A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
                  * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
                  * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
          * [Gene](Gene.md) - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -170,6 +170,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [ChemicalEntityAssessesNamedThingAssociation](ChemicalEntityAssessesNamedThingAssociation.md)
      * [ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.md) - A regulatory relationship between two genes
      * [ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md) - describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
+     * [ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation.md) - This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
+         * [ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation.md) - This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
      * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
          * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
          * [ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)
@@ -352,7 +354,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
  * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
  * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
- * [adverse event caused by](adverse_event_caused_by.md)
+ * [adverse event of](adverse_event_of.md)
  * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
      * [abundance affected by](abundance_affected_by.md)
          * [abundance decreased by](abundance_decreased_by.md)
@@ -360,6 +362,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
          * [activity decreased by](activity_decreased_by.md)
          * [activity increased by](activity_increased_by.md)
+     * [adverse event of](adverse_event_of.md)
      * [degradation affected by](degradation_affected_by.md)
          * [degradation decreased by](degradation_decreased_by.md)
          * [degradation increased by](degradation_increased_by.md)
@@ -376,6 +379,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [is ameliorated by](is_ameliorated_by.md)
          * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
      * [is exacerbated by](is_exacerbated_by.md)
+     * [is side effect of](is_side_effect_of.md)
      * [localization affected by](localization_affected_by.md)
          * [localization decreased by](localization_decreased_by.md)
          * [localization increased by](localization_increased_by.md)
@@ -469,6 +473,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
          * [entity positively regulates entity](entity_positively_regulates_entity.md)
      * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+     * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
+     * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
      * [process regulates process](process_regulates_process.md)
          * [process negatively regulates process](process_negatively_regulates_process.md)
          * [process positively regulates process](process_positively_regulates_process.md)
@@ -559,9 +565,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [catalyzes](catalyzes.md)
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
  * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
-     * [adverse event caused by](adverse_event_caused_by.md)
-     * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
- * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [chemically interacts with](chemically_interacts_with.md)
  * [chemically similar to](chemically_similar_to.md) - holds between one small molecule entity and another that it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
  * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
@@ -583,8 +586,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
      * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
-         * [adverse event caused by](adverse_event_caused_by.md)
-         * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
  * [contribution from](contribution_from.md)
  * [contributor](contributor.md)
      * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
@@ -673,6 +674,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
  * [has active ingredient](has_active_ingredient.md) - holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
+ * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
  * [has author](has_author.md)
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
  * [has capability](has_capability.md)
@@ -739,6 +741,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has nonsense variant](has_nonsense_variant.md)
      * [has splice site variant](has_splice_site_variant.md)
      * [has synonymous variant](has_synonymous_variant.md)
+ * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
  * [has splice site variant](has_splice_site_variant.md)
  * [has substrate](has_substrate.md)
  * [has supporting study result](has_supporting_study_result.md) - connects an association to an instance of supporting study result
@@ -820,6 +823,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [is nonsense variant of](is_nonsense_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
      * [is splice site variant of](is_splice_site_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
      * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
+ * [is side effect of](is_side_effect_of.md)
  * [is splice site variant of](is_splice_site_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the canonical splice site of one of the gene's exons.
  * [is substrate of](is_substrate_of.md)
  * [is synonymous variant of](is_synonymous_variant_of.md) - holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
@@ -966,6 +970,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
                  * [activity decreased by](activity_decreased_by.md)
                  * [activity increased by](activity_increased_by.md)
+             * [adverse event of](adverse_event_of.md)
              * [degradation affected by](degradation_affected_by.md)
                  * [degradation decreased by](degradation_decreased_by.md)
                  * [degradation increased by](degradation_increased_by.md)
@@ -982,6 +987,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [is ameliorated by](is_ameliorated_by.md)
                  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
              * [is exacerbated by](is_exacerbated_by.md)
+             * [is side effect of](is_side_effect_of.md)
              * [localization affected by](localization_affected_by.md)
                  * [localization decreased by](localization_decreased_by.md)
                  * [localization increased by](localization_increased_by.md)
@@ -1075,6 +1081,8 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
                  * [entity positively regulates entity](entity_positively_regulates_entity.md)
              * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+             * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
+             * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
              * [process regulates process](process_regulates_process.md)
                  * [process negatively regulates process](process_negatively_regulates_process.md)
                  * [process positively regulates process](process_positively_regulates_process.md)
@@ -1110,8 +1118,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
          * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
              * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
-                 * [adverse event caused by](adverse_event_caused_by.md)
-                 * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
          * [contribution from](contribution_from.md)
          * [contributor](contributor.md)
              * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
@@ -1283,6 +1289,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [activity affected by](activity_affected_by.md) - holds between two chemical or gene/gene product where the action or effect of one is changed by the activity of the other within a system of interest
              * [activity decreased by](activity_decreased_by.md)
              * [activity increased by](activity_increased_by.md)
+         * [adverse event of](adverse_event_of.md)
          * [degradation affected by](degradation_affected_by.md)
              * [degradation decreased by](degradation_decreased_by.md)
              * [degradation increased by](degradation_increased_by.md)
@@ -1299,6 +1306,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [is ameliorated by](is_ameliorated_by.md)
              * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
          * [is exacerbated by](is_exacerbated_by.md)
+         * [is side effect of](is_side_effect_of.md)
          * [localization affected by](localization_affected_by.md)
              * [localization decreased by](localization_decreased_by.md)
              * [localization increased by](localization_increased_by.md)
@@ -1392,6 +1400,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [entity negatively regulates entity](entity_negatively_regulates_entity.md)
              * [entity positively regulates entity](entity_positively_regulates_entity.md)
          * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
+         * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
+         * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
          * [process regulates process](process_regulates_process.md)
              * [process negatively regulates process](process_negatively_regulates_process.md)
              * [process positively regulates process](process_positively_regulates_process.md)
@@ -1427,8 +1437,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
      * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
          * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
-             * [adverse event caused by](adverse_event_caused_by.md)
-             * [causes adverse event](causes_adverse_event.md) - holds between a drug and a disease or phenotype that can be caused by the drug
      * [contribution from](contribution_from.md)
      * [contributor](contributor.md)
          * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
@@ -1800,6 +1808,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [subject aspect qualifier](subject_aspect_qualifier.md)
  * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
  * [association slot](association_slot.md) - any slot that relates an association to another entity
+     * [FDA adverse event level](FDA_adverse_event_level.md)
      * [FDA approval status](FDA_approval_status.md)
      * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.
          * [object aspect qualifier](object_aspect_qualifier.md)
@@ -1933,6 +1942,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [expected count](expected_count.md) - The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
  * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
  * [extraction confidence score](extraction_confidence_score.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
+ * [FDA adverse event level](FDA_adverse_event_level.md)
  * [FDA approval status](FDA_approval_status.md)
  * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
      * [object form or variant qualifier](object_form_or_variant_qualifier.md)
@@ -2154,6 +2164,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [drug_delivery_enum](drug_delivery_enum.md)
  * [druggable_gene_category_enum](druggable_gene_category_enum.md)
  * [FDA_approval_status_enum](FDA_approval_status_enum.md)
+ * [FDA_IDA_adverse_event_enum](FDA_IDA_adverse_event_enum.md) - please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
  * [gene_or_gene_product_or_chemical_entity_aspect_enum](gene_or_gene_product_or_chemical_entity_aspect_enum.md)
  * [gene_or_gene_product_or_chemical_part_qualifier_enum](gene_or_gene_product_or_chemical_part_qualifier_enum.md)
  * [logical_interpretation_enum](logical_interpretation_enum.md)
