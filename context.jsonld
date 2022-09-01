@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-30T01:11:29\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-01T18:57:30\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.1\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -614,7 +614,7 @@
       "adjusted_p_value": {
          "@type": "xsd:float"
       },
-      "adverse_event_caused_by": {
+      "adverse_event_of": {
          "@type": "@id"
       },
       "affected_by": {
@@ -764,9 +764,6 @@
          "@type": "@id"
       },
       "causes": {
-         "@type": "@id"
-      },
-      "causes_adverse_event": {
          "@type": "@id"
       },
       "chemically_interacts_with": {
@@ -1012,6 +1009,14 @@
       "extraction_confidence_score": {
          "@type": "xsd:integer"
       },
+      "FDA_adverse_event_level": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "FDA_approval_status": {
          "@context": {
             "@vocab": "@null",
@@ -1059,6 +1064,9 @@
          "@type": "@id"
       },
       "has_active_ingredient": {
+         "@type": "@id"
+      },
+      "has_adverse_event": {
          "@type": "@id"
       },
       "has_attribute": {
@@ -1241,6 +1249,9 @@
          "@type": "@id"
       },
       "has_sequence_variant": {
+         "@type": "@id"
+      },
+      "has_side_effect": {
          "@type": "@id"
       },
       "has_splice_site_variant": {
@@ -1430,6 +1441,9 @@
          "@type": "@id"
       },
       "is_sequence_variant_of": {
+         "@type": "@id"
+      },
+      "is_side_effect_of": {
          "@type": "@id"
       },
       "is_splice_site_variant_of": {

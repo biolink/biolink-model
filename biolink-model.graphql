@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.0.0
+# version: 3.0.1
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -783,6 +783,56 @@ type ChemicalMixture
 
 interface ChemicalOrDrugOrTreatment
   {
+  }
+
+type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    object: NamedThing!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    fDAAdverseEventLevel: FDAIDAAdverseEventEnum
+    predicate: PredicateType!
+  }
+
+type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntityAssociationMixin, EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    subject: NamedThing!
+    object: NamedThing!
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    fDAAdverseEventLevel: FDAIDAAdverseEventEnum
+    predicate: PredicateType!
   }
 
 type ChemicalRole

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.0.0
+# version: 3.0.1
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -195,8 +195,9 @@ linkml:Nodeidentifier NONLITERAL
     @<CaseToPhenotypicFeatureAssociation> OR @<CellLineToDiseaseOrPhenotypicFeatureAssociation> OR
     @<ChemicalAffectsGeneAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
     @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
-    @<ChemicalToChemicalAssociation> OR @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR
-    @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
+    @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation> OR
+    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
+    @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
     @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
     @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
     @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
@@ -623,6 +624,36 @@ linkml:Nodeidentifier NONLITERAL
        rdf:type [ <ChemicalOrDrugOrTreatment> ] ?
     )
 }
+
+<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation> CLOSED {
+    (  $<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation_tes> ( 
+          &<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> ;
+          rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
+          &<ChemicalToEntityAssociationMixin_tes> ;
+          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
+          &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+          <predicate> @<PredicateType>
+       ) ;
+       rdf:type [ <ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation> ]
+    )
+}
+
+<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation>  (
+    CLOSED {
+       (  $<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<ChemicalToEntityAssociationMixin_tes> ;
+             rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
+             &<EntityToDiseaseOrPhenotypicFeatureAssociationMixin_tes> ;
+             rdf:type [ <EntityToDiseaseOrPhenotypicFeatureAssociationMixin> ] ? ;
+             <FDA_adverse_event_level> @<FDAIDAAdverseEventEnum> ? ;
+             <predicate> @<PredicateType>
+          ) ;
+          rdf:type [ <ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> ]
+       )
+    } OR @<ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation>
+)
 
 <ChemicalRole> CLOSED {
     (  $<ChemicalRole_tes> (  &<Attribute_tes> ;
