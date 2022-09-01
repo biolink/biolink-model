@@ -6111,27 +6111,36 @@ slots:
     is_a: related to at instance level
     inverse: disease has basis in
 
-  # These may be pushable to causal relationships, but seem important for clarity
-  # Also because causes adverse event tends to be very noisy and it's useful to be able
-  # to distinguish it.  maybe not the best way to do that though.
 
-  adverse event:
-    is_a: related to at instance level
+  has adverse event:
+    is_a: affects
+    aliases: [ 'adverse effect']
+    description: >-
+      An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment 
+      with a therapeutic agent. Adverse events may be caused by something 
+      other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or 
+      diseases temporally associated with the treatment, whether or not considered related to the treatment. 
+      Adverse events are unintended effects that occur when a medication is administered correctly.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
 
   adverse event of:
-    is_a: related to at instance level
+    is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
     inverse: adverse event
 
   has side effect:
-    is_a: related to at instance level
+    is_a: affects
     description: >-
-      a secondary, typically undesirable effect of a drug or medical treatment.
+      An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment.
+      Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of 
+      the medication.
+    notes: >-
+      Adverse events are unintended pharmacologic effects that occur when a medication is administered correctly 
+      while a side effect is a secondary unwanted effect that occurs due to a a therapeutic agent, drug or treatment
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -6140,7 +6149,7 @@ slots:
       - NCIT:C2861 # side effect
 
   is side effect of:
-    is_a: related to at instance level
+    is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
