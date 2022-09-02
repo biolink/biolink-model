@@ -11604,8 +11604,8 @@ enums:
     permissible_values:
       activity or abundance:
         description: >- 
-          # TODO - make a description that indicates when to use this 
-          # upregulates example is good here.
+          Used in cases where the specificity of the relationship can not be determined to be either activity 
+          or abundance.  In general, a more specific value from this enumeration should be used.
       abundance:
         is_a: activity or abundance
       activity:
