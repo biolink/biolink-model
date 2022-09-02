@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.0.0
+// version: 3.0.1
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -686,6 +686,56 @@ message ChemicalMixture
   string drugRegulatoryStatusWorldWide = 0
  repeated  drugDeliveryEnum routesOfDelivery = 0
  }
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
+message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+  namedThing subject = 0
+  namedThing object = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  informationResource knowledgeSource = 0
+  informationResource originalKnowledgeSource = 0
+  informationResource primaryKnowledgeSource = 0
+ repeated  informationResource aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string type = 0
+ repeated  categoryType category = 0
+  fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  predicateType predicate = 0
+ }
+// This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
+message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+  namedThing subject = 0
+  namedThing object = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  informationResource knowledgeSource = 0
+  informationResource originalKnowledgeSource = 0
+  informationResource primaryKnowledgeSource = 0
+ repeated  informationResource aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string type = 0
+ repeated  categoryType category = 0
+  fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
+  predicateType predicate = 0
+ }
 message ChemicalRole
  {
   string id = 0
@@ -1214,7 +1264,7 @@ message Disease
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  }
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate. distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
  {
   string id = 0
@@ -3284,7 +3334,7 @@ message Phenomenon
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
-// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment. A combination of entity and quality that makes up a phenotyping statement.
+// A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
 message PhenotypicFeature
  {
   string id = 0
