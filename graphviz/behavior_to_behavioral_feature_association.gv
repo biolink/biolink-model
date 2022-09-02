@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,4148.8,283"];
+	graph [bb="0,0,4008.8,283"];
 	node [label="\N"];
 	"behavior to behavioral feature association"	[height=0.5,
 		label="behavior to behavioral feature association",
-		pos="2104.4,265",
+		pos="2077.4,265",
 		width=5.7231];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"behavior to behavioral feature association" -> association	[label=is_a,
 		lp="582.39,221.5",
-		pos="e,107.12,190.7 1899.9,262.79 1605.4,260.27 1044.9,252.53 568.39,229 375.18,219.46 325.55,225.65 134.39,196 128.7,195.12 122.8,194.02 \
+		pos="e,107.12,190.7 1872.9,262.67 1582.6,260.01 1034.6,252.11 568.39,229 375.19,219.42 325.55,225.65 134.39,196 128.7,195.12 122.8,194.02 \
 116.92,192.82"];
 	"entity to phenotypic feature association mixin"	[height=0.5,
 		pos="367.39,178",
 		width=6.2286];
 	"behavior to behavioral feature association" -> "entity to phenotypic feature association mixin"	[label=uses,
-		lp="746.89,221.5",
-		pos="e,458.84,194.47 1902,261.62 1576.7,257.32 951.58,246.99 730.39,229 641.68,221.78 541.5,207.52 468.89,196.07"];
+		lp="745.89,221.5",
+		pos="e,458.58,194.46 1874.9,261.51 1554.7,257.1 945.51,246.68 729.39,229 640.92,221.76 541.02,207.5 468.61,196.05"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"behavior to behavioral feature association" -> id	[color=blue,
 		label=id,
-		lp="867.39,221.5",
-		pos="e,677.37,190.01 1900.4,262.48 1600.6,259.52 1055.5,251.21 860.39,229 786.52,220.59 768.06,215.79 696.39,196 693.28,195.14 690.08,\
-194.18 686.89,193.17",
+		lp="866.39,221.5",
+		pos="e,677.38,190 1873.4,262.36 1579,259.27 1049.5,250.81 859.39,229 785.96,220.57 767.63,215.72 696.39,196 693.28,195.14 690.09,194.18 \
+686.89,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -36,8 +36,8 @@ digraph {
 		width=1.2277];
 	"behavior to behavioral feature association" -> iri	[color=blue,
 		label=iri,
-		lp="985.39,221.5",
-		pos="e,782.01,190.16 1902.2,261.49 1627.5,257.43 1150.5,247.9 977.39,229 898.71,220.41 879.11,215.46 802.39,196 798.97,195.13 795.43,\
+		lp="984.39,221.5",
+		pos="e,782.01,190.15 1875.6,261.35 1606.6,257.16 1144.6,247.51 976.39,229 898.15,220.39 878.68,215.39 802.39,196 798.97,195.13 795.43,\
 194.16 791.9,193.14",
 		style=solid];
 	name	[color=blue,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"behavior to behavioral feature association" -> name	[color=blue,
 		label=name,
-		lp="1089.4,221.5",
-		pos="e,907.2,191.29 1901,262.08 1646.2,258.82 1224.2,250.31 1069.4,229 1016.5,221.72 957.39,206.08 917.04,194.21",
+		lp="1088.4,221.5",
+		pos="e,907,191.27 1874.3,261.91 1625.4,258.49 1218.4,249.84 1068.4,229 1015.8,221.69 956.95,206.05 916.79,194.19",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"behavior to behavioral feature association" -> description	[color=blue,
 		label=description,
-		lp="1207.9,221.5",
-		pos="e,1053.5,193.96 1899.4,263.17 1666.9,261.03 1302.6,253.67 1167.4,229 1131.3,222.42 1092.1,208.98 1062.9,197.69",
+		lp="1205.9,221.5",
+		pos="e,1053.3,194.07 1872.6,263.01 1646,260.69 1295.9,253.16 1165.4,229 1129.9,222.43 1091.3,209.06 1062.6,197.8",
 		style=solid];
 	source	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.0652];
 	"behavior to behavioral feature association" -> source	[color=blue,
 		label=source,
-		lp="1340.4,221.5",
-		pos="e,1178.9,190.18 1905.3,260.28 1709.8,255.7 1425.4,246.31 1316.4,229 1271.5,221.88 1221.9,205.78 1188.7,193.76",
+		lp="1337.4,221.5",
+		pos="e,1178.7,190.27 1879,260.11 1689.6,255.45 1418.1,246.05 1313.4,229 1269.4,221.84 1220.9,205.83 1188.3,193.84",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=1.4443];
 	"behavior to behavioral feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1477.4,221.5",
-		pos="e,1292.8,191.55 1910.2,258.89 1744.5,253.61 1519.2,244.01 1430.4,229 1386,221.5 1336.9,206.5 1302.5,194.88",
+		lp="1472.4,221.5",
+		pos="e,1292.4,191.77 1884.4,258.69 1724.6,253.35 1510.3,243.78 1425.4,229 1382.5,221.54 1335.1,206.68 1301.8,195.09",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -87,8 +87,8 @@ digraph {
 		width=2.1665];
 	"behavior to behavioral feature association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1630.4,221.5",
-		pos="e,1450,193 1909.2,259.16 1814.3,254.62 1698.9,245.86 1596.4,229 1549.6,221.3 1497.6,207.21 1459.8,195.94",
+		lp="1623.4,221.5",
+		pos="e,1449.1,193.22 1883.7,258.79 1793.7,254.16 1685.6,245.43 1589.4,229 1544.7,221.37 1495.2,207.5 1459,196.3",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -97,8 +97,8 @@ digraph {
 		width=1.2999];
 	"behavior to behavioral feature association" -> negated	[color=blue,
 		label=negated,
-		lp="1763.4,221.5",
-		pos="e,1583.7,190.34 1941.1,254.01 1876.5,248.64 1801.6,240.64 1734.4,229 1685.6,220.54 1630.9,204.99 1593.7,193.47",
+		lp="1753.4,221.5",
+		pos="e,1582.8,190.6 1915.8,253.77 1855.4,248.43 1786.5,240.52 1724.4,229 1678.7,220.52 1627.8,205.29 1592.7,193.86",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -107,8 +107,8 @@ digraph {
 		width=2.1304];
 	"behavior to behavioral feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1882.9,221.5",
-		pos="e,1730.1,193.53 1977.2,250.82 1936.1,245.42 1890.6,238.24 1849.4,229 1812.1,220.63 1770.9,207.57 1739.8,196.9",
+		lp="1866.9,221.5",
+		pos="e,1726.8,193.95 1951.7,250.72 1913.5,245.4 1871.4,238.29 1833.4,229 1800.3,220.91 1764,208.18 1736.3,197.59",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -117,8 +117,8 @@ digraph {
 		width=1.7332];
 	"behavior to behavioral feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2000.4,221.5",
-		pos="e,1876.4,194.2 2025.2,248.32 2002.7,243.05 1978.4,236.55 1956.4,229 1932.1,220.66 1906,208.78 1885.4,198.69",
+		lp="1977.4,221.5",
+		pos="e,1870.5,194.94 1995.4,248.39 1974.8,243.3 1953,236.87 1933.4,229 1914.6,221.46 1895.1,210.36 1879.3,200.54",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -127,8 +127,8 @@ digraph {
 		width=2.0943];
 	"behavior to behavioral feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2106.9,221.5",
-		pos="e,2023.1,195.6 2084,246.8 2068.7,233.96 2047.7,216.27 2030.9,202.19",
+		lp="2082.9,221.5",
+		pos="e,2013,196.05 2055.1,246.9 2048.7,241.51 2042,235.31 2036.4,229 2029.8,221.56 2023.6,212.72 2018.3,204.55",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -137,159 +137,160 @@ digraph {
 		width=3.015];
 	"behavior to behavioral feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2237.9,221.5",
-		pos="e,2190.7,196.14 2132.5,247.13 2140.8,241.7 2149.7,235.42 2157.4,229 2166.6,221.33 2175.9,212.07 2183.8,203.61",
+		lp="2216.9,221.5",
+		pos="e,2180.3,195.54 2102.7,247.08 2117.2,237.38 2135.8,224.99 2152.4,214 2158.6,209.85 2165.3,205.43 2171.8,201.18",
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
-		label="information resource",
-		pos="2440.4,178",
-		width=3.015];
+		label=string,
+		pos="2370.4,178",
+		width=1.0652];
 	"behavior to behavioral feature association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2445.4,221.5",
-		pos="e,2403.2,195.02 2210,249.49 2241.3,244.18 2275.5,237.37 2306.4,229 2336,220.97 2368.3,209.03 2393.8,198.83",
+		lp="2398.4,221.5",
+		pos="e,2345,191.77 2203.1,250.71 2229.5,245.64 2256.8,238.65 2281.4,229 2292.8,224.54 2293.9,220.2 2304.4,214 2314.5,208.05 2325.7,201.94 \
+2335.9,196.52",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2675.4,178",
+		pos="2535.4,178",
 		width=3.015];
 	"behavior to behavioral feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2687.4,221.5",
-		pos="e,2640.9,195.14 2251.4,252.34 2378.6,242.24 2542.5,229.2 2543.4,229 2573.7,222.19 2606.4,209.86 2631.6,199.15",
+		lp="2606.4,221.5",
+		pos="e,2525.7,196 2223.7,252.3 2341.9,242.75 2489.3,230.57 2492.4,229 2503.3,223.42 2512.6,213.74 2519.8,204.38",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2910.4,178",
+		pos="2770.4,178",
 		width=3.015];
 	"behavior to behavioral feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2942.9,221.5",
-		pos="e,2878.7,195.32 2246.6,251.94 2270.9,250.12 2295.8,248.38 2319.4,247 2423.1,240.91 2684.8,250.74 2786.4,229 2815.1,222.85 2845.8,\
-210.56 2869.4,199.7",
+		lp="2833.9,221.5",
+		pos="e,2749.8,195.86 2220.2,252 2244.3,250.18 2269,248.43 2292.4,247 2338.2,244.19 2662.2,244.73 2705.4,229 2709.8,227.41 2726.5,214.49 \
+2741.9,202.18",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="3092.4,178",
+		pos="2952.4,178",
 		width=1.5346];
 	"behavior to behavioral feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3106.4,221.5",
-		pos="e,3084.1,196.23 2244.8,251.79 2269.7,249.95 2295.3,248.25 2319.4,247 2360.1,244.89 3017,247.34 3053.4,229 3063.8,223.75 3072.3,214.26 \
-3078.7,204.95",
+		lp="2986.4,221.5",
+		pos="e,2953.6,196.09 2218.1,251.83 2242.9,249.99 2268.4,248.28 2292.4,247 2328.4,245.08 2913.6,251.99 2941.4,229 2948.1,223.44 2951.3,\
+214.8 2952.7,206.26",
 		style=solid];
 	type	[height=0.5,
-		pos="3196.4,178",
+		pos="3056.4,178",
 		width=0.86659];
 	"behavior to behavioral feature association" -> type	[color=blue,
 		label=type,
-		lp="3184.4,221.5",
-		pos="e,3185.5,194.87 2244.3,251.78 2269.3,249.92 2295.1,248.22 2319.4,247 2365.2,244.69 3103.1,246.82 3145.4,229 3158.6,223.46 3170.2,\
-212.78 3179,202.7",
+		lp="3056.4,221.5",
+		pos="e,3050.7,196.12 2217.8,251.79 2242.7,249.95 2268.3,248.25 2292.4,247 2333.1,244.89 2990,249.25 3025.4,229 3034.6,223.73 3041.4,214.5 \
+3046.3,205.39",
 		style=solid];
 	category	[height=0.5,
-		pos="3297.4,178",
+		pos="3157.4,178",
 		width=1.4263];
 	"behavior to behavioral feature association" -> category	[color=blue,
 		label=category,
-		lp="3273.9,221.5",
-		pos="e,3275.7,194.51 2244.3,251.75 2269.3,249.9 2295.1,248.21 2319.4,247 2417.6,242.12 3109.3,253.98 3204.4,229 3226.7,223.13 3249.6,\
-210.92 3267.1,200.04",
+		lp="3141.9,221.5",
+		pos="e,3138.2,194.97 2217.5,251.78 2242.5,249.93 2268.2,248.23 2292.4,247 2379.4,242.56 2992.8,253.75 3076.4,229 3095.7,223.27 3115,211.64 \
+3130,201.04",
 		style=solid];
 	subject	[height=0.5,
-		pos="3411.4,178",
+		pos="3271.4,178",
 		width=1.2277];
 	"behavior to behavioral feature association" -> subject	[color=blue,
 		label=subject,
-		lp="3376.4,221.5",
-		pos="e,3389,193.57 2244,251.72 2269.1,249.87 2295,248.19 2319.4,247 2429.3,241.66 3202.5,254.83 3309.4,229 3334.5,222.92 3360.7,209.94 \
-3380.2,198.73",
+		lp="3241.4,221.5",
+		pos="e,3250.2,194.03 2217.3,251.75 2242.3,249.9 2268.1,248.21 2292.4,247 2390.6,242.12 3082.2,253.77 3177.4,229 3200.2,223.05 3223.7,\
+210.59 3241.5,199.6",
 		style=solid];
 	object	[height=0.5,
-		pos="3454.4,91",
+		pos="3314.4,91",
 		width=1.0832];
 	"behavior to behavioral feature association" -> object	[color=blue,
 		label=object,
-		lp="3504.4,178",
-		pos="e,3467.8,108.09 2243.7,251.71 2268.9,249.85 2294.9,248.17 2319.4,247 2379.7,244.12 3348.1,244.93 3406.4,229 3435,221.18 3446.6,219.7 \
-3464.4,196 3483.2,171.06 3486.3,156.9 3477.4,127 3476.4,123.55 3474.9,120.13 3473.1,116.85",
+		lp="3364.4,178",
+		pos="e,3327.8,108.09 2217,251.73 2242.1,249.87 2268,248.19 2292.4,247 2346.7,244.35 3219.2,244.43 3271.4,229 3298,221.13 3308.2,218.5 \
+3324.4,196 3342.7,170.69 3346.3,156.9 3337.4,127 3336.4,123.55 3334.9,120.13 3333.1,116.85",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="3638.4,178",
+		pos="3498.4,178",
 		width=2.3651];
 	"behavior to behavioral feature association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3626.4,221.5",
-		pos="e,3606.2,194.68 2243.4,251.71 2268.7,249.84 2294.8,248.16 2319.4,247 2451,240.8 3375.9,253.55 3505.4,229 3537.1,222.99 3571.1,210.07 \
-3596.8,198.87",
+		lp="3486.4,221.5",
+		pos="e,3466,194.79 2216.7,251.72 2241.9,249.86 2267.9,248.17 2292.4,247 2411.5,241.3 3248.3,251.31 3365.4,229 3397,222.98 3430.9,210.13 \
+3456.6,198.96",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
 		label="severity value",
-		pos="3817.4,178",
+		pos="3677.4,178",
 		width=2.1123];
 	"behavior to behavioral feature association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="3807.4,221.5",
-		pos="e,3788.6,194.82 2243.1,251.68 2268.5,249.82 2294.7,248.14 2319.4,247 2395.9,243.48 3623.4,244.63 3698.4,229 3726.7,223.09 3756.8,\
-210.41 3779.6,199.3",
+		lp="3667.4,221.5",
+		pos="e,3648.6,194.81 2216.4,251.69 2241.7,249.82 2267.8,248.15 2292.4,247 2432.9,240.45 3420.7,257.77 3558.4,229 3586.7,223.08 3616.8,\
+210.4 3639.6,199.29",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
 		label=onset,
-		pos="3947.4,178",
+		pos="3807.4,178",
 		width=1.011];
 	"behavior to behavioral feature association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="3955.9,221.5",
-		pos="e,3930.7,194.29 2243.1,251.65 2268.5,249.79 2294.7,248.12 2319.4,247 2405.6,243.1 3790,254.48 3872.4,229 3890.8,223.3 3908.9,211.48 \
-3922.7,200.76",
+		lp="3815.9,221.5",
+		pos="e,3790.7,194.29 2216.1,251.67 2241.5,249.81 2267.7,248.13 2292.4,247 2372.3,243.34 3656,252.66 3732.4,229 3750.8,223.29 3768.9,211.47 \
+3782.7,200.75",
 		style=solid];
 	"sex qualifier"	[color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="4075.4,178",
+		pos="3935.4,178",
 		width=2.0401];
 	"behavior to behavioral feature association" -> "sex qualifier"	[color=blue,
 		label="sex qualifier",
-		lp="4082.4,221.5",
-		pos="e,4060.1,195.73 2242.8,251.66 2268.3,249.78 2294.6,248.11 2319.4,247 2366.4,244.9 3967,244.54 4011.4,229 4026.9,223.58 4041.5,212.79 \
-4052.8,202.6",
+		lp="3942.4,221.5",
+		pos="e,3920.1,195.73 2216.1,251.65 2241.5,249.79 2267.7,248.12 2292.4,247 2336.2,245.02 3830,243.52 3871.4,229 3886.9,223.58 3901.5,212.78 \
+3912.8,202.6",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2366.4,265",
+		pos="2339.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2497.4,265",
+		pos="2470.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3449.4,134.5",
-		pos="e,3436.5,107.23 3412.5,159.55 3413.7,149.57 3416.2,137.07 3421.4,127 3423.6,122.68 3426.5,118.52 3429.7,114.66"];
+		lp="3309.4,134.5",
+		pos="e,3296.5,107.23 3272.5,159.55 3273.7,149.57 3276.2,137.07 3281.4,127 3283.6,122.68 3286.5,118.52 3289.7,114.66"];
 	relation	[height=0.5,
-		pos="3399.4,18",
+		pos="3259.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3400.7,36.188 3410.1,159.79 3408,132.48 3404,78.994 3401.5,46.38",
+	subject -> relation	[pos="e,3260.7,36.188 3270.1,159.79 3268,132.48 3264,78.994 3261.5,46.38",
 		style=dotted];
 	"behavior to behavioral feature association_subject"	[color=blue,
 		height=0.5,
 		label=behavior,
-		pos="2641.4,265",
+		pos="2614.4,265",
 		width=1.4263];
-	object -> relation	[pos="e,3412.2,35.54 3441.9,73.889 3435,64.939 3426.2,53.617 3418.4,43.584",
+	object -> relation	[pos="e,3272.2,35.54 3301.9,73.889 3295,64.939 3286.2,53.617 3278.4,43.584",
 		style=dotted];
 	"behavior to behavioral feature association_object"	[color=blue,
 		height=0.5,
 		label="behavioral feature",
-		pos="2807.4,265",
+		pos="2780.4,265",
 		width=2.672];
 }

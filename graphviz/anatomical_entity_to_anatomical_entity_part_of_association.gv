@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3382,283"];
+	graph [bb="0,0,3242,283"];
 	node [label="\N"];
 	"anatomical entity to anatomical entity part of association"	[height=0.5,
 		label="anatomical entity to anatomical entity part of association",
@@ -126,90 +126,90 @@ digraph {
 		style=solid];
 	"original knowledge source"	[color=blue,
 		height=0.5,
-		label="information resource",
-		pos="2159.4,178",
-		width=3.015];
+		label=string,
+		pos="2089.4,178",
+		width=1.0652];
 	"anatomical entity to anatomical entity part of association" -> "original knowledge source"	[color=blue,
 		label="original knowledge source",
-		lp="2138.4,221.5",
-		pos="e,2113,194.37 1861.3,249.41 1901.5,244.14 1945.4,237.36 1985.4,229 2025.3,220.66 2069.5,207.94 2103.3,197.41",
+		lp="2113.4,221.5",
+		pos="e,2064.9,191.91 1885.5,250.46 1918.9,245.41 1953.7,238.49 1985.4,229 1999.4,224.83 2031,209.26 2055.8,196.59",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2394.4,178",
+		pos="2254.4,178",
 		width=3.015];
 	"anatomical entity to anatomical entity part of association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2389.4,221.5",
-		pos="e,2353.9,194.79 1914.2,252.01 2053.5,243.13 2220.3,232.06 2236.4,229 2273.3,222.02 2313.6,209.18 2344.3,198.26",
+		lp="2325.4,221.5",
+		pos="e,2244.8,196.06 1913.6,251.99 2047.8,243.29 2204.5,232.47 2211.4,229 2222.4,223.49 2231.7,213.82 2238.8,204.45",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label="information resource",
-		pos="2629.4,178",
+		pos="2489.4,178",
 		width=3.015];
 	"anatomical entity to anatomical entity part of association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2646.9,221.5",
-		pos="e,2593.8,195.06 1914.3,252.01 1945.8,250.22 1978,248.47 2008.4,247 2115,241.83 2383.6,249.07 2488.4,229 2521.5,222.67 2557.3,209.92 \
-2584.5,198.88",
+		lp="2552.9,221.5",
+		pos="e,2468.8,195.86 1915.5,252.1 1946.6,250.31 1978.4,248.54 2008.4,247 2054.6,244.63 2381,244.84 2424.4,229 2428.8,227.41 2445.5,214.49 \
+2461,202.18",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2811.4,178",
+		pos="2671.4,178",
 		width=1.5346];
 	"anatomical entity to anatomical entity part of association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2816.4,221.5",
-		pos="e,2798.8,195.86 1911.2,251.83 1943.6,250.01 1977,248.31 2008.4,247 2050,245.26 2718.9,244.65 2757.4,229 2770.7,223.62 2782.7,213.37 \
-2792,203.54",
+		lp="2705.4,221.5",
+		pos="e,2672.6,196.09 1912,251.88 1944.2,250.07 1977.2,248.36 2008.4,247 2044.6,245.42 2632.5,252.09 2660.4,229 2667.1,223.44 2670.3,214.8 \
+2671.7,206.26",
 		style=solid];
 	type	[height=0.5,
-		pos="2915.4,178",
+		pos="2775.4,178",
 		width=0.86659];
 	"anatomical entity to anatomical entity part of association" -> type	[color=blue,
 		label=type,
-		lp="2897.4,221.5",
-		pos="e,2902.4,194.43 1910.4,251.8 1943.1,249.97 1976.7,248.28 2008.4,247 2055.5,245.1 2811.3,245.49 2855.4,229 2870.6,223.34 2884.6,212.13 \
-2895.3,201.75",
+		lp="2775.4,221.5",
+		pos="e,2769.7,196.12 1911.2,251.84 1943.6,250.02 1977,248.32 2008.4,247 2049.3,245.29 2708.9,249.33 2744.4,229 2753.6,223.73 2760.5,214.5 \
+2765.4,205.39",
 		style=solid];
 	category	[height=0.5,
-		pos="3016.4,178",
+		pos="2876.4,178",
 		width=1.4263];
 	"anatomical entity to anatomical entity part of association" -> category	[color=blue,
 		label=category,
-		lp="2988.9,221.5",
-		pos="e,2993.6,194.27 1910.1,251.78 1942.8,249.95 1976.6,248.26 2008.4,247 2109.4,243 2819.4,253.38 2917.4,229 2941.4,223.05 2966.1,210.54 \
-2984.9,199.53",
+		lp="2860.9,221.5",
+		pos="e,2857.2,194.97 1910.8,251.82 1943.4,250 1976.9,248.3 2008.4,247 2095.8,243.4 2711.6,253.84 2795.4,229 2814.8,223.27 2834.1,211.64 \
+2849,201.04",
 		style=solid];
 	subject	[height=0.5,
-		pos="3130.4,178",
+		pos="2990.4,178",
 		width=1.2277];
 	"anatomical entity to anatomical entity part of association" -> subject	[color=blue,
 		label=subject,
-		lp="3093.4,221.5",
-		pos="e,3107.1,193.57 1909.7,251.75 1942.6,249.92 1976.5,248.23 2008.4,247 2121.3,242.65 2914.5,254.66 3024.4,229 3050.5,222.91 3077.9,\
-209.83 3098.2,198.58",
+		lp="2960.4,221.5",
+		pos="e,2969.2,194.03 1910.4,251.77 1943.1,249.95 1976.7,248.26 2008.4,247 2107,243.07 2800.9,253.85 2896.4,229 2919.3,223.05 2942.7,210.59 \
+2960.5,199.6",
 		style=solid];
 	object	[height=0.5,
-		pos="3173.4,91",
+		pos="3033.4,91",
 		width=1.0832];
 	"anatomical entity to anatomical entity part of association" -> object	[color=blue,
 		label=object,
-		lp="3223.4,178",
-		pos="e,3186.8,108.09 1909.3,251.73 1942.3,249.89 1976.4,248.21 2008.4,247 2070.3,244.66 3063.6,244.9 3123.4,229 3152.8,221.19 3165,220.19 \
-3183.4,196 3202.4,171.2 3205.4,156.9 3196.4,127 3195.4,123.55 3193.9,120.13 3192.2,116.85",
+		lp="3083.4,178",
+		pos="e,3046.8,108.09 1909.7,251.76 1942.6,249.93 1976.5,248.24 2008.4,247 2063,244.88 2938.1,244.48 2990.4,229 3017,221.13 3027.2,218.5 \
+3043.4,196 3061.7,170.69 3065.4,156.9 3056.4,127 3055.4,123.55 3053.9,120.13 3052.2,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3327.4,178",
+		pos="3187.4,178",
 		width=1.5165];
 	"anatomical entity to anatomical entity part of association" -> predicate	[color=blue,
 		label=predicate,
-		lp="3300.4,221.5",
-		pos="e,3303.6,194.31 1908.9,251.71 1942,249.87 1976.2,248.19 2008.4,247 2075.9,244.49 3158.7,244.62 3224.4,229 3249.3,223.09 3275.2,210.49 \
-3294.8,199.42",
+		lp="3160.4,221.5",
+		pos="e,3163.6,194.3 1909.3,251.74 1942.3,249.91 1976.4,248.22 2008.4,247 2127.9,242.45 2968.1,256.76 3084.4,229 3109.3,223.06 3135.2,\
+210.47 3154.8,199.41",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
@@ -222,19 +222,19 @@ digraph {
 		pos="2186.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3168.4,134.5",
-		pos="e,3155.5,107.23 3131.5,159.55 3132.7,149.57 3135.2,137.07 3140.4,127 3142.7,122.68 3145.6,118.52 3148.8,114.66"];
+		lp="3028.4,134.5",
+		pos="e,3015.5,107.23 2991.5,159.55 2992.7,149.57 2995.2,137.07 3000.4,127 3002.7,122.68 3005.6,118.52 3008.8,114.66"];
 	relation	[height=0.5,
-		pos="3118.4,18",
+		pos="2978.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3119.7,36.188 3129.1,159.79 3127,132.48 3123,78.994 3120.5,46.38",
+	subject -> relation	[pos="e,2979.7,36.188 2989.1,159.79 2987,132.48 2983,78.994 2980.5,46.38",
 		style=dotted];
 	"anatomical entity to anatomical entity part of association_subject"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
 		pos="2370.4,265",
 		width=2.5456];
-	object -> relation	[pos="e,3131.2,35.54 3160.9,73.889 3154,64.939 3145.2,53.617 3137.5,43.584",
+	object -> relation	[pos="e,2991.2,35.54 3020.9,73.889 3014,64.939 3005.2,53.617 2997.5,43.584",
 		style=dotted];
 	"anatomical entity to anatomical entity part of association_object"	[color=blue,
 		height=0.5,

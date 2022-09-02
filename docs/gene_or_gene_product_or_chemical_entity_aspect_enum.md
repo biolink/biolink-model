@@ -22,15 +22,16 @@ URI: [biolink:gene_or_gene_product_or_chemical_entity_aspect_enum](https://w3id.
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
+| activity or abundance | Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used. |  |  |
+| abundance |  |  | {'is_a': 'activity or abundance'} |
+| activity |  |  | {'is_a': 'activity or abundance'} |
 | expression |  |  | {'is_a': 'abundance'} |
-| mutation rate |  |  |  |
-| abundance |  |  |  |
 | synthesis |  |  | {'is_a': 'abundance'} |
 | degradation |  |  | {'is_a': 'abundance'} |
 | cleavage |  |  | {'is_a': 'degradation'} |
 | hydrolysis |  |  | {'is_a': 'degradation'} |
-| activity |  |  |  |
 | metabolic processing |  |  |  |
+| mutation rate |  |  |  |
 | stability |  |  |  |
 | localization |  |  |  |
 | transport |  |  |  |
