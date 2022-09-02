@@ -61,7 +61,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -85,7 +85,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -138,7 +138,7 @@ message Association
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -194,7 +194,7 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -390,7 +390,7 @@ message CaseToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -444,7 +444,7 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -471,7 +471,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -522,7 +522,7 @@ message ChemicalAffectsGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -578,7 +578,7 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -602,7 +602,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -645,7 +645,7 @@ message ChemicalGeneInteractionAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -702,7 +702,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -727,7 +727,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -768,7 +768,7 @@ message ChemicalToChemicalAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -797,7 +797,7 @@ message ChemicalToChemicalDerivationAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -824,7 +824,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -848,7 +848,7 @@ message ChemicalToGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -871,7 +871,7 @@ message ChemicalToPathwayAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1146,7 +1146,7 @@ message ContributorAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1312,7 +1312,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1337,7 +1337,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1362,7 +1362,7 @@ message DiseaseToExposureEventAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1384,7 +1384,7 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1454,7 +1454,7 @@ message DrugToGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1493,7 +1493,7 @@ message DruggableGeneToDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1523,7 +1523,7 @@ message EntityToDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1547,7 +1547,7 @@ message EntityToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1686,7 +1686,7 @@ message ExonToTranscriptRelationship
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1712,7 +1712,7 @@ message ExposureEventToOutcomeAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1737,7 +1737,7 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1805,7 +1805,7 @@ message FunctionalAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1846,7 +1846,7 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1888,7 +1888,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1915,7 +1915,7 @@ message GeneRegulatoryRelationship
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1939,7 +1939,7 @@ message GeneToDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1965,7 +1965,7 @@ message GeneToExpressionSiteAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -1991,7 +1991,7 @@ message GeneToGeneCoexpressionAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2019,7 +2019,7 @@ message GeneToGeneHomologyAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2043,7 +2043,7 @@ message GeneToGeneProductRelationship
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2067,7 +2067,7 @@ message GeneToGoTermAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2091,7 +2091,7 @@ message GeneToPathwayAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2114,7 +2114,7 @@ message GeneToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2193,7 +2193,7 @@ message GenomicSequenceLocalization
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2238,7 +2238,7 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2264,7 +2264,7 @@ message GenotypeToDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2291,7 +2291,7 @@ message GenotypeToGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2315,7 +2315,7 @@ message GenotypeToGenotypePartAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2340,7 +2340,7 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2367,7 +2367,7 @@ message GenotypeToVariantAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2517,7 +2517,7 @@ message InformationContentEntityToNamedThingAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2592,7 +2592,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2616,7 +2616,7 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2640,7 +2640,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2695,7 +2695,7 @@ message MaterialSampleDerivationAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2722,7 +2722,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2802,7 +2802,7 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2826,7 +2826,7 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2849,7 +2849,7 @@ message MolecularActivityToPathwayAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -2931,7 +2931,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3101,7 +3101,7 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3126,7 +3126,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3150,7 +3150,7 @@ message OrganismToOrganismAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3174,7 +3174,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3199,7 +3199,7 @@ message PairwiseGeneToGeneInteraction
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3222,7 +3222,7 @@ message PairwiseMolecularInteraction
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3472,7 +3472,7 @@ message PopulationToPopulationAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3625,7 +3625,7 @@ message ReactionToCatalystAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3651,7 +3651,7 @@ message ReactionToParticipantAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3764,7 +3764,7 @@ message SequenceAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3786,7 +3786,7 @@ message SequenceFeatureRelationship
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -3979,7 +3979,7 @@ message TaxonToTaxonAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4048,7 +4048,7 @@ message TranscriptToGeneRelationship
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4088,7 +4088,7 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4114,7 +4114,7 @@ message VariantToDiseaseAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4142,7 +4142,7 @@ message VariantToGeneAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4166,7 +4166,7 @@ message VariantToGeneExpressionAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4194,7 +4194,7 @@ message VariantToPhenotypicFeatureAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
@@ -4221,7 +4221,7 @@ message VariantToPopulationAssociation
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   informationResource knowledgeSource = 0
-  informationResource originalKnowledgeSource = 0
+  string originalKnowledgeSource = 0
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
