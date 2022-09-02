@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-02T23:31:48
+# Generation date: 2022-09-02T23:42:15
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9454,13 +9454,13 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
-    expression = PermissibleValue(text="expression")
     abundance = PermissibleValue(text="abundance")
+    activity = PermissibleValue(text="activity")
+    expression = PermissibleValue(text="expression")
     synthesis = PermissibleValue(text="synthesis")
     degradation = PermissibleValue(text="degradation")
     cleavage = PermissibleValue(text="cleavage")
     hydrolysis = PermissibleValue(text="hydrolysis")
-    activity = PermissibleValue(text="activity")
     stability = PermissibleValue(text="stability")
     localization = PermissibleValue(text="localization")
     transport = PermissibleValue(text="transport")
@@ -9501,10 +9501,13 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "mutation rate",
-                PermissibleValue(text="mutation rate") )
+        setattr(cls, "activity or abundance",
+                PermissibleValue(text="activity or abundance",
+                                 description="Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.") )
         setattr(cls, "metabolic processing",
                 PermissibleValue(text="metabolic processing") )
+        setattr(cls, "mutation rate",
+                PermissibleValue(text="mutation rate") )
         setattr(cls, "molecular modification",
                 PermissibleValue(text="molecular modification") )
         setattr(cls, "N-linked glycosylation",
