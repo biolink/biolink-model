@@ -8620,18 +8620,25 @@ classes:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q104053
+      - UMLS:C4021819
+      - NCIT:C16977
     narrow_mappings:
       # Sign or Symptom
       - STY:T184
       - WIKIDATA:Q169872
       # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
+      - ZP:00000000 # zebrafish phenotype
+      - FBcv:0001347 # phenotype
+      - HP:0000118
+    broad_mappings:
+      - BFO:0000019 # quality
     id_prefixes:
       - HP
-      - EFO
+      - EFO # covered by BFO quality mapping
       - NCIT
       - UMLS
-      - MEDDRA
+      - MEDDRA # can not find a mapping
       - MP
       - ZP
       - UPHENO
@@ -8666,6 +8673,11 @@ classes:
       - UMLSSG:ANAT
       # UMLS Semantic Type "Anatomical Structure"
       - STY:T017
+    narrow_mappings:
+      - ZFA:0100000
+      - FBbt:10000000
+      - EMAPA:0
+      -
     id_prefixes:
       - UBERON
       - GO
