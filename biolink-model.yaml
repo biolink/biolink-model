@@ -8691,6 +8691,10 @@ classes:
       - MA:0000001 # mouse anatomical entity
       - XAO:0000000 # frog anatomical entity
       - WBbt:0000100 # c. elegans anatomical entity
+      - NCIT:C12219 # human anatomical entity
+      - GO:0110165 # cellular anatomical entity, also used directly in CL
+    related_mappings:
+      - SNOMEDCT:123037004 # body structure
     id_prefixes:
       - UBERON
       - GO
