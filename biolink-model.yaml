@@ -8623,6 +8623,7 @@ classes:
       - UMLS:C4021819
       - NCIT:C16977
       - SNOMEDCT:8116006 # documented as phenotypic finding and phenotype, also referred to as "SCTID:8116006" at SNOMEDCT
+      - MESH:D010641 # phenotype
     narrow_mappings:
       - STY:T184 # Sign or Symptom
       - WIKIDATA:Q169872 # Sign or Symptom
@@ -8636,8 +8637,7 @@ classes:
       - XPO:00000000 # frog phenotype
       - FYPO:0000001 # fission yeast phenotype
       - APO:0000017 # phenotype
-    related_mappings:
-      - TO:0000387 # more narrowly defined here for plants, but more broadly defined as 'trait' than phenotype.
+      - TO:0000387 # more narrowly defined here for plants; our definition conflates trait and phenotype.
     broad_mappings:
       - BFO:0000019 # quality
       - PATO:0000001 # quality
