@@ -24,6 +24,7 @@ URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
  * NCBITaxon
  * MESH
+ * UMLS
 
 ## Parents
 
