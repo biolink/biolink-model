@@ -8621,18 +8621,33 @@ classes:
       - UPHENO:0001001
       - SIO:010056
       - WIKIDATA:Q104053
+      - UMLS:C4021819
+      - NCIT:C16977
+      - SNOMEDCT:8116006 # documented as phenotypic finding and phenotype, also referred to as "SCTID:8116006" at SNOMEDCT
+      - MESH:D010641 # phenotype
     narrow_mappings:
-      # Sign or Symptom
-      - STY:T184
-      - WIKIDATA:Q169872
+      - STY:T184 # Sign or Symptom
+      - WIKIDATA:Q169872 # Sign or Symptom
       # presentation of a disease in clinical medicine
       - WIKIDATA:Q25203551
+      - ZP:00000000 # zebrafish phenotype
+      - FBcv:0001347 # fly phenotype
+      - HP:0000118 # human phenotype
+      - MP:0000001 # mouse phenotype
+      - WBPhenotype:0000886 # worm phenotype
+      - XPO:00000000 # frog phenotype
+      - FYPO:0000001 # fission yeast phenotype
+      - APO:0000017 # phenotype
+      - TO:0000387 # more narrowly defined here for plants; our definition conflates trait and phenotype.
+    broad_mappings:
+      - BFO:0000019 # quality
+      - PATO:0000001 # quality
     id_prefixes:
       - HP
-      - EFO
+      - EFO # covered by BFO quality mapping
       - NCIT
       - UMLS
-      - MEDDRA
+      - MEDDRA # can not find a mapping
       - MP
       - ZP
       - UPHENO
@@ -8667,6 +8682,20 @@ classes:
       - UMLSSG:ANAT
       # UMLS Semantic Type "Anatomical Structure"
       - STY:T017
+      - FMA:62955 # anatomical entity
+      - CARO:0000000  # anatomical entity
+      - SIO:001262 # anatomical entity
+    narrow_mappings:
+      - ZFA:0100000 # zebrafish anatomical entity
+      - FBbt:10000000 # fly anatomical entity
+      - EMAPA:0 # mouse anatomical entity
+      - MA:0000001 # mouse anatomical entity
+      - XAO:0000000 # frog anatomical entity
+      - WBbt:0000100 # c. elegans anatomical entity
+      - NCIT:C12219 # human anatomical entity
+      - GO:0110165 # cellular anatomical entity, also used directly in CL
+    related_mappings:
+      - SNOMEDCT:123037004 # body structure
     id_prefixes:
       - UBERON
       - GO

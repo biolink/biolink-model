@@ -138,7 +138,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
 |  | | WIKIDATA:Q104053 |
+|  | | UMLS:C4021819 |
+|  | | NCIT:C16977 |
+|  | | SNOMEDCT:8116006 |
+|  | | MESH:D010641 |
 | **Narrow Mappings:** | | STY:T184 |
 |  | | WIKIDATA:Q169872 |
 |  | | WIKIDATA:Q25203551 |
+|  | | ZP:00000000 |
+|  | | FBcv:0001347 |
+|  | | HP:0000118 |
+|  | | MP:0000001 |
+|  | | WBPhenotype:0000886 |
+|  | | XPO:00000000 |
+|  | | FYPO:0000001 |
+|  | | APO:0000017 |
+|  | | TO:0000387 |
+| **Broad Mappings:** | | BFO:0000019 |
+|  | | PATO:0000001 |
 

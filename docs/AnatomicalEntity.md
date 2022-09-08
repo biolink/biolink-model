@@ -152,4 +152,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q4936952 |
 |  | | UMLSSG:ANAT |
 |  | | STY:T017 |
+|  | | FMA:62955 |
+|  | | CARO:0000000 |
+|  | | SIO:001262 |
+| **Narrow Mappings:** | | ZFA:0100000 |
+|  | | FBbt:10000000 |
+|  | | EMAPA:0 |
+|  | | MA:0000001 |
+|  | | XAO:0000000 |
+|  | | WBbt:0000100 |
+|  | | NCIT:C12219 |
+|  | | GO:0110165 |
+| **Related Mappings:** | | SNOMEDCT:123037004 |
 
