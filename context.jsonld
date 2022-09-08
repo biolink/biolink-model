@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-07T17:02:28\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.2\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-08T17:32:48\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.2\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -261,6 +261,10 @@
       "KEGG.RCLASS": "http://www.kegg.jp/entry/",
       "KEGG.REACTION": "http://identifiers.org/kegg.reaction/",
       "LOINC": "http://loinc.org/rdf/",
+      "MA": {
+         "@id": "http://purl.obolibrary.org/obo/MA_",
+         "@prefix": true
+      },
       "MAXO": {
          "@id": "http://purl.obolibrary.org/obo/MAXO_",
          "@prefix": true
@@ -481,6 +485,10 @@
       "WIKIPATHWAYS": "http://identifiers.org/wikipathways/",
       "WormBase": {
          "@id": "https://www.wormbase.org/get?name=",
+         "@prefix": true
+      },
+      "XAO": {
+         "@id": "http://purl.obolibrary.org/obo/XAO_",
          "@prefix": true
       },
       "XCO": {

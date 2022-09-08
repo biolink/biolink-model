@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-07T17:03:00
+# Generation date: 2022-09-08T17:33:31
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -139,6 +139,7 @@ KEGG_PATHWAY = CurieNamespace('KEGG_PATHWAY', 'https://www.kegg.jp/entry/')
 KEGG_RCLASS = CurieNamespace('KEGG_RCLASS', 'http://www.kegg.jp/entry/')
 KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'http://identifiers.org/kegg.reaction/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
+MA = CurieNamespace('MA', 'http://purl.obolibrary.org/obo/MA_')
 MAXO = CurieNamespace('MAXO', 'http://purl.obolibrary.org/obo/MAXO_')
 MEDDRA = CurieNamespace('MEDDRA', 'http://identifiers.org/meddra/')
 MESH = CurieNamespace('MESH', 'http://id.nlm.nih.gov/mesh/')
@@ -242,6 +243,7 @@ WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
 WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
+XAO = CurieNamespace('XAO', 'http://purl.obolibrary.org/obo/XAO_')
 XCO = CurieNamespace('XCO', 'http://purl.obolibrary.org/obo/XCO_')
 XPO = CurieNamespace('XPO', 'http://purl.obolibrary.org/obo/XPO_')
 XENBASE = CurieNamespace('Xenbase', 'http://www.xenbase.org/gene/showgene.do?method=display&geneId=')
