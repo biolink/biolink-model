@@ -1343,6 +1343,7 @@ slots:
     description: >-
       A statement qualifier representing a taxonomic category of species in which a relationship
       expressed in an association took place.
+    range: organism taxon
 
   qualifiers:
     singular_name: qualifier
@@ -8741,6 +8742,7 @@ classes:
       - WIKIDATA:Q7868
       # UMLS Semantic Type "Cell"
       - STY:T025
+      - MESH:D002477 # cells
     id_prefixes:
       - CL
       - PO
@@ -8749,6 +8751,7 @@ classes:
       - MESH
       - UBERON
       - SNOMEDCT
+      - MESH
 
   cell line:
     is_a: organismal entity
@@ -10373,6 +10376,8 @@ classes:
         range: causal_mechanism_qualifier_enum
       anatomical context qualifier:
         range: anatomical entity
+      species context qualifier:
+        range: organism taxon
 
   drug to gene association:
     description: >-
