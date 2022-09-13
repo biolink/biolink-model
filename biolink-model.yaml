@@ -5081,6 +5081,10 @@ slots:
       - RO:0004026
       - MONDO:disease_has_location
 
+  location of disease:
+    is_a: related to
+    inverse: disease has location
+
   similar to:
     is_a: related to at instance level
     description: >-
@@ -5243,6 +5247,10 @@ slots:
       canonical_predicate: true
     in_subset:
       - translator_minimal
+
+  primarily composed of:
+    inverse: composed primarily of
+    is_a: related to
 
   plasma membrane part of:
     is_a: part of
