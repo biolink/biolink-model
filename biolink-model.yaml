@@ -2292,12 +2292,20 @@ slots:
       A grouping mixin to help with searching for all the predicates that increase the amount
       or activity of the object.
 
+  amount or activity increased by:
+    is_a: related to at instance level
+    inverse: increases amount or activity of
+
   decreases amount or activity of:
     is_a: related to at instance level
     mixin: true
     description: >-
       A grouping mixin to help with searching for all the predicates that decrease the amount
       or activity of the object.
+
+  amount or activity decreased by:
+    is_a: related to at instance level
+    inverse: decreases amount or activity of
 
   ## role mixins for use in tagging corresponding role predicates
 
