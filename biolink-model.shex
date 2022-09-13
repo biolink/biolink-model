@@ -501,7 +501,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:subject @<ChemicalEntity> ;
           rdf:predicate @<PredicateType> ;
           rdf:object @<GeneOrGeneProduct> ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ?
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <species_context_qualifier> @<OrganismTaxon> ?
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )

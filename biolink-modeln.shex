@@ -497,7 +497,8 @@ linkml:Nodeidentifier NONLITERAL
           <subject> @<ChemicalEntity> ;
           <predicate> @<PredicateType> ;
           <object> @<GeneOrGeneProduct> ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ?
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <species_context_qualifier> @<OrganismTaxon> ?
        ) ;
        rdf:type [ <ChemicalAffectsGeneAssociation> ]
     )

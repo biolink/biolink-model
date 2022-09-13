@@ -545,6 +545,7 @@ message ChemicalAffectsGeneAssociation
   predicateType predicate = 0
   geneOrGeneProduct object = 0
   directionQualifierEnum objectDirectionQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  }
 // A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 message ChemicalEntity

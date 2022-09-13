@@ -2380,6 +2380,13 @@
                         "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
                         "min": 0,
                         "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/species_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                        "min": 0,
+                        "max": 1
                      }
                   ]
                },

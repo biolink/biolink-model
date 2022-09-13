@@ -625,6 +625,7 @@ type ChemicalAffectsGeneAssociation
     predicate: PredicateType!
     object: GeneOrGeneProduct!
     objectDirectionQualifier: DirectionQualifierEnum
+    speciesContextQualifier: OrganismTaxon
   }
 
 type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide

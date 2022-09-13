@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-08T17:33:31
+# Generation date: 2022-09-12T23:58:57
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -6892,6 +6892,7 @@ class ChemicalAffectsGeneAssociation(Association):
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     qualified_predicate: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -6955,6 +6956,9 @@ class ChemicalAffectsGeneAssociation(Association):
 
         if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
             self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
+            self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -10136,7 +10140,7 @@ slots.anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifi
                    model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[Union[str, "AnatomicalContextQualifierEnum"]])
 
 slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
-                   model_uri=BIOLINK.species_context_qualifier, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.species_context_qualifier, domain=Association, range=Optional[Union[str, OrganismTaxonId]])
 
 slots.qualifiers = Slot(uri=BIOLINK.qualifiers, name="qualifiers", curie=BIOLINK.curie('qualifiers'),
                    model_uri=BIOLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
@@ -11725,6 +11729,9 @@ slots.chemical_affects_gene_association_causal_mechanism_qualifier = Slot(uri=BI
 
 slots.chemical_affects_gene_association_anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="chemical affects gene association_anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_anatomical_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
+
+slots.chemical_affects_gene_association_species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="chemical affects gene association_species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
+                   model_uri=BIOLINK.chemical_affects_gene_association_species_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, OrganismTaxonId]])
 
 slots.drug_to_gene_association_object = Slot(uri=RDF.object, name="drug to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.drug_to_gene_association_object, domain=DrugToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
