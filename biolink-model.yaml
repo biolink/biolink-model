@@ -2114,12 +2114,14 @@ slots:
     description: >-
       A causal mechanism mediated by a direct contact between the effector and target entities (this contact may 
       be weak or strong, transient or stable).
+    symmetric: true
 
   binds:
     is_a: directly physically interacts with
     description: >-
       A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, 
       which form a stable physical interaction.
+    symmetric: true
 
   indirectly physically interacts with:
     is_a: physically interacts with
@@ -11671,7 +11673,7 @@ enums:
       synthesis:
         is_a: abundance
       degradation:
-        is_a: abundance
+        is_a: abundance # negate the direction qualifier necessary.
       cleavage:
         is_a: degradation
       hydrolysis:
