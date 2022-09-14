@@ -6189,6 +6189,7 @@ slots:
     is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
+    inverse: has side effect
 
   contraindicated for:
     is_a: related to at instance level
@@ -6511,6 +6512,10 @@ slots:
     description: >-
       connects an association to an instance of supporting study result
 
+  is supporting study result of:
+    is_a: related to at instance level
+    inverse: has supporting study result
+    
   mechanism of action:
     is_a: association slot
     range: boolean
