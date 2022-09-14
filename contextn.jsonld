@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-12T23:58:28\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.2\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-14T00:04:13\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.3\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -693,6 +693,12 @@
          "@type": "@id"
       },
       "ameliorates": {
+         "@type": "@id"
+      },
+      "amount_or_activity_decreased_by": {
+         "@type": "@id"
+      },
+      "amount_or_activity_increased_by": {
          "@type": "@id"
       },
       "anatomical_context_qualifier": {
@@ -1488,6 +1494,9 @@
       "location_of": {
          "@type": "@id"
       },
+      "location_of_disease": {
+         "@type": "@id"
+      },
       "logical_interpretation": {
          "@context": {
             "@vocab": "@null",
@@ -1681,6 +1690,9 @@
          "@type": "@id"
       },
       "prevents": {
+         "@type": "@id"
+      },
+      "primarily_composed_of": {
          "@type": "@id"
       },
       "primary_knowledge_source": {
