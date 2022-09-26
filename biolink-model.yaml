@@ -1847,6 +1847,7 @@ slots:
       - RO:0002432
 
   has active component:
+    is_a: related to at instance level
     inverse: active in
 
   acts upstream of:
@@ -2041,6 +2042,7 @@ slots:
   ## end of Publication related predicates
 
   assesses:
+    is_a: related to at instance level
     aliases: [ 'was assayed against' ]
     description: >-
       The effect of a thing on a target was interrogated in some assay.
@@ -2054,6 +2056,7 @@ slots:
       canonical_predicate: true
 
   is assessed by:
+    is_a: related to at instance level
     inverse: assesses
     domain: named thing
     range: named thing
@@ -3816,6 +3819,7 @@ slots:
       - RO:0002578
 
   regulated by:
+    is_a: affected by
     domain: physical essence or occurrent
     range: physical essence or occurrent
     mixin: true
@@ -4511,11 +4515,10 @@ slots:
       - SEMMEDDB:predisposes
 
   has predisposing factor:
+    is_a: risk affected by
     inverse: predisposes
     in_subset:
       - translator_minimal
-
-  # TODO: inverse of predisposes
 
   contributes to:
     is_a: related to at instance level
