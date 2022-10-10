@@ -7892,6 +7892,14 @@ classes:
       - STY:T028   # Gene or Genome
       - GENO:0000897  # Genomic Entity
 
+  epigenomic entity:
+      mixin: true
+      slots:
+        - has biological sequence
+      in_subset:
+        - translator_minimal
+      narrow_mappings:
+
   molecular entity:
     is_a: chemical entity
     description: >-
@@ -8941,6 +8949,15 @@ classes:
       - model_organism_database
 
   ## Genomic Classes
+  nucleosome modification:
+    is_a: biological_entity
+    description: >-
+      A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.
+      e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+    mixins:
+      - gene product isoform mixin
+      - genomic entity
+      - epigenomic entity
 
   genome:
     is_a: biological entity
@@ -9072,7 +9089,16 @@ classes:
       - NCIT:C13379
       - SIO:001379
       - UMLS:C1514562
-
+  
+  posttranslational modification:
+    is_a: biological_entity
+    description: >-
+      A chemical modification of a polypeptide or protein that occurs after translation. 
+      e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, 
+      protein ubiquitination.
+    mixins:
+      - gene product isoform mixin
+  
   protein family:
     is_a: biological entity
     exact_mappings:
