@@ -5703,7 +5703,6 @@ class Association(Entity):
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
-            self.MissingRequiredField("subject")
         if not isinstance(self.subject, NamedThingId):
             self.subject = NamedThingId(self.subject)
 
