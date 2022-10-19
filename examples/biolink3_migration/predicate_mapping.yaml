@@ -1,4 +1,42 @@
 deprecated predicate mappings:
+  - deprecated predicate: affects abundance of
+    object aspect qualifier: abundance
+    predicate: affects
+    exact matches:
+      - CTD:affects_abundance_of
+  - deprecated predicate: increases abundance of
+    object aspect qualifier: abundance
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_abundance_of
+  - deprecated predicate: decreases abundance of
+    object aspect qualifier: abundance
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_abundance_of
+  - deprecated predicate: affects activity of
+    object aspect qualifier: activity
+    predicate: affects
+    exact matches:
+      - CTD:affects_activity_of
+  - deprecated predicate: increases activity of
+    object aspect qualifier: activity
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_activity_of
+  - deprecated predicate: decreases activity of
+    object aspect qualifier: activity
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:decreases_activity_of
   - deprecated predicate: increases expression of
     object aspect qualifier: expression
     object direction qualifier: increased
@@ -6,7 +44,12 @@ deprecated predicate mappings:
     qualified predicate: causes
     exact matches:
       - RO:0003003
-    narrow matches:
-    broad matches:
-    close matches:
-      - CHEMBL.MECHANISM:releasing_agent
+      - CTD:increases_expression_of
+  - deprecated predicate: decreases expression of
+    object aspect qualifier: expression
+    object direction qualifier: decreased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - RO:0003002
+      - CTD:decreases_expression_of

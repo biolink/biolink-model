@@ -1719,6 +1719,14 @@ slots:
       - RXNORM:has_quantified_form
       - UMLS:SY
 
+  exact matches:
+    description: >- 
+        A list of terms from different schemas or terminology systems that have
+        an identical meaning. Such terms often describe the same concept from
+        different ontological perspectives (e.g. drug as a type of chemical
+        entity versus drug as a type of role borne by a chemical entity).
+    multivalued: true
+
   exact match:
     is_a: close match
     description: >-
