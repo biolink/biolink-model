@@ -1268,7 +1268,6 @@ slots:
     multivalued: true
     range: deprecated predicate mapping
     inlined_as_list: true
-    tree_root: true
 
   subject aspect qualifier:
     is_a: aspect qualifier
@@ -5246,6 +5245,14 @@ slots:
       type, disease, etc.).
     range: string
 classes:
+
+  deprecated mapping collection:
+    description: >-
+      A collection of deprecated mappings.
+    abstract: true
+    slots:
+      - deprecated predicate mappings
+    tree_root: true
 
   deprecated predicate mapping:
     description: >-
