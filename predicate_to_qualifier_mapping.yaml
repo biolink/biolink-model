@@ -1,0 +1,66 @@
+id: https://w3id.org/biolink/predicate-to-qualifier-mapping
+name: predicateToQualifierMapping
+description: Classes to hold a mapping between deprecated predicates and their qualifier representation.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  CTD: 'http://ctdbase.org/'
+  RO: 'http://purl.obolibrary.org/obo/RO_'
+  GAMMA: 'http://translator.renci.org/GAMMA_'
+
+default_prefix: biolink
+default_range: string
+
+# 2. The following prefix maps are retrieved from the
+#    specified contexts defined at https://prefixcommons.org/
+default_curi_maps:
+  - obo_context
+  - idot_context
+  - monarch_context
+  - semweb_context
+
+# The following 'standard' prefixes are also used.
+emit_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+  - OIO
+  - BIOGRID
+  - SO
+
+imports:
+  - linkml:types
+  - biolink-model
+
+classes:
+  mapping:
+    slots:
+      - deprecated predicate
+      - subject aspect qualifier
+      - subject direction qualifier
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject context qualifier
+      - predicate
+      - qualified predicate
+      - object aspect qualifier
+      - object direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object derivative qualifier
+      - object context qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - species context qualifier
+      - exact_match
+      - narrow_match
+      - broad_match
+      -
+
+slots:
+  deprecated predicate:
+    description: >-
+      The predicate that is being replaced by the fully qualified representation of predicate + subject and object 
+      qualifiers.
