@@ -1217,7 +1217,7 @@ slots:
     examples:
       - value: mutation
     notes: >-
-      please see the chemical_or_gene_or_gene_product_form_enum (below) for examples of 'form or variant qualifier'
+      please see the chemical_or_gene_or_gene_product_form_or_variant_enum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
 
   aspect qualifier:
@@ -10334,7 +10334,7 @@ classes:
       predicate:
         subproperty_of: physically interacts with
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       subject part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       subject derivative qualifier:
@@ -10342,7 +10342,7 @@ classes:
       subject context qualifier:
         range: anatomical entity
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       object part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object context qualifier:
@@ -10373,7 +10373,7 @@ classes:
       subject:
         range: chemical entity
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       subject part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       subject derivative qualifier:
@@ -10391,7 +10391,7 @@ classes:
       object:
         range: gene or gene product
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       object part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object aspect qualifier:
@@ -11667,13 +11667,17 @@ enums:
     permissible_values:
       metabolite:
 
-  chemical_or_gene_or_gene_product_form_enum:
+  chemical_or_gene_or_gene_product_form_or_variant_enum:
     permissible_values:
-      modified form:
+      genetic variant form:
+        is_a: modified form
       mutant form:
-      polymorphism:
-      SNP:
-      analog:
+        is_a: genetic variant form
+      polymorphic form:
+        is_a: mutant form
+      SNP form:
+        is_a: polymorphic form
+      analog form:
 
   gene_or_gene_product_or_chemical_part_qualifier_enum:
     permissible_values:
