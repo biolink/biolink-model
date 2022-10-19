@@ -1263,6 +1263,12 @@ slots:
       qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified
       predicate model. Not to be used in knowledge graphs.
 
+  deprecated predicate mappings:
+    description: A collection of things
+    multivalued: true
+    range: deprecated predicate mapping
+    inlined_as_list: true
+
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -5240,7 +5246,17 @@ slots:
     range: string
 classes:
 
-  mapping:
+  deprecated predicate mapping collection:
+    tree_root: true
+    description: >-
+      A collection of deprecated predicate mapping objects that have been replaced by other predicates.
+    slots:
+      - deprecated predicate mappings
+
+  deprecated predicate mapping:
+    description: >-
+      A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
+      be done to use a qualified statement in its place.
     slots:
       - deprecated predicate
       - subject aspect qualifier
