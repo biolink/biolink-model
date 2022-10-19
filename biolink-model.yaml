@@ -2145,8 +2145,13 @@ slots:
       A causal mechanism mediated by a direct contact between the effector and target entities (this contact may 
       be weak or strong, transient or stable).
     symmetric: true
+    related_mappings:
+      - GAMMA:kd
+      - GAMMA:kb
+      - GAMMA:potency
     exact_mappings:
       - RO:0002436
+      - GAMMA:interacts_with
     annotations:
       canonical_predicate: true
 
@@ -2158,6 +2163,13 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
+    exact_mappings:
+      - GAMMA:binder
+      - GAMMA:binding
+    narrow_mappings:
+      - CTD:affects_binding
+      - DGIdb:binder
+      - GAMMA:antibody_binding
 
   indirectly physically interacts with:
     is_a: physically interacts with
@@ -2300,27 +2312,6 @@ slots:
     range: chemical or drug or treatment
     domain: disease or phenotypic feature
 
-  increases amount or activity of:
-    is_a: related to at instance level
-    mixin: true
-    description: >-
-      A grouping mixin to help with searching for all the predicates that increase the amount
-      or activity of the object.
-
-  amount or activity increased by:
-    is_a: related to at instance level
-    inverse: increases amount or activity of
-
-  decreases amount or activity of:
-    is_a: related to at instance level
-    mixin: true
-    description: >-
-      A grouping mixin to help with searching for all the predicates that decrease the amount
-      or activity of the object.
-
-  amount or activity decreased by:
-    is_a: related to at instance level
-    inverse: decreases amount or activity of
 
   ## role mixins for use in tagging corresponding role predicates
 
@@ -2361,7 +2352,11 @@ slots:
       - CHEMBL.MECHANISM:modulator
       - RO:0002295
       - RO:0002332
-      - RO:0002578
+      - RO:0002211
+      - RO:0002448
+      - WIKIDATA_PROPERTY:P128
+    related_mappings:
+      - GAMMA:regulator
 
   regulated by:
     is_a: affected by
@@ -10067,6 +10062,8 @@ enums:
         exact_mappings:
           - GAMMA:inhibitor
           - DGIdb:inhibitor
+          - SEMMEDDB:INHIBITS
+          - SEMMEDDB:inhibits
         narrow_mappings:
           - DGIdb:blocker
           - DGIdb:channel_blocker
@@ -10083,6 +10080,7 @@ enums:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
           - DGIdb:negative_modulator
+          - GAMMA:inhibition_of_synthesis
       antibody inhibition:
         is_a: inhibition
         description: >-
@@ -10127,6 +10125,7 @@ enums:
           - GAMMA:negative_modulator
         narrow_mappings:
           - GAMMA:inhibitory_allosteric_modulator
+          - DGIdb:negative_modulator
       agonism:
         is_a: activation
         description: >-
@@ -10201,11 +10200,18 @@ enums:
         is_a: activation
         exact_mappings:
           - CHEMBL.MECHANISM:stabiliser
+          - GAMMA:stabilization
       stimulation:
         is_a: activation
         exact_mappings:
           - DGIdb:stimulator
           - SEMMEDDB:stimulates
+          - GAMMA:stimulator
+          - DGIdb:stimulator
+      releasing agent:
+        exact_mappings:
+          - CHEMBL:MECHANISM:releasing_agent
+          - GAMMA:releasing_agent
 
   logical_interpretation_enum:
     permissible_values:

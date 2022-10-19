@@ -37,6 +37,15 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_activity_of
+      - GAMMA:ic50
+      - GAMMA:ki
+      - DGIdb:vaccine
+  - deprecated predicate: affects expression of
+    object aspect qualifier: expression
+    predicate: affects
+    exact matches:
+      - CTD:affects_expression_of
+      - GTEx:affects_expression_in
   - deprecated predicate: increases expression of
     object aspect qualifier: expression
     object direction qualifier: increased
@@ -77,6 +86,7 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:affects_localization_of
+      - GOREL:0002003
   - deprecated predicate: increases localization of
     object aspect qualifier: localization
     object direction qualifier: increased
@@ -179,6 +189,9 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:increases_degradation_of
+      - CTD:increases_cleavage
+      - CTD:increases_hydrolysis
+      - GOREL:0002004
   - deprecated predicate: decreases degradation of
     object aspect qualifier: degradation
     object direction qualifier: decreased
@@ -186,6 +199,8 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_degradation_of
+      - CTD:decreases_cleavage
+      - CTD:decreases_hydrolysis
   - deprecated predicate: affects secretion of
     object aspect qualifier: secretion
     predicate: affects
@@ -224,6 +239,7 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_mutation_rate_of
+      - CTD:decreases_mutagenesis
   - deprecated predicate: affects splicing of
     object aspect qualifier: splicing
     predicate: affects
@@ -319,3 +335,23 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_molecular_interaction
+  - deprecated predicate: entity negatively regulates entity
+    object direction qualifier: downregulated
+    predicate: regulates
+  - deprecated predicate: entity positively regulates entity
+    object direction qualifier: upregulated
+    predicate: regulates
+    exact matches:
+      - RO:0002212
+      - RO:0002450
+  - deprecated predicate: process positively regulates process
+    object direction qualifier: upregulated
+    predicate: regulates
+    exact matches:
+      - RO:0002213
+  - deprecated predicate: process negatively regulates process
+    object direction qualifier: downregulated
+    predicate: regulates
+    exact matches:
+      - RO:0002212
+
