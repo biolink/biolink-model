@@ -113,6 +113,40 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:increases_molecular_modification_of
+    narrow matches:
+      - CTD:increases_acetylation
+      - CTD:increases_acylation
+      - CTD:increases_alkylation
+      - CTD:increases_amination
+      - CTD:increases_carbamoylation
+      - CTD:increases_ethylation
+      - CTD:increases_glutathionylation
+      - CTD:increases_glycation
+      - CTD:increases_glycosylation
+      - CTD:increases_glucuronidation
+      - CTD:increases_N-linked_glycosylation
+      - CTD:increases_O-linked_glycosylation
+      - CTD:increases_hydroxylation
+      - CTD:increases_lipidation
+      - CTD:increases_farnesylation
+      - CTD:increases_geranoylation
+      - CTD:increases_myristoylation
+      - CTD:increases_palmitoylation
+      - CTD:increases_prenylation
+      - CTD:increases_methylation
+      - CTD:increases_nitrosation
+      - CTD:increases_nucleotidylation
+      - CTD:increases_phosphorylation
+      - CTD:increases_ribosylation
+      - CTD:increases_ADP-ribosylation
+      - CTD:increases_sulfation
+      - CTD:increases_sumoylation
+      - CTD:increases_ubiquitination
+      - CTD:increases_oxidation
+      - CTD:increases_reduction
+      - CTD:increases_carboxylation
+      - GAMMA:acetylation
+      - GAMMA:oxidizer
   - deprecated predicate: decreases molecular modification of
     object aspect qualifier: molecular modification
     object direction qualifier: decreased
@@ -120,6 +154,39 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_molecular_modification_of
+    narrow matches:
+      - - CTD:decreases_acetylation
+        - CTD:decreases_acylation
+        - CTD:decreases_alkylation
+        - CTD:decreases_amination
+        - CTD:decreases_carbamoylation
+        - CTD:decreases_ethylation
+        - CTD:decreases_glutathionylation
+        - CTD:decreases_glycation
+        - CTD:decreases_glycosylation
+        - CTD:decreases_glucuronidation
+        - CTD:decreases_N-linked_glycosylation
+        - CTD:decreases_O-linked_glycosylation
+        - CTD:decreases_hydroxylation
+        - CTD:decreases_lipidation
+        - CTD:decreases_farnesylation
+        - CTD:decreases_geranoylation
+        - CTD:decreases_myristoylation
+        - CTD:decreases_palmitoylation
+        - CTD:decreases_prenylation
+        - CTD:decreases_methylation
+        - CTD:decreases_nitrosation
+        - CTD:decreases_nucleotidylation
+        - CTD:decreases_phosphorylation
+        - CTD:decreases_ribosylation
+        - CTD:decreases_ADP-ribosylation
+        - CTD:decreases_sulfation
+        - CTD:decreases_sumoylation
+        - CTD:decreases_ubiquitination
+        - CTD:decreases_oxidation
+        - CTD:decreases_reduction
+        - CTD:decreases_carboxylation
+        - GAMMA:deoxidizer
   - deprecated predicate: affects metabolic processing of
     object aspect qualifier: metabolic processing
     predicate: affects
@@ -170,6 +237,12 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:increases_transport_of
+    narrow matches:
+      - GAMMA:carrier
+      - GAMMA:transporter
+      - RO:0002313
+      - RO:0002340
+      - RO:0002345
   - deprecated predicate: decreases transport of
     object aspect qualifier: transport
     object direction qualifier: decreased
@@ -206,6 +279,8 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:affects_secretion_of
+    broad matches:
+      - CTD:affects_export
   - deprecated predicate: increases secretion of
     object aspect qualifier: secretion
     object direction qualifier: increased

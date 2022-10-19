@@ -1269,6 +1269,27 @@ slots:
     range: deprecated predicate mapping
     inlined_as_list: true
 
+  exact matches:
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      an identical meaning. Such terms often describe the same concept from
+      different ontological perspectives.
+    multivalued: true
+
+  narrow matches:
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      a narrower meaning. Such terms often describe a more specific concept
+      from different ontological perspectives.
+    multivalued: true
+
+  broad matches:
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      a broader meaning. Such terms often describe a more general concept
+      from different ontological perspectives.
+    multivalued: true
+
   subject aspect qualifier:
     is_a: aspect qualifier
 
@@ -1719,14 +1740,6 @@ slots:
       - RXNORM:has_quantified_form
       - UMLS:SY
 
-  exact matches:
-    description: >- 
-        A list of terms from different schemas or terminology systems that have
-        an identical meaning. Such terms often describe the same concept from
-        different ontological perspectives (e.g. drug as a type of chemical
-        entity versus drug as a type of role borne by a chemical entity).
-    multivalued: true
-
   exact match:
     is_a: close match
     description: >-
@@ -2152,6 +2165,24 @@ slots:
     exact_mappings:
       - RO:0002436
       - GAMMA:interacts_with
+    broad_mappings:
+      # Definition of this term is more generic than direct physical molecular interactions:
+      # A is connected to B iff there exists a fiat, material or temporal path between A and B.
+      - SIO:000203
+    narrow_mappings:
+      - PHAROS:drug_targets
+      - DRUGBANK:chelator
+      - GAMMA:pharmacological_chaperone
+      - GAMMA:pharmacological_chaperone
+      - GAMMA:ligand
+      - GAMMA:cofactor
+      - GAMMA:multitarget
+      - GAMMA:chaperone
+      - GAMMA:component
+      - GAMMA:adduct
+      - GAMMA:antibody
+      - CTD:affects_binding
+      - DGIdb:cofactor
     annotations:
       canonical_predicate: true
 
