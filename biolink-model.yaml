@@ -6600,8 +6600,8 @@ slots:
       The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
       generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
 
-  supporting data set:
-    is_a: association slot
+  supporting data sets:
+    is_a: supporting documents
     description: >-
       A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through
       computation on, reasoning or inference over the retrieved data).
@@ -6729,19 +6729,21 @@ slots:
     examples:
       - value: 0.018
 
-  supporting text:
-    is_a: association slot
+  supporting texts:
+    is_a: supporting documents
     description: The segment of text from a document that supports the mined assertion.
+    multivalued: true
     range: string
     examples:
       - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
 
-  supporting document:
+  supporting documents:
     is_a: association slot
     description: >-
-      A publication or other document that reports the statement expressed in an Association, or 
-      provides information used as evidence supporting this statement.
+      One or more referencable documents that report the statement expressed in an Association, or provide 
+      information used as evidence supporting this statement.
     range: uriorcurie
+    multivalued: true
     examples:
       - value: PMID:12345678
 
@@ -6849,10 +6851,12 @@ slots:
     range: disease or phenotypic feature
 
   publications:
+    aliases: ["supporting publications"]
     singular_name: publication
     description: >-
-      connects an association to publications supporting the association
-    is_a: association slot
+      One or more publications that report the statement expressed in an Association, or provide information used as 
+      evidence supporting this statement.
+    is_a: supporting documents
     multivalued: true
     range: publication
 
