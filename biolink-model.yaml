@@ -1871,6 +1871,8 @@ slots:
   has active component:
     is_a: related to at instance level
     inverse: active in
+    domain: cellular component
+    range: gene or gene product
 
   acts upstream of:
     is_a: related to at instance level
