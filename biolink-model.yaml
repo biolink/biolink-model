@@ -7,8 +7,6 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 version: 3.0.3
 
-
-
 ## ------------
 ## PREFIXES
 ## ------------
@@ -1074,13 +1072,6 @@ slots:
       - SNOMED:has_dose_form_intended_site
       - SNOMED:has_route_of_administration
 
-  has population context:
-    deprecated: true
-    description: >-
-      a biological population (general, study, cohort, etc.) with a specific
-      set of characteristics to constrain an association.
-    is_a: association slot
-    range: population of individual organisms
 
   population context qualifier:
     description: >-
@@ -1088,13 +1079,6 @@ slots:
       set of characteristics to constrain an association.
     is_a: association slot
     range: population of individual organisms
-
-  has temporal context:
-    deprecated: true
-    description: >-
-      a constraint of time placed upon the truth value of an association.
-    is_a: association slot
-    range: time type
 
   temporal context qualifier:
     description: >-
@@ -1804,8 +1788,6 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
-  has real world evidence of association with:
-    deprecated: true
 
   associated with likelihood of:
     is_a: associated with
@@ -2154,15 +2136,6 @@ slots:
     is_a: physically interacts with
     symmetric: true
 
-  chemically interacts with:
-    deprecated: true
-    is_a: physically interacts with
-    domain: chemical entity
-    range: chemical entity
-    in_subset:
-      - translator_minimal
-    symmetric: true
-
   molecularly interacts with:
     deprecated: true
     is_a: physically interacts with
@@ -2365,13 +2338,6 @@ slots:
     exact_mappings:
       - CTD:affects_abundance_of
 
-  abundance affected by:
-    deprecated: true
-    is_a: affected by
-    inverse: affects abundance of
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-
   increases abundance of:
     deprecated: true
     description: >-
@@ -2390,13 +2356,6 @@ slots:
     related_mappings:
       - UBERGRAPH:is_increase_of
 
-  abundance increased by:
-    deprecated: true
-    is_a: abundance affected by
-    inverse: increases abundance of
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-
   decreases abundance of:
     deprecated: true
     description: >-
@@ -2412,16 +2371,8 @@ slots:
     annotations:
       canonical_predicate: true
       opposite_of: increases abundance of
-
     related_mappings:
       - UBERGRAPH:is_decrease_of
-
-  abundance decreased by:
-    deprecated: true
-    is_a: abundance affected by
-    inverse: decreases abundance of
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
 
   increases activity of:
     deprecated: true
@@ -2480,25 +2431,6 @@ slots:
       - DGIdb:modulator
       - DGIdb:allosteric_modulator
 
-  activity affected by:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product where the action or effect of one is changed by the
-      activity of the other within a system of interest
-    is_a: affected by
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects activity of
-
-  activity increased by:
-    deprecated: true
-    is_a: activity affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases activity of
-
   decreases activity of:
     deprecated: true
     description: >-
@@ -2548,37 +2480,6 @@ slots:
       - DGIdb:inhibitory_allosteric_modulator
       - DGIdb:inverse_agonist
 
-  activity decreased by:
-    deprecated: true
-    is_a: activity affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases activity of
-
-
-  affects expression of:
-    deprecated: true
-    description: >-
-      holds between a named thing (most often a chemical or gene/gene product, but can also be used to link an
-      environmental affect on expression) and a nucleic acid entity where the action or effect of one changes the
-      level of expression of the other within a system of interest
-    is_a: affects
-    in_subset:
-      - translator_minimal
-    domain: named thing
-    range: nucleic acid entity
-
-  expression affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: named thing
-    inverse: affects expression of
-
   increases expression of:
     deprecated: true
     description: >-
@@ -2597,15 +2498,6 @@ slots:
       - CHEMBL.MECHANISM:releasing_agent
     exact_mappings:
       - RO:0003003
-
-  expression increased by:
-    deprecated: true
-    is_a: expression affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: named thing
-    inverse: increases expression of
 
   decreases expression of:
     deprecated: true
@@ -2627,14 +2519,6 @@ slots:
     narrow_mappings:
       - CHEMBL.MECHANISM:antisense_inhibitor
 
-  expression decreased by:
-    deprecated: true
-    is_a: expression affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: named thing
-    inverse: decreases expression of
 
   affects folding of:
     deprecated: true
@@ -2650,14 +2534,6 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - CTD:affects_folding_of
-
-
-  folding affected by:
-    deprecated: true
-    is_a: affected by
-    inverse: affects folding of
-    domain: nucleic acid entity
-    range: chemical entity or gene or gene product
 
   increases folding of:
     deprecated: true
@@ -2676,13 +2552,6 @@ slots:
       opposite_of: decreases folding of
     exact_mappings:
       - CTD:increases_folding_of
-
-  folding increased by:
-    deprecated: true
-    is_a: folding affected by
-    inverse: increases folding of
-    domain: nucleic acid entity
-    range: chemical entity or gene or gene product
 
   decreases folding of:
     deprecated: true
@@ -2703,13 +2572,6 @@ slots:
     exact_mappings:
       - CTD:decreases_folding_of
 
-  folding decreased by:
-    deprecated: true
-    is_a: folding affected by
-    inverse: decreases folding of
-    domain: nucleic acid entity
-    range: chemical entity or gene or gene product
-
   affects localization of:
     deprecated: true
     description: >-
@@ -2726,15 +2588,6 @@ slots:
       - GAMMA:storage
     exact_mappings:
       - GOREL:0002003
-
-  localization affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects localization of
 
   increases localization of:
     deprecated: true
@@ -2754,15 +2607,6 @@ slots:
     exact_mappings:
       - CTD:increases_localization_of
 
-  localization increased by:
-    deprecated: true
-    is_a: localization affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases localization of
-
   decreases localization of:
     deprecated: true
     description: >-
@@ -2781,15 +2625,6 @@ slots:
       - CTD:decreases_localization_of
 
 
-  localization decreased by:
-    deprecated: true
-    is_a: localization affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases localization of
-
   affects metabolic processing of:
     deprecated: true
     description: >-
@@ -2804,15 +2639,6 @@ slots:
       canonical_predicate: true
     related_mappings:
       - GAMMA:catalytic_activity
-
-  metabolic processing affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects metabolic processing of
 
   increases metabolic processing of:
     deprecated: true
@@ -2834,15 +2660,6 @@ slots:
     narrow_mappings:
       - NCIT:enzyme_metabolizes_chemical_or_drug
 
-  metabolic processing increased by:
-    deprecated: true
-    is_a: metabolic processing affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases metabolic processing of
-
   decreases metabolic processing of:
     deprecated: true
     description: >-
@@ -2860,15 +2677,6 @@ slots:
       opposite_of: increases metabolic processing of
     exact_mappings:
       - CTD:decreases_metabolic_processing_of
-
-  metabolic processing decreased by:
-    deprecated: true
-    is_a: metabolic processing affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases metabolic processing of
 
   affects molecular modification of:
     deprecated: true
@@ -2917,15 +2725,6 @@ slots:
       - CTD:affects_oxidation
       - CTD:affects_reduction
       - CTD:affects_carboxylation
-
-  molecular modification affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects molecular modification of
 
   increases molecular modification of:
     deprecated: true
@@ -2980,15 +2779,6 @@ slots:
       - GAMMA:acetylation
       - GAMMA:oxidizer
 
-  molecular modification increased by:
-    deprecated: true
-    is_a: molecular modification affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases molecular modification of
-
   decreases molecular modification of:
     deprecated: true
     description: >-
@@ -3041,15 +2831,6 @@ slots:
       - CTD:decreases_carboxylation
       - GAMMA:deoxidizer
 
-  molecular modification decreased by:
-    deprecated: true
-    is_a: molecular modification affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases molecular modification of
-
   affects synthesis of:
     deprecated: true
     description: >-
@@ -3064,15 +2845,6 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - CTD:affects_synthesis_of
-
-  synthesis affected by:
-    deprecated: true
-    is_a: affected by
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects synthesis of
-    in_subset:
-      - translator_minimal
 
   increases synthesis of:
     deprecated: true
@@ -3092,15 +2864,6 @@ slots:
     exact_mappings:
       - CTD:increases_synthesis_of
 
-  synthesis increased by:
-    deprecated: true
-    is_a: synthesis affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases synthesis of
-
   decreases synthesis of:
     deprecated: true
     description: >-
@@ -3118,15 +2881,6 @@ slots:
       opposite_of: increases synthesis of
     exact_mappings:
       - GAMMA:inhibition_of_synthesis
-
-  synthesis decreased by:
-    deprecated: true
-    is_a: synthesis affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases synthesis of
 
   affects degradation of:
     deprecated: true
@@ -3149,14 +2903,6 @@ slots:
       - CTD:affects_cleavage
       - CTD:affects_hydrolysis
 
-  degradation affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects degradation of
 
   increases degradation of:
     deprecated: true
@@ -3188,15 +2934,6 @@ slots:
       - CTD:increases_hydrolysis
       - GOREL:0002004
 
-  degradation increased by:
-    deprecated: true
-    is_a: degradation affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases degradation of
-
   decreases degradation of:
     deprecated: true
     description: >-
@@ -3218,15 +2955,6 @@ slots:
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
 
-  degradation decreased by:
-    deprecated: true
-    is_a: degradation affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases degradation of
-
   affects mutation rate of:
     deprecated: true
     description: >-
@@ -3245,15 +2973,6 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - CTD:affects_mutation_rate_of
-
-  mutation rate affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: chemical entity or gene or gene product
-    inverse: affects mutation rate of
 
   increases mutation rate of:
     deprecated: true
@@ -3276,15 +2995,6 @@ slots:
       # See 'affects mutation rate of' above
       - CTD:increases_mutagenesis
 
-  mutation rate increased by:
-    deprecated: true
-    is_a: mutation rate affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: chemical entity
-    inverse: increases mutation rate of
-
   decreases mutation rate of:
     deprecated: true
     description: >-
@@ -3306,15 +3016,6 @@ slots:
       # See 'affects mutation rate of' above
       - CTD:decreases_mutagenesis
 
-  mutation rate decreased by:
-    deprecated: true
-    is_a: mutation rate affected by
-    in_subset:
-      - translator_minimal
-    domain: nucleic acid entity
-    range: chemical entity
-    inverse: decreases mutation rate of
-
   affects response to:
     is_a: affects
     in_subset:
@@ -3326,19 +3027,6 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - CTD:affects_response_to
-
-  response affected by:
-    description: >-
-      holds between two chemical entities where the susceptibility of a biological entity or system
-      (e.g. an organism, cell, cellular component, macromolecular machine mixin,
-      biological or pathological process) of one is affected by the action of the other.
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    annotations:
-      canonical_predicate: true
 
   increases response to:
     description: >-
@@ -3358,14 +3046,6 @@ slots:
       opposite_of: decreases response to
     exact_mappings:
       - CTD:increases_response_to
-
-  response increased by:
-    is_a: response affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases response to
 
   decreases response to:
     description: >-
@@ -3389,14 +3069,6 @@ slots:
       - CTD:decreases_response_to_substance
       - GAMMA:desensitize_the_target
 
-  response decreased by:
-    is_a: response affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases response to
-
   affects splicing of:
     deprecated: true
     description: >-
@@ -3413,15 +3085,6 @@ slots:
       - CTD:affects_RNA_splicing
     broad_mappings:
       - CTD:affects_splicing_of
-
-  splicing affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: transcript
-    range: chemical entity or gene or gene product
-    inverse: affects splicing of
 
   increases splicing of:
     deprecated: true
@@ -3443,15 +3106,6 @@ slots:
     broad_mappings:
       - CTD:increases_splicing_of
 
-  splicing increased by:
-    deprecated: true
-    is_a: splicing affected by
-    in_subset:
-      - translator_minimal
-    domain: transcript
-    range: chemical entity or gene or gene product
-    inverse: increases splicing of
-
   decreases splicing of:
     deprecated: true
     description: >-
@@ -3472,15 +3126,6 @@ slots:
     broad_mappings:
       - CTD:decreases_splicing_of
 
-  splicing decreased by:
-    deprecated: true
-    is_a: splicing affected by
-    in_subset:
-      - translator_minimal
-    domain: transcript
-    range: chemical entity or gene or gene product
-    inverse: decreases splicing of
-
   affects stability of:
     deprecated: true
     description: >-
@@ -3495,15 +3140,6 @@ slots:
       canonical_predicate: true
     close_mappings:
       - GAMMA:stabilization
-
-  stability affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects stability of
 
   increases stability of:
     deprecated: true
@@ -3524,15 +3160,6 @@ slots:
       # agent of the action or effect, not the relationship
       - CHEMBL.MECHANISM:stabiliser
 
-  stability increased by:
-    deprecated: true
-    is_a: stability affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases stability of
-
   decreases stability of:
     deprecated: true
     description: >-
@@ -3550,15 +3177,6 @@ slots:
       opposite_of: increases stability of
     exact_mappings:
       - CTD:decreases_stability_of
-
-  stability decreased by:
-    deprecated: true
-    is_a: stability affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases stability of
 
   affects transport of:
     deprecated: true
@@ -3579,15 +3197,6 @@ slots:
       - RO:0002340
       - RO:0002345
 
-  transport affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects transport of
-
   increases transport of:
     deprecated: true
     description: >-
@@ -3607,15 +3216,6 @@ slots:
       - GAMMA:carrier
       - GAMMA:transporter
 
-  transport increased by:
-    deprecated: true
-    is_a: transport affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases transport of
-
   decreases transport of:
     deprecated: true
     description: >-
@@ -3634,15 +3234,6 @@ slots:
     exact_mappings:
       - CTD:decreases_transport_of
 
-  transport decreased by:
-    deprecated: true
-    is_a: transport affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases transport of
-
   affects secretion of:
     deprecated: true
     description: >-
@@ -3660,15 +3251,6 @@ slots:
     broad_mappings:
       # 'export' more general than 'secretion'
       - CTD:affects_export
-
-  secretion affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects secretion of
 
   increases secretion of:
     deprecated: true
@@ -3691,15 +3273,6 @@ slots:
       # 'export' more general than 'secretion'
       - CTD:increases_export
 
-  secretion increased by:
-    deprecated: true
-    is_a: secretion affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases secretion of
-
   decreases secretion of:
     deprecated: true
     description: >-
@@ -3721,15 +3294,6 @@ slots:
       # 'export' more general than 'secretion'
       - CTD:decreases_export
 
-  secretion decreased by:
-    deprecated: true
-    is_a: secretion affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases secretion of
-
   affects uptake of:
     deprecated: true
     description: >-
@@ -3747,15 +3311,6 @@ slots:
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:affects_import
-
-  uptake affected by:
-    deprecated: true
-    is_a: affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: affects uptake of
 
   increases uptake of:
     deprecated: true
@@ -3778,15 +3333,6 @@ slots:
       # 'import' more general than 'uptake'
       - CTD:increases_import
 
-  uptake increased by:
-    deprecated: true
-    is_a: uptake affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: increases uptake of
-
   decreases uptake of:
     deprecated: true
     description: >-
@@ -3807,15 +3353,6 @@ slots:
     broad_mappings:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
-
-  uptake decreased by:
-    deprecated: true
-    is_a: uptake affected by
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: decreases uptake of
 
   regulates:
     is_a: affects
@@ -3869,12 +3406,6 @@ slots:
       - RO:0004034
       - RO:0002629
 
-  positively regulated by:
-    deprecated: true
-    is_a: regulated by
-    mixin: true
-    inverse: positively regulates
-
   negatively regulates:
     deprecated: true
     comments:
@@ -3900,12 +3431,6 @@ slots:
       - CHEMBL.MECHANISM:negative_modulator
       - RO:0002630
 
-  negatively regulated by:
-    deprecated: true
-    is_a: regulated by
-    mixin: true
-    inverse: negatively regulates
-
   process regulates process:
     deprecated: true
     is_a: affects
@@ -3918,13 +3443,6 @@ slots:
     exact_mappings:
       - RO:0002211
 
-  process regulated by process:
-    deprecated: true
-    is_a: affected by
-    domain: occurrent
-    range: occurrent
-    inverse: process regulates process
-
   process positively regulates process:
     deprecated: true
     is_a: process regulates process
@@ -3936,11 +3454,6 @@ slots:
     exact_mappings:
       - RO:0002213
 
-  process positively regulated by process:
-    deprecated: true
-    is_a: process regulated by process
-    inverse: process positively regulates process
-
   process negatively regulates process:
     deprecated: true
     is_a: process regulates process
@@ -3951,11 +3464,6 @@ slots:
       opposite_of: process positively regulates process
     exact_mappings:
       - RO:0002212
-
-  process negatively regulated by process:
-    deprecated: true
-    is_a: process regulated by process
-    inverse: process negatively regulates process
 
   entity regulates entity:
     deprecated: true
@@ -3982,12 +3490,6 @@ slots:
       # may also be another class of chemical_substance?
       - WIKIDATA_PROPERTY:P128
 
-  entity regulated by entity:
-    deprecated: true
-    is_a: affected by
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: entity regulates entity
 
   entity positively regulates entity:
     deprecated: true
@@ -4015,11 +3517,6 @@ slots:
       - SEMMEDDB:stimulates
       - SEMMEDDB:augments
 
-  entity positively regulated by entity:
-    deprecated: true
-    is_a: entity regulated by entity
-    inverse: entity positively regulates entity
-
   entity negatively regulates entity:
     deprecated: true
     aliases: [ 'activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene' ]
@@ -4040,11 +3537,6 @@ slots:
       # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
       - SEMMEDDB:INHIBITS
       - SEMMEDDB:inhibits
-
-  entity negatively regulated by entity:
-    deprecated: true
-    is_a: entity regulated by entity
-    inverse: entity negatively regulates entity
 
   disrupts:
     is_a: affects
@@ -6271,11 +5763,6 @@ slots:
     mixins:
       - decreases amount or activity of
 
-  molecular interaction decreased by:
-    deprecated: true
-    is_a: molecularly interacts with
-    inverse: decreases molecular interaction
-
   increases molecular interaction:
     deprecated: true
     is_a: molecularly interacts with
@@ -6289,10 +5776,6 @@ slots:
     mixins:
       - increases amount or activity of
 
-  molecular interaction increased by:
-    deprecated: true
-    is_a: molecularly interacts with
-    inverse: increases molecular interaction
 
   in linkage disequilibrium with:
     is_a: related to at instance level
@@ -6552,9 +6035,6 @@ slots:
     close_mappings:
       - pav:providedBy
 
-  source:
-    deprecated: true
-
   provided by:
     is_a: node property
     description: >-
@@ -6579,9 +6059,6 @@ slots:
       The "primary knowledge source" for this edge is "infores:clinical-trials-gov".  "infores:chembl" and "infores:molecular_data_provider"
       are listed in the "aggregator knowledge source" property.
     multivalued: false
-
-  original knowledge source:
-    deprecated: true
 
   aggregator knowledge source:
     is_a: knowledge source
@@ -6627,15 +6104,6 @@ slots:
       computation on, reasoning or inference over the retrieved data).
     range: information resource
     multivalued: true
-
-  association type:
-    is_a: association slot
-    range: category type
-    deprecated: >-
-      This slot is deprecated in favor of 'category' slot.
-    deprecated_element_has_exact_replacement: category
-    description: >-
-      connects an association to the category of association (e.g. gene to phenotype)
 
   chi squared statistic:
     is_a: association slot
@@ -7231,12 +6699,6 @@ classes:
     is_a: ontology class
     description: >-
       An OWL property used as an edge label
-
-  gene ontology class:
-    deprecated: true
-
-  unclassified ontology class:
-    deprecated: true
 
   taxonomic rank:
     description: >-
@@ -8395,36 +7857,6 @@ classes:
       # substance role
       - CHEBI:64047
 
-  nutrient:
-    deprecated: true
-    is_a: chemical entity
-    related_mappings:
-      # substance role
-      - CHEBI:33284
-
-  macronutrient:
-    deprecated: true
-    is_a: nutrient
-    related_mappings:
-      # substance role
-      - CHEBI:33937
-
-  micronutrient:
-    deprecated: true
-    is_a: nutrient
-    related_mappings:
-      # substance role
-      - CHEBI:27027
-
-  vitamin:
-    deprecated: true
-    is_a: micronutrient
-    related_mappings:
-      # substance role
-      - CHEBI:33229
-      # Vitamin
-      - STY:T127
-
   food:
     is_a: chemical mixture
     description: >-
@@ -8460,23 +7892,6 @@ classes:
 
     mappings:
       - PATO:0000001
-
-  inheritance:
-    deprecated: true
-    is_a: organism attribute
-    description: >-
-      The name of this attribute and its inheritance from organism attribute, indeed,
-      its designation as an attribute is problematic. First, the isolated word 'inheritance'
-      is too ambiguous (especially when embedded inside an ontology with inheritance!).
-      'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here,
-      genetic inheritance would not be a direct property at the topmost organism level, but rather
-      (as hinted in the definition) is more a commentary on the nature of phenotype (including 
-      genetic disease as a characteristic set of associated phenotypes) against the (hidden)
-      context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing 
-      the term in the attribute, rather than named thing category concept hierarchy, is perhaps
-      less flexible in terms of its usage as a first class concept for semantic queries.
-      Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance', 
-      as a child of 'biological entity' (to emphasize its biological conceptual nature).
 
   genetic inheritance:
     aliases: [ 'inheritance' ]
@@ -10367,22 +9782,6 @@ classes:
       object context qualifier:
         range: ontology class
 
-  chemical to gene association:
-    deprecated: true
-    description: >-
-      An interaction between a chemical entity and a gene or gene product.
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - chemical to entity association mixin
-    slot_usage:
-      object:
-        range: gene or gene product
-        description: >-
-          the gene or gene product that is affected by the chemical.
-
   chemical gene interaction association:
     description: >-
       describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical
@@ -10579,8 +9978,6 @@ classes:
       - subject
       - object
 
-  exposure event to entity association mixin:
-    deprecated: true
 
   entity to outcome association mixin:
     description: >-
@@ -11532,22 +10929,6 @@ classes:
         range: exon
       object:
         range: transcript
-
-  gene regulatory relationship:
-    deprecated: true
-    is_a: association
-    description: >-
-      A regulatory relationship between two genes
-    slot_usage:
-      predicate:
-        description: >-
-          the direction is always from regulator to regulated
-      subject:
-        range: gene or gene product
-        role: regulatory gene
-      object:
-        range: gene or gene product
-        role: regulated gene
 
   chemical entity or gene or gene product regulates gene association:
     is_a: association
