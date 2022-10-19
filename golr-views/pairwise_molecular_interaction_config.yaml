@@ -30,7 +30,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: connects an association to publications supporting the association
+  description: One or more publications that report the statement expressed in an
+    Association, or provide information used as  evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

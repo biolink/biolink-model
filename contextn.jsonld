@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-19T00:12:47\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.3\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-19T18:39:42\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.3\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -1161,6 +1161,9 @@
       "has_manifestation": {
          "@type": "@id"
       },
+      "has_member": {
+         "@type": "@id"
+      },
       "has_metabolite": {
          "@type": "@id"
       },
@@ -1261,9 +1264,6 @@
          "@type": "@id"
       },
       "has_substrate": {
-         "@type": "@id"
-      },
-      "has_supporting_study_result": {
          "@type": "@id"
       },
       "has_synonymous_variant": {
@@ -1455,9 +1455,6 @@
       "is_supplement": {
          "@type": "@id"
       },
-      "is_supporting_study_result_of": {
-         "@type": "@id"
-      },
       "is_synonymous_variant_of": {
          "@type": "@id"
       },
@@ -1516,6 +1513,9 @@
       },
       "mechanism_of_action": {
          "@type": "xsd:boolean"
+      },
+      "member_of": {
+         "@type": "@id"
       },
       "mentioned_by": {
          "@type": "@id"
@@ -1898,11 +1898,11 @@
       "supporting_data_source": {
          "@type": "@id"
       },
-      "supporting_document": {
-         "@type": "@id"
-      },
       "supporting_document_year": {
          "@type": "xsd:integer"
+      },
+      "supporting_documents": {
+         "@type": "@id"
       },
       "supporting_study_method_description": {
          "@type": "@id"

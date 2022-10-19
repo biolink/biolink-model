@@ -425,7 +425,7 @@ type BookChapter
     chapter: String
   }
 
-type Case
+type Case implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -488,7 +488,7 @@ type Cell
     hasAttribute: [Attribute]
   }
 
-type CellLine
+type CellLine implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -574,7 +574,7 @@ type CellularComponent
     hasAttribute: [Attribute]
   }
 
-type CellularOrganism
+type CellularOrganism implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -608,13 +608,13 @@ type ChemicalAffectsGeneAssociation
     timepoint: TimeType
     type: String
     category: [CategoryType]
-    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
     subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     subjectContextQualifier: AnatomicalEntity
     subjectDirectionQualifier: DirectionQualifierEnum
-    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
     objectContextQualifier: AnatomicalEntity
@@ -746,11 +746,11 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     timepoint: TimeType
     type: String
     category: [CategoryType]
-    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
     subjectContextQualifier: AnatomicalEntity
-    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectContextQualifier: AnatomicalEntity
     anatomicalContextQualifier: AnatomicalEntity
@@ -1144,7 +1144,7 @@ type CodingSequence
     inTaxon: [OrganismTaxon]
   }
 
-type Cohort
+type Cohort implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -1799,6 +1799,11 @@ type EpidemiologicalOutcome implements Outcome
   {
   }
 
+interface EpigenomicEntity
+  {
+    hasBiologicalSequence: BiologicalSequence
+  }
+
 type Event
   {
     id: String!
@@ -1880,15 +1885,6 @@ type ExonToTranscriptRelationship
 interface ExposureEvent
   {
     id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
     timepoint: TimeType
   }
 
@@ -2286,6 +2282,30 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     expressionSite: AnatomicalEntity
     stageQualifier: LifeStage
     phenotypicState: DiseaseOrPhenotypicFeature
+  }
+
+type GeneToGeneFamilyAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    originalKnowledgeSource: String
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    type: String
+    category: [CategoryType]
+    subject: Gene!
+    object: GeneFamily!
+    predicate: PredicateType!
   }
 
 type GeneToGeneHomologyAssociation
@@ -2791,7 +2811,7 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
-type IndividualOrganism
+type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -3358,6 +3378,23 @@ type NucleicAcidSequenceMotif
     inTaxon: [OrganismTaxon]
   }
 
+type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, EpigenomicEntity
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    synonym: [LabelType]
+    hasBiologicalSequence: BiologicalSequence
+  }
+
 type Nutrient
   {
     id: String!
@@ -3579,7 +3616,7 @@ type OrganismToOrganismAssociation
     object: IndividualOrganism!
   }
 
-interface OrganismalEntity
+type OrganismalEntity implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -3909,7 +3946,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     inTaxon: [OrganismTaxon]
   }
 
-type PopulationOfIndividualOrganisms
+type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
@@ -3946,6 +3983,22 @@ type PopulationToPopulationAssociation
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
     predicate: PredicateType!
+  }
+
+type PosttranslationalModification implements GeneProductIsoformMixin
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    source: String
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    synonym: [LabelType]
   }
 
 type Procedure implements ActivityAndBehavior
@@ -4785,7 +4838,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     frequencyQualifier: FrequencyValue
   }
 
-type Virus
+type Virus implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
