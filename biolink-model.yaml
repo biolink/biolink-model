@@ -1217,7 +1217,7 @@ slots:
     examples:
       - value: mutation
     notes: >-
-      please see the chemical_or_gene_or_gene_product_form_enum (below) for examples of 'form or variant qualifier'
+      please see the chemical_or_gene_or_gene_product_form_or_variant_enum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
 
   aspect qualifier:
@@ -6502,13 +6502,9 @@ slots:
     multivalued: true
 
   has supporting study result:
-    is_a: related to at instance level
+    is_a: association slot
     description: >-
       connects an association to an instance of supporting study result
-
-  is supporting study result of:
-    is_a: related to at instance level
-    inverse: has supporting study result
     
   mechanism of action:
     is_a: association slot
@@ -8479,6 +8475,8 @@ classes:
       population or clade of organisms, excluding chemical entities
     abstract: true
     is_a: biological entity
+    mixins:
+      - subject of investigation
     slot_usage:
       has attribute:
         description: >-
@@ -8493,6 +8491,8 @@ classes:
 
   virus:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     description: >-
       A virus is a microorganism that replicates itself as a microRNA
       and infects the host cell.
@@ -8501,6 +8501,8 @@ classes:
 
   cellular organism:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     description: >-
     exact_mappings:
       - NCBITaxon:131567
@@ -8531,6 +8533,8 @@ classes:
       An instance of an organism. For example, Richard Nixon,
       Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - SIO:010000
       # Organism
@@ -8551,6 +8555,8 @@ classes:
     local_names:
       ga4gh: population
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - PCO:0000001
       - SIO:001061
@@ -8779,6 +8785,8 @@ classes:
 
   cell line:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - CLO:0000031
     id_prefixes:
@@ -9470,6 +9478,8 @@ classes:
     is_a: individual organism
     description: >-
       An individual (human) organism that has a patient role in some clinical context.
+    mixins:
+      - subject of investigation
 
   cohort:
     is_a: study population
@@ -9477,6 +9487,8 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
+    mixins:
+      - subject of investigation
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
@@ -10348,7 +10360,7 @@ classes:
       predicate:
         subproperty_of: physically interacts with
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       subject part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       subject derivative qualifier:
@@ -10356,7 +10368,7 @@ classes:
       subject context qualifier:
         range: anatomical entity
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       object part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object context qualifier:
@@ -10387,7 +10399,7 @@ classes:
       subject:
         range: chemical entity
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       subject part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       subject derivative qualifier:
@@ -10405,7 +10417,7 @@ classes:
       object:
         range: gene or gene product
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_enum
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
       object part qualifier:
         range: gene_or_gene_product_or_chemical_part_qualifier_enum
       object aspect qualifier:
@@ -11681,13 +11693,17 @@ enums:
     permissible_values:
       metabolite:
 
-  chemical_or_gene_or_gene_product_form_enum:
+  chemical_or_gene_or_gene_product_form_or_variant_enum:
     permissible_values:
-      modified form:
+      genetic variant form:
+        is_a: modified form
       mutant form:
-      polymorphism:
-      SNP:
-      analog:
+        is_a: genetic variant form
+      polymorphic form:
+        is_a: mutant form
+      SNP form:
+        is_a: polymorphic form
+      analog form:
 
   gene_or_gene_product_or_chemical_part_qualifier_enum:
     permissible_values:
