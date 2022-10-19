@@ -1777,7 +1777,7 @@ slots:
       - translator_minimal
     exact_mappings:
       - RO:0002350
-    close_mapping:
+    close_mappings:
       - skos:member
 
   has member:
@@ -1871,6 +1871,8 @@ slots:
   has active component:
     is_a: related to at instance level
     inverse: active in
+    domain: cellular component
+    range: gene or gene product
 
   acts upstream of:
     is_a: related to at instance level
@@ -6750,16 +6752,18 @@ slots:
   supporting text:
     is_a: association slot
     description: The segment of text from a document that supports the mined assertion.
+    multivalued: true
     range: string
     examples:
       - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
 
-  supporting document:
+  supporting documents:
     is_a: association slot
     description: >-
-      A publication or other document that reports the statement expressed in an Association, or 
-      provides information used as evidence supporting this statement.
+      One or more referencable documents that report the statement expressed in an Association, or provide 
+      information used as evidence supporting this statement.
     range: uriorcurie
+    multivalued: true
     examples:
       - value: PMID:12345678
 
@@ -6867,10 +6871,12 @@ slots:
     range: disease or phenotypic feature
 
   publications:
+    aliases: ["supporting publications"]
     singular_name: publication
     description: >-
-      connects an association to publications supporting the association
-    is_a: association slot
+      One or more publications that report the statement expressed in an Association, or provide information used as 
+      evidence supporting this statement.
+    is_a: supporting documents
     multivalued: true
     range: publication
 
@@ -8974,7 +8980,7 @@ classes:
 
   ## Genomic Classes
   nucleosome modification:
-    is_a: biological_entity
+    is_a: biological entity
     description: >-
       A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform.
       e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
@@ -9115,7 +9121,7 @@ classes:
       - UMLS:C1514562
   
   posttranslational modification:
-    is_a: biological_entity
+    is_a: biological entity
     description: >-
       A chemical modification of a polypeptide or protein that occurs after translation. 
       e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids, 
