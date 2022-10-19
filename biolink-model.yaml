@@ -2130,6 +2130,7 @@ slots:
       - CHEMBL.MECHANISM:oxidative_enzyme
       - CHEMBL.MECHANISM:sequestering_agent
       - CHEMBL.MECHANISM:substrate
+      - GAMMA:substrate
       - DRUGBANK:target
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
@@ -10081,6 +10082,7 @@ enums:
           - CHEMBL.MECHANISM:inhibitor
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
+          - DGIdb:negative_modulator
       antibody inhibition:
         is_a: inhibition
         description: >-
@@ -10195,6 +10197,15 @@ enums:
         description: >-
           A causal mechanism mediated by the activation or control of signaling events that influence the some aspect 
           of the target entity (e.g. its activity, processing, transport, etc)
+      stabilization:
+        is_a: activation
+        exact_mappings:
+          - CHEMBL.MECHANISM:stabiliser
+      stimulation:
+        is_a: activation
+        exact_mappings:
+          - DGIdb:stimulator
+          - SEMMEDDB:stimulates
 
   logical_interpretation_enum:
     permissible_values:
