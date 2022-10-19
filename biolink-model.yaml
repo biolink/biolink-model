@@ -2124,6 +2124,10 @@ slots:
       A causal mechanism mediated by a direct contact between the effector and target entities (this contact may 
       be weak or strong, transient or stable).
     symmetric: true
+    exact_mappings:
+      - RO:0002436
+    annotations:
+      canonical_predicate: true
 
   binds:
     is_a: directly physically interacts with
@@ -2131,26 +2135,14 @@ slots:
       A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, 
       which form a stable physical interaction.
     symmetric: true
+    annotations:
+      canonical_predicate: true
 
   indirectly physically interacts with:
     is_a: physically interacts with
     symmetric: true
-
-  molecularly interacts with:
-    deprecated: true
-    is_a: physically interacts with
-    aliases: [ 'targets' ]
-    domain: molecular entity
-    range: molecular entity
-    in_subset:
-      - translator_minimal
-    symmetric: true
     annotations:
       canonical_predicate: true
-    related_mappings:
-      - DGIdb:antibody
-    exact_mappings:
-      - RO:0002436
 
   genetically interacts with:
     is_a: interacts with
@@ -2218,6 +2210,8 @@ slots:
       - RO:0002592
       - RO:0012003
       - SNOMED:has_pathological_process
+      - UBERGRAPH:is_increase_of # talked to Jim Balhoff, this is a valid mapping
+      - UBERGRAPH:is_decrease_of # talked to Jim Balhoff, this is a valid mapping
 
   affected by:
     is_a: related to at instance level
@@ -2323,201 +2317,6 @@ slots:
     narrow_mappings:
       - CHEBI:24432
 
-  affects abundance of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product entities where the action or effect of one changes the amount of the
-      other within a system of interest
-    is_a: affects
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    annotations:
-      canonical_predicate: true
-    exact_mappings:
-      - CTD:affects_abundance_of
-
-  increases abundance of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product entities where the action or effect of one increases the 
-      amount of the other within a system of interest
-    is_a: affects abundance of
-    in_subset:
-      - translator_minimal
-    mixins:
-      - increases amount or activity of
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    annotations:
-      canonical_predicate: true
-      opposite_of: decreases abundance of
-    related_mappings:
-      - UBERGRAPH:is_increase_of
-
-  decreases abundance of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product where the action or effect of one
-      decreases the amount of the other within a system of interest
-    is_a: affects abundance of
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    mixins:
-      - decreases amount or activity of
-    annotations:
-      canonical_predicate: true
-      opposite_of: increases abundance of
-    related_mappings:
-      - UBERGRAPH:is_decrease_of
-
-  increases activity of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product where the action or effect of one
-      increases the activity of the other within a system of interest
-    is_a: affects activity of
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    mixins:
-      - increases amount or activity of
-    related_mappings:
-      - GAMMA:ec50
-      - GAMMA:ac50
-    narrow_mappings:
-      - GAMMA:activator
-      - GAMMA:partial_agonist
-      - GAMMA:agonist
-      - GAMMA:opener
-      - GAMMA:positive_allosteric_modulator
-      - GAMMA:positive_modulator
-      - GAMMA:inducer
-      - GAMMA:potentiator
-      - GAMMA:stimulator
-      - CHEMBL.MECHANISM:agonist
-      - CHEMBL.MECHANISM:opener
-      - CHEMBL.MECHANISM:partial_agonist
-      - CHEMBL.MECHANISM:positive_allosteric_modulator
-      - CHEMBL.MECHANISM:positive_modulator
-      - DGIdb:agonist
-      - DGIdb:partial_agonist
-      - DGIdb:inducer
-      - DGIdb:positive_allosteric_modulator
-      - DGIdb:stimulator
-    annotations:
-      opposite_of: decreases activity of
-
-  affects activity of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product where the action or effect of one changes the activity of the
-      other within a system of interest
-    is_a: affects
-    annotations:
-      canonical_predicate: true
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    narrow_mappings:
-      - GAMMA:allosteric_modulator
-      - GAMMA:modulator
-      - GAMMA:regulator
-      - DGIdb:modulator
-      - DGIdb:allosteric_modulator
-
-  decreases activity of:
-    deprecated: true
-    description: >-
-      holds between two chemical or gene/gene product where the action or effect of one decreases the
-      activity of the other within a system of interest
-    is_a: affects activity of
-    in_subset:
-      - translator_minimal
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    annotations:
-      canonical_predicate: true
-      opposite_of: increases activity of
-    mixins:
-      - decreases amount or activity of
-    related_mappings:
-      - GAMMA:ic50
-      - GAMMA:ki
-      - DGIdb:vaccine
-    narrow_mappings:
-      - GAMMA:allosteric_antagonist
-      - GAMMA:partial_antagonist
-      - GAMMA:antagonist
-      - GAMMA:weak_inhibitor
-      - GAMMA:inhibitor
-      - GAMMA:channel_blocker
-      - GAMMA:gating_inhibitor
-      - GAMMA:blocker
-      - GAMMA:inverse_agonist
-      - GAMMA:inactivator
-      - GAMMA:downregulator
-      - GAMMA:negative_modulator
-      - GAMMA:negative_allosteric_modulator
-      - GAMMA:inhibitory_allosteric_modulator
-      - GAMMA:aggregation_inhibitor
-      - GAMMA:conversion_inhibitor
-      - GAMMA:suppressor
-      - CHEMBL.MECHANISM:antagonist
-      - CHEMBL.MECHANISM:allosteric_antagonist
-      - CHEMBL.MECHANISM:inverse_agonist
-      - DGIdb:antagonist
-      - DGIdb:blocker
-      - DGIdb:channel_blocker
-      - DGIdb:gating_inhibitor
-      - DGIdb:inhibitor
-      - DGIdb:negative_modulator
-      - DGIdb:inhibitory_allosteric_modulator
-      - DGIdb:inverse_agonist
-
-  increases expression of:
-    deprecated: true
-    description: >-
-      holds between a chemical or gene/gene product entity and a nucleic acid entity
-      where the action or effect of one increases the level of expression of the
-      other within a system of interest
-    is_a: affects expression of
-    in_subset:
-      - translator_minimal
-    domain: named thing
-    range: nucleic acid entity
-    mixins:
-      - increases amount or activity of
-    close_mappings:
-      # Agent of the action or effect, not the relationship itself
-      - CHEMBL.MECHANISM:releasing_agent
-    exact_mappings:
-      - RO:0003003
-
-  decreases expression of:
-    deprecated: true
-    description: >-
-      holds between a chemical or gene/gene product entity and a nucleic acid entity where the action or effect of one decreases the level of expression of the
-      other within a system of interest
-    is_a: affects expression of
-    in_subset:
-      - translator_minimal
-    domain: named thing
-    range: nucleic acid entity
-    mixins:
-      - decreases amount or activity of
-    related_mappings:
-      - DGIdb:antisense
-      - DGIdb:antisense_oligonucleotide
-    exact_mappings:
-      - RO:0003002
-    narrow_mappings:
-      - CHEMBL.MECHANISM:antisense_inhibitor
 
 
   affects folding of:
@@ -11119,6 +10918,11 @@ enums:
       decreased:
       downregulated:
         is_a: decreased
+        exact_mappings:
+          - GAMMA:downregulator
+        narrow_mappings:
+          - GAMMA:inactivator
+          - GAMMA:suppressor
 
   chemical_entity_derivative_enum:
     permissible_values:
@@ -11250,6 +11054,20 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to the target and negatively effects its normal function, 
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
+        exact_mappings:
+          - GAMMA:inhibitor
+          - DGIdb:inhibitor
+        narrow_mappings:
+          - DGIdb:blocker
+          - DGIdb:channel_blocker
+          - DGIdb:gating_inhibitor
+          - GAMMA:blocker
+          - GAMMA:channel_blocker
+          - GAMMA:gating_inhibitor
+          - GAMMA:weak_inhibitor
+          - GAMMA:aggregation_inhibitor
+          - GAMMA:conversion_inhibitor
+          - CHEMBL.MECHANISM:antisense_inhibitor
       antibody inhibition:
         is_a: inhibition
         description: >-
@@ -11259,6 +11077,14 @@ enums:
         description: >-
           A causal mecahnism in which the effector binds to a receptor and prevents activation by an agonist 
           through competing for the binding site.
+        exact_mappings:
+          - DGIdb:antagonist
+          - CHEMBL.MECHANISM:antagonist
+          - GAMMA:antagonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:allosteric_antagonist
+          - GAMMA:allosteric_antagonist
+          - GAMMA:partial_antagonist
       molecular channel blockage:
         is_a: inhibition
         description: >-
@@ -11269,40 +11095,84 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
+        exact_mappings:
+          - GAMMA:inverse_agonist
+          - CHEMBL.MECHANISM:inverse_agonist
+          - DGIdb:inverse_agonist
       negative allosteric modulation:
         is_a: inhibition
         description: >-
           A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a 
           receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        exact_mappings:
+          - CHEMBL.MECHANISM:negative_allosteric_modulator
+          - GAMMA:negative_allosteric_modulator
+          - DGIdb:inhibitory_allosteric_modulator
+        broad_mappings:
+          - GAMMA:negative_modulator
+        narrow_mappings:
+          - GAMMA:inhibitory_allosteric_modulator
       agonism:
         is_a: activation
         description: >-
           A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an 
           endogenous ligand.
+        exact_mappings:
+          - GAMMA:agonist
+          - CHEMBL.MECHANISM:agonist
+          - DGIdb:agonist
+        narrow_mappings:
+          - CHEMBL.MECHANISM:partial_agonist
+          - DGIdb:partial_agonist
       molecular channel opening:
         is_a: activation
         description: >-
           A causal mechanism in which the effector binds to a molecular channel and facilitates transport of 
           ions through it.
+        exact_mappings:
+          - GAMMA:opener
+          - CHEMBL.MECHANISM:opener
       positive allosteric modulation:
         is_a: activation
         description: >-
           A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by 
           binding to a site distinct from that ligand (i.e. non-competitive inhibition)
+        exact_mappings:
+          - CHEMBL.MECHANISM:positive_allosteric_modulator
+          - CHEMBL.MECHANISM:positive_modulator
+          - DGIdb:positive_allosteric_modulator
+          - GAMMA:positive_allosteric_modulator
+          - GAMMA:positive_modulator
+        broad_mappings:
+          - GAMMA:positive_modulator
+          - GAMMA:allosteric_modulator
+          - GAMMA:modulator
+          - DGIdb:modulator
+          - DGIdb:allosteric_modulator
       potentiation:
         is_a: binding
         description: >-
           A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some 
           other chemical or drug on its target.
+        exact_mappings:
+          - GAMMA:potentiator
       activation:
         is_a: binding
         description: >-
           A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
+        exact_mappings:
+          - GAMMA:activator
+        related_mappings:
+          - GAMMA:ec50
+          - GAMMA:ac50
       inducer:
         is_a: binding
         description: >-
           A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that 
           processes drugs in the body.
+        exact_mappings:
+          - DGIdb:inducer
+          - GAMMA:inducer
       transcriptional regulation:
         description: >-
           A causal mechanism mediated by through the control of target gene transcription
