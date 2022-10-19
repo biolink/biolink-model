@@ -8471,6 +8471,8 @@ classes:
       population or clade of organisms, excluding chemical entities
     abstract: true
     is_a: biological entity
+    mixins:
+      - subject of investigation
     slot_usage:
       has attribute:
         description: >-
@@ -8485,6 +8487,8 @@ classes:
 
   virus:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     description: >-
       A virus is a microorganism that replicates itself as a microRNA
       and infects the host cell.
@@ -8493,6 +8497,8 @@ classes:
 
   cellular organism:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     description: >-
     exact_mappings:
       - NCBITaxon:131567
@@ -8523,6 +8529,8 @@ classes:
       An instance of an organism. For example, Richard Nixon,
       Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - SIO:010000
       # Organism
@@ -8543,6 +8551,8 @@ classes:
     local_names:
       ga4gh: population
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - PCO:0000001
       - SIO:001061
@@ -8771,6 +8781,8 @@ classes:
 
   cell line:
     is_a: organismal entity
+    mixins:
+      - subject of investigation
     exact_mappings:
       - CLO:0000031
     id_prefixes:
@@ -9444,6 +9456,8 @@ classes:
     is_a: individual organism
     description: >-
       An individual (human) organism that has a patient role in some clinical context.
+    mixins:
+      - subject of investigation
 
   cohort:
     is_a: study population
@@ -9451,6 +9465,8 @@ classes:
       A group of people banded together or treated as a group who share common characteristics.
       A cohort 'study' is a particular form of longitudinal study that samples a cohort,
       performing a cross-section at intervals through time.
+    mixins:
+      - subject of investigation
     exact_mappings:
       - WIKIDATA:Q1303415
     narrow_mappings:
