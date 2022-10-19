@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-26T18:36:17
+# Generation date: 2022-10-19T00:13:16
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11230,6 +11230,9 @@ slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=B
 
 slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
                    model_uri=BIOLINK.has_supporting_study_result, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.is_supporting_study_result_of = Slot(uri=BIOLINK.is_supporting_study_result_of, name="is supporting study result of", curie=BIOLINK.curie('is_supporting_study_result_of'),
+                   model_uri=BIOLINK.is_supporting_study_result_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.mechanism_of_action = Slot(uri=BIOLINK.mechanism_of_action, name="mechanism of action", curie=BIOLINK.curie('mechanism_of_action'),
                    model_uri=BIOLINK.mechanism_of_action, domain=Association, range=Optional[Union[bool, Bool]])
