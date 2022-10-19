@@ -204,7 +204,6 @@ subsets:
 
 imports:
   - linkml:types
-  - predicateToQualifierMapping
 
 types:
 
@@ -1257,6 +1256,12 @@ slots:
     abstract: true
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+
+  deprecated predicate:
+    description: >-
+      The predicate that is being replaced by the fully qualified representation of predicate + subject and object 
+      qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified
+      predicate model. Not to be used in knowledge graphs.
 
   subject aspect qualifier:
     is_a: aspect qualifier
@@ -2349,113 +2354,6 @@ slots:
     range: physical essence or occurrent
     mixin: true
     inverse: regulates
-
-  process regulates process:
-    deprecated: true
-    is_a: affects
-    mixins:
-      - regulates
-    domain: occurrent
-    range: occurrent
-    annotations:
-      canonical_predicate: true
-    exact_mappings:
-      - RO:0002211
-
-  process positively regulates process:
-    deprecated: true
-    is_a: process regulates process
-    mixins:
-      - positively regulates
-    annotations:
-      canonical_predicate: true
-      opposite_of: process negatively regulates process
-    exact_mappings:
-      - RO:0002213
-
-  process negatively regulates process:
-    deprecated: true
-    is_a: process regulates process
-    mixins:
-      - negatively regulates
-    annotations:
-      canonical_predicate: true
-      opposite_of: process positively regulates process
-    exact_mappings:
-      - RO:0002212
-
-  entity regulates entity:
-    deprecated: true
-    aliases: [ 'activity directly regulates activity of' ]
-    is_a: affects
-    mixins:
-      - regulates
-    domain: chemical entity or gene or gene product
-    range: chemical entity or gene or gene product
-    inverse: entity regulated by entity
-    annotations:
-      canonical_predicate: true
-    local_names:
-      translator: regulates
-      ro: activity directly regulates activity of
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - RO:0002448
-    narrow_mappings:
-      # Wikidata mapping copied over from 'regulates' above;
-      # considered a slightly narrower term since it applies to
-      # protein and RNA as subject regulator whereas molecular_entity
-      # may also be another class of chemical_substance?
-      - WIKIDATA_PROPERTY:P128
-
-
-  entity positively regulates entity:
-    deprecated: true
-    aliases: [ 'activity directly positively regulates activity of', 'anatomy upregulates gene', 'disease upregulates gene' ]
-    is_a: entity regulates entity
-    mixins:
-      - positively regulates
-    annotations:
-      canonical_predicate: true
-      opposite_of: entity negatively regulates entity
-    local_names:
-      translator: positively regulates
-      ro: activity directly positively regulates activity of
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - RO:0002450
-    broad_mappings:
-      # causally positive effect of A over B but not specific to nature of B
-      - RO:0004034
-    narrow_mappings:
-      # Defined more narrowly as increasing, facilitating the
-      # action or function of a "substance interaction", where "substance" is deemed a subclass of possible entity
-      - SEMMEDDB:STIMULATES
-      - SEMMEDDB:stimulates
-      - SEMMEDDB:augments
-
-  entity negatively regulates entity:
-    deprecated: true
-    aliases: [ 'activity directly negatively regulates activity of', 'anatomy downregulates gene', 'disease downregulates gene' ]
-    is_a: entity regulates entity
-    mixins:
-      - negatively regulates
-    annotations:
-      canonical_predicate: true
-      opposite_of: entity positively regulates entity
-    local_names:
-      translator: negatively regulates
-      ro: activity directly negatively regulates activity of
-    in_subset:
-      - translator_minimal
-    exact_mappings:
-      - RO:0002449
-    narrow_mappings:
-      # SemMedDb definition focuses on (chemical?) "substance interactions" which is a bit narrower?
-      - SEMMEDDB:INHIBITS
-      - SEMMEDDB:inhibits
 
   disrupts:
     is_a: affects
@@ -4341,56 +4239,6 @@ slots:
       - RO:0002087
       - RO:0002285
 
-  directly interacts with:
-    deprecated: true
-    is_a: interacts with
-    description: Holds between chemical entities that physically and directly interact
-      with each other
-    domain: chemical entity
-    range: chemical entity or gene or gene product
-    symmetric: true
-    annotations:
-      canonical_predicate: true
-    related_mappings:
-      - GAMMA:kd
-      - GAMMA:kb
-      - GAMMA:potency
-    exact_mappings:
-      - GAMMA:interacts_with
-    broad_mappings:
-      # Definition of this term is more generic than direct physical molecular interactions:
-      # A is connected to B iff there exists a fiat, material or temporal path between A and B.
-      - SIO:000203
-    narrow_mappings:
-      - PHAROS:drug_targets
-      - DRUGBANK:chelator
-      - GAMMA:antibody_binding
-      - GAMMA:pharmacological_chaperone
-      - GAMMA:releasing_agent
-      - GAMMA:pharmacological_chaperone
-      - GAMMA:releasing_agent
-      - GAMMA:binder
-      - GAMMA:binding
-      - GAMMA:ligand
-      - GAMMA:cofactor
-      - GAMMA:multitarget
-      - GAMMA:chaperone
-      - GAMMA:component
-      - GAMMA:adduct
-      - GAMMA:antibody
-      - CTD:affects_binding
-      - DGIdb:binder
-      - DGIdb:cofactor
-
-  affects expression in:
-    deprecated: true
-    is_a: affects
-    annotations:
-      canonical_predicate: true
-    description: Holds between a variant and an anatomical entity where the expression of the variant
-      is located in.
-    exact_mappings:
-      - GTEx:affects_expression_in
 
   has variant part:
     is_a: has part
@@ -4669,31 +4517,6 @@ slots:
     is_a: related to at instance level
     inverse: has completed
 
-  decreases molecular interaction:
-    deprecated: true
-    is_a: molecularly interacts with
-    description: indicates that the source decreases the molecular interaction between
-      the target and some other chemical entity
-    annotations:
-      canonical_predicate: true
-      opposite_of: increases molecular interaction
-    exact_mappings:
-      - CTD:decreases_molecular_interaction_with
-    mixins:
-      - decreases amount or activity of
-
-  increases molecular interaction:
-    deprecated: true
-    is_a: molecularly interacts with
-    description: indicates that the source increases the molecular interaction between
-      the target and some other chemical entity
-    annotations:
-      canonical_predicate: true
-      opposite_of: decreases molecular interaction
-    exact_mappings:
-      - CTD:increases_molecular_interaction_with
-    mixins:
-      - increases amount or activity of
 
   in linkage disequilibrium with:
     is_a: related to at instance level
@@ -5415,8 +5238,32 @@ slots:
       generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue 
       type, disease, etc.).
     range: string
-
 classes:
+
+  mapping:
+    slots:
+      - deprecated predicate
+      - subject aspect qualifier
+      - subject direction qualifier
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject context qualifier
+      - predicate
+      - qualified predicate
+      - object aspect qualifier
+      - object direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object derivative qualifier
+      - object context qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - species context qualifier
+      - exact match
+      - narrow match
+      - broad match
+
 
   ## ----------
   ## ATTRIBUTES
@@ -5499,7 +5346,6 @@ classes:
       - has quantitative value
       - has qualitative value
       - iri                    # 'url'
-      - source                 # 'source'
     slot_usage:
       name:
         description: >-
@@ -5590,7 +5436,6 @@ classes:
       - type   # rdf:type
       - name
       - description
-      - source
       - has attribute
       # evidence code(s)?
 
@@ -8169,7 +8014,6 @@ classes:
       - publications
       - has evidence
       - knowledge source
-      - original knowledge source
       - primary knowledge source
       - aggregator knowledge source
       - timepoint
@@ -8915,8 +8759,8 @@ classes:
       - exposure event to entity association mixin
       - entity to outcome association mixin
     slots:
-      - has population context
-      - has temporal context
+      - population context qualifier
+      - temporal context qualifier
     defining_slots:
       - subject
       - object
