@@ -6600,8 +6600,8 @@ slots:
       The "primary knowledge source" for this edge is "infores:icees-asthma". A "supporting data source" for this KP-
       generated knowledge is "infores:unc-cdw-health."  The "aggregator knowledge source" for this data is "infores:aragorn-ara"
 
-  supporting data sets:
-    is_a: supporting documents
+  supporting data set:
+    is_a: association slot
     description: >-
       A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through
       computation on, reasoning or inference over the retrieved data).
@@ -6729,8 +6729,8 @@ slots:
     examples:
       - value: 0.018
 
-  supporting texts:
-    is_a: supporting documents
+  supporting text:
+    is_a: association slot
     description: The segment of text from a document that supports the mined assertion.
     multivalued: true
     range: string
