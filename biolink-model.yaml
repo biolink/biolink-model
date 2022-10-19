@@ -6502,13 +6502,9 @@ slots:
     multivalued: true
 
   has supporting study result:
-    is_a: related to at instance level
+    is_a: association slot
     description: >-
       connects an association to an instance of supporting study result
-
-  is supporting study result of:
-    is_a: related to at instance level
-    inverse: has supporting study result
     
   mechanism of action:
     is_a: association slot
