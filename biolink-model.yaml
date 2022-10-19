@@ -1768,6 +1768,28 @@ slots:
     annotations:
       opposite_of: broad match
 
+  member of:
+    description: >-
+      Defines a mereological relation between a item and a collection.
+    is_a: related to at concept level
+    inverse: has member
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - RO:0002350
+    close_mapping:
+      - skos:member
+
+  has member:
+    description: >-
+      Defines a mereological relation between a collection and an item.
+    is_a: related to at concept level
+    in_subset:
+      - translator_minimal
+    exact_mappings:
+      - RO:0002351
+      - skos:member
+
   opposite of:
     description: >-
       x is the opposite of y if there exists some distance metric M, and there exists
@@ -9972,6 +9994,28 @@ classes:
           homology relationship type
       object:
         range: gene or gene product
+
+  gene to gene family association:
+    description: >-
+      Set membership of a gene in a family of genes related by common
+      evolutionary ancestry usually inferred by sequence comparisons.
+      The genes in a given family generally share common sequence motifs which
+      generally map onto shared gene product structure-function relationships.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    slot_usage:
+      subject:
+        range: gene
+      object:
+        range: gene family
+      predicate:
+        subproperty_of: member of
+        symmetric: false
+        description: >-
+          membership of the gene in the given gene family.
 
   gene expression mixin:
     description: >-
