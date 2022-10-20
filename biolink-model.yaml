@@ -2198,9 +2198,10 @@ slots:
       - GAMMA:binder
       - GAMMA:binding
     narrow_mappings:
-      - CTD:affects_binding
       - DGIdb:binder
       - GAMMA:antibody_binding
+    broad_mappings:
+      -  CTD:affects_binding
 
   indirectly physically interacts with:
     is_a: physically interacts with
@@ -10090,7 +10091,7 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to the target and negatively effects its normal function, 
           e.g. prevention of enzymatic reaction or activation of downstream pathway.
-        exact_mappings:
+        close_mappings:
           - GAMMA:inhibitor
           - DGIdb:inhibitor
           - SEMMEDDB:INHIBITS
@@ -10121,7 +10122,7 @@ enums:
         description: >-
           A causal mecahnism in which the effector binds to a receptor and prevents activation by an agonist 
           through competing for the binding site.
-        exact_mappings:
+        close_mappings:
           - DGIdb:antagonist
           - CHEMBL.MECHANISM:antagonist
           - GAMMA:antagonist
@@ -10139,7 +10140,7 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
           its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.
-        exact_mappings:
+        close_mappings:
           - GAMMA:inverse_agonist
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
@@ -10148,7 +10149,7 @@ enums:
         description: >-
           A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a 
           receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        exact_mappings:
+        close_mappings:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - GAMMA:negative_allosteric_modulator
           - DGIdb:inhibitory_allosteric_modulator
@@ -10162,7 +10163,7 @@ enums:
         description: >-
           A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an 
           endogenous ligand.
-        exact_mappings:
+        close_mappings:
           - GAMMA:agonist
           - CHEMBL.MECHANISM:agonist
           - DGIdb:agonist
@@ -10174,7 +10175,7 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to a molecular channel and facilitates transport of 
           ions through it.
-        exact_mappings:
+        close_mappings:
           - GAMMA:opener
           - CHEMBL.MECHANISM:opener
       positive allosteric modulation:
@@ -10182,7 +10183,7 @@ enums:
         description: >-
           A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by 
           binding to a site distinct from that ligand (i.e. non-competitive inhibition)
-        exact_mappings:
+        close_mappings:
           - CHEMBL.MECHANISM:positive_allosteric_modulator
           - CHEMBL.MECHANISM:positive_modulator
           - DGIdb:positive_allosteric_modulator
@@ -10199,13 +10200,13 @@ enums:
         description: >-
           A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some 
           other chemical or drug on its target.
-        exact_mappings:
+        close_mappings:
           - GAMMA:potentiator
       activation:
         is_a: binding
         description: >-
           A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.
-        exact_mappings:
+        close_mappings:
           - GAMMA:activator
           - CHEMBL.MECHANISM:activator
           - DGIdb:activator
@@ -10217,7 +10218,7 @@ enums:
         description: >-
           A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that 
           processes drugs in the body.
-        exact_mappings:
+        close_mappings:
           - DGIdb:inducer
           - GAMMA:inducer
       transcriptional regulation:
@@ -10229,18 +10230,19 @@ enums:
           of the target entity (e.g. its activity, processing, transport, etc)
       stabilization:
         is_a: activation
-        exact_mappings:
+        close_mappings:
           - CHEMBL.MECHANISM:stabiliser
           - GAMMA:stabilization
       stimulation:
         is_a: activation
-        exact_mappings:
+        close_mappings:
           - DGIdb:stimulator
           - SEMMEDDB:stimulates
           - GAMMA:stimulator
           - DGIdb:stimulator
-      releasing agent:
-        exact_mappings:
+      releasing activity:
+        is_a: activation
+        close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
           - GAMMA:releasing_agent
 
