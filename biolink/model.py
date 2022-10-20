@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-19T16:43:33
+# Generation date: 2022-10-20T10:42:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9573,8 +9573,8 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
         setattr(cls, "signaling-mediated control",
                 PermissibleValue(text="signaling-mediated control",
                                  description="A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)") )
-        setattr(cls, "releasing agent",
-                PermissibleValue(text="releasing agent") )
+        setattr(cls, "releasing activity",
+                PermissibleValue(text="releasing activity") )
 
 class LogicalInterpretationEnum(EnumDefinitionImpl):
 

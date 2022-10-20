@@ -2194,14 +2194,12 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
-    exact_mappings:
+    close_mappings:
       - GAMMA:binder
       - GAMMA:binding
-    narrow_mappings:
       - DGIdb:binder
+    narrow_mappings:
       - GAMMA:antibody_binding
-    broad_mappings:
-      -  CTD:affects_binding
 
   indirectly physically interacts with:
     is_a: physically interacts with
