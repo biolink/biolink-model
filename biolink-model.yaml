@@ -1256,14 +1256,17 @@ slots:
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-  deprecated predicate:
+  mapped predicate:
     description: >-
       The predicate that is being replaced by the fully qualified representation of predicate + subject and object 
       qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified
       predicate model. Not to be used in knowledge graphs.
 
   deprecated predicate mappings:
-    description: A collection of things
+    description: >- 
+      A collection of relationships that are not used in biolink, but have biolink patterns that can 
+      be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate
+      model in Biolink3.
     multivalued: true
     range: deprecated predicate mapping
     inlined_as_list: true
@@ -5416,7 +5419,7 @@ classes:
       A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
       be done to use a qualified statement in its place.
     slots:
-      - deprecated predicate
+      - mapped predicate
       - subject aspect qualifier
       - subject direction qualifier
       - subject form or variant qualifier

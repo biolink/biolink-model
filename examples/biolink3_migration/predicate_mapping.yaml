@@ -1,36 +1,36 @@
 deprecated predicate mappings:
-  - deprecated predicate: affects abundance of
+  - mapped predicate: affects abundance of
     object aspect qualifier: abundance
     predicate: affects
     exact matches:
       - CTD:affects_abundance_of
-  - deprecated predicate: increases abundance of
+  - mapped predicate: increases abundance of
     object aspect qualifier: abundance
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_abundance_of
-  - deprecated predicate: decreases abundance of
+  - mapped predicate: decreases abundance of
     object aspect qualifier: abundance
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_abundance_of
-  - deprecated predicate: affects activity of
+  - mapped predicate: affects activity of
     object aspect qualifier: activity
     predicate: affects
     exact matches:
       - CTD:affects_activity_of
-  - deprecated predicate: increases activity of
+  - mapped predicate: increases activity of
     object aspect qualifier: activity
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_activity_of
-  - deprecated predicate: decreases activity of
+  - mapped predicate: decreases activity of
     object aspect qualifier: activity
     object direction qualifier: decreased
     qualified predicate: causes
@@ -40,13 +40,13 @@ deprecated predicate mappings:
       - GAMMA:ic50
       - GAMMA:ki
       - DGIdb:vaccine
-  - deprecated predicate: affects expression of
+  - mapped predicate: affects expression of
     object aspect qualifier: expression
     predicate: affects
     exact matches:
       - CTD:affects_expression_of
       - GTEx:affects_expression_in
-  - deprecated predicate: increases expression of
+  - mapped predicate: increases expression of
     object aspect qualifier: expression
     object direction qualifier: increased
     predicate: affects
@@ -54,7 +54,7 @@ deprecated predicate mappings:
     exact matches:
       - RO:0003003
       - CTD:increases_expression_of
-  - deprecated predicate: decreases expression of
+  - mapped predicate: decreases expression of
     object aspect qualifier: expression
     object direction qualifier: decreased
     predicate: affects
@@ -62,51 +62,51 @@ deprecated predicate mappings:
     exact matches:
       - RO:0003002
       - CTD:decreases_expression_of
-  - deprecated predicate: affects folding of
+  - mapped predicate: affects folding of
     object aspect qualifier: folding
     predicate: affects
     exact matches:
       - CTD:affects_folding_of
-  - deprecated predicate: increases folding of
+  - mapped predicate: increases folding of
     object aspect qualifier: folding
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_folding_of
-  - deprecated predicate: decreases folding of
+  - mapped predicate: decreases folding of
     object aspect qualifier: folding
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_folding_of
-  - deprecated predicate: affects localization of
+  - mapped predicate: affects localization of
     object aspect qualifier: localization
     predicate: affects
     exact matches:
       - CTD:affects_localization_of
       - GOREL:0002003
-  - deprecated predicate: increases localization of
+  - mapped predicate: increases localization of
     object aspect qualifier: localization
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_localization_of
-  - deprecated predicate: decreases localization of
+  - mapped predicate: decreases localization of
     object aspect qualifier: localization
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_localization_of
-  - deprecated predicate: affects molecular modification of
+  - mapped predicate: affects molecular modification of
     object aspect qualifier: molecular modification
     predicate: affects
     exact matches:
       - CTD:affects_molecular_modification_of
-  - deprecated predicate: increases molecular modification of
+  - mapped predicate: increases molecular modification of
     object aspect qualifier: molecular modification
     object direction qualifier: increased
     qualified predicate: causes
@@ -147,7 +147,7 @@ deprecated predicate mappings:
       - CTD:increases_carboxylation
       - GAMMA:acetylation
       - GAMMA:oxidizer
-  - deprecated predicate: decreases molecular modification of
+  - mapped predicate: decreases molecular modification of
     object aspect qualifier: molecular modification
     object direction qualifier: decreased
     qualified predicate: causes
@@ -187,50 +187,50 @@ deprecated predicate mappings:
         - CTD:decreases_reduction
         - CTD:decreases_carboxylation
         - GAMMA:deoxidizer
-  - deprecated predicate: affects metabolic processing of
+  - mapped predicate: affects metabolic processing of
     object aspect qualifier: metabolic processing
     predicate: affects
     exact matches:
       - CTD:affects_metabolic_processing_of
-  - deprecated predicate: increases metabolic processing of
+  - mapped predicate: increases metabolic processing of
     object aspect qualifier: metabolic processing
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_metabolic_processing_of
-  - deprecated predicate: decreases metabolic processing of
+  - mapped predicate: decreases metabolic processing of
     object aspect qualifier: metabolic processing
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_metabolic_processing_of
-  - deprecated predicate: affects synthesis of
+  - mapped predicate: affects synthesis of
     object aspect qualifier: synthesis
     predicate: affects
     exact matches:
       - CTD:affects_synthesis_of
-  - deprecated predicate: increases synthesis of
+  - mapped predicate: increases synthesis of
     object aspect qualifier: synthesis
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_synthesis_of
-  - deprecated predicate: decreases synthesis of
+  - mapped predicate: decreases synthesis of
     object aspect qualifier: synthesis
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_synthesis_of
-  - deprecated predicate: affects transport of
+  - mapped predicate: affects transport of
     object aspect qualifier: transport
     predicate: affects
     exact matches:
       - CTD:affects_transport_of
-  - deprecated predicate: increases transport of
+  - mapped predicate: increases transport of
     object aspect qualifier: transport
     object direction qualifier: increased
     qualified predicate: causes
@@ -243,19 +243,19 @@ deprecated predicate mappings:
       - RO:0002313
       - RO:0002340
       - RO:0002345
-  - deprecated predicate: decreases transport of
+  - mapped predicate: decreases transport of
     object aspect qualifier: transport
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_transport_of
-  - deprecated predicate: affects degradation of
+  - mapped predicate: affects degradation of
     object aspect qualifier: degradation
     predicate: affects
     exact matches:
       - CTD:affects_degradation_of
-  - deprecated predicate: increases degradation of
+  - mapped predicate: increases degradation of
     object aspect qualifier: degradation
     object direction qualifier: increased
     qualified predicate: causes
@@ -265,7 +265,7 @@ deprecated predicate mappings:
       - CTD:increases_cleavage
       - CTD:increases_hydrolysis
       - GOREL:0002004
-  - deprecated predicate: decreases degradation of
+  - mapped predicate: decreases degradation of
     object aspect qualifier: degradation
     object direction qualifier: decreased
     qualified predicate: causes
@@ -274,40 +274,41 @@ deprecated predicate mappings:
       - CTD:decreases_degradation_of
       - CTD:decreases_cleavage
       - CTD:decreases_hydrolysis
-  - deprecated predicate: affects secretion of
+  - mapped predicate: affects secretion of
     object aspect qualifier: secretion
     predicate: affects
     exact matches:
       - CTD:affects_secretion_of
     broad matches:
       - CTD:affects_export
-  - deprecated predicate: increases secretion of
+  - mapped predicate: increases secretion of
     object aspect qualifier: secretion
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_secretion_of
-  - deprecated predicate: decreases secretion of
+  - mapped predicate: decreases secretion of
     object aspect qualifier: secretion
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_secretion_of
-  - deprecated predicate: affects mutation rate of
+  - mapped predicate: affects mutation rate of
     object aspect qualifier: mutation rate
     predicate: affects
     exact matches:
       - CTD:affects_mutation_rate_of
-  - deprecated predicate: increases mutation rate of
+  - mapped predicate: increases mutation rate of
     object aspect qualifier: mutation rate
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_mutation_rate_of
-  - deprecated predicate: decreases mutation rate of
+      - CTD:increases_mutagenesis
+  - mapped predicate: decreases mutation rate of
     object aspect qualifier: mutation rate
     object direction qualifier: decreased
     qualified predicate: causes
@@ -315,116 +316,118 @@ deprecated predicate mappings:
     exact matches:
       - CTD:decreases_mutation_rate_of
       - CTD:decreases_mutagenesis
-  - deprecated predicate: affects splicing of
+  - mapped predicate: affects splicing of
     object aspect qualifier: splicing
     predicate: affects
     exact matches:
       - CTD:affects_splicing_of
-  - deprecated predicate: increases splicing of
+  - mapped predicate: increases splicing of
     object aspect qualifier: splicing
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_splicing_of
-  - deprecated predicate: decreases splicing of
+      - CTD:increases_RNA_splicing
+  - mapped predicate: decreases splicing of
     object aspect qualifier: splicing
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_splicing_of
-  - deprecated predicate: affects splicing of
+      - CTD:decreases_RNA_splicing
+  - mapped predicate: affects splicing of
     object aspect qualifier: splicing
     predicate: affects
     exact matches:
       - CTD:affects_splicing_of
-  - deprecated predicate: increases splicing of
+  - mapped predicate: increases splicing of
     object aspect qualifier: splicing
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_splicing_of
-  - deprecated predicate: decreases splicing of
+  - mapped predicate: decreases splicing of
     object aspect qualifier: splicing
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_splicing_of
-  - deprecated predicate: affects secretion of
+  - mapped predicate: affects secretion of
     object aspect qualifier: secretion
     predicate: affects
     exact matches:
       - CTD:affects_secretion_of
-  - deprecated predicate: increases secretion of
+  - mapped predicate: increases secretion of
     object aspect qualifier: secretion
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_secretion_of
-  - deprecated predicate: decreases secretion of
+  - mapped predicate: decreases secretion of
     object aspect qualifier: secretion
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_secretion_of
-  - deprecated predicate: affects uptake of
+  - mapped predicate: affects uptake of
     object aspect qualifier: uptake
     predicate: affects
     exact matches:
       - CTD:affects_uptake_of
-  - deprecated predicate: increases uptake of
+  - mapped predicate: increases uptake of
     object aspect qualifier: uptake
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_uptake_of
-  - deprecated predicate: decreases uptake of
+  - mapped predicate: decreases uptake of
     object aspect qualifier: uptake
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_uptake_of
-  - deprecated predicate: affects molecular interaction
+  - mapped predicate: affects molecular interaction
     object aspect qualifier: molecular interaction
     predicate: affects
     exact matches:
       - CTD:affects_molecular_interaction
-  - deprecated predicate: increases molecular interaction
+  - mapped predicate: increases molecular interaction
     object aspect qualifier: molecular interaction
     object direction qualifier: increased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:increases_molecular_interaction
-  - deprecated predicate: decreases molecular interaction
+  - mapped predicate: decreases molecular interaction
     object aspect qualifier: molecular interaction
     object direction qualifier: decreased
     qualified predicate: causes
     predicate: affects
     exact matches:
       - CTD:decreases_molecular_interaction
-  - deprecated predicate: entity negatively regulates entity
+  - mapped predicate: entity negatively regulates entity
     object direction qualifier: downregulated
     predicate: regulates
-  - deprecated predicate: entity positively regulates entity
+  - mapped predicate: entity positively regulates entity
     object direction qualifier: upregulated
     predicate: regulates
     exact matches:
       - RO:0002212
       - RO:0002450
-  - deprecated predicate: process positively regulates process
+  - mapped predicate: process positively regulates process
     object direction qualifier: upregulated
     predicate: regulates
     exact matches:
       - RO:0002213
-  - deprecated predicate: process negatively regulates process
+  - mapped predicate: process negatively regulates process
     object direction qualifier: downregulated
     predicate: regulates
     exact matches:
