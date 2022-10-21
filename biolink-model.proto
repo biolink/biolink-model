@@ -528,13 +528,13 @@ message ChemicalAffectsGeneAssociation
   timeType timepoint = 0
   string type = 0
  repeated  categoryType category = 0
-  chemicalOrGeneOrGeneProductFormEnum subjectFormOrVariantQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
-  chemicalOrGeneOrGeneProductFormEnum objectFormOrVariantQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   anatomicalEntity objectContextQualifier = 0
@@ -652,11 +652,11 @@ message ChemicalGeneInteractionAssociation
   timeType timepoint = 0
   string type = 0
  repeated  categoryType category = 0
-  chemicalOrGeneOrGeneProductFormEnum subjectFormOrVariantQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
-  chemicalOrGeneOrGeneProductFormEnum objectFormOrVariantQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
   anatomicalEntity objectContextQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0
@@ -2006,6 +2006,30 @@ message GeneToGeneCoexpressionAssociation
   lifeStage stageQualifier = 0
   diseaseOrPhenotypicFeature phenotypicState = 0
  }
+// Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
+message GeneToGeneFamilyAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  informationResource knowledgeSource = 0
+  string originalKnowledgeSource = 0
+  informationResource primaryKnowledgeSource = 0
+ repeated  informationResource aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string type = 0
+ repeated  categoryType category = 0
+  gene subject = 0
+  geneFamily object = 0
+  predicateType predicate = 0
+ }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
  {
@@ -3003,6 +3027,23 @@ message NucleicAcidSequenceMotif
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  }
+// A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+message NucleosomeModification
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  labelType synonym = 0
+  biologicalSequence hasBiologicalSequence = 0
+ }
 message Nutrient
  {
   string id = 0
@@ -3482,6 +3523,22 @@ message PopulationToPopulationAssociation
   populationOfIndividualOrganisms subject = 0
   populationOfIndividualOrganisms object = 0
   predicateType predicate = 0
+ }
+// A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
+message PosttranslationalModification
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+  string source = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  labelType synonym = 0
  }
 // A series of actions conducted in a certain order or manner
 message Procedure

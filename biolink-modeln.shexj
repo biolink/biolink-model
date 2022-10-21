@@ -854,6 +854,7 @@
             "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation",
             "https://w3id.org/biolink/vocab/GeneToGeneAssociation",
+            "https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation",
             "https://w3id.org/biolink/vocab/GeneToPathwayAssociation",
             "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation",
@@ -1289,8 +1290,10 @@
             "https://w3id.org/biolink/vocab/Genotype",
             "https://w3id.org/biolink/vocab/Haplotype",
             "https://w3id.org/biolink/vocab/NucleicAcidSequenceMotif",
+            "https://w3id.org/biolink/vocab/NucleosomeModification",
             "https://w3id.org/biolink/vocab/OrganismalEntity",
             "https://w3id.org/biolink/vocab/Polypeptide",
+            "https://w3id.org/biolink/vocab/PosttranslationalModification",
             "https://w3id.org/biolink/vocab/ProteinDomain",
             "https://w3id.org/biolink/vocab/ProteinFamily",
             "https://w3id.org/biolink/vocab/ReagentTargetedGene",
@@ -1750,6 +1753,18 @@
                            ]
                         },
                         "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
+                           ]
+                        },
+                        "min": 0
                      }
                   ]
                },
@@ -1945,6 +1960,18 @@
                            "type": "NodeConstraint",
                            "values": [
                               "https://w3id.org/biolink/vocab/OrganismalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
                            ]
                         },
                         "min": 0
@@ -2222,6 +2249,18 @@
                            ]
                         },
                         "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
+                           ]
+                        },
+                        "min": 0
                      }
                   ]
                },
@@ -2265,7 +2304,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -2307,7 +2346,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -2858,7 +2897,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -2886,7 +2925,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -4065,6 +4104,18 @@
                            "type": "NodeConstraint",
                            "values": [
                               "https://w3id.org/biolink/vocab/StudyPopulation"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
                            ]
                         },
                         "min": 0
@@ -6111,6 +6162,35 @@
       },
       {
          "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/EpigenomicEntity",
+         "closed": false,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "id": "https://w3id.org/biolink/vocab/EpigenomicEntity_tes",
+                  "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
+                  "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/EpigenomicEntity"
+                     ]
+                  },
+                  "min": 0
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/Event",
          "closed": true,
          "expression": {
@@ -6290,14 +6370,14 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/ExposureEvent_tes",
                   "expressions": [
-                     "https://w3id.org/biolink/vocab/NamedThing_tes",
+                     "https://w3id.org/biolink/vocab/OntologyClass_tes",
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "values": [
-                              "https://w3id.org/biolink/vocab/NamedThing"
+                              "https://w3id.org/biolink/vocab/OntologyClass"
                            ]
                         },
                         "min": 0
@@ -7736,6 +7816,66 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/GeneToGeneCoexpressionAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/Association_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/Association"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject",
+                        "valueExpr": "https://w3id.org/biolink/vocab/Gene",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneFamily",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation"
                      ]
                   },
                   "min": 1
@@ -9473,6 +9613,18 @@
                                  ]
                               },
                               "min": 0
+                           },
+                           "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
+                                 ]
+                              },
+                              "min": 0
                            }
                         ]
                      },
@@ -10856,7 +11008,6 @@
             "https://w3id.org/biolink/vocab/ClinicalEntity",
             "https://w3id.org/biolink/vocab/Device",
             "https://w3id.org/biolink/vocab/Event",
-            "https://w3id.org/biolink/vocab/ExposureEvent",
             "https://w3id.org/biolink/vocab/InformationContentEntity",
             "https://w3id.org/biolink/vocab/OrganismTaxon",
             "https://w3id.org/biolink/vocab/Phenomenon",
@@ -11135,6 +11286,95 @@
          }
       },
       {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/NucleosomeModification",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/NucleosomeModification_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GeneProductIsoformMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GeneProductIsoformMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GenomicEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GenomicEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/EpigenomicEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/EpigenomicEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/synonym",
+                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                        "min": 0,
+                        "max": -1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
+                        "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
+                        "min": 0,
+                        "max": 1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/NucleosomeModification"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/Nutrient",
          "shapeExprs": [
@@ -11307,6 +11547,7 @@
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/OntologyClass",
          "shapeExprs": [
+            "https://w3id.org/biolink/vocab/ExposureEvent",
             "https://w3id.org/biolink/vocab/RelationshipType",
             "https://w3id.org/biolink/vocab/TaxonomicRank"
          ]
@@ -11817,6 +12058,18 @@
                            "type": "NodeConstraint",
                            "values": [
                               "https://w3id.org/biolink/vocab/BiologicalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
                            ]
                         },
                         "min": 0
@@ -12995,6 +13248,18 @@
                                  ]
                               },
                               "min": 0
+                           },
+                           "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                              "valueExpr": {
+                                 "type": "NodeConstraint",
+                                 "values": [
+                                    "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
+                                 ]
+                              },
+                              "min": 0
                            }
                         ]
                      },
@@ -13068,6 +13333,64 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/PopulationToPopulationAssociation"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/PosttranslationalModification",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/PosttranslationalModification_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GeneProductIsoformMixin_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GeneProductIsoformMixin"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/synonym",
+                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                        "min": 0,
+                        "max": -1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/PosttranslationalModification"
                      ]
                   },
                   "min": 1
@@ -15814,6 +16137,18 @@
                            "type": "NodeConstraint",
                            "values": [
                               "https://w3id.org/biolink/vocab/OrganismalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/SubjectOfInvestigation_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/SubjectOfInvestigation"
                            ]
                         },
                         "min": 0
