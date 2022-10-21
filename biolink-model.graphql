@@ -7,7 +7,6 @@ type Activity implements ActivityAndBehavior
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -25,7 +24,6 @@ interface AdministrativeEntity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -37,7 +35,6 @@ type Agent
     iri: IriType
     type: String
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -55,7 +52,6 @@ type AnatomicalEntity implements PhysicalEssence
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -69,7 +65,6 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -77,7 +72,6 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -93,14 +87,12 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -117,14 +109,12 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -143,7 +133,6 @@ type Article
   {
     iri: IriType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -172,7 +161,6 @@ type Association
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -182,7 +170,6 @@ type Association
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -204,7 +191,6 @@ type Attribute implements OntologyClass
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type Behavior implements OntologyClass, ActivityAndBehavior
@@ -214,7 +200,6 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -231,7 +216,6 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -239,7 +223,6 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -267,7 +250,6 @@ type BehavioralExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -278,7 +260,6 @@ type BehavioralFeature
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -297,7 +278,6 @@ type BiologicalEntity implements ThingWithTaxon
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -312,7 +292,6 @@ type BiologicalProcess implements Occurrent, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -330,7 +309,6 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -355,7 +333,6 @@ type BiologicalSex
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type BioticExposure implements ExposureEvent
@@ -372,7 +349,6 @@ type BioticExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -380,7 +356,6 @@ type Book
   {
     iri: IriType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -403,7 +378,6 @@ type BookChapter
   {
     iri: IriType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -432,7 +406,6 @@ type Case implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -451,7 +424,6 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -461,7 +433,6 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -480,7 +451,6 @@ type Cell
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -495,7 +465,6 @@ type CellLine implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -509,7 +478,6 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
@@ -518,7 +486,6 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -536,7 +503,6 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
@@ -545,7 +511,6 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -566,7 +531,6 @@ type CellularComponent
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -581,7 +545,6 @@ type CellularOrganism implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -595,14 +558,12 @@ type ChemicalAffectsGeneAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -635,7 +596,6 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -653,14 +613,12 @@ type ChemicalEntityAssessesNamedThingAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -681,14 +639,12 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -722,7 +678,6 @@ type ChemicalExposure implements ExposureEvent
     hasAttributeType: OntologyClass!
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -733,14 +688,12 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -766,7 +719,6 @@ type ChemicalMixture
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -792,7 +744,6 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     object: NamedThing!
@@ -801,7 +752,6 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -817,7 +767,6 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     object: NamedThing!
@@ -826,7 +775,6 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -850,7 +798,6 @@ type ChemicalRole
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
@@ -859,7 +806,6 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -868,7 +814,6 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -883,14 +828,12 @@ type ChemicalToChemicalDerivationAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -908,7 +851,6 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -917,7 +859,6 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -931,37 +872,12 @@ interface ChemicalToEntityAssociationMixin
     subject: ChemicalEntityOrGeneOrGeneProduct!
   }
 
-type ChemicalToGeneAssociation implements ChemicalToEntityAssociationMixin
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    subject: NamedThing!
-    predicate: PredicateType!
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    originalKnowledgeSource: String
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
-    timepoint: TimeType
-    type: String
-    category: [CategoryType]
-    object: GeneOrGeneProduct!
-  }
-
 type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -969,7 +885,6 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -986,7 +901,6 @@ type ChiSquaredAnalysisResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1011,7 +925,6 @@ type ClinicalAttribute
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type ClinicalCourse
@@ -1028,7 +941,6 @@ type ClinicalCourse
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type ClinicalEntity
@@ -1038,7 +950,6 @@ type ClinicalEntity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1052,7 +963,6 @@ type ClinicalFinding
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -1067,7 +977,6 @@ type ClinicalIntervention
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1087,7 +996,6 @@ type ClinicalMeasurement
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     hasAttributeType: OntologyClass!
   }
 
@@ -1105,7 +1013,6 @@ type ClinicalModifier
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type ClinicalTrial
@@ -1115,7 +1022,6 @@ type ClinicalTrial
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1129,7 +1035,6 @@ type CodingSequence
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1151,7 +1056,6 @@ type Cohort implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -1173,7 +1077,6 @@ type ComplexChemicalExposure
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type ComplexMolecularMixture
@@ -1183,7 +1086,6 @@ type ComplexMolecularMixture
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1206,7 +1108,6 @@ type ConceptCountAnalysisResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1224,7 +1125,6 @@ type ConfidenceLevel
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1241,13 +1141,11 @@ type ContributorAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1266,7 +1164,6 @@ type Dataset
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1284,7 +1181,6 @@ type DatasetDistribution
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1303,7 +1199,6 @@ type DatasetSummary
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1323,7 +1218,6 @@ type DatasetVersion
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1337,6 +1231,36 @@ type DatasetVersion
     hasDistribution: DatasetDistribution
   }
 
+interface DeprecatedMappingCollection
+  {
+    deprecatedPredicateMappings: [DeprecatedPredicateMapping]
+  }
+
+type DeprecatedPredicateMapping
+  {
+    mappedPredicate: String
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: String
+    subjectFormOrVariantQualifier: String
+    subjectPartQualifier: String
+    subjectDerivativeQualifier: String
+    subjectContextQualifier: String
+    predicate: PredicateType!
+    qualifiedPredicate: String
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: String
+    objectPartQualifier: String
+    objectDerivativeQualifier: String
+    objectContextQualifier: String
+    causalMechanismQualifier: String
+    anatomicalContextQualifier: AnatomicalContextQualifierEnum
+    speciesContextQualifier: OrganismTaxon
+    exactMatch: [NamedThing]
+    narrowMatch: [NamedThing]
+    broadMatch: [NamedThing]
+  }
+
 type Device
   {
     id: String!
@@ -1344,7 +1268,6 @@ type Device
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1358,7 +1281,6 @@ type Disease
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1373,7 +1295,6 @@ type DiseaseOrPhenotypicFeature
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1395,7 +1316,6 @@ type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEn
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -1414,7 +1334,6 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
@@ -1422,7 +1341,6 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1438,7 +1356,6 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1447,7 +1364,6 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1467,7 +1383,6 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1477,7 +1392,6 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1491,7 +1405,6 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -1499,7 +1412,6 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1520,7 +1432,6 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1549,7 +1460,6 @@ type DrugExposure implements ExposureEvent
     hasAttributeType: OntologyClass!
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
   }
@@ -1565,7 +1475,6 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1574,7 +1483,6 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1596,7 +1504,6 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     hasAttributeType: OntologyClass!
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     hasQuantitativeValue: [QuantityValue]
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
@@ -1608,13 +1515,11 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1637,7 +1542,6 @@ interface Entity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
   }
 
@@ -1647,7 +1551,6 @@ type EntityToDiseaseAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1657,7 +1560,6 @@ type EntityToDiseaseAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1702,7 +1604,6 @@ type EntityToPhenotypicFeatureAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1712,7 +1613,6 @@ type EntityToPhenotypicFeatureAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1744,7 +1644,6 @@ type EnvironmentalExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -1755,7 +1654,6 @@ type EnvironmentalFeature
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1769,7 +1667,6 @@ type EnvironmentalFoodContaminant
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1788,7 +1685,6 @@ type EnvironmentalProcess implements Occurrent
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1811,7 +1707,6 @@ type Event
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1825,7 +1720,6 @@ type EvidenceType
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1843,7 +1737,6 @@ type Exon
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1864,7 +1757,6 @@ type ExonToTranscriptRelationship
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -1872,7 +1764,6 @@ type ExonToTranscriptRelationship
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1888,17 +1779,12 @@ interface ExposureEvent
     timepoint: TimeType
   }
 
-type ExposureEventToEntityAssociationMixin
-  {
-  }
-
-type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociationMixin, EntityToOutcomeAssociationMixin
+type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixin
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -1908,14 +1794,13 @@ type ExposureEventToOutcomeAssociation implements ExposureEventToEntityAssociati
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
     type: String
     category: [CategoryType]
-    hasPopulationContext: PopulationOfIndividualOrganisms
-    hasTemporalContext: TimeType
+    populationContextQualifier: PopulationOfIndividualOrganisms
+    temporalContextQualifier: TimeType
   }
 
 type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin
@@ -1924,7 +1809,6 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
@@ -1933,7 +1817,6 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -1953,7 +1836,6 @@ type Food
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -1976,7 +1858,6 @@ type FoodAdditive
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2007,7 +1888,6 @@ type FunctionalAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2015,14 +1895,13 @@ type FunctionalAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
-    object: GeneOntologyClass!
+    object: OntologyClass!
   }
 
 type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
@@ -2032,7 +1911,6 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -2049,7 +1927,6 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2057,7 +1934,6 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2085,7 +1961,6 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2105,7 +1980,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2113,7 +1987,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2125,10 +1998,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     onsetQualifier: Onset
     sequenceVariantQualifier: SequenceVariant
     subject: GeneOrGeneProduct!
-  }
-
-type GeneOntologyClass
-  {
   }
 
 interface GeneOrGeneProduct
@@ -2150,37 +2019,12 @@ interface GeneProductMixin
     xref: [Uriorcurie]
   }
 
-type GeneRegulatoryRelationship
-  {
-    id: String!
-    iri: IriType
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    negated: Boolean
-    qualifiers: [OntologyClass]
-    publications: [Publication]
-    hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    originalKnowledgeSource: String
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
-    timepoint: TimeType
-    type: String
-    category: [CategoryType]
-    predicate: PredicateType!
-    subject: GeneOrGeneProduct!
-    object: GeneOrGeneProduct!
-  }
-
 type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2188,7 +2032,6 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2212,14 +2055,12 @@ type GeneToExpressionSiteAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2238,7 +2079,6 @@ interface GeneToGeneAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2246,7 +2086,6 @@ interface GeneToGeneAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2262,14 +2101,12 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2290,14 +2127,12 @@ type GeneToGeneFamilyAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2314,14 +2149,12 @@ type GeneToGeneHomologyAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2338,14 +2171,12 @@ type GeneToGeneProductRelationship
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2362,7 +2193,6 @@ type GeneToGoTermAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2370,14 +2200,13 @@ type GeneToGoTermAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
     type: String
     category: [CategoryType]
     subject: Gene!
-    object: GeneOntologyClass!
+    object: OntologyClass!
   }
 
 type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
@@ -2386,7 +2215,6 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2394,7 +2222,6 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2410,7 +2237,6 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2418,7 +2244,6 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2439,7 +2264,6 @@ type GeneticInheritance
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2454,7 +2278,6 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2477,7 +2300,6 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
     hasGeneOrGeneProduct: [Gene]
     hasBiologicalSequence: BiologicalSequence
@@ -2495,14 +2317,12 @@ type GenomicSequenceLocalization
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2525,7 +2345,6 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2541,14 +2360,12 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2568,14 +2385,12 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2600,14 +2415,12 @@ type GenotypeToGeneAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2624,14 +2437,12 @@ type GenotypeToGenotypePartAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2648,7 +2459,6 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     object: NamedThing!
     negated: Boolean
@@ -2656,7 +2466,6 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2676,14 +2485,12 @@ type GenotypeToVariantAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2708,7 +2515,6 @@ type GenotypicSex
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type GeographicExposure implements ExposureEvent
@@ -2725,7 +2531,6 @@ type GeographicExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -2736,7 +2541,6 @@ type GeographicLocation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2752,7 +2556,6 @@ type GeographicLocationAtTime
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2769,7 +2572,6 @@ type GrossAnatomicalStructure
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -2784,7 +2586,6 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2800,7 +2601,6 @@ type Hospitalization
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2818,7 +2618,6 @@ type IndividualOrganism implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -2833,7 +2632,6 @@ interface InformationContentEntity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2850,14 +2648,12 @@ type InformationContentEntityToNamedThingAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2875,7 +2671,6 @@ type InformationResource
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -2886,23 +2681,6 @@ type InformationResource
     creationDate: Date
   }
 
-type Inheritance
-  {
-    id: String!
-    type: String
-    description: NarrativeText
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    name: LabelType
-    hasAttributeType: OntologyClass!
-    hasQuantitativeValue: [QuantityValue]
-    hasQualitativeValue: NamedThing
-    iri: IriType
-    source: String
-  }
-
 type LifeStage
   {
     id: String!
@@ -2910,7 +2688,6 @@ type LifeStage
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -2934,7 +2711,6 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2942,7 +2718,6 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2958,7 +2733,6 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2966,7 +2740,6 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -2987,7 +2760,6 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -2995,7 +2767,6 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3005,25 +2776,6 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     object: MolecularActivity!
   }
 
-type Macronutrient
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-  }
-
 type MaterialSample implements SubjectOfInvestigation
   {
     id: String!
@@ -3031,7 +2783,6 @@ type MaterialSample implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3044,14 +2795,12 @@ type MaterialSampleDerivationAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3068,7 +2817,6 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -3078,7 +2826,6 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3091,25 +2838,6 @@ interface MaterialSampleToEntityAssociationMixin
     subject: MaterialSample!
   }
 
-type Micronutrient
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-  }
-
 type MicroRNA
   {
     id: String!
@@ -3117,7 +2845,6 @@ type MicroRNA
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3146,7 +2873,6 @@ type MolecularActivity implements Occurrent, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3163,7 +2889,6 @@ type MolecularActivityToChemicalEntityAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -3171,7 +2896,6 @@ type MolecularActivityToChemicalEntityAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3187,7 +2911,6 @@ type MolecularActivityToMolecularActivityAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -3195,7 +2918,6 @@ type MolecularActivityToMolecularActivityAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3211,14 +2933,12 @@ type MolecularActivityToPathwayAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3236,7 +2956,6 @@ type MolecularEntity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3256,7 +2975,6 @@ type MolecularMixture
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3283,7 +3001,6 @@ type NamedThing
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3296,7 +3013,6 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     object: NamedThing!
@@ -3305,7 +3021,6 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3325,7 +3040,6 @@ type NoncodingRNAProduct
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3348,7 +3062,6 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3370,7 +3083,6 @@ type NucleicAcidSequenceMotif
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3385,7 +3097,6 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3395,25 +3106,6 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     hasBiologicalSequence: BiologicalSequence
   }
 
-type Nutrient
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-  }
-
 type ObservedExpectedFrequencyAnalysisResult
   {
     id: String!
@@ -3421,7 +3113,6 @@ type ObservedExpectedFrequencyAnalysisResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3450,7 +3141,6 @@ type Onset
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 interface OntologyClass
@@ -3472,7 +3162,6 @@ type OrganismAttribute
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type OrganismTaxon
@@ -3482,7 +3171,6 @@ type OrganismTaxon
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3501,14 +3189,12 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3525,7 +3211,6 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -3533,7 +3218,6 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3549,14 +3233,12 @@ type OrganismTaxonToOrganismTaxonInteraction
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3574,14 +3256,12 @@ type OrganismTaxonToOrganismTaxonSpecialization
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3598,7 +3278,6 @@ type OrganismToOrganismAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -3606,7 +3285,6 @@ type OrganismToOrganismAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3623,7 +3301,6 @@ type OrganismalEntity implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -3637,7 +3314,6 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
@@ -3646,7 +3322,6 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3668,14 +3343,12 @@ type PairwiseGeneToGeneInteraction
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3691,14 +3364,12 @@ type PairwiseMolecularInteraction
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3729,7 +3400,6 @@ type PathologicalAnatomicalExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -3744,7 +3414,6 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -3763,7 +3432,6 @@ type PathologicalProcess implements PathologicalEntityMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3788,7 +3456,6 @@ type PathologicalProcessExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     timepoint: TimeType
   }
 
@@ -3803,7 +3470,6 @@ type Pathway implements OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3821,7 +3487,6 @@ type Phenomenon implements Occurrent
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3835,7 +3500,6 @@ type PhenotypicFeature
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3857,7 +3521,6 @@ type PhenotypicQuality
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type PhenotypicSex
@@ -3874,7 +3537,6 @@ type PhenotypicSex
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type PhysicalEntity implements PhysicalEssence
@@ -3884,7 +3546,6 @@ type PhysicalEntity implements PhysicalEssence
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3906,7 +3567,6 @@ type PhysiologicalProcess implements OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3924,7 +3584,6 @@ type PlanetaryEntity
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3938,7 +3597,6 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -3953,7 +3611,6 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -3967,14 +3624,12 @@ type PopulationToPopulationAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -3992,7 +3647,6 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4008,7 +3662,6 @@ type Procedure implements ActivityAndBehavior
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4022,7 +3675,6 @@ type ProcessedMaterial
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4045,7 +3697,6 @@ type Protein implements GeneProductMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4061,7 +3712,6 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4077,7 +3727,6 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4093,7 +3742,6 @@ type ProteinIsoform implements GeneProductIsoformMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4106,7 +3754,6 @@ type Publication
   {
     iri: IriType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -4137,7 +3784,6 @@ type ReactionToCatalystAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4145,7 +3791,6 @@ type ReactionToCatalystAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4164,7 +3809,6 @@ type ReactionToParticipantAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4172,7 +3816,6 @@ type ReactionToParticipantAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4192,7 +3835,6 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4217,7 +3859,6 @@ type RelativeFrequencyAnalysisResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4235,7 +3876,6 @@ type RNAProduct implements GeneProductMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4258,7 +3898,6 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4284,7 +3923,6 @@ type SequenceAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     predicate: PredicateType!
@@ -4294,7 +3932,6 @@ type SequenceAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4308,7 +3945,6 @@ type SequenceFeatureRelationship
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4316,7 +3952,6 @@ type SequenceFeatureRelationship
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4332,7 +3967,6 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4349,7 +3983,6 @@ interface SequenceVariantModulatesTreatmentAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4357,7 +3990,6 @@ interface SequenceVariantModulatesTreatmentAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4371,7 +4003,6 @@ type Serial
   {
     iri: IriType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     category: [CategoryType]!
@@ -4407,7 +4038,6 @@ type SeverityValue
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type SiRNA
@@ -4417,7 +4047,6 @@ type SiRNA
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4439,7 +4068,6 @@ type SmallMolecule
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4459,7 +4087,6 @@ type Snv
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4484,7 +4111,6 @@ type SocioeconomicAttribute
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 type SocioeconomicExposure implements ExposureEvent
@@ -4500,7 +4126,6 @@ type SocioeconomicExposure implements ExposureEvent
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
     hasAttribute: [SocioeconomicAttribute]!
     timepoint: TimeType
   }
@@ -4520,7 +4145,6 @@ type StudyPopulation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
@@ -4535,7 +4159,6 @@ interface StudyResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4556,7 +4179,6 @@ type TaxonToTaxonAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4564,7 +4186,6 @@ type TaxonToTaxonAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4586,7 +4207,6 @@ type TextMiningResult
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4609,7 +4229,6 @@ type Transcript
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4630,7 +4249,6 @@ type TranscriptToGeneRelationship
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4638,7 +4256,6 @@ type TranscriptToGeneRelationship
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4655,7 +4272,6 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4666,24 +4282,18 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     timepoint: TimeType
   }
 
-type UnclassifiedOntologyClass
-  {
-  }
-
 type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4703,14 +4313,12 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4735,7 +4343,6 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
@@ -4743,7 +4350,6 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4759,7 +4365,6 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
@@ -4767,7 +4372,6 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4787,7 +4391,6 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     object: NamedThing!
@@ -4796,7 +4399,6 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4815,7 +4417,6 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     iri: IriType
     name: LabelType
     description: NarrativeText
-    source: String
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
@@ -4823,7 +4424,6 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: InformationResource
-    originalKnowledgeSource: String
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
@@ -4845,31 +4445,11 @@ type Virus implements SubjectOfInvestigation
     type: String
     name: LabelType
     description: NarrativeText
-    source: String
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
-  }
-
-type Vitamin
-  {
-    id: String!
-    iri: IriType
-    type: String
-    name: LabelType
-    description: NarrativeText
-    source: String
-    hasAttribute: [Attribute]
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
   }
 
 type Zygosity
@@ -4886,7 +4466,6 @@ type Zygosity
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
-    source: String
   }
 
 

@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-21T18:24:10\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.3\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-21T23:28:24\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.0.3\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -570,15 +570,6 @@
       },
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
-      "abundance_affected_by": {
-         "@type": "@id"
-      },
-      "abundance_decreased_by": {
-         "@type": "@id"
-      },
-      "abundance_increased_by": {
-         "@type": "@id"
-      },
       "active_in": {
          "@type": "@id"
       },
@@ -586,15 +577,6 @@
          "@type": "@id"
       },
       "actively_involves": {
-         "@type": "@id"
-      },
-      "activity_affected_by": {
-         "@type": "@id"
-      },
-      "activity_decreased_by": {
-         "@type": "@id"
-      },
-      "activity_increased_by": {
          "@type": "@id"
       },
       "acts_upstream_of": {
@@ -627,58 +609,10 @@
       "affects": {
          "@type": "@id"
       },
-      "affects_abundance_of": {
-         "@type": "@id"
-      },
-      "affects_activity_of": {
-         "@type": "@id"
-      },
-      "affects_degradation_of": {
-         "@type": "@id"
-      },
-      "affects_expression_in": {
-         "@type": "@id"
-      },
-      "affects_expression_of": {
-         "@type": "@id"
-      },
-      "affects_folding_of": {
-         "@type": "@id"
-      },
-      "affects_localization_of": {
-         "@type": "@id"
-      },
-      "affects_metabolic_processing_of": {
-         "@type": "@id"
-      },
-      "affects_molecular_modification_of": {
-         "@type": "@id"
-      },
-      "affects_mutation_rate_of": {
-         "@type": "@id"
-      },
       "affects_response_to": {
          "@type": "@id"
       },
       "affects_risk_for": {
-         "@type": "@id"
-      },
-      "affects_secretion_of": {
-         "@type": "@id"
-      },
-      "affects_splicing_of": {
-         "@type": "@id"
-      },
-      "affects_stability_of": {
-         "@type": "@id"
-      },
-      "affects_synthesis_of": {
-         "@type": "@id"
-      },
-      "affects_transport_of": {
-         "@type": "@id"
-      },
-      "affects_uptake_of": {
          "@type": "@id"
       },
       "affiliation": {
@@ -729,9 +663,6 @@
       "associated_with_sensitivity_to": {
          "@type": "@id"
       },
-      "association_type": {
-         "@type": "@id"
-      },
       "author": {
          "@type": "@id"
       },
@@ -774,9 +705,6 @@
          "@type": "@id"
       },
       "causes": {
-         "@type": "@id"
-      },
-      "chemically_interacts_with": {
          "@type": "@id"
       },
       "chemically_similar_to": {
@@ -854,67 +782,13 @@
       "decreased_likelihood_associated_with": {
          "@type": "@id"
       },
-      "decreases_abundance_of": {
-         "@type": "@id"
-      },
-      "decreases_activity_of": {
-         "@type": "@id"
-      },
       "decreases_amount_or_activity_of": {
-         "@type": "@id"
-      },
-      "decreases_degradation_of": {
-         "@type": "@id"
-      },
-      "decreases_expression_of": {
-         "@type": "@id"
-      },
-      "decreases_folding_of": {
-         "@type": "@id"
-      },
-      "decreases_localization_of": {
-         "@type": "@id"
-      },
-      "decreases_metabolic_processing_of": {
-         "@type": "@id"
-      },
-      "decreases_molecular_interaction": {
-         "@type": "@id"
-      },
-      "decreases_molecular_modification_of": {
-         "@type": "@id"
-      },
-      "decreases_mutation_rate_of": {
          "@type": "@id"
       },
       "decreases_response_to": {
          "@type": "@id"
       },
-      "decreases_secretion_of": {
-         "@type": "@id"
-      },
-      "decreases_splicing_of": {
-         "@type": "@id"
-      },
-      "decreases_stability_of": {
-         "@type": "@id"
-      },
-      "decreases_synthesis_of": {
-         "@type": "@id"
-      },
-      "decreases_transport_of": {
-         "@type": "@id"
-      },
-      "decreases_uptake_of": {
-         "@type": "@id"
-      },
-      "degradation_affected_by": {
-         "@type": "@id"
-      },
-      "degradation_decreased_by": {
-         "@type": "@id"
-      },
-      "degradation_increased_by": {
+      "deprecated_predicate_mappings": {
          "@type": "@id"
       },
       "derives_from": {
@@ -933,9 +807,6 @@
          "@type": "@id"
       },
       "diagnoses": {
-         "@type": "@id"
-      },
-      "directly_interacts_with": {
          "@type": "@id"
       },
       "directly_physically_interacts_with": {
@@ -971,24 +842,6 @@
       "end_interbase_coordinate": {
          "@type": "xsd:integer"
       },
-      "entity_negatively_regulated_by_entity": {
-         "@type": "@id"
-      },
-      "entity_negatively_regulates_entity": {
-         "@type": "@id"
-      },
-      "entity_positively_regulated_by_entity": {
-         "@type": "@id"
-      },
-      "entity_positively_regulates_entity": {
-         "@type": "@id"
-      },
-      "entity_regulated_by_entity": {
-         "@type": "@id"
-      },
-      "entity_regulates_entity": {
-         "@type": "@id"
-      },
       "evidence_count": {
          "@type": "xsd:integer"
       },
@@ -1002,15 +855,6 @@
          "@type": "@id"
       },
       "expresses": {
-         "@type": "@id"
-      },
-      "expression_affected_by": {
-         "@type": "@id"
-      },
-      "expression_decreased_by": {
-         "@type": "@id"
-      },
-      "expression_increased_by": {
          "@type": "@id"
       },
       "expression_site": {
@@ -1034,15 +878,6 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          }
-      },
-      "folding_affected_by": {
-         "@type": "@id"
-      },
-      "folding_decreased_by": {
-         "@type": "@id"
-      },
-      "folding_increased_by": {
-         "@type": "@id"
       },
       "food_component_of": {
          "@type": "@id"
@@ -1225,9 +1060,6 @@
       "has_plasma_membrane_part": {
          "@type": "@id"
       },
-      "has_population_context": {
-         "@type": "@id"
-      },
       "has_positive_upstream_actor": {
          "@type": "@id"
       },
@@ -1282,9 +1114,6 @@
       "has_taxonomic_rank": {
          "@type": "@id"
       },
-      "has_temporal_context": {
-         "@type": "xsd:dateTime"
-      },
       "has_topic": {
          "@type": "@id"
       },
@@ -1330,58 +1159,10 @@
       "increased_likelihood_associated_with": {
          "@type": "@id"
       },
-      "increases_abundance_of": {
-         "@type": "@id"
-      },
-      "increases_activity_of": {
-         "@type": "@id"
-      },
       "increases_amount_or_activity_of": {
          "@type": "@id"
       },
-      "increases_degradation_of": {
-         "@type": "@id"
-      },
-      "increases_expression_of": {
-         "@type": "@id"
-      },
-      "increases_folding_of": {
-         "@type": "@id"
-      },
-      "increases_localization_of": {
-         "@type": "@id"
-      },
-      "increases_metabolic_processing_of": {
-         "@type": "@id"
-      },
-      "increases_molecular_interaction": {
-         "@type": "@id"
-      },
-      "increases_molecular_modification_of": {
-         "@type": "@id"
-      },
-      "increases_mutation_rate_of": {
-         "@type": "@id"
-      },
       "increases_response_to": {
-         "@type": "@id"
-      },
-      "increases_secretion_of": {
-         "@type": "@id"
-      },
-      "increases_splicing_of": {
-         "@type": "@id"
-      },
-      "increases_stability_of": {
-         "@type": "@id"
-      },
-      "increases_synthesis_of": {
-         "@type": "@id"
-      },
-      "increases_transport_of": {
-         "@type": "@id"
-      },
-      "increases_uptake_of": {
          "@type": "@id"
       },
       "indirectly_physically_interacts_with": {
@@ -1489,15 +1270,6 @@
       "ln_ratio_confidence_interval": {
          "@type": "xsd:float"
       },
-      "localization_affected_by": {
-         "@type": "@id"
-      },
-      "localization_decreased_by": {
-         "@type": "@id"
-      },
-      "localization_increased_by": {
-         "@type": "@id"
-      },
       "located_in": {
          "@type": "@id"
       },
@@ -1536,15 +1308,6 @@
       "mesh_terms": {
          "@type": "@id"
       },
-      "metabolic_processing_affected_by": {
-         "@type": "@id"
-      },
-      "metabolic_processing_decreased_by": {
-         "@type": "@id"
-      },
-      "metabolic_processing_increased_by": {
-         "@type": "@id"
-      },
       "missing_from": {
          "@type": "@id"
       },
@@ -1557,33 +1320,6 @@
       "models": {
          "@type": "@id"
       },
-      "molecular_interaction_decreased_by": {
-         "@type": "@id"
-      },
-      "molecular_interaction_increased_by": {
-         "@type": "@id"
-      },
-      "molecular_modification_affected_by": {
-         "@type": "@id"
-      },
-      "molecular_modification_decreased_by": {
-         "@type": "@id"
-      },
-      "molecular_modification_increased_by": {
-         "@type": "@id"
-      },
-      "molecularly_interacts_with": {
-         "@type": "@id"
-      },
-      "mutation_rate_affected_by": {
-         "@type": "@id"
-      },
-      "mutation_rate_decreased_by": {
-         "@type": "@id"
-      },
-      "mutation_rate_increased_by": {
-         "@type": "@id"
-      },
       "name": {
          "@id": "rdfs:label"
       },
@@ -1594,12 +1330,6 @@
          "@type": "xsd:boolean"
       },
       "negatively_correlated_with": {
-         "@type": "@id"
-      },
-      "negatively_regulated_by": {
-         "@type": "@id"
-      },
-      "negatively_regulates": {
          "@type": "@id"
       },
       "not_completed_by": {
@@ -1685,12 +1415,6 @@
       "positively_correlated_with": {
          "@type": "@id"
       },
-      "positively_regulated_by": {
-         "@type": "@id"
-      },
-      "positively_regulates": {
-         "@type": "@id"
-      },
       "preceded_by": {
          "@type": "@id"
       },
@@ -1714,24 +1438,6 @@
          "@type": "@id"
       },
       "primary_knowledge_source": {
-         "@type": "@id"
-      },
-      "process_negatively_regulated_by_process": {
-         "@type": "@id"
-      },
-      "process_negatively_regulates_process": {
-         "@type": "@id"
-      },
-      "process_positively_regulated_by_process": {
-         "@type": "@id"
-      },
-      "process_positively_regulates_process": {
-         "@type": "@id"
-      },
-      "process_regulated_by_process": {
-         "@type": "@id"
-      },
-      "process_regulates_process": {
          "@type": "@id"
       },
       "produced_by": {
@@ -1827,15 +1533,6 @@
       "same_as": {
          "@type": "@id"
       },
-      "secretion_affected_by": {
-         "@type": "@id"
-      },
-      "secretion_decreased_by": {
-         "@type": "@id"
-      },
-      "secretion_increased_by": {
-         "@type": "@id"
-      },
       "sensitivity_associated_with": {
          "@type": "@id"
       },
@@ -1858,24 +1555,6 @@
          "@id": "schema:logo"
       },
       "species_context_qualifier": {
-         "@type": "@id"
-      },
-      "splicing_affected_by": {
-         "@type": "@id"
-      },
-      "splicing_decreased_by": {
-         "@type": "@id"
-      },
-      "splicing_increased_by": {
-         "@type": "@id"
-      },
-      "stability_affected_by": {
-         "@type": "@id"
-      },
-      "stability_decreased_by": {
-         "@type": "@id"
-      },
-      "stability_increased_by": {
          "@type": "@id"
       },
       "stage_qualifier": {
@@ -1932,15 +1611,6 @@
       "supporting_study_size": {
          "@type": "xsd:integer"
       },
-      "synthesis_affected_by": {
-         "@type": "@id"
-      },
-      "synthesis_decreased_by": {
-         "@type": "@id"
-      },
-      "synthesis_increased_by": {
-         "@type": "@id"
-      },
       "systematic_synonym": {
          "@id": "GOP:systematic_synonym"
       },
@@ -1977,15 +1647,6 @@
       "translation_of": {
          "@type": "@id"
       },
-      "transport_affected_by": {
-         "@type": "@id"
-      },
-      "transport_decreased_by": {
-         "@type": "@id"
-      },
-      "transport_increased_by": {
-         "@type": "@id"
-      },
       "treated_by": {
          "@type": "@id"
       },
@@ -1997,15 +1658,6 @@
       },
       "update_date": {
          "@type": "xsd:date"
-      },
-      "uptake_affected_by": {
-         "@type": "@id"
-      },
-      "uptake_decreased_by": {
-         "@type": "@id"
-      },
-      "uptake_increased_by": {
-         "@type": "@id"
       },
       "variant_part_of": {
          "@type": "@id"

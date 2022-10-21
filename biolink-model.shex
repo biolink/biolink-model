@@ -186,7 +186,6 @@ linkml:Nodeidentifier NONLITERAL
              <publications> @<Publication> * ;
              <has_evidence> @<EvidenceType> * ;
              <knowledge_source> @<InformationResource> ? ;
-             <original_knowledge_source> @linkml:String ? ;
              <primary_knowledge_source> @<InformationResource> ? ;
              <aggregator_knowledge_source> @<InformationResource> * ;
              <timepoint> @<TimeType> ? ;
@@ -200,17 +199,16 @@ linkml:Nodeidentifier NONLITERAL
     @<ChemicalAffectsGeneAssociation> OR @<ChemicalEntityAssessesNamedThingAssociation> OR
     @<ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation> OR @<ChemicalGeneInteractionAssociation> OR
     @<ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToChemicalAssociation> OR
-    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToGeneAssociation> OR @<ChemicalToPathwayAssociation> OR
-    @<ContributorAssociation> OR @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR
-    @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR @<DiseaseToExposureEventAssociation> OR
-    @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR @<EntityToDiseaseAssociation> OR
-    @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
-    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneRegulatoryRelationship> OR
-    @<GeneToDiseaseAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation>
-    OR @<GeneToPathwayAssociation> OR @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR
-    @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
-    @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
-    OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
+    @<ChemicalToDiseaseOrPhenotypicFeatureAssociation> OR @<ChemicalToPathwayAssociation> OR @<ContributorAssociation> OR
+    @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
+    @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
+    @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
+    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneToDiseaseAssociation> OR
+    @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation>
+    OR @<GeneToPhenotypicFeatureAssociation> OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR
+    @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
+    @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
+    @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
     @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
     @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
@@ -535,7 +533,7 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <ChemicalEntity> ]
        )
-    } OR @<ChemicalMixture> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<MolecularEntity> OR @<Nutrient>
+    } OR @<ChemicalMixture> OR @<EnvironmentalFoodContaminant> OR @<FoodAdditive> OR @<MolecularEntity>
 )
 
 <ChemicalEntityAssessesNamedThingAssociation> CLOSED {
@@ -719,17 +717,6 @@ linkml:Nodeidentifier NONLITERAL
           rdf:subject @<ChemicalEntityOrGeneOrGeneProduct>
        ) ;
        rdf:type [ <ChemicalToEntityAssociationMixin> ] ?
-    )
-}
-
-<ChemicalToGeneAssociation> CLOSED {
-    (  $<ChemicalToGeneAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          &<ChemicalToEntityAssociationMixin_tes> ;
-          rdf:type [ <ChemicalToEntityAssociationMixin> ] ? ;
-          rdf:object @<GeneOrGeneProduct>
-       ) ;
-       rdf:type [ <ChemicalToGeneAssociation> ]
     )
 }
 
@@ -927,6 +914,39 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<DeprecatedMappingCollection> {
+    (  $<DeprecatedMappingCollection_tes> <deprecated_predicate_mappings> @<DeprecatedPredicateMapping> * ;
+       rdf:type [ <DeprecatedMappingCollection> ] ?
+    )
+}
+
+<DeprecatedPredicateMapping> CLOSED {
+    (  $<DeprecatedPredicateMapping_tes> (  <mapped_predicate> @linkml:String ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @linkml:String ? ;
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
+          <subject_part_qualifier> @linkml:String ? ;
+          <subject_derivative_qualifier> @linkml:String ? ;
+          <subject_context_qualifier> @linkml:String ? ;
+          rdf:predicate @<PredicateType> ;
+          <qualified_predicate> @linkml:String ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_form_or_variant_qualifier> @linkml:String ? ;
+          <object_part_qualifier> @linkml:String ? ;
+          <object_derivative_qualifier> @linkml:String ? ;
+          <object_context_qualifier> @linkml:String ? ;
+          <causal_mechanism_qualifier> @linkml:String ? ;
+          <anatomical_context_qualifier> @<AnatomicalContextQualifierEnum> ? ;
+          <species_context_qualifier> @<OrganismTaxon> ? ;
+          <exact_match> @<NamedThing> * ;
+          <narrow_match> @<NamedThing> * ;
+          <broad_match> @<NamedThing> *
+       ) ;
+       rdf:type [ <DeprecatedPredicateMapping> ] ?
+    )
+}
+
 <Device> CLOSED {
     (  $<Device_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ?
@@ -1119,7 +1139,6 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type @linkml:String ? ;
           rdfs:label @<LabelType> ? ;
           dcterms:description @<NarrativeText> ? ;
-          <source> @linkml:String ? ;
           <has_attribute> @<Attribute> *
        ) ;
        rdf:type [ <Entity> ]
@@ -1291,21 +1310,13 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<ExposureEventToEntityAssociationMixin> CLOSED {
-    (  $<ExposureEventToEntityAssociationMixin_tes> rdf:type . * ;
-       rdf:type [ <ExposureEventToEntityAssociationMixin> ] ?
-    )
-}
-
 <ExposureEventToOutcomeAssociation> CLOSED {
     (  $<ExposureEventToOutcomeAssociation_tes> (  &<Association_tes> ;
           rdf:type [ <Association> ] ? ;
-          &<ExposureEventToEntityAssociationMixin_tes> ;
-          rdf:type [ <ExposureEventToEntityAssociationMixin> ] ? ;
           &<EntityToOutcomeAssociationMixin_tes> ;
           rdf:type [ <EntityToOutcomeAssociationMixin> ] ? ;
-          <has_population_context> @<PopulationOfIndividualOrganisms> ? ;
-          <has_temporal_context> @<TimeType> ?
+          <population_context_qualifier> @<PopulationOfIndividualOrganisms> ? ;
+          <temporal_context_qualifier> @<TimeType> ?
        ) ;
        rdf:type [ <ExposureEventToOutcomeAssociation> ]
     )
@@ -1367,7 +1378,7 @@ linkml:Nodeidentifier NONLITERAL
        (  $<FunctionalAssociation_tes> (  &<Association_tes> ;
              rdf:type [ <Association> ] ? ;
              rdf:subject @<MacromolecularMachineMixin> ;
-             rdf:object @<GeneOntologyClass>
+             rdf:object @<OntologyClass>
           ) ;
           rdf:type [ <FunctionalAssociation> ]
        )
@@ -1448,12 +1459,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<GeneOntologyClass> CLOSED {
-    (  $<GeneOntologyClass_tes> rdf:type . * ;
-       rdf:type [ <GeneOntologyClass> ] ?
-    )
-}
-
 <GeneOrGeneProduct>  (
     {
        (  $<GeneOrGeneProduct_tes> (  &<MacromolecularMachineMixin_tes> ;
@@ -1483,17 +1488,6 @@ linkml:Nodeidentifier NONLITERAL
        )
     } OR @<GeneProductIsoformMixin>
 )
-
-<GeneRegulatoryRelationship> CLOSED {
-    (  $<GeneRegulatoryRelationship_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          rdf:predicate @<PredicateType> ;
-          rdf:subject @<GeneOrGeneProduct> ;
-          rdf:object @<GeneOrGeneProduct>
-       ) ;
-       rdf:type [ <GeneRegulatoryRelationship> ]
-    )
-}
 
 <GeneToDiseaseAssociation>  (
     CLOSED {
@@ -1600,7 +1594,7 @@ linkml:Nodeidentifier NONLITERAL
     (  $<GeneToGoTermAssociation_tes> (  &<FunctionalAssociation_tes> ;
           rdf:type [ <FunctionalAssociation> ] ? ;
           rdf:subject @<Gene> ;
-          rdf:object @<GeneOntologyClass>
+          rdf:object @<OntologyClass>
        ) ;
        rdf:type [ <GeneToGoTermAssociation> ]
     )
@@ -1937,14 +1931,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<Inheritance> CLOSED {
-    (  $<Inheritance_tes> (  &<OrganismAttribute_tes> ;
-          rdf:type [ <OrganismAttribute> ] ?
-       ) ;
-       rdf:type [ <Inheritance> ]
-    )
-}
-
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ?
@@ -2010,14 +1996,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<Macronutrient> CLOSED {
-    (  $<Macronutrient_tes> (  &<Nutrient_tes> ;
-          rdf:type [ <Nutrient> ] ?
-       ) ;
-       rdf:type [ <Macronutrient> ]
-    )
-}
-
 <MaterialSample> CLOSED {
     (  $<MaterialSample_tes> (  &<PhysicalEntity_tes> ;
           rdf:type [ <PhysicalEntity> ] ? ;
@@ -2056,16 +2034,6 @@ linkml:Nodeidentifier NONLITERAL
        rdf:type [ <MaterialSampleToEntityAssociationMixin> ] ?
     )
 }
-
-<Micronutrient>  (
-    CLOSED {
-       (  $<Micronutrient_tes> (  &<Nutrient_tes> ;
-             rdf:type [ <Nutrient> ] ?
-          ) ;
-          rdf:type [ <Micronutrient> ]
-       )
-    } OR @<Vitamin>
-)
 
 <MicroRNA> CLOSED {
     (  $<MicroRNA_tes> (  &<NoncodingRNAProduct_tes> ;
@@ -2240,16 +2208,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<Nutrient>  (
-    CLOSED {
-       (  $<Nutrient_tes> (  &<ChemicalEntity_tes> ;
-             rdf:type [ <ChemicalEntity> ] ?
-          ) ;
-          rdf:type [ <Nutrient> ]
-       )
-    } OR @<Macronutrient> OR @<Micronutrient>
-)
-
 <ObservedExpectedFrequencyAnalysisResult> CLOSED {
     (  $<ObservedExpectedFrequencyAnalysisResult_tes> (  &<StudyResult_tes> ;
           rdf:type [ <StudyResult> ] ?
@@ -2293,7 +2251,7 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <OrganismAttribute> ]
        )
-    } OR @<Inheritance> OR @<PhenotypicQuality>
+    } OR @<PhenotypicQuality>
 )
 
 <OrganismTaxon> CLOSED {
@@ -3068,12 +3026,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<UnclassifiedOntologyClass> CLOSED {
-    (  $<UnclassifiedOntologyClass_tes> rdf:type . * ;
-       rdf:type [ <UnclassifiedOntologyClass> ] ?
-    )
-}
-
 <VariantAsAModelOfDiseaseAssociation> CLOSED {
     (  $<VariantAsAModelOfDiseaseAssociation_tes> (  &<VariantToDiseaseAssociation_tes> ;
           rdf:type [ <VariantToDiseaseAssociation> ] ? ;
@@ -3187,14 +3139,6 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <SubjectOfInvestigation> ] ?
        ) ;
        rdf:type [ <Virus> ]
-    )
-}
-
-<Vitamin> CLOSED {
-    (  $<Vitamin_tes> (  &<Micronutrient_tes> ;
-          rdf:type [ <Micronutrient> ] ?
-       ) ;
-       rdf:type [ <Vitamin> ]
     )
 }
 

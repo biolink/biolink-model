@@ -19,8 +19,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
@@ -60,8 +58,6 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-- id: original_knowledge_source
-  display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association
     that an implementer can identify.  Performing a rigorous analysis of upstream
@@ -97,10 +93,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
-- id: has_population_context
+- id: population_context_qualifier
   description: a biological population (general, study, cohort, etc.) with a specific
     set of characteristics to constrain an association.
-  display_name: has population context
-- id: has_temporal_context
+  display_name: population context qualifier
+- id: temporal_context_qualifier
   description: a constraint of time placed upon the truth value of an association.
-  display_name: has temporal context
+    for time intervales, use temporal interval qualifier.
+  display_name: temporal context qualifier

@@ -770,13 +770,6 @@
                            },
                            {
                               "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/original_knowledge_source",
-                              "valueExpr": "https://w3id.org/linkml/String",
-                              "min": 0,
-                              "max": 1
-                           },
-                           {
-                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/primary_knowledge_source",
                               "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
                               "min": 0,
@@ -837,7 +830,6 @@
             "https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
-            "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation",
             "https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation",
             "https://w3id.org/biolink/vocab/ContributorAssociation",
             "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation",
@@ -850,7 +842,6 @@
             "https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation",
             "https://w3id.org/biolink/vocab/ExposureEventToPhenotypicFeatureAssociation",
             "https://w3id.org/biolink/vocab/FunctionalAssociation",
-            "https://w3id.org/biolink/vocab/GeneRegulatoryRelationship",
             "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
             "https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation",
             "https://w3id.org/biolink/vocab/GeneToGeneAssociation",
@@ -2571,8 +2562,7 @@
             "https://w3id.org/biolink/vocab/ChemicalMixture",
             "https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant",
             "https://w3id.org/biolink/vocab/FoodAdditive",
-            "https://w3id.org/biolink/vocab/MolecularEntity",
-            "https://w3id.org/biolink/vocab/Nutrient"
+            "https://w3id.org/biolink/vocab/MolecularEntity"
          ]
       },
       {
@@ -3527,64 +3517,6 @@
                      ]
                   },
                   "min": 0
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/Association_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Association"
-                           ]
-                        },
-                        "min": 0
-                     },
-                     "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin"
-                           ]
-                        },
-                        "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
-                        "min": 1,
-                        "max": 1
-                     }
-                  ]
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/ChemicalToGeneAssociation"
-                     ]
-                  },
-                  "min": 1
                }
             ]
          }
@@ -4553,6 +4485,209 @@
                      ]
                   },
                   "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/DeprecatedMappingCollection",
+         "closed": false,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "id": "https://w3id.org/biolink/vocab/DeprecatedMappingCollection_tes",
+                  "predicate": "https://w3id.org/biolink/vocab/deprecated_predicate_mappings",
+                  "valueExpr": "https://w3id.org/biolink/vocab/DeprecatedPredicateMapping",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/DeprecatedMappingCollection"
+                     ]
+                  },
+                  "min": 0
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/DeprecatedPredicateMapping",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/DeprecatedPredicateMapping_tes",
+                  "expressions": [
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/mapped_predicate",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_part_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_derivative_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_context_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/qualified_predicate",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_direction_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_part_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_derivative_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/object_context_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/anatomical_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/AnatomicalContextQualifierEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/species_context_qualifier",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/exact_match",
+                        "valueExpr": "https://w3id.org/biolink/vocab/NamedThing",
+                        "min": 0,
+                        "max": -1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/narrow_match",
+                        "valueExpr": "https://w3id.org/biolink/vocab/NamedThing",
+                        "min": 0,
+                        "max": -1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/broad_match",
+                        "valueExpr": "https://w3id.org/biolink/vocab/NamedThing",
+                        "min": 0,
+                        "max": -1
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/DeprecatedPredicateMapping"
+                     ]
+                  },
+                  "min": 0
                }
             ]
          }
@@ -5561,13 +5696,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/source",
-                        "valueExpr": "https://w3id.org/linkml/String",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_attribute",
                         "valueExpr": "https://w3id.org/biolink/vocab/Attribute",
                         "min": 0,
@@ -6407,34 +6535,6 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "TripleConstraint",
-                  "id": "https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin_tes",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "min": 0,
-                  "max": -1
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin"
-                     ]
-                  },
-                  "min": 0
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation",
          "closed": true,
          "expression": {
@@ -6456,18 +6556,6 @@
                         },
                         "min": 0
                      },
-                     "https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/ExposureEventToEntityAssociationMixin"
-                           ]
-                        },
-                        "min": 0
-                     },
                      "https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin_tes",
                      {
                         "type": "TripleConstraint",
@@ -6482,14 +6570,14 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/has_population_context",
+                        "predicate": "https://w3id.org/biolink/vocab/population_context_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/has_temporal_context",
+                        "predicate": "https://w3id.org/biolink/vocab/temporal_context_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/TimeType",
                         "min": 0,
                         "max": 1
@@ -6812,7 +6900,7 @@
                            {
                               "type": "TripleConstraint",
                               "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                              "valueExpr": "https://w3id.org/biolink/vocab/GeneOntologyClass",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
                               "min": 1,
                               "max": 1
                            }
@@ -7236,34 +7324,6 @@
          }
       },
       {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/GeneOntologyClass",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "TripleConstraint",
-                  "id": "https://w3id.org/biolink/vocab/GeneOntologyClass_tes",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "min": 0,
-                  "max": -1
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/GeneOntologyClass"
-                     ]
-                  },
-                  "min": 0
-               }
-            ]
-         }
-      },
-      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
          "shapeExprs": [
@@ -7405,66 +7465,6 @@
             },
             "https://w3id.org/biolink/vocab/GeneProductIsoformMixin"
          ]
-      },
-      {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/GeneRegulatoryRelationship",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/GeneRegulatoryRelationship_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/Association_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Association"
-                           ]
-                        },
-                        "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
-                        "min": 1,
-                        "max": 1
-                     }
-                  ]
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/GeneRegulatoryRelationship"
-                     ]
-                  },
-                  "min": 1
-               }
-            ]
-         }
       },
       {
          "type": "ShapeOr",
@@ -8036,7 +8036,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOntologyClass",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
                         "min": 1,
                         "max": 1
                      }
@@ -9828,45 +9828,6 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/Inheritance",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/Inheritance_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/OrganismAttribute_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/OrganismAttribute"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/Inheritance"
-                     ]
-                  },
-                  "min": 1
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/LifeStage",
          "closed": true,
          "expression": {
@@ -10185,45 +10146,6 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/Macronutrient",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/Macronutrient_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/Nutrient_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Nutrient"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/Macronutrient"
-                     ]
-                  },
-                  "min": 1
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/MaterialSample",
          "closed": true,
          "expression": {
@@ -10424,51 +10346,6 @@
                }
             ]
          }
-      },
-      {
-         "type": "ShapeOr",
-         "id": "https://w3id.org/biolink/vocab/Micronutrient",
-         "shapeExprs": [
-            {
-               "type": "Shape",
-               "closed": true,
-               "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                     {
-                        "type": "EachOf",
-                        "id": "https://w3id.org/biolink/vocab/Micronutrient_tes",
-                        "expressions": [
-                           "https://w3id.org/biolink/vocab/Nutrient_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/Nutrient"
-                                 ]
-                              },
-                              "min": 0
-                           }
-                        ]
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Micronutrient"
-                           ]
-                        },
-                        "min": 1
-                     }
-                  ]
-               }
-            },
-            "https://w3id.org/biolink/vocab/Vitamin"
-         ]
       },
       {
          "type": "Shape",
@@ -11375,52 +11252,6 @@
          }
       },
       {
-         "type": "ShapeOr",
-         "id": "https://w3id.org/biolink/vocab/Nutrient",
-         "shapeExprs": [
-            {
-               "type": "Shape",
-               "closed": true,
-               "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                     {
-                        "type": "EachOf",
-                        "id": "https://w3id.org/biolink/vocab/Nutrient_tes",
-                        "expressions": [
-                           "https://w3id.org/biolink/vocab/ChemicalEntity_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ChemicalEntity"
-                                 ]
-                              },
-                              "min": 0
-                           }
-                        ]
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Nutrient"
-                           ]
-                        },
-                        "min": 1
-                     }
-                  ]
-               }
-            },
-            "https://w3id.org/biolink/vocab/Macronutrient",
-            "https://w3id.org/biolink/vocab/Micronutrient"
-         ]
-      },
-      {
          "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult",
          "closed": true,
@@ -11622,7 +11453,6 @@
                   ]
                }
             },
-            "https://w3id.org/biolink/vocab/Inheritance",
             "https://w3id.org/biolink/vocab/PhenotypicQuality"
          ]
       },
@@ -15503,34 +15333,6 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "TripleConstraint",
-                  "id": "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass_tes",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "min": 0,
-                  "max": -1
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/UnclassifiedOntologyClass"
-                     ]
-                  },
-                  "min": 0
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation",
          "closed": true,
          "expression": {
@@ -16162,45 +15964,6 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/Virus"
-                     ]
-                  },
-                  "min": 1
-               }
-            ]
-         }
-      },
-      {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/Vitamin",
-         "closed": true,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/Vitamin_tes",
-                  "expressions": [
-                     "https://w3id.org/biolink/vocab/Micronutrient_tes",
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "values": [
-                              "https://w3id.org/biolink/vocab/Micronutrient"
-                           ]
-                        },
-                        "min": 0
-                     }
-                  ]
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/Vitamin"
                      ]
                   },
                   "min": 1
