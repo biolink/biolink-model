@@ -412,6 +412,8 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:affects_uptake_of
+    broad matches:
+      - CTD:affects_import
   - mapped predicate: increases uptake of
     object aspect qualifier: uptake
     object direction qualifier: increased
@@ -419,6 +421,8 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:increases_uptake_of
+    broad matches:
+      - CTD:increases_import
   - mapped predicate: decreases uptake of
     object aspect qualifier: uptake
     object direction qualifier: decreased
@@ -426,6 +430,12 @@ deprecated predicate mappings:
     predicate: affects
     exact matches:
       - CTD:decreases_uptake_of
+    broad matches:
+      # 'import' more general than 'uptake'
+      - CTD:decreases_import
+      - CTD:decreases_response_to
+    narrow matches:
+      - CTD:decreases_response_to_substance
   - mapped predicate: affects molecular interaction
     object aspect qualifier: molecular interaction
     predicate: affects
