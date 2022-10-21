@@ -5696,41 +5696,6 @@ slots:
       - RO:0002087
       - RO:0002285
 
-<<<<<<< HEAD
-=======
-  directly interacts with:
-    deprecated: true
-    is_a: interacts with
-    description: Holds between chemical entities that physically and directly interact
-      with each other
-    domain: chemical entity
-    range: chemical entity or gene or gene product
-    symmetric: true
-    annotations:
-      canonical_predicate: true
-    broad_mappings:
-      # Definition of this term is more generic than direct physical molecular interactions:
-      # A is connected to B iff there exists a fiat, material or temporal path between A and B.
-      - SIO:000203
-    narrow_mappings:
-      - PHAROS:drug_targets
-      - DRUGBANK:chelator
-      - CTD:affects_binding
-      - DGIdb:binder
-      - DGIdb:chaperone
-      - DGIdb:cofactor
-
-  affects expression in:
-    deprecated: true
-    is_a: affects
-    annotations:
-      canonical_predicate: true
-    description: Holds between a variant and an anatomical entity where the expression of the variant
-      is located in.
-    exact_mappings:
-      - GTEx:affects_expression_in
->>>>>>> master
-
   has variant part:
     is_a: has part
     description: holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
