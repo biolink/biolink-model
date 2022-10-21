@@ -62,7 +62,6 @@ prefixes:
   foodb.compound: 'http://foodb.ca/foods/'
   FYECO: 'https://www.pombase.org/term/'
   FYPO: 'http://purl.obolibrary.org/obo/FYPO_'  # Fission Yeast Phenotype Ontology
-  GAMMA: 'http://translator.renci.org/GAMMA_'
   gff3: 'https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md#'
   GOREL: 'http://purl.obolibrary.org/obo/GOREL_'
   # GOP: Gene Ontology Property (not really a GO term but an associated metadatum)
@@ -2435,19 +2434,7 @@ slots:
     range: chemical entity or gene or gene product
     mixins:
       - increases amount or activity of
-    related_mappings:
-      - GAMMA:ec50
-      - GAMMA:ac50
     narrow_mappings:
-      - GAMMA:activator
-      - GAMMA:partial_agonist
-      - GAMMA:agonist
-      - GAMMA:opener
-      - GAMMA:positive_allosteric_modulator
-      - GAMMA:positive_modulator
-      - GAMMA:inducer
-      - GAMMA:potentiator
-      - GAMMA:stimulator
       - CHEMBL.MECHANISM:agonist
       - CHEMBL.MECHANISM:opener
       - CHEMBL.MECHANISM:partial_agonist
@@ -2457,6 +2444,7 @@ slots:
       - DGIdb:partial_agonist
       - DGIdb:inducer
       - DGIdb:positive_allosteric_modulator
+      - DGIdb:positive_modulator
       - DGIdb:stimulator
     annotations:
       opposite_of: decreases activity of
@@ -2474,9 +2462,6 @@ slots:
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     narrow_mappings:
-      - GAMMA:allosteric_modulator
-      - GAMMA:modulator
-      - GAMMA:regulator
       - DGIdb:modulator
       - DGIdb:allosteric_modulator
 
@@ -2515,27 +2500,8 @@ slots:
     mixins:
       - decreases amount or activity of
     related_mappings:
-      - GAMMA:ic50
-      - GAMMA:ki
       - DGIdb:vaccine
     narrow_mappings:
-      - GAMMA:allosteric_antagonist
-      - GAMMA:partial_antagonist
-      - GAMMA:antagonist
-      - GAMMA:weak_inhibitor
-      - GAMMA:inhibitor
-      - GAMMA:channel_blocker
-      - GAMMA:gating_inhibitor
-      - GAMMA:blocker
-      - GAMMA:inverse_agonist
-      - GAMMA:inactivator
-      - GAMMA:downregulator
-      - GAMMA:negative_modulator
-      - GAMMA:negative_allosteric_modulator
-      - GAMMA:inhibitory_allosteric_modulator
-      - GAMMA:aggregation_inhibitor
-      - GAMMA:conversion_inhibitor
-      - GAMMA:suppressor
       - CHEMBL.MECHANISM:antagonist
       - CHEMBL.MECHANISM:allosteric_antagonist
       - CHEMBL.MECHANISM:inverse_agonist
@@ -2722,8 +2688,6 @@ slots:
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-    related_mappings:
-      - GAMMA:storage
     exact_mappings:
       - GOREL:0002003
 
@@ -2802,8 +2766,6 @@ slots:
       - translator_minimal
     annotations:
       canonical_predicate: true
-    related_mappings:
-      - GAMMA:catalytic_activity
 
   metabolic processing affected by:
     deprecated: true
@@ -2977,8 +2939,6 @@ slots:
       - CTD:increases_oxidation
       - CTD:increases_reduction
       - CTD:increases_carboxylation
-      - GAMMA:acetylation
-      - GAMMA:oxidizer
 
   molecular modification increased by:
     deprecated: true
@@ -3039,7 +2999,6 @@ slots:
       - CTD:decreases_oxidation
       - CTD:decreases_reduction
       - CTD:decreases_carboxylation
-      - GAMMA:deoxidizer
 
   molecular modification decreased by:
     deprecated: true
@@ -3116,8 +3075,6 @@ slots:
     annotations:
       canonical_predicate: true
       opposite_of: increases synthesis of
-    exact_mappings:
-      - GAMMA:inhibition_of_synthesis
 
   synthesis decreased by:
     deprecated: true
@@ -3176,8 +3133,7 @@ slots:
     related_mappings:
       # An enzyme or reagent acts upon a substrate but that substrate may
       # not necessarily be "degraded", i.e. broken into smaller parts
-      - GAMMA:substrate
-      # RTX put this under "biolink:physically_interacts_with" but rather we also put next to the GAMMA mapping
+      # RTX put this under "biolink:physically_interacts_with"
       # That said, neither mapping feels like a comfortable fit here
       - CHEMBL.MECHANISM:substrate
     close_mappings:
@@ -3387,7 +3343,6 @@ slots:
       - CTD:decreases_response_to
     narrow_mappings:
       - CTD:decreases_response_to_substance
-      - GAMMA:desensitize_the_target
 
   response decreased by:
     is_a: response affected by
@@ -3493,8 +3448,6 @@ slots:
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
-    close_mappings:
-      - GAMMA:stabilization
 
   stability affected by:
     deprecated: true
@@ -3603,9 +3556,6 @@ slots:
     annotations:
       canonical_predicate: true
       opposite_of: decreases transport of
-    close_mappings:
-      - GAMMA:carrier
-      - GAMMA:transporter
 
   transport increased by:
     deprecated: true
@@ -5940,12 +5890,6 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
-    related_mappings:
-      - GAMMA:kd
-      - GAMMA:kb
-      - GAMMA:potency
-    exact_mappings:
-      - GAMMA:interacts_with
     broad_mappings:
       # Definition of this term is more generic than direct physical molecular interactions:
       # A is connected to B iff there exists a fiat, material or temporal path between A and B.
@@ -5953,22 +5897,9 @@ slots:
     narrow_mappings:
       - PHAROS:drug_targets
       - DRUGBANK:chelator
-      - GAMMA:antibody_binding
-      - GAMMA:pharmacological_chaperone
-      - GAMMA:releasing_agent
-      - GAMMA:pharmacological_chaperone
-      - GAMMA:releasing_agent
-      - GAMMA:binder
-      - GAMMA:binding
-      - GAMMA:ligand
-      - GAMMA:cofactor
-      - GAMMA:multitarget
-      - GAMMA:chaperone
-      - GAMMA:component
-      - GAMMA:adduct
-      - GAMMA:antibody
       - CTD:affects_binding
       - DGIdb:binder
+      - DGIdb:chaperone
       - DGIdb:cofactor
 
   affects expression in:
@@ -6121,8 +6052,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    exact_mappings:
-      - GAMMA:0000102
 
   has nearby variant:
     is_a: has sequence variant
@@ -6139,8 +6068,6 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-    exact_mappings:
-      - GAMMA:0000103
 
   has non coding variant:
     is_a: has sequence variant
