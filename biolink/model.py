@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-19T18:40:11
+# Generation date: 2022-10-21T18:24:49
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -96,7 +96,6 @@ FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
 FOODON = CurieNamespace('FOODON', 'http://purl.obolibrary.org/obo/FOODON_')
 FYECO = CurieNamespace('FYECO', 'https://www.pombase.org/term/')
 FYPO = CurieNamespace('FYPO', 'http://purl.obolibrary.org/obo/FYPO_')
-GAMMA = CurieNamespace('GAMMA', 'http://translator.renci.org/GAMMA_')
 GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
 GENO = CurieNamespace('GENO', 'http://purl.obolibrary.org/obo/GENO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
