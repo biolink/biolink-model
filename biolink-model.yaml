@@ -2186,6 +2186,18 @@ slots:
     annotations:
       canonical_predicate: true
     symmetric: true
+    
+  genetic_neighborhood_of:
+    is_a: genetically interacts with
+    description: >-
+      holds between two genes located nearby one another on a chromosome. 
+    domain: gene
+    range: gene
+    in_subset:
+      - translator_minimal
+    annotations:
+      canonical_predicate: true
+    symmetric: true
 
   affects:
     is_a: related to at instance level
