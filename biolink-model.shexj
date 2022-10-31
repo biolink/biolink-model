@@ -1280,6 +1280,7 @@
             "https://w3id.org/biolink/vocab/Genome",
             "https://w3id.org/biolink/vocab/Genotype",
             "https://w3id.org/biolink/vocab/Haplotype",
+            "https://w3id.org/biolink/vocab/MacromolecularComplex",
             "https://w3id.org/biolink/vocab/NucleicAcidSequenceMotif",
             "https://w3id.org/biolink/vocab/NucleosomeModification",
             "https://w3id.org/biolink/vocab/OrganismalEntity",
@@ -4061,6 +4062,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/Cohort"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/CommonDataElement",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/CommonDataElement_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/InformationContentEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/InformationContentEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/CommonDataElement"
                      ]
                   },
                   "min": 1
@@ -9649,6 +9689,7 @@
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/InformationContentEntity",
          "shapeExprs": [
+            "https://w3id.org/biolink/vocab/CommonDataElement",
             "https://w3id.org/biolink/vocab/ConfidenceLevel",
             "https://w3id.org/biolink/vocab/Dataset",
             "https://w3id.org/biolink/vocab/DatasetDistribution",
@@ -9657,7 +9698,9 @@
             "https://w3id.org/biolink/vocab/EvidenceType",
             "https://w3id.org/biolink/vocab/InformationResource",
             "https://w3id.org/biolink/vocab/Publication",
-            "https://w3id.org/biolink/vocab/StudyResult"
+            "https://w3id.org/biolink/vocab/Study",
+            "https://w3id.org/biolink/vocab/StudyResult",
+            "https://w3id.org/biolink/vocab/StudyVariable"
          ]
       },
       {
@@ -9867,15 +9910,27 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/MacromolecularComplexMixin",
-         "closed": false,
+         "id": "https://w3id.org/biolink/vocab/MacromolecularComplex",
+         "closed": true,
          "expression": {
             "type": "EachOf",
             "expressions": [
                {
                   "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/MacromolecularComplexMixin_tes",
+                  "id": "https://w3id.org/biolink/vocab/MacromolecularComplex_tes",
                   "expressions": [
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
                      "https://w3id.org/biolink/vocab/MacromolecularMachineMixin_tes",
                      {
                         "type": "TripleConstraint",
@@ -9896,10 +9951,10 @@
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "values": [
-                        "https://w3id.org/biolink/vocab/MacromolecularComplexMixin"
+                        "https://w3id.org/biolink/vocab/MacromolecularComplex"
                      ]
                   },
-                  "min": 0
+                  "min": 1
                }
             ]
          }
@@ -9908,38 +9963,36 @@
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/MacromolecularMachineMixin",
          "shapeExprs": [
-            "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
-            "https://w3id.org/biolink/vocab/MacromolecularComplexMixin"
-         ]
-      },
-      {
-         "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/MacromolecularMachineMixin_struct",
-         "closed": false,
-         "expression": {
-            "type": "EachOf",
-            "expressions": [
-               {
-                  "type": "TripleConstraint",
-                  "id": "https://w3id.org/biolink/vocab/MacromolecularMachineMixin_tes",
-                  "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
-                  "valueExpr": "https://w3id.org/biolink/vocab/SymbolType",
-                  "min": 0,
-                  "max": 1
-               },
-               {
-                  "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": {
-                     "type": "NodeConstraint",
-                     "values": [
-                        "https://w3id.org/biolink/vocab/MacromolecularMachineMixin"
-                     ]
-                  },
-                  "min": 0
+            {
+               "type": "Shape",
+               "closed": false,
+               "expression": {
+                  "type": "EachOf",
+                  "expressions": [
+                     {
+                        "type": "TripleConstraint",
+                        "id": "https://w3id.org/biolink/vocab/MacromolecularMachineMixin_tes",
+                        "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+                        "valueExpr": "https://w3id.org/biolink/vocab/SymbolType",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/MacromolecularMachineMixin"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
                }
-            ]
-         }
+            },
+            "https://w3id.org/biolink/vocab/GeneOrGeneProduct"
+         ]
       },
       {
          "type": "Shape",
@@ -14860,6 +14913,45 @@
          ]
       },
       {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/Study",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/Study_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/InformationContentEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/InformationContentEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/Study"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
          "type": "ShapeOr",
          "id": "https://w3id.org/biolink/vocab/StudyPopulation",
          "shapeExprs": [
@@ -14947,6 +15039,45 @@
                      "type": "NodeConstraint",
                      "values": [
                         "https://w3id.org/biolink/vocab/StudyResult"
+                     ]
+                  },
+                  "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/StudyVariable",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/StudyVariable_tes",
+                  "expressions": [
+                     "https://w3id.org/biolink/vocab/InformationContentEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/InformationContentEntity"
+                           ]
+                        },
+                        "min": 0
+                     }
+                  ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/StudyVariable"
                      ]
                   },
                   "min": 1

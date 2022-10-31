@@ -4641,6 +4641,80 @@
          "title": "Cohort",
          "type": "object"
       },
+      "CommonDataElement": {
+         "additionalProperties": false,
+         "description": "A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "CommonDataElement",
+         "type": "object"
+      },
       "ComplexChemicalExposure": {
          "additionalProperties": false,
          "description": "A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.",
@@ -8111,7 +8185,7 @@
             },
             "subject": {
                "$ref": "#/$defs/MacromolecularMachineMixin",
-               "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term"
             },
             "timepoint": {
                "description": "a point in time",
@@ -11525,6 +11599,73 @@
          "title": "LogicalInterpretationEnum",
          "type": "string"
       },
+      "MacromolecularComplex": {
+         "additionalProperties": false,
+         "description": "A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "MacromolecularComplex",
+         "type": "object"
+      },
       "MacromolecularMachineToBiologicalProcessAssociation": {
          "additionalProperties": false,
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.",
@@ -11609,7 +11750,7 @@
             },
             "subject": {
                "$ref": "#/$defs/MacromolecularMachineMixin",
-               "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term"
             },
             "timepoint": {
                "description": "a point in time",
@@ -11714,7 +11855,7 @@
             },
             "subject": {
                "$ref": "#/$defs/MacromolecularMachineMixin",
-               "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term"
             },
             "timepoint": {
                "description": "a point in time",
@@ -11819,7 +11960,7 @@
             },
             "subject": {
                "$ref": "#/$defs/MacromolecularMachineMixin",
-               "description": "gene, product or macromolecular complex mixin that has the function associated with the GO term"
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term"
             },
             "timepoint": {
                "description": "a point in time",
@@ -17654,6 +17795,80 @@
          "title": "StrandEnum",
          "type": "string"
       },
+      "Study": {
+         "additionalProperties": false,
+         "description": "a detailed investigation and/or analysis",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Study",
+         "type": "object"
+      },
       "StudyPopulation": {
          "additionalProperties": false,
          "description": "A group of people banded together or treated as a group as participants in a research study.",
@@ -17719,6 +17934,80 @@
             "category"
          ],
          "title": "StudyPopulation",
+         "type": "object"
+      },
+      "StudyVariable": {
+         "additionalProperties": false,
+         "description": "a variable that is used as a measure in the investigation of a study",
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+               "items": {
+                  "type": "string"
+               },
+               "pattern": "^biolink:\\d+$",
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "format": "date",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_attribute": {
+               "description": "connects any entity to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "provided_by": {
+               "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "StudyVariable",
          "type": "object"
       },
       "TaxonToTaxonAssociation": {

@@ -1063,6 +1063,23 @@ type Cohort implements SubjectOfInvestigation
     hasAttribute: [Attribute]
   }
 
+type CommonDataElement
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 type ComplexChemicalExposure
   {
     id: String!
@@ -2695,9 +2712,18 @@ type LifeStage
     hasAttribute: [Attribute]
   }
 
-interface MacromolecularComplexMixin
+type MacromolecularComplex implements MacromolecularMachineMixin
   {
-    name: SymbolType
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
   }
 
 interface MacromolecularMachineMixin
@@ -4138,6 +4164,23 @@ interface SpecificityQuantifier
   {
   }
 
+type Study
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
 type StudyPopulation
   {
     id: String!
@@ -4153,6 +4196,23 @@ type StudyPopulation
   }
 
 interface StudyResult
+  {
+    id: String!
+    iri: IriType
+    type: String
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type StudyVariable
   {
     id: String!
     iri: IriType

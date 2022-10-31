@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-21T23:29:01
+# Generation date: 2022-10-31T21:48:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -67,6 +67,7 @@ CTD_DISEASE = CurieNamespace('CTD_DISEASE', 'http://ctdbase.org/detail.go?type=d
 CTD_GENE = CurieNamespace('CTD_GENE', 'http://ctdbase.org/detail.go?type=gene&acc=')
 CHEMBANK = CurieNamespace('ChemBank', 'http://chembank.broadinstitute.org/chemistry/viewMolecule.htm?cbid=')
 CLINVARVARIANT = CurieNamespace('ClinVarVariant', 'http://www.ncbi.nlm.nih.gov/clinvar/variation/')
+COMPLEXPORTAL = CurieNamespace('ComplexPortal', 'https://www.ebi.ac.uk/complexportal/complex/')
 DBSNP = CurieNamespace('DBSNP', 'http://identifiers.org/dbsnp/')
 DDANAT = CurieNamespace('DDANAT', 'http://purl.obolibrary.org/obo/DDANAT_')
 DGIDB = CurieNamespace('DGIdb', 'https://www.dgidb.org/interaction_types')
@@ -462,6 +463,18 @@ class StudyResultId(InformationContentEntityId):
     pass
 
 
+class StudyId(InformationContentEntityId):
+    pass
+
+
+class StudyVariableId(InformationContentEntityId):
+    pass
+
+
+class CommonDataElementId(InformationContentEntityId):
+    pass
+
+
 class ConceptCountAnalysisResultId(StudyResultId):
     pass
 
@@ -727,6 +740,10 @@ class GrossAnatomicalStructureId(AnatomicalEntityId):
 
 
 class GeneId(BiologicalEntityId):
+    pass
+
+
+class MacromolecularComplexId(BiologicalEntityId):
     pass
 
 
@@ -2002,6 +2019,80 @@ class StudyResult(InformationContentEntity):
 
     id: Union[str, StudyResultId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+@dataclass
+class Study(InformationContentEntity):
+    """
+    a detailed investigation and/or analysis
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Study
+    class_class_curie: ClassVar[str] = "biolink:Study"
+    class_name: ClassVar[str] = "study"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Study
+
+    id: Union[str, StudyId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyId):
+            self.id = StudyId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class StudyVariable(InformationContentEntity):
+    """
+    a variable that is used as a measure in the investigation of a study
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
+    class_class_curie: ClassVar[str] = "biolink:StudyVariable"
+    class_name: ClassVar[str] = "study variable"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.StudyVariable
+
+    id: Union[str, StudyVariableId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyVariableId):
+            self.id = StudyVariableId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CommonDataElement(InformationContentEntity):
+    """
+    A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable
+    responses, used systematically across different sites, studies, or clinical trials to ensure consistent data
+    collection. Multiple CDEs (from one or more Collections) can be curated into Forms. (https://cde.nlm.nih.gov/home)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
+    class_class_curie: ClassVar[str] = "biolink:CommonDataElement"
+    class_name: ClassVar[str] = "common data element"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CommonDataElement
+
+    id: Union[str, CommonDataElementId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CommonDataElementId):
+            self.id = CommonDataElementId(self.id)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class ConceptCountAnalysisResult(StudyResult):
@@ -3939,8 +4030,8 @@ class ChemicalEntityOrProteinOrPolypeptide(YAMLRoot):
 @dataclass
 class MacromolecularMachineMixin(YAMLRoot):
     """
-    A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a
-    cell. They either carry out individual biological activities, or they encode molecules which do this.
+    A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell.
+    They either carry out individual biological activities, or they encode molecules which do this.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4055,17 +4146,33 @@ class GeneProductIsoformMixin(GeneProductMixin):
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneProductIsoformMixin
 
 
-class MacromolecularComplexMixin(MacromolecularMachineMixin):
+@dataclass
+class MacromolecularComplex(BiologicalEntity):
     """
     A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which
     at least one component is a protein and the constituent parts function together.
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplexMixin
-    class_class_curie: ClassVar[str] = "biolink:MacromolecularComplexMixin"
-    class_name: ClassVar[str] = "macromolecular complex mixin"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplexMixin
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplex
+    class_class_curie: ClassVar[str] = "biolink:MacromolecularComplex"
+    class_name: ClassVar[str] = "macromolecular complex"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MacromolecularComplex
+
+    id: Union[str, MacromolecularComplexId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MacromolecularComplexId):
+            self.id = MacromolecularComplexId(self.id)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass

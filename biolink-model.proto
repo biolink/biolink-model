@@ -966,6 +966,23 @@ message Cohort
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
  }
+// A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
+message CommonDataElement
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ }
 // A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
 message ComplexChemicalExposure
  {
@@ -2390,6 +2407,20 @@ message LifeStage
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
  }
+// A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
+message MacromolecularComplex
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
  {
@@ -3654,6 +3685,23 @@ message SocioeconomicExposure
  repeated  socioeconomicAttribute hasAttribute = 0
   timeType timepoint = 0
  }
+// a detailed investigation and/or analysis
+message Study
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation
  {
@@ -3667,6 +3715,23 @@ message StudyPopulation
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
+ }
+// a variable that is used as a measure in the investigation of a study
+message StudyVariable
+ {
+  string id = 0
+  iriType iri = 0
+  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
  }
 message TaxonToTaxonAssociation
  {

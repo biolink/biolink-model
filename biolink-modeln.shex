@@ -290,9 +290,9 @@ linkml:Nodeidentifier NONLITERAL
 
 <BiologicalEntity>  (
     @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<GeneticInheritance> OR
-    @<Genome> OR @<Genotype> OR @<Haplotype> OR @<NucleicAcidSequenceMotif> OR @<NucleosomeModification> OR @<OrganismalEntity> OR
-    @<Polypeptide> OR @<PosttranslationalModification> OR @<ProteinDomain> OR @<ProteinFamily> OR @<ReagentTargetedGene> OR
-    @<SequenceVariant>
+    @<Genome> OR @<Genotype> OR @<Haplotype> OR @<MacromolecularComplex> OR @<NucleicAcidSequenceMotif> OR
+    @<NucleosomeModification> OR @<OrganismalEntity> OR @<Polypeptide> OR @<PosttranslationalModification> OR @<ProteinDomain> OR
+    @<ProteinFamily> OR @<ReagentTargetedGene> OR @<SequenceVariant>
 )
 
 <BiologicalEntity_struct> {
@@ -825,6 +825,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <SubjectOfInvestigation> ] ?
        ) ;
        rdf:type [ <Cohort> ]
+    )
+}
+
+<CommonDataElement> CLOSED {
+    (  $<CommonDataElement_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <CommonDataElement> ]
     )
 }
 
@@ -1892,8 +1900,8 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <InformationContentEntity>  (
-    @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR @<EvidenceType> OR
-    @<InformationResource> OR @<Publication> OR @<StudyResult>
+    @<CommonDataElement> OR @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR
+    @<EvidenceType> OR @<InformationResource> OR @<Publication> OR @<Study> OR @<StudyResult> OR @<StudyVariable>
 )
 
 <InformationContentEntity_struct> {
@@ -1935,23 +1943,23 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<MacromolecularComplexMixin> {
-    (  $<MacromolecularComplexMixin_tes> (  &<MacromolecularMachineMixin_tes> ;
+<MacromolecularComplex> CLOSED {
+    (  $<MacromolecularComplex_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ? ;
+          &<MacromolecularMachineMixin_tes> ;
           rdf:type [ <MacromolecularMachineMixin> ] ?
        ) ;
-       rdf:type [ <MacromolecularComplexMixin> ] ?
+       rdf:type [ <MacromolecularComplex> ]
     )
 }
 
 <MacromolecularMachineMixin>  (
-    @<GeneOrGeneProduct> OR @<MacromolecularComplexMixin>
+    {
+       (  $<MacromolecularMachineMixin_tes> <name> @<SymbolType> ? ;
+          rdf:type [ <MacromolecularMachineMixin> ] ?
+       )
+    } OR @<GeneOrGeneProduct>
 )
-
-<MacromolecularMachineMixin_struct> {
-    (  $<MacromolecularMachineMixin_tes> <name> @<SymbolType> ? ;
-       rdf:type [ <MacromolecularMachineMixin> ] ?
-    )
-}
 
 <MacromolecularMachineToBiologicalProcessAssociation> CLOSED {
     (  $<MacromolecularMachineToBiologicalProcessAssociation_tes> (  &<FunctionalAssociation_tes> ;
@@ -2925,6 +2933,14 @@ linkml:Nodeidentifier NONLITERAL
     } OR @<PathognomonicityQuantifier>
 )
 
+<Study> CLOSED {
+    (  $<Study_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <Study> ]
+    )
+}
+
 <StudyPopulation>  (
     CLOSED {
        (  $<StudyPopulation_tes> (  &<PopulationOfIndividualOrganisms_tes> ;
@@ -2945,6 +2961,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <InformationContentEntity> ] ?
        ) ;
        rdf:type [ <StudyResult> ]
+    )
+}
+
+<StudyVariable> CLOSED {
+    (  $<StudyVariable_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ?
+       ) ;
+       rdf:type [ <StudyVariable> ]
     )
 }
 
