@@ -4376,7 +4376,7 @@ slots:
   in complex with:
     description: >-
       holds between two genes or gene products that are part of (or code for
-      products that are part of) in the same macromolecular complex mixin
+      products that are part of) in the same macromolecular complex
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
@@ -8787,7 +8787,7 @@ classes:
 
   macromolecular machine mixin:
     description: >-
-      A union of gene locus, gene product, and macromolecular complex mixin. These are
+      A union of gene locus, gene product, and macromolecular complex. These are
       the basic units of function in a cell. They either carry out individual
       biological activities, or they encode molecules which do this.
     mixin: true
@@ -8887,13 +8887,14 @@ classes:
     is_a: gene product mixin
     mixin: true
 
-  macromolecular complex mixin:
+  macromolecular complex:
     description: >-
       A stable assembly of two or more macromolecules, i.e. proteins,
       nucleic acids, carbohydrates or lipids, in which at least one
       component is a protein and the constituent parts function together.
-    is_a: macromolecular machine mixin
-    mixin: true
+    is_a: biological entity
+    mixins:
+      - macromolecular machine mixin
     exact_mappings:
       - GO:0032991
       - WIKIDATA:Q22325163
@@ -11235,7 +11236,7 @@ classes:
       subject:
         range: macromolecular machine mixin
         description: >-
-          gene, product or macromolecular complex mixin that
+          gene, product or macromolecular complex that
           has the function associated with the GO term
         examples:
           - value: ZFIN:ZDB-GENE-050417-357
