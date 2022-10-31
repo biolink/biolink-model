@@ -37,6 +37,7 @@ prefixes:
   CLINVAR: 'http://identifiers.org/clinvar'
   COAR_RESOURCE: 'http://purl.org/coar/resource_type/'
   COG: 'https://www.ncbi.nlm.nih.gov/research/cog-project/'
+  ComplexPortal: 'https://www.ebi.ac.uk/complexportal/complex/'
   CPT: 'https://www.ama-assn.org/practice-management/cpt/'
   CTD.CHEMICAL: 'http://ctdbase.org/detail.go?type=chem&acc='
   CTD.DISEASE: 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc='
@@ -8903,6 +8904,7 @@ classes:
       - GO
       - PR
       - REACT
+      - ComplexPortal
     in_subset:
       - model_organism_database
 
