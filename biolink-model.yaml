@@ -1832,7 +1832,9 @@ slots:
       dependence is demonstrated, wherein the state or value of one variable predicts the future state 
       or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated 
       with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
-      is associated with an increased or decreased likelihood that a patient will later exhibit MI. 
+      is associated with an increased or decreased likelihood that a patient will later exhibit MI.
+    annotations:
+      canonical_predicate: true
 
   likelihood associated with:
     is_a: associated with
@@ -1843,18 +1845,24 @@ slots:
     is_a: associated with likelihood of
     description: >-
       Expresses a relationship between two named things where the relationship is typically generated statistically
-      and the state or fact of something is more probable. 
+      and the state or fact of something is more probable.
+    annotations:
+      canonical_predicate: true
 
   increased likelihood associated with:
     is_a: likelihood associated with
     description: >-
     inverse: associated with increased likelihood of
+    annotations:
+      canonical_predicate: true
 
   associated with decreased likelihood of:
     is_a: associated with likelihood of
     description: >-
       Expresses a relationship between two named things where the relationship is typically generated statistically
-      and the state or fact of something is less probable. 
+      and the state or fact of something is less probable.
+    annotations:
+      canonical_predicate: true
 
   decreased likelihood associated with:
     is_a: likelihood associated with
@@ -2328,6 +2336,7 @@ slots:
     domain: disease or phenotypic feature
 
   increases amount or activity of:
+    deprecated: true
     is_a: related to at instance level
     mixin: true
     description: >-
@@ -2335,10 +2344,12 @@ slots:
       or activity of the object.
 
   amount or activity increased by:
+    deprecated: true
     is_a: related to at instance level
     inverse: increases amount or activity of
 
   decreases amount or activity of:
+    deprecated: true
     is_a: related to at instance level
     mixin: true
     description: >-
@@ -2346,6 +2357,7 @@ slots:
       or activity of the object.
 
   amount or activity decreased by:
+    deprecated: true
     is_a: related to at instance level
     inverse: decreases amount or activity of
 
@@ -2401,8 +2413,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    mixins:
-      - increases amount or activity of
     annotations:
       canonical_predicate: true
       opposite_of: decreases response to
@@ -2428,8 +2438,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    mixins:
-      - decreases amount or activity of
     annotations:
       canonical_predicate: true
       opposite_of: increases response to
