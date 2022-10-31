@@ -1846,15 +1846,13 @@ slots:
     description: >-
       Expresses a relationship between two named things where the relationship is typically generated statistically
       and the state or fact of something is more probable.
-    annotations:
+    annotations:`
       canonical_predicate: true
 
   increased likelihood associated with:
     is_a: likelihood associated with
     description: >-
     inverse: associated with increased likelihood of
-    annotations:
-      canonical_predicate: true
 
   associated with decreased likelihood of:
     is_a: associated with likelihood of
@@ -2399,8 +2397,6 @@ slots:
       - translator_minimal
     domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
-    annotations:
-      canonical_predicate: true
 
   increases response to:
     description: >-
