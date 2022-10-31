@@ -7683,7 +7683,6 @@ classes:
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - CLINVAR
-      - ClinVarVariant
       - WIKIDATA
       # - CIViC needs IRI mapping
       - DBSNP
@@ -7714,7 +7713,7 @@ classes:
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
-          - value: ClinVarVariant:17681
+          - value: CLINVAR:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
     in_subset:
       - model_organism_database
@@ -9183,8 +9182,8 @@ classes:
         description: >-
           a sequence variant in which the allele state is associated with some other entity
         examples:
-          - value: ClinVar:38077
-            description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
+          - value: CLINVAR:38077
+            description: "CLINVAR representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
 
@@ -9385,7 +9384,7 @@ classes:
           a sequence variant in which the allele state
           is associated in some way with the disease state
         examples:
-          - value: ClinVar:52241
+          - value: CLINVAR:52241
             description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
       predicate:
         description: >-
