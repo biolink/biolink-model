@@ -7234,6 +7234,26 @@ classes:
       analyses, or a larger scale clinical trial or experimental research investigation.
     is_a: information content entity
 
+  study:
+    description: a detailed investigation and/or analysis
+    is_a: information content entity
+    exact_mappings:
+      - NCIT:C63536
+    close_mappings:
+      - SIO:001066
+      - SEPIO:0000004
+    narrow_mappings:
+      - SIO:000994
+
+  study variable:
+    is_a: information content entity
+    description: a variable that is used as a measure in the investigation of a study
+    narrow_mappings:
+      - NCIT:C142192 # specifies clinical study
+    close_mappings:
+      - STATO:0000258
+      - SIO:000367
+
   ## epc result sets
   concept count analysis result:
     is_a: study result
