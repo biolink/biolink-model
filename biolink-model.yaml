@@ -1200,9 +1200,20 @@ slots:
       ‘a mutation of Gene X’.
     examples:
       - value: mutation
+      - value: late stage
+      - value: severe
+      - value: transplant
+      - value: chemical analong
     notes: >-
       please see the chemical_or_gene_or_gene_product_form_or_variant_enum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
+      the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’.
+      the qualifier ‘Late Stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
+      the qualifier ‘Severe’ combines with a core concept of ‘Bleeding’ to express the  more specific concept ‘Severe forms of Bleeding’
+      the qualifier ‘Liver’ combines with a core concept of ‘Surgical Transplant’ to express the composed concept ‘Liver Transplant’
+      the qualifier ‘Recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
+      the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
+
 
   aspect qualifier:
     is_a: association slot
@@ -1210,7 +1221,8 @@ slots:
     description: >-
       Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
       the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that
-      inheres in the core concept.
+      inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an 
+      'affects' association.
     examples:
       - value: stability
       - value: abundance
@@ -1220,6 +1232,13 @@ slots:
       for good examples of aspects in the gene-> chemical space, please see the 
       gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify 
       the gene making the full subject a different ontological type.  
+      the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process)
+      the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process)
+      the qualifier ‘Activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity)
+      the qualifier ‘Emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event)
+      the qualifier ‘Infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
+      the qualifier ‘Severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
+      the qualifier ‘Abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
 
   derivative qualifier:
     is_a: association slot
@@ -1250,12 +1269,19 @@ slots:
       - value: cohort x
       - value: blood
       - value: gut microbiome
+    notes: >-
+      the context qualifier ‘hippocampus’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in 
+      the hippocampus’. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity
+
 
   direction qualifier:
     is_a: association slot
     abstract: true
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+    notes: >-
+      the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’   
+      the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
 
   mapped predicate:
     description: >-
@@ -1333,9 +1359,20 @@ slots:
   qualified predicate:
     is_a: association slot
     description: >-
-      predicate to be used in an association when subject and object qualifiers are present and the full
+      Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or 
-      increase the specificity of the full statement reading
+      increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that 
+      expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based 
+      semantics are included.  This is necessary only in cases where the primary predicate does not work in a 
+      full statement reading.
+    notes: >-
+      to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read 
+      using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using 
+      the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression, 
+      object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but doesnt make 
+      sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not 
+      what we mean to say here: it causes increased expression of Gene Y)
+
 
   statement qualifier:
     is_a: association slot
@@ -10215,7 +10252,7 @@ enums:
       antagonism:
         is_a: inhibition
         description: >-
-          A causal mecahnism in which the effector binds to a receptor and prevents activation by an agonist 
+          A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist 
           through competing for the binding site.
         close_mappings:
           - DGIdb:antagonist
