@@ -243,7 +243,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
 
 ### Example 8:
 
-"Fenofibrate is an agonist of PPARA protein” - Chemical increases  gene activity, via a specific control mechanism (agonism)
+"Fenofibrate is an agonist of PPARA protein” - Chemical increases'  gene activity, via a specific control mechanism (agonist)
 
 ```json
 {
