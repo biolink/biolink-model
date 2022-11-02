@@ -337,8 +337,8 @@ slots:
       - INO:0000154
       - HANCESTRO:0308
       - OMIM:has_inheritance_type
-      - ORPHA:C016
-      - ORPHA:C017
+      - orphanet:C016
+      - orphanet:C017
       - RO:0000053
       # RTX tagged a few RO terms as 'biolink:related_to' but semantics suggest a better mapping here
       - RO:0000086
@@ -3078,11 +3078,11 @@ slots:
       - NCIT:chromosome_mapped_to_disease
       - NCIT:disease_has_normal_tissue_origin
       - NBO-PROPERTY:in_response_to
-      - ORPHA:317343
-      - ORPHA:317344
-      - ORPHA:317346
-      - ORPHA:410295
-      - ORPHA:410296
+      - orphanet:317343
+      - orphanet:317344
+      - orphanet:317346
+      - orphanet:410295
+      - orphanet:410296
       # RTX mapped this term to 'biolink:related_to' but this term seems a more precise mapping
       - RO:0002256
       - RO:0002315
@@ -3374,7 +3374,7 @@ slots:
       # RTX term was tagged as 'biolink:actively_involved_in' but maps better here?
       - NCIT:genetic_biomarker_related_to
       - NCIT:is_molecular_abnormality_of_disease
-      - ORPHA:465410
+      - orphanet:465410
 
   # It may be helpful to introduce an intermediate predicate in between 'related_to' and 'expressed in'
   # which would have a domain of 'biological entity' and range of 'anatomical entity', to map predicates
@@ -3996,9 +3996,9 @@ slots:
       - RO:0002432
     narrow_mappings:
       - NBO-PROPERTY:by_means
-      - ORPHA:317348
-      - ORPHA:317349
-      - ORPHA:327767
+      - orphanet:317348
+      - orphanet:317349
+      - orphanet:327767
       - RO:0002503
 
   actively involves:
