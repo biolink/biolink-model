@@ -18,17 +18,17 @@ represent a record from the CTD database that asserts “A Hexachlorobenzene met
 mutant form of the CDKN2A promoter in the nucleus of HeLa cells”.
 
 ```
-subject: Hexachlorobenzene
+subject: CHEBI:5692 # Hexachlorobenzene
 subject_derivative: metabolite
 predicate: affects
 qualified_predicate: causes
-object: CDKN2A
+object:  NCBIGene:1029 # CDKN2A
 object_part: promoter
 object_form_or_variant: mutant form
 object_aspect:  methylation
 object_direction: increased
 object_context: nucleus 
-experimental_context_qualifier: HeLa cells
+experimental_context_qualifier:  # HeLa cells
 ```
 
 To extract the assertions encoded in this structure:
