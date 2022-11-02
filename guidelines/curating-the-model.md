@@ -104,66 +104,88 @@ For more information on what each slot means and how to use them in Biolink Mode
 
 ### Adding an Association class
 
-An association represents an assertion (statement) which connects a subject to an object via a predicate.
+These modeling principles/desiderata have guided modeling choices throughout the qualifier-based approach 
+to adding Association classes in Biolink.
 
-Instances of the Association class are represented as edges in a graph.
+- Nodes should represent core domain concepts: If possible, IRIs for KG nodes should represent fundamental domain concepts (genes, chemicals, phenotypes, diseases, etc.) This facilitates connections between primary entities of interest with fewer hops, and avoids the need to create/maintain/resolve new IRIs. 
+   - Corollary: Limit dependencies on term creation by external ontologies:  We don’t want a scenario where we are waiting for external, unpredictable ontologies to add terms we need, e.g., addition of terms like ‘’severe bleeding” to HP, “early onset Alzheimers” to MONDO, or ‘’exposure to PM2.5” to ECTO.  
+- Use qualifiers to compose full node semantics: When an identifier/IRI does not exist for a node concept in a standard, Translator-approved ontology, use qualifiers to post-compose their meaning. This is preferred over minting new ontology terms at a more granular level than is practical, or using structured data objects as Statement subject/objects.
+- The ‘core triple’ should remain true if qualifiers are ignored: When using qualifiers, ensure that the core SPO triple remains true when qualifiers are ignored. (However, note that there may be one predicate used for the core triple and a different predicate for the qualified assertion.) If certain necessary qualifiers may violate this rule (e.g., ‘negated’), these should be flagged and NEVER ignored.
+- Control predicate proliferation: When deciding where to place Statement semantics, choose modeling approaches that avoid a potential for an explosion of predicates. Pushing semantics into qualifiers is one way to achieve this.
+- Represent information consistently: Where possible, a given type of semantics (e.g., gene aspect, direction of effect) should be represented using the same pattern across Statement types and components.  This will facilitate clear and consistent creation of data by KPs, and simplify query construction and answering.
 
-Biolink Model has several Association classes like `gene to gene association`, `gene to disease association`, `disease to phenotypic feature association`.
-
-All these classes are arranged in a hierarchy with the root of all associations being the `association` class.
-
-
-
-To add an Association class to Biolink Model you need to determine the following,
-  - What is an appropriate name for this association
-    - The name for an association should be clear and concise. It should capture the type of assertion that it is trying to represent
-  - What type of nodes does this association link?
-    - Determine what the subject and the object classes are in this assertion
-  - Where in the hierarchy does the new class fit?
-    - Determine where in the [`association slot` hierarchy]() does this new assocation class fit
-  - What are the slots that this association class can have (in addition to inherited slots)?
-    - Determine what additional properties that this class ought to have
-  - Do certain slots have to be constrained on what values it ought to have?
-    - Determine whethere there are properties (new or inherited)  whose value have to be constrained to a certain value space
-  - What are the mapping(s) for this class?
-    - Mappings are a way of rooting this new association in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
-    - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
-
-
-
-As an example, let's consider the definition of class  `variant to disease association`:
+As an example, let's consider the definition of class  `chemical affects gene association`:
 
 ```yaml
-  variant to disease association:
+  chemical affects gene association:
+    description: >-
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,
+      localization, processing, expression, etc.)
     is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - variant to thing association
-      - entity to disease association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject context qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object aspect qualifier
+      - object context qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - qualified predicate
     slot_usage:
       subject:
-        description: >-
-          a sequence variant in which the allele state is associated in some way with the disease state
-        examples:
-          - value: ClinVar:52241
-            description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
-      relation:
-        description: >-
-          E.g. is pathogenic for
-        subproperty_of: related condition
+        range: chemical entity
+      subject form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+      subject part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      subject derivative qualifier:
+        range: chemical_entity_derivative_enum
+      subject aspect qualifier:
+        range: gene_or_gene_product_or_chemical_entity_aspect_enum
+      subject context qualifier:
+        range: anatomical entity
+      subject direction qualifier:
+        range: direction_qualifier_enum
+      predicate:
+        subproperty_of: affects
+      qualified predicate:
+        subproperty_of: causes
       object:
-        description: >-
-          a disease that is associated with that variant
-        examples:
-          - value: MONDO:0016419
-            description: hereditary breast cancer
+        range: gene or gene product
+      object form or variant qualifier:
+        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+      object part qualifier:
+        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+      object aspect qualifier:
+        range: gene_or_gene_product_or_chemical_entity_aspect_enum
+      object context qualifier:
+        range: anatomical entity
+      object direction qualifier:
+        range: direction_qualifier_enum
+      causal mechanism qualifier:
+        range: causal_mechanism_qualifier_enum
+      anatomical context qualifier:
+        range: anatomical entity
+      species context qualifier:
+        range: organism taxon
 ```
 
-In the above YAML snippet, `is_a`, `defining_slots`, `mixins`, and `slot_usage` are slots from linkML where each slot has a specific meaning and they add semantics to the class definition.
+In the above YAML snippet, we first define the class `chemical affects gene association` as a subclass of `association` 
+and then we define the slots that this class will have.  Many of these slots represent qualifiers that are used to 
+refine the meaning of the association. For example, `object form or variant qualifier` is a slot that is used to
+describe when a "mutant form" of a gene is used in an assertion.  This allows us to both represent that the gene
+of interest (the object) is somehow related to the chemical of interest (the subject), and also that more specifically
+we may be talking about a "mutant form" of the gene.  "mutant form" is a `biolink:object_form_or_variant_qualifier`.  This 
+kind of modeling allows us to increase connectivity in graphs by using a core biological concept (gene) but also be
+more specific and nuanced about the meaning of the association by qualifying the concept (gene) with a more specific
+form of "mutant form" of that concept. 
 
-There are [other linkML slots](https://linkml.github.io/linkml-model/docs/ClassDefinition#Attributes) that can be used to define your class and represent the semantics of your class.
+For more information on qualifiers, please refer to [Understanding the Model](understanding-the-model.md)
 
 For more information on what each slot means and how to use them in Biolink Model, refer to [Using the Modeling Language](using-the-modeling-language.md).
 

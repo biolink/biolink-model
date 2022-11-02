@@ -71,7 +71,7 @@ At a glance the structure is as follows,
 
 ### Classes
 
-A class represents an entity or an association. A class can have one more more slots (properties).
+A class represents an entity or an association. A class can have one more slots (properties).
 
 In RDF sense, a class is basically `rdfs:Class`.
 
@@ -93,9 +93,6 @@ Each class in the `named thing` has one or more slots (properties).
 
 The root of all entities is the `named thing` class.
 
-> **Note:** While we say `named thing` when defining the model using linkML, the actual CURIE for this class is `biolink:NamedThing`
-
-
 ##### Associations
 
 Associations are classes that represent an assertion or statement. 
@@ -104,29 +101,76 @@ In RDF sense, an association is an `rdf:Statement`.
 
 In a graph formalism, associations are represented using edges in a graph.
 
-Each class has one or more slots (or properties).
+Associations help us to make assertions about the world. For example, we can say that a gene is associated with a disease. 
+Or we can say that a gene is a member of a pathway.  Associations also help us constrain the meaning of an edge, or 
+add context to the edge that describes how or when the edge takes place.  In fact, we also use association objects
+to hold references to the publications, confidence scores, and other metadata that we use to support our assertions.
 
-The root of all associations is the `association` class.
+Associations are arranged in a hierarchy where the root of all Associations is the `association` class.  In general, 
+Associations have three main properties (or slots):
+  - `subject`: the subject of the association 
+  - `predicate`: the predicate or relationship between the subject and the object of the association
+  - `object`: the object of the association
+These three properties (or slots) define what Biolink calls a "core triple".
 
-> **Note:** While we say `association` when defining the model using linkML, the acutal CURIE for this class is `biolink:Association`
+Subjects and objects are always classes in the Biolink Model that are descendants of "biolink:NamedThing" and 
+represent core biological, chemical, and biomedical concepts (e.g. genes, diseases, chemicals, phenotypes), 
+whose IRIs come from community standard ontologies (e.g. HGNC, MONOD, ChEBI, HPO).  As a best practice, 
+Biolink Model prioritizes connectivity and practicality. 
 
+The predicate in an Association is always a Biolink property (or slot) that is or descends from the "biolink:related_to" 
+property.  Predicates in Biolink often are exactly equivalent to relations in the Relations Ontology.  
+
+To express more complex or nuanced Statements, we use additional slots called qualifiers that  refine or extend the 
+meaning of the core triple. At the highest level we distinguish two kinds of qualifiers: (1) node qualifiers altering 
+the meaning of the Association subject or object specifically; (2) statement qualifiers refine or extend the meaning 
+of the statement as a whole. 
+
+Together, the subject, predicate, object, and optional qualifier(s) comprise the full semantics of the statement that 
+an Association puts forth as true (i.e. its ‘S-P-O-Q’ semantics).  Association objects may also include slots to 
+hold additional metadata about this core statement - primarily information about the provenance and evidence supporting it. 
+Using these elements together we can build Associations with many possible ‘layers’ of complexity (Figure 1). 
+Some Associations may simply consist of an S-P-O triple. Others may represent more complex statements that employ 
+multiple qualifiers, supported by rich evidence and provenance metadata. For example, Figure 2 provides a layered 
+view of a complex Disease to Phenotype Association instance. 
+
+Figure 1: A layered view of a simple a Biolink Association object.
+![](../images/onion.png))
+
+Figure 2: An Association representing the Statement that “Late Stage Ebola has phenotype Severe Bleeding with 92%  
+penetrance in adults”, and some provenance metadata supporting this. This representation leans heavily on qualifiers 
+for representing Statement semantics. 
+
+![](../images/example_onion.png)
+
+At the highest level we distinguish two kinds of qualifiers that contribute to an Association Statement: 
+- node qualifiers (aka subject / object qualifiers) extend or refine the meaning of an Association subject or object concept; 
+- statement qualifiers refine or extend the meaning of the core S-P-O triple as a whole.
+- 
+Together, the subject, predicate, object, and optional qualifier(s) comprise the full semantics of the statement that an 
+Association puts forth as true (i.e. its ‘S-P-O-Q’ semantics).  Association objects may also include slots to hold 
+Metadata about this core statement - primarily information about the provenance and evidence supporting it - but unlike 
+qualifiers, this metadata does not contribute to the meaning of the core Statement itself. 
+Using these qualifier and metadata elements together, we can build Associations with many possible ‘layers’ of complexity.
+
+Sometimes, seeing several examples of a modeling pattern is most helpful in applying the pattern to your own data.
+To peruse our examples, please visit: 
+
+Please refer to [Curating the Model](curating-the-model.md) for more information about making new Associations or 
+making changes to existing Associations.
 
 ##### Mixins
-
-Mixins are classes that contain slots (properties) or  slots  which embody a generic slot semantic definition, for use across several other classes or slots.
-
-Mixins are abstract classes/slots and they cannot be instantiated by themselves. That is, there cannot be an instance of a mixin class or slot value (e.g. predicate slot) used as 'data'.  
-
-However, a class `mixin` _**may**_ be given as the `domain` or `range` specification of an association or a `mixin` slot may be  given as a `subproperty_of` constraint, with the strict understanding that when the given association  or slot is deployed as an element in a knowledge graph, that the actual values used in the instantiated nodes and edges of the graph will be "concrete" classes or slots that have or inherited those `mixin` elements as `mixins`.
-
 Mixins are defined as a way of encouraging reuse of specific slots (properties) while ensuring a clear inheritance chain.
+Mixins are used to extend the properties (or slots) of a class, without changing its
+position in the class hierarchy.  Mixins can be extremely helpful in a number of ways: 
+- to generalize a set of attributes that can apply to classes in different parts of the class hierarchy, 
+- reduce duplication of shared attributes between classes that do not inherit from one another 
+- to prevent the sometimes confusing nature of multiple inheritance noted in the '[diamond problem]'(https://tinyurl.com/4zdw9tsb).
 
-For example, the `entity to feature or disease qualifiers` class is a mixin that defines slots `severity qualifier` and `onset qualifier`. The mixin also inherits the slot `frequency qualifier` from its parent mixin class `frequency qualifier mixin`. 
-
-The mixin class `entity to feature or disease qualifiers` is used in the `entity to phenotypic feature association` class and thus by design the class will have `severity qualifier`, `onset qualifier`, and `frequency qualifier` in addition to all other slots it inherits from its own parent `association` class.
-
-> **Note:** Even though `entity to phenotypic feature association` uses the mixin class `entity to feature or disease qualifiers` that does not mean that `entity to phenotypic feature association` is a child of `entity to feature or disease qualifiers`. i.e. Mixins do not contribute to the inheritance hierarchy of the class that uses them.
-
+In general, while mixin slots and classes should not be directly instantiated, or used directly as a slot in a class,
+KGs can use them as a substitute for multiple inheritance. For example, a KG might wish to determine what are the parents
+of a certain class.  In this case, the KG should navigate a mixin used in a domain or range of a class or slot, as it 
+would the "is_a" demarcation.  
 
 
 ### Slots
