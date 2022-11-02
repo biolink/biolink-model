@@ -14,7 +14,7 @@ and describe how they would be represented in Biolink Model.
 
 "Methionine deficiency results in increased expression of ADRB2 in adipose tissue"
 
-In keeping with our modeling paradigms (see [Curating The Model](guidelines/curating-the-model.md))
+In keeping with our modeling paradigms ([Curating The Model](guidelines/curating-the-model.md))
 - Nodes should represent core domain concepts
 - Use qualifiers to compose full node semantics
 - The ‘core triple’ should remain true if qualifiers are ignored. (except 'negation', 'negation' should never be ignored)
@@ -27,24 +27,27 @@ and data sources.  In this example sentence, we can first break it apart into th
 - affects (biolink:predicate)
 - ADRB2 (biolink:object)
 
-This is our "core triple" and its subject and object are broken down from the example above so that they are concepts
-that are most likely to be shared across many statements and data sources.  We might find more data sources that talk
-about "Methionine" than "Methionine deficiency" and we might find more data sources that talk about "ADRB2" as a "thing"
-than "increased expression of ADRB2 in adipose tissue".  So we want to break down the example sentence into its core 
-components without making a false statement.  
+This is our "core triple". 
 
-Notes: 
+Some design decisions that went into selecting this core triple:
 - Use of the Biolink model does not require, always, the use of less specific subject and
 object concepts, some use knowledge graphs may choose to use a more specific subject and object category to fulfill their 
 use cases.  But for this example, we apply Biolink categories at a higher level in the core triple to increase the 
 connectivity possibilities of the data.
 
-- Note the use of the "affects" predicate.  Here we are careful to use a predicate that keeps the core triple true despite
-our modification of the subject and object.  If we were to use "increases expression of" as a predicate here, we would 
-be invalidating the "core tripe is true" principle.
+- The "affects" predicate was chose here because we are being careful to use a predicate that keeps the core triple true despite
+our choice of subject and object.  If we were to use "increases expression of" as a predicate here, we would 
+be invalidating the "core tripe is true" principle (as our subject, "Methionine" is the opposite of "Methionine deficiency").
 
-- Despite our preference for connectivity, we don't want to lose the specificity of our original knowledge statement.  
-We can capture the nuance and specificity (expression, abundance) in qualifiers.
+Despite our preference for connectivity, we don't want to lose the specificity of our original knowledge statement.  
+We can capture the nuance and specificity (expression, abundance) in qualifiers.  The aspect of Methionine that we 
+want to capture is the "decreased abundance" of it.  The aspect of ADRB2 that we want to capture is the "increased expression" of it.
+These two aspects, "abundance" and "expression" are represented in the Biolink model as "aspect qualifiers". 
+The direction of the aspect, is represented in the Biolink model as "direction qualifiers".  Finally, we can have a 
+qualifier that applies to the entirety of the fully qualified statement, an "anatomical context qualifier" that expresses
+that this statement all takes place in the "adipose tissue." Therefore, the fully 
+qualified statement, using our core triple would be: 
+
 
 - json
 ```json
