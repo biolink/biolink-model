@@ -126,7 +126,124 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 
 
 
-
 ### Example 2:
 
-""
+"Fenofibrate binds to PPARA protein"  - This is a simple `Chemical interacts with Gene` statement (no qualifiers needed)
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:5001"  # Fenofibrate
+  "predicate": "biolink:physically_interacts_with"
+  "object": "NCBIGene:5465"  # PPARA
+}
+```
+
+### Example 3:
+
+"Cyclophosphamide affects the hydroxylation of CYP2B6" - A simple chemical affects gene (aspect) Statement  - no direction to the effect. 
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:16811"  # Cyclophosphamide,
+  "predicate": "biolink:affects",
+  "object": "NCBIGene:154"  # CYP2B6,
+  "object_aspect_qualifier": "hydroxylation"
+}
+```
+
+### Example 4:
+
+"Bisphenol A results in decreased degradation of ESR1 protein" - A Statement where the effect has a direction (decreased)
+    
+```json
+    {
+    "id": "e0",
+    "category": "biolink:ChemicalAffectsGeneAsociation",
+    "subject": "CHEBI:16811"  # Bisphenol A,
+    "predicate": "biolink:affects",
+    "qualified_predicate": "biolink:causes",
+    "object": "NCBIGene:2099"  # ESR1,
+    "object_aspect_qualifier": "degradation",
+    "object_direction_qualifier": "decreased"
+    }
+```
+
+### Example 5: 
+
+"Bisphenol A is associated with decreased degradation of ESR1 protein" - A (hypothetical) chemical associated_with 
+gene (aspect)  Statement with same S/O concepts as above
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:16811"  # Bisphenol A,
+  "predicate": "biolink:associated_with",
+  "object": "NCBIGene:2099"  # ESR1,
+  "object_aspect_qualifier": "degradation",
+  "object_direction_qualifier": "decreased"
+}
+```
+
+### Example 6:
+
+"Progesterone metabolites cause decreased methylation of APP promoter mutant forms" - A more complex example where a 
+metabolite of the specified chemical is the effector of a heavily qualified Statement object.
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:17026"  # Progesterone,
+  "predicate": "biolink:affects",
+  "qualified_predicate": "biolink:causes",
+  "object": "NCBIGene:351"  # APP,
+  "object_aspect_qualifier": "methylation",
+  "object_direction_qualifier": "decreased",
+  "object_part_qualifier": "promoter",
+  "object_form_or_variant_qualifier": "mutant"
+}
+```
+
+### Example 7:
+
+“Hexachlorobenzene analog causes increased methylation of CDKN2A enhancer alternative form”  - Another complex example 
+where an analog of a specified chemical is the effector of a heavily qualified Statement object.
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:16811"  # Hexachlorobenzene,
+  "subject_form_or_variant_qualifier": "analog",
+  "predicate": "biolink:affects",
+  "qualified_predicate": "biolink:causes",
+  "object": "NCBIGene:1029"  # CDKN2A,
+  "object_aspect_qualifier": "methylation",
+  "object_direction_qualifier": "increased",
+  "object_part_qualifier": "enhancer",
+  "object_form_or_variant_qualifier": "modified"
+}
+```
+
+### Example 8:
+
+"Fenofibrate is an agonist of PPARA protein” - Chemical increases  gene activity, via a specific control mechanism (agonism)
+
+```json
+{
+  "id": "e0",
+  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "subject": "CHEBI:5001"  # Fenofibrate,
+  "predicate": "biolink:afects",
+  "qualified_predicate": "biolink:causes",
+  "object": "NCBIGene:5465"  # PPARA,
+  "object_aspect_qualifier": "activity",
+  "object_direction_qualifier": "increased",
+  "causal_mechanism_qualifier": "agonism"
+}
+```
