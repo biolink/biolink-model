@@ -154,12 +154,13 @@ qualifiers, this metadata does not contribute to the meaning of the core Stateme
 Using these qualifier and metadata elements together, we can build Associations with many possible ‘layers’ of complexity.
 
 Sometimes, seeing several examples of a modeling pattern is most helpful in applying the pattern to your own data.
-To peruse our examples, please visit: 
+To peruse our examples, please visit: [Association Examples With Qualifiers](association-examples-with_qualifiers.md)
 
 Please refer to [Curating the Model](curating-the-model.md) for more information about making new Associations or 
 making changes to existing Associations.
 
 ##### Mixins
+
 Mixins are defined as a way of encouraging reuse of specific slots (properties) while ensuring a clear inheritance chain.
 Mixins are used to extend the properties (or slots) of a class, without changing its
 position in the class hierarchy.  Mixins can be extremely helpful in a number of ways: 
@@ -175,43 +176,39 @@ would the "is_a" demarcation.
 
 ### Slots
 
-In Biolink Model, slots represent properties that a class can have.
+In Biolink Model, slots represent properties that a class or an association can have.
 
 A slot is similar to `rdf:Property` where it can link
   - an instance of a class to another instance of a class
   - an instance of a class to a literal/data type
 
-
 In Biolink Model slots are used to represent
   - [Predicates](#predicates)
   - [Node Properties](#node-properties)
-  - [Edge Properties](#edge-properties)
+  - [Edge Properties](#edge-properties) (aka Association Properties, subject/object/statement qualifiers)
 
 
 #### Predicates
-
-Predicates are slots that connect instances of classes. 
 
 In a graph formalism, predicates are relationships that link two instances.
 
 In an OWL sense, predicates are similar to `owl:ObjectProperty`.
 
-For example, a predicate `treats` can be used to link an instance of class `chemical substance` with an instance of class `disease`.
+For example, a predicate `biolink:treats` can be used to link an instance of class `biolink:ChemicalEntity` with an instance 
+of class `Biolink:Disease`.
 
 
 #### Node Properties
 
 Node properties are slots that an entity class (i.e, a node) can have.
 
-The root of all node properties is `node property` slot.
+The root of all node properties is `biolink:node_property` slot.
 
 In an OWL sense, node properties are similar to `owl:DataTypeProperty`.
 
-For example, `symbol`, `synonym`, and `xref` are children of the `node property` slot and they are assigned to the entity class `named thing`.
-So all instances of this class can have `symbol`, `synonym`, and `xref` as properties that further describes the instance. 
-
-
-> **Note:** In many cases you may see node properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed node in a graph, with `id` and `name` as its properties, then they correspond to `biolink:id` and `biolink:name`. But to be sure of the semantics it is advised to use the full CURIE to represent property names in your graph.
+For example, `biolink:symbol`, `biolink:synonym`, and `biolink:xref` are children of the `biolink:node_property` slot, 
+and they are assigned to the entity class `named thing`. So all instances of this class can have `biolink:symbol`, 
+`biolink:synonym`, and `biolink:xref` as properties that further describes the instance. 
 
 
 #### Edge Properties
@@ -222,9 +219,10 @@ The root of all edge properties is `association slot` slot.
 
 In an OWL sense, edge properties are similar to `owl:DataTypeProperty`.
 
-For example, `subject`, `predicate`, and `object` are children of the `association_slot` slot and they are assigned to association class `association`. So all instances of this class can have `subject`, `predicate`, and `object` as its properties that further describes the instance.
+For example, `biolink:subject`, `biolink:predicate`, and `biolink:object` are children of the `biolink:association_slot` slot, 
+and they are assigned to association class `biolink:association`. So all instances of this class can 
+have `biolink:subject`, `biolink:predicate`, and `biolink:object` as its properties that further describes the instance.
 
-> **Note:** In many cases you may see edge properties without the `biolink` prefix. This is normal since we can assume that if there is a biolink typed edge in a graph with `subject`, `predicate`, and `object` as its properties then they correspond to `biolink:subject`, `biolink:predicate`, and `biolink:object`, respectively. But to be sure of the semantics it is advised to use the full CURIE to represent property names in your graph.
 
 
 ### Types
@@ -233,8 +231,13 @@ linkML provides a handful of inbuilt data types. But you can also define custom 
 
 In Biolink Model we have several data types.
 
-Data types do not have any inheritance and thus are not arranged in any hierarchy.
+- string
+- integer
+- uriorcurie
+- float
+- boolean
+- iri type
 
-For example, `iri type` is a type defined in the Biolink Model where the value space is constrained to `uriorcurie`.
+Data types are not arranged in any hierarchy.
 
-> **Note**: `uriorcurie` is an inbuilt data type provided by linkML where the value space is constrained to either a URI or a CURIE representation.
+
