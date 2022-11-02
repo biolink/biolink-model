@@ -2,7 +2,7 @@
 title: "Curating the Biolink Model"
 parent: "Biolink Model Guidelines"
 layout: default
-nav_order: 2
+nav_order: 7
 ---
 
 # Curating the Biolink Model

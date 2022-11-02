@@ -2,7 +2,7 @@
 title: "Association Examples with Qualifiers"
 parent: "Biolink Model Guidelines"
 layout: default
-nav_order: 1
+nav_order: 2
 ---
 
 ## Chemical affects Gene Association
@@ -13,6 +13,38 @@ and describe how they would be represented in Biolink Model.
 ### Example 1: 
 
 "Methionine deficiency results in increased expression of ADRB2 in adipose tissue"
+
+In keeping with our modeling paradigms (see [Curating The Model](guidelines/curating-the-model.md))
+- Nodes should represent core domain concepts
+- Use qualifiers to compose full node semantics
+- The ‘core triple’ should remain true if qualifiers are ignored. (except 'negation', 'negation' should never be ignored)
+- Control predicate proliferation
+- Represent information consistently
+
+We need to break this statement into its core components that are most likely going to be shared across many statements
+and data sources.  In this example sentence, we can first break it apart into three parts or core components:
+- Methionine (biolink:subject)
+- affects (biolink:predicate)
+- ADRB2 (biolink:object)
+
+This is our "core triple" and its subject and object are broken down from the example above so that they are concepts
+that are most likely to be shared across many statements and data sources.  We might find more data sources that talk
+about "Methionine" than "Methionine deficiency" and we might find more data sources that talk about "ADRB2" as a "thing"
+than "increased expression of ADRB2 in adipose tissue".  So we want to break down the example sentence into its core 
+components without making a false statement.  
+
+Notes: 
+- Use of the Biolink model does not require, always, the use of less specific subject and
+object concepts, some use knowledge graphs may choose to use a more specific subject and object category to fulfill their 
+use cases.  But for this example, we apply Biolink categories at a higher level in the core triple to increase the 
+connectivity possibilities of the data.
+
+- Note the use of the "affects" predicate.  Here we are careful to use a predicate that keeps the core triple true despite
+our modification of the subject and object.  If we were to use "increases expression of" as a predicate here, we would 
+be invalidating the "core tripe is true" principle.
+
+- Despite our preference for connectivity, we don't want to lose the specificity of our original knowledge statement.  
+We can capture the nuance and specificity (expression, abundance) in qualifiers.
 
 - json
 ```json
@@ -91,6 +123,8 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
   }
 }
 ```
+
+
 
 
 ### Example 2:
