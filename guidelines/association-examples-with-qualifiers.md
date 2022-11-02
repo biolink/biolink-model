@@ -45,9 +45,9 @@ want to capture is the "decreased abundance" of it.  The aspect of ADRB2 that we
 These two aspects, "abundance" and "expression" are represented in the Biolink model as "aspect qualifiers". 
 The direction of the aspect, is represented in the Biolink model as "direction qualifiers".  Finally, we can have a 
 qualifier that applies to the entirety of the fully qualified statement, an "anatomical context qualifier" that expresses
-that this statement all takes place in the "adipose tissue." Therefore, the fully 
-qualified statement, using our core triple would be: 
+that this statement all takes place in the "adipose tissue."
 
+Therefore, the fully qualified statement, using our core triple would be: 
 
 - json
 ```json
@@ -62,10 +62,18 @@ qualified statement, using our core triple would be:
   "object": "NCBIGene:154", # ADRB2
   "object_aspect_qualifier" : "expression",
   "object_direction_qualifier" : "increased",
-  "biolink:original_knowledge_source": "infores:molepro",
-  "biolink:anatomical_context_qualifier": "UBERON:0001013" # adipose tissue
+  "anatomical_context_qualifier": "UBERON:0001013" # adipose tissue,
+  "publications": ["PMID:123456"],
+  "original_knowledge_source": "infores:molepro"
 }
 ```
+
+Note: this is a representation of the fully qualified statement in an association.  This association is not limited
+to subject, predicate, object and qualifiers.  It can also have other slots, such as "original_knowledge_source" and
+"publications" that express the evidence and provenance of this statement. 
+
+More information on knowledge source retrieval provenance can be found in the 
+[Knowledge Source Retrieval](guidelines/knowledge-source-retrieval.md) guidelines.
 
 - KGX flat file (edges.tsv)
 ```tsv
