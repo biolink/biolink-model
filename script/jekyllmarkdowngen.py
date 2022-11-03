@@ -701,4 +701,4 @@ if __name__ == "__main__":
     parser.add_argument('--yaml', help='the YAML file', required=True)
     parser.add_argument('--dir', help='the destination folder', required=True)
     args = parser.parse_args()
-    JekyllMarkdownGenerator(yamlfile=args.yaml, schema=args.yaml).serialize(directory=args.dir)
+    JekyllMarkdownGenerator(schema=args.yaml).serialize(directory=args.dir)
