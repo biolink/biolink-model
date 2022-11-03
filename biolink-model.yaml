@@ -555,7 +555,7 @@ slots:
     description: >-
       the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
     is_a: association slot
-    range: reaction_direction_enum
+    range: ReactionDirectionEnum
     narrow_mappings:
       - NCIT:C42677
 
@@ -567,7 +567,7 @@ slots:
     description: >-
       the side of a reaction being modeled (ie: left or right)
     is_a: association slot
-    range: reaction_side_enum
+    range: ReactionSideEnum
 
   symbol:
     is_a: node property
@@ -1107,7 +1107,7 @@ slots:
     description: >-
     is_a: node property
     multivalued: true
-    range: drug_availability_enum
+    range: DrugAvailabilityEnum
 
   is toxic:
     description: >-
@@ -1141,7 +1141,7 @@ slots:
   FDA adverse event level:
     description: >-
     is_a: association slot
-    range: FDA_IDA_adverse_event_enum
+    range: FDAIDAAdverseEventEnum
 
   highest FDA approval status:
     description: >-
@@ -1184,7 +1184,7 @@ slots:
       the method or process of administering a pharmaceutical compound to achieve a therapeutic
       effect in humans or animals.
     multivalued: true
-    range: drug_delivery_enum
+    range: DrugDeliveryEnum
 
   ## -------------------
   ## QUALIFIERS
@@ -1205,7 +1205,7 @@ slots:
       - value: transplant
       - value: chemical analong
     notes: >-
-      please see the chemical_or_gene_or_gene_product_form_or_variant_enum (below) for examples of 'form or variant qualifier'
+      please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
       the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’.
       the qualifier ‘Late Stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
@@ -1230,7 +1230,7 @@ slots:
       - value: exposure
     notes: >-
       for good examples of aspects in the gene-> chemical space, please see the 
-      gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify 
+      GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify 
       the gene making the full subject a different ontological type.  
       the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process)
       the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process)
@@ -1354,7 +1354,7 @@ slots:
 
   object direction qualifier:
     is_a: direction qualifier
-    range: direction_qualifier_enum
+    range: DirectionQualifierEnum
 
   qualified predicate:
     is_a: association slot
@@ -1390,7 +1390,7 @@ slots:
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or subcellular location).
-    range: anatomical_context_qualifier_enum
+    range: AnatomicalContextQualifierEnum
     notes: >-
       Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more
       details.
@@ -4880,7 +4880,7 @@ slots:
     is_a: association slot
     required: false
     domain: association
-    range: logical_interpretation_enum
+    range: LogicalInterpretationEnum
     exact_mappings:
       - os:LogicalInterpretation
 
@@ -5322,7 +5322,7 @@ slots:
     description: >-
       The version of the genome on which a feature is located.
       For example, GRCh38 for Homo sapiens.
-    range: strand_enum
+    range: StrandEnum
     exact_mappings:
       - gff3:strand
 
@@ -5331,7 +5331,7 @@ slots:
     description: >-
       The strand on which a feature is located. Has a value of '+'
       (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-    range: strand_enum
+    range: StrandEnum
     exact_mappings:
       - gff3:strand
 
@@ -5341,14 +5341,14 @@ slots:
     description: >-
       The phase for a coding sequence entity. For example, phase of a
       CDS as represented in a GFF3 with a value of 0, 1 or 2.
-    range: phase_enum
+    range: PhaseEnum
     exact_mappings:
       - gff3:phase
 
   FDA approval status:
     is_a: association slot
     description: >-
-    range: FDA_approval_status_enum
+    range: FDAApprovalStatusEnum
 
   supporting study metadata:
     is_a: association slot
@@ -8772,17 +8772,17 @@ classes:
       predicate:
         subproperty_of: physically interacts with
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+        range: ChemicalOrGeneOrGeneProductFormOrVariant
       subject part qualifier:
-        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       subject derivative qualifier:
-        range: chemical_entity_derivative_enum
+        range: ChemicalEntityDerivativeEnum
       subject context qualifier:
         range: anatomical entity
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+        range: ChemicalOrGeneOrGeneProductFormOrVariant
       object part qualifier:
-        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       object context qualifier:
         range: anatomical entity
       anatomical context qualifier:
@@ -8811,17 +8811,17 @@ classes:
       subject:
         range: chemical entity
       subject form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
-        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       subject derivative qualifier:
-        range: chemical_entity_derivative_enum
+        range: ChemicalEntityDerivativeEnum
       subject aspect qualifier:
-        range: gene_or_gene_product_or_chemical_entity_aspect_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       subject context qualifier:
         range: anatomical entity
       subject direction qualifier:
-        range: direction_qualifier_enum
+        range: DirectionQualifierEnum
       predicate:
         subproperty_of: affects
       qualified predicate:
@@ -8829,17 +8829,17 @@ classes:
       object:
         range: gene or gene product
       object form or variant qualifier:
-        range: chemical_or_gene_or_gene_product_form_or_variant_enum
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
-        range: gene_or_gene_product_or_chemical_part_qualifier_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       object aspect qualifier:
-        range: gene_or_gene_product_or_chemical_entity_aspect_enum
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
       object context qualifier:
         range: anatomical entity
       object direction qualifier:
-        range: direction_qualifier_enum
+        range: DirectionQualifierEnum
       causal mechanism qualifier:
-        range: causal_mechanism_qualifier_enum
+        range: CausalMechanismQualifierEnum
       anatomical context qualifier:
         range: anatomical entity
       species context qualifier:
@@ -9277,7 +9277,7 @@ classes:
       predicate:
         subproperty_of: target for
       has evidence:
-        range: druggable_gene_category_enum
+        range: DruggableGeneCategoryEnum
     defining_slots:
       - subject
       - object
@@ -9910,7 +9910,7 @@ classes:
         range: gene or gene product
         role: regulated gene
       object direction qualifier:
-        range: direction_qualifier_enum
+        range: DirectionQualifierEnum
 
   anatomical entity to anatomical entity association: # schema: gocam
     is_a: association
@@ -10064,7 +10064,7 @@ classes:
 
 enums:
 
-  anatomical_context_qualifier_enum:
+  AnatomicalContextQualiferEnum:
     reachable_from:
       source_ontology: bioregistry:uberon
       source_nodes:
@@ -10073,7 +10073,7 @@ enums:
       relationship_types:
         - rdfs:subClassOf
 
-  direction_qualifier_enum:
+  DirectionQualifierEnum:
     permissible_values:
       increased:
       upregulated:
@@ -10099,11 +10099,11 @@ enums:
           # This term is slightly broader in that it includes that A acts within B as well
           - RO:0004033
 
-  chemical_entity_derivative_enum:
+  ChemicalEntityDerivativeEnum:
     permissible_values:
       metabolite:
 
-  chemical_or_gene_or_gene_product_form_or_variant_enum:
+  ChemicalOrGeneOrGeneProductFormOrVariantEnum:
     permissible_values:
       genetic_variant_form:
         is_a: modified form
@@ -10111,21 +10111,21 @@ enums:
         is_a: genetic variant form
       polymorphic_form:
         is_a: mutant form
-      SNP_form:
+      snp_form:
         is_a: polymorphic form
       analog_form:
 
-  gene_or_gene_product_or_chemical_part_qualifier_enum:
+  GeneOrGeneProductOrChemicalPartQualifierEnum:
     permissible_values:
-      3'_UTR:
-      5'_UTR:
-      polyA_tail:
+      3_prime_utr:
+      5_prime_utr:
+      polya_tail:
       promoter:
       enhancer:
       exon:
       intron:
 
-  gene_or_gene_product_or_chemical_entity_aspect_enum:
+  GeneOrGeneProductOrChemicalEntityAspectEnum:
     permissible_values:
       activity_or_abundance:
         description: >- 
@@ -10176,9 +10176,9 @@ enums:
         is_a: molecular_modification
       glucuronidation:
         is_a: molecular_modification
-      N-linked_glycosylation:
+      n_linked_glycosylation:
         is_a: molecular_modification
-      O-linked_glycosylation:
+      o_linked_glycosylation:
         is_a: molecular_modification
       hydroxylation:
         is_a: molecular_modification
@@ -10219,8 +10219,7 @@ enums:
       carboxylation:
         is_a: molecular_modification
 
-
-  causal_mechanism_qualifier_enum:
+  CausalMechanismQualifierEnum:
     permissible_values:
       binding:
         description: >-
@@ -10335,7 +10334,7 @@ enums:
       transcriptional_regulation:
         description: >-
           A causal mechanism mediated by through the control of target gene transcription
-      signaling-mediated_control:
+      signaling_mediated_control:
         description: >-
           A causal mechanism mediated by the activation or control of signaling events that influence the some aspect 
           of the target entity (e.g. its activity, processing, transport, etc)
@@ -10354,38 +10353,38 @@ enums:
         close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
 
-  logical_interpretation_enum:
+  LogicalInterpretationEnum:
     permissible_values:
-      SomeSome:
+      some_some:
         description: >-
           A modifier on a triple that causes the triple to be interpreted as a some-some statement
         meaning: os:SomeSomeInterpretation
-      AllSome:
+      all_some:
         description: >-
           A modifier on a triple that causes the triple to be interpreted as an all-some statement.
         meaning: os:AllSomeInterpretation
-      InverseAllSome:
+      inverse_all_some:
 
-  reaction_direction_enum:
+  ReactionDirectionEnum:
     permissible_values:
       left_to_right:
       right_to_left:
       bidirectional:
       neutral:
 
-  reaction_side_enum:
+  ReactionSideEnum:
     permissible_values:
       left:
       right:
 
-  phase_enum:
+  PhaseEnum:
     description: phase
     permissible_values:
       0:
       1:
       2:
 
-  strand_enum:
+  StrandEnum:
     description: strand
     permissible_values:
       "+":
@@ -10397,31 +10396,31 @@ enums:
       "?":
         description: Unknown
 
-  sequence_enum:
+  SequenceEnum:
     description: type of sequence
     permissible_values:
-      "NA":
+      "na":
         description: nucleic acid
-      "AA":
+      "aa":
         description: amino acid
 
-  druggable_gene_category_enum:
+  DruggableGeneCategoryEnum:
     permissible_values:
-      "Tclin":
+      "tclin":
         description: >-
           These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.
-      "Tbio":
+      "tbio":
         description: >-
           These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy
           the activity thresholds detailed below.
-      "Tchem":
+      "tchem":
         description: >-
           These targets do not have known drug or small molecule activities that satisfy the activity
           thresholds detailed below AND satisfy one or more of the following criteria:
           target is above the cutoff criteria for Tdark
           target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s)
           with an Experimental Evidence code
-      "Tdark":
+      "tdark":
         description: >-
           These are targets about which virtually nothing is known. They do not have known drug or small
           molecule activities that satisfy the activity thresholds detailed below AND satisfy two or
@@ -10429,7 +10428,7 @@ enums:
           A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or
           less than or equal to 50 Antibodies available according to http://antibodypedia.com.
 
-  drug_availability_enum:
+  DrugAvailabilityEnum:
     description: >-
     permissible_values:
       "over_the_counter":
@@ -10439,78 +10438,78 @@ enums:
         description:
           chemical entity is available by prescription.
 
-  drug_delivery_enum:
+  DrugDeliveryEnum:
     permissible_values:
       "inhalation":
       "oral":
       "absorbtion_through_the_skin":
       "intravenous_injection":
 
-  FDA_approval_status_enum:
+  FDAApprovalStatusEnum:
     description: >-
     permissible_values:
-      "Discovery_And_Development_Phase":
+      "discovery_and_development_phase":
         description: >-
           Discovery & Development Phase. Discovery involves researchers finding new possibilities
           for medication through testing molecular compounds, noting unexpected effects from existing treatments,
           or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
           Drug development occurs after researchers identify potential compounds for experiments.
-      "Preclinical_Research_Phase":
+      "preclinical_research_phase":
         description: >-
           Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
           they must do preliminary research to determine its potential for harm (toxicity).
           This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA_Clinical_Research_Phase":
+      "fda_clinical_research_phase":
         description: >-
           Clinical Research Phase. Clinical research involves trials of the drug on people,
           and it is one of the most involved stages in the drug development and approval process.
           Clinical trials must answer specific questions and follow a protocol determined by
           the drug researcher or manufacturer.
-      "FDA_Review_Phase_4":
+      "fda_review_phase_4":
         description: >-
           FDA Review
-      "FDA_Post-Market_Safety_Monitoring":
+      "fda_post_market_safety_review":
         description: >-
           FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
           while the drug is on the marketplace. If a developer wants to change anything about the
           drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
           frequently reviews the drug’s advertising and its manufacturing facility to make sure
           everything involved in its creation and marketing is in compliance with regulations.
-      "FDA_Clinical_Research_Phase 1":
+      "fda_clinical_research_phase_1":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
-      "FDA_Clinical_Research_Phase_2":
+      "fda_clinical_research_phase_2":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
-      "FDA_Clinical_Research_Phase_3":
+      "fda_clinical_research_phase_3":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
           and can last up to four years. It is used to continue monitoring the efficacy of
           the drug, as well as exploring any longer-term adverse reactions.
-      "FDA_Clinical_Research_Phase_4":
+      "fda_clinical_research_phase_4":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
           volunteers who have the disease or condition and continues to monitor safety and efficacy.
           If a drug passes this phase, it goes on to FDA review.
-      "FDA_Fast_Track":
+      "fda_fast_track":
         description: >-
           Fast track is a process designed to facilitate the development, and expedite the
           review of drugs to treat serious conditions and fill an unmet medical need.
           The purpose is to get important new drugs to the patient earlier. Fast Track
           addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "FDA_Breakthrough_Therapy":
+      "fda_breakthrough_therapy":
         description: >-
           Breakthrough Therapy designation is a process designed to expedite the
           development and review of drugs that are intended to treat a serious
           condition and preliminary clinical evidence indicates that the drug may
           demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "FDA_Accelerated_Approval":
+      "fda_accelerated_approval":
         description: >-
           When studying a new drug, it can sometimes take many years to learn whether a drug actually
           provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
@@ -10520,7 +10519,7 @@ enums:
           for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
           Using a surrogate endpoint enabled the FDA to approve these drugs faster.
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "FDA_Priority_Review":
+      "fda_priority_review":
         description: >-
           Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
           In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
@@ -10528,21 +10527,27 @@ enums:
           Review. A Priority Review designation means FDA’s goal is to take action on an application
           within 6 months (compared to 10 months under standard review).
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "Regular_FDA_Approval":
-      "Post-Approval_Withdrawal":
+      "regular_fda_approval":
+        description: >-
+          Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace.
+          If a developer wants to change anything about the drug formulation or approve it for a new use,
+          they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its
+          manufacturing facility to make sure everything involved in its creation and marketing is in compliance
+          with regulations.
+      "post_approval_withdrawn":
 
-  FDA_IDA_adverse_event_enum:
+  FDAIDAAdverseEventEnum:
     description: >-
       please consult with the FDA guidelines as proposed in this document:
       https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     permissible_values:
-      "Life-threatening_adverse_event":
+      "life_threatening_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either 
           the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. 
           It does not include an adverse event or suspected adverse reaction that, had it occurred in a more 
           severe form, might have caused death.
-      "Serious_adverse_event":
+      "serious_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the 
           investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event,
@@ -10554,13 +10559,13 @@ enums:
           definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment 
           in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient 
           hospitalization, or the development of drug dependency or drug abuse.
-      "Suspected_adverse_reaction":
+      "suspected_adverse_reaction":
          description: >-
            means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. 
            For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a 
            causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser 
            degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
-      "Unexpected_adverse_event":
+      "unexpected_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the 
           investigator brochure or is not listed at the specificity or severity that has been observed; or, if an 
