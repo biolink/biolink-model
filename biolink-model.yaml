@@ -10105,21 +10105,21 @@ enums:
 
   chemical_or_gene_or_gene_product_form_or_variant_enum:
     permissible_values:
-      genetic variant form:
+      genetic_variant_form:
         is_a: modified form
-      mutant form:
+      mutant_form:
         is_a: genetic variant form
-      polymorphic form:
+      polymorphic_form:
         is_a: mutant form
-      SNP form:
+      SNP_form:
         is_a: polymorphic form
-      analog form:
+      analog_form:
 
   gene_or_gene_product_or_chemical_part_qualifier_enum:
     permissible_values:
-      3' UTR:
-      5' UTR:
-      polyA tail:
+      3'_UTR:
+      5'_UTR:
+      polyA_tail:
       promoter:
       enhancer:
       exon:
@@ -10127,7 +10127,7 @@ enums:
 
   gene_or_gene_product_or_chemical_entity_aspect_enum:
     permissible_values:
-      activity or abundance:
+      activity_or_abundance:
         description: >- 
           Used in cases where the specificity of the relationship can not be determined to be either activity 
           or abundance.  In general, a more specific value from this enumeration should be used.
@@ -10145,8 +10145,8 @@ enums:
         is_a: degradation
       hydrolysis:
         is_a: degradation
-      metabolic processing:
-      mutation rate:
+      metabolic_processing:
+      mutation_rate:
       stability:
       folding:
       localization:
@@ -10155,69 +10155,69 @@ enums:
         is_a: transport
       uptake:
         is_a: transport
-      molecular modification:
+      molecular_modification:
       acetylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       acylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       alkylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       amination:
-        is_a: molecular modification
+        is_a: molecular_modification
       carbamoylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       ethylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       glutathionylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       glycation:
-        is_a: molecular modification
+        is_a: molecular_modification
       glycosylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       glucuronidation:
-        is_a: molecular modification
-      N-linked glycosylation:
-        is_a: molecular modification
-      O-linked glycosylation:
-        is_a: molecular modification
+        is_a: molecular_modification
+      N-linked_glycosylation:
+        is_a: molecular_modification
+      O-linked_glycosylation:
+        is_a: molecular_modification
       hydroxylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       lipidation:
-        is_a: molecular modification
+        is_a: molecular_modification
       farnesylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       geranoylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       myristoylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       palmitoylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       prenylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       methylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       nitrosation:
-        is_a: molecular modification
+        is_a: molecular_modification
       nucleotidylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       phosphorylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       ribosylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       ADP-ribosylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       sulfation:
-        is_a: molecular modification
+        is_a: molecular_modification
       sumoylation:
-        is_a: molecular modification
+        is_a: molecular_modification
       ubiquitination:
-        is_a: molecular modification
+        is_a: molecular_modification
       oxidation:
-        is_a: molecular modification
+        is_a: molecular_modification
       reduction:
-        is_a: molecular modification
+        is_a: molecular_modification
       carboxylation:
-        is_a: molecular modification
+        is_a: molecular_modification
 
 
   causal_mechanism_qualifier_enum:
@@ -10245,7 +10245,7 @@ enums:
           - CHEMBL.MECHANISM:negative_allosteric_modulator
           - CHEMBL.MECHANISM:negative_modulator
           - DGIdb:negative_modulator
-      antibody inhibition:
+      antibody_inhibition:
         is_a: inhibition
         description: >-
           A causal mechanism in which an antibody specifically binds to and interferes with the target.
@@ -10259,12 +10259,12 @@ enums:
           - CHEMBL.MECHANISM:antagonist
         narrow_mappings:
           - CHEMBL.MECHANISM:allosteric_antagonist
-      molecular channel blockage:
+      molecular_channel_blockage:
         is_a: inhibition
         description: >-
           A causal mechanism in which the effector binds to a molecular channel and prevents or reduces 
           transport of ions through it.
-      inverse agonism:
+      inverse_agonism:
         is_a: inhibition
         description: >-
           A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes
@@ -10272,7 +10272,7 @@ enums:
         close_mappings:
           - CHEMBL.MECHANISM:inverse_agonist
           - DGIdb:inverse_agonist
-      negative allosteric modulation:
+      negative_allosteric_modulation:
         is_a: inhibition
         description: >-
           A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a 
@@ -10293,14 +10293,14 @@ enums:
         narrow_mappings:
           - CHEMBL.MECHANISM:partial_agonist
           - DGIdb:partial_agonist
-      molecular channel opening:
+      molecular_channel_opening:
         is_a: activation
         description: >-
           A causal mechanism in which the effector binds to a molecular channel and facilitates transport of 
           ions through it.
         close_mappings:
           - CHEMBL.MECHANISM:opener
-      positive allosteric modulation:
+      positive_allosteric_modulation:
         is_a: activation
         description: >-
           A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by 
@@ -10332,10 +10332,10 @@ enums:
           processes drugs in the body.
         close_mappings:
           - DGIdb:inducer
-      transcriptional regulation:
+      transcriptional_regulation:
         description: >-
           A causal mechanism mediated by through the control of target gene transcription
-      signaling-mediated control:
+      signaling-mediated_control:
         description: >-
           A causal mechanism mediated by the activation or control of signaling events that influence the some aspect 
           of the target entity (e.g. its activity, processing, transport, etc)
@@ -10349,7 +10349,7 @@ enums:
           - DGIdb:stimulator
           - SEMMEDDB:stimulates
           - DGIdb:stimulator
-      releasing activity:
+      releasing_activity:
         is_a: activation
         close_mappings:
           - CHEMBL:MECHANISM:releasing_agent
@@ -10432,7 +10432,7 @@ enums:
   drug_availability_enum:
     description: >-
     permissible_values:
-      "over the counter":
+      "over_the_counter":
         description: >-
           chemical entity is available over the counter without a prescription.
       "prescription":
@@ -10443,74 +10443,74 @@ enums:
     permissible_values:
       "inhalation":
       "oral":
-      "absorbtion through the skin":
-      "intravenous injection":
+      "absorbtion_through_the_skin":
+      "intravenous_injection":
 
   FDA_approval_status_enum:
     description: >-
     permissible_values:
-      "Discovery & Development Phase":
+      "Discovery_And_Development_Phase":
         description: >-
           Discovery & Development Phase. Discovery involves researchers finding new possibilities
           for medication through testing molecular compounds, noting unexpected effects from existing treatments,
           or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
           Drug development occurs after researchers identify potential compounds for experiments.
-      "Preclinical Research Phase":
+      "Preclinical_Research_Phase":
         description: >-
           Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
           they must do preliminary research to determine its potential for harm (toxicity).
           This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
-      "FDA Clinical Research Phase":
+      "FDA_Clinical_Research_Phase":
         description: >-
           Clinical Research Phase. Clinical research involves trials of the drug on people,
           and it is one of the most involved stages in the drug development and approval process.
           Clinical trials must answer specific questions and follow a protocol determined by
           the drug researcher or manufacturer.
-      "FDA Review Phase 4":
+      "FDA_Review_Phase_4":
         description: >-
           FDA Review
-      "FDA Post-Market Safety Monitoring":
+      "FDA_Post-Market_Safety_Monitoring":
         description: >-
           FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one
           while the drug is on the marketplace. If a developer wants to change anything about the
           drug formulation or approve it for a new use, they must apply with the FDA. The FDA also
           frequently reviews the drug’s advertising and its manufacturing facility to make sure
           everything involved in its creation and marketing is in compliance with regulations.
-      "FDA Clinical Research Phase 1":
+      "FDA_Clinical_Research_Phase 1":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
-      "FDA Clinical Research Phase 2":
+      "FDA_Clinical_Research_Phase_2":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
-      "FDA Clinical Research Phase 3":
+      "FDA_Clinical_Research_Phase_3":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
           and can last up to four years. It is used to continue monitoring the efficacy of
           the drug, as well as exploring any longer-term adverse reactions.
-      "FDA Clinical Research Phase 4":
+      "FDA_Clinical_Research_Phase_4":
         description: >-
           In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
           volunteers who have the disease or condition and continues to monitor safety and efficacy.
           If a drug passes this phase, it goes on to FDA review.
-      "FDA Fast Track":
+      "FDA_Fast_Track":
         description: >-
           Fast track is a process designed to facilitate the development, and expedite the
           review of drugs to treat serious conditions and fill an unmet medical need.
           The purpose is to get important new drugs to the patient earlier. Fast Track
           addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track
-      "FDA Breakthrough Therapy":
+      "FDA_Breakthrough_Therapy":
         description: >-
           Breakthrough Therapy designation is a process designed to expedite the
           development and review of drugs that are intended to treat a serious
           condition and preliminary clinical evidence indicates that the drug may
           demonstrate substantial improvement over available therapy on a clinically significant endpoint(s).
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy
-      "FDA Accelerated Approval":
+      "FDA_Accelerated_Approval":
         description: >-
           When studying a new drug, it can sometimes take many years to learn whether a drug actually
           provides a real effect on how a patient survives, feels, or functions. A positive therapeutic
@@ -10520,7 +10520,7 @@ enums:
           for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint.
           Using a surrogate endpoint enabled the FDA to approve these drugs faster.
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval
-      "FDA Priority Review":
+      "FDA_Priority_Review":
         description: >-
           Prior to approval, each drug marketed in the United States must go through a detailed FDA review process.
           In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving
@@ -10528,21 +10528,21 @@ enums:
           Review. A Priority Review designation means FDA’s goal is to take action on an application
           within 6 months (compared to 10 months under standard review).
           For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review
-      "Regular FDA Approval":
-      "Post-Approval Withdrawal":
+      "Regular_FDA_Approval":
+      "Post-Approval_Withdrawal":
 
   FDA_IDA_adverse_event_enum:
     description: >-
       please consult with the FDA guidelines as proposed in this document:
       https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     permissible_values:
-      "Life-threatening adverse event":
+      "Life-threatening_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either 
           the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death. 
           It does not include an adverse event or suspected adverse reaction that, had it occurred in a more 
           severe form, might have caused death.
-      "Serious adverse event":
+      "Serious_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the 
           investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event,
@@ -10554,13 +10554,13 @@ enums:
           definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment 
           in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient 
           hospitalization, or the development of drug dependency or drug abuse.
-      "Suspected adverse reaction":
+      "Suspected_adverse_reaction":
          description: >-
            means any adverse event for which there is a reasonable possibility that the drug caused the adverse event. 
            For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a 
            causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser 
            degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.
-      "Unexpected adverse event":
+      "Unexpected_adverse_event":
         description: >-
           An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the 
           investigator brochure or is not listed at the specificity or severity that has been observed; or, if an 
