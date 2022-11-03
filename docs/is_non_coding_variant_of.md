@@ -25,10 +25,3 @@ URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_co
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | GAMMA:0000103 |
-

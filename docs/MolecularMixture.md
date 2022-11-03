@@ -15,7 +15,7 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularMixture%7Chighest_FDA_approval_status(i):string%20%3F;drug_regulatory_status_world_wide(i):string%20%3F;routes_of_delivery(i):drug_delivery_enum%20%2A;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[Drug],[ChemicalMixture]%5E-[MolecularMixture],[Drug],[ChemicalRole],[ChemicalMixture],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularMixture%7Chighest_FDA_approval_status(i):string%20%3F;drug_regulatory_status_world_wide(i):string%20%3F;routes_of_delivery(i):drug_delivery_enum%20%2A;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[Drug],[ChemicalMixture]%5E-[MolecularMixture],[Drug],[ChemicalRole],[ChemicalMixture],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -112,8 +112,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

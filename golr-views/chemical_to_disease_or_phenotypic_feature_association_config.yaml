@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: chemical_to_disease_or_phenotypic_feature_association
+# metamodel_version: 1.7.0# version: 3.0.3id: chemical_to_disease_or_phenotypic_feature_association
 schema_generating: true
 description: An interaction between a chemical entity and a phenotype or disease,
   where the presence of the chemical gives rise to or exacerbates the phenotype.
@@ -20,8 +20,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
@@ -43,7 +41,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: connects an association to publications supporting the association
+  description: One or more publications that report the statement expressed in an
+    Association, or provide information used as  evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -56,8 +55,6 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-- id: original_knowledge_source
-  display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association
     that an implementer can identify.  Performing a rigorous analysis of upstream

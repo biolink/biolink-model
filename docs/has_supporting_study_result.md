@@ -1,11 +1,11 @@
 ---
-parent: Predicates
+parent: Edge Properties
 title: biolink:has_supporting_study_result
 grand_parent: Slots
 layout: default
 ---
 
-# Relation: has_supporting_study_result
+# Slot: has_supporting_study_result
 
 
 connects an association to an instance of supporting study result
@@ -14,11 +14,11 @@ URI: [biolink:has_supporting_study_result](https://w3id.org/biolink/vocab/has_su
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[Association](Association.md) ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [association slot](association_slot.md)
 
 ## Children
 

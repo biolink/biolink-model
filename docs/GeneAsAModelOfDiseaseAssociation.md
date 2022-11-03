@@ -15,7 +15,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
 
 ---
 
@@ -59,7 +59,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: connects an association to publications supporting the association
+     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence
@@ -67,8 +67,6 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
- * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
      * Range: [InformationResource](InformationResource.md)
@@ -113,8 +111,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

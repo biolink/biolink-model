@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: nucleic_acid_sequence_motif
+# metamodel_version: 1.7.0# version: 3.0.3id: nucleic_acid_sequence_motif
 schema_generating: true
 description: A linear nucleotide sequence pattern that is widespread and has, or is
   conjectured to have, a biological significance. e.g. the TATA box promoter motif,
@@ -23,8 +23,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute

@@ -15,7 +15,7 @@ URI: [biolink:Dataset](https://w3id.org/biolink/vocab/Dataset)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[DatasetVersion],[DatasetVersion]-%20has%20dataset%200..1%3E[Dataset%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[InformationContentEntity]%5E-[Dataset],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity],[DatasetVersion],[DatasetVersion]-%20has%20dataset%200..1%3E[Dataset%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[Dataset],[Attribute])
 
 ---
 
@@ -55,8 +55,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

@@ -25,7 +25,6 @@ URI: [biolink:interacts_with](https://w3id.org/biolink/vocab/interacts_with)
 
 ## Children
 
- *  [directly interacts with](directly_interacts_with.md)
  *  [genetically interacts with](genetically_interacts_with.md)
  *  [physically interacts with](physically_interacts_with.md)
 

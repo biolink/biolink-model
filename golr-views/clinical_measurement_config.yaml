@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: clinical_measurement
+# metamodel_version: 1.7.0# version: 3.0.3id: clinical_measurement
 schema_generating: true
 description: A clinical measurement is a special kind of attribute which results from
   a laboratory observation from a subject individual or sample. Measurements can be
@@ -62,8 +62,6 @@ fields:
   description: An IRI for an entity. This is determined by the id using expansion
     rules.
   display_name: iri
-- id: source
-  display_name: source
 - id: has_attribute_type
   description: connects an attribute to a class that describes it
   display_name: clinical measurement_has attribute type

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: sequence_variant
+# metamodel_version: 1.7.0# version: 3.0.3id: sequence_variant
 schema_generating: true
 description: An allele that varies in its sequence from what is considered the reference
   allele at that locus.
@@ -18,8 +18,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute

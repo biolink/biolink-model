@@ -15,7 +15,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonomicRank],[RelationshipType],[ClinicalMeasurement]-%20has%20attribute%20type%201..1%3E[OntologyClass%7Cid:string],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation]-%20object%20context%20qualifier%200..1%3E[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation]-%20subject%20context%20qualifier%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[SequenceVariant]uses%20-.-%3E[OntologyClass],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[PhysiologicalProcess]uses%20-.-%3E[OntologyClass],[Pathway]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[MolecularActivity]uses%20-.-%3E[OntologyClass],[Haplotype]uses%20-.-%3E[OntologyClass],[Genotype]uses%20-.-%3E[OntologyClass],[GenomicBackgroundExposure]uses%20-.-%3E[OntologyClass],[Genome]uses%20-.-%3E[OntologyClass],[Gene]uses%20-.-%3E[OntologyClass],[Drug]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[TaxonomicRank],[OntologyClass]%5E-[RelationshipType],[SequenceVariant],[ReagentTargetedGene],[PhysiologicalProcess],[Pathway],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[MolecularActivity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[GeneToExpressionSiteAssociation],[GeneExpressionMixin],[Gene],[Drug],[ContributorAssociation],[ClinicalMeasurement],[BiologicalProcessOrActivity],[BiologicalProcess],[Behavior],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TaxonomicRank],[RelationshipType],[ClinicalMeasurement]-%20has%20attribute%20type%201..1%3E[OntologyClass%7Cid:string],[ContributorAssociation]-%20qualifiers%200..%2A%3E[OntologyClass],[FunctionalAssociation]-%20object%201..1%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1%3E[OntologyClass],[GeneToGoTermAssociation]-%20object%201..1%3E[OntologyClass],[Attribute]-%20has%20attribute%20type%201..1%3E[OntologyClass],[PairwiseMolecularInteraction]-%20interacting%20molecules%20category%200..1%3E[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation]-%20object%20context%20qualifier%200..1%3E[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation]-%20subject%20context%20qualifier%200..1%3E[OntologyClass],[Association]-%20qualifiers%200..%2A%3E[OntologyClass],[GeneExpressionMixin]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%200..1%3E[OntologyClass],[SequenceVariant]uses%20-.-%3E[OntologyClass],[ReagentTargetedGene]uses%20-.-%3E[OntologyClass],[PhysiologicalProcess]uses%20-.-%3E[OntologyClass],[Pathway]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[MolecularActivity]uses%20-.-%3E[OntologyClass],[Haplotype]uses%20-.-%3E[OntologyClass],[Genotype]uses%20-.-%3E[OntologyClass],[GenomicBackgroundExposure]uses%20-.-%3E[OntologyClass],[Genome]uses%20-.-%3E[OntologyClass],[Gene]uses%20-.-%3E[OntologyClass],[Drug]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[OntologyClass],[Attribute]uses%20-.-%3E[OntologyClass],[OntologyClass]%5E-[TaxonomicRank],[OntologyClass]%5E-[RelationshipType],[OntologyClass]%5E-[ExposureEvent],[SequenceVariant],[ReagentTargetedGene],[PhysiologicalProcess],[Pathway],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[MolecularActivity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[GeneToGoTermAssociation],[GeneToExpressionSiteAssociation],[GeneExpressionMixin],[Gene],[FunctionalAssociation],[ExposureEvent],[Drug],[ContributorAssociation],[ClinicalMeasurement],[BiologicalProcessOrActivity],[BiologicalProcess],[Behavior],[Attribute],[Association])
 
 ---
 
@@ -28,6 +28,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ## Children
 
+ * [ExposureEvent](ExposureEvent.md) - A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
  * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
  * [TaxonomicRank](TaxonomicRank.md) - A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 
@@ -54,8 +55,10 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
  *  **[ClinicalMeasurement](ClinicalMeasurement.md)** *[has attribute type](has_attribute_type.md)*  <sub>1..1</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[ContributorAssociation](ContributorAssociation.md)** *[qualifiers](qualifiers.md)*  <sub>0..\*</sub>  **[OntologyClass](OntologyClass.md)**
+ *  **[FunctionalAssociation](FunctionalAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneExpressionMixin](GeneExpressionMixin.md)** *[quantifier qualifier](quantifier_qualifier.md)*  <sub>0..1</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](quantifier_qualifier.md)*  <sub>0..1</sub>  **[OntologyClass](OntologyClass.md)**
+ *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[Attribute](Attribute.md)** *[has attribute type](has_attribute_type.md)*  <sub>1..1</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[NamedThing](NamedThing.md)** *[has molecular consequence](has_molecular_consequence.md)*  <sub>0..\*</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[NamedThing](NamedThing.md)** *[has topic](has_topic.md)*  <sub>0..1</sub>  **[OntologyClass](OntologyClass.md)**
@@ -94,8 +97,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

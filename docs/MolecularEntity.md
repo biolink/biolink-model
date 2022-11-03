@@ -15,7 +15,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalRole],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SmallMolecule],[ReactionToParticipantAssociation],[PairwiseMolecularInteraction],[NucleicAcidEntity],[NamedThing],[MolecularActivity]-%20has%20input%200..%2A%3E[MolecularEntity%7Cis_metabolite:boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[MolecularActivity]-%20has%20output%200..%2A%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20object%201..1%3E[MolecularEntity],[PairwiseMolecularInteraction]-%20subject%201..1%3E[MolecularEntity],[ReactionToParticipantAssociation]-%20subject%201..1%3E[MolecularEntity],[MolecularEntity]%5E-[SmallMolecule],[MolecularEntity]%5E-[NucleicAcidEntity],[ChemicalEntity]%5E-[MolecularEntity],[MolecularActivity],[Drug],[ChemicalRole],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -55,18 +55,13 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
 ## Referenced by class
 
- *  **[MolecularEntity](MolecularEntity.md)** *[decreases molecular interaction](decreases_molecular_interaction.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[Drug](Drug.md)** *[has active ingredient](has_active_ingredient.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[NamedThing](NamedThing.md)** *[has constituent](has_constituent.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[Drug](Drug.md)** *[has excipient](has_excipient.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[has metabolite](has_metabolite.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[increases molecular interaction](increases_molecular_interaction.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[is metabolite of](is_metabolite_of.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[has input](has_input.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularActivity](MolecularActivity.md)** *[has output](has_output.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[molecular interaction decreased by](molecular_interaction_decreased_by.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[molecular interaction increased by](molecular_interaction_increased_by.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)*  <sub>0..\*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[object](object.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[PairwiseMolecularInteraction](PairwiseMolecularInteraction.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[ReactionToParticipantAssociation](ReactionToParticipantAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[MolecularEntity](MolecularEntity.md)**
@@ -119,8 +114,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

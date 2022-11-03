@@ -22,6 +22,7 @@ URI: [biolink:risk_affected_by](https://w3id.org/biolink/vocab/risk_affected_by)
 
 ## Children
 
+ *  [has predisposing factor](has_predisposing_factor.md)
  *  [prevented by](prevented_by.md)
 
 ## Used by

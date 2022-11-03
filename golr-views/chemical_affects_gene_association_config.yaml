@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: chemical_affects_gene_association
+# metamodel_version: 1.7.0# version: 3.0.3id: chemical_affects_gene_association
 schema_generating: true
 description: Describes an effect that a chemical has on a gene or gene product (e.g.
   an impact of on its abundance, activity, localization, processing, expression, etc.)
@@ -20,8 +20,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
@@ -35,7 +33,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: connects an association to publications supporting the association
+  description: One or more publications that report the statement expressed in an
+    Association, or provide information used as  evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -48,8 +47,6 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-- id: original_knowledge_source
-  display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association
     that an implementer can identify.  Performing a rigorous analysis of upstream
@@ -116,10 +113,14 @@ fields:
     or subcellular location).
   display_name: chemical affects gene association_anatomical context qualifier
 - id: qualified_predicate
-  description: predicate to be used in an association when subject and object qualifiers
-    are present and the full reading of the statement requires a qualification to
-    the predicate in use in order to refine or  increase the specificity of the full
-    statement reading
+  description: "Predicate to be used in an association when subject and object qualifiers\
+    \ are present and the full reading of the statement requires a qualification to\
+    \ the predicate in use in order to refine or  increase the specificity of the\
+    \ full statement reading.  This qualifier holds a relationship to be used instead\
+    \ of that  expressed by the primary predicate, in a \u2018full statement\u2019\
+    \ reading of the association, where qualifier-based  semantics are included. \
+    \ This is necessary only in cases where the primary predicate does not work in\
+    \ a  full statement reading."
   display_name: chemical affects gene association_qualified predicate
 - id: subject
   description: connects an association to the subject of the association. For example,
@@ -135,3 +136,7 @@ fields:
   display_name: chemical affects gene association_object
 - id: object_direction_qualifier
   display_name: chemical affects gene association_object direction qualifier
+- id: species_context_qualifier
+  description: A statement qualifier representing a taxonomic category of species
+    in which a relationship expressed in an association took place.
+  display_name: chemical affects gene association_species context qualifier

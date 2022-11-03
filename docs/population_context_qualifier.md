@@ -25,3 +25,4 @@ URI: [biolink:population_context_qualifier](https://w3id.org/biolink/vocab/popul
 
 ## Used by
 
+ * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)

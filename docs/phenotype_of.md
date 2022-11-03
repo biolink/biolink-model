@@ -7,11 +7,8 @@ layout: default
 
 # Relation: phenotype_of
 
-translator_minimal
-{: .translator_minimal-subset-label }
 
 
-holds between a phenotype and a biological entity, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
 
 URI: [biolink:phenotype_of](https://w3id.org/biolink/vocab/phenotype_of)
 
@@ -27,11 +24,4 @@ URI: [biolink:phenotype_of](https://w3id.org/biolink/vocab/phenotype_of)
 
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
 

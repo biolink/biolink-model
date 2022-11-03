@@ -25,3 +25,10 @@ URI: [biolink:binds](https://w3id.org/biolink/vocab/binds)
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Close Mappings:** | | DGIdb:binder |
+

@@ -25,3 +25,4 @@ URI: [biolink:subject_form_or_variant_qualifier](https://w3id.org/biolink/vocab/
 
 ## Used by
 
+ * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)

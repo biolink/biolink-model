@@ -25,10 +25,3 @@ URI: [biolink:is_nearby_variant_of](https://w3id.org/biolink/vocab/is_nearby_var
 
 ## Used by
 
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | GAMMA:0000102 |
-

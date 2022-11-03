@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: behavioral_exposure
+# metamodel_version: 1.7.0# version: 3.0.3id: behavioral_exposure
 schema_generating: true
 description: A behavioral exposure is a factor relating to behavior impacting an individual.
 display_name: behavioral exposure
@@ -63,8 +63,6 @@ fields:
   description: An IRI for an entity. This is determined by the id using expansion
     rules.
   display_name: iri
-- id: source
-  display_name: source
 - id: timepoint
   description: a point in time
   display_name: timepoint

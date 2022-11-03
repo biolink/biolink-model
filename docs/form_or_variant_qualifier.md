@@ -33,4 +33,8 @@ URI: [biolink:form_or_variant_qualifier](https://w3id.org/biolink/vocab/form_or_
 |  |  |  |
 | --- | --- | --- |
 | **Examples:** | | Example(value='mutation', description=None) |
+|  | | Example(value='late stage', description=None) |
+|  | | Example(value='severe', description=None) |
+|  | | Example(value='transplant', description=None) |
+|  | | Example(value='chemical analong', description=None) |
 

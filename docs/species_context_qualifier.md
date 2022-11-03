@@ -14,7 +14,7 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [String](types/String.md)
+[Association](Association.md) ->  <sub>0..1</sub> [OrganismTaxon](OrganismTaxon.md)
 
 ## Parents
 
@@ -25,3 +25,4 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 
 ## Used by
 
+ * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)

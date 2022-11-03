@@ -33,6 +33,7 @@ URI: [biolink:gene_or_gene_product_or_chemical_entity_aspect_enum](https://w3id.
 | metabolic processing |  |  |  |
 | mutation rate |  |  |  |
 | stability |  |  |  |
+| folding |  |  |  |
 | localization |  |  |  |
 | transport |  |  |  |
 | secretion |  |  | {'is_a': 'transport'} |

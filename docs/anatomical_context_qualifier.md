@@ -25,3 +25,4 @@ URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/vocab/anato
 
 ## Used by
 
+ * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)

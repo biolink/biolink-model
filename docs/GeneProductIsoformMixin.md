@@ -15,7 +15,7 @@ URI: [biolink:GeneProductIsoformMixin](https://w3id.org/biolink/vocab/GeneProduc
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneProductMixin],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoformMixin%7Csynonym(i):label_type%20%2A;xref(i):uriorcurie%20%2A;name(i):symbol_type%20%3F],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoformMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[ProteinIsoform],[RNAProductIsoform])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneProductMixin],[ProteinIsoform]uses%20-.-%3E[GeneProductIsoformMixin%7Csynonym(i):label_type%20%2A;xref(i):uriorcurie%20%2A;name(i):symbol_type%20%3F],[PosttranslationalModification]uses%20-.-%3E[GeneProductIsoformMixin],[NucleosomeModification]uses%20-.-%3E[GeneProductIsoformMixin],[RNAProductIsoform]uses%20-.-%3E[GeneProductIsoformMixin],[GeneProductMixin]%5E-[GeneProductIsoformMixin],[ProteinIsoform],[PosttranslationalModification],[NucleosomeModification],[RNAProductIsoform])
 
 ---
 
@@ -27,6 +27,8 @@ URI: [biolink:GeneProductIsoformMixin](https://w3id.org/biolink/vocab/GeneProduc
 ## Mixin for
 
  * [RNAProductIsoform](RNAProductIsoform.md) (mixin)  - Represents a protein that is a specific isoform of the canonical or reference RNA
+ * [NucleosomeModification](NucleosomeModification.md) (mixin)  - A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+ * [PosttranslationalModification](PosttranslationalModification.md) (mixin)  - A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
  * [ProteinIsoform](ProteinIsoform.md) (mixin)  - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 
 ## Referenced by class

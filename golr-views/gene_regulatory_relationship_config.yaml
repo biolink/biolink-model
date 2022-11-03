@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: gene_regulatory_relationship
+# metamodel_version: 1.7.0# version: 3.0.3id: gene_regulatory_relationship
 schema_generating: true
 description: A regulatory relationship between two genes
 display_name: gene regulatory relationship
@@ -34,7 +34,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: connects an association to publications supporting the association
+  description: One or more publications that report the statement expressed in an
+    Association, or provide information used as  evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

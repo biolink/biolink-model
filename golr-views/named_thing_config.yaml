@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: named_thing
+# metamodel_version: 1.7.0# version: 3.0.3id: named_thing
 schema_generating: true
 description: a databased entity or concept/class
 display_name: named thing
@@ -21,8 +21,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute

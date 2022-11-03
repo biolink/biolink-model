@@ -79,8 +79,8 @@ URI: [biolink:organismal_entity_has_attribute](https://w3id.org/biolink/vocab/or
 |  | | INO:0000154 |
 |  | | HANCESTRO:0308 |
 |  | | OMIM:has_inheritance_type |
-|  | | ORPHA:C016 |
-|  | | ORPHA:C017 |
+|  | | orphanet:C016 |
+|  | | orphanet:C017 |
 |  | | RO:0000053 |
 |  | | RO:0000086 |
 |  | | RO:0000087 |

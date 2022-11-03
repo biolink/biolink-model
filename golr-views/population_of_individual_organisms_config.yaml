@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: population_of_individual_organisms
+# metamodel_version: 1.7.0# version: 3.0.3id: population_of_individual_organisms
 schema_generating: true
 description: A collection of individuals from the same taxonomic class distinguished
   by one or more characteristics.  Characteristics can include, but are not limited
@@ -23,8 +23,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: provided_by
   description: The value in this node property represents the knowledge provider that
     created or assembled the node and all of its attributes.  Used internally to represent

@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: decreases_amount_or_activity_of
+# Relation: decreases_amount_or_activity_of _(deprecated)_
 
 
 A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.

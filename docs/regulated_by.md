@@ -1,11 +1,11 @@
 ---
-parent: Slot Mixins
+parent: Predicates
 title: biolink:regulated_by
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: regulated_by
+# Relation: regulated_by
 
 
 
@@ -14,15 +14,14 @@ URI: [biolink:regulated_by](https://w3id.org/biolink/vocab/regulated_by)
 
 ## Domain and Range
 
-[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>0..1</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
+[PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md) ->  <sub>0..\*</sub> [PhysicalEssenceOrOccurrent](PhysicalEssenceOrOccurrent.md)
 
 ## Parents
 
+ *  is_a: [affected by](affected_by.md)
 
 ## Children
 
- *  [negatively regulated by](negatively_regulated_by.md)
- *  [positively regulated by](positively_regulated_by.md)
 
 ## Used by
 

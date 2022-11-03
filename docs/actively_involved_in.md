@@ -39,8 +39,8 @@ URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_invo
 | **Exact Mappings:** | | RO:0002331 |
 |  | | RO:0002432 |
 | **Narrow Mappings:** | | NBO-PROPERTY:by_means |
-|  | | ORPHA:317348 |
-|  | | ORPHA:317349 |
-|  | | ORPHA:327767 |
+|  | | orphanet:317348 |
+|  | | orphanet:317349 |
+|  | | orphanet:327767 |
 |  | | RO:0002503 |
 

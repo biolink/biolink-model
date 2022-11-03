@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,380.39,123"];
+	node [label="\N"];
+	"deprecated mapping collection"	[height=0.5,
+		label="deprecated mapping collection",
+		pos="153.39,105",
+		width=4.2607];
+	"deprecated predicate mappings"	[color=blue,
+		height=0.5,
+		label="deprecated predicate mapping",
+		pos="153.39,18",
+		width=4.2607];
+	"deprecated mapping collection" -> "deprecated predicate mappings"	[color=blue,
+		label="deprecated predicate mappings",
+		lp="266.89,61.5",
+		pos="e,153.39,36.175 153.39,86.799 153.39,75.163 153.39,59.548 153.39,46.237",
+		style=solid];
+}

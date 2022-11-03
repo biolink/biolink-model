@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,1765.3,123"];
+	graph [bb="0,0,1671.2,123"];
 	node [label="\N"];
 	"complex chemical exposure"	[height=0.5,
 		label="complex chemical exposure",
-		pos="819,105",
+		pos="755,105",
 		width=3.8455];
 	attribute	[height=0.5,
 		pos="51.995,18",
 		width=1.4443];
 	"complex chemical exposure" -> attribute	[label=is_a,
-		lp="253,61.5",
-		pos="e,88.065,31.025 681.06,103.25 563.02,100.81 388.92,92.92 239,69 189.95,61.175 135.21,45.72 97.693,34.053"];
+		lp="250,61.5",
+		pos="e,87.828,31.046 618.38,102.03 513.23,98.777 364.61,90.381 236,69 188.09,61.036 134.66,45.779 97.775,34.204"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,8 +18,8 @@ digraph {
 		width=1.0652];
 	"complex chemical exposure" -> id	[color=blue,
 		label=id,
-		lp="341,61.5",
-		pos="e,189.38,29.712 684.15,100.92 586.39,97.073 451.32,88.428 334,69 286.72,61.172 234.05,44.936 199.17,33.082",
+		lp="335,61.5",
+		pos="e,188.95,29.825 622.89,99.533 538.11,95.104 425.96,86.328 328,69 282.58,60.968 232.07,44.924 198.4,33.169",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -28,8 +28,8 @@ digraph {
 		width=1.0652];
 	"complex chemical exposure" -> type	[color=blue,
 		label=type,
-		lp="422,61.5",
-		pos="e,282.82,30.508 684.94,100.28 603.6,96.143 498.08,87.408 406,69 366.34,61.073 322.64,45.853 292.5,34.278",
+		lp="413,61.5",
+		pos="e,282.17,30.794 624.99,98.815 556.53,94.199 471.54,85.477 397,69 360.24,60.876 319.9,46.068 291.64,34.668",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -38,8 +38,8 @@ digraph {
 		width=2.0943];
 	"complex chemical exposure" -> description	[color=blue,
 		label=description,
-		lp="514.5,61.5",
-		pos="e,409.38,35.406 694.95,96.875 613.18,91.135 514.04,81.887 474,69 454.13,62.606 433.8,51.245 417.79,40.967",
+		lp="500.5,61.5",
+		pos="e,405.68,35.594 636.07,95.678 568.71,89.833 491.74,80.924 460,69 443.36,62.752 426.86,51.943 413.76,41.97",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -48,8 +48,8 @@ digraph {
 		width=1.4443];
 	"complex chemical exposure" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="624,61.5",
-		pos="e,542.46,35.748 704.39,94.886 653.13,89.305 599.27,80.905 577,69 565.84,63.04 556.07,53.176 548.51,43.778",
+		lp="604,61.5",
+		pos="e,536.19,35.971 647.33,93.621 609.18,88.153 572,80.195 557,69 549.2,63.181 543.67,54.25 539.84,45.537",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -58,8 +58,8 @@ digraph {
 		width=1.0652];
 	"complex chemical exposure" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="736.5,61.5",
-		pos="e,653.59,35.116 745.63,89.692 728.06,84.603 709.83,77.856 694,69 681.68,62.11 669.93,51.856 660.57,42.424",
+		lp="708.5,61.5",
+		pos="e,645.44,36.267 697.85,88.548 686.42,83.613 675.13,77.221 666,69 658.92,62.627 653.46,53.869 649.42,45.463",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
@@ -68,24 +68,24 @@ digraph {
 		width=1.5887];
 	"complex chemical exposure" -> xref	[color=blue,
 		label=xref,
-		lp="805.5,61.5",
-		pos="e,766.69,35.597 805.84,86.799 796.38,74.426 783.48,57.555 772.91,43.738",
+		lp="769.5,61.5",
+		pos="e,754.2,36.175 754.79,86.799 754.66,75.163 754.47,59.548 754.32,46.237",
 		style=solid];
 	category	[height=0.5,
 		pos="881,18",
 		width=1.4263];
 	"complex chemical exposure" -> category	[color=blue,
 		label=category,
-		lp="885.5,61.5",
-		pos="e,868.89,35.597 831.54,86.799 840.57,74.426 852.87,57.555 862.95,43.738",
+		lp="857.5,61.5",
+		pos="e,858.27,34.33 779.89,87.207 799.93,73.684 828.22,54.6 849.78,40.056",
 		style=solid];
 	name	[height=0.5,
 		pos="987,18",
 		width=1.011];
 	"complex chemical exposure" -> name	[color=blue,
 		label=name,
-		lp="965,61.5",
-		pos="e,970.11,34.206 874.6,88.481 890.05,83.227 906.54,76.702 921,69 935.63,61.203 950.48,50.278 962.38,40.628",
+		lp="946,61.5",
+		pos="e,965.3,32.48 825.87,89.488 847.74,84.093 871.67,77.238 893,69 915.02,60.492 938.47,48.026 956.44,37.671",
 		style=solid];
 	"has attribute type"	[color=blue,
 		height=0.5,
@@ -94,8 +94,8 @@ digraph {
 		width=2.1304];
 	"complex chemical exposure" -> "has attribute type"	[color=blue,
 		label="has attribute type",
-		lp="1098,61.5",
-		pos="e,1083.5,34.182 899.67,90.248 928.15,84.643 960.23,77.47 989,69 1017.9,60.494 1049.4,48.329 1074.1,38.128",
+		lp="1085,61.5",
+		pos="e,1080.2,33.699 850.4,91.911 887.95,86.258 931.28,78.623 970,69 1004.3,60.479 1042,47.682 1070.8,37.168",
 		style=solid];
 	"has quantitative value"	[color=blue,
 		height=0.5,
@@ -104,9 +104,9 @@ digraph {
 		width=2.1484];
 	"complex chemical exposure" -> "has quantitative value"	[color=blue,
 		label="has quantitative value",
-		lp="1293,61.5",
-		pos="e,1259,34.61 917.4,92.264 933.63,90.431 950.28,88.612 966,87 1055.2,77.847 1079.8,90.12 1167,69 1195.5,62.083 1226.2,49.661 1249.7,\
-38.93",
+		lp="1284,61.5",
+		pos="e,1256.7,34.246 852.19,92.151 868.79,90.301 885.88,88.507 902,87 1013.8,76.548 1044.2,92.606 1154,69 1186.2,62.076 1221,49.157 1247.4,\
+38.186",
 		style=solid];
 	"has qualitative value"	[color=blue,
 		height=0.5,
@@ -115,40 +115,29 @@ digraph {
 		width=1.9318];
 	"complex chemical exposure" -> "has qualitative value"	[color=blue,
 		label="has qualitative value",
-		lp="1484.5,61.5",
-		pos="e,1435.9,35.319 914.58,91.945 931.68,90.074 949.35,88.325 966,87 1057.1,79.744 1289.8,96.619 1377,69 1395.3,63.205 1413.5,51.96 \
-1427.7,41.599",
+		lp="1478.5,61.5",
+		pos="e,1433.5,35.354 850.18,91.916 867.4,90.036 885.22,88.292 902,87 1005.3,79.041 1268.4,97.651 1368,69 1388.3,63.148 1409,51.588 1425,\
+41.057",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
 		label="iri type",
-		pos="1626,18",
+		pos="1627,18",
 		width=1.2277];
 	"complex chemical exposure" -> iri	[color=blue,
 		label=iri,
-		lp="1598,61.5",
-		pos="e,1611.2,35.372 913.77,91.841 931.12,89.957 949.08,88.231 966,87 1032.2,82.184 1500.7,91.787 1563,69 1578.2,63.444 1592.5,52.674 \
-1603.7,42.548",
-		style=solid];
-	source	[color=blue,
-		height=0.5,
-		label=string,
-		pos="1727,18",
-		width=1.0652];
-	"complex chemical exposure" -> source	[color=blue,
-		label=source,
-		lp="1681,61.5",
-		pos="e,1703.2,32.316 913.77,91.81 931.12,89.929 949.08,88.212 966,87 1108.8,76.767 1470.2,99.67 1610,69 1639.8,62.47 1671.4,48.453 1694.3,\
-36.917",
+		lp="1594,61.5",
+		pos="e,1610.8,34.918 849.77,91.803 867.12,89.923 885.08,88.208 902,87 974.62,81.813 1488,92.169 1557,69 1574,63.308 1590.4,51.998 1603,\
+41.573",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1050,105",
+		pos="986,105",
 		width=2.0762];
 	attribute_name	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="1199,105",
+		pos="1135,105",
 		width=1.5707];
 }

@@ -45,7 +45,6 @@ URI: [biolink:has_quantitative_value](https://w3id.org/biolink/vocab/has_quantit
  * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)
  * [GenotypicSex](GenotypicSex.md)
  * [GeographicExposure](GeographicExposure.md)
- * [Inheritance](Inheritance.md)
  * [Onset](Onset.md)
  * [OrganismAttribute](OrganismAttribute.md)
  * [PathologicalAnatomicalExposure](PathologicalAnatomicalExposure.md)

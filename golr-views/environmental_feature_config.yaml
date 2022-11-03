@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: environmental_feature
+# metamodel_version: 1.7.0# version: 3.0.3id: environmental_feature
 schema_generating: true
 display_name: environmental feature
 document_category: environmental feature
@@ -20,8 +20,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute

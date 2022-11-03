@@ -8,7 +8,7 @@ layout: default
 # Slot: publications
 
 
-connects an association to publications supporting the association
+One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
 
 URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 
@@ -18,7 +18,7 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [supporting documents](supporting_documents.md)
 
 ## Children
 
@@ -42,7 +42,6 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
  * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
  * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
- * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [ContributorAssociation](ContributorAssociation.md)
  * [DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.md)
@@ -59,11 +58,11 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
- * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
+ * [GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md)
  * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
@@ -108,3 +107,10 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
  * [VariantToGeneExpressionAssociation](VariantToGeneExpressionAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | supporting publications |
+

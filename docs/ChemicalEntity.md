@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[Nutrient],[NucleicAcidEntity],[NamedThing],[MolecularEntity],[MolecularActivityToChemicalEntityAssociation],[FoodAdditive],[EnvironmentalFoodContaminant],[ChemicalToPathwayAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalRole],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalGeneInteractionAssociation],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntityAssessesNamedThingAssociation],[ChemicalRole]%3Chas%20chemical%20role%200..%2A-%20[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;max_tolerated_dose:string%20%3F;is_toxic:boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity],[ChemicalAffectsGeneAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntityAssessesNamedThingAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalGeneInteractionAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToPathwayAssociation]-%20subject%201..1%3E[ChemicalEntity],[MolecularActivityToChemicalEntityAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[Nutrient],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[ChemicalAffectsGeneAssociation],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssence],[NamedThing],[MolecularEntity],[MolecularActivityToChemicalEntityAssociation],[FoodAdditive],[EnvironmentalFoodContaminant],[ChemicalToPathwayAssociation],[ChemicalToChemicalDerivationAssociation],[ChemicalToChemicalAssociation],[ChemicalRole],[ChemicalOrDrugOrTreatment],[ChemicalMixture],[ChemicalGeneInteractionAssociation],[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntityAssessesNamedThingAssociation],[ChemicalRole]%3Chas%20chemical%20role%200..%2A-%20[ChemicalEntity%7Cavailable_from:drug_availability_enum%20%2A;max_tolerated_dose:string%20%3F;is_toxic:boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalEntity]%3Ctrade%20name%200..1-%20[ChemicalEntity],[ChemicalAffectsGeneAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalEntityAssessesNamedThingAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalGeneInteractionAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToChemicalAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalToChemicalDerivationAssociation]-%20subject%201..1%3E[ChemicalEntity],[ChemicalToPathwayAssociation]-%20subject%201..1%3E[ChemicalEntity],[MolecularActivityToChemicalEntityAssociation]-%20object%201..1%3E[ChemicalEntity],[ChemicalEntity]uses%20-.-%3E[PhysicalEssence],[ChemicalEntity]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity]uses%20-.-%3E[ChemicalEntityOrProteinOrPolypeptide],[ChemicalEntity]%5E-[MolecularEntity],[ChemicalEntity]%5E-[FoodAdditive],[ChemicalEntity]%5E-[EnvironmentalFoodContaminant],[ChemicalEntity]%5E-[ChemicalMixture],[NamedThing]%5E-[ChemicalEntity],[ChemicalAffectsGeneAssociation],[Attribute])
 
 ---
 
@@ -45,7 +45,6 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
  * [FoodAdditive](FoodAdditive.md)
  * [MolecularEntity](MolecularEntity.md) - A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
- * [Nutrient](Nutrient.md)
 
 ## Referenced by class
 
@@ -58,13 +57,10 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[ChemicalEntity](ChemicalEntity.md)** *[chemically interacts with](chemically_interacts_with.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[food component of](food_component_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[has food component](has_food_component.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[has nutrient](has_nutrient.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[MolecularActivityToChemicalEntityAssociation](MolecularActivityToChemicalEntityAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate decreased by](mutation_rate_decreased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
- *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[mutation rate increased by](mutation_rate_increased_by.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[ChemicalEntity](ChemicalEntity.md)** *[nutrient of](nutrient_of.md)*  <sub>0..\*</sub>  **[ChemicalEntity](ChemicalEntity.md)**
  *  **[NamedThing](NamedThing.md)** *[trade name](trade_name.md)*  <sub>0..1</sub>  **[ChemicalEntity](ChemicalEntity.md)**
 
@@ -110,8 +106,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

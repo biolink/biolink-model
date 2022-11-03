@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: pathological_process_exposure
+# metamodel_version: 1.7.0# version: 3.0.3id: pathological_process_exposure
 schema_generating: true
 description: A pathological process, when viewed as an exposure, representing a precondition,
   leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -64,8 +64,6 @@ fields:
   description: An IRI for an entity. This is determined by the id using expansion
     rules.
   display_name: iri
-- id: source
-  display_name: source
 - id: timepoint
   description: a point in time
   display_name: timepoint

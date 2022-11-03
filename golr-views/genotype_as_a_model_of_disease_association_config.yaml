@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: genotype_as_a_model_of_disease_association
+# metamodel_version: 1.7.0# version: 3.0.3id: genotype_as_a_model_of_disease_association
 schema_generating: true
 display_name: genotype as a model of disease association
 document_category: genotype as a model of disease association
@@ -18,8 +18,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
@@ -33,7 +31,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: connects an association to publications supporting the association
+  description: One or more publications that report the statement expressed in an
+    Association, or provide information used as  evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -46,8 +45,6 @@ fields:
     the knowledge passed on its way to its currently serialized form. In practice,
     implementers should use one of the more specific subtypes of this generic property.
   display_name: knowledge source
-- id: original_knowledge_source
-  display_name: original knowledge source
 - id: primary_knowledge_source
   description: The most upstream source of the knowledge expressed in an Association
     that an implementer can identify.  Performing a rigorous analysis of upstream

@@ -1,5 +1,5 @@
 ---
-parent: Slot Mixins
+parent: Predicates
 title: biolink:regulates
 grand_parent: Slots
 layout: default
@@ -22,8 +22,6 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
 ## Children
 
- *  [negatively regulates](negatively_regulates.md)
- *  [positively regulates](positively_regulates.md)
 
 ## Used by
 
@@ -38,5 +36,7 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 |  | | CHEMBL.MECHANISM:modulator |
 |  | | RO:0002295 |
 |  | | RO:0002332 |
-|  | | RO:0002578 |
+|  | | RO:0002211 |
+|  | | RO:0002448 |
+|  | | WIKIDATA_PROPERTY:P128 |
 

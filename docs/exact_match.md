@@ -29,6 +29,7 @@ URI: [biolink:exact_match](https://w3id.org/biolink/vocab/exact_match)
 
 ## Used by
 
+ * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
 
 ## Other properties
 

@@ -23,6 +23,8 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 
  *  [composed primarily of](composed_primarily_of.md)
  *  [disease has location](disease_has_location.md)
+ *  [location of disease](location_of_disease.md)
+ *  [primarily composed of](primarily_composed_of.md)
  *  [related to at concept level](related_to_at_concept_level.md)
  *  [related to at instance level](related_to_at_instance_level.md)
 

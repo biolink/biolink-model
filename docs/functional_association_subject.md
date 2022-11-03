@@ -2,7 +2,7 @@
 # Slot: subject
 
 
-gene, product or macromolecular complex mixin that has the function associated with the GO term
+gene, product or macromolecular complex that has the function associated with the GO term
 
 URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/functional_association_subject)
 

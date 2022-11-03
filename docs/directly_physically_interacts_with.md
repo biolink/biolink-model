@@ -26,3 +26,16 @@ URI: [biolink:directly_physically_interacts_with](https://w3id.org/biolink/vocab
 
 ## Used by
 
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | RO:0002436 |
+| **Narrow Mappings:** | | PHAROS:drug_targets |
+|  | | DRUGBANK:chelator |
+|  | | CTD:affects_binding |
+|  | | DGIdb:cofactor |
+| **Broad Mappings:** | | SIO:000203 |
+|  | | RO:0002578 |
+

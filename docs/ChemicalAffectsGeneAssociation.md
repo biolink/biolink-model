@@ -15,7 +15,7 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalEntity],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalAffectsGeneAssociation%7Csubject_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;subject_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;subject_derivative_qualifier:chemical_entity_derivative_enum%20%3F;subject_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;subject_direction_qualifier:direction_qualifier_enum%20%3F;object_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_enum%20%3F;object_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;object_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;causal_mechanism_qualifier:causal_mechanism_qualifier_enum%20%3F;qualified_predicate:string%20%3F;predicate:predicate_type;object_direction_qualifier:direction_qualifier_enum%20%3F;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Attribute],[Association],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OrganismTaxon],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalEntity],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation%7Csubject_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_or_variant_enum%20%3F;subject_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;subject_derivative_qualifier:chemical_entity_derivative_enum%20%3F;subject_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;subject_direction_qualifier:direction_qualifier_enum%20%3F;object_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_or_variant_enum%20%3F;object_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;object_aspect_qualifier:gene_or_gene_product_or_chemical_entity_aspect_enum%20%3F;causal_mechanism_qualifier:causal_mechanism_qualifier_enum%20%3F;qualified_predicate:string%20%3F;predicate:predicate_type;object_direction_qualifier:direction_qualifier_enum%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalAffectsGeneAssociation],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalAffectsGeneAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Attribute],[Association],[AnatomicalEntity])
 
 ---
 
@@ -55,8 +55,11 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [qualified predicate](qualified_predicate.md)  <sub>0..1</sub>
-     * Description: predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading
+     * Description: Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
      * Range: [String](types/String.md)
+ * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
+     * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
+     * Range: [OrganismTaxon](OrganismTaxon.md)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -91,7 +94,7 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: connects an association to publications supporting the association
+     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence
@@ -99,8 +102,6 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
- * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
      * Range: [InformationResource](InformationResource.md)
@@ -145,8 +146,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
@@ -184,8 +183,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [qualified predicate](qualified_predicate.md)  <sub>0..1</sub>
-     * Description: predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading
+     * Description: Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
      * Range: [String](types/String.md)
+ * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
+     * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
+     * Range: [OrganismTaxon](OrganismTaxon.md)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

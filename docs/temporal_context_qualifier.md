@@ -26,3 +26,4 @@ URI: [biolink:temporal_context_qualifier](https://w3id.org/biolink/vocab/tempora
 
 ## Used by
 
+ * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)

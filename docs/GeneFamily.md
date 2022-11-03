@@ -15,7 +15,7 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[GeneGroupingMixin],[GeneFamily%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[GeneFamily],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[GeneToGeneFamilyAssociation],[GeneGroupingMixin],[GeneToGeneFamilyAssociation]-%20object%201..1%3E[GeneFamily%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneFamily]uses%20-.-%3E[GeneGroupingMixin],[GeneFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[GeneFamily],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -52,6 +52,10 @@ URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
  *  mixin: [GeneGroupingMixin](GeneGroupingMixin.md) - any grouping of multiple genes or gene products
  *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
+## Referenced by class
+
+ *  **[GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[GeneFamily](GeneFamily.md)**
+
 ## Attributes
 
 
@@ -79,8 +83,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

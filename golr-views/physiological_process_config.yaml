@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: physiological_process
+# metamodel_version: 1.7.0# version: 3.0.3id: physiological_process
 schema_generating: true
 display_name: physiological process
 document_category: physiological process
@@ -20,8 +20,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute

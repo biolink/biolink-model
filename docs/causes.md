@@ -51,11 +51,11 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 |  | | NCIT:chromosome_mapped_to_disease |
 |  | | NCIT:disease_has_normal_tissue_origin |
 |  | | NBO-PROPERTY:in_response_to |
-|  | | ORPHA:317343 |
-|  | | ORPHA:317344 |
-|  | | ORPHA:317346 |
-|  | | ORPHA:410295 |
-|  | | ORPHA:410296 |
+|  | | orphanet:317343 |
+|  | | orphanet:317344 |
+|  | | orphanet:317346 |
+|  | | orphanet:410295 |
+|  | | orphanet:410296 |
 |  | | RO:0002256 |
 |  | | RO:0002315 |
 |  | | RO:0002507 |

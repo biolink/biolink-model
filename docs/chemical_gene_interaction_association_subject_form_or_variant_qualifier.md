@@ -9,7 +9,7 @@ URI: [biolink:chemical_gene_interaction_association_subject_form_or_variant_qual
 
 ## Domain and Range
 
-[ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md) &#8594;  <sub>0..1</sub> [chemical_or_gene_or_gene_product_form_enum](chemical_or_gene_or_gene_product_form_enum.md)
+[ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md) &#8594;  <sub>0..1</sub> [chemical_or_gene_or_gene_product_form_or_variant_enum](chemical_or_gene_or_gene_product_form_or_variant_enum.md)
 
 ## Parents
 

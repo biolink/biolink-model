@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntityOrGeneOrGeneProduct],[ChemicalEntity],[Attribute],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
 
 ---
 
@@ -35,10 +35,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Referenced by class
 
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[affects splicing of](affects_splicing_of.md)*  <sub>0..\*</sub>  **[Transcript](Transcript.md)**
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[decreases splicing of](decreases_splicing_of.md)*  <sub>0..\*</sub>  **[Transcript](Transcript.md)**
  *  **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[object](object.md)*  <sub>1..1</sub>  **[Transcript](Transcript.md)**
- *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[increases splicing of](increases_splicing_of.md)*  <sub>0..\*</sub>  **[Transcript](Transcript.md)**
  *  **[Gene](Gene.md)** *[transcribed to](transcribed_to.md)*  <sub>0..\*</sub>  **[Transcript](Transcript.md)**
  *  **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Transcript](Transcript.md)**
  *  **[Protein](Protein.md)** *[translation of](translation_of.md)*  <sub>0..\*</sub>  **[Transcript](Transcript.md)**
@@ -85,12 +82,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
+
+### Inherited from epigenomic entity:
+
+ * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
+     * Description: connects a genomic feature to its sequence
+     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from gene product mixin:
 
@@ -98,12 +99,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: Alternate CURIEs for a thing
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
-
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
 
 ### Inherited from macromolecular machine mixin:
 

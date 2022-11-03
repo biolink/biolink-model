@@ -23,7 +23,6 @@ URI: [biolink:macromolecular_machine_mixin_name](https://w3id.org/biolink/vocab/
  * [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [GeneProductIsoformMixin](GeneProductIsoformMixin.md)
  * [GeneProductMixin](GeneProductMixin.md)
- * [MacromolecularComplexMixin](MacromolecularComplexMixin.md)
  * [MacromolecularMachineMixin](MacromolecularMachineMixin.md)
 
 ## Other properties

@@ -9,7 +9,7 @@ URI: [biolink:chemical_affects_gene_association_subject_form_or_variant_qualifie
 
 ## Domain and Range
 
-[ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md) &#8594;  <sub>0..1</sub> [chemical_or_gene_or_gene_product_form_enum](chemical_or_gene_or_gene_product_form_enum.md)
+[ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md) &#8594;  <sub>0..1</sub> [chemical_or_gene_or_gene_product_form_or_variant_enum](chemical_or_gene_or_gene_product_form_or_variant_enum.md)
 
 ## Parents
 

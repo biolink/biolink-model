@@ -1,11 +1,11 @@
 ---
-parent: Other Slots
+parent: Predicates
 title: biolink:has_predisposing_factor
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_predisposing_factor
+# Relation: has_predisposing_factor
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -17,10 +17,11 @@ URI: [biolink:has_predisposing_factor](https://w3id.org/biolink/vocab/has_predis
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..1</sub> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 
+ *  is_a: [risk affected by](risk_affected_by.md)
 
 ## Children
 

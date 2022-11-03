@@ -15,7 +15,7 @@ URI: [biolink:PlanetaryEntity](https://w3id.org/biolink/vocab/PlanetaryEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[GeographicLocation],[PlanetaryEntity]%5E-[EnvironmentalProcess],[PlanetaryEntity]%5E-[EnvironmentalFeature],[NamedThing]%5E-[PlanetaryEntity],[NamedThing],[GeographicLocation],[EnvironmentalProcess],[EnvironmentalFeature],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PlanetaryEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[GeographicLocation],[PlanetaryEntity]%5E-[EnvironmentalProcess],[PlanetaryEntity]%5E-[EnvironmentalFeature],[NamedThing]%5E-[PlanetaryEntity],[NamedThing],[GeographicLocation],[EnvironmentalProcess],[EnvironmentalFeature],[Attribute])
 
 ---
 
@@ -60,8 +60,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

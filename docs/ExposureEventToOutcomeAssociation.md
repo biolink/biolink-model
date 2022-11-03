@@ -15,7 +15,7 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PopulationOfIndividualOrganisms],[OntologyClass],[NamedThing],[InformationResource],[PopulationOfIndividualOrganisms]%3Chas%20population%20context%200..1-%20[ExposureEventToOutcomeAssociation%7Chas_temporal_context:time_type%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;original_knowledge_source(i):string%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[ExposureEventToEntityAssociationMixin],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[EntityToOutcomeAssociationMixin],[Association]%5E-[ExposureEventToOutcomeAssociation],[ExposureEventToEntityAssociationMixin],[EvidenceType],[EntityToOutcomeAssociationMixin],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[PopulationOfIndividualOrganisms],[OntologyClass],[NamedThing],[InformationResource],[PopulationOfIndividualOrganisms]%3Cpopulation%20context%20qualifier%200..1-%20[ExposureEventToOutcomeAssociation%7Ctemporal_context_qualifier:time_type%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ExposureEventToOutcomeAssociation]uses%20-.-%3E[EntityToOutcomeAssociationMixin],[Association]%5E-[ExposureEventToOutcomeAssociation],[EvidenceType],[EntityToOutcomeAssociationMixin],[Attribute],[Association])
 
 ---
 
@@ -26,7 +26,6 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
 
 ## Uses Mixins
 
- *  mixin: [ExposureEventToEntityAssociationMixin](ExposureEventToEntityAssociationMixin.md)
  *  mixin: [EntityToOutcomeAssociationMixin](EntityToOutcomeAssociationMixin.md) - An association between some entity and an outcome
 
 ## Attributes
@@ -34,11 +33,11 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
 
 ### Own
 
- * [has population context](has_population_context.md)  <sub>0..1</sub>
+ * [population context qualifier](population_context_qualifier.md)  <sub>0..1</sub>
      * Description: a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
      * Range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
- * [has temporal context](has_temporal_context.md)  <sub>0..1</sub>
-     * Description: a constraint of time placed upon the truth value of an association.
+ * [temporal context qualifier](temporal_context_qualifier.md)  <sub>0..1</sub>
+     * Description: a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
      * Range: [TimeType](types/TimeType.md)
 
 ### Inherited from association:
@@ -59,7 +58,7 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: connects an association to publications supporting the association
+     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence
@@ -67,8 +66,6 @@ URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
- * [original knowledge source](original_knowledge_source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
      * Range: [InformationResource](InformationResource.md)
@@ -113,8 +110,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

@@ -15,7 +15,7 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[PhenotypicQuality],[OrganismAttribute%7Cname(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F;source(i):string%20%3F]%5E-[PhenotypicQuality],[OrganismAttribute]%5E-[Inheritance],[Attribute]%5E-[OrganismAttribute],[OntologyClass],[NamedThing],[Inheritance],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[QuantityValue],[PhenotypicQuality],[OrganismAttribute%7Cname(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;description(i):narrative_text%20%3F]%5E-[PhenotypicQuality],[Attribute]%5E-[OrganismAttribute],[OntologyClass],[NamedThing],[Attribute])
 
 ---
 
@@ -26,7 +26,6 @@ URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribut
 
 ## Children
 
- * [Inheritance](Inheritance.md) - The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).
  * [PhenotypicQuality](PhenotypicQuality.md) - A property of a phenotype
 
 ## Referenced by class
@@ -81,8 +80,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
- * [source](source.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

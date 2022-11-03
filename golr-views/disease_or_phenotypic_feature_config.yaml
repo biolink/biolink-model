@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.0.2id: disease_or_phenotypic_feature
+# metamodel_version: 1.7.0# version: 3.0.3id: disease_or_phenotypic_feature
 schema_generating: true
 description: Either one of a disease or an individual phenotypic feature. Some knowledge
   resources such as Monarch treat these as distinct, others such as MESH conflate.  Please
@@ -25,8 +25,6 @@ fields:
 - id: description
   description: a human-readable description of an entity
   display_name: description
-- id: source
-  display_name: source
 - id: has_attribute
   description: connects any entity to an attribute
   display_name: has attribute
