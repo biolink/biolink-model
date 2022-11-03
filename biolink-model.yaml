@@ -3455,7 +3455,7 @@ slots:
     annotations:
       canonical_predicate: true
     close_mappings:
-      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process"
+      # These RTX mapped terms tagged as the inverse of "biolink:occurs_in", i.e. Entity/Site contains Process
       - BFO:0000067
       - SNOMED:has_occurrence
       - UBERON:site_of
@@ -3830,7 +3830,7 @@ slots:
     in_subset:
       - translator_minimal
     close_mappings:
-      # RTX inverse mapping to to 'biolink:has_input'
+      # RTX inverse mapping to 'biolink:has_input'
       - RO:0002352
     exact_mappings:
       - RO:0002233
@@ -3943,7 +3943,7 @@ slots:
   has substrate:
     is_a: has participant
     # domain: molecular activity
-    # range: chemical entity or gene or gene product
+    # range: chemical entity or gene or gene_product
     annotations:
       canonical_predicate: true
 
@@ -4257,7 +4257,7 @@ slots:
       - SEMMEDDB:manifestation_of
       - OMIM:manifestation_of
     broad_mappings:
-      # Wikidata definition slightly broader: "inherent and characteristic embodiment of a given concept"
+      # Wikidata's definition is slightly broader: "inherent and characteristic embodiment of a given concept"
       - WIKIDATA_PROPERTY:P1557
     narrow_mappings:
       - SNOMED:has_definitional_manifestation
@@ -6789,7 +6789,7 @@ classes:
       - The CHEBI ID represents a role rather than a substance
     broad_mappings:
       # Pharmacologic Substance: Any natural, endogenously-derived,
-      # synthetic or semi-synthetic compound with pharmacologic activity.
+      # synthetic or semi synthetic compound with pharmacologic activity.
       - STY:T121
     exact_mappings:
       - WIKIDATA:Q12140
@@ -6891,7 +6891,7 @@ classes:
       - WIKIDATA:Q7239
       # UMLS Semantic Group "Living Beings"
       # Several of the associated semantic types here are probably not
-      # that relevant to the Biolink world but we keep them here for now.
+      # that relevant to the Biolink world, but we keep them here for now.
       - UMLSSG:LIVB
       - CARO:0001010
 
@@ -10093,7 +10093,7 @@ enums:
           - RO:0004035
           - RO:0002212
         close_mappings:
-          # This RTX contributed term is tagged as a inverse of this Biolink predicate
+          # This RTX contributed term is tagged as an inverse of this Biolink predicate
           - RO:0002335
         broad_mappings:
           # This term is slightly broader in that it includes that A acts within B as well
