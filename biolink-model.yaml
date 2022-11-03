@@ -553,7 +553,7 @@ slots:
 
   reaction direction:
     description: >-
-      the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+      the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
     is_a: association slot
     range: ReactionDirectionEnum
     narrow_mappings:
@@ -1392,7 +1392,7 @@ slots:
       association took place (can be a tissue, cell type, or subcellular location).
     range: AnatomicalContextQualifierEnum
     notes: >-
-      Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more
+      Anatomical context values can be any term from UBERON. See AnatomicalContextQualifierEnum for more
       details.
 
   species context qualifier:
@@ -10132,9 +10132,9 @@ enums:
           Used in cases where the specificity of the relationship can not be determined to be either activity 
           or abundance.  In general, a more specific value from this enumeration should be used.
       abundance:
-        is_a: activity or abundance
+        is_a: activity_or_abundance
       activity:
-        is_a: activity or abundance
+        is_a: activity_or_abundance
       expression:
         is_a: abundance
       synthesis:
