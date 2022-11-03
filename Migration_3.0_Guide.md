@@ -17,11 +17,21 @@ Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 
 ![](images/example_onion.png)
 
-## For a guide to migrate existing predicates, please refer to: 
+## For guidance in migrating existing predicates, to their fully qualified Association-based counterparts, please refer to: 
 
-[predicate tranformation table](images/predicate_transformation.pdf)
+- [Deprecated predicate to qualifier mappings](examples/biolink3_migration/predicate_mapping.yaml)
+This is a mapping file that shows how deprecated predicates like "increases expression of" can be translated
+to their equivalent Association-based, qualifiier representation. 
 
-## Deprecated Predicates:
+- [Association semantics using qualifiers](guidelines/association-examples-with-qualifiers.md)
+This is a general guide with examples of fully qualified Associations in the chemical-to-gene domain.
+
+- [Predicate tranformation table](images/predicate_transformation.pdf)
+View the predicate transformations to qualifiers in the predicate hierarchy
+
+
+
+### Deprecated Predicates:
 
 Code to list deprecated predicates, classes and associations can be found here: https://tinyurl.com/ycyd3xae
 
@@ -240,7 +250,8 @@ subject and object qualifiers:
 
 ### TRAPI Examples 
 
-Please see: [TRAPI examples using Biolink 3.0](guidelines/TRAPI-examples.md)
+Please see examples in the [TRAPI repository](https://github.com/NCATSTranslator/ReasonerAPI/tree/master/examples/Message)
+
 
 # Biolink Model 2.0 Migration Guide
 
