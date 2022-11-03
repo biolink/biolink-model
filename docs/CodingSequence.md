@@ -15,7 +15,7 @@ URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NucleicAcidEntity],[NucleicAcidEntity]%5E-[CodingSequence%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):drug_availability_enum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalRole],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NucleicAcidEntity],[NucleicAcidEntity]%5E-[CodingSequence%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalRole],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -35,7 +35,7 @@ URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
  * [trade name](trade_name.md)  <sub>0..1</sub>
      * Range: [ChemicalEntity](ChemicalEntity.md)
  * [available from](available_from.md)  <sub>0..\*</sub>
-     * Range: [drug_availability_enum](drug_availability_enum.md)
+     * Range: [DrugAvailabilityEnum](DrugAvailabilityEnum.md)
  * [max tolerated dose](max_tolerated_dose.md)  <sub>0..1</sub>
      * Description: The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
      * Range: [String](types/String.md)

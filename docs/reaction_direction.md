@@ -8,13 +8,13 @@ layout: default
 # Slot: reaction_direction
 
 
-the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
 
 URI: [biolink:reaction_direction](https://w3id.org/biolink/vocab/reaction_direction)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [reaction_direction_enum](reaction_direction_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [ReactionDirectionEnum](ReactionDirectionEnum.md)
 
 ## Parents
 

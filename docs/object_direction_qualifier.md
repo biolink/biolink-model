@@ -14,7 +14,7 @@ URI: [biolink:object_direction_qualifier](https://w3id.org/biolink/vocab/object_
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [direction_qualifier_enum](direction_qualifier_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [DirectionQualifierEnum](DirectionQualifierEnum.md)
 
 ## Parents
 

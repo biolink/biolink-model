@@ -15,7 +15,7 @@ URI: [biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](https:/
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation%7Cobject_direction_qualifier:direction_qualifier_enum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalEntityOrGeneOrGeneProduct]%3Csubject%201..1-++[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[Association]%5E-[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[ChemicalEntityOrGeneOrGeneProduct],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation%7Cobject_direction_qualifier:DirectionQualifierEnum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalEntityOrGeneOrGeneProduct]%3Csubject%201..1-++[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[Association]%5E-[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[ChemicalEntityOrGeneOrGeneProduct],[Attribute],[Association])
 
 ---
 
@@ -36,7 +36,7 @@ URI: [biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](https:/
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [direction_qualifier_enum](direction_qualifier_enum.md)
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
@@ -132,7 +132,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [direction_qualifier_enum](direction_qualifier_enum.md)
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)

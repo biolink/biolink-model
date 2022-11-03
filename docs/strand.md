@@ -14,7 +14,7 @@ URI: [biolink:strand](https://w3id.org/biolink/vocab/strand)
 
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [strand_enum](strand_enum.md)
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>0..1</sub> [StrandEnum](StrandEnum.md)
 
 ## Parents
 

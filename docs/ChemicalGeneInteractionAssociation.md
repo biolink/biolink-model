@@ -15,7 +15,7 @@ URI: [biolink:ChemicalGeneInteractionAssociation](https://w3id.org/biolink/vocab
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalToEntityAssociationMixin],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalGeneInteractionAssociation%7Csubject_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_or_variant_enum%20%3F;subject_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;subject_derivative_qualifier:chemical_entity_derivative_enum%20%3F;object_form_or_variant_qualifier:chemical_or_gene_or_gene_product_form_or_variant_enum%20%3F;object_part_qualifier:gene_or_gene_product_or_chemical_part_qualifier_enum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[ChemicalGeneInteractionAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[Association]%5E-[ChemicalGeneInteractionAssociation],[ChemicalEntity],[Attribute],[Association],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[InformationResource],[GeneOrGeneProduct],[EvidenceType],[ChemicalToEntityAssociationMixin],[GeneOrGeneProduct]%3Cobject%201..1-++[ChemicalGeneInteractionAssociation%7Csubject_form_or_variant_qualifier:ChemicalOrGeneOrGeneProductFormOrVariantEnum%20%3F;subject_part_qualifier:GeneOrGeneProductOrChemicalPartQualifierEnum%20%3F;subject_derivative_qualifier:ChemicalEntityDerivativeEnum%20%3F;object_form_or_variant_qualifier:ChemicalOrGeneOrGeneProductFormOrVariantEnum%20%3F;object_part_qualifier:GeneOrGeneProductOrChemicalPartQualifierEnum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalEntity]%3Csubject%201..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Canatomical%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Cobject%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[AnatomicalEntity]%3Csubject%20context%20qualifier%200..1-%20[ChemicalGeneInteractionAssociation],[ChemicalGeneInteractionAssociation]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[Association]%5E-[ChemicalGeneInteractionAssociation],[ChemicalEntity],[Attribute],[Association],[AnatomicalEntity])
 
 ---
 
@@ -38,7 +38,7 @@ URI: [biolink:ChemicalGeneInteractionAssociation](https://w3id.org/biolink/vocab
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * Range: [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+     * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -149,7 +149,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * Range: [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+     * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

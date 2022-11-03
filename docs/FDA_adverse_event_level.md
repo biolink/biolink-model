@@ -14,7 +14,7 @@ URI: [biolink:FDA_adverse_event_level](https://w3id.org/biolink/vocab/FDA_advers
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [FDA_IDA_adverse_event_enum](FDA_IDA_adverse_event_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md)
 
 ## Parents
 

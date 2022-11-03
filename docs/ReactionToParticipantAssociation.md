@@ -15,7 +15,7 @@ URI: [biolink:ReactionToParticipantAssociation](https://w3id.org/biolink/vocab/R
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%3Csubject%201..1-%20[ReactionToParticipantAssociation%7Cstoichiometry:integer%20%3F;reaction_direction:reaction_direction_enum%20%3F;reaction_side:reaction_side_enum%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ReactionToParticipantAssociation]%5E-[ReactionToCatalystAssociation],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ReactionToCatalystAssociation],[Publication],[OntologyClass],[MolecularEntity],[InformationResource],[EvidenceType],[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MolecularEntity]%3Csubject%201..1-%20[ReactionToParticipantAssociation%7Cstoichiometry:integer%20%3F;reaction_direction:ReactionDirectionEnum%20%3F;reaction_side:ReactionSideEnum%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ReactionToParticipantAssociation]%5E-[ReactionToCatalystAssociation],[ChemicalToChemicalAssociation]%5E-[ReactionToParticipantAssociation],[ReactionToCatalystAssociation],[Publication],[OntologyClass],[MolecularEntity],[InformationResource],[EvidenceType],[ChemicalToChemicalAssociation],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -37,11 +37,11 @@ URI: [biolink:ReactionToParticipantAssociation](https://w3id.org/biolink/vocab/R
 ### Own
 
  * [reaction direction](reaction_direction.md)  <sub>0..1</sub>
-     * Description: the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
-     * Range: [reaction_direction_enum](reaction_direction_enum.md)
+     * Description: the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
+     * Range: [ReactionDirectionEnum](ReactionDirectionEnum.md)
  * [reaction side](reaction_side.md)  <sub>0..1</sub>
      * Description: the side of a reaction being modeled (ie: left or right)
-     * Range: [reaction_side_enum](reaction_side_enum.md)
+     * Range: [ReactionSideEnum](ReactionSideEnum.md)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

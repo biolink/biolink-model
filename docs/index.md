@@ -1383,7 +1383,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
      * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
      * [reaction balanced](reaction_balanced.md)
-     * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+     * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
      * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
      * [relative frequency object](relative_frequency_object.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.
      * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
@@ -1503,7 +1503,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
  * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
  * [reaction balanced](reaction_balanced.md)
- * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)
+ * [reaction direction](reaction_direction.md) - the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
  * [reaction side](reaction_side.md) - the side of a reaction being modeled (ie: left or right)
  * [relative frequency object](relative_frequency_object.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the object concept appears in these same records.
  * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
@@ -1656,21 +1656,21 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ## Enums
 
- * [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
- * [causal_mechanism_qualifier_enum](causal_mechanism_qualifier_enum.md)
- * [chemical_entity_derivative_enum](chemical_entity_derivative_enum.md)
- * [chemical_or_gene_or_gene_product_form_or_variant_enum](chemical_or_gene_or_gene_product_form_or_variant_enum.md)
- * [direction_qualifier_enum](direction_qualifier_enum.md)
- * [drug_availability_enum](drug_availability_enum.md)
- * [drug_delivery_enum](drug_delivery_enum.md)
- * [druggable_gene_category_enum](druggable_gene_category_enum.md)
- * [FDA_approval_status_enum](FDA_approval_status_enum.md)
- * [FDA_IDA_adverse_event_enum](FDA_IDA_adverse_event_enum.md) - please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
- * [gene_or_gene_product_or_chemical_entity_aspect_enum](gene_or_gene_product_or_chemical_entity_aspect_enum.md)
- * [gene_or_gene_product_or_chemical_part_qualifier_enum](gene_or_gene_product_or_chemical_part_qualifier_enum.md)
- * [logical_interpretation_enum](logical_interpretation_enum.md)
- * [phase_enum](phase_enum.md) - phase
- * [reaction_direction_enum](reaction_direction_enum.md)
- * [reaction_side_enum](reaction_side_enum.md)
- * [sequence_enum](sequence_enum.md) - type of sequence
- * [strand_enum](strand_enum.md) - strand
+ * [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+ * [CausalMechanismQualifierEnum](CausalMechanismQualifierEnum.md)
+ * [ChemicalEntityDerivativeEnum](ChemicalEntityDerivativeEnum.md)
+ * [ChemicalOrGeneOrGeneProductFormOrVariantEnum](ChemicalOrGeneOrGeneProductFormOrVariantEnum.md)
+ * [DirectionQualifierEnum](DirectionQualifierEnum.md)
+ * [DrugAvailabilityEnum](DrugAvailabilityEnum.md)
+ * [DrugDeliveryEnum](DrugDeliveryEnum.md)
+ * [DruggableGeneCategoryEnum](DruggableGeneCategoryEnum.md)
+ * [FDAApprovalStatusEnum](FDAApprovalStatusEnum.md)
+ * [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md) - please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
+ * [GeneOrGeneProductOrChemicalEntityAspectEnum](GeneOrGeneProductOrChemicalEntityAspectEnum.md)
+ * [GeneOrGeneProductOrChemicalPartQualifierEnum](GeneOrGeneProductOrChemicalPartQualifierEnum.md)
+ * [LogicalInterpretationEnum](LogicalInterpretationEnum.md)
+ * [PhaseEnum](PhaseEnum.md) - phase
+ * [ReactionDirectionEnum](ReactionDirectionEnum.md)
+ * [ReactionSideEnum](ReactionSideEnum.md)
+ * [SequenceEnum](SequenceEnum.md) - type of sequence
+ * [StrandEnum](StrandEnum.md) - strand

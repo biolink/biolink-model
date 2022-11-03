@@ -1,4 +1,11 @@
-### Biolink Model 3.0 
+---
+title: "TRAPI Examples"
+parent: "Biolink Model Guidelines"
+layout: default
+nav_order: 3
+---
+
+### TRAPI Examples
 
 For reference, [here is the TRAPI 1.3 data representation](https://github.com/NCATSTranslator/ReasonerAPI/blob/b43cc5d95a9ae3678401092d1ddb97a5b0b82aae/TranslatorReasonerAPI.yaml#L852) for qualifiers.
 

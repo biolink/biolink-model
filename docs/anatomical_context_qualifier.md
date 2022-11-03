@@ -14,7 +14,7 @@ URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/vocab/anato
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
 
 ## Parents
 

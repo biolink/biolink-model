@@ -14,7 +14,7 @@ URI: [biolink:routes_of_delivery](https://w3id.org/biolink/vocab/routes_of_deliv
 
 ## Domain and Range
 
-None ->  <sub>0..\*</sub> [drug_delivery_enum](drug_delivery_enum.md)
+None ->  <sub>0..\*</sub> [DrugDeliveryEnum](DrugDeliveryEnum.md)
 
 ## Parents
 

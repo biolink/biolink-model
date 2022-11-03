@@ -14,7 +14,7 @@ URI: [biolink:FDA_approval_status](https://w3id.org/biolink/vocab/FDA_approval_s
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [FDA_approval_status_enum](FDA_approval_status_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [FDAApprovalStatusEnum](FDAApprovalStatusEnum.md)
 
 ## Parents
 

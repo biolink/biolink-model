@@ -15,7 +15,7 @@ URI: [biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation%7CFDA_adverse_event_level:FDA_IDA_adverse_event_enum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]%5E-[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation%7CFDA_adverse_event_level:FDAIDAAdverseEventEnum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]%5E-[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Attribute],[Association])
 
 ---
 
@@ -42,7 +42,7 @@ URI: [biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](
 ### Own
 
  * [FDA adverse event level](FDA_adverse_event_level.md)  <sub>0..1</sub>
-     * Range: [FDA_IDA_adverse_event_enum](FDA_IDA_adverse_event_enum.md)
+     * Range: [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)

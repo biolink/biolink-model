@@ -15,7 +15,7 @@ URI: [biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssoc
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation%7Cpredicate:predicate_type;FDA_adverse_event_level(i):FDA_IDA_adverse_event_enum%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]%5E-[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation%7Cpredicate:predicate_type;FDA_adverse_event_level(i):FDAIDAAdverseEventEnum%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ChemicalToEntityAssociationMixin],[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToDiseaseOrPhenotypicFeatureAssociationMixin],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation]%5E-[ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation],[Attribute])
 
 ---
 
@@ -90,7 +90,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from chemical or drug or treatment to disease or phenotypic feature association:
 
  * [FDA adverse event level](FDA_adverse_event_level.md)  <sub>0..1</sub>
-     * Range: [FDA_IDA_adverse_event_enum](FDA_IDA_adverse_event_enum.md)
+     * Range: [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)

@@ -15,7 +15,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[NucleicAcidEntity],[InformationResource],[NucleicAcidEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:strand_enum%20%3F;strand:strand_enum%20%3F;phase:phase_enum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[NucleicAcidEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[EvidenceType],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceAssociation],[Publication],[OntologyClass],[NucleicAcidEntity],[InformationResource],[NucleicAcidEntity]%3Cobject%201..1-%20[GenomicSequenceLocalization%7Cstart_interbase_coordinate:integer%20%3F;end_interbase_coordinate:integer%20%3F;genome_build:StrandEnum%20%3F;strand:StrandEnum%20%3F;phase:PhaseEnum%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[NucleicAcidEntity]%3Csubject%201..1-%20[GenomicSequenceLocalization],[SequenceAssociation]%5E-[GenomicSequenceLocalization],[EvidenceType],[Attribute])
 
 ---
 
@@ -37,7 +37,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
      * Range: [Integer](types/Integer.md)
  * [genome build](genome_build.md)  <sub>0..1</sub>
      * Description: The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
-     * Range: [strand_enum](strand_enum.md)
+     * Range: [StrandEnum](StrandEnum.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -52,7 +52,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
      * Range: [Integer](types/Integer.md)
  * [strand](strand.md)  <sub>0..1</sub>
      * Description: The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-     * Range: [strand_enum](strand_enum.md)
+     * Range: [StrandEnum](StrandEnum.md)
 
 ### Inherited from association:
 
@@ -143,7 +143,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Integer](types/Integer.md)
  * [genome build](genome_build.md)  <sub>0..1</sub>
      * Description: The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
-     * Range: [strand_enum](strand_enum.md)
+     * Range: [StrandEnum](StrandEnum.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -158,7 +158,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Integer](types/Integer.md)
  * [strand](strand.md)  <sub>0..1</sub>
      * Description: The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
-     * Range: [strand_enum](strand_enum.md)
+     * Range: [StrandEnum](StrandEnum.md)
 
 ## Other properties
 

@@ -15,7 +15,7 @@ URI: [biolink:DeprecatedPredicateMapping](https://w3id.org/biolink/vocab/Depreca
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[NamedThing]%3Cbroad%20match%200..%2A-%20[DeprecatedPredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:string%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:direction_qualifier_enum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:string%20%3F;anatomical_context_qualifier:anatomical_context_qualifier_enum%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[DeprecatedPredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[DeprecatedPredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[DeprecatedPredicateMapping],[DeprecatedMappingCollection]++-%20deprecated%20predicate%20mappings%200..%2A%3E[DeprecatedPredicateMapping],[DeprecatedMappingCollection])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[NamedThing]%3Cbroad%20match%200..%2A-%20[DeprecatedPredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:string%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:DirectionQualifierEnum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:string%20%3F;anatomical_context_qualifier:AnatomicalContextQualifierEnum%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[DeprecatedPredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[DeprecatedPredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[DeprecatedPredicateMapping],[DeprecatedMappingCollection]++-%20deprecated%20predicate%20mappings%200..%2A%3E[DeprecatedPredicateMapping],[DeprecatedMappingCollection])
 
 ---
 
@@ -123,7 +123,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [String](types/String.md)
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
-     * Range: [anatomical_context_qualifier_enum](anatomical_context_qualifier_enum.md)
+     * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
  * [qualified predicate](qualified_predicate.md)  <sub>0..1</sub>
      * Description: Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
      * Range: [String](types/String.md)
@@ -137,7 +137,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [direction_qualifier_enum](direction_qualifier_enum.md)
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
@@ -145,7 +145,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from chemical entity or gene or gene product regulates gene association:
 
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [direction_qualifier_enum](direction_qualifier_enum.md)
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)

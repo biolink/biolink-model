@@ -14,7 +14,7 @@ URI: [biolink:available_from](https://w3id.org/biolink/vocab/available_from)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [drug_availability_enum](drug_availability_enum.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [DrugAvailabilityEnum](DrugAvailabilityEnum.md)
 
 ## Parents
 

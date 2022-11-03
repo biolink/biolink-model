@@ -15,7 +15,7 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[Association]%5E-[EntityToDiseaseAssociation%7CFDA_approval_status:FDA_approval_status_enum%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[OntologyClass],[NamedThing],[InformationResource],[EvidenceType],[Association]%5E-[EntityToDiseaseAssociation%7CFDA_approval_status:FDAApprovalStatusEnum%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Attribute],[Association])
 
 ---
 
@@ -105,7 +105,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from entity to phenotypic feature association:
 
  * [FDA approval status](FDA_approval_status.md)  <sub>0..1</sub>
-     * Range: [FDA_approval_status_enum](FDA_approval_status_enum.md)
+     * Range: [FDAApprovalStatusEnum](FDAApprovalStatusEnum.md)
 
 ### Inherited from macromolecular machine mixin:
 

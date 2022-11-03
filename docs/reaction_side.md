@@ -14,7 +14,7 @@ URI: [biolink:reaction_side](https://w3id.org/biolink/vocab/reaction_side)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [reaction_side_enum](reaction_side_enum.md)
+[Association](Association.md) ->  <sub>0..1</sub> [ReactionSideEnum](ReactionSideEnum.md)
 
 ## Parents
 
