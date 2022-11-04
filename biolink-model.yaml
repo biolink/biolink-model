@@ -7691,22 +7691,19 @@ classes:
 
   sequence variant:
     aliases: [ 'allele' ]
-    local_names:
-      agr: allele
     is_a: biological entity
     mixins:
       - genomic entity
       - physical essence
       - ontology class
     description: >-
-      A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
-    comments:
+      A sequence variant is a non exact copy of a sequence feature or genome exhibiting one or more 
+      sequence alterations.
+    notes:
       - This class is for modeling the specific state at a locus.
         A single DBSNP rs ID could correspond to more than one sequence variants
         (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     exact_mappings:
-      # slightly broader semantics than SO:0001059 - 'sequence alteration'
-      # describes a sequence feature that may have 1..* sequence alterations
       - WIKIDATA:Q15304597
     close_mappings:
       - dcid:Allele
@@ -7719,7 +7716,6 @@ classes:
       - CAID # ClinGen Allele Registry
       - CLINVAR
       - WIKIDATA
-      # - CIViC needs IRI mapping
       - DBSNP
       - MGI
       - ZFIN
@@ -7731,8 +7727,14 @@ classes:
       - WormBase
     alt_descriptions:
       AGR: >-
-        An entity that describes a single affected, endogenous allele.
-        These can be of any type that matches that definition
+        A DNA sequence that differs relative to a designated reference sequence. The sequence difference occurs at a 
+        single position or in contiguous nucleotides.
+        Subclasses: Variants related to phenotypic alleles; High Throughput derived variants (ex. SNPs).
+        Associated data: Type of variation (Sequence Ontology term); Nucleotide change; Genomic position 
+        within the reference sequence (e.g. genome build).
+        Notes: This term currently includes the following variant types: substitution, point mutation, 
+        insertion, deletion, insertion+deletion. Genomic Variants could refer to nuclear or organellar genomes. 
+        The designated reference sequence can be whatever sequence or set of sequences to which the variant is compared.
       VMC: >-
         A contiguous change at a Location
     slots:
