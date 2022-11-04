@@ -7699,22 +7699,21 @@ classes:
       - physical essence
       - ontology class
     description: >-
-      An allele that varies in its sequence from what is considered
-      the reference allele at that locus.
+      A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
     comments:
       - This class is for modeling the specific state at a locus.
         A single DBSNP rs ID could correspond to more than one sequence variants
         (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
-    broad_mappings:
+    exact_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
       # describes a sequence feature that may have 1..* sequence alterations
       - SO:0001060
-    exact_mappings:
-      - GENO:0000002
       - WIKIDATA:Q15304597
-      - SIO:010277
       - VMC:Allele
       - SO:0001059
+    narrow_mappings:
+      - GENO:0000002
+      - SIO:010277
     close_mappings:
       - dcid:Allele
     id_prefixes:
