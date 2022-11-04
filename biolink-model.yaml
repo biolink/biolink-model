@@ -7707,15 +7707,14 @@ classes:
     exact_mappings:
       # slightly broader semantics than SO:0001059 - 'sequence alteration'
       # describes a sequence feature that may have 1..* sequence alterations
-      - SO:0001060
       - WIKIDATA:Q15304597
-      - VMC:Allele
-      - SO:0001059
-    narrow_mappings:
-      - GENO:0000002
-      - SIO:010277
     close_mappings:
       - dcid:Allele
+      - SO:0001060
+      - VMC:Allele
+      - GENO:0000002
+      - SIO:010277
+      - SO:0001060
     id_prefixes:
       - CAID # ClinGen Allele Registry
       - CLINVAR
