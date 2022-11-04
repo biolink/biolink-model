@@ -1840,22 +1840,22 @@
          "enum": [
             "binding",
             "inhibition",
-            "antibody inhibition",
+            "antibody_inhibition",
             "antagonism",
-            "molecular channel blockage",
-            "inverse agonism",
-            "negative allosteric modulation",
+            "molecular_channel_blockage",
+            "inverse_agonism",
+            "negative_allosteric_modulation",
             "agonism",
-            "molecular channel opening",
-            "positive allosteric modulation",
+            "molecular_channel_opening",
+            "positive_allosteric_modulation",
             "potentiation",
             "activation",
             "inducer",
-            "transcriptional regulation",
-            "signaling-mediated control",
+            "transcriptional_regulation",
+            "signaling_mediated_control",
             "stabilization",
             "stimulation",
-            "releasing activity"
+            "releasing_activity"
          ],
          "title": "CausalMechanismQualifierEnum",
          "type": "string"
@@ -2419,7 +2419,7 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
             "object_aspect_qualifier": {
-               "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+               "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
             },
             "object_context_qualifier": {
                "type": "string"
@@ -2468,7 +2468,7 @@
                "type": "string"
             },
             "subject_aspect_qualifier": {
-               "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+               "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
             },
             "subject_context_qualifier": {
                "type": "string"
@@ -2534,7 +2534,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -3053,7 +3053,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -3339,18 +3339,18 @@
       "ChemicalOrGeneOrGeneProductFormOrVariantEnum": {
          "description": "",
          "enum": [
-            "genetic variant form",
-            "mutant form",
-            "polymorphic form",
-            "SNP form",
-            "analog form"
+            "genetic_variant_form",
+            "mutant_form",
+            "polymorphic_form",
+            "snp_form",
+            "analog_form"
          ],
          "title": "ChemicalOrGeneOrGeneProductFormOrVariantEnum",
          "type": "string"
       },
       "ChemicalRole": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A role played by the molecular entity or part thereof within a chemical context.",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
@@ -4510,7 +4510,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -4825,7 +4825,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -6315,7 +6315,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -6385,7 +6385,7 @@
       "DrugAvailabilityEnum": {
          "description": "",
          "enum": [
-            "over the counter",
+            "over_the_counter",
             "prescription"
          ],
          "title": "DrugAvailabilityEnum",
@@ -6396,8 +6396,8 @@
          "enum": [
             "inhalation",
             "oral",
-            "absorbtion through the skin",
-            "intravenous injection"
+            "absorbtion_through_the_skin",
+            "intravenous_injection"
          ],
          "title": "DrugDeliveryEnum",
          "type": "string"
@@ -6679,10 +6679,10 @@
       "DruggableGeneCategoryEnum": {
          "description": "",
          "enum": [
-            "Tclin",
-            "Tbio",
-            "Tchem",
-            "Tdark"
+            "tclin",
+            "tbio",
+            "tchem",
+            "tdark"
          ],
          "title": "DruggableGeneCategoryEnum",
          "type": "string"
@@ -7191,7 +7191,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -7480,7 +7480,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -7887,21 +7887,21 @@
       "FDAApprovalStatusEnum": {
          "description": "",
          "enum": [
-            "Discovery & Development Phase",
-            "Preclinical Research Phase",
-            "FDA Clinical Research Phase",
-            "FDA Review Phase 4",
-            "FDA Post-Market Safety Monitoring",
-            "FDA Clinical Research Phase 1",
-            "FDA Clinical Research Phase 2",
-            "FDA Clinical Research Phase 3",
-            "FDA Clinical Research Phase 4",
-            "FDA Fast Track",
-            "FDA Breakthrough Therapy",
-            "FDA Accelerated Approval",
-            "FDA Priority Review",
-            "Regular FDA Approval",
-            "Post-Approval Withdrawal"
+            "discovery_and_development_phase",
+            "preclinical_research_phase",
+            "fda_clinical_research_phase",
+            "fda_review_phase_4",
+            "fda_post_market_safety_review",
+            "fda_clinical_research_phase_1",
+            "fda_clinical_research_phase_2",
+            "fda_clinical_research_phase_3",
+            "fda_clinical_research_phase_4",
+            "fda_fast_track",
+            "fda_breakthrough_therapy",
+            "fda_accelerated_approval",
+            "fda_priority_review",
+            "regular_fda_approval",
+            "post_approval_withdrawal"
          ],
          "title": "FDAApprovalStatusEnum",
          "type": "string"
@@ -7909,10 +7909,10 @@
       "FDAIDAAdverseEventEnum": {
          "description": "please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
          "enum": [
-            "Life-threatening adverse event",
-            "Serious adverse event",
-            "Suspected adverse reaction",
-            "Unexpected adverse event"
+            "life_threatening_adverse_event",
+            "serious_adverse_event",
+            "suspected_adverse_reaction",
+            "unexpected_adverse_event"
          ],
          "title": "FDAIDAAdverseEventEnum",
          "type": "string"
@@ -7951,7 +7951,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -8048,7 +8048,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -8603,7 +8603,7 @@
       "GeneOrGeneProductOrChemicalEntityAspectEnum": {
          "description": "",
          "enum": [
-            "activity or abundance",
+            "activity_or_abundance",
             "abundance",
             "activity",
             "expression",
@@ -8611,15 +8611,15 @@
             "degradation",
             "cleavage",
             "hydrolysis",
-            "metabolic processing",
-            "mutation rate",
+            "metabolic_processing",
+            "mutation_rate",
             "stability",
             "folding",
             "localization",
             "transport",
             "secretion",
             "uptake",
-            "molecular modification",
+            "molecular_modification",
             "acetylation",
             "acylation",
             "alkylation",
@@ -8630,8 +8630,8 @@
             "glycation",
             "glycosylation",
             "glucuronidation",
-            "N-linked glycosylation",
-            "O-linked glycosylation",
+            "n_linked_glycosylation",
+            "o_linked_glycosylation",
             "hydroxylation",
             "lipidation",
             "farnesylation",
@@ -8658,9 +8658,9 @@
       "GeneOrGeneProductOrChemicalPartQualifierEnum": {
          "description": "",
          "enum": [
-            "3' UTR",
-            "5' UTR",
-            "polyA tail",
+            "3_prime_utr",
+            "5_prime_utr",
+            "polya_tail",
             "promoter",
             "enhancer",
             "exon",
@@ -11592,9 +11592,9 @@
       "LogicalInterpretationEnum": {
          "description": "",
          "enum": [
-            "SomeSome",
-            "AllSome",
-            "InverseAllSome"
+            "some_some",
+            "all_some",
+            "inverse_all_some"
          ],
          "title": "LogicalInterpretationEnum",
          "type": "string"
@@ -12285,7 +12285,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -12789,7 +12789,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -12880,7 +12880,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -13166,7 +13166,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -13271,7 +13271,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -15743,7 +15743,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -16265,7 +16265,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -16370,7 +16370,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -16545,7 +16545,7 @@
             },
             "reaction_direction": {
                "$ref": "#/$defs/ReactionDirectionEnum",
-               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
+               "description": "the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
                "$ref": "#/$defs/ReactionSideEnum",
@@ -16662,7 +16662,7 @@
             },
             "reaction_direction": {
                "$ref": "#/$defs/ReactionDirectionEnum",
-               "description": "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)"
+               "description": "the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)"
             },
             "reaction_side": {
                "$ref": "#/$defs/ReactionSideEnum",
@@ -16963,8 +16963,8 @@
       "SequenceEnum": {
          "description": "type of sequence",
          "enum": [
-            "NA",
-            "AA"
+            "na",
+            "aa"
          ],
          "title": "SequenceEnum",
          "type": "string"
@@ -17382,7 +17382,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -17483,7 +17483,7 @@
                "type": "array"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },
@@ -18238,7 +18238,7 @@
                "type": "string"
             },
             "has_chemical_role": {
-               "description": "A role is particular behaviour which a material entity may exhibit.",
+               "description": "A role is particular behaviour which a chemical entity may exhibit.",
                "items": {
                   "type": "string"
                },

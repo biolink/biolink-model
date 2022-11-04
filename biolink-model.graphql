@@ -572,12 +572,12 @@ type ChemicalAffectsGeneAssociation
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectDerivativeQualifier: ChemicalEntityDerivativeEnum
-    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     subjectContextQualifier: AnatomicalEntity
     subjectDirectionQualifier: DirectionQualifierEnum
     objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
-    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
     objectContextQualifier: AnatomicalEntity
     causalMechanismQualifier: CausalMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalEntity

@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3085.5,283"];
+	graph [bb="0,0,3067.4,283"];
 	node [label="\N"];
 	"entity to phenotypic feature association"	[height=0.5,
 		label="entity to phenotypic feature association",
@@ -197,14 +197,14 @@ digraph {
 		style=solid];
 	"FDA approval status"	[color=blue,
 		height=0.5,
-		label=FDA_approval_status_enum,
-		pos="2946.4,178",
-		width=3.8635];
+		label=FDAApprovalStatusEnum,
+		pos="2937.4,178",
+		width=3.6108];
 	"entity to phenotypic feature association" -> "FDA approval status"	[color=blue,
 		label="FDA approval status",
-		lp="2894.9,221.5",
-		pos="e,2895.6,194.77 1427.6,251.7 1451.8,249.83 1476.9,248.15 1500.4,247 1775.9,233.6 2467.8,263.9 2741.4,229 2790.7,222.71 2845.4,209.02 \
-2885.9,197.55",
+		lp="2891.9,221.5",
+		pos="e,2888.9,194.78 1427.6,251.7 1451.8,249.83 1476.9,248.15 1500.4,247 1638.1,240.3 2604.7,247.17 2741.4,229 2788.4,222.76 2840.3,209.2 \
+2878.9,197.78",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="919.39,134.5",

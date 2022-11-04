@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,3085.5,283"];
+	graph [bb="0,0,3067.4,283"];
 	node [label="\N"];
 	"entity to disease association"	[height=0.5,
 		label="entity to disease association",
@@ -198,14 +198,14 @@ digraph {
 		style=solid];
 	"FDA approval status"	[color=blue,
 		height=0.5,
-		label=FDA_approval_status_enum,
-		pos="2946.4,178",
-		width=3.8635];
+		label=FDAApprovalStatusEnum,
+		pos="2937.4,178",
+		width=3.6108];
 	"entity to disease association" -> "FDA approval status"	[color=blue,
 		label="FDA approval status",
-		lp="2894.9,221.5",
-		pos="e,2895.6,194.78 1392.2,251.75 1410.5,249.83 1429.5,248.12 1447.4,247 1734.4,229 2456.1,265.3 2741.4,229 2790.7,222.72 2845.4,209.03 \
-2885.9,197.56",
+		lp="2891.9,221.5",
+		pos="e,2888.9,194.78 1392.2,251.75 1410.5,249.83 1429.5,248.12 1447.4,247 1734.4,229 2456.3,266.81 2741.4,229 2788.4,222.77 2840.3,209.22 \
+2878.9,197.79",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="919.39,134.5",

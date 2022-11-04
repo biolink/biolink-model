@@ -496,12 +496,12 @@ message ChemicalAffectsGeneAssociation
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
-  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum subjectAspectQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
-  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum objectAspectQualifier = 0
   anatomicalEntity objectContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0
@@ -689,6 +689,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
  }
+// 	A role played by the molecular entity or part thereof within a chemical context.
 message ChemicalRole
  {
   string id = 0
