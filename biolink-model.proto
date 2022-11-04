@@ -3539,7 +3539,7 @@ message SequenceFeatureRelationship
   nucleicAcidEntity subject = 0
   nucleicAcidEntity object = 0
  }
-// An allele that varies in its sequence from what is considered the reference allele at that locus.
+// A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 message SequenceVariant
  {
   iriType iri = 0
