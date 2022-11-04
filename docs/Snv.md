@@ -22,7 +22,7 @@ URI: [biolink:Snv](https://w3id.org/biolink/vocab/Snv)
 
 ## Parents
 
- *  is_a: [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
+ *  is_a: [SequenceVariant](SequenceVariant.md) - A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 
 ## Attributes
 

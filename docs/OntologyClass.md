@@ -49,7 +49,7 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
  * [Pathway](Pathway.md) (mixin) 
  * [PhysiologicalProcess](PhysiologicalProcess.md) (mixin) 
  * [ReagentTargetedGene](ReagentTargetedGene.md) (mixin)  - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
- * [SequenceVariant](SequenceVariant.md) (mixin)  - An allele that varies in its sequence from what is considered the reference allele at that locus.
+ * [SequenceVariant](SequenceVariant.md) (mixin)  - A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 
 ## Referenced by class
 

@@ -109,11 +109,11 @@
         biolink:VariantToEntityAssociationMixin ;
     dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     pav:version "3.0.3" ;
-    linkml:generation_date "2022-11-03T00:35:16" ;
+    linkml:generation_date "2022-11-04T20:17:19" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "biolink-model.yaml" ;
-    linkml:source_file_date "2022-11-03T00:33:12" ;
-    linkml:source_file_size 333717 .
+    linkml:source_file_date "2022-11-04T20:16:07" ;
+    linkml:source_file_size 334266 .
 
 biolink:Activity a owl:Class ;
     rdfs:label "activity" ;
@@ -152,15 +152,15 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
     rdfs:label "anatomical entity to anatomical entity part of association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:AnatomicalEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
     skos:definition "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms" .
@@ -168,45 +168,45 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
 biolink:Article a owl:Class ;
     rdfs:label "article" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:Uriorcurie ;
-            owl:onProperty biolink:published_in ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:issue ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:iso_abbreviation ],
+            owl:onProperty biolink:volume ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty biolink:published_in ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:volume ],
+            owl:onProperty biolink:iso_abbreviation ],
         biolink:Publication .
 
 biolink:BehaviorToBehavioralFeatureAssociation a owl:Class ;
     rdfs:label "behavior to behavioral feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:BehavioralFeature ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:Behavior ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:Behavior ;
-            owl:onProperty rdf:subject ;
+            owl:onClass biolink:BehavioralFeature ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSex ;
@@ -263,16 +263,16 @@ biolink:CaseToPhenotypicFeatureAssociation a owl:Class ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSex ;
             owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
         biolink:Association,
         biolink:CaseToEntityAssociationMixin,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
@@ -291,21 +291,21 @@ biolink:Cell a owl:Class ;
 biolink:CellLineAsAModelOfDiseaseAssociation a owl:Class ;
     rdfs:label "cell line as a model of disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:CellLine ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:CellLine ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation,
         biolink:EntityToDiseaseAssociationMixin,
         biolink:ModelToDiseaseAssociationMixin .
@@ -321,64 +321,28 @@ biolink:ChemicalAffectsGeneAssociation a owl:Class ;
     rdfs:label "chemical affects gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DirectionQualifierEnum ;
-            owl:onProperty biolink:object_direction_qualifier ],
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:object_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
+            owl:onProperty biolink:subject_aspect_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
             owl:onProperty biolink:object_form_or_variant_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:qualified_predicate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
-            owl:onProperty biolink:object_part_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:object_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:CausalMechanismQualifierEnum ;
-            owl:onProperty biolink:causal_mechanism_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:GeneOrGeneProductOrChemicalEntityAspectEnum ;
-            owl:onProperty biolink:subject_aspect_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
-            owl:onProperty biolink:subject_form_or_variant_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:GeneOrGeneProductOrChemicalEntityAspectEnum ;
-            owl:onProperty biolink:object_aspect_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:subject_context_qualifier ],
+            owl:onProperty biolink:subject_part_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:DirectionQualifierEnum ;
             owl:onProperty biolink:subject_direction_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:anatomical_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
-            owl:onProperty biolink:subject_part_qualifier ],
+            owl:onClass biolink:DirectionQualifierEnum ;
+            owl:onProperty biolink:object_direction_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OrganismTaxon ;
@@ -391,16 +355,48 @@ biolink:ChemicalAffectsGeneAssociation a owl:Class ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:ChemicalEntityDerivativeEnum ;
             owl:onProperty biolink:subject_derivative_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
+            owl:onProperty biolink:subject_form_or_variant_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:CausalMechanismQualifierEnum ;
+            owl:onProperty biolink:causal_mechanism_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:subject_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
+            owl:onProperty biolink:object_part_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:qualified_predicate ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
+            owl:onProperty biolink:object_aspect_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:anatomical_context_qualifier ],
         biolink:Association ;
     skos:definition "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)" .
 
 biolink:ChemicalEntityAssessesNamedThingAssociation a owl:Class ;
     rdfs:label "chemical entity assesses named thing association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
@@ -408,14 +404,18 @@ biolink:ChemicalEntityAssessesNamedThingAssociation a owl:Class ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association .
 
 biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation a owl:Class ;
     rdfs:label "chemical entity or gene or gene product regulates gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DirectionQualifierEnum ;
-            owl:onProperty biolink:object_direction_qualifier ],
+            owl:onClass biolink:ChemicalEntityOrGeneOrGeneProduct ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
@@ -425,26 +425,34 @@ biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation a owl:Class ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntityOrGeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:DirectionQualifierEnum ;
+            owl:onProperty biolink:object_direction_qualifier ],
         biolink:Association ;
     skos:definition "A regulatory relationship between two genes" .
 
 biolink:ChemicalGeneInteractionAssociation a owl:Class ;
     rdfs:label "chemical gene interaction association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
+            owl:onProperty biolink:object_part_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:anatomical_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
+            owl:onProperty biolink:subject_part_qualifier ],
+        [ a owl:Restriction ;
             owl:onClass biolink:ChemicalEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
-            owl:onProperty biolink:subject_form_or_variant_qualifier ],
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:object_context_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:AnatomicalEntity ;
@@ -455,28 +463,20 @@ biolink:ChemicalGeneInteractionAssociation a owl:Class ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:anatomical_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
-            owl:onProperty biolink:object_form_or_variant_qualifier ],
+            owl:onProperty biolink:subject_form_or_variant_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
-            owl:onProperty biolink:subject_part_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:GeneOrGeneProductOrChemicalPartQualifierEnum ;
-            owl:onProperty biolink:object_part_qualifier ],
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:ChemicalEntityDerivativeEnum ;
             owl:onProperty biolink:subject_derivative_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:object_context_qualifier ],
+            owl:onClass biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum ;
+            owl:onProperty biolink:object_form_or_variant_qualifier ],
         biolink:Association,
         biolink:ChemicalToEntityAssociationMixin ;
     skos:definition "describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)" ;
@@ -496,19 +496,19 @@ biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
 biolink:ChemicalToChemicalDerivationAssociation a owl:Class ;
     rdfs:label "chemical to chemical derivation association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
+            owl:onProperty biolink:catalyst_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass biolink:ChemicalEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:MacromolecularMachineMixin ;
-            owl:onProperty biolink:catalyst_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:ChemicalToChemicalAssociation ;
     skos:definition """A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -612,16 +612,16 @@ biolink:ContributorAssociation a owl:Class ;
             owl:allValuesFrom biolink:OntologyClass ;
             owl:onProperty biolink:qualifiers ],
         [ a owl:Restriction ;
-            owl:onClass biolink:Agent ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:InformationContentEntity ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Agent ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Any association between an entity (such as a publication) and various agents that contribute to its realisation" .
@@ -676,13 +676,21 @@ biolink:DiseaseToExposureEventAssociation a owl:Class ;
 biolink:DiseaseToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "disease to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biolink:PhenotypicFeature ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PhenotypicFeature ;
-            owl:onProperty rdf:object ;
+            owl:onClass biolink:Disease ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FrequencyValue ;
@@ -691,14 +699,6 @@ biolink:DiseaseToPhenotypicFeatureAssociation a owl:Class ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSex ;
             owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:Disease ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:DiseaseToEntityAssociationMixin,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
@@ -728,16 +728,16 @@ biolink:DrugToGeneInteractionExposure a owl:Class ;
 biolink:DruggableGeneToDiseaseAssociation a owl:Class ;
     rdfs:label "druggable gene to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:DruggableGeneCategoryEnum ;
             owl:onProperty biolink:has_evidence ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
         biolink:EntityToDiseaseAssociationMixin,
         biolink:GeneToDiseaseAssociation,
         biolink:GeneToEntityAssociationMixin .
@@ -818,24 +818,24 @@ biolink:ExposureEventToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "exposure event to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:ExposureEvent ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin ;
     skos:definition "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype." .
@@ -873,28 +873,80 @@ biolink:GeneHasVariantThatContributesToDiseaseAssociation a owl:Class ;
             owl:onProperty biolink:sequence_variant_qualifier ],
         biolink:GeneToDiseaseAssociation .
 
+biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
+    rdfs:label "GeneOrGeneProductOrChemicalEntityAspectEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake> .
+
 biolink:GeneToExpressionSiteAssociation a owl:Class ;
     rdfs:label "gene to expression site association" ;
     rdfs:seeAlso "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OntologyClass ;
-            owl:onProperty biolink:quantifier_qualifier ],
-        [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:OntologyClass ;
+            owl:onProperty biolink:quantifier_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LifeStage ;
             owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a gene and a gene expression site, possibly qualified by stage/timing info." ;
@@ -907,21 +959,21 @@ biolink:GeneToGeneCoexpressionAssociation a owl:Class ;
             owl:onClass biolink:LifeStage ;
             owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:expression_site ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
-            owl:onProperty biolink:phenotypic_state ],
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:expression_site ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:quantifier_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
+            owl:onProperty biolink:phenotypic_state ],
         biolink:GeneExpressionMixin,
         biolink:GeneToGeneAssociation ;
     skos:definition "Indicates that two genes are co-expressed, generally under the same conditions." .
@@ -933,12 +985,12 @@ biolink:GeneToGeneFamilyAssociation a owl:Class ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:GeneFamily ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneFamily ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships." .
@@ -946,12 +998,12 @@ biolink:GeneToGeneFamilyAssociation a owl:Class ;
 biolink:GeneToGeneHomologyAssociation a owl:Class ;
     rdfs:label "gene to gene homology association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
@@ -963,16 +1015,16 @@ biolink:GeneToGeneHomologyAssociation a owl:Class ;
 biolink:GeneToGeneProductRelationship a owl:Class ;
     rdfs:label "gene to gene product relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:GeneProductMixin ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneProductMixin ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:SequenceFeatureRelationship ;
     skos:definition "A gene is transcribed and potentially translated to a gene product" .
@@ -994,12 +1046,12 @@ biolink:GeneToGoTermAssociation a owl:Class ;
 biolink:GeneToPathwayAssociation a owl:Class ;
     rdfs:label "gene to pathway association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Pathway ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:GeneOrGeneProduct ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:GeneToEntityAssociationMixin ;
@@ -1009,28 +1061,28 @@ biolink:GeneToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "gene to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PhenotypicFeature ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PhenotypicFeature ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin,
         biolink:GeneToEntityAssociationMixin ;
@@ -1055,6 +1107,9 @@ biolink:Genome a owl:Class ;
 biolink:GenomicBackgroundExposure a owl:Class ;
     rdfs:label "genomic background exposure" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Gene ;
+            owl:onProperty biolink:has_gene_or_gene_product ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
@@ -1065,9 +1120,6 @@ biolink:GenomicBackgroundExposure a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:OrganismTaxon ;
             owl:onProperty biolink:in_taxon ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Gene ;
-            owl:onProperty biolink:has_gene_or_gene_product ],
         biolink:Attribute,
         biolink:ExposureEvent,
         biolink:GeneGroupingMixin,
@@ -1111,12 +1163,12 @@ biolink:GenotypeToGenotypePartAssociation a owl:Class ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Genotype ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Any association between one genotype and a genotypic entity that is a sub-component of it" .
@@ -1124,29 +1176,29 @@ biolink:GenotypeToGenotypePartAssociation a owl:Class ;
 biolink:GenotypeToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "genotype to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:Genotype ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:Genotype ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin,
         biolink:GenotypeToEntityAssociationMixin ;
@@ -1249,12 +1301,12 @@ biolink:InformationContentEntityToNamedThingAssociation a owl:Class ;
             owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property)." .
@@ -1304,12 +1356,12 @@ biolink:MaterialSampleDerivationAssociation a owl:Class ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:MaterialSample ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MaterialSample ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a material sample and the material entity from which it is derived." .
@@ -1331,12 +1383,12 @@ biolink:MicroRNA a owl:Class ;
 biolink:MolecularActivityToChemicalEntityAssociation a owl:Class ;
     rdfs:label "molecular activity to chemical entity association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:MolecularActivity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:ChemicalEntity ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MolecularActivity ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples" .
@@ -1361,12 +1413,12 @@ biolink:MolecularActivityToPathwayAssociation a owl:Class ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:MolecularActivity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Pathway ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MolecularActivity ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "Association that holds the relationship between a reaction and the pathway it participates in." .
@@ -1379,25 +1431,25 @@ biolink:MortalityOutcome a owl:Class ;
 biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation a owl:Class ;
     rdfs:label "named thing associated with likelihood of named thing association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:object_aspect_qualifier ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_aspect_qualifier ],
+            owl:onClass biolink:OntologyClass ;
+            owl:onProperty biolink:subject_context_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:object_context_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OntologyClass ;
-            owl:onProperty biolink:subject_context_qualifier ],
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:object_aspect_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_aspect_qualifier ],
         biolink:Association ;
     skos:definition "" .
 
@@ -1410,12 +1462,12 @@ biolink:NucleicAcidSequenceMotif a owl:Class ;
 biolink:NucleosomeModification a owl:Class ;
     rdfs:label "nucleosome modification" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom biolink:LabelType ;
-            owl:onProperty biolink:synonym ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:LabelType ;
+            owl:onProperty biolink:synonym ],
         biolink:BiologicalEntity,
         biolink:EpigenomicEntity,
         biolink:GeneProductIsoformMixin,
@@ -1430,16 +1482,16 @@ biolink:ObservedExpectedFrequencyAnalysisResult a owl:Class ;
 biolink:OrganismTaxonToEnvironmentAssociation a owl:Class ;
     rdfs:label "organism taxon to environment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:object ;
+            owl:onClass biolink:OrganismTaxon ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty rdf:subject ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:OrganismTaxonToEntityAssociation .
@@ -1447,12 +1499,8 @@ biolink:OrganismTaxonToEnvironmentAssociation a owl:Class ;
 biolink:OrganismTaxonToOrganismTaxonInteraction a owl:Class ;
     rdfs:label "organism taxon to organism taxon interaction" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:associated_environmental_context ],
-        [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
@@ -1460,20 +1508,24 @@ biolink:OrganismTaxonToOrganismTaxonInteraction a owl:Class ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:associated_environmental_context ],
         biolink:OrganismTaxonToOrganismTaxonAssociation ;
     skos:definition "An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens" .
 
 biolink:OrganismTaxonToOrganismTaxonSpecialization a owl:Class ;
     rdfs:label "organism taxon to organism taxon specialization" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:OrganismTaxon ;
@@ -1486,11 +1538,11 @@ biolink:OrganismToOrganismAssociation a owl:Class ;
     rdfs:label "organism to organism association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:IndividualOrganism ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:IndividualOrganism ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         biolink:Association .
 
@@ -1523,12 +1575,12 @@ biolink:PairwiseMolecularInteraction a owl:Class ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:interacting_molecules_category ],
         [ a owl:Restriction ;
-            owl:onClass biolink:MolecularEntity ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MolecularEntity ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:MolecularEntity ;
@@ -1752,10 +1804,10 @@ biolink:SensitivityQuantifier a owl:Class ;
         linkml:mixin .
 
 biolink:SequenceEnum a owl:Class ;
-    rdfs:label "sequence_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/SequenceEnum#NA> <https://w3id.org/biolink/vocab/SequenceEnum#AA> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/SequenceEnum#AA>,
-        <https://w3id.org/biolink/vocab/SequenceEnum#NA> .
+    rdfs:label "SequenceEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/SequenceEnum#na> <https://w3id.org/biolink/vocab/SequenceEnum#aa> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/SequenceEnum#aa>,
+        <https://w3id.org/biolink/vocab/SequenceEnum#na> .
 
 biolink:SequenceVariantModulatesTreatmentAssociation a owl:Class ;
     rdfs:label "sequence variant modulates treatment association" ;
@@ -1776,23 +1828,23 @@ biolink:Serial a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
+            owl:onProperty biolink:issue ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
             owl:onProperty biolink:iso_abbreviation ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:volume ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:issue ],
+            owl:onProperty rdf:type ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty rdf:type ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty biolink:volume ],
         biolink:Publication ;
     skos:altLabel "journal" ;
     skos:definition "This class may rarely be instantiated except if use cases of a given knowledge graph support its utility." .
@@ -1922,24 +1974,24 @@ biolink:VariantToGeneExpressionAssociation a owl:Class ;
     rdfs:label "variant to gene expression association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
-            owl:onProperty biolink:phenotypic_state ],
+            owl:onClass biolink:LifeStage ;
+            owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalEntity ;
-            owl:onProperty biolink:expression_site ],
+            owl:onClass biolink:DiseaseOrPhenotypicFeature ;
+            owl:onProperty biolink:phenotypic_state ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:quantifier_qualifier ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalEntity ;
+            owl:onProperty biolink:expression_site ],
+        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LifeStage ;
-            owl:onProperty biolink:stage_qualifier ],
         biolink:GeneExpressionMixin,
         biolink:VariantToGeneAssociation ;
     skos:definition "An association between a variant and expression of a gene (i.e. e-QTL)" .
@@ -1947,25 +1999,25 @@ biolink:VariantToGeneExpressionAssociation a owl:Class ;
 biolink:VariantToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "variant to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:SequenceVariant ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:SequenceVariant ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
         biolink:Association,
         biolink:EntityToPhenotypicFeatureAssociationMixin,
         biolink:VariantToEntityAssociationMixin .
@@ -1977,29 +2029,29 @@ biolink:VariantToPopulationAssociation a owl:Class ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:SequenceVariant ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty biolink:has_total ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:has_count ],
+            owl:onClass linkml:Double ;
+            owl:onProperty biolink:has_percentage ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:SequenceVariant ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Double ;
+            owl:onProperty biolink:has_quotient ],
         [ a owl:Restriction ;
             owl:onClass biolink:PopulationOfIndividualOrganisms ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_percentage ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_quotient ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:has_count ],
         biolink:Association,
         biolink:FrequencyQualifierMixin,
         biolink:FrequencyQuantifier,
@@ -2718,11 +2770,11 @@ biolink:BookChapter a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:chapter ],
+            owl:onProperty biolink:volume ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:volume ],
+            owl:onProperty biolink:chapter ],
         [ a owl:Restriction ;
             owl:onClass linkml:Uriorcurie ;
             owl:onProperty biolink:published_in ;
@@ -2738,26 +2790,26 @@ biolink:Case a owl:Class ;
     skos:definition "An individual (human) organism that has a patient role in some clinical context." .
 
 biolink:CausalMechanismQualifierEnum a owl:Class ;
-    rdfs:label "causal_mechanism_qualifier_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody+inhibition> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+blockage> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse+agonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative+allosteric+modulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+opening> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive+allosteric+modulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional+regulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling-mediated+control> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing+activity> ) ;
+    rdfs:label "CausalMechanismQualifierEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation> <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#activation>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#agonism>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody+inhibition>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inducer>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse+agonism>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+blockage>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+opening>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative+allosteric+modulation>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive+allosteric+modulation>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing+activity>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling-mediated+control>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity>,
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization>,
         <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation>,
-        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional+regulation> .
+        <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation> .
 
 biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "cell line to disease or phenotypic feature association" ;
@@ -2793,13 +2845,13 @@ biolink:ChemicalFormulaValue a owl:Class ;
 biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "chemical or drug or treatment to disease or phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:FDAIDAAdverseEventEnum ;
             owl:onProperty biolink:FDA_adverse_event_level ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:ChemicalToEntityAssociationMixin,
         biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin ;
@@ -2864,12 +2916,12 @@ biolink:DrugToEntityAssociationMixin a owl:Class ;
     skos:definition "An interaction between a drug and another entity" .
 
 biolink:DruggableGeneCategoryEnum a owl:Class ;
-    rdfs:label "druggable_gene_category_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tclin> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tbio> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tchem> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tdark> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tbio>,
-        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tchem>,
-        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tclin>,
-        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tdark> .
+    rdfs:label "DruggableGeneCategoryEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem> <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio>,
+        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem>,
+        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin>,
+        <https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> .
 
 biolink:EnvironmentalExposure a owl:Class ;
     rdfs:label "environmental exposure" ;
@@ -2900,20 +2952,20 @@ biolink:FrequencyQuantifier a owl:Class ;
     rdfs:label "frequency quantifier" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:has_total ],
+            owl:onClass linkml:Double ;
+            owl:onProperty biolink:has_percentage ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_percentage ],
+            owl:onProperty biolink:has_quotient ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty biolink:has_count ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Double ;
-            owl:onProperty biolink:has_quotient ],
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:has_total ],
         biolink:RelationshipQuantifier,
         linkml:mixin .
 
@@ -2938,20 +2990,8 @@ biolink:GenotypeToDiseaseAssociation a owl:Class ;
     rdfs:label "genotype to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
@@ -2959,6 +2999,18 @@ biolink:GenotypeToDiseaseAssociation a owl:Class ;
         [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
@@ -2970,22 +3022,22 @@ biolink:GeographicLocation a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty biolink:longitude ],
+            owl:onProperty biolink:latitude ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Float ;
-            owl:onProperty biolink:latitude ],
+            owl:onProperty biolink:longitude ],
         biolink:PlanetaryEntity ;
     skos:definition "a location that can be described in lat/long coordinates" ;
     skos:exactMatch STY:T083,
         UMLSSG:GEOG .
 
 biolink:LogicalInterpretationEnum a owl:Class ;
-    rdfs:label "logical_interpretation_enum" ;
-    owl:unionOf ( os:SomeSomeInterpretation os:AllSomeInterpretation <https://w3id.org/biolink/vocab/LogicalInterpretationEnum#InverseAllSome> ) ;
+    rdfs:label "LogicalInterpretationEnum" ;
+    owl:unionOf ( os:SomeSomeInterpretation os:AllSomeInterpretation <https://w3id.org/biolink/vocab/LogicalInterpretationEnum#inverse_all_some> ) ;
     linkml:permissible_values os:AllSomeInterpretation,
         os:SomeSomeInterpretation,
-        <https://w3id.org/biolink/vocab/LogicalInterpretationEnum#InverseAllSome> .
+        <https://w3id.org/biolink/vocab/LogicalInterpretationEnum#inverse_all_some> .
 
 biolink:MolecularMixture a owl:Class ;
     rdfs:label "molecular mixture" ;
@@ -3027,16 +3079,16 @@ biolink:ReactionToParticipantAssociation a owl:Class ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ReactionDirectionEnum ;
-            owl:onProperty biolink:reaction_direction ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty biolink:stoichiometry ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:ReactionSideEnum ;
             owl:onProperty biolink:reaction_side ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:ReactionDirectionEnum ;
+            owl:onProperty biolink:reaction_direction ],
         biolink:ChemicalToChemicalAssociation .
 
 biolink:SequenceAssociation a owl:Class ;
@@ -3062,18 +3114,18 @@ biolink:SymbolType a owl:Class ;
 biolink:Treatment a owl:Class ;
     rdfs:label "treatment" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Procedure ;
+            owl:onProperty biolink:has_procedure ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Device ;
+            owl:onProperty biolink:has_device ],
+        [ a owl:Restriction ;
             owl:allValuesFrom biolink:Drug ;
             owl:onProperty biolink:has_drug ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:TimeType ;
             owl:onProperty biolink:timepoint ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Device ;
-            owl:onProperty biolink:has_device ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Procedure ;
-            owl:onProperty biolink:has_procedure ],
         biolink:ChemicalOrDrugOrTreatment,
         biolink:ExposureEvent,
         biolink:NamedThing ;
@@ -3087,28 +3139,28 @@ biolink:Treatment a owl:Class ;
 biolink:VariantToDiseaseAssociation a owl:Class ;
     rdfs:label "variant to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:FrequencyValue ;
-            owl:onProperty biolink:frequency_qualifier ],
-        [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:Onset ;
-            owl:onProperty biolink:onset_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:SeverityValue ;
             owl:onProperty biolink:severity_qualifier ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:Onset ;
+            owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:FrequencyValue ;
+            owl:onProperty biolink:frequency_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
@@ -3118,12 +3170,12 @@ biolink:VariantToDiseaseAssociation a owl:Class ;
 biolink:VariantToGeneAssociation a owl:Class ;
     rdfs:label "variant to gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:Gene ;
             owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:VariantToEntityAssociationMixin ;
@@ -3858,7 +3910,7 @@ biolink:has_chemical_role a owl:ObjectProperty ;
     rdfs:domain biolink:NamedThing ;
     rdfs:range biolink:ChemicalRole ;
     rdfs:subPropertyOf biolink:node_property ;
-    skos:definition "A role is particular behaviour which a material entity may exhibit." .
+    skos:definition "A role is particular behaviour which a chemical entity may exhibit." .
 
 biolink:has_completed a owl:ObjectProperty ;
     rdfs:label "has completed" ;
@@ -4860,7 +4912,7 @@ biolink:reaction_direction a owl:ObjectProperty ;
     rdfs:domain biolink:Association ;
     rdfs:range biolink:ReactionDirectionEnum ;
     rdfs:subPropertyOf biolink:association_slot ;
-    skos:definition "the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)" ;
+    skos:definition "the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)" ;
     skos:narrowMatch <http://purl.obolibrary.org/obo/NCIT_C42677> .
 
 biolink:reaction_side a owl:ObjectProperty ;
@@ -5219,13 +5271,13 @@ schema1:logo a owl:ObjectProperty ;
     skos:exactMatch schema1:logo .
 
 os:AllSomeInterpretation a owl:Class ;
-    rdfs:label "AllSome" .
+    rdfs:label "all_some" .
 
 os:SomeSomeInterpretation a owl:Class ;
-    rdfs:label "SomeSome" .
+    rdfs:label "some_some" .
 
 biolink:AnatomicalContextQualifierEnum a owl:Class ;
-    rdfs:label "anatomical_context_qualifier_enum" ;
+    rdfs:label "AnatomicalContextQualifierEnum" ;
     owl:unionOf [ rdf:rest () ] .
 
 biolink:AnatomicalEntityToAnatomicalEntityAssociation a owl:Class ;
@@ -5262,8 +5314,8 @@ biolink:CaseToEntityAssociationMixin a owl:Class ;
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antagonism> a owl:Class ;
     rdfs:label "antagonism" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody+inhibition> a owl:Class ;
-    rdfs:label "antibody inhibition" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#antibody_inhibition> a owl:Class ;
+    rdfs:label "antibody_inhibition" .
 
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#binding> a owl:Class ;
     rdfs:label "binding" .
@@ -5274,29 +5326,29 @@ biolink:CaseToEntityAssociationMixin a owl:Class ;
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inhibition> a owl:Class ;
     rdfs:label "inhibition" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse+agonism> a owl:Class ;
-    rdfs:label "inverse agonism" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#inverse_agonism> a owl:Class ;
+    rdfs:label "inverse_agonism" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+blockage> a owl:Class ;
-    rdfs:label "molecular channel blockage" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_blockage> a owl:Class ;
+    rdfs:label "molecular_channel_blockage" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular+channel+opening> a owl:Class ;
-    rdfs:label "molecular channel opening" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#molecular_channel_opening> a owl:Class ;
+    rdfs:label "molecular_channel_opening" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative+allosteric+modulation> a owl:Class ;
-    rdfs:label "negative allosteric modulation" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#negative_allosteric_modulation> a owl:Class ;
+    rdfs:label "negative_allosteric_modulation" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive+allosteric+modulation> a owl:Class ;
-    rdfs:label "positive allosteric modulation" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#positive_allosteric_modulation> a owl:Class ;
+    rdfs:label "positive_allosteric_modulation" .
 
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#potentiation> a owl:Class ;
     rdfs:label "potentiation" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing+activity> a owl:Class ;
-    rdfs:label "releasing activity" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#releasing_activity> a owl:Class ;
+    rdfs:label "releasing_activity" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling-mediated+control> a owl:Class ;
-    rdfs:label "signaling-mediated control" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#signaling_mediated_control> a owl:Class ;
+    rdfs:label "signaling_mediated_control" .
 
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stabilization> a owl:Class ;
     rdfs:label "stabilization" .
@@ -5304,8 +5356,8 @@ biolink:CaseToEntityAssociationMixin a owl:Class ;
 <https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#stimulation> a owl:Class ;
     rdfs:label "stimulation" .
 
-<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional+regulation> a owl:Class ;
-    rdfs:label "transcriptional regulation" .
+<https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum#transcriptional_regulation> a owl:Class ;
+    rdfs:label "transcriptional_regulation" .
 
 biolink:CellLine a owl:Class ;
     rdfs:label "cell line" ;
@@ -5323,31 +5375,34 @@ biolink:CellLineToEntityAssociationMixin a owl:Class ;
     skos:definition "An relationship between a cell line and another entity" .
 
 biolink:ChemicalEntityDerivativeEnum a owl:Class ;
-    rdfs:label "chemical_entity_derivative_enum" ;
+    rdfs:label "ChemicalEntityDerivativeEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> .
 
 <https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum#metabolite> a owl:Class ;
     rdfs:label "metabolite" .
 
-<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#SNP+form> a owl:Class ;
-    rdfs:label "SNP form" .
+<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> a owl:Class ;
+    rdfs:label "analog_form" .
 
-<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog+form> a owl:Class ;
-    rdfs:label "analog form" .
+<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form> a owl:Class ;
+    rdfs:label "genetic_variant_form" .
 
-<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic+variant+form> a owl:Class ;
-    rdfs:label "genetic variant form" .
+<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form> a owl:Class ;
+    rdfs:label "mutant_form" .
 
-<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant+form> a owl:Class ;
-    rdfs:label "mutant form" .
+<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form> a owl:Class ;
+    rdfs:label "polymorphic_form" .
 
-<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic+form> a owl:Class ;
-    rdfs:label "polymorphic form" .
+<https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form> a owl:Class ;
+    rdfs:label "snp_form" .
 
 biolink:ChemicalRole a owl:Class ;
     rdfs:label "chemical role" ;
-    rdfs:subClassOf biolink:Attribute .
+    rdfs:subClassOf biolink:Attribute ;
+    skos:definition "	A role played by the molecular entity or part thereof within a chemical context." ;
+    skos:exactMatch <http://purl.obolibrary.org/obo/CHEBI_51086> ;
+    linkml:examples "Example(value='CHEBI:35469', description=None)" .
 
 biolink:ChemicalToChemicalAssociation a owl:Class ;
     rdfs:label "chemical to chemical association" ;
@@ -5387,48 +5442,48 @@ biolink:Device a owl:Class ;
     rdfs:label "upregulated" .
 
 biolink:DrugAvailabilityEnum a owl:Class ;
-    rdfs:label "drug_availability_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over+the+counter> <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over+the+counter>,
+    rdfs:label "DrugAvailabilityEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over_the_counter> <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over_the_counter>,
         <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> .
 
-<https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over+the+counter> a owl:Class ;
-    rdfs:label "over the counter" .
+<https://w3id.org/biolink/vocab/DrugAvailabilityEnum#over_the_counter> a owl:Class ;
+    rdfs:label "over_the_counter" .
 
 <https://w3id.org/biolink/vocab/DrugAvailabilityEnum#prescription> a owl:Class ;
     rdfs:label "prescription" .
 
 biolink:DrugDeliveryEnum a owl:Class ;
-    rdfs:label "drug_delivery_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion+through+the+skin> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous+injection> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion+through+the+skin>,
+    rdfs:label "DrugDeliveryEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion_through_the_skin> <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous_injection> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion_through_the_skin>,
         <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation>,
-        <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous+injection>,
+        <https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous_injection>,
         <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral> .
 
-<https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion+through+the+skin> a owl:Class ;
-    rdfs:label "absorbtion through the skin" .
+<https://w3id.org/biolink/vocab/DrugDeliveryEnum#absorbtion_through_the_skin> a owl:Class ;
+    rdfs:label "absorbtion_through_the_skin" .
 
 <https://w3id.org/biolink/vocab/DrugDeliveryEnum#inhalation> a owl:Class ;
     rdfs:label "inhalation" .
 
-<https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous+injection> a owl:Class ;
-    rdfs:label "intravenous injection" .
+<https://w3id.org/biolink/vocab/DrugDeliveryEnum#intravenous_injection> a owl:Class ;
+    rdfs:label "intravenous_injection" .
 
 <https://w3id.org/biolink/vocab/DrugDeliveryEnum#oral> a owl:Class ;
     rdfs:label "oral" .
 
-<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tbio> a owl:Class ;
-    rdfs:label "Tbio" .
+<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tbio> a owl:Class ;
+    rdfs:label "tbio" .
 
-<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tchem> a owl:Class ;
-    rdfs:label "Tchem" .
+<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tchem> a owl:Class ;
+    rdfs:label "tchem" .
 
-<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tclin> a owl:Class ;
-    rdfs:label "Tclin" .
+<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tclin> a owl:Class ;
+    rdfs:label "tclin" .
 
-<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#Tdark> a owl:Class ;
-    rdfs:label "Tdark" .
+<https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum#tdark> a owl:Class ;
+    rdfs:label "tdark" .
 
 biolink:EntityToExposureEventAssociationMixin a owl:Class ;
     rdfs:label "entity to exposure event association mixin" ;
@@ -5477,70 +5532,70 @@ biolink:EvidenceType a owl:Class ;
     skos:definition "Class of evidence that supports an association" ;
     skos:exactMatch <http://purl.obolibrary.org/obo/ECO_0000000> .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Discovery+&+Development+Phase> a owl:Class ;
-    rdfs:label "Discovery & Development Phase" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#discovery_and_development_phase> a owl:Class ;
+    rdfs:label "discovery_and_development_phase" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Accelerated+Approval> a owl:Class ;
-    rdfs:label "FDA Accelerated Approval" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_accelerated_approval> a owl:Class ;
+    rdfs:label "fda_accelerated_approval" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Breakthrough+Therapy> a owl:Class ;
-    rdfs:label "FDA Breakthrough Therapy" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_breakthrough_therapy> a owl:Class ;
+    rdfs:label "fda_breakthrough_therapy" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase> a owl:Class ;
-    rdfs:label "FDA Clinical Research Phase" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase> a owl:Class ;
+    rdfs:label "fda_clinical_research_phase" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+1> a owl:Class ;
-    rdfs:label "FDA Clinical Research Phase 1" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_1> a owl:Class ;
+    rdfs:label "fda_clinical_research_phase_1" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+2> a owl:Class ;
-    rdfs:label "FDA Clinical Research Phase 2" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_2> a owl:Class ;
+    rdfs:label "fda_clinical_research_phase_2" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+3> a owl:Class ;
-    rdfs:label "FDA Clinical Research Phase 3" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_3> a owl:Class ;
+    rdfs:label "fda_clinical_research_phase_3" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+4> a owl:Class ;
-    rdfs:label "FDA Clinical Research Phase 4" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_4> a owl:Class ;
+    rdfs:label "fda_clinical_research_phase_4" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Fast+Track> a owl:Class ;
-    rdfs:label "FDA Fast Track" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_fast_track> a owl:Class ;
+    rdfs:label "fda_fast_track" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Post-Market+Safety+Monitoring> a owl:Class ;
-    rdfs:label "FDA Post-Market Safety Monitoring" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_post_market_safety_review> a owl:Class ;
+    rdfs:label "fda_post_market_safety_review" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Priority+Review> a owl:Class ;
-    rdfs:label "FDA Priority Review" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_priority_review> a owl:Class ;
+    rdfs:label "fda_priority_review" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Review+Phase+4> a owl:Class ;
-    rdfs:label "FDA Review Phase 4" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_review_phase_4> a owl:Class ;
+    rdfs:label "fda_review_phase_4" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Post-Approval+Withdrawal> a owl:Class ;
-    rdfs:label "Post-Approval Withdrawal" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#post_approval_withdrawal> a owl:Class ;
+    rdfs:label "post_approval_withdrawal" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Preclinical+Research+Phase> a owl:Class ;
-    rdfs:label "Preclinical Research Phase" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#preclinical_research_phase> a owl:Class ;
+    rdfs:label "preclinical_research_phase" .
 
-<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Regular+FDA+Approval> a owl:Class ;
-    rdfs:label "Regular FDA Approval" .
+<https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#regular_fda_approval> a owl:Class ;
+    rdfs:label "regular_fda_approval" .
 
 biolink:FDAIDAAdverseEventEnum a owl:Class ;
-    rdfs:label "FDA_IDA_adverse_event_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Life-threatening+adverse+event> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Serious+adverse+event> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Suspected+adverse+reaction> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Unexpected+adverse+event> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Life-threatening+adverse+event>,
-        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Serious+adverse+event>,
-        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Suspected+adverse+reaction>,
-        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Unexpected+adverse+event> .
+    rdfs:label "FDAIDAAdverseEventEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#life_threatening_adverse_event> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction> <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#life_threatening_adverse_event>,
+        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event>,
+        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction>,
+        <https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> .
 
-<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Life-threatening+adverse+event> a owl:Class ;
-    rdfs:label "Life-threatening adverse event" .
+<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#life_threatening_adverse_event> a owl:Class ;
+    rdfs:label "life_threatening_adverse_event" .
 
-<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Serious+adverse+event> a owl:Class ;
-    rdfs:label "Serious adverse event" .
+<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#serious_adverse_event> a owl:Class ;
+    rdfs:label "serious_adverse_event" .
 
-<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Suspected+adverse+reaction> a owl:Class ;
-    rdfs:label "Suspected adverse reaction" .
+<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#suspected_adverse_reaction> a owl:Class ;
+    rdfs:label "suspected_adverse_reaction" .
 
-<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#Unexpected+adverse+event> a owl:Class ;
-    rdfs:label "Unexpected adverse event" .
+<https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum#unexpected_adverse_event> a owl:Class ;
+    rdfs:label "unexpected_adverse_event" .
 
 biolink:FDA_approval_status a owl:ObjectProperty ;
     rdfs:label "FDA approval status" ;
@@ -5549,66 +5604,8 @@ biolink:FDA_approval_status a owl:ObjectProperty ;
     rdfs:subPropertyOf biolink:association_slot ;
     skos:definition "" .
 
-biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
-    rdfs:label "gene_or_gene_product_or_chemical_entity_aspect_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity+or+abundance> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic+processing> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation+rate> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular+modification> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#N-linked+glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#O-linked+glycosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#N-linked+glycosylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#O-linked+glycosylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acetylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity+or+abundance>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#alkylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#amination>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carbamoylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#carboxylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#cleavage>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#degradation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ethylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#expression>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#farnesylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#folding>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#geranoylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glucuronidation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glutathionylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#glycosylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydrolysis>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#hydroxylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#lipidation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic+processing>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular+modification>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation+rate>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#palmitoylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#phosphorylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#prenylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#reduction>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ribosylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#secretion>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#stability>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sulfation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#sumoylation>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#synthesis>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#transport>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ubiquitination>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake> .
-
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#ADP-ribosylation> a owl:Class ;
     rdfs:label "ADP-ribosylation" .
-
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#N-linked+glycosylation> a owl:Class ;
-    rdfs:label "N-linked glycosylation" .
-
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#O-linked+glycosylation> a owl:Class ;
-    rdfs:label "O-linked glycosylation" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#abundance> a owl:Class ;
     rdfs:label "abundance" .
@@ -5619,8 +5616,8 @@ biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity> a owl:Class ;
     rdfs:label "activity" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity+or+abundance> a owl:Class ;
-    rdfs:label "activity or abundance" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#activity_or_abundance> a owl:Class ;
+    rdfs:label "activity_or_abundance" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#acylation> a owl:Class ;
     rdfs:label "acylation" .
@@ -5682,26 +5679,32 @@ biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#localization> a owl:Class ;
     rdfs:label "localization" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic+processing> a owl:Class ;
-    rdfs:label "metabolic processing" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#metabolic_processing> a owl:Class ;
+    rdfs:label "metabolic_processing" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#methylation> a owl:Class ;
     rdfs:label "methylation" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular+modification> a owl:Class ;
-    rdfs:label "molecular modification" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#molecular_modification> a owl:Class ;
+    rdfs:label "molecular_modification" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation+rate> a owl:Class ;
-    rdfs:label "mutation rate" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#mutation_rate> a owl:Class ;
+    rdfs:label "mutation_rate" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#myristoylation> a owl:Class ;
     rdfs:label "myristoylation" .
+
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#n_linked_glycosylation> a owl:Class ;
+    rdfs:label "n_linked_glycosylation" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nitrosation> a owl:Class ;
     rdfs:label "nitrosation" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#nucleotidylation> a owl:Class ;
     rdfs:label "nucleotidylation" .
+
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#o_linked_glycosylation> a owl:Class ;
+    rdfs:label "o_linked_glycosylation" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#oxidation> a owl:Class ;
     rdfs:label "oxidation" .
@@ -5745,11 +5748,11 @@ biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum#uptake> a owl:Class ;
     rdfs:label "uptake" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3'+UTR> a owl:Class ;
-    rdfs:label "3' UTR" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr> a owl:Class ;
+    rdfs:label "3_prime_utr" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5'+UTR> a owl:Class ;
-    rdfs:label "5' UTR" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr> a owl:Class ;
+    rdfs:label "5_prime_utr" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer> a owl:Class ;
     rdfs:label "enhancer" .
@@ -5760,8 +5763,8 @@ biolink:GeneOrGeneProductOrChemicalEntityAspectEnum a owl:Class ;
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> a owl:Class ;
     rdfs:label "intron" .
 
-<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polyA+tail> a owl:Class ;
-    rdfs:label "polyA tail" .
+<https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail> a owl:Class ;
+    rdfs:label "polya_tail" .
 
 <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter> a owl:Class ;
     rdfs:label "promoter" .
@@ -5770,8 +5773,8 @@ biolink:IriType a owl:Class ;
     rdfs:label "iri type" ;
     rdfs:subClassOf linkml:Uriorcurie .
 
-<https://w3id.org/biolink/vocab/LogicalInterpretationEnum#InverseAllSome> a owl:Class ;
-    rdfs:label "InverseAllSome" .
+<https://w3id.org/biolink/vocab/LogicalInterpretationEnum#inverse_all_some> a owl:Class ;
+    rdfs:label "inverse_all_some" .
 
 biolink:MaterialSample a owl:Class ;
     rdfs:label "material sample" ;
@@ -5819,7 +5822,7 @@ biolink:OrganismTaxonToOrganismTaxonAssociation a owl:Class ;
     skos:definition "A relationship between two organism taxon nodes" .
 
 biolink:PhaseEnum a owl:Class ;
-    rdfs:label "phase_enum" ;
+    rdfs:label "PhaseEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/PhaseEnum#0> <https://w3id.org/biolink/vocab/PhaseEnum#1> <https://w3id.org/biolink/vocab/PhaseEnum#2> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/PhaseEnum#0>,
         <https://w3id.org/biolink/vocab/PhaseEnum#1>,
@@ -5857,7 +5860,7 @@ biolink:RNAProduct a owl:Class ;
         WIKIDATA:Q11053 .
 
 biolink:ReactionDirectionEnum a owl:Class ;
-    rdfs:label "reaction_direction_enum" ;
+    rdfs:label "ReactionDirectionEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/ReactionDirectionEnum#left_to_right> <https://w3id.org/biolink/vocab/ReactionDirectionEnum#right_to_left> <https://w3id.org/biolink/vocab/ReactionDirectionEnum#bidirectional> <https://w3id.org/biolink/vocab/ReactionDirectionEnum#neutral> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/ReactionDirectionEnum#bidirectional>,
         <https://w3id.org/biolink/vocab/ReactionDirectionEnum#left_to_right>,
@@ -5877,7 +5880,7 @@ biolink:ReactionDirectionEnum a owl:Class ;
     rdfs:label "right_to_left" .
 
 biolink:ReactionSideEnum a owl:Class ;
-    rdfs:label "reaction_side_enum" ;
+    rdfs:label "ReactionSideEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/ReactionSideEnum#left> <https://w3id.org/biolink/vocab/ReactionSideEnum#right> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/ReactionSideEnum#left>,
         <https://w3id.org/biolink/vocab/ReactionSideEnum#right> .
@@ -5888,11 +5891,11 @@ biolink:ReactionSideEnum a owl:Class ;
 <https://w3id.org/biolink/vocab/ReactionSideEnum#right> a owl:Class ;
     rdfs:label "right" .
 
-<https://w3id.org/biolink/vocab/SequenceEnum#AA> a owl:Class ;
-    rdfs:label "AA" .
+<https://w3id.org/biolink/vocab/SequenceEnum#aa> a owl:Class ;
+    rdfs:label "aa" .
 
-<https://w3id.org/biolink/vocab/SequenceEnum#NA> a owl:Class ;
-    rdfs:label "NA" .
+<https://w3id.org/biolink/vocab/SequenceEnum#na> a owl:Class ;
+    rdfs:label "na" .
 
 biolink:SocioeconomicAttribute a owl:Class ;
     rdfs:label "socioeconomic attribute" ;
@@ -5968,7 +5971,7 @@ biolink:aspect_qualifier a owl:ObjectProperty ;
     rdfs:range linkml:String ;
     rdfs:subPropertyOf biolink:association_slot ;
     skos:definition "Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association." ;
-    skos:editorialNote "for good examples of aspects in the gene-> chemical space, please see the  gene_or_gene_product_or_chemical_entity_aspect_enum (below) which lists many aspects that can be used to qualify  the gene making the full subject a different ontological type.   the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process) the qualifier ‘Activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity) the qualifier ‘Emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event) the qualifier ‘Infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process) the qualifier ‘Severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality) the qualifier ‘Abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)" ;
+    skos:editorialNote "for good examples of aspects in the gene-> chemical space, please see the  GeneOrGeneProductOrChemicalEntityAspectEnum (below) which lists many aspects that can be used to qualify  the gene making the full subject a different ontological type.   the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process) the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process) the qualifier ‘Activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity) the qualifier ‘Emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event) the qualifier ‘Infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process) the qualifier ‘Severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality) the qualifier ‘Abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)" ;
     linkml:examples "Example(value='abundance', description=None)",
         "Example(value='exposure', description=None)",
         "Example(value='expression', description=None)",
@@ -6099,7 +6102,7 @@ biolink:form_or_variant_qualifier a owl:ObjectProperty ;
     rdfs:range linkml:String ;
     rdfs:subPropertyOf biolink:association_slot ;
     skos:definition "A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’." ;
-    skos:editorialNote "please see the chemical_or_gene_or_gene_product_form_or_variant_enum (below) for examples of 'form or variant qualifier' terms in the gene->chemical association space.  the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’. the qualifier ‘Late Stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’ the qualifier ‘Severe’ combines with a core concept of ‘Bleeding’ to express the  more specific concept ‘Severe forms of Bleeding’ the qualifier ‘Liver’ combines with a core concept of ‘Surgical Transplant’ to express the composed concept ‘Liver Transplant’ the qualifier ‘Recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’ the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’" ;
+    skos:editorialNote "please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier' terms in the gene->chemical association space.  the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’. the qualifier ‘Late Stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’ the qualifier ‘Severe’ combines with a core concept of ‘Bleeding’ to express the  more specific concept ‘Severe forms of Bleeding’ the qualifier ‘Liver’ combines with a core concept of ‘Surgical Transplant’ to express the composed concept ‘Liver Transplant’ the qualifier ‘Recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’ the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’" ;
     linkml:examples "Example(value='chemical analong', description=None)",
         "Example(value='late stage', description=None)",
         "Example(value='mutation', description=None)",
@@ -6521,17 +6524,73 @@ biolink:DatasetSummary a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty schema1:logo ],
+            owl:onProperty biolink:source_web_page ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:source_web_page ],
+            owl:onProperty schema1:logo ],
         biolink:InformationContentEntity ;
     skos:definition "an item that holds summary level information about a dataset." .
 
 biolink:DeprecatedPredicateMapping a owl:Class ;
     rdfs:label "deprecated predicate mapping" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:mapped_predicate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:causal_mechanism_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:AnatomicalContextQualifierEnum ;
+            owl:onProperty biolink:anatomical_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:object_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_part_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:qualified_predicate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:DirectionQualifierEnum ;
+            owl:onProperty biolink:object_direction_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_derivative_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_direction_qualifier ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:OrganismTaxon ;
+            owl:onProperty biolink:species_context_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:object_derivative_qualifier ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:subject_form_or_variant_qualifier ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:subject_aspect_qualifier ],
@@ -6543,75 +6602,19 @@ biolink:DeprecatedPredicateMapping a owl:Class ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:object_part_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:object_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_direction_qualifier ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:NamedThing ;
             owl:onProperty biolink:exact_match ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:AnatomicalContextQualifierEnum ;
-            owl:onProperty biolink:anatomical_context_qualifier ],
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:object_form_or_variant_qualifier ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:NamedThing ;
             owl:onProperty biolink:broad_match ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_derivative_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:object_aspect_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OrganismTaxon ;
-            owl:onProperty biolink:species_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:qualified_predicate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_context_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:causal_mechanism_qualifier ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:mapped_predicate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:object_derivative_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:object_form_or_variant_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DirectionQualifierEnum ;
-            owl:onProperty biolink:object_direction_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_part_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:subject_form_or_variant_qualifier ] ;
+            owl:onProperty biolink:object_aspect_qualifier ] ;
     skos:definition "A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place." .
 
 biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin a owl:Class ;
@@ -6631,23 +6634,23 @@ biolink:DiseaseToEntityAssociationMixin a owl:Class ;
         linkml:mixin .
 
 biolink:FDAApprovalStatusEnum a owl:Class ;
-    rdfs:label "FDA_approval_status_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Discovery+&+Development+Phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Preclinical+Research+Phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Review+Phase+4> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Post-Market+Safety+Monitoring> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+1> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+2> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+3> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+4> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Fast+Track> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Breakthrough+Therapy> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Accelerated+Approval> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Priority+Review> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Regular+FDA+Approval> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Post-Approval+Withdrawal> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Discovery+&+Development+Phase>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Accelerated+Approval>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Breakthrough+Therapy>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+1>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+2>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+3>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Clinical+Research+Phase+4>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Fast+Track>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Post-Market+Safety+Monitoring>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Priority+Review>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#FDA+Review+Phase+4>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Post-Approval+Withdrawal>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Preclinical+Research+Phase>,
-        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#Regular+FDA+Approval> .
+    rdfs:label "FDAApprovalStatusEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#discovery_and_development_phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#preclinical_research_phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_review_phase_4> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_post_market_safety_review> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_1> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_2> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_3> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_4> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_fast_track> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_breakthrough_therapy> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_accelerated_approval> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_priority_review> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#regular_fda_approval> <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#post_approval_withdrawal> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#discovery_and_development_phase>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_accelerated_approval>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_breakthrough_therapy>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_1>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_2>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_3>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_clinical_research_phase_4>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_fast_track>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_post_market_safety_review>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_priority_review>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#fda_review_phase_4>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#post_approval_withdrawal>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#preclinical_research_phase>,
+        <https://w3id.org/biolink/vocab/FDAApprovalStatusEnum#regular_fda_approval> .
 
 biolink:FrequencyQualifierMixin a owl:Class ;
     rdfs:label "frequency qualifier mixin" ;
@@ -6666,12 +6669,12 @@ biolink:GeneExpressionMixin a owl:Class ;
             owl:onProperty biolink:stage_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:OntologyClass ;
-            owl:onProperty biolink:quantifier_qualifier ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:DiseaseOrPhenotypicFeature ;
             owl:onProperty biolink:phenotypic_state ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:OntologyClass ;
+            owl:onProperty biolink:quantifier_qualifier ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:AnatomicalEntity ;
@@ -6686,20 +6689,20 @@ biolink:GeneToDiseaseAssociation a owl:Class ;
             owl:onClass biolink:FrequencyValue ;
             owl:onProperty biolink:frequency_qualifier ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:SeverityValue ;
-            owl:onProperty biolink:severity_qualifier ],
+            owl:onClass biolink:Disease ;
+            owl:onProperty rdf:object ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Onset ;
             owl:onProperty biolink:onset_qualifier ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:SeverityValue ;
+            owl:onProperty biolink:severity_qualifier ],
+        [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
             owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:Disease ;
-            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association,
         biolink:EntityToDiseaseAssociationMixin,
@@ -6712,11 +6715,11 @@ biolink:GeneToGeneAssociation a owl:Class ;
     rdfs:label "gene to gene association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:GeneOrGeneProduct ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:altLabel "molecular or genetic interaction" ;
@@ -6793,11 +6796,11 @@ biolink:SequenceFeatureRelationship a owl:Class ;
     rdfs:label "sequence feature relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onClass biolink:NucleicAcidEntity ;
-            owl:onProperty rdf:object ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:NucleicAcidEntity ;
-            owl:onProperty rdf:subject ;
+            owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "For example, a particular exon is part of a particular transcript or gene" ;
@@ -6827,7 +6830,7 @@ biolink:anatomical_context_qualifier a owl:ObjectProperty ;
     rdfs:range biolink:AnatomicalContextQualifierEnum ;
     rdfs:subPropertyOf biolink:statement_qualifier ;
     skos:definition "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location)." ;
-    skos:editorialNote "Anatomical context values can be any term from UBERON. See anatomical_context_qualifier_enum for more details." .
+    skos:editorialNote "Anatomical context values can be any term from UBERON. See AnatomicalContextQualifierEnum for more details." .
 
 biolink:associated_with_likelihood_of a owl:ObjectProperty ;
     rdfs:label "associated with likelihood of" ;
@@ -7001,13 +7004,13 @@ biolink:volume a owl:ObjectProperty ;
     skos:exactMatch WIKIDATA_PROPERTY:P478 .
 
 biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum a owl:Class ;
-    rdfs:label "chemical_or_gene_or_gene_product_form_or_variant_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic+variant+form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant+form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic+form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#SNP+form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog+form> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#SNP+form>,
-        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog+form>,
-        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic+variant+form>,
-        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant+form>,
-        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic+form> .
+    rdfs:label "ChemicalOrGeneOrGeneProductFormOrVariantEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form> <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#analog_form>,
+        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#genetic_variant_form>,
+        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#mutant_form>,
+        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#polymorphic_form>,
+        <https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum#snp_form> .
 
 biolink:ClinicalAttribute a owl:Class ;
     rdfs:label "clinical attribute" ;
@@ -7019,42 +7022,31 @@ biolink:DatasetVersion a owl:Class ;
     rdfs:label "dataset version" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:DatasetDistribution ;
+            owl:onProperty dct:distribution ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty pav:version ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:Dataset ;
             owl:onProperty dct:source ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:DatasetDistribution ;
-            owl:onProperty dct:distribution ],
         biolink:InformationContentEntity ;
     skos:definition "an item that holds version level information about a dataset." .
 
 biolink:FunctionalAssociation a owl:Class ;
     rdfs:label "functional association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:MacromolecularMachineMixin ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:MacromolecularMachineMixin ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         biolink:Association ;
     skos:definition "An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed." .
-
-biolink:GeneOrGeneProductOrChemicalPartQualifierEnum a owl:Class ;
-    rdfs:label "gene_or_gene_product_or_chemical_part_qualifier_enum" ;
-    owl:unionOf ( <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3'+UTR> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5'+UTR> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polyA+tail> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ) ;
-    linkml:permissible_values <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3'+UTR>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5'+UTR>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polyA+tail>,
-        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter> .
 
 biolink:GeneProductIsoformMixin a owl:Class ;
     rdfs:label "gene product isoform mixin" ;
@@ -7104,7 +7096,7 @@ biolink:RelationshipQuantifier a owl:Class ;
     rdfs:subClassOf linkml:mixin .
 
 biolink:StrandEnum a owl:Class ;
-    rdfs:label "strand_enum" ;
+    rdfs:label "StrandEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/StrandEnum#+> <https://w3id.org/biolink/vocab/StrandEnum#-> <https://w3id.org/biolink/vocab/StrandEnum#.> <https://w3id.org/biolink/vocab/StrandEnum#?> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/StrandEnum#+>,
         <https://w3id.org/biolink/vocab/StrandEnum#->,
@@ -7385,7 +7377,7 @@ biolink:Dataset a owl:Class ;
         dcid:Dataset .
 
 biolink:DirectionQualifierEnum a owl:Class ;
-    rdfs:label "direction_qualifier_enum" ;
+    rdfs:label "DirectionQualifierEnum" ;
     owl:unionOf ( <https://w3id.org/biolink/vocab/DirectionQualifierEnum#increased> <https://w3id.org/biolink/vocab/DirectionQualifierEnum#upregulated> <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased> <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated> ) ;
     linkml:permissible_values <https://w3id.org/biolink/vocab/DirectionQualifierEnum#decreased>,
         <https://w3id.org/biolink/vocab/DirectionQualifierEnum#downregulated>,
@@ -7399,6 +7391,17 @@ biolink:Entity a owl:Class ;
             owl:onClass biolink:NarrativeText ;
             owl:onProperty dct:description ],
         [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Attribute ;
+            owl:onProperty biolink:has_attribute ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:IriType ;
+            owl:onProperty biolink:iri ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:LabelType ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty rdf:type ],
@@ -7407,19 +7410,8 @@ biolink:Entity a owl:Class ;
             owl:onProperty biolink:id ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Attribute ;
-            owl:onProperty biolink:has_attribute ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:CategoryType ;
-            owl:onProperty biolink:category ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LabelType ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:IriType ;
-            owl:onProperty biolink:iri ] ;
+            owl:onProperty biolink:category ] ;
     skos:definition "Root Biolink Model class for all things and informational relationships, real or imagined." .
 
 biolink:GeneToEntityAssociationMixin a owl:Class ;
@@ -7643,14 +7635,25 @@ biolink:GeneGroupingMixin a owl:Class ;
         linkml:mixin ;
     skos:definition "any grouping of multiple genes or gene products" .
 
+biolink:GeneOrGeneProductOrChemicalPartQualifierEnum a owl:Class ;
+    rdfs:label "GeneOrGeneProductOrChemicalPartQualifierEnum" ;
+    owl:unionOf ( <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon> <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron> ) ;
+    linkml:permissible_values <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#3_prime_utr>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#5_prime_utr>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#enhancer>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#exon>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#intron>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#polya_tail>,
+        <https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum#promoter> .
+
 biolink:GeneProductMixin a owl:Class ;
     rdfs:label "gene product mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:xref ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:LabelType ;
             owl:onProperty biolink:synonym ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:xref ],
         biolink:GeneOrGeneProduct,
         linkml:mixin ;
     skos:definition "The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules." ;
@@ -7661,12 +7664,12 @@ biolink:GeneProductMixin a owl:Class ;
 biolink:ModelToDiseaseAssociationMixin a owl:Class ;
     rdfs:label "model to disease association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PredicateType ;
             owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         linkml:mixin ;
     skos:definition "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
@@ -7946,13 +7949,13 @@ biolink:supporting_study_metadata a owl:ObjectProperty ;
 biolink:EntityToPhenotypicFeatureAssociationMixin a owl:Class ;
     rdfs:label "entity to phenotypic feature association mixin" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:BiologicalSex ;
-            owl:onProperty biolink:sex_qualifier ],
-        [ a owl:Restriction ;
             owl:onClass biolink:PhenotypicFeature ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:BiologicalSex ;
+            owl:onProperty biolink:sex_qualifier ],
         biolink:EntityToFeatureOrDiseaseQualifiersMixin,
         linkml:mixin .
 
@@ -8247,32 +8250,32 @@ biolink:GenomicSequenceLocalization a owl:Class ;
     rdfs:label "genomic sequence localization" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty biolink:start_interbase_coordinate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:StrandEnum ;
             owl:onProperty biolink:genome_build ],
         [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass biolink:NucleicAcidEntity ;
             owl:onProperty rdf:object ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:NucleicAcidEntity ;
-            owl:onProperty rdf:subject ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty biolink:end_interbase_coordinate ],
         [ a owl:Restriction ;
+            owl:onClass biolink:NucleicAcidEntity ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:PhaseEnum ;
             owl:onProperty biolink:phase ],
+        [ a owl:Restriction ;
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty biolink:start_interbase_coordinate ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:StrandEnum ;
@@ -8286,13 +8289,13 @@ biolink:MolecularActivity a owl:Class ;
     rdfs:label "molecular activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom biolink:MolecularEntity ;
-            owl:onProperty biolink:has_output ],
+            owl:onProperty biolink:has_input ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:MacromolecularMachineMixin ;
             owl:onProperty biolink:enabled_by ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:MolecularEntity ;
-            owl:onProperty biolink:has_input ],
+            owl:onProperty biolink:has_output ],
         biolink:BiologicalProcessOrActivity,
         biolink:Occurrent,
         biolink:OntologyClass ;
@@ -8379,9 +8382,8 @@ biolink:has_biological_sequence a owl:ObjectProperty ;
 biolink:Agent a owl:Class ;
     rdfs:label "agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:id ;
-            owl:qualifiedCardinality 1 ],
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:affiliation ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -8391,8 +8393,9 @@ biolink:Agent a owl:Class ;
             owl:onClass biolink:LabelType ;
             owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:affiliation ],
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:id ;
+            owl:qualifiedCardinality 1 ],
         biolink:AdministrativeEntity ;
     skos:altLabel "group" ;
     skos:definition "person, group, organization or project that provides a piece of information (i.e. a knowledge association)" ;
@@ -8408,11 +8411,11 @@ biolink:Agent a owl:Class ;
 biolink:BiologicalProcessOrActivity a owl:Class ;
     rdfs:label "biological process or activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom biolink:PhysicalEntity ;
-            owl:onProperty biolink:enabled_by ],
-        [ a owl:Restriction ;
             owl:allValuesFrom biolink:BiologicalProcessOrActivity ;
             owl:onProperty biolink:has_output ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:PhysicalEntity ;
+            owl:onProperty biolink:enabled_by ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:BiologicalProcessOrActivity ;
             owl:onProperty biolink:has_input ],
@@ -8561,15 +8564,15 @@ biolink:InformationContentEntity a owl:Class ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty biolink:license ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
             owl:onProperty biolink:rights ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Date ;
             owl:onProperty biolink:creation_date ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:license ],
         biolink:NamedThing ;
     skos:altLabel "information",
         "information artefact",
@@ -8593,10 +8596,7 @@ biolink:Publication a owl:Class ;
     rdfs:label "publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty biolink:pages ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty biolink:mesh_terms ],
+            owl:onProperty biolink:authors ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:id ;
@@ -8606,19 +8606,22 @@ biolink:Publication a owl:Class ;
             owl:onProperty dct:type ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty biolink:keywords ],
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty biolink:mesh_terms ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty biolink:summary ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty biolink:authors ],
+            owl:onProperty biolink:keywords ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:LabelType ;
             owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty biolink:summary ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty biolink:pages ],
         biolink:InformationContentEntity ;
     skos:definition "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses." ;
     skos:exactMatch IAO:0000311 ;
@@ -8628,20 +8631,20 @@ biolink:Publication a owl:Class ;
 biolink:Attribute a owl:Class ;
     rdfs:label "attribute" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom biolink:QuantityValue ;
+            owl:onProperty biolink:has_quantitative_value ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty biolink:has_qualitative_value ],
+            owl:onClass biolink:LabelType ;
+            owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
             owl:onClass biolink:OntologyClass ;
             owl:onProperty biolink:has_attribute_type ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:LabelType ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:QuantityValue ;
-            owl:onProperty biolink:has_quantitative_value ],
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty biolink:has_qualitative_value ],
         biolink:NamedThing,
         biolink:OntologyClass ;
     skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." ;
@@ -8717,23 +8720,23 @@ biolink:SequenceVariant a owl:Class ;
 biolink:ChemicalEntity a owl:Class ;
     rdfs:label "chemical entity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty biolink:is_toxic ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:DrugAvailabilityEnum ;
+            owl:onProperty biolink:available_from ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:ChemicalEntity ;
+            owl:onProperty biolink:trade_name ],
+        [ a owl:Restriction ;
             owl:allValuesFrom biolink:ChemicalRole ;
             owl:onProperty biolink:has_chemical_role ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty biolink:max_tolerated_dose ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:ChemicalEntity ;
-            owl:onProperty biolink:trade_name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:DrugAvailabilityEnum ;
-            owl:onProperty biolink:available_from ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty biolink:is_toxic ],
         biolink:ChemicalEntityOrGeneOrGeneProduct,
         biolink:ChemicalEntityOrProteinOrPolypeptide,
         biolink:ChemicalOrDrugOrTreatment,
@@ -8764,12 +8767,12 @@ biolink:DiseaseOrPhenotypicFeature a owl:Class ;
 biolink:Gene a owl:Class ;
     rdfs:label "gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom biolink:LabelType ;
+            owl:onProperty biolink:synonym ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass biolink:BiologicalSequence ;
             owl:onProperty biolink:has_biological_sequence ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:LabelType ;
-            owl:onProperty biolink:synonym ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -8873,52 +8876,52 @@ biolink:related_to_at_instance_level a owl:ObjectProperty,
 biolink:Association a owl:Class ;
     rdfs:label "association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass biolink:PredicateType ;
-            owl:onProperty rdf:predicate ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass biolink:NamedThing ;
-            owl:onProperty rdf:subject ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:TimeType ;
+            owl:onProperty biolink:timepoint ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty rdf:type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Boolean ;
-            owl:onProperty biolink:negated ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom biolink:InformationResource ;
-            owl:onProperty biolink:aggregator_knowledge_source ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:TimeType ;
-            owl:onProperty biolink:timepoint ],
+            owl:onClass biolink:InformationResource ;
+            owl:onProperty biolink:primary_knowledge_source ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:CategoryType ;
             owl:onProperty biolink:category ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:Publication ;
-            owl:onProperty biolink:publications ],
+            owl:allValuesFrom biolink:EvidenceType ;
+            owl:onProperty biolink:has_evidence ],
         [ a owl:Restriction ;
             owl:allValuesFrom biolink:OntologyClass ;
             owl:onProperty biolink:qualifiers ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:InformationResource ;
-            owl:onProperty biolink:knowledge_source ],
+            owl:onClass biolink:PredicateType ;
+            owl:onProperty rdf:predicate ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:allValuesFrom biolink:EvidenceType ;
-            owl:onProperty biolink:has_evidence ],
+            owl:allValuesFrom biolink:InformationResource ;
+            owl:onProperty biolink:aggregator_knowledge_source ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass biolink:InformationResource ;
-            owl:onProperty biolink:primary_knowledge_source ],
+            owl:onClass biolink:NamedThing ;
+            owl:onProperty rdf:subject ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass biolink:NamedThing ;
             owl:onProperty rdf:object ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biolink:Publication ;
+            owl:onProperty biolink:publications ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Boolean ;
+            owl:onProperty biolink:negated ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass biolink:InformationResource ;
+            owl:onProperty biolink:knowledge_source ],
         biolink:Entity ;
     skos:definition "A typed association between two entities, supported by evidence" ;
     skos:exactMatch OBAN:association,

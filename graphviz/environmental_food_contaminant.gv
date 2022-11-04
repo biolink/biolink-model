@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2040.7,123"];
+	graph [bb="0,0,2034.7,123"];
 	node [label="\N"];
 	"environmental food contaminant"	[height=0.5,
 		label="environmental food contaminant",
@@ -113,47 +113,47 @@ digraph {
 		style=solid];
 	"available from"	[color=blue,
 		height=0.5,
-		label=drug_availability_enum,
-		pos="1547.9,18",
-		width=3.2858];
+		label=DrugAvailabilityEnum,
+		pos="1543.9,18",
+		width=3.1594];
 	"environmental food contaminant" -> "available from"	[color=blue,
 		label="available from",
-		lp="1444.4,61.5",
-		pos="e,1488.9,33.743 1059.3,92.377 1077.9,90.549 1096.9,88.702 1114.9,87 1203.7,78.585 1226.7,82.388 1314.9,69 1370.5,60.559 1432.8,46.972 \
-1479,36.091",
+		lp="1443.4,61.5",
+		pos="e,1486.4,33.652 1059.3,92.377 1077.9,90.549 1096.9,88.702 1114.9,87 1203.7,78.585 1226.7,82.546 1314.9,69 1369.8,60.57 1431.2,46.917 \
+1476.7,36.006",
 		style=solid];
 	"max tolerated dose"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1722.9,18",
+		pos="1713.9,18",
 		width=1.0652];
 	"environmental food contaminant" -> "max tolerated dose"	[color=blue,
 		label="max tolerated dose",
-		lp="1669.9,61.5",
-		pos="e,1694.2,29.977 1056,92.003 1075.6,90.149 1095.8,88.391 1114.9,87 1285.7,74.523 1329.8,88.92 1499.9,69 1578.5,59.796 1598.5,56.606 \
-1674.9,36 1678.1,35.148 1681.3,34.188 1684.5,33.168",
+		lp="1664.9,61.5",
+		pos="e,1685.3,30.135 1056,92.005 1075.6,90.15 1095.8,88.392 1114.9,87 1285.3,74.545 1329.3,89.521 1498.9,69 1574.4,59.86 1593.6,56.334 \
+1666.9,36 1669.8,35.191 1672.8,34.288 1675.8,33.329",
 		style=solid];
 	"is toxic"	[color=blue,
 		height=0.5,
 		label=boolean,
-		pos="1829.9,18",
+		pos="1823.9,18",
 		width=1.2999];
 	"environmental food contaminant" -> "is toxic"	[color=blue,
 		label="is toxic",
-		lp="1804.9,61.5",
-		pos="e,1809.8,34.448 1054.6,91.841 1074.7,89.969 1095.4,88.247 1114.9,87 1184.6,82.544 1675.7,87.965 1742.9,69 1763.8,63.09 1785,51.048 \
-1801.3,40.264",
+		lp="1798.9,61.5",
+		pos="e,1804,34.446 1054.6,91.845 1074.7,89.973 1095.4,88.25 1114.9,87 1184,82.572 1671.3,87.989 1737.9,69 1758.6,63.086 1779.6,51.045 \
+1795.6,40.261",
 		style=solid];
 	"has chemical role"	[color=blue,
 		height=0.5,
 		label="chemical role",
-		pos="1967.9,18",
+		pos="1961.9,18",
 		width=2.022];
 	"environmental food contaminant" -> "has chemical role"	[color=blue,
 		label="has chemical role",
-		lp="1950.4,61.5",
-		pos="e,1936.3,34.342 1054.2,91.825 1074.4,89.942 1095.2,88.221 1114.9,87 1274.6,77.077 1677.8,99.587 1834.9,69 1866.8,62.792 1901,49.742 \
-1926.8,38.531",
+		lp="1944.4,61.5",
+		pos="e,1930.3,34.34 1054.6,91.785 1074.7,89.919 1095.4,88.214 1114.9,87 1273.3,77.143 1673.1,99.349 1828.9,69 1860.8,62.789 1895,49.739 \
+1920.8,38.528",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

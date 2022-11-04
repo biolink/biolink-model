@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,4602,283"];
+	graph [bb="0,0,4574,283"];
 	node [label="\N"];
 	"chemical or drug or treatment side effect disease or phenotypic feature association"	[height=0.5,
 		label="chemical or drug or treatment side effect disease or phenotypic feature association",
@@ -198,23 +198,23 @@ digraph {
 		style=solid];
 	"FDA adverse event level"	[color=blue,
 		height=0.5,
-		label=FDA_IDA_adverse_event_enum,
-		pos="4321.4,178",
-		width=4.2607];
+		label=FDAIDAAdverseEventEnum,
+		pos="4307.4,178",
+		width=3.8816];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "FDA adverse event level"	[color=blue,
 		label="FDA adverse event level",
-		lp="4273.9,221.5",
-		pos="e,4265.9,194.83 2925.8,251.78 2971.4,249.99 3018.2,248.31 3062.4,247 3292.8,240.19 3870.6,256.46 4099.4,229 4152.8,222.59 4212.3,\
-208.85 4256.2,197.39",
+		lp="4267.9,221.5",
+		pos="e,4255.4,194.85 2925.8,251.78 2971.4,249.99 3018.2,248.31 3062.4,247 3292.8,240.19 3870.8,258.11 4099.4,229 4149.3,222.65 4204.6,\
+209.04 4245.6,197.62",
 		style=solid];
 	predicate	[height=0.5,
-		pos="4547.4,178",
+		pos="4519.4,178",
 		width=1.5165];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
-		lp="4469.4,221.5",
-		pos="e,4511.7,191.71 2924.1,251.71 2970.2,249.91 3017.7,248.24 3062.4,247 3207.2,242.98 4222.1,249.34 4365.4,229 4412.9,222.27 4465.5,\
-206.91 4501.9,194.98",
+		lp="4455.4,221.5",
+		pos="e,4486.4,192.42 2924.1,251.72 2970.2,249.91 3017.7,248.24 3062.4,247 3206.5,242.99 4217.1,251.73 4359.4,229 4400.3,222.47 4445.2,\
+207.75 4477,195.97",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="2434.4,134.5",

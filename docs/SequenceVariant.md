@@ -8,7 +8,7 @@ layout: default
 # Class: SequenceVariant
 
 
-An allele that varies in its sequence from what is considered the reference allele at that locus.
+A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 
 URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
@@ -170,11 +170,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | A contiguous change at a Location (VMC) |
 | **Comments:** | | This class is for modeling the specific state at a locus. A single DBSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743) |
 | **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | GENO:0000002 |
-|  | | WIKIDATA:Q15304597 |
-|  | | SIO:010277 |
-|  | | VMC:Allele |
-|  | | SO:0001059 |
+| **Exact Mappings:** | | WIKIDATA:Q15304597 |
 | **Close Mappings:** | | dcid:Allele |
-| **Broad Mappings:** | | SO:0001060 |
+|  | | SO:0001060 |
+|  | | VMC:Allele |
+|  | | GENO:0000002 |
+|  | | SIO:010277 |
+|  | | SO:0001060 |
 

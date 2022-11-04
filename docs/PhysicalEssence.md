@@ -36,7 +36,7 @@ URI: [biolink:PhysicalEssence](https://w3id.org/biolink/vocab/PhysicalEssence)
  * [NucleicAcidEntity](NucleicAcidEntity.md) (mixin)  - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
  * [PhysicalEntity](PhysicalEntity.md) (mixin)  - An entity that has material reality (a.k.a. physical essence).
  * [ReagentTargetedGene](ReagentTargetedGene.md) (mixin)  - A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
- * [SequenceVariant](SequenceVariant.md) (mixin)  - An allele that varies in its sequence from what is considered the reference allele at that locus.
+ * [SequenceVariant](SequenceVariant.md) (mixin)  - A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 
 ## Referenced by class
 

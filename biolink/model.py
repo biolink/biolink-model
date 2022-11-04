@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-03T00:35:42
+# Generation date: 2022-11-04T20:17:38
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1700,6 +1700,9 @@ class Attribute(NamedThing):
 
 @dataclass
 class ChemicalRole(Attribute):
+    """
+    A role played by the molecular entity or part thereof within a chemical context.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.ChemicalRole
@@ -7033,12 +7036,12 @@ class ChemicalAffectsGeneAssociation(Association):
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
-    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
@@ -7076,8 +7079,8 @@ class ChemicalAffectsGeneAssociation(Association):
         if self.subject_derivative_qualifier is not None and not isinstance(self.subject_derivative_qualifier, ChemicalEntityDerivativeEnum):
             self.subject_derivative_qualifier = ChemicalEntityDerivativeEnum(self.subject_derivative_qualifier)
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
-            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.subject_aspect_qualifier)
 
         if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, AnatomicalEntityId):
             self.subject_context_qualifier = AnatomicalEntityId(self.subject_context_qualifier)
@@ -7091,8 +7094,8 @@ class ChemicalAffectsGeneAssociation(Association):
         if self.object_part_qualifier is not None and not isinstance(self.object_part_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
             self.object_part_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.object_part_qualifier)
 
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
-            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.object_aspect_qualifier)
 
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
@@ -9525,25 +9528,19 @@ class ChemicalEntityDerivativeEnum(EnumDefinitionImpl):
 
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
 
+    genetic_variant_form = PermissibleValue(text="genetic_variant_form")
+    mutant_form = PermissibleValue(text="mutant_form")
+    polymorphic_form = PermissibleValue(text="polymorphic_form")
+    snp_form = PermissibleValue(text="snp_form")
+    analog_form = PermissibleValue(text="analog_form")
+
     _defn = EnumDefinition(
         name="ChemicalOrGeneOrGeneProductFormOrVariantEnum",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "genetic variant form",
-                PermissibleValue(text="genetic variant form") )
-        setattr(cls, "mutant form",
-                PermissibleValue(text="mutant form") )
-        setattr(cls, "polymorphic form",
-                PermissibleValue(text="polymorphic form") )
-        setattr(cls, "SNP form",
-                PermissibleValue(text="SNP form") )
-        setattr(cls, "analog form",
-                PermissibleValue(text="analog form") )
-
 class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
 
+    polya_tail = PermissibleValue(text="polya_tail")
     promoter = PermissibleValue(text="promoter")
     enhancer = PermissibleValue(text="enhancer")
     exon = PermissibleValue(text="exon")
@@ -9555,15 +9552,15 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "3' UTR",
-                PermissibleValue(text="3' UTR") )
-        setattr(cls, "5' UTR",
-                PermissibleValue(text="5' UTR") )
-        setattr(cls, "polyA tail",
-                PermissibleValue(text="polyA tail") )
+        setattr(cls, "3_prime_utr",
+                PermissibleValue(text="3_prime_utr") )
+        setattr(cls, "5_prime_utr",
+                PermissibleValue(text="5_prime_utr") )
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
+    activity_or_abundance = PermissibleValue(text="activity_or_abundance",
+                                                                 description="Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.")
     abundance = PermissibleValue(text="abundance")
     activity = PermissibleValue(text="activity")
     expression = PermissibleValue(text="expression")
@@ -9571,12 +9568,15 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     degradation = PermissibleValue(text="degradation")
     cleavage = PermissibleValue(text="cleavage")
     hydrolysis = PermissibleValue(text="hydrolysis")
+    metabolic_processing = PermissibleValue(text="metabolic_processing")
+    mutation_rate = PermissibleValue(text="mutation_rate")
     stability = PermissibleValue(text="stability")
     folding = PermissibleValue(text="folding")
     localization = PermissibleValue(text="localization")
     transport = PermissibleValue(text="transport")
     secretion = PermissibleValue(text="secretion")
     uptake = PermissibleValue(text="uptake")
+    molecular_modification = PermissibleValue(text="molecular_modification")
     acetylation = PermissibleValue(text="acetylation")
     acylation = PermissibleValue(text="acylation")
     alkylation = PermissibleValue(text="alkylation")
@@ -9587,6 +9587,8 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     glycation = PermissibleValue(text="glycation")
     glycosylation = PermissibleValue(text="glycosylation")
     glucuronidation = PermissibleValue(text="glucuronidation")
+    n_linked_glycosylation = PermissibleValue(text="n_linked_glycosylation")
+    o_linked_glycosylation = PermissibleValue(text="o_linked_glycosylation")
     hydroxylation = PermissibleValue(text="hydroxylation")
     lipidation = PermissibleValue(text="lipidation")
     farnesylation = PermissibleValue(text="farnesylation")
@@ -9612,19 +9614,6 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "activity or abundance",
-                PermissibleValue(text="activity or abundance",
-                                 description="Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.") )
-        setattr(cls, "metabolic processing",
-                PermissibleValue(text="metabolic processing") )
-        setattr(cls, "mutation rate",
-                PermissibleValue(text="mutation rate") )
-        setattr(cls, "molecular modification",
-                PermissibleValue(text="molecular modification") )
-        setattr(cls, "N-linked glycosylation",
-                PermissibleValue(text="N-linked glycosylation") )
-        setattr(cls, "O-linked glycosylation",
-                PermissibleValue(text="O-linked glycosylation") )
         setattr(cls, "ADP-ribosylation",
                 PermissibleValue(text="ADP-ribosylation") )
 
@@ -9634,61 +9623,49 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
                                      description="A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction.")
     inhibition = PermissibleValue(text="inhibition",
                                            description="A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.")
+    antibody_inhibition = PermissibleValue(text="antibody_inhibition",
+                                                             description="A causal mechanism in which an antibody specifically binds to and interferes with the target.")
     antagonism = PermissibleValue(text="antagonism",
                                            description="A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.")
+    molecular_channel_blockage = PermissibleValue(text="molecular_channel_blockage",
+                                                                           description="A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.")
+    inverse_agonism = PermissibleValue(text="inverse_agonism",
+                                                     description="A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.")
+    negative_allosteric_modulation = PermissibleValue(text="negative_allosteric_modulation",
+                                                                                   description="A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)")
     agonism = PermissibleValue(text="agonism",
                                      description="A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.")
+    molecular_channel_opening = PermissibleValue(text="molecular_channel_opening",
+                                                                         description="A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.")
+    positive_allosteric_modulation = PermissibleValue(text="positive_allosteric_modulation",
+                                                                                   description="A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)")
     potentiation = PermissibleValue(text="potentiation",
                                                description="A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.")
     activation = PermissibleValue(text="activation",
                                            description="A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.")
     inducer = PermissibleValue(text="inducer",
                                      description="A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.")
+    transcriptional_regulation = PermissibleValue(text="transcriptional_regulation",
+                                                                           description="A causal mechanism mediated by through the control of target gene transcription")
+    signaling_mediated_control = PermissibleValue(text="signaling_mediated_control",
+                                                                           description="A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)")
     stabilization = PermissibleValue(text="stabilization")
     stimulation = PermissibleValue(text="stimulation")
+    releasing_activity = PermissibleValue(text="releasing_activity")
 
     _defn = EnumDefinition(
         name="CausalMechanismQualifierEnum",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "antibody inhibition",
-                PermissibleValue(text="antibody inhibition",
-                                 description="A causal mechanism in which an antibody specifically binds to and interferes with the target.") )
-        setattr(cls, "molecular channel blockage",
-                PermissibleValue(text="molecular channel blockage",
-                                 description="A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.") )
-        setattr(cls, "inverse agonism",
-                PermissibleValue(text="inverse agonism",
-                                 description="A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.") )
-        setattr(cls, "negative allosteric modulation",
-                PermissibleValue(text="negative allosteric modulation",
-                                 description="A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)") )
-        setattr(cls, "molecular channel opening",
-                PermissibleValue(text="molecular channel opening",
-                                 description="A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.") )
-        setattr(cls, "positive allosteric modulation",
-                PermissibleValue(text="positive allosteric modulation",
-                                 description="A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)") )
-        setattr(cls, "transcriptional regulation",
-                PermissibleValue(text="transcriptional regulation",
-                                 description="A causal mechanism mediated by through the control of target gene transcription") )
-        setattr(cls, "signaling-mediated control",
-                PermissibleValue(text="signaling-mediated control",
-                                 description="A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)") )
-        setattr(cls, "releasing activity",
-                PermissibleValue(text="releasing activity") )
-
 class LogicalInterpretationEnum(EnumDefinitionImpl):
 
-    SomeSome = PermissibleValue(text="SomeSome",
-                                       description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
-                                       meaning=OS.SomeSomeInterpretation)
-    AllSome = PermissibleValue(text="AllSome",
-                                     description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
-                                     meaning=OS.AllSomeInterpretation)
-    InverseAllSome = PermissibleValue(text="InverseAllSome")
+    some_some = PermissibleValue(text="some_some",
+                                         description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
+                                         meaning=OS.SomeSomeInterpretation)
+    all_some = PermissibleValue(text="all_some",
+                                       description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
+                                       meaning=OS.AllSomeInterpretation)
+    inverse_all_some = PermissibleValue(text="inverse_all_some")
 
     _defn = EnumDefinition(
         name="LogicalInterpretationEnum",
@@ -9760,9 +9737,9 @@ class SequenceEnum(EnumDefinitionImpl):
     """
     type of sequence
     """
-    NA = PermissibleValue(text="NA",
+    na = PermissibleValue(text="na",
                            description="nucleic acid")
-    AA = PermissibleValue(text="AA",
+    aa = PermissibleValue(text="aa",
                            description="amino acid")
 
     _defn = EnumDefinition(
@@ -9772,13 +9749,13 @@ class SequenceEnum(EnumDefinitionImpl):
 
 class DruggableGeneCategoryEnum(EnumDefinitionImpl):
 
-    Tclin = PermissibleValue(text="Tclin",
+    tclin = PermissibleValue(text="tclin",
                                  description="These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.")
-    Tbio = PermissibleValue(text="Tbio",
+    tbio = PermissibleValue(text="tbio",
                                description="These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.")
-    Tchem = PermissibleValue(text="Tchem",
+    tchem = PermissibleValue(text="tchem",
                                  description="These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code")
-    Tdark = PermissibleValue(text="Tdark",
+    tdark = PermissibleValue(text="tdark",
                                  description="These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.")
 
     _defn = EnumDefinition(
@@ -9787,6 +9764,8 @@ class DruggableGeneCategoryEnum(EnumDefinitionImpl):
 
 class DrugAvailabilityEnum(EnumDefinitionImpl):
 
+    over_the_counter = PermissibleValue(text="over_the_counter",
+                                                       description="chemical entity is available over the counter without a prescription.")
     prescription = PermissibleValue(text="prescription",
                                                description="chemical entity is available by prescription.")
 
@@ -9794,104 +9773,71 @@ class DrugAvailabilityEnum(EnumDefinitionImpl):
         name="DrugAvailabilityEnum",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "over the counter",
-                PermissibleValue(text="over the counter",
-                                 description="chemical entity is available over the counter without a prescription.") )
-
 class DrugDeliveryEnum(EnumDefinitionImpl):
 
     inhalation = PermissibleValue(text="inhalation")
     oral = PermissibleValue(text="oral")
+    absorbtion_through_the_skin = PermissibleValue(text="absorbtion_through_the_skin")
+    intravenous_injection = PermissibleValue(text="intravenous_injection")
 
     _defn = EnumDefinition(
         name="DrugDeliveryEnum",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "absorbtion through the skin",
-                PermissibleValue(text="absorbtion through the skin") )
-        setattr(cls, "intravenous injection",
-                PermissibleValue(text="intravenous injection") )
-
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
+
+    discovery_and_development_phase = PermissibleValue(text="discovery_and_development_phase",
+                                                                                     description="Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.")
+    preclinical_research_phase = PermissibleValue(text="preclinical_research_phase",
+                                                                           description="Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.")
+    fda_clinical_research_phase = PermissibleValue(text="fda_clinical_research_phase",
+                                                                             description="Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.")
+    fda_review_phase_4 = PermissibleValue(text="fda_review_phase_4",
+                                                           description="FDA Review")
+    fda_post_market_safety_review = PermissibleValue(text="fda_post_market_safety_review",
+                                                                                 description="FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.")
+    fda_clinical_research_phase_1 = PermissibleValue(text="fda_clinical_research_phase_1",
+                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.")
+    fda_clinical_research_phase_2 = PermissibleValue(text="fda_clinical_research_phase_2",
+                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.")
+    fda_clinical_research_phase_3 = PermissibleValue(text="fda_clinical_research_phase_3",
+                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.")
+    fda_clinical_research_phase_4 = PermissibleValue(text="fda_clinical_research_phase_4",
+                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.")
+    fda_fast_track = PermissibleValue(text="fda_fast_track",
+                                                   description="Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track")
+    fda_breakthrough_therapy = PermissibleValue(text="fda_breakthrough_therapy",
+                                                                       description="Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy")
+    fda_accelerated_approval = PermissibleValue(text="fda_accelerated_approval",
+                                                                       description="When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval")
+    fda_priority_review = PermissibleValue(text="fda_priority_review",
+                                                             description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review")
+    regular_fda_approval = PermissibleValue(text="regular_fda_approval",
+                                                               description="Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.")
+    post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
 
     _defn = EnumDefinition(
         name="FDAApprovalStatusEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Discovery & Development Phase",
-                PermissibleValue(text="Discovery & Development Phase",
-                                 description="Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.") )
-        setattr(cls, "Preclinical Research Phase",
-                PermissibleValue(text="Preclinical Research Phase",
-                                 description="Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.") )
-        setattr(cls, "FDA Clinical Research Phase",
-                PermissibleValue(text="FDA Clinical Research Phase",
-                                 description="Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.") )
-        setattr(cls, "FDA Review Phase 4",
-                PermissibleValue(text="FDA Review Phase 4",
-                                 description="FDA Review") )
-        setattr(cls, "FDA Post-Market Safety Monitoring",
-                PermissibleValue(text="FDA Post-Market Safety Monitoring",
-                                 description="FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.") )
-        setattr(cls, "FDA Clinical Research Phase 1",
-                PermissibleValue(text="FDA Clinical Research Phase 1",
-                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.") )
-        setattr(cls, "FDA Clinical Research Phase 2",
-                PermissibleValue(text="FDA Clinical Research Phase 2",
-                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.") )
-        setattr(cls, "FDA Clinical Research Phase 3",
-                PermissibleValue(text="FDA Clinical Research Phase 3",
-                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.") )
-        setattr(cls, "FDA Clinical Research Phase 4",
-                PermissibleValue(text="FDA Clinical Research Phase 4",
-                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.") )
-        setattr(cls, "FDA Fast Track",
-                PermissibleValue(text="FDA Fast Track",
-                                 description="Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track") )
-        setattr(cls, "FDA Breakthrough Therapy",
-                PermissibleValue(text="FDA Breakthrough Therapy",
-                                 description="Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy") )
-        setattr(cls, "FDA Accelerated Approval",
-                PermissibleValue(text="FDA Accelerated Approval",
-                                 description="When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval") )
-        setattr(cls, "FDA Priority Review",
-                PermissibleValue(text="FDA Priority Review",
-                                 description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review") )
-        setattr(cls, "Regular FDA Approval",
-                PermissibleValue(text="Regular FDA Approval") )
-        setattr(cls, "Post-Approval Withdrawal",
-                PermissibleValue(text="Post-Approval Withdrawal") )
 
 class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     """
     please consult with the FDA guidelines as proposed in this document:
     https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     """
+    life_threatening_adverse_event = PermissibleValue(text="life_threatening_adverse_event",
+                                                                                   description="An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death.")
+    serious_adverse_event = PermissibleValue(text="serious_adverse_event",
+                                                                 description="An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse.")
+    suspected_adverse_reaction = PermissibleValue(text="suspected_adverse_reaction",
+                                                                           description="means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.")
+    unexpected_adverse_event = PermissibleValue(text="unexpected_adverse_event",
+                                                                       description="An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected,' as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation.")
+
     _defn = EnumDefinition(
         name="FDAIDAAdverseEventEnum",
         description="please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Life-threatening adverse event",
-                PermissibleValue(text="Life-threatening adverse event",
-                                 description="An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death.") )
-        setattr(cls, "Serious adverse event",
-                PermissibleValue(text="Serious adverse event",
-                                 description="An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse.") )
-        setattr(cls, "Suspected adverse reaction",
-                PermissibleValue(text="Suspected adverse reaction",
-                                 description="means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.") )
-        setattr(cls, "Unexpected adverse event",
-                PermissibleValue(text="Unexpected adverse event",
-                                 description="An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected,' as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation.") )
 
 # Slots
 class slots:
@@ -11480,7 +11426,7 @@ slots.chemical_affects_gene_association_subject_derivative_qualifier = Slot(uri=
                    model_uri=BIOLINK.chemical_affects_gene_association_subject_derivative_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "ChemicalEntityDerivativeEnum"]])
 
 slots.chemical_affects_gene_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="chemical affects gene association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+                   model_uri=BIOLINK.chemical_affects_gene_association_subject_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
 slots.chemical_affects_gene_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="chemical affects gene association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_subject_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
@@ -11504,7 +11450,7 @@ slots.chemical_affects_gene_association_object_part_qualifier = Slot(uri=BIOLINK
                    model_uri=BIOLINK.chemical_affects_gene_association_object_part_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
 slots.chemical_affects_gene_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical affects gene association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+                   model_uri=BIOLINK.chemical_affects_gene_association_object_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
 slots.chemical_affects_gene_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="chemical affects gene association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_object_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])

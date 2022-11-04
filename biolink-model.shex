@@ -493,12 +493,12 @@ linkml:Nodeidentifier NONLITERAL
           <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormOrVariantEnum> ? ;
           <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <subject_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
-          <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+          <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <subject_context_qualifier> @<AnatomicalEntity> ? ;
           <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormOrVariantEnum> ? ;
           <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
-          <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+          <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
           <object_context_qualifier> @<AnatomicalEntity> ? ;
           <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
