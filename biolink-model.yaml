@@ -43,6 +43,7 @@ prefixes:
   CTD.DISEASE: 'http://ctdbase.org/detail.go?type=disease&db=MESH&acc='
   CTD.GENE: 'http://ctdbase.org/detail.go?type=gene&acc='
   CTD: 'http://ctdbase.org/'
+  dbsnp: 'https://bioregistry.io/dbsnp:'
   DGIdb: 'https://www.dgidb.org/interaction_types'
   dcat: 'http://www.w3.org/ns/dcat#'
   dct: 'http://purl.org/dc/terms/'
@@ -7690,7 +7691,6 @@ classes:
       - VMC:Haplotype
 
   sequence variant:
-    aliases: [ 'allele' ]
     is_a: biological entity
     mixins:
       - genomic entity
@@ -7701,7 +7701,7 @@ classes:
       sequence alterations.
     notes:
       - This class is for modeling the specific state at a locus.
-        A single DBSNP rs ID could correspond to more than one sequence variants
+        A single dbsnp rs ID could correspond to more than one sequence variants
         (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
     exact_mappings:
       - WIKIDATA:Q15304597
@@ -7716,7 +7716,7 @@ classes:
       - CAID # ClinGen Allele Registry
       - CLINVAR
       - WIKIDATA
-      - DBSNP
+      - dbsnp
       - MGI
       - ZFIN
       - FB
