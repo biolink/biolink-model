@@ -1120,7 +1120,7 @@ slots:
   has chemical role:
     is_a: node property
     description: >-
-      A role is particular behaviour which a material entity may exhibit.
+      A role is particular behaviour which a chemical entity may exhibit.
     range: chemical role
     multivalued: true
 
@@ -5536,6 +5536,15 @@ classes:
 
   chemical role:
     is_a: attribute
+    description: >-
+      	A role played by the molecular entity or part thereof within a chemical context.
+    id_prefixes:
+      - CHEBI
+    exact_mappings:
+      - CHEBI:51086
+    examples:
+      - name: antidepressant
+        value: CHEBI:35469
 
   biological sex:
     is_a: attribute
