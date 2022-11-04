@@ -31,7 +31,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical entity.
              * [DrugExposure](DrugExposure.md) - A drug exposure is an intake of a particular drug.
                  * [DrugToGeneInteractionExposure](DrugToGeneInteractionExposure.md) - drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
-         * [ChemicalRole](ChemicalRole.md)
+         * [ChemicalRole](ChemicalRole.md) - 	A role played by the molecular entity or part thereof within a chemical context.
          * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
              * [ClinicalCourse](ClinicalCourse.md) - The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
                  * [Onset](Onset.md) - The age group in which (disease) symptom manifestations appear
@@ -1187,7 +1187,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [full name](full_name.md) - a long-form human readable name for a thing
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
- * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a material entity may exhibit.
+ * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
  * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
  * [has count](has_count.md) - number of things with a particular property
  * [has dataset](has_dataset.md)
@@ -1241,7 +1241,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [full name](full_name.md) - a long-form human readable name for a thing
      * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
      * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
-     * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a material entity may exhibit.
+     * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
      * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
      * [has dataset](has_dataset.md)
      * [has device](has_device.md) - connects an entity to one or more (medical) devices

@@ -8,7 +8,7 @@ layout: default
 # Class: ChemicalRole
 
 
-
+A role played by the molecular entity or part thereof within a chemical context.
 
 URI: [biolink:ChemicalRole](https://w3id.org/biolink/vocab/ChemicalRole)
 
@@ -19,6 +19,10 @@ URI: [biolink:ChemicalRole](https://w3id.org/biolink/vocab/ChemicalRole)
 
 ---
 
+
+## Identifier prefixes
+
+ * CHEBI
 
 ## Parents
 
@@ -102,3 +106,11 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='CHEBI:35469', description=None) |
+| **Exact Mappings:** | | CHEBI:51086 |
+

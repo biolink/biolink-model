@@ -8,7 +8,7 @@ layout: default
 # Slot: has_chemical_role
 
 
-A role is particular behaviour which a material entity may exhibit.
+A role is particular behaviour which a chemical entity may exhibit.
 
 URI: [biolink:has_chemical_role](https://w3id.org/biolink/vocab/has_chemical_role)
 

@@ -41,7 +41,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
  * [BiologicalSex](BiologicalSex.md)
  * [BioticExposure](BioticExposure.md) - An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
  * [ChemicalExposure](ChemicalExposure.md) - A chemical exposure is an intake of a particular chemical entity.
- * [ChemicalRole](ChemicalRole.md)
+ * [ChemicalRole](ChemicalRole.md) - 	A role played by the molecular entity or part thereof within a chemical context.
  * [ClinicalAttribute](ClinicalAttribute.md) - Attributes relating to a clinical manifestation
  * [ComplexChemicalExposure](ComplexChemicalExposure.md) - A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
  * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md) - A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
