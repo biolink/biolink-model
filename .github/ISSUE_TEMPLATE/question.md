@@ -13,3 +13,5 @@ Please replace this text with a clear and concise description of what your quest
 Please include any relevant links.
 
 To set up a meeting to discuss your question, please contact `smoxon at lbl dot gov` to set up a time. 
+For those involved in NCATS Data Translator consortium, please feel free to drop by from 10-11am PT on Mondays (
+details can be found on the shared calendar for Translator). 
