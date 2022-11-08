@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-04T20:17:38
+# Generation date: 2022-11-04T23:01:19
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -4756,7 +4756,7 @@ class Haplotype(BiologicalEntity):
 @dataclass
 class SequenceVariant(BiologicalEntity):
     """
-    An allele that varies in its sequence from what is considered the reference allele at that locus.
+    A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
