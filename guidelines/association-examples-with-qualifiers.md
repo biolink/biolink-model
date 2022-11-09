@@ -53,7 +53,7 @@ Therefore, the fully qualified statement, using our core triple would be:
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:16811", # methionine
   "subject_aspect_qualifier": "abundance",
   "subject_direction_qualifier": "decreased",
@@ -144,7 +144,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:5001"  # Fenofibrate
   "predicate": "biolink:physically_interacts_with"
   "object": "NCBIGene:5465"  # PPARA
@@ -158,7 +158,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:16811"  # Cyclophosphamide,
   "predicate": "biolink:affects",
   "object": "NCBIGene:154"  # CYP2B6,
@@ -173,7 +173,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
 ```json
     {
     "id": "e0",
-    "category": "biolink:ChemicalAffectsGeneAsociation",
+    "category": "biolink:ChemicalAffectsGeneAssociation",
     "subject": "CHEBI:16811"  # Bisphenol A,
     "predicate": "biolink:affects",
     "qualified_predicate": "biolink:causes",
@@ -191,7 +191,7 @@ gene (aspect)  Statement with same S/O concepts as above
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:16811"  # Bisphenol A,
   "predicate": "biolink:associated_with",
   "object": "NCBIGene:2099"  # ESR1,
@@ -208,7 +208,7 @@ metabolite of the specified chemical is the effector of a heavily qualified Stat
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:17026"  # Progesterone,
   "predicate": "biolink:affects",
   "qualified_predicate": "biolink:causes",
@@ -228,7 +228,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:16811"  # Hexachlorobenzene,
   "subject_form_or_variant_qualifier": "analog",
   "predicate": "biolink:affects",
@@ -248,7 +248,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
 ```json
 {
   "id": "e0",
-  "category": "biolink:ChemicalAffectsGeneAsociation",
+  "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:5001"  # Fenofibrate,
   "predicate": "biolink:afects",
   "qualified_predicate": "biolink:causes",
