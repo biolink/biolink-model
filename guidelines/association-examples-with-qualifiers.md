@@ -118,7 +118,7 @@ https://github.com/NCATSTranslator/ReasonerAPI/blob/master/examples/Message/subj
           },
           {
             "qualifier_type_id": "biolink:qualified_predicate",
-            "qualifier_value": "causes"
+            "qualifier_value": "biolink:causes"
           },
           {
             "qualifier_type_id": "biolink:object_aspect_qualifier",
