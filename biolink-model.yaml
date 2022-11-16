@@ -4063,7 +4063,7 @@ slots:
 
   derives into:
     is_a: related to at instance level
-    aliases: [ 'is normal cell origin of disease','may be normal cell origin of disease' ]
+    aliases: [ 'is normal cell origin of disease', 'may be normal cell origin of disease' ]
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -4750,7 +4750,7 @@ slots:
     inverse: develops from
 
   in taxon:
-    aliases: [ 'instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism',' gene product has organism source' ]
+    aliases: [ 'instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source' ]
     is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
@@ -4797,7 +4797,7 @@ slots:
   association slot:
     abstract: true
     domain: association
-    aliases: [ 'edge property','statement property','node qualifier','edge qualifier','statement qualifier' ]
+    aliases: [ 'edge property', 'statement property', 'node qualifier', 'edge qualifier', 'statement qualifier' ]
     description: >-
       any slot that relates an association to another entity
 
@@ -7157,7 +7157,7 @@ classes:
       - model_organism_database
 
   cellular component:
-    aliases: [ 'cell component','cell part' ]
+    aliases: [ 'cell component', 'cell part' ]
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -7612,7 +7612,7 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases: [ 'orthogroup','protein family' ]
+    aliases: [ 'orthogroup', 'protein family' ]
     is_a: biological entity
     exact_mappings:
       - NCIT:C26004
@@ -7761,7 +7761,7 @@ classes:
       - model_organism_database
 
   snv:
-    aliases: [ 'single nucleotide variant','single nucleotide polymorphism', 'snp' ]
+    aliases: [ 'single nucleotide variant', 'single nucleotide polymorphism', 'snp' ]
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at
@@ -8076,7 +8076,7 @@ classes:
 
   biotic exposure:
     is_a: attribute
-    aliases: [ 'viral exposure','bacterial exposure' ]
+    aliases: [ 'viral exposure', 'bacterial exposure' ]
     mixins:
       - exposure event
     description: >-
@@ -10581,7 +10581,7 @@ enums:
           under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the 
           investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral 
           thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the 
-          investigator brochure listed only cerebral vascular accidents. 'Unexpected,' as used in this definition, 
+          investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, 
           also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure
           as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but 
           are not specifically mentioned as occurring with the particular drug under investigation.
