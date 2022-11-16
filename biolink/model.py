@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-08T00:14:12
+# Generation date: 2022-11-16T16:16:13
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -205,8 +205,8 @@ SIDER_DRUG = CurieNamespace('SIDER_DRUG', 'http://identifiers.org/sider.drug/')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SMART = CurieNamespace('SMART', 'http://identifiers.org/smart/')
 SMPDB = CurieNamespace('SMPDB', 'http://identifiers.org/smpdb/')
-SNOMED = CurieNamespace('SNOMED', 'http://www.snomedbrowser.com/Codes/Details/')
-SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://www.snomedbrowser.com/Codes/Details/')
+SNOMED = CurieNamespace('SNOMED', 'http://purl.obolibrary.org/obo/SNOMED_')
+SNOMEDCT = CurieNamespace('SNOMEDCT', 'http://snomed.info/id/')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
 SPDI = CurieNamespace('SPDI', 'https://api.ncbi.nlm.nih.gov/variation/v0/spdi/')
 STATO = CurieNamespace('STATO', 'http://purl.obolibrary.org/obo/STATO_')
