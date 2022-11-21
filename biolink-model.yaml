@@ -603,22 +603,22 @@ slots:
       - IAO:0000136
       - RXNORM:has_tradename
 
-  exact_synonym:
+  exact synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasExactSynonym
 
-  broad_synonym:
+  broad synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasBroadSynonym
 
-  narrow_synonym:
+  narrow synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasNarrowSynonym
 
-  related_synonym:
+  related synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
@@ -7825,7 +7825,7 @@ classes:
       defined in the phenotypic abnormality sub-ontology, with respect
       to severity, laterality, and other aspects
     exact_mappings:
-      - HP:0012823
+
 
   clinical course:
     is_a: clinical attribute
