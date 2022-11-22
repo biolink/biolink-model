@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-04T23:01:19
+# Generation date: 2022-11-22T11:35:09
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.0.3"
+version = "3.1.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -7422,6 +7422,10 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
     object: Union[str, PhenotypicFeatureId] = None
     sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+    has_count: Optional[int] = None
+    has_total: Optional[int] = None
+    has_quotient: Optional[float] = None
+    has_percentage: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.object):
@@ -7431,6 +7435,18 @@ class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifie
 
         if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
             self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        if self.has_count is not None and not isinstance(self.has_count, int):
+            self.has_count = int(self.has_count)
+
+        if self.has_total is not None and not isinstance(self.has_total, int):
+            self.has_total = int(self.has_total)
+
+        if self.has_quotient is not None and not isinstance(self.has_quotient, float):
+            self.has_quotient = float(self.has_quotient)
+
+        if self.has_percentage is not None and not isinstance(self.has_percentage, float):
+            self.has_percentage = float(self.has_percentage)
 
         super().__post_init__(**kwargs)
 
@@ -9900,16 +9916,16 @@ slots.symbol = Slot(uri=BIOLINK.symbol, name="symbol", curie=BIOLINK.curie('symb
 slots.synonym = Slot(uri=BIOLINK.synonym, name="synonym", curie=BIOLINK.curie('synonym'),
                    model_uri=BIOLINK.synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
-slots.exact_synonym = Slot(uri=BIOLINK.exact_synonym, name="exact_synonym", curie=BIOLINK.curie('exact_synonym'),
+slots.exact_synonym = Slot(uri=BIOLINK.exact_synonym, name="exact synonym", curie=BIOLINK.curie('exact_synonym'),
                    model_uri=BIOLINK.exact_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
-slots.broad_synonym = Slot(uri=BIOLINK.broad_synonym, name="broad_synonym", curie=BIOLINK.curie('broad_synonym'),
+slots.broad_synonym = Slot(uri=BIOLINK.broad_synonym, name="broad synonym", curie=BIOLINK.curie('broad_synonym'),
                    model_uri=BIOLINK.broad_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
-slots.narrow_synonym = Slot(uri=BIOLINK.narrow_synonym, name="narrow_synonym", curie=BIOLINK.curie('narrow_synonym'),
+slots.narrow_synonym = Slot(uri=BIOLINK.narrow_synonym, name="narrow synonym", curie=BIOLINK.curie('narrow_synonym'),
                    model_uri=BIOLINK.narrow_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
-slots.related_synonym = Slot(uri=BIOLINK.related_synonym, name="related_synonym", curie=BIOLINK.curie('related_synonym'),
+slots.related_synonym = Slot(uri=BIOLINK.related_synonym, name="related synonym", curie=BIOLINK.curie('related_synonym'),
                    model_uri=BIOLINK.related_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
 slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.curie('has_topic'),
