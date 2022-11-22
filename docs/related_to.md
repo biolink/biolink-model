@@ -37,7 +37,8 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
 | --- | --- | --- |
 | **Exact Mappings:** | | skos:relatedMatch |
 |  | | UMLS:related_to |
-| **Narrow Mappings:** | | SEMMEDDB:compared_with |
+| **Narrow Mappings:** | | SEMMEDDB:ASSOCIATED_WITH |
+|  | | SEMMEDDB:compared_with |
 |  | | SEMMEDDB:higher_than |
 |  | | SEMMEDDB:lower_than |
 |  | | BFO:0000054 |

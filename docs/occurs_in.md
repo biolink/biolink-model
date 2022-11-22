@@ -41,9 +41,7 @@ URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
 |  | | SNOMED:has_occurrence |
 |  | | UBERON:site_of |
 | **Narrow Mappings:** | | SEMMEDDB:OCCURS_IN |
-|  | | SEMMEDDB:occurs_in |
 |  | | SEMMEDDB:PROCESS_OF |
-|  | | SEMMEDDB:process_of |
 |  | | UBERON_CORE:site_of |
 |  | | LOINC:has_imaged_location |
 |  | | PathWhiz:in_species |

@@ -31,5 +31,5 @@ URI: [biolink:exacerbates](https://w3id.org/biolink/vocab/exacerbates)
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | RO:0003309 |
-| **Broad Mappings:** | | SEMMEDDB:complicates |
+| **Broad Mappings:** | | SEMMEDDB:COMPLICATES |
 

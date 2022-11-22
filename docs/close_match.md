@@ -36,7 +36,6 @@ URI: [biolink:close_match](https://w3id.org/biolink/vocab/close_match)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | skos:closeMatch |
-|  | | SEMMEDDB:SAME_AS |
 |  | | SEMMEDDB:same_as |
 | **Narrow Mappings:** | | CHEBI:is_enantiomer_of |
 |  | | CHEBI:is_tautomer_of |

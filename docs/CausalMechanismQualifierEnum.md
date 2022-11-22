@@ -23,7 +23,7 @@ URI: [biolink:CausalMechanismQualifierEnum](https://w3id.org/biolink/vocab/Causa
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
 | binding | A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction. |  |  |
-| inhibition | A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway. |  | {'is_a': 'binding', 'close_mappings': ['DGIdb:inhibitor', 'SEMMEDDB:INHIBITS', 'SEMMEDDB:inhibits'], 'narrow_mappings': ['DGIdb:blocker', 'DGIdb:channel_blocker', 'DGIdb:gating_inhibitor', 'CHEMBL.MECHANISM:antisense_inhibitor', 'CHEMBL.MECHANISM:blocker', 'CHEMBL.MECHANISM:inhibitor', 'CHEMBL.MECHANISM:negative_allosteric_modulator', 'CHEMBL.MECHANISM:negative_modulator', 'DGIdb:negative_modulator']} |
+| inhibition | A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway. |  | {'is_a': 'binding', 'close_mappings': ['DGIdb:inhibitor', 'SEMMEDDB:INHIBITS'], 'narrow_mappings': ['DGIdb:blocker', 'DGIdb:channel_blocker', 'DGIdb:gating_inhibitor', 'CHEMBL.MECHANISM:antisense_inhibitor', 'CHEMBL.MECHANISM:blocker', 'CHEMBL.MECHANISM:inhibitor', 'CHEMBL.MECHANISM:negative_allosteric_modulator', 'CHEMBL.MECHANISM:negative_modulator', 'DGIdb:negative_modulator']} |
 | antibody_inhibition | A causal mechanism in which an antibody specifically binds to and interferes with the target. |  | {'is_a': 'inhibition'} |
 | antagonism | A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site. |  | {'is_a': 'inhibition', 'close_mappings': ['DGIdb:antagonist', 'CHEMBL.MECHANISM:antagonist'], 'narrow_mappings': ['CHEMBL.MECHANISM:allosteric_antagonist']} |
 | molecular_channel_blockage | A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it. |  | {'is_a': 'inhibition'} |
@@ -38,6 +38,6 @@ URI: [biolink:CausalMechanismQualifierEnum](https://w3id.org/biolink/vocab/Causa
 | transcriptional_regulation | A causal mechanism mediated by through the control of target gene transcription |  |  |
 | signaling_mediated_control | A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc) |  |  |
 | stabilization |  |  | {'is_a': 'activation', 'close_mappings': ['CHEMBL.MECHANISM:stabiliser']} |
-| stimulation |  |  | {'is_a': 'activation', 'close_mappings': ['DGIdb:stimulator', 'SEMMEDDB:stimulates', 'DGIdb:stimulator']} |
+| stimulation |  |  | {'is_a': 'activation', 'close_mappings': ['DGIdb:stimulator', 'SEMMEDDB:STIMULATES', 'DGIdb:stimulator']} |
 | releasing_activity |  |  | {'is_a': 'activation', 'close_mappings': ['CHEMBL:MECHANISM:releasing_agent']} |
 

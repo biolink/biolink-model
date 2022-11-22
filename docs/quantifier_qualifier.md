@@ -33,6 +33,6 @@ URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/vocab/quantifier_qu
 | **Narrow Mappings:** | | LOINC:analyzes |
 |  | | LOINC:measured_by |
 |  | | LOINC:property_of |
-|  | | SEMMEDDB:measures |
+|  | | SEMMEDDB:MEASURES |
 |  | | UMLS:measures |
 

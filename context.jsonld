@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-08T00:13:44\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.1.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-16T16:15:31\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.1.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -405,8 +405,11 @@
       },
       "SMART": "http://identifiers.org/smart/",
       "SMPDB": "http://identifiers.org/smpdb/",
-      "SNOMED": "http://www.snomedbrowser.com/Codes/Details/",
-      "SNOMEDCT": "http://www.snomedbrowser.com/Codes/Details/",
+      "SNOMED": {
+         "@id": "http://purl.obolibrary.org/obo/SNOMED_",
+         "@prefix": true
+      },
+      "SNOMEDCT": "http://snomed.info/id/",
       "SO": {
          "@id": "http://purl.obolibrary.org/obo/SO_",
          "@prefix": true

@@ -37,7 +37,6 @@ URI: [biolink:associated_with](https://w3id.org/biolink/vocab/associated_with)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | SEMMEDDB:associated_with |
 | **Narrow Mappings:** | | RO:0004029 |
 |  | | SNOMEDCT:47429007 |
 

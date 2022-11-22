@@ -37,7 +37,6 @@ URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
 | **Exact Mappings:** | | RO:0003000 |
 |  | | WIKIDATA_PROPERTY:P1056 |
 |  | | SEMMEDDB:PRODUCES |
-|  | | SEMMEDDB:produces |
 | **Narrow Mappings:** | | NCIT:R29 |
 |  | | SNOMED:has_process_output |
 |  | | SNOMED:specimen_procedure_of |

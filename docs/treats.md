@@ -38,7 +38,6 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | DRUGBANK:treats |
 |  | | SEMMEDDB:TREATS |
-|  | | SEMMEDDB:treats |
 |  | | WIKIDATA_PROPERTY:P2175 |
 | **Narrow Mappings:** | | RO:0002606 |
 |  | | NCIT:regimen_has_accepted_use_for_disease |

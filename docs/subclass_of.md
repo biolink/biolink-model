@@ -35,8 +35,7 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | rdfs:subClassOf |
-|  | | SEMMEDDB:IS_A |
-|  | | SEMMEDDB:isa |
+|  | | SEMMEDDB:ISA |
 |  | | WIKIDATA_PROPERTY:P279 |
 |  | | CHEMBL.MECHANISM:subset_of |
 |  | | GO:isa |

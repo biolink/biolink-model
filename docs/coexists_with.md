@@ -39,7 +39,6 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | SEMMEDDB:COEXISTS_WITH |
-|  | | SEMMEDDB:coexists_with |
 | **Narrow Mappings:** | | BSPO:0000096 |
 |  | | BSPO:0000097 |
 |  | | BSPO:0000098 |

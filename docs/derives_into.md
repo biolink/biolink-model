@@ -39,6 +39,5 @@ URI: [biolink:derives_into](https://w3id.org/biolink/vocab/derives_into)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0001001 |
 |  | | SEMMEDDB:CONVERTS_TO |
-|  | | SEMMEDDB:converts_to |
 |  | | FMA:derives |
 

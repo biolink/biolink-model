@@ -42,9 +42,8 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | SEMMEDDB:AFFECTS |
-|  | | SEMMEDDB:affects |
 |  | | DGIdb:affects |
-| **Narrow Mappings:** | | SEMMEDDB:administered_to |
+| **Narrow Mappings:** | | SEMMEDDB:ADMINISTERED_TO |
 |  | | CTD:prediction_hypothesis |
 |  | | GOREL:0001006 |
 |  | | CTD:inferred |

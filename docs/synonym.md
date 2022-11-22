@@ -25,10 +25,10 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 
 ## Children
 
- *  [broad_synonym](broad_synonym.md)
- *  [exact_synonym](exact_synonym.md)
- *  [narrow_synonym](narrow_synonym.md)
- *  [related_synonym](related_synonym.md)
+ *  [broad synonym](broad_synonym.md)
+ *  [exact synonym](exact_synonym.md)
+ *  [narrow synonym](narrow_synonym.md)
+ *  [related synonym](related_synonym.md)
 
 ## Used by
 

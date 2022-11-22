@@ -41,7 +41,6 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | BFO:0000050 |
 |  | | SEMMEDDB:PART_OF |
-|  | | SEMMEDDB:part_of |
 |  | | WIKIDATA_PROPERTY:P361 |
 |  | | FMA:part_of |
 |  | | RXNORM:constitutes |

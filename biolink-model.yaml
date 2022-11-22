@@ -602,22 +602,22 @@ slots:
       - IAO:0000136
       - RXNORM:has_tradename
 
-  exact_synonym:
+  exact synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasExactSynonym
 
-  broad_synonym:
+  broad synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasBroadSynonym
 
-  narrow_synonym:
+  narrow synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasNarrowSynonym
 
-  related_synonym:
+  related synonym:
     is_a: synonym
     exact_mappings:
       - oboInOwl:hasRelatedSynonym
@@ -1464,7 +1464,7 @@ slots:
       - LOINC:analyzes
       - LOINC:measured_by
       - LOINC:property_of
-      - SEMMEDDB:measures
+      - SEMMEDDB:MEASURES
       - UMLS:measures
 
   catalyst qualifier:
@@ -1507,6 +1507,7 @@ slots:
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
+      - SEMMEDDB:ASSOCIATED_WITH
       - SEMMEDDB:compared_with
       - SEMMEDDB:higher_than
       - SEMMEDDB:lower_than
@@ -1649,8 +1650,6 @@ slots:
     symmetric: true
     domain: named thing
     range: named thing
-    exact_mappings:
-      - SEMMEDDB:associated_with
     narrow_mappings:
       - RO:0004029
       - SNOMEDCT:47429007
@@ -1700,8 +1699,7 @@ slots:
       - LOINC:has_class
     exact_mappings:
       - rdfs:subClassOf
-      - SEMMEDDB:IS_A
-      - SEMMEDDB:isa
+      - SEMMEDDB:ISA
       - WIKIDATA_PROPERTY:P279
       - CHEMBL.MECHANISM:subset_of
       - GO:isa
@@ -1747,7 +1745,7 @@ slots:
       - skos:exactMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
       # RTX suggests mapping this to proposed new "biolink:close_match" predicate instead
-      #- SEMMEDDB:SAME_AS
+      #- SEMMEDDB:same_as
       - WIKIDATA_PROPERTY:P2888
       - CHEMBL.MECHANISM:equivalent_to
       - MONDO:equivalentTo
@@ -1770,7 +1768,6 @@ slots:
     exact_mappings:
       - skos:closeMatch
       # Semantic Medline definition: "comparative predicate" where the equivalence could simply be functional
-      - SEMMEDDB:SAME_AS
       - SEMMEDDB:same_as
     narrow_mappings:
       - CHEBI:is_enantiomer_of
@@ -2148,7 +2145,6 @@ slots:
     range: named thing
 
   interacts with:
-    abstract: true
     domain: named thing
     range: named thing
     description: >-
@@ -2161,7 +2157,7 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - RO:0002434
-      - SEMMEDDB:interacts_with
+      - SEMMEDDB:INTERACTS_WITH
     narrow_mappings:
       # RO terms RTX mapped to 'biolink:related_to' but which imply a chemical interaction
       - RO:0002103
@@ -2270,10 +2266,9 @@ slots:
       - DRUGBANK:pathway
     exact_mappings:
       - SEMMEDDB:AFFECTS
-      - SEMMEDDB:affects
       - DGIdb:affects
     narrow_mappings:
-      - SEMMEDDB:administered_to
+      - SEMMEDDB:ADMINISTERED_TO
       - CTD:prediction_hypothesis
       - GOREL:0001006
       - CTD:inferred
@@ -2363,7 +2358,7 @@ slots:
       - SIO:001331 # diagnosis
     exact_mappings:
       - DrugCentral:5271
-      - SEMMEDDB:diagnoses
+      - SEMMEDDB:DIAGNOSES
 
   is diagnosed by:
     is_a: related to at instance level
@@ -2533,7 +2528,6 @@ slots:
       opposite_of: enables
     exact_mappings:
       - SEMMEDDB:DISRUPTS
-      - SEMMEDDB:disrupts
       - CHEMBL.MECHANISM:disrupting_agent
     narrow_mappings:
       - RO:0004024
@@ -2703,7 +2697,6 @@ slots:
       canonical_predicate: true
     exact_mappings:
       - SEMMEDDB:COEXISTS_WITH
-      - SEMMEDDB:coexists_with
     narrow_mappings:
       - BSPO:0000096
       - BSPO:0000097
@@ -3010,7 +3003,7 @@ slots:
       canonical_predicate: true
       opposite_of: prevents
     exact_mappings:
-      - SEMMEDDB:predisposes
+      - SEMMEDDB:PREDISPOSES
 
   has predisposing factor:
     is_a: risk affected by
@@ -3058,7 +3051,6 @@ slots:
       opposite_of: prevents
     exact_mappings:
       - SEMMEDDB:CAUSES
-      - SEMMEDDB:causes
       - WIKIDATA_PROPERTY:P1542
       - SNOMED:cause_of
       - RO:0003303
@@ -3153,7 +3145,7 @@ slots:
     exact_mappings:
       - RO:0003309
     broad_mappings:
-      - SEMMEDDB:complicates
+      - SEMMEDDB:COMPLICATES
 
   is exacerbated by:
     inverse: exacerbates
@@ -3181,7 +3173,6 @@ slots:
     exact_mappings:
       - DRUGBANK:treats
       - SEMMEDDB:TREATS
-      - SEMMEDDB:treats
       - WIKIDATA_PROPERTY:P2175
     narrow_mappings:
       # "is substance that treats" constrains statements to
@@ -3244,7 +3235,6 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:PREVENTS
-      - SEMMEDDB:prevents
     narrow_mappings:
       # more restricted case of a material entity mitigating a pathological process
       - RO:0002599
@@ -3467,10 +3457,8 @@ slots:
     narrow_mappings:
       # SemMedDb term 'OCCURS_IN' constrained to something (other than process) occurring in a group or population
       - SEMMEDDB:OCCURS_IN
-      - SEMMEDDB:occurs_in
       # SemMedDb term 'PROCESS_IN' constrained specifically to a process occurring in the object concept entity
       - SEMMEDDB:PROCESS_OF
-      - SEMMEDDB:process_of
       # Uberon term constrained to a 'site' as object concept
       - UBERON_CORE:site_of
       - LOINC:has_imaged_location
@@ -3556,7 +3544,6 @@ slots:
     exact_mappings:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
-      - SEMMEDDB:location_of
       - WIKIDATA_PROPERTY:P276
       # RTX tagged this as an inverse of biolink:located_in
       - FMA:location_of
@@ -3758,7 +3745,6 @@ slots:
     exact_mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
-      - SEMMEDDB:part_of
       - WIKIDATA_PROPERTY:P361
       - FMA:part_of
       - RXNORM:constitutes
@@ -3836,7 +3822,6 @@ slots:
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
-      - SEMMEDDB:uses
     narrow_mappings:
       - LOINC:has_fragments_for_synonyms
       - LOINC:has_system
@@ -4078,7 +4063,6 @@ slots:
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
-      - SEMMEDDB:converts_to
       # RTX posted terms as inverse of 'biolink:derives_from'
       - FMA:derives
 
@@ -4255,7 +4239,6 @@ slots:
       - translator_minimal
     exact_mappings:
       - SEMMEDDB:MANIFESTATION_OF
-      - SEMMEDDB:manifestation_of
       - OMIM:manifestation_of
     broad_mappings:
       # Wikidata's definition is slightly broader: "inherent and characteristic embodiment of a given concept"
@@ -4303,7 +4286,6 @@ slots:
       - RO:0003000
       - WIKIDATA_PROPERTY:P1056
       - SEMMEDDB:PRODUCES
-      - SEMMEDDB:produces
     narrow_mappings:
       - NCIT:R29
       - SNOMED:has_process_output
@@ -4373,7 +4355,6 @@ slots:
     exact_mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
-      - SEMMEDDB:precedes
       - SNOMED:occurs_before
     broad_mappings:
       # the Wikidata definition is subtly broader, focusing on a series not strictly temporal in nature
@@ -7824,7 +7805,7 @@ classes:
       defined in the phenotypic abnormality sub-ontology, with respect
       to severity, laterality, and other aspects
     exact_mappings:
-      - HP:0012823
+
 
   clinical course:
     is_a: clinical attribute
@@ -10240,7 +10221,6 @@ enums:
         close_mappings:
           - DGIdb:inhibitor
           - SEMMEDDB:INHIBITS
-          - SEMMEDDB:inhibits
         narrow_mappings:
           - DGIdb:blocker
           - DGIdb:channel_blocker
@@ -10353,7 +10333,7 @@ enums:
         is_a: activation
         close_mappings:
           - DGIdb:stimulator
-          - SEMMEDDB:stimulates
+          - SEMMEDDB:STIMULATES
           - DGIdb:stimulator
       releasing_activity:
         is_a: activation

@@ -29,7 +29,6 @@ URI: [biolink:molecular_activity_has_input](https://w3id.org/biolink/vocab/molec
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002233 |
 |  | | SEMMEDDB:USES |
-|  | | SEMMEDDB:uses |
 | **Close Mappings:** | | RO:0002352 |
 | **Narrow Mappings:** | | LOINC:has_fragments_for_synonyms |
 |  | | LOINC:has_system |

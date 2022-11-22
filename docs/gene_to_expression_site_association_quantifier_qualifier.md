@@ -29,6 +29,6 @@ URI: [biolink:gene_to_expression_site_association_quantifier_qualifier](https://
 | **Narrow Mappings:** | | LOINC:analyzes |
 |  | | LOINC:measured_by |
 |  | | LOINC:property_of |
-|  | | SEMMEDDB:measures |
+|  | | SEMMEDDB:MEASURES |
 |  | | UMLS:measures |
 

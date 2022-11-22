@@ -35,7 +35,6 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | SEMMEDDB:CAUSES |
-|  | | SEMMEDDB:causes |
 |  | | WIKIDATA_PROPERTY:P1542 |
 |  | | SNOMED:cause_of |
 |  | | RO:0003303 |

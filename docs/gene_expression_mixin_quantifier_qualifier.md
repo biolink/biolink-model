@@ -31,6 +31,6 @@ URI: [biolink:gene_expression_mixin_quantifier_qualifier](https://w3id.org/bioli
 | **Narrow Mappings:** | | LOINC:analyzes |
 |  | | LOINC:measured_by |
 |  | | LOINC:property_of |
-|  | | SEMMEDDB:measures |
+|  | | SEMMEDDB:MEASURES |
 |  | | UMLS:measures |
 

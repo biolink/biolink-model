@@ -36,7 +36,6 @@ URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | BFO:0000063 |
 |  | | SEMMEDDB:PRECEDES |
-|  | | SEMMEDDB:precedes |
 |  | | SNOMED:occurs_before |
 | **Close Mappings:** | | RO:0002263 |
 |  | | RO:0002264 |

@@ -1175,14 +1175,14 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [animal model available from](animal_model_available_from.md)
  * [authors](authors.md) - connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
  * [available from](available_from.md)
- * [broad_synonym](broad_synonym.md)
+ * [broad synonym](broad_synonym.md)
  * [chapter](chapter.md) - chapter of a book
  * [created with](created_with.md)
  * [creation date](creation_date.md) - date on which an entity was created. This can be applied to nodes or edges
  * [dataset download url](dataset_download_url.md)
  * [distribution download url](distribution_download_url.md)
  * [download url](download_url.md)
- * [exact_synonym](exact_synonym.md)
+ * [exact synonym](exact_synonym.md)
  * [format](format.md)
  * [full name](full_name.md) - a long-form human readable name for a thing
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
@@ -1219,7 +1219,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [longitude](longitude.md) - longitude
  * [max tolerated dose](max_tolerated_dose.md) - The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
  * [mesh terms](mesh_terms.md) - mesh terms tagging a publication
- * [narrow_synonym](narrow_synonym.md)
+ * [narrow synonym](narrow_synonym.md)
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
      * [address](address.md) - the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text "blob" containing all relevant details of the given location for fitness of purpose. For the moment, this "address" can include other contact details such as email and phone number(?).
      * [affiliation](affiliation.md) - a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
@@ -1278,10 +1278,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [summary](summary.md) - executive  summary of a publication
      * [symbol](symbol.md) - Symbol for a particular thing
      * [synonym](synonym.md) - Alternate human-readable names for a thing
-         * [broad_synonym](broad_synonym.md)
-         * [exact_synonym](exact_synonym.md)
-         * [narrow_synonym](narrow_synonym.md)
-         * [related_synonym](related_synonym.md)
+         * [broad synonym](broad_synonym.md)
+         * [exact synonym](exact_synonym.md)
+         * [narrow synonym](narrow_synonym.md)
+         * [related synonym](related_synonym.md)
      * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
      * [trade name](trade_name.md)
      * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
@@ -1292,7 +1292,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [pages](pages.md) - page number of source referenced for statement or publication
  * [provided by](provided_by.md) - The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
  * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
- * [related_synonym](related_synonym.md)
+ * [related synonym](related_synonym.md)
  * [retrieved on](retrieved_on.md)
  * [rights](rights.md)
  * [source logo](source_logo.md)
@@ -1300,10 +1300,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [summary](summary.md) - executive  summary of a publication
  * [symbol](symbol.md) - Symbol for a particular thing
  * [synonym](synonym.md) - Alternate human-readable names for a thing
-     * [broad_synonym](broad_synonym.md)
-     * [exact_synonym](exact_synonym.md)
-     * [narrow_synonym](narrow_synonym.md)
-     * [related_synonym](related_synonym.md)
+     * [broad synonym](broad_synonym.md)
+     * [exact synonym](exact_synonym.md)
+     * [narrow synonym](narrow_synonym.md)
+     * [related synonym](related_synonym.md)
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [trade name](trade_name.md)
  * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges

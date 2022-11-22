@@ -36,7 +36,6 @@ URI: [biolink:manifestation_of](https://w3id.org/biolink/vocab/manifestation_of)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | SEMMEDDB:MANIFESTATION_OF |
-|  | | SEMMEDDB:manifestation_of |
 |  | | OMIM:manifestation_of |
 | **Narrow Mappings:** | | SNOMED:has_definitional_manifestation |
 | **Broad Mappings:** | | WIKIDATA_PROPERTY:P1557 |
