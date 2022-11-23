@@ -3,7 +3,6 @@ from linkml.generators.prefixmapgen import PrefixGenerator
 from linkml_runtime.utils.formatutils import camelcase
 from classprefixes import BiolinkClassPrefixMap, Prefix, BiolinkClassPrefixesCollection
 from linkml_runtime.dumpers.json_dumper import JSONDumper
-from linkml_runtime.dumpers.csv_dumper import CSVDumper
 import os
 
 OUT_JSON = os.path.join('../prefix-map/preferred_prefixes_per_class.json')
