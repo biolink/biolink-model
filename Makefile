@@ -128,6 +128,9 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
 	pipenv run gen-prefix-map $< > $@
 
+id-prefixes:
+	pipenv run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
+
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
