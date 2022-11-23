@@ -50,7 +50,7 @@ classes:
   Prefix:
     slots:
         - prefix
-        - uri
+        - base_uri
 
 slots:
   biolink_class_prefixes:
@@ -71,7 +71,7 @@ slots:
     description: the name of a class in Biolink Model
     range: uriorcurie
 
-  uri:
+  base_uri:
     description: the URI of a prefix
     range: uri
 

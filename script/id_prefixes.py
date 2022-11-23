@@ -3,9 +3,11 @@ from linkml.generators.prefixmapgen import PrefixGenerator
 from linkml_runtime.utils.formatutils import camelcase
 from classprefixes import BiolinkClassPrefixMap, Prefix
 from linkml_runtime.dumpers.json_dumper import JSONDumper
+from linkml_runtime.dumpers.csv_dumper import CSVDumper
 import os
 
 OUT_JSON = os.path.join('../prefix-map/preferred_prefixes_per_class.json')
+
 
 class IDPrefixes:
 
@@ -27,7 +29,9 @@ class IDPrefixes:
                 bcpm.prefix_map = prefix_map
 
         jd = JSONDumper()
+        csvd = CSVDumper()
         jd.dump(bcpm, to_file=OUT_JSON)
+
 
 if __name__ == "__main__":
     IDPrefixes().dump()
