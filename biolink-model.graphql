@@ -234,6 +234,10 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type BehavioralExposure implements ExposureEvent
@@ -442,6 +446,10 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Cell
@@ -1440,6 +1448,10 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
@@ -1638,13 +1650,17 @@ type EntityToPhenotypicFeatureAssociation
     fDAApprovalStatus: FDAApprovalStatusEnum
   }
 
-interface EntityToPhenotypicFeatureAssociationMixin
+type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
     object: PhenotypicFeature!
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type EnvironmentalExposure implements ExposureEvent
@@ -1844,6 +1860,10 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Food
@@ -2272,6 +2292,10 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type GeneticInheritance
@@ -2494,6 +2518,10 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type GenotypeToVariantAssociation
@@ -4469,6 +4497,10 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, FrequencyQuantifier, FrequencyQualifierMixin

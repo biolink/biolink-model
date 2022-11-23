@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,4202.8,283"];
+	graph [bb="0,0,4656.4,283"];
 	node [label="\N"];
 	"case to phenotypic feature association"	[height=0.5,
 		label="case to phenotypic feature association",
-		pos="2166.4,265",
+		pos="2479.4,265",
 		width=5.2356];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"case to phenotypic feature association" -> association	[label=is_a,
-		lp="705.39,221.5",
-		pos="e,106.72,190.73 1980.9,261.71 1701.3,257.77 1155.1,248.23 691.39,229 443.62,218.72 379.76,231.96 134.39,196 128.61,195.15 122.62,\
+		lp="704.39,221.5",
+		pos="e,106.72,190.73 2292.3,262.78 1966.6,260.12 1274.5,252.04 690.39,229 443.04,219.24 379.32,231.91 134.39,196 128.61,195.15 122.62,\
 194.07 116.66,192.86"];
 	"entity to phenotypic feature association mixin"	[height=0.5,
 		pos="367.39,178",
 		width=6.2286];
 	"case to phenotypic feature association" -> "entity to phenotypic feature association mixin"	[label=uses,
-		lp="936.89,221.5",
-		pos="e,495.17,192.82 1979.7,262.37 1735.9,259.41 1295.9,251.23 920.39,229 778.64,220.61 616.93,205.32 505.15,193.85"];
+		lp="935.89,221.5",
+		pos="e,493.55,192.88 2291,263.9 1997.6,262.81 1413.8,256.91 919.39,229 777.29,220.98 615.12,205.54 503.52,193.92"];
 	"case to entity association mixin"	[height=0.5,
 		pos="767.39,178",
 		width=4.3691];
 	"case to phenotypic feature association" -> "case to entity association mixin"	[label=uses,
-		lp="1079.9,221.5",
-		pos="e,839.71,194.04 1982,261.18 1715.5,256.58 1235.9,246.22 1063.4,229 990.72,221.74 908.91,207.45 849.74,195.99"];
+		lp="1077.9,221.5",
+		pos="e,838.6,194.06 2292.3,262.72 1963.4,259.92 1294.4,251.57 1061.4,229 988.93,221.98 907.37,207.59 848.57,196.04"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -31,9 +31,9 @@ digraph {
 		width=1.0652];
 	"case to phenotypic feature association" -> id	[color=blue,
 		label=id,
-		lp="1201.4,221.5",
-		pos="e,1010.4,190.01 1982.7,260.92 1744.3,256.31 1341.7,246.26 1194.4,229 1120.1,220.29 1101.5,215.87 1029.4,196 1026.3,195.14 1023.1,\
-194.18 1019.9,193.17",
+		lp="1197.4,221.5",
+		pos="e,1010.4,189.99 2292.1,262.94 1987.5,260.55 1397.8,252.89 1190.4,229 1117.8,220.64 1099.8,215.57 1029.4,196 1026.3,195.14 1023.1,\
+194.17 1019.9,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -42,9 +42,9 @@ digraph {
 		width=1.2277];
 	"case to phenotypic feature association" -> iri	[color=blue,
 		label=iri,
-		lp="1314.4,221.5",
-		pos="e,1115.3,190.23 1977.9,264.44 1803.2,262.92 1536.5,255.73 1306.4,229 1229.5,220.07 1210.4,215.19 1135.4,196 1132,195.14 1128.5,194.18 \
-1125.1,193.17",
+		lp="1311.4,221.5",
+		pos="e,1115.3,190.21 2293.2,262.18 2011.3,258.8 1489.3,249.88 1303.4,229 1227.8,220.51 1209.1,214.99 1135.4,196 1132,195.13 1128.5,194.17 \
+1125.1,193.16",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -53,8 +53,8 @@ digraph {
 		width=1.5707];
 	"case to phenotypic feature association" -> name	[color=blue,
 		label=name,
-		lp="1416.4,221.5",
-		pos="e,1239.8,191.34 1985.1,260.04 1793.9,255.11 1505.6,245.27 1396.4,229 1345.5,221.42 1288.7,206.03 1249.6,194.31",
+		lp="1411.4,221.5",
+		pos="e,1239.1,191.61 2291.8,263.05 2027.6,260.84 1559.4,253.49 1391.4,229 1342,221.8 1286.9,206.48 1248.9,194.68",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -63,8 +63,8 @@ digraph {
 		width=2.0943];
 	"case to phenotypic feature association" -> description	[color=blue,
 		label=description,
-		lp="1530.9,221.5",
-		pos="e,1384.9,194.19 1983.5,260.55 1816.1,256.29 1581.1,247.25 1490.4,229 1457.3,222.33 1421.4,209.28 1394.4,198.18",
+		lp="1529.9,221.5",
+		pos="e,1384.3,194.24 2291,264.31 2047.6,263.51 1637.5,257.71 1489.4,229 1456.3,222.59 1420.6,209.45 1393.8,198.26",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -73,8 +73,8 @@ digraph {
 		width=1.4443];
 	"case to phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1667.4,221.5",
-		pos="e,1524.6,193.41 1989.4,258.74 1857.2,253.66 1688.2,244.43 1620.4,229 1590.2,222.14 1557.9,208.86 1533.8,197.72",
+		lp="1666.4,221.5",
+		pos="e,1523.8,193.38 2291.2,263.88 2077.6,262.42 1742.7,255.72 1619.4,229 1589.2,222.45 1556.8,209.03 1532.9,197.74",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -83,8 +83,8 @@ digraph {
 		width=1.9318];
 	"case to phenotypic feature association" -> subject	[color=blue,
 		label=subject,
-		lp="1790.4,221.5",
-		pos="e,1667.7,194.13 1987.1,259.34 1916.9,254.68 1836.2,245.78 1764.4,229 1734.2,221.95 1701.8,209.2 1677.1,198.34",
+		lp="1789.4,221.5",
+		pos="e,1666.8,194.25 2293.9,261.76 2116.1,258.38 1860.7,249.95 1763.4,229 1733.1,222.49 1700.7,209.6 1676.2,198.54",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -94,7 +94,7 @@ digraph {
 	"case to phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1868.4,221.5",
-		pos="e,1808.8,196.31 1988.5,258.92 1924.3,254.24 1861,245.45 1834.4,229 1825.4,223.45 1818.5,214.34 1813.4,205.41",
+		pos="e,1808.5,196.02 2292.5,262.47 2116.2,259.64 1873.2,251.63 1834.4,229 1825.1,223.61 1818.1,214.35 1813.1,205.26",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -104,7 +104,7 @@ digraph {
 	"case to phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="1947.4,178",
-		pos="e,1776,105.47 2073.3,249.28 2026.6,239.11 1970.6,222.49 1925.4,196 1905.9,184.56 1908.1,172.77 1889.4,160 1857.3,138.07 1817,120.64 \
+		pos="e,1776,105.47 2314.6,256.21 2176.4,247.42 1991.4,229.71 1925.4,196 1905.2,185.71 1908.1,172.77 1889.4,160 1857.3,138.07 1817,120.64 \
 1785.5,108.92",
 		style=solid];
 	negated	[color=blue,
@@ -114,8 +114,9 @@ digraph {
 		width=1.2999];
 	"case to phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="2133.4,221.5",
-		pos="e,2048.4,193.97 2135.9,247.21 2125.8,241.54 2114.6,235.09 2104.4,229 2088.6,219.55 2071.3,208.65 2056.9,199.45",
+		lp="2219.4,221.5",
+		pos="e,2060.6,189.93 2344.1,252.45 2295.3,247.02 2240.1,239.39 2190.4,229 2140.4,218.56 2129.2,210.87 2080.4,196 2077.1,194.99 2073.7,\
+193.95 2070.2,192.9",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -124,8 +125,8 @@ digraph {
 		width=2.1304];
 	"case to phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2199.9,221.5",
-		pos="e,2166.4,196.18 2166.4,246.8 2166.4,235.16 2166.4,219.55 2166.4,206.24",
+		lp="2327.9,221.5",
+		pos="e,2200.3,194.24 2384,249.45 2355,244.08 2323.1,237.26 2294.4,229 2265.5,220.71 2234.1,208.5 2209.7,198.21",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -134,8 +135,8 @@ digraph {
 		width=1.7332];
 	"case to phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2308.4,221.5",
-		pos="e,2297.7,194.57 2201.7,247.2 2213.1,241.58 2225.9,235.17 2237.4,229 2254.6,219.79 2273.3,208.98 2288.9,199.78",
+		lp="2431.4,221.5",
+		pos="e,2341.4,195.45 2428,247.56 2414.4,242.39 2400,236.13 2387.4,229 2374,221.42 2360.3,211.19 2349.1,201.95",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -144,8 +145,8 @@ digraph {
 		width=2.0943];
 	"case to phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2444.9,221.5",
-		pos="e,2446.9,194.34 2265.9,249.61 2295.3,244.3 2327.4,237.46 2356.4,229 2384.1,220.91 2414.1,208.77 2437.6,198.47",
+		lp="2525.9,221.5",
+		pos="e,2479.4,196.18 2479.4,246.8 2479.4,235.16 2479.4,219.55 2479.4,206.24",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -154,8 +155,8 @@ digraph {
 		width=3.015];
 	"case to phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2621.9,221.5",
-		pos="e,2633.3,194.15 2298.2,252.09 2372.8,244.93 2458.3,235.91 2495.4,229 2538.8,220.91 2586.9,207.85 2623.4,197.12",
+		lp="2673.9,221.5",
+		pos="e,2649.1,195.37 2528.1,247.48 2543.7,241.92 2560.9,235.48 2576.4,229 2597.7,220.11 2620.9,209.19 2640.1,199.83",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -164,9 +165,8 @@ digraph {
 		width=3.015];
 	"case to phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2867.4,221.5",
-		pos="e,2862,193.63 2298.2,252.12 2320.3,250.29 2343,248.51 2364.4,247 2509.1,236.79 2546.6,248.74 2690.4,229 2745.5,221.43 2807.2,207.41 \
-2852.1,196.14",
+		lp="2896.4,221.5",
+		pos="e,2870,194.37 2602.8,251.39 2647.1,245.86 2697.2,238.45 2742.4,229 2782.3,220.66 2826.4,207.94 2860.3,197.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -175,9 +175,9 @@ digraph {
 		width=3.015];
 	"case to phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3145.9,221.5",
-		pos="e,3106,194.46 2295.5,251.87 2318.4,250.01 2342.1,248.29 2364.4,247 2498,239.27 2834,248.59 2966.4,229 3010.8,222.43 3059.7,208.91 \
-3096.1,197.59",
+		lp="3158.9,221.5",
+		pos="e,3111.7,194.81 2611.4,252.13 2633.4,250.3 2656.1,248.52 2677.4,247 2818.6,236.94 2856.2,254.81 2995.4,229 3032,222.22 3071.9,209.3 \
+3102.2,198.3",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -186,27 +186,27 @@ digraph {
 		width=1.5346];
 	"case to phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3323.4,221.5",
-		pos="e,3315,195.22 2294.4,251.78 2317.7,249.9 2341.7,248.2 2364.4,247 2463.4,241.76 3161.6,258.11 3256.4,229 3274.7,223.38 3292.8,212.03 \
-3306.8,201.56",
+		lp="3332.4,221.5",
+		pos="e,3318.3,195.37 2608.5,251.88 2631.4,250.02 2655.1,248.3 2677.4,247 2743.1,243.18 3207.5,251.37 3269.4,229 3284.9,223.39 3299.6,\
+212.47 3311,202.26",
 		style=solid];
 	type	[height=0.5,
 		pos="3437.4,178",
 		width=0.86659];
 	"case to phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3409.4,221.5",
-		pos="e,3421.6,193.54 2294.1,251.76 2317.5,249.88 2341.7,248.18 2364.4,247 2419.8,244.13 3309.5,245.55 3362.4,229 3381.2,223.12 3399.6,\
-210.94 3413.5,200.07",
+		lp="3415.4,221.5",
+		pos="e,3422.8,194.43 2608.2,251.82 2631.2,249.96 2655,248.25 2677.4,247 2754.4,242.7 3298.6,254.52 3371.4,229 3387.7,223.28 3403.3,211.9 \
+3415.2,201.44",
 		style=solid];
 	category	[height=0.5,
 		pos="3538.4,178",
 		width=1.4263];
 	"case to phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3504.9,221.5",
-		pos="e,3513.5,194.06 2294.1,251.74 2317.5,249.86 2341.7,248.17 2364.4,247 2482.6,240.93 3314,255.23 3429.4,229 3455.9,222.97 3483.8,210.07 \
-3504.7,198.88",
+		lp="3508.9,221.5",
+		pos="e,3514.5,194.25 2607.9,251.8 2631,249.94 2654.9,248.23 2677.4,247 2761.5,242.39 3353.5,248.85 3435.4,229 3460.2,222.98 3486.1,210.38 \
+3505.7,199.34",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
@@ -215,9 +215,9 @@ digraph {
 		width=2.3651];
 	"case to phenotypic feature association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3668.4,221.5",
-		pos="e,3656.3,194.31 2293.9,251.73 2317.3,249.85 2341.6,248.15 2364.4,247 2494.9,240.41 3411.5,250.66 3540.4,229 3577.1,222.83 3617,209.45 \
-3646.7,198.07",
+		lp="3671.4,221.5",
+		pos="e,3657,194.37 2607.7,251.77 2630.8,249.9 2654.8,248.2 2677.4,247 2869.8,236.75 3354.6,262.23 3544.4,229 3580,222.76 3618.7,209.44 \
+3647.6,198.12",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
@@ -226,9 +226,9 @@ digraph {
 		width=2.1123];
 	"case to phenotypic feature association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="3853.4,221.5",
-		pos="e,3840.3,194.46 2293.6,251.71 2317.1,249.82 2341.5,248.13 2364.4,247 2517.1,239.46 3590.2,257.7 3740.4,229 3771.9,222.98 3805.6,\
-209.93 3831,198.67",
+		lp="3855.4,221.5",
+		pos="e,3840.8,194.54 2607.1,251.74 2630.5,249.86 2654.7,248.17 2677.4,247 2795.7,240.93 3627.2,251.91 3743.4,229 3774,222.97 3806.7,210.07 \
+3831.4,198.89",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
@@ -237,9 +237,9 @@ digraph {
 		width=1.011];
 	"case to phenotypic feature association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="4003.9,221.5",
-		pos="e,3983.3,193.83 2293.6,251.68 2317.1,249.8 2341.5,248.11 2364.4,247 2450.6,242.8 3835.3,252.6 3918.4,229 3939,223.14 3959.7,210.73 \
-3975.2,199.74",
+		lp="4005.9,221.5",
+		pos="e,3983.8,193.81 2606.9,251.71 2630.3,249.83 2654.6,248.14 2677.4,247 2746.4,243.54 3854.1,248.34 3920.4,229 3940.4,223.16 3960.4,\
+210.92 3975.5,200.02",
 		style=solid];
 	"sex qualifier"	[color=blue,
 		height=0.5,
@@ -248,9 +248,53 @@ digraph {
 		width=2.0401];
 	"case to phenotypic feature association" -> "sex qualifier"	[color=blue,
 		label="sex qualifier",
-		lp="4132.4,221.5",
-		pos="e,4112.4,195.75 2293.3,251.68 2316.9,249.79 2341.4,248.11 2364.4,247 2411.4,244.73 4014.6,243.61 4059.4,229 4076,223.57 4092.1,212.61 \
-4104.7,202.34",
+		lp="4134.4,221.5",
+		pos="e,4113,195.73 2606.6,251.71 2630.1,249.82 2654.5,248.13 2677.4,247 2754.2,243.21 3988.5,253.45 4061.4,229 4077.5,223.59 4093,212.79 \
+4105.1,202.61",
+		style=solid];
+	"has count"	[color=blue,
+		height=0.5,
+		label=integer,
+		pos="4265.4,178",
+		width=1.2277];
+	"case to phenotypic feature association" -> "has count"	[color=blue,
+		label="has count",
+		lp="4251.4,221.5",
+		pos="e,4246.7,194.31 2606.6,251.69 2630.1,249.8 2654.5,248.12 2677.4,247 2760.9,242.92 4102,251.87 4182.4,229 4202.5,223.27 4222.7,211.28 \
+4238.2,200.48",
+		style=solid];
+	"has total"	[color=blue,
+		height=0.5,
+		label=integer,
+		pos="4371.4,178",
+		width=1.2277];
+	"case to phenotypic feature association" -> "has total"	[color=blue,
+		label="has total",
+		lp="4355.9,221.5",
+		pos="e,4352.9,194.55 2606.3,251.69 2629.9,249.8 2654.4,248.11 2677.4,247 2766.9,242.66 4204.3,253.95 4290.4,229 4310,223.31 4329.6,211.44 \
+4344.6,200.69",
+		style=solid];
+	"has quotient"	[color=blue,
+		height=0.5,
+		label=double,
+		pos="4475.4,178",
+		width=1.1735];
+	"case to phenotypic feature association" -> "has quotient"	[color=blue,
+		label="has quotient",
+		lp="4471.4,221.5",
+		pos="e,4456.4,194.32 2606.3,251.68 2629.9,249.79 2654.4,248.11 2677.4,247 2772.5,242.42 4299.7,254.74 4391.4,229 4411.9,223.23 4432.6,\
+211.07 4448.2,200.19",
+		style=solid];
+	"has percentage"	[color=blue,
+		height=0.5,
+		label=double,
+		pos="4582.4,178",
+		width=1.1735];
+	"case to phenotypic feature association" -> "has percentage"	[color=blue,
+		label="has percentage",
+		lp="4601.4,221.5",
+		pos="e,4568.4,194.99 2606.3,251.67 2629.9,249.78 2654.4,248.1 2677.4,247 2728.5,244.56 4472.2,246.28 4520.4,229 4535.7,223.52 4550,212.54 \
+4561,202.26",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1719.4,134.5",
@@ -265,11 +309,11 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2411.4,265",
+		pos="2724.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2542.4,265",
+		pos="2855.4,265",
 		width=2.0762];
 }

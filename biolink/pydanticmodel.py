@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "3.0.2"
+version = "3.1.0"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -40,21 +40,21 @@ class ChemicalEntityDerivativeEnum(str, Enum):
     
     
 
-class ChemicalOrGeneOrGeneProductFormEnum(str, Enum):
+class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
     
-    modified_form = "modified form"
-    mutant_form = "mutant form"
-    polymorphism = "polymorphism"
-    SNP = "SNP"
-    analog = "analog"
+    genetic_variant_form = "genetic_variant_form"
+    mutant_form = "mutant_form"
+    polymorphic_form = "polymorphic_form"
+    snp_form = "snp_form"
+    analog_form = "analog_form"
     
     
 
 class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
     
-    number_3APOSTROPHE_UTR = "3' UTR"
-    number_5APOSTROPHE_UTR = "5' UTR"
-    polyA_tail = "polyA tail"
+    number_3_prime_utr = "3_prime_utr"
+    number_5_prime_utr = "5_prime_utr"
+    polya_tail = "polya_tail"
     promoter = "promoter"
     enhancer = "enhancer"
     exon = "exon"
@@ -64,7 +64,7 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(str, Enum):
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     
-    activity_or_abundance = "activity or abundance"
+    activity_or_abundance = "activity_or_abundance"
     abundance = "abundance"
     activity = "activity"
     expression = "expression"
@@ -72,14 +72,15 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     degradation = "degradation"
     cleavage = "cleavage"
     hydrolysis = "hydrolysis"
-    metabolic_processing = "metabolic processing"
-    mutation_rate = "mutation rate"
+    metabolic_processing = "metabolic_processing"
+    mutation_rate = "mutation_rate"
     stability = "stability"
+    folding = "folding"
     localization = "localization"
     transport = "transport"
     secretion = "secretion"
     uptake = "uptake"
-    molecular_modification = "molecular modification"
+    molecular_modification = "molecular_modification"
     acetylation = "acetylation"
     acylation = "acylation"
     alkylation = "alkylation"
@@ -90,8 +91,8 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     glycation = "glycation"
     glycosylation = "glycosylation"
     glucuronidation = "glucuronidation"
-    N_linked_glycosylation = "N-linked glycosylation"
-    O_linked_glycosylation = "O-linked glycosylation"
+    n_linked_glycosylation = "n_linked_glycosylation"
+    o_linked_glycosylation = "o_linked_glycosylation"
     hydroxylation = "hydroxylation"
     lipidation = "lipidation"
     farnesylation = "farnesylation"
@@ -118,27 +119,30 @@ class CausalMechanismQualifierEnum(str, Enum):
     
     binding = "binding"
     inhibition = "inhibition"
-    antibody_inhibition = "antibody inhibition"
+    antibody_inhibition = "antibody_inhibition"
     antagonism = "antagonism"
-    molecular_channel_blockage = "molecular channel blockage"
-    inverse_agonism = "inverse agonism"
-    negative_allosteric_modulation = "negative allosteric modulation"
+    molecular_channel_blockage = "molecular_channel_blockage"
+    inverse_agonism = "inverse_agonism"
+    negative_allosteric_modulation = "negative_allosteric_modulation"
     agonism = "agonism"
-    molecular_channel_opening = "molecular channel opening"
-    positive_allosteric_modulation = "positive allosteric modulation"
+    molecular_channel_opening = "molecular_channel_opening"
+    positive_allosteric_modulation = "positive_allosteric_modulation"
     potentiation = "potentiation"
     activation = "activation"
     inducer = "inducer"
-    transcriptional_regulation = "transcriptional regulation"
-    signaling_mediated_control = "signaling-mediated control"
+    transcriptional_regulation = "transcriptional_regulation"
+    signaling_mediated_control = "signaling_mediated_control"
+    stabilization = "stabilization"
+    stimulation = "stimulation"
+    releasing_activity = "releasing_activity"
     
     
 
 class LogicalInterpretationEnum(str, Enum):
     
-    SomeSome = "SomeSome"
-    AllSome = "AllSome"
-    InverseAllSome = "InverseAllSome"
+    some_some = "some_some"
+    all_some = "all_some"
+    inverse_all_some = "inverse_all_some"
     
     
 
@@ -177,23 +181,23 @@ class StrandEnum(str, Enum):
 
 class SequenceEnum(str, Enum):
     
-    NA = "NA"
-    AA = "AA"
+    na = "na"
+    aa = "aa"
     
     
 
 class DruggableGeneCategoryEnum(str, Enum):
     
-    Tclin = "Tclin"
-    Tbio = "Tbio"
-    Tchem = "Tchem"
-    Tdark = "Tdark"
+    tclin = "tclin"
+    tbio = "tbio"
+    tchem = "tchem"
+    tdark = "tdark"
     
     
 
 class DrugAvailabilityEnum(str, Enum):
     
-    over_the_counter = "over the counter"
+    over_the_counter = "over_the_counter"
     prescription = "prescription"
     
     
@@ -202,39 +206,75 @@ class DrugDeliveryEnum(str, Enum):
     
     inhalation = "inhalation"
     oral = "oral"
-    absorbtion_through_the_skin = "absorbtion through the skin"
-    intravenous_injection = "intravenous injection"
+    absorbtion_through_the_skin = "absorbtion_through_the_skin"
+    intravenous_injection = "intravenous_injection"
     
     
 
 class FDAApprovalStatusEnum(str, Enum):
     
-    Discovery_AMPERSAND_Development_Phase = "Discovery & Development Phase"
-    Preclinical_Research_Phase = "Preclinical Research Phase"
-    FDA_Clinical_Research_Phase = "FDA Clinical Research Phase"
-    FDA_Review_Phase_4 = "FDA Review Phase 4"
-    FDA_Post_Market_Safety_Monitoring = "FDA Post-Market Safety Monitoring"
-    FDA_Clinical_Research_Phase_1 = "FDA Clinical Research Phase 1"
-    FDA_Clinical_Research_Phase_2 = "FDA Clinical Research Phase 2"
-    FDA_Clinical_Research_Phase_3 = "FDA Clinical Research Phase 3"
-    FDA_Clinical_Research_Phase_4 = "FDA Clinical Research Phase 4"
-    FDA_Fast_Track = "FDA Fast Track"
-    FDA_Breakthrough_Therapy = "FDA Breakthrough Therapy"
-    FDA_Accelerated_Approval = "FDA Accelerated Approval"
-    FDA_Priority_Review = "FDA Priority Review"
-    Regular_FDA_Approval = "Regular FDA Approval"
-    Post_Approval_Withdrawal = "Post-Approval Withdrawal"
+    discovery_and_development_phase = "discovery_and_development_phase"
+    preclinical_research_phase = "preclinical_research_phase"
+    fda_clinical_research_phase = "fda_clinical_research_phase"
+    fda_review_phase_4 = "fda_review_phase_4"
+    fda_post_market_safety_review = "fda_post_market_safety_review"
+    fda_clinical_research_phase_1 = "fda_clinical_research_phase_1"
+    fda_clinical_research_phase_2 = "fda_clinical_research_phase_2"
+    fda_clinical_research_phase_3 = "fda_clinical_research_phase_3"
+    fda_clinical_research_phase_4 = "fda_clinical_research_phase_4"
+    fda_fast_track = "fda_fast_track"
+    fda_breakthrough_therapy = "fda_breakthrough_therapy"
+    fda_accelerated_approval = "fda_accelerated_approval"
+    fda_priority_review = "fda_priority_review"
+    regular_fda_approval = "regular_fda_approval"
+    post_approval_withdrawal = "post_approval_withdrawal"
     
     
 
 class FDAIDAAdverseEventEnum(str, Enum):
     
-    Life_threatening_adverse_event = "Life-threatening adverse event"
-    Serious_adverse_event = "Serious adverse event"
-    Suspected_adverse_reaction = "Suspected adverse reaction"
-    Unexpected_adverse_event = "Unexpected adverse event"
+    life_threatening_adverse_event = "life_threatening_adverse_event"
+    serious_adverse_event = "serious_adverse_event"
+    suspected_adverse_reaction = "suspected_adverse_reaction"
+    unexpected_adverse_event = "unexpected_adverse_event"
     
     
+
+class DeprecatedMappingCollection(ConfiguredBaseModel):
+    """
+    A collection of deprecated mappings.
+    """
+    deprecated_predicate_mappings: Optional[List[DeprecatedPredicateMapping]] = Field(None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
+    
+
+
+class DeprecatedPredicateMapping(ConfiguredBaseModel):
+    """
+    A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
+    """
+    mapped_predicate: Optional[str] = Field(None, description="""The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.""")
+    subject_aspect_qualifier: Optional[str] = Field(None)
+    subject_direction_qualifier: Optional[str] = Field(None)
+    subject_form_or_variant_qualifier: Optional[str] = Field(None)
+    subject_part_qualifier: Optional[str] = Field(None)
+    subject_derivative_qualifier: Optional[str] = Field(None)
+    subject_context_qualifier: Optional[str] = Field(None)
+    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.""")
+    object_aspect_qualifier: Optional[str] = Field(None)
+    object_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[str] = Field(None)
+    object_part_qualifier: Optional[str] = Field(None)
+    object_derivative_qualifier: Optional[str] = Field(None)
+    object_context_qualifier: Optional[str] = Field(None)
+    causal_mechanism_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
+    anatomical_context_qualifier: Optional[AnatomicalContextQualifierEnum] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
+    exact_match: Optional[List[str]] = Field(None, description="""holds between two entities that have strictly equivalent meanings, with a high degree of confidence""")
+    narrow_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.""")
+    broad_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.""")
+    
+
 
 class OntologyClass(ConfiguredBaseModel):
     """
@@ -316,7 +356,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -337,7 +376,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -351,7 +389,6 @@ class Attribute(NamedThing, OntologyClass):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -367,13 +404,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 
 class ChemicalRole(Attribute):
-    
+    """
+    	A role played by the molecular entity or part thereof within a chemical context.
+    """
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -395,7 +433,6 @@ class BiologicalSex(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -419,7 +456,6 @@ class PhenotypicSex(BiologicalSex):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -443,7 +479,6 @@ class GenotypicSex(BiologicalSex):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -467,7 +502,6 @@ class SeverityValue(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -487,18 +521,6 @@ class RelationshipType(OntologyClass):
     An OWL property used as an edge label
     """
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    
-
-
-class GeneOntologyClass(ConfiguredBaseModel):
-    
-    None
-    
-
-
-class UnclassifiedOntologyClass(ConfiguredBaseModel):
-    
-    None
     
 
 
@@ -526,7 +548,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -547,7 +568,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -566,7 +586,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -589,7 +608,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -614,7 +632,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -639,7 +656,78 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class Study(InformationContentEntity):
+    """
+    a detailed investigation and/or analysis
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:Study"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class StudyVariable(InformationContentEntity):
+    """
+    a variable that is used as a measure in the investigation of a study
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:StudyVariable"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class CommonDataElement(InformationContentEntity):
+    """
+    A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
+    """
+    license: Optional[str] = Field(None)
+    rights: Optional[str] = Field(None)
+    format: Optional[str] = Field(None)
+    creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:CommonDataElement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -664,7 +752,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -689,7 +776,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -714,7 +800,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -739,7 +824,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -764,7 +848,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -789,7 +872,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -815,7 +897,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -843,7 +924,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -870,7 +950,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -895,7 +974,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -920,7 +998,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -945,7 +1022,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -975,7 +1051,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: str = Field(None, description="""Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.""")
     name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1005,7 +1080,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: str = Field(None, description="""Should generally be set to an ontology class defined term for 'book'.""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1036,7 +1110,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: str = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1069,7 +1142,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: str = Field(None, description="""Should generally be set to an ontology class defined term for 'serial' or 'journal'.""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1101,7 +1173,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: str = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1138,7 +1209,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1175,7 +1245,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1196,7 +1265,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1217,7 +1285,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1238,7 +1305,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1267,7 +1333,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1288,7 +1353,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1307,7 +1371,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1326,7 +1389,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1349,7 +1411,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1373,7 +1434,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1401,12 +1461,17 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
 class GenomicEntity(ConfiguredBaseModel):
+    
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
+    
+
+
+class EpigenomicEntity(ConfiguredBaseModel):
     
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     
@@ -1432,7 +1497,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1457,7 +1521,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1482,7 +1545,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1505,7 +1567,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1528,7 +1589,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1551,7 +1611,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1565,7 +1624,6 @@ class OrganismAttribute(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -1589,35 +1647,10 @@ class PhenotypicQuality(OrganismAttribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     category: List[str] = Field(["biolink:PhenotypicQuality"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class Inheritance(OrganismAttribute):
-    """
-    The name of this attribute and its inheritance from organism attribute, indeed, its designation as an attribute is problematic. First, the isolated word 'inheritance' is too ambiguous (especially when embedded inside an ontology with inheritance!). 'Genetic inheritance' would be more precise. Second, in terms of the scientific usage here, genetic inheritance would not be a direct property at the topmost organism level, but rather (as hinted in the definition) is more a commentary on the nature of phenotype (including  genetic disease as a characteristic set of associated phenotypes) against the (hidden) context of (meiotic/somatic/mitochondrial) DNA segregation and expression.  Third, placing  the term in the attribute, rather than named thing category concept hierarchy, is perhaps less flexible in terms of its usage as a first class concept for semantic queries. Thus, we deprecate this term, moving it to the 'new' category of 'genetic inheritance',  as a child of 'biological entity' (to emphasize its biological conceptual nature).
-    """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
-    has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
-    has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
-    category: List[str] = Field(["biolink:Inheritance"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1645,12 +1678,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class OrganismalEntity(BiologicalEntity):
+class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     """
     A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
     """
@@ -1667,12 +1699,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
-class Virus(OrganismalEntity):
+class Virus(OrganismalEntity, SubjectOfInvestigation):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
     """
@@ -1689,12 +1720,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class CellularOrganism(OrganismalEntity):
+class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1709,7 +1739,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1731,12 +1760,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class IndividualOrganism(OrganismalEntity):
+class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
     An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
     """
@@ -1753,12 +1781,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class PopulationOfIndividualOrganisms(OrganismalEntity):
+class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     """
     A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
     """
@@ -1775,7 +1802,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1797,7 +1823,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1819,7 +1844,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1841,7 +1865,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1863,7 +1886,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1885,7 +1907,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1907,7 +1928,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1929,7 +1949,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1949,12 +1968,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class CellLine(OrganismalEntity):
+class CellLine(OrganismalEntity, SubjectOfInvestigation):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
@@ -1969,7 +1987,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -1989,7 +2006,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2018,7 +2034,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2031,7 +2047,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2045,7 +2060,7 @@ class MolecularEntity(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2058,7 +2073,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2072,7 +2086,7 @@ class SmallMolecule(MolecularEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2085,7 +2099,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2102,7 +2115,7 @@ class ChemicalMixture(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2115,7 +2128,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2132,7 +2144,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2144,7 +2156,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2161,7 +2172,7 @@ class MolecularMixture(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2174,7 +2185,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2191,7 +2201,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2204,7 +2214,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2221,7 +2230,7 @@ class ProcessedMaterial(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2234,7 +2243,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2252,7 +2260,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2264,7 +2272,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2275,7 +2282,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2288,7 +2295,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2299,7 +2305,7 @@ class FoodAdditive(ChemicalEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2312,103 +2318,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class Nutrient(ChemicalEntity):
-    
-    trade_name: Optional[str] = Field(None)
-    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
-    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
-    is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Nutrient"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class Macronutrient(Nutrient):
-    
-    trade_name: Optional[str] = Field(None)
-    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
-    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
-    is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Macronutrient"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class Micronutrient(Nutrient):
-    
-    trade_name: Optional[str] = Field(None)
-    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
-    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
-    is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Micronutrient"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class Vitamin(Micronutrient):
-    
-    trade_name: Optional[str] = Field(None)
-    available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
-    max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
-    is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Vitamin"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2425,7 +2334,7 @@ class Food(ChemicalMixture):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2438,14 +2347,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
 class MacromolecularMachineMixin(ConfiguredBaseModel):
     """
-    A union of gene locus, gene product, and macromolecular complex mixin. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+    A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
     """
     name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
@@ -2479,7 +2387,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2504,11 +2411,47 @@ class GeneProductIsoformMixin(GeneProductMixin):
     
 
 
-class MacromolecularComplexMixin(MacromolecularMachineMixin):
+class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     """
     A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
     """
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:MacromolecularComplex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicEntity, BiologicalEntity):
+    """
+    A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
+    """
+    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:NucleosomeModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     
 
 
@@ -2530,7 +2473,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2547,7 +2489,7 @@ class Exon(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2559,7 +2501,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2576,7 +2517,7 @@ class Transcript(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2588,7 +2529,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2603,7 +2543,7 @@ class CodingSequence(NucleicAcidEntity):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
@@ -2615,7 +2555,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2637,7 +2576,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2660,7 +2598,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2683,8 +2620,29 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
+    """
+    A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
+    """
+    in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
+    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[str] = Field(["biolink:PosttranslationalModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     
 
 
@@ -2705,7 +2663,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2722,7 +2679,7 @@ class RNAProduct(Transcript, GeneProductMixin):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2733,7 +2690,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2752,7 +2708,7 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RNAProductIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2763,7 +2719,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2780,7 +2735,7 @@ class NoncodingRNAProduct(RNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NoncodingRNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2791,7 +2746,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2808,7 +2762,7 @@ class MicroRNA(NoncodingRNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MicroRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2819,7 +2773,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2838,7 +2791,7 @@ class SiRNA(NoncodingRNAProduct):
     available_from: Optional[List[DrugAvailabilityEnum]] = Field(None)
     max_tolerated_dose: Optional[str] = Field(None, description="""The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.""")
     is_toxic: Optional[bool] = Field(None)
-    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a material entity may exhibit.""")
+    has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:SiRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2849,7 +2802,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2880,7 +2832,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2901,7 +2852,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2924,7 +2874,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2936,7 +2885,6 @@ class Zygosity(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -2970,7 +2918,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -2993,14 +2940,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
 class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     """
-    An allele that varies in its sequence from what is considered the reference allele at that locus.
+    A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
     """
     has_gene: Optional[List[str]] = Field(None, description="""Each allele can be associated with any number of genes""")
     has_biological_sequence: Optional[str] = Field(None, description="""The state of the sequence w.r.t a reference sequence""")
@@ -3017,7 +2963,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3041,7 +2986,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3064,7 +3008,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3078,7 +3021,6 @@ class ClinicalAttribute(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3102,7 +3044,6 @@ class ClinicalMeasurement(ClinicalAttribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3126,7 +3067,6 @@ class ClinicalModifier(ClinicalAttribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3150,7 +3090,6 @@ class ClinicalCourse(ClinicalAttribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3174,7 +3113,6 @@ class Onset(ClinicalCourse):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3205,7 +3143,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3224,7 +3161,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3243,7 +3179,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3265,7 +3200,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3284,7 +3218,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3298,7 +3231,6 @@ class SocioeconomicAttribute(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3313,7 +3245,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     
 
 
-class Case(IndividualOrganism):
+class Case(IndividualOrganism, SubjectOfInvestigation):
     """
     An individual (human) organism that has a patient role in some clinical context.
     """
@@ -3330,12 +3262,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class Cohort(StudyPopulation):
+class Cohort(StudyPopulation, SubjectOfInvestigation):
     """
     A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
     """
@@ -3352,30 +3283,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
-class ExposureEvent(NamedThing):
+class ExposureEvent(OntologyClass):
     """
     A (possibly time bounded) incidence of a feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ExposureEvent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
 
@@ -3393,7 +3310,6 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     category: List[str] = Field(["biolink:GenomicBackgroundExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3435,7 +3351,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3450,7 +3365,6 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3482,7 +3396,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3497,7 +3410,6 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3522,7 +3434,6 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3547,7 +3458,6 @@ class ChemicalExposure(ExposureEvent, Attribute):
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3571,7 +3481,6 @@ class ComplexChemicalExposure(Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3596,7 +3505,6 @@ class DrugExposure(ChemicalExposure, ExposureEvent):
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3622,7 +3530,6 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3657,7 +3564,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3672,7 +3578,6 @@ class BioticExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3697,7 +3602,6 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3722,7 +3626,6 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3747,7 +3650,6 @@ class BehavioralExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3772,7 +3674,6 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    source: Optional[str] = Field(None)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
@@ -3868,10 +3769,9 @@ class Association(Entity):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3885,7 +3785,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3897,10 +3796,9 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3914,7 +3812,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3928,10 +3825,9 @@ class ContributorAssociation(Association):
     object: str = Field(None, description="""agent helping to realise the given entity (e.g. such as a publication)""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""this field can be used to annotate special characteristics of an agent relationship, such as the fact that a given author agent of a publication is the 'corresponding author'""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3945,7 +3841,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3959,10 +3854,9 @@ class GenotypeToGenotypePartAssociation(Association):
     object: str = Field(None, description="""child genotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -3976,7 +3870,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -3990,10 +3883,9 @@ class GenotypeToGeneAssociation(Association):
     object: str = Field(None, description="""gene implicated in genotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4007,7 +3899,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4021,10 +3912,9 @@ class GenotypeToVariantAssociation(Association):
     object: str = Field(None, description="""gene implicated in genotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4038,7 +3928,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4052,10 +3941,9 @@ class GeneToGeneAssociation(Association):
     object: str = Field(None, description="""the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4069,7 +3957,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4083,10 +3970,9 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4100,7 +3986,35 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class GeneToGeneFamilyAssociation(Association):
+    """
+    Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
+    """
+    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""membership of the gene in the given gene family.""")
+    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: Optional[List[str]] = Field(["biolink:GeneToGeneFamilyAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[str] = Field(None)
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4129,10 +4043,9 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4146,7 +4059,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4160,10 +4072,9 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4177,7 +4088,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4192,10 +4102,9 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4209,7 +4118,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4263,10 +4171,9 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     object: str = Field(None, description="""the chemical element that is the target of the statement""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4280,7 +4187,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4288,17 +4194,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
-    reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)""")
+    reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4312,7 +4217,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4320,17 +4224,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
-    reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction_enum (ie: left_to_right, neutral, etc.)""")
+    reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4344,7 +4247,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4366,10 +4268,9 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     object: str = Field(None, description="""the downstream chemical entity""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4383,7 +4284,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4397,10 +4297,9 @@ class MolecularActivityToPathwayAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4414,7 +4313,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4428,10 +4326,9 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
     object: str = Field(None, description="""the pathway that is affected by the chemical""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4445,7 +4342,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4457,10 +4353,9 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4474,38 +4369,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class ChemicalToGeneAssociation(ChemicalToEntityAssociationMixin, Association):
-    """
-    An interaction between a chemical entity and a gene or gene product.
-    """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""the gene or gene product that is affected by the chemical.""")
-    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
-    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
-    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
-    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
-    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
-    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
-    timepoint: Optional[str] = Field(None, description="""a point in time""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4514,11 +4377,11 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     """
     describes a physical interaction between a chemical entity and a gene or gene product. Any biological or chemical effect resulting from such an interaction are out of scope, and covered by the ChemicalAffectsGeneAssociation type (e.g. impact of a chemical on the abundance, activity, structure, etc, of either participant in the interaction)
     """
-    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
     subject_context_qualifier: Optional[str] = Field(None)
-    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
@@ -4527,10 +4390,9 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4544,7 +4406,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4553,28 +4414,27 @@ class ChemicalAffectsGeneAssociation(Association):
     """
     Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
     """
-    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     subject_context_qualifier: Optional[str] = Field(None)
     subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
-    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
-    qualified_predicate: Optional[str] = Field(None, description="""predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4588,7 +4448,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4602,10 +4461,9 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     object: str = Field(None, description="""the gene or gene product that is affected by the drug""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4619,7 +4477,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4641,10 +4498,9 @@ class MaterialSampleDerivationAssociation(Association):
     object: str = Field(None, description="""the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4658,7 +4514,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4686,10 +4541,9 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4703,14 +4557,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class ExposureEventToEntityAssociationMixin(ConfiguredBaseModel):
-    
-    None
     
 
 
@@ -4722,21 +4569,20 @@ class EntityToOutcomeAssociationMixin(ConfiguredBaseModel):
     
 
 
-class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, ExposureEventToEntityAssociationMixin, Association):
+class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Association):
     """
     An association between an exposure event and an outcome.
     """
-    has_population_context: Optional[str] = Field(None, description="""a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.""")
-    has_temporal_context: Optional[str] = Field(None, description="""a constraint of time placed upon the truth value of an association.""")
+    population_context_qualifier: Optional[str] = Field(None, description="""a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.""")
+    temporal_context_qualifier: Optional[str] = Field(None, description="""a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4750,7 +4596,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4773,9 +4618,13 @@ class EntityToFeatureOrDiseaseQualifiersMixin(FrequencyQualifierMixin):
     
 
 
-class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin):
+class EntityToPhenotypicFeatureAssociationMixin(EntityToFeatureOrDiseaseQualifiersMixin, FrequencyQuantifier):
     
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -4791,10 +4640,9 @@ class InformationContentEntityToNamedThingAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4808,7 +4656,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4838,10 +4685,9 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     object: str = Field(None, description="""anatomical entity in which the disease or feature is found.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4855,7 +4701,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4869,10 +4714,9 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
     object: str = Field(None, description="""genetic inheritance associated with the specified disease or phenotypic feature.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4886,7 +4730,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4906,10 +4749,9 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4923,7 +4765,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4937,10 +4778,9 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     object: str = Field(None, description="""the disease or phenotype that is affected by the chemical""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4954,7 +4794,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -4969,10 +4808,9 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -4986,7 +4824,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5001,10 +4838,9 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5018,7 +4854,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5032,10 +4867,9 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5049,7 +4883,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5070,10 +4903,9 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5087,8 +4919,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5105,10 +4940,9 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5122,8 +4956,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5140,10 +4977,9 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5157,8 +4993,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5175,10 +5014,9 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5192,8 +5030,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5210,10 +5051,9 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     object: str = Field(None, description="""behavioral feature that is the object of the association""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5227,8 +5067,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5250,10 +5093,9 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     object: str = Field(None, description="""the pathway that includes or is affected by the gene or gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5267,7 +5109,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5286,10 +5127,9 @@ class GeneToPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToP
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5303,8 +5143,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5318,10 +5161,9 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAsso
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5335,7 +5177,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5350,10 +5191,9 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[DruggableGeneCategoryEnum]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5367,7 +5207,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5384,10 +5223,9 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5401,7 +5239,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5419,10 +5256,9 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5436,7 +5272,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5455,10 +5290,9 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     object: str = Field(None, description="""the population that is observed to have the frequency""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5472,7 +5306,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5486,10 +5319,9 @@ class PopulationToPopulationAssociation(Association):
     object: str = Field(None, description="""the population that form the object of the association""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5503,7 +5335,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5516,10 +5347,9 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5533,8 +5363,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_count: Optional[int] = Field(None, description="""number of things with a particular property""")
+    has_total: Optional[int] = Field(None, description="""total number of things in a particular reference set""")
+    has_quotient: Optional[float] = Field(None)
+    has_percentage: Optional[float] = Field(None, description="""equivalent to has quotient multiplied by 100""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
     frequency_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject""")
@@ -5548,10 +5381,9 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     object: str = Field(None, description="""a disease that is associated with that variant""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5565,7 +5397,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5580,10 +5411,9 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     object: str = Field(None, description="""a disease that is associated with that genotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5597,7 +5427,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5620,10 +5449,9 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5637,7 +5465,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5652,10 +5479,9 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5669,7 +5495,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5684,10 +5509,9 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5701,7 +5525,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5716,10 +5539,9 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5733,7 +5555,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5748,10 +5569,9 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5765,7 +5585,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5780,10 +5599,9 @@ class OrganismToOrganismAssociation(Association):
     object: str = Field(None, description="""An association between two individual organisms.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5797,7 +5615,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5809,10 +5626,9 @@ class TaxonToTaxonAssociation(Association):
     object: str = Field(None, description="""An association between individuals of different taxa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5826,7 +5642,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5839,10 +5654,9 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5856,7 +5670,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     severity_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state how severe the phenotype is in the subject""")
     onset_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state when the phenotype appears is in the subject""")
@@ -5875,10 +5688,9 @@ class GeneToExpressionSiteAssociation(Association):
     object: str = Field(None, description="""location in which the gene is expressed""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5892,7 +5704,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5906,10 +5717,9 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     object: str = Field(None, description="""treatment whose efficacy is modulated by the subject variant""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5923,7 +5733,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5932,15 +5741,14 @@ class FunctionalAssociation(Association):
     """
     An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
     """
-    subject: str = Field(None, description="""gene, product or macromolecular complex mixin that has the function associated with the GO term""")
+    subject: str = Field(None, description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: GeneOntologyClass = Field(None, description="""class describing the activity, process or localization of the gene product""")
+    object: str = Field(None, description="""class describing the activity, process or localization of the gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5954,7 +5762,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -5976,10 +5783,9 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -5993,7 +5799,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6007,10 +5812,9 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6024,7 +5828,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6038,10 +5841,9 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6055,7 +5857,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6069,10 +5870,9 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6086,7 +5886,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6100,10 +5899,9 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6117,7 +5915,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6126,13 +5923,12 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     
     subject: str = Field(None, description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: GeneOntologyClass = Field(None, description="""class describing the activity, process or localization of the gene product""")
+    object: str = Field(None, description="""class describing the activity, process or localization of the gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6146,7 +5942,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6159,10 +5954,9 @@ class EntityToDiseaseAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6176,7 +5970,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6189,10 +5982,9 @@ class EntityToPhenotypicFeatureAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6206,7 +5998,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6220,10 +6011,9 @@ class SequenceAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6237,7 +6027,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6256,10 +6045,9 @@ class GenomicSequenceLocalization(SequenceAssociation):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6273,7 +6061,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6287,10 +6074,9 @@ class SequenceFeatureRelationship(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6304,7 +6090,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6318,10 +6103,9 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6335,7 +6119,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6349,10 +6132,9 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6366,7 +6148,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6380,10 +6161,9 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6397,38 +6177,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
-    
-
-
-class GeneRegulatoryRelationship(Association):
-    """
-    A regulatory relationship between two genes
-    """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-    predicate: str = Field(None, description="""the direction is always from regulator to regulated""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
-    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
-    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
-    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
-    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
-    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
-    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
-    timepoint: Optional[str] = Field(None, description="""a point in time""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneRegulatoryRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
- * In a neo4j database this MAY correspond to the neo4j label tag.
- * In an RDF database it should be a biolink model class URI.
-This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
-In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[str] = Field(None)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6443,10 +6191,9 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6460,7 +6207,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6472,10 +6218,9 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6489,7 +6234,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6503,10 +6247,9 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     object: str = Field(None, description="""the whole""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6520,7 +6263,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6534,10 +6276,9 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     object: str = Field(None, description="""the structure at an earlier time""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6551,7 +6292,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6573,10 +6313,9 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6590,7 +6329,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6604,10 +6342,9 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     object: str = Field(None, description="""the more general taxon""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6621,7 +6358,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6636,10 +6372,9 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     object: str = Field(None, description="""the taxon that is the subject of the association""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6653,7 +6388,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6665,10 +6399,9 @@ class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, As
     object: str = Field(None, description="""the environment in which the organism occurs""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
-    publications: Optional[List[str]] = Field(default_factory=list, description="""connects an association to publications supporting the association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.""")
     has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
     knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
-    original_knowledge_source: Optional[str] = Field(None)
     primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources.""")
     aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
@@ -6682,7 +6415,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[str] = Field(None)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    source: Optional[str] = Field(None)
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
 
@@ -6690,6 +6422,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 # Update forward refs
 # see https://pydantic-docs.helpmanual.io/usage/postponed_annotations/
+DeprecatedMappingCollection.update_forward_refs()
+DeprecatedPredicateMapping.update_forward_refs()
 OntologyClass.update_forward_refs()
 Annotation.update_forward_refs()
 QuantityValue.update_forward_refs()
@@ -6708,8 +6442,6 @@ PhenotypicSex.update_forward_refs()
 GenotypicSex.update_forward_refs()
 SeverityValue.update_forward_refs()
 RelationshipType.update_forward_refs()
-GeneOntologyClass.update_forward_refs()
-UnclassifiedOntologyClass.update_forward_refs()
 TaxonomicRank.update_forward_refs()
 OrganismTaxon.update_forward_refs()
 Event.update_forward_refs()
@@ -6717,6 +6449,9 @@ AdministrativeEntity.update_forward_refs()
 Agent.update_forward_refs()
 InformationContentEntity.update_forward_refs()
 StudyResult.update_forward_refs()
+Study.update_forward_refs()
+StudyVariable.update_forward_refs()
+CommonDataElement.update_forward_refs()
 ConceptCountAnalysisResult.update_forward_refs()
 ObservedExpectedFrequencyAnalysisResult.update_forward_refs()
 RelativeFrequencyAnalysisResult.update_forward_refs()
@@ -6753,6 +6488,7 @@ GeographicLocationAtTime.update_forward_refs()
 ThingWithTaxon.update_forward_refs()
 BiologicalEntity.update_forward_refs()
 GenomicEntity.update_forward_refs()
+EpigenomicEntity.update_forward_refs()
 BiologicalProcessOrActivity.update_forward_refs()
 MolecularActivity.update_forward_refs()
 BiologicalProcess.update_forward_refs()
@@ -6761,7 +6497,6 @@ PhysiologicalProcess.update_forward_refs()
 Behavior.update_forward_refs()
 OrganismAttribute.update_forward_refs()
 PhenotypicQuality.update_forward_refs()
-Inheritance.update_forward_refs()
 GeneticInheritance.update_forward_refs()
 OrganismalEntity.update_forward_refs()
 Virus.update_forward_refs()
@@ -6792,17 +6527,14 @@ ProcessedMaterial.update_forward_refs()
 Drug.update_forward_refs()
 EnvironmentalFoodContaminant.update_forward_refs()
 FoodAdditive.update_forward_refs()
-Nutrient.update_forward_refs()
-Macronutrient.update_forward_refs()
-Micronutrient.update_forward_refs()
-Vitamin.update_forward_refs()
 Food.update_forward_refs()
 MacromolecularMachineMixin.update_forward_refs()
 GeneOrGeneProduct.update_forward_refs()
 Gene.update_forward_refs()
 GeneProductMixin.update_forward_refs()
 GeneProductIsoformMixin.update_forward_refs()
-MacromolecularComplexMixin.update_forward_refs()
+MacromolecularComplex.update_forward_refs()
+NucleosomeModification.update_forward_refs()
 Genome.update_forward_refs()
 Exon.update_forward_refs()
 Transcript.update_forward_refs()
@@ -6810,6 +6542,7 @@ CodingSequence.update_forward_refs()
 Polypeptide.update_forward_refs()
 Protein.update_forward_refs()
 ProteinIsoform.update_forward_refs()
+PosttranslationalModification.update_forward_refs()
 NucleicAcidSequenceMotif.update_forward_refs()
 RNAProduct.update_forward_refs()
 RNAProductIsoform.update_forward_refs()
@@ -6874,6 +6607,7 @@ GenotypeToGeneAssociation.update_forward_refs()
 GenotypeToVariantAssociation.update_forward_refs()
 GeneToGeneAssociation.update_forward_refs()
 GeneToGeneHomologyAssociation.update_forward_refs()
+GeneToGeneFamilyAssociation.update_forward_refs()
 GeneExpressionMixin.update_forward_refs()
 GeneToGeneCoexpressionAssociation.update_forward_refs()
 PairwiseGeneToGeneInteraction.update_forward_refs()
@@ -6890,7 +6624,6 @@ ChemicalToChemicalDerivationAssociation.update_forward_refs()
 MolecularActivityToPathwayAssociation.update_forward_refs()
 ChemicalToPathwayAssociation.update_forward_refs()
 NamedThingAssociatedWithLikelihoodOfNamedThingAssociation.update_forward_refs()
-ChemicalToGeneAssociation.update_forward_refs()
 ChemicalGeneInteractionAssociation.update_forward_refs()
 ChemicalAffectsGeneAssociation.update_forward_refs()
 DrugToGeneAssociation.update_forward_refs()
@@ -6899,7 +6632,6 @@ MaterialSampleDerivationAssociation.update_forward_refs()
 DiseaseToEntityAssociationMixin.update_forward_refs()
 EntityToExposureEventAssociationMixin.update_forward_refs()
 DiseaseToExposureEventAssociation.update_forward_refs()
-ExposureEventToEntityAssociationMixin.update_forward_refs()
 EntityToOutcomeAssociationMixin.update_forward_refs()
 ExposureEventToOutcomeAssociation.update_forward_refs()
 FrequencyQualifierMixin.update_forward_refs()
@@ -6962,7 +6694,6 @@ SequenceFeatureRelationship.update_forward_refs()
 TranscriptToGeneRelationship.update_forward_refs()
 GeneToGeneProductRelationship.update_forward_refs()
 ExonToTranscriptRelationship.update_forward_refs()
-GeneRegulatoryRelationship.update_forward_refs()
 ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation.update_forward_refs()
 AnatomicalEntityToAnatomicalEntityAssociation.update_forward_refs()
 AnatomicalEntityToAnatomicalEntityPartOfAssociation.update_forward_refs()
