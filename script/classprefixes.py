@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-23T14:01:22
+# Generation date: 2022-11-23T14:02:18
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -108,14 +108,14 @@ class Prefix(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.Prefix
 
     prefix: Optional[str] = None
-    uri: Optional[Union[str, URI]] = None
+    base_uri: Optional[Union[str, URI]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.prefix is not None and not isinstance(self.prefix, str):
             self.prefix = str(self.prefix)
 
-        if self.uri is not None and not isinstance(self.uri, URI):
-            self.uri = URI(self.uri)
+        if self.base_uri is not None and not isinstance(self.base_uri, URI):
+            self.base_uri = URI(self.base_uri)
 
         super().__post_init__(**kwargs)
 
@@ -136,8 +136,8 @@ slots.prefix_map = Slot(uri=BIOLINK.prefix_map, name="prefix_map", curie=BIOLINK
 slots.class_name = Slot(uri=BIOLINK.class_name, name="class_name", curie=BIOLINK.curie('class_name'),
                    model_uri=BIOLINK.class_name, domain=None, range=Optional[Union[str, URIorCURIE]])
 
-slots.uri = Slot(uri=BIOLINK.uri, name="uri", curie=BIOLINK.curie('uri'),
-                   model_uri=BIOLINK.uri, domain=None, range=Optional[Union[str, URI]])
+slots.base_uri = Slot(uri=BIOLINK.base_uri, name="base_uri", curie=BIOLINK.curie('base_uri'),
+                   model_uri=BIOLINK.base_uri, domain=None, range=Optional[Union[str, URI]])
 
 slots.prefix = Slot(uri=BIOLINK.prefix, name="prefix", curie=BIOLINK.curie('prefix'),
                    model_uri=BIOLINK.prefix, domain=None, range=Optional[str])

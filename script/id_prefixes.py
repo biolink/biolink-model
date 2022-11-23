@@ -7,6 +7,7 @@ from linkml_runtime.dumpers.csv_dumper import CSVDumper
 import os
 
 OUT_JSON = os.path.join('../prefix-map/preferred_prefixes_per_class.json')
+OUT_CSV = os.path.join('../prefix-map/preferred_prefixes_per_class.csv')
 
 
 class IDPrefixes:
@@ -31,6 +32,7 @@ class IDPrefixes:
         jd = JSONDumper()
         csvd = CSVDumper()
         jd.dump(bcpm, to_file=OUT_JSON)
+        csvd.dump(bcpm, to_file=OUT_CSV)
 
 
 if __name__ == "__main__":
