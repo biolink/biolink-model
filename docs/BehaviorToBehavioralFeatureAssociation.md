@@ -15,7 +15,7 @@ URI: [biolink:BehaviorToBehavioralFeatureAssociation](https://w3id.org/biolink/v
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[BehavioralFeature],[BehavioralFeature]%3Cobject%201..1-%20[BehaviorToBehavioralFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Behavior]%3Csubject%201..1-%20[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[BehaviorToBehavioralFeatureAssociation],[Behavior],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[InformationResource],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[BehavioralFeature],[BehavioralFeature]%3Cobject%201..1-%20[BehaviorToBehavioralFeatureAssociation%7Cfrequency_qualifier:frequency_value%20%3F;has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Behavior]%3Csubject%201..1-%20[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[Association]%5E-[BehaviorToBehavioralFeatureAssociation],[Behavior],[Attribute],[Association])
 
 ---
 
@@ -141,6 +141,20 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
+
+### Inherited from frequency quantifier:
+
+ * [has count](has_count.md)  <sub>0..1</sub>
+     * Description: number of things with a particular property
+     * Range: [Integer](types/Integer.md)
+ * [has total](has_total.md)  <sub>0..1</sub>
+     * Description: total number of things in a particular reference set
+     * Range: [Integer](types/Integer.md)
+ * [has quotient](has_quotient.md)  <sub>0..1</sub>
+     * Range: [Double](types/Double.md)
+ * [has percentage](has_percentage.md)  <sub>0..1</sub>
+     * Description: equivalent to has quotient multiplied by 100
+     * Range: [Double](types/Double.md)
 
 ### Inherited from macromolecular machine mixin:
 

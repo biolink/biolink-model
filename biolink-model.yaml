@@ -2187,6 +2187,7 @@ slots:
       - CHEMBL.MECHANISM:sequestering_agent
       - CHEMBL.MECHANISM:substrate
       - DRUGBANK:target
+
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
@@ -8972,6 +8973,8 @@ classes:
   entity to phenotypic feature association mixin:
     mixin: true
     is_a: entity to feature or disease qualifiers mixin
+    mixins:
+      - frequency quantifier
     defining_slots:
       - object
     slot_usage:

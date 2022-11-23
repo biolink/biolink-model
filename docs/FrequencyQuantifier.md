@@ -15,7 +15,7 @@ URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuant
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier%7Chas_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[VariantToPopulationAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RelationshipQuantifier],[VariantToPopulationAssociation]uses%20-.-%3E[FrequencyQuantifier%7Chas_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],[EntityToPhenotypicFeatureAssociationMixin]uses%20-.-%3E[FrequencyQuantifier],[RelationshipQuantifier]%5E-[FrequencyQuantifier],[VariantToPopulationAssociation],[EntityToPhenotypicFeatureAssociationMixin])
 
 ---
 
@@ -26,6 +26,7 @@ URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuant
 
 ## Mixin for
 
+ * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md) (mixin) 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
 
 ## Referenced by class
