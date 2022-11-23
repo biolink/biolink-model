@@ -1,7 +1,7 @@
 from linkml_runtime.utils.schemaview import SchemaView
 from linkml.generators.prefixmapgen import PrefixGenerator
 from linkml_runtime.utils.formatutils import camelcase
-from classprefixes import BiolinkClassPrefixMap, Prefix
+from classprefixes import BiolinkClassPrefixMap, Prefix, BiolinkClassPrefixesCollection
 from linkml_runtime.dumpers.json_dumper import JSONDumper
 from linkml_runtime.dumpers.csv_dumper import CSVDumper
 import os
@@ -19,20 +19,19 @@ class IDPrefixes:
 
         prefixmap = PrefixGenerator('../biolink-model.yaml')
         bcpm = BiolinkClassPrefixMap()
-
+        bpcc = BiolinkClassPrefixesCollection()
         for cls, clsdef in self.sv.all_classes().items():
             prefix_map = []
             if clsdef.id_prefixes and not clsdef.mixin:
                 for prefix in clsdef.id_prefixes:
                     p = Prefix(prefix=prefix, base_uri=prefixmap.namespaces[prefix])
                     prefix_map.append(p)
-                bcpm.class_name = "biolink:"+camelcase(cls)
-                bcpm.prefix_map = prefix_map
+                    bcpm.class_name = "biolink:"+camelcase(cls)
+                    bcpm.prefix_map = prefix_map
+                    bpcc.biolink_class_prefixes.append(bcpm)
 
         jd = JSONDumper()
-        csvd = CSVDumper()
-        jd.dump(bcpm, to_file=OUT_JSON)
-        csvd.dump(bcpm, to_file=OUT_CSV)
+        jd.dump(bpcc, to_file=OUT_JSON)
 
 
 if __name__ == "__main__":
