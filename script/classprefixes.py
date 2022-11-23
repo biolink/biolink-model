@@ -1,5 +1,5 @@
 # Auto generated from class_prefixes.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-23T14:02:18
+# Generation date: 2022-11-23T14:55:53
 # Schema: BiolinkClassPrefixes
 #
 # id: biolink-model-class-prefixes
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import String, Uri, Uriorcurie
+from linkml_runtime.linkml_model.types import Integer, String, Uri, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URI, URIorCURIE
 
 metamodel_version = "1.7.0"
@@ -109,6 +109,7 @@ class Prefix(YAMLRoot):
 
     prefix: Optional[str] = None
     base_uri: Optional[Union[str, URI]] = None
+    order: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.prefix is not None and not isinstance(self.prefix, str):
@@ -116,6 +117,9 @@ class Prefix(YAMLRoot):
 
         if self.base_uri is not None and not isinstance(self.base_uri, URI):
             self.base_uri = URI(self.base_uri)
+
+        if self.order is not None and not isinstance(self.order, int):
+            self.order = int(self.order)
 
         super().__post_init__(**kwargs)
 
@@ -141,3 +145,6 @@ slots.base_uri = Slot(uri=BIOLINK.base_uri, name="base_uri", curie=BIOLINK.curie
 
 slots.prefix = Slot(uri=BIOLINK.prefix, name="prefix", curie=BIOLINK.curie('prefix'),
                    model_uri=BIOLINK.prefix, domain=None, range=Optional[str])
+
+slots.order = Slot(uri=BIOLINK.order, name="order", curie=BIOLINK.curie('order'),
+                   model_uri=BIOLINK.order, domain=None, range=Optional[int])

@@ -17,17 +17,19 @@ class IDPrefixes:
     def dump(self):
 
         prefixmap = PrefixGenerator('../biolink-model.yaml')
-        bcpm = BiolinkClassPrefixMap()
         bpcc = BiolinkClassPrefixesCollection()
         for cls, clsdef in self.sv.all_classes().items():
             prefix_map = []
             if clsdef.id_prefixes and not clsdef.mixin:
+                bcpm = BiolinkClassPrefixMap()
+                bcpm.class_name = "biolink:" + camelcase(cls)
+                counter = 0
                 for prefix in clsdef.id_prefixes:
-                    p = Prefix(prefix=prefix, base_uri=prefixmap.namespaces[prefix])
+                    counter = counter + 1
+                    p = Prefix(prefix=prefix, base_uri=prefixmap.namespaces[prefix], order=counter)
                     prefix_map.append(p)
-                    bcpm.class_name = "biolink:"+camelcase(cls)
-                    bcpm.prefix_map = prefix_map
-                    bpcc.biolink_class_prefixes.append(bcpm)
+                bcpm.prefix_map = prefix_map
+                bpcc.biolink_class_prefixes.append(bcpm)
 
         jd = JSONDumper()
         jd.dump(bpcc, to_file=OUT_JSON)

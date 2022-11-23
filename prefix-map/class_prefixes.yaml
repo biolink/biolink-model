@@ -51,6 +51,7 @@ classes:
     slots:
         - prefix
         - base_uri
+        - order
 
 slots:
   biolink_class_prefixes:
@@ -77,3 +78,6 @@ slots:
 
   prefix:
     range: string
+
+  order:
+    range: integer
