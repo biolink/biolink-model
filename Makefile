@@ -25,7 +25,7 @@ prefix-map: prefix-map/biolink-model-prefix-map.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
-prefix-map/biolink-model-prefix-map.json
+prefix-map/biolink-model-prefix-map.json gen-pydantic
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
