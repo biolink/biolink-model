@@ -163,8 +163,8 @@ message Behavior
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
@@ -241,8 +241,8 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
@@ -258,8 +258,8 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 message BiologicalSex
@@ -3066,8 +3066,8 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -3099,8 +3099,8 @@ message Pathway
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -3187,8 +3187,8 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Any entity or process that exists at the level of the whole planet

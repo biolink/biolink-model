@@ -332,8 +332,8 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Occurrent> ] ? ;
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
-             <has_input> @<BiologicalProcessOrActivity> * ;
-             <has_output> @<BiologicalProcessOrActivity> * ;
+             <has_input> @<Occurrent> * ;
+             <has_output> @<Occurrent> * ;
              <enabled_by> @<PhysicalEntity> *
           ) ;
           rdf:type [ <BiologicalProcessOrActivity> ]
