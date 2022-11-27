@@ -17,7 +17,7 @@ URI: [biolink:actively_involves](https://w3id.org/biolink/vocab/actively_involve
 
 ## Domain and Range
 
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [MolecularActivity](MolecularActivity.md)
+[MolecularActivity](MolecularActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
 
 ## Parents
 

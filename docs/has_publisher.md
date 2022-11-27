@@ -14,7 +14,7 @@ URI: [biolink:has_publisher](https://w3id.org/biolink/vocab/has_publisher)
 
 ## Domain and Range
 
-[Agent](Agent.md) ->  <sub>0..\*</sub> [Publication](Publication.md)
+[Publication](Publication.md) ->  <sub>0..\*</sub> [Agent](Agent.md)
 
 ## Parents
 

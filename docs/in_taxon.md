@@ -94,7 +94,7 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 |  | | is organism source of gene product |
 |  | | organism has gene |
 |  | | gene found in organism |
-|  | |  gene product has organism source |
+|  | | gene product has organism source |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002162 |
 |  | | WIKIDATA_PROPERTY:P703 |

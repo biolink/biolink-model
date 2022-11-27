@@ -15,7 +15,7 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneToPathwayAssociation]-%20object%201..1%3E[Pathway],[MolecularActivityToPathwayAssociation]-%20object%201..1%3E[Pathway],[Pathway]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[Pathway],[OrganismTaxon],[OntologyClass],[MolecularActivityToPathwayAssociation],[GeneToPathwayAssociation],[ChemicalToPathwayAssociation],[BiologicalProcessOrActivity],[BiologicalProcess],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[ChemicalToPathwayAssociation]-%20object%201..1%3E[Pathway%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneToPathwayAssociation]-%20object%201..1%3E[Pathway],[MolecularActivityToPathwayAssociation]-%20object%201..1%3E[Pathway],[Pathway]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[Pathway],[OrganismTaxon],[OntologyClass],[Occurrent],[MolecularActivityToPathwayAssociation],[GeneToPathwayAssociation],[ChemicalToPathwayAssociation],[BiologicalProcess],[Attribute])
 
 ---
 
@@ -53,6 +53,14 @@ URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
 ### Inherited from biological process or activity:
 
+ * [has input](has_input.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an input into the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
+ * [has output](has_output.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an output of the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process
      * Range: [PhysicalEntity](PhysicalEntity.md)

@@ -192,6 +192,10 @@ message BehaviorToBehavioralFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
@@ -375,6 +379,10 @@ message CaseToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 message Cell
  {
@@ -1326,6 +1334,10 @@ message DiseaseToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -1654,6 +1666,10 @@ message ExposureEventToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A substance consumed by a living organism as a source of nutrition
 message Food
@@ -2004,6 +2020,10 @@ message GeneToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance
@@ -2214,6 +2234,10 @@ message GenotypeToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
@@ -3957,6 +3981,10 @@ message VariantToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation

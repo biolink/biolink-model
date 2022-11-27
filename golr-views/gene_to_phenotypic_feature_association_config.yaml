@@ -107,3 +107,14 @@ fields:
   description: a qualifier used in a phenotypic association to state whether the association
     is specific to a particular sex.
   display_name: sex qualifier
+- id: has_count
+  description: number of things with a particular property
+  display_name: has count
+- id: has_total
+  description: total number of things in a particular reference set
+  display_name: has total
+- id: has_quotient
+  display_name: has quotient
+- id: has_percentage
+  description: equivalent to has quotient multiplied by 100
+  display_name: has percentage

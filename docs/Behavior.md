@@ -15,7 +15,7 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[BiologicalProcessOrActivity],[BiologicalProcess],[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]-%20subject%201..1%3E[Behavior%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Behavior]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[ActivityAndBehavior],[BiologicalProcess]%5E-[Behavior],[Attribute],[ActivityAndBehavior])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[Occurrent],[BiologicalProcess],[BehaviorToBehavioralFeatureAssociation],[BehaviorToBehavioralFeatureAssociation]-%20subject%201..1%3E[Behavior%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Behavior]uses%20-.-%3E[OntologyClass],[Behavior]uses%20-.-%3E[ActivityAndBehavior],[BiologicalProcess]%5E-[Behavior],[Attribute],[ActivityAndBehavior])
 
 ---
 
@@ -38,6 +38,14 @@ URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
 
 ### Inherited from biological process or activity:
 
+ * [has input](has_input.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an input into the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
+ * [has output](has_output.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an output of the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process
      * Range: [PhysicalEntity](PhysicalEntity.md)

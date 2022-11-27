@@ -259,7 +259,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <BehaviorToBehavioralFeatureAssociation> ]
     )
@@ -408,7 +412,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <CaseToPhenotypicFeatureAssociation> ]
     )
@@ -1061,7 +1069,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <DiseaseToPhenotypicFeatureAssociation> ]
     )
@@ -1215,8 +1227,14 @@ linkml:Nodeidentifier NONLITERAL
 <EntityToPhenotypicFeatureAssociationMixin> {
     (  $<EntityToPhenotypicFeatureAssociationMixin_tes> (  &<EntityToFeatureOrDiseaseQualifiersMixin_tes> ;
           rdf:type [ <EntityToFeatureOrDiseaseQualifiersMixin> ] ? ;
+          &<FrequencyQuantifier_tes> ;
+          rdf:type [ <FrequencyQuantifier> ] ? ;
           <sex_qualifier> @<BiologicalSex> ? ;
-          rdf:object @<PhenotypicFeature>
+          rdf:object @<PhenotypicFeature> ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ?
     )
@@ -1339,7 +1357,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <ExposureEventToPhenotypicFeatureAssociation> ]
     )
@@ -1632,7 +1654,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <GeneToPhenotypicFeatureAssociation> ]
     )
@@ -1796,7 +1822,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <GenotypeToPhenotypicFeatureAssociation> ]
     )
@@ -3129,7 +3159,11 @@ linkml:Nodeidentifier NONLITERAL
           <frequency_qualifier> @<FrequencyValue> ? ;
           <severity_qualifier> @<SeverityValue> ? ;
           <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ?
+          <sex_qualifier> @<BiologicalSex> ? ;
+          <has_count> @linkml:Integer ? ;
+          <has_total> @linkml:Integer ? ;
+          <has_quotient> @linkml:Double ? ;
+          <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <VariantToPhenotypicFeatureAssociation> ]
     )

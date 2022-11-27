@@ -35,12 +35,12 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
 
 ## Referenced by class
 
- *  **[Publication](Publication.md)** *[author](author.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
- *  **[InformationContentEntity](InformationContentEntity.md)** *[contributor](contributor.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
  *  **[ContributorAssociation](ContributorAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Agent](Agent.md)**
- *  **[Publication](Publication.md)** *[editor](editor.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
- *  **[InformationContentEntity](InformationContentEntity.md)** *[provider](provider.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
- *  **[Publication](Publication.md)** *[publisher](publisher.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
+ *  **[Publication](Publication.md)** *[has author](has_author.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
+ *  **[InformationContentEntity](InformationContentEntity.md)** *[has contributor](has_contributor.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
+ *  **[Publication](Publication.md)** *[has editor](has_editor.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
+ *  **[InformationContentEntity](InformationContentEntity.md)** *[has provider](has_provider.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
+ *  **[Publication](Publication.md)** *[has publisher](has_publisher.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
 
 ## Attributes
 

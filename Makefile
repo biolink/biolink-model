@@ -25,7 +25,7 @@ prefix-map: prefix-map/biolink-model-prefix-map.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
-prefix-map/biolink-model-prefix-map.json gen-pydantic
+prefix-map/biolink-model-prefix-map.json gen-pydantic id-prefixes
 
 # TODO: Get this working
 build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
@@ -128,6 +128,9 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
 	pipenv run gen-prefix-map $< > $@
 
+id-prefixes:
+	pipenv run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
+	cd script && pipenv run python id_prefixes.py
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
@@ -150,7 +153,7 @@ biolink-model.ttl: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
 # ~~~~~~~~~~~~~~~~~~~~
-biolink-model.shex: biolink-model.yaml
+biolink-modeel.shex: biolink-model.yaml
 	pipenv run gen-shex $< > $@
 biolink-modeln.shex: biolink-model.yaml
 	touch $@

@@ -15,7 +15,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[Occurrent],[MolecularActivity],[PhysicalEntity]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[BiologicalProcessOrActivity]%3Chas%20output%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]%3Chas%20input%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[Occurrent],[MolecularActivity],[PhysicalEntity]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Occurrent]%3Chas%20output%200..%2A-++[BiologicalProcessOrActivity],[Occurrent]%3Chas%20input%200..%2A-++[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -41,10 +41,10 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ## Referenced by class
 
- *  **[Occurrent](Occurrent.md)** *[consumes](consumes.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[Occurrent](Occurrent.md)** *[consumed by](consumed_by.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
  *  **[PhysicalEntity](PhysicalEntity.md)** *[enables](enables.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
- *  **[Occurrent](Occurrent.md)** *[has input](has_input.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
- *  **[Occurrent](Occurrent.md)** *[has output](has_output.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[Occurrent](Occurrent.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[Occurrent](Occurrent.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
 
 ## Attributes
 
@@ -54,6 +54,14 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process
      * Range: [PhysicalEntity](PhysicalEntity.md)
+     * in subsets: (translator_minimal)
+ * [has input](has_input.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an input into the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
+ * [has output](has_output.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an output of the process
+     * Range: [Occurrent](Occurrent.md)
      * in subsets: (translator_minimal)
 
 ### Inherited from entity:
@@ -125,4 +133,12 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process
      * Range: [PhysicalEntity](PhysicalEntity.md)
+     * in subsets: (translator_minimal)
+ * [has input](has_input.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an input into the process
+     * Range: [Occurrent](Occurrent.md)
+     * in subsets: (translator_minimal)
+ * [has output](has_output.md)  <sub>0..\*</sub>
+     * Description: holds between a process and a continuant, where the continuant is an output of the process
+     * Range: [Occurrent](Occurrent.md)
      * in subsets: (translator_minimal)

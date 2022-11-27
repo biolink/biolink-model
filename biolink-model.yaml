@@ -2045,8 +2045,8 @@ slots:
 
   contributor:
     is_a: related to at instance level
-    domain: information content entity
-    range: agent
+    domain: agent
+    range: information content entity
     comments:
       - This is a grouping for predicates relating entities to their associated contributors realizing them
     abstract: true
@@ -2056,8 +2056,8 @@ slots:
   has contributor:
     inverse: contributor
     is_a: related to at instance level
-    domain: agent
-    range: information content entity
+    domain: information content entity
+    range: agent
 
   provider:
     is_a: contributor
@@ -2067,12 +2067,12 @@ slots:
   has provider:
     inverse: provider
     is_a: has contributor
-    domain: agent
-    range: information content entity
+    domain: information content entity
+    range: agent
 
   publisher:
     is_a: contributor
-    domain: publication
+    domain: agent
     description: >-
       organization or person responsible for publishing books, periodicals, podcasts, games or software.
       Note that in the case of publications which have a containing "published in" node property, the publisher
@@ -2086,12 +2086,12 @@ slots:
   has publisher:
     is_a: has contributor
     inverse: publisher
-    domain: agent
-    range: publication
+    domain: publication
+    range: agent
 
   editor:
     is_a: contributor
-    domain: publication
+    domain: agent
     description: >-
       editor of a compiled work such as a book or a periodical (newspaper or an academic journal).
       Note that in the case of publications which have a containing "published in" node property, the editor
@@ -2104,12 +2104,12 @@ slots:
   has editor:
     inverse: editor
     is_a: has contributor
-    domain: agent
-    range: publication
+    domain: publication
+    range: agent
 
   author:
     is_a: contributor
-    domain: publication
+    domain: agent
     description: >-
       an instance of one (co-)creator primarily responsible for a written work
     exact_mappings:
@@ -2119,8 +2119,8 @@ slots:
   has author:
     inverse: author
     is_a: has contributor
-    domain: agent
-    range: publication
+    domain: publication
+    range: agent
 
   ## end of Publication related predicates
 
@@ -2952,8 +2952,8 @@ slots:
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence,
       contribute to, or correlate with
-    domain: gene
-    range: disease or phenotypic feature
+    domain: disease or phenotypic feature
+    range: gene
     annotations:
       canonical_predicate: true
     in_subset:
@@ -2972,8 +2972,8 @@ slots:
     aliases: [ 'disease associated with gene' ]
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-    domain: disease or phenotypic feature
-    range: gene
+    domain: gene
+    range: disease or phenotypic feature
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
@@ -3810,8 +3810,8 @@ slots:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
-    domain: occurrent
-    range: biological process or activity
+    domain: biological process or activity
+    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has output
@@ -3840,8 +3840,8 @@ slots:
 
   is input of:
     is_a: participates in
-    domain: biological process or activity
-    range: occurrent
+    domain: occurrent
+    range: biological process or activity
     inverse: has input
     in_subset:
       - translator_minimal
@@ -3850,8 +3850,8 @@ slots:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
-    domain: occurrent
-    range: biological process or activity
+    domain: biological process or activity
+    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has input
@@ -3875,8 +3875,8 @@ slots:
 
   is output of:
     is_a: participates in
-    range: occurrent
-    domain: biological process or activity
+    domain: occurrent
+    range: biological process or activity
     inverse: has output
     in_subset:
       - translator_minimal
@@ -3885,7 +3885,7 @@ slots:
     is_a: related to at instance level
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
-    domain: occurrent
+    domain: biological process or activity
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3972,8 +3972,8 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
-    domain: molecular activity
-    range: occurrent
+    domain: occurrent
+    range: molecular activity
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3990,8 +3990,8 @@ slots:
 
   actively involves:
     is_a: has participant
-    domain: occurrent
-    range: molecular activity
+    domain: molecular activity
+    range: occurrent
     inverse: actively involved in
     exact_mappings:
       - RO:0002331
@@ -4049,7 +4049,7 @@ slots:
 
   derives into:
     is_a: related to at instance level
-    aliases: [ 'is normal cell origin of disease','may be normal cell origin of disease' ]
+    aliases: [ 'is normal cell origin of disease', 'may be normal cell origin of disease' ]
     description: >-
       holds between two distinct material entities, the old entity and
       the new entity, in which the new entity begins to exist when
@@ -4732,7 +4732,7 @@ slots:
     inverse: develops from
 
   in taxon:
-    aliases: [ 'instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism',' gene product has organism source' ]
+    aliases: [ 'instance of', 'is organism source of gene product', 'organism has gene', 'gene found in organism', 'gene product has organism source' ]
     is_a: related to at instance level
     domain: thing with taxon
     range: organism taxon
@@ -4779,7 +4779,7 @@ slots:
   association slot:
     abstract: true
     domain: association
-    aliases: [ 'edge property','statement property','node qualifier','edge qualifier','statement qualifier' ]
+    aliases: [ 'edge property', 'statement property', 'node qualifier', 'edge qualifier', 'statement qualifier' ]
     description: >-
       any slot that relates an association to another entity
 
@@ -7139,7 +7139,7 @@ classes:
       - model_organism_database
 
   cellular component:
-    aliases: [ 'cell component','cell part' ]
+    aliases: [ 'cell component', 'cell part' ]
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -7594,7 +7594,7 @@ classes:
       - has gene or gene product
 
   gene family:
-    aliases: [ 'orthogroup','protein family' ]
+    aliases: [ 'orthogroup', 'protein family' ]
     is_a: biological entity
     exact_mappings:
       - NCIT:C26004
@@ -7743,7 +7743,7 @@ classes:
       - model_organism_database
 
   snv:
-    aliases: [ 'single nucleotide variant','single nucleotide polymorphism', 'snp' ]
+    aliases: [ 'single nucleotide variant', 'single nucleotide polymorphism', 'snp' ]
     is_a: sequence variant
     description: >-
       SNVs are single nucleotide positions in genomic DNA at
@@ -8058,7 +8058,7 @@ classes:
 
   biotic exposure:
     is_a: attribute
-    aliases: [ 'viral exposure','bacterial exposure' ]
+    aliases: [ 'viral exposure', 'bacterial exposure' ]
     mixins:
       - exposure event
     description: >-
@@ -10564,7 +10564,7 @@ enums:
           under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the 
           investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral 
           thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the 
-          investigator brochure listed only cerebral vascular accidents. 'Unexpected,' as used in this definition, 
+          investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition, 
           also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure
           as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but 
           are not specifically mentioned as occurring with the particular drug under investigation.

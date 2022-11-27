@@ -54,7 +54,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ## Referenced by class
 
- *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[condition associated with gene](condition_associated_with_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
+ *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[gene associated with condition](gene_associated_with_condition.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
  *  **[GeneProductMixin](GeneProductMixin.md)** *[gene product of](gene_product_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
  *  **[GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
  *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**

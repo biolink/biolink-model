@@ -14,7 +14,7 @@ URI: [biolink:has_substrate](https://w3id.org/biolink/vocab/has_substrate)
 
 ## Domain and Range
 
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

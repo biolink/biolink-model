@@ -14,7 +14,7 @@ URI: [biolink:has_provider](https://w3id.org/biolink/vocab/has_provider)
 
 ## Domain and Range
 
-[Agent](Agent.md) ->  <sub>0..\*</sub> [InformationContentEntity](InformationContentEntity.md)
+[InformationContentEntity](InformationContentEntity.md) ->  <sub>0..\*</sub> [Agent](Agent.md)
 
 ## Parents
 
