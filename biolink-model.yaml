@@ -1678,8 +1678,6 @@ slots:
       - OMIM:has_manifestation
       - SNOMED:has_basic_dose_form
       - UMLS:RB
-    annotations:
-      opposite_of: subclass of
 
   subclass of:
     is_a: related to at concept level
@@ -1692,7 +1690,7 @@ slots:
       - translator_minimal
     annotations:
       canonical_predicate: true
-      opposite_of: superclass of
+    inverse: superclass of
     close_mappings:
       # RTX
       - LOINC:class_of
@@ -2584,8 +2582,6 @@ slots:
     description: >-
       inverse of transcribed from
     inverse: transcribed from
-    annotations:
-      opposite_of: transcribed from
     exact_mappings:
       - RO:0002511
       - SIO:010080
@@ -2596,7 +2592,7 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-      opposite_of: transcribed to
+    inverse: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -2609,7 +2605,7 @@ slots:
     range: protein
     annotations:
       canonical_predicate: true
-      opposite_of: translation of
+    inverse: translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -2628,8 +2624,7 @@ slots:
     close_mappings:
       - RO:0002512
       - SIO:010083
-    annotations:
-      opposite_of: translates to
+    inverse: translates to
 
   homologous to:
     is_a: similar to
@@ -4059,8 +4054,9 @@ slots:
       - translator_minimal
     inverse: derives from
     # TODO: fix this according to WG notes. Example of both opposite and inverse
-    annotations:
-      opposite_of: subclass of
+    # Commenting as it feels very wrong. A good example with both opposite and inverse is `has active ingredient`
+    # annotations:
+    #   opposite_of: subclass of
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
@@ -4345,7 +4341,7 @@ slots:
     range: occurrent
     annotations:
       canonical_predicate: true
-      opposite_of: preceded by
+    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
