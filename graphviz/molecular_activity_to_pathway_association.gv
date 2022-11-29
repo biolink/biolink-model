@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,2692,283"];
+	graph [bb="0,0,3016,283"];
 	node [label="\N"];
 	"molecular activity to pathway association"	[height=0.5,
 		label="molecular activity to pathway association",
-		pos="1267.4,265",
+		pos="1551.4,265",
 		width=5.6509];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"molecular activity to pathway association" -> association	[label=is_a,
 		lp="282.39,221.5",
-		pos="e,103.74,191.66 1067.1,261.79 820.76,258.23 417.06,249.43 268.39,229 214.84,221.64 154.92,206.26 113.57,194.5"];
+		pos="e,103.34,191.65 1348.5,263.67 1040.8,262.29 470.76,256.01 268.39,229 214.64,221.83 154.52,206.34 113.17,194.5"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"molecular activity to pathway association" -> id	[color=blue,
 		label=id,
-		lp="401.39,221.5",
-		pos="e,210.37,190.01 1072.7,259.76 856.34,254.42 520.72,244.07 394.39,229 320.14,220.14 301.49,215.87 229.39,196 226.28,195.14 223.08,\
-194.18 219.88,193.17",
+		lp="400.39,221.5",
+		pos="e,210.37,190.01 1350.7,262.01 1069.6,258.52 572.67,249.6 393.39,229 319.53,220.51 301.06,215.79 229.39,196 226.28,195.14 223.08,\
+194.18 219.89,193.17",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"molecular activity to pathway association" -> iri	[color=blue,
 		label=iri,
-		lp="515.39,221.5",
-		pos="e,315.29,190.23 1065.5,262.58 912.01,259.59 695.79,251.29 507.39,229 430.1,219.85 410.81,215.26 335.39,196 332.02,195.14 328.54,\
-194.18 325.05,193.17",
+		lp="519.39,221.5",
+		pos="e,315.01,190.17 1353.2,260.91 1098,256.32 668.75,246.3 511.39,229 432.29,220.3 412.55,215.53 335.39,196 331.96,195.13 328.43,194.16 \
+324.9,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"molecular activity to pathway association" -> name	[color=blue,
 		label=name,
-		lp="618.39,221.5",
-		pos="e,440.17,191.27 1064.4,263.61 931.21,260.84 753.65,252.39 598.39,229 546.93,221.25 489.37,205.83 449.83,194.15",
+		lp="623.39,221.5",
+		pos="e,440.4,191.25 1352.1,261.35 1117.6,257.4 742.63,248.26 603.39,229 550.17,221.64 490.6,205.95 450.03,194.1",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"molecular activity to pathway association" -> description	[color=blue,
 		label=description,
-		lp="733.89,221.5",
-		pos="e,585.65,194.09 1079,258.13 940.57,252.76 764.64,243.42 693.39,229 659.48,222.13 622.67,209 595.02,197.91",
+		lp="741.89,221.5",
+		pos="e,586.72,193.92 1350,262.2 1138.7,259.15 821.06,250.96 701.39,229 665.13,222.35 625.63,208.91 596.27,197.64",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"molecular activity to pathway association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="872.39,221.5",
-		pos="e,725.34,193.03 1070,260.62 992.92,256.13 904.29,247.01 825.39,229 793.83,221.8 759.75,208.32 734.54,197.17",
+		lp="884.39,221.5",
+		pos="e,726.75,192.68 1353.6,260.74 1177.1,256.66 932.44,247.76 837.39,229 802.18,222.05 763.89,208.03 736.11,196.6",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,9 +70,8 @@ digraph {
 		width=1.2999];
 	"molecular activity to pathway association" -> negated	[color=blue,
 		label=negated,
-		lp="1007.4,221.5",
-		pos="e,848.59,189.93 1127.3,251.91 1079.8,246.52 1026.5,239.05 978.39,229 928.43,218.56 917.22,210.87 868.39,196 865.09,194.99 861.68,\
-193.95 858.25,192.9",
+		lp="1033.4,221.5",
+		pos="e,847.79,190.35 1356.5,259.77 1251.7,255.42 1120.5,246.66 1004.4,229 953.22,221.22 895.96,205.22 857.6,193.4",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -81,8 +80,8 @@ digraph {
 		width=2.1304];
 	"molecular activity to pathway association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1115.9,221.5",
-		pos="e,988.3,194.24 1170.1,249.09 1141.6,243.78 1110.5,237.08 1082.4,229 1053.5,220.71 1022.1,208.5 997.66,198.21",
+		lp="1161.9,221.5",
+		pos="e,995.33,193.25 1369.7,256.85 1294.6,251.85 1206.9,243.37 1128.4,229 1086.2,221.27 1039.5,207.56 1005.1,196.45",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -91,8 +90,8 @@ digraph {
 		width=1.7332];
 	"molecular activity to pathway association" -> publications	[color=blue,
 		label=publications,
-		lp="1219.4,221.5",
-		pos="e,1129.4,195.45 1216,247.56 1202.4,242.39 1188,236.13 1175.4,229 1162,221.42 1148.3,211.19 1137.1,201.95",
+		lp="1293.4,221.5",
+		pos="e,1144.2,193.34 1397.7,253.16 1349.8,247.92 1297,240.23 1249.4,229 1216.5,221.24 1180.6,208.09 1153.7,197.22",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -101,8 +100,8 @@ digraph {
 		width=2.0943];
 	"molecular activity to pathway association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1313.9,221.5",
-		pos="e,1267.4,196.18 1267.4,246.8 1267.4,235.16 1267.4,219.55 1267.4,206.24",
+		lp="1424.9,221.5",
+		pos="e,1297.3,194.68 1457.5,248.97 1431.6,243.75 1403.6,237.12 1378.4,229 1353.8,221.08 1327.4,209.32 1306.5,199.19",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -111,8 +110,8 @@ digraph {
 		width=3.015];
 	"molecular activity to pathway association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1461.9,221.5",
-		pos="e,1437.1,195.37 1316.1,247.48 1331.7,241.92 1348.9,235.48 1364.4,229 1385.7,220.11 1408.9,209.19 1428.1,199.83",
+		lp="1547.9,221.5",
+		pos="e,1470.8,196.34 1506.2,247.43 1497.7,242.58 1489.5,236.51 1483.4,229 1478.1,222.52 1474.8,214.16 1472.8,206.15",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -121,8 +120,9 @@ digraph {
 		width=3.015];
 	"molecular activity to pathway association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1684.4,221.5",
-		pos="e,1658,194.37 1394.5,250.93 1437.8,245.46 1486.4,238.19 1530.4,229 1570.3,220.66 1614.4,207.94 1648.3,197.41",
+		lp="1730.4,221.5",
+		pos="e,1670.7,195.19 1581.7,247.07 1591.6,241.44 1602.5,235.06 1612.4,229 1622.8,222.63 1624.8,220.1 1635.4,214 1643.8,209.16 1652.9,\
+204.28 1661.7,199.76",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -131,9 +131,9 @@ digraph {
 		width=3.015];
 	"molecular activity to pathway association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="1946.9,221.5",
-		pos="e,1899.7,194.78 1410.6,252.17 1433.9,250.36 1457.8,248.57 1480.4,247 1615,237.63 1650.8,253.78 1783.4,229 1820,222.16 1859.9,209.26 \
-1890.2,198.27",
+		lp="1954.9,221.5",
+		pos="e,1893.7,194.43 1719.1,254.71 1754.9,249.4 1792,241.29 1825.4,229 1836.8,224.79 1837.5,219.55 1848.4,214 1859.7,208.22 1872.2,202.83 \
+1884.2,198.09",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -142,88 +142,121 @@ digraph {
 		width=1.5346];
 	"molecular activity to pathway association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2120.4,221.5",
-		pos="e,2106.3,195.37 1407.1,251.88 1431.5,250.03 1456.7,248.31 1480.4,247 1544.4,243.45 1997.1,250.83 2057.4,229 2072.9,223.39 2087.6,\
-212.46 2099,202.25",
+		lp="2118.4,221.5",
+		pos="e,2104.5,195.17 1694.6,252.19 1717.9,250.38 1741.8,248.58 1764.4,247 1830.4,242.37 1999.9,253.38 2061.4,229 2069.3,225.85 2084,213.71 \
+2096.8,202.18",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2233.4,178",
+		width=1.0652];
+	"molecular activity to pathway association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2233.4,221.5",
+		pos="e,2211.3,192.7 1692.8,252.04 1716.7,250.22 1741.3,248.46 1764.4,247 1851,241.55 2071.8,255.63 2154.4,229 2166,225.25 2167.1,220.57 \
+2177.4,214 2185.6,208.79 2194.4,203.21 2202.7,198.07",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2347.4,178",
+		width=1.5887];
+	"molecular activity to pathway association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="2374.9,221.5",
+		pos="e,2330.8,195.49 1691.4,251.92 1715.7,250.08 1740.8,248.35 1764.4,247 1822.7,243.68 2235,250.26 2289.4,229 2297.1,225.97 2311.2,213.97 \
+2323.5,202.49",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2461.4,178",
+		width=1.0652];
+	"molecular activity to pathway association" -> "original object"	[color=blue,
+		label="original object",
+		lp="2503.9,221.5",
+		pos="e,2458.6,196.42 1690.5,251.83 1715.1,249.98 1740.5,248.27 1764.4,247 1801.9,245.01 2408.3,249.92 2439.4,229 2447.3,223.7 2452.4,\
+214.88 2455.6,206.11",
 		style=solid];
 	type	[height=0.5,
-		pos="2225.4,178",
+		pos="2549.4,178",
 		width=0.86659];
 	"molecular activity to pathway association" -> type	[color=blue,
 		label=type,
-		lp="2203.4,221.5",
-		pos="e,2210.8,194.43 1406.5,251.82 1431.1,249.98 1456.5,248.27 1480.4,247 1555.8,243 2088.2,253.98 2159.4,229 2175.7,223.28 2191.3,211.9 \
-2203.2,201.44",
+		lp="2581.4,221.5",
+		pos="e,2559.3,195.51 1690,251.79 1714.7,249.94 1740.3,248.23 1764.4,247 1786.5,245.87 2544,244.8 2559.4,229 2565.6,222.65 2565.4,213.61 \
+2562.9,204.95",
 		style=solid];
 	category	[height=0.5,
-		pos="2326.4,178",
+		pos="2650.4,178",
 		width=1.4263];
 	"molecular activity to pathway association" -> category	[color=blue,
 		label=category,
-		lp="2296.9,221.5",
-		pos="e,2302.5,194.24 1406.2,251.8 1430.9,249.95 1456.4,248.25 1480.4,247 1562.9,242.71 2143.1,248.48 2223.4,229 2248.2,222.97 2274.1,\
-210.38 2293.7,199.34",
+		lp="2654.9,221.5",
+		pos="e,2639.3,195.84 1689.7,251.79 1714.5,249.93 1740.2,248.22 1764.4,247 1810.8,244.65 2558.7,247.48 2601.4,229 2613.8,223.64 2624.6,\
+213.54 2632.9,203.81",
 		style=solid];
 	subject	[height=0.5,
-		pos="2440.4,178",
+		pos="2764.4,178",
 		width=1.2277];
 	"molecular activity to pathway association" -> subject	[color=blue,
 		label=subject,
-		lp="2402.4,221.5",
-		pos="e,2417,193.31 1405.7,251.78 1430.5,249.92 1456.2,248.22 1480.4,247 1575,242.23 2240.1,250.34 2332.4,229 2359.2,222.79 2387.4,209.5 \
-2408.2,198.18",
+		lp="2747.4,221.5",
+		pos="e,2747.4,194.73 1689.4,251.77 1714.3,249.9 1740.1,248.2 1764.4,247 1815.8,244.45 2641.3,244.54 2690.4,229 2708.4,223.3 2726,211.71 \
+2739.5,201.13",
 		style=solid];
 	object	[height=0.5,
-		pos="2483.4,91",
+		pos="2807.4,91",
 		width=1.0832];
 	"molecular activity to pathway association" -> object	[color=blue,
 		label=object,
-		lp="2533.4,178",
-		pos="e,2496.8,108.09 1405.4,251.76 1430.3,249.89 1456.1,248.2 1480.4,247 1586.1,241.79 2330.1,255.93 2432.4,229 2462.2,221.15 2474.6,\
-220.43 2493.4,196 2512.4,171.26 2515.3,156.9 2506.4,127 2505.4,123.55 2503.9,120.13 2502.1,116.85",
+		lp="2850.4,178",
+		pos="e,2820.8,108.09 1689.4,251.73 1714.3,249.87 1740.1,248.18 1764.4,247 1820.6,244.26 2724.6,248.5 2777.4,229 2819.9,213.31 2825.1,\
+186.96 2830.4,142 2831.2,135.38 2832.3,133.39 2830.4,127 2829.4,123.55 2827.9,120.13 2826.1,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2637.4,178",
+		pos="2961.4,178",
 		width=1.5165];
 	"molecular activity to pathway association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2610.4,221.5",
-		pos="e,2613.6,194.3 1405.1,251.74 1430.1,249.87 1456,248.18 1480.4,247 1597.4,241.34 2420.5,256.22 2534.4,229 2559.3,223.06 2585.1,210.47 \
-2604.7,199.4",
+		lp="2934.4,221.5",
+		pos="e,2937.6,194.3 1689.1,251.73 1714.1,249.86 1740,248.17 1764.4,247 1885.8,241.16 2740.1,257.21 2858.4,229 2883.3,223.07 2909.1,210.47 \
+2928.7,199.41",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1527.4,265",
+		pos="1811.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1658.4,265",
+		pos="1942.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2478.4,134.5",
-		pos="e,2465.5,107.23 2441.5,159.55 2442.7,149.57 2445.2,137.07 2450.4,127 2452.6,122.68 2455.5,118.52 2458.7,114.66"];
+		lp="2802.4,134.5",
+		pos="e,2789.5,107.23 2765.5,159.55 2766.7,149.57 2769.2,137.07 2774.4,127 2776.6,122.68 2779.5,118.52 2782.7,114.66"];
 	relation	[height=0.5,
-		pos="2428.4,18",
+		pos="2752.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2429.7,36.188 2439.1,159.79 2437,132.48 2433,78.994 2430.5,46.38",
+	subject -> relation	[pos="e,2753.7,36.188 2763.1,159.79 2761,132.48 2757,78.994 2754.5,46.38",
 		style=dotted];
 	"molecular activity to pathway association_subject"	[color=blue,
 		height=0.5,
 		label="molecular activity",
-		pos="1845.4,265",
+		pos="2129.4,265",
 		width=2.6178];
-	object -> relation	[pos="e,2441.2,35.54 2470.9,73.889 2464,64.939 2455.2,53.617 2447.4,43.584",
+	object -> relation	[pos="e,2765.2,35.54 2794.9,73.889 2788,64.939 2779.2,53.617 2771.4,43.584",
 		style=dotted];
 	"molecular activity to pathway association_object"	[color=blue,
 		height=0.5,
 		label=pathway,
-		pos="2007.4,265",
+		pos="2291.4,265",
 		width=1.3902];
 	"molecular activity to pathway association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2153.4,265",
+		pos="2437.4,265",
 		width=2.1665];
 }

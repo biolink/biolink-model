@@ -1,22 +1,22 @@
 digraph {
-	graph [bb="0,0,3921.3,283"];
+	graph [bb="0,0,4245.3,283"];
 	node [label="\N"];
 	"gene to gene coexpression association"	[height=0.5,
 		label="gene to gene coexpression association",
-		pos="1943.4,265",
+		pos="2228.4,265",
 		width=5.2356];
 	"gene to gene association"	[height=0.5,
 		pos="125.44,178",
 		width=3.4844];
 	"gene to gene coexpression association" -> "gene to gene association"	[label=is_a,
-		lp="527.44,221.5",
-		pos="e,205.82,191.83 1757.8,261.85 1427.3,257.63 749.52,247.05 513.44,229 411.2,221.18 294.61,205.2 216.15,193.39"];
+		lp="519.44,221.5",
+		pos="e,204.51,192 2041.1,262.81 1658.5,259.95 798.84,251.21 505.44,229 405.43,221.43 291.45,205.44 214.62,193.57"];
 	"gene expression mixin"	[height=0.5,
 		pos="383.44,178",
 		width=3.1955];
 	"gene to gene coexpression association" -> "gene expression mixin"	[label=uses,
-		lp="652.94,221.5",
-		pos="e,442.05,193.5 1756.1,262.87 1447.9,260.35 847.44,252.51 636.44,229 573.34,221.97 502.52,207.39 451.89,195.78"];
+		lp="650.94,221.5",
+		pos="e,441.57,193.58 2040.2,263.99 1679.1,263.29 901.34,258.29 634.44,229 571.81,222.13 501.55,207.53 451.34,195.87"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -24,9 +24,9 @@ digraph {
 		width=1.0652];
 	"gene to gene coexpression association" -> id	[color=blue,
 		label=id,
-		lp="773.44,221.5",
-		pos="e,583.42,190.01 1756.8,262.29 1474.6,259.05 952.4,250.32 766.44,229 692.57,220.53 674.11,215.79 602.44,196 599.33,195.14 596.13,\
-194.18 592.93,193.17",
+		lp="769.44,221.5",
+		pos="e,583.43,189.98 2040.3,263.71 1702.1,262.49 1004.2,256.59 762.44,229 690.3,220.77 672.38,215.5 602.44,196 599.33,195.13 596.13,194.17 \
+592.93,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -35,9 +35,9 @@ digraph {
 		width=1.2277];
 	"gene to gene coexpression association" -> iri	[color=blue,
 		label=iri,
-		lp="893.44,221.5",
-		pos="e,688.05,190.17 1759.1,261.26 1502,256.87 1049.1,246.86 885.44,229 805.89,220.32 786.03,215.59 708.44,196 705.01,195.13 701.48,194.17 \
-697.94,193.15",
+		lp="882.44,221.5",
+		pos="e,688.35,190.2 2041,263.1 1723.9,260.92 1094.6,253.54 874.44,229 799.68,220.66 781.26,214.85 708.44,196 705.06,195.13 701.58,194.16 \
+698.1,193.15",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -46,8 +46,8 @@ digraph {
 		width=1.5707];
 	"gene to gene coexpression association" -> name	[color=blue,
 		label=name,
-		lp="998.44,221.5",
-		pos="e,813.46,191.16 1758.1,261.65 1521.1,257.89 1123.7,248.81 978.44,229 924.53,221.65 864.17,205.89 823.18,194.01",
+		lp="989.44,221.5",
+		pos="e,812.41,191.44 2040.3,263.9 1741.1,262.87 1170.3,257.12 969.44,229 918.34,221.84 861.32,206.31 822.2,194.44",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -56,8 +56,8 @@ digraph {
 		width=2.0943];
 	"gene to gene coexpression association" -> description	[color=blue,
 		label=description,
-		lp="1118.9,221.5",
-		pos="e,960.74,193.91 1756.9,262.4 1542.4,259.52 1203.8,251.45 1078.4,229 1041.1,222.32 1000.4,208.79 970.16,197.49",
+		lp="1109.9,221.5",
+		pos="e,958.8,194.16 2043.5,261.47 1740.5,256.86 1162.2,245.99 1069.4,229 1034.5,222.61 996.66,209.32 968.39,198.05",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -66,8 +66,8 @@ digraph {
 		width=1.4443];
 	"gene to gene coexpression association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1263.4,221.5",
-		pos="e,1100.6,192.45 1759.5,260.99 1579,256.98 1316.5,248.04 1216.4,229 1179.4,221.96 1139,207.71 1110,196.22",
+		lp="1255.4,221.5",
+		pos="e,1099.3,192.82 2039.9,264.51 1789.9,263.98 1362.2,258.54 1208.4,229 1173.6,222.31 1135.9,208.27 1108.5,196.77",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -76,8 +76,8 @@ digraph {
 		width=1.2999];
 	"gene to gene coexpression association" -> negated	[color=blue,
 		label=negated,
-		lp="1414.4,221.5",
-		pos="e,1221.2,190.05 1762,260.08 1652.5,255.86 1510.4,247.12 1385.4,229 1331.5,221.18 1270.9,204.84 1230.9,192.96",
+		lp="1411.4,221.5",
+		pos="e,1221,190.38 2045.8,260.47 1836.2,255.71 1505.8,245.83 1382.4,229 1329.4,221.76 1269.9,205.39 1230.6,193.34",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -86,8 +86,8 @@ digraph {
 		width=2.1304];
 	"gene to gene coexpression association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1547.9,221.5",
-		pos="e,1370.8,192.97 1773.4,257.18 1694.3,252.2 1599.1,243.65 1514.4,229 1468.5,221.06 1417.5,207.06 1380.4,195.89",
+		lp="1543.9,221.5",
+		pos="e,1369,193.16 2048.3,259.7 1870.1,254.63 1610,244.84 1510.4,229 1465.2,221.81 1415.2,207.7 1378.9,196.3",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -96,8 +96,8 @@ digraph {
 		width=1.7332];
 	"gene to gene coexpression association" -> publications	[color=blue,
 		label=publications,
-		lp="1686.4,221.5",
-		pos="e,1520.9,192.74 1801.6,253.13 1751.1,247.78 1693.9,240.02 1642.4,229 1604.1,220.78 1561.8,207.15 1530.6,196.19",
+		lp="1679.4,221.5",
+		pos="e,1518.5,193.14 2051.7,258.64 1906.4,253.29 1712.3,243.73 1635.4,229 1598.4,221.9 1557.9,208.15 1528.2,196.86",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -106,8 +106,8 @@ digraph {
 		width=2.0943];
 	"gene to gene coexpression association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1827.9,221.5",
-		pos="e,1677.7,193.69 1862.6,248.66 1836.5,243.14 1807.6,236.43 1781.4,229 1749.6,219.96 1714.6,207.54 1687.4,197.34",
+		lp="1822.9,221.5",
+		pos="e,1673.8,194.19 2044.2,261.18 1961.6,257 1863.3,247.96 1776.4,229 1744.3,221.98 1709.4,209.06 1683.1,198.12",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -117,7 +117,7 @@ digraph {
 	"gene to gene coexpression association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
 		lp="1958.9,221.5",
-		pos="e,1858.7,195.85 1918.2,247.06 1910.4,241.53 1901.9,235.21 1894.4,229 1884.8,220.96 1874.7,211.52 1866,203.02",
+		pos="e,1855,195.94 2061.5,256.54 1993.8,251.44 1924.5,242.98 1894.4,229 1882,223.23 1870.7,213.26 1861.8,203.74",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -126,8 +126,8 @@ digraph {
 		width=3.015];
 	"gene to gene coexpression association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2138.4,221.5",
-		pos="e,2062.1,195.85 1988.4,247.46 2000.2,242.29 2012.7,236.06 2023.4,229 2034.6,221.67 2045.7,211.98 2054.9,203.08",
+		lp="2125.4,221.5",
+		pos="e,2046.3,195.46 2091.1,252.67 2063.3,247.5 2039.6,239.97 2030.4,229 2022.7,219.76 2028.4,210.01 2038.2,201.6",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -136,8 +136,8 @@ digraph {
 		width=3.015];
 	"gene to gene coexpression association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2365.9,221.5",
-		pos="e,2287.3,195.59 2069.9,251.62 2141.7,244.1 2220.4,234.86 2236.4,229 2236.8,228.88 2258.6,214.49 2278.8,201.18",
+		lp="2335.9,221.5",
+		pos="e,2254.4,193.23 2224.4,246.85 2222.9,236.48 2223,223.49 2229.4,214 2233.7,207.77 2239.2,202.65 2245.5,198.43",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -146,135 +146,166 @@ digraph {
 		width=1.5346];
 	"gene to gene coexpression association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2520.4,221.5",
-		pos="e,2491.6,196.33 2075.2,252.11 2097.3,250.28 2120,248.5 2141.4,247 2178.2,244.42 2442.2,249.96 2472.4,229 2480.3,223.59 2485.3,214.75 \
-2488.6,205.99",
+		lp="2498.4,221.5",
+		pos="e,2481.7,195.66 2370.4,253.15 2395.2,247.83 2420.2,240.12 2442.4,229 2454.7,222.87 2466,212.85 2474.9,203.39",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2606.4,178",
+		width=1.0652];
+	"gene to gene coexpression association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2613.4,221.5",
+		pos="e,2586.3,193.57 2360.1,252.04 2435.6,244.65 2518.7,235.38 2535.4,229 2537.9,228.05 2559.3,212.91 2578,199.53",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2720.4,178",
+		width=1.5887];
+	"gene to gene coexpression association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="2754.9,221.5",
+		pos="e,2708.6,196.09 2362.1,252.31 2383.6,250.49 2405.6,248.66 2426.4,247 2480.6,242.67 2621,251.64 2670.4,229 2682.6,223.41 2693.5,213.47 \
+2702,203.92",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2834.4,178",
+		width=1.0652];
+	"gene to gene coexpression association" -> "original object"	[color=blue,
+		label="original object",
+		lp="2882.9,221.5",
+		pos="e,2834.5,196.14 2359.4,252.01 2381.7,250.18 2404.7,248.43 2426.4,247 2448.3,245.56 2803.3,242.64 2820.4,229 2827.4,223.44 2831.1,\
+214.68 2833,206.04",
 		style=solid];
 	type	[height=0.5,
-		pos="2598.4,178",
+		pos="2922.4,178",
 		width=0.86659];
 	"gene to gene coexpression association" -> type	[color=blue,
 		label=type,
-		lp="2593.4,221.5",
-		pos="e,2590.4,195.66 2074.1,251.99 2096.6,250.15 2119.7,248.4 2141.4,247 2187.8,244.01 2518.1,250.29 2559.4,229 2570.1,223.52 2578.7,\
-213.68 2585.1,204.16",
+		lp="2959.4,221.5",
+		pos="e,2934.8,194.84 2358,251.93 2380.8,250.08 2404.3,248.34 2426.4,247 2454.8,245.28 2918.7,249.48 2938.4,229 2945,222.19 2943.6,212.67 \
+2939.6,203.76",
 		style=solid];
 	category	[height=0.5,
-		pos="2699.4,178",
+		pos="3023.4,178",
 		width=1.4263];
 	"gene to gene coexpression association" -> category	[color=blue,
 		label=category,
-		lp="2679.9,221.5",
-		pos="e,2679.2,194.63 2073.6,251.94 2096.2,250.1 2119.5,248.36 2141.4,247 2246.2,240.51 2512.6,258.25 2613.4,229 2634,223.03 2654.8,211.11 \
-2670.8,200.4",
+		lp="3029.9,221.5",
+		pos="e,3013.9,195.75 2357.8,251.9 2380.6,250.05 2404.2,248.31 2426.4,247 2487.8,243.37 2923.8,255.23 2979.4,229 2990.9,223.58 3000.7,\
+213.61 3008,203.99",
 		style=solid];
 	subject	[height=0.5,
-		pos="2813.4,178",
+		pos="3137.4,178",
 		width=1.2277];
 	"gene to gene coexpression association" -> subject	[color=blue,
 		label=subject,
-		lp="2781.4,221.5",
-		pos="e,2791.6,193.71 2072.8,251.88 2095.6,250.03 2119.2,248.3 2141.4,247 2205.1,243.27 2653.6,244.88 2715.4,229 2739.4,222.83 2764.3,\
-210.07 2783,198.98",
+		lp="3121.4,221.5",
+		pos="e,3120.7,194.92 2357.5,251.84 2380.4,249.99 2404.1,248.27 2426.4,247 2497.4,242.96 2998,251.18 3065.4,229 3082.8,223.31 3099.6,212 \
+3112.7,201.57",
 		style=solid];
 	object	[height=0.5,
-		pos="2856.4,91",
+		pos="3180.4,91",
 		width=1.0832];
 	"gene to gene coexpression association" -> object	[color=blue,
 		label=object,
-		lp="2906.4,178",
-		pos="e,2869.8,108.09 2072.2,251.84 2095.3,249.98 2119,248.26 2141.4,247 2215.8,242.81 2739.9,249.84 2811.4,229 2838.8,221.02 2849.6,218.98 \
-2866.4,196 2884.9,170.85 2888.4,156.9 2879.4,127 2878.4,123.55 2876.9,120.13 2875.2,116.85",
+		lp="3223.4,178",
+		pos="e,3193.8,108.09 2357,251.82 2380.1,249.96 2404,248.24 2426.4,247 2466.7,244.78 3113.8,243.33 3151.4,229 3193.5,212.98 3198.1,186.73 \
+3203.4,142 3204.2,135.38 3205.3,133.39 3203.4,127 3202.4,123.55 3200.9,120.13 3199.2,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3010.4,178",
+		pos="3334.4,178",
 		width=1.5165];
 	"gene to gene coexpression association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2983.4,221.5",
-		pos="e,2986.6,194.25 2072,251.8 2095.1,249.93 2119,248.23 2141.4,247 2226.4,242.36 2824.7,249.05 2907.4,229 2932.3,222.98 2958.2,210.39 \
-2977.8,199.34",
+		lp="3307.4,221.5",
+		pos="e,3310.6,194.26 2356.7,251.8 2379.9,249.93 2403.9,248.22 2426.4,247 2515.8,242.17 3144.5,250.02 3231.4,229 3256.3,222.99 3282.2,\
+210.4 3301.8,199.35",
 		style=solid];
 	"quantifier qualifier"	[height=0.5,
-		pos="3180.4,178",
+		pos="3504.4,178",
 		width=2.7081];
 	"gene to gene coexpression association" -> "quantifier qualifier"	[color=blue,
 		label="quantifier qualifier",
-		lp="3151.4,221.5",
-		pos="e,3141.7,194.61 2071.4,251.78 2094.7,249.91 2118.8,248.2 2141.4,247 2336.8,236.63 2828.4,260.66 3021.4,229 3059.4,222.77 3100.9,\
-209.5 3132,198.2",
+		lp="3475.4,221.5",
+		pos="e,3465.7,194.62 2356.4,251.76 2379.7,249.89 2403.8,248.19 2426.4,247 2630.4,236.26 3143.9,261.97 3345.4,229 3383.4,222.78 3424.9,\
+209.52 3456,198.21",
 		style=solid];
 	"expression site"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="3387.4,178",
+		pos="3711.4,178",
 		width=2.5456];
 	"gene to gene coexpression association" -> "expression site"	[color=blue,
 		label="expression site",
-		lp="3341.9,221.5",
-		pos="e,3348.2,194.28 2071.2,251.73 2094.5,249.86 2118.7,248.16 2141.4,247 2261.4,240.86 3103.8,247.6 3222.4,229 3262.4,222.74 3306.1,\
-209.18 3338.5,197.75",
+		lp="3665.9,221.5",
+		pos="e,3672.2,194.29 2356.2,251.72 2379.5,249.85 2403.7,248.16 2426.4,247 2550.7,240.67 3423.5,248.23 3546.4,229 3586.4,222.75 3630.1,\
+209.19 3662.5,197.76",
 		style=solid];
 	"stage qualifier"	[color=blue,
 		height=0.5,
 		label="life stage",
-		pos="3551.4,178",
+		pos="3875.4,178",
 		width=1.4985];
 	"gene to gene coexpression association" -> "stage qualifier"	[color=blue,
 		label="stage qualifier",
-		lp="3511.9,221.5",
-		pos="e,3519.8,192.65 2070.9,251.71 2094.3,249.83 2118.6,248.14 2141.4,247 2281.2,240.01 3262.5,252.26 3400.4,229 3438.6,222.57 3480.2,\
-208.19 3510.1,196.5",
+		lp="3835.9,221.5",
+		pos="e,3843.8,192.65 2355.9,251.7 2379.3,249.82 2403.6,248.14 2426.4,247 2570.5,239.83 3582.2,252.95 3724.4,229 3762.6,222.57 3804.2,\
+208.2 3834.1,196.5",
 		style=solid];
 	"phenotypic state"	[color=blue,
 		height=0.5,
 		label="disease or phenotypic feature",
-		pos="3772.4,178",
+		pos="4096.4,178",
 		width=4.1344];
 	"gene to gene coexpression association" -> "phenotypic state"	[color=blue,
 		label="phenotypic state",
-		lp="3706.4,221.5",
-		pos="e,3721.2,194.92 2070.6,251.7 2094.2,249.82 2118.5,248.13 2141.4,247 2299.7,239.22 3410.2,248.9 3567.4,229 3616.6,222.77 3671.1,209.16 \
-3711.5,197.7",
+		lp="4030.4,221.5",
+		pos="e,4045.2,194.92 2355.6,251.69 2379.2,249.81 2403.5,248.12 2426.4,247 2589,239.03 3729.9,249.42 3891.4,229 3940.6,222.78 3995.1,209.16 \
+4035.5,197.71",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2188.4,265",
+		pos="2473.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2319.4,265",
+		pos="2604.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2851.4,134.5",
-		pos="e,2838.5,107.23 2814.5,159.55 2815.7,149.57 2818.2,137.07 2823.4,127 2825.7,122.68 2828.6,118.52 2831.8,114.66"];
+		lp="3175.4,134.5",
+		pos="e,3162.5,107.23 3138.5,159.55 3139.7,149.57 3142.2,137.07 3147.4,127 3149.7,122.68 3152.6,118.52 3155.8,114.66"];
 	relation	[height=0.5,
-		pos="2801.4,18",
+		pos="3125.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2802.7,36.188 2812.1,159.79 2810.1,132.48 2806,78.994 2803.5,46.38",
+	subject -> relation	[pos="e,3126.7,36.188 3136.1,159.79 3134.1,132.48 3130,78.994 3127.5,46.38",
 		style=dotted];
 	"gene to gene association_subject"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="2522.4,265",
+		pos="2807.4,265",
 		width=3.0692];
-	object -> relation	[pos="e,2814.3,35.54 2844,73.889 2837,64.939 2828.3,53.617 2820.5,43.584",
+	object -> relation	[pos="e,3138.3,35.54 3168,73.889 3161,64.939 3152.3,53.617 3144.5,43.584",
 		style=dotted];
 	"gene to gene association_object"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="2761.4,265",
+		pos="3046.4,265",
 		width=3.0692];
 	"gene to gene coexpression association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2967.4,265",
+		pos="3252.4,265",
 		width=2.1665];
 	"gene expression mixin_quantifier qualifier"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3140.4,265",
+		pos="3425.4,265",
 		width=2.1304];
 }

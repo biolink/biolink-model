@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,4601.4,283"];
+	graph [bb="0,0,4926.4,283"];
 	node [label="\N"];
 	"genotype to phenotypic feature association"	[height=0.5,
 		label="genotype to phenotypic feature association",
-		pos="2601.4,265",
+		pos="2911.4,265",
 		width=5.8675];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"genotype to phenotypic feature association" -> association	[label=is_a,
 		lp="725.39,221.5",
-		pos="e,106.71,190.75 2391.6,262.76 2042.7,260.1 1321.4,252.08 711.39,229 454.71,219.29 388.58,232.99 134.39,196 128.61,195.16 122.61,\
+		pos="e,106.71,190.75 2700.5,263.53 2308.6,262.03 1441.5,255.67 711.39,229 454.7,219.62 388.58,232.99 134.39,196 128.61,195.16 122.61,\
 194.08 116.66,192.87"];
 	"entity to phenotypic feature association mixin"	[height=0.5,
 		pos="367.39,178",
 		width=6.2286];
 	"genotype to phenotypic feature association" -> "entity to phenotypic feature association mixin"	[label=uses,
 		lp="968.89,221.5",
-		pos="e,498.5,192.62 2390.4,263.84 2076.6,262.62 1468.5,256.51 952.39,229 800.57,220.91 627.08,205.27 508.71,193.63"];
+		pos="e,497.63,192.66 2700,264.89 2340.6,265.35 1587.9,261.8 952.39,229 800.19,221.14 626.22,205.41 507.83,193.68"];
 	"genotype to entity association mixin"	[height=0.5,
 		pos="789.39,178",
 		width=4.9829];
 	"genotype to phenotypic feature association" -> "genotype to entity association mixin"	[label=uses,
 		lp="1117.9,221.5",
-		pos="e,866.28,194.3 2391.7,262.62 2039.9,259.71 1345.2,251.28 1101.4,229 1024.9,222.01 938.82,207.72 876.47,196.2"];
+		pos="e,865.95,194.33 2700.5,263.62 2291.9,262.27 1405.7,256.19 1101.4,229 1024.8,222.16 938.52,207.81 876.14,196.24"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -32,7 +32,7 @@ digraph {
 	"genotype to phenotypic feature association" -> id	[color=blue,
 		label=id,
 		lp="1225.4,221.5",
-		pos="e,1054.4,189.89 2390.5,263.78 2060.8,262.57 1438.5,256.55 1218.4,229 1152.8,220.79 1136.9,214.4 1073.4,196 1070.3,195.1 1067.1,194.11 \
+		pos="e,1054.4,189.89 2702.8,262.06 2282.5,257.81 1361.7,246.61 1218.4,229 1152.8,220.94 1136.9,214.4 1073.4,196 1070.3,195.1 1067.1,194.11 \
 1063.9,193.08",
 		style=solid];
 	iri	[color=blue,
@@ -43,7 +43,7 @@ digraph {
 	"genotype to phenotypic feature association" -> iri	[color=blue,
 		label=iri,
 		lp="1313.4,221.5",
-		pos="e,1158.2,190.61 2390.3,264.16 2078.1,263.4 1508.2,257.91 1305.4,229 1257.2,222.13 1203.7,206 1167.8,193.91",
+		pos="e,1158.2,190.67 2702.7,262.18 2299.2,258.26 1439.9,247.81 1305.4,229 1257.2,222.26 1203.7,206.11 1167.8,193.97",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -53,7 +53,7 @@ digraph {
 	"genotype to phenotypic feature association" -> name	[color=blue,
 		label=name,
 		lp="1397.4,221.5",
-		pos="e,1275,193.47 2393.4,261.82 2070.1,257.86 1473.8,248.08 1377.4,229 1345,222.59 1310.1,209.07 1284.4,197.7",
+		pos="e,1274.7,193.4 2701,263.15 2310.9,260.99 1503.5,253.58 1377.4,229 1344.9,222.66 1309.9,209.07 1284.1,197.65",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=2.0943];
 	"genotype to phenotypic feature association" -> description	[color=blue,
 		label=description,
-		lp="1480.9,221.5",
-		pos="e,1405.6,196.26 2393.1,261.95 2070.6,258.16 1482.7,248.62 1440.4,229 1428.9,223.68 1419.1,213.92 1411.6,204.42",
+		lp="1481.9,221.5",
+		pos="e,1405.9,196.3 2701,263.32 2308.2,261.43 1497.6,254.47 1441.4,229 1429.8,223.73 1419.7,213.97 1412,204.47",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -72,19 +72,19 @@ digraph {
 		width=1.4443];
 	"genotype to phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1577.4,221.5",
-		pos="e,1530.3,195.96 2390.2,264.54 2086.6,264.25 1559.8,259.35 1530.4,229 1524.4,222.78 1524.4,214.02 1526.8,205.57",
+		lp="1578.4,221.5",
+		pos="e,1530.8,196 2702.1,262.42 2321.2,259.03 1551.5,249.64 1531.4,229 1525.4,222.83 1525.3,214.08 1527.4,205.62",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="3393.4,91",
+		pos="3717.4,91",
 		width=1.9318];
 	"genotype to phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="1659.4,178",
-		pos="e,3323.9,92.031 2397.8,260.07 2247.8,255.8 2039.1,247 1856.4,229 1754.8,218.99 1566.6,233.54 1637.4,160 1696.2,98.865 2978.7,92.631 \
-3313.8,92.048",
+		pos="e,3648,92.956 2700.3,264.26 2486.8,262.82 2147.5,255.86 1855.4,229 1754.2,219.7 1566.7,233.03 1637.4,160 1672.8,123.4 3260.8,98.503 \
+3637.7,93.102",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -93,9 +93,8 @@ digraph {
 		width=1.2999];
 	"genotype to phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="1968.4,221.5",
-		pos="e,1772.2,190.21 2392.9,261.94 2262.2,258.43 2090.3,249.78 1939.4,229 1873.1,219.87 1857.1,213.23 1792.4,196 1789,195.1 1785.5,194.12 \
-1782,193.12",
+		lp="1965.4,221.5",
+		pos="e,1771.8,190.23 2704.9,261.17 2463.7,257.06 2079.4,247.78 1936.4,229 1882.2,221.88 1821.4,205.32 1781.5,193.21",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -104,8 +103,8 @@ digraph {
 		width=2.1304];
 	"genotype to phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2103.9,221.5",
-		pos="e,1922.1,192.91 2399.6,259.66 2300,255.25 2178.4,246.45 2070.4,229 2022.9,221.33 1970.2,207.17 1932,195.87",
+		lp="2098.9,221.5",
+		pos="e,1920.5,193.12 2705.9,260.68 2495.9,256.35 2184.1,247.1 2065.4,229 2018.9,221.91 1967.3,207.62 1930.1,196.13",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -114,8 +113,8 @@ digraph {
 		width=1.7332];
 	"genotype to phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2245.4,221.5",
-		pos="e,2072.4,192.55 2418.6,255.93 2350,250.83 2271.7,242.52 2201.4,229 2160.4,221.12 2115.1,207.11 2082.2,195.92",
+		lp="2237.4,221.5",
+		pos="e,2070.5,192.99 2708.3,259.92 2531.3,255.3 2288.5,246.07 2193.4,229 2154.3,221.98 2111.4,207.99 2080.2,196.59",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -124,8 +123,8 @@ digraph {
 		width=2.0943];
 	"genotype to phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2390.9,221.5",
-		pos="e,2229.5,193.59 2470.5,250.81 2429.8,245.47 2385,238.32 2344.4,229 2308.5,220.77 2269.1,207.79 2239.3,197.11",
+		lp="2384.9,221.5",
+		pos="e,2226.6,193.95 2718,257.7 2580.7,252.17 2408.7,242.84 2338.4,229 2303.1,222.05 2264.7,208.76 2236,197.63",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -134,8 +133,8 @@ digraph {
 		width=3.015];
 	"genotype to phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2530.9,221.5",
-		pos="e,2413.6,195.72 2522,248.31 2503.3,243.29 2483.8,236.92 2466.4,229 2450.7,221.85 2434.7,211.34 2421.7,201.8",
+		lp="2525.9,221.5",
+		pos="e,2410.5,195.85 2711.6,259.15 2613.5,254.63 2506.8,245.89 2461.4,229 2445.7,223.15 2430.4,212.52 2418.3,202.57",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -144,8 +143,8 @@ digraph {
 		width=3.015];
 	"genotype to phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2697.4,221.5",
-		pos="e,2612.6,195.93 2599.2,246.89 2598.5,237.02 2598.8,224.52 2602.4,214 2603.5,210.68 2605.1,207.41 2606.9,204.28",
+		lp="2692.4,221.5",
+		pos="e,2607.3,195.76 2739.7,254.5 2672.1,248.97 2607.9,240.73 2597.4,229 2590.5,221.31 2593.9,211.9 2600.5,203.32",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -154,8 +153,8 @@ digraph {
 		width=3.015];
 	"genotype to phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2920.9,221.5",
-		pos="e,2840.7,195.69 2721.6,250.15 2745.6,245.13 2770.2,238.3 2792.4,229 2797,227.08 2815.6,213.94 2832.6,201.62",
+		lp="2900.9,221.5",
+		pos="e,2816.7,194.29 2818.1,248.85 2808.9,243.89 2800.7,237.42 2794.4,229 2785.6,217.21 2794,207.04 2807.7,199.01",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -164,161 +163,192 @@ digraph {
 		width=1.5346];
 	"genotype to phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3074.4,221.5",
-		pos="e,3044.2,196.12 2750.7,252.24 2873.2,242.5 3027,230.1 3028.4,229 3035.6,223.41 3039.7,214.64 3042.1,206",
+		lp="3057.4,221.5",
+		pos="e,3036,195.86 2972.4,247.7 2984.7,242.83 2997,236.68 3007.4,229 3016.3,222.4 3024.2,213.12 3030.4,204.35",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3157.4,178",
+		width=1.0652];
+	"genotype to phenotypic feature association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="3176.4,221.5",
+		pos="e,3142.4,195.02 3032.1,250.2 3054.1,245.18 3076.4,238.33 3096.4,229 3110.6,222.38 3124.2,211.71 3135,201.92",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="3271.4,178",
+		width=1.5887];
+	"genotype to phenotypic feature association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="3315.9,221.5",
+		pos="e,3263.9,195.85 3067.5,252.83 3142.8,246.41 3220.1,237.88 3235.4,229 3245.1,223.35 3252.9,213.92 3258.7,204.77",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3385.4,178",
+		width=1.0652];
+	"genotype to phenotypic feature association" -> "original object"	[color=blue,
+		label="original object",
+		lp="3441.9,221.5",
+		pos="e,3389.9,196.07 3061.8,252.33 3085.4,250.52 3109.6,248.7 3132.4,247 3160.3,244.93 3363.9,249.08 3383.4,229 3389.2,223.03 3390.9,\
+214.55 3390.8,206.26",
 		style=solid];
 	type	[height=0.5,
-		pos="3149.4,178",
+		pos="3473.4,178",
 		width=0.86659];
 	"genotype to phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3146.4,221.5",
-		pos="e,3142.2,195.55 2750.6,252.22 2774.6,250.41 2799.2,248.61 2822.4,247 2854.7,244.76 3085,244.65 3113.4,229 3123.5,223.44 3131.4,213.72 \
-3137.3,204.32",
+		lp="3518.4,221.5",
+		pos="e,3489,194.02 3058.8,252.1 3083.3,250.27 3108.6,248.5 3132.4,247 3152.7,245.72 3483.4,243.71 3497.4,229 3504.6,221.42 3501.4,211.26 \
+3495.3,202.08",
 		style=solid];
 	category	[height=0.5,
-		pos="3250.4,178",
+		pos="3574.4,178",
 		width=1.4263];
 	"genotype to phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3229.9,221.5",
-		pos="e,3230.3,194.78 2749.4,252.11 2773.8,250.3 2798.8,248.53 2822.4,247 2898.8,242.06 3093.1,251.23 3166.4,229 3186.2,222.99 3206.2,\
-211.34 3221.7,200.8",
+		lp="3586.9,221.5",
+		pos="e,3567,196.11 3058.2,252.04 3082.9,250.21 3108.4,248.46 3132.4,247 3177.5,244.27 3498.7,250.47 3538.4,229 3548.4,223.6 3556.3,214.09 \
+3562.1,204.8",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3374.4,178",
+		pos="3698.4,178",
 		width=1.5165];
 	"genotype to phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
-		lp="3343.4,221.5",
-		pos="e,3349,194.11 2747.9,251.98 2772.7,250.16 2798.3,248.42 2822.4,247 2920.8,241.22 3169.6,251.97 3265.4,229 3291.7,222.7 3319.3,209.93 \
-3340.2,198.88",
+		lp="3688.4,221.5",
+		pos="e,3680.2,195.12 3057.3,251.95 3082.3,250.12 3108.1,248.38 3132.4,247 3186.8,243.91 3570.5,245.58 3622.4,229 3640.5,223.23 3658.3,\
+211.87 3672.1,201.44",
 		style=solid];
 	subject	[height=0.5,
-		pos="3491.4,178",
+		pos="3815.4,178",
 		width=1.2277];
 	"genotype to phenotypic feature association" -> subject	[color=blue,
 		label=subject,
-		lp="3451.4,221.5",
-		pos="e,3467.5,193.22 2746.7,251.9 2771.9,250.06 2797.9,248.34 2822.4,247 2946.5,240.23 3260.4,257.26 3381.4,229 3408.6,222.64 3437.3,\
-209.35 3458.6,198.07",
+		lp="3789.4,221.5",
+		pos="e,3795.1,194.2 3056.4,251.88 3081.7,250.04 3107.8,248.32 3132.4,247 3198.3,243.47 3662.8,246.68 3726.4,229 3747.9,223.03 3769.7,\
+210.87 3786.4,200.03",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="3638.4,178",
+		pos="3962.4,178",
 		width=2.3651];
 	"genotype to phenotypic feature association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3611.4,221.5",
-		pos="e,3600.7,194.29 2746.1,251.84 2771.5,250 2797.7,248.29 2822.4,247 2968.7,239.38 3337,253.47 3481.4,229 3519.2,222.6 3560.4,209.2 \
-3591.2,197.88",
+		lp="3944.4,221.5",
+		pos="e,3927.7,194.56 3055.8,251.84 3081.3,249.99 3107.6,248.28 3132.4,247 3284.9,239.14 3669.2,256.53 3819.4,229 3853.5,222.74 3890.5,\
+209.65 3918.2,198.44",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
 		label="severity value",
-		pos="3817.4,178",
+		pos="4141.4,178",
 		width=2.1123];
 	"genotype to phenotypic feature association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="3797.4,221.5",
-		pos="e,3785.5,194.38 2745.2,251.77 2770.9,249.92 2797.4,248.22 2822.4,247 2918,242.33 3589.4,246.98 3683.4,229 3715.7,222.83 3750.3,209.69 \
-3776.3,198.43",
+		lp="4127.4,221.5",
+		pos="e,4111.3,194.63 3054.9,251.78 3080.7,249.92 3107.3,248.22 3132.4,247 3230.5,242.23 3920.1,248.56 4016.4,229 4046.2,222.94 4078,210.11 \
+4102.1,198.96",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
 		label=onset,
-		pos="3947.4,178",
+		pos="4271.4,178",
 		width=1.011];
 	"genotype to phenotypic feature association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="3948.9,221.5",
-		pos="e,3928.8,193.8 2744.6,251.74 2770.5,249.88 2797.2,248.19 2822.4,247 2880.1,244.28 3806.8,244.66 3862.4,229 3883.4,223.09 3904.5,\
-210.68 3920.5,199.7",
+		lp="4276.9,221.5",
+		pos="e,4254,194.03 3054.6,251.73 3080.5,249.87 3107.2,248.18 3132.4,247 3191.2,244.24 4136,245.88 4192.4,229 4211.9,223.17 4231.2,211.05 \
+4245.9,200.21",
 		style=solid];
 	"sex qualifier"	[color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="4075.4,178",
+		pos="4399.4,178",
 		width=2.0401];
 	"genotype to phenotypic feature association" -> "sex qualifier"	[color=blue,
 		label="sex qualifier",
-		lp="4078.4,221.5",
-		pos="e,4058.1,195.73 2744.3,251.72 2770.2,249.85 2797.1,248.16 2822.4,247 2888,243.98 3941.9,249.31 4004.4,229 4021.2,223.53 4037.5,212.58 \
-4050.3,202.31",
+		lp="4405.4,221.5",
+		pos="e,4383.2,195.72 3054.3,251.71 3080.2,249.85 3107.1,248.16 3132.4,247 3199,243.94 4269.3,250.48 4332.4,229 4348.4,223.57 4363.6,212.77 \
+4375.6,202.59",
 		style=solid];
 	"has count"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="4211.4,178",
+		pos="4535.4,178",
 		width=1.2277];
 	"genotype to phenotypic feature association" -> "has count"	[color=blue,
 		label="has count",
-		lp="4196.4,221.5",
-		pos="e,4192.1,194.3 2744,251.71 2770,249.84 2797,248.15 2822.4,247 2894.8,243.72 4056.6,248.52 4126.4,229 4147.1,223.2 4168,211.04 4183.9,\
-200.16",
+		lp="4522.4,221.5",
+		pos="e,4516.6,194.54 3054,251.7 3080,249.83 3107,248.15 3132.4,247 3205.7,243.68 4382.9,249.33 4453.4,229 4473.2,223.29 4493,211.42 4508.2,\
+200.68",
 		style=solid];
 	"has total"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="4317.4,178",
+		pos="4641.4,178",
 		width=1.2277];
 	"genotype to phenotypic feature association" -> "has total"	[color=blue,
 		label="has total",
-		lp="4300.9,221.5",
-		pos="e,4298.6,194.55 2744,251.68 2770,249.82 2797,248.14 2822.4,247 2900.8,243.49 4159.9,250.71 4235.4,229 4255.2,223.3 4275,211.43 4290.2,\
-200.68",
+		lp="4625.9,221.5",
+		pos="e,4623.1,194.54 3054,251.68 3080,249.81 3107,248.13 3132.4,247 3211.7,243.45 4485.2,251.37 4561.4,229 4580.8,223.29 4600.2,211.42 \
+4615,200.68",
 		style=solid];
 	"has quotient"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="4421.4,178",
+		pos="4745.4,178",
 		width=1.1735];
 	"genotype to phenotypic feature association" -> "has quotient"	[color=blue,
 		label="has quotient",
-		lp="4416.4,221.5",
-		pos="e,4402.1,194.31 2743.7,251.69 2769.8,249.81 2796.9,248.13 2822.4,247 2906.4,243.27 4255.4,251.58 4336.4,229 4357.1,223.22 4378,211.06 \
-4393.9,200.18",
+		lp="4741.4,221.5",
+		pos="e,4726.4,194.31 3053.7,251.69 3079.8,249.81 3106.9,248.13 3132.4,247 3217.3,243.24 4579.6,252.01 4661.4,229 4681.9,223.22 4702.6,\
+211.06 4718.2,200.18",
 		style=solid];
 	"has percentage"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="4528.4,178",
+		pos="4852.4,178",
 		width=1.1735];
 	"genotype to phenotypic feature association" -> "has percentage"	[color=blue,
 		label="has percentage",
-		lp="4546.4,221.5",
-		pos="e,4514.1,194.99 2743.7,251.67 2769.8,249.8 2796.9,248.12 2822.4,247 2868,245 4422.4,244.26 4465.4,229 4481,223.46 4495.7,212.32 \
-4506.9,201.96",
+		lp="4871.4,221.5",
+		pos="e,4837.9,195.47 3053.7,251.67 3079.8,249.79 3106.9,248.12 3132.4,247 3178.4,244.98 4747,244.57 4790.4,229 4805.5,223.58 4819.6,212.83 \
+4830.6,202.67",
 		style=solid];
 	relation	[height=0.5,
-		pos="3442.4,18",
+		pos="3766.4,18",
 		width=1.2999];
-	object -> relation	[pos="e,3430.9,35.705 3405,73.174 3411,64.509 3418.4,53.768 3425,44.141",
+	object -> relation	[pos="e,3754.9,35.705 3729,73.174 3735,64.509 3742.4,53.768 3749,44.141",
 		style=dotted];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2869.4,265",
+		pos="3179.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="3000.4,265",
+		pos="3310.4,265",
 		width=2.0762];
 	"genotype to phenotypic feature association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="3171.4,265",
+		pos="3481.4,265",
 		width=2.1665];
 	subject -> object	[label=relation,
-		lp="3449.4,134.5",
-		pos="e,3399.8,108.97 3458.9,165.59 3446.1,159.94 3432,152.13 3421.4,142 3414.4,135.31 3408.7,126.48 3404.3,118.1"];
-	subject -> relation	[pos="e,3453.6,35.828 3490,159.99 3487.9,139.02 3483,102.55 3472.4,73 3468.9,63.258 3463.8,53.189 3458.8,44.423",
+		lp="3773.4,134.5",
+		pos="e,3723.8,108.97 3782.9,165.59 3770.1,159.94 3756,152.13 3745.4,142 3738.4,135.31 3732.7,126.48 3728.3,118.1"];
+	subject -> relation	[pos="e,3777.6,35.828 3814,159.99 3811.9,139.02 3807,102.55 3796.4,73 3792.9,63.258 3787.8,53.189 3782.8,44.423",
 		style=dotted];
 	"genotype to phenotypic feature association_subject"	[color=blue,
 		height=0.5,
 		label=genotype,
-		pos="3321.4,265",
+		pos="3631.4,265",
 		width=1.4985];
 }

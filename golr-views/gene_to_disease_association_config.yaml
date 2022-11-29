@@ -66,6 +66,20 @@ fields:
 - id: timepoint
   description: a point in time
   display_name: timepoint
+- id: original_subject
+  description: used to hold the original subject of a relation (or predicate) that
+    an external knowledge source uses before transformation to match the biolink-model
+    specification.
+  display_name: original subject
+- id: original_predicate
+  description: used to hold the original relation/predicate that an external knowledge
+    source uses before transformation to match the biolink-model specification.
+  display_name: original predicate
+- id: original_object
+  description: used to hold the original object of a relation (or predicate) that
+    an external knowledge source uses before transformation to match the biolink-model
+    specification.
+  display_name: original object
 - id: type
   description: rdf:type of biolink:Association should be fixed at rdf:Statement
   display_name: association_type

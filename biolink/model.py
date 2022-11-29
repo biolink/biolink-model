@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-27T01:06:36
+# Generation date: 2022-11-29T20:33:31
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -5838,6 +5838,9 @@ class Association(Entity):
     primary_knowledge_source: Optional[Union[str, InformationResourceId]] = None
     aggregator_knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
+    original_subject: Optional[str] = None
+    original_predicate: Optional[Union[str, URIorCURIE]] = None
+    original_object: Optional[str] = None
     type: Optional[str] = None
     category: Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]] = empty_list()
 
@@ -5889,6 +5892,15 @@ class Association(Entity):
 
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
+
+        if self.original_subject is not None and not isinstance(self.original_subject, str):
+            self.original_subject = str(self.original_subject)
+
+        if self.original_predicate is not None and not isinstance(self.original_predicate, URIorCURIE):
+            self.original_predicate = URIorCURIE(self.original_predicate)
+
+        if self.original_object is not None and not isinstance(self.original_object, str):
+            self.original_object = str(self.original_object)
 
         if self.type is not None and not isinstance(self.type, str):
             self.type = str(self.type)

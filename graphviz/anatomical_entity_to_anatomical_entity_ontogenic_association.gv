@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3052,283"];
+	graph [bb="0,0,3376,283"];
 	node [label="\N"];
 	"anatomical entity to anatomical entity ontogenic association"	[height=0.5,
 		label="anatomical entity to anatomical entity ontogenic association",
-		pos="1627.4,265",
+		pos="1911.4,265",
 		width=8.0701];
 	"anatomical entity to anatomical entity association"	[height=0.5,
 		pos="242.43,178",
 		width=6.7341];
 	"anatomical entity to anatomical entity ontogenic association" -> "anatomical entity to anatomical entity association"	[label=is_a,
 		lp="642.43,221.5",
-		pos="e,341.73,194.47 1343.6,261.13 1143.4,257.38 869.17,248.77 628.43,229 534.81,221.31 429.05,207.23 351.94,195.97"];
+		pos="e,340.51,194.5 1620.9,264.47 1360.5,262.9 968.45,255.59 628.43,229 534.3,221.64 427.93,207.42 350.73,196.02"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,8 +18,8 @@ digraph {
 		width=1.0652];
 	"anatomical entity to anatomical entity ontogenic association" -> id	[color=blue,
 		label=id,
-		lp="761.43,221.5",
-		pos="e,570.41,190.01 1360.5,257.9 1147.7,252.18 867.39,242.48 754.43,229 680.17,220.14 661.53,215.87 589.43,196 586.32,195.14 583.12,\
+		lp="760.43,221.5",
+		pos="e,570.41,190.01 1628.5,260.91 1341.2,256.78 916.28,247.71 753.43,229 679.56,220.51 661.1,215.79 589.43,196 586.32,195.14 583.12,\
 194.18 579.92,193.17",
 		style=solid];
 	iri	[color=blue,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"anatomical entity to anatomical entity ontogenic association" -> iri	[color=blue,
 		label=iri,
-		lp="875.43,221.5",
-		pos="e,675.33,190.23 1345.1,260.63 1201.7,256.48 1024.8,247.63 867.43,229 790.13,219.85 770.85,215.26 695.43,196 692.05,195.14 688.57,\
-194.18 685.08,193.17",
+		lp="879.43,221.5",
+		pos="e,675.04,190.17 1635.1,259.43 1377.9,254.32 1013.6,244.63 871.43,229 792.32,220.3 772.58,215.53 695.43,196 692,195.13 688.47,194.16 \
+684.93,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"anatomical entity to anatomical entity ontogenic association" -> name	[color=blue,
 		label=name,
-		lp="978.43,221.5",
-		pos="e,800.21,191.27 1343,261.31 1223.7,257.03 1083.8,247.88 958.43,229 906.96,221.25 849.4,205.83 809.86,194.15",
+		lp="983.43,221.5",
+		pos="e,800.43,191.25 1632.6,259.9 1400.2,255.33 1087.8,246.2 963.43,229 910.2,221.64 850.64,205.95 810.07,194.1",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"anatomical entity to anatomical entity ontogenic association" -> description	[color=blue,
 		label=description,
-		lp="1093.9,221.5",
-		pos="e,945.68,194.09 1379.1,255.64 1253.4,250.05 1114.7,241.4 1053.4,229 1019.5,222.13 982.7,209 955.06,197.91",
+		lp="1101.9,221.5",
+		pos="e,946.75,193.92 1628.7,260.84 1424.3,256.95 1166.5,248.28 1061.4,229 1025.2,222.35 985.66,208.91 956.3,197.64",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"anatomical entity to anatomical entity ontogenic association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1232.4,221.5",
-		pos="e,1085.4,193.03 1371.6,256.42 1310.1,251.13 1245,242.6 1185.4,229 1153.9,221.8 1119.8,208.32 1094.6,197.17",
+		lp="1244.4,221.5",
+		pos="e,1086.8,192.68 1638.3,258.79 1473.3,254.05 1279.5,245.21 1197.4,229 1162.2,222.05 1123.9,208.03 1096.1,196.6",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,9 +70,8 @@ digraph {
 		width=1.2999];
 	"anatomical entity to anatomical entity ontogenic association" -> negated	[color=blue,
 		label=negated,
-		lp="1367.4,221.5",
-		pos="e,1208.6,189.93 1469.9,249.87 1427,244.68 1380.7,237.84 1338.4,229 1288.5,218.56 1277.3,210.87 1228.4,196 1225.1,194.99 1221.7,193.95 \
-1218.3,192.9",
+		lp="1393.4,221.5",
+		pos="e,1207.8,190.35 1653,256.72 1561.5,251.7 1458,243.24 1364.4,229 1313.3,221.22 1256,205.22 1217.6,193.4",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -81,8 +80,8 @@ digraph {
 		width=2.1304];
 	"anatomical entity to anatomical entity ontogenic association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1475.9,221.5",
-		pos="e,1348.3,194.24 1524.9,248.1 1497.8,242.95 1468.8,236.58 1442.4,229 1413.6,220.71 1382.2,208.5 1357.7,198.21",
+		lp="1521.9,221.5",
+		pos="e,1355.4,193.25 1685.9,253.62 1621.7,248.43 1552,240.65 1488.4,229 1446.2,221.27 1399.5,207.56 1365.2,196.45",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -91,8 +90,8 @@ digraph {
 		width=1.7332];
 	"anatomical entity to anatomical entity ontogenic association" -> publications	[color=blue,
 		label=publications,
-		lp="1579.4,221.5",
-		pos="e,1489.4,195.45 1575.1,247.2 1561.8,242.09 1547.8,235.97 1535.4,229 1522,221.42 1508.3,211.19 1497.1,201.95",
+		lp="1653.4,221.5",
+		pos="e,1504.2,193.34 1735.8,250.61 1694,245.52 1649.9,238.54 1609.4,229 1576.5,221.24 1540.6,208.09 1513.7,197.22",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -101,8 +100,8 @@ digraph {
 		width=2.0943];
 	"anatomical entity to anatomical entity ontogenic association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1673.9,221.5",
-		pos="e,1627.4,196.18 1627.4,246.8 1627.4,235.16 1627.4,219.55 1627.4,206.24",
+		lp="1784.9,221.5",
+		pos="e,1657.3,194.68 1813,248.05 1788.4,242.98 1762.2,236.65 1738.4,229 1713.8,221.08 1687.4,209.32 1666.5,199.19",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -111,8 +110,8 @@ digraph {
 		width=3.015];
 	"anatomical entity to anatomical entity ontogenic association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1821.9,221.5",
-		pos="e,1797.2,195.37 1677.1,247.12 1692.4,241.65 1709.2,235.34 1724.4,229 1745.7,220.11 1768.9,209.19 1788.1,199.83",
+		lp="1907.9,221.5",
+		pos="e,1830.8,196.34 1865.6,247.03 1857.3,242.25 1849.4,236.31 1843.4,229 1838.1,222.52 1834.8,214.16 1832.8,206.15",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -121,8 +120,9 @@ digraph {
 		width=3.015];
 	"anatomical entity to anatomical entity ontogenic association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2044.4,221.5",
-		pos="e,2018,194.37 1767.6,249.23 1807.5,243.98 1850.9,237.27 1890.4,229 1930.3,220.66 1974.5,207.94 2008.3,197.41",
+		lp="2090.4,221.5",
+		pos="e,2030.7,195.19 1941.7,247.07 1951.6,241.44 1962.5,235.06 1972.4,229 1982.8,222.63 1984.9,220.1 1995.4,214 2003.8,209.16 2012.9,\
+204.28 2021.7,199.76",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -131,8 +131,9 @@ digraph {
 		width=3.015];
 	"anatomical entity to anatomical entity ontogenic association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2306.9,221.5",
-		pos="e,2259.4,194.8 1834.5,252.34 1964.4,244.6 2112.9,234.84 2143.4,229 2179.9,222.03 2219.6,209.19 2249.9,198.27",
+		lp="2314.9,221.5",
+		pos="e,2253.7,194.43 2100.2,251.27 2129.3,246.07 2158.5,238.89 2185.4,229 2196.9,224.79 2197.6,219.55 2208.4,214 2219.7,208.22 2232.2,\
+202.83 2244.2,198.09",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -141,88 +142,120 @@ digraph {
 		width=1.5346];
 	"anatomical entity to anatomical entity ontogenic association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2480.4,221.5",
-		pos="e,2466.3,195.34 1829.1,252.02 1862,250.23 1895.6,248.48 1927.4,247 1981.9,244.46 2366.2,247.68 2417.4,229 2432.9,223.34 2447.6,212.41 \
-2459,202.21",
+		lp="2478.4,221.5",
+		pos="e,2464.5,195.15 2109.6,251.79 2249.7,242.94 2413.9,232.01 2421.4,229 2429.3,225.82 2444,213.68 2456.8,202.16",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2593.4,178",
+		width=1.0652];
+	"anatomical entity to anatomical entity ontogenic association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2593.4,221.5",
+		pos="e,2571.3,192.7 2117.8,252.33 2291.5,242.46 2512,229.79 2514.4,229 2526,225.18 2527.1,220.57 2537.4,214 2545.6,208.79 2554.5,203.21 \
+2562.7,198.07",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2707.4,178",
+		width=1.5887];
+	"anatomical entity to anatomical entity ontogenic association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="2734.9,221.5",
+		pos="e,2690.9,195.47 2114.3,252.07 2146.8,250.29 2180,248.53 2211.4,247 2260.1,244.62 2604.1,246.9 2649.4,229 2657.2,225.95 2671.2,213.95 \
+2683.5,202.47",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2821.4,178",
+		width=1.0652];
+	"anatomical entity to anatomical entity ontogenic association" -> "original object"	[color=blue,
+		label="original object",
+		lp="2863.9,221.5",
+		pos="e,2818.6,196.41 2111.5,251.94 2144.9,250.13 2179.1,248.41 2211.4,247 2244.1,245.58 2772.3,247.28 2799.4,229 2807.3,223.68 2812.4,\
+214.86 2815.7,206.09",
 		style=solid];
 	type	[height=0.5,
-		pos="2585.4,178",
+		pos="2909.4,178",
 		width=0.86659];
 	"anatomical entity to anatomical entity ontogenic association" -> type	[color=blue,
 		label=type,
-		lp="2563.4,221.5",
-		pos="e,2570.8,194.41 1827.5,251.93 1860.9,250.13 1895.1,248.41 1927.4,247 1993.2,244.14 2457.4,250.91 2519.4,229 2535.7,223.25 2551.3,\
-211.87 2563.2,201.41",
+		lp="2941.4,221.5",
+		pos="e,2919.3,195.5 2110.3,251.86 2144,250.05 2178.7,248.34 2211.4,247 2231.1,246.19 2905.7,243.09 2919.4,229 2925.6,222.64 2925.4,213.6 \
+2922.9,204.94",
 		style=solid];
 	category	[height=0.5,
-		pos="2686.4,178",
+		pos="3010.4,178",
 		width=1.4263];
 	"anatomical entity to anatomical entity ontogenic association" -> category	[color=blue,
 		label=category,
-		lp="2656.9,221.5",
-		pos="e,2662.6,194.22 1826.7,251.89 1860.3,250.08 1894.9,248.37 1927.4,247 2000.3,243.94 2512.6,246.31 2583.4,229 2608.3,222.93 2634.1,\
-210.34 2653.8,199.31",
+		lp="3014.9,221.5",
+		pos="e,2999.3,195.82 2109.9,251.84 2143.7,250.03 2178.6,248.32 2211.4,247 2253.1,245.32 2923.2,245.6 2961.4,229 2973.8,223.63 2984.6,\
+213.52 2993,203.79",
 		style=solid];
 	subject	[height=0.5,
-		pos="2800.4,178",
+		pos="3124.4,178",
 		width=1.2277];
 	"anatomical entity to anatomical entity ontogenic association" -> subject	[color=blue,
 		label=subject,
-		lp="2762.4,221.5",
-		pos="e,2777,193.29 1825.9,251.83 1859.7,250.01 1894.6,248.32 1927.4,247 2012.4,243.59 2609.6,248.26 2692.4,229 2719.3,222.76 2747.4,209.47 \
-2768.3,198.15",
+		lp="3107.4,221.5",
+		pos="e,3107.4,194.72 2109.5,251.79 2143.5,249.98 2178.5,248.29 2211.4,247 2258,245.18 3006,243.13 3050.4,229 3068.4,223.28 3086,211.69 \
+3099.6,201.11",
 		style=solid];
 	object	[height=0.5,
-		pos="2843.4,91",
+		pos="3167.4,91",
 		width=1.0832];
 	"anatomical entity to anatomical entity ontogenic association" -> object	[color=blue,
 		label=object,
-		lp="2893.4,178",
-		pos="e,2856.8,108.09 1825.1,251.79 1859.2,249.97 1894.3,248.28 1927.4,247 2023.5,243.28 2699.5,253.56 2792.4,229 2822.2,221.12 2834.6,\
-220.43 2853.4,196 2872.5,171.26 2875.4,156.9 2866.4,127 2865.4,123.55 2863.9,120.13 2862.2,116.85",
+		lp="3210.4,178",
+		pos="e,3180.8,108.09 2108.7,251.78 2142.9,249.95 2178.2,248.26 2211.4,247 2262.8,245.04 3089.2,246.87 3137.4,229 3179.9,213.28 3185.1,\
+186.96 3190.4,142 3191.2,135.38 3192.3,133.39 3190.4,127 3189.4,123.55 3187.9,120.13 3186.2,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2997.4,178",
+		pos="3321.4,178",
 		width=1.5165];
 	"anatomical entity to anatomical entity ontogenic association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2970.4,221.5",
-		pos="e,2973.6,194.28 1824.7,251.75 1858.9,249.93 1894.2,248.25 1927.4,247 2034.8,242.96 2789.9,254.05 2894.4,229 2919.3,223.04 2945.2,\
-210.45 2964.8,199.39",
+		lp="3294.4,221.5",
+		pos="e,3297.6,194.29 2108.3,251.75 2142.6,249.93 2178.1,248.24 2211.4,247 2323.3,242.83 3109.6,255.05 3218.4,229 3243.3,223.05 3269.2,\
+210.46 3288.8,199.4",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1974.4,265",
+		pos="2258.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2105.4,265",
+		pos="2389.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2838.4,134.5",
-		pos="e,2825.5,107.23 2801.5,159.55 2802.7,149.57 2805.2,137.07 2810.4,127 2812.7,122.68 2815.6,118.52 2818.8,114.66"];
+		lp="3162.4,134.5",
+		pos="e,3149.5,107.23 3125.5,159.55 3126.7,149.57 3129.2,137.07 3134.4,127 3136.7,122.68 3139.6,118.52 3142.8,114.66"];
 	relation	[height=0.5,
-		pos="2788.4,18",
+		pos="3112.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2789.7,36.188 2799.1,159.79 2797,132.48 2793,78.994 2790.5,46.38",
+	subject -> relation	[pos="e,3113.7,36.188 3123.1,159.79 3121,132.48 3117,78.994 3114.5,46.38",
 		style=dotted];
 	"anatomical entity to anatomical entity ontogenic association_subject"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="2289.4,265",
+		pos="2573.4,265",
 		width=2.5456];
-	object -> relation	[pos="e,2801.2,35.54 2830.9,73.889 2824,64.939 2815.2,53.617 2807.5,43.584",
+	object -> relation	[pos="e,3125.2,35.54 3154.9,73.889 3148,64.939 3139.2,53.617 3131.5,43.584",
 		style=dotted];
 	"anatomical entity to anatomical entity ontogenic association_object"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="2490.4,265",
+		pos="2774.4,265",
 		width=2.5456];
 	"anatomical entity to anatomical entity ontogenic association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2678.4,265",
+		pos="2962.4,265",
 		width=2.1665];
 }

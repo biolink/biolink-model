@@ -185,6 +185,9 @@ linkml:Nodeidentifier NONLITERAL
              <primary_knowledge_source> @<InformationResource> ? ;
              <aggregator_knowledge_source> @<InformationResource> * ;
              <timepoint> @<TimeType> ? ;
+             <original_subject> @linkml:String ? ;
+             <original_predicate> @linkml:Uriorcurie ? ;
+             <original_object> @linkml:String ? ;
              <type> @linkml:String ? ;
              <category> @<CategoryType> *
           ) ;
