@@ -205,8 +205,8 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -301,8 +301,8 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -318,8 +318,8 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3491,8 +3491,8 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3529,8 +3529,8 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3626,8 +3626,8 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 

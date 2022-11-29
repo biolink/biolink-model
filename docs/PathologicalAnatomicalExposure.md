@@ -66,6 +66,15 @@ URI: [biolink:PathologicalAnatomicalExposure](https://w3id.org/biolink/vocab/Pat
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
+ * [original subject](original_subject.md)  <sub>0..1</sub>
+     * Description: used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [String](types/String.md)
+ * [original predicate](original_predicate.md)  <sub>0..1</sub>
+     * Description: used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [original object](original_object.md)  <sub>0..1</sub>
+     * Description: used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>

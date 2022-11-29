@@ -15,7 +15,7 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[InformationResource],[EvidenceType],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[MolecularEntity]%3Cobject%201..1-%20[PairwiseMolecularInteraction%7Cid:string;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[MolecularEntity]%3Csubject%201..1-%20[PairwiseMolecularInteraction],[OntologyClass]%3Cinteracting%20molecules%20category%200..1-%20[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction]%5E-[PairwiseMolecularInteraction],[PairwiseGeneToGeneInteraction],[OntologyClass],[MolecularEntity],[InformationResource],[EvidenceType],[Attribute])
 
 ---
 
@@ -84,6 +84,15 @@ URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/Pairw
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
+ * [original subject](original_subject.md)  <sub>0..1</sub>
+     * Description: used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [String](types/String.md)
+ * [original predicate](original_predicate.md)  <sub>0..1</sub>
+     * Description: used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+ * [original object](original_object.md)  <sub>0..1</sub>
+     * Description: used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
+     * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
