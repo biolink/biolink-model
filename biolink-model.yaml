@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.1.0
+version: 3.1.1
 
 
 ## ------------
@@ -92,7 +92,7 @@ prefixes:
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
-  metacyc.reaction: 'https://identifiers.org/metacyc.reaction:'
+  metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
@@ -109,7 +109,6 @@ prefixes:
   OBAN: 'http://purl.org/oban/'
   oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
-  OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORCID: 'https://orcid.org/'
   orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
@@ -481,7 +480,7 @@ slots:
       - translator_minimal
     required: true
     exact_mappings:
-      - agrkb:primaryId
+      - AGRKB:primaryId
       - gff3:ID
       - gpi:DB_Object_ID
 
@@ -498,7 +497,7 @@ slots:
   type:
     slot_uri: rdf:type
     exact_mappings:
-      - agrkb:soTermId
+      - AGRKB:soTermId
       - gff3:type
       - gpi:DB_Object_Type
 
@@ -576,7 +575,7 @@ slots:
     description: >-
       Symbol for a particular thing
     exact_mappings:
-      - agrkb:symbol
+      - AGRKB:symbol
       - gpi:DB_Object_Symbol
 
   synonym:
@@ -595,7 +594,7 @@ slots:
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
-      - agrkb:synonyms
+      - AGRKB:synonyms
       - gpi:DB_Object_Synonyms
       # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
@@ -1290,13 +1289,13 @@ slots:
       qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified
       predicate model. Not to be used in knowledge graphs.
 
-  deprecated predicate mappings:
+  predicate mappings:
     description: >- 
       A collection of relationships that are not used in biolink, but have biolink patterns that can 
       be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate
       model in Biolink3.
     multivalued: true
-    range: deprecated predicate mapping
+    range: predicate mapping
     inlined_as_list: true
 
   exact matches:
@@ -1661,7 +1660,6 @@ slots:
     domain: ontology class
     range: ontology class
     multivalued: True
-    inverse: subclass of
     in_subset:
       - translator_minimal
     exact_mappings:
@@ -1678,8 +1676,6 @@ slots:
       - OMIM:has_manifestation
       - SNOMED:has_basic_dose_form
       - UMLS:RB
-    annotations:
-      opposite_of: subclass of
 
   subclass of:
     is_a: related to at concept level
@@ -1692,7 +1688,6 @@ slots:
       - translator_minimal
     annotations:
       canonical_predicate: true
-      opposite_of: superclass of
     close_mappings:
       # RTX
       - LOINC:class_of
@@ -2584,8 +2579,6 @@ slots:
     description: >-
       inverse of transcribed from
     inverse: transcribed from
-    annotations:
-      opposite_of: transcribed from
     exact_mappings:
       - RO:0002511
       - SIO:010080
@@ -2596,7 +2589,7 @@ slots:
     range: gene
     annotations:
       canonical_predicate: true
-      opposite_of: transcribed to
+    inverse: transcribed to
     description: >-
       x is transcribed from y if and only if x is synthesized from template y
     exact_mappings:
@@ -2609,7 +2602,7 @@ slots:
     range: protein
     annotations:
       canonical_predicate: true
-      opposite_of: translation of
+    inverse: translation of
     description: >-
       x (amino acid chain/polypeptide) is the ribosomal translation of y (transcript) if and only if a ribosome
       reads y (transcript) through a series of triplet codon-amino acid adaptor activities (GO:0030533)
@@ -2628,8 +2621,6 @@ slots:
     close_mappings:
       - RO:0002512
       - SIO:010083
-    annotations:
-      opposite_of: translates to
 
   homologous to:
     is_a: similar to
@@ -3112,12 +3103,12 @@ slots:
     is_a: affects
     description: >-
       A relationship between an entity (e.g. a genotype,
-      genetic variation, chemical, or environmental exposure)
+      genetic variation, chemical, or environmental exposure, clinical intervention)
       and a condition (a phenotype or disease), where the
       presence of the entity reduces or eliminates some or
       all aspects of the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
-    domain: biological entity
+    domain: named thing
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -4059,8 +4050,9 @@ slots:
       - translator_minimal
     inverse: derives from
     # TODO: fix this according to WG notes. Example of both opposite and inverse
-    annotations:
-      opposite_of: subclass of
+    # Commenting as it feels very wrong. A good example with both opposite and inverse is `has active ingredient`
+    # annotations:
+    #   opposite_of: subclass of
     exact_mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
@@ -4345,7 +4337,7 @@ slots:
     range: occurrent
     annotations:
       canonical_predicate: true
-      opposite_of: preceded by
+    inverse: preceded by
     in_subset:
       - translator_minimal
     close_mappings:
@@ -5382,15 +5374,15 @@ slots:
     range: string
 classes:
 
-  deprecated mapping collection:
+  mapping collection:
     description: >-
       A collection of deprecated mappings.
     abstract: true
     slots:
-      - deprecated predicate mappings
+      - predicate mappings
     tree_root: true
 
-  deprecated predicate mapping:
+  predicate mapping:
     description: >-
       A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
       be done to use a qualified statement in its place.
@@ -6402,6 +6394,7 @@ classes:
       - translator_minimal
     id_prefixes:
       - UNII
+      - CHEBI
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS

@@ -28,7 +28,7 @@ URI: [biolink:broad_match](https://w3id.org/biolink/vocab/broad_match)
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)
 
 ## Other properties
 

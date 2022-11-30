@@ -23,6 +23,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
 ## Identifier prefixes
 
  * UNII
+ * CHEBI
  * MESH
  * CAS
  * UMLS

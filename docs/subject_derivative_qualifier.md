@@ -25,4 +25,4 @@ URI: [biolink:subject_derivative_qualifier](https://w3id.org/biolink/vocab/subje
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

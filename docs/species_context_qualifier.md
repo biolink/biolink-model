@@ -25,4 +25,4 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,3290.4,283"];
+	graph [bb="0,0,3614.4,283"];
 	node [label="\N"];
 	"disease or phenotypic feature to genetic inheritance association"	[height=0.5,
 		label="disease or phenotypic feature to genetic inheritance association",
-		pos="1756.4,265",
+		pos="1991.4,265",
 		width=8.5576];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"disease or phenotypic feature to genetic inheritance association" -> association	[label=is_a,
 		lp="665.39,221.5",
-		pos="e,106.72,190.7 1475.6,257.59 1252.2,251.89 931.66,242.38 651.39,229 421.41,218.02 362.13,229.91 134.39,196 128.62,195.14 122.62,\
-194.05 116.66,192.84"];
+		pos="e,106.72,190.7 1697.9,259.51 1426.3,254.6 1011.5,245.19 651.39,229 421.38,218.66 362.13,229.91 134.39,196 128.62,195.14 122.62,194.05 \
+116.66,192.84"];
 	"disease or phenotypic feature to entity association mixin"	[height=0.5,
 		pos="417.39,178",
 		width=7.6188];
 	"disease or phenotypic feature to genetic inheritance association" -> "disease or phenotypic feature to entity association mixin"	[label=uses,
-		lp="846.89,221.5",
-		pos="e,525.41,194.56 1464.9,259.15 1282.3,254.59 1042.4,245.81 830.39,229 730.69,221.09 618.01,207.11 535.57,195.94"];
+		lp="847.89,221.5",
+		pos="e,524.36,194.6 1686.6,262.29 1452.4,259.16 1121.1,250.82 831.39,229 730.8,221.42 617.07,207.28 534.3,195.97"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"disease or phenotypic feature to genetic inheritance association" -> id	[color=blue,
 		label=id,
-		lp="968.39,221.5",
-		pos="e,777.37,190.01 1453.5,261.56 1304.8,257.6 1123.2,248.63 961.39,229 887.15,220 868.49,215.87 796.39,196 793.28,195.14 790.08,194.18 \
-786.88,193.17",
+		lp="969.39,221.5",
+		pos="e,777.12,189.93 1698.8,259.33 1445.7,254.32 1099.5,244.85 962.39,229 887.67,220.36 868.92,215.94 796.39,196 793.24,195.13 790,194.16 \
+786.75,193.13",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -36,9 +36,9 @@ digraph {
 		width=1.2277];
 	"disease or phenotypic feature to genetic inheritance association" -> iri	[color=blue,
 		label=iri,
-		lp="1088.4,221.5",
-		pos="e,882,190.18 1474.5,257.69 1352.9,252.83 1209.4,244.23 1080.4,229 1000.5,219.57 980.41,215.66 902.39,196 898.96,195.14 895.43,194.17 \
-891.89,193.15",
+		lp="1091.4,221.5",
+		pos="e,882,190.19 1685.1,262.99 1508.7,259.71 1283,250.94 1083.4,229 1002.1,220.07 981.72,215.86 902.39,196 898.96,195.14 895.43,194.18 \
+891.89,193.16",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"disease or phenotypic feature to genetic inheritance association" -> name	[color=blue,
 		label=name,
-		lp="1193.4,221.5",
-		pos="e,1008,190.99 1478.8,257.15 1381.8,252.17 1272.5,243.62 1173.4,229 1119.5,221.04 1059,205.46 1017.8,193.79",
+		lp="1199.4,221.5",
+		pos="e,1008,190.88 1712.6,257.34 1519.1,251.7 1279,242.37 1179.4,229 1123.3,221.47 1060.2,205.52 1017.8,193.65",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"disease or phenotypic feature to genetic inheritance association" -> description	[color=blue,
 		label=description,
-		lp="1313.9,221.5",
-		pos="e,1155.6,193.8 1488.8,256.08 1418.3,250.87 1342.6,242.47 1273.4,229 1236.2,221.76 1195.5,208.4 1165.1,197.31",
+		lp="1322.9,221.5",
+		pos="e,1156.5,193.56 1713.1,257.26 1551,251.96 1363.1,243.06 1282.4,229 1242.4,222.03 1198.5,208.29 1166.2,196.98",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"disease or phenotypic feature to genetic inheritance association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1458.4,221.5",
-		pos="e,1295.7,192.27 1555.4,251.29 1507.9,246.17 1457.6,239.01 1411.4,229 1374.7,221.05 1334.5,207.09 1305.2,195.94",
+		lp="1473.4,221.5",
+		pos="e,1296.8,191.81 1700.2,259.09 1611.7,254.08 1514.6,245.03 1426.4,229 1384.8,221.45 1338.9,206.77 1306.5,195.27",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=1.9318];
 	"disease or phenotypic feature to genetic inheritance association" -> subject	[color=blue,
 		label=subject,
-		lp="1587.4,221.5",
-		pos="e,1442.6,192.96 1653.1,248.03 1623.4,242.73 1590.9,236.3 1561.4,229 1524.3,219.85 1483.3,206.76 1452.3,196.27",
+		lp="1617.4,221.5",
+		pos="e,1445.5,192.43 1776.7,252.08 1716.5,246.87 1651.1,239.48 1591.4,229 1544.7,220.81 1492.6,206.55 1455.2,195.36",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -87,8 +87,9 @@ digraph {
 		width=1.2999];
 	"disease or phenotypic feature to genetic inheritance association" -> negated	[color=blue,
 		label=negated,
-		lp="1680.4,221.5",
-		pos="e,1566.1,192.48 1702.9,247.22 1686.3,241.73 1668,235.39 1651.4,229 1625.7,219.12 1597.4,206.72 1575.5,196.74",
+		lp="1731.4,221.5",
+		pos="e,1572.6,189.93 1831.6,249.59 1789.4,244.44 1744,237.68 1702.4,229 1652.4,218.56 1641.2,210.87 1592.4,196 1589.1,194.99 1585.7,193.95 \
+1582.2,192.9",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -97,8 +98,8 @@ digraph {
 		width=2.1304];
 	"disease or phenotypic feature to genetic inheritance association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1755.9,221.5",
-		pos="e,1693.9,195.89 1740.6,246.8 1729.2,234.39 1713.7,217.46 1701,203.62",
+		lp="1839.9,221.5",
+		pos="e,1712.3,194.24 1888.3,248.01 1861.4,242.88 1832.6,236.53 1806.4,229 1777.5,220.71 1746.1,208.5 1721.7,198.21",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -107,8 +108,8 @@ digraph {
 		width=1.7332];
 	"disease or phenotypic feature to genetic inheritance association" -> publications	[color=blue,
 		label=publications,
-		lp="1851.4,221.5",
-		pos="e,1822.2,195.62 1775.2,246.96 1781.2,241.37 1787.7,235.05 1793.4,229 1801,220.96 1808.9,211.79 1815.8,203.52",
+		lp="1943.4,221.5",
+		pos="e,1853.4,195.45 1939.1,247.2 1925.8,242.09 1911.7,235.97 1899.4,229 1886,221.42 1872.3,211.19 1861.1,201.95",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -117,8 +118,8 @@ digraph {
 		width=2.0943];
 	"disease or phenotypic feature to genetic inheritance association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1977.9,221.5",
-		pos="e,1966.1,195.08 1839.2,247.57 1859.2,242.56 1880.3,236.37 1899.4,229 1919.3,221.31 1940.3,210.17 1957.1,200.36",
+		lp="2037.9,221.5",
+		pos="e,1991.4,196.18 1991.4,246.8 1991.4,235.16 1991.4,219.55 1991.4,206.24",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -127,8 +128,8 @@ digraph {
 		width=3.015];
 	"disease or phenotypic feature to genetic inheritance association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2148.9,221.5",
-		pos="e,2149.4,194.5 1906.4,249.23 1946.3,244.07 1989.2,237.41 2028.4,229 2066.2,220.9 2107.8,208.25 2139.8,197.7",
+		lp="2185.9,221.5",
+		pos="e,2161.1,195.37 2041.1,247.12 2056.4,241.65 2073.2,235.34 2088.4,229 2109.7,220.11 2132.9,209.19 2152.1,199.83",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -137,8 +138,8 @@ digraph {
 		width=3.015];
 	"disease or phenotypic feature to genetic inheritance association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2389.4,221.5",
-		pos="e,2376,193.85 1991.1,253.32 2063.9,248.1 2144.2,240.37 2217.4,229 2268,221.13 2324.4,207.5 2366.2,196.45",
+		lp="2408.4,221.5",
+		pos="e,2382,194.37 2133.3,249.01 2172.7,243.79 2215.4,237.15 2254.4,229 2294.3,220.66 2338.4,207.94 2372.3,197.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -147,9 +148,8 @@ digraph {
 		width=3.015];
 	"disease or phenotypic feature to genetic inheritance association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2658.9,221.5",
-		pos="e,2619.8,194.55 1972.1,252.14 2006,250.36 2040.6,248.59 2073.4,247 2257.8,238.06 2306.2,258.56 2488.4,229 2530,222.25 2575.7,208.97 \
-2610,197.79",
+		lp="2670.9,221.5",
+		pos="e,2623.4,194.8 2204.4,251.98 2332.9,244.31 2477.3,234.75 2507.4,229 2543.8,222.03 2583.6,209.19 2613.9,198.27",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -158,45 +158,78 @@ digraph {
 		width=1.5346];
 	"disease or phenotypic feature to genetic inheritance association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2836.4,221.5",
-		pos="e,2827.2,195.18 1967.4,251.87 2002.8,250.07 2039.1,248.36 2073.4,247 2150.7,243.93 2695.6,252.15 2769.4,229 2787.5,223.33 2805.3,\
-211.97 2819.2,201.52",
+		lp="2839.4,221.5",
+		pos="e,2827.3,195.23 2205.8,252.05 2240.1,250.27 2275.2,248.52 2308.4,247 2360.9,244.59 2732,247.06 2781.4,229 2789.8,225.92 2805.6,213.58 \
+2819.4,201.93",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2957.4,178",
+		width=1.0652];
+	"disease or phenotypic feature to genetic inheritance association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2957.4,221.5",
+		pos="e,2935.3,192.7 2204.1,251.95 2238.9,250.16 2274.7,248.44 2308.4,247 2371.7,244.3 2817.9,248.01 2878.4,229 2890,225.34 2891.1,220.57 \
+2901.4,214 2909.6,208.79 2918.4,203.21 2926.7,198.07",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="3071.4,178",
+		width=1.5887];
+	"disease or phenotypic feature to genetic inheritance association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="3098.9,221.5",
+		pos="e,3054.9,195.51 2202.4,251.86 2237.8,250.06 2274.1,248.36 2308.4,247 2347.5,245.45 2976.8,243.11 3013.4,229 3021.1,226.01 3035.2,\
+214.01 3047.5,202.51",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3185.4,178",
+		width=1.0652];
+	"disease or phenotypic feature to genetic inheritance association" -> "original object"	[color=blue,
+		label="original object",
+		lp="3227.9,221.5",
+		pos="e,3182.6,196.44 2201.1,251.79 2236.9,249.98 2273.7,248.3 2308.4,247 2332.1,246.11 3143.6,242.19 3163.4,229 3171.3,223.72 3176.4,\
+214.91 3179.7,206.14",
 		style=solid];
 	type	[height=0.5,
-		pos="2949.4,178",
+		pos="3273.4,178",
 		width=0.86659];
 	"disease or phenotypic feature to genetic inheritance association" -> type	[color=blue,
 		label=type,
-		lp="2922.4,221.5",
-		pos="e,2933.5,193.75 1966.5,251.81 2002.2,250.01 2038.8,248.31 2073.4,247 2117.9,245.31 2832.9,242.52 2875.4,229 2893.9,223.12 2912,211.05 \
-2925.6,200.25",
+		lp="3305.4,221.5",
+		pos="e,3283.3,195.52 2200.2,251.76 2236.3,249.94 2273.4,248.26 2308.4,247 2335.5,246.02 3264.4,248.33 3283.4,229 3289.6,222.67 3289.4,\
+213.62 3286.9,204.97",
 		style=solid];
 	category	[height=0.5,
-		pos="3050.4,178",
+		pos="3374.4,178",
 		width=1.4263];
 	"disease or phenotypic feature to genetic inheritance association" -> category	[color=blue,
 		label=category,
-		lp="3017.9,221.5",
-		pos="e,3025.7,194.03 1966.1,251.78 2001.9,249.97 2038.7,248.29 2073.4,247 2169.9,243.41 2848.3,250.75 2942.4,229 2968.6,222.95 2996,210.14 \
-3016.7,199",
+		lp="3378.9,221.5",
+		pos="e,3363.3,195.85 2200.2,251.73 2236.3,249.92 2273.4,248.25 2308.4,247 2364.9,244.99 3273.5,251.35 3325.4,229 3337.8,223.67 3348.6,\
+213.57 3357,203.83",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3174.4,178",
+		pos="3498.4,178",
 		width=1.5165];
 	"disease or phenotypic feature to genetic inheritance association" -> predicate	[color=blue,
 		label=predicate,
-		lp="3134.4,221.5",
-		pos="e,3147,193.81 1965.2,251.75 2001.3,249.94 2038.4,248.26 2073.4,247 2182.2,243.08 2946.8,251.18 3053.4,229 3082.9,222.86 3114.4,209.64 \
-3137.8,198.34",
+		lp="3482.4,221.5",
+		pos="e,3478.4,195.01 2199.8,251.71 2236,249.9 2273.3,248.23 2308.4,247 2369.8,244.85 3355.3,245.78 3414.4,229 3434.3,223.34 3454.3,211.72 \
+3469.8,201.1",
 		style=solid];
 	object	[height=0.5,
 		pos="1470.4,91",
 		width=1.0832];
 	"disease or phenotypic feature to genetic inheritance association" -> object	[color=blue,
 		label=object,
-		lp="3268.4,178",
-		pos="e,1509.6,91.987 1964.8,251.72 2001,249.9 2038.3,248.23 2073.4,247 2134.4,244.86 3113.1,243.52 3172.4,229 3213.6,218.91 3267.8,190.58 \
-3238.4,160 3177.2,96.388 1799.8,92.188 1519.8,91.993",
+		lp="3592.4,178",
+		pos="e,1509.6,92.524 2199.4,251.69 2235.7,249.87 2273.1,248.21 2308.4,247 2375.7,244.7 3456.9,251.48 3520.4,229 3554.2,217.01 3587.4,\
+185.79 3562.4,160 3525.7,122.08 1832.1,96.976 1519.7,92.662",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1469.4,134.5",
@@ -209,23 +242,23 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2120.4,265",
+		pos="2355.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2251.4,265",
+		pos="2486.4,265",
 		width=2.0762];
 	"disease or phenotypic feature to genetic inheritance association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2422.4,265",
+		pos="2657.4,265",
 		width=2.1665];
 	object -> relation	[pos="e,1428.2,35.54 1457.9,73.889 1451,64.939 1442.2,53.617 1434.4,43.584",
 		style=dotted];
 	"disease or phenotypic feature to genetic inheritance association_object"	[color=blue,
 		height=0.5,
 		label="genetic inheritance",
-		pos="2619.4,265",
+		pos="2854.4,265",
 		width=2.7984];
 }

@@ -25,4 +25,4 @@ URI: [biolink:causal_mechanism_qualifier](https://w3id.org/biolink/vocab/causal_
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

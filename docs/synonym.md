@@ -53,7 +53,7 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 | **In Subsets:** | | translator_minimal |
 | **Narrow Mappings:** | | skos:altLabel |
 |  | | gff3:Alias |
-|  | | agrkb:synonyms |
+|  | | AGRKB:synonyms |
 |  | | gpi:DB_Object_Synonyms |
 |  | | HANCESTRO:0330 |
 |  | | IAO:0000136 |

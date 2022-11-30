@@ -24,4 +24,4 @@ None ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

@@ -25,4 +25,4 @@ URI: [biolink:object_context_qualifier](https://w3id.org/biolink/vocab/object_co
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

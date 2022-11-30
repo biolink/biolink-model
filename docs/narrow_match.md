@@ -28,7 +28,7 @@ URI: [biolink:narrow_match](https://w3id.org/biolink/vocab/narrow_match)
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)
 
 ## Other properties
 

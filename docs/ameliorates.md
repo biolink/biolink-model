@@ -8,13 +8,13 @@ layout: default
 # Relation: ameliorates
 
 
-A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
+A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure, clinical intervention) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
 
 URI: [biolink:ameliorates](https://w3id.org/biolink/vocab/ameliorates)
 
 ## Domain and Range
 
-[BiologicalEntity](BiologicalEntity.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 

@@ -25,4 +25,4 @@ URI: [biolink:qualified_predicate](https://w3id.org/biolink/vocab/qualified_pred
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)

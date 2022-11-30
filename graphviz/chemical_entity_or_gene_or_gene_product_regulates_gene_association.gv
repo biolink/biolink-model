@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3038.9,283"];
+	graph [bb="0,0,3308.9,283"];
 	node [label="\N"];
 	"chemical entity or gene or gene product regulates gene association"	[height=0.5,
 		label="chemical entity or gene or gene product regulates gene association",
-		pos="1368.4,265",
+		pos="1638.4,265",
 		width=8.9909];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"chemical entity or gene or gene product regulates gene association" -> association	[label=is_a,
 		lp="282.39,221.5",
-		pos="e,103.35,191.59 1052.1,261.17 781.74,257.42 414,248.77 268.39,229 214.66,221.7 154.53,206.24 113.18,194.43"];
+		pos="e,103.34,191.67 1315.5,263.66 975.47,261.88 462.91,254.79 268.39,229 214.64,221.87 154.52,206.38 113.17,194.52"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -19,7 +19,7 @@ digraph {
 	"chemical entity or gene or gene product regulates gene association" -> id	[color=blue,
 		label=id,
 		lp="400.39,221.5",
-		pos="e,210.37,190.01 1066.4,258.52 829.23,253.22 518.87,243.78 393.39,229 319.55,220.3 301.06,215.79 229.39,196 226.28,195.14 223.08,\
+		pos="e,210.37,190.01 1321.7,261.24 1013.1,257.43 566.14,248.66 393.39,229 319.52,220.59 301.06,215.79 229.39,196 226.28,195.14 223.08,\
 194.18 219.89,193.17",
 		style=solid];
 	iri	[color=blue,
@@ -30,7 +30,7 @@ digraph {
 	"chemical entity or gene or gene product regulates gene association" -> iri	[color=blue,
 		label=iri,
 		lp="518.39,221.5",
-		pos="e,315.01,190.16 1049,262.01 887.15,258.2 687.86,249.24 510.39,229 431.76,220.03 412.11,215.46 335.39,196 331.97,195.13 328.43,194.16 \
+		pos="e,315.01,190.16 1328.4,259.78 1050.1,255 662.74,245.63 510.39,229 431.71,220.41 412.11,215.46 335.39,196 331.97,195.13 328.43,194.16 \
 324.9,193.14",
 		style=solid];
 	name	[color=blue,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"chemical entity or gene or gene product regulates gene association" -> name	[color=blue,
 		label=name,
-		lp="622.39,221.5",
-		pos="e,440.22,191.14 1081.3,256.66 903.36,250.98 692.16,241.9 602.39,229 549.57,221.41 490.43,205.81 450.06,194.05",
+		lp="623.39,221.5",
+		pos="e,440.02,191.18 1325.2,260.42 1072.4,256.23 737.61,247.36 603.39,229 549.99,221.7 490.22,205.92 449.65,194.03",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"chemical entity or gene or gene product regulates gene association" -> description	[color=blue,
 		label=description,
-		lp="739.89,221.5",
-		pos="e,586.84,194.04 1080.9,256.71 933.9,251.43 771.22,242.74 699.39,229 663.85,222.2 625.16,208.91 596.25,197.74",
+		lp="742.89,221.5",
+		pos="e,586.96,193.95 1320.3,261.65 1096.4,258.18 817.01,249.69 702.39,229 665.89,222.41 626.13,208.97 596.57,197.69",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"chemical entity or gene or gene product regulates gene association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="881.39,221.5",
-		pos="e,726.64,192.77 1112,254 1002.2,248.31 887.25,240.07 834.39,229 800.3,221.86 763.26,208.08 736.15,196.8",
+		lp="885.39,221.5",
+		pos="e,726.96,192.73 1328.5,259.78 1144.5,255.45 929.8,246.69 838.39,229 802.93,222.14 764.37,208.11 736.4,196.66",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"chemical entity or gene or gene product regulates gene association" -> negated	[color=blue,
 		label=negated,
-		lp="1027.4,221.5",
-		pos="e,847.74,190.34 1168.9,250.81 1113.5,245.61 1053.4,238.52 998.39,229 949.55,220.54 894.9,204.99 857.74,193.47",
+		lp="1034.4,221.5",
+		pos="e,847.61,190.33 1336.6,258.46 1231.4,253.59 1112.8,244.77 1005.4,229 953.78,221.42 896.03,205.31 857.47,193.41",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=2.1304];
 	"chemical entity or gene or gene product regulates gene association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1146.9,221.5",
-		pos="e,994.07,193.53 1226.3,248.81 1189.4,243.68 1149.7,237.14 1113.4,229 1076.1,220.63 1034.9,207.57 1003.8,196.9",
+		lp="1164.9,221.5",
+		pos="e,995.68,193.28 1364.2,255.43 1288.4,250.26 1206.4,242.03 1131.4,229 1088.1,221.48 1040.2,207.6 1005.2,196.37",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.7332];
 	"chemical entity or gene or gene product regulates gene association" -> publications	[color=blue,
 		label=publications,
-		lp="1264.4,221.5",
-		pos="e,1140.4,194.2 1285.8,247.51 1264.2,242.38 1241.2,236.17 1220.4,229 1196.1,220.66 1170,208.78 1149.4,198.69",
+		lp="1298.4,221.5",
+		pos="e,1144.8,193.32 1408.6,252.32 1357.4,247.15 1303.8,239.72 1254.4,229 1219.9,221.52 1182.3,208.14 1154.3,197.11",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.0943];
 	"chemical entity or gene or gene product regulates gene association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1370.9,221.5",
-		pos="e,1287.1,195.6 1348,246.8 1332.7,233.96 1311.7,216.27 1294.9,202.19",
+		lp="1437.9,221.5",
+		pos="e,1299.3,194.37 1490.3,248.97 1457.4,243.99 1423,237.47 1391.4,229 1363,221.39 1332.4,209.08 1308.7,198.58",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"chemical entity or gene or gene product regulates gene association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1501.9,221.5",
-		pos="e,1454.7,196.14 1396.7,246.95 1405,241.56 1413.8,235.35 1421.4,229 1430.6,221.33 1439.9,212.07 1447.8,203.61",
+		lp="1566.9,221.5",
+		pos="e,1476.8,196.24 1539.4,247.81 1526.3,243.06 1513.5,236.93 1502.4,229 1493.8,222.9 1486.9,213.84 1481.6,205.1",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"chemical entity or gene or gene product regulates gene association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1710.4,221.5",
-		pos="e,1667.2,195.02 1481.9,248.13 1511,243.03 1542.1,236.67 1570.4,229 1600,220.97 1632.3,209.03 1657.8,198.83",
+		lp="1734.4,221.5",
+		pos="e,1660,194.65 1634.6,246.59 1633.3,236.37 1633.5,223.63 1639.4,214 1642.6,208.82 1646.8,204.35 1651.6,200.52",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,9 @@ digraph {
 		width=3.015];
 	"chemical entity or gene or gene product regulates gene association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="1963.9,221.5",
-		pos="e,1905.5,195.15 1593.4,252.06 1680,246.21 1768,238.4 1809.4,229 1839.2,222.24 1871.2,209.99 1896,199.31",
+		lp="1958.9,221.5",
+		pos="e,1895.7,194.64 1763.7,248.4 1786,243.56 1808.7,237.24 1829.4,229 1840.7,224.48 1841.6,219.64 1852.4,214 1863.1,208.42 1874.9,203.13 \
+1886.3,198.44",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -140,102 +141,132 @@ digraph {
 		width=1.5346];
 	"chemical entity or gene or gene product regulates gene association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2129.4,221.5",
-		pos="e,2110.9,195.7 1597.2,252.23 1632.1,250.46 1667.7,248.67 1701.4,247 1742.8,244.94 2036.7,246.38 2074.4,229 2086.4,223.46 2096.8,\
-213.34 2104.8,203.64",
+		lp="2119.4,221.5",
+		pos="e,2105.4,195.38 1860.8,251.9 1953.9,245.68 2045.3,237.61 2065.4,229 2072.8,225.82 2086.2,214.01 2098,202.67",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2233.4,178",
+		width=1.0652];
+	"chemical entity or gene or gene product regulates gene association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2236.4,221.5",
+		pos="e,2212.3,193.27 1858.2,251.77 1993.4,243.82 2143.6,234.03 2158.4,229 2159.7,228.55 2183.4,212.7 2203.8,198.97",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2347.4,178",
+		width=1.5887];
+	"chemical entity or gene or gene product regulates gene association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="2376.9,221.5",
+		pos="e,2332.1,195.44 1867.2,252.22 2055.1,242.48 2290.9,230.07 2293.4,229 2300.7,225.92 2313.6,214.11 2324.9,202.75",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2461.4,178",
+		width=1.0652];
+	"chemical entity or gene or gene product regulates gene association" -> "original object"	[color=blue,
+		label="original object",
+		lp="2506.9,221.5",
+		pos="e,2460,196.28 1864.1,252.08 1900,250.3 1936.7,248.55 1971.4,247 1997.6,245.83 2422.2,244.5 2443.4,229 2450.8,223.6 2455.1,214.87 \
+2457.7,206.22",
 		style=solid];
 	type	[height=0.5,
-		pos="2225.4,178",
+		pos="2549.4,178",
 		width=0.86659];
 	"chemical entity or gene or gene product regulates gene association" -> type	[color=blue,
 		label=type,
-		lp="2209.4,221.5",
-		pos="e,2212.8,194.82 1594.5,252.07 1630.3,250.3 1666.8,248.55 1701.4,247 1753.3,244.68 2120.2,248.23 2168.4,229 2182.6,223.33 2195.7,\
-212.49 2205.7,202.34",
+		lp="2583.4,221.5",
+		pos="e,2560.4,194.94 1861.8,251.96 1898.4,250.17 1936,248.44 1971.4,247 2004.2,245.66 2539.5,252.58 2562.4,229 2568.8,222.38 2568,213.01 \
+2564.7,204.17",
 		style=solid];
 	category	[height=0.5,
-		pos="2326.4,178",
+		pos="2650.4,178",
 		width=1.4263];
 	"chemical entity or gene or gene product regulates gene association" -> category	[color=blue,
 		label=category,
-		lp="2299.9,221.5",
-		pos="e,2303.7,194.41 1593.2,252.01 1629.4,250.22 1666.4,248.49 1701.4,247 1760,244.5 2172.6,243.81 2229.4,229 2252.6,222.95 2276.6,210.65 \
-2294.9,199.77",
+		lp="2654.9,221.5",
+		pos="e,2639.9,195.79 1861.4,251.92 1898.1,250.13 1935.8,248.41 1971.4,247 2006.5,245.6 2571.4,243.4 2603.4,229 2615.4,223.58 2625.9,213.47 \
+2633.8,203.75",
 		style=solid];
 	"object direction qualifier"	[height=0.5,
-		pos="2520.4,178",
+		pos="2844.4,178",
 		width=3.4664];
 	"chemical entity or gene or gene product regulates gene association" -> "object direction qualifier"	[color=blue,
 		label="object direction qualifier",
-		lp="2496.4,221.5",
-		pos="e,2473.9,194.84 1591.4,251.92 1628.1,250.13 1665.8,248.41 1701.4,247 1842.2,241.41 2196,249.53 2335.4,229 2379.3,222.53 2427.7,209.22 \
-2464,197.96",
+		lp="2839.4,221.5",
+		pos="e,2805.3,195.17 1860,251.88 1897.2,250.08 1935.4,248.37 1971.4,247 2131.1,240.93 2532.9,255.96 2690.4,229 2726.6,222.8 2766.1,209.87 \
+2796,198.72",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2717.4,178",
+		pos="3041.4,178",
 		width=1.5165];
 	"chemical entity or gene or gene product regulates gene association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2673.4,221.5",
-		pos="e,2688.6,193.55 1588.7,251.8 1626.3,249.99 1664.9,248.3 1701.4,247 1799.9,243.49 2491.7,248.1 2588.4,229 2620.2,222.73 2654.2,209.2 \
-2679.4,197.8",
+		lp="3009.4,221.5",
+		pos="e,3016.2,194.04 1858.2,251.77 1896,249.96 1934.8,248.28 1971.4,247 2078,243.28 2827.3,252.56 2931.4,229 2958.1,222.95 2986.2,210.05 \
+3007.3,198.87",
 		style=solid];
 	subject	[height=0.5,
-		pos="2834.4,178",
+		pos="3158.4,178",
 		width=1.2277];
 	"chemical entity or gene or gene product regulates gene association" -> subject	[color=blue,
 		label=subject,
-		lp="2786.4,221.5",
-		pos="e,2808.4,192.86 1587.8,251.76 1625.7,249.95 1664.7,248.26 1701.4,247 1813.6,243.14 2601.4,251.51 2711.4,229 2742.3,222.67 2775.3,\
-208.82 2799.3,197.3",
+		lp="3118.4,221.5",
+		pos="e,3134.3,193.34 1857.8,251.73 1895.7,249.92 1934.7,248.24 1971.4,247 2090.9,242.95 2930.7,255.09 3047.4,229 3074.9,222.85 3103.8,\
+209.55 3125.3,198.22",
 		style=solid];
 	object	[height=0.5,
-		pos="2877.4,91",
+		pos="3201.4,91",
 		width=1.0832];
 	"chemical entity or gene or gene product regulates gene association" -> object	[color=blue,
 		label=object,
-		lp="2927.4,178",
-		pos="e,2890.8,108.09 1587.3,251.73 1625.3,249.91 1664.5,248.24 1701.4,247 1825.2,242.84 2695.6,256.72 2816.4,229 2850.3,221.22 2865.4,\
-222.93 2887.4,196 2907.2,171.85 2909.3,156.9 2900.4,127 2899.4,123.55 2897.9,120.13 2896.1,116.85",
+		lp="3251.4,178",
+		pos="e,3214.8,108.09 1857.3,251.71 1895.3,249.89 1934.5,248.22 1971.4,247 2036.8,244.83 3085,245.11 3148.4,229 3179,221.21 3192,220.93 \
+3211.4,196 3230.6,171.39 3233.3,156.9 3224.4,127 3223.4,123.55 3221.9,120.13 3220.1,116.85",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1748.4,265",
+		pos="2018.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1879.4,265",
+		pos="2149.4,265",
 		width=2.0762];
 	"chemical entity or gene or gene product regulates gene association_object direction qualifier"	[color=blue,
 		height=0.5,
 		label=DirectionQualifierEnum,
-		pos="2093.4,265",
+		pos="2363.4,265",
 		width=3.358];
 	"chemical entity or gene or gene product regulates gene association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2310.4,265",
+		pos="2580.4,265",
 		width=2.1665];
 	subject -> object	[label=relation,
-		lp="2872.4,134.5",
-		pos="e,2859.5,107.23 2835.5,159.55 2836.7,149.57 2839.2,137.07 2844.4,127 2846.6,122.68 2849.5,118.52 2852.7,114.66"];
+		lp="3196.4,134.5",
+		pos="e,3183.5,107.23 3159.5,159.55 3160.7,149.57 3163.2,137.07 3168.4,127 3170.6,122.68 3173.5,118.52 3176.7,114.66"];
 	relation	[height=0.5,
-		pos="2822.4,18",
+		pos="3146.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2823.7,36.188 2833.1,159.79 2831,132.48 2827,78.994 2824.5,46.38",
+	subject -> relation	[pos="e,3147.7,36.188 3157.1,159.79 3155,132.48 3151,78.994 3148.5,46.38",
 		style=dotted];
 	"chemical entity or gene or gene product regulates gene association_subject"	[color=blue,
 		height=0.5,
 		label="chemical entity or gene or gene product",
-		pos="2603.4,265",
+		pos="2873.4,265",
 		width=5.4703];
-	object -> relation	[pos="e,2835.2,35.54 2864.9,73.889 2858,64.939 2849.2,53.617 2841.4,43.584",
+	object -> relation	[pos="e,3159.2,35.54 3188.9,73.889 3182,64.939 3173.2,53.617 3165.4,43.584",
 		style=dotted];
 	"chemical entity or gene or gene product regulates gene association_object"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="2928.4,265",
+		pos="3198.4,265",
 		width=3.0692];
 }

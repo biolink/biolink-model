@@ -164,7 +164,7 @@ None ->  <sub>0..1</sub> [String](types/String.md)
 |  |  |  |
 | --- | --- | --- |
 | **Mappings:** | | rdf:type |
-| **Exact Mappings:** | | agrkb:soTermId |
+| **Exact Mappings:** | | AGRKB:soTermId |
 |  | | gff3:type |
 |  | | gpi:DB_Object_Type |
 

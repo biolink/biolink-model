@@ -1,9 +1,17 @@
 CHANGES
 =======
+3.1.1
+-----
+adding more predicate mappings, refactored location and naming conventions here to remove "deprecated"
+some opposite/inverse refactoring
+loosened the domain of ameliorates predicate to include ClinicalEntities
+added several slots to a variety of association classes
+refactored build so that pydantic classes are generated and pypi release is automatic
+
 3.1.0
 -----
 remove deprecated classes, slots
-add deprecated predicate mappings to examples/biolink3_migration/predicate_mappings.yaml
+add deprecated predicate mappings to predicate_mappings.yaml
 refine documentation with regard to associations, add several chemical->gene examples
 general cleanup and maintenance
 

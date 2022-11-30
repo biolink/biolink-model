@@ -264,6 +264,18 @@
                "description": "the structure at an earlier time",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -367,6 +379,18 @@
             },
             "object": {
                "description": "the whole",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -597,6 +621,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -889,6 +925,18 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -1812,6 +1860,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -2092,6 +2152,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -2199,6 +2271,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -2463,6 +2547,18 @@
             "object_part_qualifier": {
                "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -2677,6 +2773,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -2792,6 +2900,18 @@
             },
             "object_direction_qualifier": {
                "$ref": "#/$defs/DirectionQualifierEnum"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
             },
             "predicate": {
                "description": "the direction is always from regulator to regulated",
@@ -2991,6 +3111,18 @@
             },
             "object_part_qualifier": {
                "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
             },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
@@ -3213,6 +3345,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -3319,6 +3463,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -3514,6 +3670,18 @@
                "description": "the chemical element that is the target of the statement",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -3626,6 +3794,18 @@
                "description": "the downstream chemical entity",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -3731,6 +3911,18 @@
                "description": "the disease or phenotype that is affected by the chemical",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -3834,6 +4026,18 @@
             },
             "object": {
                "description": "the pathway that is affected by the chemical",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -5130,6 +5334,18 @@
                "description": "agent helping to realise the given entity (e.g. such as a publication)",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "generally one of the predicate values 'provider', 'publisher', 'editor' or 'author'",
                "type": "string"
@@ -5935,6 +6151,18 @@
                "description": "genetic inheritance associated with the specified disease or phenotypic feature.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -6040,6 +6268,18 @@
                "description": "anatomical entity in which the disease or feature is found.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -6143,6 +6383,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -6271,6 +6523,18 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -6588,6 +6852,18 @@
                "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the gene or gene product that is affected by the drug"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -6800,6 +7076,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -6912,6 +7200,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -7018,6 +7318,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -7649,6 +7961,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -7752,6 +8076,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "population_context_qualifier": {
@@ -7889,6 +8225,18 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -8221,6 +8569,18 @@
                "description": "class describing the activity, process or localization of the gene product",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -8416,6 +8776,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -8605,6 +8977,18 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -8797,6 +9181,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -8904,6 +9300,18 @@
             },
             "object": {
                "description": "location in which the gene is expressed",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -9023,6 +9431,18 @@
                "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "phenotypic_state": {
                "description": "in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.",
                "type": "string"
@@ -9140,6 +9560,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "membership of the gene in the given gene family.",
                "type": "string"
@@ -9244,6 +9676,18 @@
             "object": {
                "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
             },
             "predicate": {
                "description": "homology relationship type",
@@ -9350,6 +9794,18 @@
                "$ref": "#/$defs/GeneProductMixin",
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -9455,6 +9911,18 @@
                "description": "class describing the activity, process or localization of the gene product",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -9558,6 +10026,18 @@
             },
             "object": {
                "description": "the pathway that includes or is affected by the gene or gene product",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -9686,6 +10166,18 @@
             },
             "onset_qualifier": {
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -10046,6 +10538,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "phase": {
                "$ref": "#/$defs/PhaseEnum",
                "description": "The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2."
@@ -10245,6 +10749,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "E.g. is pathogenic for",
                "type": "string"
@@ -10362,6 +10878,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "E.g. is pathogenic for",
                "type": "string"
@@ -10471,6 +10999,18 @@
                "description": "gene implicated in genotype",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "the relationship type used to connect genotype to gene",
                "type": "string"
@@ -10574,6 +11114,18 @@
             },
             "object": {
                "description": "child genotype",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -10704,6 +11256,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -10815,6 +11379,18 @@
             },
             "object": {
                "description": "gene implicated in genotype",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -11493,6 +12069,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -11816,6 +12404,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -11921,6 +12521,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -12024,6 +12636,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -12191,6 +12815,18 @@
                "description": "the material entity the sample was derived from. This may be another material sample, or any other material entity, including for example an organism, a geographic feature, or some environmental material.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "derivation relationship",
                "type": "string"
@@ -12294,6 +12930,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -12594,6 +13242,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -12699,6 +13359,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -12802,6 +13474,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -13169,6 +13853,18 @@
                "type": "string"
             },
             "object_context_qualifier": {
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -13923,6 +14619,18 @@
                "description": "the taxon that is the subject of the association",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -14028,6 +14736,18 @@
                "description": "the more general taxon",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -14131,6 +14851,18 @@
             },
             "object": {
                "description": "An association between two individual organisms.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -14246,6 +14978,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -14355,6 +15099,18 @@
                "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa."
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "interaction relationship type",
                "type": "string"
@@ -14461,6 +15217,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -15620,6 +16388,18 @@
                "description": "the population that form the object of the association",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
                "type": "string"
@@ -16611,6 +17391,18 @@
                "$ref": "#/$defs/GeneOrGeneProduct",
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -16726,6 +17518,18 @@
             },
             "object": {
                "description": "the chemical element that is the target of the statement",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -17005,6 +17809,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -17117,6 +17933,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {
@@ -18160,6 +18988,18 @@
                "description": "An association between individuals of different taxa.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -18452,6 +19292,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -18651,6 +19503,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "E.g. is pathogenic for",
                "type": "string"
@@ -18768,6 +19632,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "E.g. is pathogenic for",
                "type": "string"
@@ -18877,6 +19753,18 @@
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -18984,6 +19872,18 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "phenotypic_state": {
@@ -19126,6 +20026,18 @@
                "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
             "predicate": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "type": "string"
@@ -19257,6 +20169,18 @@
             },
             "object": {
                "description": "the population that is observed to have the frequency",
+               "type": "string"
+            },
+            "original_object": {
+               "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_predicate": {
+               "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+               "type": "string"
+            },
+            "original_subject": {
+               "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                "type": "string"
             },
             "predicate": {

@@ -25,4 +25,4 @@ URI: [biolink:object_direction_qualifier](https://w3id.org/biolink/vocab/object_
 
 ## Used by
 
- * [DeprecatedPredicateMapping](DeprecatedPredicateMapping.md)
+ * [PredicateMapping](PredicateMapping.md)
