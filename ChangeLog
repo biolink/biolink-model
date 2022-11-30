@@ -3,7 +3,10 @@ CHANGES
 3.1.1
 -----
 adding more predicate mappings, refactored location and naming conventions here to remove "deprecated"
-
+some opposite/inverse refactoring
+loosened the domain of ameliorates predicate to include ClinicalEntities
+added several slots to a variety of association classes
+refactored build so that pydantic classes are generated and pypi release is automatic
 
 3.1.0
 -----
