@@ -14,7 +14,7 @@ URI: [biolink:editor](https://w3id.org/biolink/vocab/editor)
 
 ## Domain and Range
 
-[Agent](Agent.md) ->  <sub>0..\*</sub> [InformationContentEntity](InformationContentEntity.md)
+[Agent](Agent.md) ->  <sub>0..\*</sub> [Publication](Publication.md)
 
 ## Parents
 

@@ -45,12 +45,9 @@ URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/Informati
 
 ## Referenced by class
 
- *  **[Agent](Agent.md)** *[author](author.md)*  <sub>0..\*</sub>  **[InformationContentEntity](InformationContentEntity.md)**
  *  **[Agent](Agent.md)** *[contributor](contributor.md)*  <sub>0..\*</sub>  **[InformationContentEntity](InformationContentEntity.md)**
  *  **[ContributorAssociation](ContributorAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[InformationContentEntity](InformationContentEntity.md)**
- *  **[Agent](Agent.md)** *[editor](editor.md)*  <sub>0..\*</sub>  **[InformationContentEntity](InformationContentEntity.md)**
  *  **[Agent](Agent.md)** *[provider](provider.md)*  <sub>0..\*</sub>  **[InformationContentEntity](InformationContentEntity.md)**
- *  **[Agent](Agent.md)** *[publisher](publisher.md)*  <sub>0..\*</sub>  **[InformationContentEntity](InformationContentEntity.md)**
 
 ## Attributes
 

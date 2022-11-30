@@ -14,7 +14,7 @@ URI: [biolink:catalyzes](https://w3id.org/biolink/vocab/catalyzes)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [MolecularActivity](MolecularActivity.md)
 
 ## Parents
 

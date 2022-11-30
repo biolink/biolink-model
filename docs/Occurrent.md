@@ -15,7 +15,7 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent],[BiologicalProcessOrActivity]++-%20has%20input%200..%2A%3E[Occurrent],[BiologicalProcessOrActivity]++-%20has%20output%200..%2A%3E[Occurrent],[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[ActivityAndBehavior],[PhysicalEssenceOrOccurrent]%5E-[Occurrent],[Phenomenon],[NamedThing],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEssenceOrOccurrent],[BiologicalProcessOrActivity]++-%20has%20input%200..%2A%3E[Occurrent],[BiologicalProcessOrActivity]++-%20has%20output%200..%2A%3E[Occurrent],[Phenomenon]uses%20-.-%3E[Occurrent],[MolecularActivity]uses%20-.-%3E[Occurrent],[EnvironmentalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[Occurrent],[Occurrent]%5E-[ActivityAndBehavior],[PhysicalEssenceOrOccurrent]%5E-[Occurrent],[Phenomenon],[MolecularActivity],[EnvironmentalProcess],[BiologicalProcessOrActivity],[BiologicalProcess],[ActivityAndBehavior])
 
 ---
 
@@ -40,13 +40,11 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
  *  **[MolecularActivity](MolecularActivity.md)** *[actively involves](actively_involves.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[capable of](capable_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[catalyzes](catalyzes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumes](consumes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[MolecularActivity](MolecularActivity.md)** *[has capability](has_capability.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[has capability](has_capability.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has input](has_input.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has output](has_output.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[is substrate of](is_substrate_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has participant](has_participant.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[preceded by](preceded_by.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[precedes](precedes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[temporally related to](temporally_related_to.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**

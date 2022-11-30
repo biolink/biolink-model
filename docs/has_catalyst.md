@@ -14,7 +14,7 @@ URI: [biolink:has_catalyst](https://w3id.org/biolink/vocab/has_catalyst)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
+[MolecularActivity](MolecularActivity.md) ->  <sub>0..\*</sub> [NucleicAcidEntity](NucleicAcidEntity.md)
 
 ## Parents
 

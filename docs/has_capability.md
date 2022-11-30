@@ -14,7 +14,7 @@ URI: [biolink:has_capability](https://w3id.org/biolink/vocab/has_capability)
 
 ## Domain and Range
 
-[MolecularActivity](MolecularActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
 
 ## Parents
 

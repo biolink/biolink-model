@@ -13,7 +13,8 @@ OUT_CSV = os.path.join('../prefix-map/preferred_prefixes_per_class.csv')
 class IDPrefixes:
 
     def __init__(self) -> None:
-        self.sv = SchemaView('../prefix-map/class_prefixes.yaml')
+        self.pmsv = SchemaView('../prefix-map/class_prefixes.yaml')
+        self.sv = SchemaView('../biolink-model.yaml')
 
     def dump(self):
 
@@ -31,11 +32,8 @@ class IDPrefixes:
                     prefix_map.append(p)
                 bcpm.prefix_map = prefix_map
                 bpcc.biolink_class_prefixes.append(bcpm)
-
         jd = JSONDumper()
         jd.dump(bpcc, to_file=OUT_JSON)
-        csvd = CSVDumper()
-        csvd.dump(element=bpcc, to_file=OUT_CSV, schemaview=self.sv)
 
 
 if __name__ == "__main__":

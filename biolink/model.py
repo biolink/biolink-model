@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-29T20:33:31
+# Generation date: 2022-11-30T13:25:59
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.1.0"
+version = "3.1.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -162,7 +162,6 @@ NDDF = CurieNamespace('NDDF', 'http://purl.bioontology.org/ontology/NDDF/')
 NLMID = CurieNamespace('NLMID', 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term=')
 OBAN = CurieNamespace('OBAN', 'http://purl.org/oban/')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
-OBOREL = CurieNamespace('OBOREL', 'http://purl.obolibrary.org/obo/RO_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
@@ -248,7 +247,6 @@ ZFA = CurieNamespace('ZFA', 'http://purl.obolibrary.org/obo/ZFA_')
 ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZFS = CurieNamespace('ZFS', 'http://purl.obolibrary.org/obo/ZFS_')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
-AGRKB = CurieNamespace('agrkb', 'https://www.alliancegenome.org/')
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOSCHEMAS = CurieNamespace('bioschemas', 'https://bioschemas.org/')
@@ -272,7 +270,7 @@ ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
 ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 MEDGEN = CurieNamespace('medgen', 'https://www.ncbi.nlm.nih.gov/medgen/')
-METACYC_REACTION = CurieNamespace('metacyc_reaction', 'https://identifiers.org/metacyc.reaction:')
+METACYC_REACTION = CurieNamespace('metacyc_reaction', 'http://identifiers.org/metacyc.reaction:')
 MIRBASE = CurieNamespace('mirbase', 'http://identifiers.org/mirbase')
 MMMP_BIOMAPS = CurieNamespace('mmmp_biomaps', 'https://bioregistry.io/mmmp.biomaps:')
 NCATS_BIOPLANET = CurieNamespace('ncats_bioplanet', 'https://tripod.nih.gov/bioplanet/detail.jsp?pid=')
@@ -1290,39 +1288,39 @@ class OrganismTaxonToEnvironmentAssociationId(AssociationId):
 
 
 @dataclass
-class DeprecatedMappingCollection(YAMLRoot):
+class MappingCollection(YAMLRoot):
     """
     A collection of deprecated mappings.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DeprecatedMappingCollection
-    class_class_curie: ClassVar[str] = "biolink:DeprecatedMappingCollection"
-    class_name: ClassVar[str] = "deprecated mapping collection"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DeprecatedMappingCollection
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MappingCollection
+    class_class_curie: ClassVar[str] = "biolink:MappingCollection"
+    class_name: ClassVar[str] = "mapping collection"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MappingCollection
 
-    deprecated_predicate_mappings: Optional[Union[Union[dict, "DeprecatedPredicateMapping"], List[Union[dict, "DeprecatedPredicateMapping"]]]] = empty_list()
+    predicate_mappings: Optional[Union[Union[dict, "PredicateMapping"], List[Union[dict, "PredicateMapping"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if not isinstance(self.deprecated_predicate_mappings, list):
-            self.deprecated_predicate_mappings = [self.deprecated_predicate_mappings] if self.deprecated_predicate_mappings is not None else []
-        self.deprecated_predicate_mappings = [v if isinstance(v, DeprecatedPredicateMapping) else DeprecatedPredicateMapping(**as_dict(v)) for v in self.deprecated_predicate_mappings]
+        if not isinstance(self.predicate_mappings, list):
+            self.predicate_mappings = [self.predicate_mappings] if self.predicate_mappings is not None else []
+        self.predicate_mappings = [v if isinstance(v, PredicateMapping) else PredicateMapping(**as_dict(v)) for v in self.predicate_mappings]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class DeprecatedPredicateMapping(YAMLRoot):
+class PredicateMapping(YAMLRoot):
     """
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
     be done to use a qualified statement in its place.
     """
     _inherited_slots: ClassVar[List[str]] = ["exact_match", "narrow_match", "broad_match"]
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.DeprecatedPredicateMapping
-    class_class_curie: ClassVar[str] = "biolink:DeprecatedPredicateMapping"
-    class_name: ClassVar[str] = "deprecated predicate mapping"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.DeprecatedPredicateMapping
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PredicateMapping
+    class_class_curie: ClassVar[str] = "biolink:PredicateMapping"
+    class_name: ClassVar[str] = "predicate mapping"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PredicateMapping
 
     predicate: Union[str, PredicateType] = None
     mapped_predicate: Optional[str] = None
@@ -10171,8 +10169,8 @@ slots.direction_qualifier = Slot(uri=BIOLINK.direction_qualifier, name="directio
 slots.mapped_predicate = Slot(uri=BIOLINK.mapped_predicate, name="mapped predicate", curie=BIOLINK.curie('mapped_predicate'),
                    model_uri=BIOLINK.mapped_predicate, domain=None, range=Optional[str])
 
-slots.deprecated_predicate_mappings = Slot(uri=BIOLINK.deprecated_predicate_mappings, name="deprecated predicate mappings", curie=BIOLINK.curie('deprecated_predicate_mappings'),
-                   model_uri=BIOLINK.deprecated_predicate_mappings, domain=None, range=Optional[Union[Union[dict, DeprecatedPredicateMapping], List[Union[dict, DeprecatedPredicateMapping]]]])
+slots.predicate_mappings = Slot(uri=BIOLINK.predicate_mappings, name="predicate mappings", curie=BIOLINK.curie('predicate_mappings'),
+                   model_uri=BIOLINK.predicate_mappings, domain=None, range=Optional[Union[Union[dict, PredicateMapping], List[Union[dict, PredicateMapping]]]])
 
 slots.exact_matches = Slot(uri=BIOLINK.exact_matches, name="exact matches", curie=BIOLINK.curie('exact_matches'),
                    model_uri=BIOLINK.exact_matches, domain=None, range=Optional[Union[str, List[str]]])
@@ -10391,19 +10389,19 @@ slots.has_provider = Slot(uri=BIOLINK.has_provider, name="has provider", curie=B
                    model_uri=BIOLINK.has_provider, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.publisher = Slot(uri=BIOLINK.publisher, name="publisher", curie=BIOLINK.curie('publisher'),
-                   model_uri=BIOLINK.publisher, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+                   model_uri=BIOLINK.publisher, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
 slots.has_publisher = Slot(uri=BIOLINK.has_publisher, name="has publisher", curie=BIOLINK.curie('has_publisher'),
                    model_uri=BIOLINK.has_publisher, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.editor = Slot(uri=BIOLINK.editor, name="editor", curie=BIOLINK.curie('editor'),
-                   model_uri=BIOLINK.editor, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+                   model_uri=BIOLINK.editor, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
 slots.has_editor = Slot(uri=BIOLINK.has_editor, name="has editor", curie=BIOLINK.curie('has_editor'),
                    model_uri=BIOLINK.has_editor, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.author = Slot(uri=BIOLINK.author, name="author", curie=BIOLINK.curie('author'),
-                   model_uri=BIOLINK.author, domain=Agent, range=Optional[Union[Union[str, InformationContentEntityId], List[Union[str, InformationContentEntityId]]]])
+                   model_uri=BIOLINK.author, domain=Agent, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
 slots.has_author = Slot(uri=BIOLINK.has_author, name="has author", curie=BIOLINK.curie('has_author'),
                    model_uri=BIOLINK.has_author, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
@@ -10583,10 +10581,10 @@ slots.caused_by = Slot(uri=BIOLINK.caused_by, name="caused by", curie=BIOLINK.cu
                    model_uri=BIOLINK.caused_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.ameliorates = Slot(uri=BIOLINK.ameliorates, name="ameliorates", curie=BIOLINK.curie('ameliorates'),
-                   model_uri=BIOLINK.ameliorates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.ameliorates, domain=NamedThing, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.is_ameliorated_by = Slot(uri=BIOLINK.is_ameliorated_by, name="is ameliorated by", curie=BIOLINK.curie('is_ameliorated_by'),
-                   model_uri=BIOLINK.is_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, BiologicalEntityId], List[Union[str, BiologicalEntityId]]]])
+                   model_uri=BIOLINK.is_ameliorated_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.exacerbates = Slot(uri=BIOLINK.exacerbates, name="exacerbates", curie=BIOLINK.curie('exacerbates'),
                    model_uri=BIOLINK.exacerbates, domain=BiologicalEntity, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
@@ -10709,22 +10707,22 @@ slots.is_output_of = Slot(uri=BIOLINK.is_output_of, name="is output of", curie=B
                    model_uri=BIOLINK.is_output_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
-                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
-                   model_uri=BIOLINK.catalyzes, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.catalyzes, domain=NucleicAcidEntity, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
 
 slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=BIOLINK.curie('has_catalyst'),
-                   model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_catalyst, domain=MolecularActivity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
-                   model_uri=BIOLINK.has_substrate, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_substrate, domain=MolecularActivity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
-                   model_uri=BIOLINK.is_substrate_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
 
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
-                   model_uri=BIOLINK.participates_in, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involved_in = Slot(uri=BIOLINK.actively_involved_in, name="actively involved in", curie=BIOLINK.curie('actively_involved_in'),
                    model_uri=BIOLINK.actively_involved_in, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
@@ -10736,7 +10734,7 @@ slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK
                    model_uri=BIOLINK.capable_of, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.has_capability = Slot(uri=BIOLINK.has_capability, name="has capability", curie=BIOLINK.curie('has_capability'),
-                   model_uri=BIOLINK.has_capability, domain=MolecularActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_capability, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
                    model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
@@ -10769,10 +10767,10 @@ slots.has_nutrient = Slot(uri=BIOLINK.has_nutrient, name="has nutrient", curie=B
                    model_uri=BIOLINK.has_nutrient, domain=ChemicalEntity, range=Optional[Union[Union[str, ChemicalEntityId], List[Union[str, ChemicalEntityId]]]])
 
 slots.is_active_ingredient_of = Slot(uri=BIOLINK.is_active_ingredient_of, name="is active ingredient of", curie=BIOLINK.curie('is_active_ingredient_of'),
-                   model_uri=BIOLINK.is_active_ingredient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [OBOREL["0002249"]])
+                   model_uri=BIOLINK.is_active_ingredient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [RO["0002249"]])
 
 slots.has_active_ingredient = Slot(uri=BIOLINK.has_active_ingredient, name="has active ingredient", curie=BIOLINK.curie('has_active_ingredient'),
-                   model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [OBOREL["0002248"]])
+                   model_uri=BIOLINK.has_active_ingredient, domain=Drug, range=Optional[Union[Union[str, MolecularEntityId], List[Union[str, MolecularEntityId]]]], mappings = [RO["0002248"]])
 
 slots.is_excipient_of = Slot(uri=BIOLINK.is_excipient_of, name="is excipient of", curie=BIOLINK.curie('is_excipient_of'),
                    model_uri=BIOLINK.is_excipient_of, domain=MolecularEntity, range=Optional[Union[Union[str, DrugId], List[Union[str, DrugId]]]], mappings = [WIKIDATA.Q902638])

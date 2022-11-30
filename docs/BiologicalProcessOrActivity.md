@@ -45,6 +45,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
  *  **[PhysicalEntity](PhysicalEntity.md)** *[enables](enables.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
  *  **[Occurrent](Occurrent.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
  *  **[Occurrent](Occurrent.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[Occurrent](Occurrent.md)** *[participates in](participates_in.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
 
 ## Attributes
 

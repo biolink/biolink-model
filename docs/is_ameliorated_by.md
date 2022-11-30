@@ -14,7 +14,7 @@ URI: [biolink:is_ameliorated_by](https://w3id.org/biolink/vocab/is_ameliorated_b
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [BiologicalEntity](BiologicalEntity.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 
