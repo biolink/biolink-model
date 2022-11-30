@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.1.0
+# version: 3.1.1
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -926,39 +926,6 @@ linkml:Nodeidentifier NONLITERAL
           <has_distribution> @<DatasetDistribution> ?
        ) ;
        rdf:type [ <DatasetVersion> ]
-    )
-}
-
-<DeprecatedMappingCollection> {
-    (  $<DeprecatedMappingCollection_tes> <deprecated_predicate_mappings> @<DeprecatedPredicateMapping> * ;
-       rdf:type [ <DeprecatedMappingCollection> ] ?
-    )
-}
-
-<DeprecatedPredicateMapping> CLOSED {
-    (  $<DeprecatedPredicateMapping_tes> (  <mapped_predicate> @linkml:String ? ;
-          <subject_aspect_qualifier> @linkml:String ? ;
-          <subject_direction_qualifier> @linkml:String ? ;
-          <subject_form_or_variant_qualifier> @linkml:String ? ;
-          <subject_part_qualifier> @linkml:String ? ;
-          <subject_derivative_qualifier> @linkml:String ? ;
-          <subject_context_qualifier> @linkml:String ? ;
-          <predicate> @<PredicateType> ;
-          <qualified_predicate> @linkml:String ? ;
-          <object_aspect_qualifier> @linkml:String ? ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
-          <object_form_or_variant_qualifier> @linkml:String ? ;
-          <object_part_qualifier> @linkml:String ? ;
-          <object_derivative_qualifier> @linkml:String ? ;
-          <object_context_qualifier> @linkml:String ? ;
-          <causal_mechanism_qualifier> @linkml:String ? ;
-          <anatomical_context_qualifier> @<AnatomicalContextQualifierEnum> ? ;
-          <species_context_qualifier> @<OrganismTaxon> ? ;
-          <exact_match> @<NamedThing> * ;
-          <narrow_match> @<NamedThing> * ;
-          <broad_match> @<NamedThing> *
-       ) ;
-       rdf:type [ <DeprecatedPredicateMapping> ] ?
     )
 }
 
@@ -2033,6 +2000,12 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<MappingCollection> {
+    (  $<MappingCollection_tes> <predicate_mappings> @<PredicateMapping> * ;
+       rdf:type [ <MappingCollection> ] ?
+    )
+}
+
 <MaterialSample> CLOSED {
     (  $<MaterialSample_tes> (  &<PhysicalEntity_tes> ;
           rdf:type [ <PhysicalEntity> ] ? ;
@@ -2642,6 +2615,33 @@ linkml:Nodeidentifier NONLITERAL
           <synonym> @<LabelType> *
        ) ;
        rdf:type [ <PosttranslationalModification> ]
+    )
+}
+
+<PredicateMapping> CLOSED {
+    (  $<PredicateMapping_tes> (  <mapped_predicate> @linkml:String ? ;
+          <subject_aspect_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @linkml:String ? ;
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
+          <subject_part_qualifier> @linkml:String ? ;
+          <subject_derivative_qualifier> @linkml:String ? ;
+          <subject_context_qualifier> @linkml:String ? ;
+          <predicate> @<PredicateType> ;
+          <qualified_predicate> @linkml:String ? ;
+          <object_aspect_qualifier> @linkml:String ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_form_or_variant_qualifier> @linkml:String ? ;
+          <object_part_qualifier> @linkml:String ? ;
+          <object_derivative_qualifier> @linkml:String ? ;
+          <object_context_qualifier> @linkml:String ? ;
+          <causal_mechanism_qualifier> @linkml:String ? ;
+          <anatomical_context_qualifier> @<AnatomicalContextQualifierEnum> ? ;
+          <species_context_qualifier> @<OrganismTaxon> ? ;
+          <exact_match> @<NamedThing> * ;
+          <narrow_match> @<NamedThing> * ;
+          <broad_match> @<NamedThing> *
+       ) ;
+       rdf:type [ <PredicateMapping> ] ?
     )
 }
 
