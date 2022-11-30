@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,3351.8,283"];
+	graph [bb="0,0,3686.8,283"];
 	node [label="\N"];
 	"macromolecular machine to biological process association"	[height=0.5,
 		label="macromolecular machine to biological process association",
-		pos="1828.8,265",
+		pos="2063.8,265",
 		width=7.7813];
 	"functional association"	[height=0.5,
 		pos="111.79,178",
 		width=3.1053];
 	"macromolecular machine to biological process association" -> "functional association"	[label=is_a,
-		lp="727.79,221.5",
-		pos="e,190.45,190.88 1567.3,258.53 1341.3,253.15 1005.9,243.6 713.79,229 499.78,218.3 445.91,218.25 232.79,196 222.29,194.9 211.3,193.59 \
+		lp="728.79,221.5",
+		pos="e,190.45,190.88 1793,260.35 1520.5,255.88 1088.3,246.63 714.79,229 500.3,218.88 446.35,218.28 232.79,196 222.29,194.9 211.3,193.59 \
 200.41,192.19"];
 	"macromolecular machine to entity association mixin"	[height=0.5,
 		pos="494.79,178",
 		width=7.023];
 	"macromolecular machine to biological process association" -> "macromolecular machine to entity association mixin"	[label=uses,
-		lp="902.29,221.5",
-		pos="e,596.2,194.52 1557.8,260.41 1369.2,256.33 1111.8,247.61 885.79,229 791.31,221.22 684.58,207.22 606.54,196.01"];
+		lp="903.29,221.5",
+		pos="e,595.22,194.54 1784.8,263.32 1546.1,260.92 1193.4,253.05 886.79,229 791.55,221.53 683.94,207.39 605.59,196.05"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"macromolecular machine to biological process association" -> id	[color=blue,
 		label=id,
-		lp="1023.8,221.5",
-		pos="e,832.77,190.01 1550.8,262.61 1393.6,259.17 1193.6,250.37 1016.8,229 942.54,220.03 923.89,215.87 851.79,196 848.68,195.14 845.48,\
-194.18 842.28,193.17",
+		lp="1025.8,221.5",
+		pos="e,832.51,189.94 1794.9,259.93 1536.1,255.11 1163.2,245.58 1018.8,229 943.63,220.37 924.75,216.02 851.79,196 848.64,195.13 845.39,\
+194.16 842.15,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -36,9 +36,9 @@ digraph {
 		width=1.2277];
 	"macromolecular machine to biological process association" -> iri	[color=blue,
 		label=iri,
-		lp="1143.8,221.5",
-		pos="e,937.4,190.18 1564.8,258.91 1435.2,254.31 1277,245.58 1135.8,229 1055.9,219.62 1035.8,215.66 957.79,196 954.36,195.14 950.83,194.17 \
-947.29,193.15",
+		lp="1147.8,221.5",
+		pos="e,937.39,190.2 1784.3,263.68 1600.6,260.95 1355.3,252.5 1139.8,229 1058.1,220.09 1037.5,215.93 957.79,196 954.36,195.14 950.82,194.18 \
+947.29,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"macromolecular machine to biological process association" -> name	[color=blue,
 		label=name,
-		lp="1249.8,221.5",
-		pos="e,1063.2,190.9 1567.2,258.54 1462,253.79 1339.7,245.04 1229.8,229 1175.5,221.07 1114.5,205.4 1073.1,193.71",
+		lp="1255.8,221.5",
+		pos="e,1063.6,190.89 1804.7,258.13 1603.6,252.62 1341.7,243.09 1235.8,229 1179.4,221.5 1116.1,205.55 1073.4,193.67",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"macromolecular machine to biological process association" -> description	[color=blue,
 		label=description,
-		lp="1371.3,221.5",
-		pos="e,1211.2,193.7 1572.7,257.7 1494.5,252.64 1408.7,243.92 1330.8,229 1293,221.77 1251.6,208.34 1220.8,197.22",
+		lp="1380.3,221.5",
+		pos="e,1212.4,193.56 1804.6,258.12 1633.9,252.96 1426.4,243.9 1339.8,229 1299.3,222.04 1254.9,208.3 1222.1,196.99",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"macromolecular machine to biological process association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1516.8,221.5",
-		pos="e,1351.5,192.18 1628.2,252.39 1576.3,247.22 1520.6,239.76 1469.8,229 1432.3,221.07 1391.1,207.04 1361.2,195.85",
+		lp="1531.8,221.5",
+		pos="e,1352.6,191.7 1792,260.58 1694.5,255.93 1584.2,246.72 1484.8,229 1442.4,221.43 1395.5,206.69 1362.4,195.16",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=2.1665];
 	"macromolecular machine to biological process association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1651.8,221.5",
-		pos="e,1505.7,193.75 1715.3,248.5 1683.6,243.27 1649.2,236.74 1617.8,229 1583,220.41 1544.6,207.67 1515.3,197.2",
+		lp="1681.8,221.5",
+		pos="e,1509.4,193.2 1848,253.49 1783.3,248.28 1712.4,240.53 1647.8,229 1603.8,221.14 1555,207.36 1519.2,196.25",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -87,8 +87,9 @@ digraph {
 		width=1.2999];
 	"macromolecular machine to biological process association" -> negated	[color=blue,
 		label=negated,
-		lp="1752.8,221.5",
-		pos="e,1638.5,192.48 1775.6,247.31 1758.9,241.8 1740.5,235.42 1723.8,229 1698.1,219.12 1669.8,206.72 1647.9,196.74",
+		lp="1803.8,221.5",
+		pos="e,1645,189.93 1907.8,250.05 1864.5,244.84 1817.6,237.94 1774.8,229 1724.8,218.56 1713.6,210.87 1664.8,196 1661.5,194.99 1658.1,193.95 \
+1654.6,192.9",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -97,8 +98,8 @@ digraph {
 		width=2.1304];
 	"macromolecular machine to biological process association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1828.3,221.5",
-		pos="e,1766.3,195.89 1813,246.8 1801.6,234.39 1786.1,217.46 1773.4,203.62",
+		lp="1912.3,221.5",
+		pos="e,1784.7,194.24 1961.7,248.19 1934.5,243.03 1905.3,236.63 1878.8,229 1849.9,220.71 1818.5,208.5 1794.1,198.21",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -107,8 +108,8 @@ digraph {
 		width=1.7332];
 	"macromolecular machine to biological process association" -> publications	[color=blue,
 		label=publications,
-		lp="1923.8,221.5",
-		pos="e,1894.6,195.62 1847.6,246.96 1853.6,241.37 1860.1,235.05 1865.8,229 1873.4,220.96 1881.3,211.79 1888.1,203.52",
+		lp="2015.8,221.5",
+		pos="e,1925.8,195.45 2011.5,247.2 1998.2,242.09 1984.1,235.97 1971.8,229 1958.3,221.42 1944.7,211.19 1933.5,201.95",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -117,8 +118,8 @@ digraph {
 		width=2.0943];
 	"macromolecular machine to biological process association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2050.3,221.5",
-		pos="e,2038.5,195.08 1910.8,247.76 1931.1,242.71 1952.5,236.47 1971.8,229 1991.7,221.31 2012.7,210.17 2029.5,200.36",
+		lp="2110.3,221.5",
+		pos="e,2063.8,196.18 2063.8,246.8 2063.8,235.16 2063.8,219.55 2063.8,206.24",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -127,8 +128,8 @@ digraph {
 		width=3.015];
 	"macromolecular machine to biological process association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2221.3,221.5",
-		pos="e,2221.8,194.5 1975.7,249.64 2016.4,244.42 2060.5,237.63 2100.8,229 2138.6,220.9 2180.2,208.25 2212.2,197.7",
+		lp="2258.3,221.5",
+		pos="e,2233.5,195.37 2113.5,247.12 2128.8,241.65 2145.6,235.34 2160.8,229 2182.1,220.11 2205.3,209.19 2224.5,199.83",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -137,8 +138,8 @@ digraph {
 		width=3.015];
 	"macromolecular machine to biological process association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2461.8,221.5",
-		pos="e,2448.3,193.85 2025.1,252.16 2126.7,245.42 2239.7,236.79 2289.8,229 2340.4,221.13 2396.8,207.5 2438.6,196.45",
+		lp="2480.8,221.5",
+		pos="e,2454.4,194.37 2203,249.37 2243.1,244.1 2286.9,237.34 2326.8,229 2366.7,220.66 2410.8,207.94 2444.7,197.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -147,9 +148,8 @@ digraph {
 		width=3.015];
 	"macromolecular machine to biological process association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2731.3,221.5",
-		pos="e,2692.2,194.58 2023.9,252.04 2055.3,250.26 2087.4,248.51 2117.8,247 2314.6,237.21 2366.2,260.29 2560.8,229 2602.4,222.31 2648.1,\
-209.03 2682.4,197.83",
+		lp="2743.3,221.5",
+		pos="e,2695.8,194.8 2257.4,251.96 2397,243.1 2563.6,232.09 2579.8,229 2616.2,222.03 2656,209.19 2686.3,198.27",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -158,74 +158,107 @@ digraph {
 		width=1.5346];
 	"macromolecular machine to biological process association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2908.8,221.5",
-		pos="e,2899.6,195.19 2020,251.84 2052.6,250.02 2086.2,248.32 2117.8,247 2198.2,243.64 2765,253.04 2841.8,229 2859.9,223.33 2877.7,211.98 \
-2891.6,201.53",
+		lp="2916.8,221.5",
+		pos="e,2902.7,195.34 2257.7,251.98 2289.5,250.19 2322,248.46 2352.8,247 2408.4,244.36 2801.5,248.08 2853.8,229 2869.3,223.35 2884,212.42 \
+2895.4,202.22",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3029.8,178",
+		width=1.0652];
+	"macromolecular machine to biological process association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="3042.8,221.5",
+		pos="e,3013.1,194.43 2256.1,251.91 2288.4,250.1 2321.5,248.39 2352.8,247 2419.8,244.03 2892,249.58 2955.8,229 2973.9,223.17 2991.6,211.46 \
+3005.2,200.84",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="3143.8,178",
+		width=1.5887];
+	"macromolecular machine to biological process association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="3184.3,221.5",
+		pos="e,3134.9,196.25 2255,251.82 2287.6,250 2321.2,248.31 2352.8,247 2394.4,245.28 3065.3,247.28 3102.8,229 3113.6,223.72 3122.5,214.1 \
+3129.3,204.69",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3275.8,178",
+		width=1.0652];
+	"macromolecular machine to biological process association" -> "original object"	[color=blue,
+		label="original object",
+		lp="3316.3,221.5",
+		pos="e,3272.5,196 2253.8,251.77 2286.8,249.95 2320.8,248.26 2352.8,247 2377.7,246.02 3230.8,242.51 3251.8,229 3260.1,223.64 3265.6,214.53 \
+3269.2,205.53",
 		style=solid];
 	type	[height=0.5,
-		pos="3021.8,178",
+		pos="3363.8,178",
 		width=0.86659];
 	"macromolecular machine to biological process association" -> type	[color=blue,
 		label=type,
-		lp="2994.8,221.5",
-		pos="e,3005.9,193.75 2019.2,251.8 2052,249.98 2085.9,248.28 2117.8,247 2163.9,245.15 2903.8,242.98 2947.8,229 2966.3,223.12 2984.3,211.06 \
-2998,200.25",
+		lp="3393.8,221.5",
+		pos="e,3372.7,195.56 2253.4,251.73 2286.5,249.91 2320.6,248.23 2352.8,247 2381.1,245.92 3351.9,249.19 3371.8,229 3377.9,222.78 3378.1,\
+213.87 3376,205.3",
 		style=solid];
 	category	[height=0.5,
-		pos="3122.8,178",
+		pos="3464.8,178",
 		width=1.4263];
 	"macromolecular machine to biological process association" -> category	[color=blue,
 		label=category,
-		lp="3090.3,221.5",
-		pos="e,3098.1,194.03 2019.2,251.75 2052,249.94 2085.9,248.26 2117.8,247 2217.4,243.07 2917.7,251.42 3014.8,229 3041,222.96 3068.4,210.14 \
-3089.1,199",
+		lp="3468.3,221.5",
+		pos="e,3453.1,195.87 2253.4,251.71 2286.5,249.89 2320.6,248.22 2352.8,247 2411.7,244.77 3359.4,251.75 3413.8,229 3426.6,223.64 3438,213.39 \
+3446.7,203.56",
 		style=solid];
 	subject	[height=0.5,
-		pos="3236.8,178",
+		pos="3578.8,178",
 		width=1.2277];
 	"macromolecular machine to biological process association" -> subject	[color=blue,
 		label=subject,
-		lp="3196.8,221.5",
-		pos="e,3212.7,193.33 2018.4,251.74 2051.5,249.91 2085.6,248.23 2117.8,247 2229.7,242.71 3016.5,253.5 3125.8,229 3153.3,222.84 3182.2,\
-209.54 3203.7,198.21",
+		lp="3561.8,221.5",
+		pos="e,3561.5,194.76 2253,251.7 2286.2,249.87 2320.5,248.2 2352.8,247 2416.7,244.62 3442.7,248.01 3503.8,229 3522,223.34 3539.8,211.75 \
+3553.5,201.16",
 		style=solid];
 	object	[height=0.5,
-		pos="3279.8,91",
+		pos="3621.8,91",
 		width=1.0832];
 	"macromolecular machine to biological process association" -> object	[color=blue,
 		label=object,
-		lp="3329.8,178",
-		pos="e,3293.2,108.09 2018,251.71 2051.2,249.88 2085.5,248.21 2117.8,247 2179.4,244.69 3167.1,244.21 3226.8,229 3257.4,221.2 3270.4,220.93 \
-3289.8,196 3309,171.39 3311.7,156.9 3302.8,127 3301.8,123.55 3300.3,120.13 3298.5,116.85",
+		lp="3664.8,178",
+		pos="e,3635.2,108.09 2252.6,251.69 2286,249.86 2320.4,248.19 2352.8,247 2421.6,244.48 3527.2,252.75 3591.8,229 3634.3,213.38 3639.5,186.96 \
+3644.8,142 3645.6,135.38 3646.7,133.39 3644.8,127 3643.8,123.55 3642.3,120.13 3640.5,116.85",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2164.8,265",
+		pos="2399.8,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2295.8,265",
+		pos="2530.8,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3274.8,134.5",
-		pos="e,3261.9,107.23 3237.9,159.55 3239.1,149.57 3241.6,137.07 3246.8,127 3249,122.68 3251.9,118.52 3255.1,114.66"];
+		lp="3616.8,134.5",
+		pos="e,3603.9,107.23 3579.9,159.55 3581.1,149.57 3583.6,137.07 3588.8,127 3591,122.68 3593.9,118.52 3597.1,114.66"];
 	relation	[height=0.5,
-		pos="3224.8,18",
+		pos="3566.8,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3226.1,36.188 3235.5,159.79 3233.4,132.48 3229.3,78.994 3226.9,46.38",
+	subject -> relation	[pos="e,3568.1,36.188 3577.5,159.79 3575.4,132.48 3571.3,78.994 3568.9,46.38",
 		style=dotted];
 	"functional association_subject"	[color=blue,
 		height=0.5,
 		label="macromolecular machine mixin",
-		pos="2544.8,265",
+		pos="2779.8,265",
 		width=4.3329];
-	object -> relation	[pos="e,3237.6,35.54 3267.3,73.889 3260.4,64.939 3251.6,53.617 3243.8,43.584",
+	object -> relation	[pos="e,3579.6,35.54 3609.3,73.889 3602.4,64.939 3593.6,53.617 3585.8,43.584",
 		style=dotted];
 	"macromolecular machine to biological process association_object"	[color=blue,
 		height=0.5,
 		label="biological process",
-		pos="2812.8,265",
+		pos="3047.8,265",
 		width=2.5998];
 }

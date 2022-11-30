@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2495.9,123"];
+	graph [bb="0,0,2144.9,123"];
 	node [label="\N"];
 	"pathological process"	[height=0.5,
 		label="pathological process",
@@ -123,36 +123,36 @@ digraph {
 		style=solid];
 	"has input"	[color=blue,
 		height=0.5,
-		label="biological process or activity",
-		pos="1870.6,18",
-		width=3.9899];
+		label=occurrent,
+		pos="1782.6,18",
+		width=1.5526];
 	"pathological process" -> "has input"	[color=blue,
 		label="has input",
-		lp="1723.1,61.5",
-		pos="e,1801.2,33.76 1188.4,92.015 1202.1,90.101 1216.2,88.32 1229.6,87 1388.1,71.333 1429.3,86.894 1587.6,69 1656.8,61.176 1734.7,47.014 \
-1791.2,35.755",
+		lp="1692.1,61.5",
+		pos="e,1744.2,31.309 1188.4,92.015 1202.1,90.101 1216.2,88.32 1229.6,87 1388.1,71.333 1430.1,92.715 1587.6,69 1638.5,61.342 1695.3,45.962 \
+1734.4,34.27",
 		style=solid];
 	"has output"	[color=blue,
 		height=0.5,
-		label="biological process or activity",
-		pos="2175.6,18",
-		width=3.9899];
+		label=occurrent,
+		pos="1912.6,18",
+		width=1.5526];
 	"pathological process" -> "has output"	[color=blue,
 		label="has output",
-		lp="1948.1,61.5",
-		pos="e,2085.5,32.116 1187.8,91.921 1201.6,89.992 1216,88.229 1229.6,87 1464.8,65.7 1525.2,87.14 1760.6,69 1868.5,60.683 1991.6,45.08 \
-2075.5,33.506",
+		lp="1835.1,61.5",
+		pos="e,1876,31.695 1187.8,91.944 1201.6,90.012 1216,88.243 1229.6,87 1451,66.71 1509.8,102.53 1729.6,69 1776.9,61.783 1829.5,46.645 1866.1,\
+34.906",
 		style=solid];
 	"enabled by"	[color=blue,
 		height=0.5,
 		label="physical entity",
-		pos="2416.6,18",
+		pos="2065.6,18",
 		width=2.2026];
 	"pathological process" -> "enabled by"	[color=blue,
 		label="enabled by",
-		lp="2228.1,61.5",
-		pos="e,2359.9,30.756 1187.4,91.851 1201.4,89.915 1215.9,88.168 1229.6,87 1566.7,58.208 1652.9,89.451 1990.6,69 2141.3,59.876 2179.2,57.671 \
-2328.6,36 2335.4,35.009 2342.5,33.852 2349.6,32.615",
+		lp="1991.1,61.5",
+		pos="e,2023.2,33.289 1187.4,91.896 1201.4,89.956 1215.9,88.196 1229.6,87 1516.6,61.889 1592.5,110.3 1877.6,69 1924.4,62.222 1976.2,47.905 \
+2013.6,36.322",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

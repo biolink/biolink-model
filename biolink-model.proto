@@ -60,6 +60,9 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
@@ -82,6 +85,9 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
@@ -132,6 +138,9 @@ message Association
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
  }
@@ -163,8 +172,8 @@ message Behavior
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
@@ -184,6 +193,9 @@ message BehaviorToBehavioralFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   behavior subject = 0
@@ -192,6 +204,10 @@ message BehaviorToBehavioralFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A behavioral exposure is a factor relating to behavior impacting an individual.
 message BehavioralExposure
@@ -237,8 +253,8 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
@@ -254,8 +270,8 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 message BiologicalSex
@@ -369,12 +385,19 @@ message CaseToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 message Cell
  {
@@ -419,6 +442,9 @@ message CellLineAsAModelOfDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   cellLine subject = 0
@@ -444,6 +470,9 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -491,6 +520,9 @@ message ChemicalAffectsGeneAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -545,6 +577,9 @@ message ChemicalEntityAssessesNamedThingAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
@@ -567,6 +602,9 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -607,6 +645,9 @@ message ChemicalGeneInteractionAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -661,6 +702,9 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -684,6 +728,9 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -723,6 +770,9 @@ message ChemicalToChemicalAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
@@ -750,6 +800,9 @@ message ChemicalToChemicalDerivationAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
@@ -775,6 +828,9 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature object = 0
@@ -796,6 +852,9 @@ message ChemicalToPathwayAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
@@ -1071,6 +1130,9 @@ message ContributorAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   informationContentEntity subject = 0
@@ -1252,6 +1314,9 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -1275,6 +1340,9 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   anatomicalEntity object = 0
@@ -1298,6 +1366,9 @@ message DiseaseToExposureEventAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
  }
@@ -1318,6 +1389,9 @@ message DiseaseToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   disease subject = 0
@@ -1326,6 +1400,10 @@ message DiseaseToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 message Drug
@@ -1384,6 +1462,9 @@ message DrugToGeneAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct object = 0
@@ -1420,6 +1501,9 @@ message DruggableGeneToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   disease object = 0
@@ -1448,6 +1532,9 @@ message EntityToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
@@ -1470,6 +1557,9 @@ message EntityToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
@@ -1600,6 +1690,9 @@ message ExonToTranscriptRelationship
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   exon subject = 0
@@ -1624,6 +1717,9 @@ message ExposureEventToOutcomeAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -1647,6 +1743,9 @@ message ExposureEventToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   exposureEvent subject = 0
@@ -1654,6 +1753,10 @@ message ExposureEventToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // A substance consumed by a living organism as a source of nutrition
 message Food
@@ -1711,6 +1814,9 @@ message FunctionalAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -1749,6 +1855,9 @@ message GeneAsAModelOfDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   disease object = 0
@@ -1788,6 +1897,9 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   disease object = 0
@@ -1813,6 +1925,9 @@ message GeneToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -1837,6 +1952,9 @@ message GeneToExpressionSiteAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   lifeStage stageQualifier = 0
@@ -1861,6 +1979,9 @@ message GeneToGeneCoexpressionAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -1887,6 +2008,9 @@ message GeneToGeneFamilyAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -1909,6 +2033,9 @@ message GeneToGeneHomologyAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -1931,6 +2058,9 @@ message GeneToGeneProductRelationship
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -1953,6 +2083,9 @@ message GeneToGoTermAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -1975,6 +2108,9 @@ message GeneToPathwayAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -1996,6 +2132,9 @@ message GeneToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -2004,6 +2143,10 @@ message GeneToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance
@@ -2070,6 +2213,9 @@ message GenomicSequenceLocalization
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   integer startInterbaseCoordinate = 0
@@ -2112,6 +2258,9 @@ message GenotypeAsAModelOfDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2136,6 +2285,9 @@ message GenotypeToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -2161,6 +2313,9 @@ message GenotypeToGeneAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2183,6 +2338,9 @@ message GenotypeToGenotypePartAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2206,6 +2364,9 @@ message GenotypeToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2214,6 +2375,10 @@ message GenotypeToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
@@ -2231,6 +2396,9 @@ message GenotypeToVariantAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2371,6 +2539,9 @@ message InformationContentEntityToNamedThingAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -2439,6 +2610,9 @@ message MacromolecularMachineToBiologicalProcessAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -2461,6 +2635,9 @@ message MacromolecularMachineToCellularComponentAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -2483,6 +2660,9 @@ message MacromolecularMachineToMolecularActivityAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -2517,6 +2697,9 @@ message MaterialSampleDerivationAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   materialSample subject = 0
@@ -2542,6 +2725,9 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
  }
@@ -2600,6 +2786,9 @@ message MolecularActivityToChemicalEntityAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2622,6 +2811,9 @@ message MolecularActivityToMolecularActivityAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2643,6 +2835,9 @@ message MolecularActivityToPathwayAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2720,6 +2915,9 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2879,6 +3077,9 @@ message OrganismTaxonToOrganismTaxonInteraction
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   string associatedEnvironmentalContext = 0
@@ -2902,6 +3103,9 @@ message OrganismTaxonToOrganismTaxonSpecialization
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
@@ -2924,6 +3128,9 @@ message OrganismToOrganismAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   individualOrganism subject = 0
@@ -2946,6 +3153,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   organismalEntity subject = 0
@@ -2969,6 +3179,9 @@ message PairwiseGeneToGeneInteraction
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -2990,6 +3203,9 @@ message PairwiseMolecularInteraction
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   ontologyClass interactingMoleculesCategory = 0
@@ -3042,8 +3258,8 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -3075,8 +3291,8 @@ message Pathway
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -3163,8 +3379,8 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  biologicalProcessOrActivity hasInput = 0
- repeated  biologicalProcessOrActivity hasOutput = 0
+ repeated  occurrent hasInput = 0
+ repeated  occurrent hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Any entity or process that exists at the level of the whole planet
@@ -3224,6 +3440,9 @@ message PopulationToPopulationAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms subject = 0
@@ -3383,6 +3602,9 @@ message ReactionToCatalystAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   integer stoichiometry = 0
@@ -3407,6 +3629,9 @@ message ReactionToParticipantAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
@@ -3514,6 +3739,9 @@ message SequenceAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
  }
@@ -3534,6 +3762,9 @@ message SequenceFeatureRelationship
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   nucleicAcidEntity subject = 0
@@ -3750,6 +3981,9 @@ message TaxonToTaxonAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
@@ -3815,6 +4049,9 @@ message TranscriptToGeneRelationship
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   transcript subject = 0
@@ -3852,6 +4089,9 @@ message VariantAsAModelOfDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -3876,6 +4116,9 @@ message VariantToDiseaseAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -3902,6 +4145,9 @@ message VariantToGeneAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   gene object = 0
@@ -3924,6 +4170,9 @@ message VariantToGeneExpressionAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   gene object = 0
@@ -3950,6 +4199,9 @@ message VariantToPhenotypicFeatureAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0
@@ -3957,6 +4209,10 @@ message VariantToPhenotypicFeatureAssociation
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
   biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
@@ -3975,6 +4231,9 @@ message VariantToPopulationAssociation
   informationResource primaryKnowledgeSource = 0
  repeated  informationResource aggregatorKnowledgeSource = 0
   timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0

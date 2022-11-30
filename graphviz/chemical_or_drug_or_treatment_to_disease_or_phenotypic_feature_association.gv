@@ -1,30 +1,30 @@
 digraph {
-	graph [bb="0,0,3980,283"];
+	graph [bb="0,0,4322,283"];
 	node [label="\N"];
 	"chemical or drug or treatment to disease or phenotypic feature association"	[height=0.5,
 		label="chemical or drug or treatment to disease or phenotypic feature association",
-		pos="2061.4,265",
+		pos="2289.4,265",
 		width=9.9838];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> association	[label=is_a,
-		lp="736.39,221.5",
-		pos="e,106.71,190.75 1729.4,258.08 1458.4,252.59 1065.5,243.11 722.39,229 460.87,218.25 393.43,233.55 134.39,196 128.61,195.16 122.61,\
-194.08 116.65,192.88"];
+		lp="727.39,221.5",
+		pos="e,106.71,190.75 1945,259.79 1625.6,255.07 1137.3,245.78 713.39,229 455.85,218.8 389.46,233.09 134.39,196 128.61,195.16 122.61,194.08 \
+116.66,192.88"];
 	"chemical to entity association mixin"	[height=0.5,
 		pos="320.39,178",
 		width=4.9287];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "chemical to entity association mixin"	[label=uses,
 		lp="1033.9,221.5",
-		pos="e,445.34,190.81 1749.2,256.07 1541.7,250.18 1263.2,241.07 1017.4,229 790.53,217.86 733.85,213.62 507.39,196 490.62,194.69 473,193.22 \
+		pos="e,445.34,190.81 1956.2,258.21 1699.5,252.93 1335.9,243.68 1017.4,229 790.49,218.54 733.85,213.62 507.39,196 490.62,194.69 473,193.22 \
 455.57,191.71"];
 	"entity to disease or phenotypic feature association mixin"	[height=0.5,
 		pos="790.39,178",
 		width=7.6188];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "entity to disease or phenotypic feature association mixin"	[label=uses,
-		lp="1217.9,221.5",
-		pos="e,898.75,194.59 1739.2,257.02 1577.5,251.96 1378.9,243.39 1201.4,229 1102.5,220.99 990.83,207.08 908.85,195.97"];
+		lp="1216.9,221.5",
+		pos="e,896.75,194.61 1940.1,260.69 1726.3,256.7 1447.2,247.98 1200.4,229 1101,221.36 988.75,207.28 906.84,196.01"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -32,9 +32,9 @@ digraph {
 		width=1.0652];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> id	[color=blue,
 		label=id,
-		lp="1336.4,221.5",
-		pos="e,1150.4,189.98 1723.4,258.82 1599.1,254.03 1457.5,245.18 1329.4,229 1257.4,219.91 1239.3,215.5 1169.4,196 1166.3,195.13 1163.1,\
-194.17 1159.9,193.15",
+		lp="1333.4,221.5",
+		pos="e,1150.4,189.97 1958.2,257.98 1728.9,252.66 1444.6,243.46 1326.4,229 1255.6,220.34 1238,215.28 1169.4,196 1166.3,195.13 1163.1,194.16 \
+1159.9,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -44,7 +44,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> iri	[color=blue,
 		label=iri,
 		lp="1437.4,221.5",
-		pos="e,1255.3,190.12 1747.1,256.25 1645.4,251.17 1532.3,242.79 1429.4,229 1360,219.7 1343,214.05 1275.4,196 1272,195.1 1268.6,194.12 \
+		pos="e,1255.3,190.12 1970.5,256.67 1770.1,250.97 1530.9,241.85 1429.4,229 1360,220.21 1343,214.05 1275.4,196 1272,195.1 1268.6,194.12 \
 1265.1,193.09",
 		style=solid];
 	name	[color=blue,
@@ -55,7 +55,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> name	[color=blue,
 		label=name,
 		lp="1530.4,221.5",
-		pos="e,1377.1,192.11 1747.1,256.23 1669.3,250.96 1586.5,242.5 1510.4,229 1467.6,221.41 1420.3,206.86 1386.6,195.4",
+		pos="e,1376.7,192.2 1964.5,257.27 1791,252.11 1595.9,243.35 1510.4,229 1467.4,221.79 1419.9,207.12 1386.3,195.53",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -65,7 +65,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> description	[color=blue,
 		label=description,
 		lp="1631.9,221.5",
-		pos="e,1516.6,195.07 1794.1,252.94 1711,247.57 1630.8,239.86 1591.4,229 1568.2,222.62 1544.1,210.72 1525.3,200.13",
+		pos="e,1516.1,195.02 1944.6,259.84 1803.7,255.41 1658.2,246.55 1591.4,229 1568,222.86 1543.7,210.85 1524.9,200.14",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -75,7 +75,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
 		lp="1748.4,221.5",
-		pos="e,1652.1,195.25 1828.7,251.28 1775.1,246.09 1726.4,238.89 1701.4,229 1686,222.92 1671.2,212.06 1659.6,202.01",
+		pos="e,1651.8,195.22 2000,254.3 1866.4,248.43 1730.7,239.95 1701.4,229 1685.8,223.17 1670.9,212.22 1659.3,202.06",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -85,7 +85,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> subject	[color=blue,
 		label=subject,
 		lp="1842.4,221.5",
-		pos="e,1785.6,196.23 1893.4,249.06 1860.3,244.01 1831.2,237.44 1816.4,229 1806.3,223.23 1797.8,213.83 1791.2,204.73",
+		pos="e,1785.1,196.03 2020.9,253.02 1925.3,247.39 1836.3,239.48 1816.4,229 1806,223.5 1797.3,213.97 1790.7,204.7",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -95,7 +95,7 @@ digraph {
 	"chemical or drug or treatment to disease or phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="1913.4,178",
-		pos="e,1872.4,109.15 1973.8,247.53 1943.4,237.53 1911.9,221.54 1891.4,196 1874.1,174.44 1871.3,142.11 1871.9,119.23",
+		pos="e,1871.7,109.02 2080.8,250.31 1999.5,240.6 1919.2,224.06 1891.4,196 1871.6,176.04 1869.5,142.62 1870.9,119.07",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -104,8 +104,8 @@ digraph {
 		width=1.2999];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="2060.4,221.5",
-		pos="e,2004.8,195.31 2047.2,246.8 2036.9,234.23 2022.7,217.01 2011.2,203.08",
+		lp="2159.4,221.5",
+		pos="e,2022.5,191.48 2204.7,247.48 2180.5,242.19 2154.3,235.9 2130.4,229 2096.8,219.31 2059.6,205.77 2032.1,195.22",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -114,8 +114,8 @@ digraph {
 		width=2.1304];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2139.9,221.5",
-		pos="e,2119.7,195.93 2077.6,246.79 2082.8,241.2 2088.4,234.91 2093.4,229 2100.1,221.01 2107.3,212.07 2113.5,203.97",
+		lp="2251.9,221.5",
+		pos="e,2158.9,195.02 2253.8,247.03 2242.4,241.45 2229.8,235.11 2218.4,229 2201.5,219.92 2183,209.3 2167.6,200.19",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -124,8 +124,8 @@ digraph {
 		width=1.7332];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2256.4,221.5",
-		pos="e,2258.9,193.86 2122.4,247.18 2140.3,241.82 2159.8,235.57 2177.4,229 2201.8,219.91 2228.4,208.1 2249.6,198.24",
+		lp="2333.4,221.5",
+		pos="e,2289.4,196.18 2289.4,246.8 2289.4,235.16 2289.4,219.55 2289.4,206.24",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -134,8 +134,8 @@ digraph {
 		width=2.0943];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2398.9,221.5",
-		pos="e,2409.5,193.96 2203,248.41 2236.5,243.41 2271.9,237.02 2304.4,229 2337,220.96 2372.5,208.31 2399.8,197.75",
+		lp="2450.9,221.5",
+		pos="e,2427.1,195.69 2342.2,247.01 2355.4,241.95 2369.2,235.88 2381.4,229 2394.7,221.48 2408.3,211.34 2419.5,202.15",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -144,8 +144,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2585.9,221.5",
-		pos="e,2597,194.07 2277.4,250.58 2333.6,245.44 2394,238.44 2449.4,229 2496.1,221.05 2547.9,207.79 2586.9,196.92",
+		lp="2614.9,221.5",
+		pos="e,2607.3,194.73 2408.1,247.97 2438.7,242.86 2471.5,236.54 2501.4,229 2534,220.77 2569.8,208.57 2597.8,198.28",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -154,8 +154,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2832.4,221.5",
-		pos="e,2827.5,193.57 2322.4,252.61 2450.8,246.19 2591.2,237.73 2654.4,229 2710.1,221.29 2772.4,207.24 2817.8,196",
+		lp="2850.4,221.5",
+		pos="e,2832.1,193.96 2508.5,250.71 2565.6,245.56 2627,238.52 2683.4,229 2730.7,221.01 2783.2,207.6 2822.5,196.68",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -164,9 +164,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3105.9,221.5",
-		pos="e,3071.8,194.38 2312.5,252.09 2351.9,250.32 2392.3,248.56 2430.4,247 2541.7,242.44 2821.2,245.57 2931.4,229 2976,222.3 3025.2,208.78 \
-3061.8,197.5",
+		lp="3116.9,221.5",
+		pos="e,3074.9,194.69 2540.2,252.08 2718.1,243.39 2928.8,232.56 2949.4,229 2988.9,222.17 3032.3,209.11 3065.1,198.05",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -175,47 +174,80 @@ digraph {
 		width=1.5346];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3285.4,221.5",
-		pos="e,3279.7,194.97 2307.5,251.87 2348.5,250.07 2390.7,248.37 2430.4,247 2517.7,243.99 3132.5,253.35 3216.4,229 3236.1,223.28 3255.9,\
-211.65 3271.2,201.04",
+		lp="3292.4,221.5",
+		pos="e,3282.3,195.14 2539,252.01 2578.9,250.24 2619.8,248.5 2658.4,247 2721.6,244.54 3167.3,248.86 3227.4,229 3244.6,223.32 3261.3,212.12 \
+3274.4,201.76",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3411.4,178",
+		width=1.0652];
+	"chemical or drug or treatment to disease or phenotypic feature association" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="3420.4,221.5",
+		pos="e,3393.7,193.97 2537,251.93 2577.5,250.15 2619.1,248.43 2658.4,247 2733.1,244.28 3259.8,250.58 3331.4,229 3351.1,223.07 3370.7,210.96 \
+3385.5,200.14",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="3525.4,178",
+		width=1.5887];
+	"chemical or drug or treatment to disease or phenotypic feature association" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="3564.9,221.5",
+		pos="e,3515.5,195.8 2535,251.86 2576.2,250.06 2618.5,248.36 2658.4,247 2704,245.45 3438.9,248.04 3480.4,229 3492.1,223.65 3502,213.69 \
+3509.5,204.06",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3657.4,178",
+		width=1.0652];
+	"chemical or drug or treatment to disease or phenotypic feature association" -> "original object"	[color=blue,
+		label="original object",
+		lp="3697.9,221.5",
+		pos="e,3653.7,196.03 2534,251.78 2575.5,249.98 2618.2,248.3 2658.4,247 2685.4,246.13 3609.5,243.44 3632.4,229 3640.8,223.68 3646.5,214.56 \
+3650.3,205.56",
 		style=solid];
 	type	[height=0.5,
-		pos="3403.4,178",
+		pos="3745.4,178",
 		width=0.86659];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3373.4,221.5",
-		pos="e,3386.9,193.29 2306.5,251.82 2347.8,250.02 2390.3,248.33 2430.4,247 2480,245.36 3276.8,243.31 3324.4,229 3344.3,223.02 3364,210.54 \
-3378.8,199.54",
+		lp="3775.4,221.5",
+		pos="e,3754.3,195.56 2533,251.76 2574.8,249.95 2617.9,248.27 2658.4,247 2688.8,246.05 3732.1,250.69 3753.4,229 3759.5,222.78 3759.7,213.88 \
+3757.6,205.3",
 		style=solid];
 	category	[height=0.5,
-		pos="3504.4,178",
+		pos="3846.4,178",
 		width=1.4263];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3469.9,221.5",
-		pos="e,3479.4,193.8 2306,251.79 2347.5,249.99 2390.2,248.3 2430.4,247 2537.4,243.54 3289,252.45 3393.4,229 3420.5,222.91 3449.1,209.88 \
-3470.4,198.64",
+		lp="3849.9,221.5",
+		pos="e,3834.7,195.88 2533,251.73 2574.8,249.93 2617.9,248.25 2658.4,247 2721.5,245.05 3737.1,253.35 3795.4,229 3808.2,223.65 3819.6,213.4 \
+3828.3,203.57",
 		style=solid];
 	"FDA adverse event level"	[color=blue,
 		height=0.5,
 		label=FDAIDAAdverseEventEnum,
-		pos="3713.4,178",
+		pos="4055.4,178",
 		width=3.8816];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> "FDA adverse event level"	[color=blue,
 		label="FDA adverse event level",
-		lp="3673.9,221.5",
-		pos="e,3661.8,194.73 2305.5,251.74 2347.2,249.94 2390,248.27 2430.4,247 2669.2,239.5 3268.4,259.1 3505.4,229 3555.4,222.65 3610.9,208.96 \
-3652,197.51",
+		lp="4039.9,221.5",
+		pos="e,4012.5,195.16 2532.5,251.72 2574.5,249.9 2617.7,248.24 2658.4,247 2794.7,242.86 3750.6,249.42 3885.4,229 3925.7,222.9 3969.8,209.73 \
+4003,198.44",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3925.4,178",
+		pos="4267.4,178",
 		width=1.5165];
 	"chemical or drug or treatment to disease or phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
-		lp="3861.4,221.5",
-		pos="e,3892.4,192.42 2304,251.7 2346.1,249.88 2389.5,248.22 2430.4,247 2578.7,242.59 3618.9,252.37 3765.4,229 3806.3,222.48 3851.1,207.76 \
-3882.9,195.97",
+		lp="4218.4,221.5",
+		pos="e,4237.7,193.26 2531.5,251.67 2573.8,249.86 2617.4,248.2 2658.4,247 2740.2,244.62 4050.9,243.83 4131.4,229 4165.2,222.77 4201.7,\
+208.93 4228.4,197.39",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1840.4,134.5",
@@ -230,16 +262,16 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2477.4,265",
+		pos="2705.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2608.4,265",
+		pos="2836.4,265",
 		width=2.0762];
 	"chemical or drug or treatment to disease or phenotypic feature association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2779.4,265",
+		pos="3007.4,265",
 		width=2.1665];
 }

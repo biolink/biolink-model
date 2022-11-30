@@ -75,6 +75,9 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -96,6 +99,9 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -118,6 +124,9 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -173,6 +182,9 @@ type Association
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
   }
@@ -205,8 +217,8 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -226,6 +238,9 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Behavior!
@@ -234,6 +249,10 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type BehavioralExposure implements ExposureEvent
@@ -297,8 +316,8 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -314,8 +333,8 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -436,12 +455,19 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Cell
@@ -489,6 +515,9 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: CellLine!
@@ -514,6 +543,9 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
@@ -567,6 +599,9 @@ type ChemicalAffectsGeneAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -622,6 +657,9 @@ type ChemicalEntityAssessesNamedThingAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: ChemicalEntity!
@@ -648,6 +686,9 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -697,6 +738,9 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -755,6 +799,9 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -778,6 +825,9 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -817,6 +867,9 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -837,6 +890,9 @@ type ChemicalToChemicalDerivationAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -862,6 +918,9 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
@@ -888,6 +947,9 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: ChemicalEntity!
@@ -1166,6 +1228,9 @@ type ContributorAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: InformationContentEntity!
@@ -1361,6 +1426,9 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -1384,6 +1452,9 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: AnatomicalEntity!
@@ -1412,6 +1483,9 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
   }
@@ -1432,6 +1506,9 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Disease!
@@ -1440,6 +1517,10 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
@@ -1503,6 +1584,9 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -1540,6 +1624,9 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: Disease!
@@ -1580,6 +1667,9 @@ type EntityToDiseaseAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1633,18 +1723,25 @@ type EntityToPhenotypicFeatureAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
   }
 
-interface EntityToPhenotypicFeatureAssociationMixin
+type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
     object: PhenotypicFeature!
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type EnvironmentalExposure implements ExposureEvent
@@ -1784,6 +1881,9 @@ type ExonToTranscriptRelationship
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Exon!
@@ -1814,6 +1914,9 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -1837,6 +1940,9 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: ExposureEvent!
@@ -1844,6 +1950,10 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type Food
@@ -1915,6 +2025,9 @@ type FunctionalAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -1954,6 +2067,9 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: Disease!
@@ -2007,6 +2123,9 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: Disease!
@@ -2052,6 +2171,9 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2081,6 +2203,9 @@ type GeneToExpressionSiteAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     stageQualifier: LifeStage
@@ -2106,6 +2231,9 @@ interface GeneToGeneAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2127,6 +2255,9 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2153,6 +2284,9 @@ type GeneToGeneFamilyAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -2175,6 +2309,9 @@ type GeneToGeneHomologyAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2197,6 +2334,9 @@ type GeneToGeneProductRelationship
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -2220,6 +2360,9 @@ type GeneToGoTermAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Gene!
@@ -2242,6 +2385,9 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2264,6 +2410,9 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2272,6 +2421,10 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type GeneticInheritance
@@ -2343,6 +2496,9 @@ type GenomicSequenceLocalization
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     startInterbaseCoordinate: Integer
@@ -2386,6 +2542,9 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2411,6 +2570,9 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -2441,6 +2603,9 @@ type GenotypeToGeneAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2463,6 +2628,9 @@ type GenotypeToGenotypePartAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2486,6 +2654,9 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2494,6 +2665,10 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type GenotypeToVariantAssociation
@@ -2511,6 +2686,9 @@ type GenotypeToVariantAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -2674,6 +2852,9 @@ type InformationContentEntityToNamedThingAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -2747,6 +2928,9 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2769,6 +2953,9 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2796,6 +2983,9 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2830,6 +3020,9 @@ type MaterialSampleDerivationAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MaterialSample!
@@ -2855,6 +3048,9 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
   }
@@ -2925,6 +3121,9 @@ type MolecularActivityToChemicalEntityAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MolecularActivity!
@@ -2947,6 +3146,9 @@ type MolecularActivityToMolecularActivityAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MolecularActivity!
@@ -2968,6 +3170,9 @@ type MolecularActivityToPathwayAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: MolecularActivity!
@@ -3050,6 +3255,9 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -3224,6 +3432,9 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3247,6 +3458,9 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3268,6 +3482,9 @@ type OrganismTaxonToOrganismTaxonInteraction
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     associatedEnvironmentalContext: String
@@ -3291,6 +3508,9 @@ type OrganismTaxonToOrganismTaxonSpecialization
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3314,6 +3534,9 @@ type OrganismToOrganismAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: IndividualOrganism!
@@ -3351,6 +3574,9 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: OrganismalEntity!
@@ -3378,6 +3604,9 @@ type PairwiseGeneToGeneInteraction
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -3399,6 +3628,9 @@ type PairwiseMolecularInteraction
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
@@ -3463,8 +3695,8 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3501,8 +3733,8 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3598,8 +3830,8 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [BiologicalProcessOrActivity]
-    hasOutput: [BiologicalProcessOrActivity]
+    hasInput: [Occurrent]
+    hasOutput: [Occurrent]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3659,6 +3891,9 @@ type PopulationToPopulationAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
@@ -3820,6 +4055,9 @@ type ReactionToCatalystAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     stoichiometry: Integer
@@ -3845,6 +4083,9 @@ type ReactionToParticipantAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: ChemicalEntity!
@@ -3961,6 +4202,9 @@ type SequenceAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
   }
@@ -3981,6 +4225,9 @@ type SequenceFeatureRelationship
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: NucleicAcidEntity!
@@ -4019,6 +4266,9 @@ interface SequenceVariantModulatesTreatmentAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4249,6 +4499,9 @@ type TaxonToTaxonAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -4319,6 +4572,9 @@ type TranscriptToGeneRelationship
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: Transcript!
@@ -4357,6 +4613,9 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     predicate: PredicateType!
@@ -4382,6 +4641,9 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: NamedThing!
@@ -4413,6 +4675,9 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: Gene!
@@ -4435,6 +4700,9 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     object: Gene!
@@ -4462,6 +4730,9 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4469,6 +4740,10 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, FrequencyQuantifier, FrequencyQualifierMixin
@@ -4487,6 +4762,9 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     primaryKnowledgeSource: InformationResource
     aggregatorKnowledgeSource: [InformationResource]
     timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
     type: String
     category: [CategoryType]
     subject: SequenceVariant!

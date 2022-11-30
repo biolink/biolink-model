@@ -791,6 +791,27 @@
                            },
                            {
                               "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/original_subject",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/original_predicate",
+                              "valueExpr": "https://w3id.org/linkml/Uriorcurie",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/original_object",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/type",
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
@@ -1113,6 +1134,34 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
                         "min": 0,
                         "max": 1
                      }
@@ -1475,14 +1524,14 @@
                            {
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/has_input",
-                              "valueExpr": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivity",
+                              "valueExpr": "https://w3id.org/biolink/vocab/Occurrent",
                               "min": 0,
                               "max": -1
                            },
                            {
                               "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/has_output",
-                              "valueExpr": "https://w3id.org/biolink/vocab/BiologicalProcessOrActivity",
+                              "valueExpr": "https://w3id.org/biolink/vocab/Occurrent",
                               "min": 0,
                               "max": -1
                            },
@@ -1875,6 +1924,34 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
                         "min": 0,
                         "max": 1
                      }
@@ -5297,6 +5374,34 @@
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
                         "min": 0,
                         "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
                      }
                   ]
                },
@@ -6066,6 +6171,18 @@
                         },
                         "min": 0
                      },
+                     "https://w3id.org/biolink/vocab/FrequencyQuantifier_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/FrequencyQuantifier"
+                           ]
+                        },
+                        "min": 0
+                     },
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
@@ -6078,6 +6195,34 @@
                         "predicate": "https://w3id.org/biolink/vocab/object",
                         "valueExpr": "https://w3id.org/biolink/vocab/PhenotypicFeature",
                         "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
                         "max": 1
                      }
                   ]
@@ -6705,6 +6850,34 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
                         "min": 0,
                         "max": 1
                      }
@@ -8249,6 +8422,34 @@
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
                         "min": 0,
                         "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
                      }
                   ]
                },
@@ -9155,6 +9356,34 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
                         "min": 0,
                         "max": 1
                      }
@@ -15908,6 +16137,34 @@
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/sex_qualifier",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_count",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_total",
+                        "valueExpr": "https://w3id.org/linkml/Integer",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_quotient",
+                        "valueExpr": "https://w3id.org/linkml/Double",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_percentage",
+                        "valueExpr": "https://w3id.org/linkml/Double",
                         "min": 0,
                         "max": 1
                      }

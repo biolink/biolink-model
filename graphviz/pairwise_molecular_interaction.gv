@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3028,283"];
+	graph [bb="0,0,3397,283"];
 	node [label="\N"];
 	"pairwise molecular interaction"	[height=0.5,
 		label="pairwise molecular interaction",
-		pos="1684,265",
+		pos="1983,265",
 		width=4.2427];
 	"pairwise gene to gene interaction"	[height=0.5,
 		pos="167.04,178",
 		width=4.6399];
 	"pairwise molecular interaction" -> "pairwise gene to gene interaction"	[label=is_a,
-		lp="507.04,221.5",
-		pos="e,246.08,193.91 1533.4,261.88 1259.6,257.65 690.42,246.97 493.04,229 412.35,221.66 321.28,207.16 255.94,195.65"];
+		lp="503.04,221.5",
+		pos="e,244.77,193.99 1831.1,262.96 1504.9,260.32 745.93,251.86 489.04,229 409.34,221.91 319.42,207.39 254.9,195.82"];
 	iri	[color=blue,
 		height=0.5,
 		label="iri type",
@@ -18,9 +18,9 @@ digraph {
 		width=1.2277];
 	"pairwise molecular interaction" -> iri	[color=blue,
 		label=iri,
-		lp="634.04,221.5",
-		pos="e,428.64,190.17 1533.6,261.83 1284.6,257.76 797.2,247.68 626.04,229 546.49,220.32 526.62,215.59 449.04,196 445.61,195.13 442.07,\
-194.17 438.54,193.15",
+		lp="623.04,221.5",
+		pos="e,428.94,190.2 1830.7,263.38 1525,261.59 846.36,254.76 615.04,229 540.28,220.67 521.86,214.85 449.04,196 445.66,195.13 442.18,194.16 \
+438.7,193.15",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -29,8 +29,8 @@ digraph {
 		width=1.5707];
 	"pairwise molecular interaction" -> name	[color=blue,
 		label=name,
-		lp="739.04,221.5",
-		pos="e,554.05,191.16 1532.8,262.17 1301.8,258.76 871.54,249.79 719.04,229 665.13,221.65 604.77,205.89 563.78,194.01",
+		lp="730.04,221.5",
+		pos="e,553.01,191.44 1830.3,264.06 1540.8,263.46 921.88,258.63 710.04,229 658.93,221.85 601.91,206.32 562.8,194.45",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -39,8 +39,8 @@ digraph {
 		width=2.0943];
 	"pairwise molecular interaction" -> description	[color=blue,
 		label=description,
-		lp="859.54,221.5",
-		pos="e,701.34,193.91 1532.3,262.84 1321.6,260.37 951.44,252.71 819.04,229 781.71,222.32 740.96,208.79 710.76,197.49",
+		lp="850.54,221.5",
+		pos="e,699.4,194.16 1832.2,262.04 1538,257.84 907.8,246.89 810.04,229 775.12,222.61 737.26,209.32 708.98,198.05",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -49,8 +49,8 @@ digraph {
 		width=1.4443];
 	"pairwise molecular interaction" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1004,221.5",
-		pos="e,841.17,192.45 1533.5,261.7 1353.6,258.08 1063.5,249.25 957.04,229 920.04,221.96 879.64,207.71 850.58,196.22",
+		lp="997.04,221.5",
+		pos="e,840.14,192.82 1830.3,264.59 1585,264.57 1114,260.26 950.04,229 915,222.32 876.99,208.28 849.43,196.77",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -59,8 +59,8 @@ digraph {
 		width=1.2999];
 	"pairwise molecular interaction" -> negated	[color=blue,
 		label=negated,
-		lp="1155,221.5",
-		pos="e,961.83,190.05 1534.4,261.21 1421.7,257.52 1263.5,248.93 1126,229 1072.1,221.18 1011.5,204.84 971.54,192.96",
+		lp="1154,221.5",
+		pos="e,961.62,190.28 1833.6,261.25 1625.1,256.85 1257.5,246.82 1125,229 1071.3,221.76 1011,205.31 971.27,193.25",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -69,8 +69,8 @@ digraph {
 		width=2.1304];
 	"pairwise molecular interaction" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1288.5,221.5",
-		pos="e,1111.4,192.97 1540.7,258.76 1457,254.09 1349.5,245.34 1255,229 1209.1,221.06 1158.1,207.06 1121,195.89",
+		lp="1287.5,221.5",
+		pos="e,1110.3,193.16 1834.6,260.63 1654.6,255.89 1361.8,245.88 1254,229 1207.9,221.78 1156.8,207.58 1119.9,196.15",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -79,8 +79,8 @@ digraph {
 		width=1.7332];
 	"pairwise molecular interaction" -> publications	[color=blue,
 		label=publications,
-		lp="1427,221.5",
-		pos="e,1261.5,192.74 1558.3,254.78 1504,249.41 1440,241.21 1383,229 1344.7,220.78 1302.4,207.15 1271.2,196.19",
+		lp="1426,221.5",
+		pos="e,1260.2,193.01 1836.9,259.68 1687.6,254.51 1466,244.56 1382,229 1343.3,221.83 1300.9,207.92 1269.9,196.59",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -89,8 +89,8 @@ digraph {
 		width=2.0943];
 	"pairwise molecular interaction" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1568.5,221.5",
-		pos="e,1418.3,193.69 1606.9,249.44 1579.9,243.78 1549.4,236.78 1522,229 1490.2,219.96 1455.2,207.54 1428,197.34",
+		lp="1573.5,221.5",
+		pos="e,1416.3,193.91 1832.3,261.99 1742.8,258.44 1627.5,249.72 1527,229 1492.3,221.84 1454.4,208.71 1426,197.71",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -99,8 +99,8 @@ digraph {
 		width=3.015];
 	"pairwise molecular interaction" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1699.5,221.5",
-		pos="e,1599.3,195.85 1659.1,247.23 1651.2,241.66 1642.6,235.28 1635,229 1625.3,220.96 1615.2,211.52 1606.6,203.02",
+		lp="1714.5,221.5",
+		pos="e,1600.2,195.93 1846,256.91 1770.5,251.58 1685.2,242.77 1650,229 1634.7,222.99 1619.7,212.44 1607.9,202.59",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -109,8 +109,8 @@ digraph {
 		width=3.015];
 	"pairwise molecular interaction" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1879,221.5",
-		pos="e,1802.7,195.85 1728.6,247.64 1740.5,242.43 1753.1,236.14 1764,229 1775.2,221.67 1786.3,211.98 1795.5,203.08",
+		lp="1881,221.5",
+		pos="e,1796.2,195.95 1858,254.6 1825.4,249.43 1796.4,241.41 1786,229 1779.4,221.14 1782.8,211.83 1789.4,203.39",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -119,8 +119,8 @@ digraph {
 		width=3.015];
 	"pairwise molecular interaction" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2106.5,221.5",
-		pos="e,2027.9,195.59 1792.1,252.26 1871.9,243.41 1968.1,232.25 1977,229 1977.4,228.88 1999.2,214.49 2019.4,201.18",
+		lp="2090.5,221.5",
+		pos="e,2005.7,194.35 1979.2,247 1977.9,236.7 1977.9,223.71 1984,214 1987.5,208.55 1992,203.91 1997.2,199.98",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -129,113 +129,144 @@ digraph {
 		width=1.5346];
 	"pairwise molecular interaction" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2261,221.5",
-		pos="e,2232.2,196.35 1790.3,252 1808.8,250.14 1828,248.39 1846,247 1886.7,243.87 2179.4,252.14 2213,229 2220.9,223.61 2225.9,214.77 2229.2,\
-206.01",
+		lp="2249,221.5",
+		pos="e,2226.5,196.13 2097.2,252.98 2138.6,247.38 2179.6,239.5 2197,229 2206.8,223.12 2214.9,213.7 2221.1,204.62",
+		style=solid];
+	"original subject"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2347,178",
+		width=1.0652];
+	"pairwise molecular interaction" -> "original subject"	[color=blue,
+		label="original subject",
+		lp="2368,221.5",
+		pos="e,2333.2,194.93 2091.7,252.27 2177.4,242.9 2283.4,231.01 2288,229 2302.2,222.88 2315.5,212.2 2325.9,202.28",
+		style=solid];
+	"original predicate"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="2461,178",
+		width=1.5887];
+	"pairwise molecular interaction" -> "original predicate"	[color=blue,
+		label="original predicate",
+		lp="2505.5,221.5",
+		pos="e,2453.6,196.03 2090.2,252.14 2108.5,250.29 2127.3,248.5 2145,247 2176.1,244.37 2397.8,244.1 2425,229 2434.9,223.56 2442.7,214.17 \
+2448.5,204.99",
+		style=solid];
+	"original object"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2593,178",
+		width=1.0652];
+	"pairwise molecular interaction" -> "original object"	[color=blue,
+		label="original object",
+		lp="2636.5,221.5",
+		pos="e,2590.9,196.32 2088.8,251.94 2107.5,250.08 2126.8,248.34 2145,247 2168.8,245.26 2553.6,242.75 2573,229 2580.7,223.58 2585.4,214.74 \
+2588.3,205.98",
 		style=solid];
 	type	[height=0.5,
-		pos="2339,178",
+		pos="2681,178",
 		width=0.86659];
 	"pairwise molecular interaction" -> type	[color=blue,
 		label=type,
-		lp="2334,221.5",
-		pos="e,2331,195.67 1789.4,251.94 1808.2,250.07 1827.7,248.32 1846,247 1896.4,243.36 2255.1,252.04 2300,229 2310.7,223.54 2319.3,213.7 \
-2325.7,204.18",
+		lp="2713,221.5",
+		pos="e,2691.3,195.46 2087.9,251.88 2106.9,250.01 2126.6,248.27 2145,247 2175.4,244.91 2670.9,250.85 2692,229 2698.2,222.6 2697.9,213.54 \
+2695.2,204.89",
 		style=solid];
 	category	[height=0.5,
-		pos="2440,178",
+		pos="2782,178",
 		width=1.4263];
 	"pairwise molecular interaction" -> category	[color=blue,
 		label=category,
-		lp="2420.5,221.5",
-		pos="e,2419.8,194.65 1789.4,251.88 1808.2,250.01 1827.7,248.29 1846,247 1958.7,239.1 2245.5,260.33 2354,229 2374.6,223.06 2395.4,211.14 \
-2411.4,200.43",
+		lp="2785.5,221.5",
+		pos="e,2770.9,195.79 2087.9,251.85 2106.9,249.97 2126.6,248.25 2145,247 2210.2,242.59 2673.2,255.24 2733,229 2745.4,223.59 2756.2,213.48 \
+2764.6,203.76",
 		style=solid];
 	"interacting molecules category"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="2586,178",
+		pos="2928,178",
 		width=2.1304];
 	"pairwise molecular interaction" -> "interacting molecules category"	[color=blue,
 		label="interacting molecules category",
-		lp="2599,221.5",
-		pos="e,2543.7,193.12 1788.9,251.83 1807.9,249.96 1827.6,248.24 1846,247 1981.3,237.92 2324.1,260.43 2456,229 2471.3,225.36 2473.5,219.98 \
-2488,214 2502.8,207.9 2519.1,201.84 2534.1,196.51",
+		lp="2975,221.5",
+		pos="e,2901.9,194.95 2087.5,251.83 2106.6,249.95 2126.4,248.22 2145,247 2220,242.08 2747.9,246.27 2821,229 2846.3,223.03 2872.7,210.74 \
+2893,199.84",
 		style=solid];
 	subject	[height=0.5,
-		pos="2725,178",
+		pos="3095,178",
 		width=1.2277];
 	"pairwise molecular interaction" -> subject	[color=blue,
 		label=subject,
-		lp="2747,221.5",
-		pos="e,2724.8,196.25 1788.1,251.78 1807.3,249.89 1827.3,248.18 1846,247 1870,245.5 2690.9,243.53 2710,229 2717.2,223.56 2721.1,214.83 \
-2723.1,206.17",
+		lp="3122,221.5",
+		pos="e,3097.3,196 2087.1,251.76 2106.3,249.87 2126.3,248.16 2145,247 2171.2,245.38 3067.3,246.17 3087,229 3093.5,223.34 3096.2,214.68 \
+3097.1,206.14",
 		style=solid];
 	id	[height=0.5,
-		pos="2814,178",
+		pos="3184,178",
 		width=0.75];
 	"pairwise molecular interaction" -> id	[color=blue,
 		label=id,
-		lp="2801,221.5",
-		pos="e,2806.7,195.73 1788.1,251.76 1807.3,249.87 1827.3,248.16 1846,247 1897.7,243.8 2731.1,252.73 2777,229 2787.4,223.67 2795.5,213.99 \
-2801.6,204.55",
+		lp="3175,221.5",
+		pos="e,3178.2,195.67 2087.1,251.74 2106.3,249.85 2126.3,248.15 2145,247 2173,245.29 3127.6,242.65 3152,229 3161.6,223.64 3168.8,214.09 \
+3173.8,204.76",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2914,178",
+		pos="3284,178",
 		width=1.5165];
 	"pairwise molecular interaction" -> predicate	[color=blue,
 		label=predicate,
-		lp="2887,221.5",
-		pos="e,2890.4,194.28 1788.1,251.75 1807.3,249.86 1827.3,248.16 1846,247 1953.2,240.39 2707.7,254.23 2812,229 2836.7,223.04 2862.3,210.45 \
-2881.7,199.39",
+		lp="3260,221.5",
+		pos="e,3261.1,194.53 2086.6,251.77 2106,249.87 2126.1,248.15 2145,247 2260.5,239.96 3073.8,257.01 3186,229 3209.6,223.12 3233.9,210.74 \
+3252.5,199.77",
 		style=solid];
 	object	[height=0.5,
-		pos="2792,91",
+		pos="3162,91",
 		width=1.0832];
 	"pairwise molecular interaction" -> object	[color=blue,
 		label=object,
-		lp="3006,178",
-		pos="e,2829.1,96.84 1787.6,251.76 1807,249.86 1827.1,248.15 1846,247 1905.9,243.37 2867.5,245.96 2925,229 2951.7,221.15 2964.6,220.26 \
-2978,196 3010.5,137.51 2904.3,109.76 2839.1,98.507",
+		lp="3375,178",
+		pos="e,3199.4,96.831 2086.6,251.74 2106,249.84 2126.1,248.14 2145,247 2209,243.15 3236.8,247.9 3298,229 3323.5,221.14 3335.4,219.45 3348,\
+196 3379.7,137.24 3274.4,109.66 3209.4,98.485",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1893,265",
+		pos="2192,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2024,265",
+		pos="2323,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2791,134.5",
-		pos="e,2779.4,108.05 2738,160.61 2747.9,147.95 2761.9,130.24 2773.1,115.98"];
+		lp="3161,134.5",
+		pos="e,3149.4,108.05 3108,160.61 3117.9,147.95 3131.9,130.24 3143.1,115.98"];
 	relation	[height=0.5,
-		pos="2737,18",
+		pos="3107,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2735.7,36.188 2726.3,159.79 2728.4,132.48 2732.5,78.994 2735,46.38",
+	subject -> relation	[pos="e,3105.7,36.188 3096.3,159.79 3098.4,132.48 3102.5,78.994 3105,46.38",
 		style=dotted];
 	"pairwise molecular interaction_subject"	[color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="2204,265",
+		pos="2503,265",
 		width=2.4192];
 	"pairwise molecular interaction_id"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2347,265",
+		pos="2646,265",
 		width=1.0652];
 	"pairwise molecular interaction_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2481,265",
+		pos="2780,265",
 		width=2.1665];
-	object -> relation	[pos="e,2749.8,35.54 2779.6,73.889 2772.6,64.939 2763.9,53.617 2756.1,43.584",
+	object -> relation	[pos="e,3119.8,35.54 3149.6,73.889 3142.6,64.939 3133.9,53.617 3126.1,43.584",
 		style=dotted];
 	"pairwise molecular interaction_object"	[color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="2664,265",
+		pos="2963,265",
 		width=2.4192];
 }
