@@ -21,7 +21,6 @@ class IDPrefixes:
         prefixmap = PrefixGenerator('../biolink-model.yaml')
         bpcc = BiolinkClassPrefixesCollection()
         for cls, clsdef in self.sv.all_classes().items():
-            print(cls)
             prefix_map = []
             if clsdef.id_prefixes and not clsdef.mixin:
                 bcpm = BiolinkClassPrefixMap()
@@ -33,7 +32,6 @@ class IDPrefixes:
                     prefix_map.append(p)
                 bcpm.prefix_map = prefix_map
                 bpcc.biolink_class_prefixes.append(bcpm)
-        print(bpcc)
         jd = JSONDumper()
         jd.dump(bpcc, to_file=OUT_JSON)
 
