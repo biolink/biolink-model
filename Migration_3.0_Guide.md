@@ -19,7 +19,7 @@ Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 
 ## For guidance in migrating existing predicates, to their fully qualified Association-based counterparts, please refer to: 
 
-- [Deprecated predicate to qualifier mappings](examples/biolink3_migration/predicate_mapping.yaml)
+- [Deprecated predicate to qualifier mappings](predicate_mapping.yaml)
 This is a mapping file that shows how deprecated predicates like "increases expression of" can be translated
 to their equivalent Association-based, qualifiier representation. 
 

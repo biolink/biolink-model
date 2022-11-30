@@ -92,7 +92,7 @@ prefixes:
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
-  metacyc.reaction: 'https://identifiers.org/metacyc.reaction:'
+  metacyc.reaction: 'http://identifiers.org/metacyc.reaction:'
   METANETX.REACTION: 'https://www.metanetx.org/equa_info/'
   MESH: 'http://id.nlm.nih.gov/mesh/'
   MI: 'http://purl.obolibrary.org/obo/MI_'
@@ -1290,13 +1290,13 @@ slots:
       qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified
       predicate model. Not to be used in knowledge graphs.
 
-  deprecated predicate mappings:
+  predicate mappings:
     description: >- 
       A collection of relationships that are not used in biolink, but have biolink patterns that can 
       be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate
       model in Biolink3.
     multivalued: true
-    range: deprecated predicate mapping
+    range: predicate mapping
     inlined_as_list: true
 
   exact matches:
@@ -3112,12 +3112,12 @@ slots:
     is_a: affects
     description: >-
       A relationship between an entity (e.g. a genotype,
-      genetic variation, chemical, or environmental exposure)
+      genetic variation, chemical, or environmental exposure, clinical intervention)
       and a condition (a phenotype or disease), where the
       presence of the entity reduces or eliminates some or
       all aspects of the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
-    domain: biological entity
+    domain: named thing
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -5382,15 +5382,15 @@ slots:
     range: string
 classes:
 
-  deprecated mapping collection:
+  mapping collection:
     description: >-
       A collection of deprecated mappings.
     abstract: true
     slots:
-      - deprecated predicate mappings
+      - predicate mappings
     tree_root: true
 
-  deprecated predicate mapping:
+  predicate mapping:
     description: >-
       A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should
       be done to use a qualified statement in its place.

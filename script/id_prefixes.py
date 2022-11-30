@@ -3,6 +3,7 @@ from linkml.generators.prefixmapgen import PrefixGenerator
 from linkml_runtime.utils.formatutils import camelcase
 from classprefixes import BiolinkClassPrefixMap, Prefix, BiolinkClassPrefixesCollection
 from linkml_runtime.dumpers.json_dumper import JSONDumper
+from linkml_runtime.dumpers.csv_dumper import CSVDumper
 import os
 
 OUT_JSON = os.path.join('../prefix-map/preferred_prefixes_per_class.json')
@@ -12,7 +13,7 @@ OUT_CSV = os.path.join('../prefix-map/preferred_prefixes_per_class.csv')
 class IDPrefixes:
 
     def __init__(self) -> None:
-        self.sv = SchemaView('../biolink-model.yaml')
+        self.sv = SchemaView('../prefix-map/class_prefixes.yaml')
 
     def dump(self):
 
@@ -33,6 +34,8 @@ class IDPrefixes:
 
         jd = JSONDumper()
         jd.dump(bpcc, to_file=OUT_JSON)
+        csvd = CSVDumper()
+        csvd.dump(element=bpcc, to_file=OUT_CSV, schemaview=self.sv)
 
 
 if __name__ == "__main__":

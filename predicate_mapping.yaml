@@ -1,4 +1,25 @@
-deprecated predicate mappings:
+predicate mappings:
+  - mapped predicate: inhibits
+    object aspect qualifier: activity or abundance
+    object direction qualifier: decreased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - SEMMEDDB:INHIBITS
+  - mapped predicate: stimulates
+    object aspect qualifier: activity or abundance
+    object direction qualifier: increased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - SEMMEDDB:STIMULATES
+  - mapped predicate: augments
+    object aspect qualifier: activity or abundance
+    object direction qualifier: increased
+    predicate: affects
+    qualified predicate: causes
+    exact matches:
+      - SEMMEDDB:AUGMENTS
   - mapped predicate: affects abundance of
     object aspect qualifier: abundance
     predicate: affects
