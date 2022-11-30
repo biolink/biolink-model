@@ -109,7 +109,6 @@ prefixes:
   OBAN: 'http://purl.org/oban/'
   oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
-  OBOREL: 'http://purl.obolibrary.org/obo/RO_'
   ORCID: 'https://orcid.org/'
   orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
   os: 'https://github.com/cmungall/owlstar/blob/master/owlstar.ttl'
@@ -481,7 +480,7 @@ slots:
       - translator_minimal
     required: true
     exact_mappings:
-      - agrkb:primaryId
+      - AGRKB:primaryId
       - gff3:ID
       - gpi:DB_Object_ID
 
@@ -498,7 +497,7 @@ slots:
   type:
     slot_uri: rdf:type
     exact_mappings:
-      - agrkb:soTermId
+      - AGRKB:soTermId
       - gff3:type
       - gpi:DB_Object_Type
 
@@ -576,7 +575,7 @@ slots:
     description: >-
       Symbol for a particular thing
     exact_mappings:
-      - agrkb:symbol
+      - AGRKB:symbol
       - gpi:DB_Object_Symbol
 
   synonym:
@@ -595,7 +594,7 @@ slots:
       # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
       - gff3:Alias
-      - agrkb:synonyms
+      - AGRKB:synonyms
       - gpi:DB_Object_Synonyms
       # TODO: RTX contributed terms mapped here... May need review?
       - HANCESTRO:0330
@@ -6402,6 +6401,7 @@ classes:
       - translator_minimal
     id_prefixes:
       - UNII
+      - CHEBI
       - MESH
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
