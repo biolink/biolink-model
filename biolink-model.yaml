@@ -2068,6 +2068,7 @@ slots:
   publisher:
     is_a: contributor
     domain: agent
+    range: publication
     description: >-
       organization or person responsible for publishing books, periodicals, podcasts, games or software.
       Note that in the case of publications which have a containing "published in" node property, the publisher
@@ -2087,6 +2088,7 @@ slots:
   editor:
     is_a: contributor
     domain: agent
+    range: publication
     description: >-
       editor of a compiled work such as a book or a periodical (newspaper or an academic journal).
       Note that in the case of publications which have a containing "published in" node property, the editor
@@ -2105,6 +2107,7 @@ slots:
   author:
     is_a: contributor
     domain: agent
+    range: publication
     description: >-
       an instance of one (co-)creator primarily responsible for a written work
     exact_mappings:
@@ -3120,7 +3123,7 @@ slots:
     inverse: ameliorates
     is_a: affected by
     domain: disease or phenotypic feature
-    range: biological entity
+    range: named thing
 
   exacerbates:
     is_a: affects
@@ -3877,6 +3880,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: biological process or activity
+    range: occurrent
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3909,32 +3913,37 @@ slots:
 
   catalyzes:
     is_a: participates in
-    # domain: nucleic acid entity
-    # range: molecular activity
+    domain: nucleic acid entity
+    range: molecular activity
     annotations:
       canonical_predicate: true
 
   has catalyst:
     is_a: has participant
     inverse: catalyzes
+    domain: molecular activity
+    range: nucleic acid entity
 
   has substrate:
     is_a: has participant
-    # domain: molecular activity
-    # range: chemical entity or gene or gene_product
+    domain: molecular activity
+    range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
 
   is substrate of:
     is_a: participates in
     inverse: has substrate
+    domain: chemical entity or gene or gene product
+    range: molecular activity
 
   participates in:
     is_a: related to at instance level
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved
       in the process
-    range: occurrent
+    range: biological process or activity
+    domain: occurrent
     inverse: has participant
     in_subset:
       - translator_minimal
@@ -4008,6 +4017,7 @@ slots:
   has capability:
     is_a: actively involves
     inverse: capable of
+    domain: occurrent
 
   enables:
     is_a: participates in
