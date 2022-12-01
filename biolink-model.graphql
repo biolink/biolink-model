@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.1.0
+# version: 3.1.1
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -1311,36 +1311,6 @@ type DatasetVersion
     hasDataset: Dataset
     ingestDate: String
     hasDistribution: DatasetDistribution
-  }
-
-interface DeprecatedMappingCollection
-  {
-    deprecatedPredicateMappings: [DeprecatedPredicateMapping]
-  }
-
-type DeprecatedPredicateMapping
-  {
-    mappedPredicate: String
-    subjectAspectQualifier: String
-    subjectDirectionQualifier: String
-    subjectFormOrVariantQualifier: String
-    subjectPartQualifier: String
-    subjectDerivativeQualifier: String
-    subjectContextQualifier: String
-    predicate: PredicateType!
-    qualifiedPredicate: String
-    objectAspectQualifier: String
-    objectDirectionQualifier: DirectionQualifierEnum
-    objectFormOrVariantQualifier: String
-    objectPartQualifier: String
-    objectDerivativeQualifier: String
-    objectContextQualifier: String
-    causalMechanismQualifier: String
-    anatomicalContextQualifier: AnatomicalContextQualifierEnum
-    speciesContextQualifier: OrganismTaxon
-    exactMatch: [NamedThing]
-    narrowMatch: [NamedThing]
-    broadMatch: [NamedThing]
   }
 
 type Device
@@ -2992,6 +2962,11 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     object: MolecularActivity!
   }
 
+interface MappingCollection
+  {
+    predicateMappings: [PredicateMapping]
+  }
+
 type MaterialSample implements SubjectOfInvestigation
   {
     id: String!
@@ -3914,6 +3889,31 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     synonym: [LabelType]
+  }
+
+type PredicateMapping
+  {
+    mappedPredicate: String
+    subjectAspectQualifier: String
+    subjectDirectionQualifier: String
+    subjectFormOrVariantQualifier: String
+    subjectPartQualifier: String
+    subjectDerivativeQualifier: String
+    subjectContextQualifier: String
+    predicate: PredicateType!
+    qualifiedPredicate: String
+    objectAspectQualifier: String
+    objectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: String
+    objectPartQualifier: String
+    objectDerivativeQualifier: String
+    objectContextQualifier: String
+    causalMechanismQualifier: String
+    anatomicalContextQualifier: AnatomicalContextQualifierEnum
+    speciesContextQualifier: OrganismTaxon
+    exactMatch: [NamedThing]
+    narrowMatch: [NamedThing]
+    broadMatch: [NamedThing]
   }
 
 type Procedure implements ActivityAndBehavior
