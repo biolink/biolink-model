@@ -18,7 +18,7 @@ URI: [biolink:acts_upstream_of_or_within_positive_effect](https://w3id.org/bioli
 
 ## Parents
 
- *  is_a: [acts upstream of](acts_upstream_of.md)
+ *  is_a: [acts upstream of or within](acts_upstream_of_or_within.md)
 
 ## Children
 

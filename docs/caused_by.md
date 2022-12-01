@@ -21,7 +21,7 @@ URI: [biolink:caused_by](https://w3id.org/biolink/vocab/caused_by)
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [contribution from](contribution_from.md)
 
 ## Children
 

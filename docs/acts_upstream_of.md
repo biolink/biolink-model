@@ -24,8 +24,6 @@ URI: [biolink:acts_upstream_of](https://w3id.org/biolink/vocab/acts_upstream_of)
 
  *  [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
  *  [acts upstream of or within](acts_upstream_of_or_within.md)
- *  [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
- *  [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
  *  [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
 
 ## Used by

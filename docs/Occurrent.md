@@ -39,9 +39,9 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 ## Referenced by class
 
  *  **[MolecularActivity](MolecularActivity.md)** *[actively involves](actively_involves.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[Occurrent](Occurrent.md)** *[can be carried out by](can_be_carried_out_by.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[capable of](capable_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumes](consumes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
- *  **[Occurrent](Occurrent.md)** *[has capability](has_capability.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has input](has_input.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has output](has_output.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has participant](has_participant.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**

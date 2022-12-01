@@ -22,6 +22,8 @@ URI: [biolink:acts_upstream_of_or_within](https://w3id.org/biolink/vocab/acts_up
 
 ## Children
 
+ *  [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+ *  [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
 
 ## Used by
 

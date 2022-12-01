@@ -31,7 +31,6 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [amount or activity increased by](amount_or_activity_increased_by.md)
  *  [assesses](assesses.md)
  *  [associated with](associated_with.md)
- *  [caused by](caused_by.md)
  *  [coexists with](coexists_with.md)
  *  [completed by](completed_by.md)
  *  [contains process](contains_process.md)

@@ -331,15 +331,17 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
      * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [actively involves](actively_involves.md)
-     * [has capability](has_capability.md)
+     * [can be carried out by](can_be_carried_out_by.md)
  * [acts upstream of](acts_upstream_of.md)
      * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
      * [acts upstream of or within](acts_upstream_of_or_within.md)
-     * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
-     * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
+         * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+         * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
      * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
  * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
  * [acts upstream of or within](acts_upstream_of_or_within.md)
+     * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+     * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
  * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
  * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
  * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
@@ -406,6 +408,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
  * [biomarker for](biomarker_for.md) - holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
  * [broad match](broad_match.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+ * [can be carried out by](can_be_carried_out_by.md)
  * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
  * [catalyzes](catalyzes.md)
  * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -431,6 +434,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
      * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
  * [contribution from](contribution_from.md)
+     * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
  * [contributor](contributor.md)
      * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
      * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
@@ -480,7 +484,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
  * [has author](has_author.md)
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
- * [has capability](has_capability.md)
  * [has catalyst](has_catalyst.md)
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has contraindication](has_contraindication.md)
@@ -523,7 +526,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has variant part](has_variant_part.md) - holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
  * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
      * [actively involves](actively_involves.md)
-         * [has capability](has_capability.md)
+         * [can be carried out by](can_be_carried_out_by.md)
      * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
      * [has catalyst](has_catalyst.md)
      * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
@@ -708,8 +711,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [acts upstream of](acts_upstream_of.md)
              * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
              * [acts upstream of or within](acts_upstream_of_or_within.md)
-             * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
-             * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
+                 * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+                 * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
              * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
          * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
              * [adverse event of](adverse_event_of.md)
@@ -757,7 +760,6 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [increased likelihood associated with](increased_likelihood_associated_with.md)
              * [resistance associated with](resistance_associated_with.md)
              * [sensitivity associated with](sensitivity_associated_with.md)
-         * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
          * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
              * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
              * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -769,6 +771,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
              * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
          * [contribution from](contribution_from.md)
+             * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
          * [contributor](contributor.md)
              * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
              * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
@@ -804,7 +807,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
          * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
              * [actively involves](actively_involves.md)
-                 * [has capability](has_capability.md)
+                 * [can be carried out by](can_be_carried_out_by.md)
              * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
              * [has catalyst](has_catalyst.md)
              * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
@@ -926,8 +929,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [acts upstream of](acts_upstream_of.md)
          * [acts upstream of negative effect](acts_upstream_of_negative_effect.md)
          * [acts upstream of or within](acts_upstream_of_or_within.md)
-         * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
-         * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
+             * [acts upstream of or within negative effect](acts_upstream_of_or_within_negative_effect.md)
+             * [acts upstream of or within positive effect](acts_upstream_of_or_within_positive_effect.md)
          * [acts upstream of positive effect](acts_upstream_of_positive_effect.md)
      * [affected by](affected_by.md) - describes an entity of which the state or quality is affected by another existing entity.
          * [adverse event of](adverse_event_of.md)
@@ -975,7 +978,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [increased likelihood associated with](increased_likelihood_associated_with.md)
          * [resistance associated with](resistance_associated_with.md)
          * [sensitivity associated with](sensitivity_associated_with.md)
-     * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
      * [coexists with](coexists_with.md) - holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
          * [colocalizes with](colocalizes_with.md) - holds between two entities that are observed to be located in the same place.
          * [in cell population with](in_cell_population_with.md) - holds between two genes or gene products that are expressed in the same cell type or population
@@ -987,6 +989,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
          * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
      * [contribution from](contribution_from.md)
+         * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
      * [contributor](contributor.md)
          * [author](author.md) - an instance of one (co-)creator primarily responsible for a written work
          * [editor](editor.md) - editor of a compiled work such as a book or a periodical (newspaper or an academic journal). Note that in the case of publications which have a containing "published in" node property, the editor association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the editorial agent of the encompassing publication (e.g. only from the Book referenced by the 'published_in' property of a book chapter Publication node).
@@ -1022,7 +1025,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has not completed](has_not_completed.md) - holds between an entity and a process that the entity is capable of, but has not completed
      * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
          * [actively involves](actively_involves.md)
-             * [has capability](has_capability.md)
+             * [can be carried out by](can_be_carried_out_by.md)
          * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
          * [has catalyst](has_catalyst.md)
          * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
