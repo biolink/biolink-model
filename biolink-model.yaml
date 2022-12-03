@@ -10132,6 +10132,8 @@ enums:
         is_a: activity_or_abundance
       activity:
         is_a: activity_or_abundance
+      response:
+        is_a: activity  #really not sure here, but seems reasonable.
       expression:
         is_a: abundance
       synthesis:

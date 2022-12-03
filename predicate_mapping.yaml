@@ -462,9 +462,25 @@ predicate mappings:
     broad matches:
       # 'import' more general than 'uptake'
       - CTD:decreases_import
+  - mapped predicate: affects response to
+    object aspect qualifier: response
+    predicate: affects
+    exact matches:
+      - CTD:affects_response_to
+  - mapped predicate: increases response to
+    object aspect qualifier: response
+    object direction qualifier: increased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
+      - CTD:increases_response_to
+  - mapped predicate: decreases response to
+    object aspect qualifier: response
+    object direction qualifier: decreased
+    qualified predicate: causes
+    predicate: affects
+    exact matches:
       - CTD:decreases_response_to
-    narrow matches:
-      - CTD:decreases_response_to_substance
   - mapped predicate: affects molecular interaction
     object aspect qualifier: molecular interaction
     predicate: affects
