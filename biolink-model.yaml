@@ -4420,7 +4420,7 @@ slots:
   has sequence variant:
     is_a: related to at instance level
     inverse: is sequence variant of
-    domain: nucleic acid entity
+    domain: genomic entity
     range: sequence variant
 
   is missense variant of:
@@ -4428,7 +4428,7 @@ slots:
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4445,7 +4445,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
