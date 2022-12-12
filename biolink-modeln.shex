@@ -1448,8 +1448,10 @@ linkml:Nodeidentifier NONLITERAL
 <GeneHasVariantThatContributesToDiseaseAssociation> CLOSED {
     (  $<GeneHasVariantThatContributesToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
           rdf:type [ <GeneToDiseaseAssociation> ] ? ;
-          <sequence_variant_qualifier> @<SequenceVariant> ? ;
-          <subject> @<GeneOrGeneProduct>
+          <subject_form_or_variant_qualifier> @linkml:String ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <object> @<Disease> ;
+          <predicate> @<PredicateType>
        ) ;
        rdf:type [ <GeneHasVariantThatContributesToDiseaseAssociation> ]
     )

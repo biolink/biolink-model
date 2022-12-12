@@ -14,7 +14,7 @@ URI: [biolink:has_splice_site_variant](https://w3id.org/biolink/vocab/has_splice
 
 ## Domain and Range
 
-[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
+[GenomicEntity](GenomicEntity.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
 
 ## Parents
 

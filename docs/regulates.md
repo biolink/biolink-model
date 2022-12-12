@@ -8,7 +8,7 @@ layout: default
 # Relation: regulates
 
 
-A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
+A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.
 
 URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
@@ -30,13 +30,10 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 
 |  |  |  |
 | --- | --- | --- |
-| **Exact Mappings:** | | RO:0002211 |
-| **Close Mappings:** | | RO:0002334 |
-| **Narrow Mappings:** | | WIKIDATA_PROPERTY:P128 |
+| **Exact Mappings:** | | RO:0002448 |
+| **Broad Mappings:** | | WIKIDATA_PROPERTY:P128 |
 |  | | CHEMBL.MECHANISM:modulator |
 |  | | RO:0002295 |
 |  | | RO:0002332 |
-|  | | RO:0002211 |
 |  | | RO:0002448 |
-|  | | WIKIDATA_PROPERTY:P128 |
 

@@ -36,7 +36,6 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P129 |
 | **Close Mappings:** | | CHEMBL.MECHANISM:binding_agent |
 |  | | CHEMBL.MECHANISM:chelating_agent |
 |  | | CHEMBL.MECHANISM:cross-linking_agent |
@@ -48,4 +47,5 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 |  | | FMA:adheres_to |
 |  | | NCIT:A7 |
 |  | | PR:non-covalently_bound_to |
+| **Broad Mappings:** | | WIKIDATA_PROPERTY:P129 |
 

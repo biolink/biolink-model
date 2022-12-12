@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-01T22:52:40
+# Generation date: 2022-12-12T22:31:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -8532,10 +8532,10 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     class_model_uri: ClassVar[URIRef] = BIOLINK.GeneHasVariantThatContributesToDiseaseAssociation
 
     id: Union[str, GeneHasVariantThatContributesToDiseaseAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, DiseaseId] = None
     subject: Union[dict, GeneOrGeneProduct] = None
-    sequence_variant_qualifier: Optional[Union[str, SequenceVariantId]] = None
+    object: Union[str, DiseaseId] = None
+    predicate: Union[str, PredicateType] = None
+    subject_form_or_variant_qualifier: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -8548,8 +8548,18 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
         if not isinstance(self.subject, GeneOrGeneProduct):
             self.subject = GeneOrGeneProduct(**as_dict(self.subject))
 
-        if self.sequence_variant_qualifier is not None and not isinstance(self.sequence_variant_qualifier, SequenceVariantId):
-            self.sequence_variant_qualifier = SequenceVariantId(self.sequence_variant_qualifier)
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
+            self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -9555,7 +9565,9 @@ class ChemicalEntityDerivativeEnum(EnumDefinitionImpl):
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(EnumDefinitionImpl):
 
     genetic_variant_form = PermissibleValue(text="genetic_variant_form")
-    mutant_form = PermissibleValue(text="mutant_form")
+    modified_form = PermissibleValue(text="modified_form")
+    loss_of_function_variant_form = PermissibleValue(text="loss_of_function_variant_form")
+    gain_of_function_variant_form = PermissibleValue(text="gain_of_function_variant_form")
     polymorphic_form = PermissibleValue(text="polymorphic_form")
     snp_form = PermissibleValue(text="snp_form")
     analog_form = PermissibleValue(text="analog_form")
@@ -9803,7 +9815,7 @@ class DrugDeliveryEnum(EnumDefinitionImpl):
 
     inhalation = PermissibleValue(text="inhalation")
     oral = PermissibleValue(text="oral")
-    absorbtion_through_the_skin = PermissibleValue(text="absorbtion_through_the_skin")
+    absorption_through_the_skin = PermissibleValue(text="absorption_through_the_skin")
     intravenous_injection = PermissibleValue(text="intravenous_injection")
 
     _defn = EnumDefinition(
@@ -11687,6 +11699,12 @@ slots.taxon_to_taxon_association_object = Slot(uri=RDF.object, name="taxon to ta
 
 slots.gene_has_variant_that_contributes_to_disease_association_subject = Slot(uri=RDF.subject, name="gene has variant that contributes to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_subject, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_has_variant_that_contributes_to_disease_association_object = Slot(uri=RDF.object, name="gene has variant that contributes to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_object, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.gene_has_variant_that_contributes_to_disease_association_predicate = Slot(uri=RDF.predicate, name="gene has variant that contributes to disease association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_has_variant_that_contributes_to_disease_association_predicate, domain=GeneHasVariantThatContributesToDiseaseAssociation, range=Union[str, PredicateType])
 
 slots.gene_to_expression_site_association_subject = Slot(uri=RDF.subject, name="gene to expression site association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_expression_site_association_subject, domain=GeneToExpressionSiteAssociation, range=Union[dict, GeneOrGeneProduct])

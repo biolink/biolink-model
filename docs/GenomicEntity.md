@@ -15,7 +15,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleosomeModification]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[SequenceVariant],[ReagentTargetedGene],[NucleosomeModification],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[SequenceVariant]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleosomeModification]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene],[NucleosomeModification],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene])
 
 ---
 
@@ -34,6 +34,14 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ## Referenced by class
 
+ *  **[SequenceVariant](SequenceVariant.md)** *[is frameshift variant of](is_frameshift_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is missense variant of](is_missense_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is nearby variant of](is_nearby_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is non coding variant of](is_non_coding_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is nonsense variant of](is_nonsense_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is sequence variant of](is_sequence_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is splice site variant of](is_splice_site_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
+ *  **[SequenceVariant](SequenceVariant.md)** *[is synonymous variant of](is_synonymous_variant_of.md)*  <sub>0..\*</sub>  **[GenomicEntity](GenomicEntity.md)**
 
 ## Attributes
 

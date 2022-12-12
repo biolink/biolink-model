@@ -1,11 +1,11 @@
 ---
-parent: Node Properties
+parent: Predicates
 title: biolink:has_chemical_role
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: has_chemical_role
+# Relation: has_chemical_role
 
 
 A role is particular behaviour which a chemical entity may exhibit.
@@ -18,7 +18,7 @@ URI: [biolink:has_chemical_role](https://w3id.org/biolink/vocab/has_chemical_rol
 
 ## Parents
 
- *  is_a: [node property](node_property.md)
+ *  is_a: [related to at concept level](related_to_at_concept_level.md)
 
 ## Children
 

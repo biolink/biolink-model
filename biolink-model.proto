@@ -1863,7 +1863,6 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
-  predicateType predicate = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -1877,12 +1876,13 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string originalObject = 0
   string type = 0
  repeated  categoryType category = 0
-  disease object = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
-  sequenceVariant sequenceVariantQualifier = 0
+  string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
+  disease object = 0
+  predicateType predicate = 0
  }
 message GeneToDiseaseAssociation
  {

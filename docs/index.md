@@ -367,7 +367,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
      * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
      * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
-     * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
+     * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.
  * [affects response to](affects_response_to.md)
      * [decreases response to](decreases_response_to.md) - holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
      * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
@@ -485,6 +485,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has author](has_author.md)
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
  * [has catalyst](has_catalyst.md)
+ * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
  * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
  * [has contraindication](has_contraindication.md)
  * [has contributor](has_contributor.md)
@@ -577,12 +578,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [increased likelihood associated with](increased_likelihood_associated_with.md)
  * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
- * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
-     * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-     * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
-         * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
-             * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-         * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
  * [is active ingredient of](is_active_ingredient_of.md) - holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
  * [is ameliorated by](is_ameliorated_by.md)
      * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
@@ -689,7 +684,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [provider](provider.md) - person, group, organization or project that provides a piece of information (e.g. a knowledge association).
  * [publisher](publisher.md) - organization or person responsible for publishing books, periodicals, podcasts, games or software. Note that in the case of publications which have a containing "published in" node property, the publisher association may not be attached directly to the embedded child publication, but only made in between the parent's publication node and the publisher agent of the encompassing publication (e.g. only from the Journal referenced by the 'published_in' property of an journal article Publication node).
  * [regulated by](regulated_by.md)
- * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
+ * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.
  * [related condition](related_condition.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
      * [composed primarily of](composed_primarily_of.md) - x composed_primarily_of_y if:more than half of the mass of x is made from parts of y.
@@ -701,6 +696,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
              * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
                  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+         * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
          * [has member](has_member.md) - Defines a mereological relation between a collection and an item.
          * [member of](member_of.md) - Defines a mereological relation between a item and a collection.
          * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
@@ -735,7 +731,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
              * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
              * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
-             * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
+             * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.
          * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
              * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
              * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
@@ -834,12 +830,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
          * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
          * [increased amount of](increased_amount_of.md)
-         * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
-             * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-             * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
-                 * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
-                     * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-                 * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
          * [is assessed by](is_assessed_by.md)
          * [is diagnosed by](is_diagnosed_by.md)
          * [is molecular consequence of](is_molecular_consequence_of.md)
@@ -919,6 +909,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [close match](close_match.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
          * [exact match](exact_match.md) - holds between two entities that have strictly equivalent meanings, with a high degree of confidence
              * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+     * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
      * [has member](has_member.md) - Defines a mereological relation between a collection and an item.
      * [member of](member_of.md) - Defines a mereological relation between a item and a collection.
      * [narrow match](narrow_match.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
@@ -953,7 +944,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [exacerbates](exacerbates.md) - A relationship between an entity (e.g. a chemical, environmental exposure, or some form of genetic variation) and a condition (a phenotype or disease), where the presence of the entity worsens some or all aspects of the condition.
          * [has adverse event](has_adverse_event.md) - An untoward medical occurrence in a patient or clinical investigation subject that happens during treatment  with a therapeutic agent. Adverse events may be caused by something  other than the drug or therapy being given and may include abnormal laboratory finding, symptoms, or  diseases temporally associated with the treatment, whether or not considered related to the treatment.  Adverse events are unintended effects that occur when a medication is administered correctly.
          * [has side effect](has_side_effect.md) - An unintended, but predictable, secondary effect shown to be correlated with a therapeutic agent, drug or treatment. Side effects happen at normal, recommended doses or treatments, and are unrelated to the intended purpose of  the medication.
-         * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships  may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule  created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships  are usually not cases of regulation.
+         * [regulates](regulates.md) - A more specific form of affects, that implies the effect results from a biologically evolved control mechanism. Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships  are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or possibly one of the 'interacts with' predicates depending on the nature of the interaction.
      * [affects risk for](affects_risk_for.md) - holds between two entities where exposure to one entity alters the chance of developing the other
          * [predisposes](predisposes.md) - holds between two entities where exposure to one entity increases the chance of developing the other
          * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
@@ -1052,12 +1043,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [in linkage disequilibrium with](in_linkage_disequilibrium_with.md) - holds between two sequence variants, the presence of which are correlated in a population
      * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * [increased amount of](increased_amount_of.md)
-     * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
-         * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
-         * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
-             * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
-                 * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
-             * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
      * [is assessed by](is_assessed_by.md)
      * [is diagnosed by](is_diagnosed_by.md)
      * [is molecular consequence of](is_molecular_consequence_of.md)
@@ -1190,7 +1175,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [full name](full_name.md) - a long-form human readable name for a thing
  * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
  * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
- * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
  * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
  * [has count](has_count.md) - number of things with a particular property
  * [has dataset](has_dataset.md)
@@ -1244,7 +1228,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [full name](full_name.md) - a long-form human readable name for a thing
      * [has biological sequence](has_biological_sequence.md) - connects a genomic feature to its sequence
      * [has chemical formula](has_chemical_formula.md) - description of chemical compound based on element symbols
-     * [has chemical role](has_chemical_role.md) - A role is particular behaviour which a chemical entity may exhibit.
      * [has constituent](has_constituent.md) - one or more molecular entities within a chemical mixture
      * [has dataset](has_dataset.md)
      * [has device](has_device.md) - connects an entity to one or more (medical) devices
@@ -1574,6 +1557,12 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [chemical role mixin](chemical_role_mixin.md) - A role played by the chemical entity or part thereof within a chemical context.
  * [decreases amount or activity of](decreases_amount_or_activity_of.md) - A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.
  * [increases amount or activity of](increases_amount_or_activity_of.md) - A grouping mixin to help with searching for all the predicates that increase the amount or activity of the object.
+ * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
+     * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+     * [physically interacts with](physically_interacts_with.md) - holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
+         * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
+             * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
+         * [indirectly physically interacts with](indirectly_physically_interacts_with.md)
 
 ### Other Slots
 

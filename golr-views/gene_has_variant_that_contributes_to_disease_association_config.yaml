@@ -22,10 +22,6 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: predicate
-  description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: predicate
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -98,10 +94,6 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: gene to disease association_object
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
@@ -114,11 +106,18 @@ fields:
   description: a qualifier used in a phenotypic association to state when the phenotype
     appears is in the subject
   display_name: onset qualifier
-- id: sequence_variant_qualifier
-  description: a qualifier used in an association with the variant
-  display_name: sequence variant qualifier
+- id: subject_form_or_variant_qualifier
+  display_name: subject form or variant qualifier
 - id: subject
   description: A gene that has a role in modeling the disease. This may be a model
     organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate
     core features of the disease.
   display_name: gene has variant that contributes to disease association_subject
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: gene has variant that contributes to disease association_object
+- id: predicate
+  description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
+  display_name: gene has variant that contributes to disease association_predicate

@@ -24,6 +24,7 @@ URI: [biolink:related_to_at_concept_level](https://w3id.org/biolink/vocab/relate
 
  *  [broad match](broad_match.md)
  *  [close match](close_match.md)
+ *  [has chemical role](has_chemical_role.md)
  *  [has member](has_member.md)
  *  [member of](member_of.md)
  *  [narrow match](narrow_match.md)

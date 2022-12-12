@@ -14,7 +14,7 @@ URI: [biolink:has_non_coding_variant](https://w3id.org/biolink/vocab/has_non_cod
 
 ## Domain and Range
 
-[Gene](Gene.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
+[GenomicEntity](GenomicEntity.md) ->  <sub>0..\*</sub> [SequenceVariant](SequenceVariant.md)
 
 ## Parents
 
