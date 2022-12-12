@@ -10103,14 +10103,19 @@ enums:
   ChemicalOrGeneOrGeneProductFormOrVariantEnum:
     permissible_values:
       genetic_variant_form:
-        is_a: modified form
-      mutant_form:
-        is_a: genetic variant form
+        is_a: modified_form
+      modified_form:
+        is_a: genetic_variant_form
+      loss_of_function_variant_form:
+        is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: genetic_variant_form
       polymorphic_form:
-        is_a: mutant form
+        is_a: genetic_variant_form
       snp_form:
-        is_a: polymorphic form
+        is_a: polymorphic_form
       analog_form:
+        is_a: modified_form
 
   GeneOrGeneProductOrChemicalPartQualifierEnum:
     permissible_values:
