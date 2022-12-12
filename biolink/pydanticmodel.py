@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "3.1.0"
+version = "3.1.1"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -240,15 +240,15 @@ class FDAIDAAdverseEventEnum(str, Enum):
     
     
 
-class DeprecatedMappingCollection(ConfiguredBaseModel):
+class MappingCollection(ConfiguredBaseModel):
     """
     A collection of deprecated mappings.
     """
-    deprecated_predicate_mappings: Optional[List[DeprecatedPredicateMapping]] = Field(None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
+    predicate_mappings: Optional[List[PredicateMapping]] = Field(None, description="""A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.""")
     
 
 
-class DeprecatedPredicateMapping(ConfiguredBaseModel):
+class PredicateMapping(ConfiguredBaseModel):
     """
     A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
     """
@@ -6668,8 +6668,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 # Update forward refs
 # see https://pydantic-docs.helpmanual.io/usage/postponed_annotations/
-DeprecatedMappingCollection.update_forward_refs()
-DeprecatedPredicateMapping.update_forward_refs()
+MappingCollection.update_forward_refs()
+PredicateMapping.update_forward_refs()
 OntologyClass.update_forward_refs()
 Annotation.update_forward_refs()
 QuantityValue.update_forward_refs()

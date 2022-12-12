@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.1.0
+// version: 3.1.1
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -1213,31 +1213,6 @@ message DatasetVersion
   dataset hasDataset = 0
   string ingestDate = 0
   datasetDistribution hasDistribution = 0
- }
-// A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
-message DeprecatedPredicateMapping
- {
-  string mappedPredicate = 0
-  string subjectAspectQualifier = 0
-  string subjectDirectionQualifier = 0
-  string subjectFormOrVariantQualifier = 0
-  string subjectPartQualifier = 0
-  string subjectDerivativeQualifier = 0
-  string subjectContextQualifier = 0
-  predicateType predicate = 0
-  string qualifiedPredicate = 0
-  string objectAspectQualifier = 0
-  directionQualifierEnum objectDirectionQualifier = 0
-  string objectFormOrVariantQualifier = 0
-  string objectPartQualifier = 0
-  string objectDerivativeQualifier = 0
-  string objectContextQualifier = 0
-  string causalMechanismQualifier = 0
-  anatomicalContextQualifierEnum anatomicalContextQualifier = 0
-  organismTaxon speciesContextQualifier = 0
- repeated  namedThing exactMatch = 0
- repeated  namedThing narrowMatch = 0
- repeated  namedThing broadMatch = 0
  }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 message Device
@@ -3463,6 +3438,31 @@ message PosttranslationalModification
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  repeated  labelType synonym = 0
+ }
+// A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
+message PredicateMapping
+ {
+  string mappedPredicate = 0
+  string subjectAspectQualifier = 0
+  string subjectDirectionQualifier = 0
+  string subjectFormOrVariantQualifier = 0
+  string subjectPartQualifier = 0
+  string subjectDerivativeQualifier = 0
+  string subjectContextQualifier = 0
+  predicateType predicate = 0
+  string qualifiedPredicate = 0
+  string objectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  string objectFormOrVariantQualifier = 0
+  string objectPartQualifier = 0
+  string objectDerivativeQualifier = 0
+  string objectContextQualifier = 0
+  string causalMechanismQualifier = 0
+  anatomicalContextQualifierEnum anatomicalContextQualifier = 0
+  organismTaxon speciesContextQualifier = 0
+ repeated  namedThing exactMatch = 0
+ repeated  namedThing narrowMatch = 0
+ repeated  namedThing broadMatch = 0
  }
 // A series of actions conducted in a certain order or manner
 message Procedure

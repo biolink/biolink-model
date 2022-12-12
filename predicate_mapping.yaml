@@ -1,18 +1,4 @@
 predicate mappings:
-  - mapped predicate: inhibits
-    object aspect qualifier: activity or abundance
-    object direction qualifier: decreased
-    predicate: affects
-    qualified predicate: causes
-    exact matches:
-      - SEMMEDDB:INHIBITS
-  - mapped predicate: stimulates
-    object aspect qualifier: activity or abundance
-    object direction qualifier: increased
-    predicate: affects
-    qualified predicate: causes
-    exact matches:
-      - SEMMEDDB:STIMULATES
   - mapped predicate: augments
     object aspect qualifier: activity or abundance
     object direction qualifier: increased
@@ -44,6 +30,7 @@ predicate mappings:
     predicate: affects
     exact matches:
       - CTD:affects_activity_of
+      - DGIdb:modulator
   - mapped predicate: increases activity of
     object aspect qualifier: activity
     object direction qualifier: increased
@@ -51,6 +38,14 @@ predicate mappings:
     predicate: affects
     exact matches:
       - CTD:increases_activity_of
+      - CHEMBL.MECHANISM:opener
+      - CHEMBL.MECHANISM:positive_modulator
+      - CHEMBL.MECHANISM:releasing_agent
+      - DGIdb:activator
+      - DGIdb:agonist
+    narrow matches:
+      - DGIdb:partial_agonist
+      - SEMMEDDB:STIMULATES
   - mapped predicate: decreases activity of
     object aspect qualifier: activity
     object direction qualifier: decreased
@@ -61,6 +56,19 @@ predicate mappings:
       - GAMMA:ic50
       - GAMMA:ki
       - DGIdb:vaccine
+      - DGIdb:antagonist
+      - DGIdb:blocker
+      - DGIdb:channel_blocker
+      - DGIdb:gating_inhibitor
+      - CHEMBL.MECHANISM:antisense_inhibitor
+      - CHEMBL.MECHANISM:blocker
+      - CHEMBL.MECHANISM:inhibitor
+      - CHEMBL.MECHANISM:negative_allosteric_modulator
+      - CHEMBL.MECHANISM:negative_modulator
+      - DGIdb:negative_modulator
+      - DGIdb:inverse_agonist
+      - SEMMEDDB:INHIBITS
+      - DGIdb:inhibitor
   - mapped predicate: affects expression of
     object aspect qualifier: expression
     predicate: affects
@@ -208,38 +216,38 @@ predicate mappings:
     exact matches:
       - CTD:decreases_molecular_modification_of
     narrow matches:
-      - - CTD:decreases_acetylation
-        - CTD:decreases_acylation
-        - CTD:decreases_alkylation
-        - CTD:decreases_amination
-        - CTD:decreases_carbamoylation
-        - CTD:decreases_ethylation
-        - CTD:decreases_glutathionylation
-        - CTD:decreases_glycation
-        - CTD:decreases_glycosylation
-        - CTD:decreases_glucuronidation
-        - CTD:decreases_N-linked_glycosylation
-        - CTD:decreases_O-linked_glycosylation
-        - CTD:decreases_hydroxylation
-        - CTD:decreases_lipidation
-        - CTD:decreases_farnesylation
-        - CTD:decreases_geranoylation
-        - CTD:decreases_myristoylation
-        - CTD:decreases_palmitoylation
-        - CTD:decreases_prenylation
-        - CTD:decreases_methylation
-        - CTD:decreases_nitrosation
-        - CTD:decreases_nucleotidylation
-        - CTD:decreases_phosphorylation
-        - CTD:decreases_ribosylation
-        - CTD:decreases_ADP-ribosylation
-        - CTD:decreases_sulfation
-        - CTD:decreases_sumoylation
-        - CTD:decreases_ubiquitination
-        - CTD:decreases_oxidation
-        - CTD:decreases_reduction
-        - CTD:decreases_carboxylation
-        - GAMMA:deoxidizer
+      - CTD:decreases_acetylation
+      - CTD:decreases_acylation
+      - CTD:decreases_alkylation
+      - CTD:decreases_amination
+      - CTD:decreases_carbamoylation
+      - CTD:decreases_ethylation
+      - CTD:decreases_glutathionylation
+      - CTD:decreases_glycation
+      - CTD:decreases_glycosylation
+      - CTD:decreases_glucuronidation
+      - CTD:decreases_N-linked_glycosylation
+      - CTD:decreases_O-linked_glycosylation
+      - CTD:decreases_hydroxylation
+      - CTD:decreases_lipidation
+      - CTD:decreases_farnesylation
+      - CTD:decreases_geranoylation
+      - CTD:decreases_myristoylation
+      - CTD:decreases_palmitoylation
+      - CTD:decreases_prenylation
+      - CTD:decreases_methylation
+      - CTD:decreases_nitrosation
+      - CTD:decreases_nucleotidylation
+      - CTD:decreases_phosphorylation
+      - CTD:decreases_ribosylation
+      - CTD:decreases_ADP-ribosylation
+      - CTD:decreases_sulfation
+      - CTD:decreases_sumoylation
+      - CTD:decreases_ubiquitination
+      - CTD:decreases_oxidation
+      - CTD:decreases_reduction
+      - CTD:decreases_carboxylation
+      - GAMMA:deoxidizer
   - mapped predicate: affects metabolic processing of
     object aspect qualifier: metabolic processing
     predicate: affects
@@ -479,6 +487,8 @@ predicate mappings:
   - mapped predicate: entity negatively regulates entity
     object direction qualifier: downregulated
     predicate: regulates
+    exact matches:
+      - RO:0002449
   - mapped predicate: entity positively regulates entity
     object direction qualifier: upregulated
     predicate: regulates
