@@ -1264,13 +1264,8 @@ slots:
     description: >-
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
     examples:
-      - value: cohort x
-      - value: blood
-      - value: gut microbiome
-    notes: >-
-      the context qualifier ‘hippocampus’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in 
-      the hippocampus’. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity
-
+      - value: cohort x (e.g. a specific population, referenced by an identifier)
+      - value: gut microbiome # OHMI:0000020
 
   direction qualifier:
     is_a: association slot
@@ -1387,11 +1382,17 @@ slots:
     is_a: statement qualifier
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
-      association took place (can be a tissue, cell type, or subcellular location).
+      association took place (can be a tissue, cell type, or sub-cellular location).
     range: AnatomicalContextQualifierEnum
     notes: >-
-      Anatomical context values can be any term from UBERON. See AnatomicalContextQualifierEnum for more
-      details.
+      Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ 
+      combines with a core concept of ‘neuron’ 
+      to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies 
+      taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values 
+      here, the examples below are intended to help clarify the content of the CURIEs.
+    examples:
+      - value: blood # UBERON:0000178
+      - value: cerebral cortext # UBERON:0000956
 
   species context qualifier:
     is_a: statement qualifier
@@ -1399,6 +1400,12 @@ slots:
       A statement qualifier representing a taxonomic category of species in which a relationship
       expressed in an association took place.
     range: organism taxon
+    examples:
+      - value: zebrafish # NCBITaxon:7955
+      - value: human # NCBITaxon:9606
+    notes: >- 
+      Ontology CURIEs are expected as values
+      here, the examples below are intended to help clarify the content of the CURIEs.
 
   qualifiers:
     singular_name: qualifier
