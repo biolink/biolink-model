@@ -49,6 +49,8 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * Example: zebrafish None
+     * Example: human None
 
 ### Inherited from association:
 
@@ -131,8 +133,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * Range: [String](types/String.md)
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
-     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Example: blood None
+     * Example: cerebral cortext None
  * [qualified predicate](qualified_predicate.md)  <sub>0..1</sub>
      * Description: Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
      * Range: [String](types/String.md)
@@ -150,6 +154,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * Example: zebrafish None
+     * Example: human None
 
 ### Inherited from chemical entity or gene or gene product regulates gene association:
 
@@ -164,3 +170,17 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
+
+### Inherited from gene has variant that contributes to disease association:
+
+ * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)

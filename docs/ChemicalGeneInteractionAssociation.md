@@ -37,8 +37,10 @@ URI: [biolink:ChemicalGeneInteractionAssociation](https://w3id.org/biolink/vocab
 ### Own
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
-     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Example: blood None
+     * Example: cerebral cortext None
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -157,8 +159,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
-     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Example: blood None
+     * Example: cerebral cortext None
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

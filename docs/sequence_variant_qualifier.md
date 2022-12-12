@@ -25,4 +25,3 @@ URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/vocab/sequenc
 
 ## Used by
 
- * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)

@@ -17,12 +17,12 @@ URI: [biolink:gene_to_disease_association_object](https://w3id.org/biolink/vocab
 
 ## Children
 
+ *  [gene has variant that contributes to disease association➞object](gene_has_variant_that_contributes_to_disease_association_object.md)
 
 ## Used by
 
  * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
- * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
 
 ## Other properties

@@ -2,7 +2,7 @@
 # Slot: anatomical context qualifier
 
 
-A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
 
 URI: [biolink:chemical_gene_interaction_association_anatomical_context_qualifier](https://w3id.org/biolink/vocab/chemical_gene_interaction_association_anatomical_context_qualifier)
 
@@ -21,3 +21,11 @@ URI: [biolink:chemical_gene_interaction_association_anatomical_context_qualifier
 ## Used by
 
  * [ChemicalGeneInteractionAssociation](ChemicalGeneInteractionAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='blood', description=None) |
+|  | | Example(value='cerebral cortext', description=None) |
+

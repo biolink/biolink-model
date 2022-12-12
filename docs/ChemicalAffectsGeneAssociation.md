@@ -33,8 +33,10 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
 ### Own
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
-     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Example: blood None
+     * Example: cerebral cortext None
  * [causal mechanism qualifier](causal_mechanism_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * Range: [String](types/String.md)
@@ -60,6 +62,8 @@ URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/Che
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * Example: zebrafish None
+     * Example: human None
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -170,8 +174,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
-     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).
+     * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Example: blood None
+     * Example: cerebral cortext None
  * [causal mechanism qualifier](causal_mechanism_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
      * Range: [String](types/String.md)
@@ -197,6 +203,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * Example: zebrafish None
+     * Example: human None
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

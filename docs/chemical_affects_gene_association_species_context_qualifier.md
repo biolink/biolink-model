@@ -21,3 +21,11 @@ URI: [biolink:chemical_affects_gene_association_species_context_qualifier](https
 ## Used by
 
  * [ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='zebrafish', description=None) |
+|  | | Example(value='human', description=None) |
+

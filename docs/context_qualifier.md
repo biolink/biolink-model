@@ -32,7 +32,6 @@ URI: [biolink:context_qualifier](https://w3id.org/biolink/vocab/context_qualifie
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='cohort x', description=None) |
-|  | | Example(value='blood', description=None) |
+| **Examples:** | | Example(value='cohort x (e.g. a specific population, referenced by an identifier)', description=None) |
 |  | | Example(value='gut microbiome', description=None) |
 

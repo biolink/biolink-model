@@ -15,7 +15,7 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GeneToDiseaseAssociation],[Gene],[EntityToDiseaseAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToEntityAssociationMixin],[DiseaseOrPhenotypicFeature],[DiseaseToEntityAssociationMixin]-%20subject%201..1%3E[Disease%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DiseaseToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociationMixin]-%20object%201..1%3E[Disease],[GeneToDiseaseAssociation]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[NamedThing],[GeneToDiseaseAssociation],[GeneHasVariantThatContributesToDiseaseAssociation],[Gene],[EntityToDiseaseAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToEntityAssociationMixin],[DiseaseOrPhenotypicFeature],[DiseaseToEntityAssociationMixin]-%20subject%201..1%3E[Disease%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DiseaseToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Disease],[EntityToDiseaseAssociationMixin]-%20object%201..1%3E[Disease],[GeneHasVariantThatContributesToDiseaseAssociation]-%20object%201..1%3E[Disease],[GeneToDiseaseAssociation]-%20object%201..1%3E[Disease],[DiseaseOrPhenotypicFeature]%5E-[Disease],[Attribute])
 
 ---
 
@@ -49,6 +49,7 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
  *  **[DiseaseToEntityAssociationMixin](DiseaseToEntityAssociationMixin.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Disease](Disease.md)**
  *  **[DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Disease](Disease.md)**
  *  **[EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md)** *[object](object.md)*  <sub>1..1</sub>  **[Disease](Disease.md)**
+ *  **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Disease](Disease.md)**
  *  **[GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Disease](Disease.md)**
  *  **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)*  <sub>0..\*</sub>  **[Disease](Disease.md)**
  *  **[Gene](Gene.md)** *[target for](target_for.md)*  <sub>0..\*</sub>  **[Disease](Disease.md)**

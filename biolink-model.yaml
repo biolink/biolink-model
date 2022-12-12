@@ -1203,15 +1203,13 @@ slots:
       - value: late stage
       - value: severe
       - value: transplant
-      - value: chemical analong
+      - value: chemical analog
     notes: >-
       please see the ChemicalOrGeneOrGeneProductFormOrVariantEnum (below) for examples of 'form or variant qualifier'
       terms in the gene->chemical association space. 
       the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘Mutated forms of Gene X’.
-      the qualifier ‘Late Stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
-      the qualifier ‘Severe’ combines with a core concept of ‘Bleeding’ to express the  more specific concept ‘Severe forms of Bleeding’
-      the qualifier ‘Liver’ combines with a core concept of ‘Surgical Transplant’ to express the composed concept ‘Liver Transplant’
-      the qualifier ‘Recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
+      the qualifier ‘late stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
+      the qualifier ‘recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
       the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
 
 
@@ -1234,11 +1232,11 @@ slots:
       the gene making the full subject a different ontological type.  
       the qualifier ‘expression’ combines with a core concept of ‘Gene X’ to express the composed concept ‘expression of Gene X’ (Gene → Biological Process)
       the qualifier ‘exposure’ combines with a core concept of ‘Chemical X’ to express the composed concept ‘exposure to Chemical X’ (Chemical → Exposure Process)
-      the qualifier ‘Activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity)
-      the qualifier ‘Emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event)
-      the qualifier ‘Infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
-      the qualifier ‘Severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
-      the qualifier ‘Abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
+      the qualifier ‘activity’ combines with a core concept of ‘PPARG’ to express the concept ‘activity of PPARG’ (Gene → function/activity)
+      the qualifier ‘emergency Department Visit’ combines with a core concept of ‘Disease X’ to express the concept ‘Emergency Department visits for Disease X’ (Disease → Clinical Event)
+      the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
+      the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
+      the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
 
   derivative qualifier:
     is_a: association slot
@@ -1266,13 +1264,8 @@ slots:
     description: >-
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
     examples:
-      - value: cohort x
-      - value: blood
-      - value: gut microbiome
-    notes: >-
-      the context qualifier ‘hippocampus’ combines with a core concept of ‘neuron’ to express the composed concept ‘neuron in 
-      the hippocampus’. The species_context_qualifier applies taxonomic context, e.g. species-specific molecular activity
-
+      - value: cohort x (e.g. a specific population, referenced by an identifier)
+      - value: gut microbiome # OHMI:0000020
 
   direction qualifier:
     is_a: association slot
@@ -1389,11 +1382,17 @@ slots:
     is_a: statement qualifier
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
-      association took place (can be a tissue, cell type, or subcellular location).
+      association took place (can be a tissue, cell type, or sub-cellular location).
     range: AnatomicalContextQualifierEnum
     notes: >-
-      Anatomical context values can be any term from UBERON. See AnatomicalContextQualifierEnum for more
-      details.
+      Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ 
+      combines with a core concept of ‘neuron’ 
+      to express the composed concept ‘neuron in the cerebral cortext’. The species_context_qualifier applies 
+      taxonomic context, e.g. species-specific molecular activity.  Ontology CURIEs are expected as values 
+      here, the examples below are intended to help clarify the content of the CURIEs.
+    examples:
+      - value: blood # UBERON:0000178
+      - value: cerebral cortext # UBERON:0000956
 
   species context qualifier:
     is_a: statement qualifier
@@ -1401,6 +1400,12 @@ slots:
       A statement qualifier representing a taxonomic category of species in which a relationship
       expressed in an association took place.
     range: organism taxon
+    examples:
+      - value: zebrafish # NCBITaxon:7955
+      - value: human # NCBITaxon:9606
+    notes: >- 
+      Ontology CURIEs are expected as values
+      here, the examples below are intended to help clarify the content of the CURIEs.
 
   qualifiers:
     singular_name: qualifier
@@ -9586,7 +9591,7 @@ classes:
       - predicate
       - object
     slots:
-      - sequence variant qualifier
+      - subject form or variant qualifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -9594,6 +9599,10 @@ classes:
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
           a gene whose mutants recapitulate core features of the disease.
+      object:
+        range: disease
+      predicate:
+        subproperty_of: contributes to
 
   gene to expression site association:
     is_a: association
@@ -10103,14 +10112,19 @@ enums:
   ChemicalOrGeneOrGeneProductFormOrVariantEnum:
     permissible_values:
       genetic_variant_form:
-        is_a: modified form
-      mutant_form:
-        is_a: genetic variant form
+        is_a: modified_form
+      modified_form:
+        is_a: genetic_variant_form
+      loss_of_function_variant_form:
+        is_a: genetic_variant_form
+      gain_of_function_variant_form:
+        is_a: genetic_variant_form
       polymorphic_form:
-        is_a: mutant form
+        is_a: genetic_variant_form
       snp_form:
-        is_a: polymorphic form
+        is_a: polymorphic_form
       analog_form:
+        is_a: modified_form
 
   GeneOrGeneProductOrChemicalPartQualifierEnum:
     permissible_values:
@@ -10438,7 +10452,7 @@ enums:
     permissible_values:
       "inhalation":
       "oral":
-      "absorbtion_through_the_skin":
+      "absorption_through_the_skin":
       "intravenous_injection":
 
   FDAApprovalStatusEnum:

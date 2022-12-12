@@ -26,3 +26,11 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Examples:** | | Example(value='zebrafish', description=None) |
+|  | | Example(value='human', description=None) |
+

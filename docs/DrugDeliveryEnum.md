@@ -24,6 +24,6 @@ URI: [biolink:DrugDeliveryEnum](https://w3id.org/biolink/vocab/DrugDeliveryEnum)
 | :--- | :---: | :---: | ---: |
 | inhalation |  |  |  |
 | oral |  |  |  |
-| absorbtion_through_the_skin |  |  |  |
+| absorption_through_the_skin |  |  |  |
 | intravenous_injection |  |  |  |
 

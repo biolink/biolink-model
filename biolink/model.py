@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-30T21:38:12
+# Generation date: 2022-12-01T22:52:40
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10733,8 +10733,8 @@ slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively inv
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
                    model_uri=BIOLINK.capable_of, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
-slots.has_capability = Slot(uri=BIOLINK.has_capability, name="has capability", curie=BIOLINK.curie('has_capability'),
-                   model_uri=BIOLINK.has_capability, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+slots.can_be_carried_out_by = Slot(uri=BIOLINK.can_be_carried_out_by, name="can be carried out by", curie=BIOLINK.curie('can_be_carried_out_by'),
+                   model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
                    model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
