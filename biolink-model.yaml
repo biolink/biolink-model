@@ -1116,7 +1116,7 @@ slots:
     range: boolean
 
   has chemical role:
-    is_a: node property
+    is_a: related to at concept level
     description: >-
       A role is particular behaviour which a chemical entity may exhibit.
     range: chemical role
@@ -2156,16 +2156,9 @@ slots:
     in_subset:
       - translator_minimal
     symmetric: true
-    annotations:
-      canonical_predicate: true
+    mixin: true
     exact_mappings:
-      - RO:0002434
       - SEMMEDDB:INTERACTS_WITH
-    narrow_mappings:
-      # RO terms RTX mapped to 'biolink:related_to' but which imply a chemical interaction
-      - RO:0002103
-      - RO:0002120
-      - RO:0002130
     notes: >-
       please use a more specific child predicate of interacts with, either physically interacts with
       or genetically interacts with. 
@@ -2180,7 +2173,7 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
-    exact_mappings:
+    broad_mappings:
       - WIKIDATA_PROPERTY:P129
     close_mappings:
       - CHEMBL.MECHANISM:binding_agent
@@ -2190,13 +2183,14 @@ slots:
       - CHEMBL.MECHANISM:sequestering_agent
       - CHEMBL.MECHANISM:substrate
       - DRUGBANK:target
-
     narrow_mappings:
       # Defined more narrowly as "substance interaction", thus specific applies to a subclass entities
       - DRUGBANK:drug-interaction
       - FMA:adheres_to
       - NCIT:A7
       - PR:non-covalently_bound_to
+    mixins:
+      - interacts with
 
   directly physically interacts with:
     is_a: physically interacts with
@@ -2220,6 +2214,7 @@ slots:
       canonical_predicate: true
 
   binds:
+    deprecated: true
     is_a: directly physically interacts with
     description: >-
       A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity, 
@@ -2491,27 +2486,28 @@ slots:
     is_a: affects
     description: >-
       A more specific form of affects, that implies the effect results from a biologically evolved control mechanism.
-      Gene-affects-gene relationships will (almost) always involve regulation.  Chemical-affects-gene relationships 
-      may in some cases be considered regulation (if the chemical is some endogenously produced signaling molecule 
-      created to execute a certain function/activity), but exogenous/environmental chemical-affects-gene relationships 
-      are usually not cases of regulation.
+      Gene-affects-gene relationships will (almost) always involve regulation.  Exogenous/environmental chemical-affects-gene relationships 
+      are not cases of regulation in this definition. Instead these would be captured using the 'affects' predicate, or
+      possibly one of the 'interacts with' predicates depending on the nature of the interaction.
     domain: physical essence or occurrent
     range: physical essence or occurrent
     annotations:
       canonical_predicate: true
-    close_mappings:
-      - RO:0002334
     exact_mappings:
-      - RO:0002211
-    narrow_mappings:
+      - RO:0002448
+    broad_mappings:
       # https://www.wikidata.org/wiki/Property:P128 - regulates (molecular biology)
       - WIKIDATA_PROPERTY:P128
       - CHEMBL.MECHANISM:modulator
       - RO:0002295
       - RO:0002332
-      - RO:0002211
       - RO:0002448
-      - WIKIDATA_PROPERTY:P128
+    notes: >-
+      The RO definition of 'directly regulates the activity of' is an exact_mapping here because 
+      it describes genetic regulation from the point of view of one genetic entity regulating another, as opposed to
+      "RO:0002211" which describes process to process regulation.
+    mixins:
+      - interacts with
 
   regulated by:
     is_a: affected by
@@ -4420,7 +4416,7 @@ slots:
     aliases: [ 'gene product sequence variation encoded by gene mutant', 'allelic variant of', 'gene product variant of gene product' ]
     description: holds between a sequence variant and a nucleic acid entity
     domain: sequence variant
-    range: nucleic acid entity
+    range: genomic entity
     annotations:
       canonical_predicate: true
     narrow_mappings:
@@ -4429,7 +4425,7 @@ slots:
   has sequence variant:
     is_a: related to at instance level
     inverse: is sequence variant of
-    domain: nucleic acid entity
+    domain: genomic entity
     range: sequence variant
 
   is missense variant of:
@@ -4437,7 +4433,7 @@ slots:
     description: holds between a gene  and a sequence variant, such the sequence variant
       results in a different amino acid sequence but where the length is preserved.
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4445,7 +4441,7 @@ slots:
 
   has missense variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is missense variant of
 
@@ -4454,7 +4450,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the coding sequence of the gene, but results in the same amino acid sequence
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4462,7 +4458,7 @@ slots:
 
   has synonymous variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is synonymous variant of
     aliases: [ 'stop gained' ]
@@ -4472,7 +4468,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       results in a premature stop codon
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     broad_mappings:
@@ -4482,7 +4478,7 @@ slots:
 
   has nonsense variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is nonsense variant of
 
@@ -4492,7 +4488,7 @@ slots:
       causes a disruption of the translational reading frame, because the number of
       nucleotides inserted or deleted is not a multiple of three.
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4502,7 +4498,7 @@ slots:
   has frameshift variant:
     is_a: has sequence variant
     inverse: is frameshift variant of
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     aliases: [ 'splice region variant', 'splice acceptor variant', 'splice donor variant' ]
 
@@ -4511,7 +4507,7 @@ slots:
     description: holds between a sequence variant and a gene, such the sequence variant
       is in the canonical splice site of one of the gene's exons.
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4520,7 +4516,7 @@ slots:
 
   has splice site variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is splice site variant of
     aliases: [ 'downstream gene variant', 'upstream gene variant' ]
@@ -4530,13 +4526,13 @@ slots:
     description: holds between a sequence variant and a gene sequence that the variant
       is genomically close to.
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
 
   has nearby variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is nearby variant of
     aliases: [ 'intron variant', '3 prime UTR variant', '5 prime UTR variant', '5 prime UTR premature start codon gain variant', 'non coding transcript exon variant' ]
@@ -4546,13 +4542,13 @@ slots:
     description: holds between a sequence variant and a gene, where the variant does
       not affect the coding sequence
     domain: sequence variant
-    range: gene
+    range: genomic entity
     annotations:
       canonical_predicate: true
 
   has non coding variant:
     is_a: has sequence variant
-    domain: gene
+    domain: genomic entity
     range: sequence variant
     inverse: is non coding variant of
 
@@ -7278,10 +7274,6 @@ classes:
       - symbol
       - synonym
       - xref
-    narrow_mappings:
-      - bioschemas:gene
-    broad_mappings:
-      - NCIT:C45822
     exact_mappings:
       - SO:0000704
       - SIO:010035
@@ -7307,7 +7299,13 @@ classes:
       - Xenbase
       - AspGD
     in_subset:
+      - translator_minimal
       - model_organism_database
+    narrow_mappings:
+      - bioschemas:gene
+    broad_mappings:
+      - NCIT:C45822
+
 
   gene product mixin:
     description: >-
