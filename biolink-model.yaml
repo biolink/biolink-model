@@ -9584,7 +9584,7 @@ classes:
       - predicate
       - object
     slots:
-      - sequence variant qualifier
+      - subject form or variant qualifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -9592,6 +9592,10 @@ classes:
           A gene that has a role in modeling the disease. This may be
           a model organism ortholog of a known disease gene, or it may be
           a gene whose mutants recapitulate core features of the disease.
+      object:
+        range: disease
+      predicate:
+        subproperty_of: contributes to
 
   gene to expression site association:
     is_a: association
@@ -10113,6 +10117,7 @@ enums:
       snp_form:
         is_a: polymorphic_form
       analog_form:
+        is_a: modified_form
 
   GeneOrGeneProductOrChemicalPartQualifierEnum:
     permissible_values:
