@@ -2084,7 +2084,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
-    predicate: PredicateType!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2098,12 +2097,13 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     originalObject: String
     type: String
     category: [CategoryType]
-    object: Disease!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
-    sequenceVariantQualifier: SequenceVariant
+    subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
+    object: Disease!
+    predicate: PredicateType!
   }
 
 interface GeneOrGeneProduct

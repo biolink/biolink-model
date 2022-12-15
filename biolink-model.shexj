@@ -7305,8 +7305,8 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/sequence_variant_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/SequenceVariant",
+                        "predicate": "https://w3id.org/biolink/vocab/subject_form_or_variant_qualifier",
+                        "valueExpr": "https://w3id.org/linkml/String",
                         "min": 0,
                         "max": 1
                      },
@@ -7314,6 +7314,20 @@
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "https://w3id.org/biolink/vocab/Disease",
+                        "min": 1,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": "https://w3id.org/biolink/vocab/PredicateType",
                         "min": 1,
                         "max": 1
                      }

@@ -43,7 +43,9 @@ class ChemicalEntityDerivativeEnum(str, Enum):
 class ChemicalOrGeneOrGeneProductFormOrVariantEnum(str, Enum):
     
     genetic_variant_form = "genetic_variant_form"
-    mutant_form = "mutant_form"
+    modified_form = "modified_form"
+    loss_of_function_variant_form = "loss_of_function_variant_form"
+    gain_of_function_variant_form = "gain_of_function_variant_form"
     polymorphic_form = "polymorphic_form"
     snp_form = "snp_form"
     analog_form = "analog_form"
@@ -206,7 +208,7 @@ class DrugDeliveryEnum(str, Enum):
     
     inhalation = "inhalation"
     oral = "oral"
-    absorbtion_through_the_skin = "absorbtion_through_the_skin"
+    absorption_through_the_skin = "absorption_through_the_skin"
     intravenous_injection = "intravenous_injection"
     
     
@@ -268,7 +270,7 @@ class PredicateMapping(ConfiguredBaseModel):
     object_derivative_qualifier: Optional[str] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     causal_mechanism_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
-    anatomical_context_qualifier: Optional[AnatomicalContextQualifierEnum] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    anatomical_context_qualifier: Optional[AnatomicalContextQualifierEnum] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     exact_match: Optional[List[str]] = Field(None, description="""holds between two entities that have strictly equivalent meanings, with a high degree of confidence""")
     narrow_match: Optional[List[str]] = Field(None, description="""a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.""")
@@ -4441,7 +4443,7 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
-    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
@@ -4485,7 +4487,7 @@ class ChemicalAffectsGeneAssociation(Association):
     object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
-    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or subcellular location).""")
+    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.""")
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
@@ -5816,7 +5818,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     
-    sequence_variant_qualifier: Optional[str] = Field(None, description="""a qualifier used in an association with the variant""")
+    subject_form_or_variant_qualifier: Optional[str] = Field(None)
     subject: str = Field(None, description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
