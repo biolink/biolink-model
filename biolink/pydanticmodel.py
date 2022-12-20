@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "3.1.1"
+version = "3.1.2"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
