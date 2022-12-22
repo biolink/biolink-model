@@ -528,14 +528,11 @@ slots:
     aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for an attribute or entity.
+    domain: entity
     range: label type
     in_subset:
       - translator_minimal
       - samples
-    #
-    # linkML doesn't like this name slot to be "required: true".
-    # Besides, some entity nodes/attributes may not have names?
-    # required: true
     slot_uri: rdfs:label
     exact_mappings:
       - gff3:Name
