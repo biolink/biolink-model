@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-20T18:46:33
+# Generation date: 2022-12-26T01:53:28
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9918,7 +9918,7 @@ slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie
                    model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
 
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
-                   model_uri=BIOLINK.name, domain=None, range=Optional[Union[str, LabelType]])
+                   model_uri=BIOLINK.name, domain=Entity, range=Optional[Union[str, LabelType]])
 
 slots.stoichiometry = Slot(uri=BIOLINK.stoichiometry, name="stoichiometry", curie=BIOLINK.curie('stoichiometry'),
                    model_uri=BIOLINK.stoichiometry, domain=Association, range=Optional[int])
