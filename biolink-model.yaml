@@ -528,14 +528,11 @@ slots:
     aliases: [ 'label', 'display name', 'title' ]
     description: >-
       A human-readable name for an attribute or entity.
+    domain: entity
     range: label type
     in_subset:
       - translator_minimal
       - samples
-    #
-    # linkML doesn't like this name slot to be "required: true".
-    # Besides, some entity nodes/attributes may not have names?
-    # required: true
     slot_uri: rdfs:label
     exact_mappings:
       - gff3:Name
@@ -4820,6 +4817,7 @@ slots:
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
+    domain: association
     range: named thing
     slot_uri: rdf:subject
     exact_mappings:
@@ -4832,6 +4830,7 @@ slots:
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
+    domain: association
     range: named thing
     local_names:
       ga4gh: descriptor
