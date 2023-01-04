@@ -20,15 +20,15 @@ mutant form of the CDKN2A promoter in the nucleus of HeLa cells”.
 ```
 subject: CHEBI:5692 # Hexachlorobenzene
 subject_derivative: metabolite
-predicate: affects
-qualified_predicate: causes
+predicate: biolink:affects
+qualified_predicate: biolink:causes
 object:  NCBIGene:1029 # CDKN2A
 object_part: promoter
-object_form_or_variant: mutant form
+object_form_or_variant: mutant_form
 object_aspect:  methylation
 object_direction: increased
-object_context: nucleus 
-experimental_context_qualifier:  # HeLa cells
+object_context: "UBERON:0001013" # nucleus, 
+experimental_context_qualifier: HeLa cells
 ```
 
 To extract the assertions encoded in this structure:
