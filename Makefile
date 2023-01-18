@@ -20,11 +20,12 @@ docs: docs/index.md
 jekyll-docs: docs/Classes.md
 
 shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
+shacl: biolink-model.shacl.ttl
 json-schema: json-schema/biolink-model.json
 prefix-map: prefix-map/biolink-model-prefix-map.json
 
 build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
-json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex biolink-model.ttl \
+json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex shacl biolink-model.ttl \
 prefix-map/biolink-model-prefix-map.json gen-pydantic id-prefixes
 
 # TODO: Get this working
@@ -165,6 +166,11 @@ biolink-modeln.shexj: biolink-model.yaml
 	touch $@
 	pipenv run gen-shex --metauris --format json $< > $@
 
+# ~~~~~~~~~~~~~~~~~~~~
+# SHACL
+# ~~~~~~~~~~~~~~~~~~~~
+biolink-model.shacl.ttl: biolink-model.yaml
+	pipenv run gen-shacl $< > $@
 
 # ----------------------------------------
 # Ontology conversion
@@ -190,7 +196,7 @@ biolink-modeln.shexj: biolink-model.yaml
 # Contrib
 # ~~~~~~~~~~~~~~~~~~~~
 contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/%.graphql \
-contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex
+contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex contrib/%/%.shacl.ttl
 	echo
 
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml env.lock
@@ -225,6 +231,9 @@ contrib/%/%.owl: contrib/%.yaml
 contrib/%/%.shex: contrib-dir-% contrib/%.yaml
 	pipenv run gen-shex contrib/*.yaml > $@
 
+contrib/%/%.shacl.ttl: contrib-dir-% contrib/%.yaml
+	pipenv run gen-shacl contrib/*.yaml > $@
+
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
@@ -242,7 +251,7 @@ pytest: biolink/model.py
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex pydantic
+	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex shacl pydantic
 	rm -f env.lock
 	pipenv --rm
 
