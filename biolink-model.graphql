@@ -141,6 +141,7 @@ interface Annotation
 type Article
   {
     iri: IriType
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -157,7 +158,7 @@ type Article
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: [String]!
+    publicationType: String!
     publishedIn: Uriorcurie!
     isoAbbreviation: String
     volume: String
@@ -389,13 +390,15 @@ type Book
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
     name: LabelType
+    publicationType: String!
     id: String!
-    type: [String]!
+    type: [String]
   }
 
 type BookChapter
   {
     iri: IriType
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -412,7 +415,7 @@ type BookChapter
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: [String]!
+    publicationType: String!
     publishedIn: Uriorcurie!
     volume: String
     chapter: String
@@ -4014,6 +4017,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
 type Publication
   {
     iri: IriType
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -4030,7 +4034,7 @@ type Publication
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: [String]!
+    publicationType: String!
   }
 
 type QuantityValue
@@ -4293,11 +4297,12 @@ type Serial
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
     name: LabelType
+    publicationType: String!
     isoAbbreviation: String
     volume: String
     issue: String
     id: String!
-    type: [String]!
+    type: [String]
   }
 
 type SeverityValue
