@@ -15,7 +15,7 @@ URI: [biolink:Entity](https://w3id.org/biolink/vocab/Entity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-%20[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2A;type:string%20%3F;name:label_type%20%3F;description:narrative_text%20%3F],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute]%3Chas%20attribute%200..%2A-%20[Entity%7Cid:string;iri:iri_type%20%3F;category:category_type%20%2A;type:string%20%2A;name:label_type%20%3F;description:narrative_text%20%3F],[Entity]%5E-[NamedThing],[Entity]%5E-[Association],[Attribute],[Association])
 
 ---
 
@@ -57,7 +57,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
      * in subsets: (translator_minimal,samples)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
 
 ### Inherited from macromolecular machine mixin:

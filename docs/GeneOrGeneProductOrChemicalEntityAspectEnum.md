@@ -27,7 +27,7 @@ URI: [biolink:GeneOrGeneProductOrChemicalEntityAspectEnum](https://w3id.org/biol
 | activity |  |  | {'is_a': 'activity_or_abundance'} |
 | expression |  |  | {'is_a': 'abundance'} |
 | synthesis |  |  | {'is_a': 'abundance'} |
-| degradation |  |  | {'is_a': 'abundance'} |
+| degradation |  |  |  |
 | cleavage |  |  | {'is_a': 'degradation'} |
 | hydrolysis |  |  | {'is_a': 'degradation'} |
 | metabolic_processing |  |  |  |

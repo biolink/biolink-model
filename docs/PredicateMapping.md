@@ -96,7 +96,7 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
  * [original object](original_object.md)  <sub>0..1</sub>
      * Description: used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * Range: [String](types/String.md)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.

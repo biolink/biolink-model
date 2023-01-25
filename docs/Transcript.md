@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
 
 ---
 
@@ -76,7 +76,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity

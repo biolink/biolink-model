@@ -15,7 +15,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;type(i):string%20%3F;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[Publication],[OntologyClass],[Onset],[ModelToDiseaseAssociationMixin],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneAsAModelOfDiseaseAssociation%7Cfrequency_qualifier(i):frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[ModelToDiseaseAssociationMixin],[GeneAsAModelOfDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[Disease],[Attribute])
 
 ---
 
@@ -85,7 +85,7 @@ URI: [biolink:GeneAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/G
  * [original object](original_object.md)  <sub>0..1</sub>
      * Description: used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * Range: [String](types/String.md)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -114,7 +114,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity

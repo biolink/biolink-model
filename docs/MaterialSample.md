@@ -15,7 +15,7 @@ URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[MaterialSampleToEntityAssociationMixin],[MaterialSampleDerivationAssociation],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[MaterialSampleToEntityAssociationMixin]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[PhysicalEntity],[MaterialSampleToEntityAssociationMixin],[MaterialSampleDerivationAssociation],[MaterialSampleDerivationAssociation]-%20subject%201..1%3E[MaterialSample%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[MaterialSampleToEntityAssociationMixin]-%20subject%201..1%3E[MaterialSample],[MaterialSample]uses%20-.-%3E[SubjectOfInvestigation],[PhysicalEntity]%5E-[MaterialSample],[Attribute])
 
 ---
 
@@ -59,7 +59,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity

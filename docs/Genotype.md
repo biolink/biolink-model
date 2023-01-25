@@ -15,7 +15,7 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToEntityAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation],[Zygosity]%3Chas%20zygosity%200..1-%20[Genotype%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToEntityAssociationMixin]-%20subject%201..1%3E[Genotype],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[Genotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Genotype],[GenomicEntity],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Zygosity],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToEntityAssociationMixin],[GenotypeAsAModelOfDiseaseAssociation],[Zygosity]%3Chas%20zygosity%200..1-%20[Genotype%7Chas_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToEntityAssociationMixin]-%20subject%201..1%3E[Genotype],[GenotypeToGeneAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20object%201..1%3E[Genotype],[GenotypeToGenotypePartAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1%3E[Genotype],[GenotypeToVariantAssociation]-%20subject%201..1%3E[Genotype],[Genotype]uses%20-.-%3E[PhysicalEssence],[Genotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Genotype],[GenomicEntity],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -66,7 +66,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity

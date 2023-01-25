@@ -15,7 +15,7 @@ URI: [biolink:Serial](https://w3id.org/biolink/vocab/Serial)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]%5E-[Serial%7Ciso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;id:string;type:string;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;name(i):label_type%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F],[Publication],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication]%5E-[Serial%7Ciso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;id:string;type:string%20%2B;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;name(i):label_type%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F],[Publication],[Attribute])
 
 ---
 
@@ -41,7 +41,7 @@ URI: [biolink:Serial](https://w3id.org/biolink/vocab/Serial)
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
 
 ### Inherited from entity:
@@ -62,7 +62,7 @@ This field is multi-valued. It should include values for ancestors of the biolin
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
@@ -131,7 +131,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
 
 ### Domain for slot:
@@ -140,7 +140,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [type](type.md)  <sub>0..1</sub>
+ * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
 
 ## Other properties
