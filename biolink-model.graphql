@@ -4,7 +4,7 @@ type Activity implements ActivityAndBehavior
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -21,7 +21,7 @@ interface AdministrativeEntity
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -33,7 +33,7 @@ interface AdministrativeEntity
 type Agent
   {
     iri: IriType
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -49,7 +49,7 @@ type AnatomicalEntity implements PhysicalEssence
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -78,7 +78,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
@@ -102,7 +102,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
@@ -127,7 +127,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
@@ -157,7 +157,7 @@ type Article
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: String!
+    type: [String]!
     publishedIn: Uriorcurie!
     isoAbbreviation: String
     volume: String
@@ -185,14 +185,14 @@ type Association
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
   }
 
 type Attribute implements OntologyClass
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -209,7 +209,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -241,7 +241,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Behavior!
     object: BehavioralFeature!
@@ -258,7 +258,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
 type BehavioralExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -276,7 +276,7 @@ type BehavioralFeature
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -294,7 +294,7 @@ type BiologicalEntity implements ThingWithTaxon
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -308,7 +308,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -325,7 +325,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -341,7 +341,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
 type BiologicalSex
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -357,7 +357,7 @@ type BiologicalSex
 type BioticExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -390,7 +390,7 @@ type Book
     xref: [Uriorcurie]
     name: LabelType
     id: String!
-    type: String!
+    type: [String]!
   }
 
 type BookChapter
@@ -412,7 +412,7 @@ type BookChapter
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: String!
+    type: [String]!
     publishedIn: Uriorcurie!
     volume: String
     chapter: String
@@ -422,7 +422,7 @@ type Case implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -458,7 +458,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -474,7 +474,7 @@ type Cell
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -488,7 +488,7 @@ type CellLine implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -518,7 +518,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: CellLine!
     frequencyQualifier: FrequencyValue
@@ -546,7 +546,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
   }
@@ -560,7 +560,7 @@ type CellularComponent
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -574,7 +574,7 @@ type CellularOrganism implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -602,7 +602,7 @@ type ChemicalAffectsGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
@@ -628,7 +628,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -660,7 +660,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: ChemicalEntity!
     object: NamedThing!
@@ -689,7 +689,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     objectDirectionQualifier: DirectionQualifierEnum
     predicate: PredicateType!
@@ -709,7 +709,7 @@ interface ChemicalEntityToEntityAssociationMixin
 type ChemicalExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -741,7 +741,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
     subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
@@ -760,7 +760,7 @@ type ChemicalMixture
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -802,7 +802,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
     predicate: PredicateType!
@@ -828,7 +828,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
     predicate: PredicateType!
@@ -837,7 +837,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
 type ChemicalRole
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -870,7 +870,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: ChemicalEntity!
   }
@@ -893,7 +893,7 @@ type ChemicalToChemicalDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
     subject: ChemicalEntity!
@@ -921,7 +921,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
   }
@@ -950,7 +950,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: ChemicalEntity!
     object: Pathway!
@@ -960,7 +960,7 @@ type ChiSquaredAnalysisResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -976,7 +976,7 @@ type ChiSquaredAnalysisResult
 type ClinicalAttribute
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -992,7 +992,7 @@ type ClinicalAttribute
 type ClinicalCourse
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1009,7 +1009,7 @@ type ClinicalEntity
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1022,7 +1022,7 @@ type ClinicalFinding
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -1036,7 +1036,7 @@ type ClinicalIntervention
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1048,7 +1048,7 @@ type ClinicalIntervention
 type ClinicalMeasurement
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1064,7 +1064,7 @@ type ClinicalMeasurement
 type ClinicalModifier
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1081,7 +1081,7 @@ type ClinicalTrial
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1094,7 +1094,7 @@ type CodingSequence
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1115,7 +1115,7 @@ type Cohort implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -1129,7 +1129,7 @@ type CommonDataElement
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1145,7 +1145,7 @@ type CommonDataElement
 type ComplexChemicalExposure
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1162,7 +1162,7 @@ type ComplexMolecularMixture
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1184,7 +1184,7 @@ type ConceptCountAnalysisResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1201,7 +1201,7 @@ type ConfidenceLevel
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1231,7 +1231,7 @@ type ContributorAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: InformationContentEntity!
     predicate: PredicateType!
@@ -1243,7 +1243,7 @@ type Dataset
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1260,7 +1260,7 @@ type DatasetDistribution
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1278,7 +1278,7 @@ type DatasetSummary
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1297,7 +1297,7 @@ type DatasetVersion
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1317,7 +1317,7 @@ type Device
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1330,7 +1330,7 @@ type Disease
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1344,7 +1344,7 @@ type DiseaseOrPhenotypicFeature
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1357,7 +1357,7 @@ type DiseaseOrPhenotypicFeature
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1399,7 +1399,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     object: GeneticInheritance!
@@ -1425,7 +1425,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: AnatomicalEntity!
   }
@@ -1456,7 +1456,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
   }
 
@@ -1479,7 +1479,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Disease!
     object: PhenotypicFeature!
@@ -1497,7 +1497,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1518,7 +1518,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
 type DrugExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1557,7 +1557,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: GeneOrGeneProduct!
   }
@@ -1565,7 +1565,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
 type DrugToGeneInteractionExposure implements GeneGroupingMixin
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1597,7 +1597,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: Disease!
     frequencyQualifier: FrequencyValue
@@ -1613,7 +1613,7 @@ interface Entity
     id: String!
     iri: IriType
     category: [CategoryType]
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1640,7 +1640,7 @@ type EntityToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
   }
@@ -1696,7 +1696,7 @@ type EntityToPhenotypicFeatureAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
   }
@@ -1717,7 +1717,7 @@ type EntityToPhenotypicFeatureAssociationMixin implements FrequencyQuantifier
 type EnvironmentalExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -1735,7 +1735,7 @@ type EnvironmentalFeature
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1748,7 +1748,7 @@ type EnvironmentalFoodContaminant
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1766,7 +1766,7 @@ type EnvironmentalProcess implements Occurrent
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1788,7 +1788,7 @@ type Event
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1801,7 +1801,7 @@ type EvidenceType
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1818,7 +1818,7 @@ type Exon
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1854,7 +1854,7 @@ type ExonToTranscriptRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Exon!
     object: Transcript!
@@ -1887,7 +1887,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     populationContextQualifier: PopulationOfIndividualOrganisms
     temporalContextQualifier: TimeType
@@ -1913,7 +1913,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: ExposureEvent!
     frequencyQualifier: FrequencyValue
@@ -1930,7 +1930,7 @@ type Food
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1952,7 +1952,7 @@ type FoodAdditive
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -1998,7 +1998,7 @@ type FunctionalAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: OntologyClass!
@@ -2008,7 +2008,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2040,7 +2040,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: Disease!
     frequencyQualifier: FrequencyValue
@@ -2061,7 +2061,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2095,7 +2095,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
@@ -2144,7 +2144,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -2176,7 +2176,7 @@ type GeneToExpressionSiteAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     stageQualifier: LifeStage
     quantifierQualifier: OntologyClass
@@ -2204,7 +2204,7 @@ interface GeneToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -2228,7 +2228,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -2257,7 +2257,7 @@ type GeneToGeneFamilyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Gene!
     object: GeneFamily!
@@ -2282,7 +2282,7 @@ type GeneToGeneHomologyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
@@ -2307,7 +2307,7 @@ type GeneToGeneProductRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Gene!
     object: GeneProductMixin!
@@ -2333,7 +2333,7 @@ type GeneToGoTermAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Gene!
     object: OntologyClass!
@@ -2358,7 +2358,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: Pathway!
@@ -2383,7 +2383,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: PhenotypicFeature!
@@ -2401,7 +2401,7 @@ type GeneticInheritance
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2415,7 +2415,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2429,7 +2429,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
 type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, PhysicalEssence, GenomicEntity, ThingWithTaxon, OntologyClass
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -2469,7 +2469,7 @@ type GenomicSequenceLocalization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     startInterbaseCoordinate: Integer
     endInterbaseCoordinate: Integer
@@ -2485,7 +2485,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2515,7 +2515,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     object: NamedThing!
@@ -2543,7 +2543,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: NamedThing!
     predicate: PredicateType!
@@ -2576,7 +2576,7 @@ type GenotypeToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     subject: Genotype!
@@ -2601,7 +2601,7 @@ type GenotypeToGenotypePartAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     subject: Genotype!
@@ -2627,7 +2627,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     subject: Genotype!
@@ -2659,7 +2659,7 @@ type GenotypeToVariantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     subject: Genotype!
@@ -2669,7 +2669,7 @@ type GenotypeToVariantAssociation
 type GenotypicSex
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -2685,7 +2685,7 @@ type GenotypicSex
 type GeographicExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -2703,7 +2703,7 @@ type GeographicLocation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2718,7 +2718,7 @@ type GeographicLocationAtTime
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2734,7 +2734,7 @@ type GrossAnatomicalStructure
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -2748,7 +2748,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2763,7 +2763,7 @@ type Hospitalization
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2780,7 +2780,7 @@ type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -2794,7 +2794,7 @@ interface InformationContentEntity
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2825,7 +2825,7 @@ type InformationContentEntityToNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: NamedThing!
     object: NamedThing!
@@ -2836,7 +2836,7 @@ type InformationResource
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2853,7 +2853,7 @@ type LifeStage
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -2867,7 +2867,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2901,7 +2901,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: BiologicalProcess!
@@ -2926,7 +2926,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: CellularComponent!
@@ -2956,7 +2956,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
@@ -2971,7 +2971,7 @@ type MaterialSample implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -2998,7 +2998,7 @@ type MaterialSampleDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MaterialSample!
     object: NamedThing!
@@ -3026,7 +3026,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
   }
 
@@ -3039,7 +3039,7 @@ type MicroRNA
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3067,7 +3067,7 @@ type MolecularActivity implements Occurrent, OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3099,7 +3099,7 @@ type MolecularActivityToChemicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
     object: ChemicalEntity!
@@ -3124,7 +3124,7 @@ type MolecularActivityToMolecularActivityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
     object: MolecularActivity!
@@ -3148,7 +3148,7 @@ type MolecularActivityToPathwayAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
     object: Pathway!
@@ -3159,7 +3159,7 @@ type MolecularEntity
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3178,7 +3178,7 @@ type MolecularMixture
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3204,7 +3204,7 @@ type NamedThing
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3233,7 +3233,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     subjectAspectQualifier: String
@@ -3246,7 +3246,7 @@ type NoncodingRNAProduct
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3268,7 +3268,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3289,7 +3289,7 @@ type NucleicAcidSequenceMotif
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3303,7 +3303,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3319,7 +3319,7 @@ type ObservedExpectedFrequencyAnalysisResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3339,7 +3339,7 @@ interface Occurrent
 type Onset
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3360,7 +3360,7 @@ interface OntologyClass
 type OrganismAttribute
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3377,7 +3377,7 @@ type OrganismTaxon
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3410,7 +3410,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
     object: NamedThing!
@@ -3436,7 +3436,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
     object: OrganismTaxon!
@@ -3460,7 +3460,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     associatedEnvironmentalContext: String
     subject: OrganismTaxon!
@@ -3486,7 +3486,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
     object: OrganismTaxon!
@@ -3512,7 +3512,7 @@ type OrganismToOrganismAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: IndividualOrganism!
     object: IndividualOrganism!
@@ -3522,7 +3522,7 @@ type OrganismalEntity implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -3552,7 +3552,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: OrganismalEntity!
     frequencyQualifier: FrequencyValue
@@ -3582,7 +3582,7 @@ type PairwiseGeneToGeneInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
@@ -3606,7 +3606,7 @@ type PairwiseMolecularInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
     subject: MolecularEntity!
@@ -3622,7 +3622,7 @@ interface PathognomonicityQuantifier
 type PathologicalAnatomicalExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3644,7 +3644,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -3662,7 +3662,7 @@ type PathologicalProcess implements PathologicalEntityMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3678,7 +3678,7 @@ type PathologicalProcess implements PathologicalEntityMixin
 type PathologicalProcessExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3700,7 +3700,7 @@ type Pathway implements OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3717,7 +3717,7 @@ type Phenomenon implements Occurrent
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3730,7 +3730,7 @@ type PhenotypicFeature
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3743,7 +3743,7 @@ type PhenotypicFeature
 type PhenotypicQuality
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3759,7 +3759,7 @@ type PhenotypicQuality
 type PhenotypicSex
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -3776,7 +3776,7 @@ type PhysicalEntity implements PhysicalEssence
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3797,7 +3797,7 @@ type PhysiologicalProcess implements OntologyClass
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3814,7 +3814,7 @@ type PlanetaryEntity
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3827,7 +3827,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3841,7 +3841,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -3869,7 +3869,7 @@ type PopulationToPopulationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
@@ -3880,7 +3880,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3920,7 +3920,7 @@ type Procedure implements ActivityAndBehavior
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3933,7 +3933,7 @@ type ProcessedMaterial
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3955,7 +3955,7 @@ type Protein implements GeneProductMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3970,7 +3970,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -3985,7 +3985,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4000,7 +4000,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4030,7 +4030,7 @@ type Publication
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    type: String!
+    type: [String]!
   }
 
 type QuantityValue
@@ -4058,7 +4058,7 @@ type ReactionToCatalystAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     stoichiometry: Integer
     reactionDirection: ReactionDirectionEnum
@@ -4086,7 +4086,7 @@ type ReactionToParticipantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: ChemicalEntity!
     stoichiometry: Integer
@@ -4099,7 +4099,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4123,7 +4123,7 @@ type RelativeFrequencyAnalysisResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4140,7 +4140,7 @@ type RNAProduct implements GeneProductMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4162,7 +4162,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4205,7 +4205,7 @@ type SequenceAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
   }
 
@@ -4228,7 +4228,7 @@ type SequenceFeatureRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: NucleicAcidEntity!
     object: NucleicAcidEntity!
@@ -4237,7 +4237,7 @@ type SequenceFeatureRelationship
 type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
   {
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4269,7 +4269,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
     object: Treatment!
@@ -4297,13 +4297,13 @@ type Serial
     volume: String
     issue: String
     id: String!
-    type: String!
+    type: [String]!
   }
 
 type SeverityValue
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -4320,7 +4320,7 @@ type SiRNA
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4341,7 +4341,7 @@ type SiRNA
 type SmallMolecule
   {
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4360,7 +4360,7 @@ type SmallMolecule
 type Snv
   {
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4376,7 +4376,7 @@ type Snv
 type SocioeconomicAttribute
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
@@ -4392,7 +4392,7 @@ type SocioeconomicAttribute
 type SocioeconomicExposure implements ExposureEvent
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
@@ -4418,7 +4418,7 @@ type Study
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4435,7 +4435,7 @@ type StudyPopulation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -4449,7 +4449,7 @@ interface StudyResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4466,7 +4466,7 @@ type StudyVariable
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4502,7 +4502,7 @@ type TaxonToTaxonAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
     object: OrganismTaxon!
@@ -4517,7 +4517,7 @@ type TextMiningResult
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4539,7 +4539,7 @@ type Transcript
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4575,7 +4575,7 @@ type TranscriptToGeneRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: Transcript!
     object: Gene!
@@ -4585,7 +4585,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
@@ -4616,7 +4616,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     predicate: PredicateType!
     object: NamedThing!
@@ -4644,7 +4644,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: NamedThing!
     predicate: PredicateType!
@@ -4678,7 +4678,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: Gene!
     predicate: PredicateType!
@@ -4703,7 +4703,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     object: Gene!
     predicate: PredicateType!
@@ -4733,7 +4733,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
     frequencyQualifier: FrequencyValue
@@ -4765,7 +4765,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
-    type: String
+    type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
@@ -4780,7 +4780,7 @@ type Virus implements SubjectOfInvestigation
   {
     id: String!
     iri: IriType
-    type: String
+    type: [String]
     name: LabelType
     description: NarrativeText
     providedBy: [String]
@@ -4793,7 +4793,7 @@ type Virus implements SubjectOfInvestigation
 type Zygosity
   {
     id: String!
-    type: String
+    type: [String]
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]

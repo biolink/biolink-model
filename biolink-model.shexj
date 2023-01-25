@@ -815,7 +815,7 @@
                               "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
-                              "max": 1
+                              "max": -1
                            },
                            {
                               "type": "TripleConstraint",
@@ -1694,7 +1694,7 @@
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "https://w3id.org/linkml/String",
                         "min": 1,
-                        "max": 1
+                        "max": -1
                      }
                   ]
                },
@@ -5620,7 +5620,7 @@
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "https://w3id.org/linkml/String",
                         "min": 0,
-                        "max": 1
+                        "max": -1
                      },
                      {
                         "type": "TripleConstraint",
@@ -13942,7 +13942,7 @@
                               "predicate": "http://purl.org/dc/terms/type",
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 1,
-                              "max": 1
+                              "max": -1
                            }
                         ]
                      },
@@ -14793,7 +14793,7 @@
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "https://w3id.org/linkml/String",
                         "min": 1,
-                        "max": 1
+                        "max": -1
                      }
                   ]
                },

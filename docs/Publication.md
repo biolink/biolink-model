@@ -15,7 +15,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Cauthors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;id:string;name:label_type%20%3F;type:string%20%2B;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;description(i):narrative_text%20%3F],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Association]-%20publications%200..%2A%3E[Publication%7Cauthors:string%20%2A;pages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;id:string;name:label_type%20%3F;publication_type:string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article],[Agent])
 
 ---
 
@@ -67,7 +67,8 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
  * [pages](pages.md)  <sub>0..\*</sub>
      * Description: page number of source referenced for statement or publication
      * Range: [String](types/String.md)
- * [type](type.md)  <sub>0..\*</sub>
+ * [publication type](publication_type.md)  <sub>0..1</sub>
+     * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
      * Range: [String](types/String.md)
  * [summary](summary.md)  <sub>0..1</sub>
      * Description: executive  summary of a publication
@@ -157,7 +158,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [pages](pages.md)  <sub>0..\*</sub>
      * Description: page number of source referenced for statement or publication
      * Range: [String](types/String.md)
- * [type](type.md)  <sub>0..\*</sub>
+ * [publication type](publication_type.md)  <sub>0..1</sub>
+     * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
      * Range: [String](types/String.md)
  * [summary](summary.md)  <sub>0..1</sub>
      * Description: executive  summary of a publication
