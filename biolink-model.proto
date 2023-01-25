@@ -7,7 +7,7 @@ message Activity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -19,7 +19,7 @@ message Activity
 message Agent
  {
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -35,7 +35,7 @@ message AnatomicalEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -63,7 +63,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
   anatomicalEntity object = 0
@@ -88,7 +88,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
   anatomicalEntity object = 0
@@ -113,7 +113,7 @@ message Article
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string type = 0
+ repeated  string type = 0
   uriorcurie publishedIn = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -141,14 +141,14 @@ message Association
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
  }
 // A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -164,7 +164,7 @@ message Behavior
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -196,7 +196,7 @@ message BehaviorToBehavioralFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   behavior subject = 0
   behavioralFeature object = 0
@@ -213,7 +213,7 @@ message BehaviorToBehavioralFeatureAssociation
 message BehavioralExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -231,7 +231,7 @@ message BehavioralFeature
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -245,7 +245,7 @@ message BiologicalProcess
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -262,7 +262,7 @@ message BiologicalProcessOrActivity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -277,7 +277,7 @@ message BiologicalProcessOrActivity
 message BiologicalSex
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -293,7 +293,7 @@ message BiologicalSex
 message BioticExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -326,7 +326,7 @@ message Book
  repeated  uriorcurie xref = 0
   labelType name = 0
   string id = 0
-  string type = 0
+ repeated  string type = 0
  }
 message BookChapter
  {
@@ -347,7 +347,7 @@ message BookChapter
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string type = 0
+ repeated  string type = 0
   uriorcurie publishedIn = 0
   string volume = 0
   string chapter = 0
@@ -357,7 +357,7 @@ message Case
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -388,7 +388,7 @@ message CaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
@@ -403,7 +403,7 @@ message Cell
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -416,7 +416,7 @@ message CellLine
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -445,7 +445,7 @@ message CellLineAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   cellLine subject = 0
   frequencyValue frequencyQualifier = 0
@@ -473,7 +473,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature subject = 0
  }
@@ -482,7 +482,7 @@ message CellularComponent
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -495,7 +495,7 @@ message CellularOrganism
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -523,7 +523,7 @@ message ChemicalAffectsGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
@@ -549,7 +549,7 @@ message ChemicalEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -580,7 +580,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
   namedThing object = 0
@@ -605,7 +605,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   directionQualifierEnum objectDirectionQualifier = 0
   predicateType predicate = 0
@@ -616,7 +616,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
 message ChemicalExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -648,7 +648,7 @@ message ChemicalGeneInteractionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
@@ -667,7 +667,7 @@ message ChemicalMixture
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -705,7 +705,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
@@ -731,7 +731,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
   predicateType predicate = 0
@@ -740,7 +740,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
 message ChemicalRole
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -773,7 +773,7 @@ message ChemicalToChemicalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
  }
@@ -803,7 +803,7 @@ message ChemicalToChemicalDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
   chemicalEntity subject = 0
@@ -831,7 +831,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature object = 0
  }
@@ -855,7 +855,7 @@ message ChemicalToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
   pathway object = 0
@@ -865,7 +865,7 @@ message ChiSquaredAnalysisResult
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -881,7 +881,7 @@ message ChiSquaredAnalysisResult
 message ClinicalAttribute
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -897,7 +897,7 @@ message ClinicalAttribute
 message ClinicalCourse
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -914,7 +914,7 @@ message ClinicalEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -927,7 +927,7 @@ message ClinicalFinding
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -940,7 +940,7 @@ message ClinicalIntervention
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -952,7 +952,7 @@ message ClinicalIntervention
 message ClinicalMeasurement
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -968,7 +968,7 @@ message ClinicalMeasurement
 message ClinicalModifier
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -984,7 +984,7 @@ message ClinicalTrial
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -996,7 +996,7 @@ message CodingSequence
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1017,7 +1017,7 @@ message Cohort
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -1031,7 +1031,7 @@ message CommonDataElement
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1047,7 +1047,7 @@ message CommonDataElement
 message ComplexChemicalExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -1064,7 +1064,7 @@ message ComplexMolecularMixture
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1086,7 +1086,7 @@ message ConceptCountAnalysisResult
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1103,7 +1103,7 @@ message ConfidenceLevel
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1133,7 +1133,7 @@ message ContributorAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   informationContentEntity subject = 0
   predicateType predicate = 0
@@ -1145,7 +1145,7 @@ message Dataset
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1162,7 +1162,7 @@ message DatasetDistribution
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1180,7 +1180,7 @@ message DatasetSummary
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1199,7 +1199,7 @@ message DatasetVersion
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1219,7 +1219,7 @@ message Device
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1232,7 +1232,7 @@ message Disease
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1246,7 +1246,7 @@ message DiseaseOrPhenotypicFeature
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1259,7 +1259,7 @@ message DiseaseOrPhenotypicFeature
 message DiseaseOrPhenotypicFeatureExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -1292,7 +1292,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   geneticInheritance object = 0
@@ -1318,7 +1318,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity object = 0
  }
@@ -1344,7 +1344,7 @@ message DiseaseToExposureEventAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
  }
 // An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
@@ -1367,7 +1367,7 @@ message DiseaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   disease subject = 0
   phenotypicFeature object = 0
@@ -1385,7 +1385,7 @@ message Drug
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1406,7 +1406,7 @@ message Drug
 message DrugExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -1440,7 +1440,7 @@ message DrugToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct object = 0
  }
@@ -1448,7 +1448,7 @@ message DrugToGeneAssociation
 message DrugToGeneInteractionExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -1479,7 +1479,7 @@ message DruggableGeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   disease object = 0
   frequencyValue frequencyQualifier = 0
@@ -1510,7 +1510,7 @@ message EntityToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
  }
@@ -1535,7 +1535,7 @@ message EntityToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
  }
@@ -1543,7 +1543,7 @@ message EntityToPhenotypicFeatureAssociation
 message EnvironmentalExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -1560,7 +1560,7 @@ message EnvironmentalFeature
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1572,7 +1572,7 @@ message EnvironmentalFoodContaminant
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1589,7 +1589,7 @@ message EnvironmentalProcess
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1602,7 +1602,7 @@ message Event
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1615,7 +1615,7 @@ message EvidenceType
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1632,7 +1632,7 @@ message Exon
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1668,7 +1668,7 @@ message ExonToTranscriptRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   exon subject = 0
   transcript object = 0
@@ -1695,7 +1695,7 @@ message ExposureEventToOutcomeAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
   timeType temporalContextQualifier = 0
@@ -1721,7 +1721,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   exposureEvent subject = 0
   frequencyValue frequencyQualifier = 0
@@ -1738,7 +1738,7 @@ message Food
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1759,7 +1759,7 @@ message FoodAdditive
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1792,7 +1792,7 @@ message FunctionalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
@@ -1802,7 +1802,7 @@ message Gene
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1833,7 +1833,7 @@ message GeneAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   disease object = 0
   frequencyValue frequencyQualifier = 0
@@ -1846,7 +1846,7 @@ message GeneFamily
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -1874,7 +1874,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
@@ -1903,7 +1903,7 @@ message GeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -1930,7 +1930,7 @@ message GeneToExpressionSiteAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   lifeStage stageQualifier = 0
   ontologyClass quantifierQualifier = 0
@@ -1957,7 +1957,7 @@ message GeneToGeneCoexpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
@@ -1986,7 +1986,7 @@ message GeneToGeneFamilyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
   geneFamily object = 0
@@ -2011,7 +2011,7 @@ message GeneToGeneHomologyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   predicateType predicate = 0
@@ -2036,7 +2036,7 @@ message GeneToGeneProductRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
   geneProductMixin object = 0
@@ -2061,7 +2061,7 @@ message GeneToGoTermAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
   ontologyClass object = 0
@@ -2086,7 +2086,7 @@ message GeneToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   pathway object = 0
@@ -2110,7 +2110,7 @@ message GeneToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   phenotypicFeature object = 0
@@ -2128,7 +2128,7 @@ message GeneticInheritance
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2142,7 +2142,7 @@ message Genome
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2156,7 +2156,7 @@ message Genome
 message GenomicBackgroundExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -2191,7 +2191,7 @@ message GenomicSequenceLocalization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   integer startInterbaseCoordinate = 0
   integer endInterbaseCoordinate = 0
@@ -2207,7 +2207,7 @@ message Genotype
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2236,7 +2236,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   namedThing object = 0
@@ -2263,7 +2263,7 @@ message GenotypeToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
   predicateType predicate = 0
@@ -2291,7 +2291,7 @@ message GenotypeToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   genotype subject = 0
@@ -2316,7 +2316,7 @@ message GenotypeToGenotypePartAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   genotype subject = 0
@@ -2342,7 +2342,7 @@ message GenotypeToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   genotype subject = 0
@@ -2374,7 +2374,7 @@ message GenotypeToVariantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   genotype subject = 0
@@ -2384,7 +2384,7 @@ message GenotypeToVariantAssociation
 message GenotypicSex
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -2400,7 +2400,7 @@ message GenotypicSex
 message GeographicExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -2418,7 +2418,7 @@ message GeographicLocation
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2433,7 +2433,7 @@ message GeographicLocationAtTime
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2448,7 +2448,7 @@ message GrossAnatomicalStructure
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -2462,7 +2462,7 @@ message Haplotype
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2476,7 +2476,7 @@ message Hospitalization
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2489,7 +2489,7 @@ message IndividualOrganism
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -2517,7 +2517,7 @@ message InformationContentEntityToNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
   namedThing object = 0
@@ -2528,7 +2528,7 @@ message InformationResource
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2545,7 +2545,7 @@ message LifeStage
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -2559,7 +2559,7 @@ message MacromolecularComplex
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2588,7 +2588,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   biologicalProcess object = 0
@@ -2613,7 +2613,7 @@ message MacromolecularMachineToCellularComponentAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   cellularComponent object = 0
@@ -2638,7 +2638,7 @@ message MacromolecularMachineToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
@@ -2648,7 +2648,7 @@ message MaterialSample
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2675,7 +2675,7 @@ message MaterialSampleDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   materialSample subject = 0
   namedThing object = 0
@@ -2703,14 +2703,14 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
  }
 message MicroRNA
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2732,7 +2732,7 @@ message MolecularActivity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2764,7 +2764,7 @@ message MolecularActivityToChemicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
   chemicalEntity object = 0
@@ -2789,7 +2789,7 @@ message MolecularActivityToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
   molecularActivity object = 0
@@ -2813,7 +2813,7 @@ message MolecularActivityToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
   pathway object = 0
@@ -2824,7 +2824,7 @@ message MolecularEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2843,7 +2843,7 @@ message MolecularMixture
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2865,7 +2865,7 @@ message NamedThing
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2893,7 +2893,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   string subjectAspectQualifier = 0
@@ -2905,7 +2905,7 @@ message NoncodingRNAProduct
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2927,7 +2927,7 @@ message NucleicAcidEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2948,7 +2948,7 @@ message NucleicAcidSequenceMotif
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2962,7 +2962,7 @@ message NucleosomeModification
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2978,7 +2978,7 @@ message ObservedExpectedFrequencyAnalysisResult
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -2994,7 +2994,7 @@ message ObservedExpectedFrequencyAnalysisResult
 message Onset
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3010,7 +3010,7 @@ message Onset
 message OrganismAttribute
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3027,7 +3027,7 @@ message OrganismTaxon
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3055,7 +3055,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   string associatedEnvironmentalContext = 0
   organismTaxon subject = 0
@@ -3081,7 +3081,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
   organismTaxon object = 0
@@ -3106,7 +3106,7 @@ message OrganismToOrganismAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   individualOrganism subject = 0
   individualOrganism object = 0
@@ -3131,7 +3131,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   organismalEntity subject = 0
   frequencyValue frequencyQualifier = 0
@@ -3157,7 +3157,7 @@ message PairwiseGeneToGeneInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   geneOrGeneProduct object = 0
@@ -3181,7 +3181,7 @@ message PairwiseMolecularInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   ontologyClass interactingMoleculesCategory = 0
   molecularEntity subject = 0
@@ -3193,7 +3193,7 @@ message PairwiseMolecularInteraction
 message PathologicalAnatomicalExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3211,7 +3211,7 @@ message PathologicalAnatomicalStructure
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -3225,7 +3225,7 @@ message PathologicalProcess
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3241,7 +3241,7 @@ message PathologicalProcess
 message PathologicalProcessExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3258,7 +3258,7 @@ message Pathway
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3275,7 +3275,7 @@ message Phenomenon
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3288,7 +3288,7 @@ message PhenotypicFeature
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3301,7 +3301,7 @@ message PhenotypicFeature
 message PhenotypicQuality
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3317,7 +3317,7 @@ message PhenotypicQuality
 message PhenotypicSex
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3334,7 +3334,7 @@ message PhysicalEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3346,7 +3346,7 @@ message PhysiologicalProcess
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3363,7 +3363,7 @@ message PlanetaryEntity
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3376,7 +3376,7 @@ message Polypeptide
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3390,7 +3390,7 @@ message PopulationOfIndividualOrganisms
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -3418,7 +3418,7 @@ message PopulationToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms subject = 0
   populationOfIndividualOrganisms object = 0
@@ -3429,7 +3429,7 @@ message PosttranslationalModification
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3469,7 +3469,7 @@ message Procedure
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3482,7 +3482,7 @@ message ProcessedMaterial
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3504,7 +3504,7 @@ message Protein
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3519,7 +3519,7 @@ message ProteinDomain
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3533,7 +3533,7 @@ message ProteinFamily
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3548,7 +3548,7 @@ message ProteinIsoform
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3578,7 +3578,7 @@ message Publication
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string type = 0
+ repeated  string type = 0
  }
 // A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 message QuantityValue
@@ -3605,7 +3605,7 @@ message ReactionToCatalystAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   integer stoichiometry = 0
   reactionDirectionEnum reactionDirection = 0
@@ -3632,7 +3632,7 @@ message ReactionToParticipantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
   integer stoichiometry = 0
@@ -3645,7 +3645,7 @@ message ReagentTargetedGene
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3665,7 +3665,7 @@ message RelativeFrequencyAnalysisResult
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3681,7 +3681,7 @@ message RNAProduct
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3703,7 +3703,7 @@ message RNAProductIsoform
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3742,7 +3742,7 @@ message SequenceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
  }
 // For example, a particular exon is part of a particular transcript or gene
@@ -3765,7 +3765,7 @@ message SequenceFeatureRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   nucleicAcidEntity subject = 0
   nucleicAcidEntity object = 0
@@ -3774,7 +3774,7 @@ message SequenceFeatureRelationship
 message SequenceVariant
  {
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3809,13 +3809,13 @@ message Serial
   string volume = 0
   string issue = 0
   string id = 0
-  string type = 0
+ repeated  string type = 0
  }
 // describes the severity of a phenotypic feature or disease
 message SeverityValue
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3832,7 +3832,7 @@ message SiRNA
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3853,7 +3853,7 @@ message SiRNA
 message SmallMolecule
  {
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3872,7 +3872,7 @@ message SmallMolecule
 message Snv
  {
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3888,7 +3888,7 @@ message Snv
 message SocioeconomicAttribute
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3904,7 +3904,7 @@ message SocioeconomicAttribute
 message SocioeconomicExposure
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  string providedBy = 0
  repeated  uriorcurie xref = 0
@@ -3922,7 +3922,7 @@ message Study
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3939,7 +3939,7 @@ message StudyPopulation
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -3953,7 +3953,7 @@ message StudyVariable
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -3984,7 +3984,7 @@ message TaxonToTaxonAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
   organismTaxon object = 0
@@ -3999,7 +3999,7 @@ message TextMiningResult
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -4016,7 +4016,7 @@ message Transcript
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -4052,7 +4052,7 @@ message TranscriptToGeneRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   transcript subject = 0
   gene object = 0
@@ -4062,7 +4062,7 @@ message Treatment
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
@@ -4092,7 +4092,7 @@ message VariantAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
   namedThing object = 0
@@ -4119,7 +4119,7 @@ message VariantToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
   predicateType predicate = 0
@@ -4148,7 +4148,7 @@ message VariantToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   gene object = 0
   predicateType predicate = 0
@@ -4173,7 +4173,7 @@ message VariantToGeneExpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   gene object = 0
   predicateType predicate = 0
@@ -4202,7 +4202,7 @@ message VariantToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0
   frequencyValue frequencyQualifier = 0
@@ -4234,7 +4234,7 @@ message VariantToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
-  string type = 0
+ repeated  string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0
   populationOfIndividualOrganisms object = 0
@@ -4249,7 +4249,7 @@ message Virus
  {
   string id = 0
   iriType iri = 0
-  string type = 0
+ repeated  string type = 0
   labelType name = 0
   narrativeText description = 0
  repeated  string providedBy = 0
@@ -4261,7 +4261,7 @@ message Virus
 message Zygosity
  {
   string id = 0
-  string type = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0

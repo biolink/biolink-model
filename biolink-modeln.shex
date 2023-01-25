@@ -188,7 +188,7 @@ linkml:Nodeidentifier NONLITERAL
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;
              <original_object> @linkml:String ? ;
-             <type> @linkml:String ? ;
+             <type> @linkml:String * ;
              <category> @<CategoryType> *
           ) ;
           rdf:type [ <Association> ]
@@ -368,7 +368,7 @@ linkml:Nodeidentifier NONLITERAL
 <Book> CLOSED {
     (  $<Book_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <type> @linkml:String
+          <type> @linkml:String +
        ) ;
        rdf:type [ <Book> ]
     )
@@ -1122,7 +1122,7 @@ linkml:Nodeidentifier NONLITERAL
 <Entity_struct> {
     (  $<Entity_tes> (  <iri> @<IriType> ? ;
           <category> @<CategoryType> * ;
-          <type> @linkml:String ? ;
+          <type> @linkml:String * ;
           <name> @<LabelType> ? ;
           <description> @<NarrativeText> ? ;
           <has_attribute> @<Attribute> *
@@ -2724,7 +2724,7 @@ linkml:Nodeidentifier NONLITERAL
              <keywords> @linkml:String * ;
              <mesh_terms> @linkml:Uriorcurie * ;
              <name> @<LabelType> ? ;
-             <type> @linkml:String
+             <type> @linkml:String +
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -2892,7 +2892,7 @@ linkml:Nodeidentifier NONLITERAL
           <iso_abbreviation> @linkml:String ? ;
           <volume> @linkml:String ? ;
           <issue> @linkml:String ? ;
-          <type> @linkml:String
+          <type> @linkml:String +
        ) ;
        rdf:type [ <Serial> ]
     )
