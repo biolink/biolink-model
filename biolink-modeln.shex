@@ -368,7 +368,7 @@ linkml:Nodeidentifier NONLITERAL
 <Book> CLOSED {
     (  $<Book_tes> (  &<Publication_tes> ;
           rdf:type [ <Publication> ] ? ;
-          <type> @linkml:String +
+          <type> @linkml:String *
        ) ;
        rdf:type [ <Book> ]
     )
@@ -2724,7 +2724,7 @@ linkml:Nodeidentifier NONLITERAL
              <keywords> @linkml:String * ;
              <mesh_terms> @linkml:Uriorcurie * ;
              <name> @<LabelType> ? ;
-             <type> @linkml:String +
+             <publication_type> @linkml:String
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -2892,7 +2892,7 @@ linkml:Nodeidentifier NONLITERAL
           <iso_abbreviation> @linkml:String ? ;
           <volume> @linkml:String ? ;
           <issue> @linkml:String ? ;
-          <type> @linkml:String +
+          <type> @linkml:String *
        ) ;
        rdf:type [ <Serial> ]
     )

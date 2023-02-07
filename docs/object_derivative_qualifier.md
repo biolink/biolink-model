@@ -7,6 +7,9 @@ layout: default
 
 # Slot: object_derivative_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -26,3 +29,10 @@ URI: [biolink:object_derivative_qualifier](https://w3id.org/biolink/vocab/object
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

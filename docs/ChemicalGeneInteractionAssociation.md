@@ -41,15 +41,19 @@ URI: [biolink:ChemicalGeneInteractionAssociation](https://w3id.org/biolink/vocab
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
      * Example: blood None
      * Example: cerebral cortext None
+     * in subsets: (translator_minimal)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object part qualifier](object_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
@@ -58,12 +62,16 @@ URI: [biolink:ChemicalGeneInteractionAssociation](https://w3id.org/biolink/vocab
      * Range: [NamedThing](NamedThing.md)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject derivative qualifier](subject_derivative_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject part qualifier](subject_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from association:
 
@@ -163,15 +171,19 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
      * Example: blood None
      * Example: cerebral cortext None
+     * in subsets: (translator_minimal)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object part qualifier](object_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
@@ -180,12 +192,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [NamedThing](NamedThing.md)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject derivative qualifier](subject_derivative_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject part qualifier](subject_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
 
 ## Other properties
 

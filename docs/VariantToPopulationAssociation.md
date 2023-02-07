@@ -142,6 +142,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from frequency quantifier:
 

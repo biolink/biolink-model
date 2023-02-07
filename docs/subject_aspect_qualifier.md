@@ -7,6 +7,9 @@ layout: default
 
 # Slot: subject_aspect_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -26,3 +29,10 @@ URI: [biolink:subject_aspect_qualifier](https://w3id.org/biolink/vocab/subject_a
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

@@ -130,15 +130,18 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * Range: [SeverityValue](SeverityValue.md)
+     * in subsets: (translator_minimal)
  * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * Range: [Onset](Onset.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from entity to phenotypic feature association mixin:
 
  * [sex qualifier](sex_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
      * Range: [BiologicalSex](BiologicalSex.md)
+     * in subsets: (translator_minimal)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -148,6 +151,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from frequency quantifier:
 

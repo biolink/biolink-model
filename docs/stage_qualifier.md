@@ -7,6 +7,9 @@ layout: default
 
 # Slot: stage_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 stage during which gene or protein expression of takes place.
 
@@ -34,4 +37,5 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 |  |  |  |
 | --- | --- | --- |
 | **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
+| **In Subsets:** | | translator_minimal |
 

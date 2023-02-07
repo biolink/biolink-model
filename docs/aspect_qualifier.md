@@ -7,6 +7,9 @@ layout: default
 
 # Slot: aspect_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.
 
@@ -18,7 +21,7 @@ URI: [biolink:aspect_qualifier](https://w3id.org/biolink/vocab/aspect_qualifier)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -36,4 +39,5 @@ URI: [biolink:aspect_qualifier](https://w3id.org/biolink/vocab/aspect_qualifier)
 |  | | Example(value='abundance', description=None) |
 |  | | Example(value='expression', description=None) |
 |  | | Example(value='exposure', description=None) |
+| **In Subsets:** | | translator_minimal |
 

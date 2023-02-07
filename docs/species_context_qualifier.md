@@ -7,6 +7,9 @@ layout: default
 
 # Slot: species_context_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
 
@@ -33,4 +36,5 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 | --- | --- | --- |
 | **Examples:** | | Example(value='zebrafish', description=None) |
 |  | | Example(value='human', description=None) |
+| **In Subsets:** | | translator_minimal |
 

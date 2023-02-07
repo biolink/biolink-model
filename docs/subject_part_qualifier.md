@@ -7,6 +7,9 @@ layout: default
 
 # Slot: subject_part_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -26,3 +29,10 @@ URI: [biolink:subject_part_qualifier](https://w3id.org/biolink/vocab/subject_par
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

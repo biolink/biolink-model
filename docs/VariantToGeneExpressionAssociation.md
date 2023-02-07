@@ -143,6 +143,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: stage during which gene or protein expression of takes place.
      * Range: [LifeStage](LifeStage.md)
      * Example: UBERON:0000069 larval stage
+     * in subsets: (translator_minimal)
  * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
      * Description: A measurable quantity for the object of the association
      * Range: [OntologyClass](OntologyClass.md)

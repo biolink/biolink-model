@@ -50,6 +50,7 @@ URI: [biolink:GeneExpressionMixin](https://w3id.org/biolink/vocab/GeneExpression
      * Description: stage during which gene or protein expression of takes place.
      * Range: [LifeStage](LifeStage.md)
      * Example: UBERON:0000069 larval stage
+     * in subsets: (translator_minimal)
  * [quantifier qualifier](quantifier_qualifier.md)  <sub>0..1</sub>
      * Description: A measurable quantity for the object of the association
      * Range: [OntologyClass](OntologyClass.md)

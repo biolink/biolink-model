@@ -7,6 +7,9 @@ layout: default
 
 # Slot: sex_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
 
@@ -18,7 +21,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -33,3 +36,10 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

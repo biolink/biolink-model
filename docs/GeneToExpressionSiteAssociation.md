@@ -45,6 +45,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
      * Description: stage during which gene or protein expression of takes place.
      * Range: [LifeStage](LifeStage.md)
      * Example: UBERON:0000069 larval stage
+     * in subsets: (translator_minimal)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
@@ -155,6 +156,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: stage during which gene or protein expression of takes place.
      * Range: [LifeStage](LifeStage.md)
      * Example: UBERON:0000069 larval stage
+     * in subsets: (translator_minimal)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

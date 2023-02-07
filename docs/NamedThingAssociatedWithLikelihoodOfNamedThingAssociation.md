@@ -34,15 +34,19 @@ URI: [biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](https:/
 
  * [object aspect qualifier](object_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from association:
 
@@ -139,12 +143,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [object aspect qualifier](object_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)

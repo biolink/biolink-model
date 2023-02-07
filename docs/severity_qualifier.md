@@ -7,6 +7,9 @@ layout: default
 
 # Slot: severity_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
 
@@ -18,7 +21,7 @@ URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualif
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -45,3 +48,10 @@ URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualif
  * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

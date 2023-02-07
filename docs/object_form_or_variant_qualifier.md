@@ -7,6 +7,9 @@ layout: default
 
 # Slot: object_form_or_variant_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -26,3 +29,10 @@ URI: [biolink:object_form_or_variant_qualifier](https://w3id.org/biolink/vocab/o
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

@@ -7,6 +7,9 @@ layout: default
 
 # Slot: statement_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -18,7 +21,7 @@ URI: [biolink:statement_qualifier](https://w3id.org/biolink/vocab/statement_qual
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -27,4 +30,11 @@ URI: [biolink:statement_qualifier](https://w3id.org/biolink/vocab/statement_qual
  *  [species context qualifier](species_context_qualifier.md)
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
 

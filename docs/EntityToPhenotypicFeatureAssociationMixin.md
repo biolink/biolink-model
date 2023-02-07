@@ -52,21 +52,25 @@ URI: [biolink:EntityToPhenotypicFeatureAssociationMixin](https://w3id.org/biolin
  * [sex qualifier](sex_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
      * Range: [BiologicalSex](BiologicalSex.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from entity to feature or disease qualifiers mixin:
 
  * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * Range: [SeverityValue](SeverityValue.md)
+     * in subsets: (translator_minimal)
  * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * Range: [Onset](Onset.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from frequency quantifier:
 

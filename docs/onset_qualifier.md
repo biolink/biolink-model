@@ -7,6 +7,9 @@ layout: default
 
 # Slot: onset_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 
@@ -18,7 +21,7 @@ URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -45,3 +48,10 @@ URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
  * [VariantAsAModelOfDiseaseAssociation](VariantAsAModelOfDiseaseAssociation.md)
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

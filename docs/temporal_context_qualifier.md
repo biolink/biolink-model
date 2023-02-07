@@ -18,7 +18,7 @@ URI: [biolink:temporal_context_qualifier](https://w3id.org/biolink/vocab/tempora
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 

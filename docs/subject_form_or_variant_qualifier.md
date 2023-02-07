@@ -7,6 +7,9 @@ layout: default
 
 # Slot: subject_form_or_variant_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -27,3 +30,10 @@ URI: [biolink:subject_form_or_variant_qualifier](https://w3id.org/biolink/vocab/
 
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

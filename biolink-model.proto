@@ -97,6 +97,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
 message Article
  {
   iriType iri = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -113,7 +114,7 @@ message Article
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
- repeated  string type = 0
+  string publicationType = 0
   uriorcurie publishedIn = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -325,12 +326,14 @@ message Book
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
   labelType name = 0
+  string publicationType = 0
   string id = 0
  repeated  string type = 0
  }
 message BookChapter
  {
   iriType iri = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -347,7 +350,7 @@ message BookChapter
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
- repeated  string type = 0
+  string publicationType = 0
   uriorcurie publishedIn = 0
   string volume = 0
   string chapter = 0
@@ -3562,6 +3565,7 @@ message ProteinIsoform
 message Publication
  {
   iriType iri = 0
+ repeated  string type = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
@@ -3578,7 +3582,7 @@ message Publication
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
- repeated  string type = 0
+  string publicationType = 0
  }
 // A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 message QuantityValue
@@ -3805,6 +3809,7 @@ message Serial
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
   labelType name = 0
+  string publicationType = 0
   string isoAbbreviation = 0
   string volume = 0
   string issue = 0

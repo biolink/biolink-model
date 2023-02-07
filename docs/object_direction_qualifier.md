@@ -7,6 +7,9 @@ layout: default
 
 # Slot: object_direction_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 
 
@@ -26,3 +29,10 @@ URI: [biolink:object_direction_qualifier](https://w3id.org/biolink/vocab/object_
 ## Used by
 
  * [PredicateMapping](PredicateMapping.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

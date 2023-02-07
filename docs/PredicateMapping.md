@@ -15,7 +15,7 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Cbroad%20match%200..%2A-%20[PredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:string%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:DirectionQualifierEnum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:string%20%3F;anatomical_context_qualifier:AnatomicalContextQualifierEnum%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[PredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[PredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[PredicateMapping],[MappingCollection]++-%20predicate%20mappings%200..%2A%3E[PredicateMapping],[OrganismTaxon],[NamedThing],[MappingCollection])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Cbroad%20match%200..%2A-%20[PredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:DirectionQualifierEnum%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:DirectionQualifierEnum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:CausalMechanismQualifierEnum%20%3F;anatomical_context_qualifier:AnatomicalContextQualifierEnum%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[PredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[PredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[PredicateMapping],[MappingCollection]++-%20predicate%20mappings%200..%2A%3E[PredicateMapping],[OrganismTaxon],[NamedThing],[MappingCollection])
 
 ---
 
@@ -46,11 +46,13 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
      * in subsets: (translator_minimal)
  * [object derivative qualifier](object_derivative_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
      * Example: zebrafish None
      * Example: human None
+     * in subsets: (translator_minimal)
 
 ### Inherited from association:
 
@@ -111,32 +113,44 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject part qualifier](subject_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject derivative qualifier](subject_derivative_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject context qualifier](subject_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject direction qualifier](subject_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object part qualifier](object_part_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object aspect qualifier](object_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object context qualifier](object_context_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [causal mechanism qualifier](causal_mechanism_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
-     * Range: [String](types/String.md)
+     * Range: [CausalMechanismQualifierEnum](CausalMechanismQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
      * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
      * Example: blood None
      * Example: cerebral cortext None
+     * in subsets: (translator_minimal)
  * [qualified predicate](qualified_predicate.md)  <sub>0..1</sub>
      * Description: Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
      * Range: [String](types/String.md)
@@ -151,16 +165,19 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
      * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [species context qualifier](species_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * Range: [OrganismTaxon](OrganismTaxon.md)
      * Example: zebrafish None
      * Example: human None
+     * in subsets: (translator_minimal)
 
 ### Inherited from chemical entity or gene or gene product regulates gene association:
 
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
      * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
@@ -175,6 +192,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)

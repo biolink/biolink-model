@@ -7,6 +7,9 @@ layout: default
 
 # Slot: form_or_variant_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
 
@@ -18,7 +21,7 @@ URI: [biolink:form_or_variant_qualifier](https://w3id.org/biolink/vocab/form_or_
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -37,4 +40,5 @@ URI: [biolink:form_or_variant_qualifier](https://w3id.org/biolink/vocab/form_or_
 |  | | Example(value='severe', description=None) |
 |  | | Example(value='transplant', description=None) |
 |  | | Example(value='chemical analog', description=None) |
+| **In Subsets:** | | translator_minimal |
 

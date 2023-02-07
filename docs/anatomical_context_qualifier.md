@@ -7,6 +7,9 @@ layout: default
 
 # Slot: anatomical_context_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
 
@@ -33,4 +36,5 @@ URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/vocab/anato
 | --- | --- | --- |
 | **Examples:** | | Example(value='blood', description=None) |
 |  | | Example(value='cerebral cortext', description=None) |
+| **In Subsets:** | | translator_minimal |
 

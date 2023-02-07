@@ -1311,9 +1311,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [association slot](association_slot.md) - any slot that relates an association to another entity
      * [FDA adverse event level](FDA_adverse_event_level.md)
      * [FDA approval status](FDA_approval_status.md)
-     * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.
-         * [object aspect qualifier](object_aspect_qualifier.md)
-         * [subject aspect qualifier](subject_aspect_qualifier.md)
      * [associated environmental context](associated_environmental_context.md) - An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
      * [catalyst qualifier](catalyst_qualifier.md) - a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
      * [chi squared statistic](chi_squared_statistic.md) - represents the chi-squared statistic computed from observations
@@ -1321,23 +1318,10 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [concept count object](concept_count_object.md) - The number of instances in a dataset/cohort whose records contain the concept in the object slot of an association.
      * [concept count subject](concept_count_subject.md) - The number of instances in a dataset/cohort whose records contain the concept in the subject slot of an association.
      * [concept pair count](concept_pair_count.md) - The number of instances in a dataset/cohort whose records contain both the subject and object concept of an association.
-     * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
-         * [object context qualifier](object_context_qualifier.md)
-         * [subject context qualifier](subject_context_qualifier.md)
-     * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
-         * [object derivative qualifier](object_derivative_qualifier.md)
-         * [subject derivative qualifier](subject_derivative_qualifier.md)
-     * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
-         * [object direction qualifier](object_direction_qualifier.md)
-         * [subject direction qualifier](subject_direction_qualifier.md)
      * [evidence count](evidence_count.md) - The number of evidence instances that are connected to an association.
      * [expected count](expected_count.md) - The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
      * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
      * [extraction confidence score](extraction_confidence_score.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
-     * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
-         * [object form or variant qualifier](object_form_or_variant_qualifier.md)
-         * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
-     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
      * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
      * [has supporting study result](has_supporting_study_result.md) - connects an association to an instance of supporting study result
@@ -1352,20 +1336,45 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * [object location in text](object_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
-     * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [p value](p_value.md) - A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
          * [adjusted p value](adjusted_p_value.md) - The adjusted p-value is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct, adjusted for multiple comparisons.   P is always italicized and capitalized. The actual P value* should be expressed (P=. 04)  rather than expressing a statement of inequality (P<. 05), unless P<.
              * [bonferonni adjusted p value](bonferonni_adjusted_p_value.md) - The Bonferroni correction is an adjustment made to P values when several dependent or independent  statistical tests are being performed simultaneously on a single data set. To perform a Bonferroni  correction, divide the critical P value (α) by the number of comparisons being made.  P is always italicized and  capitalized. The actual P value* should be expressed (P=. 04) rather than expressing a statement of inequality  (P<. 05), unless P<.
-     * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
-         * [object part qualifier](object_part_qualifier.md)
-         * [subject part qualifier](subject_part_qualifier.md)
      * [phenotypic state](phenotypic_state.md) - in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
-     * [population context qualifier](population_context_qualifier.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
      * [predicate](predicate.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * [qualified predicate](qualified_predicate.md) - Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
+     * [qualifier](qualifier.md) - grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+         * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.
+             * [object aspect qualifier](object_aspect_qualifier.md)
+             * [subject aspect qualifier](subject_aspect_qualifier.md)
+         * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+             * [object context qualifier](object_context_qualifier.md)
+             * [subject context qualifier](subject_context_qualifier.md)
+         * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
+             * [object derivative qualifier](object_derivative_qualifier.md)
+             * [subject derivative qualifier](subject_derivative_qualifier.md)
+         * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+             * [object direction qualifier](object_direction_qualifier.md)
+             * [subject direction qualifier](subject_direction_qualifier.md)
+         * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
+             * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+             * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
+         * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+         * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+         * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+             * [object part qualifier](object_part_qualifier.md)
+             * [subject part qualifier](subject_part_qualifier.md)
+         * [population context qualifier](population_context_qualifier.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
+         * [qualified predicate](qualified_predicate.md) - Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
+         * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+         * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+         * [statement qualifier](statement_qualifier.md)
+             * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
+             * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+             * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
+         * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
+             * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
      * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
      * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
      * [reaction balanced](reaction_balanced.md)
@@ -1386,13 +1395,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [phase](phase.md) - The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
          * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
      * [sequence variant qualifier](sequence_variant_qualifier.md) - a qualifier used in an association with the variant
-     * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
      * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
-     * [statement qualifier](statement_qualifier.md)
-         * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
-         * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
-         * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
@@ -1411,8 +1414,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [supporting study size](supporting_study_size.md) - The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
      * [supporting text](supporting_text.md) - The segment of text from a document that supports the mined assertion.
      * [supporting text section type](supporting_text_section_type.md) - The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.
-     * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
-         * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
      * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
      * [start coordinate](start_coordinate.md) - The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
@@ -1486,6 +1487,37 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
  * [publications](publications.md) - One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
  * [qualified predicate](qualified_predicate.md) - Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
+ * [qualifier](qualifier.md) - grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+     * [aspect qualifier](aspect_qualifier.md) - Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which the core concept participates, a function/activity/role held by the core concept, or a characteristic/quality that inheres in the core concept.  The purpose of the aspect slot is to indicate what aspect is being affected in an  'affects' association.
+         * [object aspect qualifier](object_aspect_qualifier.md)
+         * [subject aspect qualifier](subject_aspect_qualifier.md)
+     * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
+         * [object context qualifier](object_context_qualifier.md)
+         * [subject context qualifier](subject_context_qualifier.md)
+     * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
+         * [object derivative qualifier](object_derivative_qualifier.md)
+         * [subject derivative qualifier](subject_derivative_qualifier.md)
+     * [direction qualifier](direction_qualifier.md) - Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
+         * [object direction qualifier](object_direction_qualifier.md)
+         * [subject direction qualifier](subject_direction_qualifier.md)
+     * [form or variant qualifier](form_or_variant_qualifier.md) - A qualifier that composes with a core subject/object concept to define a specific type, variant, alternative version of this concept. The composed concept remains a subtype or instance of the core concept. For example, the qualifier ‘mutation’ combines with the core concept ‘Gene X’ to express the compose concept ‘a mutation of Gene X’.
+         * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+         * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
+     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * [part qualifier](part_qualifier.md) - defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
+         * [object part qualifier](object_part_qualifier.md)
+         * [subject part qualifier](subject_part_qualifier.md)
+     * [population context qualifier](population_context_qualifier.md) - a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
+     * [qualified predicate](qualified_predicate.md) - Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.
+     * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * [statement qualifier](statement_qualifier.md)
+         * [anatomical context qualifier](anatomical_context_qualifier.md) - A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
+         * [causal mechanism qualifier](causal_mechanism_qualifier.md) - A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
+         * [species context qualifier](species_context_qualifier.md) - A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
+     * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
+         * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [qualifiers](qualifiers.md) - connects an association to qualifiers that modify or qualify the meaning of that association
  * [quantifier qualifier](quantifier_qualifier.md) - A measurable quantity for the object of the association
  * [reaction balanced](reaction_balanced.md)
@@ -1603,6 +1635,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Built in
 
  * **Bool**
+ * **Curie**
  * **Decimal**
  * **ElementIdentifier**
  * **NCName**
@@ -1622,6 +1655,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Boolean](types/Boolean.md)  (**Bool**)  - A binary (true or false) value
  * [CategoryType](types/CategoryType.md)  ([Uriorcurie](types/Uriorcurie.md))  - A primitive type in which the value denotes a class within the biolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the biolink class, for example biolink:Gene. For an RDF representation, the value should be a URI such as https://w3id.org/biolink/vocab/Gene
  * [ChemicalFormulaValue](types/ChemicalFormulaValue.md)  (**str**)  - A chemical formula
+ * [Curie](types/Curie.md)  (**Curie**)  - a compact URI
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
  * [DateOrDatetime](types/DateOrDatetime.md)  (**str**)  - Either a date or a datetime
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time

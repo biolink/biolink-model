@@ -7,6 +7,9 @@ layout: default
 
 # Slot: context_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
 
@@ -18,7 +21,7 @@ URI: [biolink:context_qualifier](https://w3id.org/biolink/vocab/context_qualifie
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -34,4 +37,5 @@ URI: [biolink:context_qualifier](https://w3id.org/biolink/vocab/context_qualifie
 | --- | --- | --- |
 | **Examples:** | | Example(value='cohort x (e.g. a specific population, referenced by an identifier)', description=None) |
 |  | | Example(value='gut microbiome', description=None) |
+| **In Subsets:** | | translator_minimal |
 

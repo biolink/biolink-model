@@ -7,6 +7,9 @@ layout: default
 
 # Slot: part_qualifier
 
+translator_minimal
+{: .translator_minimal-subset-label }
+
 
 defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can use to directly represent it, e.g. 'ESR1 transcript' q: polyA tail).
 
@@ -18,7 +21,7 @@ URI: [biolink:part_qualifier](https://w3id.org/biolink/vocab/part_qualifier)
 
 ## Parents
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [qualifier](qualifier.md)
 
 ## Children
 
@@ -34,4 +37,5 @@ URI: [biolink:part_qualifier](https://w3id.org/biolink/vocab/part_qualifier)
 | --- | --- | --- |
 | **Examples:** | | Example(value='polyA tail', description=None) |
 |  | | Example(value='upstream control region', description=None) |
+| **In Subsets:** | | translator_minimal |
 

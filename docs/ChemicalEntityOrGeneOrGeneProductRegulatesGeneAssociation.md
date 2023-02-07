@@ -37,6 +37,7 @@ URI: [biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](https:/
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
      * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
@@ -142,6 +143,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [NamedThing](NamedThing.md)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
      * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
  * [predicate](predicate.md)  <sub>1..1</sub>
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)

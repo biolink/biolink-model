@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-25T00:24:09
+# Generation date: 2023-01-25T17:27:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2427,7 +2427,7 @@ class Publication(InformationContentEntity):
 
     id: Union[str, PublicationId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    type: Union[str, List[str]] = None
+    publication_type: str = None
     authors: Optional[Union[str, List[str]]] = empty_list()
     pages: Optional[Union[str, List[str]]] = empty_list()
     summary: Optional[str] = None
@@ -2442,11 +2442,10 @@ class Publication(InformationContentEntity):
         if not isinstance(self.id, PublicationId):
             self.id = PublicationId(self.id)
 
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, list):
-            self.type = [self.type] if self.type is not None else []
-        self.type = [v if isinstance(v, str) else str(v) for v in self.type]
+        if self._is_empty(self.publication_type):
+            self.MissingRequiredField("publication_type")
+        if not isinstance(self.publication_type, str):
+            self.publication_type = str(self.publication_type)
 
         if not isinstance(self.authors, list):
             self.authors = [self.authors] if self.authors is not None else []
@@ -2491,7 +2490,8 @@ class Book(Publication):
 
     id: Union[str, BookId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    type: Union[str, List[str]] = None
+    publication_type: str = None
+    type: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2499,8 +2499,6 @@ class Book(Publication):
         if not isinstance(self.id, BookId):
             self.id = BookId(self.id)
 
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
         if not isinstance(self.type, list):
             self.type = [self.type] if self.type is not None else []
         self.type = [v if isinstance(v, str) else str(v) for v in self.type]
@@ -2519,7 +2517,7 @@ class BookChapter(Publication):
 
     id: Union[str, BookChapterId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    type: Union[str, List[str]] = None
+    publication_type: str = None
     published_in: Union[str, URIorCURIE] = None
     volume: Optional[str] = None
     chapter: Optional[str] = None
@@ -2558,22 +2556,17 @@ class Serial(Publication):
 
     id: Union[str, SerialId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    type: Union[str, List[str]] = None
+    publication_type: str = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
     issue: Optional[str] = None
+    type: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, SerialId):
             self.id = SerialId(self.id)
-
-        if self._is_empty(self.type):
-            self.MissingRequiredField("type")
-        if not isinstance(self.type, list):
-            self.type = [self.type] if self.type is not None else []
-        self.type = [v if isinstance(v, str) else str(v) for v in self.type]
 
         if self.iso_abbreviation is not None and not isinstance(self.iso_abbreviation, str):
             self.iso_abbreviation = str(self.iso_abbreviation)
@@ -2583,6 +2576,10 @@ class Serial(Publication):
 
         if self.issue is not None and not isinstance(self.issue, str):
             self.issue = str(self.issue)
+
+        if not isinstance(self.type, list):
+            self.type = [self.type] if self.type is not None else []
+        self.type = [v if isinstance(v, str) else str(v) for v in self.type]
 
         super().__post_init__(**kwargs)
 
@@ -2598,7 +2595,7 @@ class Article(Publication):
 
     id: Union[str, ArticleId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    type: Union[str, List[str]] = None
+    publication_type: str = None
     published_in: Union[str, URIorCURIE] = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
@@ -9922,6 +9919,9 @@ slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
 slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
                    model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
 
+slots.publication_type = Slot(uri=DCT.type, name="publication type", curie=DCT.curie('type'),
+                   model_uri=BIOLINK.publication_type, domain=None, range=Optional[str])
+
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=Entity, range=Optional[Union[str, LabelType]])
 
@@ -11177,8 +11177,8 @@ slots.publication_id = Slot(uri=BIOLINK.id, name="publication_id", curie=BIOLINK
 slots.publication_name = Slot(uri=RDFS.label, name="publication_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.publication_name, domain=Publication, range=Optional[Union[str, LabelType]])
 
-slots.publication_type = Slot(uri=DCT.type, name="publication_type", curie=DCT.curie('type'),
-                   model_uri=BIOLINK.publication_type, domain=Publication, range=Union[str, List[str]])
+slots.publication_publication_type = Slot(uri=DCT.type, name="publication_publication type", curie=DCT.curie('type'),
+                   model_uri=BIOLINK.publication_publication_type, domain=Publication, range=str)
 
 slots.publication_pages = Slot(uri=BIOLINK.pages, name="publication_pages", curie=BIOLINK.curie('pages'),
                    model_uri=BIOLINK.publication_pages, domain=Publication, range=Optional[Union[str, List[str]]])
@@ -11187,7 +11187,7 @@ slots.book_id = Slot(uri=BIOLINK.id, name="book_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.book_id, domain=Book, range=Union[str, BookId])
 
 slots.book_type = Slot(uri=RDF.type, name="book_type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.book_type, domain=Book, range=Union[str, List[str]])
+                   model_uri=BIOLINK.book_type, domain=Book, range=Optional[Union[str, List[str]]])
 
 slots.book_chapter_published_in = Slot(uri=BIOLINK.published_in, name="book chapter_published in", curie=BIOLINK.curie('published_in'),
                    model_uri=BIOLINK.book_chapter_published_in, domain=BookChapter, range=Union[str, URIorCURIE])
@@ -11196,7 +11196,7 @@ slots.serial_id = Slot(uri=BIOLINK.id, name="serial_id", curie=BIOLINK.curie('id
                    model_uri=BIOLINK.serial_id, domain=Serial, range=Union[str, SerialId])
 
 slots.serial_type = Slot(uri=RDF.type, name="serial_type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.serial_type, domain=Serial, range=Union[str, List[str]])
+                   model_uri=BIOLINK.serial_type, domain=Serial, range=Optional[Union[str, List[str]]])
 
 slots.article_published_in = Slot(uri=BIOLINK.published_in, name="article_published in", curie=BIOLINK.curie('published_in'),
                    model_uri=BIOLINK.article_published_in, domain=Article, range=Union[str, URIorCURIE])
