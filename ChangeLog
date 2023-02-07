@@ -1,5 +1,16 @@
 CHANGES
 =======
+3.2.0
+-----
+add entity as a domain of name by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1208
+fix the regex pattern used to check for the biolink:category CURIE by @vemonet in https://github.com/biolink/biolink-model/pull/1213
+add SHACL gen to the `Makefile` by @vemonet in https://github.com/biolink/biolink-model/pull/1214
+update doc to use curie form of predicates by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1209
+make type slot multivalued by @vincentvialard in https://github.com/biolink/biolink-model/pull/1212
+remove cycle in permissible values, fixes #1215, remove degradation from abundance hierarchy in permissible values, fixes #1206 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1217
+create `publication type` slot to fix SHACL validation and avoid confusion by @vemonet in https://github.com/biolink/biolink-model/pull/1218
+add grouping class for qualifiers, add subset translator, fix range o… by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1219
+
 3.1.2
 -----
 documentation consistency updates and minor bug fixes
