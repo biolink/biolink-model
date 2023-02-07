@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.1.2
+# version: 3.2.0
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -3898,7 +3898,7 @@ type PredicateMapping
   {
     mappedPredicate: String
     subjectAspectQualifier: String
-    subjectDirectionQualifier: String
+    subjectDirectionQualifier: DirectionQualifierEnum
     subjectFormOrVariantQualifier: String
     subjectPartQualifier: String
     subjectDerivativeQualifier: String
@@ -3911,7 +3911,7 @@ type PredicateMapping
     objectPartQualifier: String
     objectDerivativeQualifier: String
     objectContextQualifier: String
-    causalMechanismQualifier: String
+    causalMechanismQualifier: CausalMechanismQualifierEnum
     anatomicalContextQualifier: AnatomicalContextQualifierEnum
     speciesContextQualifier: OrganismTaxon
     exactMatch: [NamedThing]

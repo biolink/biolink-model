@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-01-25T17:27:01\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.1.2\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-02-07T19:40:43\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.0\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -700,6 +700,14 @@
       },
       "category": {
          "@type": "@id"
+      },
+      "causal_mechanism_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
       },
       "caused_by": {
          "@type": "@id"
@@ -1583,6 +1591,14 @@
       "subject": {
          "@type": "@id",
          "@id": "rdf:subject"
+      },
+      "subject_direction_qualifier": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
       },
       "subject_location_in_text": {
          "@type": "xsd:integer"

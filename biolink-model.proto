@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.1.2
+// version: 3.2.0
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -3447,7 +3447,7 @@ message PredicateMapping
  {
   string mappedPredicate = 0
   string subjectAspectQualifier = 0
-  string subjectDirectionQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
   string subjectFormOrVariantQualifier = 0
   string subjectPartQualifier = 0
   string subjectDerivativeQualifier = 0
@@ -3460,7 +3460,7 @@ message PredicateMapping
   string objectPartQualifier = 0
   string objectDerivativeQualifier = 0
   string objectContextQualifier = 0
-  string causalMechanismQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
   anatomicalContextQualifierEnum anatomicalContextQualifier = 0
   organismTaxon speciesContextQualifier = 0
  repeated  namedThing exactMatch = 0

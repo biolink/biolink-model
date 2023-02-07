@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.1.2
+# version: 3.2.0
 {
    "type": "Schema",
    "@context": [
@@ -128,6 +128,11 @@
          "type": "NodeConstraint",
          "id": "https://w3id.org/linkml/Uriorcurie",
          "nodeKind": "iri"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Curie",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
       },
       {
          "type": "NodeConstraint",
@@ -13378,7 +13383,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject_direction_qualifier",
-                        "valueExpr": "https://w3id.org/linkml/String",
+                        "valueExpr": "https://w3id.org/biolink/vocab/DirectionQualifierEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -13469,7 +13474,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/causal_mechanism_qualifier",
-                        "valueExpr": "https://w3id.org/linkml/String",
+                        "valueExpr": "https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum",
                         "min": 0,
                         "max": 1
                      },
