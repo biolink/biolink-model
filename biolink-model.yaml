@@ -1095,14 +1095,14 @@ slots:
     description: >-
       a biological population (general, study, cohort, etc.) with a specific
       set of characteristics to constrain an association.
-    is_a: association slot
+    is_a: qualifier
     range: population of individual organisms
 
   temporal context qualifier:
     description: >-
       a constraint of time placed upon the truth value of an association.
       for time intervales, use temporal interval qualifier.
-    is_a: association slot
+    is_a: qualifier
     range: time type
 
   temporal interval qualifier:
@@ -1209,7 +1209,7 @@ slots:
   ## -------------------
 
   form or variant qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       A qualifier that composes with a core subject/object concept to define a specific type, variant,
@@ -1229,10 +1229,11 @@ slots:
       the qualifier ‘late stage’ combines with a core concept of ‘Disease X’ to express the  more specific concept ‘Late Stage forms of Disease X’
       the qualifier ‘recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
       the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
-
+    in_subset:
+      - translator_minimal
 
   aspect qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       Composes with the core concept to describe new concepts of a different ontological type. e.g. a process in which
@@ -1255,9 +1256,11 @@ slots:
       the qualifier ‘infection’ combines with a core concept of ‘Giardia’ to express the concept ‘Infection with Giardia’ (Taxon → Biological / Pathological Process)
       the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
       the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
+    in_subset:
+      - translator_minimal
 
   derivative qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       A qualifier that composes with a core subject/object  concept to describe something that is derived from the
@@ -1265,9 +1268,11 @@ slots:
       the composed concept ‘a metabolite of Chemical X’.
     examples:
       - value: metabolite
+    in_subset:
+      - translator_minimal
 
   part qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       defines a specific part/component of the core concept (used in cases there this specific part has no IRI we can
@@ -1275,24 +1280,30 @@ slots:
     examples:
       - value: polyA tail
       - value: upstream control region
+    in_subset:
+      - translator_minimal
 
   context qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
     examples:
       - value: cohort x (e.g. a specific population, referenced by an identifier)
       - value: gut microbiome # OHMI:0000020
+    in_subset:
+      - translator_minimal
 
   direction qualifier:
-    is_a: association slot
+    is_a: qualifier
     abstract: true
     description: >-
       Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
     notes: >-
       the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’   
       the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
+    in_subset:
+      - translator_minimal
 
   mapped predicate:
     description: >-
@@ -1332,43 +1343,68 @@ slots:
 
   subject aspect qualifier:
     is_a: aspect qualifier
+    in_subset:
+      - translator_minimal
 
   subject form or variant qualifier:
     is_a: form or variant qualifier
+    in_subset:
+      - translator_minimal
 
   subject part qualifier:
     is_a: part qualifier
+    in_subset:
+      - translator_minimal
 
   subject derivative qualifier:
     is_a: derivative qualifier
+    in_subset:
+      - translator_minimal
 
   subject context qualifier:
     is_a: context qualifier
+    in_subset:
+      - translator_minimal
 
   subject direction qualifier:
     is_a: direction qualifier
+    range: DirectionQualifierEnum
+    in_subset:
+      - translator_minimal
 
   object aspect qualifier:
     is_a: aspect qualifier
+    in_subset:
+      - translator_minimal
 
   object form or variant qualifier:
     is_a: form or variant qualifier
+    in_subset:
+      - translator_minimal
 
   object part qualifier:
     is_a: part qualifier
+    in_subset:
+      - translator_minimal
 
   object derivative qualifier:
     is_a: derivative qualifier
+    in_subset:
+      - translator_minimal
 
   object context qualifier:
     is_a: context qualifier
+    in_subset:
+      - translator_minimal
 
   object direction qualifier:
     is_a: direction qualifier
     range: DirectionQualifierEnum
+    in_subset:
+      - translator_minimal
 
   qualified predicate:
-    is_a: association slot
+    is_a: qualifier
     description: >-
       Predicate to be used in an association when subject and object qualifiers are present and the full
       reading of the statement requires a qualification to the predicate in use in order to refine or 
@@ -1384,10 +1420,18 @@ slots:
       sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not 
       what we mean to say here: it causes increased expression of Gene Y)
 
+  qualifier:
+    is_a: association slot
+    description: >- 
+      grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+    in_subset:
+      - translator_minimal
 
   statement qualifier:
-    is_a: association slot
+    is_a: qualifier
     description: >-
+    in_subset:
+      - translator_minimal
 
   causal mechanism qualifier:
     is_a: statement qualifier
@@ -1395,6 +1439,9 @@ slots:
       A statement qualifier representing a type of molecular control mechanism through which an
       effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition',
       'allosteric modulation', 'channel blocker')
+    range: CausalMechanismQualifierEnum
+    in_subset:
+      - translator_minimal
 
   anatomical context qualifier:
     is_a: statement qualifier
@@ -1411,6 +1458,8 @@ slots:
     examples:
       - value: blood # UBERON:0000178
       - value: cerebral cortext # UBERON:0000956
+    in_subset:
+      - translator_minimal
 
   species context qualifier:
     is_a: statement qualifier
@@ -1424,6 +1473,8 @@ slots:
     notes: >- 
       Ontology CURIEs are expected as values
       here, the examples below are intended to help clarify the content of the CURIEs.
+    in_subset:
+      - translator_minimal
 
   qualifiers:
     singular_name: qualifier
@@ -1437,31 +1488,39 @@ slots:
     range: ontology class
 
   frequency qualifier:
+    is_a: qualifier
     description: >-
       a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    is_a: association slot
     range: frequency value
+    in_subset:
+      - translator_minimal
 
   severity qualifier:
     description: >-
       a qualifier used in a phenotypic association to state
       how severe the phenotype is in the subject
-    is_a: association slot
+    is_a: qualifier
     range: severity value
+    in_subset:
+      - translator_minimal
 
   sex qualifier:
     description: >-
       a qualifier used in a phenotypic association to state whether
       the association is specific to a particular sex.
-    is_a: association slot
+    is_a: qualifier
     range: biological sex
+    in_subset:
+      - translator_minimal
 
   onset qualifier:
     description: >-
       a qualifier used in a phenotypic association to state
       when the phenotype appears is in the subject
-    is_a: association slot
+    is_a: qualifier
     range: onset
+    in_subset:
+      - translator_minimal
 
   clinical modifier qualifier:
     description: >-
@@ -1508,6 +1567,8 @@ slots:
     examples:
       - value: UBERON:0000069
         description: larval stage
+    in_subset:
+      - translator_minimal
 
   ## --------------------
   ## PREDICATES/RELATIONS
