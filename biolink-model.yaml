@@ -1209,7 +1209,7 @@ slots:
       the qualifier ‘recombinant’ combines with a core concept of ‘FLT1 Gene’ to express the composed concept ‘Recombinant forms of the FLT1 gene’
       the qualifier ‘chemical analog’ combines with a core concept of ‘Ditiocarb’ to express the composed concept ‘analog forms of Ditiocarb’
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   aspect qualifier:
     is_a: qualifier
@@ -1236,7 +1236,7 @@ slots:
       the qualifier ‘severity’ combines with a core concept of ‘DILI’ to express the concept ‘the severity level of DILI’ (Disease → (intrinsic) Characteristic/Quality)
       the qualifier ‘abundance’ combines with a core concept of ‘BRCA2’ to express the concept ‘abundance of BRCA2’ (Gene → (extrinsic) characteristic/quality)
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   derivative qualifier:
     is_a: qualifier
@@ -1248,7 +1248,7 @@ slots:
     examples:
       - value: metabolite
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   part qualifier:
     is_a: qualifier
@@ -1260,7 +1260,7 @@ slots:
       - value: polyA tail
       - value: upstream control region
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   context qualifier:
     is_a: qualifier
@@ -1271,7 +1271,7 @@ slots:
       - value: cohort x (e.g. a specific population, referenced by an identifier)
       - value: gut microbiome # OHMI:0000020
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   direction qualifier:
     is_a: qualifier
@@ -1282,7 +1282,7 @@ slots:
       the qualifier ‘increased’ combines with a core concept of ‘Gene X’ and an aspect of ‘expression’ to express the composed concept ‘increased expression of Gene X’   
       the qualifier ‘decreased’ combines with a core concept of ‘Protein X’ and an aspect of ‘abundance’ to express the composed concept ‘decreased abundance of Protein X’
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   mapped predicate:
     description: >-
@@ -1323,64 +1323,64 @@ slots:
   subject aspect qualifier:
     is_a: aspect qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   subject form or variant qualifier:
     is_a: form or variant qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   subject part qualifier:
     is_a: part qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   subject derivative qualifier:
     is_a: derivative qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   subject context qualifier:
     is_a: context qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   subject direction qualifier:
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object aspect qualifier:
     is_a: aspect qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object form or variant qualifier:
     is_a: form or variant qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object part qualifier:
     is_a: part qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object derivative qualifier:
     is_a: derivative qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object context qualifier:
     is_a: context qualifier
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   object direction qualifier:
     is_a: direction qualifier
     range: DirectionQualifierEnum
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   qualified predicate:
     is_a: qualifier
@@ -1404,13 +1404,13 @@ slots:
     description: >- 
       grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   statement qualifier:
     is_a: qualifier
     description: >-
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   causal mechanism qualifier:
     is_a: statement qualifier
@@ -1420,7 +1420,7 @@ slots:
       'allosteric modulation', 'channel blocker')
     range: CausalMechanismQualifierEnum
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   anatomical context qualifier:
     is_a: statement qualifier
@@ -1438,7 +1438,7 @@ slots:
       - value: blood # UBERON:0000178
       - value: cerebral cortext # UBERON:0000956
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   species context qualifier:
     is_a: statement qualifier
@@ -1453,7 +1453,7 @@ slots:
       Ontology CURIEs are expected as values
       here, the examples below are intended to help clarify the content of the CURIEs.
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   qualifiers:
     singular_name: qualifier
@@ -1472,7 +1472,7 @@ slots:
       a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     range: frequency value
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   severity qualifier:
     description: >-
@@ -1481,7 +1481,7 @@ slots:
     is_a: qualifier
     range: severity value
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   sex qualifier:
     description: >-
@@ -1490,7 +1490,7 @@ slots:
     is_a: qualifier
     range: biological sex
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   onset qualifier:
     description: >-
@@ -1499,7 +1499,7 @@ slots:
     is_a: qualifier
     range: onset
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   clinical modifier qualifier:
     description: >-
@@ -1547,7 +1547,7 @@ slots:
       - value: UBERON:0000069
         description: larval stage
     in_subset:
-      - tranlator_minimal
+      - translator_minimal
 
   ## --------------------
   ## PREDICATES/RELATIONS
@@ -8830,7 +8830,7 @@ classes:
       predicate:
         subproperty_of: physically interacts with
       subject form or variant qualifier:
-        range: ChemicalOrGeneOrGeneProductFormOrVariant
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       subject part qualifier:
         range: GeneOrGeneProductOrChemicalPartQualifierEnum
       subject derivative qualifier:
