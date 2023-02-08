@@ -495,7 +495,8 @@ slots:
       - WIKIDATA_PROPERTY:P854
 
   type:
-    slot_uri: rdfs:type
+    slot_uri: rdf:type
+    domain: entity
     exact_mappings:
       - AGRKB:soTermId
       - gff3:type
