@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-07T19:41:16
+# Generation date: 2023-02-09T18:38:26
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -223,11 +223,11 @@ UBERON_NONAMESPACE = CurieNamespace('UBERON_NONAMESPACE', 'http://purl.obolibrar
 UMLS = CurieNamespace('UMLS', 'http://identifiers.org/umls/')
 UMLSSG = CurieNamespace('UMLSSG', 'https://lhncbc.nlm.nih.gov/semanticnetwork/download/sg_archive/SemGroups-v04.txt')
 UNII = CurieNamespace('UNII', 'http://identifiers.org/unii/')
-UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://identifiers.org/uniprot.isoform/')
+UNIPROT_ISOFORM = CurieNamespace('UNIPROT_ISOFORM', 'http://purl.uniprot.org/isoforms/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UO_PROPERTY = CurieNamespace('UO-PROPERTY', 'http://purl.obolibrary.org/obo/uo#')
 UPHENO = CurieNamespace('UPHENO', 'http://purl.obolibrary.org/obo/UPHENO_')
-UNIPROTKB = CurieNamespace('UniProtKB', 'http://identifiers.org/uniprot/')
+UNIPROTKB = CurieNamespace('UniProtKB', 'http://purl.uniprot.org/uniprot/')
 VANDF = CurieNamespace('VANDF', 'https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/VANDF/')
 VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
@@ -9914,7 +9914,7 @@ slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
                    model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
 
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
-                   model_uri=BIOLINK.type, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.type, domain=Entity, range=Optional[Union[str, List[str]]])
 
 slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie('category'),
                    model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
