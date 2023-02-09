@@ -6624,8 +6624,6 @@ classes:
       A region (or regions) of the genome that contains known or putative regulatory elements
       that act in cis- or trans- to affect the transcription of gene
     is_a: biological entity
-    slots:
-      - xref
     mixins:
       - genomic entity
       - chemical entity or gene or gene product
@@ -6642,8 +6640,6 @@ classes:
       A region (or regions) of a chromatinized genome that has been measured to be more
       accessible to an enzyme such as DNase-I or Tn5 Transpose
     is_a: regulatory region
-    slots:
-      - xref
     mixins:
       - genomic entity
       - chemical entity or gene or gene product
@@ -6657,8 +6653,6 @@ classes:
     description: >-
       A region (or regions) of the genome that contains a region of DNA known or predicted
       to bind a protein that modulates gene transcription
-    slots:
-      - xref
     is_a: regulatory region
     mixins:
       - genomic entity
