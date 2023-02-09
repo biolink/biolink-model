@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "3.1.2"
+version = "3.2.0"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -256,7 +256,7 @@ class PredicateMapping(ConfiguredBaseModel):
     """
     mapped_predicate: Optional[str] = Field(None, description="""The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.""")
     subject_aspect_qualifier: Optional[str] = Field(None)
-    subject_direction_qualifier: Optional[str] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
     subject_form_or_variant_qualifier: Optional[str] = Field(None)
     subject_part_qualifier: Optional[str] = Field(None)
     subject_derivative_qualifier: Optional[str] = Field(None)
@@ -269,7 +269,7 @@ class PredicateMapping(ConfiguredBaseModel):
     object_part_qualifier: Optional[str] = Field(None)
     object_derivative_qualifier: Optional[str] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
-    causal_mechanism_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
+    causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[AnatomicalContextQualifierEnum] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
     species_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.""")
     exact_match: Optional[List[str]] = Field(None, description="""holds between two entities that have strictly equivalent meanings, with a high degree of confidence""")

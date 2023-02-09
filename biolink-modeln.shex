@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.1.2
+# version: 3.2.0
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -54,6 +54,8 @@ linkml:Datetime xsd:dateTime
 linkml:DateOrDatetime linkml:DateOrDatetime
 
 linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
 
 linkml:Uri IRI
 
@@ -2623,7 +2625,7 @@ linkml:Nodeidentifier NONLITERAL
 <PredicateMapping> CLOSED {
     (  $<PredicateMapping_tes> (  <mapped_predicate> @linkml:String ? ;
           <subject_aspect_qualifier> @linkml:String ? ;
-          <subject_direction_qualifier> @linkml:String ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
           <subject_form_or_variant_qualifier> @linkml:String ? ;
           <subject_part_qualifier> @linkml:String ? ;
           <subject_derivative_qualifier> @linkml:String ? ;
@@ -2636,7 +2638,7 @@ linkml:Nodeidentifier NONLITERAL
           <object_part_qualifier> @linkml:String ? ;
           <object_derivative_qualifier> @linkml:String ? ;
           <object_context_qualifier> @linkml:String ? ;
-          <causal_mechanism_qualifier> @linkml:String ? ;
+          <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
           <anatomical_context_qualifier> @<AnatomicalContextQualifierEnum> ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <exact_match> @<NamedThing> * ;

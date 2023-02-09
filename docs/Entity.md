@@ -85,3 +85,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
+ * [type](type.md)  <sub>0..\*</sub>
+     * Range: [String](types/String.md)

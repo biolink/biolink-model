@@ -14,7 +14,7 @@ URI: [biolink:type](https://w3id.org/biolink/vocab/type)
 
 ## Domain and Range
 
-None ->  <sub>0..\*</sub> [String](types/String.md)
+[Entity](Entity.md) ->  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

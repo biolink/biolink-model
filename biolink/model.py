@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-25T17:27:34
+# Generation date: 2023-02-07T19:41:16
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.1.2"
+version = "3.2.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1325,7 +1325,7 @@ class PredicateMapping(YAMLRoot):
     predicate: Union[str, PredicateType] = None
     mapped_predicate: Optional[str] = None
     subject_aspect_qualifier: Optional[str] = None
-    subject_direction_qualifier: Optional[str] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     subject_form_or_variant_qualifier: Optional[str] = None
     subject_part_qualifier: Optional[str] = None
     subject_derivative_qualifier: Optional[str] = None
@@ -1337,7 +1337,7 @@ class PredicateMapping(YAMLRoot):
     object_part_qualifier: Optional[str] = None
     object_derivative_qualifier: Optional[str] = None
     object_context_qualifier: Optional[str] = None
-    causal_mechanism_qualifier: Optional[str] = None
+    causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[Union[str, "AnatomicalContextQualifierEnum"]] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     exact_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
@@ -1356,8 +1356,8 @@ class PredicateMapping(YAMLRoot):
         if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, str):
             self.subject_aspect_qualifier = str(self.subject_aspect_qualifier)
 
-        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, str):
-            self.subject_direction_qualifier = str(self.subject_direction_qualifier)
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
 
         if self.subject_form_or_variant_qualifier is not None and not isinstance(self.subject_form_or_variant_qualifier, str):
             self.subject_form_or_variant_qualifier = str(self.subject_form_or_variant_qualifier)
@@ -1392,8 +1392,8 @@ class PredicateMapping(YAMLRoot):
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, str):
             self.object_context_qualifier = str(self.object_context_qualifier)
 
-        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, str):
-            self.causal_mechanism_qualifier = str(self.causal_mechanism_qualifier)
+        if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
+            self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
         if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalContextQualifierEnum):
             self.anatomical_context_qualifier = AnatomicalContextQualifierEnum(self.anatomical_context_qualifier)
@@ -10214,7 +10214,7 @@ slots.subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, na
                    model_uri=BIOLINK.subject_context_qualifier, domain=Association, range=Optional[str])
 
 slots.subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="subject direction qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
-                   model_uri=BIOLINK.subject_direction_qualifier, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.subject_direction_qualifier, domain=Association, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
 slots.object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
                    model_uri=BIOLINK.object_aspect_qualifier, domain=Association, range=Optional[str])
@@ -10237,11 +10237,14 @@ slots.object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, 
 slots.qualified_predicate = Slot(uri=BIOLINK.qualified_predicate, name="qualified predicate", curie=BIOLINK.curie('qualified_predicate'),
                    model_uri=BIOLINK.qualified_predicate, domain=Association, range=Optional[str])
 
+slots.qualifier = Slot(uri=BIOLINK.qualifier, name="qualifier", curie=BIOLINK.curie('qualifier'),
+                   model_uri=BIOLINK.qualifier, domain=Association, range=Optional[str])
+
 slots.statement_qualifier = Slot(uri=BIOLINK.statement_qualifier, name="statement qualifier", curie=BIOLINK.curie('statement_qualifier'),
                    model_uri=BIOLINK.statement_qualifier, domain=Association, range=Optional[str])
 
 slots.causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, name="causal mechanism qualifier", curie=BIOLINK.curie('causal_mechanism_qualifier'),
-                   model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[str])
+                   model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
                    model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[Union[str, "AnatomicalContextQualifierEnum"]])
