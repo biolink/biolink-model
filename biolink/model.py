@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-09T18:38:26
+# Generation date: 2023-02-09T23:59:55
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -9908,7 +9908,7 @@ slots.node_property = Slot(uri=BIOLINK.node_property, name="node property", curi
                    model_uri=BIOLINK.node_property, domain=NamedThing, range=Optional[str])
 
 slots.id = Slot(uri=BIOLINK.id, name="id", curie=BIOLINK.curie('id'),
-                   model_uri=BIOLINK.id, domain=None, range=URIRef)
+                   model_uri=BIOLINK.id, domain=Entity, range=Union[str, EntityId])
 
 slots.iri = Slot(uri=BIOLINK.iri, name="iri", curie=BIOLINK.curie('iri'),
                    model_uri=BIOLINK.iri, domain=None, range=Optional[Union[str, IriType]])
