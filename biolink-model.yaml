@@ -8020,6 +8020,7 @@ classes:
     exact_mappings:
       - OBI:1110122
       - NCIT:C16956
+      - MPATH:596
     narrow_mappings:
       # metastasis
       - NCIT:C19151
@@ -8043,6 +8044,8 @@ classes:
     is_a: anatomical entity
     mixins:
       - pathological entity mixin
+    exact_mappings:
+      - MPATH:603
 
   pathological anatomical exposure:
     is_a: attribute
