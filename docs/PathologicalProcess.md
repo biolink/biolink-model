@@ -116,6 +116,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Exact Mappings:** | | OBI:1110122 |
 |  | | NCIT:C16956 |
+|  | | MPATH:596 |
 | **Narrow Mappings:** | | NCIT:C19151 |
 |  | | EFO:0009708 |
 |  | | STY:T046 |
