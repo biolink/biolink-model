@@ -115,6 +115,11 @@ prefixes:
   PANTHER.FAMILY: 'http://www.pantherdb.org/panther/family.do?clsAccession='
   PathWhiz: 'http://smpdb.ca/pathways/#'  # See also https://smpdb.ca/pathwhiz/
   pav: 'http://purl.org/pav/'
+  PHARMGKB.CHEMICAL: 'https://www.pharmgkb.org/chemical/'
+  PHARMGKB.DISEASE: 'https://www.pharmgkb.org/disease/'
+  PHARMGKB.GENE: 'https://www.pharmgkb.org/gene/'
+  PHARMGKB.PATHWAYS: 'https://www.pharmgkb.org/pathway/'
+  PHARMGKB.VARIANT: 'https://www.pharmgkb.org/variant/'
   PHAROS: 'http://pharos.nih.gov'
   PomBase: 'https://www.pombase.org/gene/'
   prov: 'http://www.w3.org/ns/prov#'
@@ -6477,6 +6482,7 @@ classes:
       - CAS #CAS numbers are given for things like plant extracts as well.
       - UMLS
       - ncats.drug
+      - PHARMGKB.CHEMICAL
 
   small molecule:
     is_a: molecular entity
@@ -7104,6 +7110,7 @@ classes:
       - KEGG.DISEASE ## H number
       - HP
       - MP
+      - PHARMGKB:DISEASE
     in_subset:
       - model_organism_database
 
@@ -7365,6 +7372,7 @@ classes:
       - UMLS
       - Xenbase
       - AspGD
+      - PHARMGKB.GENE
     in_subset:
       - translator_minimal
       - model_organism_database
@@ -7791,6 +7799,7 @@ classes:
       - SPDI
       - WB
       - WormBase
+      - PHARMGKB.VARIANT
     alt_descriptions:
       AGR: >-
         An entity that describes a single affected, endogenous allele.
