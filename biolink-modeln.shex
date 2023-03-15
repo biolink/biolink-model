@@ -65,6 +65,22 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
+<AccessibleDnaRegion> CLOSED {
+    (  $<AccessibleDnaRegion_tes> (  &<RegulatoryRegion_tes> ;
+          rdf:type [ <RegulatoryRegion> ] ? ;
+          &<GenomicEntity_tes> ;
+          rdf:type [ <GenomicEntity> ] ? ;
+          &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+          rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+          &<PhysicalEssence_tes> ;
+          rdf:type [ <PhysicalEssence> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <AccessibleDnaRegion> ]
+    )
+}
+
 <Activity> CLOSED {
     (  $<Activity_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
@@ -301,7 +317,7 @@ linkml:Nodeidentifier NONLITERAL
     @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<GeneticInheritance> OR
     @<Genome> OR @<Genotype> OR @<Haplotype> OR @<MacromolecularComplex> OR @<NucleicAcidSequenceMotif> OR
     @<NucleosomeModification> OR @<OrganismalEntity> OR @<Polypeptide> OR @<PosttranslationalModification> OR @<ProteinDomain> OR
-    @<ProteinFamily> OR @<ReagentTargetedGene> OR @<SequenceVariant>
+    @<ProteinFamily> OR @<ReagentTargetedGene> OR @<RegulatoryRegion> OR @<SequenceVariant>
 )
 
 <BiologicalEntity_struct> {
@@ -2781,6 +2797,25 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<RegulatoryRegion>  (
+    CLOSED {
+       (  $<RegulatoryRegion_tes> (  &<BiologicalEntity_tes> ;
+             rdf:type [ <BiologicalEntity> ] ? ;
+             &<GenomicEntity_tes> ;
+             rdf:type [ <GenomicEntity> ] ? ;
+             &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+             rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+             &<PhysicalEssence_tes> ;
+             rdf:type [ <PhysicalEssence> ] ? ;
+             &<OntologyClass_tes> ;
+             rdf:type [ <OntologyClass> ] ? ;
+             <has_biological_sequence> @<BiologicalSequence> ?
+          ) ;
+          rdf:type [ <RegulatoryRegion> ]
+       )
+    } OR @<AccessibleDnaRegion> OR @<TranscriptionFactorBindingSite>
+)
+
 <RelationshipQuantifier>  (
     @<FrequencyQuantifier> OR @<SensitivityQuantifier> OR @<SpecificityQuantifier>
 )
@@ -3064,6 +3099,22 @@ linkml:Nodeidentifier NONLITERAL
           <object> @<Gene>
        ) ;
        rdf:type [ <TranscriptToGeneRelationship> ]
+    )
+}
+
+<TranscriptionFactorBindingSite> CLOSED {
+    (  $<TranscriptionFactorBindingSite_tes> (  &<RegulatoryRegion_tes> ;
+          rdf:type [ <RegulatoryRegion> ] ? ;
+          &<GenomicEntity_tes> ;
+          rdf:type [ <GenomicEntity> ] ? ;
+          &<ChemicalEntityOrGeneOrGeneProduct_tes> ;
+          rdf:type [ <ChemicalEntityOrGeneOrGeneProduct> ] ? ;
+          &<PhysicalEssence_tes> ;
+          rdf:type [ <PhysicalEssence> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <TranscriptionFactorBindingSite> ]
     )
 }
 

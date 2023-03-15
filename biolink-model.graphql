@@ -1,5 +1,20 @@
 # metamodel_version: 1.7.0
 # version: 3.2.0
+type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasBiologicalSequence: BiologicalSequence
+  }
+
 type Activity implements ActivityAndBehavior
   {
     id: String!
@@ -4114,6 +4129,21 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     hasBiologicalSequence: BiologicalSequence
   }
 
+type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasBiologicalSequence: BiologicalSequence
+  }
+
 interface RelationshipQuantifier
   {
   }
@@ -4584,6 +4614,21 @@ type TranscriptToGeneRelationship
     category: [CategoryType]
     subject: Transcript!
     object: Gene!
+  }
+
+type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasBiologicalSequence: BiologicalSequence
   }
 
 type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment

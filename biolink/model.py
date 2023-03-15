@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-01T17:10:12
+# Generation date: 2023-03-15T16:09:36
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -604,6 +604,18 @@ class ChemicalMixtureId(ChemicalEntityId):
 
 
 class NucleicAcidEntityId(MolecularEntityId):
+    pass
+
+
+class RegulatoryRegionId(BiologicalEntityId):
+    pass
+
+
+class AccessibleDnaRegionId(RegulatoryRegionId):
+    pass
+
+
+class TranscriptionFactorBindingSiteId(RegulatoryRegionId):
     pass
 
 
@@ -3210,6 +3222,93 @@ class NucleicAcidEntity(MolecularEntity):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class RegulatoryRegion(BiologicalEntity):
+    """
+    A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans-
+    to affect the transcription of gene
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.RegulatoryRegion
+    class_class_curie: ClassVar[str] = "biolink:RegulatoryRegion"
+    class_name: ClassVar[str] = "regulatory region"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.RegulatoryRegion
+
+    id: Union[str, RegulatoryRegionId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, RegulatoryRegionId):
+            self.id = RegulatoryRegionId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AccessibleDnaRegion(RegulatoryRegion):
+    """
+    A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as
+    DNase-I or Tn5 Transpose
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.AccessibleDnaRegion
+    class_class_curie: ClassVar[str] = "biolink:AccessibleDnaRegion"
+    class_name: ClassVar[str] = "accessible dna region"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AccessibleDnaRegion
+
+    id: Union[str, AccessibleDnaRegionId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, AccessibleDnaRegionId):
+            self.id = AccessibleDnaRegionId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class TranscriptionFactorBindingSite(RegulatoryRegion):
+    """
+    A region (or regions) of the genome that contains a region of DNA known or predicted to bind a protein that
+    modulates gene transcription
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.TranscriptionFactorBindingSite
+    class_class_curie: ClassVar[str] = "biolink:TranscriptionFactorBindingSite"
+    class_name: ClassVar[str] = "transcription factor binding site"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.TranscriptionFactorBindingSite
+
+    id: Union[str, TranscriptionFactorBindingSiteId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TranscriptionFactorBindingSiteId):
+            self.id = TranscriptionFactorBindingSiteId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -10449,6 +10548,12 @@ slots.indirectly_physically_interacts_with = Slot(uri=BIOLINK.indirectly_physica
 
 slots.genetically_interacts_with = Slot(uri=BIOLINK.genetically_interacts_with, name="genetically interacts with", curie=BIOLINK.curie('genetically_interacts_with'),
                    model_uri=BIOLINK.genetically_interacts_with, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+
+slots.gene_fusion_with = Slot(uri=BIOLINK.gene_fusion_with, name="gene_fusion_with", curie=BIOLINK.curie('gene_fusion_with'),
+                   model_uri=BIOLINK.gene_fusion_with, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+
+slots.genetic_neighborhood_of = Slot(uri=BIOLINK.genetic_neighborhood_of, name="genetic_neighborhood_of", curie=BIOLINK.curie('genetic_neighborhood_of'),
+                   model_uri=BIOLINK.genetic_neighborhood_of, domain=Gene, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
 slots.affects = Slot(uri=BIOLINK.affects, name="affects", curie=BIOLINK.curie('affects'),
                    model_uri=BIOLINK.affects, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

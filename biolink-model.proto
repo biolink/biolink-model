@@ -2,6 +2,21 @@
  package
 // metamodel_version: 1.7.0
 // version: 3.2.0
+// A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
+message AccessibleDnaRegion
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  biologicalSequence hasBiologicalSequence = 0
+ }
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 message Activity
  {
@@ -3659,6 +3674,21 @@ message ReagentTargetedGene
  repeated  organismTaxon inTaxon = 0
   biologicalSequence hasBiologicalSequence = 0
  }
+// A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
+message RegulatoryRegion
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  biologicalSequence hasBiologicalSequence = 0
+ }
 // An OWL property used as an edge label
 message RelationshipType
  {
@@ -4061,6 +4091,21 @@ message TranscriptToGeneRelationship
  repeated  categoryType category = 0
   transcript subject = 0
   gene object = 0
+ }
+// A region (or regions) of the genome that contains a region of DNA known or predicted to bind a protein that modulates gene transcription
+message TranscriptionFactorBindingSite
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  biologicalSequence hasBiologicalSequence = 0
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 message Treatment
