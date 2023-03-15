@@ -1,75 +1,35 @@
 ---
 parent: Entities
-title: biolink:Gene
+title: biolink:AccessibleDnaRegion
 grand_parent: Classes
 layout: default
 ---
 
-# Class: Gene
+# Class: AccessibleDnaRegion
 
 
-A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
+A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 
-URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
+URI: [biolink:AccessibleDnaRegion](https://w3id.org/biolink/vocab/AccessibleDnaRegion)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[Transcript],[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenotypeToGeneAssociation],[GenomicEntity],[GeneToGoTermAssociation],[GeneToGeneProductRelationship],[GeneToGeneFamilyAssociation],[GeneProductMixin],[GeneOrGeneProduct],[GeneToGeneFamilyAssociation]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;has_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene],[GeneToGoTermAssociation]-%20subject%201..1%3E[Gene],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..%2A%3E[Gene],[GeneGroupingMixin]-%20has%20gene%20or%20gene%20product%200..%2A%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[Gene]uses%20-.-%3E[GeneOrGeneProduct],[Gene]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Gene]uses%20-.-%3E[PhysicalEssence],[Gene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Gene],[GeneGroupingMixin],[DiseaseOrPhenotypicFeature],[Disease],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RegulatoryRegion],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenomicEntity],[ChemicalEntityOrGeneOrGeneProduct],[Attribute],[AccessibleDnaRegion%7Chas_biological_sequence(i):biological_sequence%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[GenomicEntity],[AccessibleDnaRegion]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[AccessibleDnaRegion]uses%20-.-%3E[PhysicalEssence],[AccessibleDnaRegion]uses%20-.-%3E[OntologyClass],[RegulatoryRegion]%5E-[AccessibleDnaRegion])
 
 ---
 
-
-## Identifier prefixes
-
- * NCBIGene
- * ENSEMBL
- * HGNC
- * MGI
- * ZFIN
- * dictyBase
- * WB
- * WormBase
- * FB
- * RGD
- * SGD
- * PomBase
- * OMIM
- * KEGG.GENE
- * UMLS
- * Xenbase
- * AspGD
 
 ## Parents
 
- *  is_a: [BiologicalEntity](BiologicalEntity.md)
+ *  is_a: [RegulatoryRegion](RegulatoryRegion.md) - A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
 
 ## Uses Mixins
 
- *  mixin: [GeneOrGeneProduct](GeneOrGeneProduct.md) - A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
  *  mixin: [GenomicEntity](GenomicEntity.md)
  *  mixin: [ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md) - A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
  *  mixin: [PhysicalEssence](PhysicalEssence.md) - Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
  *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
-
-## Referenced by class
-
- *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[gene associated with condition](gene_associated_with_condition.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GeneProductMixin](GeneProductMixin.md)** *[gene product of](gene_product_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[subject](subject.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[Gene](Gene.md)** *[gene_fusion_with](gene_fusion_with.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[Gene](Gene.md)** *[genetic_neighborhood_of](genetic_neighborhood_of.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[NamedThing](NamedThing.md)** *[has gene](has_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[NamedThing](NamedThing.md)** *[has gene or gene product](has_gene_or_gene_product.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[Disease](Disease.md)** *[has target](has_target.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[has gene](has_gene.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[Transcript](Transcript.md)** *[transcribed from](transcribed_from.md)*  <sub>0..\*</sub>  **[Gene](Gene.md)**
- *  **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[object](object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
- *  **[VariantToGeneAssociation](VariantToGeneAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Gene](Gene.md)**
 
 ## Attributes
 
@@ -148,12 +108,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **In Subsets:** | | translator_minimal |
-|  | | model_organism_database |
-| **Exact Mappings:** | | SO:0000704 |
-|  | | SIO:010035 |
-|  | | WIKIDATA:Q7187 |
-|  | | dcid:Gene |
-| **Narrow Mappings:** | | bioschemas:gene |
-| **Broad Mappings:** | | NCIT:C45822 |
+| **Aliases:** | | dnase-seq accessible region |
+|  | | atac-seq accessible region |
+| **Exact Mappings:** | | SO:0002231 |
 

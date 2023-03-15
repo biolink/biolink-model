@@ -2330,6 +2330,33 @@ slots:
     symmetric: true
     exact_mappings:
       - RO:0002435
+      
+  gene_fusion_with:
+    is_a: genetically interacts with
+    description: >-
+      holds between two independent genes that have fused through 
+      translocation, interstitial deletion, or chromosomal inversion to 
+      form a new, hybrid gene. Fusion genes are often implicated in various neoplasms
+      and cancers.
+    domain: gene
+    range: gene
+    in_subset:
+      - translator_minimal
+    annotations:
+      canonical_predicate: true
+    symmetric: true
+    
+  genetic_neighborhood_of:
+    is_a: genetically interacts with
+    description: >-
+      holds between two genes located nearby one another on a chromosome. 
+    domain: gene
+    range: gene
+    in_subset:
+      - translator_minimal
+    annotations:
+      canonical_predicate: true
+    symmetric: true
 
   affects:
     is_a: related to at instance level
@@ -6620,6 +6647,50 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  # G number
       - KEGG.ENVIRON # E number
+
+  regulatory region:
+    aliases: [ 'regulatory element' ]
+    description: >-
+      A region (or regions) of the genome that contains known or putative regulatory elements
+      that act in cis- or trans- to affect the transcription of gene
+    is_a: biological entity
+    mixins:
+      - genomic entity
+      - chemical entity or gene or gene product
+      - physical essence
+      - ontology class
+    exact_mappings:
+      - SO:0005836
+      - SIO:001225
+      - WIKIDATA:Q3238407
+
+  accessible dna region:
+    aliases: [ 'dnase-seq accessible region', 'atac-seq accessible region' ]
+    description: >-
+      A region (or regions) of a chromatinized genome that has been measured to be more
+      accessible to an enzyme such as DNase-I or Tn5 Transpose
+    is_a: regulatory region
+    mixins:
+      - genomic entity
+      - chemical entity or gene or gene product
+      - physical essence
+      - ontology class
+    exact_mappings:
+      - SO:0002231
+
+  transcription factor binding site:
+    aliases: [ 'tf binding site', 'binding site' ]
+    description: >-
+      A region (or regions) of the genome that contains a region of DNA known or predicted
+      to bind a protein that modulates gene transcription
+    is_a: regulatory region
+    mixins:
+      - genomic entity
+      - chemical entity or gene or gene product
+      - physical essence
+      - ontology class
+    exact_mappings:
+      - SO:0000235
 
   molecular mixture:
     is_a: chemical mixture

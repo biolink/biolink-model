@@ -26,6 +26,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [AccessibleDnaRegion](AccessibleDnaRegion.md)
  * [Activity](Activity.md)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [Agent](Agent.md)
@@ -143,6 +144,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [ProteinIsoform](ProteinIsoform.md)
  * [Publication](Publication.md)
  * [ReagentTargetedGene](ReagentTargetedGene.md)
+ * [RegulatoryRegion](RegulatoryRegion.md)
  * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Serial](Serial.md)
@@ -158,6 +160,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [StudyVariable](StudyVariable.md)
  * [TextMiningResult](TextMiningResult.md)
  * [Transcript](Transcript.md)
+ * [TranscriptionFactorBindingSite](TranscriptionFactorBindingSite.md)
  * [Treatment](Treatment.md)
  * [Virus](Virus.md)
  * [Zygosity](Zygosity.md)

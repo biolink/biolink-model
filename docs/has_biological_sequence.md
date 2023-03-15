@@ -27,6 +27,7 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
 
  * [RNAProduct](RNAProduct.md)
  * [RNAProductIsoform](RNAProductIsoform.md)
+ * [AccessibleDnaRegion](AccessibleDnaRegion.md)
  * [CodingSequence](CodingSequence.md)
  * [EpigenomicEntity](EpigenomicEntity.md)
  * [Exon](Exon.md)
@@ -41,5 +42,7 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
  * [NucleicAcidEntity](NucleicAcidEntity.md)
  * [NucleosomeModification](NucleosomeModification.md)
  * [ReagentTargetedGene](ReagentTargetedGene.md)
+ * [RegulatoryRegion](RegulatoryRegion.md)
  * [SiRNA](SiRNA.md)
  * [Transcript](Transcript.md)
+ * [TranscriptionFactorBindingSite](TranscriptionFactorBindingSite.md)

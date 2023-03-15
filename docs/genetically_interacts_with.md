@@ -25,6 +25,8 @@ URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetic
 
 ## Children
 
+ *  [gene_fusion_with](gene_fusion_with.md)
+ *  [genetic_neighborhood_of](genetic_neighborhood_of.md)
 
 ## Used by
 
