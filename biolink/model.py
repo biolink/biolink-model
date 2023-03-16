@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-15T16:09:36
+# Generation date: 2023-03-16T23:50:31
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -172,7 +172,11 @@ PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/pant
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 PCO = CurieNamespace('PCO', 'http://purl.obolibrary.org/obo/PCO_')
 PFAM = CurieNamespace('PFAM', 'http://identifiers.org/pfam/')
-PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'http://identifiers.org/pharmgkb.pathways/')
+PHARMGKB_CHEMICAL = CurieNamespace('PHARMGKB_CHEMICAL', 'https://www.pharmgkb.org/chemical/')
+PHARMGKB_DISEASE = CurieNamespace('PHARMGKB_DISEASE', 'https://www.pharmgkb.org/disease/')
+PHARMGKB_GENE = CurieNamespace('PHARMGKB_GENE', 'https://www.pharmgkb.org/gene/')
+PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'https://www.pharmgkb.org/pathway/')
+PHARMGKB_VARIANT = CurieNamespace('PHARMGKB_VARIANT', 'https://www.pharmgkb.org/variant/')
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PIRSF = CurieNamespace('PIRSF', 'http://identifiers.org/pirsf/')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
