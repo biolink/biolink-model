@@ -39,6 +39,7 @@ URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
  * KEGG.DISEASE
  * HP
  * MP
+ * PHARMGKB.DISEASE
 
 ## Parents
 

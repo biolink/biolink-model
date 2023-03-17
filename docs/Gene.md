@@ -39,6 +39,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * UMLS
  * Xenbase
  * AspGD
+ * PHARMGKB.GENE
 
 ## Parents
 

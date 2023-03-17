@@ -34,6 +34,7 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
  * SPDI
  * WB
  * WormBase
+ * PHARMGKB.VARIANT
 
 ## Parents
 

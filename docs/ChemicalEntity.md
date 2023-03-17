@@ -28,6 +28,7 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  * CAS
  * UMLS
  * ncats.drug
+ * PHARMGKB.CHEMICAL
 
 ## Parents
 
