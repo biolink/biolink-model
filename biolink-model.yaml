@@ -659,8 +659,7 @@ slots:
       See https://github.com/biolink/biolink-model/issues/238
 
   xref:
-    is_a: node property
-    aliases: [ 'dbxref', 'Dbxref', 'DbXref' ]
+    aliases: [ 'dbxref', 'Dbxref', 'DbXref', 'record_url' ]
     domain: named thing
     range: uriorcurie
     description: >-
