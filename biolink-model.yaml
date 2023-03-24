@@ -6416,6 +6416,7 @@ classes:
       - STY:T050
       # SIO term is 'biological entity' but less inclusive than the Biolink scope
       - SIO:010046
+      - STY:T129 # (imft, full name: Immunologic Factor
 
   genomic entity:
     mixin: true
@@ -6498,7 +6499,6 @@ classes:
       - STY:T103 # Chemical
     narrow_mappings:
       - WIKIDATA:Q43460564
-      - STY:T129 # (imft, full name: Immunologic Factor
     in_subset:
       - translator_minimal
     id_prefixes:
