@@ -7,25 +7,17 @@ license = "https://creativecommons.org/publicdomain/zero/1.0/"
 readme = "README.md"
 packages = [{include = "biolink_model"}]
 
+
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml = "^1.5.0"
+linkml = "^1.4"
 curies = "^0.5.2"
 prefixmaps = "^0.1.4"
-
-packages = [
-    { include = "biolink" }
-]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
 style = "pep440"
-
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]

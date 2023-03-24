@@ -677,18 +677,20 @@ slots:
       The CURIE for an Information Resource that served as a source
       of knowledge expressed in an Edge, or a source of data used to
       generate this knowledge.
+    domain: retrieval source
     range: uriorcurie
     required: true
     in_subset:
       - translator_minimal
   
-  resource_url:
+  resource role:
     is_a: node property
     description: >-
       The role played by the InformationResource in serving as a
       source for an Edge. Note that a given Edge should have one
       and only one 'primary' source, and may have any number of
       'aggregator' or 'supporting data' sources.
+    domain: retrieval source
     range: ResourceRoleEnum
     required: true
     in_subset:
@@ -700,6 +702,20 @@ slots:
     range: label type
     description: >-
       a long-form human readable name for a thing
+
+  upstream resources:
+    is_a: node property
+    description: >-
+      An upstream InformationResource from which the resource
+      being described directly retrieved a record of the knowledge
+      expressed in the Edge, or data used to generate this knowledge.
+      This is an array because there are cases where a merged Edge
+      holds knowledge that was retrieved from multiple sources. e.g.
+      an Edge provided by the ARAGORN ARA can expressing knowledge it
+      retrieved from both the automat-mychem-info and molepro KPs,
+      which both provided it with records of this single fact.
+    domain: retrieval source
+    range: uriorcurie
 
   description:
     aliases: [ 'definition' ]
