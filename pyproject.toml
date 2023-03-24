@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "biolink-model"
+version = "0.0.0"
+description = "Entity and association taxonomy and datamodel for life-sciences data"
+authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
+license = "https://creativecommons.org/publicdomain/zero/1.0/"
+readme = "README.md"
+packages = [{include = "biolink_model"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+linkml = "^1.4"
+curies = "^0.5.2"
+prefixmaps = "^0.1.4"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
