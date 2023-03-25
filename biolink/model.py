@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-16T23:50:31
+# Generation date: 2023-03-24T23:53:37
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -463,10 +463,6 @@ class StudyResultId(InformationContentEntityId):
     pass
 
 
-class StudyId(InformationContentEntityId):
-    pass
-
-
 class StudyVariableId(InformationContentEntityId):
     pass
 
@@ -543,11 +539,19 @@ class ArticleId(PublicationId):
     pass
 
 
+class RetrievalSourceId(InformationContentEntityId):
+    pass
+
+
 class PhysicalEntityId(NamedThingId):
     pass
 
 
 class ActivityId(NamedThingId):
+    pass
+
+
+class StudyId(ActivityId):
     pass
 
 
@@ -2037,30 +2041,6 @@ class StudyResult(InformationContentEntity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
 
 @dataclass
-class Study(InformationContentEntity):
-    """
-    a detailed investigation and/or analysis
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.Study
-    class_class_curie: ClassVar[str] = "biolink:Study"
-    class_name: ClassVar[str] = "study"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Study
-
-    id: Union[str, StudyId] = None
-    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, StudyId):
-            self.id = StudyId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class StudyVariable(InformationContentEntity):
     """
     a variable that is used as a measure in the investigation of a study
@@ -2640,6 +2620,52 @@ class Article(Publication):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class RetrievalSource(InformationContentEntity):
+    """
+    Provides information about how a particular InformationResource served as a source from which knowledge expressed
+    in an Edge, or data used to generate this knowledge, was retrieved.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.RetrievalSource
+    class_class_curie: ClassVar[str] = "biolink:RetrievalSource"
+    class_name: ClassVar[str] = "retrieval source"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.RetrievalSource
+
+    id: Union[str, RetrievalSourceId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    resource: Union[str, URIorCURIE] = None
+    resource_role: Union[str, "ResourceRoleEnum"] = None
+    upstream_resources: Optional[Union[str, URIorCURIE]] = None
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, RetrievalSourceId):
+            self.id = RetrievalSourceId(self.id)
+
+        if self._is_empty(self.resource):
+            self.MissingRequiredField("resource")
+        if not isinstance(self.resource, URIorCURIE):
+            self.resource = URIorCURIE(self.resource)
+
+        if self._is_empty(self.resource_role):
+            self.MissingRequiredField("resource_role")
+        if not isinstance(self.resource_role, ResourceRoleEnum):
+            self.resource_role = ResourceRoleEnum(self.resource_role)
+
+        if self.upstream_resources is not None and not isinstance(self.upstream_resources, URIorCURIE):
+            self.upstream_resources = URIorCURIE(self.upstream_resources)
+
+        if not isinstance(self.xref, list):
+            self.xref = [self.xref] if self.xref is not None else []
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        super().__post_init__(**kwargs)
+
+
 class PhysicalEssenceOrOccurrent(YAMLRoot):
     """
     Either a physical or processual entity.
@@ -2733,6 +2759,30 @@ class Activity(NamedThing):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ActivityId):
             self.id = ActivityId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Study(Activity):
+    """
+    a detailed investigation and/or analysis
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Study
+    class_class_curie: ClassVar[str] = "biolink:Study"
+    class_name: ClassVar[str] = "study"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Study
+
+    id: Union[str, StudyId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyId):
+            self.id = StudyId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -9927,6 +9977,21 @@ class DrugDeliveryEnum(EnumDefinitionImpl):
         name="DrugDeliveryEnum",
     )
 
+class ResourceRoleEnum(EnumDefinitionImpl):
+    """
+    The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a
+    given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting
+    data' sources. This enumeration is found in Biolink Model, but is repeated here for convenience.
+    """
+    primary_knowledge_source = PermissibleValue(text="primary_knowledge_source")
+    aggregator_knowledge_source = PermissibleValue(text="aggregator_knowledge_source")
+    supporting_data_source = PermissibleValue(text="supporting_data_source")
+
+    _defn = EnumDefinition(
+        name="ResourceRoleEnum",
+        description="The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.",
+    )
+
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
 
     discovery_and_development_phase = PermissibleValue(text="discovery_and_development_phase",
@@ -10064,8 +10129,17 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
+slots.resource = Slot(uri=BIOLINK.resource, name="resource", curie=BIOLINK.curie('resource'),
+                   model_uri=BIOLINK.resource, domain=RetrievalSource, range=Union[str, URIorCURIE])
+
+slots.resource_role = Slot(uri=BIOLINK.resource_role, name="resource role", curie=BIOLINK.curie('resource_role'),
+                   model_uri=BIOLINK.resource_role, domain=RetrievalSource, range=Union[str, "ResourceRoleEnum"])
+
 slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
                    model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
+
+slots.upstream_resources = Slot(uri=BIOLINK.upstream_resources, name="upstream resources", curie=BIOLINK.curie('upstream_resources'),
+                   model_uri=BIOLINK.upstream_resources, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
 
 slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curie('description'),
                    model_uri=BIOLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])

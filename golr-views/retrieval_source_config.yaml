@@ -1,8 +1,10 @@
-# metamodel_version: 1.7.0# version: 3.2.0id: study
+# metamodel_version: 1.7.0# version: 3.2.0id: retrieval_source
 schema_generating: true
-description: a detailed investigation and/or analysis
-display_name: study
-document_category: study
+description: Provides information about how a particular InformationResource served
+  as a source from which knowledge expressed in an Edge, or data used to generate
+  this knowledge, was retrieved.
+display_name: retrieval source
+document_category: retrieval source
 weight: 20
 fields:
 - id: id
@@ -32,10 +34,6 @@ fields:
     how a particular node made its way into a knowledge provider or graph.
   display_name: provided by
   cardinality: multi
-- id: xref
-  description: Alternate CURIEs for a thing
-  display_name: xref
-  cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -50,4 +48,35 @@ fields:
     \ anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity,\
     \ biolink:NamedThing}"
   display_name: named thing_category
+  cardinality: multi
+- id: license
+  display_name: license
+- id: rights
+  display_name: rights
+- id: format
+  display_name: format
+- id: creation_date
+  description: date on which an entity was created. This can be applied to nodes or
+    edges
+  display_name: creation date
+- id: resource
+  description: The CURIE for an Information Resource that served as a source of knowledge
+    expressed in an Edge, or a source of data used to generate this knowledge.
+  display_name: resource
+- id: resource_role
+  description: The role played by the InformationResource in serving as a source for
+    an Edge. Note that a given Edge should have one and only one 'primary' source,
+    and may have any number of 'aggregator' or 'supporting data' sources.
+  display_name: resource role
+- id: upstream_resources
+  description: An upstream InformationResource from which the resource being described
+    directly retrieved a record of the knowledge expressed in the Edge, or data used
+    to generate this knowledge. This is an array because there are cases where a merged
+    Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided
+    by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info
+    and molepro KPs, which both provided it with records of this single fact.
+  display_name: upstream resources
+- id: xref
+  description: Alternate CURIEs for a thing
+  display_name: xref
   cardinality: multi

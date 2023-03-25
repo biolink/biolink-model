@@ -3711,6 +3711,26 @@ message RelativeFrequencyAnalysisResult
   string format = 0
   date creationDate = 0
  }
+// Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
+message RetrievalSource
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+  uriorcurie resource = 0
+  resourceRoleEnum resourceRole = 0
+  uriorcurie upstreamResources = 0
+ repeated  uriorcurie xref = 0
+ }
 message RNAProduct
  {
   string id = 0
@@ -3964,10 +3984,6 @@ message Study
  repeated  string providedBy = 0
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
-  string license = 0
-  string rights = 0
-  string format = 0
-  date creationDate = 0
  }
 // A group of people banded together or treated as a group as participants in a research study.
 message StudyPopulation

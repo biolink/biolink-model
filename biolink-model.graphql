@@ -4170,6 +4170,26 @@ type RelativeFrequencyAnalysisResult
     creationDate: Date
   }
 
+type RetrievalSource
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    resource: Uriorcurie!
+    resourceRole: ResourceRoleEnum!
+    upstreamResources: Uriorcurie
+    xref: [Uriorcurie]
+  }
+
 type RNAProduct implements GeneProductMixin
   {
     id: String!
@@ -4460,10 +4480,6 @@ type Study
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
-    license: String
-    rights: String
-    format: String
-    creationDate: Date
   }
 
 type StudyPopulation

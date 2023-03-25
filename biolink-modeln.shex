@@ -81,15 +81,17 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<Activity> CLOSED {
-    (  $<Activity_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
-          &<ActivityAndBehavior_tes> ;
-          rdf:type [ <ActivityAndBehavior> ] ?
-       ) ;
-       rdf:type [ <Activity> ]
-    )
-}
+<Activity>  (
+    CLOSED {
+       (  $<Activity_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ? ;
+             &<ActivityAndBehavior_tes> ;
+             rdf:type [ <ActivityAndBehavior> ] ?
+          ) ;
+          rdf:type [ <Activity> ]
+       )
+    } OR @<Study>
+)
 
 <ActivityAndBehavior> {
     (  $<ActivityAndBehavior_tes> (  &<Occurrent_tes> ;
@@ -1921,7 +1923,7 @@ linkml:Nodeidentifier NONLITERAL
 
 <InformationContentEntity>  (
     @<CommonDataElement> OR @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR
-    @<EvidenceType> OR @<InformationResource> OR @<Publication> OR @<Study> OR @<StudyResult> OR @<StudyVariable>
+    @<EvidenceType> OR @<InformationResource> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
 )
 
 <InformationContentEntity_struct> {
@@ -2842,6 +2844,17 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<RetrievalSource> CLOSED {
+    (  $<RetrievalSource_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ? ;
+          <resource> @linkml:Uriorcurie ;
+          <resource_role> @<ResourceRoleEnum> ;
+          <upstream_resources> @linkml:Uriorcurie ?
+       ) ;
+       rdf:type [ <RetrievalSource> ]
+    )
+}
+
 <RNAProduct>  (
     CLOSED {
        (  $<RNAProduct_tes> (  &<Transcript_tes> ;
@@ -3006,8 +3019,8 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <Study> CLOSED {
-    (  $<Study_tes> (  &<InformationContentEntity_tes> ;
-          rdf:type [ <InformationContentEntity> ] ?
+    (  $<Study_tes> (  &<Activity_tes> ;
+          rdf:type [ <Activity> ] ?
        ) ;
        rdf:type [ <Study> ]
     )
