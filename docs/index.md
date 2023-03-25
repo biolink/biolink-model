@@ -20,6 +20,7 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [NamedThing](NamedThing.md) - a databased entity or concept/class
      * [Activity](Activity.md) - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+         * [Study](Study.md) - a detailed investigation and/or analysis
      * [AdministrativeEntity](AdministrativeEntity.md)
          * [Agent](Agent.md) - person, group, organization or project that provides a piece of information (i.e. a knowledge association)
      * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
@@ -139,7 +140,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
              * [BookChapter](BookChapter.md)
              * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
-         * [Study](Study.md) - a detailed investigation and/or analysis
+         * [RetrievalSource](RetrievalSource.md) - Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
          * [StudyResult](StudyResult.md) - A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
              * [ChiSquaredAnalysisResult](ChiSquaredAnalysisResult.md) - A result of a chi squared analysis.
              * [ConceptCountAnalysisResult](ConceptCountAnalysisResult.md) - A result of a concept count analysis.
@@ -1264,6 +1265,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [pages](pages.md) - page number of source referenced for statement or publication
      * [provided by](provided_by.md) - The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
+     * [resource](resource.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+     * [resource role](resource_role.md) - The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * [retrieved on](retrieved_on.md)
      * [rights](rights.md)
      * [source logo](source_logo.md)
@@ -1278,14 +1281,16 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
      * [trade name](trade_name.md)
      * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
+     * [upstream resources](upstream_resources.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
      * [version](version.md)
      * [version of](version_of.md)
      * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
-     * [xref](xref.md) - Alternate CURIEs for a thing
  * [pages](pages.md) - page number of source referenced for statement or publication
  * [provided by](provided_by.md) - The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
  * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
  * [related synonym](related_synonym.md)
+ * [resource](resource.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+ * [resource role](resource_role.md) - The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
  * [retrieved on](retrieved_on.md)
  * [rights](rights.md)
  * [source logo](source_logo.md)
@@ -1300,10 +1305,10 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [trade name](trade_name.md)
  * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
+ * [upstream resources](upstream_resources.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
  * [version](version.md)
  * [version of](version_of.md)
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
- * [xref](xref.md) - Alternate CURIEs for a thing
 
 ### Edge Properties
 
@@ -1630,6 +1635,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * [xref](xref.md) - Alternate CURIEs for a thing
 
 ## Subsets
 
@@ -1708,5 +1714,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [PhaseEnum](PhaseEnum.md) - phase
  * [ReactionDirectionEnum](ReactionDirectionEnum.md)
  * [ReactionSideEnum](ReactionSideEnum.md)
+ * [ResourceRoleEnum](ResourceRoleEnum.md) - The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.
  * [SequenceEnum](SequenceEnum.md) - type of sequence
  * [StrandEnum](StrandEnum.md) - strand

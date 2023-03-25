@@ -1,62 +1,48 @@
 ---
 parent: Entities
-title: biolink:PhenotypicFeature
+title: biolink:RetrievalSource
 grand_parent: Classes
 layout: default
 ---
 
-# Class: PhenotypicFeature
+# Class: RetrievalSource
 
 
-A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
+Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
 
-URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
+URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[EntityToPhenotypicFeatureAssociationMixin]-%20object%201..1%3E[PhenotypicFeature],[GeneToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature],[PhenotypicFeature]%5E-[ClinicalFinding],[PhenotypicFeature]%5E-[BehavioralFeature],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[GeneToPhenotypicFeatureAssociation],[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ClinicalFinding],[BiologicalEntity],[BehavioralFeature],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity]%5E-[RetrievalSource%7Cresource:uriorcurie;resource_role:ResourceRoleEnum;upstream_resources:uriorcurie%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity],[Attribute])
 
 ---
 
-
-## Identifier prefixes
-
- * HP
- * EFO
- * NCIT
- * UMLS
- * MEDDRA
- * MP
- * ZP
- * UPHENO
- * APO
- * FBcv
- * WBPhenotype
- * SNOMEDCT
- * MESH
- * XPO
- * FYPO
- * TO
 
 ## Parents
 
- *  is_a: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
-
-## Children
-
- * [BehavioralFeature](BehavioralFeature.md) - A phenotypic feature which is behavioral in nature.
- * [ClinicalFinding](ClinicalFinding.md) - this category is currently considered broad enough to tag clinical lab measurements and other biological attributes taken as 'clinical traits' with some statistical score, for example, a p value in genetic associations.
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
 
 ## Referenced by class
 
- *  **[DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
- *  **[EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
- *  **[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
- *  **[BiologicalEntity](BiologicalEntity.md)** *[has phenotype](has_phenotype.md)*  <sub>0..\*</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
 
 ## Attributes
 
+
+### Own
+
+ * [resource](resource.md)  <sub>1..1</sub>
+     * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+     * Range: [Uriorcurie](types/Uriorcurie.md)
+     * in subsets: (translator_minimal)
+ * [resource role](resource_role.md)  <sub>1..1</sub>
+     * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
+     * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
+     * in subsets: (translator_minimal)
+ * [upstream resources](upstream_resources.md)  <sub>0..1</sub>
+     * Description: An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
+     * Range: [Uriorcurie](types/Uriorcurie.md)
 
 ### Inherited from entity:
 
@@ -94,6 +80,18 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
 
+### Inherited from information content entity:
+
+ * [license](license.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [rights](rights.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [format](format.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [creation date](creation_date.md)  <sub>0..1</sub>
+     * Description: date on which an entity was created. This can be applied to nodes or edges
+     * Range: [Date](types/Date.md)
+
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>
@@ -115,43 +113,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
 
-### Inherited from thing with taxon:
+### Domain for slot:
 
- * [in taxon](in_taxon.md)  <sub>0..\*</sub>
-     * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
-     * Range: [OrganismTaxon](OrganismTaxon.md)
+ * [resource](resource.md)  <sub>1..1</sub>
+     * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+     * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Aliases:** | | sign |
-|  | | symptom |
-|  | | phenotype |
-|  | | trait |
-|  | | endophenotype |
-| **Examples:** | | Example(value='MP:0001262', description='decreased body weight', object=None) |
-| **In Subsets:** | | model_organism_database |
-| **Exact Mappings:** | | UPHENO:0001001 |
-|  | | SIO:010056 |
-|  | | WIKIDATA:Q104053 |
-|  | | UMLS:C4021819 |
-|  | | NCIT:C16977 |
-|  | | SNOMEDCT:8116006 |
-|  | | MESH:D010641 |
-| **Narrow Mappings:** | | STY:T184 |
-|  | | WIKIDATA:Q169872 |
-|  | | WIKIDATA:Q25203551 |
-|  | | ZP:00000000 |
-|  | | FBcv:0001347 |
-|  | | HP:0000118 |
-|  | | MP:0000001 |
-|  | | WBPhenotype:0000886 |
-|  | | XPO:00000000 |
-|  | | FYPO:0000001 |
-|  | | APO:0000017 |
-|  | | TO:0000387 |
-| **Broad Mappings:** | | BFO:0000019 |
-|  | | PATO:0000001 |
-
+ * [resource role](resource_role.md)  <sub>1..1</sub>
+     * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
+     * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
+     * in subsets: (translator_minimal)
+ * [upstream resources](upstream_resources.md)  <sub>0..1</sub>
+     * Description: An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
+     * Range: [Uriorcurie](types/Uriorcurie.md)

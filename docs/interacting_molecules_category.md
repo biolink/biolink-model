@@ -31,6 +31,6 @@ URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/int
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein') |
+| **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein', object=None) |
 | **Exact Mappings:** | | MI:1046 |
 

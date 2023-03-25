@@ -1,5 +1,5 @@
 ---
-parent: Node Properties
+parent: Other Slots
 title: biolink:xref
 grand_parent: Slots
 layout: default
@@ -21,7 +21,6 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
 
 ## Parents
 
- *  is_a: [node property](node_property.md)
 
 ## Children
 
@@ -152,6 +151,7 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
  * [ReagentTargetedGene](ReagentTargetedGene.md)
  * [RegulatoryRegion](RegulatoryRegion.md)
  * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md)
+ * [RetrievalSource](RetrievalSource.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Serial](Serial.md)
  * [SeverityValue](SeverityValue.md)
@@ -178,6 +178,8 @@ URI: [biolink:xref](https://w3id.org/biolink/vocab/xref)
 | **Aliases:** | | dbxref |
 |  | | Dbxref |
 |  | | DbXref |
+|  | | record_url |
+|  | | source_record_urls |
 | **In Subsets:** | | translator_minimal |
 | **Narrow Mappings:** | | gff3:Dbxref |
 |  | | gpi:DB_Xrefs |

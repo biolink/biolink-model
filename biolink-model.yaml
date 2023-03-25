@@ -659,8 +659,7 @@ slots:
       See https://github.com/biolink/biolink-model/issues/238
 
   xref:
-    is_a: node property
-    aliases: [ 'dbxref', 'Dbxref', 'DbXref' ]
+    aliases: [ 'dbxref', 'Dbxref', 'DbXref', 'record_url', 'source_record_urls' ]
     domain: named thing
     range: uriorcurie
     description: >-
@@ -672,12 +671,51 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  resource:
+    is_a: node property
+    description: >-
+      The CURIE for an Information Resource that served as a source
+      of knowledge expressed in an Edge, or a source of data used to
+      generate this knowledge.
+    domain: retrieval source
+    range: uriorcurie
+    required: true
+    in_subset:
+      - translator_minimal
+  
+  resource role:
+    is_a: node property
+    description: >-
+      The role played by the InformationResource in serving as a
+      source for an Edge. Note that a given Edge should have one
+      and only one 'primary' source, and may have any number of
+      'aggregator' or 'supporting data' sources.
+    domain: retrieval source
+    range: ResourceRoleEnum
+    required: true
+    in_subset:
+      - translator_minimal
+  
   full name:
     is_a: node property
     domain: named thing
     range: label type
     description: >-
       a long-form human readable name for a thing
+
+  upstream resources:
+    is_a: node property
+    description: >-
+      An upstream InformationResource from which the resource
+      being described directly retrieved a record of the knowledge
+      expressed in the Edge, or data used to generate this knowledge.
+      This is an array because there are cases where a merged Edge
+      holds knowledge that was retrieved from multiple sources. e.g.
+      an Edge provided by the ARAGORN ARA can expressing knowledge it
+      retrieved from both the automat-mychem-info and molepro KPs,
+      which both provided it with records of this single fact.
+    domain: retrieval source
+    range: uriorcurie
 
   description:
     aliases: [ 'definition' ]
@@ -5815,7 +5853,7 @@ classes:
 
   study:
     description: a detailed investigation and/or analysis
-    is_a: information content entity
+    is_a: activity
     exact_mappings:
       - NCIT:C63536
     close_mappings:
@@ -6182,6 +6220,18 @@ classes:
     in_subset:
       - model_organism_database
 
+  retrieval source:
+    is_a: information content entity
+    description: >-
+      Provides information about how a particular InformationResource
+      served as a source from which knowledge expressed in an Edge, or
+      data used to generate this knowledge, was retrieved.
+    slots:
+      - resource
+      - resource role
+      - upstream resources
+      - xref
+
   ## Top Level Abstractions of Material & Process Entities
 
   physical essence or occurrent:
@@ -6417,6 +6467,7 @@ classes:
       - STY:T050
       # SIO term is 'biological entity' but less inclusive than the Biolink scope
       - SIO:010046
+      - STY:T129 # (imft, full name: Immunologic Factor
 
   genomic entity:
     mixin: true
@@ -6499,7 +6550,6 @@ classes:
       - STY:T103 # Chemical
     narrow_mappings:
       - WIKIDATA:Q43460564
-      - STY:T129 # (imft, full name: Immunologic Factor
     in_subset:
       - translator_minimal
     id_prefixes:
@@ -10600,6 +10650,20 @@ enums:
       "oral":
       "absorption_through_the_skin":
       "intravenous_injection":
+        
+  ResourceRoleEnum:
+    description: >-
+      The role played by the information reource in serving as a
+      source for an edge in a TRAPI message. Note that a given Edge should have one
+      and only one 'primary' source, and may have any number of
+      'aggregator' or 'supporting data' sources.  This enumeration
+      is found in Biolink Model, but is repeated here for convenience.
+    permissible_values:
+      "primary_knowledge_source":
+      "aggregator_knowledge_source":
+      "supporting_data_source":
+    in_subset:
+      - translator_minimal
 
   FDAApprovalStatusEnum:
     description: >-

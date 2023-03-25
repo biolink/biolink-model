@@ -146,6 +146,7 @@ URI: [biolink:named_thing_category](https://w3id.org/biolink/vocab/named_thing_c
  * [ReagentTargetedGene](ReagentTargetedGene.md)
  * [RegulatoryRegion](RegulatoryRegion.md)
  * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md)
+ * [RetrievalSource](RetrievalSource.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Serial](Serial.md)
  * [SeverityValue](SeverityValue.md)

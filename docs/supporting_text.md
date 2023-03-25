@@ -30,5 +30,5 @@ URI: [biolink:supporting_text](https://w3id.org/biolink/vocab/supporting_text)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='The administration of 50g/ml bupivacaine promoted maximum breast cancer.', description=None) |
+| **Examples:** | | Example(value='The administration of 50g/ml bupivacaine promoted maximum breast cancer.', description=None, object=None) |
 

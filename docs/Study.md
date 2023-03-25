@@ -15,14 +15,14 @@ URI: [biolink:Study](https://w3id.org/biolink/vocab/Study)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity]%5E-[Study%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Activity]%5E-[Study%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Attribute],[Activity])
 
 ---
 
 
 ## Parents
 
- *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
+ *  is_a: [Activity](Activity.md) - An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 
 ## Attributes
 
@@ -62,18 +62,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: Alternate CURIEs for a thing
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
-
-### Inherited from information content entity:
-
- * [license](license.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [rights](rights.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [format](format.md)  <sub>0..1</sub>
-     * Range: [String](types/String.md)
- * [creation date](creation_date.md)  <sub>0..1</sub>
-     * Description: date on which an entity was created. This can be applied to nodes or edges
-     * Range: [Date](types/Date.md)
 
 ### Inherited from macromolecular machine mixin:
 

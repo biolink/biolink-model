@@ -147,6 +147,8 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [prevents](prevents.md) - holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
  * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
  * [qualifier](qualifier.md) - grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
+ * [resource](resource.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+ * [resource role](resource_role.md) - The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
  * [response affected by](response_affected_by.md) - holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
  * [response decreased by](response_decreased_by.md)
  * [response increased by](response_increased_by.md)
@@ -168,3 +170,4 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
 
 ### Enums
 
+ * [ResourceRoleEnum](ResourceRoleEnum.md) - The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.

@@ -130,4 +130,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Narrow Mappings:** | | WIKIDATA:Q28845870 |
 |  | | STY:T050 |
 |  | | SIO:010046 |
+|  | | STY:T129 |
 

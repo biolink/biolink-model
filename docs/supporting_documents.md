@@ -31,5 +31,5 @@ URI: [biolink:supporting_documents](https://w3id.org/biolink/vocab/supporting_do
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='PMID:12345678', description=None) |
+| **Examples:** | | Example(value='PMID:12345678', description=None, object=None) |
 

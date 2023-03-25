@@ -36,6 +36,6 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
+| **Examples:** | | Example(value='UBERON:0000069', description='larval stage', object=None) |
 | **In Subsets:** | | translator_minimal |
 

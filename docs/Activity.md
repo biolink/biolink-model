@@ -15,7 +15,7 @@ URI: [biolink:Activity](https://w3id.org/biolink/vocab/Activity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing],[Attribute],[ActivityAndBehavior],[Activity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ActivityAndBehavior],[NamedThing]%5E-[Activity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[NamedThing],[Attribute],[ActivityAndBehavior],[Activity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ActivityAndBehavior],[Activity]%5E-[Study],[NamedThing]%5E-[Activity])
 
 ---
 
@@ -27,6 +27,13 @@ URI: [biolink:Activity](https://w3id.org/biolink/vocab/Activity)
 ## Uses Mixins
 
  *  mixin: [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+
+## Children
+
+ * [Study](Study.md) - a detailed investigation and/or analysis
+
+## Referenced by class
+
 
 ## Attributes
 
