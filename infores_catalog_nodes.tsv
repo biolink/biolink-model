@@ -9,9 +9,17 @@ released	Anatomical Therapeutic Chemical (ATC) Codes (from UMLS)	infores:atc-cod
 released	Autophagy Ontology	infores:atgo	http://atgo.ucsd.edu/	ATGO	KP			Information Resource					
 released	Athena	infores:athena	https://athena.ohdsi.org/search-terms/start		KP		t	Information Resource					
 released	Automat Biolink	infores:automat-biolink	https://monarchinitiative.org/		KP	['Ranking Agent']	A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).	Information Resource					
-released	Automat CTD (trapi v-1.1.0)	infores:automat-ctd			KP	['Ranking Agent']	A graph based on the [Comparative Toxicogenomics Database (ctdbase.org)](ctdbase.org).	Information Resource
+deprecated	Automat Chemical normalization (trapi v-1.1.0)	infores:automat-chem-norm			KP	['Ranking Agent']	"A graph  linking together similar compounds.  Two compounds are linked by an edge in the graph if they are equivalent when charge, salts, and stereochemistry are ignored."	Information Resource
+deprecated	Automat Chembio	infores:automat-chembio			KP	['Ranking Agent']	A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).	Information Resource
+deprecated	Automat Cord19	infores:automat-cord19			KP	['Ranking Agent']	A literature co-occurence graph based on parsing the CORD-19 paper set.	Information Resource
+deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite			KP	['Ranking Agent']	A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.	Information Resource
+deprecated	Automat Cord19 Scigraph (trapi v-1.1.0)	infores:automat-cord19-scigraph			KP	['Ranking Agent']	A literature co-occurence graph based on scigraph parsing of the CORD-19 paper set. All triples contain covid-19 as either subject or object.	Information Resource
+deprecated	Automat Covid Phenotypes (trapi v-1.1.0)	infores:automat-covid-phenotypes			KP	['Ranking Agent']	A hand-curated graph of phenotypes of covid-19.	Information Resource
+deprecated	Automat Covidkop KG (trapi v-1.1.0)	infores:automat-covidkop			KP	['Ranking Agent']	Knowledge graph constructed from Robokop KG by incorporating Cord-19 dataset and other covid related knowledge sources.	Information Resource
+released	Automat CTD (trapi v-1.1.0)	infores:automat-ctd			KP	['Ranking Agent']	A graph based on the [Comparative Toxicogenomics Database (ctdbase.org)](ctdbase.org).	Information Resource					
 released	Automat DrugCentral	infores:automat-drug-central			KP	['Ranking Agent']	A graph based on DrugCentral	Information Resource					
-released	Automat GTEx (trapi v-1.1.0)	infores:automat-gtex			KP	['Ranking Agent']	A graph containing eqtl and sqtl information from [GTEx Portal (https://gtexportal.org/home/)](https://gtexportal.org/home/). Also includes genes that the variants lie within or near.	Information Resource
+released	Automat Foodb (trapi v-1.1.0)	infores:automat-foodb			KP	['Ranking Agent']	A graph of the food/chemical relationships in [foodb.ca](foodb.ca).	Information Resource
+released	Automat GTEx (trapi v-1.1.0)	infores:automat-gtex			KP	['Ranking Agent']	A graph containing eqtl and sqtl information from [GTEx Portal (https://gtexportal.org/home/)](https://gtexportal.org/home/). Also includes genes that the variants lie within or near.	Information Resource					
 released	Automat Gtopdb (trapi v-1.1.0)	infores:automat-gtopdb			KP	['Ranking Agent']	A graph based on the [IUPHAR Guide to Pharmacology (https://www.guidetopharmacology.org/)](https://www.guidetopharmacology.org/)	Information Resource					
 released	Automat GWAS Catalog	infores:automat-gwas-catalog			KP	['Ranking Agent']	A graph based on the GWAS Catalog	Information Resource					
 released	Automat Hetio (trapi v-1.1.0)	infores:automat-hetio			KP	['Ranking Agent']	A graph based on [hetionet (het.io)](het.io).	Information Resource					
@@ -20,11 +28,13 @@ released	Automat HMDB (trapi v-1.1.0)	infores:automat-hmdb			KP	['Ranking Agent'
 released	Automat Human GOA (trapi v-1.1.0)	infores:automat-human-goa			KP	['Ranking Agent']	Human Gene Ontology Annotations from the GO consortium.	Information Resource					
 released	Automat IntAct (trapi v-1.1.0)	infores:automat-intact			KP	['Ranking Agent']	Molecular (Gene-Gene) interactions from [EBI IntAct (https://www.ebi.ac.uk/intact/)](https://www.ebi.ac.uk/intact/).	Information Resource					
 released	Automat KEGG (trapi v-1.1.0)	infores:automat-kegg			KP	['Ranking Agent']	A graph based on the [Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)](https://www.genome.jp/kegg/).	Information Resource					
-released	Automat Ontological Hierarchy (trapi v-1.1.0)	infores:automat-ontology-hierarchy			KP	['Ranking Agent']	A graph for ontological hierarchy extracted from Uberongraph.	Information Resource
+deprecated	Automat MyChem (trapi v-1.1.0)	infores:automat-mychem-info			KP	['Ranking Agent']	"A graph integrating DrugBank, DrugCentral, and Aeolus data as provided by [mychem.info](mychem.info)."	Information Resource
+released	Automat Ontological Hierarchy (trapi v-1.1.0)	infores:automat-ontology-hierarchy			KP	['Ranking Agent']	A graph for ontological hierarchy extracted from Uberongraph.	Information Resource					
 released	Automat Panther (trapi v-1.1.0)	infores:automat-panther			KP	['Ranking Agent']	A graph of gene families and pathways from [Panther (pantherdb.org)](pantherdb.org)	Information Resource					
 released	Automat Pharos (trapi v-1.1.0)	infores:automat-pharos			KP	['Ranking Agent']	A graph based on [Pharos (pharos.nih.gov)](pharos.nih.gov).	Information Resource					
 released	Automat Robokop KG (trapi v-1.1.0)	infores:automat-robokop			KP	['Ranking Agent']	Biomedical Knowledge graph build by constructing relationships from federated data sets.	Information Resource					
-released	Automat Uberongraph (trapi v-1.1.0)	infores:automat-uberongraph			KP	['Ranking Agent']	"A graph representation of Uberongraph, an integration of ontologies including GO, CHEBI, Uberon, and HPO."	Information Resource
+deprecated	Automat Textmining KP (trapi v-1.1.0)	infores:automat-text-mining-provider			KP	['Ranking Agent']	A literature co-occurrence graph created by the Translator Text Mining KP.	Information Resource
+released	Automat Uberongraph (trapi v-1.1.0)	infores:automat-uberongraph			KP	['Ranking Agent']	"A graph representation of Uberongraph, an integration of ontologies including GO, CHEBI, Uberon, and HPO."	Information Resource					
 released	Automat Viral Proteome (trapi v-1.1.0)	infores:automat-viral-protome			KP	['Ranking Agent']	"A graph consisting of viral proteins from UniProt, connected by similarity edges from UniRef."	Information Resource					
 released	Basic Formal Ontology	infores:bfo	http://www.obofoundry.org/ontology/bfo.html	BFO	KP			Information Resource					
 released	Bgee	infores:bgee	https://bgee.org/		KP			Information Resource					
