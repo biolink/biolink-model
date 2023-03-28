@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-28T00:23:43
+# Generation date: 2023-03-28T15:47:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.2.3"
+version = "3.2.4"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -10130,10 +10130,10 @@ slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
 slots.resource = Slot(uri=BIOLINK.resource, name="resource", curie=BIOLINK.curie('resource'),
-                   model_uri=BIOLINK.resource, domain=RetrievalSource, range=Union[str, URIorCURIE])
+                   model_uri=BIOLINK.resource, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
 
 slots.resource_role = Slot(uri=BIOLINK.resource_role, name="resource role", curie=BIOLINK.curie('resource_role'),
-                   model_uri=BIOLINK.resource_role, domain=RetrievalSource, range=Union[str, "ResourceRoleEnum"])
+                   model_uri=BIOLINK.resource_role, domain=RetrievalSource, range=Optional[Union[str, "ResourceRoleEnum"]])
 
 slots.full_name = Slot(uri=BIOLINK.full_name, name="full name", curie=BIOLINK.curie('full_name'),
                    model_uri=BIOLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
@@ -11389,6 +11389,15 @@ slots.article_published_in = Slot(uri=BIOLINK.published_in, name="article_publis
 
 slots.article_iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="article_iso abbreviation", curie=BIOLINK.curie('iso_abbreviation'),
                    model_uri=BIOLINK.article_iso_abbreviation, domain=Article, range=Optional[str])
+
+slots.retrieval_source_resource = Slot(uri=BIOLINK.resource, name="retrieval source_resource", curie=BIOLINK.curie('resource'),
+                   model_uri=BIOLINK.retrieval_source_resource, domain=RetrievalSource, range=Union[str, URIorCURIE])
+
+slots.retrieval_source_resource_role = Slot(uri=BIOLINK.resource_role, name="retrieval source_resource role", curie=BIOLINK.curie('resource_role'),
+                   model_uri=BIOLINK.retrieval_source_resource_role, domain=RetrievalSource, range=Union[str, "ResourceRoleEnum"])
+
+slots.retrieval_source_upstream_resources = Slot(uri=BIOLINK.upstream_resources, name="retrieval source_upstream resources", curie=BIOLINK.curie('upstream_resources'),
+                   model_uri=BIOLINK.retrieval_source_upstream_resources, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
 
 slots.small_molecule_id = Slot(uri=BIOLINK.id, name="small molecule_id", curie=BIOLINK.curie('id'),
                    model_uri=BIOLINK.small_molecule_id, domain=SmallMolecule, range=Union[str, SmallMoleculeId])

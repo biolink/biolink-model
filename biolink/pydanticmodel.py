@@ -5,7 +5,7 @@ from typing import List, Dict, Optional, Any
 from pydantic import BaseModel as BaseModel, Field
 
 metamodel_version = "None"
-version = "3.2.3"
+version = "3.2.4"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -1167,9 +1167,9 @@ class RetrievalSource(InformationContentEntity):
     """
     Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
     """
-    resource: str = Field(None, description="""The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
-    resource_role: ResourceRoleEnum = Field(None, description="""The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.""")
-    upstream_resources: Optional[str] = Field(None, description="""An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.""")
+    resource: str = Field(None, description="""The InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
+    resource_role: ResourceRoleEnum = Field(None, description="""The role of the InformationResource in the retrieval of the knowledge expressed in an Edge, or data used to generate this knowledge.""")
+    upstream_resources: Optional[str] = Field(None, description="""The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
