@@ -130,6 +130,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | disorder |
 |  | | medical condition |
 | **In Subsets:** | | model_organism_database |
+|  | | translator_minimal |
 | **Exact Mappings:** | | MONDO:0000001 |
 |  | | DOID:4 |
 |  | | NCIT:C2991 |
