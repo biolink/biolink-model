@@ -679,7 +679,6 @@ slots:
       generate this knowledge.
     domain: retrieval source
     range: uriorcurie
-    required: true
     in_subset:
       - translator_minimal
   
@@ -692,7 +691,6 @@ slots:
       'aggregator' or 'supporting data' sources.
     domain: retrieval source
     range: ResourceRoleEnum
-    required: true
     in_subset:
       - translator_minimal
   
@@ -6231,6 +6229,22 @@ classes:
       - resource role
       - upstream resources
       - xref
+    slot_usage:
+      resource:
+        required: true
+        description: >-
+        The InformationResource that served as a source for the
+        knowledge expressed in an Edge, or data used to generate this knowledge.
+      resource role:
+        required: true
+          description: >-
+          The role of the InformationResource in the retrieval of the
+          knowledge expressed in an Edge, or data used to generate this knowledge.
+      upstream resources:
+        description: >-
+        The InformationResources that served as a source for the
+        InformationResource that served as a source for the knowledge
+        expressed in an Edge, or data used to generate this knowledge.
 
   ## Top Level Abstractions of Material & Process Entities
 
