@@ -17,7 +17,7 @@ URI: [biolink:resource_role](https://w3id.org/biolink/vocab/resource_role)
 
 ## Domain and Range
 
-[RetrievalSource](RetrievalSource.md) ->  <sub>1..1</sub> [ResourceRoleEnum](ResourceRoleEnum.md)
+[RetrievalSource](RetrievalSource.md) ->  <sub>0..1</sub> [ResourceRoleEnum](ResourceRoleEnum.md)
 
 ## Parents
 
@@ -28,7 +28,6 @@ URI: [biolink:resource_role](https://w3id.org/biolink/vocab/resource_role)
 
 ## Used by
 
- * [RetrievalSource](RetrievalSource.md)
 
 ## Other properties
 

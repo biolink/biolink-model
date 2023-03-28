@@ -32,11 +32,11 @@ URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
 
 ### Own
 
- * [resource](resource.md)  <sub>1..1</sub>
+ * [resource](resource.md)  <sub>0..1</sub>
      * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
- * [resource role](resource_role.md)  <sub>1..1</sub>
+ * [resource role](resource_role.md)  <sub>0..1</sub>
      * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
      * in subsets: (translator_minimal)
@@ -115,11 +115,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [resource](resource.md)  <sub>1..1</sub>
+ * [resource](resource.md)  <sub>0..1</sub>
      * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
- * [resource role](resource_role.md)  <sub>1..1</sub>
+ * [resource role](resource_role.md)  <sub>0..1</sub>
      * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
      * in subsets: (translator_minimal)

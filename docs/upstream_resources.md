@@ -25,4 +25,3 @@ URI: [biolink:upstream_resources](https://w3id.org/biolink/vocab/upstream_resour
 
 ## Used by
 
- * [RetrievalSource](RetrievalSource.md)

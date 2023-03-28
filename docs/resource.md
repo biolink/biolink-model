@@ -17,7 +17,7 @@ URI: [biolink:resource](https://w3id.org/biolink/vocab/resource)
 
 ## Domain and Range
 
-[RetrievalSource](RetrievalSource.md) ->  <sub>1..1</sub> [Uriorcurie](types/Uriorcurie.md)
+[RetrievalSource](RetrievalSource.md) ->  <sub>0..1</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 
@@ -28,7 +28,6 @@ URI: [biolink:resource](https://w3id.org/biolink/vocab/resource)
 
 ## Used by
 
- * [RetrievalSource](RetrievalSource.md)
 
 ## Other properties
 
