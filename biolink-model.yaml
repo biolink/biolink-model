@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.2.2
+version: 3.2.3
 
 
 ## ------------
@@ -7234,6 +7234,7 @@ classes:
       - PHARMGKB.DISEASE
     in_subset:
       - model_organism_database
+      - translator_minimal
 
   phenotypic feature:
     aliases: [ 'sign', 'symptom', 'phenotype', 'trait', 'endophenotype' ]
