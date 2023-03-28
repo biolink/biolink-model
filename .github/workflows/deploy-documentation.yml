@@ -2,16 +2,8 @@ name: Deploy Documentation
 
 # Controls when the action will run. Triggers the workflow on push
 on:
-  push:
-    branches:
-    - master
-    paths:
-    - '*.md'
-    - 'biolink-model.ttl'
-    - 'biolink-model.owl'
-    - 'biolink-model.shex'
-    - 'about/*'
-    - 'context.jsonld'
+  release:
+    types: [created]
   repository_dispatch:
     types: trigger-build-documentation
 
@@ -28,7 +20,7 @@ jobs:
           type: now
           target_branch: gh-pages
         env:
-          GITHUB_TOKEN: ${{secrets.API_TOKEN}}
+          GITHUB_TOKEN: ${{ github.token }}
 
   build:
     # The type of runner that the job will run on
@@ -40,7 +32,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.API_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Python Environment
       uses: actions/setup-python@v2
@@ -64,7 +56,7 @@ jobs:
     - name: Deploy to gh-pages branch
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
         REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
         BRANCH: gh-pages # The branch the action should deploy to.
         COMMIT_MESSAGE: 'Update documentation'
