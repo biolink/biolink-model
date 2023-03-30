@@ -3260,49 +3260,52 @@ slots:
       - RO:0004028
       - RO:0009501
 
-  # TODO: ameliorates and exacerbates inverses.
-  ameliorates:
+  beneficial for:
+    aliases: ['ameliorates', 'beneficial for condition']
     is_a: affects
-    description: >-
-      A relationship between an entity (e.g. a genotype,
-      genetic variation, chemical, or environmental exposure, clinical intervention)
-      and a condition (a phenotype or disease), where the
-      presence of the entity reduces or eliminates some or
-      all aspects of the condition.
+    description: >- 
+      Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
+      where the intervention can benefit patients with, or disposed to getting, the condition.  The “benefit” of the 
+      treatment may be preventing, delaying, reducing risk, reducing duration, ameliorating symptoms, or completely 
+      curing the condition.  An intervention does not need to be formally approved, or even used in clinical practice, 
+      to be the subject of a ‘treats’ statement. There only needs to be reasonable evidence to believe that it will 
+      benefit patients with or prevented from getting the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: named thing
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: exacerbates
+      opposite_of: detrimental for
     exact_mappings:
       - RO:0003307
 
-  is ameliorated by:
-    inverse: ameliorates
+  benefited by:
+    inverse: beneficial for
     is_a: affected by
     domain: disease or phenotypic feature
     range: named thing
 
-  exacerbates:
+  detrimental for:
+    aliases: ['exacerbates', 'detrimental for condition']
     is_a: affects
     description: >-
-      A relationship between an entity (e.g. a chemical,
-      environmental exposure, or some form of genetic variation)
-      and a condition (a phenotype or disease), where the presence
-      of the entity worsens some or all aspects of the condition.
+        Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
+        where the intervention can be detrimental to patients with, or disposed to getting, the condition.  The “detriment” of the 
+        treatment may be worsening, delaying, increasing risk, increasing duration, exacerbating symptoms, or completely 
+        worsening the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: biological entity
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
+    opposite_of: beneficial for
     exact_mappings:
       - RO:0003309
     broad_mappings:
       - SEMMEDDB:COMPLICATES
 
-  is exacerbated by:
-    inverse: exacerbates
+  is harmed by:
+    inverse: detrimental for
     is_a: affected by
     domain: disease or phenotypic feature
     range: biological entity
@@ -3311,10 +3314,18 @@ slots:
 
   treats:
     aliases: [ 'is substance that treats', 'indicated for' ]
-    is_a: ameliorates
+    is_a: beneficial for
     description: >-
-      holds between a therapeutic procedure or chemical entity
-      and a disease or phenotypic feature that it is used to treat
+        Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
+        where the intervention can benefit patients with, or disposed to getting, the condition.  The “benefit” of the 
+        treatment may be preventing, delaying, reducing risk, reducing duration, ameliorating symptoms, or completely 
+        curing the condition.  Treats edges should be used for interventions that are formally approved for use in
+        clinical practice.  For interventions that are not formally approved, use the ‘beneficial for’ predicate.  For
+        interventions that are currently being tested in non-human models, use 'is studied to treat' predicate.
+        In addition, a Translator ARA may use a treats predicate as a shortcut relation that is supported by
+        a combination of other relations (e.g.: an abundance of model organism data, evidence of a beneficial effect
+        in a preclinical trial, a correlation between clinical treatment of a condition and usage of a particular
+        drug that may or may not officially approved).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3322,41 +3333,14 @@ slots:
       opposite_of: contraindicated for
     in_subset:
       - translator_minimal
-    related_mappings:
-      - MONDO:disease_responds_to
-    exact_mappings:
+    broad_mappings:
       - DRUGBANK:treats
       - SEMMEDDB:TREATS
       - WIKIDATA_PROPERTY:P2175
-    narrow_mappings:
-      # "is substance that treats" constrains statements to
-      # a subset of the universe of all possible treatments
-      - RO:0002606
-      - NCIT:regimen_has_accepted_use_for_disease
-      # RTX mapped REPODB terms
-      - REPODB:clinically_tested_approved_unknown_phase
-      - REPODB:clinically_tested_suspended_phase_0
-      - REPODB:clinically_tested_suspended_phase_1
-      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
-      - REPODB:clinically_tested_suspended_phase_2
-      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
-      - REPODB:clinically_tested_suspended_phase_3
-      - REPODB:clinically_tested_terminated_phase_0
-      - REPODB:clinically_tested_terminated_phase_1
-      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
-      - REPODB:clinically_tested_terminated_phase_2
-      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
-      - REPODB:clinically_tested_terminated_phase_3
-      - REPODB:clinically_tested_withdrawn_phase_0
-      - REPODB:clinically_tested_withdrawn_phase_1
-      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
-      - REPODB:clinically_tested_withdrawn_phase_2
-      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
-      - REPODB:clinically_tested_withdrawn_phase_3
-      - SNOMED:plays_role
+      - MONDO:disease_responds_to
 
   treated by:
-    is_a: is ameliorated by
+    is_a: benefited by
     description: >-
       holds between a disease or phenotypic feature and a therapeutic
       process or chemical entity that is used to treat the condition
@@ -3374,6 +3358,26 @@ slots:
       # "is treated by substance" constrains statements to
       # subset of the universe of all possible treatments
       - RO:0002302
+
+  is studied to treat:
+    is_a: affects
+    description: >-
+      Studied to treat is a narrower form of treats that should be applied to 
+      interventions that are not formally approved for use in clinical practice.  These interventions
+      could be being tested in clinical trials (see the more narrow children predicates of this one), or they
+      could be used in clinical practice but not formally approved.  These could be interventions
+      are also being assayed in alternative models (e.g. drug efficacy tested in model organisms).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+  
+  treated in a study:
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    inverse: is studied to treat
+
 
   prevents:
     is_a: affects risk for
@@ -4772,9 +4776,11 @@ slots:
     inverse: has side effect
 
   contraindicated for:
-    is_a: related to at instance level
-    description: Holds between a drug and a disease or phenotype, such that a person
-      with that disease should not be treated with the drug.
+    is_a: detrimental for
+    description: >-
+        A relation that holds between a disease or phenotypic feature and a chemical or drug or treatment, where the
+        chemical or drug or treatment is not recommended for use in the disease or phenotypic feature, is harmful for
+        the disease or phenotypic feature when used in combination with another treatment.
     domain: drug
     range: disease or phenotypic feature
     annotations:
