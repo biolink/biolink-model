@@ -160,6 +160,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [statement qualifier](statement_qualifier.md)
  * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
  * [superclass of](superclass_of.md) - holds between two classes where the domain class is a super class of the range class
+ * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
  * [synonym](synonym.md) - Alternate human-readable names for a thing
  * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical entity that is used to treat the condition
  * [treats](treats.md) - holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat

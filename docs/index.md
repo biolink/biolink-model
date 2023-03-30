@@ -1632,6 +1632,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [publication type](publication_type.md) - Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
  * [relation](relation.md)
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
+ * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
  * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.

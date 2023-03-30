@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2201.4,123"];
+	graph [bb="0,0,2206.4,123"];
 	node [label="\N"];
 	"retrieval source"	[height=0.5,
 		label="retrieval source",
@@ -133,53 +133,62 @@ digraph {
 		pos="e,1516.3,32.63 1213.1,92.226 1224.1,90.302 1235.5,88.463 1246.2,87 1334.2,75.003 1360.4,95.129 1445.2,69 1467.6,62.103 1490.7,49.151 \
 1507.9,38.158",
 		style=solid];
-	resource	[color=blue,
-		height=0.5,
-		label=uriorcurie,
-		pos="1641.2,18",
-		width=1.5887];
+	resource	[height=0.5,
+		pos="1636.2,18",
+		width=1.4263];
 	"retrieval source" -> resource	[color=blue,
 		label=resource,
-		lp="1634.7,61.5",
-		pos="e,1626.2,35.487 1212.1,92.078 1223.4,90.121 1235.2,88.308 1246.2,87 1319.6,78.34 1509.2,95.202 1578.2,69 1593.3,63.302 1607.5,52.624 \
-1618.6,42.595",
+		lp="1633.7,61.5",
+		pos="e,1622.4,35.72 1212.1,92.078 1223.4,90.121 1235.2,88.308 1246.2,87 1319.6,78.34 1509.7,96.599 1578.2,69 1592.2,63.381 1605.1,52.96 \
+1615.3,43.081",
 		style=solid];
-	"resource role"	[color=blue,
-		height=0.5,
-		label=ResourceRoleEnum,
-		pos="1818.2,18",
-		width=2.8164];
+	"resource role"	[height=0.5,
+		pos="1777.2,18",
+		width=2.004];
 	"retrieval source" -> "resource role"	[color=blue,
 		label="resource role",
-		lp="1771.7,61.5",
-		pos="e,1781,34.867 1212.1,91.972 1223.4,90.025 1235.1,88.243 1246.2,87 1433.7,65.992 1484.8,103.53 1670.2,69 1705.1,62.509 1742.9,49.61 \
-1771.6,38.539",
+		lp="1760.7,61.5",
+		pos="e,1750.8,34.821 1212.1,91.973 1223.4,90.026 1235.1,88.244 1246.2,87 1339.7,76.516 1577.8,91.186 1669.2,69 1694.7,62.831 1721.4,50.534 \
+1741.8,39.68",
 		style=solid];
-	"upstream resources"	[color=blue,
-		height=0.5,
-		label=uriorcurie,
-		pos="1995.2,18",
-		width=1.5887];
+	"upstream resources"	[height=0.5,
+		pos="1970.2,18",
+		width=2.8706];
 	"retrieval source" -> "upstream resources"	[color=blue,
 		label="upstream resources",
-		lp="1962.7,61.5",
-		pos="e,1959.6,32.223 1211.6,91.957 1223,89.985 1235,88.198 1246.2,87 1501.4,59.856 1569.8,109.13 1823.2,69 1867.1,62.05 1915.6,47.281 \
-1949.9,35.586",
+		lp="1945.7,61.5",
+		pos="e,1931.1,34.723 1211.6,91.963 1223,89.99 1235,88.202 1246.2,87 1496.5,60.298 1564.1,111.37 1812.2,69 1849.7,62.598 1890.6,49.475 \
+1921.4,38.28",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="2144.2,18",
+		pos="2149.2,18",
 		width=1.5887];
 	"retrieval source" -> xref	[color=blue,
 		label=xref,
-		lp="2094.7,61.5",
-		pos="e,2119.6,34.254 1211.6,91.881 1223,89.916 1235,88.15 1246.2,87 1333.8,78.058 1952.6,89.216 2038.2,69 2063.8,62.962 2090.6,50.281 \
-2110.8,39.202",
+		lp="2085.7,61.5",
+		pos="e,2120.4,33.642 1211.6,91.885 1223,89.92 1235,88.153 1246.2,87 1417.6,69.457 1852.3,102.85 2021.2,69 2052.7,62.702 2086.4,49.245 \
+2111.3,37.877",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
 		pos="1330.2,105",
 		width=2.0762];
+	"retrieval source_resource"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="1480.2,105",
+		width=1.5887];
+	"retrieval source_resource role"	[color=blue,
+		height=0.5,
+		label=ResourceRoleEnum,
+		pos="1657.2,105",
+		width=2.8164];
+	"retrieval source_upstream resources"	[color=blue,
+		height=0.5,
+		label=uriorcurie,
+		pos="1834.2,105",
+		width=1.5887];
 }
