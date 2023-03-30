@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-28T15:47:54
+# Generation date: 2023-03-30T15:34:14
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10128,6 +10128,9 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
 
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+
+slots.support_graphs = Slot(uri=BIOLINK.support_graphs, name="support graphs", curie=BIOLINK.curie('support_graphs'),
+                   model_uri=BIOLINK.support_graphs, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.resource = Slot(uri=BIOLINK.resource, name="resource", curie=BIOLINK.curie('resource'),
                    model_uri=BIOLINK.resource, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
