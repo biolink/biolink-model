@@ -9071,6 +9071,47 @@ classes:
       species context qualifier:
         range: organism taxon
 
+  chemical or drug or treatment treats disease or phenotypic feature association:
+    description: >-
+      Describes a treatment that a chemical entity, drug, or treatment has on a disease or phenotypic feature.
+    is_a: association
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - anatomical context qualifier
+    slot_usage:
+      subject:
+        range: chemical entity or drug or treatment
+      object:
+        range: disease or phenotypic feature
+        id_prefixes:
+          - MONDO
+          - HP
+      predicate:
+        subproperty_of: treats
+
+  chemical or drug or treatment is studied to treat disease or phenotypic feature association:
+  description: >-
+  is_a: association
+  slots:
+    - subject aspect qualifier
+    - subject direction qualifier
+    - object aspect qualifier
+    - object direction qualifier
+    - species context qualifier
+  slot_usage:
+    subject:
+      range: chemical entity or drug or treatment
+    object:
+      range: disease or phenotypic feature
+      id_prefixes:
+        - MONDO
+        - HP
+    predicate:
+      subproperty_of: is studied to treat
+
   drug to gene association:
     description: >-
       An interaction between a drug and a gene or gene product.
