@@ -671,6 +671,13 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  support graphs:
+    description: >-
+      A list of knowledge graphs that support the existence of this node.
+    multivalued: true
+    in_subset:
+      - translator_minimal
+  
   resource:
     is_a: node property
     description: >-
