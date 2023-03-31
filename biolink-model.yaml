@@ -3371,6 +3371,32 @@ slots:
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
+    narrow_mappings:
+      # "is substance that treats" constrains statements to
+      # a subset of the universe of all possible treatments
+      - RO:0002606
+      - NCIT:regimen_has_accepted_use_for_disease
+      # RTX mapped REPODB terms
+      - REPODB:clinically_tested_approved_unknown_phase
+      - REPODB:clinically_tested_suspended_phase_0
+      - REPODB:clinically_tested_suspended_phase_1
+      - REPODB:clinically_tested_suspended_phase_1_or_phase_2
+      - REPODB:clinically_tested_suspended_phase_2
+      - REPODB:clinically_tested_suspended_phase_2_or_phase_3
+      - REPODB:clinically_tested_suspended_phase_3
+      - REPODB:clinically_tested_terminated_phase_0
+      - REPODB:clinically_tested_terminated_phase_1
+      - REPODB:clinically_tested_terminated_phase_1_or_phase_2
+      - REPODB:clinically_tested_terminated_phase_2
+      - REPODB:clinically_tested_terminated_phase_2_or_phase_3
+      - REPODB:clinically_tested_terminated_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_0
+      - REPODB:clinically_tested_withdrawn_phase_1
+      - REPODB:clinically_tested_withdrawn_phase_1_or_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2
+      - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
+      - REPODB:clinically_tested_withdrawn_phase_3
+      - SNOMED:plays_role
   
   treated in a study:
     is_a: affected by
