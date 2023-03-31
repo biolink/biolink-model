@@ -8703,56 +8703,25 @@ classes:
         range: molecular entity
 
   cell line to entity association mixin:
-    description: >-
-      An relationship between a cell line and another entity
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: cell line
+    deprecated: true
 
-  # TODO: figure out what gives with subject range
   cell line to disease or phenotypic feature association:
     is_a: association
-    mixins:
-      - cell line to entity association mixin
     description: >-
       An relationship between a cell line and a disease or a phenotype, where
       the cell line is derived from an individual with that disease or phenotype.
+    defining_slots:
+      - subject
     slot_usage:
       subject:
         range: cell line
       object:
         range: disease or phenotypic feature
 
-  chemical entity to entity association mixin:
-    description: >-
-      An interaction between a chemical entity and another entity
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: chemical entity or gene or gene product
-        description: "the chemical entity that is an interactor"
-
-  drug to entity association mixin:
-    description: >-
-      An interaction between a drug and another entity
-    is_a: chemical entity to entity association mixin
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: drug
-        description: "the drug that is an interactor"
 
   chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
-    is_a: chemical entity to entity association mixin
     mixin: true
     defining_slots:
       - subject
@@ -9449,7 +9418,6 @@ classes:
       - subject
       - object
     mixins:
-      - entity to disease association mixin
       - gene to entity association mixin
     slot_usage:
       subject:
@@ -9462,6 +9430,12 @@ classes:
 
   druggable gene to disease association:
     is_a: gene to disease association
+    mixins:
+      - gene to entity association mixin
+    defining_slots:
+      - subject
+      - object
+      - predicate
     slot_usage:
       subject:
         range: gene or gene product
@@ -9473,13 +9447,9 @@ classes:
         subproperty_of: target for
       has evidence:
         range: DruggableGeneCategoryEnum
-    defining_slots:
-      - subject
-      - object
-      - predicate
-    mixins:
-      - entity to disease association mixin
-      - gene to entity association mixin
+      object:
+        range: disease
+
 
   variant to gene association:
     description: >-
@@ -9607,7 +9577,6 @@ classes:
       - object
     mixins:
       - variant to entity association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         description: >-
@@ -9623,6 +9592,7 @@ classes:
       object:
         description: >-
           a disease that is associated with that variant
+        range: disease
         examples:
           - value: MONDO:0016419
             description: hereditary breast cancer
@@ -9634,8 +9604,6 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: genotype
@@ -9679,7 +9647,6 @@ classes:
       - object
     mixins:
       - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: gene or gene product
@@ -9687,6 +9654,8 @@ classes:
           A gene that has a role in modeling the disease. This may be a model
           organism ortholog of a known disease gene, or it may be a gene whose
           mutants recapitulate core features of the disease.
+      object:
+        range: disease
 
   variant as a model of disease association:
     is_a: variant to disease association
@@ -9696,12 +9665,13 @@ classes:
       - object
     mixins:
       - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: sequence variant
         description: >-
           A variant that has a role in modeling the disease.
+      object:
+        range: disease
 
   genotype as a model of disease association:
     is_a: genotype to disease association
@@ -9711,12 +9681,13 @@ classes:
       - object
     mixins:
       - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: genotype
         description: >-
           A genotype that has a role in modeling the disease.
+      object:
+        range: disease
 
   cell line as a model of disease association:
     is_a: cell line to disease or phenotypic feature association
@@ -9726,13 +9697,14 @@ classes:
       - object
     mixins:
       - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: cell line
         description: >-
           A cell line derived from an organismal entity with a disease state that is used
           as a model of that disease.
+      object:
+        range: disease
 
   organismal entity as a model of disease association:
     is_a: association
@@ -9742,13 +9714,14 @@ classes:
       - object
     mixins:
       - model to disease association mixin
-      - entity to disease association mixin
     slot_usage:
       subject:
         range: organismal entity
         description: >-
           A organismal entity (strain, breed) with a predisposition to a disease, or bred/created
           specifically to model a disease.
+      object:
+        range: disease
 
   organism to organism association:
     is_a: association
