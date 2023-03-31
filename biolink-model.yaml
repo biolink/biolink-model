@@ -1548,13 +1548,7 @@ slots:
       - translator_minimal
 
   severity qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state
-      how severe the phenotype is in the subject
-    is_a: qualifier
-    range: severity value
-    in_subset:
-      - translator_minimal
+    deprecated: true
 
   sex qualifier:
     description: >-
@@ -1566,13 +1560,7 @@ slots:
       - translator_minimal
 
   onset qualifier:
-    description: >-
-      a qualifier used in a phenotypic association to state
-      when the phenotype appears is in the subject
-    is_a: qualifier
-    range: onset
-    in_subset:
-      - translator_minimal
+    deprecated: true
 
   clinical modifier qualifier:
     description: >-
@@ -5748,9 +5736,7 @@ classes:
       - PATO:0020000
 
   severity value:
-    is_a: attribute
-    description: >-
-      describes the severity of a phenotypic feature or disease
+    deprecated: true
 
   relationship quantifier:
     mixin: true
@@ -8084,11 +8070,7 @@ classes:
       - HP:0031797
 
   onset:
-    is_a: clinical course
-    description: >-
-      The age group in which (disease) symptom manifestations appear
-    exact_mappings:
-      - HP:0003674
+    deprecated: true
 
   clinical entity:
     is_a: named thing
