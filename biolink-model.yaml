@@ -7447,6 +7447,11 @@ classes:
       chemical entities that must include genes and their children as chemical entities.
     mixin: true
 
+  chemical entity or drug or treatment:
+    description: >-
+      A union of chemical entities and children, and drug or treatment.
+    mixin: true
+
   chemical entity or protein or polypeptide:
     description: >-
       A union of chemical entities and children, and protein and polypeptide.
