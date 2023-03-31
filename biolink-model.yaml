@@ -8717,14 +8717,13 @@ classes:
     is_a: association
     mixins:
       - cell line to entity association mixin
-      - entity to disease or phenotypic feature association mixin
     description: >-
       An relationship between a cell line and a disease or a phenotype, where
       the cell line is derived from an individual with that disease or phenotype.
     slot_usage:
       subject:
-        #        - range: cell line
-        #        - range: disease or phenotypic feature
+        range: cell line
+      object:
         range: disease or phenotypic feature
 
   chemical entity to entity association mixin:
@@ -9023,12 +9022,15 @@ classes:
     description: >-
       Describes a treatment that a chemical entity, drug, or treatment has on a disease or phenotypic feature.
     is_a: association
+    mixins:
+      - entity to phenotypic feature association mixin
     slots:
       - subject aspect qualifier
       - subject direction qualifier
       - object aspect qualifier
       - object direction qualifier
       - anatomical context qualifier
+      - FDA approval status
     slot_usage:
       subject:
         range: chemical entity or drug or treatment
@@ -9041,37 +9043,39 @@ classes:
         subproperty_of: treats
 
   chemical or drug or treatment is studied to treat disease or phenotypic feature association:
-  description: >-
-  is_a: association
-  slots:
-    - subject aspect qualifier
-    - subject direction qualifier
-    - object aspect qualifier
-    - object direction qualifier
-    - species context qualifier
-  slot_usage:
-    subject:
-      range: chemical entity or drug or treatment
-    object:
-      range: disease or phenotypic feature
-      id_prefixes:
-        - MONDO
-        - HP
-    predicate:
-      subproperty_of: is studied to treat
+    description: >-
+    is_a: association
+    mixins:
+      - entity to phenotypic feature association mixin
+    slots:
+      - subject aspect qualifier
+      - subject direction qualifier
+      - object aspect qualifier
+      - object direction qualifier
+      - species context qualifier
+    slot_usage:
+     subject:
+        range: chemical entity or drug or treatment
+      object:
+        range: disease or phenotypic feature
+        id_prefixes:
+          - MONDO
+          - HP
+      predicate:
+        subproperty_of: is studied to treat
 
   chemical or drug or treatment detrimental for phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the disesae or phenotypic feature is a secondary undesirable effect.
     is_a: association
+    mixins:
+      - entity to phenotypic feature association mixin
+      - chemical to entity association mixin
     defining_slots:
       - subject
       - predicate
       - object
-    mixins:
-      - chemical to entity association mixin
-      - entity to disease or phenotypic feature association mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -9092,13 +9096,13 @@ classes:
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the disesae or phenotypic feature is a secondary undesirable effect.
     is_a: association
+    mixins:
+      - entity to phenotypic feature association mixin
+      - chemical to entity association mixin
     defining_slots:
       - subject
       - predicate
       - object
-    mixins:
-      - chemical to entity association mixin
-      - entity to disease or phenotypic feature association mixin
     slots:
       - FDA adverse event level
     slot_usage:
@@ -9165,17 +9169,6 @@ classes:
           derivation relationship
         subproperty_of: derives from
 
-  material sample to disease or phenotypic feature association:
-    description: >-
-      An association between a material sample and a disease or phenotype.
-    is_a: association
-    mixins:
-      - material sample to entity association mixin
-      - entity to disease or phenotypic feature association mixin
-    defining_slots:
-      - subject
-      - object
-
   disease to entity association mixin:
     mixin: true
     defining_slots:
@@ -9210,16 +9203,6 @@ classes:
       - subject
       - object
 
-  entity to outcome association mixin:
-    description: >-
-      An association between some entity and an outcome
-    mixin: true
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: outcome
-
   exposure event to outcome association:
     description: >-
       An association between an exposure event and an outcome.
@@ -9240,18 +9223,8 @@ classes:
     slots:
       - frequency qualifier
 
-  entity to feature or disease qualifiers mixin:
-    description: >-
-      Qualifiers for entity to disease or phenotype associations.
-    mixin: true
-    is_a: frequency qualifier mixin
-    slots:
-      - severity qualifier
-      - onset qualifier
-
   entity to phenotypic feature association mixin:
     mixin: true
-    is_a: entity to feature or disease qualifiers mixin
     mixins:
       - frequency quantifier
     defining_slots:
@@ -9293,20 +9266,6 @@ classes:
     in_subset:
       - model_organism_database
 
-  entity to disease association mixin:
-    description: >-
-      mixin class for any association whose object (target node) is a disease
-    mixin: true
-    is_a: entity to feature or disease qualifiers mixin
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: disease
-        description: "disease"
-        examples:
-          - value: MONDO:0020066
-            description: "Ehlers-Danlos syndrome"
 
   disease or phenotypic feature to entity association mixin:
     mixin: true
@@ -9355,20 +9314,6 @@ classes:
         examples:
           - value: HP:0001417
             description: "X-linked inheritance"
-
-  entity to disease or phenotypic feature association mixin:
-    mixin: true
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: disease or phenotypic feature
-        description: "disease or phenotype"
-        examples:
-          - value: MONDO:0017314
-            description: "Ehlers-Danlos syndrome, vascular type"
-          - value: MP:0013229
-            description: "abnormal brain ventricle size"
 
   genotype to entity association mixin:
     mixin: true
@@ -10057,23 +10002,6 @@ classes:
           - value: GO:0016301
             description: kinase activity
 
-  entity to disease association:
-    is_a: association
-    exact_mappings:
-    slots:
-      - FDA approval status
-    defining_slots:
-      - subject
-      - object
-
-  entity to phenotypic feature association:
-    is_a: association
-    exact_mappings:
-    slots:
-      - FDA approval status
-    defining_slots:
-      - subject
-      - object
 
   ## -----------------
   ## SEQUENCE FEATURES
