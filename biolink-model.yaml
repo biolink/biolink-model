@@ -8846,58 +8846,6 @@ classes:
           catalyzes the reaction that causes the subject chemical to
           transform into the object chemical.
 
-  chemical to disease or phenotypic feature association:
-    description: >-
-      An interaction between a chemical entity and a phenotype or disease,
-      where the presence of the chemical gives rise to or exacerbates the phenotype.
-    is_a: association
-    narrow_mappings:
-      - SIO:000993
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - chemical to entity association mixin
-      - entity to disease or phenotypic feature association mixin
-    slot_usage:
-      object:
-        range: disease or phenotypic feature
-        description: "the disease or phenotype that is affected by the chemical"
-
-  chemical or drug or treatment to disease or phenotypic feature association:
-    description: >-
-      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary undesirable effect.
-    is_a: association
-    defining_slots:
-      - subject
-      - predicate
-      - object
-    mixins:
-      - chemical to entity association mixin
-      - entity to disease or phenotypic feature association mixin
-    slots:
-      - FDA adverse event level
-    slot_usage:
-      predicate:
-        subproperty_of: has adverse event
-
-  chemical or drug or treatment side effect disease or phenotypic feature association:
-    description: >-
-      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
-    is_a: chemical or drug or treatment to disease or phenotypic feature association
-    defining_slots:
-      - subject
-      - predicate
-      - object
-    mixins:
-      - chemical to entity association mixin
-      - entity to disease or phenotypic feature association mixin
-    slot_usage:
-      predicate:
-        subproperty_of: has side effect
-
   gene to pathway association:
     description: >-
       An interaction between a gene or gene product and a biological process or pathway.
@@ -9111,6 +9059,61 @@ classes:
         - HP
     predicate:
       subproperty_of: is studied to treat
+
+  chemical or drug or treatment detrimental for phenotypic feature association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disesae or phenotypic feature is a secondary undesirable effect.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - chemical to entity association mixin
+      - entity to disease or phenotypic feature association mixin
+    slots:
+      - FDA adverse event level
+    slot_usage:
+      subject:
+        range: chemical entity or drug or treatment
+      object:
+        range: disease or phenotypic feature
+        id_prefixes:
+          - MONDO
+          - HP
+      predicate:
+        subproperty_of: detrimental for
+    narrow_mappings:
+      - SIO:000993
+
+  chemical or drug or treatment beneficial for phenotypic feature association:
+    description: >-
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
+      where the disesae or phenotypic feature is a secondary undesirable effect.
+    is_a: association
+    defining_slots:
+      - subject
+      - predicate
+      - object
+    mixins:
+      - chemical to entity association mixin
+      - entity to disease or phenotypic feature association mixin
+    slots:
+      - FDA adverse event level
+    slot_usage:
+      subject:
+        range: chemical entity or drug or treatment
+      object:
+        range: disease or phenotypic feature
+        id_prefixes:
+          - MONDO
+          - HP
+      predicate:
+        subproperty_of: beneficial for
+    narrow_mappings:
+      - SIO:000993
+
 
   drug to gene association:
     description: >-
