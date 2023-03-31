@@ -8718,7 +8718,6 @@ classes:
       object:
         range: disease or phenotypic feature
 
-
   chemical to entity association mixin:
     description: >-
       An interaction between a chemical entity and another entity
@@ -8991,8 +8990,6 @@ classes:
     description: >-
       Describes a treatment that a chemical entity, drug, or treatment has on a disease or phenotypic feature.
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
     slots:
       - subject aspect qualifier
       - subject direction qualifier
@@ -9014,8 +9011,6 @@ classes:
   chemical or drug or treatment is studied to treat disease or phenotypic feature association:
     description: >-
     is_a: association
-    mixins:
-      - entity to phenotypic feature association mixin
     slots:
       - subject aspect qualifier
       - subject direction qualifier
@@ -9023,7 +9018,7 @@ classes:
       - object direction qualifier
       - species context qualifier
     slot_usage:
-     subject:
+      subject:
         range: chemical entity or drug or treatment
       object:
         range: disease or phenotypic feature
@@ -9039,7 +9034,6 @@ classes:
       where the disesae or phenotypic feature is a secondary undesirable effect.
     is_a: association
     mixins:
-      - entity to phenotypic feature association mixin
       - chemical to entity association mixin
     defining_slots:
       - subject
@@ -9066,7 +9060,6 @@ classes:
       where the disesae or phenotypic feature is a secondary undesirable effect.
     is_a: association
     mixins:
-      - entity to phenotypic feature association mixin
       - chemical to entity association mixin
     defining_slots:
       - subject
@@ -9096,12 +9089,12 @@ classes:
     defining_slots:
       - subject
       - object
-    mixins:
-      - drug to entity association mixin
     slot_usage:
       object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the drug"
+      subject:
+        range: drug
 
   material sample to entity association mixin:
     description: >-
@@ -9309,15 +9302,15 @@ classes:
 
   disease to phenotypic feature association:
     is_a: association
+    mixins:
+      - disease to entity association mixin
+      - frequency quantifier
     defining_slots:
       - subject
       - object
     description: >-
       An association between a disease and a phenotypic feature in which the
       phenotypic feature is associated with the disease in some way.
-    mixins:
-      - entity to phenotypic feature association mixin
-      - disease to entity association mixin
     close_mappings:
       - dcid:DiseaseSymptomAssociation
     slot_usage:
@@ -9331,12 +9324,12 @@ classes:
       An association between a case (e.g. individual patient) and a phenotypic
       feature in which the individual has or has had the phenotype.
     is_a: association
+    mixins:
+      - case to entity association mixin
+      - frequency quantifier
     defining_slots:
       - subject
       - object
-    mixins:
-      - entity to phenotypic feature association mixin
-      - case to entity association mixin
 
   behavior to behavioral feature association:
     description: >-
@@ -9356,8 +9349,6 @@ classes:
         range: behavioral feature
         description: >-
           behavioral feature that is the object of the association
-    mixins:
-      - entity to phenotypic feature association mixin
 
   gene to entity association mixin:
     mixin: true
@@ -9388,14 +9379,12 @@ classes:
 
   gene to phenotypic feature association:
     is_a: association
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
     defining_slots:
       - subject
       - object
     mixins:
-      - entity to phenotypic feature association mixin
       - gene to entity association mixin
+      - frequency quantifier
     slot_usage:
       subject:
         range: gene or gene product
@@ -9405,6 +9394,8 @@ classes:
             description: "COL1A1 (Human)"
       object:
         range: phenotypic feature
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
 
   gene to disease association:
     is_a: association
@@ -9560,7 +9551,7 @@ classes:
       - object
     mixins:
       - variant to entity association mixin
-      - entity to phenotypic feature association mixin
+      - frequency quantifier
     slot_usage:
       subject:
         range: sequence variant
