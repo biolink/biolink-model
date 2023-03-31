@@ -5523,6 +5523,11 @@ slots:
     exact_mappings:
       - gff3:phase
 
+  clinical use status:
+    is_a: association slot
+    description: >-
+    range: ClinicalStatusEnum
+
   FDA approval status:
     is_a: association slot
     description: >-
@@ -9038,6 +9043,12 @@ classes:
           - HP
       predicate:
         subproperty_of: treats
+      object_aspect_qualifier:
+        range: DiseaseAspectQualifierEnum
+      object_direction_qualifier:
+        range: DirectionQualifierEnum
+      subject_direction_qualifier:
+        range: DirectionQualifierEnum
 
   chemical or drug or treatment is studied to treat disease or phenotypic feature association:
     description: >-
@@ -9058,6 +9069,12 @@ classes:
           - HP
       predicate:
         subproperty_of: is studied to treat
+      object_aspect_qualifier:
+        range: DiseaseAspectQualifierEnum
+      object_direction_qualifier:
+        range: DirectionQualifierEnum
+      subject_direction_qualifier:
+        range: DirectionQualifierEnum
 
   chemical or drug or treatment detrimental for phenotypic feature association:
     description: >-
@@ -9082,6 +9099,12 @@ classes:
           - HP
       predicate:
         subproperty_of: detrimental for
+      object_aspect_qualifier:
+        range: DiseaseAspectQualifierEnum
+      object_direction_qualifier:
+        range: DirectionQualifierEnum
+      subject_direction_qualifier:
+        range: DirectionQualifierEnum
     narrow_mappings:
       - SIO:000993
 
@@ -9108,6 +9131,12 @@ classes:
           - HP
       predicate:
         subproperty_of: beneficial for
+      object_aspect_qualifier:
+        range: DiseaseAspectQualifierEnum
+      object_direction_qualifier:
+        range: DirectionQualifierEnum
+      subject_direction_qualifier:
+        range: DirectionQualifierEnum
     narrow_mappings:
       - SIO:000993
 
@@ -10265,6 +10294,13 @@ classes:
 
 enums:
 
+  DiseaseAspectQualifierEnum:
+    permissible_values:
+      onset:
+      severity:
+      duration:
+      likelihood:
+
   AnatomicalContextQualifierEnum:
     reachable_from:
       source_ontology: bioregistry:uberon
@@ -10662,7 +10698,13 @@ enums:
     in_subset:
       - translator_minimal
 
+  ClinicalStatusEnum:
+    description:
+    permissible_values:
+      approved:
+
   FDAApprovalStatusEnum:
+    is_a: ClinicalStatusEnum
     description: >-
     permissible_values:
       "discovery_and_development_phase":

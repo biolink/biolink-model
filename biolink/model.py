@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-30T17:32:50
+# Generation date: 2023-03-30T17:51:11
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7154,6 +7154,9 @@ class ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation(Assoc
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[Union[str, "AnatomicalContextQualifierEnum"]] = None
     FDA_approval_status: Optional[Union[str, "FDAApprovalStatusEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "DiseaseAspectQualifierEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7194,6 +7197,15 @@ class ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation(Assoc
         if self.FDA_approval_status is not None and not isinstance(self.FDA_approval_status, FDAApprovalStatusEnum):
             self.FDA_approval_status = FDAApprovalStatusEnum(self.FDA_approval_status)
 
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, DiseaseAspectQualifierEnum):
+            self.object_aspect_qualifier = DiseaseAspectQualifierEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
         super().__post_init__(**kwargs)
 
 
@@ -7215,6 +7227,9 @@ class ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssocia
     object_aspect_qualifier: Optional[str] = None
     object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
+    object_aspect_qualifier: Optional[Union[str, "DiseaseAspectQualifierEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7252,6 +7267,15 @@ class ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssocia
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
 
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, DiseaseAspectQualifierEnum):
+            self.object_aspect_qualifier = DiseaseAspectQualifierEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
         super().__post_init__(**kwargs)
 
 
@@ -7273,6 +7297,9 @@ class ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation(Associ
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     predicate: Union[str, PredicateType] = None
     FDA_adverse_event_level: Optional[Union[str, "FDAIDAAdverseEventEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "DiseaseAspectQualifierEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7298,6 +7325,15 @@ class ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation(Associ
         if self.FDA_adverse_event_level is not None and not isinstance(self.FDA_adverse_event_level, FDAIDAAdverseEventEnum):
             self.FDA_adverse_event_level = FDAIDAAdverseEventEnum(self.FDA_adverse_event_level)
 
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, DiseaseAspectQualifierEnum):
+            self.object_aspect_qualifier = DiseaseAspectQualifierEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
+
         super().__post_init__(**kwargs)
 
 
@@ -7319,6 +7355,9 @@ class ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation(Associa
     object: Union[str, DiseaseOrPhenotypicFeatureId] = None
     predicate: Union[str, PredicateType] = None
     FDA_adverse_event_level: Optional[Union[str, "FDAIDAAdverseEventEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "DiseaseAspectQualifierEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -7343,6 +7382,15 @@ class ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation(Associa
 
         if self.FDA_adverse_event_level is not None and not isinstance(self.FDA_adverse_event_level, FDAIDAAdverseEventEnum):
             self.FDA_adverse_event_level = FDAIDAAdverseEventEnum(self.FDA_adverse_event_level)
+
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, DiseaseAspectQualifierEnum):
+            self.object_aspect_qualifier = DiseaseAspectQualifierEnum(self.object_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.subject_direction_qualifier is not None and not isinstance(self.subject_direction_qualifier, DirectionQualifierEnum):
+            self.subject_direction_qualifier = DirectionQualifierEnum(self.subject_direction_qualifier)
 
         super().__post_init__(**kwargs)
 
@@ -7488,6 +7536,51 @@ class EntityToExposureEventAssociationMixin(YAMLRoot):
             self.object = ExposureEventId(self.object)
 
         super().__post_init__(**kwargs)
+
+
+class EntityToFeatureOrDiseaseQualifiersMixin(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrDiseaseQualifiersMixin
+    class_class_curie: ClassVar[str] = "biolink:EntityToFeatureOrDiseaseQualifiersMixin"
+    class_name: ClassVar[str] = "entity to feature or disease qualifiers mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToFeatureOrDiseaseQualifiersMixin
+
+
+class EntityToDiseaseAssociationMixin(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociationMixin
+    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociationMixin"
+    class_name: ClassVar[str] = "entity to disease association mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociationMixin
+
+
+class EntityToDiseaseOrPhenotypicFeatureAssociationMixin(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseOrPhenotypicFeatureAssociationMixin"
+    class_name: ClassVar[str] = "entity to disease or phenotypic feature association mixin"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseOrPhenotypicFeatureAssociationMixin
+
+
+class EntityToDiseaseAssociation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:EntityToDiseaseAssociation"
+    class_name: ClassVar[str] = "entity to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToDiseaseAssociation
+
+
+class EntityToPhenotypicFeatureAssociation(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
+    class_class_curie: ClassVar[str] = "biolink:EntityToPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "entity to phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.EntityToPhenotypicFeatureAssociation
 
 
 @dataclass
@@ -9673,6 +9766,17 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class DiseaseAspectQualifierEnum(EnumDefinitionImpl):
+
+    onset = PermissibleValue(text="onset")
+    severity = PermissibleValue(text="severity")
+    duration = PermissibleValue(text="duration")
+    likelihood = PermissibleValue(text="likelihood")
+
+    _defn = EnumDefinition(
+        name="DiseaseAspectQualifierEnum",
+    )
+
 class AnatomicalContextQualifierEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -9971,6 +10075,14 @@ class ResourceRoleEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ResourceRoleEnum",
         description="The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.",
+    )
+
+class ClinicalStatusEnum(EnumDefinitionImpl):
+
+    approved = PermissibleValue(text="approved")
+
+    _defn = EnumDefinition(
+        name="ClinicalStatusEnum",
     )
 
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
@@ -11307,6 +11419,9 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                    model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[Union[str, "PhaseEnum"]])
 
+slots.clinical_use_status = Slot(uri=BIOLINK.clinical_use_status, name="clinical use status", curie=BIOLINK.curie('clinical_use_status'),
+                   model_uri=BIOLINK.clinical_use_status, domain=Association, range=Optional[Union[str, "ClinicalStatusEnum"]])
+
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
 
@@ -11330,6 +11445,15 @@ slots.supporting_study_date_range = Slot(uri=BIOLINK.supporting_study_date_range
 
 slots.supporting_study_context = Slot(uri=BIOLINK.supporting_study_context, name="supporting study context", curie=BIOLINK.curie('supporting_study_context'),
                    model_uri=BIOLINK.supporting_study_context, domain=Association, range=Optional[str])
+
+slots.object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="object_aspect_qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.object_aspect_qualifier, domain=None, range=Optional[Union[str, "DiseaseAspectQualifierEnum"]])
+
+slots.object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="object_direction_qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.object_direction_qualifier, domain=None, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="subject_direction_qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.subject_direction_qualifier, domain=None, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
 slots.attribute_name = Slot(uri=RDFS.label, name="attribute_name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
@@ -11689,6 +11813,15 @@ slots.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_associa
 slots.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment treats disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation, range=Union[str, PredicateType])
 
+slots.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical or drug or treatment treats disease or phenotypic feature association_object_aspect_qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_object_aspect_qualifier, domain=ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DiseaseAspectQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical or drug or treatment treats disease or phenotypic feature association_object_direction_qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_object_direction_qualifier, domain=ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical or drug or treatment treats disease or phenotypic feature association_subject_direction_qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_treats_disease_or_phenotypic_feature_association_subject_direction_qualifier, domain=ChemicalOrDrugOrTreatmentTreatsDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
 slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="chemical or drug or treatment is studied to treat disease or phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_subject, domain=ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssociation, range=Union[dict, ChemicalEntityOrDrugOrTreatment])
 
@@ -11697,6 +11830,15 @@ slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_fe
 
 slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment is studied to treat disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssociation, range=Union[str, PredicateType])
+
+slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical or drug or treatment is studied to treat disease or phenotypic feature association_object_aspect_qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_object_aspect_qualifier, domain=ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DiseaseAspectQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical or drug or treatment is studied to treat disease or phenotypic feature association_object_direction_qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_object_direction_qualifier, domain=ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical or drug or treatment is studied to treat disease or phenotypic feature association_subject_direction_qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_is_studied_to_treat_disease_or_phenotypic_feature_association_subject_direction_qualifier, domain=ChemicalOrDrugOrTreatmentIsStudiedToTreatDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
 slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="chemical or drug or treatment detrimental for phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_subject, domain=ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation, range=Union[dict, ChemicalEntityOrDrugOrTreatment])
@@ -11707,6 +11849,15 @@ slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_associati
 slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment detrimental for phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation, range=Union[str, PredicateType])
 
+slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical or drug or treatment detrimental for phenotypic feature association_object_aspect_qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_object_aspect_qualifier, domain=ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation, range=Optional[Union[str, "DiseaseAspectQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical or drug or treatment detrimental for phenotypic feature association_object_direction_qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_object_direction_qualifier, domain=ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical or drug or treatment detrimental for phenotypic feature association_subject_direction_qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_detrimental_for_phenotypic_feature_association_subject_direction_qualifier, domain=ChemicalOrDrugOrTreatmentDetrimentalForPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
 slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="chemical or drug or treatment beneficial for phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_subject, domain=ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation, range=Union[dict, ChemicalEntityOrDrugOrTreatment])
 
@@ -11715,6 +11866,15 @@ slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_associatio
 
 slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="chemical or drug or treatment beneficial for phenotypic feature association_predicate", curie=RDF.curie('predicate'),
                    model_uri=BIOLINK.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_predicate, domain=ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation, range=Union[str, PredicateType])
+
+slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical or drug or treatment beneficial for phenotypic feature association_object_aspect_qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_object_aspect_qualifier, domain=ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation, range=Optional[Union[str, "DiseaseAspectQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="chemical or drug or treatment beneficial for phenotypic feature association_object_direction_qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_object_direction_qualifier, domain=ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_subject_direction_qualifier = Slot(uri=BIOLINK.subject_direction_qualifier, name="chemical or drug or treatment beneficial for phenotypic feature association_subject_direction_qualifier", curie=BIOLINK.curie('subject_direction_qualifier'),
+                   model_uri=BIOLINK.chemical_or_drug_or_treatment_beneficial_for_phenotypic_feature_association_subject_direction_qualifier, domain=ChemicalOrDrugOrTreatmentBeneficialForPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
 
 slots.drug_to_gene_association_object = Slot(uri=RDF.object, name="drug to gene association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.drug_to_gene_association_object, domain=DrugToGeneAssociation, range=Union[dict, GeneOrGeneProduct])
