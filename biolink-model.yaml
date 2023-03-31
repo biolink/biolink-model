@@ -9224,24 +9224,7 @@ classes:
       - frequency qualifier
 
   entity to phenotypic feature association mixin:
-    mixin: true
-    mixins:
-      - frequency quantifier
-    defining_slots:
-      - object
-    slot_usage:
-      object:
-        range: phenotypic feature
-        values_from: [ 'upheno', 'hp', 'mp', 'wbphenotype' ]
-        examples:
-          - value: HP:0002487
-            description: Hyperkinesis
-          - value: WBPhenotype:0000180
-            description: axon morphology variant
-          - value: MP:0001569
-            description: abnormal circulating bilirubin level
-    slots:
-      - sex qualifier
+    deprecated: true
 
   information content entity to named thing association:
     description: >-
@@ -9316,25 +9299,20 @@ classes:
             description: "X-linked inheritance"
 
   genotype to entity association mixin:
-    mixin: true
-    defining_slots:
-      - subject
-    slot_usage:
-      subject:
-        range: genotype
-        description: "genotype that is the subject of the association"
+    deprecated: true
 
   genotype to phenotypic feature association:
     is_a: association
+    mixins:
+      - frequency quantifier
+    slots:
+      - sex qualifier
     defining_slots:
       - subject
       - object
     description: >-
       Any association between one genotype and a phenotypic feature, where having
       the genotype confers the phenotype, either in isolation or through environment
-    mixins:
-      - entity to phenotypic feature association mixin
-      - genotype to entity association mixin
     slot_usage:
       predicate:
         subproperty_of: has phenotype
@@ -9346,14 +9324,16 @@ classes:
   # ie: smoke exposure to coughing phenotype? is this a denormalization?
   exposure event to phenotypic feature association:
     is_a: association
+    mixins:
+      - frequency quantifier
+    slots:
+      - sex qualifier
     defining_slots:
       - subject
       - object
     description: >-
       Any association between an environment and a phenotypic feature,
       where being in the environment influences the phenotype.
-    mixins:
-      - entity to phenotypic feature association mixin
     slot_usage:
       subject:
         range: exposure event
@@ -9655,10 +9635,10 @@ classes:
       - subject
       - object
     mixins:
-      - genotype to entity association mixin
       - entity to disease association mixin
     slot_usage:
       subject:
+        range: genotype
         description: >-
           a genotype that is associated in some way with a disease state
       predicate:
@@ -9668,6 +9648,7 @@ classes:
       object:
         description: >-
           a disease that is associated with that genotype
+        range: disease
         examples:
           - value: MONDO:0016419
             description: hereditary breast cancer
