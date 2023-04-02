@@ -5272,6 +5272,7 @@ slots:
       - value: The administration of 50g/ml bupivacaine promoted maximum breast cancer.
 
   supporting documents:
+    deprecated:true
     is_a: association slot
     description: >-
       One or more referencable documents that report the statement expressed in an Association, or provide 
@@ -5385,7 +5386,7 @@ slots:
     range: disease or phenotypic feature
 
   publications:
-    aliases: ["supporting publications"]
+    aliases: ['supporting publications', 'supporting documents']
     singular_name: publication
     description: >-
       One or more publications that report the statement expressed in an 
@@ -5396,7 +5397,7 @@ slots:
         document made available for public consumption. It covers journal issues, 
         individual articles, and books - and also things like article pre-prints, 
         white papers, patents, drug labels, web pages, protocol documents, etc. 
-is_a: supporting documents
+    is_a: association slot
     multivalued: true
     range: publication
 
