@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3190.1,283"];
+	graph [bb="0,0,4922.1,283"];
 	node [label="\N"];
 	"gene to gene product relationship"	[height=0.5,
 		label="gene to gene product relationship",
-		pos="1725.5,265",
+		pos="2642.5,265",
 		width=4.676];
 	"sequence feature relationship"	[height=0.5,
 		pos="149.49,178",
 		width=4.1524];
 	"gene to gene product relationship" -> "sequence feature relationship"	[label=is_a,
-		lp="456.49,221.5",
-		pos="e,219.86,193.89 1558.9,262.39 1262.2,259.04 653.91,249.82 442.49,229 370.03,221.87 288.44,207.41 229.8,195.87"];
+		lp="454.49,221.5",
+		pos="e,218.76,194 2475,262.83 1995.7,259.27 640.47,247.66 440.49,229 368.23,222.26 286.91,207.68 228.64,196"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"gene to gene product relationship" -> id	[color=blue,
 		label=id,
-		lp="574.49,221.5",
-		pos="e,384.47,190.01 1558.6,262.41 1285.4,259.24 754.19,250.45 567.49,229 493.62,220.51 475.15,215.79 403.49,196 400.38,195.14 397.18,\
-194.18 393.98,193.17",
+		lp="570.49,221.5",
+		pos="e,384.47,189.98 2474.9,262.98 2014.2,259.91 750.68,249.7 563.49,229 491.32,221.02 473.43,215.5 403.49,196 400.38,195.13 397.18,194.17 \
+393.98,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"gene to gene product relationship" -> iri	[color=blue,
 		label=iri,
-		lp="693.49,221.5",
-		pos="e,489.1,190.17 1560.4,261.5 1311,257.19 849.85,247.07 685.49,229 606.38,220.3 586.64,215.53 509.49,196 506.06,195.13 502.52,194.16 \
-498.99,193.14",
+		lp="683.49,221.5",
+		pos="e,489.4,190.2 2475.2,262.74 2032.4,259.14 851.49,247.91 675.49,229 600.7,220.97 582.31,214.85 509.49,196 506.11,195.13 502.63,194.16 \
+499.15,193.15",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"gene to gene product relationship" -> name	[color=blue,
 		label=name,
-		lp="797.49,221.5",
-		pos="e,614.49,191.25 1559.4,261.89 1328.8,258.26 923.5,249.2 777.49,229 724.26,221.64 664.69,205.95 624.12,194.1",
+		lp="790.49,221.5",
+		pos="e,613.44,191.54 2474.7,263.08 2046.8,260.43 936.33,251.45 770.49,229 719.35,222.08 662.34,206.51 623.23,194.57",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"gene to gene product relationship" -> description	[color=blue,
 		label=description,
-		lp="915.99,221.5",
-		pos="e,760.81,193.92 1558.2,262.66 1348.6,260.01 1001.8,252.17 875.49,229 839.22,222.35 799.72,208.91 770.36,197.64",
+		lp="910.99,221.5",
+		pos="e,759.54,194.14 2474.3,263.66 2062.3,262.4 1025.3,256.51 870.49,229 835.43,222.77 797.43,209.4 769.13,198.06",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"gene to gene product relationship" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1058.5,221.5",
-		pos="e,900.84,192.68 1560.3,261.46 1382.8,257.74 1112.5,248.95 1011.5,229 976.27,222.05 937.98,208.03 910.2,196.6",
+		lp="1056.5,221.5",
+		pos="e,900.07,192.82 2474.7,263.47 2086.8,261.82 1150.4,255.13 1009.5,229 974.52,222.52 936.66,208.39 909.29,196.8",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"gene to gene product relationship" -> negated	[color=blue,
 		label=negated,
-		lp="1207.5,221.5",
-		pos="e,1021.9,190.35 1561.3,260.95 1452.3,257.09 1306.2,248.43 1178.5,229 1127.3,221.22 1070.1,205.22 1031.7,193.4",
+		lp="1212.5,221.5",
+		pos="e,1021.7,190.46 2474.2,264.31 2145.4,264.2 1428.3,260.25 1183.5,229 1130.2,222.2 1070.6,205.66 1031.2,193.46",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=2.1304];
 	"gene to gene product relationship" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1336,221.5",
-		pos="e,1169.4,193.25 1568.8,258.41 1488.7,253.69 1389.8,245 1302.5,229 1260.3,221.27 1213.6,207.56 1179.2,196.45",
+		lp="1353,221.5",
+		pos="e,1170.8,193.07 2474,264.35 2169.1,264.19 1537.2,259.96 1319.5,229 1271.7,222.2 1218.6,207.74 1180.6,196.11",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.7332];
 	"gene to gene product relationship" -> publications	[color=blue,
 		label=publications,
-		lp="1467.5,221.5",
-		pos="e,1318.3,193.34 1586.8,254.73 1535,249.5 1476.1,241.41 1423.5,229 1390.6,221.24 1354.7,208.09 1327.8,197.22",
+		lp="1500.5,221.5",
+		pos="e,1322.2,192.71 2474.2,264.31 2194.8,263.93 1647.2,259.19 1456.5,229 1413.4,222.18 1365.9,207.69 1331.9,196.06",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.0943];
 	"gene to gene product relationship" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1599,221.5",
-		pos="e,1471.4,194.68 1635.6,249.77 1608.6,244.44 1579,237.54 1552.5,229 1527.9,221.08 1501.5,209.32 1480.6,199.19",
+		lp="1655,221.5",
+		pos="e,1480,193.61 2474.4,263.55 2225.3,261.98 1770,255.45 1608.5,229 1567.6,222.3 1522.7,208.48 1489.8,197.06",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"gene to gene product relationship" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1722,221.5",
-		pos="e,1644.9,196.34 1680.7,247.63 1672,242.75 1663.7,236.61 1657.5,229 1652.2,222.52 1648.9,214.16 1646.9,206.15",
+		lp="1810,221.5",
+		pos="e,1669.6,195.59 2477.7,261.26 2238,256.71 1814.2,246.35 1745.5,229 1722,223.07 1697.5,211.31 1678.5,200.68",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -120,9 +120,8 @@ digraph {
 		width=3.015];
 	"gene to gene product relationship" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1904.5,221.5",
-		pos="e,1844.8,195.19 1755.5,247.25 1765.4,241.57 1776.5,235.12 1786.5,229 1796.9,222.63 1798.9,220.1 1809.5,214 1817.9,209.16 1827,204.28 \
-1835.8,199.76",
+		lp="1981.5,221.5",
+		pos="e,1876.2,196.41 2477.1,261.59 2261.3,257.69 1908.2,248.37 1886.5,229 1880.1,223.34 1877.5,214.82 1876.6,206.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -131,9 +130,8 @@ digraph {
 		width=3.015];
 	"gene to gene product relationship" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2129,221.5",
-		pos="e,2067.8,194.43 1840.3,251.76 1908.4,244.08 1984.2,234.61 1999.5,229 2010.9,224.79 2011.6,219.55 2022.5,214 2033.8,208.22 2046.3,\
-202.83 2058.3,198.09",
+		lp="2190,221.5",
+		pos="e,2092.8,195.97 2482.7,259.3 2322.4,253.79 2097.1,243.52 2083.5,229 2076.5,221.54 2079.7,212.18 2086.1,203.58",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -142,9 +140,8 @@ digraph {
 		width=1.5346];
 	"gene to gene product relationship" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2292.5,221.5",
-		pos="e,2278.6,195.18 1843.2,252.07 1863.3,250.23 1884,248.46 1903.5,247 1977.2,241.49 2166.7,256.02 2235.5,229 2243.4,225.88 2258.1,213.74 \
-2270.9,202.2",
+		lp="2345.5,221.5",
+		pos="e,2296,196.47 2496,256.01 2414,250.23 2325.3,241.28 2310.5,229 2303.7,223.41 2300,214.91 2297.8,206.49",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -153,9 +150,8 @@ digraph {
 		width=1.0652];
 	"gene to gene product relationship" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2407.5,221.5",
-		pos="e,2385.3,192.7 1842.2,251.96 1862.6,250.11 1883.7,248.37 1903.5,247 1997.8,240.5 2238.5,257.85 2328.5,229 2340.1,225.28 2341.2,220.57 \
-2351.5,214 2359.6,208.79 2368.5,203.21 2376.7,198.07",
+		lp="2444.5,221.5",
+		pos="e,2393.7,194.92 2484.3,258.83 2441.1,253.92 2402.4,244.98 2388.5,229 2382.2,221.83 2384,212.39 2388.4,203.65",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -164,9 +160,8 @@ digraph {
 		width=1.5887];
 	"gene to gene product relationship" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2549,221.5",
-		pos="e,2504.9,195.49 1841.3,251.88 1862,250.01 1883.3,248.28 1903.5,247 1965.6,243.04 2405.5,251.62 2463.5,229 2471.2,225.98 2485.2,213.98 \
-2497.6,202.49",
+		lp="2572,221.5",
+		pos="e,2510.4,195.76 2554.5,249.65 2533.4,244.35 2515.1,237.52 2508.5,229 2503.2,222.16 2503.7,213.39 2506.5,205.11",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -175,88 +170,206 @@ digraph {
 		width=1.0652];
 	"gene to gene product relationship" -> "original object"	[color=blue,
 		label="original object",
-		lp="2678,221.5",
-		pos="e,2632.7,196.43 1840.8,251.8 1861.6,249.94 1883.2,248.22 1903.5,247 1942.9,244.62 2580.7,250.98 2613.5,229 2621.4,223.7 2626.5,214.89 \
-2629.7,206.12",
+		lp="2691,221.5",
+		pos="e,2636.9,196.18 2641.1,246.8 2640.1,235.16 2638.8,219.55 2637.7,206.24",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2768.5,178",
+		width=2.1304];
+	"gene to gene product relationship" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2817,221.5",
+		pos="e,2764.7,196.4 2714.2,248.69 2726,243.82 2737.3,237.42 2746.5,229 2753.2,222.84 2758,214.24 2761.4,205.9",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2939.5,178",
+		width=2.1304];
+	"gene to gene product relationship" -> "object category"	[color=blue,
+		label="object category",
+		lp="2960,221.5",
+		pos="e,2924.7,195.73 2763.1,252.42 2810.7,246.57 2859.1,238.65 2880.5,229 2894.1,222.83 2907.1,212.54 2917.4,202.9",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3072.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3096,221.5",
+		pos="e,3060.1,195.53 2763.1,252.4 2782.3,250.57 2801.9,248.72 2820.5,247 2864.7,242.89 2979,247.24 3019.5,229 3032.4,223.18 3044.2,212.87 \
+3053.3,203.13",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3172.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3216.5,221.5",
+		pos="e,3171.1,196.23 2760.2,252.06 2780.3,250.23 2801,248.46 2820.5,247 2857.5,244.23 3124.7,251.18 3154.5,229 3161.8,223.54 3166.2,214.8 \
+3168.8,206.15",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3305.5,178",
+		width=2.1304];
+	"gene to gene product relationship" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3375,221.5",
+		pos="e,3298.5,196.11 2758.7,251.96 2779.3,250.1 2800.5,248.35 2820.5,247 2870.4,243.62 3226.6,252.99 3270.5,229 3280.3,223.67 3287.9,\
+214.3 3293.5,205.1",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3497.5,178",
+		width=2.1304];
+	"gene to gene product relationship" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3565,221.5",
+		pos="e,3491.8,196.1 2757.8,251.85 2778.6,249.97 2800.2,248.25 2820.5,247 2856.3,244.79 3435.4,246.9 3466.5,229 3475.7,223.71 3482.5,214.48 \
+3487.4,205.37",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3687.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3737.5,221.5",
+		pos="e,3680.5,196.19 2757.3,251.78 2778.3,249.91 2800,248.2 2820.5,247 2866.6,244.3 3611.7,250.79 3652.5,229 3662.3,223.76 3670,214.4 \
+3675.6,205.19",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3846.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3890.5,221.5",
+		pos="e,3839.1,195.73 2756.8,251.77 2778,249.88 2799.9,248.17 2820.5,247 2875.4,243.89 3760.6,254.18 3809.5,229 3819.8,223.68 3828,213.99 \
+3834,204.56",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3997.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4050.5,221.5",
+		pos="e,3989.5,195.77 2756.8,251.73 2778,249.84 2799.9,248.15 2820.5,247 2852.1,245.25 3930.2,243.09 3958.5,229 3969.2,223.66 3977.8,213.84 \
+3984.3,204.31",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4168.5,178",
+		width=1.0652];
+	"gene to gene product relationship" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4216,221.5",
+		pos="e,4160.2,195.79 2756.3,251.74 2777.6,249.84 2799.7,248.13 2820.5,247 2856.8,245.02 4095.8,244.97 4128.5,229 4139.3,223.69 4148.2,\
+213.87 4154.8,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4321.5,178",
+		width=2.347];
+	"gene to gene product relationship" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4375,221.5",
+		pos="e,4315.5,196.18 2756.3,251.71 2777.6,249.81 2799.7,248.12 2820.5,247 2861.2,244.81 4253.8,248.81 4289.5,229 4298.9,223.75 4306,214.39 \
+4311.1,205.18",
 		style=solid];
 	type	[height=0.5,
-		pos="2723.5,178",
+		pos="4455.5,178",
 		width=0.86659];
 	"gene to gene product relationship" -> type	[color=blue,
 		label=type,
-		lp="2755.5,221.5",
-		pos="e,2733.3,195.51 1840.3,251.79 1861.3,249.91 1883,248.2 1903.5,247 1926.5,245.65 2717.4,245.48 2733.5,229 2739.7,222.66 2739.5,213.61 \
-2737,204.95",
+		lp="4473.5,221.5",
+		pos="e,4458.2,195.98 2756.3,251.69 2777.6,249.8 2799.7,248.1 2820.5,247 2843.1,245.8 4431.5,243.93 4448.5,229 4454.9,223.32 4457.5,214.65 \
+4458.2,206.12",
 		style=solid];
 	category	[height=0.5,
-		pos="2824.5,178",
+		pos="4556.5,178",
 		width=1.4263];
 	"gene to gene product relationship" -> category	[color=blue,
 		label=category,
-		lp="2829,221.5",
-		pos="e,2813.4,195.84 1840.3,251.77 1861.3,249.89 1883,248.19 1903.5,247 1951.9,244.19 2731,248.23 2775.5,229 2787.9,223.65 2798.7,213.55 \
-2807,203.81",
+		lp="4552,221.5",
+		pos="e,4541.7,195.48 2756.3,251.69 2777.6,249.79 2799.7,248.1 2820.5,247 2866.9,244.54 4449.7,244.53 4493.5,229 4508.7,223.59 4523.1,\
+212.84 4534.2,202.68",
 		style=solid];
 	subject	[height=0.5,
-		pos="2938.5,178",
+		pos="4670.5,178",
 		width=1.2277];
 	"gene to gene product relationship" -> subject	[color=blue,
 		label=subject,
-		lp="2921.5,221.5",
-		pos="e,2921.5,194.73 1839.8,251.78 1861,249.89 1882.9,248.18 1903.5,247 1956.8,243.96 2813.6,245.11 2864.5,229 2882.5,223.31 2900.1,211.72 \
-2913.6,201.13",
+		lp="4647.5,221.5",
+		pos="e,4651.7,194.32 2756.3,251.68 2777.6,249.78 2799.7,248.1 2820.5,247 2918.5,241.83 4493,255.77 4587.5,229 4607.6,223.29 4627.8,211.3 \
+4643.3,200.49",
 		style=solid];
 	object	[height=0.5,
-		pos="2981.5,91",
+		pos="4713.5,91",
 		width=1.0832];
 	"gene to gene product relationship" -> object	[color=blue,
 		label=object,
-		lp="3024.5,178",
-		pos="e,2994.9,108.09 1839.8,251.75 1861,249.86 1882.9,248.16 1903.5,247 1961.6,243.73 2896.9,249.16 2951.5,229 2994,213.33 2999.2,186.96 \
-3004.5,142 3005.3,135.38 3006.4,133.39 3004.5,127 3003.5,123.55 3002,120.13 3000.2,116.85",
+		lp="4757.5,178",
+		pos="e,4726.9,108.09 2756.3,251.67 2777.6,249.77 2799.7,248.09 2820.5,247 2872,244.3 4628.5,245.03 4677.5,229 4701.4,221.18 4709.4,216.87 \
+4723.5,196 4737.3,175.52 4733.6,166.51 4736.5,142 4737.3,135.38 4738.4,133.39 4736.5,127 4735.5,123.55 4734,120.13 4732.2,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3135.5,178",
+		pos="4867.5,178",
 		width=1.5165];
 	"gene to gene product relationship" -> predicate	[color=blue,
 		label=predicate,
-		lp="3108.5,221.5",
-		pos="e,3111.6,194.3 1839.8,251.73 1861,249.84 1882.9,248.15 1903.5,247 2028.8,240.03 2910.4,258.08 3032.5,229 3057.4,223.07 3083.2,210.48 \
-3102.8,199.41",
+		lp="4840.5,221.5",
+		pos="e,4843.7,194.36 2756.3,251.66 2777.6,249.77 2799.7,248.09 2820.5,247 2928.3,241.36 4659.3,253.69 4764.5,229 4789.4,223.16 4815.3,\
+210.56 4834.9,199.48",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1950.5,265",
+		pos="2867.5,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2081.5,265",
+		pos="2998.5,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2976.5,134.5",
-		pos="e,2963.6,107.23 2939.6,159.55 2940.8,149.57 2943.3,137.07 2948.5,127 2950.7,122.68 2953.6,118.52 2956.8,114.66"];
+		lp="4708.5,134.5",
+		pos="e,4695.6,107.23 4671.6,159.55 4672.8,149.57 4675.3,137.07 4680.5,127 4682.7,122.68 4685.6,118.52 4688.8,114.66"];
 	relation	[height=0.5,
-		pos="2926.5,18",
+		pos="4658.5,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2927.8,36.188 2937.2,159.79 2935.1,132.48 2931,78.994 2928.6,46.38",
+	subject -> relation	[pos="e,4659.8,36.188 4669.2,159.79 4667.1,132.48 4663,78.994 4660.6,46.38",
 		style=dotted];
 	"gene to gene product relationship_subject"	[color=blue,
 		height=0.5,
 		label=gene,
-		pos="2207.5,265",
+		pos="3124.5,265",
 		width=0.92075];
-	object -> relation	[pos="e,2939.3,35.54 2969,73.889 2962.1,64.939 2953.3,53.617 2945.5,43.584",
+	object -> relation	[pos="e,4671.3,35.54 4701,73.889 4694.1,64.939 4685.3,53.617 4677.5,43.584",
 		style=dotted];
 	"gene to gene product relationship_object"	[color=blue,
 		height=0.5,
 		label="gene product mixin",
-		pos="2359.5,265",
+		pos="3276.5,265",
 		width=2.7984];
 	"gene to gene product relationship_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2556.5,265",
+		pos="3473.5,265",
 		width=2.1665];
 }

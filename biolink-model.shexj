@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.4
+# version: 3.2.5
 {
    "type": "Schema",
    "@context": [
@@ -907,6 +907,83 @@
                               "valueExpr": "https://w3id.org/linkml/String",
                               "min": 0,
                               "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/subject_category",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object_category",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/subject_closure",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object_closure",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/subject_category_closure",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object_category_closure",
+                              "valueExpr": "https://w3id.org/biolink/vocab/OntologyClass",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/subject_namespace",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object_namespace",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": 1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/subject_label_closure",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/object_label_closure",
+                              "valueExpr": "https://w3id.org/linkml/String",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/retrieval_source_ids",
+                              "valueExpr": "https://w3id.org/biolink/vocab/RetrievalSource",
+                              "min": 0,
+                              "max": -1
                            },
                            {
                               "type": "TripleConstraint",
@@ -14560,7 +14637,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/resource",
+                        "predicate": "https://w3id.org/biolink/vocab/resource_id",
                         "valueExpr": "https://w3id.org/linkml/Uriorcurie",
                         "min": 1,
                         "max": 1
@@ -14574,7 +14651,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/upstream_resources",
+                        "predicate": "https://w3id.org/biolink/vocab/upstream_resource_ids",
                         "valueExpr": "https://w3id.org/linkml/Uriorcurie",
                         "min": 0,
                         "max": 1

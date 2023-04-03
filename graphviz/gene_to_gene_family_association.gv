@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3016,283"];
+	graph [bb="0,0,4748,283"];
 	node [label="\N"];
 	"gene to gene family association"	[height=0.5,
 		label="gene to gene family association",
-		pos="1551.4,265",
+		pos="2468.4,265",
 		width=4.3691];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"gene to gene family association" -> association	[label=is_a,
-		lp="282.39,221.5",
-		pos="e,103.34,191.65 1394.4,263.85 1101.3,262.88 481.32,257.42 268.39,229 214.64,221.83 154.52,206.34 113.17,194.5"];
+		lp="280.39,221.5",
+		pos="e,102.91,191.79 2311.3,263.54 1841.5,261.88 467.08,254.85 266.39,229 213.1,222.13 153.57,206.61 112.64,194.66"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"gene to gene family association" -> id	[color=blue,
 		label=id,
-		lp="400.39,221.5",
-		pos="e,210.37,190.01 1395.4,262.54 1125.6,259.47 582.6,250.74 393.39,229 319.53,220.51 301.06,215.79 229.39,196 226.28,195.14 223.08,\
-194.18 219.89,193.17",
+		lp="396.39,221.5",
+		pos="e,210.38,189.98 2311.8,263.05 1860.6,260.07 578.1,249.86 389.39,229 317.23,221.02 299.34,215.5 229.39,196 226.29,195.13 223.09,194.17 \
+219.89,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"gene to gene family association" -> iri	[color=blue,
 		label=iri,
-		lp="519.39,221.5",
-		pos="e,315.01,190.17 1396.6,261.67 1149.8,257.48 678.06,247.32 511.39,229 432.29,220.3 412.55,215.53 335.39,196 331.96,195.13 328.43,\
-194.16 324.9,193.14",
+		lp="509.39,221.5",
+		pos="e,315.3,190.2 2312.2,262.82 1878.3,259.33 678.89,248.07 501.39,229 426.6,220.97 408.22,214.85 335.39,196 332.02,195.13 328.54,194.16 \
+325.06,193.15",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"gene to gene family association" -> name	[color=blue,
 		label=name,
-		lp="623.39,221.5",
-		pos="e,440.4,191.25 1395.8,262.05 1167.2,258.54 751.65,249.51 603.39,229 550.17,221.64 490.6,205.95 450.03,194.1",
+		lp="616.39,221.5",
+		pos="e,439.35,191.54 2311.8,263.15 1892.3,260.59 763.69,251.65 596.39,229 545.26,222.08 488.24,206.51 449.14,194.57",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"gene to gene family association" -> description	[color=blue,
 		label=description,
-		lp="741.89,221.5",
-		pos="e,586.72,193.92 1395.2,262.8 1187.1,260.29 829.96,252.59 701.39,229 665.13,222.35 625.63,208.91 596.27,197.64",
+		lp="736.89,221.5",
+		pos="e,585.45,194.14 2311.3,263.69 1907.3,262.51 852.6,256.76 696.39,229 661.33,222.77 623.33,209.4 595.03,198.06",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"gene to gene family association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="884.39,221.5",
-		pos="e,726.75,192.68 1396.5,261.67 1219.3,258.08 940.43,249.34 837.39,229 802.18,222.05 763.89,208.03 736.11,196.6",
+		lp="882.39,221.5",
+		pos="e,725.98,192.82 2311.6,263.52 1930.7,261.94 977.64,255.38 835.39,229 800.43,222.52 762.57,208.39 735.2,196.8",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"gene to gene family association" -> negated	[color=blue,
 		label=negated,
-		lp="1033.4,221.5",
-		pos="e,847.79,190.35 1397.4,261.3 1287.3,257.63 1136.1,249.04 1004.4,229 953.22,221.22 895.96,205.22 857.6,193.4",
+		lp="1038.4,221.5",
+		pos="e,847.59,190.46 2311.1,264.31 1987.5,264.29 1257,260.6 1009.4,229 956.09,222.2 896.47,205.66 857.14,193.46",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=2.1304];
 	"gene to gene family association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1161.9,221.5",
-		pos="e,995.33,193.25 1403.1,258.9 1321.6,254.3 1218.8,245.56 1128.4,229 1086.2,221.27 1039.5,207.56 1005.1,196.45",
+		lp="1178.9,221.5",
+		pos="e,996.68,193.07 2311.1,264.36 2010.8,264.29 1365.8,260.34 1145.4,229 1097.6,222.2 1044.5,207.74 1006.5,196.11",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.7332];
 	"gene to gene family association" -> publications	[color=blue,
 		label=publications,
-		lp="1293.4,221.5",
-		pos="e,1144.2,193.34 1418.7,255.33 1365.6,250.12 1304.1,241.9 1249.4,229 1216.5,221.24 1180.6,208.09 1153.7,197.22",
+		lp="1326.4,221.5",
+		pos="e,1148.1,192.71 2311.1,264.32 2035.4,264.05 1475.7,259.59 1282.4,229 1239.3,222.18 1191.8,207.69 1157.8,196.06",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.0943];
 	"gene to gene family association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1424.9,221.5",
-		pos="e,1297.3,194.68 1462.8,250.03 1435.4,244.66 1405.4,237.69 1378.4,229 1353.8,221.08 1327.4,209.32 1306.5,199.19",
+		lp="1480.9,221.5",
+		pos="e,1305.9,193.61 2311.5,263.61 2065,262.17 1598.3,255.85 1434.4,229 1393.5,222.3 1348.6,208.48 1315.7,197.06",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"gene to gene family association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1547.9,221.5",
-		pos="e,1470.8,196.34 1506.6,247.63 1497.9,242.75 1489.6,236.61 1483.4,229 1478.1,222.52 1474.8,214.16 1472.8,206.15",
+		lp="1635.9,221.5",
+		pos="e,1495.5,195.59 2313.9,261.45 2076.2,257.01 1641.1,246.6 1571.4,229 1547.9,223.07 1523.5,211.31 1504.4,200.68",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -120,9 +120,8 @@ digraph {
 		width=3.015];
 	"gene to gene family association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1730.4,221.5",
-		pos="e,1670.7,195.19 1581.4,247.25 1591.3,241.57 1602.4,235.12 1612.4,229 1622.8,222.63 1624.8,220.1 1635.4,214 1643.8,209.16 1652.9,\
-204.28 1661.7,199.76",
+		lp="1807.4,221.5",
+		pos="e,1702.1,196.41 2313.4,261.78 2098.7,257.99 1734.4,248.68 1712.4,229 1706.1,223.34 1703.4,214.82 1702.5,206.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -131,9 +130,8 @@ digraph {
 		width=3.015];
 	"gene to gene family association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="1954.9,221.5",
-		pos="e,1893.7,194.43 1662.5,252.19 1731.5,244.44 1809.9,234.71 1825.4,229 1836.8,224.79 1837.5,219.55 1848.4,214 1859.7,208.22 1872.2,\
-202.83 1884.2,198.09",
+		lp="2015.9,221.5",
+		pos="e,1918.7,195.97 2318.1,259.63 2157.3,254.2 1923.3,243.81 1909.4,229 1902.4,221.54 1905.6,212.18 1912,203.58",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -142,9 +140,8 @@ digraph {
 		width=1.5346];
 	"gene to gene family association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2118.4,221.5",
-		pos="e,2104.5,195.19 1660.9,252.08 1680.1,250.21 1699.8,248.43 1718.4,247 1794.5,241.13 1990.3,256.86 2061.4,229 2069.3,225.89 2084,213.75 \
-2096.8,202.21",
+		lp="2171.4,221.5",
+		pos="e,2121.9,196.47 2329.3,256.52 2245.3,250.77 2151.6,241.65 2136.4,229 2129.6,223.41 2125.9,214.91 2123.8,206.49",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -153,9 +150,8 @@ digraph {
 		width=1.0652];
 	"gene to gene family association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2233.4,221.5",
-		pos="e,2211.3,192.7 1660.5,251.94 1679.7,250.08 1699.6,248.34 1718.4,247 1815.1,240.09 2062,258.54 2154.4,229 2166,225.28 2167.1,220.57 \
-2177.4,214 2185.6,208.79 2194.4,203.21 2202.7,198.07",
+		lp="2270.4,221.5",
+		pos="e,2219.6,194.92 2318.1,259.68 2271.8,254.97 2229.2,245.95 2214.4,229 2208.1,221.83 2209.9,212.39 2214.3,203.65",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -164,9 +160,8 @@ digraph {
 		width=1.5887];
 	"gene to gene family association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2374.9,221.5",
-		pos="e,2330.8,195.5 1659.6,251.88 1679.1,250 1699.3,248.27 1718.4,247 1781.7,242.78 2230.2,252.04 2289.4,229 2297.1,225.98 2311.2,213.98 \
-2323.5,202.5",
+		lp="2397.9,221.5",
+		pos="e,2336.3,195.76 2381.5,249.91 2359.9,244.58 2341.1,237.66 2334.4,229 2329.1,222.16 2329.6,213.39 2332.4,205.11",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -175,88 +170,207 @@ digraph {
 		width=1.0652];
 	"gene to gene family association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2503.9,221.5",
-		pos="e,2458.6,196.43 1659.1,251.81 1678.8,249.93 1699.2,248.21 1718.4,247 1758.4,244.47 2406.1,251.31 2439.4,229 2447.3,223.7 2452.4,\
-214.89 2455.6,206.12",
+		lp="2516.9,221.5",
+		pos="e,2462.8,196.18 2467,246.8 2466,235.16 2464.7,219.55 2463.6,206.24",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2594.4,178",
+		width=2.1304];
+	"gene to gene family association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2642.9,221.5",
+		pos="e,2590.6,196.4 2539.6,248.91 2551.5,244.01 2563,237.55 2572.4,229 2579.1,222.84 2583.9,214.24 2587.3,205.9",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2765.4,178",
+		width=2.1304];
+	"gene to gene family association" -> "object category"	[color=blue,
+		label="object category",
+		lp="2785.9,221.5",
+		pos="e,2750.6,195.73 2585.2,252.88 2634,246.99 2684.5,238.91 2706.4,229 2720,222.83 2733,212.54 2743.3,202.9",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2898.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="2921.9,221.5",
+		pos="e,2886,195.55 2580.7,252.32 2598.9,250.49 2617.7,248.66 2635.4,247 2682,242.63 2802.6,248.14 2845.4,229 2858.3,223.21 2870.1,212.91 \
+2879.2,203.16",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2998.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3042.4,221.5",
+		pos="e,2997,196.24 2577.9,252.07 2597.1,250.21 2616.8,248.43 2635.4,247 2673.7,244.06 2949.6,251.88 2980.4,229 2987.7,223.54 2992.1,214.81 \
+2994.7,206.16",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3131.4,178",
+		width=2.1304];
+	"gene to gene family association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3200.9,221.5",
+		pos="e,3124.4,196.12 2577,251.95 2596.4,250.08 2616.5,248.33 2635.4,247 2686.5,243.4 3051.4,253.56 3096.4,229 3106.2,223.67 3113.8,214.3 \
+3119.4,205.1",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3323.4,178",
+		width=2.1304];
+	"gene to gene family association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3390.9,221.5",
+		pos="e,3317.7,196.11 2576.1,251.85 2595.8,249.97 2616.2,248.24 2635.4,247 2671.8,244.65 3260.7,247.19 3292.4,229 3301.6,223.71 3308.4,\
+214.48 3313.3,205.38",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3513.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3563.4,221.5",
+		pos="e,3506.4,196.19 2575.6,251.8 2595.5,249.91 2616.1,248.19 2635.4,247 2682.2,244.13 3437.1,251.08 3478.4,229 3488.2,223.76 3495.9,\
+214.4 3501.5,205.19",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3672.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3716.4,221.5",
+		pos="e,3665,195.74 2575.6,251.75 2595.5,249.86 2616,248.16 2635.4,247 2690.9,243.68 3586,254.45 3635.4,229 3645.7,223.68 3653.9,213.99 \
+3659.9,204.56",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3823.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="3876.4,221.5",
+		pos="e,3815.4,195.77 2575.2,251.75 2595.2,249.85 2615.9,248.14 2635.4,247 2667.3,245.13 3755.8,243.23 3784.4,229 3795.1,223.66 3803.8,\
+213.84 3810.2,204.31",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3994.4,178",
+		width=1.0652];
+	"gene to gene family association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4041.9,221.5",
+		pos="e,3986.1,195.79 2575.2,251.72 2595.2,249.82 2615.9,248.12 2635.4,247 2672,244.89 3921.5,245.1 3954.4,229 3965.3,223.69 3974.1,213.87 \
+3980.7,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4147.4,178",
+		width=2.347];
+	"gene to gene family association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4200.9,221.5",
+		pos="e,4141.4,196.18 2575.2,251.7 2595.2,249.8 2615.9,248.11 2635.4,247 2676.4,244.67 4079.4,248.96 4115.4,229 4124.9,223.75 4131.9,214.39 \
+4137,205.18",
 		style=solid];
 	type	[height=0.5,
-		pos="2549.4,178",
+		pos="4281.4,178",
 		width=0.86659];
 	"gene to gene family association" -> type	[color=blue,
 		label=type,
-		lp="2581.4,221.5",
-		pos="e,2559.3,195.51 1658.6,251.8 1678.5,249.91 1699.1,248.19 1718.4,247 1741.7,245.57 2543,245.7 2559.4,229 2565.6,222.66 2565.4,213.61 \
-2562.9,204.96",
+		lp="4299.4,221.5",
+		pos="e,4284.1,195.98 2574.7,251.72 2594.9,249.81 2615.8,248.11 2635.4,247 2658.1,245.72 4257.3,244.03 4274.4,229 4280.9,223.32 4283.4,\
+214.65 4284.1,206.12",
 		style=solid];
 	category	[height=0.5,
-		pos="2650.4,178",
+		pos="4382.4,178",
 		width=1.4263];
 	"gene to gene family association" -> category	[color=blue,
 		label=category,
-		lp="2654.9,221.5",
-		pos="e,2639.3,195.84 1658.6,251.78 1678.5,249.89 1699.1,248.18 1718.4,247 1767.4,244.01 2556.4,248.47 2601.4,229 2613.8,223.65 2624.6,\
-213.55 2632.9,203.82",
+		lp="4377.9,221.5",
+		pos="e,4367.7,195.48 2574.7,251.72 2594.9,249.81 2615.8,248.1 2635.4,247 2682.1,244.38 4275.3,244.63 4319.4,229 4334.6,223.59 4349,212.84 \
+4360.1,202.68",
 		style=solid];
 	subject	[height=0.5,
-		pos="2764.4,178",
+		pos="4496.4,178",
 		width=1.2277];
 	"gene to gene family association" -> subject	[color=blue,
 		label=subject,
-		lp="2747.4,221.5",
-		pos="e,2747.4,194.74 1658.6,251.76 1678.5,249.87 1699,248.16 1718.4,247 1772.3,243.76 2638.9,245.29 2690.4,229 2708.4,223.31 2726,211.72 \
-2739.5,201.14",
+		lp="4473.4,221.5",
+		pos="e,4477.7,194.32 2574.7,251.71 2594.9,249.8 2615.8,248.1 2635.4,247 2734,241.49 4318.4,255.93 4413.4,229 4433.6,223.29 4453.7,211.3 \
+4469.2,200.49",
 		style=solid];
 	object	[height=0.5,
-		pos="2807.4,91",
+		pos="4539.4,91",
 		width=1.0832];
 	"gene to gene family association" -> object	[color=blue,
 		label=object,
-		lp="2850.4,178",
-		pos="e,2820.8,108.09 1658.2,251.77 1678.2,249.87 1698.9,248.16 1718.4,247 1777.1,243.52 2722.2,249.36 2777.4,229 2819.9,213.33 2825.1,\
-186.96 2830.4,142 2831.2,135.38 2832.3,133.39 2830.4,127 2829.4,123.55 2827.9,120.13 2826.1,116.85",
+		lp="4583.4,178",
+		pos="e,4552.8,108.09 2574.7,251.7 2594.9,249.79 2615.8,248.09 2635.4,247 2687.2,244.12 4454.1,245.12 4503.4,229 4527.3,221.18 4535.3,\
+216.87 4549.4,196 4563.2,175.52 4559.5,166.51 4562.4,142 4563.2,135.38 4564.3,133.39 4562.4,127 4561.4,123.55 4559.9,120.13 4558.1,\
+116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2961.4,178",
+		pos="4693.4,178",
 		width=1.5165];
 	"gene to gene family association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2934.4,221.5",
-		pos="e,2937.6,194.31 1658.2,251.75 1678.2,249.85 1698.9,248.14 1718.4,247 1844.9,239.58 2735.2,258.36 2858.4,229 2883.3,223.07 2909.1,\
-210.48 2928.7,199.42",
+		lp="4666.4,221.5",
+		pos="e,4669.6,194.36 2574.7,251.69 2594.9,249.78 2615.8,248.09 2635.4,247 2743.8,240.99 4484.7,253.82 4590.4,229 4615.3,223.16 4641.2,\
+210.56 4660.8,199.48",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1765.4,265",
+		pos="2682.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1896.4,265",
+		pos="2813.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2802.4,134.5",
-		pos="e,2789.5,107.23 2765.5,159.55 2766.7,149.57 2769.2,137.07 2774.4,127 2776.6,122.68 2779.5,118.52 2782.7,114.66"];
+		lp="4534.4,134.5",
+		pos="e,4521.5,107.23 4497.5,159.55 4498.7,149.57 4501.2,137.07 4506.4,127 4508.6,122.68 4511.5,118.52 4514.7,114.66"];
 	relation	[height=0.5,
-		pos="2752.4,18",
+		pos="4484.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2753.7,36.188 2763.1,159.79 2761,132.48 2757,78.994 2754.5,46.38",
+	subject -> relation	[pos="e,4485.7,36.188 4495.1,159.79 4493,132.48 4489,78.994 4486.5,46.38",
 		style=dotted];
 	"gene to gene family association_subject"	[color=blue,
 		height=0.5,
 		label=gene,
-		pos="2022.4,265",
+		pos="2939.4,265",
 		width=0.92075];
-	object -> relation	[pos="e,2765.2,35.54 2794.9,73.889 2788,64.939 2779.2,53.617 2771.4,43.584",
+	object -> relation	[pos="e,4497.2,35.54 4526.9,73.889 4520,64.939 4511.2,53.617 4503.4,43.584",
 		style=dotted];
 	"gene to gene family association_object"	[color=blue,
 		height=0.5,
 		label="gene family",
-		pos="2138.4,265",
+		pos="3055.4,265",
 		width=1.8054];
 	"gene to gene family association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2299.4,265",
+		pos="3216.4,265",
 		width=2.1665];
 }

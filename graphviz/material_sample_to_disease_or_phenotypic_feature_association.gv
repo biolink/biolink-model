@@ -1,30 +1,29 @@
 digraph {
-	graph [bb="0,0,4196.7,283"];
+	graph [bb="0,0,5883.7,283"];
 	node [label="\N"];
 	"material sample to disease or phenotypic feature association"	[height=0.5,
 		label="material sample to disease or phenotypic feature association",
-		pos="2303.4,265",
+		pos="3267.4,265",
 		width=8.1604];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"material sample to disease or phenotypic feature association" -> association	[label=is_a,
-		lp="813.39,221.5",
-		pos="e,106.46,190.89 2022.7,259.67 1720.5,254.49 1225.8,244.52 799.39,229 503.23,218.22 426.76,238.02 133.39,196 127.91,195.21 122.22,\
+		lp="806.39,221.5",
+		pos="e,106.46,190.89 2974.9,263.26 2511.7,261.32 1581.1,254.32 792.39,229 499.29,219.59 423.68,237.65 133.39,196 127.91,195.21 122.22,\
 194.2 116.56,193.06"];
 	"material sample to entity association mixin"	[height=0.5,
 		pos="354.39,178",
 		width=5.8856];
 	"material sample to disease or phenotypic feature association" -> "material sample to entity association mixin"	[label=uses,
-		lp="1103.9,221.5",
-		pos="e,504.16,190.77 2027.1,258.85 1780.6,253.58 1409.8,244.02 1087.4,229 859.61,218.38 802.85,212.08 575.39,196 555.6,194.6 534.82,193.08 \
-514.24,191.53"];
+		lp="1101.9,221.5",
+		pos="e,498.51,191.25 2973.9,263.81 2554.8,262.52 1760.9,256.26 1085.4,229 885.98,220.95 656.42,203.99 508.57,192.06"];
 	"entity to disease or phenotypic feature association mixin"	[height=0.5,
 		pos="858.39,178",
 		width=7.6188];
 	"material sample to disease or phenotypic feature association" -> "entity to disease or phenotypic feature association mixin"	[label=uses,
-		lp="1287.9,221.5",
-		pos="e,965.97,194.61 2017.2,260.94 1809.9,257.1 1523,248.46 1271.4,229 1171.5,221.27 1058.6,207.24 976.13,196"];
+		lp="1285.9,221.5",
+		pos="e,962.42,194.68 2976,262.61 2503.8,259.73 1591.9,251.38 1269.4,229 1168.7,222.01 1054.9,207.65 972.55,196.11"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -32,9 +31,9 @@ digraph {
 		width=1.0652];
 	"material sample to disease or phenotypic feature association" -> id	[color=blue,
 		label=id,
-		lp="1409.4,221.5",
-		pos="e,1218.4,190.01 2031.4,258.17 1811.4,252.58 1519.6,242.91 1402.4,229 1328.1,220.19 1309.5,215.87 1237.4,196 1234.3,195.14 1231.1,\
-194.18 1227.9,193.17",
+		lp="1404.4,221.5",
+		pos="e,1218.4,189.98 2979.1,261.53 2493.3,256.94 1549.6,245.98 1397.4,229 1325.2,220.95 1307.3,215.5 1237.4,196 1234.3,195.13 1231.1,\
+194.17 1227.9,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -43,9 +42,9 @@ digraph {
 		width=1.2277];
 	"material sample to disease or phenotypic feature association" -> iri	[color=blue,
 		label=iri,
-		lp="1522.4,221.5",
-		pos="e,1323.3,190.23 2015.4,261.33 1865.6,257.38 1679.7,248.51 1514.4,229 1437.5,219.93 1418.4,215.19 1343.4,196 1340,195.14 1336.5,194.18 \
-1333.1,193.17",
+		lp="1511.4,221.5",
+		pos="e,1323.3,190.16 2973.3,264.7 2547.2,264.59 1779,259.89 1503.4,229 1431.2,220.91 1413.6,214.45 1343.4,196 1340,195.11 1336.5,194.14 \
+1333.1,193.12",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -54,8 +53,8 @@ digraph {
 		width=1.5707];
 	"material sample to disease or phenotypic feature association" -> name	[color=blue,
 		label=name,
-		lp="1624.4,221.5",
-		pos="e,1447.8,191.29 2044.5,256.43 1881.4,250.62 1686.8,241.47 1604.4,229 1553.5,221.3 1496.7,205.93 1457.6,194.25",
+		lp="1615.4,221.5",
+		pos="e,1446.3,191.75 2978.2,261.75 2535.7,257.72 1727.8,247.9 1595.4,229 1546.9,222.08 1493.1,206.72 1455.8,194.84",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -64,8 +63,8 @@ digraph {
 		width=2.0943];
 	"material sample to disease or phenotypic feature association" -> description	[color=blue,
 		label=description,
-		lp="1738.9,221.5",
-		pos="e,1592.9,194.13 2045.2,256.4 1911.8,251.01 1763.5,242.31 1698.4,229 1665.3,222.23 1629.4,209.18 1602.4,198.11",
+		lp="1731.9,221.5",
+		pos="e,1590.8,194.37 2975.6,262.86 2554.5,260.4 1813.3,252.71 1691.4,229 1659.7,222.84 1625.7,209.79 1600.1,198.56",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -74,8 +73,8 @@ digraph {
 		width=1.4443];
 	"material sample to disease or phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1875.4,221.5",
-		pos="e,1732.6,193.33 2073.9,253.75 1976.6,248.03 1875,239.84 1828.4,229 1798.3,221.99 1765.9,208.73 1741.8,197.62",
+		lp="1870.4,221.5",
+		pos="e,1730.9,193.52 2975.7,262.73 2586.2,260.14 1932.4,252.34 1823.4,229 1794.1,222.73 1763,209.39 1739.9,198.06",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -84,8 +83,8 @@ digraph {
 		width=1.9318];
 	"material sample to disease or phenotypic feature association" -> subject	[color=blue,
 		label=subject,
-		lp="1998.4,221.5",
-		pos="e,1876,194.08 2104.6,251.68 2060.7,246.55 2014.6,239.29 1972.4,229 1942.4,221.7 1910.1,209.01 1885.4,198.25",
+		lp="1997.4,221.5",
+		pos="e,1874.5,194.33 2979,261.5 2627.1,257.62 2067,248.47 1971.4,229 1941,222.8 1908.4,209.83 1883.9,198.66",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -95,7 +94,7 @@ digraph {
 	"material sample to disease or phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
 		lp="2076.4,221.5",
-		pos="e,2016.9,196.2 2122.8,250.76 2087.9,245.66 2057.5,238.64 2042.4,229 2033.5,223.33 2026.6,214.19 2021.5,205.27",
+		pos="e,2016.4,196.12 2976.5,262.49 2627,259.67 2082.4,251.65 2042.4,229 2033,223.67 2025.9,214.3 2020.8,205.1",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -105,7 +104,7 @@ digraph {
 	"material sample to disease or phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="2155.4,178",
-		pos="e,1984,105.47 2245.5,247.33 2211.2,235.93 2167.9,218.75 2133.4,196 2114.5,183.54 2116.1,172.77 2097.4,160 2065.3,138.07 2025,120.64 \
+		pos="e,1984,105.47 2991,258.86 2679.9,251.27 2207.9,233.7 2133.4,196 2113.2,185.78 2116.1,172.77 2097.4,160 2065.3,138.07 2025,120.64 \
 1993.5,108.92",
 		style=solid];
 	negated	[color=blue,
@@ -115,8 +114,8 @@ digraph {
 		width=1.2999];
 	"material sample to disease or phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="2302.4,221.5",
-		pos="e,2246.8,195.31 2289.2,246.8 2278.9,234.23 2264.7,217.01 2253.2,203.08",
+		lp="2457.4,221.5",
+		pos="e,2267.8,190.38 2995.2,258.22 2792.8,252.87 2534,243.52 2428.4,229 2375.7,221.75 2316.7,205.44 2277.5,193.41",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -125,8 +124,8 @@ digraph {
 		width=2.1304];
 	"material sample to disease or phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2381.9,221.5",
-		pos="e,2361.7,195.93 2319.6,246.79 2324.8,241.2 2330.4,234.91 2335.4,229 2342.1,221.01 2349.3,212.07 2355.5,203.97",
+		lp="2588.9,221.5",
+		pos="e,2415.9,193.28 3003.6,257.08 2837.5,251.54 2639.2,242.46 2555.4,229 2510.8,221.84 2461.5,207.79 2425.6,196.41",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -135,8 +134,8 @@ digraph {
 		width=1.7332];
 	"material sample to disease or phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2498.4,221.5",
-		pos="e,2500.9,193.86 2363.8,247.36 2381.8,241.96 2401.6,235.64 2419.4,229 2443.8,219.91 2470.4,208.1 2491.6,198.24",
+		lp="2723.4,221.5",
+		pos="e,2565.1,193.26 3016.2,255.66 2886.6,250.04 2742.8,241.36 2679.4,229 2643.2,221.93 2603.6,208.25 2574.5,196.98",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -145,8 +144,8 @@ digraph {
 		width=2.0943];
 	"material sample to disease or phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2640.9,221.5",
-		pos="e,2651.5,193.96 2440.5,249.08 2475.3,243.97 2512.5,237.37 2546.4,229 2579,220.96 2614.5,208.31 2641.8,197.75",
+		lp="2864.9,221.5",
+		pos="e,2719.7,194.32 3008.2,256.5 2945.5,251.21 2879.1,242.66 2818.4,229 2787.5,222.06 2754.3,209.29 2729,198.39",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -155,8 +154,8 @@ digraph {
 		width=3.015];
 	"material sample to disease or phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2827.9,221.5",
-		pos="e,2839,194.07 2504.8,251.89 2565.1,246.64 2631.1,239.26 2691.4,229 2738.1,221.05 2789.9,207.79 2828.9,196.92",
+		lp="2997.9,221.5",
+		pos="e,2899.8,196.41 3047.1,253.05 2998.6,247.87 2955.2,240.24 2933.4,229 2922.5,223.39 2913.2,213.9 2905.9,204.68",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -165,8 +164,8 @@ digraph {
 		width=3.015];
 	"material sample to disease or phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="3074.4,221.5",
-		pos="e,3069.5,193.57 2510.2,252.17 2677.4,242.55 2886.6,230.35 2896.4,229 2952.1,221.29 3014.4,207.24 3059.8,196",
+		lp="3164.4,221.5",
+		pos="e,3087.8,195.17 3115.3,249.59 3094.1,244.63 3076.9,237.96 3069.4,229 3061,218.96 3067.9,209.01 3079.3,200.67",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -175,9 +174,8 @@ digraph {
 		width=3.015];
 	"material sample to disease or phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3347.9,221.5",
-		pos="e,3313.8,194.43 2505.9,251.96 2539.4,250.16 2573.9,248.43 2606.4,247 2732.3,241.47 3048.7,247.49 3173.4,229 3218,222.39 3267.2,208.87 \
-3303.8,197.56",
+		lp="3374.9,221.5",
+		pos="e,3294.9,192.66 3263.2,246.77 3261.8,236.38 3261.8,223.38 3268.4,214 3273,207.37 3279.1,202 3286,197.65",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -186,9 +184,8 @@ digraph {
 		width=1.5346];
 	"material sample to disease or phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3527.4,221.5",
-		pos="e,3521.7,194.98 2503.4,251.79 2537.8,249.97 2573.1,248.29 2606.4,247 2701,243.35 3367.4,255.32 3458.4,229 3478.1,223.29 3497.9,211.66 \
-3513.2,201.06",
+		lp="3536.4,221.5",
+		pos="e,3524.1,195.19 3419.2,249.53 3440.6,244.54 3462,237.88 3481.4,229 3489.1,225.48 3503.6,213.47 3516.4,202.1",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -197,49 +194,168 @@ digraph {
 		width=1.0652];
 	"material sample to disease or phenotypic feature association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="3658.4,221.5",
-		pos="e,3634.3,193.79 2502.6,251.76 2537.2,249.94 2572.8,248.26 2606.4,247 2659.7,245.01 3515,243.24 3566.4,229 3587.8,223.08 3609.4,210.66 \
-3625.8,199.69",
+		lp="3653.4,221.5",
+		pos="e,3631.3,192.7 3445.6,250.64 3498.9,245.12 3549.7,237.91 3574.4,229 3585.9,224.86 3587.1,220.57 3597.4,214 3605.6,208.79 3614.4,\
+203.21 3622.7,198.07",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="3768.4,178",
+		pos="3767.4,178",
 		width=1.5887];
 	"material sample to disease or phenotypic feature association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3804.9,221.5",
-		pos="e,3757,195.87 2502.2,251.71 2536.9,249.89 2572.7,248.22 2606.4,247 2668.1,244.77 3661.5,253.11 3718.4,229 3730.9,223.69 3742,213.59 \
-3750.5,203.85",
+		lp="3793.9,221.5",
+		pos="e,3750.8,195.38 3484,252.84 3584.9,246.53 3687.6,238.1 3709.4,229 3717.1,225.8 3731.1,213.8 3743.4,202.35",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3918.4,178",
+		pos="3881.4,178",
 		width=1.0652];
 	"material sample to disease or phenotypic feature association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3944.9,221.5",
-		pos="e,3908.2,195.85 2501.4,251.7 2536.3,249.86 2572.4,248.19 2606.4,247 2641.5,245.76 3840.3,243.36 3872.4,229 3884.2,223.71 3894.4,\
-213.76 3902.1,204.11",
+		lp="3923.9,221.5",
+		pos="e,3878.5,196.31 3476,252.29 3645.6,242.67 3857.4,230.41 3859.4,229 3867.2,223.57 3872.3,214.72 3875.5,205.97",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4014.4,178",
+		width=2.1304];
+	"material sample to disease or phenotypic feature association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="4055.9,221.5",
+		pos="e,4007.4,196.1 3473.2,252.12 3505.7,250.34 3539,248.57 3570.4,247 3615.8,244.73 3939.5,250.89 3979.4,229 3989.1,223.65 3996.8,214.27 \
+4002.4,205.08",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4185.4,178",
+		width=2.1304];
+	"material sample to disease or phenotypic feature association" -> "object category"	[color=blue,
+		label="object category",
+		lp="4202.9,221.5",
+		pos="e,4169.5,195.61 3470.3,251.96 3503.7,250.17 3538,248.44 3570.4,247 3631.4,244.29 4061.9,249.39 4119.4,229 4135.1,223.42 4150.2,212.61 \
+4161.9,202.46",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4318.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="4336.9,221.5",
+		pos="e,4303,194.73 3468.6,251.86 3502.6,250.06 3537.5,248.35 3570.4,247 3608.8,245.42 4225.6,243 4261.4,229 4269.2,225.94 4283.4,213.52 \
+4295.6,201.83",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4414.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="4456.4,221.5",
+		pos="e,4412,196.42 3467.4,251.81 3501.8,249.99 3537.1,248.3 3570.4,247 3593.2,246.11 4374.5,241.86 4393.4,229 4401.2,223.69 4406.1,214.87 \
+4409.2,206.1",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4547.4,178",
+		width=2.1304];
+	"material sample to disease or phenotypic feature association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="4614.9,221.5",
+		pos="e,4539.8,196.22 3467,251.75 3501.5,249.94 3537,248.26 3570.4,247 3622.6,245.04 4464,252.95 4510.4,229 4520.6,223.75 4528.7,214.26 \
+4534.7,204.95",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4736.4,178",
+		width=2.1304];
+	"material sample to disease or phenotypic feature association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4804.9,221.5",
+		pos="e,4731.1,196.13 3465.8,251.72 3500.6,249.89 3536.6,248.22 3570.4,247 3601.9,245.87 4679.1,244.77 4706.4,229 4715.5,223.75 4722.2,\
+214.52 4726.9,205.41",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4926.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4976.4,221.5",
+		pos="e,4919.7,196.21 3465.4,251.68 3500.3,249.85 3536.4,248.18 3570.4,247 3607.1,245.72 4860.1,246.4 4892.4,229 4902.1,223.78 4909.6,\
+214.43 4915,205.21",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5085.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="5129.4,221.5",
+		pos="e,5078,195.76 3465,251.66 3500.1,249.83 3536.3,248.16 3570.4,247 3611.4,245.6 5011.8,247.7 5048.4,229 5058.7,223.71 5066.9,214.03 \
+5072.9,204.59",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5236.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="5289.4,221.5",
+		pos="e,5228.4,195.79 3464.6,251.65 3499.8,249.81 3536.2,248.15 3570.4,247 3615.6,245.48 5156.9,249.05 5197.4,229 5208.1,223.69 5216.8,\
+213.87 5223.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5407.4,178",
+		width=1.0652];
+	"material sample to disease or phenotypic feature association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="5455.9,221.5",
+		pos="e,5399.1,195.8 3464.6,251.62 3499.8,249.78 3536.2,248.13 3570.4,247 3620.3,245.35 5322.5,250.85 5367.4,229 5378.3,223.71 5387.1,\
+213.9 5393.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="5569.4,178",
+		width=2.347];
+	"material sample to disease or phenotypic feature association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="5617.9,221.5",
+		pos="e,5560.8,196.3 3464.1,251.62 3499.5,249.78 3536,248.12 3570.4,247 3624.8,245.23 5480.5,252.8 5529.4,229 5540.1,223.79 5548.9,214.18 \
+5555.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="4044.4,178",
+		pos="5731.4,178",
 		width=0.86659];
 	"material sample to disease or phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="4037.4,221.5",
-		pos="e,4035.2,195.34 2501.4,251.66 2536.3,249.83 2572.4,248.17 2606.4,247 2645.1,245.67 3965.2,245.18 4000.4,229 4012.1,223.62 4021.9,\
-213.46 4029.3,203.69",
+		lp="5726.4,221.5",
+		pos="e,5723.1,195.81 3464.1,251.6 3499.5,249.76 3536,248.11 3570.4,247 3599.8,246.05 5664.9,241.87 5691.4,229 5702.3,223.72 5711.1,213.91 \
+5717.7,204.36",
 		style=solid];
 	category	[height=0.5,
-		pos="4145.4,178",
+		pos="5832.4,178",
 		width=1.4263];
 	"material sample to disease or phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="4123.9,221.5",
-		pos="e,4125,194.56 2501,251.67 2536.1,249.83 2572.3,248.17 2606.4,247 2687,244.24 3979.6,250.08 4057.4,229 4078.6,223.26 4100,211.23 \
-4116.5,200.4",
+		lp="5812.9,221.5",
+		pos="e,5812.2,194.83 3464.1,251.59 3499.5,249.75 3536,248.11 3570.4,247 3630.8,245.06 5688.1,244.97 5746.4,229 5767.1,223.34 5787.9,211.43 \
+5803.9,200.65",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1927.4,134.5",
@@ -254,11 +370,11 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2653.4,265",
+		pos="3617.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2784.4,265",
+		pos="3748.4,265",
 		width=2.0762];
 }

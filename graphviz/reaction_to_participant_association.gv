@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3844.7,283"];
+	graph [bb="0,0,5567.7,283"];
 	node [label="\N"];
 	"reaction to participant association"	[height=0.5,
 		label="reaction to participant association",
-		pos="2012.5,265",
+		pos="2905.5,265",
 		width=4.7121];
 	"chemical to chemical association"	[height=0.5,
 		pos="162.49,178",
 		width=4.5135];
 	"reaction to participant association" -> "chemical to chemical association"	[label=is_a,
-		lp="482.49,221.5",
-		pos="e,236.63,194.09 1843.5,263.14 1500.1,260.91 730.8,253.28 468.49,229 392.96,222.01 307.87,207.57 246.63,195.99"];
+		lp="481.49,221.5",
+		pos="e,235.75,194.14 2736.7,263.03 2221.7,259.85 691.36,248.85 467.49,229 391.92,222.3 306.8,207.75 245.72,196.07"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"reaction to participant association" -> id	[color=blue,
 		label=id,
-		lp="600.49,221.5",
-		pos="e,410.47,190.01 1843.4,263.51 1521.2,261.98 830.65,255.58 593.49,229 519.6,220.72 501.15,215.79 429.49,196 426.38,195.14 423.18,\
-194.18 419.98,193.17",
+		lp="598.49,221.5",
+		pos="e,410.47,190 2736.5,263.26 2239.2,260.82 802.31,251.87 591.49,229 518.44,221.08 500.29,215.65 429.49,196 426.38,195.14 423.18,194.17 \
+419.98,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"reaction to participant association" -> iri	[color=blue,
 		label=iri,
-		lp="719.49,221.5",
-		pos="e,515.1,190.17 1844.1,262.79 1543.4,260.07 925.84,251.83 711.49,229 632.35,220.57 612.64,215.53 535.49,196 532.06,195.13 528.52,\
-194.16 524.99,193.14",
+		lp="715.49,221.5",
+		pos="e,515.39,190.23 2736.5,263 2256.6,259.92 906.67,249.54 707.49,229 630.06,221.02 610.91,215.26 535.49,196 532.11,195.14 528.63,194.18 \
+525.14,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"reaction to participant association" -> name	[color=blue,
 		label=name,
-		lp="832.49,221.5",
-		pos="e,641.08,191.05 1843.8,263.13 1561.8,260.99 1006.6,253.69 812.49,229 756.3,221.86 693.29,205.84 650.87,193.85",
+		lp="826.49,221.5",
+		pos="e,640.29,191.28 2736.2,263.28 2271.1,261.01 995.15,252.68 806.49,229 752.09,222.17 691.23,206.24 650.06,194.18",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"reaction to participant association" -> description	[color=blue,
 		label=description,
-		lp="962.99,221.5",
-		pos="e,790.57,193.5 1843.1,263.77 1582.3,262.53 1094.5,256.46 922.49,229 880.37,222.28 834.01,208.29 800.2,196.82",
+		lp="953.99,221.5",
+		pos="e,788.74,193.79 2735.9,263.75 2287.2,262.71 1090.5,257.29 913.49,229 873.71,222.64 830.17,208.8 798.25,197.28",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"reaction to participant association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1117.5,221.5",
-		pos="e,930.92,191.59 1844,262.64 1614.1,259.94 1214.4,252 1070.5,229 1025.4,221.8 975.52,206.69 940.75,194.95",
+		lp="1109.5,221.5",
+		pos="e,929.56,191.9 2736.4,263.42 2312.2,261.6 1224.8,254.48 1062.5,229 1019.6,222.27 972.44,207.28 939.35,195.45",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=2.1665];
 	"reaction to participant association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1272.5,221.5",
-		pos="e,1088.3,193.06 1847.8,260.55 1656.2,255.83 1351.6,245.95 1238.5,229 1190.3,221.79 1136.8,207.51 1098.2,196.05",
+		lp="1268.5,221.5",
+		pos="e,1086.9,193.25 2736.8,262.73 2342,259.43 1380.1,249.38 1234.5,229 1187,222.36 1134.5,207.95 1096.7,196.3",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.2999];
 	"reaction to participant association" -> negated	[color=blue,
 		label=negated,
-		lp="1408.5,221.5",
-		pos="e,1221.7,190.33 1843.7,262.96 1715.7,260.17 1535.8,251.95 1379.5,229 1327.9,221.42 1270.1,205.31 1231.6,193.41",
+		lp="1410.5,221.5",
+		pos="e,1221.3,190.46 2735.6,264.59 2394.9,265.04 1638.6,262.1 1381.5,229 1328.9,222.23 1270.2,205.81 1231.3,193.62",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=2.1304];
 	"reaction to participant association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1539,221.5",
-		pos="e,1369.8,193.28 1846.5,261.16 1747,257.33 1618.3,248.61 1505.5,229 1462.2,221.48 1414.3,207.6 1379.3,196.37",
+		lp="1549,221.5",
+		pos="e,1370.2,193.2 2735.6,264.73 2418.1,265.25 1745.9,262.23 1515.5,229 1468.8,222.26 1417,207.87 1379.8,196.25",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=1.7332];
 	"reaction to participant association" -> publications	[color=blue,
 		label=publications,
-		lp="1672.5,221.5",
-		pos="e,1518.9,193.32 1854.7,258.36 1784.8,253.62 1701.9,244.93 1628.5,229 1594,221.52 1556.4,208.14 1528.4,197.11",
+		lp="1694.5,221.5",
+		pos="e,1521.2,192.85 2735.8,264.85 2442.9,265.38 1854.1,262.09 1650.5,229 1609.1,222.28 1563.6,207.95 1530.9,196.35",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=2.0943];
 	"reaction to participant association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1812,221.5",
-		pos="e,1673.4,194.37 1889.8,252.57 1849.7,247.27 1805.3,239.69 1765.5,229 1737.1,221.39 1706.5,209.08 1682.8,198.58",
+		lp="1853,221.5",
+		pos="e,1679.5,193.63 2736,264.02 2473.4,263.13 1980.1,257.55 1806.5,229 1766.1,222.35 1721.7,208.52 1689.2,197.09",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"reaction to participant association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1941,221.5",
-		pos="e,1850.9,196.24 1919.5,249.88 1904.3,244.89 1889.3,238.13 1876.5,229 1867.9,222.9 1861,213.84 1855.7,205.1",
+		lp="2008,221.5",
+		pos="e,1869,195.61 2738.5,261.78 2483.3,257.8 2018,248.04 1943.5,229 1920.4,223.1 1896.4,211.34 1877.7,200.71",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"reaction to participant association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2108.5,221.5",
-		pos="e,2034.1,194.65 2008.7,246.59 2007.4,236.37 2007.6,223.63 2013.5,214 2016.7,208.82 2020.9,204.35 2025.7,200.52",
+		lp="2179.5,221.5",
+		pos="e,2075.5,196.33 2737.6,262.34 2504.4,259.25 2108,250.81 2084.5,229 2078.4,223.32 2076,214.91 2075.4,206.59",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -140,9 +140,8 @@ digraph {
 		width=3.015];
 	"reaction to participant association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2333,221.5",
-		pos="e,2269.8,194.64 2123.4,251.34 2150.2,246.2 2178.4,239.02 2203.5,229 2214.8,224.48 2215.7,219.64 2226.5,214 2237.2,208.42 2249,203.13 \
-2260.4,198.44",
+		lp="2388,221.5",
+		pos="e,2291.7,195.87 2741.3,260.33 2561.8,255.49 2297.2,245.58 2281.5,229 2274.3,221.43 2277.8,212.05 2284.6,203.46",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=1.5346];
 	"reaction to participant association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2495.5,221.5",
-		pos="e,2479.5,195.4 2132.3,252.25 2152.1,250.42 2172.4,248.6 2191.5,247 2246.5,242.39 2388.6,250.55 2439.5,229 2446.9,225.85 2460.3,214.04 \
-2472.1,202.69",
+		lp="2542.5,221.5",
+		pos="e,2494.9,196.43 2746.3,258.74 2643.6,253.87 2525.9,244.88 2507.5,229 2500.9,223.36 2497.6,214.85 2496,206.44",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -162,9 +160,8 @@ digraph {
 		width=1.0652];
 	"reaction to participant association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2610.5,221.5",
-		pos="e,2586.4,193.27 2130.9,252.05 2151.1,250.21 2171.9,248.45 2191.5,247 2267.2,241.41 2460.5,252.9 2532.5,229 2533.8,228.56 2557.5,\
-212.71 2577.9,198.98",
+		lp="2640.5,221.5",
+		pos="e,2591.7,194.82 2755.3,256.61 2677.7,251.21 2596.5,242.43 2584.5,229 2577.8,221.56 2580.4,211.86 2585.9,202.98",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -173,9 +170,8 @@ digraph {
 		width=1.5887];
 	"reaction to participant association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2751,221.5",
-		pos="e,2706.2,195.47 2129.4,251.93 2150.1,250.07 2171.4,248.33 2191.5,247 2244.3,243.5 2618.6,249.24 2667.5,229 2674.8,225.97 2687.7,\
-214.17 2699,202.79",
+		lp="2767,221.5",
+		pos="e,2707.7,195.8 2771.2,253.96 2740.3,248.77 2713.5,240.91 2703.5,229 2697.6,222.05 2698.9,213.06 2702.8,204.62",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -184,107 +180,224 @@ digraph {
 		width=1.0652];
 	"reaction to participant association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2881,221.5",
-		pos="e,2834.1,196.32 2128.9,251.82 2149.7,249.96 2171.2,248.25 2191.5,247 2226.2,244.85 2789.3,249.41 2817.5,229 2824.9,223.63 2829.3,\
-214.92 2831.8,206.26",
+		lp="2891,221.5",
+		pos="e,2832.9,196.07 2859.8,247.64 2851.9,242.81 2844.5,236.69 2839.5,229 2835.1,222.32 2833.3,214 2832.9,206.08",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2968.5,178",
+		width=2.1304];
+	"reaction to participant association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3015,221.5",
+		pos="e,2963.1,196.22 2928.9,247.1 2935.2,241.81 2941.6,235.61 2946.5,229 2951.7,221.97 2956,213.49 2959.4,205.54",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3139.5,178",
+		width=2.1304];
+	"reaction to participant association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3158,221.5",
+		pos="e,3123.4,195.91 3012,250.93 3034.6,245.84 3057.9,238.79 3078.5,229 3092.1,222.54 3105.3,212.41 3115.9,202.94",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3272.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3295,221.5",
+		pos="e,3259.4,195.42 3025.5,252.26 3109.6,243.76 3208.5,233.07 3217.5,229 3230.7,223.04 3242.8,212.72 3252.4,203",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3372.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3415.5,221.5",
+		pos="e,3370.7,196.22 3024.8,252.2 3044.7,250.36 3065.2,248.56 3084.5,247 3114.3,244.58 3329.4,246.82 3353.5,229 3360.9,223.52 3365.4,\
+214.78 3368.2,206.13",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3505.5,178",
+		width=2.1304];
+	"reaction to participant association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3574,221.5",
+		pos="e,3498.1,196.1 3023.4,251.99 3043.7,250.15 3064.7,248.4 3084.5,247 3127.2,243.97 3431.8,249.41 3469.5,229 3479.5,223.59 3487.4,214.08 \
+3493.2,204.79",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3697.5,178",
+		width=2.1304];
+	"reaction to participant association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3765,221.5",
+		pos="e,3691.5,196.11 3021.9,251.86 3042.7,250 3064.2,248.27 3084.5,247 3116.7,244.97 3637.4,244.94 3665.5,229 3674.9,223.66 3682,214.29 \
+3687,205.09",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3887.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3937.5,221.5",
+		pos="e,3880.5,196.18 3021.4,251.77 3042.4,249.91 3064.1,248.21 3084.5,247 3127.1,244.48 3814.9,249.15 3852.5,229 3862.3,223.75 3869.9,\
+214.39 3875.6,205.18",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4046.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4090.5,221.5",
+		pos="e,4039.1,195.73 3020.9,251.75 3042.1,249.87 3063.9,248.18 3084.5,247 3135.8,244.07 3963.8,252.58 4009.5,229 4019.8,223.67 4028,213.99 \
+4034,204.55",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4197.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4250.5,221.5",
+		pos="e,4189.5,195.76 3020.5,251.75 3041.7,249.86 3063.8,248.16 3084.5,247 3144.1,243.68 4105.1,255.63 4158.5,229 4169.2,223.66 4177.8,\
+213.84 4184.2,204.3",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4368.5,178",
+		width=1.0652];
+	"reaction to participant association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4416,221.5",
+		pos="e,4360.2,195.79 3020.5,251.71 3041.7,249.82 3063.8,248.13 3084.5,247 3119,245.11 4297.4,244.2 4328.5,229 4339.3,223.69 4348.2,213.87 \
+4354.8,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4512.5,178",
+		width=2.347];
+	"reaction to participant association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4572,221.5",
+		pos="e,4509.5,196.01 3020.5,251.68 3041.7,249.8 3063.8,248.12 3084.5,247 3123.5,244.9 4456.8,250.27 4489.5,229 4497.6,223.7 4502.9,214.72 \
+4506.4,205.82",
 		style=solid];
 	type	[height=0.5,
-		pos="2923.5,178",
+		pos="4646.5,178",
 		width=0.86659];
 	"reaction to participant association" -> type	[color=blue,
 		label=type,
-		lp="2957.5,221.5",
-		pos="e,2934.5,194.96 2128.4,251.79 2149.4,249.92 2171.1,248.21 2191.5,247 2212.1,245.77 2922,243.81 2936.5,229 2942.9,222.4 2942.1,213.04 \
-2938.8,204.2",
+		lp="4668.5,221.5",
+		pos="e,4651.6,196.18 3020,251.7 3041.4,249.8 3063.6,248.11 3084.5,247 3106.1,245.85 4630.1,244.27 4645.5,229 4651.4,223.09 4653,214.51 \
+4652.7,206.12",
 		style=solid];
 	category	[height=0.5,
-		pos="3024.5,178",
+		pos="4747.5,178",
 		width=1.4263];
 	"reaction to participant association" -> category	[color=blue,
 		label=category,
-		lp="3031,221.5",
-		pos="e,3014,195.81 2127.9,251.81 2149.1,249.93 2170.9,248.21 2191.5,247 2235.1,244.43 2937.6,246.79 2977.5,229 2989.6,223.62 3000,213.51 \
-3007.9,203.78",
+		lp="4746,221.5",
+		pos="e,4733.9,195.46 3020,251.69 3041.4,249.8 3063.6,248.11 3084.5,247 3129,244.64 4646.7,244.58 4688.5,229 4703.1,223.56 4716.5,212.8 \
+4726.9,202.65",
 		style=solid];
 	object	[height=0.5,
-		pos="3729.5,91",
+		pos="5452.5,91",
 		width=1.0832];
 	"reaction to participant association" -> object	[color=blue,
 		label=object,
-		lp="3142.5,178",
-		pos="e,3690.4,92.466 2127.9,251.77 2149.1,249.89 2170.9,248.19 2191.5,247 2240,244.2 3023,250.74 3066.5,229 3101.3,211.58 3086.5,178.98 \
-3120.5,160 3216.3,106.55 3552.9,95.088 3680.2,92.651",
+		lp="4865.5,178",
+		pos="e,5413.6,92.765 3020,251.68 3041.4,249.79 3063.6,248.1 3084.5,247 3131.6,244.52 4738.5,248.42 4781.5,229 4819.1,212.01 4806.8,178.85 \
+4843.5,160 4941,109.84 5276.6,96.366 5403.4,93.024",
 		style=solid];
 	stoichiometry	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="3217.5,178",
+		pos="4940.5,178",
 		width=1.2277];
 	"reaction to participant association" -> stoichiometry	[color=blue,
 		label=stoichiometry,
-		lp="3213,221.5",
-		pos="e,3196.8,194.03 2127.9,251.75 2149.1,249.87 2170.9,248.17 2191.5,247 2295.1,241.09 3025.1,255.54 3125.5,229 3147.9,223.06 3170.9,\
-210.6 3188.2,199.61",
+		lp="4936,221.5",
+		pos="e,4919.8,194.09 3020,251.68 3041.4,249.78 3063.6,248.1 3084.5,247 3182.4,241.86 4753.6,253.63 4848.5,229 4871,223.16 4893.9,210.7 \
+4911.3,199.68",
 		style=solid];
 	"reaction direction"	[color=blue,
 		height=0.5,
 		label=ReactionDirectionEnum,
-		pos="3401.5,178",
+		pos="5124.5,178",
 		width=3.3761];
 	"reaction to participant association" -> "reaction direction"	[color=blue,
 		label="reaction direction",
-		lp="3384,221.5",
-		pos="e,3367.2,195.4 2127.5,251.75 2148.7,249.86 2170.8,248.16 2191.5,247 2310.8,240.35 3149.1,251.06 3266.5,229 3298.1,223.06 3332,210.46 \
-3358,199.39",
+		lp="5107,221.5",
+		pos="e,5090.5,195.35 3020,251.66 3041.4,249.77 3063.6,248.09 3084.5,247 3190.2,241.49 4885.4,248.16 4989.5,229 5021.2,223.16 5055.3,210.48 \
+5081.3,199.36",
 		style=solid];
 	"reaction side"	[color=blue,
 		height=0.5,
 		label=ReactionSideEnum,
-		pos="3639.5,178",
+		pos="5362.5,178",
 		width=2.7442];
 	"reaction to participant association" -> "reaction side"	[color=blue,
 		label="reaction side",
-		lp="3571,221.5",
-		pos="e,3594.9,194.18 2127.5,251.7 2148.7,249.82 2170.8,248.13 2191.5,247 2331.3,239.37 3312.8,248.14 3451.5,229 3497.4,222.66 3548.1,\
-208.75 3585.3,197.21",
+		lp="5294,221.5",
+		pos="e,5318.3,194.13 3020,251.65 3041.4,249.76 3063.6,248.08 3084.5,247 3316.4,235.01 4944.3,260.09 5174.5,229 5220.6,222.77 5271.5,208.78 \
+5308.7,197.18",
 		style=solid];
 	subject	[height=0.5,
-		pos="3800.5,178",
+		pos="5523.5,178",
 		width=1.2277];
 	"reaction to participant association" -> subject	[color=blue,
 		label=subject,
-		lp="3716.5,221.5",
-		pos="e,3769,190.65 2127,251.72 2148.4,249.82 2170.6,248.12 2191.5,247 2350.2,238.48 3464,250.29 3621.5,229 3669.9,222.46 3723.6,206.19 \
-3759.4,193.97",
+		lp="5439.5,221.5",
+		pos="e,5492,190.69 3020,251.64 3041.4,249.75 3063.6,248.07 3084.5,247 3335.3,234.12 5095.6,262.07 5344.5,229 5392.9,222.57 5446.6,206.28 \
+5482.4,194.03",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2238.5,265",
+		pos="3131.5,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2369.5,265",
+		pos="3262.5,265",
 		width=2.0762];
 	relation	[height=0.5,
-		pos="3764.5,18",
+		pos="5487.5,18",
 		width=1.2999];
-	object -> relation	[pos="e,3756,36.198 3737.8,73.174 3741.9,64.896 3746.9,54.723 3751.5,45.438",
+	object -> relation	[pos="e,5479,36.198 5460.8,73.174 5464.9,64.896 5469.9,54.723 5474.5,45.438",
 		style=dotted];
 	"chemical to chemical association_object"	[color=blue,
 		height=0.5,
 		label="chemical entity",
-		pos="2544.5,265",
+		pos="3437.5,265",
 		width=2.2748];
 	subject -> object	[label=relation,
-		lp="3758.5,134.5",
-		pos="e,3725.7,109.01 3764.1,167.42 3751.3,162.12 3738.1,154.06 3730.5,142 3726.2,135.26 3724.9,126.93 3724.9,119.01"];
-	subject -> relation	[pos="e,3768.7,36.005 3796.8,160.05 3792.4,139.44 3784.6,103.63 3777.5,73 3775.4,64.183 3773.2,54.574 3771.1,45.938",
+		lp="5481.5,134.5",
+		pos="e,5448.7,109.01 5487.1,167.42 5474.3,162.12 5461.1,154.06 5453.5,142 5449.2,135.26 5447.9,126.93 5447.9,119.01"];
+	subject -> relation	[pos="e,5491.7,36.005 5519.8,160.05 5515.4,139.44 5507.6,103.63 5500.5,73 5498.4,64.183 5496.2,54.574 5494.1,45.938",
 		style=dotted];
 	"reaction to participant association_subject"	[color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="2731.5,265",
+		pos="3624.5,265",
 		width=2.4192];
 }
