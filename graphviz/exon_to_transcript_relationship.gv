@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3238.5,283"];
+	graph [bb="0,0,4962.5,283"];
 	node [label="\N"];
 	"exon to transcript relationship"	[height=0.5,
 		label="exon to transcript relationship",
-		pos="1716.5,265",
+		pos="2666.5,265",
 		width=4.2427];
 	"sequence feature relationship"	[height=0.5,
 		pos="149.49,178",
 		width=4.1524];
 	"exon to transcript relationship" -> "sequence feature relationship"	[label=is_a,
-		lp="457.49,221.5",
-		pos="e,220.1,193.89 1565.1,262.51 1276.3,259.24 656.64,249.95 443.49,229 370.79,221.85 288.92,207.4 230.08,195.86"];
+		lp="455.49,221.5",
+		pos="e,219,194.01 2514.5,262.97 2046.5,259.59 646.03,248.01 441.49,229 368.99,222.26 287.38,207.69 228.91,196"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"exon to transcript relationship" -> id	[color=blue,
 		label=id,
-		lp="577.49,221.5",
-		pos="e,384.21,189.94 1565.2,262.47 1299.3,259.27 758.51,250.3 570.49,229 495.31,220.48 476.45,216.02 403.49,196 400.33,195.13 397.09,\
-194.16 393.84,193.14",
+		lp="572.49,221.5",
+		pos="e,384.47,190 2514.3,263.09 2063.9,260.15 757.07,249.93 565.49,229 492.44,221.02 474.29,215.65 403.49,196 400.38,195.14 397.18,194.17 \
+393.98,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"exon to transcript relationship" -> iri	[color=blue,
 		label=iri,
-		lp="701.49,221.5",
-		pos="e,489.09,190.21 1566.2,261.51 1324,257.04 857.94,246.47 693.49,229 610.87,220.22 590.11,216.07 509.49,196 506.05,195.15 502.52,194.19 \
-498.98,193.17",
+		lp="689.49,221.5",
+		pos="e,489.39,190.23 2514.7,262.83 2081.9,259.28 861.47,247.71 681.49,229 604.07,220.95 584.91,215.26 509.49,196 506.11,195.14 502.63,\
+194.18 499.14,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"exon to transcript relationship" -> name	[color=blue,
 		label=name,
-		lp="810.49,221.5",
-		pos="e,615.46,190.85 1566.4,261.61 1343.6,257.51 935.89,247.69 790.49,229 733.01,221.61 668.41,205.5 625.17,193.56",
+		lp="801.49,221.5",
+		pos="e,614.11,191.15 2514.5,263.04 2096.7,260.13 950.92,250.29 781.49,229 726.67,222.11 665.3,206.11 623.92,194.05",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"exon to transcript relationship" -> description	[color=blue,
 		label=description,
-		lp="935.99,221.5",
-		pos="e,764.69,193.5 1565.8,261.96 1364.8,258.48 1020,249.65 895.49,229 853.78,222.08 807.86,208.18 774.27,196.79",
+		lp="929.99,221.5",
+		pos="e,762.9,193.65 2514.2,263.41 2113,261.5 1047.3,254.11 889.49,229 849.13,222.58 804.89,208.66 772.54,197.14",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"exon to transcript relationship" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1089.5,221.5",
-		pos="e,904.86,191.55 1569,260.31 1401.8,255.44 1140,245.47 1042.5,229 998.11,221.5 948.94,206.5 914.58,194.88",
+		lp="1087.5,221.5",
+		pos="e,904.07,191.75 2514.6,263.02 2138.4,260.26 1183.4,251.15 1040.5,229 996.35,222.16 947.61,207 913.67,195.15",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=2.1665];
 	"exon to transcript relationship" -> predicate	[color=blue,
 		label=predicate,
-		lp="1242.5,221.5",
-		pos="e,1062.1,193 1567.3,261.11 1465.6,257.33 1328.2,248.7 1208.5,229 1161.7,221.3 1109.7,207.21 1071.9,195.94",
+		lp="1248.5,221.5",
+		pos="e,1061.9,193.09 2513.5,264.67 2193.3,265.37 1461.5,263.03 1214.5,229 1165.3,222.22 1110.6,207.65 1071.5,195.99",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.2999];
 	"exon to transcript relationship" -> negated	[color=blue,
 		label=negated,
-		lp="1375.5,221.5",
-		pos="e,1195.8,190.34 1582.2,256.31 1511.7,251.01 1424.1,242.43 1346.5,229 1297.6,220.54 1243,204.99 1205.8,193.47",
+		lp="1394.5,221.5",
+		pos="e,1196.4,190.23 2514.2,263.55 2220,262.08 1583.4,255.81 1365.5,229 1309.6,222.13 1247,205.38 1206.1,193.16",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=2.1304];
 	"exon to transcript relationship" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1495,221.5",
-		pos="e,1342.2,193.53 1604.4,252.74 1559.6,247.18 1507.8,239.39 1461.5,229 1424.2,220.63 1383,207.57 1351.9,196.9",
+		lp="1531,221.5",
+		pos="e,1345.7,193.02 2513.9,263.62 2243.2,262.24 1689,256.09 1497.5,229 1448.7,222.11 1394.6,207.65 1355.7,196.05",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=1.7332];
 	"exon to transcript relationship" -> publications	[color=blue,
 		label=publications,
-		lp="1612.5,221.5",
-		pos="e,1488.4,194.2 1641.5,249.3 1617.9,243.86 1591.8,237.03 1568.5,229 1544.2,220.66 1518.1,208.78 1497.5,198.69",
+		lp="1673.5,221.5",
+		pos="e,1496,192.66 2513.9,263.57 2268,262.07 1795,255.69 1629.5,229 1586.6,222.09 1539.4,207.61 1505.6,196.01",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=2.0943];
 	"exon to transcript relationship" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1719,221.5",
-		pos="e,1635.2,195.6 1696,246.8 1680.8,233.96 1659.8,216.27 1643,202.19",
+		lp="1827,221.5",
+		pos="e,1653.5,193.55 2514.7,262.66 2299.6,259.97 1917.1,252.01 1780.5,229 1740.1,222.2 1695.7,208.38 1663.2,196.99",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"exon to transcript relationship" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1850,221.5",
-		pos="e,1802.8,196.14 1744.5,247.13 1752.9,241.7 1761.8,235.42 1769.5,229 1778.7,221.33 1788,212.07 1795.9,203.61",
+		lp="1977,221.5",
+		pos="e,1842,195.78 2513.4,264.72 2326.4,264.24 2021.6,258.67 1912.5,229 1890.7,223.09 1868.3,211.61 1850.8,201.13",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"exon to transcript relationship" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2058.5,221.5",
-		pos="e,2015.3,195.02 1813.1,251 1846.8,245.49 1884.6,238.18 1918.5,229 1948.1,220.97 1980.4,209.03 2005.9,198.83",
+		lp="2146.5,221.5",
+		pos="e,2046.7,196 2518.3,260.62 2341.5,255.84 2067.3,245.77 2051.5,229 2045.7,222.9 2044.5,214.27 2045.1,205.9",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -140,9 +140,8 @@ digraph {
 		width=3.015];
 	"exon to transcript relationship" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2312,221.5",
-		pos="e,2253.9,195.18 1823.6,252.15 1841.9,250.3 1860.7,248.5 1878.5,247 2002.3,236.51 2036.1,255.61 2157.5,229 2187.5,222.41 2219.8,210.02 \
-2244.7,199.22",
+		lp="2355,221.5",
+		pos="e,2261.7,195.53 2516.9,261.19 2404.5,257.49 2266.8,248.9 2248.5,229 2240.8,220.62 2245.7,210.86 2254.2,202.2",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=1.5346];
 	"exon to transcript relationship" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2477.5,221.5",
-		pos="e,2459,195.77 1821.4,251.89 1840.4,250.01 1860,248.27 1878.5,247 1938.8,242.84 2367.4,253.92 2422.5,229 2434.5,223.55 2445,213.44 \
-2452.9,203.72",
+		lp="2506.5,221.5",
+		pos="e,2465.2,196.26 2543.5,254.29 2511.1,249.1 2482.1,241.16 2471.5,229 2466.1,222.83 2464.4,214.43 2464.4,206.27",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -162,9 +160,8 @@ digraph {
 		width=1.0652];
 	"exon to transcript relationship" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2596.5,221.5",
-		pos="e,2564.3,194.22 1821,251.85 1840.1,249.97 1859.9,248.24 1878.5,247 1949.2,242.3 2449.7,252.78 2516.5,229 2525.3,225.86 2542.2,212.73 \
-2556.6,200.71",
+		lp="2604.5,221.5",
+		pos="e,2561.4,193.75 2575.2,250.43 2564.8,245.28 2555.5,238.33 2548.5,229 2541.8,220.01 2546.6,209.73 2554.4,200.83",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -173,85 +170,203 @@ digraph {
 		width=1.5887];
 	"exon to transcript relationship" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2737,221.5",
-		pos="e,2686.9,196.24 1820.5,251.82 1839.8,249.92 1859.7,248.2 1878.5,247 1921.6,244.24 2616.8,248.15 2655.5,229 2666.2,223.71 2674.9,\
-214.09 2681.5,204.69",
+		lp="2731,221.5",
+		pos="e,2678.7,195.4 2664.1,246.84 2663.5,236.95 2663.7,224.45 2667.5,214 2668.8,210.42 2670.6,206.94 2672.7,203.64",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2827.5,178",
+		pos="2809.5,178",
 		width=1.0652];
 	"exon to transcript relationship" -> "original object"	[color=blue,
 		label="original object",
-		lp="2869,221.5",
-		pos="e,2824.5,195.98 1820.5,251.76 1839.8,249.87 1859.7,248.17 1878.5,247 1904.2,245.41 2783,243.09 2804.5,229 2812.6,223.68 2817.9,214.69 \
-2821.4,205.79",
+		lp="2856,221.5",
+		pos="e,2808.4,196.46 2759.6,250.71 2772.5,245.59 2784.7,238.57 2794.5,229 2800.6,223.04 2804.2,214.69 2806.4,206.52",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2942.5,178",
+		width=2.1304];
+	"exon to transcript relationship" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2986,221.5",
+		pos="e,2936.3,196.16 2776.9,252.54 2836.3,245.61 2899.8,236.67 2911.5,229 2920.2,223.28 2927,214.13 2931.9,205.22",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3113.5,178",
+		width=2.1304];
+	"exon to transcript relationship" -> "object category"	[color=blue,
+		label="object category",
+		lp="3131,221.5",
+		pos="e,3097.6,195.83 2774.9,252.27 2792.8,250.43 2811.2,248.61 2828.5,247 2877.5,242.43 3003.6,246.92 3049.5,229 3064.4,223.18 3078.7,\
+212.7 3089.9,202.83",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3246.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3268,221.5",
+		pos="e,3233.7,195.25 2772.7,252.01 2791.3,250.15 2810.4,248.39 2828.5,247 2868.6,243.9 3153.2,244.28 3190.5,229 3204.3,223.32 3217,212.69 \
+3226.8,202.68",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3346.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3388.5,221.5",
+		pos="e,3344.4,196.34 2771.8,251.89 2790.7,250.02 2810.2,248.29 2828.5,247 2856.1,245.05 3303.8,244.93 3326.5,229 3334.2,223.61 3338.9,\
+214.77 3341.8,206.01",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3479.5,178",
+		width=2.1304];
+	"exon to transcript relationship" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3547,221.5",
+		pos="e,3471.8,196.18 2771.4,251.83 2790.4,249.96 2810,248.24 2828.5,247 2862.5,244.72 3412.2,244.8 3442.5,229 3452.6,223.69 3460.7,214.2 \
+3466.7,204.9",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3671.5,178",
+		width=2.1304];
+	"exon to transcript relationship" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3738,221.5",
+		pos="e,3665.2,196.16 2770.5,251.8 2789.8,249.91 2809.7,248.19 2828.5,247 2873.4,244.15 3599.1,250.77 3638.5,229 3648,223.72 3655.3,214.36 \
+3660.6,205.15",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3861.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3910.5,221.5",
+		pos="e,3854.4,195.72 2770.5,251.74 2789.8,249.85 2809.7,248.15 2828.5,247 2883.8,243.61 3776.4,254.7 3825.5,229 3835.7,223.66 3843.7,\
+213.97 3849.5,204.54",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4020.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4064.5,221.5",
+		pos="e,4012.8,195.76 2770.1,251.74 2789.5,249.84 2809.6,248.14 2828.5,247 2860.5,245.08 3953.9,243.47 3982.5,229 3993,223.7 4001.3,214.03 \
+4007.5,204.59",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4171.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4224.5,221.5",
+		pos="e,4163.5,195.78 2770.1,251.72 2789.5,249.82 2809.6,248.12 2828.5,247 2864.6,244.86 4100,245.12 4132.5,229 4143.2,223.67 4151.9,213.85 \
+4158.3,204.32",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4342.5,178",
+		width=1.0652];
+	"exon to transcript relationship" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4390,221.5",
+		pos="e,4334.2,195.8 2770.1,251.69 2789.5,249.8 2809.6,248.11 2828.5,247 2869.4,244.61 4265.7,246.96 4302.5,229 4313.3,223.7 4322.2,213.88 \
+4328.8,204.34",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4504.5,178",
+		width=2.347];
+	"exon to transcript relationship" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4553,221.5",
+		pos="e,4495.6,196.31 2769.6,251.72 2789.2,249.81 2809.4,248.1 2828.5,247 2873.8,244.38 4422.5,248.65 4463.5,229 4474.3,223.79 4483.3,\
+214.18 4490,204.77",
 		style=solid];
 	type	[height=0.5,
-		pos="2915.5,178",
+		pos="4638.5,178",
 		width=0.86659];
 	"exon to transcript relationship" -> type	[color=blue,
 		label=type,
-		lp="2946.5,221.5",
-		pos="e,2924.9,195.54 1820.1,251.77 1839.5,249.87 1859.6,248.15 1878.5,247 1907.5,245.23 2904.1,249.72 2924.5,229 2930.7,222.69 2930.6,\
-213.66 2928.3,205",
+		lp="4652.5,221.5",
+		pos="e,4639.3,196.18 2769.6,251.7 2789.2,249.79 2809.4,248.09 2828.5,247 2853.4,245.57 4607,244.56 4626.5,229 4633.3,223.54 4636.7,214.93 \
+4638.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="3016.5,178",
+		pos="4739.5,178",
 		width=1.4263];
 	"exon to transcript relationship" -> category	[color=blue,
 		label=category,
-		lp="3021,221.5",
-		pos="e,3005.1,195.87 1820.1,251.76 1839.5,249.86 1859.6,248.15 1878.5,247 1938.8,243.34 2910.8,252.6 2966.5,229 2979,223.68 2990.1,213.59 \
-2998.6,203.85",
+		lp="4733,221.5",
+		pos="e,4723.9,195.25 2769.6,251.7 2789.2,249.79 2809.4,248.09 2828.5,247 2879.6,244.07 4624,245.38 4672.5,229 4688.7,223.53 4704.2,212.51 \
+4716.2,202.2",
 		style=solid];
 	subject	[height=0.5,
-		pos="3130.5,178",
+		pos="4853.5,178",
 		width=1.2277];
 	"exon to transcript relationship" -> subject	[color=blue,
 		label=subject,
-		lp="3113.5,221.5",
-		pos="e,3113.5,194.76 1820.1,251.74 1839.5,249.84 1859.6,248.13 1878.5,247 1943.8,243.08 2994.1,248.64 3056.5,229 3074.5,223.34 3092.1,\
-211.75 3105.6,201.16",
+		lp="4829.5,221.5",
+		pos="e,4834.2,194.33 2769.6,251.69 2789.2,249.78 2809.4,248.09 2828.5,247 2936.1,240.87 4664.6,257.8 4768.5,229 4789.2,223.25 4810.1,\
+211.09 4826,200.2",
 		style=solid];
 	object	[height=0.5,
-		pos="3173.5,91",
+		pos="4896.5,91",
 		width=1.0832];
 	"exon to transcript relationship" -> object	[color=blue,
 		label=object,
-		lp="3216.5,178",
-		pos="e,3186.9,108.09 1820.1,251.72 1839.5,249.83 1859.6,248.12 1878.5,247 1948.6,242.83 3077.5,253.23 3143.5,229 3186,213.39 3191.2,186.96 \
-3196.5,142 3197.3,135.38 3198.4,133.39 3196.5,127 3195.5,123.55 3194,120.13 3192.2,116.85",
+		lp="4940.5,178",
+		pos="e,4909.9,108.09 2769.6,251.68 2789.2,249.78 2809.4,248.08 2828.5,247 2884.8,243.8 4805.8,246.24 4859.5,229 4883.8,221.2 4892.1,217.1 \
+4906.5,196 4920.4,175.59 4916.6,166.51 4919.5,142 4920.3,135.38 4921.4,133.39 4919.5,127 4918.5,123.55 4917,120.13 4915.2,116.85",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1925.5,265",
+		pos="2875.5,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2056.5,265",
+		pos="3006.5,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3168.5,134.5",
-		pos="e,3155.6,107.23 3131.6,159.55 3132.8,149.57 3135.3,137.07 3140.5,127 3142.7,122.68 3145.6,118.52 3148.8,114.66"];
+		lp="4891.5,134.5",
+		pos="e,4878.6,107.23 4854.6,159.55 4855.8,149.57 4858.3,137.07 4863.5,127 4865.7,122.68 4868.6,118.52 4871.8,114.66"];
 	relation	[height=0.5,
-		pos="3118.5,18",
+		pos="4841.5,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3119.8,36.188 3129.2,159.79 3127.1,132.48 3123,78.994 3120.6,46.38",
+	subject -> relation	[pos="e,4842.8,36.188 4852.2,159.79 4850.1,132.48 4846,78.994 4843.6,46.38",
 		style=dotted];
 	"exon to transcript relationship_subject"	[color=blue,
 		height=0.5,
 		label=exon,
-		pos="2181.5,265",
+		pos="3131.5,265",
 		width=0.9027];
-	object -> relation	[pos="e,3131.3,35.54 3161,73.889 3154.1,64.939 3145.3,53.617 3137.5,43.584",
+	object -> relation	[pos="e,4854.3,35.54 4884,73.889 4877.1,64.939 4868.3,53.617 4860.5,43.584",
 		style=dotted];
 	"exon to transcript relationship_object"	[color=blue,
 		height=0.5,
 		label=transcript,
-		pos="2289.5,265",
+		pos="3239.5,265",
 		width=1.5887];
 }

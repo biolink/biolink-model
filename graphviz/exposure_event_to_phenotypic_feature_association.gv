@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,4596.4,283"];
+	graph [bb="0,0,6258.4,283"];
 	node [label="\N"];
 	"exposure event to phenotypic feature association"	[height=0.5,
 		label="exposure event to phenotypic feature association",
-		pos="2576.4,265",
+		pos="3379.4,265",
 		width=6.6439];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"exposure event to phenotypic feature association" -> association	[label=is_a,
-		lp="580.39,221.5",
-		pos="e,107.12,190.7 2337.2,264.38 1960.4,263.96 1205.7,258.96 566.39,229 374.05,219.99 324.67,225.55 134.39,196 128.7,195.12 122.8,194.02 \
-116.92,192.81"];
+		lp="570.39,221.5",
+		pos="e,107.12,190.68 3141.5,263.06 2556,260.43 1056.5,251.63 556.39,229 368.46,220.5 320.27,225.03 134.39,196 128.7,195.11 122.8,194.01 \
+116.93,192.8"];
 	"entity to phenotypic feature association mixin"	[height=0.5,
 		pos="367.39,178",
 		width=6.2286];
 	"exposure event to phenotypic feature association" -> "entity to phenotypic feature association mixin"	[label=uses,
 		lp="743.89,221.5",
-		pos="e,457.32,194.52 2338.4,263.03 1911.9,260.69 1033.1,253.03 727.39,229 639.08,222.06 539.35,207.69 467.3,196.13"];
+		pos="e,456.57,194.54 3140.2,264.67 2579.4,265.62 1192,264.19 727.39,229 638.76,222.29 538.66,207.82 466.55,196.17"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -26,8 +26,8 @@ digraph {
 	"exposure event to phenotypic feature association" -> id	[color=blue,
 		label=id,
 		lp="861.39,221.5",
-		pos="e,677.38,189.97 2337.2,264.62 1933.6,264.74 1134,260.77 854.39,229 783.12,220.9 765.47,215.35 696.39,196 693.29,195.13 690.09,194.16 \
-686.89,193.14",
+		pos="e,677.38,189.97 3141.3,263.31 2555.8,261.23 1077.2,253.58 854.39,229 783.09,221.13 765.47,215.35 696.39,196 693.29,195.13 690.09,\
+194.16 686.89,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -37,7 +37,7 @@ digraph {
 	"exposure event to phenotypic feature association" -> iri	[color=blue,
 		label=iri,
 		lp="958.39,221.5",
-		pos="e,782.71,189.98 2337,264.66 1951.8,264.73 1211.2,260.56 950.39,229 894.94,222.29 832.78,205.31 792.47,193",
+		pos="e,782.7,190.05 3141.2,263.34 2571.8,261.38 1163.4,254.02 950.39,229 894.92,222.49 832.76,205.47 792.46,193.09",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,7 +47,7 @@ digraph {
 	"exposure event to phenotypic feature association" -> name	[color=blue,
 		label=name,
 		lp="1054.4,221.5",
-		pos="e,902.73,192.32 2340.1,262.14 1939.8,258.47 1159.3,248.85 1034.4,229 992.1,222.28 945.54,207.58 912.52,195.85",
+		pos="e,902.72,192.4 3140.4,264.19 2584.7,264.09 1237.9,260.54 1034.4,229 992.08,222.44 945.52,207.73 912.51,195.95",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,7 +57,7 @@ digraph {
 	"exposure event to phenotypic feature association" -> description	[color=blue,
 		label=description,
 		lp="1157.9,221.5",
-		pos="e,1042.8,195.22 2337.5,264.02 1954,263.19 1232,257.75 1117.4,229 1094.1,223.16 1070,211.16 1051.5,200.38",
+		pos="e,1042.8,195.28 3141.4,263.19 2580.2,260.88 1214.2,252.85 1117.4,229 1094.1,223.26 1070,211.26 1051.5,200.46",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,7 +67,7 @@ digraph {
 	"exposure event to phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
 		lp="1277.4,221.5",
-		pos="e,1179.3,195.41 2341.4,261.58 1969.5,257.21 1281.8,246.8 1230.4,229 1214.3,223.44 1199,212.52 1187,202.3",
+		pos="e,1179,195.22 3140.5,264.04 2599.3,263.6 1319.3,259.33 1230.4,229 1214.2,223.48 1198.7,212.45 1186.7,202.15",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -77,18 +77,18 @@ digraph {
 	"exposure event to phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1377.4,221.5",
-		pos="e,1317.4,196.12 2338.6,262.94 1992.4,260.58 1385.8,253.02 1343.4,229 1334,223.67 1326.9,214.3 1321.8,205.1",
+		pos="e,1317.4,196.16 3141.7,262.84 2612.9,259.86 1382.1,250.63 1343.4,229 1333.9,223.72 1326.9,214.36 1321.8,205.16",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="3387.4,91",
+		pos="5049.4,91",
 		width=1.9318];
 	"exposure event to phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="1456.4,178",
-		pos="e,3317.7,91.747 2339.5,262.46 2152.1,259.46 1884,251.19 1650.4,229 1550.1,219.47 1364.4,232.49 1434.4,160 1500.5,91.603 2949,90.853 \
-3307.6,91.721",
+		pos="e,4979.7,91.969 3141.2,263.07 2736.7,260.85 1931.6,253.4 1649.4,229 1549.4,220.35 1364.1,231.63 1434.4,160 1498.5,94.718 4444.1,\
+91.943 4969.6,91.968",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -97,8 +97,8 @@ digraph {
 		width=1.2999];
 	"exposure event to phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="1759.4,221.5",
-		pos="e,1569,190.38 2349,259.42 2139.8,254.32 1845.3,244.68 1730.4,229 1677.3,221.76 1617.9,205.39 1578.5,193.34",
+		lp="1757.4,221.5",
+		pos="e,1568.2,190.48 3143.7,261.77 2720.9,257.36 1864.5,246.4 1728.4,229 1675.8,222.28 1617.1,205.84 1578.2,193.64",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -107,8 +107,8 @@ digraph {
 		width=2.1304];
 	"exposure event to phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1891.9,221.5",
-		pos="e,1717,193.16 2353.5,258.43 2178.8,253.08 1950.3,243.61 1858.4,229 1813.2,221.81 1763.2,207.7 1726.8,196.3",
+		lp="1896.9,221.5",
+		pos="e,1717.4,193.23 3144.4,261.63 2750.1,257.2 1986.2,246.5 1863.4,229 1816.4,222.31 1764.4,207.91 1727,196.28",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -117,8 +117,8 @@ digraph {
 		width=1.7332];
 	"exposure event to phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2027.4,221.5",
-		pos="e,1866.5,193.14 2361,257.16 2221.7,251.6 2053.6,242.46 1983.4,229 1946.4,221.9 1905.9,208.15 1876.1,196.86",
+		lp="2042.4,221.5",
+		pos="e,1868.3,192.88 3144.5,261.46 2779.9,257.01 2107.9,246.55 1998.4,229 1956.8,222.33 1911,208 1878.1,196.38",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -127,8 +127,8 @@ digraph {
 		width=2.0943];
 	"exposure event to phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2170.9,221.5",
-		pos="e,2021.7,194.19 2351.6,258.79 2278.5,253.87 2197.4,244.94 2124.4,229 2092.2,221.98 2057.4,209.06 2031,198.12",
+		lp="2201.9,221.5",
+		pos="e,2026.5,193.55 3140.3,264.58 2838.9,264.03 2338.2,258.45 2155.4,229 2114.4,222.39 2069.3,208.49 2036.4,197.02",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -137,8 +137,8 @@ digraph {
 		width=3.015];
 	"exposure event to phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2306.9,221.5",
-		pos="e,2203,195.94 2383.1,254.38 2324.4,249.16 2268.6,241.16 2242.4,229 2230,223.23 2218.7,213.26 2209.8,203.74",
+		lp="2357.9,221.5",
+		pos="e,2216.8,195.64 3144.2,261.62 2849.5,257.84 2373.3,248.74 2293.4,229 2269.6,223.12 2244.8,211.28 2225.5,200.6",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -147,8 +147,8 @@ digraph {
 		width=3.015];
 	"exposure event to phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2473.4,221.5",
-		pos="e,2394.2,195.46 2429.6,250.78 2405.9,245.71 2386.5,238.7 2378.4,229 2370.6,219.76 2376.4,210.01 2386.1,201.6",
+		lp="2529.4,221.5",
+		pos="e,2423.5,196.48 3142.1,262.57 2870.9,259.84 2460.8,251.93 2434.4,229 2428,223.41 2425.1,214.91 2424,206.5",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -157,8 +157,8 @@ digraph {
 		width=3.015];
 	"exposure event to phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2683.9,221.5",
-		pos="e,2602.3,193.23 2572.3,246.85 2570.9,236.48 2571,223.49 2577.4,214 2581.6,207.77 2587.2,202.65 2593.4,198.43",
+		lp="2738.9,221.5",
+		pos="e,2640.7,196.14 3146.9,260.78 2934.3,256.66 2650.2,247.68 2632.4,229 2625.5,221.8 2628.3,212.59 2634.2,204.05",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -167,8 +167,8 @@ digraph {
 		width=1.5346];
 	"exposure event to phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2846.4,221.5",
-		pos="e,2829.7,195.66 2727.7,251.04 2749.4,245.85 2771,238.73 2790.4,229 2802.6,222.87 2813.9,212.85 2822.8,203.39",
+		lp="2895.4,221.5",
+		pos="e,2843.9,196.19 3149.5,259.98 3021.9,255.73 2884.2,246.98 2860.4,229 2853.1,223.49 2848.7,214.74 2846.2,206.1",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -177,8 +177,8 @@ digraph {
 		width=1.0652];
 	"exposure event to phenotypic feature association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2961.4,221.5",
-		pos="e,2934.2,193.57 2744.6,252.17 2801.5,246.59 2857.3,238.94 2883.4,229 2885.9,228.05 2907.3,212.91 2925.9,199.53",
+		lp="2994.4,221.5",
+		pos="e,2941.9,195.19 3152.7,259.25 3052.7,254.75 2954.1,246 2938.4,229 2932.1,222.22 2933.3,212.97 2937.1,204.27",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -187,8 +187,8 @@ digraph {
 		width=1.5887];
 	"exposure event to phenotypic feature association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3102.9,221.5",
-		pos="e,3056.5,196.06 2743.5,252.09 2866,243.16 3011.9,231.97 3018.4,229 3030.6,223.38 3041.5,213.43 3050,203.88",
+		lp="3121.9,221.5",
+		pos="e,3058.6,195.75 3192.2,253.77 3127.5,248.29 3068.5,240.29 3058.4,229 3052.6,222.56 3052.7,213.75 3055,205.31",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -197,148 +197,263 @@ digraph {
 		width=1.0652];
 	"exposure event to phenotypic feature association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3230.9,221.5",
-		pos="e,3182.4,196.12 2744.5,252.16 2771.5,250.36 2799.2,248.58 2825.4,247 2863.5,244.7 3138.6,252.85 3168.4,229 3175.3,223.47 3179,214.84 \
-3180.9,206.29",
+		lp="3250.9,221.5",
+		pos="e,3183.9,196.25 3257.1,249.46 3231.5,244.34 3209.3,237.63 3199.4,229 3192.7,223.17 3188.7,214.61 3186.2,206.22",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3315.4,178",
+		width=2.1304];
+	"exposure event to phenotypic feature association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3368.9,221.5",
+		pos="e,3308.1,196.39 3328.7,247.39 3321,242.65 3314.1,236.63 3309.4,229 3305.2,222.28 3304.8,214.07 3305.9,206.26",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3486.4,178",
+		width=2.1304];
+	"exposure event to phenotypic feature association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3501.9,221.5",
+		pos="e,3468,195.66 3404.1,246.98 3412,241.4 3420.7,235.07 3428.4,229 3439.1,220.58 3450.6,210.87 3460.4,202.27",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3619.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3638.9,221.5",
+		pos="e,3605.2,195.02 3502.2,249.49 3522.5,244.54 3543,237.9 3561.4,229 3574.9,222.45 3587.8,211.92 3598,202.21",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3715.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3756.4,221.5",
+		pos="e,3712.8,196.12 3550.2,252.39 3617.4,246.43 3681.8,238.43 3694.4,229 3702,223.35 3706.8,214.45 3709.9,205.72",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3848.4,178",
+		width=2.1304];
+	"exposure event to phenotypic feature association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3914.9,221.5",
+		pos="e,3840.3,195.98 3545.8,252.03 3664.6,243.25 3804.4,232.3 3810.4,229 3820.5,223.44 3828.8,213.91 3835,204.64",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4037.4,178",
+		width=2.1304];
+	"exposure event to phenotypic feature association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4104.9,221.5",
+		pos="e,4031.7,196.03 3546.8,252.1 3574.1,250.29 3602,248.53 3628.4,247 3670.4,244.57 3970.2,250.32 4006.4,229 4015.5,223.62 4022.4,214.37 \
+4027.3,205.28",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4227.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4277.4,221.5",
+		pos="e,4220.4,196.15 3544.1,251.91 3572.2,250.09 3601.1,248.37 3628.4,247 3659.7,245.43 4164.8,243.92 4192.4,229 4202.2,223.71 4209.8,\
+214.34 4215.4,205.14",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4386.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4430.4,221.5",
+		pos="e,4379,195.71 3542.7,251.83 3571.3,250 3600.7,248.29 3628.4,247 3668.4,245.13 4313.8,247.48 4349.4,229 4359.7,223.64 4367.9,213.95 \
+4373.9,204.52",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4537.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4590.4,221.5",
+		pos="e,4529.4,195.75 3542.1,251.78 3570.8,249.94 3600.5,248.24 3628.4,247 3676.7,244.85 4455.2,250.66 4498.4,229 4509.1,223.64 4517.7,\
+213.81 4524.1,204.28",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4657.4,178",
+		width=1.0652];
+	"exposure event to phenotypic feature association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4743.9,221.5",
+		pos="e,4667.7,195.5 3541.4,251.74 3570.4,249.89 3600.3,248.2 3628.4,247 3657.3,245.77 4648.1,249.61 4668.4,229 4674.6,222.64 4674.3,213.6 \
+4671.6,204.94",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4798.4,178",
+		width=2.347];
+	"exposure event to phenotypic feature association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4891.9,221.5",
+		pos="e,4813.2,196.2 3541.1,251.71 3570.1,249.86 3600.1,248.18 3628.4,247 3661.4,245.62 4794.2,252.53 4817.4,229 4823.9,222.42 4822.5,\
+213.41 4818.3,204.84",
 		style=solid];
 	type	[height=0.5,
-		pos="3270.4,178",
+		pos="4932.4,178",
 		width=0.86659];
 	"exposure event to phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3307.4,221.5",
-		pos="e,3282.7,194.83 2742.1,252.01 2769.9,250.19 2798.5,248.44 2825.4,247 2851,245.63 3268.6,247.47 3286.4,229 3293,222.17 3291.6,212.65 \
-3287.6,203.75",
+		lp="4986.4,221.5",
+		pos="e,4951.1,192.56 3540.7,251.69 3569.9,249.84 3600,248.16 3628.4,247 3647,246.24 4952.4,242.22 4965.4,229 4974,220.33 4967.8,209.12 \
+4958.5,199.52",
 		style=solid];
 	category	[height=0.5,
-		pos="3371.4,178",
+		pos="5033.4,178",
 		width=1.4263];
 	"exposure event to phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3377.9,221.5",
-		pos="e,3361.8,195.73 2741.8,251.96 2769.7,250.14 2798.3,248.41 2825.4,247 2881.1,244.1 3277,252.9 3327.4,229 3338.9,223.56 3348.6,213.59 \
-3356,203.97",
+		lp="5051.9,221.5",
+		pos="e,5029.1,196.09 3540.7,251.68 3569.9,249.83 3600,248.15 3628.4,247 3666.6,245.45 4973.6,248.82 5006.4,229 5015.1,223.75 5021.1,214.65 \
+5025.3,205.64",
 		style=solid];
 	subject	[height=0.5,
-		pos="3485.4,178",
+		pos="5147.4,178",
 		width=1.2277];
 	"exposure event to phenotypic feature association" -> subject	[color=blue,
 		label=subject,
-		lp="3469.4,221.5",
-		pos="e,3468.6,194.9 2740.8,251.9 2769,250.08 2798,248.35 2825.4,247 2890.7,243.77 3351.3,249.49 3413.4,229 3430.7,223.29 3447.6,211.98 \
-3460.6,201.56",
+		lp="5139.4,221.5",
+		pos="e,5133.5,195.46 3540.4,251.69 3569.7,249.83 3599.9,248.15 3628.4,247 3668.9,245.37 5049.4,243.03 5087.4,229 5102.1,223.56 5115.8,\
+212.8 5126.4,202.65",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="3632.4,178",
+		pos="5294.4,178",
 		width=2.3651];
 	"exposure event to phenotypic feature association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3620.4,221.5",
-		pos="e,3599.9,194.69 2740.1,251.85 2768.5,250.02 2797.8,248.31 2825.4,247 2975.1,239.9 3352.3,257.76 3499.4,229 3531,222.83 3564.9,209.98 \
-3590.5,198.85",
+		lp="5287.4,221.5",
+		pos="e,5264,194.83 3540.4,251.67 3569.7,249.81 3599.9,248.14 3628.4,247 3713.9,243.58 5085.4,245.68 5169.4,229 5199.1,223.09 5230.9,210.32 \
+5254.9,199.17",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
 		label="severity value",
-		pos="3811.4,178",
+		pos="5473.4,178",
 		width=2.1123];
 	"exposure event to phenotypic feature association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="3801.4,221.5",
-		pos="e,3782.6,194.75 2739.1,251.78 2767.8,249.94 2797.5,248.24 2825.4,247 2921.7,242.72 3598.1,249.02 3692.4,229 3720.7,222.99 3750.8,\
-210.31 3773.6,199.22",
+		lp="5466.4,221.5",
+		pos="e,5445.9,194.84 3540.1,251.66 3569.4,249.8 3599.8,248.12 3628.4,247 3724.5,243.22 5265.4,249.22 5359.4,229 5386.6,223.15 5415.2,\
+210.56 5437,199.48",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
 		label=onset,
-		pos="3941.4,178",
+		pos="5603.4,178",
 		width=1.011];
 	"exposure event to phenotypic feature association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="3948.9,221.5",
-		pos="e,3924.7,194.26 2738.4,251.74 2767.4,249.89 2797.3,248.2 2825.4,247 2883.2,244.53 3811.2,246.24 3866.4,229 3884.8,223.24 3902.9,\
-211.42 3916.7,200.72",
+		lp="5612.9,221.5",
+		pos="e,5587.5,194.3 3540.1,251.64 3569.4,249.78 3599.8,248.11 3628.4,247 3681.2,244.95 5481,245.04 5531.4,229 5549.3,223.3 5566.7,211.48 \
+5579.9,200.76",
 		style=solid];
 	"sex qualifier"	[color=blue,
 		height=0.5,
 		label="biological sex",
-		pos="4069.4,178",
+		pos="5731.4,178",
 		width=2.0401];
 	"exposure event to phenotypic feature association" -> "sex qualifier"	[color=blue,
 		label="sex qualifier",
-		lp="4076.4,221.5",
-		pos="e,4053.8,195.71 2738.1,251.71 2767.1,249.86 2797.1,248.18 2825.4,247 2890.8,244.27 3942.5,250.57 4004.4,229 4020,223.55 4034.8,212.75 \
-4046.4,202.58",
+		lp="5739.4,221.5",
+		pos="e,5716.2,195.98 3540.1,251.63 3569.4,249.76 3599.8,248.1 3628.4,247 3685,244.82 5615,247.89 5668.4,229 5683.4,223.68 5697.6,213.15 \
+5708.7,203.12",
 		style=solid];
 	"has count"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="4205.4,178",
+		pos="5867.4,178",
 		width=1.2277];
 	"exposure event to phenotypic feature association" -> "has count"	[color=blue,
 		label="has count",
-		lp="4193.4,221.5",
-		pos="e,4186.8,194.54 2737.7,251.7 2766.9,249.84 2797,248.16 2825.4,247 2897.5,244.04 4055.1,249.18 4124.4,229 4144,223.28 4163.6,211.41 \
-4178.6,200.67",
+		lp="5855.4,221.5",
+		pos="e,5849.1,194.57 3539.7,251.64 3569.2,249.77 3599.7,248.1 3628.4,247 3688.3,244.71 5729.8,245.77 5787.4,229 5806.8,223.33 5826.2,\
+211.47 5841,200.71",
 		style=solid];
 	"has total"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="4311.4,178",
+		pos="5973.4,178",
 		width=1.2277];
 	"exposure event to phenotypic feature association" -> "has total"	[color=blue,
 		label="has total",
-		lp="4296.9,221.5",
-		pos="e,4293.4,194.54 2737.7,251.68 2766.9,249.82 2797,248.15 2825.4,247 2903.5,243.84 4157.5,251.24 4232.4,229 4251.6,223.29 4270.7,211.42 \
-4285.3,200.68",
+		lp="5958.9,221.5",
+		pos="e,5955.4,194.57 3539.7,251.63 3569.2,249.76 3599.7,248.09 3628.4,247 3691.3,244.61 5834,246.76 5894.4,229 5913.7,223.33 5932.8,211.47 \
+5947.3,200.71",
 		style=solid];
 	"has quotient"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="4415.4,178",
+		pos="6077.4,178",
 		width=1.1735];
 	"exposure event to phenotypic feature association" -> "has quotient"	[color=blue,
 		label="has quotient",
-		lp="4411.4,221.5",
-		pos="e,4396.7,194.31 2737.4,251.68 2766.7,249.82 2796.9,248.14 2825.4,247 2909.1,243.65 4251.9,251.9 4332.4,229 4352.5,223.27 4372.7,\
-211.28 4388.2,200.48",
+		lp="6073.4,221.5",
+		pos="e,6058.7,194.34 3539.7,251.62 3569.2,249.75 3599.7,248.09 3628.4,247 3694.1,244.51 5931.1,246.84 5994.4,229 6014.6,223.31 6034.8,\
+211.32 6050.2,200.51",
 		style=solid];
 	"has percentage"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="4522.4,178",
+		pos="6184.4,178",
 		width=1.1735];
 	"exposure event to phenotypic feature association" -> "has percentage"	[color=blue,
 		label="has percentage",
-		lp="4541.4,221.5",
-		pos="e,4507.9,195.47 2737.4,251.66 2766.7,249.8 2796.9,248.13 2825.4,247 2870.8,245.2 4417.6,244.35 4460.4,229 4475.5,223.58 4489.6,212.83 \
-4500.6,202.67",
+		lp="6203.4,221.5",
+		pos="e,6170.4,195 3539.7,251.61 3569.2,249.74 3599.7,248.08 3628.4,247 3697.6,244.39 6057.1,252.3 6122.4,229 6137.7,223.54 6152,212.56 \
+6163,202.28",
 		style=solid];
 	relation	[height=0.5,
-		pos="3436.4,18",
+		pos="5098.4,18",
 		width=1.2999];
-	object -> relation	[pos="e,3424.9,35.705 3399,73.174 3405,64.509 3412.4,53.768 3419,44.141",
+	object -> relation	[pos="e,5086.9,35.705 5061,73.174 5067,64.509 5074.4,53.768 5081,44.141",
 		style=dotted];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2872.4,265",
+		pos="3675.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="3003.4,265",
+		pos="3806.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3443.4,134.5",
-		pos="e,3393.8,108.97 3452.9,165.59 3440.1,159.94 3426,152.13 3415.4,142 3408.4,135.31 3402.7,126.48 3398.3,118.1"];
-	subject -> relation	[pos="e,3447.6,35.828 3484,159.99 3481.9,139.02 3477,102.55 3466.4,73 3462.9,63.258 3457.8,53.189 3452.8,44.423",
+		lp="5105.4,134.5",
+		pos="e,5055.8,108.97 5114.9,165.59 5102.1,159.94 5088,152.13 5077.4,142 5070.4,135.31 5064.7,126.48 5060.3,118.1"];
+	subject -> relation	[pos="e,5109.6,35.828 5146,159.99 5143.9,139.02 5139,102.55 5128.4,73 5124.9,63.258 5119.8,53.189 5114.8,44.423",
 		style=dotted];
 	"exposure event to phenotypic feature association_subject"	[color=blue,
 		height=0.5,
 		label="exposure event",
-		pos="3178.4,265",
+		pos="3981.4,265",
 		width=2.2748];
 }

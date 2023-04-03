@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,4916,283"];
+	graph [bb="0,0,6632,283"];
 	node [label="\N"];
 	"chemical or drug or treatment side effect disease or phenotypic feature association"	[height=0.5,
 		label="chemical or drug or treatment side effect disease or phenotypic feature association",
-		pos="2883.4,265",
+		pos="3901.4,265",
 		width=11.049];
 	"chemical or drug or treatment to disease or phenotypic feature association"	[height=0.5,
 		pos="359.42,178",
 		width=9.9838];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "chemical or drug or treatment to disease or phenotypic feature association"	[label=is_a,
 		lp="1321.4,221.5",
-		pos="e,576.77,192.35 2509.2,258.9 2189.8,253.78 1718.3,244.4 1307.4,229 1061.1,219.77 778.97,204.26 586.99,192.95"];
+		pos="e,571.57,192.57 3505,263.48 2996,261.69 2085.7,254.77 1307.4,229 1058.8,220.77 773.84,204.87 581.79,193.2"];
 	"chemical to entity association mixin"	[height=0.5,
 		pos="914.42,178",
 		width=4.9287];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "chemical to entity association mixin"	[label=uses,
 		lp="1627.9,221.5",
-		pos="e,1039.4,190.81 2520.7,257.6 2266.2,252.23 1917.9,243.13 1611.4,229 1384.5,218.54 1327.9,213.62 1101.4,196 1084.6,194.69 1067,193.22 \
+		pos="e,1039.4,190.81 3504.4,263.87 3047.6,262.34 2275,255.52 1611.4,229 1384.5,219.93 1327.9,213.62 1101.4,196 1084.6,194.69 1067,193.22 \
 1049.6,191.71"];
 	"entity to disease or phenotypic feature association mixin"	[height=0.5,
 		pos="1384.4,178",
 		width=7.6188];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "entity to disease or phenotypic feature association mixin"	[label=uses,
 		lp="1810.9,221.5",
-		pos="e,1490.8,194.61 2500.9,260.04 2291.9,255.78 2028.6,247.01 1794.4,229 1695.1,221.36 1582.8,207.28 1500.9,196.01"];
+		pos="e,1488.2,194.7 3507.7,262.39 2992,259.42 2115.8,251.2 1794.4,229 1694,222.06 1580.4,207.69 1498.3,196.13"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -31,9 +31,9 @@ digraph {
 		width=1.0652];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> id	[color=blue,
 		label=id,
-		lp="1927.4,221.5",
-		pos="e,1744.4,189.97 2523.6,257.3 2299.8,251.89 2033.7,242.86 1920.4,229 1849.6,220.34 1832.1,215.28 1763.4,196 1760.3,195.13 1757.1,\
-194.16 1753.9,193.14",
+		lp="1928.4,221.5",
+		pos="e,1744.4,189.97 3513,261.06 2981.1,256.43 2074.3,246.16 1921.4,229 1850.1,221 1832.5,215.35 1763.4,196 1760.3,195.13 1757.1,194.16 \
+1753.9,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -42,9 +42,8 @@ digraph {
 		width=1.2277];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> iri	[color=blue,
 		label=iri,
-		lp="2031.4,221.5",
-		pos="e,1849.3,190.12 2539.4,255.95 2344.5,250.21 2120.8,241.32 2023.4,229 1954,220.21 1937.1,214.05 1869.4,196 1866,195.1 1862.6,194.12 \
-1859.1,193.09",
+		lp="2024.4,221.5",
+		pos="e,1849.6,190.01 3513.4,260.99 3004.8,256.39 2160.1,246.28 2016.4,229 1961.2,222.36 1899.4,205.37 1859.3,193.03",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -53,8 +52,8 @@ digraph {
 		width=1.5707];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> name	[color=blue,
 		label=name,
-		lp="2124.4,221.5",
-		pos="e,1970.8,192.2 2532.7,256.48 2366,251.23 2185.7,242.65 2104.4,229 2061.4,221.79 2014,207.12 1980.3,195.53",
+		lp="2120.4,221.5",
+		pos="e,1969.5,192.36 3508.9,262.08 3020.8,258.81 2235,250.28 2100.4,229 2058.4,222.35 2012.1,207.65 1979.3,195.9",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -63,8 +62,8 @@ digraph {
 		width=2.0943];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> description	[color=blue,
 		label=description,
-		lp="2225.9,221.5",
-		pos="e,2110.2,195.02 2509.4,258.86 2378,254.15 2247.6,245.34 2185.4,229 2162,222.86 2137.7,210.85 2118.9,200.14",
+		lp="2223.9,221.5",
+		pos="e,2109.6,195.24 3516.2,260.51 3029.4,255.46 2246.8,244.93 2183.4,229 2160.4,223.23 2136.7,211.31 2118.4,200.56",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -74,7 +73,7 @@ digraph {
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
 		lp="2342.4,221.5",
-		pos="e,2245.8,195.22 2576.8,253.53 2448.9,247.7 2323.5,239.48 2295.4,229 2279.8,223.17 2264.9,212.22 2253.3,202.06",
+		pos="e,2245.8,195.42 3510.4,261.57 3053.4,257.82 2351.8,248.87 2295.4,229 2279.7,223.46 2264.8,212.55 2253.2,202.32",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -84,7 +83,7 @@ digraph {
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> subject	[color=blue,
 		label=subject,
 		lp="2436.4,221.5",
-		pos="e,2379.1,196.03 2602.2,252.25 2511.6,246.68 2429.4,239.02 2410.4,229 2400,223.5 2391.3,213.97 2384.8,204.7",
+		pos="e,2379,196.24 3506,262.96 3080.9,260.6 2458.9,253.03 2410.4,229 2399.7,223.71 2391,214.09 2384.4,204.68",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -94,7 +93,8 @@ digraph {
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="2507.4,178",
-		pos="e,2465.8,109.02 2670.5,249.79 2590.7,240 2512.7,223.56 2485.4,196 2465.7,176.04 2463.5,142.62 2464.9,119.07",
+		pos="e,2465.7,109.09 3533.1,258.16 3241.3,252.61 2857.6,243.02 2702.4,229 2605.3,220.23 2554.8,264.6 2485.4,196 2465.5,176.25 2463.3,\
+142.8 2464.8,119.17",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -103,8 +103,8 @@ digraph {
 		width=1.2999];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="2753.4,221.5",
-		pos="e,2616.5,191.48 2798.3,247.39 2774.3,242.12 2748.2,235.86 2724.4,229 2690.8,219.31 2653.6,205.77 2626.2,195.22",
+		lp="2812.4,221.5",
+		pos="e,2620,190.39 3519.3,259.98 3252.7,255.66 2920.9,246.84 2783.4,229 2729.6,222.02 2669.4,205.52 2629.6,193.37",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -113,8 +113,8 @@ digraph {
 		width=2.1304];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2845.9,221.5",
-		pos="e,2752.9,195.02 2847.8,247.03 2836.4,241.45 2823.8,235.11 2812.4,229 2795.5,219.92 2777.1,209.3 2761.6,200.19",
+		lp="2945.9,221.5",
+		pos="e,2768.3,193.2 3523,259.45 3294.9,254.97 3026.9,246.18 2912.4,229 2866.1,222.05 2814.8,207.75 2777.9,196.22",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -123,8 +123,8 @@ digraph {
 		width=1.7332];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2927.4,221.5",
-		pos="e,2883.4,196.18 2883.4,246.8 2883.4,235.16 2883.4,219.55 2883.4,206.24",
+		lp="3083.4,221.5",
+		pos="e,2918,193.08 3528.2,258.73 3339.7,254.08 3131.7,245.35 3039.4,229 3000.8,222.15 2958.4,208.15 2927.6,196.7",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -133,8 +133,8 @@ digraph {
 		width=2.0943];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="3044.9,221.5",
-		pos="e,3021.2,195.69 2936.2,247.01 2949.4,241.95 2963.2,235.88 2975.4,229 2988.8,221.48 3002.3,211.34 3013.5,202.15",
+		lp="3229.9,221.5",
+		pos="e,3073.9,194.09 3553,256.3 3406.6,251.14 3254,242.68 3183.4,229 3148.9,222.31 3111.4,209.1 3083.4,197.94",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -143,8 +143,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="3208.9,221.5",
-		pos="e,3201.4,194.73 3003,247.83 3033.3,242.75 3065.8,236.47 3095.4,229 3128.1,220.77 3163.9,208.57 3191.8,198.28",
+		lp="3368.9,221.5",
+		pos="e,3257,195.95 3589.2,253.81 3459.7,248.06 3332.8,239.82 3304.4,229 3289.6,223.35 3275.6,212.89 3264.5,202.99",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -153,8 +153,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="3444.4,221.5",
-		pos="e,3426.2,193.96 3108.7,250.14 3164.1,245.05 3223.1,238.18 3277.4,229 3324.7,221.01 3377.3,207.6 3416.5,196.68",
+		lp="3535.4,221.5",
+		pos="e,3452.2,195.77 3574.4,254.73 3506.6,249.55 3452,241.49 3440.4,229 3433,220.97 3437.2,211.37 3445,202.74",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -163,8 +163,8 @@ digraph {
 		width=3.015];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3710.9,221.5",
-		pos="e,3668.9,194.69 3164,252.21 3326.2,244.85 3505.5,235.55 3543.4,229 3583,222.17 3626.3,209.11 3659.1,198.05",
+		lp="3744.9,221.5",
+		pos="e,3662.2,194.17 3681.9,249.98 3662,244.87 3646.3,238.05 3638.4,229 3628,217.1 3637.8,206.69 3653.2,198.49",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -173,9 +173,8 @@ digraph {
 		width=1.5346];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3886.4,221.5",
-		pos="e,3876.4,195.13 3161.2,252.11 3204.4,250.34 3248.6,248.58 3290.4,247 3349.4,244.77 3765.4,247.59 3821.4,229 3838.6,223.3 3855.4,\
-212.1 3868.4,201.75",
+		lp="3891.4,221.5",
+		pos="e,3870.6,194.47 3871.3,246.83 3865.3,241.89 3859.8,235.93 3856.4,229 3851.7,219.42 3856.2,209.79 3863.4,201.57",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -184,9 +183,8 @@ digraph {
 		width=1.0652];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="4014.4,221.5",
-		pos="e,3987.4,194.2 3158.7,252 3202.8,250.22 3247.8,248.49 3290.4,247 3361,244.53 3857.9,249.42 3925.4,229 3944.9,223.1 3964.4,211.1 \
-3979.2,200.34",
+		lp="4005.4,221.5",
+		pos="e,3981.4,192.24 3916,246.75 3925.1,236.6 3937.3,223.86 3949.4,214 3956.6,208.17 3964.8,202.54 3972.7,197.56",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -195,58 +193,174 @@ digraph {
 		width=1.5887];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="4158.9,221.5",
-		pos="e,4109.6,195.8 3156.2,251.9 3201.1,250.11 3247,248.4 3290.4,247 3334,245.59 4034.8,247.18 4074.4,229 4086.1,223.65 4096,213.69 4103.6,\
-204.05",
+		lp="4147.9,221.5",
+		pos="e,4104.3,195.85 4011.1,247.63 4028.4,242.9 4045.8,236.82 4061.4,229 4074.5,222.46 4087,212.32 4097.1,202.87",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="4251.4,178",
+		pos="4233.4,178",
 		width=1.0652];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "original object"	[color=blue,
 		label="original object",
-		lp="4291.9,221.5",
-		pos="e,4247.7,196.03 3154.6,251.82 3199.9,250.03 3246.5,248.34 3290.4,247 3316.4,246.21 4204.4,242.88 4226.4,229 4234.9,223.67 4240.5,\
-214.56 4244.3,205.56",
+		lp="4275.9,221.5",
+		pos="e,4230.4,196.13 4145.7,250.74 4174.5,245.61 4198.4,238.59 4211.4,229 4219.1,223.36 4224.1,214.47 4227.4,205.74",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4366.4,178",
+		width=2.1304];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="4406.9,221.5",
+		pos="e,4359.3,195.95 4164.2,251.47 4243.9,245.91 4314.9,238.45 4331.4,229 4341.1,223.47 4348.7,214.06 4354.3,204.89",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4537.4,178",
+		width=2.1304];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "object category"	[color=blue,
+		label="object category",
+		lp="4552.9,221.5",
+		pos="e,4520.9,195.7 4160.6,251.34 4303.4,243.8 4455,234.64 4470.4,229 4486.1,223.24 4501.3,212.51 4513.2,202.47",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4670.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="4688.9,221.5",
+		pos="e,4654.7,194.68 4182.2,252.25 4376.5,243.78 4602,233.15 4612.4,229 4620.3,225.85 4634.7,213.43 4647.2,201.76",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4766.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="4807.4,221.5",
+		pos="e,4763.9,196.35 4182.2,252.25 4224.5,250.49 4267.6,248.69 4308.4,247 4332.7,245.99 4725.5,242.86 4745.4,229 4753.2,223.61 4758.1,\
+214.78 4761.2,206.02",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4899.4,178",
+		width=2.1304];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="4965.9,221.5",
+		pos="e,4891.4,196.18 4178.6,252.08 4222.1,250.31 4266.5,248.56 4308.4,247 4339.1,245.86 4834.1,243.11 4861.4,229 4871.7,223.69 4880,214.2 \
+4886.2,204.89",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="5088.4,178",
+		width=2.1304];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="5155.9,221.5",
+		pos="e,5082.7,196.12 4174.8,251.92 4219.4,250.13 4265.2,248.42 4308.4,247 4350,245.63 5021.3,249.68 5057.4,229 5066.6,223.73 5073.5,214.5 \
+5078.3,205.39",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5278.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="5328.4,221.5",
+		pos="e,5271.4,196.2 4172.6,251.82 4217.9,250.03 4264.5,248.34 4308.4,247 4334.4,246.21 5220.5,241.22 5243.4,229 5253.2,223.77 5260.9,\
+214.42 5266.5,205.2",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5437.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="5481.4,221.5",
+		pos="e,5430.1,195.74 4171.2,251.77 4217,249.97 4264.1,248.29 4308.4,247 4338.7,246.12 5373.4,242.88 5400.4,229 5410.8,223.68 5418.9,214 \
+5425,204.57",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5588.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="5641.4,221.5",
+		pos="e,5580.4,195.77 4170.4,251.73 4216.4,249.93 4263.8,248.26 4308.4,247 4342.9,246.03 5518.5,244.35 5549.4,229 5560.1,223.67 5568.8,\
+213.85 5575.2,204.31",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5759.4,178",
+		width=1.0652];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="5806.9,221.5",
+		pos="e,5751.1,195.79 4169.6,251.69 4215.9,249.89 4263.5,248.22 4308.4,247 4347.6,245.93 5684.2,246.2 5719.4,229 5730.3,223.7 5739.1,213.88 \
+5745.7,204.34",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="5921.4,178",
+		width=2.347];
+	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="5969.9,221.5",
+		pos="e,5912.5,196.3 4169,251.67 4215.5,249.86 4263.3,248.2 4308.4,247 4352.1,245.84 5841.1,247.9 5880.4,229 5891.3,223.79 5900.2,214.18 \
+5907,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="4339.4,178",
+		pos="6055.4,178",
 		width=0.86659];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="4369.4,221.5",
-		pos="e,4348.4,195.56 3153.5,251.78 3199.2,249.98 3246.1,248.3 3290.4,247 3319.8,246.14 4326.8,249.94 4347.4,229 4353.5,222.78 4353.7,\
-213.88 4351.6,205.3",
+		lp="6069.4,221.5",
+		pos="e,6056.3,196.18 4168.5,251.65 4215.1,249.83 4263.2,248.18 4308.4,247 4332.5,246.37 6024.6,244.02 6043.4,229 6050.3,223.54 6053.6,\
+214.92 6055.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="4440.4,178",
+		pos="6156.4,178",
 		width=1.4263];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="4443.9,221.5",
-		pos="e,4428.7,195.87 3153.2,251.77 3199,249.97 3246.1,248.29 3290.4,247 3351.5,245.23 4333.1,252.55 4389.4,229 4402.2,223.64 4413.6,213.4 \
-4422.3,203.57",
+		lp="6149.9,221.5",
+		pos="e,6140.8,195.25 4168.2,251.65 4214.9,249.83 4263.1,248.18 4308.4,247 4357.9,245.72 6042.5,244.83 6089.4,229 6105.6,223.53 6121.1,\
+212.51 6133.1,202.2",
 		style=solid];
 	"FDA adverse event level"	[color=blue,
 		height=0.5,
 		label=FDAIDAAdverseEventEnum,
-		pos="4649.4,178",
+		pos="6365.4,178",
 		width=3.8816];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> "FDA adverse event level"	[color=blue,
 		label="FDA adverse event level",
-		lp="4633.9,221.5",
-		pos="e,4606.5,195.15 3152.7,251.74 3198.6,249.94 3245.9,248.27 3290.4,247 3422.5,243.24 4348.8,248.82 4479.4,229 4519.7,222.89 4563.8,\
-209.72 4597,198.43",
+		lp="6343.9,221.5",
+		pos="e,6320.2,195.09 4168.2,251.63 4214.9,249.81 4263.1,248.16 4308.4,247 4516.9,241.65 5978.9,258.16 6185.4,229 6228.3,222.95 6275.4,\
+209.62 6310.6,198.24",
 		style=solid];
 	predicate	[height=0.5,
-		pos="4861.4,178",
+		pos="6577.4,178",
 		width=1.5165];
 	"chemical or drug or treatment side effect disease or phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
-		lp="4812.4,221.5",
-		pos="e,4831.7,193.26 3151.6,251.69 3197.9,249.88 3245.5,248.22 3290.4,247 3370.1,244.84 4647,243.46 4725.4,229 4759.2,222.76 4795.7,208.93 \
-4822.4,197.39",
+		lp="6524.4,221.5",
+		pos="e,6546.9,193.06 4167.6,251.61 4214.5,249.79 4262.9,248.14 4308.4,247 4426.6,244.03 6319,249.4 6435.4,229 6471,222.76 6509.5,208.69 \
+6537.5,197.06",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="2434.4,134.5",
@@ -261,16 +375,16 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3337.4,265",
+		pos="4355.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="3468.4,265",
+		pos="4486.4,265",
 		width=2.0762];
 	"chemical or drug or treatment side effect disease or phenotypic feature association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="3639.4,265",
+		pos="4657.4,265",
 		width=2.1665];
 }
