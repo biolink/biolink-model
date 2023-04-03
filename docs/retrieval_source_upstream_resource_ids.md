@@ -1,10 +1,10 @@
 
-# Slot: upstream resources
+# Slot: upstream resource ids
 
 
 The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.
 
-URI: [biolink:retrieval_source_upstream_resources](https://w3id.org/biolink/vocab/retrieval_source_upstream_resources)
+URI: [biolink:retrieval_source_upstream_resource_ids](https://w3id.org/biolink/vocab/retrieval_source_upstream_resource_ids)
 
 
 ## Domain and Range
@@ -13,7 +13,7 @@ URI: [biolink:retrieval_source_upstream_resources](https://w3id.org/biolink/voca
 
 ## Parents
 
- *  is_a: [upstream resources](upstream_resources.md)
+ *  is_a: [upstream resource ids](upstream_resource_ids.md)
 
 ## Children
 

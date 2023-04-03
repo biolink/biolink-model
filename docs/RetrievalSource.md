@@ -15,7 +15,7 @@ URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[InformationContentEntity]%5E-[RetrievalSource%7Cresource:uriorcurie;resource_role:ResourceRoleEnum;upstream_resources:uriorcurie%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20retrieval%20source%20ids%200..%2A%3E[RetrievalSource%7Cresource_id:uriorcurie;resource_role:ResourceRoleEnum;upstream_resource_ids:uriorcurie%20%3F;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[RetrievalSource],[InformationContentEntity],[Attribute],[Association])
 
 ---
 
@@ -26,13 +26,14 @@ URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
 
 ## Referenced by class
 
+ *  **None** *[retrieval source ids](retrieval_source_ids.md)*  <sub>0..\*</sub>  **[RetrievalSource](RetrievalSource.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [resource](resource.md)  <sub>0..1</sub>
+ * [resource id](resource_id.md)  <sub>0..1</sub>
      * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
@@ -40,7 +41,7 @@ URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
      * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
      * in subsets: (translator_minimal)
- * [upstream resources](upstream_resources.md)  <sub>0..1</sub>
+ * [upstream resource ids](upstream_resource_ids.md)  <sub>0..1</sub>
      * Description: An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
      * Range: [Uriorcurie](types/Uriorcurie.md)
 
@@ -115,7 +116,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Domain for slot:
 
- * [resource](resource.md)  <sub>0..1</sub>
+ * [resource id](resource_id.md)  <sub>0..1</sub>
      * Description: The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
@@ -123,6 +124,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * Range: [ResourceRoleEnum](ResourceRoleEnum.md)
      * in subsets: (translator_minimal)
- * [upstream resources](upstream_resources.md)  <sub>0..1</sub>
+ * [upstream resource ids](upstream_resource_ids.md)  <sub>0..1</sub>
      * Description: An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
      * Range: [Uriorcurie](types/Uriorcurie.md)

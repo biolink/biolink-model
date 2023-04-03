@@ -1,11 +1,11 @@
 ---
 parent: Node Properties
-title: biolink:resource
+title: biolink:resource_id
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: resource
+# Slot: resource_id
 
 translator_minimal
 {: .translator_minimal-subset-label }
@@ -13,7 +13,7 @@ translator_minimal
 
 The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
 
-URI: [biolink:resource](https://w3id.org/biolink/vocab/resource)
+URI: [biolink:resource_id](https://w3id.org/biolink/vocab/resource_id)
 
 ## Domain and Range
 

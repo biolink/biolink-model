@@ -1265,7 +1265,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [pages](pages.md) - page number of source referenced for statement or publication
      * [provided by](provided_by.md) - The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
-     * [resource](resource.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+     * [resource id](resource_id.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
      * [resource role](resource_role.md) - The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
      * [retrieved on](retrieved_on.md)
      * [rights](rights.md)
@@ -1281,7 +1281,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
      * [trade name](trade_name.md)
      * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
-     * [upstream resources](upstream_resources.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
+     * [upstream resource ids](upstream_resource_ids.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
      * [version](version.md)
      * [version of](version_of.md)
      * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
@@ -1289,7 +1289,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [provided by](provided_by.md) - The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
  * [published in](published_in.md) - CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
  * [related synonym](related_synonym.md)
- * [resource](resource.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
+ * [resource id](resource_id.md) - The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
  * [resource role](resource_role.md) - The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
  * [retrieved on](retrieved_on.md)
  * [rights](rights.md)
@@ -1305,7 +1305,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
  * [trade name](trade_name.md)
  * [update date](update_date.md) - date on which an entity was updated. This can be applied to nodes or edges
- * [upstream resources](upstream_resources.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
+ * [upstream resource ids](upstream_resource_ids.md) - An upstream InformationResource from which the resource being described directly retrieved a record of the knowledge expressed in the Edge, or data used to generate this knowledge. This is an array because there are cases where a merged Edge holds knowledge that was retrieved from multiple sources. e.g. an Edge provided by the ARAGORN ARA can expressing knowledge it retrieved from both the automat-mychem-info and molepro KPs, which both provided it with records of this single fact.
  * [version](version.md)
  * [version of](version_of.md)
  * [volume](volume.md) - volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
@@ -1347,7 +1347,12 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
      * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * [object category](object_category.md) - Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [object category closure](object_category_closure.md) - Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [object closure](object_closure.md) - Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [object label closure](object_label_closure.md) - Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * [object location in text](object_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
+     * [object namespace](object_namespace.md) - Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original predicate](original_predicate.md) - used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.
      * [original subject](original_subject.md) - used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
@@ -1410,7 +1415,12 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
      * [stoichiometry](stoichiometry.md) - the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
      * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * [subject category](subject_category.md) - Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [subject category closure](subject_category_closure.md) - Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [subject closure](subject_closure.md) - Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [subject label closure](subject_label_closure.md) - Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
+     * [subject namespace](subject_namespace.md) - Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
      * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
      * [supporting document type](supporting_document_type.md) - The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
@@ -1476,11 +1486,16 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
  * [object](object.md) - connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
  * [object aspect qualifier](object_aspect_qualifier.md)
+ * [object category](object_category.md) - Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+ * [object category closure](object_category_closure.md) - Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+ * [object closure](object_closure.md) - Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [object context qualifier](object_context_qualifier.md)
  * [object derivative qualifier](object_derivative_qualifier.md)
  * [object direction qualifier](object_direction_qualifier.md)
  * [object form or variant qualifier](object_form_or_variant_qualifier.md)
+ * [object label closure](object_label_closure.md) - Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [object location in text](object_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
+ * [object namespace](object_namespace.md) - Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [object part qualifier](object_part_qualifier.md)
  * [onset qualifier](onset_qualifier.md) - a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
  * [original object](original_object.md) - used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
@@ -1564,11 +1579,16 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [strand](strand.md) - The strand on which a feature is located. Has a value of '+' (sense strand or forward strand) or '-' (anti-sense strand or reverse strand).
  * [subject](subject.md) - connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
  * [subject aspect qualifier](subject_aspect_qualifier.md)
+ * [subject category](subject_category.md) - Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+ * [subject category closure](subject_category_closure.md) - Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+ * [subject closure](subject_closure.md) - Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [subject context qualifier](subject_context_qualifier.md)
  * [subject derivative qualifier](subject_derivative_qualifier.md)
  * [subject direction qualifier](subject_direction_qualifier.md)
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)
+ * [subject label closure](subject_label_closure.md) - Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
+ * [subject namespace](subject_namespace.md) - Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [subject part qualifier](subject_part_qualifier.md)
  * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
@@ -1631,6 +1651,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [predicate mappings](predicate_mappings.md) - A collection of relationships that are not used in biolink, but have biolink patterns that can  be used to replace them.  This is a temporary slot to help with the transition to the fully qualified predicate model in Biolink3.
  * [publication type](publication_type.md) - Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
  * [relation](relation.md)
+ * [retrieval source ids](retrieval_source_ids.md) - A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
  * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
  * [timepoint](timepoint.md) - a point in time
