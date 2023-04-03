@@ -4969,6 +4969,81 @@ slots:
     domain: association
     range: uriorcurie
 
+  subject category:
+    is_a: association slot
+    description: >-
+      Used to hold the subject category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+
+  object category:
+    is_a: association slot
+    description: >-
+      Used to hold the object category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+
+  subject category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+
+  object category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+
+  subject label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+
+  object label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+
+  subject namespace:
+    aliases: ["subject prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the subject namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+  
+  object namespace:
+    aliases: ["object prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the object namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+
+
   subject:
     is_a: association slot
     local_names:
