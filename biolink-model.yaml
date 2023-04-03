@@ -678,7 +678,7 @@ slots:
     in_subset:
       - translator_minimal
   
-  resource:
+  resource id:
     is_a: node property
     description: >-
       The CURIE for an Information Resource that served as a source
@@ -700,7 +700,17 @@ slots:
     range: ResourceRoleEnum
     in_subset:
       - translator_minimal
-  
+
+  retrieval source ids:
+    description: >-
+        A list of retrieval sources that served as a source of knowledge
+        expressed in an Edge, or a source of data used to generate this
+        knowledge.
+    multivalued: true
+    range: retrieval source
+    in_subset:
+      - translator_minimal
+
   full name:
     is_a: node property
     domain: named thing
@@ -708,7 +718,7 @@ slots:
     description: >-
       a long-form human readable name for a thing
 
-  upstream resources:
+  upstream resource ids:
     is_a: node property
     description: >-
       An upstream InformationResource from which the resource
@@ -4969,6 +4979,157 @@ slots:
     domain: association
     range: uriorcurie
 
+  subject closure:
+   is_a: association slot
+   description: >-
+      Used to hold the subject closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+   multivalued: true
+   domain: association
+
+  object closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    examples:
+      - value: [ "MONDO:0000167", "MONDO:0005395" ]
+        description: >-
+          The object closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          diseases that are ancestors of 'breast cancer' in the
+          MONDO ontology.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+
+  subject category:
+    is_a: association slot
+    description: >-
+      Used to hold the biolink class/category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+    examples:
+      - value: "biolink:Gene"
+        description: >-
+          The subject category of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.
+
+  object category:
+    is_a: association slot
+    description: >-
+      Used to hold the biolink class/category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+    examples:
+      - value: "biolink:Disease"
+        description: >-
+            The object category of the association between the gene
+            'BRCA1' and the disease 'breast cancer' is 'biolink:Disease'.
+
+  subject category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+    examples:
+      - value: [ "biolink:Gene", "biolink:NamedThing" ]
+        description: >-
+          The subject category closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          biolink classes that are ancestors of 'biolink:Gene' in the
+          biolink model.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+
+  object category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+    examples:
+      - value: [ "biolink:Disease", "biolink:NamedThing" ]
+        description: >-
+          The object category closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          biolink classes that are ancestors of 'biolink:Disease' in the
+          biolink model.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+
+  subject label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+    examples:
+      - value: ["BRACA1"]
+        description: >-
+          The subject label closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          labels that are ancestors of 'BRCA1' in the
+          biolink model.  
+
+  object label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+    examples:
+      - value: ["breast cancer", "cancer"]
+        description: >-
+          The object label closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          labels that are ancestors of 'breast cancer' in the
+          biolink model.
+
+  subject namespace:
+    aliases: ["subject prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the subject namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+    examples:
+      - value: "NCBIGene"
+        description: >-
+          The subject namespace of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.
+
+  object namespace:
+    aliases: ["object prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the object namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+    examples:
+      - value: "MONDO"
+        description: >-
+          The object namespace of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'MONDO'.
+
   subject:
     is_a: association slot
     local_names:
@@ -6232,12 +6393,12 @@ classes:
       served as a source from which knowledge expressed in an Edge, or
       data used to generate this knowledge, was retrieved.
     slots:
-      - resource
+      - resource id
       - resource role
-      - upstream resources
+      - upstream resource ids
       - xref
     slot_usage:
-      resource:
+      resource id:
         required: true
         description: >-
           The InformationResource that served as a source for the
@@ -6247,7 +6408,7 @@ classes:
         description: >-
             The role of the InformationResource in the retrieval of the
             knowledge expressed in an Edge, or data used to generate this knowledge.
-      upstream resources:
+      upstream resource ids:
         description: >-
           The InformationResources that served as a source for the
           InformationResource that served as a source for the knowledge
@@ -6259,7 +6420,6 @@ classes:
     description: >-
       Either a physical or processual entity.
     mixin: true
-
 
   physical essence:
     description: >-
@@ -8438,6 +8598,18 @@ classes:
       - original subject
       - original predicate
       - original object
+      # denormalized fields
+      - subject category
+      - object category
+      - subject closure
+      - object closure
+      - subject category closure
+      - object category closure
+      - subject namespace
+      - object namespace
+      - subject label closure
+      - object label closure
+      - retrieval source ids
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement
