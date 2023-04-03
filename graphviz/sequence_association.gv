@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3188.7,283"];
+	graph [bb="0,0,4878.7,283"];
 	node [label="\N"];
 	"sequence association"	[height=0.5,
 		label="sequence association",
-		pos="1444.4,265",
+		pos="2498.4,265",
 		width=3.015];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"sequence association" -> association	[label=is_a,
-		lp="282.39,221.5",
-		pos="e,103.34,191.62 1335.9,263.66 1085.3,262.4 472.59,256.51 268.39,229 214.65,221.76 154.53,206.29 113.17,194.46"];
+		lp="280.39,221.5",
+		pos="e,102.91,191.79 2389.9,263.73 1971.7,262.49 477.62,256.19 266.39,229 213.1,222.14 153.57,206.61 112.64,194.67"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"sequence association" -> id	[color=blue,
 		label=id,
-		lp="400.39,221.5",
-		pos="e,210.37,190.01 1336.4,262.67 1106.1,259.46 573.38,249.96 393.39,229 319.54,220.4 301.06,215.79 229.39,196 226.28,195.14 223.08,\
-194.18 219.89,193.17",
+		lp="396.39,221.5",
+		pos="e,210.38,189.98 2390.1,263.39 1987.2,260.95 588.45,250.98 389.39,229 317.23,221.03 299.34,215.5 229.39,196 226.29,195.13 223.09,\
+194.17 219.89,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"sequence association" -> iri	[color=blue,
 		label=iri,
-		lp="513.39,221.5",
-		pos="e,315.3,190.22 1337.2,262.09 1126.1,257.98 663.51,247.18 505.39,229 428.93,220.21 409.95,215.12 335.39,196 332.02,195.13 328.54,\
-194.17 325.05,193.16",
+		lp="503.39,221.5",
+		pos="e,315.31,190.16 2390.2,263.29 2000.8,260.56 683.57,249.87 495.39,229 423.23,221 405.62,214.45 335.39,196 332.02,195.11 328.55,194.14 \
+325.06,193.12",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"sequence association" -> name	[color=blue,
 		label=name,
-		lp="615.39,221.5",
-		pos="e,439.55,191.39 1336.9,262.39 1141.4,259 735.22,249.66 595.39,229 544.86,221.53 488.45,206.17 449.55,194.44",
+		lp="607.39,221.5",
+		pos="e,438.25,191.77 2390,263.56 2011.9,261.81 765.43,254.17 587.39,229 538.92,222.15 485.05,206.78 447.81,194.87",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"sequence association" -> description	[color=blue,
 		label=description,
-		lp="729.89,221.5",
-		pos="e,584.61,194.25 1336.4,262.98 1158,260.64 809.87,253.04 689.39,229 656.45,222.43 620.85,209.37 594.06,198.24",
+		lp="723.89,221.5",
+		pos="e,582.77,194.4 2390,264.07 2024.3,263.99 850.26,261.21 683.39,229 651.71,222.88 617.7,209.83 592.13,198.6",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"sequence association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="866.39,221.5",
-		pos="e,724.36,193.48 1337.1,262.25 1185,259.03 914.82,250.44 819.39,229 789.41,222.26 757.3,208.99 733.41,197.8",
+		lp="862.39,221.5",
+		pos="e,722.86,193.55 2389.7,264.11 2041.6,264.12 968.34,261.48 815.39,229 786.11,222.78 754.98,209.44 731.91,198.1",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -71,7 +71,7 @@ digraph {
 	"sequence association" -> subject	[color=blue,
 		label=subject,
 		lp="989.39,221.5",
-		pos="e,867.13,194.15 1339.9,260.09 1220.5,254.96 1032.5,244.73 963.39,229 933.31,222.15 900.97,209.33 876.46,198.39",
+		pos="e,866.52,194.37 2389.9,263.73 2063.1,262.6 1101.8,256.91 963.39,229 932.94,222.86 900.37,209.9 875.84,198.71",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -81,7 +81,7 @@ digraph {
 	"sequence association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1068.4,221.5",
-		pos="e,1008.8,196.39 1340.2,259.88 1227.4,254.66 1060,244.45 1034.4,229 1025.4,223.54 1018.4,214.45 1013.4,205.5",
+		pos="e,1008.4,196.14 2389.9,264.18 2060.9,264.37 1093.2,262.09 1034.4,229 1025,223.69 1017.9,214.33 1012.8,205.13",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -91,8 +91,8 @@ digraph {
 	"sequence association" -> object	[color=blue,
 		label=object,
 		lp="1147.4,178",
-		pos="e,976.03,105.47 1345.5,257.55 1279.8,249.85 1193.4,232.97 1125.4,196 1105.5,185.2 1108.1,172.77 1089.4,160 1057.3,138.07 1017,120.64 \
-985.5,108.92",
+		pos="e,976.03,105.47 2390.9,262.4 2144.4,258.48 1543.9,247.3 1342.4,229 1245.2,220.17 1212.5,240.02 1125.4,196 1105.2,185.79 1108.1,172.77 \
+1089.4,160 1057.3,138.07 1017,120.64 985.5,108.92",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -101,8 +101,8 @@ digraph {
 		width=1.2999];
 	"sequence association" -> negated	[color=blue,
 		label=negated,
-		lp="1368.4,221.5",
-		pos="e,1254.1,192.48 1396,248.89 1378.1,243.03 1357.7,236.04 1339.4,229 1313.7,219.12 1285.4,206.72 1263.5,196.74",
+		lp="1452.4,221.5",
+		pos="e,1260,190.37 2390.1,263.14 2155.7,260.86 1607.7,253.04 1423.4,229 1369.6,221.98 1309.4,205.49 1269.6,193.36",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -111,8 +111,8 @@ digraph {
 		width=2.1304];
 	"sequence association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1443.9,221.5",
-		pos="e,1381.9,195.89 1428.6,246.8 1417.2,234.39 1401.7,217.46 1389,203.62",
+		lp="1585.9,221.5",
+		pos="e,1408.3,193.18 2390.3,263.06 2177.4,260.71 1710.9,252.93 1552.4,229 1506.1,222.01 1454.8,207.72 1417.8,196.19",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -121,8 +121,8 @@ digraph {
 		width=1.7332];
 	"sequence association" -> publications	[color=blue,
 		label=publications,
-		lp="1539.4,221.5",
-		pos="e,1510.2,195.62 1463.2,246.96 1469.2,241.37 1475.7,235.05 1481.4,229 1489,220.96 1496.9,211.79 1503.8,203.52",
+		lp="1723.4,221.5",
+		pos="e,1558,193.06 2390.4,262.96 2200.2,260.54 1812.7,252.76 1679.4,229 1640.7,222.11 1598.4,208.11 1567.6,196.67",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -131,8 +131,8 @@ digraph {
 		width=2.0943];
 	"sequence association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1665.9,221.5",
-		pos="e,1654.1,195.08 1513.1,250.95 1537.1,245.43 1563.8,238.12 1587.4,229 1607.3,221.31 1628.3,210.17 1645.1,200.36",
+		lp="1869.9,221.5",
+		pos="e,1713.8,194.06 2391.1,262.12 2228.8,258.64 1928.8,249.61 1823.4,229 1788.9,222.26 1751.4,209.05 1723.4,197.9",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -141,9 +141,8 @@ digraph {
 		width=3.015];
 	"sequence association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1836.9,221.5",
-		pos="e,1837.8,194.53 1522.4,252.46 1535.8,250.57 1549.5,248.69 1562.4,247 1630.7,238.09 1648.9,243.05 1716.4,229 1754.4,221.09 1796.2,\
-208.38 1828.2,197.75",
+		lp="2009.9,221.5",
+		pos="e,1897.3,195.93 2389.8,264.68 2252.3,264.25 2023.9,258.82 1945.4,229 1930.4,223.32 1916.2,212.85 1904.9,202.96",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -152,9 +151,8 @@ digraph {
 		width=3.015];
 	"sequence association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2077.4,221.5",
-		pos="e,2064.9,193.96 1520.1,252.05 1534.2,250.14 1548.7,248.34 1562.4,247 1714.3,232.1 1754.3,250.69 1905.4,229 1956.5,221.67 2013.3,\
-207.87 2055.1,196.61",
+		lp="2176.4,221.5",
+		pos="e,2093.1,195.58 2391,262.38 2274.4,259.48 2102,251.41 2081.4,229 2074.1,221.04 2078.2,211.47 2085.7,202.85",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -163,9 +161,8 @@ digraph {
 		width=3.015];
 	"sequence association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2351.9,221.5",
-		pos="e,2308.2,194.6 1519.2,251.92 1533.5,249.98 1548.4,248.21 1562.4,247 1698.4,235.25 2041.5,249.91 2176.4,229 2218.2,222.52 2264.1,\
-209.16 2298.4,197.88",
+		lp="2385.9,221.5",
+		pos="e,2303,194.15 2394,259.99 2345.3,255.69 2294.7,246.91 2279.4,229 2269.3,217.19 2278.7,206.86 2293.6,198.69",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -174,9 +171,8 @@ digraph {
 		width=1.5346];
 	"sequence association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2527.4,221.5",
-		pos="e,2516.6,195.21 1518.8,251.86 1533.2,249.91 1548.3,248.15 1562.4,247 1662.1,238.85 2367.4,260.16 2462.4,229 2479.4,223.41 2496,212.22 \
-2508.8,201.85",
+		lp="2534.4,221.5",
+		pos="e,2513.1,194.83 2495.7,246.69 2494.9,236.76 2495.1,224.26 2499.4,214 2501.1,209.95 2503.5,206.11 2506.2,202.56",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -185,49 +181,168 @@ digraph {
 		width=1.0652];
 	"sequence association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2655.4,221.5",
-		pos="e,2627.7,194.27 1518.8,251.84 1533.2,249.89 1548.3,248.14 1562.4,247 1673.6,238.03 2459.5,261.02 2566.4,229 2585.8,223.2 2605,211.21 \
-2619.6,200.42",
+		lp="2647.4,221.5",
+		pos="e,2623.9,193.16 2533.2,247.93 2544.8,242.25 2557.8,235.62 2569.4,229 2570.6,228.29 2594.6,212.48 2615.4,198.82",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="2760.4,178",
+		pos="2759.4,178",
 		width=1.5887];
 	"sequence association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2799.9,221.5",
-		pos="e,2750.6,195.83 1518.8,251.81 1533.2,249.86 1548.3,248.12 1562.4,247 1626.3,241.92 2657.1,255.52 2715.4,229 2727.1,223.69 2737,213.73 \
-2744.6,204.09",
+		lp="2789.9,221.5",
+		pos="e,2745.8,195.62 2578,252.67 2630.9,244.75 2692.8,234.63 2704.4,229 2717.2,222.76 2729.2,212.6 2738.7,203.05",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2910.4,178",
+		pos="2873.4,178",
 		width=1.0652];
 	"sequence association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2938.9,221.5",
-		pos="e,2901.2,195.82 1518.5,251.83 1533,249.87 1548.2,248.12 1562.4,247 1598.5,244.16 2834.6,244.35 2867.4,229 2878.8,223.68 2888.3,213.72 \
-2895.5,204.08",
+		lp="2917.9,221.5",
+		pos="e,2871.5,196.19 2575.1,252.18 2588.8,250.29 2603,248.47 2616.4,247 2642.8,244.11 2833.1,244.87 2854.4,229 2861.8,223.49 2866.3,214.74 \
+2869,206.09",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3006.4,178",
+		width=2.1304];
+	"sequence association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3048.9,221.5",
+		pos="e,3000,196.05 2574.1,252.03 2588.2,250.12 2602.7,248.33 2616.4,247 2655.9,243.16 2938.9,248.7 2973.4,229 2982.9,223.58 2990.1,214.2 \
+2995.4,205.01",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3177.4,178",
+		width=2.1304];
+	"sequence association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3195.9,221.5",
+		pos="e,3161.5,195.84 2573.5,251.96 2587.7,250.02 2602.5,248.25 2616.4,247 2671.3,242.06 3060.5,247.7 3112.4,229 3127.8,223.43 3142.6,\
+212.72 3154.1,202.64",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3310.4,178",
+		width=1.0652];
+	"sequence association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3333.9,221.5",
+		pos="e,3297.9,195.35 2573.2,251.91 2587.5,249.97 2602.4,248.2 2616.4,247 2687.2,240.93 3189.5,255.54 3255.4,229 3269.1,223.47 3281.6,\
+212.85 3291.2,202.81",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3408.4,178",
+		width=1.0652];
+	"sequence association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3450.4,221.5",
+		pos="e,3406.3,196.39 2572.8,251.9 2587.2,249.94 2602.3,248.18 2616.4,247 2659.1,243.43 3353.2,253.46 3388.4,229 3396.1,223.65 3400.8,\
+214.83 3403.7,206.06",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3541.4,178",
+		width=2.1304];
+	"sequence association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3608.9,221.5",
+		pos="e,3533.8,196.22 2572.8,251.86 2587.2,249.91 2602.3,248.16 2616.4,247 2665.6,242.97 3460.6,251.65 3504.4,229 3514.6,223.74 3522.7,\
+214.25 3528.7,204.94",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3731.4,178",
+		width=2.1304];
+	"sequence association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3798.9,221.5",
+		pos="e,3725.7,196.15 2572.8,251.82 2587.2,249.87 2602.3,248.13 2616.4,247 2646.4,244.6 3674.2,243.86 3700.4,229 3709.6,223.76 3716.5,\
+214.54 3721.3,205.43",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3921.4,178",
+		width=1.0652];
+	"sequence association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3971.4,221.5",
+		pos="e,3914.7,195.72 2572.5,251.83 2587,249.87 2602.2,248.12 2616.4,247 2651.6,244.23 3855.2,245.51 3886.4,229 3896.5,223.66 3904.3,213.98 \
+3909.9,204.54",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4080.4,178",
+		width=1.0652];
+	"sequence association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4124.4,221.5",
+		pos="e,4073,195.76 2572.5,251.82 2587,249.86 2602.2,248.11 2616.4,247 2655.9,243.92 4008.1,247.07 4043.4,229 4053.7,223.7 4061.9,214.03 \
+4067.9,204.59",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4231.4,178",
+		width=1.0652];
+	"sequence association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4284.4,221.5",
+		pos="e,4223.4,195.79 2572.5,251.8 2587,249.85 2602.2,248.1 2616.4,247 2660,243.62 4153.2,248.43 4192.4,229 4203.1,223.69 4211.8,213.87 \
+4218.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4402.4,178",
+		width=1.0652];
+	"sequence association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4450.9,221.5",
+		pos="e,4394.1,195.8 2572.5,251.79 2587,249.83 2602.2,248.09 2616.4,247 2664.8,243.28 4318.8,250.24 4362.4,229 4373.3,223.71 4382.1,213.89 \
+4388.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4564.4,178",
+		width=2.347];
+	"sequence association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4612.9,221.5",
+		pos="e,4555.8,196.3 2572.5,251.78 2587,249.82 2602.2,248.09 2616.4,247 2669.2,242.96 4476.7,252.19 4524.4,229 4535.1,223.79 4543.9,214.17 \
+4550.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3036.4,178",
+		pos="4726.4,178",
 		width=0.86659];
 	"sequence association" -> type	[color=blue,
 		label=type,
-		lp="3030.4,221.5",
-		pos="e,3027.8,195.32 1518.5,251.82 1533,249.86 1548.2,248.11 1562.4,247 1602.1,243.91 2958.4,246.03 2994.4,229 3005.8,223.6 3015.2,213.43 \
-3022.3,203.67",
+		lp="4721.4,221.5",
+		pos="e,4718.1,195.81 2572.5,251.77 2587,249.82 2602.2,248.08 2616.4,247 2673.7,242.64 4634.7,254.13 4686.4,229 4697.3,223.72 4706.1,213.9 \
+4712.7,204.36",
 		style=solid];
 	category	[height=0.5,
-		pos="3137.4,178",
+		pos="4827.4,178",
 		width=1.4263];
 	"sequence association" -> category	[color=blue,
 		label=category,
-		lp="3116.9,221.5",
-		pos="e,3116.9,194.8 1518.5,251.81 1533,249.85 1548.2,248.11 1562.4,247 1644.8,240.59 2970.6,250.8 3050.4,229 3071.2,223.3 3092.3,211.39 \
-3108.5,200.62",
+		lp="4807.9,221.5",
+		pos="e,4807.2,194.82 2572.5,251.77 2587,249.81 2602.2,248.08 2616.4,247 2734.1,238.06 4627.5,260.21 4741.4,229 4762.1,223.34 4782.9,211.42 \
+4798.9,200.65",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="919.39,134.5",
@@ -242,11 +357,11 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1609.4,265",
+		pos="2663.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1740.4,265",
+		pos="2794.4,265",
 		width=2.0762];
 }

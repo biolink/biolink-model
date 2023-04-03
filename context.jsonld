@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-03-30T15:48:40\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.5\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-04-03T20:55:55\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.5\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -1354,6 +1354,12 @@
          "@type": "@id",
          "@id": "rdf:object"
       },
+      "object_category": {
+         "@type": "@id"
+      },
+      "object_category_closure": {
+         "@type": "@id"
+      },
       "object_direction_qualifier": {
          "@context": {
             "@vocab": "@null",
@@ -1525,7 +1531,7 @@
       "resistance_associated_with": {
          "@type": "@id"
       },
-      "resource": {
+      "resource_id": {
          "@type": "@id"
       },
       "resource_role": {
@@ -1543,6 +1549,9 @@
          "@type": "@id"
       },
       "response_increased_by": {
+         "@type": "@id"
+      },
+      "retrieval_source_ids": {
          "@type": "@id"
       },
       "retrieved_on": {
@@ -1612,6 +1621,12 @@
       "subject": {
          "@type": "@id",
          "@id": "rdf:subject"
+      },
+      "subject_category": {
+         "@type": "@id"
+      },
+      "subject_category_closure": {
+         "@type": "@id"
       },
       "subject_direction_qualifier": {
          "@context": {
@@ -1696,7 +1711,7 @@
       "update_date": {
          "@type": "xsd:date"
       },
-      "upstream_resources": {
+      "upstream_resource_ids": {
          "@type": "@id"
       },
       "variant_part_of": {

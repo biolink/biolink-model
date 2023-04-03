@@ -327,6 +327,11 @@
           "prefix": "ncats.drug",
           "base_uri": "https://drugs.ncats.io/drug/",
           "order": 6
+        },
+        {
+          "prefix": "PHARMGKB.CHEMICAL",
+          "base_uri": "https://www.pharmgkb.org/chemical/",
+          "order": 7
         }
       ]
     },
@@ -1010,7 +1015,7 @@
         },
         {
           "prefix": "PHARMGKB.PATHWAYS",
-          "base_uri": "http://identifiers.org/pharmgkb.pathways/",
+          "base_uri": "https://www.pharmgkb.org/pathway/",
           "order": 6
         },
         {
@@ -1277,6 +1282,11 @@
           "prefix": "MP",
           "base_uri": "http://purl.obolibrary.org/obo/MP_",
           "order": 17
+        },
+        {
+          "prefix": "PHARMGKB.DISEASE",
+          "base_uri": "https://www.pharmgkb.org/disease/",
+          "order": 18
         }
       ]
     },
@@ -1637,6 +1647,11 @@
           "prefix": "AspGD",
           "base_uri": "http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=",
           "order": 17
+        },
+        {
+          "prefix": "PHARMGKB.GENE",
+          "base_uri": "https://www.pharmgkb.org/gene/",
+          "order": 18
         }
       ]
     },
@@ -1690,7 +1705,7 @@
       "prefix_map": [
         {
           "prefix": "UniProtKB",
-          "base_uri": "http://identifiers.org/uniprot/",
+          "base_uri": "http://purl.uniprot.org/uniprot/",
           "order": 1
         },
         {
@@ -1720,7 +1735,7 @@
       "prefix_map": [
         {
           "prefix": "UniProtKB",
-          "base_uri": "http://identifiers.org/uniprot/",
+          "base_uri": "http://purl.uniprot.org/uniprot/",
           "order": 1
         },
         {
@@ -1760,12 +1775,12 @@
       "prefix_map": [
         {
           "prefix": "UniProtKB",
-          "base_uri": "http://identifiers.org/uniprot/",
+          "base_uri": "http://purl.uniprot.org/uniprot/",
           "order": 1
         },
         {
           "prefix": "UNIPROT.ISOFORM",
-          "base_uri": "http://identifiers.org/uniprot.isoform/",
+          "base_uri": "http://purl.uniprot.org/isoforms/",
           "order": 2
         },
         {
@@ -2042,6 +2057,11 @@
           "prefix": "WormBase",
           "base_uri": "https://www.wormbase.org/get?name=",
           "order": 12
+        },
+        {
+          "prefix": "PHARMGKB.VARIANT",
+          "base_uri": "https://www.pharmgkb.org/variant/",
+          "order": 13
         }
       ]
     },

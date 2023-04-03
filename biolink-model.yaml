@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.2.5
+version: 3.2.6
 
 
 ## ------------
@@ -4986,7 +4986,9 @@ slots:
       field used primarily in the SQL serialization of a knowledge graph via KGX.
    multivalued: true
    domain: association
-
+   annotations:
+     denormalized: true
+     
   object closure:
     is_a: association slot
     description: >-
@@ -5003,6 +5005,8 @@ slots:
           MONDO ontology.  Note: typically the "subclass of" and "part of" 
           relations are used to construct the closure, but other relations
           may be used as well.
+    annotations:
+      denormalized: true
 
   subject category:
     is_a: association slot
@@ -5017,6 +5021,8 @@ slots:
         description: >-
           The subject category of the association between the gene
           'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.
+    annotations:
+      denormalized: true
 
   object category:
     is_a: association slot
@@ -5031,6 +5037,8 @@ slots:
         description: >-
             The object category of the association between the gene
             'BRCA1' and the disease 'breast cancer' is 'biolink:Disease'.
+    annotations:
+      denormalized: true
 
   subject category closure:
     is_a: association slot
@@ -5049,6 +5057,8 @@ slots:
           biolink model.  Note: typically the "subclass of" and "part of" 
           relations are used to construct the closure, but other relations
           may be used as well.
+    annotations:
+      denormalized: true
 
   object category closure:
     is_a: association slot
@@ -5067,6 +5077,8 @@ slots:
           biolink model.  Note: typically the "subclass of" and "part of" 
           relations are used to construct the closure, but other relations
           may be used as well.
+    annotations:
+      denormalized: true
 
   subject label closure:
     is_a: association slot
@@ -5082,7 +5094,9 @@ slots:
           The subject label closure of the association between the gene
           'BRCA1' and the disease 'breast cancer' is the set of all
           labels that are ancestors of 'BRCA1' in the
-          biolink model.  
+          biolink model.
+    annotations:
+      denormalized: true
 
   object label closure:
     is_a: association slot
@@ -5099,6 +5113,8 @@ slots:
           'BRCA1' and the disease 'breast cancer' is the set of all
           labels that are ancestors of 'breast cancer' in the
           biolink model.
+    annotations:
+      denormalized: true
 
   subject namespace:
     aliases: ["subject prefix"]
@@ -5114,6 +5130,8 @@ slots:
         description: >-
           The subject namespace of the association between the gene
           'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.
+    annotations:
+      denormalized: true
 
   object namespace:
     aliases: ["object prefix"]
@@ -5129,6 +5147,8 @@ slots:
         description: >-
           The object namespace of the association between the gene
           'BRCA1' and the disease 'breast cancer' is 'MONDO'.
+    annotations:
+      denormalized: true
 
   subject:
     is_a: association slot

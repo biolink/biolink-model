@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,2985.3,283"];
+	graph [bb="0,0,4715.3,283"];
 	node [label="\N"];
 	"contributor association"	[height=0.5,
 		label="contributor association",
-		pos="1591.4,265",
+		pos="2444.4,265",
 		width=3.2858];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"contributor association" -> association	[label=is_a,
 		lp="280.39,221.5",
-		pos="e,103.31,191.77 1473,264.11 1193.3,263.86 497.53,260.01 266.39,229 213.31,221.88 153.98,206.47 113.05,194.62"];
+		pos="e,102.91,191.79 2326.4,263.65 1902.4,262.18 470.51,255.32 266.39,229 213.1,222.13 153.57,206.6 112.64,194.66"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,8 +18,8 @@ digraph {
 		width=1.0652];
 	"contributor association" -> id	[color=blue,
 		label=id,
-		lp="397.39,221.5",
-		pos="e,210.38,189.99 1473.4,263.16 1213.3,260.88 597.47,253.06 390.39,229 317.84,220.57 299.77,215.57 229.39,196 226.29,195.14 223.09,\
+		lp="396.39,221.5",
+		pos="e,210.38,189.98 2326.4,263.27 1918.4,260.59 581.35,250.24 389.39,229 317.23,221.01 299.34,215.5 229.39,196 226.29,195.13 223.09,\
 194.17 219.89,193.15",
 		style=solid];
 	iri	[color=blue,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"contributor association" -> iri	[color=blue,
 		label=iri,
-		lp="513.39,221.5",
-		pos="e,315.3,190.22 1473.9,262.58 1232.9,259.28 689.92,249.75 505.39,229 428.91,220.4 409.95,215.12 335.39,196 332.02,195.13 328.54,194.17 \
-325.05,193.16",
+		lp="504.39,221.5",
+		pos="e,315.31,190.17 2326.5,263.15 1932.6,260.12 677.42,249.01 496.39,229 423.79,220.98 406.05,214.52 335.39,196 332.02,195.12 328.54,\
+194.14 325.06,193.12",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"contributor association" -> name	[color=blue,
 		label=name,
-		lp="615.39,221.5",
-		pos="e,439.54,191.46 1473.7,263.06 1247.8,260.74 761.5,253.03 595.39,229 544.84,221.69 488.43,206.31 449.53,194.52",
+		lp="609.39,221.5",
+		pos="e,438.3,191.65 2326.4,263.43 1945.1,261.34 760.3,252.98 589.39,229 540.27,222.11 485.63,206.67 447.98,194.75",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"contributor association" -> description	[color=blue,
 		label=description,
-		lp="729.89,221.5",
-		pos="e,584.31,194.2 1473.2,263.93 1263.8,263.05 835.89,257.66 689.39,229 656.32,222.53 620.59,209.4 593.77,198.22",
+		lp="725.89,221.5",
+		pos="e,583.28,194.39 2326,263.95 1957.4,263.47 845.21,259.49 685.39,229 653.14,222.85 618.44,209.7 592.44,198.44",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"contributor association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="866.39,221.5",
-		pos="e,723.85,193.34 1473.4,263.54 1288.9,261.99 940.46,255.53 819.39,229 789.18,222.38 756.85,208.96 732.92,197.69",
+		lp="865.39,221.5",
+		pos="e,723.57,193.54 2326.1,263.95 1976.7,263.46 964.38,259.39 818.39,229 788.46,222.77 756.54,209.42 732.86,198.09",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"contributor association" -> negated	[color=blue,
 		label=negated,
-		lp="1004.4,221.5",
-		pos="e,845.1,191.3 1476.3,260.79 1325.3,256.01 1068.3,245.72 975.39,229 933.39,221.44 887,206.4 854.66,194.79",
+		lp="1011.4,221.5",
+		pos="e,845.52,191.31 2326.7,262.94 2002.8,259.78 1113.3,249.33 982.39,229 937.95,222.1 888.83,206.64 855.05,194.72",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.7332];
 	"contributor association" -> publications	[color=blue,
 		label=publications,
-		lp="1135.4,221.5",
-		pos="e,974.82,193.14 1473.1,264 1371.1,262.04 1220.3,254.44 1091.4,229 1054.5,221.72 1014.2,208.05 984.46,196.84",
+		lp="1154.4,221.5",
+		pos="e,976.9,192.74 2327,262.66 2023.6,258.96 1228.5,247.59 1110.4,229 1067.5,222.25 1020.3,207.76 986.5,196.1",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=2.0943];
 	"contributor association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1278.9,221.5",
-		pos="e,1130,194.11 1477,260.29 1405.9,256.15 1313,247.42 1232.4,229 1200.4,221.69 1165.7,208.84 1139.3,198",
+		lp="1315.9,221.5",
+		pos="e,1135.6,193.41 2325.9,264.25 2069.5,264.16 1470.1,260.48 1269.4,229 1226.7,222.3 1179.6,208.24 1145.4,196.73",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=3.015];
 	"contributor association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1414.9,221.5",
-		pos="e,1311.5,196.24 1490.4,255.55 1435.9,249.78 1374.9,240.98 1350.4,229 1338.3,223.07 1327.1,213.26 1318.3,203.9",
+		lp="1474.9,221.5",
+		pos="e,1326.8,195.38 2326.9,262.56 2074.7,259.11 1497.5,249.11 1410.4,229 1384.4,222.99 1357,210.87 1335.8,200.06",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"contributor association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1581.4,221.5",
-		pos="e,1502.2,195.39 1514.7,251.18 1503.6,246.04 1493.5,238.9 1486.4,229 1479.5,219.47 1484.9,209.86 1494.2,201.65",
+		lp="1650.4,221.5",
+		pos="e,1536.2,196.38 2326.8,262.66 2092.5,259.52 1586.7,250.33 1555.4,229 1547.5,223.65 1542.5,214.82 1539.2,206.06",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -120,9 +120,8 @@ digraph {
 		width=3.015];
 	"contributor association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="1805.9,221.5",
-		pos="e,1734.7,195.19 1634.5,248.08 1648.1,242.56 1663.1,235.98 1676.4,229 1687.2,223.32 1688.8,220.1 1699.4,214 1707.8,209.16 1716.9,\
-204.28 1725.7,199.76",
+		lp="1859.9,221.5",
+		pos="e,1755.7,196.25 2327.4,262.22 2135.4,258.72 1772.8,249.43 1753.4,229 1747.3,222.61 1748,213.84 1751.2,205.44",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -131,9 +130,8 @@ digraph {
 		width=1.5346];
 	"contributor association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="1964.4,221.5",
-		pos="e,1942.3,195.93 1675.7,252.33 1690.2,250.45 1705.2,248.6 1719.4,247 1762.2,242.16 1874.7,249.91 1912.4,229 1922.5,223.38 1930.8,\
-213.84 1937,204.58",
+		lp="2020.4,221.5",
+		pos="e,1957.5,195.97 2329.9,260.35 2203.7,255.53 2014.6,245.65 1985.4,229 1975.7,223.49 1968.1,214.09 1962.5,204.92",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -142,9 +140,8 @@ digraph {
 		width=1.0652];
 	"contributor association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2083.4,221.5",
-		pos="e,2048.7,195.19 1674.3,252.15 1689.3,250.24 1704.8,248.43 1719.4,247 1782.3,240.83 1944.7,252.64 2003.4,229 2017.7,223.24 2031,212.6 \
-2041.4,202.61",
+		lp="2121.4,221.5",
+		pos="e,2058.3,196.06 2329.3,260.82 2224.6,256.74 2083.6,247.81 2065.4,229 2059.6,223.03 2057.7,214.54 2057.6,206.25",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -153,9 +150,8 @@ digraph {
 		width=1.5887];
 	"contributor association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2220.9,221.5",
-		pos="e,2169,196.11 1673.6,251.98 1688.8,250.07 1704.5,248.3 1719.4,247 1766,242.91 2099.2,251.23 2140.4,229 2150.4,223.61 2158.3,214.1 \
-2164.1,204.81",
+		lp="2254.9,221.5",
+		pos="e,2177,196.37 2330.3,260.08 2273.5,255.83 2212.5,247.07 2191.4,229 2184.7,223.3 2181,214.77 2178.9,206.37",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -164,102 +160,219 @@ digraph {
 		width=1.0652];
 	"contributor association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2350.9,221.5",
-		pos="e,2303.7,196.25 1672.9,251.93 1688.3,250 1704.3,248.24 1719.4,247 1750.9,244.41 2263.1,248.05 2288.4,229 2295.6,223.56 2299.6,214.82 \
-2301.9,206.17",
+		lp="2385.9,221.5",
+		pos="e,2310.9,196.03 2375.2,250.34 2360.7,245.28 2346.3,238.39 2334.4,229 2326.5,222.73 2320.2,213.74 2315.4,205.11",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2437.4,178",
+		width=2.1304];
+	"contributor association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2500.9,221.5",
+		pos="e,2438.8,196.18 2443,246.8 2442,235.16 2440.7,219.55 2439.6,206.24",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2608.4,178",
+		width=2.1304];
+	"contributor association" -> "object category"	[color=blue,
+		label="object category",
+		lp="2636.9,221.5",
+		pos="e,2597.2,196.1 2515.2,250.52 2532.1,245.4 2549.6,238.43 2564.4,229 2574.6,222.54 2583.7,213.06 2591,204.09",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2741.4,178",
+		width=1.0652];
+	"contributor association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="2769.9,221.5",
+		pos="e,2730.9,195.77 2529.9,252.47 2602.2,242.66 2694.5,230 2696.4,229 2707.6,223.07 2717.3,213.21 2724.9,203.81",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2847.4,178",
+		width=1.0652];
+	"contributor association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="2890.4,221.5",
+		pos="e,2845.6,196.21 2527.6,252.19 2542.5,250.29 2557.9,248.47 2572.4,247 2600.8,244.12 2805.5,246 2828.4,229 2835.8,223.51 2840.3,214.77 \
+2843.1,206.12",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2980.4,178",
+		width=2.1304];
+	"contributor association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3048.9,221.5",
+		pos="e,2973,196.09 2526.9,252.01 2542,250.11 2557.7,248.33 2572.4,247 2613.6,243.27 2908,248.75 2944.4,229 2954.4,223.58 2962.3,214.07 \
+2968.1,204.78",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3173.4,178",
+		width=2.1304];
+	"contributor association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3239.9,221.5",
+		pos="e,3167,196.12 2525.9,251.93 2541.3,250 2557.3,248.24 2572.4,247 2603.9,244.42 3112.8,244.4 3140.4,229 3149.9,223.67 3157.2,214.3 \
+3162.4,205.11",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3363.4,178",
+		width=1.0652];
+	"contributor association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3412.4,221.5",
+		pos="e,3356.3,195.7 2525.5,251.88 2541,249.94 2557.2,248.19 2572.4,247 2614.2,243.73 3290.3,248.57 3327.4,229 3337.6,223.63 3345.6,213.94 \
+3351.4,204.51",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3522.4,178",
+		width=1.0652];
+	"contributor association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3565.4,221.5",
+		pos="e,3514.7,195.74 2525.5,251.83 2541,249.9 2557.2,248.16 2572.4,247 2622.9,243.16 3439.2,251.97 3484.4,229 3494.9,223.68 3503.2,214 \
+3509.4,204.56",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3673.4,178",
+		width=1.0652];
+	"contributor association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="3725.4,221.5",
+		pos="e,3665.1,195.78 2525.2,251.84 2540.8,249.89 2557.1,248.14 2572.4,247 2631.2,242.61 3580.5,254.99 3633.4,229 3644.2,223.67 3653.1,\
+213.85 3659.7,204.32",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3844.4,178",
+		width=1.0652];
+	"contributor association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="3890.9,221.5",
+		pos="e,3835.8,195.8 2525.2,251.81 2540.8,249.87 2557.1,248.13 2572.4,247 2606.5,244.49 3772.6,243.85 3803.4,229 3814.4,223.7 3823.4,213.88 \
+3830.2,204.34",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="3988.4,178",
+		width=2.347];
+	"contributor association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4046.9,221.5",
+		pos="e,3985.1,196.03 2525.2,251.79 2540.8,249.85 2557.1,248.11 2572.4,247 2611,244.2 3931.8,249.81 3964.4,229 3972.7,223.67 3978.3,214.56 \
+3981.9,205.56",
 		style=solid];
 	type	[height=0.5,
-		pos="2392.4,178",
+		pos="4122.4,178",
 		width=0.86659];
 	"contributor association" -> type	[color=blue,
 		label=type,
-		lp="2427.4,221.5",
-		pos="e,2403.8,194.93 1672.9,251.87 1688.3,249.94 1704.3,248.2 1719.4,247 1738.4,245.49 2393.1,242.67 2406.4,229 2412.9,222.36 2411.9,\
-212.99 2408.4,204.15",
+		lp="4143.4,221.5",
+		pos="e,4127.1,196.23 2525.2,251.77 2540.8,249.83 2557.1,248.1 2572.4,247 2593.8,245.46 4105,243.99 4120.4,229 4126.4,223.15 4128.2,214.58 \
+4128,206.19",
 		style=solid];
 	category	[height=0.5,
-		pos="2493.4,178",
+		pos="4223.4,178",
 		width=1.4263];
 	"contributor association" -> category	[color=blue,
 		label=category,
-		lp="2499.9,221.5",
-		pos="e,2483.2,195.8 1672.5,251.89 1688,249.95 1704.2,248.19 1719.4,247 1759.7,243.83 2410.6,245.71 2447.4,229 2459.2,223.65 2469.3,213.69 \
-2477.1,204.05",
+		lp="4220.9,221.5",
+		pos="e,4209.5,195.46 2525.2,251.77 2540.8,249.83 2557.1,248.1 2572.4,247 2616.5,243.83 4121.9,244.28 4163.4,229 4178.1,223.57 4191.8,\
+212.81 4202.4,202.66",
 		style=solid];
 	subject	[height=0.5,
-		pos="2607.4,178",
+		pos="4337.4,178",
 		width=1.2277];
 	"contributor association" -> subject	[color=blue,
 		label=subject,
-		lp="2591.4,221.5",
-		pos="e,2590.9,194.71 1672.5,251.86 1688,249.92 1704.2,248.17 1719.4,247 1809.8,240.02 2449.2,257.06 2535.4,229 2552.8,223.32 2569.8,211.9 \
-2582.9,201.4",
+		lp="4316.4,221.5",
+		pos="e,4318.9,194.56 2525.2,251.76 2540.8,249.82 2557.1,248.09 2572.4,247 2665.7,240.33 4166.5,255.02 4256.4,229 4276,223.31 4295.6,211.45 \
+4310.6,200.7",
 		style=solid];
 	predicate	[height=0.5,
-		pos="2724.4,178",
+		pos="4454.4,178",
 		width=1.5165];
 	"contributor association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2697.4,221.5",
-		pos="e,2700.5,194.27 1672.5,251.83 1688,249.9 1704.2,248.16 1719.4,247 1819.3,239.39 2523.9,252.43 2621.4,229 2646.3,223.02 2672.1,210.43 \
-2691.7,199.38",
+		lp="4424.4,221.5",
+		pos="e,4429.7,194.11 2524.8,251.8 2540.6,249.84 2557,248.1 2572.4,247 2670.7,240 4250.2,250.69 4346.4,229 4372.6,223.09 4400.1,210.27 \
+4420.7,199.1",
 		style=solid];
 	object	[height=0.5,
-		pos="2674.4,91",
+		pos="4404.4,91",
 		width=1.0832];
 	"contributor association" -> object	[color=blue,
 		label=object,
-		lp="2816.4,178",
-		pos="e,2706.5,101.28 1672.2,251.85 1687.8,249.9 1704.1,248.15 1719.4,247 1832,238.55 2627.1,260.99 2735.4,229 2772.5,218.04 2807.5,193.63 \
-2788.4,160 2773,132.81 2741.9,115.34 2716,104.93",
+		lp="4546.4,178",
+		pos="e,4434.2,102.71 2524.8,251.79 2540.6,249.83 2557,248.09 2572.4,247 2677.1,239.57 4361.2,257.11 4462.4,229 4490.2,221.27 4504.1,221.08 \
+4518.4,196 4540.7,156.94 4484.7,124.38 4443.5,106.59",
 		style=solid];
 	qualifiers	[height=0.5,
-		pos="2931.4,178",
+		pos="4661.4,178",
 		width=1.4985];
 	"contributor association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2902.9,221.5",
-		pos="e,2907.8,194.3 1672.2,251.83 1687.8,249.88 1704.1,248.14 1719.4,247 1842.4,237.86 2709.5,257.84 2829.4,229 2854.1,223.07 2879.7,\
-210.47 2899.1,199.41",
+		lp="4632.9,221.5",
+		pos="e,4637.8,194.36 2524.8,251.78 2540.6,249.83 2557,248.09 2572.4,247 2682.5,239.22 4452,254.43 4559.4,229 4584.1,223.16 4609.7,210.56 \
+4629.1,199.48",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1766.4,265",
+		pos="2619.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1897.4,265",
+		pos="2750.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2673.4,134.5",
-		pos="e,2661.7,108.05 2620.3,160.61 2630.3,147.95 2644.3,130.24 2655.5,115.98"];
+		lp="4403.4,134.5",
+		pos="e,4391.7,108.05 4350.3,160.61 4360.3,147.95 4374.3,130.24 4385.5,115.98"];
 	relation	[height=0.5,
-		pos="2619.4,18",
+		pos="4349.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2618.1,36.188 2608.7,159.79 2610.8,132.48 2614.8,78.994 2617.3,46.38",
+	subject -> relation	[pos="e,4348.1,36.188 4338.7,159.79 4340.8,132.48 4344.8,78.994 4347.3,46.38",
 		style=dotted];
 	"contributor association_subject"	[color=blue,
 		height=0.5,
 		label="information content entity",
-		pos="2123.4,265",
+		pos="2976.4,265",
 		width=3.7011];
 	"contributor association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2352.4,265",
+		pos="3205.4,265",
 		width=2.1665];
-	object -> relation	[pos="e,2632.2,35.54 2661.9,73.889 2655,64.939 2646.2,53.617 2638.4,43.584",
+	object -> relation	[pos="e,4362.2,35.54 4391.9,73.889 4385,64.939 4376.2,53.617 4368.4,43.584",
 		style=dotted];
 	"contributor association_object"	[color=blue,
 		height=0.5,
 		label=agent,
-		pos="2485.4,265",
+		pos="3338.4,265",
 		width=1.0291];
 	"contributor association_qualifiers"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="2617.4,265",
+		pos="3470.4,265",
 		width=2.1304];
 }

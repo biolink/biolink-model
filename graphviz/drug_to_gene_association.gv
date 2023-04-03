@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,3449.4,283"];
+	graph [bb="0,0,5164.4,283"];
 	node [label="\N"];
 	"drug to gene association"	[height=0.5,
 		label="drug to gene association",
-		pos="1778.4,265",
+		pos="2796.4,265",
 		width=3.4664];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"drug to gene association" -> association	[label=is_a,
-		lp="475.39,221.5",
-		pos="e,106.9,190.62 1653.9,263.75 1420,262.59 899.1,256.8 461.39,229 315.18,219.71 277.85,220.45 133.39,196 128.01,195.09 122.42,194 \
-116.85,192.82"];
+		lp="466.39,221.5",
+		pos="e,107.28,190.69 2671.8,263.59 2251.9,261.98 890.16,254.86 452.39,229 310.11,220.59 273.9,219.98 133.39,196 128.08,195.09 122.58,\
+194.02 117.09,192.86"];
 	"drug to entity association mixin"	[height=0.5,
 		pos="301.39,178",
 		width=4.4052];
 	"drug to gene association" -> "drug to entity association mixin"	[label=uses,
-		lp="616.89,221.5",
-		pos="e,374.14,194.01 1654.5,262.45 1394.9,258.86 801.73,248.73 600.39,229 526.86,221.79 444.07,207.46 384.28,195.97"];
+		lp="614.89,221.5",
+		pos="e,372.71,194.12 2671.5,264.49 2268.5,265.68 1005.2,266.26 598.39,229 524.93,222.27 442.23,207.77 382.79,196.11"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"drug to gene association" -> id	[color=blue,
 		label=id,
-		lp="740.39,221.5",
-		pos="e,545.11,189.95 1654.5,262.33 1417.6,258.72 908.24,248.87 733.39,229 657.35,220.36 638.22,216.16 564.39,196 561.24,195.14 557.99,\
-194.17 554.75,193.15",
+		lp="735.39,221.5",
+		pos="e,545.37,190.01 2671.9,263.21 2254.7,260.38 920.73,249.8 728.39,229 654.48,221 636.06,215.79 564.39,196 561.28,195.14 558.08,194.18 \
+554.89,193.17",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -36,9 +36,9 @@ digraph {
 		width=1.2277];
 	"drug to gene association" -> iri	[color=blue,
 		label=iri,
-		lp="866.39,221.5",
-		pos="e,649.99,190.23 1653.4,264.61 1476,264.25 1141.5,259.09 858.39,229 774.04,220.03 752.75,216.34 670.39,196 666.96,195.15 663.42,194.2 \
-659.89,193.19",
+		lp="853.39,221.5",
+		pos="e,650.01,190.16 2671.3,264.51 2299,265.59 1201.5,265.5 845.39,229 766.66,220.93 747.11,215.46 670.39,196 666.97,195.13 663.43,194.16 \
+659.9,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"drug to gene association" -> name	[color=blue,
 		label=name,
-		lp="978.39,221.5",
-		pos="e,776.9,190.59 1656.3,261.27 1461.7,256.51 1089.6,245.56 958.39,229 898.63,221.46 831.31,205.16 786.63,193.22",
+		lp="967.39,221.5",
+		pos="e,775.59,191.06 2672.1,263.12 2285.1,260.19 1117.2,249.7 947.39,229 891,222.12 827.78,205.98 785.37,193.88",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"drug to gene association" -> description	[color=blue,
 		label=description,
-		lp="1107.9,221.5",
-		pos="e,927.52,193.16 1656.3,261.23 1483.7,256.77 1177.1,246.64 1067.4,229 1022.7,221.81 973.18,207.7 937.27,196.29",
+		lp="1098.9,221.5",
+		pos="e,925.36,193.52 2672.1,263.38 2300.8,261.27 1216.2,253.1 1058.4,229 1015.9,222.51 969.07,208.43 935.04,196.86",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"drug to gene association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1267.4,221.5",
-		pos="e,1067.9,191.01 1654.4,262.94 1540.8,260.39 1368.4,252.5 1220.4,229 1170.9,221.13 1115.5,205.68 1077.6,194.03",
+		lp="1260.4,221.5",
+		pos="e,1066.4,191.41 2672.2,263 2324.2,259.94 1355.8,249.67 1213.4,229 1165.7,222.07 1112.7,206.59 1076.2,194.67",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=1.9318];
 	"drug to gene association" -> subject	[color=blue,
 		label=subject,
-		lp="1417.4,221.5",
-		pos="e,1217.8,191.45 1664,257.67 1586.7,252.41 1482.5,243.41 1391.4,229 1335.1,220.1 1271.7,205.16 1227.5,193.93",
+		lp="1425.4,221.5",
+		pos="e,1216.8,191.65 2671.6,263.92 2376.8,263.25 1643.5,258.55 1399.4,229 1339.6,221.76 1272.4,206.08 1226.5,194.2",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -87,8 +87,8 @@ digraph {
 		width=2.1665];
 	"drug to gene association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1535.4,221.5",
-		pos="e,1378,193.49 1674.1,255.06 1621.9,249.52 1557.9,241.1 1501.4,229 1462.6,220.7 1419.8,207.5 1387.6,196.75",
+		lp="1563.4,221.5",
+		pos="e,1380.3,193.17 2671.5,264.15 2396.8,263.9 1747,259.94 1529.4,229 1481.5,222.19 1428.4,207.8 1390.2,196.2",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -97,8 +97,8 @@ digraph {
 		width=1.2999];
 	"drug to gene association" -> negated	[color=blue,
 		label=negated,
-		lp="1648.4,221.5",
-		pos="e,1511.5,191.48 1706.7,250.26 1679.2,244.46 1647.6,237.15 1619.4,229 1585.8,219.31 1548.6,205.77 1521.1,195.22",
+		lp="1707.4,221.5",
+		pos="e,1515,190.39 2672,263.17 2422.2,261 1867.1,253.49 1678.4,229 1624.6,222.02 1564.4,205.52 1524.6,193.37",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -107,8 +107,8 @@ digraph {
 		width=2.1304];
 	"drug to gene association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1740.9,221.5",
-		pos="e,1647.9,195.02 1743.8,247.56 1732.2,241.85 1719.1,235.3 1707.4,229 1690.5,219.92 1672,209.3 1656.6,200.19",
+		lp="1840.9,221.5",
+		pos="e,1663.3,193.2 2672,263.12 2444.6,260.92 1970.4,253.47 1807.4,229 1761.1,222.05 1709.8,207.75 1672.8,196.22",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -117,8 +117,8 @@ digraph {
 		width=1.7332];
 	"drug to gene association" -> publications	[color=blue,
 		label=publications,
-		lp="1822.4,221.5",
-		pos="e,1778.4,196.18 1778.4,246.8 1778.4,235.16 1778.4,219.55 1778.4,206.24",
+		lp="1978.4,221.5",
+		pos="e,1813,193.08 2671.9,263.06 2468.1,260.84 2072.2,253.42 1934.4,229 1895.7,222.15 1853.4,208.15 1822.6,196.7",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -127,8 +127,8 @@ digraph {
 		width=2.0943];
 	"drug to gene association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1939.9,221.5",
-		pos="e,1916.1,195.69 1827.9,248.29 1842,242.98 1857.1,236.47 1870.4,229 1883.7,221.48 1897.3,211.34 1908.5,202.15",
+		lp="2124.9,221.5",
+		pos="e,1968.8,194.09 2672.9,262.22 2498.4,258.98 2188.6,250.36 2078.4,229 2043.9,222.31 2006.4,209.1 1978.3,197.94",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -137,8 +137,8 @@ digraph {
 		width=3.015];
 	"drug to gene association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2103.9,221.5",
-		pos="e,2096.3,194.73 1868.6,252.5 1906.5,246.79 1950.9,238.96 1990.4,229 2023,220.77 2058.8,208.57 2086.8,198.28",
+		lp="2263.9,221.5",
+		pos="e,2152,195.95 2674.9,260.79 2513.2,255.92 2242.5,245.44 2199.4,229 2184.6,223.35 2170.5,212.89 2159.5,202.99",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -147,9 +147,8 @@ digraph {
 		width=3.015];
 	"drug to gene association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2339.4,221.5",
-		pos="e,2321.6,194.12 1866.3,252.13 1881.6,250.26 1897.5,248.46 1912.4,247 2027.7,235.71 2058,247.18 2172.4,229 2219.9,221.45 2272.7,207.95 \
-2311.9,196.88",
+		lp="2430.4,221.5",
+		pos="e,2347.2,195.77 2672.2,263.09 2543.5,260.83 2357.9,253.32 2335.4,229 2328,220.97 2332.2,211.37 2340,202.74",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -158,9 +157,8 @@ digraph {
 		width=3.015];
 	"drug to gene association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2606.9,221.5",
-		pos="e,2564.6,194.68 1864.4,251.9 1880.3,250 1896.9,248.25 1912.4,247 2145.6,228.26 2207.5,266.67 2438.4,229 2478.3,222.49 2522,209.29 \
-2554.8,198.08",
+		lp="2639.9,221.5",
+		pos="e,2557.2,194.17 2672.3,262.73 2613.5,259.22 2552.1,250.31 2533.4,229 2523,217.1 2532.7,206.69 2548.1,198.49",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -169,9 +167,8 @@ digraph {
 		width=1.5346];
 	"drug to gene association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2782.4,221.5",
-		pos="e,2771.6,195.19 1863.7,251.83 1879.8,249.91 1896.6,248.17 1912.4,247 2001.6,240.36 2632.4,256.97 2717.4,229 2734.4,223.39 2751,212.2 \
-2763.8,201.83",
+		lp="2786.4,221.5",
+		pos="e,2765.6,194.47 2766.8,247.2 2760.6,242.2 2754.9,236.11 2751.4,229 2746.7,219.42 2751.1,209.79 2758.4,201.57",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -180,9 +177,8 @@ digraph {
 		width=1.0652];
 	"drug to gene association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2910.4,221.5",
-		pos="e,2882.7,194.25 1863.7,251.8 1879.8,249.88 1896.6,248.15 1912.4,247 2013.1,239.63 2724.7,258.08 2821.4,229 2840.8,223.18 2860,211.19 \
-2874.6,200.41",
+		lp="2900.4,221.5",
+		pos="e,2876.4,192.24 2811,246.75 2820.1,236.6 2832.3,223.86 2844.4,214 2851.6,208.17 2859.8,202.54 2867.7,197.56",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -191,47 +187,167 @@ digraph {
 		width=1.5887];
 	"drug to gene association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3054.9,221.5",
-		pos="e,3004.9,195.82 1863.3,251.81 1879.6,249.88 1896.5,248.14 1912.4,247 1971,242.79 2917,253.67 2970.4,229 2981.9,223.67 2991.7,213.71 \
-2999,204.08",
+		lp="3042.9,221.5",
+		pos="e,2999.2,195.85 2886.3,252.47 2909.9,247.29 2934.8,239.8 2956.4,229 2969.5,222.46 2982,212.32 2992.1,202.87",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3146.4,178",
+		pos="3128.4,178",
 		width=1.0652];
 	"drug to gene association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3186.9,221.5",
-		pos="e,3143.1,196.02 1863.3,251.78 1879.6,249.85 1896.5,248.12 1912.4,247 1945.9,244.63 3094.1,247.11 3122.4,229 3130.7,223.67 3136.2,\
-214.55 3139.9,205.55",
+		lp="3170.9,221.5",
+		pos="e,3125.4,196.17 2885.7,252.36 2900.6,250.51 2915.9,248.65 2930.4,247 2969.5,242.53 3074.6,252.13 3106.4,229 3114.1,223.4 3119.1,\
+214.52 3122.4,205.79",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3261.4,178",
+		width=2.1304];
+	"drug to gene association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3301.9,221.5",
+		pos="e,3254.3,196.03 2883.5,252.11 2899.1,250.22 2915.2,248.42 2930.4,247 2963.2,243.92 3197.6,245.1 3226.4,229 3236.1,223.56 3243.7,\
+214.18 3249.4,204.99",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3432.4,178",
+		width=2.1304];
+	"drug to gene association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3449.9,221.5",
+		pos="e,3415.9,195.81 2882.8,251.95 2898.6,250.05 2915,248.3 2930.4,247 2978.6,242.95 3319.8,245.19 3365.4,229 3381.2,223.4 3396.3,212.69 \
+3408.2,202.61",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3565.4,178",
+		width=1.0652];
+	"drug to gene association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3583.9,221.5",
+		pos="e,3549.9,194.72 2882.1,251.9 2898.1,249.99 2914.7,248.23 2930.4,247 2994.4,241.95 3448.6,252.57 3508.4,229 3516.2,225.92 3530.4,\
+213.5 3542.6,201.81",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3661.4,178",
+		width=1.0652];
+	"drug to gene association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3703.4,221.5",
+		pos="e,3659,196.41 2882,251.83 2898.1,249.92 2914.7,248.19 2930.4,247 2969.7,244.01 3607.8,251.25 3640.4,229 3648.2,223.68 3653.1,214.85 \
+3656.2,206.09",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3794.4,178",
+		width=2.1304];
+	"drug to gene association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3861.9,221.5",
+		pos="e,3786.8,196.21 2881.7,251.83 2897.8,249.9 2914.6,248.17 2930.4,247 2976.2,243.6 3716.6,250.13 3757.4,229 3767.6,223.73 3775.7,214.24 \
+3781.7,204.94",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3983.4,178",
+		width=2.1304];
+	"drug to gene association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4051.9,221.5",
+		pos="e,3978.1,196.13 2881.7,251.77 2897.8,249.86 2914.6,248.14 2930.4,247 2958.7,244.96 3928.8,243.22 3953.4,229 3962.5,223.74 3969.2,\
+214.51 3973.9,205.4",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4173.4,178",
+		width=1.0652];
+	"drug to gene association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4223.4,221.5",
+		pos="e,4166.7,196.2 2881.3,251.78 2897.6,249.85 2914.5,248.12 2930.4,247 2963.9,244.63 4109.8,244.93 4139.4,229 4149.1,223.77 4156.6,\
+214.42 4162,205.21",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4332.4,178",
+		width=1.0652];
+	"drug to gene association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4376.4,221.5",
+		pos="e,4325,195.76 2881.3,251.76 2897.6,249.83 2914.5,248.11 2930.4,247 2968.2,244.36 4261.6,246.29 4295.4,229 4305.7,223.7 4313.9,214.02 \
+4319.9,204.58",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4483.4,178",
+		width=1.0652];
+	"drug to gene association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4536.4,221.5",
+		pos="e,4475.4,195.78 2881.3,251.74 2897.6,249.82 2914.5,248.1 2930.4,247 2972.4,244.1 4406.7,247.68 4444.4,229 4455.1,223.69 4463.8,213.87 \
+4470.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4654.4,178",
+		width=1.0652];
+	"drug to gene association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4702.9,221.5",
+		pos="e,4646.1,195.8 2881.3,251.73 2897.6,249.8 2914.5,248.09 2930.4,247 2977.1,243.8 4572.3,249.49 4614.4,229 4625.3,223.71 4634.1,213.89 \
+4640.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4816.4,178",
+		width=2.347];
+	"drug to gene association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4864.9,221.5",
+		pos="e,4807.8,196.3 2881,251.76 2897.3,249.82 2914.4,248.09 2930.4,247 2981.6,243.52 4730.3,251.44 4776.4,229 4787.1,223.79 4795.9,214.17 \
+4802.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3234.4,178",
+		pos="4950.4,178",
 		width=0.86659];
 	"drug to gene association" -> type	[color=blue,
 		label=type,
-		lp="3264.4,221.5",
-		pos="e,3243.4,195.57 1863.3,251.76 1879.6,249.83 1896.5,248.11 1912.4,247 1930.8,245.71 3229.4,242.15 3242.4,229 3248.5,222.79 3248.7,\
-213.89 3246.6,205.31",
+		lp="4964.4,221.5",
+		pos="e,4951.2,196.19 2881,251.75 2897.3,249.81 2914.4,248.08 2930.4,247 2958.2,245.12 4916.6,246.37 4938.4,229 4945.2,223.55 4948.6,214.93 \
+4950.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="3335.4,178",
+		pos="5051.4,178",
 		width=1.4263];
 	"drug to gene association" -> category	[color=blue,
 		label=category,
-		lp="3337.9,221.5",
-		pos="e,3323.7,195.89 1863.3,251.76 1879.6,249.83 1896.5,248.11 1912.4,247 1950.4,244.35 3249.2,243.64 3284.4,229 3297.2,223.66 3308.6,\
-213.42 3317.3,203.59",
+		lp="5043.9,221.5",
+		pos="e,5035.8,195.26 2881,251.74 2897.3,249.8 2914.4,248.08 2930.4,247 2987.3,243.15 4930.3,247.22 4984.4,229 5000.6,223.54 5016.1,212.52 \
+5028.1,202.21",
 		style=solid];
 	object	[height=0.5,
 		pos="1238.4,91",
 		width=1.0832];
 	"drug to gene association" -> object	[color=blue,
 		label=object,
-		lp="3427.4,178",
-		pos="e,1277.4,92.482 1863.3,251.75 1879.6,249.82 1896.5,248.1 1912.4,247 1952.9,244.19 3337.7,248.37 3373.4,229 3401.7,213.64 3417.8,\
-183.12 3395.4,160 3357.5,120.86 1605.8,96.685 1287.7,92.613",
+		lp="5142.4,178",
+		pos="e,1277.5,91.926 2881,251.74 2897.3,249.8 2914.4,248.08 2930.4,247 2990,242.99 5024.5,252.5 5079.4,229 5110.5,215.69 5135.1,184.11 \
+5111.4,160 5041.1,88.423 1733.3,91.209 1287.8,91.91",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1237.4,134.5",
@@ -244,18 +360,18 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1959.4,265",
+		pos="2977.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2090.4,265",
+		pos="3108.4,265",
 		width=2.0762];
 	object -> relation	[pos="e,1196.2,35.54 1225.9,73.889 1219,64.939 1210.2,53.617 1202.4,43.584",
 		style=dotted];
 	"drug to gene association_object"	[color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="2293.4,265",
+		pos="3311.4,265",
 		width=3.0692];
 }

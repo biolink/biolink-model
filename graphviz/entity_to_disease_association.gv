@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3446.4,283"];
+	graph [bb="0,0,5142.4,283"];
 	node [label="\N"];
 	"entity to disease association"	[height=0.5,
 		label="entity to disease association",
-		pos="1523.4,265",
+		pos="2544.4,265",
 		width=3.9538];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"entity to disease association" -> association	[label=is_a,
 		lp="280.39,221.5",
-		pos="e,103.32,191.76 1381.1,263.84 1099,262.89 477.81,257.52 266.39,229 213.31,221.84 153.98,206.43 113.05,194.6"];
+		pos="e,102.91,191.8 2402.4,263.68 1937.3,262.36 477.01,256.08 266.39,229 213.1,222.15 153.57,206.62 112.64,194.67"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"entity to disease association" -> id	[color=blue,
 		label=id,
-		lp="397.39,221.5",
-		pos="e,210.38,189.99 1382.1,262.66 1122.2,259.68 578.16,250.98 390.39,229 317.85,220.51 299.77,215.57 229.39,196 226.29,195.14 223.09,\
-194.17 219.89,193.15",
+		lp="396.39,221.5",
+		pos="e,210.38,189.98 2402.7,263.24 1955,260.62 587.97,250.9 389.39,229 317.22,221.04 299.34,215.5 229.39,196 226.29,195.13 223.09,194.17 \
+219.89,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"entity to disease association" -> iri	[color=blue,
 		label=iri,
-		lp="513.39,221.5",
-		pos="e,315.3,190.22 1382.9,261.9 1144.7,257.89 671,247.8 505.39,229 428.92,220.32 409.95,215.12 335.39,196 332.02,195.13 328.54,194.17 \
-325.05,193.16",
+		lp="503.39,221.5",
+		pos="e,315.31,190.16 2402.5,263.11 1969.5,260.17 683.15,249.78 495.39,229 423.23,221.01 405.62,214.45 335.39,196 332.02,195.11 328.55,\
+194.14 325.06,193.12",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"entity to disease association" -> name	[color=blue,
 		label=name,
-		lp="615.39,221.5",
-		pos="e,439.55,191.43 1382.4,262.38 1161.3,259.22 742.86,250.53 595.39,229 544.85,221.62 488.44,206.25 449.54,194.49",
+		lp="607.39,221.5",
+		pos="e,438.25,191.78 2402.6,263.47 1982.9,261.61 765.15,254.09 587.39,229 538.92,222.16 485.05,206.79 447.81,194.88",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"entity to disease association" -> description	[color=blue,
 		label=description,
-		lp="729.89,221.5",
-		pos="e,584.6,194.29 1381.6,263.26 1179.2,261.32 817.62,254.3 689.39,229 656.44,222.5 620.84,209.44 594.05,198.29",
+		lp="723.89,221.5",
+		pos="e,582.77,194.4 2401.9,264.13 1995.6,264.09 849.98,261.11 683.39,229 651.71,222.89 617.7,209.84 592.13,198.6",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"entity to disease association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="866.39,221.5",
-		pos="e,723.86,193.3 1382.3,262.57 1208.3,259.83 922.82,251.9 819.39,229 789.19,222.31 756.86,208.9 732.93,197.65",
+		lp="862.39,221.5",
+		pos="e,722.86,193.55 2402,264.19 2016,264.26 968.26,261.42 815.39,229 786.11,222.79 754.98,209.44 731.91,198.1",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -71,7 +71,7 @@ digraph {
 	"entity to disease association" -> subject	[color=blue,
 		label=subject,
 		lp="989.39,221.5",
-		pos="e,867.11,194.24 1385.7,260.31 1246.4,255.69 1040.8,246.21 963.39,229 933.27,222.3 900.94,209.48 876.43,198.5",
+		pos="e,866.52,194.37 2402.2,263.71 2040.1,262.55 1101.9,256.88 963.39,229 932.94,222.87 900.37,209.91 875.84,198.72",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -81,7 +81,7 @@ digraph {
 	"entity to disease association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1068.4,221.5",
-		pos="e,1008.5,195.95 1385.7,260.42 1251.7,255.94 1064,246.6 1034.4,229 1025.2,223.53 1018.2,214.26 1013.1,205.18",
+		pos="e,1008.4,196.14 2402.2,264.3 2037.4,264.6 1093.3,262.14 1034.4,229 1025,223.7 1017.9,214.33 1012.8,205.13",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -91,8 +91,8 @@ digraph {
 	"entity to disease association" -> object	[color=blue,
 		label=object,
 		lp="1147.4,178",
-		pos="e,976.03,105.47 1440.7,250.29 1402.3,243.89 1356,236.12 1314.4,229 1230.3,214.62 1201.1,235.31 1125.4,196 1105.3,185.57 1108.1,172.77 \
-1089.4,160 1057.3,138.07 1017,120.64 985.5,108.92",
+		pos="e,976.03,105.47 2403.8,262.06 2132.3,257.95 1544.4,247.23 1342.4,229 1245.2,220.23 1212.5,240.02 1125.4,196 1105.2,185.79 1108.1,\
+172.77 1089.4,160 1057.3,138.07 1017,120.64 985.5,108.92",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -101,8 +101,8 @@ digraph {
 		width=1.2999];
 	"entity to disease association" -> negated	[color=blue,
 		label=negated,
-		lp="1393.4,221.5",
-		pos="e,1256.5,191.48 1448.5,249.58 1421.8,243.89 1391.6,236.84 1364.4,229 1330.8,219.31 1293.6,205.77 1266.1,195.22",
+		lp="1452.4,221.5",
+		pos="e,1260,190.39 2402.7,263.03 2144.9,260.69 1608.5,253.01 1423.4,229 1369.6,222.02 1309.4,205.52 1269.6,193.37",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -111,8 +111,8 @@ digraph {
 		width=2.1304];
 	"entity to disease association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1485.9,221.5",
-		pos="e,1392.9,195.02 1488.5,247.38 1476.9,241.72 1464,235.24 1452.4,229 1435.5,219.92 1417,209.3 1401.6,200.19",
+		lp="1585.9,221.5",
+		pos="e,1408.3,193.2 2402.7,262.96 2168.8,260.58 1712,252.94 1552.4,229 1506.1,222.05 1454.8,207.75 1417.8,196.22",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -121,8 +121,8 @@ digraph {
 		width=1.7332];
 	"entity to disease association" -> publications	[color=blue,
 		label=publications,
-		lp="1567.4,221.5",
-		pos="e,1523.4,196.18 1523.4,246.8 1523.4,235.16 1523.4,219.55 1523.4,206.24",
+		lp="1724.4,221.5",
+		pos="e,1558.3,193.08 2402.8,262.85 2194.3,260.38 1814.8,252.69 1680.4,229 1641.5,222.15 1598.9,208.14 1567.9,196.7",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -131,8 +131,8 @@ digraph {
 		width=2.0943];
 	"entity to disease association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1684.9,221.5",
-		pos="e,1661.1,195.69 1573.3,248.11 1587.3,242.83 1602.3,236.39 1615.4,229 1628.7,221.48 1642.3,211.34 1653.5,202.15",
+		lp="1871.9,221.5",
+		pos="e,1714.3,194.09 2404,261.84 2226.8,258.3 1932.3,249.49 1825.4,229 1790.4,222.3 1752.4,209.09 1724,197.93",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -141,8 +141,8 @@ digraph {
 		width=3.015];
 	"entity to disease association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1848.9,221.5",
-		pos="e,1841.3,194.73 1619.1,251.66 1655.7,246.03 1697.8,238.48 1735.4,229 1768,220.77 1803.8,208.57 1831.8,198.28",
+		lp="2011.9,221.5",
+		pos="e,1897.9,195.96 2407.3,260.16 2244.4,254.94 1989.3,244.45 1947.4,229 1931.9,223.3 1917.1,212.69 1905.4,202.7",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -151,9 +151,8 @@ digraph {
 		width=3.015];
 	"entity to disease association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2084.4,221.5",
-		pos="e,2066.6,194.05 1623.9,252.23 1641.1,250.37 1658.7,248.55 1675.4,247 1782.8,237 1810.9,246.2 1917.4,229 1964.9,221.33 2017.7,207.83 \
-2056.9,196.8",
+		lp="2178.4,221.5",
+		pos="e,2094.1,195.74 2402.9,262.76 2275.5,260.13 2104.9,252.25 2083.4,229 2076.2,221.21 2080,211.68 2087.1,203.04",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -162,9 +161,8 @@ digraph {
 		width=3.015];
 	"entity to disease association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2351.9,221.5",
-		pos="e,2309.6,194.66 1621.4,251.93 1639.3,250.04 1657.9,248.29 1675.4,247 1900.7,230.43 1960.4,265.52 2183.4,229 2223.3,222.47 2267,209.26 \
-2299.8,198.06",
+		lp="2387.9,221.5",
+		pos="e,2304.5,194.27 2404.5,261.66 2350.9,257.53 2298.4,248.41 2281.4,229 2271.3,217.45 2280.6,207.11 2295.3,198.87",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -173,9 +171,8 @@ digraph {
 		width=1.5346];
 	"entity to disease association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2527.4,221.5",
-		pos="e,2516.6,195.19 1620.6,251.84 1638.8,249.93 1657.6,248.19 1675.4,247 1762.7,241.13 2379.3,256.37 2462.4,229 2479.4,223.39 2496,212.2 \
-2508.8,201.82",
+		lp="2534.4,221.5",
+		pos="e,2512,194.95 2514.8,247.2 2508.6,242.2 2502.9,236.11 2499.4,229 2494.9,219.85 2498.7,210.46 2505.2,202.32",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -184,9 +181,8 @@ digraph {
 		width=1.0652];
 	"entity to disease association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2655.4,221.5",
-		pos="e,2627.7,194.25 1620.6,251.8 1638.8,249.89 1657.6,248.17 1675.4,247 1774.2,240.49 2471.6,257.53 2566.4,229 2585.8,223.18 2605,211.18 \
-2619.6,200.4",
+		lp="2648.4,221.5",
+		pos="e,2622.4,192.59 2559.1,246.86 2568.2,236.75 2580.4,224.01 2592.4,214 2599.1,208.42 2606.7,202.95 2614,198.05",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -195,49 +191,168 @@ digraph {
 		width=1.5887];
 	"entity to disease association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2799.9,221.5",
-		pos="e,2749.9,195.81 1620.2,251.8 1638.5,249.88 1657.5,248.15 1675.4,247 1733.1,243.28 2662.9,253.26 2715.4,229 2726.9,223.67 2736.7,\
-213.71 2744,204.07",
+		lp="2789.9,221.5",
+		pos="e,2745.2,195.87 2639.9,251.62 2661.8,246.49 2684.6,239.24 2704.4,229 2716.9,222.55 2728.7,212.55 2738.2,203.17",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2909.4,178",
+		pos="2873.4,178",
 		width=1.0652];
 	"entity to disease association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2938.9,221.5",
-		pos="e,2900.5,195.8 1620.2,251.76 1638.5,249.85 1657.5,248.13 1675.4,247 1708.4,244.91 2837.5,243.21 2867.4,229 2878.5,223.71 2887.8,\
-213.9 2894.7,204.35",
+		lp="2917.9,221.5",
+		pos="e,2871.5,196.07 2647.1,252.49 2737.2,242.36 2854.1,229.2 2854.4,229 2861.7,223.35 2866.2,214.58 2868.9,205.94",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3006.4,178",
+		width=2.1304];
+	"entity to disease association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3048.9,221.5",
+		pos="e,3000,195.99 2644.5,252.14 2661.8,250.28 2679.6,248.48 2696.4,247 2727.1,244.29 2946.7,244.49 2973.4,229 2982.8,223.52 2990.1,214.12 \
+2995.4,204.94",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3177.4,178",
+		width=2.1304];
+	"entity to disease association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3195.9,221.5",
+		pos="e,3161.5,195.8 2643.2,251.96 2660.9,250.09 2679.2,248.33 2696.4,247 2742.5,243.43 3068.9,244.84 3112.4,229 3127.8,223.38 3142.6,\
+212.67 3154.1,202.6",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3310.4,178",
+		width=1.0652];
+	"entity to disease association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3333.9,221.5",
+		pos="e,3297.9,195.33 2642.4,251.88 2660.3,250 2678.9,248.26 2696.4,247 2758.4,242.54 3197.8,252.34 3255.4,229 3269.1,223.44 3281.6,212.82 \
+3291.2,202.79",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3408.4,178",
+		width=1.0652];
+	"entity to disease association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3450.4,221.5",
+		pos="e,3406.3,196.38 2642,251.84 2660.1,249.94 2678.8,248.21 2696.4,247 2734.8,244.36 3356.8,250.97 3388.4,229 3396.1,223.64 3400.8,214.81 \
+3403.7,206.05",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3541.4,178",
+		width=2.1304];
+	"entity to disease association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3608.9,221.5",
+		pos="e,3533.8,196.21 2641.6,251.83 2659.8,249.92 2678.6,248.19 2696.4,247 2741.2,244 3464.5,249.65 3504.4,229 3514.6,223.73 3522.7,214.24 \
+3528.7,204.93",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3731.4,178",
+		width=2.1304];
+	"entity to disease association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3798.9,221.5",
+		pos="e,3725.7,196.14 2641.6,251.76 2659.8,249.86 2678.6,248.15 2696.4,247 2724.2,245.2 3676.1,242.78 3700.4,229 3709.6,223.76 3716.5,\
+214.53 3721.3,205.42",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3921.4,178",
+		width=1.0652];
+	"entity to disease association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3971.4,221.5",
+		pos="e,3914.7,195.72 2641.2,251.77 2659.5,249.85 2678.5,248.13 2696.4,247 2729.4,244.91 3857.2,244.49 3886.4,229 3896.5,223.66 3904.3,\
+213.97 3909.9,204.54",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4080.4,178",
+		width=1.0652];
+	"entity to disease association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4124.4,221.5",
+		pos="e,4073,195.75 2641.2,251.74 2659.5,249.83 2678.5,248.12 2696.4,247 2733.7,244.67 4010.1,246.07 4043.4,229 4053.7,223.7 4061.9,214.02 \
+4067.9,204.58",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4231.4,178",
+		width=1.0652];
+	"entity to disease association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4284.4,221.5",
+		pos="e,4223.4,195.78 2641.2,251.72 2659.5,249.81 2678.5,248.11 2696.4,247 2737.9,244.44 4155.2,247.46 4192.4,229 4203.1,223.68 4211.8,\
+213.87 4218.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4402.4,178",
+		width=1.0652];
+	"entity to disease association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4450.9,221.5",
+		pos="e,4394.1,195.8 2640.8,251.74 2659.2,249.82 2678.4,248.1 2696.4,247 2742.6,244.17 4320.8,249.27 4362.4,229 4373.3,223.71 4382.1,213.89 \
+4388.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4564.4,178",
+		width=2.347];
+	"entity to disease association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4612.9,221.5",
+		pos="e,4555.8,196.3 2640.8,251.73 2659.2,249.81 2678.4,248.09 2696.4,247 2747.1,243.92 4478.7,251.22 4524.4,229 4535.1,223.79 4543.9,\
+214.17 4550.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3016.4,178",
+		pos="4712.4,178",
 		width=0.86659];
 	"entity to disease association" -> type	[color=blue,
 		label=type,
-		lp="3023.4,221.5",
-		pos="e,3013.8,195.98 1620.2,251.74 1638.5,249.83 1657.5,248.12 1675.4,247 1712,244.71 2963.8,249.23 2994.4,229 3002.4,223.67 3007.6,214.69 \
-3010.8,205.79",
+		lp="4716.4,221.5",
+		pos="e,4708.4,196.08 2640.8,251.72 2659.2,249.8 2678.4,248.09 2696.4,247 2724,245.34 4662.8,243.45 4686.4,229 4695,223.74 4700.9,214.64 \
+4704.8,205.63",
 		style=solid];
 	category	[height=0.5,
-		pos="3117.4,178",
+		pos="4813.4,178",
 		width=1.4263];
 	"entity to disease association" -> category	[color=blue,
 		label=category,
-		lp="3105.9,221.5",
-		pos="e,3100.1,195.01 1620.2,251.74 1638.5,249.82 1657.5,248.12 1675.4,247 1751.3,242.27 2970.9,251.73 3043.4,229 3061.3,223.39 3078.8,\
-211.93 3092.3,201.39",
+		lp="4799.9,221.5",
+		pos="e,4795.3,195.05 2640.8,251.72 2659.2,249.79 2678.4,248.08 2696.4,247 2753,243.6 4682.1,245.33 4736.4,229 4754.8,223.45 4773,211.98 \
+4787.1,201.44",
 		style=solid];
 	"FDA approval status"	[color=blue,
 		height=0.5,
 		label=FDAApprovalStatusEnum,
-		pos="3316.4,178",
+		pos="5012.4,178",
 		width=3.6108];
 	"entity to disease association" -> "FDA approval status"	[color=blue,
 		label="FDA approval status",
-		lp="3283.9,221.5",
-		pos="e,3272.5,195.06 1620.2,251.72 1638.5,249.81 1657.5,248.11 1675.4,247 1838,236.93 2980.2,252.58 3141.4,229 3182.9,222.92 3228.5,209.68 \
-3262.7,198.35",
+		lp="4978.9,221.5",
+		pos="e,4968.4,194.99 2640.8,251.71 2659.2,249.79 2678.4,248.08 2696.4,247 2933.6,232.77 4600.1,262.6 4835.4,229 4877.5,222.98 4923.8,\
+209.67 4958.5,198.29",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="919.39,134.5",
@@ -252,11 +367,11 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1722.4,265",
+		pos="2743.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1853.4,265",
+		pos="2874.4,265",
 		width=2.0762];
 }

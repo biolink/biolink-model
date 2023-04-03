@@ -176,7 +176,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [subject label closure](subject_label_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
-     * Example: ['BRACA1'] The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.  
+     * Example: ['BRACA1'] The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.
  * [subject namespace](subject_namespace.md)  <sub>0..1</sub>
      * Description: Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
@@ -306,7 +306,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [subject label closure](subject_label_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
-     * Example: ['BRACA1'] The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.  
+     * Example: ['BRACA1'] The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.
  * [subject namespace](subject_namespace.md)  <sub>0..1</sub>
      * Description: Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)

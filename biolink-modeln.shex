@@ -208,6 +208,17 @@ linkml:Nodeidentifier NONLITERAL
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;
              <original_object> @linkml:String ? ;
+             <subject_category> @<OntologyClass> ? ;
+             <object_category> @<OntologyClass> ? ;
+             <subject_closure> @linkml:String * ;
+             <object_closure> @linkml:String * ;
+             <subject_category_closure> @<OntologyClass> * ;
+             <object_category_closure> @<OntologyClass> * ;
+             <subject_namespace> @linkml:String ? ;
+             <object_namespace> @linkml:String ? ;
+             <subject_label_closure> @linkml:String * ;
+             <object_label_closure> @linkml:String * ;
+             <retrieval_source_ids> @<RetrievalSource> * ;
              <type> @linkml:String * ;
              <category> @<CategoryType> *
           ) ;
@@ -2847,9 +2858,9 @@ linkml:Nodeidentifier NONLITERAL
 <RetrievalSource> CLOSED {
     (  $<RetrievalSource_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ? ;
-          <resource> @linkml:Uriorcurie ;
+          <resource_id> @linkml:Uriorcurie ;
           <resource_role> @<ResourceRoleEnum> ;
-          <upstream_resources> @linkml:Uriorcurie ?
+          <upstream_resource_ids> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <RetrievalSource> ]
     )
