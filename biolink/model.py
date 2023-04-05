@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-03T23:02:33
+# Generation date: 2023-04-04T19:06:29
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -237,8 +237,8 @@ VMC = CurieNamespace('VMC', 'https://github.com/ga4gh/vr-spec/')
 WB = CurieNamespace('WB', 'http://identifiers.org/wb/')
 WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPhenotype_')
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
-WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBBT_')
-WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBBL_')
+WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBbt_')
+WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBls_')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
