@@ -971,7 +971,6 @@ slots:
 
   authors:
     is_a: node property
-    singular_name: author
     description: >-
       connects an publication to the list of authors who contributed to the publication.
       This property should be a comma-delimited list of author names. It is recommended that an author's name
@@ -981,6 +980,7 @@ slots:
       and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     multivalued: true
     domain: publication
+    range: author
 
   volume:
     is_a: node property
@@ -1539,7 +1539,7 @@ slots:
       - translator_minimal
 
   qualifiers:
-    singular_name: qualifier
+    deprecated: true
     description: >-
       connects an association to qualifiers that modify or
       qualify the meaning of that association
