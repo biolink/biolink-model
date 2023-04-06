@@ -83,12 +83,11 @@ prefixes:
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
   ncats.drug: 'https://drugs.ncats.io/drug/'
-  KEGG.BRITE: 'http://www.kegg.jp/entry/'
-  KEGG.DGROUP: 'http://www.kegg.jp/entry/'
-  KEGG.ENZYME: 'http://www.kegg.jp/entry/'
-  KEGG.GENE: 'http://www.kegg.jp/entry/'
-  KEGG.PATHWAY: 'https://www.kegg.jp/entry/'
-  KEGG.RCLASS: 'http://www.kegg.jp/entry/'
+  KEGG.BRITE: 'https://bioregistry.io/kegg.brite:'
+  KEGG: 'http://www.kegg.jp/entry/'
+  KEGG.GENES: 'https://bioregistry.io/kegg.genes:bsu:'
+  KEGG.PATHWAY: 'https://bioregistry.io/kegg.pathway:'
+  KEGG.RCLASS: 'https://www.genome.jp/dbget-bin/www_bget?rc:'
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
@@ -176,7 +175,7 @@ emit_prefixes:
   - rdfs
   - xsd
   - skos
-  - OIO
+  - oboInOwl
   - BIOGRID
   - SO
 
@@ -1913,7 +1912,7 @@ slots:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
-      - OIO:hasDbXref
+      - oboInOwl:hasDbXref
       - RXNORM:has_quantified_form
       - UMLS:SY
 
@@ -6736,8 +6735,8 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - KEGG
       - UMLS
 
   chemical entity:
@@ -6820,8 +6819,8 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - KEGG
       - BIGG.METABOLITE
       - UMLS
       - foodb.compound
@@ -6868,7 +6867,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
     close_mappings:
@@ -6907,6 +6906,7 @@ classes:
       - CAS
       - GTOPDB
       - HMDB
+      - KEGG
       - KEGG.COMPOUND
       - ChemBank
       - PUBCHEM.SUBSTANCE
@@ -6989,7 +6989,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
       - ncats.drug
@@ -7022,7 +7022,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
 
@@ -7076,8 +7076,7 @@ classes:
       - EC
       - TCDB
       - KEGG.REACTION  ## R number
-      - KEGG.RCLASS    ## RC number
-      - KEGG.ENZYME    ## EC number
+      - KEGG
       - KEGG.ORTHOLOGY ## in particular for gut microbiome use case in issue #888
       - UMLS
       - BIGG.REACTION
@@ -7102,6 +7101,7 @@ classes:
       - REACT
       - metacyc.reaction
       - KEGG.MODULE ## M number
+      - KEGG
 
   pathway:
     is_a: biological process
@@ -7703,7 +7703,7 @@ classes:
       - SGD
       - PomBase
       - OMIM
-      - KEGG.GENE ## org:gene
+      - KEGG.GENES ## org:gene
       - UMLS
       - Xenbase
       - AspGD
