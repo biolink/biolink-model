@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-05T18:59:34
+# Generation date: 2023-04-06T09:48:26
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2424,7 +2424,7 @@ class Publication(InformationContentEntity):
     id: Union[str, PublicationId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     publication_type: str = None
-    authors: Optional[Union[str, List[str]]] = empty_list()
+    authors: Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]] = empty_list()
     pages: Optional[Union[str, List[str]]] = empty_list()
     summary: Optional[str] = None
     keywords: Optional[Union[str, List[str]]] = empty_list()
@@ -2445,7 +2445,7 @@ class Publication(InformationContentEntity):
 
         if not isinstance(self.authors, list):
             self.authors = [self.authors] if self.authors is not None else []
-        self.authors = [v if isinstance(v, str) else str(v) for v in self.authors]
+        self.authors = [v if isinstance(v, AgentId) else AgentId(v) for v in self.authors]
 
         if not isinstance(self.pages, list):
             self.pages = [self.pages] if self.pages is not None else []
@@ -10295,7 +10295,7 @@ slots.iso_abbreviation = Slot(uri=BIOLINK.iso_abbreviation, name="iso abbreviati
                    model_uri=BIOLINK.iso_abbreviation, domain=Publication, range=Optional[str])
 
 slots.authors = Slot(uri=BIOLINK.authors, name="authors", curie=BIOLINK.curie('authors'),
-                   model_uri=BIOLINK.authors, domain=Publication, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.authors, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.volume = Slot(uri=BIOLINK.volume, name="volume", curie=BIOLINK.curie('volume'),
                    model_uri=BIOLINK.volume, domain=Publication, range=Optional[str])
