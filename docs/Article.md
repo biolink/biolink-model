@@ -15,7 +15,7 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Attribute],[Publication]%5E-[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;authors(i):string%20%2A;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;id(i):string;name(i):label_type%20%3F;publication_type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[Attribute],[Publication]%5E-[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;id(i):string;name(i):label_type%20%3F;publication_type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[Agent])
 
 ---
 
@@ -109,7 +109,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [authors](authors.md)  <sub>0..\*</sub>
      * Description: connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as "surname, firstname initial.".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.
-     * Range: [String](types/String.md)
+     * Range: [Agent](Agent.md)
  * [pages](pages.md)  <sub>0..\*</sub>
      * Description: page number of source referenced for statement or publication
      * Range: [String](types/String.md)

@@ -154,8 +154,8 @@ prefixes:
   WBls: 'http://purl.obolibrary.org/obo/WBls_'
   WBbt: 'http://purl.obolibrary.org/obo/WBbt_'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
-  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  WIKIDATA: 'https://www.wikidata.org/entity/'            # Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/prop/'
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
   Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
@@ -971,7 +971,6 @@ slots:
 
   authors:
     is_a: node property
-    singular_name: author
     description: >-
       connects an publication to the list of authors who contributed to the publication.
       This property should be a comma-delimited list of author names. It is recommended that an author's name
@@ -981,6 +980,7 @@ slots:
       and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     multivalued: true
     domain: publication
+    range: agent
 
   volume:
     is_a: node property
@@ -1539,7 +1539,7 @@ slots:
       - translator_minimal
 
   qualifiers:
-    singular_name: qualifier
+    deprecated: true
     description: >-
       connects an association to qualifiers that modify or
       qualify the meaning of that association
@@ -4920,6 +4920,20 @@ slots:
     narrow_mappings:
       - RO:0002160
 
+  in_taxon_label:
+    is_a: node property
+    domain: thing with taxon
+    range: label type
+    description: >-
+      The human readable scientific name for the taxon of the entity.
+    in_subset:
+      - translator_minimal
+    slot_uri: rdfs:label
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P225
+    annotations:
+      denormalized: true
+
   taxon of:
     is_a: related to at instance level
     inverse: in taxon
@@ -5567,7 +5581,6 @@ slots:
 
   publications:
     aliases: ["supporting publications"]
-    singular_name: publication
     description: >-
       One or more publications that report the statement expressed in an Association, or provide information used as 
       evidence supporting this statement.

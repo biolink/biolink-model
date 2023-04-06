@@ -15,7 +15,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[InformationContentEntity],[ContributorAssociation],[Attribute],[ContributorAssociation]-%20object%201..1%3E[Agent%7Caffiliation:uriorcurie%20%2A;address:string%20%3F;id:string;name:label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[AdministrativeEntity]%5E-[Agent],[AdministrativeEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[InformationContentEntity],[ContributorAssociation],[Attribute],[Publication]-%20authors%200..%2A%3E[Agent%7Caffiliation:uriorcurie%20%2A;address:string%20%3F;id:string;name:label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[ContributorAssociation]-%20object%201..1%3E[Agent],[AdministrativeEntity]%5E-[Agent],[AdministrativeEntity])
 
 ---
 
@@ -35,6 +35,7 @@ URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
 
 ## Referenced by class
 
+ *  **[Publication](Publication.md)** *[authors](authors.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
  *  **[ContributorAssociation](ContributorAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[Agent](Agent.md)**
  *  **[Publication](Publication.md)** *[has author](has_author.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
  *  **[InformationContentEntity](InformationContentEntity.md)** *[has contributor](has_contributor.md)*  <sub>0..\*</sub>  **[Agent](Agent.md)**
