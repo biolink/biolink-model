@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-04-06T16:51:34\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.6\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-04-06T18:00:30\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.6\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -241,20 +241,18 @@
       },
       "INTACT": "http://identifiers.org/intact/",
       "IUPHAR.FAMILY": "http://identifiers.org/iuphar.family/",
-      "KEGG": "http://identifiers.org/kegg/",
-      "KEGG.BRITE": "http://www.kegg.jp/entry/",
+      "KEGG": "http://www.kegg.jp/entry/",
+      "KEGG.BRITE": "https://bioregistry.io/kegg.brite:",
       "KEGG.COMPOUND": "http://identifiers.org/kegg.compound/",
-      "KEGG.DGROUP": "http://www.kegg.jp/entry/",
       "KEGG.DISEASE": "http://identifiers.org/kegg.disease/",
       "KEGG.DRUG": "http://identifiers.org/kegg.drug/",
       "KEGG.ENVIRON": "http://identifiers.org/kegg.environ/",
-      "KEGG.ENZYME": "http://www.kegg.jp/entry/",
-      "KEGG.GENE": "http://www.kegg.jp/entry/",
+      "KEGG.GENES": "https://bioregistry.io/kegg.genes:bsu:",
       "KEGG.GLYCAN": "http://identifiers.org/kegg.glycan/",
       "KEGG.MODULE": "http://identifiers.org/kegg.module/",
       "KEGG.ORTHOLOGY": "http://identifiers.org/kegg.orthology/",
-      "KEGG.PATHWAY": "https://www.kegg.jp/entry/",
-      "KEGG.RCLASS": "http://www.kegg.jp/entry/",
+      "KEGG.PATHWAY": "https://bioregistry.io/kegg.pathway:",
+      "KEGG.RCLASS": "https://www.genome.jp/dbget-bin/www_bget?rc:",
       "KEGG.REACTION": "http://identifiers.org/kegg.reaction/",
       "LOINC": "http://loinc.org/rdf/",
       "MA": {
@@ -321,7 +319,6 @@
          "@id": "http://purl.obolibrary.org/obo/OGMS_",
          "@prefix": true
       },
-      "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "OMIM": {
          "@id": "http://purl.obolibrary.org/obo/OMIM_",
          "@prefix": true
@@ -548,7 +545,6 @@
       },
       "ncats.drug": "https://drugs.ncats.io/drug/",
       "oboInOwl": "http://www.geneontology.org/formats/oboInOwl#",
-      "oboformat": "http://www.geneontology.org/formats/oboInOwl#",
       "orphanet": {
          "@id": "http://www.orpha.net/ORDO/Orphanet_",
          "@prefix": true
