@@ -2749,7 +2749,7 @@ linkml:Nodeidentifier NONLITERAL
     CLOSED {
        (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
              rdf:type [ <InformationContentEntity> ] ? ;
-             <authors> @linkml:String * ;
+             <authors> @<Agent> * ;
              <pages> @linkml:String * ;
              <summary> @linkml:String ? ;
              <keywords> @linkml:String * ;

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-06T09:48:26
+# Generation date: 2023-04-06T16:52:15
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -239,8 +239,8 @@ WBPHENOTYPE = CurieNamespace('WBPhenotype', 'http://purl.obolibrary.org/obo/WBPh
 WBVOCAB = CurieNamespace('WBVocab', 'http://bio2rdf.org/wormbase_vocabulary')
 WBBT = CurieNamespace('WBbt', 'http://purl.obolibrary.org/obo/WBbt_')
 WBLS = CurieNamespace('WBls', 'http://purl.obolibrary.org/obo/WBls_')
-WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
-WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
+WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/entity/')
+WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/prop/')
 WIKIPATHWAYS = CurieNamespace('WIKIPATHWAYS', 'http://identifiers.org/wikipathways/')
 WORMBASE = CurieNamespace('WormBase', 'https://www.wormbase.org/get?name=')
 XAO = CurieNamespace('XAO', 'http://purl.obolibrary.org/obo/XAO_')
@@ -11193,6 +11193,9 @@ slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curi
 
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
+
+slots.in_taxon_label = Slot(uri=RDFS.label, name="in_taxon_label", curie=RDFS.curie('label'),
+                   model_uri=BIOLINK.in_taxon_label, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),
                    model_uri=BIOLINK.taxon_of, domain=OrganismTaxon, range=Optional[Union[Union[dict, "ThingWithTaxon"], List[Union[dict, "ThingWithTaxon"]]]])

@@ -198,7 +198,7 @@ type Article
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -453,7 +453,7 @@ type Book
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -477,7 +477,7 @@ type BookChapter
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -4800,7 +4800,7 @@ type Publication
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -5154,7 +5154,7 @@ type Serial
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
