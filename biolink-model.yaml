@@ -4920,6 +4920,18 @@ slots:
     narrow_mappings:
       - RO:0002160
 
+  in_taxon_label:
+    is_a: node property
+    domain: thing with taxon
+    range: label type
+    description: >-
+      The human readable scientific name for the taxon of the entity.
+    in_subset:
+      - translator_minimal
+    slot_uri: rdfs:label
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P225
+
   taxon of:
     is_a: related to at instance level
     inverse: in taxon
