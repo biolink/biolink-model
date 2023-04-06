@@ -107,7 +107,6 @@ prefixes:
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
-  oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
   ORCID: 'https://orcid.org/'
   orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -1915,7 +1914,6 @@ slots:
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
       - OIO:hasDbXref
-      - oboformat:xref
       - RXNORM:has_quantified_form
       - UMLS:SY
 
