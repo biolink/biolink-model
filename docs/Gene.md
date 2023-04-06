@@ -35,7 +35,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  * SGD
  * PomBase
  * OMIM
- * KEGG.GENE
+ * KEGG.GENES
  * UMLS
  * Xenbase
  * AspGD

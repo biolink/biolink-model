@@ -40,7 +40,7 @@ URI: [biolink:ComplexMolecularMixture](https://w3id.org/biolink/vocab/ComplexMol
  * INCHIKEY
  * KEGG.GLYCAN
  * KEGG.DRUG
- * KEGG.DGROUP
+ * KEGG
  * KEGG.ENVIRON
  * UMLS
 

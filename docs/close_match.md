@@ -40,8 +40,7 @@ URI: [biolink:close_match](https://w3id.org/biolink/vocab/close_match)
 | **Narrow Mappings:** | | CHEBI:is_enantiomer_of |
 |  | | CHEBI:is_tautomer_of |
 |  | | MEDDRA:classified_as |
-|  | | OIO:hasDbXref |
-|  | | oboformat:xref |
+|  | | oboInOwl:hasDbXref |
 |  | | RXNORM:has_quantified_form |
 |  | | UMLS:SY |
 

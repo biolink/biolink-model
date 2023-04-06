@@ -143,7 +143,7 @@ message Article
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -378,7 +378,7 @@ message Book
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -401,7 +401,7 @@ message BookChapter
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -4304,7 +4304,7 @@ message Publication
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -4611,7 +4611,7 @@ message Serial
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0

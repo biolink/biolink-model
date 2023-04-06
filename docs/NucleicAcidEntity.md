@@ -30,6 +30,7 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
  * CAS
  * GTOPDB
  * HMDB
+ * KEGG
  * KEGG.COMPOUND
  * ChemBank
  * PUBCHEM.SUBSTANCE

@@ -40,7 +40,7 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
  * INCHIKEY
  * KEGG.GLYCAN
  * KEGG.DRUG
- * KEGG.DGROUP
+ * KEGG
  * KEGG.ENVIRON
  * UMLS
 

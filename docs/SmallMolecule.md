@@ -40,8 +40,8 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
  * INCHIKEY
  * KEGG.GLYCAN
  * KEGG.DRUG
- * KEGG.DGROUP
  * KEGG.ENVIRON
+ * KEGG
  * BIGG.METABOLITE
  * UMLS
  * foodb.compound

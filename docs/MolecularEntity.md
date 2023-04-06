@@ -40,8 +40,8 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  * INCHIKEY
  * KEGG.GLYCAN
  * KEGG.DRUG
- * KEGG.DGROUP
  * KEGG.ENVIRON
+ * KEGG
  * UMLS
 
 ## Parents

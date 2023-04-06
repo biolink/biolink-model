@@ -29,8 +29,7 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
  * EC
  * TCDB
  * KEGG.REACTION
- * KEGG.RCLASS
- * KEGG.ENZYME
+ * KEGG
  * KEGG.ORTHOLOGY
  * UMLS
  * BIGG.REACTION

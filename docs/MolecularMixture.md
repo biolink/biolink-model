@@ -40,7 +40,7 @@ URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
  * INCHIKEY
  * KEGG.GLYCAN
  * KEGG.DRUG
- * KEGG.DGROUP
+ * KEGG
  * KEGG.ENVIRON
  * UMLS
  * ncats.drug
