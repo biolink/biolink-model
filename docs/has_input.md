@@ -17,7 +17,7 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 
@@ -43,7 +43,6 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002233 |
 |  | | SEMMEDDB:USES |
-| **Close Mappings:** | | RO:0002352 |
 | **Narrow Mappings:** | | LOINC:has_fragments_for_synonyms |
 |  | | LOINC:has_system |
 |  | | PathWhiz:has_left_element |

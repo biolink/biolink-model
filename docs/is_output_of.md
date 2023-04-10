@@ -34,4 +34,6 @@ URI: [biolink:is_output_of](https://w3id.org/biolink/vocab/is_output_of)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002353 |
+| **Narrow Mappings:** | | RO:0002354 |
 

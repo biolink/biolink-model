@@ -17,7 +17,7 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 
@@ -41,8 +41,6 @@ URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | RO:0002234 |
-| **Close Mappings:** | | RO:0002353 |
-|  | | RO:0002354 |
 | **Narrow Mappings:** | | NCIT:R31 |
 |  | | OBI:0000299 |
 |  | | PathWhiz:has_right_element |

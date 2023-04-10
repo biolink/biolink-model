@@ -17,7 +17,7 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

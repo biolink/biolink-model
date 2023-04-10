@@ -3092,7 +3092,7 @@ slots:
     annotations:
       canonical_predicate: true
     exact_mappings:
-      - RO:00002325
+      - RO:0002325
 
   # Despite the name, note that this particular entity is
   # NOT a biolink:Association but rather, a biolink:predicate
@@ -3971,15 +3971,11 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has output
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX inverse mapping to 'biolink:has_input'
-      - RO:0002352
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
@@ -4000,26 +3996,23 @@ slots:
 
   is input of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has input
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002352
 
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has input
     in_subset:
       - translator_minimal
-    close_mappings:
-      - RO:0002353
-      - RO:0002354
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -4035,18 +4028,20 @@ slots:
 
   is output of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has output
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002353
+    narrow_mappings:
+      - RO:0002354
 
   has participant:
     is_a: related to at instance level
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
     in_subset:
@@ -4138,15 +4133,13 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
-    domain: occurrent
-    range: molecular activity
+    range: biological process or activity
     annotations:
       canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
       - RO:0002331
-      - RO:0002432
     narrow_mappings:
       - NBO-PROPERTY:by_means
       - orphanet:317348
@@ -4156,11 +4149,8 @@ slots:
 
   actively involves:
     is_a: has participant
-    domain: molecular activity
-    range: occurrent
+    domain: biological process or activity
     inverse: actively involved in
-    exact_mappings:
-      - RO:0002331
     in_subset:
       - translator_minimal
 

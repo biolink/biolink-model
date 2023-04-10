@@ -47,7 +47,6 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 
 ## Referenced by class
 
- *  **[Occurrent](Occurrent.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[NucleicAcidEntity](NucleicAcidEntity.md)** *[catalyzes](catalyzes.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[ChemicalEntityOrGeneOrGeneProduct](ChemicalEntityOrGeneOrGeneProduct.md)** *[is substrate of](is_substrate_of.md)*  <sub>0..\*</sub>  **[MolecularActivity](MolecularActivity.md)**
  *  **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[MolecularActivity](MolecularActivity.md)**
@@ -67,11 +66,11 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
      * in subsets: (translator_minimal)
  * [has input](has_input.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an input into the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [has output](has_output.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an output of the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
 
 ### Inherited from entity:
@@ -146,11 +145,11 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [has input](has_input.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an input into the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [has output](has_output.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an output of the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

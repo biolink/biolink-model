@@ -34,5 +34,5 @@ URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | RO:00002325 |
+| **Exact Mappings:** | | RO:0002325 |
 

@@ -14,7 +14,7 @@ URI: [biolink:consumes](https://w3id.org/biolink/vocab/consumes)
 
 ## Domain and Range
 
-[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

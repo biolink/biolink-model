@@ -35,4 +35,5 @@ URI: [biolink:is_input_of](https://w3id.org/biolink/vocab/is_input_of)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
+| **Exact Mappings:** | | RO:0002352 |
 

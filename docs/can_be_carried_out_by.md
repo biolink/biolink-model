@@ -14,7 +14,7 @@ URI: [biolink:can_be_carried_out_by](https://w3id.org/biolink/vocab/can_be_carri
 
 ## Domain and Range
 
-[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [Occurrent](Occurrent.md)
+[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [NamedThing](NamedThing.md)
 
 ## Parents
 

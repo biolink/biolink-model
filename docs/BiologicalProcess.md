@@ -15,7 +15,7 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[OrganismTaxon],[OntologyClass],[Occurrent],[MacromolecularMachineToBiologicalProcessAssociation],[GeneOrGeneProduct],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysiologicalProcess],[PhysicalEntity],[Pathway],[PathologicalProcess],[OrganismTaxon],[OntologyClass],[Occurrent],[NamedThing],[MacromolecularMachineToBiologicalProcessAssociation],[GeneOrGeneProduct],[BiologicalProcessOrActivity],[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1%3E[BiologicalProcess%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[BiologicalProcess]uses%20-.-%3E[Occurrent],[BiologicalProcess]uses%20-.-%3E[OntologyClass],[BiologicalProcess]%5E-[PhysiologicalProcess],[BiologicalProcess]%5E-[Pathway],[BiologicalProcess]%5E-[PathologicalProcess],[BiologicalProcess]%5E-[Behavior],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[Behavior],[Attribute])
 
 ---
 
@@ -61,11 +61,11 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
  * [has input](has_input.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an input into the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [has output](has_output.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an output of the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process

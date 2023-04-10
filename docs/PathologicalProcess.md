@@ -15,7 +15,7 @@ URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalPr
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcess%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[BiologicalProcess]%5E-[PathologicalProcess],[PathologicalEntityMixin],[OrganismTaxon],[Occurrent],[BiologicalProcess],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[PathologicalProcess%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[PathologicalEntityMixin],[BiologicalProcess]%5E-[PathologicalProcess],[PathologicalEntityMixin],[OrganismTaxon],[NamedThing],[BiologicalProcess],[Attribute])
 
 ---
 
@@ -35,11 +35,11 @@ URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalPr
 
  * [has input](has_input.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an input into the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [has output](has_output.md)  <sub>0..\*</sub>
      * Description: holds between a process and a continuant, where the continuant is an output of the process
-     * Range: [Occurrent](Occurrent.md)
+     * Range: [NamedThing](NamedThing.md)
      * in subsets: (translator_minimal)
  * [enabled by](enabled_by.md)  <sub>0..\*</sub>
      * Description: holds between a process and a physical entity, where the physical entity executes the process
