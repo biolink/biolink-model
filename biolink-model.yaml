@@ -4013,9 +4013,6 @@ slots:
       opposite_of: has input
     in_subset:
       - translator_minimal
-    close_mappings:
-      - RO:0002353
-      - RO:0002354
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -4035,6 +4032,10 @@ slots:
     inverse: has output
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002353
+    narrow_mappings:
+      - RO:0002354
 
   has participant:
     is_a: related to at instance level
