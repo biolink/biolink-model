@@ -3971,15 +3971,11 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has output
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX inverse mapping to 'biolink:has_input'
-      - RO:0002352
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
@@ -4000,18 +3996,18 @@ slots:
 
   is input of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has input
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002352
 
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has input
@@ -4035,7 +4031,6 @@ slots:
 
   is output of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has output
     in_subset:
@@ -4046,7 +4041,6 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
     in_subset:
