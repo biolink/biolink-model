@@ -4133,15 +4133,13 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
-    domain: occurrent
-    range: molecular activity
+    range: biological process or activity
     annotations:
       canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
       - RO:0002331
-      - RO:0002432
     narrow_mappings:
       - NBO-PROPERTY:by_means
       - orphanet:317348
@@ -4151,11 +4149,8 @@ slots:
 
   actively involves:
     is_a: has participant
-    domain: molecular activity
-    range: occurrent
+    domain: biological process or activity
     inverse: actively involved in
-    exact_mappings:
-      - RO:0002331
     in_subset:
       - translator_minimal
 
