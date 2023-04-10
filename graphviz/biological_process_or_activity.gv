@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,2159.4,123"];
+	graph [bb="0,0,2214.4,123"];
 	node [label="\N"];
 	"biological process or activity"	[height=0.5,
 		label="biological process or activity",
@@ -126,36 +126,36 @@ digraph {
 		style=solid];
 	"has input"	[color=blue,
 		height=0.5,
-		label=occurrent,
-		pos="1797.1,18",
-		width=1.5526];
+		label="named thing",
+		pos="1811.1,18",
+		width=1.9318];
 	"biological process or activity" -> "has input"	[color=blue,
 		label="has input",
-		lp="1705.6,61.5",
-		pos="e,1758.9,31.247 1160.4,91.959 1177.9,90.098 1196.1,88.349 1213.1,87 1385.2,73.399 1430.4,94.211 1601.1,69 1652.5,61.412 1710,45.892 \
-1749.3,34.145",
+		lp="1710.6,61.5",
+		pos="e,1767,32.078 1160.4,91.959 1177.9,90.098 1196.1,88.349 1213.1,87 1385.2,73.399 1430.2,93.098 1601.1,69 1654.9,61.42 1715.1,46.405 \
+1757.2,34.798",
 		style=solid];
 	"has output"	[color=blue,
 		height=0.5,
-		label=occurrent,
-		pos="1927.1,18",
-		width=1.5526];
+		label="named thing",
+		pos="1968.1,18",
+		width=1.9318];
 	"biological process or activity" -> "has output"	[color=blue,
 		label="has output",
-		lp="1848.6,61.5",
-		pos="e,1890.3,31.716 1159.6,91.867 1177.4,89.992 1195.8,88.263 1213.1,87 1448.2,69.889 1510.1,104.14 1743.1,69 1790.7,61.828 1843.6,46.684 \
-1880.4,34.931",
+		lp="1866.6,61.5",
+		pos="e,1923.1,31.884 1159.6,91.862 1177.4,89.988 1195.8,88.26 1213.1,87 1450.4,69.765 1512.2,99.501 1748.1,69 1805.2,61.624 1869.2,46.251 \
+1913.4,34.486",
 		style=solid];
 	"enabled by"	[color=blue,
 		height=0.5,
 		label="physical entity",
-		pos="2080.1,18",
+		pos="2135.1,18",
 		width=2.2026];
 	"biological process or activity" -> "enabled by"	[color=blue,
 		label="enabled by",
-		lp="2004.6,61.5",
-		pos="e,2037.6,33.303 1159.2,91.803 1177.1,89.922 1195.7,88.208 1213.1,87 1363.5,76.614 1742,90.417 1891.1,69 1938.2,62.248 1990.3,47.929 \
-2027.9,36.338",
+		lp="2030.6,61.5",
+		pos="e,2087.1,32.441 1159.1,91.793 1177.1,89.914 1195.7,88.202 1213.1,87 1521.9,65.784 1602,106.59 1909.1,69 1967,61.919 2031.8,46.814 \
+2077.2,35.048",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,

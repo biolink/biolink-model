@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-07T23:27:43
+# Generation date: 2023-04-10T23:45:00
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3428,8 +3428,8 @@ class BiologicalProcessOrActivity(BiologicalEntity):
 
     id: Union[str, BiologicalProcessOrActivityId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    has_input: Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]] = empty_list()
-    has_output: Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]] = empty_list()
+    has_input: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
+    has_output: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
     enabled_by: Optional[Union[Union[str, PhysicalEntityId], List[Union[str, PhysicalEntityId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3440,11 +3440,11 @@ class BiologicalProcessOrActivity(BiologicalEntity):
 
         if not isinstance(self.has_input, list):
             self.has_input = [self.has_input] if self.has_input is not None else []
-        self.has_input = [v if isinstance(v, Occurrent) else Occurrent(**as_dict(v)) for v in self.has_input]
+        self.has_input = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.has_input]
 
         if not isinstance(self.has_output, list):
             self.has_output = [self.has_output] if self.has_output is not None else []
-        self.has_output = [v if isinstance(v, Occurrent) else Occurrent(**as_dict(v)) for v in self.has_output]
+        self.has_output = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.has_output]
 
         if not isinstance(self.enabled_by, list):
             self.enabled_by = [self.enabled_by] if self.enabled_by is not None else []
@@ -10951,19 +10951,19 @@ slots.part_of = Slot(uri=BIOLINK.part_of, name="part of", curie=BIOLINK.curie('p
                    model_uri=BIOLINK.part_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.has_input = Slot(uri=BIOLINK.has_input, name="has input", curie=BIOLINK.curie('has_input'),
-                   model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_input_of = Slot(uri=BIOLINK.is_input_of, name="is input of", curie=BIOLINK.curie('is_input_of'),
                    model_uri=BIOLINK.is_input_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_output = Slot(uri=BIOLINK.has_output, name="has output", curie=BIOLINK.curie('has_output'),
-                   model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_output_of = Slot(uri=BIOLINK.is_output_of, name="is output of", curie=BIOLINK.curie('is_output_of'),
                    model_uri=BIOLINK.is_output_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
-                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
                    model_uri=BIOLINK.catalyzes, domain=NucleicAcidEntity, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
@@ -10981,16 +10981,16 @@ slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in"
                    model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involved_in = Slot(uri=BIOLINK.actively_involved_in, name="actively involved in", curie=BIOLINK.curie('actively_involved_in'),
-                   model_uri=BIOLINK.actively_involved_in, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+                   model_uri=BIOLINK.actively_involved_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively involves", curie=BIOLINK.curie('actively_involves'),
-                   model_uri=BIOLINK.actively_involves, domain=MolecularActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.actively_involves, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
                    model_uri=BIOLINK.capable_of, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.can_be_carried_out_by = Slot(uri=BIOLINK.can_be_carried_out_by, name="can be carried out by", curie=BIOLINK.curie('can_be_carried_out_by'),
-                   model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.enables = Slot(uri=BIOLINK.enables, name="enables", curie=BIOLINK.curie('enables'),
                    model_uri=BIOLINK.enables, domain=PhysicalEntity, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
@@ -11053,7 +11053,7 @@ slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOL
                    model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
-                   model_uri=BIOLINK.consumes, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
+                   model_uri=BIOLINK.consumes, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
                    model_uri=BIOLINK.consumed_by, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
