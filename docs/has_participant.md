@@ -55,6 +55,7 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 |  | | PathWhiz:has_nucleic_acid |
 |  | | PathWhiz:has_protein |
 |  | | PathWhiz:has_reaction |
+|  | | RO:0002565 |
 |  | | RO:0004007 |
 |  | | RO:0004020 |
 |  | | RO:0004021 |

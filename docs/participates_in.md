@@ -53,6 +53,5 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 |  | | OBI:0000295 |
 |  | | RO:0002216 |
 |  | | RO:0002505 |
-|  | | RO:0002565 |
 |  | | SNOMED:has_direct_device |
 

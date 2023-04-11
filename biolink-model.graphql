@@ -277,8 +277,8 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -387,8 +387,8 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -404,8 +404,8 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -4436,8 +4436,8 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -4474,8 +4474,8 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -4571,8 +4571,8 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
