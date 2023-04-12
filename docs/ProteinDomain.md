@@ -70,7 +70,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Inherited from gene product mixin:
 
  * [xref](xref.md)  <sub>0..\*</sub>
-     * Description: Alternate CURIEs for a thing
+     * Description: A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.
      * Range: [Uriorcurie](types/Uriorcurie.md)
      * in subsets: (translator_minimal)
 
