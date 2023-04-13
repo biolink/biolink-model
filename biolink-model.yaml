@@ -5,7 +5,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.2.5
+version: 3.2.7
 
 
 ## ------------
@@ -83,12 +83,11 @@ prefixes:
   isni: 'https://isni.org/isni/'
   issn: 'https://portal.issn.org/resource/ISSN/'
   ncats.drug: 'https://drugs.ncats.io/drug/'
-  KEGG.BRITE: 'http://www.kegg.jp/entry/'
-  KEGG.DGROUP: 'http://www.kegg.jp/entry/'
-  KEGG.ENZYME: 'http://www.kegg.jp/entry/'
-  KEGG.GENE: 'http://www.kegg.jp/entry/'
-  KEGG.PATHWAY: 'https://www.kegg.jp/entry/'
-  KEGG.RCLASS: 'http://www.kegg.jp/entry/'
+  KEGG.BRITE: 'https://bioregistry.io/kegg.brite:'
+  KEGG: 'http://www.kegg.jp/entry/'
+  KEGG.GENES: 'https://bioregistry.io/kegg.genes:bsu:'
+  KEGG.PATHWAY: 'https://bioregistry.io/kegg.pathway:'
+  KEGG.RCLASS: 'https://www.genome.jp/dbget-bin/www_bget?rc:'
   LOINC: 'http://loinc.org/rdf/'
   MAXO: 'http://purl.obolibrary.org/obo/MAXO_'
   medgen: 'https://www.ncbi.nlm.nih.gov/medgen/'
@@ -107,7 +106,6 @@ prefixes:
   NDDF: 'http://purl.bioontology.org/ontology/NDDF/'
   NLMID: 'https://www.ncbi.nlm.nih.gov/nlmcatalog/?term='
   OBAN: 'http://purl.org/oban/'
-  oboformat: 'http://www.geneontology.org/formats/oboInOwl#'
   OMIM.PS: 'https://www.omim.org/phenotypicSeries/'
   ORCID: 'https://orcid.org/'
   orphanet: 'http://www.orpha.net/ORDO/Orphanet_'
@@ -151,11 +149,11 @@ prefixes:
   # See also: https://www.ga4gh.org/work_stream/genomic-knowledge-standards/#existing-standards and
   # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153148/
   VMC: 'https://github.com/ga4gh/vr-spec/'
-  WBls: 'http://purl.obolibrary.org/obo/WBBL_'
-  WBbt: 'http://purl.obolibrary.org/obo/WBBT_'
+  WBls: 'http://purl.obolibrary.org/obo/WBls_'
+  WBbt: 'http://purl.obolibrary.org/obo/WBbt_'
   WBVocab: 'http://bio2rdf.org/wormbase_vocabulary'
-  WIKIDATA: 'https://www.wikidata.org/wiki/'            # Wikidata Entity
-  WIKIDATA_PROPERTY: 'https://www.wikidata.org/wiki/Property:'  # Wikidata Property - not a conventional namespace prefix
+  WIKIDATA: 'https://www.wikidata.org/entity/'            # Wikidata Entity
+  WIKIDATA_PROPERTY: 'https://www.wikidata.org/prop/'
   wgs: 'http://www.w3.org/2003/01/geo/wgs84_pos'
   XPO: 'http://purl.obolibrary.org/obo/XPO_'  # Xenopus Phenotype Ontology
   Xenbase: 'http://www.xenbase.org/gene/showgene.do?method=display&geneId='
@@ -178,7 +176,7 @@ emit_prefixes:
   - rdfs
   - xsd
   - skos
-  - OIO
+  - oboInOwl
   - BIOGRID
   - SO
 
@@ -664,7 +662,10 @@ slots:
     domain: named thing
     range: uriorcurie
     description: >-
-      Alternate CURIEs for a thing
+      A database cross reference or alternative identifier for a NamedThing or edge between two 
+      NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or 
+      gives more detail about the edge. This property can be used on a node or edge to provide multiple
+      URIs or CURIE cross references.
     multivalued: true
     in_subset:
       - translator_minimal
@@ -679,7 +680,7 @@ slots:
     in_subset:
       - translator_minimal
   
-  resource:
+  resource id:
     is_a: node property
     description: >-
       The CURIE for an Information Resource that served as a source
@@ -701,7 +702,17 @@ slots:
     range: ResourceRoleEnum
     in_subset:
       - translator_minimal
-  
+
+  retrieval source ids:
+    description: >-
+        A list of retrieval sources that served as a source of knowledge
+        expressed in an Edge, or a source of data used to generate this
+        knowledge.
+    multivalued: true
+    range: retrieval source
+    in_subset:
+      - translator_minimal
+
   full name:
     is_a: node property
     domain: named thing
@@ -709,7 +720,7 @@ slots:
     description: >-
       a long-form human readable name for a thing
 
-  upstream resources:
+  upstream resource ids:
     is_a: node property
     description: >-
       An upstream InformationResource from which the resource
@@ -962,7 +973,6 @@ slots:
 
   authors:
     is_a: node property
-    singular_name: author
     description: >-
       connects an publication to the list of authors who contributed to the publication.
       This property should be a comma-delimited list of author names. It is recommended that an author's name
@@ -972,6 +982,7 @@ slots:
       and possibly, some qualifiers which clarify the specific status of a given author in the publication.
     multivalued: true
     domain: publication
+    range: agent
 
   volume:
     is_a: node property
@@ -1530,7 +1541,7 @@ slots:
       - translator_minimal
 
   qualifiers:
-    singular_name: qualifier
+    deprecated: true
     description: >-
       connects an association to qualifiers that modify or
       qualify the meaning of that association
@@ -1905,8 +1916,7 @@ slots:
       - CHEBI:is_enantiomer_of
       - CHEBI:is_tautomer_of
       - MEDDRA:classified_as
-      - OIO:hasDbXref
-      - oboformat:xref
+      - oboInOwl:hasDbXref
       - RXNORM:has_quantified_form
       - UMLS:SY
 
@@ -3086,7 +3096,7 @@ slots:
     annotations:
       canonical_predicate: true
     exact_mappings:
-      - RO:00002325
+      - RO:0002325
 
   # Despite the name, note that this particular entity is
   # NOT a biolink:Association but rather, a biolink:predicate
@@ -3965,15 +3975,11 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has output
     in_subset:
       - translator_minimal
-    close_mappings:
-      # RTX inverse mapping to 'biolink:has_input'
-      - RO:0002352
     exact_mappings:
       - RO:0002233
       - SEMMEDDB:USES
@@ -3994,26 +4000,23 @@ slots:
 
   is input of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has input
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002352
 
   has output:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
       opposite_of: has input
     in_subset:
       - translator_minimal
-    close_mappings:
-      - RO:0002353
-      - RO:0002354
     exact_mappings:
       - RO:0002234
     narrow_mappings:
@@ -4029,18 +4032,20 @@ slots:
 
   is output of:
     is_a: participates in
-    domain: occurrent
     range: biological process or activity
     inverse: has output
     in_subset:
       - translator_minimal
+    exact_mappings:
+      - RO:0002353
+    narrow_mappings:
+      - RO:0002354
 
   has participant:
     is_a: related to at instance level
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: biological process or activity
-    range: occurrent
     annotations:
       canonical_predicate: true
     in_subset:
@@ -4064,6 +4069,7 @@ slots:
       - PathWhiz:has_nucleic_acid
       - PathWhiz:has_protein
       - PathWhiz:has_reaction
+      - RO:0002565
       - RO:0004007
       - RO:0004020
       - RO:0004021
@@ -4122,7 +4128,6 @@ slots:
       - OBI:0000295
       - RO:0002216
       - RO:0002505
-      - RO:0002565
       - SNOMED:has_direct_device
 
   actively involved in:
@@ -4132,15 +4137,13 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
-    domain: occurrent
-    range: molecular activity
+    range: biological process or activity
     annotations:
       canonical_predicate: true
     in_subset:
       - translator_minimal
     exact_mappings:
       - RO:0002331
-      - RO:0002432
     narrow_mappings:
       - NBO-PROPERTY:by_means
       - orphanet:317348
@@ -4150,11 +4153,8 @@ slots:
 
   actively involves:
     is_a: has participant
-    domain: molecular activity
-    range: occurrent
+    domain: biological process or activity
     inverse: actively involved in
-    exact_mappings:
-      - RO:0002331
     in_subset:
       - translator_minimal
 
@@ -4911,6 +4911,20 @@ slots:
     narrow_mappings:
       - RO:0002160
 
+  in_taxon_label:
+    is_a: node property
+    domain: thing with taxon
+    range: label type
+    description: >-
+      The human readable scientific name for the taxon of the entity.
+    in_subset:
+      - translator_minimal
+    slot_uri: rdfs:label
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P225
+    annotations:
+      denormalized: true
+
   taxon of:
     is_a: related to at instance level
     inverse: in taxon
@@ -4969,6 +4983,177 @@ slots:
       - SIO
     domain: association
     range: uriorcurie
+
+  subject closure:
+   is_a: association slot
+   description: >-
+      Used to hold the subject closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+   multivalued: true
+   domain: association
+   annotations:
+     denormalized: true
+     
+  object closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    examples:
+      - value: [ "MONDO:0000167", "MONDO:0005395" ]
+        description: >-
+          The object closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          diseases that are ancestors of 'breast cancer' in the
+          MONDO ontology.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+    annotations:
+      denormalized: true
+
+  subject category:
+    is_a: association slot
+    description: >-
+      Used to hold the biolink class/category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+    examples:
+      - value: "biolink:Gene"
+        description: >-
+          The subject category of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.
+    annotations:
+      denormalized: true
+
+  object category:
+    is_a: association slot
+    description: >-
+      Used to hold the biolink class/category of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: ontology class
+    examples:
+      - value: "biolink:Disease"
+        description: >-
+            The object category of the association between the gene
+            'BRCA1' and the disease 'breast cancer' is 'biolink:Disease'.
+    annotations:
+      denormalized: true
+
+  subject category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+    examples:
+      - value: [ "biolink:Gene", "biolink:NamedThing" ]
+        description: >-
+          The subject category closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          biolink classes that are ancestors of 'biolink:Gene' in the
+          biolink model.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+    annotations:
+      denormalized: true
+
+  object category closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object category closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: ontology class
+    examples:
+      - value: [ "biolink:Disease", "biolink:NamedThing" ]
+        description: >-
+          The object category closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          biolink classes that are ancestors of 'biolink:Disease' in the
+          biolink model.  Note: typically the "subclass of" and "part of" 
+          relations are used to construct the closure, but other relations
+          may be used as well.
+    annotations:
+      denormalized: true
+
+  subject label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the subject label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+    examples:
+      - value: ["BRACA1"]
+        description: >-
+          The subject label closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          labels that are ancestors of 'BRCA1' in the
+          biolink model.
+    annotations:
+      denormalized: true
+
+  object label closure:
+    is_a: association slot
+    description: >-
+      Used to hold the object label closure of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: true
+    domain: association
+    range: string
+    examples:
+      - value: ["breast cancer", "cancer"]
+        description: >-
+          The object label closure of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is the set of all
+          labels that are ancestors of 'breast cancer' in the
+          biolink model.
+    annotations:
+      denormalized: true
+
+  subject namespace:
+    aliases: ["subject prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the subject namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+    examples:
+      - value: "NCBIGene"
+        description: >-
+          The subject namespace of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.
+    annotations:
+      denormalized: true
+
+  object namespace:
+    aliases: ["object prefix"]
+    is_a: association slot
+    description: >-
+      Used to hold the object namespace of an association. This is a denormalized 
+      field used primarily in the SQL serialization of a knowledge graph via KGX.
+    multivalued: false
+    domain: association
+    range: string
+    examples:
+      - value: "MONDO"
+        description: >-
+          The object namespace of the association between the gene
+          'BRCA1' and the disease 'breast cancer' is 'MONDO'.
+    annotations:
+      denormalized: true
 
   subject:
     is_a: association slot
@@ -5388,7 +5573,6 @@ slots:
 
   publications:
     aliases: ['supporting publications', 'supporting documents']
-    singular_name: publication
     description: >-
       One or more publications that report the statement expressed in an 
       Association, or provide information used as evidence supporting this statement.
@@ -5551,6 +5735,7 @@ slots:
       generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue 
       type, disease, etc.).
     range: string
+
 classes:
 
   mapping collection:
@@ -6299,12 +6484,12 @@ classes:
       served as a source from which knowledge expressed in an Edge, or
       data used to generate this knowledge, was retrieved.
     slots:
-      - resource
+      - resource id
       - resource role
-      - upstream resources
+      - upstream resource ids
       - xref
     slot_usage:
-      resource:
+      resource id:
         required: true
         description: >-
           The InformationResource that served as a source for the
@@ -6314,7 +6499,7 @@ classes:
         description: >-
             The role of the InformationResource in the retrieval of the
             knowledge expressed in an Edge, or data used to generate this knowledge.
-      upstream resources:
+      upstream resource ids:
         description: >-
           The InformationResources that served as a source for the
           InformationResource that served as a source for the knowledge
@@ -6326,7 +6511,6 @@ classes:
     description: >-
       Either a physical or processual entity.
     mixin: true
-
 
   physical essence:
     description: >-
@@ -6611,8 +6795,8 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - KEGG
       - UMLS
 
   chemical entity:
@@ -6695,8 +6879,8 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
       - KEGG.ENVIRON ## E number
+      - KEGG
       - BIGG.METABOLITE
       - UMLS
       - foodb.compound
@@ -6743,7 +6927,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
     close_mappings:
@@ -6782,6 +6966,7 @@ classes:
       - CAS
       - GTOPDB
       - HMDB
+      - KEGG
       - KEGG.COMPOUND
       - ChemBank
       - PUBCHEM.SUBSTANCE
@@ -6864,7 +7049,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
       - ncats.drug
@@ -6897,7 +7082,7 @@ classes:
       # - SMILES  # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN  ## G number
       - KEGG.DRUG    ## D number
-      - KEGG.DGROUP  ## DG number
+      - KEGG
       - KEGG.ENVIRON ## E number
       - UMLS
 
@@ -6951,8 +7136,7 @@ classes:
       - EC
       - TCDB
       - KEGG.REACTION  ## R number
-      - KEGG.RCLASS    ## RC number
-      - KEGG.ENZYME    ## EC number
+      - KEGG
       - KEGG.ORTHOLOGY ## in particular for gut microbiome use case in issue #888
       - UMLS
       - BIGG.REACTION
@@ -6977,6 +7161,7 @@ classes:
       - REACT
       - metacyc.reaction
       - KEGG.MODULE ## M number
+      - KEGG
 
   pathway:
     is_a: biological process
@@ -7578,7 +7763,7 @@ classes:
       - SGD
       - PomBase
       - OMIM
-      - KEGG.GENE ## org:gene
+      - KEGG.GENES ## org:gene
       - UMLS
       - Xenbase
       - AspGD
@@ -8505,6 +8690,18 @@ classes:
       - original subject
       - original predicate
       - original object
+      # denormalized fields
+      - subject category
+      - object category
+      - subject closure
+      - object closure
+      - subject category closure
+      - object category closure
+      - subject namespace
+      - object namespace
+      - subject label closure
+      - object label closure
+      - retrieval source ids
     slot_usage:
       type:
         description: rdf:type of biolink:Association should be fixed at rdf:Statement

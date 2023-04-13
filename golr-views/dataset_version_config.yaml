@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.5id: dataset_version
+# metamodel_version: 1.7.0# version: 3.2.7id: dataset_version
 schema_generating: true
 description: an item that holds version level information about a dataset.
 display_name: dataset version
@@ -33,7 +33,11 @@ fields:
   display_name: provided by
   cardinality: multi
 - id: xref
-  description: Alternate CURIEs for a thing
+  description: A database cross reference or alternative identifier for a NamedThing
+    or edge between two  NamedThings.  This property should point to a database record
+    or webpage that supports the existence of the edge, or  gives more detail about
+    the edge. This property can be used on a node or edge to provide multiple URIs
+    or CURIE cross references.
   display_name: xref
   cardinality: multi
 - id: category

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.5id: population_to_population_association
+# metamodel_version: 1.7.0# version: 3.2.7id: population_to_population_association
 schema_generating: true
 description: An association between a two populations
 display_name: population to population association
@@ -77,6 +77,63 @@ fields:
     an external knowledge source uses before transformation to match the biolink-model
     specification.
   display_name: original object
+- id: subject_category
+  description: Used to hold the biolink class/category of an association. This is
+    a denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: subject category
+- id: object_category
+  description: Used to hold the biolink class/category of an association. This is
+    a denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: object category
+- id: subject_closure
+  description: Used to hold the subject closure of an association. This is a denormalized  field
+    used primarily in the SQL serialization of a knowledge graph via KGX.
+  display_name: subject closure
+  cardinality: multi
+- id: object_closure
+  description: Used to hold the object closure of an association. This is a denormalized  field
+    used primarily in the SQL serialization of a knowledge graph via KGX.
+  display_name: object closure
+  cardinality: multi
+- id: subject_category_closure
+  description: Used to hold the subject category closure of an association. This is
+    a denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: subject category closure
+  cardinality: multi
+- id: object_category_closure
+  description: Used to hold the object category closure of an association. This is
+    a denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: object category closure
+  cardinality: multi
+- id: subject_namespace
+  description: Used to hold the subject namespace of an association. This is a denormalized  field
+    used primarily in the SQL serialization of a knowledge graph via KGX.
+  display_name: subject namespace
+- id: object_namespace
+  description: Used to hold the object namespace of an association. This is a denormalized  field
+    used primarily in the SQL serialization of a knowledge graph via KGX.
+  display_name: object namespace
+- id: subject_label_closure
+  description: Used to hold the subject label closure of an association. This is a
+    denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: subject label closure
+  cardinality: multi
+- id: object_label_closure
+  description: Used to hold the object label closure of an association. This is a
+    denormalized  field used primarily in the SQL serialization of a knowledge graph
+    via KGX.
+  display_name: object label closure
+  cardinality: multi
+- id: retrieval_source_ids
+  description: A list of retrieval sources that served as a source of knowledge expressed
+    in an Edge, or a source of data used to generate this knowledge.
+  display_name: retrieval source ids
+  cardinality: multi
 - id: type
   description: rdf:type of biolink:Association should be fixed at rdf:Statement
   display_name: association_type

@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,4087.7,283"];
+	graph [bb="0,0,5810.7,283"];
 	node [label="\N"];
 	"named thing associated with likelihood of named thing association"	[height=0.5,
 		label="named thing associated with likelihood of named thing association",
-		pos="1789.4,265",
+		pos="2706.4,265",
 		width=8.8825];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"named thing associated with likelihood of named thing association" -> association	[label=is_a,
-		lp="277.39,221.5",
-		pos="e,102.69,191.82 1469.4,264.95 1092.1,264.61 487.71,259.1 263.39,229 211.04,221.98 152.59,206.55 112.28,194.68"];
+		lp="279.39,221.5",
+		pos="e,102.71,191.81 2387.7,263.46 1773.9,261.84 469.9,255.3 265.39,229 212.35,222.18 153.11,206.64 112.39,194.69"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"named thing associated with likelihood of named thing association" -> id	[color=blue,
 		label=id,
-		lp="390.39,221.5",
-		pos="e,210.39,189.95 1471.5,262.96 1122.9,260.59 585.94,253.01 383.39,229 313.88,220.76 296.75,215.06 229.39,196 226.29,195.12 223.09,\
-194.15 219.9,193.12",
+		lp="394.39,221.5",
+		pos="e,210.38,189.97 2389.3,262.58 1800.5,259.44 580.49,250.42 387.39,229 316.09,221.09 298.47,215.35 229.39,196 226.29,195.13 223.09,\
+194.16 219.89,193.14",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -30,8 +30,7 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> iri	[color=blue,
 		label=iri,
 		lp="490.39,221.5",
-		pos="e,315.34,190.07 1472.5,262.57 1148.2,259.83 666.47,251.91 482.39,229 415.95,220.73 400.01,213.58 335.39,196 332.03,195.08 328.56,\
-194.09 325.08,193.05",
+		pos="e,315.53,190.04 2389.2,262.61 1819.8,259.58 666.01,250.82 482.39,229 427.19,222.44 365.34,205.43 325.24,193.07",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -41,7 +40,7 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> name	[color=blue,
 		label=name,
 		lp="586.39,221.5",
-		pos="e,435.84,192.38 1469.6,264.43 1166.5,263.1 733.46,256.2 566.39,229 524.49,222.18 478.38,207.57 445.58,195.89",
+		pos="e,435.51,192.39 2387.2,263.66 1834.4,262.35 740.71,256.29 566.39,229 524.32,222.41 478.05,207.7 445.24,195.93",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -51,7 +50,7 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> description	[color=blue,
 		label=description,
 		lp="689.89,221.5",
-		pos="e,575.56,195.17 1475.8,261.41 1166,257.72 727.34,249.01 649.39,229 626.45,223.11 602.73,211.19 584.37,200.46",
+		pos="e,575.53,195.27 2390,262.36 1833.9,258.94 732.04,249.61 649.39,229 626.41,223.27 602.69,211.35 584.34,200.59",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -61,7 +60,7 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> "has attribute"	[color=blue,
 		label="has attribute",
 		lp="808.39,221.5",
-		pos="e,711.75,195.36 1471.7,262.93 1194.6,260.4 826.96,252.55 761.39,229 745.72,223.37 730.79,212.44 719.21,202.23",
+		pos="e,711.72,195.45 2387.7,263.47 1855.5,261.85 836.5,255.3 761.39,229 745.67,223.49 730.74,212.58 719.17,202.35",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -71,7 +70,7 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> subject	[color=blue,
 		label=subject,
 		lp="902.39,221.5",
-		pos="e,845.03,196.18 1491.1,258.49 1235.4,252.83 903.94,242.9 876.39,229 865.76,223.63 857.01,214 850.44,204.6",
+		pos="e,844.99,196.26 2386.4,264.9 1879.6,265.33 942.71,261.66 876.39,229 865.7,223.74 856.95,214.11 850.39,204.71",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -81,7 +80,8 @@ digraph {
 	"named thing associated with likelihood of named thing association" -> object	[color=blue,
 		label=object,
 		lp="973.39,178",
-		pos="e,931.67,109.1 1492.3,258.3 1267.1,250.96 990.03,234.19 951.39,196 931.42,176.26 929.29,142.8 930.78,119.18",
+		pos="e,931.68,109.09 2392,261.63 2012.4,257.93 1396.4,249.01 1167.4,229 1070.6,220.55 1020.4,264.31 951.39,196 931.43,176.25 929.3,142.79 \
+930.79,119.17",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.2999];
 	"named thing associated with likelihood of named thing association" -> negated	[color=blue,
 		label=negated,
-		lp="1271.4,221.5",
-		pos="e,1085.8,190.35 1514.3,255.77 1427,250.66 1330.4,242.38 1242.4,229 1191.2,221.22 1134,205.22 1095.6,193.4",
+		lp="1276.4,221.5",
+		pos="e,1085.6,190.46 2387,264 2025.5,262.65 1459.4,256.06 1247.4,229 1194.1,222.2 1134.5,205.66 1095.1,193.46",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.1304];
 	"named thing associated with likelihood of named thing association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1399.9,221.5",
-		pos="e,1233.3,193.25 1553.9,252.8 1492.6,247.62 1426.7,240.05 1366.4,229 1324.2,221.27 1277.5,207.56 1243.1,196.45",
+		lp="1416.9,221.5",
+		pos="e,1234.7,193.07 2387,263.96 2058.6,262.4 1569.6,255.47 1383.4,229 1335.6,222.2 1282.5,207.74 1244.5,196.11",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=1.7332];
 	"named thing associated with likelihood of named thing association" -> publications	[color=blue,
 		label=publications,
-		lp="1531.4,221.5",
-		pos="e,1382.2,193.34 1609.3,250.07 1568.9,245.03 1526.4,238.2 1487.4,229 1454.5,221.24 1418.6,208.09 1391.7,197.22",
+		lp="1564.4,221.5",
+		pos="e,1386.1,192.71 2387.3,263.72 2093.9,261.79 1680.9,254.4 1520.4,229 1477.3,222.18 1429.8,207.69 1395.8,196.06",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=2.0943];
 	"named thing associated with likelihood of named thing association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1662.9,221.5",
-		pos="e,1535.3,194.68 1690.1,247.86 1665.7,242.82 1639.9,236.56 1616.4,229 1591.8,221.08 1565.4,209.32 1544.5,199.19",
+		lp="1718.9,221.5",
+		pos="e,1543.9,193.61 2390.4,262.18 2138,259.06 1805.4,250.8 1672.4,229 1631.5,222.3 1586.6,208.48 1553.7,197.06",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"named thing associated with likelihood of named thing association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1785.9,221.5",
-		pos="e,1708.8,196.34 1743.5,247.03 1735.2,242.25 1727.4,236.31 1721.4,229 1716.1,222.52 1712.8,214.16 1710.8,206.15",
+		lp="1873.9,221.5",
+		pos="e,1733.5,195.59 2408,258.48 2169.8,253.04 1866.6,243.44 1809.4,229 1785.9,223.07 1761.5,211.31 1742.4,200.68",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -140,9 +140,8 @@ digraph {
 		width=3.015];
 	"named thing associated with likelihood of named thing association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1968.4,221.5",
-		pos="e,1908.7,195.19 1819.7,247.07 1829.6,241.44 1840.5,235.06 1850.4,229 1860.8,222.63 1862.8,220.1 1873.4,214 1881.8,209.16 1890.9,\
-204.28 1899.7,199.76",
+		lp="2045.4,221.5",
+		pos="e,1940.1,196.41 2406.4,258.75 2203,253.78 1968,244.69 1950.4,229 1944.1,223.34 1941.4,214.82 1940.5,206.41",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=3.015];
 	"named thing associated with likelihood of named thing association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2192.9,221.5",
-		pos="e,2131.7,194.43 1981.8,250.61 2009.7,245.47 2037.6,238.48 2063.4,229 2074.8,224.79 2075.5,219.55 2086.4,214 2097.7,208.22 2110.2,\
-202.83 2122.2,198.09",
+		lp="2253.9,221.5",
+		pos="e,2156.7,195.97 2438.5,255.16 2300.3,249.24 2158.1,240.44 2147.4,229 2140.4,221.54 2143.6,212.18 2150,203.58",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -162,8 +160,8 @@ digraph {
 		width=1.5346];
 	"named thing associated with likelihood of named thing association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2356.4,221.5",
-		pos="e,2342.5,195.15 2009.8,251.93 2141.3,244.22 2285.3,234.64 2299.4,229 2307.3,225.82 2322,213.68 2334.8,202.16",
+		lp="2409.4,221.5",
+		pos="e,2359.9,196.47 2500.1,251.23 2439.2,245.68 2385.6,238.29 2374.4,229 2367.6,223.41 2363.9,214.91 2361.8,206.49",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -172,9 +170,8 @@ digraph {
 		width=1.0652];
 	"named thing associated with likelihood of named thing association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2471.4,221.5",
-		pos="e,2449.3,192.7 2015,252.23 2182.4,243.29 2383.2,232.04 2392.4,229 2404,225.18 2405.1,220.57 2415.4,214 2423.6,208.79 2432.4,203.21 \
-2440.7,198.07",
+		lp="2508.4,221.5",
+		pos="e,2457.6,194.92 2501.4,251.17 2478.9,245.97 2460.9,238.82 2452.4,229 2446.1,221.83 2447.9,212.39 2452.3,203.65",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -183,9 +180,8 @@ digraph {
 		width=1.5887];
 	"named thing associated with likelihood of named thing association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2612.9,221.5",
-		pos="e,2568.8,195.47 2014.1,252.16 2049,250.38 2084.7,248.61 2118.4,247 2163.8,244.83 2485.1,245.78 2527.4,229 2535.1,225.93 2549.1,213.93 \
-2561.5,202.46",
+		lp="2635.9,221.5",
+		pos="e,2574.3,195.76 2611.1,247.72 2593.2,242.73 2578.2,236.52 2572.4,229 2567.1,222.16 2567.6,213.39 2570.4,205.11",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -194,72 +190,187 @@ digraph {
 		width=1.0652];
 	"named thing associated with likelihood of named thing association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2741.9,221.5",
-		pos="e,2696.6,196.41 2010.6,251.98 2046.6,250.19 2083.5,248.46 2118.4,247 2149.4,245.7 2651.6,246.4 2677.4,229 2685.3,223.68 2690.4,214.85 \
-2693.6,206.09",
+		lp="2754.9,221.5",
+		pos="e,2700.8,196.18 2705,246.8 2704,235.16 2702.7,219.55 2701.6,206.24",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2832.4,178",
+		width=2.1304];
+	"named thing associated with likelihood of named thing association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2880.9,221.5",
+		pos="e,2828.6,196.4 2781.1,247.43 2791.8,242.73 2802,236.71 2810.4,229 2817.1,222.84 2821.9,214.24 2825.3,205.9",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3003.4,178",
+		width=2.1304];
+	"named thing associated with likelihood of named thing association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3023.9,221.5",
+		pos="e,2988.6,195.73 2880.9,249.86 2902.8,244.76 2924.5,237.99 2944.4,229 2958,222.83 2971,212.54 2981.3,202.9",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3136.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3159.9,221.5",
+		pos="e,3124,195.51 2952.2,253.41 3007.8,248.23 3057.9,240.5 3083.4,229 3096.3,223.16 3108.1,212.86 3117.2,203.11",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3236.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3280.4,221.5",
+		pos="e,3234.9,196.19 2923.8,251.78 3060.4,243.67 3212.2,233.69 3218.4,229 3225.7,223.49 3230,214.74 3232.6,206.09",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3369.4,178",
+		width=2.1304];
+	"named thing associated with likelihood of named thing association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3437.9,221.5",
+		pos="e,3362.3,196.05 2929.8,252.11 3109.3,242.46 3332.1,230.27 3334.4,229 3344.1,223.59 3351.8,214.21 3357.4,205.02",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3561.4,178",
+		width=2.1304];
+	"named thing associated with likelihood of named thing association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3628.9,221.5",
+		pos="e,3555.4,196.09 2928.9,252.04 2964.5,250.26 3001,248.52 3035.4,247 3062.8,245.79 3505.5,242.62 3529.4,229 3538.8,223.63 3545.9,214.26 \
+3550.9,205.06",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3751.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3801.4,221.5",
+		pos="e,3744.4,196.17 2925.8,251.89 2962.4,250.09 3000,248.38 3035.4,247 3073.2,245.52 3683.1,246.92 3716.4,229 3726.2,223.73 3733.8,214.37 \
+3739.5,205.17",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3910.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3954.4,221.5",
+		pos="e,3903,195.72 2924.5,251.81 2961.5,250 2999.5,248.31 3035.4,247 3081.9,245.3 3832,250.4 3873.4,229 3883.7,223.66 3891.9,213.97 3897.9,\
+204.54",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4061.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4114.4,221.5",
+		pos="e,4053.4,195.76 2923.6,251.75 2960.9,249.94 2999.2,248.26 3035.4,247 3090.2,245.08 3973.3,253.51 4022.4,229 4033.1,223.65 4041.7,\
+213.83 4048.2,204.29",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4232.4,178",
+		width=1.0652];
+	"named thing associated with likelihood of named thing association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4279.9,221.5",
+		pos="e,4224.1,195.78 2922.7,251.71 2960.3,249.89 2999,248.22 3035.4,247 3067.5,245.92 4163.5,243.15 4192.4,229 4203.2,223.68 4212.1,213.86 \
+4218.7,204.32",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4376.4,178",
+		width=2.347];
+	"named thing associated with likelihood of named thing association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4435.9,221.5",
+		pos="e,4373.4,196 2921.8,251.69 2959.7,249.87 2998.7,248.2 3035.4,247 3072,245.81 4322.7,248.96 4353.4,229 4361.5,223.7 4366.8,214.72 \
+4370.3,205.82",
 		style=solid];
 	type	[height=0.5,
-		pos="2787.4,178",
+		pos="4510.4,178",
 		width=0.86659];
 	"named thing associated with likelihood of named thing association" -> type	[color=blue,
 		label=type,
-		lp="2819.4,221.5",
-		pos="e,2797.2,195.5 2008.8,251.89 2045.4,250.1 2083,248.38 2118.4,247 2137.2,246.26 2784.2,242.52 2797.4,229 2803.6,222.64 2803.4,213.59 \
-2800.9,204.94",
+		lp="4532.4,221.5",
+		pos="e,4515.5,196.18 2921.4,251.67 2959.3,249.84 2998.5,248.18 3035.4,247 3055.9,246.35 4494.9,243.42 4509.4,229 4515.4,223.09 4517,214.51 \
+4516.6,206.12",
 		style=solid];
 	category	[height=0.5,
-		pos="2888.4,178",
+		pos="4611.4,178",
 		width=1.4263];
 	"named thing associated with likelihood of named thing association" -> category	[color=blue,
 		label=category,
-		lp="2892.9,221.5",
-		pos="e,2877.3,195.82 2008.4,251.87 2045.1,250.07 2082.8,248.36 2118.4,247 2158.4,245.47 2802.7,244.98 2839.4,229 2851.8,223.62 2862.6,\
-213.52 2870.9,203.79",
+		lp="4609.9,221.5",
+		pos="e,4597.8,195.45 2921.4,251.66 2959.3,249.83 2998.5,248.17 3035.4,247 3077.5,245.66 4512.9,243.74 4552.4,229 4567,223.56 4580.4,212.8 \
+4590.8,202.65",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3012.4,178",
+		pos="4735.4,178",
 		width=1.5165];
 	"named thing associated with likelihood of named thing association" -> predicate	[color=blue,
 		label=predicate,
-		lp="2997.4,221.5",
-		pos="e,2992.4,194.97 2007.5,251.83 2044.5,250.02 2082.5,248.32 2118.4,247 2208.4,243.68 2841.9,253.84 2928.4,229 2948.3,223.28 2968.3,\
-211.65 2983.8,201.05",
+		lp="4716.4,221.5",
+		pos="e,4714.2,194.81 2921.4,251.64 2959.3,249.81 2998.5,248.16 3035.4,247 3124.8,244.19 4558.9,251.92 4645.4,229 4666.8,223.32 4688.6,\
+211.41 4705.4,200.63",
 		style=solid];
 	"subject aspect qualifier"	[height=0.5,
-		pos="3204.4,178",
+		pos="4927.4,178",
 		width=3.3039];
 	"named thing associated with likelihood of named thing association" -> "subject aspect qualifier"	[color=blue,
 		label="subject aspect qualifier",
-		lp="3185.9,221.5",
-		pos="e,3162.4,194.85 2007,251.77 2044.2,249.96 2082.4,248.28 2118.4,247 2322.1,239.74 2834,260.19 3035.4,229 3075.7,222.76 3119.9,209.45 \
-3152.9,198.14",
+		lp="4905.9,221.5",
+		pos="e,4884.7,194.84 2920.9,251.64 2959,249.81 2998.4,248.15 3035.4,247 3226.3,241.07 4565.4,256.77 4754.4,229 4795.8,222.92 4841.2,209.54 \
+4875.1,198.15",
 		style=solid];
 	"subject context qualifier"	[height=0.5,
-		pos="3464.4,178",
+		pos="5187.4,178",
 		width=3.4303];
 	"named thing associated with likelihood of named thing association" -> "subject context qualifier"	[color=blue,
 		label="subject context qualifier",
-		lp="3435.4,221.5",
-		pos="e,3417.2,194.76 2005.7,251.71 2043.3,249.89 2082,248.23 2118.4,247 2246.7,242.69 3146.2,246.38 3273.4,229 3319.2,222.74 3369.8,209.18 \
-3407.4,197.77",
+		lp="5156.4,221.5",
+		pos="e,5139.8,194.73 2920.5,251.62 2958.7,249.78 2998.2,248.13 3035.4,247 3252.9,240.39 4777.7,257.36 4993.4,229 5040.1,222.86 5091.7,\
+209.23 5129.9,197.75",
 		style=solid];
 	"object aspect qualifier"	[height=0.5,
-		pos="3719.4,178",
+		pos="5442.4,178",
 		width=3.1594];
 	"named thing associated with likelihood of named thing association" -> "object aspect qualifier"	[color=blue,
 		label="object aspect qualifier",
-		lp="3681.9,221.5",
-		pos="e,3672.8,194.44 2004.8,251.67 2042.7,249.84 2081.7,248.18 2118.4,247 2274.8,241.96 3371.3,249.77 3526.4,229 3573.2,222.74 3624.8,\
-208.97 3663,197.46",
+		lp="5402.9,221.5",
+		pos="e,5395.3,194.5 2920.5,251.59 2958.7,249.75 2998.2,248.11 3035.4,247 3158.2,243.33 5125.5,244.88 5247.4,229 5294.6,222.84 5346.9,\
+209.07 5385.4,197.53",
 		style=solid];
 	"object context qualifier"	[height=0.5,
-		pos="3969.4,178",
+		pos="5692.4,178",
 		width=3.2858];
 	"named thing associated with likelihood of named thing association" -> "object context qualifier"	[color=blue,
 		label="object context qualifier",
-		lp="3927.4,221.5",
-		pos="e,3920.1,194.46 2003.9,251.65 2042,249.82 2081.4,248.16 2118.4,247 2301.3,241.28 3583.8,251.93 3765.4,229 3815,222.73 3870,208.82 \
-3910.4,197.26",
+		lp="5649.4,221.5",
+		pos="e,5643,194.38 2920,251.58 2958.4,249.74 2998.1,248.1 3035.4,247 3171.5,242.99 5351.2,245.67 5486.4,229 5536.7,222.8 5592.4,208.81 \
+5633.3,197.2",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="900.39,134.5",
@@ -274,36 +385,36 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2165.4,265",
+		pos="3082.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2296.4,265",
+		pos="3213.4,265",
 		width=2.0762];
 	"named thing associated with likelihood of named thing association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="2467.4,265",
+		pos="3384.4,265",
 		width=2.1665];
 	"named thing associated with likelihood of named thing association_subject aspect qualifier"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2601.4,265",
+		pos="3518.4,265",
 		width=1.0652];
 	"named thing associated with likelihood of named thing association_subject context qualifier"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="2734.4,265",
+		pos="3651.4,265",
 		width=2.1304];
 	"named thing associated with likelihood of named thing association_object aspect qualifier"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2867.4,265",
+		pos="3784.4,265",
 		width=1.0652];
 	"named thing associated with likelihood of named thing association_object context qualifier"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3000.4,265",
+		pos="3917.4,265",
 		width=2.1304];
 }

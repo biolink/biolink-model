@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3868.1,283"];
+	graph [bb="0,0,5599.1,283"];
 	node [label="\N"];
 	"genomic sequence localization"	[height=0.5,
 		label="genomic sequence localization",
-		pos="2175.5,265",
+		pos="2895.5,265",
 		width=4.2066];
 	"sequence association"	[height=0.5,
 		pos="108.54,178",
 		width=3.015];
 	"genomic sequence localization" -> "sequence association"	[label=is_a,
 		lp="372.54,221.5",
-		pos="e,165.68,193.45 2023.8,264.55 1647.6,265.37 679.36,263.89 358.54,229 295.84,222.18 225.48,207.46 175.41,195.75"];
+		pos="e,165.17,193.42 2744.2,263.53 2233.8,261.73 594.74,254.03 358.54,229 295.61,222.33 225,207.52 174.91,195.73"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -19,7 +19,7 @@ digraph {
 	"genomic sequence localization" -> id	[color=blue,
 		label=id,
 		lp="488.54,221.5",
-		pos="e,302.53,189.98 2024,264.41 1666.3,264.82 777.69,262.32 481.54,229 409.39,220.88 391.48,215.5 321.54,196 318.43,195.13 315.23,194.17 \
+		pos="e,302.53,189.98 2744.3,263.47 2250.6,261.51 705.1,253.45 481.54,229 409.36,221.11 391.48,215.5 321.54,196 318.43,195.13 315.23,194.17 \
 312.04,193.15",
 		style=solid];
 	iri	[color=blue,
@@ -30,8 +30,8 @@ digraph {
 	"genomic sequence localization" -> iri	[color=blue,
 		label=iri,
 		lp="601.54,221.5",
-		pos="e,407.45,190.2 2024.3,264.01 1684.2,263.49 867.56,259.04 593.54,229 518.77,220.8 500.36,214.85 427.54,196 424.16,195.13 420.69,194.16 \
-417.2,193.15",
+		pos="e,407.45,190.2 2744.6,263.29 2266.8,260.83 805.81,251.53 593.54,229 518.74,221.06 500.36,214.85 427.54,196 424.16,195.13 420.69,\
+194.16 417.2,193.15",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -41,7 +41,7 @@ digraph {
 	"genomic sequence localization" -> name	[color=blue,
 		label=name,
 		lp="708.54,221.5",
-		pos="e,531.51,191.49 2023.8,264.79 1698.5,265.77 942.75,264.04 688.54,229 637.42,221.95 580.4,206.4 541.3,194.5",
+		pos="e,531.13,191.46 2744.3,263.66 2279.4,262.31 890.44,256.04 688.54,229 637.24,222.13 580.03,206.47 540.92,194.5",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -51,7 +51,7 @@ digraph {
 	"genomic sequence localization" -> description	[color=blue,
 		label=description,
 		lp="829.04,221.5",
-		pos="e,677.61,194.09 2025,262.8 1690.9,259.77 907.36,250.45 788.54,229 753.5,222.67 715.5,209.31 687.19,197.99",
+		pos="e,677.59,194.18 2743.9,264.24 2292.9,264.55 979.05,262.55 788.54,229 753.47,222.82 715.47,209.46 687.17,198.09",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"genomic sequence localization" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="975.54,221.5",
-		pos="e,818.36,192.76 2025.5,262.43 1717.5,258.83 1033.5,248.71 928.54,229 893.37,222.4 855.23,208.28 827.65,196.73",
+		lp="974.54,221.5",
+		pos="e,818.12,192.86 2744.1,264.15 2313.8,264.19 1103.9,261.37 927.54,229 892.57,222.58 854.7,208.45 827.34,196.84",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"genomic sequence localization" -> negated	[color=blue,
 		label=negated,
-		lp="1132.5,221.5",
-		pos="e,940.11,190.37 2025.3,262.69 1773.6,259.9 1277,251.63 1103.5,229 1049.7,221.98 989.51,205.49 949.76,193.35",
+		lp="1129.5,221.5",
+		pos="e,939.56,190.5 2745,262.9 2342.6,259.68 1261.1,249.26 1100.5,229 1047.6,222.32 988.42,205.82 949.3,193.59",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=2.1304];
 	"genomic sequence localization" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1265,221.5",
-		pos="e,1088.2,193.18 2025.2,262.57 1798.5,259.72 1379.9,251.5 1231.5,229 1185.7,222.05 1134.9,207.84 1098.2,196.34",
+		lp="1269,221.5",
+		pos="e,1088.4,193.14 2745.1,262.87 2364.3,259.71 1382.3,249.66 1235.5,229 1188.2,222.33 1135.7,207.86 1098.1,196.19",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.7332];
 	"genomic sequence localization" -> publications	[color=blue,
 		label=publications,
-		lp="1402.5,221.5",
-		pos="e,1237.9,193.06 2025.5,262.39 1825.4,259.42 1482.2,251.18 1358.5,229 1320.1,222.11 1278.1,208.11 1247.5,196.67",
+		lp="1415.5,221.5",
+		pos="e,1239.6,192.78 2745,262.82 2386.9,259.68 1504.4,249.91 1371.5,229 1329.1,222.33 1282.4,207.82 1249.1,196.15",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.0943];
 	"genomic sequence localization" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1548,221.5",
-		pos="e,1393.8,194.18 2027.1,261.24 1859.7,257.25 1598.4,248.15 1501.5,229 1467.6,222.29 1430.8,209.15 1403.1,198.02",
+		lp="1576,221.5",
+		pos="e,1398.4,193.58 2745.5,262.36 2415.5,258.43 1646.8,247.42 1529.5,229 1487.6,222.42 1441.6,208.42 1407.9,196.9",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"genomic sequence localization" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1687,221.5",
-		pos="e,1576.8,196.17 2023.9,264.76 1885.8,263.59 1693,256.72 1622.5,229 1608.2,223.35 1594.7,212.99 1584,203.16",
+		lp="1734,221.5",
+		pos="e,1588.8,195.42 2744.7,263.09 2440.1,260.77 1771.4,252.97 1669.5,229 1644.4,223.09 1618.1,211.05 1597.7,200.26",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"genomic sequence localization" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1853.5,221.5",
-		pos="e,1771.3,195.6 2027.5,261.21 1915.1,257.51 1776.9,248.92 1758.5,229 1751,220.79 1755.5,211.15 1763.7,202.54",
+		lp="1907.5,221.5",
+		pos="e,1797.2,196.25 2744.4,263.68 2455.2,262.44 1849,256.56 1812.5,229 1805.3,223.55 1801.3,214.82 1799.1,206.17",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"genomic sequence localization" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2063,221.5",
-		pos="e,1980.7,194.03 2041.1,256.71 2003,251.67 1968.7,243.21 1956.5,229 1946.2,216.84 1956,206.43 1971.6,198.31",
+		lp="2117,221.5",
+		pos="e,2015.8,196.05 2744.2,263.4 2498,261.67 2035.5,254.96 2010.5,229 2004.1,222.25 2005.8,213.2 2010.3,204.65",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -140,8 +140,8 @@ digraph {
 		width=1.5346];
 	"genomic sequence localization" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2211.5,221.5",
-		pos="e,2191.5,194.53 2172.7,246.62 2171.8,236.66 2172,224.16 2176.5,214 2178.5,209.58 2181.3,205.46 2184.5,201.7",
+		lp="2275.5,221.5",
+		pos="e,2218,195.94 2744.4,263.64 2564.2,262.01 2282,255.24 2240.5,229 2232,223.57 2225.9,214.44 2221.8,205.45",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -150,9 +150,8 @@ digraph {
 		width=1.0652];
 	"genomic sequence localization" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2325.5,221.5",
-		pos="e,2303.4,192.7 2211.4,247.37 2222.8,241.81 2235.3,235.4 2246.5,229 2257.1,222.96 2259.3,220.57 2269.5,214 2277.7,208.79 2286.6,203.21 \
-2294.8,198.07",
+		lp="2375.5,221.5",
+		pos="e,2317.4,195.95 2749.9,260.08 2584.1,254.88 2334.2,244.53 2319.5,229 2313.7,222.84 2313.2,214.21 2314.7,205.84",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -161,8 +160,8 @@ digraph {
 		width=1.5887];
 	"genomic sequence localization" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2465,221.5",
-		pos="e,2422.6,195.43 2298.1,254.34 2326.4,249.11 2355.8,241.13 2381.5,229 2389,225.48 2402.9,213.61 2415.2,202.31",
+		lp="2505,221.5",
+		pos="e,2435,196.05 2745.9,262.17 2621.9,259.09 2462.6,250.86 2441.5,229 2435.8,223.02 2434,214.53 2434.1,206.24",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -171,143 +170,258 @@ digraph {
 		width=1.0652];
 	"genomic sequence localization" -> "original object"	[color=blue,
 		label="original object",
-		lp="2596,221.5",
-		pos="e,2550.6,196.2 2283.8,252.37 2301.4,250.54 2319.5,248.69 2336.5,247 2379.8,242.72 2496.2,254.43 2531.5,229 2539.3,223.44 2544.3,\
-214.57 2547.6,205.83",
+		lp="2639,221.5",
+		pos="e,2560.4,195.81 2752.2,259.11 2685.7,254.57 2615.4,245.83 2587.5,229 2578.1,223.3 2570.7,213.87 2565.2,204.72",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2686.5,178",
+		width=2.1304];
+	"genomic sequence localization" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2764,221.5",
+		pos="e,2688.4,196.31 2783,252.91 2749,247.55 2717.3,239.85 2704.5,229 2697.7,223.23 2693.5,214.69 2690.9,206.29",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2857.5,178",
+		width=2.1304];
+	"genomic sequence localization" -> "object category"	[color=blue,
+		label="object category",
+		lp="2885,221.5",
+		pos="e,2838.6,195.82 2849.1,247.74 2841.3,242.92 2834.2,236.78 2829.5,229 2824.7,220.9 2827.3,211.93 2832.5,203.84",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="2990.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3011,221.5",
+		pos="e,2975.7,194.83 2918.4,247.09 2925.6,241.51 2933.6,235.16 2940.5,229 2950.1,220.58 2960.1,210.78 2968.6,202.1",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3090.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3131.5,221.5",
+		pos="e,3087.6,196.31 2997.8,251.64 3028.7,246.16 3057.7,238.71 3069.5,229 3076.7,223.17 3081.4,214.5 3084.6,206.02",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3223.5,178",
+		width=2.1304];
+	"genomic sequence localization" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3290,221.5",
+		pos="e,3215.1,196.31 3001.8,252.14 3082.9,242.94 3181.4,231.36 3185.5,229 3195.4,223.33 3203.6,213.95 3209.8,204.83",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3415.5,178",
+		width=2.1304];
+	"genomic sequence localization" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3481,221.5",
+		pos="e,3408.8,196.04 3001.1,252.09 3019.6,250.23 3038.6,248.44 3056.5,247 3092.6,244.1 3350.1,246.8 3381.5,229 3391.1,223.58 3398.6,214.19 \
+3404,205",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3605.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3653.5,221.5",
+		pos="e,3598.1,195.67 2999.8,251.91 3018.7,250.03 3038.2,248.29 3056.5,247 3113.3,243.01 3518.2,255.51 3568.5,229 3578.8,223.59 3587,213.89 \
+3593,204.47",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3764.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3807.5,221.5",
+		pos="e,3756.5,195.72 2999.4,251.83 3018.4,249.95 3038,248.22 3056.5,247 3093.6,244.55 3692.4,245.76 3725.5,229 3736.2,223.6 3744.9,213.77 \
+3751.3,204.25",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3915.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="3967.5,221.5",
+		pos="e,3907.2,195.75 2998.9,251.8 3018.1,249.91 3037.9,248.19 3056.5,247 3102,244.11 3834.7,249.16 3875.5,229 3886.4,223.65 3895.2,213.82 \
+3901.8,204.29",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4086.5,178",
+		width=1.0652];
+	"genomic sequence localization" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4133,221.5",
+		pos="e,4077.9,195.78 2998.5,251.78 3017.8,249.88 3037.7,248.16 3056.5,247 3111.4,243.61 3996.1,252.96 4045.5,229 4056.5,223.68 4065.6,\
+213.86 4072.3,204.32",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4239.5,178",
+		width=2.347];
+	"genomic sequence localization" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4292,221.5",
+		pos="e,4233.2,196.18 2998.5,251.74 3017.8,249.84 3037.7,248.14 3056.5,247 3088.4,245.07 4178.5,244.36 4206.5,229 4216.1,223.75 4223.4,\
+214.39 4228.6,205.19",
 		style=solid];
 	type	[height=0.5,
-		pos="2641.5,178",
+		pos="4373.5,178",
 		width=0.86659];
 	"genomic sequence localization" -> type	[color=blue,
 		label=type,
-		lp="2673.5,221.5",
-		pos="e,2651.3,195.42 2281.6,252.07 2299.9,250.22 2318.8,248.45 2336.5,247 2371.5,244.16 2627.5,254.49 2651.5,229 2657.6,222.55 2657.4,\
-213.48 2654.9,204.83",
+		lp="4390.5,221.5",
+		pos="e,4375.9,196.02 2998.5,251.71 3017.8,249.82 3037.7,248.12 3056.5,247 3092.8,244.84 4338,252.78 4365.5,229 4372.1,223.36 4374.8,214.7 \
+4375.6,206.16",
 		style=solid];
 	category	[height=0.5,
-		pos="2742.5,178",
+		pos="4474.5,178",
 		width=1.4263];
 	"genomic sequence localization" -> category	[color=blue,
 		label=category,
-		lp="2746,221.5",
-		pos="e,2731.4,195.7 2281.1,252.02 2299.6,250.16 2318.6,248.4 2336.5,247 2376.1,243.91 2657.3,245.3 2693.5,229 2705.8,223.47 2716.7,213.34 \
-2725,203.64",
+		lp="4470,221.5",
+		pos="e,4459.5,195.47 2998.1,251.75 3017.5,249.84 3037.6,248.12 3056.5,247 3131.6,242.55 4339.6,253.96 4410.5,229 4426.1,223.53 4440.8,\
+212.61 4452.2,202.37",
 		style=solid];
 	"start interbase coordinate"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="2856.5,178",
+		pos="4588.5,178",
 		width=1.2277];
 	"genomic sequence localization" -> "start interbase coordinate"	[color=blue,
 		label="start interbase coordinate",
-		lp="2906,221.5",
-		pos="e,2839.2,194.61 2280.2,251.95 2299,250.08 2318.3,248.33 2336.5,247 2435.2,239.8 2687.4,259.59 2781.5,229 2799.7,223.11 2817.5,211.52 \
-2831.2,200.98",
+		lp="4633,221.5",
+		pos="e,4569.8,194.31 2998.1,251.74 3017.5,249.82 3037.6,248.12 3056.5,247 3136.9,242.27 4428.1,251.04 4505.5,229 4525.7,223.26 4545.9,\
+211.27 4561.3,200.47",
 		style=solid];
 	"end interbase coordinate"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="3030.5,178",
+		pos="4761.5,178",
 		width=1.2277];
 	"genomic sequence localization" -> "end interbase coordinate"	[color=blue,
 		label="end interbase coordinate",
-		lp="3107,221.5",
-		pos="e,3026.2,196.04 2279.4,251.83 2298.4,249.95 2318,248.23 2336.5,247 2373.5,244.55 2972,248.42 3003.5,229 3012.2,223.69 3018.2,214.58 \
-3022.4,205.58",
+		lp="4835,221.5",
+		pos="e,4755.9,196.17 2998.1,251.71 3017.5,249.8 3037.6,248.1 3056.5,247 3103,244.31 4690,251.83 4730.5,229 4739.8,223.79 4746.6,214.57 \
+4751.5,205.46",
 		style=solid];
 	"genome build"	[color=blue,
 		height=0.5,
 		label=StrandEnum,
-		pos="3178.5,178",
+		pos="4909.5,178",
 		width=1.9318];
 	"genomic sequence localization" -> "genome build"	[color=blue,
 		label="genome build",
-		lp="3254,221.5",
-		pos="e,3194.5,195.59 2278.9,251.78 2298.1,249.89 2317.9,248.18 2336.5,247 2360.5,245.49 3183.7,246.15 3200.5,229 3207.3,222.09 3205.2,\
-212.75 3200.2,204.01",
+		lp="4982,221.5",
+		pos="e,4924,195.74 2998.1,251.69 3017.5,249.78 3037.6,248.09 3056.5,247 3082.5,245.51 4910.2,247.47 4928.5,229 4935.1,222.34 4933.6,213.16 \
+4929.3,204.48",
 		style=solid];
 	strand	[color=blue,
 		height=0.5,
 		label=StrandEnum,
-		pos="3335.5,178",
+		pos="5066.5,178",
 		width=1.9318];
 	"genomic sequence localization" -> strand	[color=blue,
 		label=strand,
-		lp="3345,221.5",
-		pos="e,3330.5,196.11 2278.5,251.79 2297.8,249.88 2317.7,248.16 2336.5,247 2363.4,245.33 3283.3,242.67 3306.5,229 3315.5,223.71 3322,214.48 \
-3326.5,205.38",
+		lp="5074,221.5",
+		pos="e,5060.6,196.19 2998.1,251.69 3017.5,249.78 3037.6,248.08 3056.5,247 3111.4,243.86 4986.5,255.6 5034.5,229 5044,223.76 5051.1,214.41 \
+5056.2,205.2",
 		style=solid];
 	phase	[color=blue,
 		height=0.5,
 		label=PhaseEnum,
-		pos="3488.5,178",
+		pos="5219.5,178",
 		width=1.8234];
 	"genomic sequence localization" -> phase	[color=blue,
 		label=phase,
-		lp="3441,221.5",
-		pos="e,3461,194.54 2278.5,251.77 2297.8,249.87 2317.7,248.15 2336.5,247 2451.5,239.95 3260,253.24 3372.5,229 3400.3,223.02 3429.7,210.29 \
-3451.9,199.18",
+		lp="5170,221.5",
+		pos="e,5191.9,194.37 2998.1,251.68 3017.5,249.77 3037.6,248.08 3056.5,247 3170,240.53 4990.3,252.11 5101.5,229 5130.1,223.07 5160.3,210.13 \
+5183,198.89",
 		style=solid];
 	subject	[height=0.5,
-		pos="3616.5,178",
+		pos="5347.5,178",
 		width=1.2277];
 	"genomic sequence localization" -> subject	[color=blue,
 		label=subject,
-		lp="3551.5,221.5",
-		pos="e,3587.3,191.71 2278.5,251.75 2297.8,249.85 2317.7,248.14 2336.5,247 2461.9,239.4 3342.8,250.1 3466.5,229 3505.4,222.37 3547.9,207.42 \
-3577.7,195.58",
+		lp="5281.5,221.5",
+		pos="e,5318.2,191.66 2998.1,251.67 3017.5,249.77 3037.6,248.08 3056.5,247 3175.2,240.25 5078.3,248.3 5195.5,229 5235.2,222.47 5278.7,\
+207.32 5308.9,195.4",
 		style=solid];
 	object	[height=0.5,
-		pos="3659.5,91",
+		pos="5390.5,91",
 		width=1.0832];
 	"genomic sequence localization" -> object	[color=blue,
 		label=object,
-		lp="3710.5,178",
-		pos="e,3672.9,108.09 2278.5,251.73 2297.8,249.83 2317.7,248.13 2336.5,247 2474.6,238.73 3445.6,254.67 3581.5,229 3622.6,221.25 3641.9,\
-227.29 3669.5,196 3690.2,172.62 3691.5,156.9 3682.5,127 3681.5,123.55 3680,120.13 3678.3,116.85",
+		lp="5441.5,178",
+		pos="e,5403.9,108.09 2998.1,251.67 3017.5,249.76 3037.6,248.07 3056.5,247 3181.6,239.91 5188.3,251.62 5311.5,229 5353,221.38 5372.5,227.55 \
+5400.5,196 5421.3,172.66 5422.5,156.9 5413.5,127 5412.5,123.55 5411,120.13 5409.3,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3813.5,178",
+		pos="5544.5,178",
 		width=1.5165];
 	"genomic sequence localization" -> predicate	[color=blue,
 		label=predicate,
-		lp="3786.5,221.5",
-		pos="e,3789.7,194.33 2278.1,251.75 2297.5,249.83 2317.6,248.12 2336.5,247 2412.7,242.49 3636.3,246.59 3710.5,229 3735.4,223.11 3761.3,\
-210.51 3780.9,199.44",
+		lp="5517.5,221.5",
+		pos="e,5520.7,194.37 2997.6,251.7 3017.2,249.78 3037.5,248.08 3056.5,247 3188.8,239.53 5312.5,259.17 5441.5,229 5466.4,223.18 5492.3,\
+210.58 5511.9,199.49",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2383.5,265",
+		pos="3103.5,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2514.5,265",
+		pos="3234.5,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3654.5,134.5",
-		pos="e,3641.6,107.23 3617.6,159.55 3618.8,149.57 3621.3,137.07 3626.5,127 3628.8,122.68 3631.7,118.52 3634.9,114.66"];
+		lp="5385.5,134.5",
+		pos="e,5372.6,107.23 5348.6,159.55 5349.8,149.57 5352.3,137.07 5357.5,127 5359.8,122.68 5362.7,118.52 5365.9,114.66"];
 	relation	[height=0.5,
-		pos="3604.5,18",
+		pos="5335.5,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3605.8,36.188 3615.2,159.79 3613.2,132.48 3609.1,78.994 3606.6,46.38",
+	subject -> relation	[pos="e,5336.8,36.188 5346.2,159.79 5344.2,132.48 5340.1,78.994 5337.6,46.38",
 		style=dotted];
 	"genomic sequence localization_subject"	[color=blue,
 		height=0.5,
 		label="nucleic acid entity",
-		pos="2702.5,265",
+		pos="3422.5,265",
 		width=2.6539];
-	object -> relation	[pos="e,3617.4,35.54 3647.1,73.889 3640.1,64.939 3631.4,53.617 3623.6,43.584",
+	object -> relation	[pos="e,5348.4,35.54 5378.1,73.889 5371.1,64.939 5362.4,53.617 5354.6,43.584",
 		style=dotted];
 	"genomic sequence localization_object"	[color=blue,
 		height=0.5,
 		label="nucleic acid entity",
-		pos="2911.5,265",
+		pos="3631.5,265",
 		width=2.6539];
 	"genomic sequence localization_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="3103.5,265",
+		pos="3823.5,265",
 		width=2.1665];
 }

@@ -1,35 +1,35 @@
 digraph {
-	graph [bb="0,0,4618.5,283"];
+	graph [bb="0,0,6331.5,283"];
 	node [label="\N"];
 	"variant to population association"	[height=0.5,
 		label="variant to population association",
-		pos="2584.4,265",
+		pos="3494.4,265",
 		width=4.5315];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"variant to population association" -> association	[label=is_a,
-		lp="611.39,221.5",
-		pos="e,106.49,190.74 2421.4,264.07 2081.9,263.57 1274.3,259.01 597.39,229 390.85,219.84 337.72,227.51 133.39,196 127.91,195.15 122.23,\
-194.1 116.58,192.94"];
+		lp="608.39,221.5",
+		pos="e,106.49,190.74 3331.6,263.31 2802.4,260.87 1133.5,251.53 594.39,229 389.16,220.42 336.4,227.35 133.39,196 127.91,195.15 122.23,\
+194.1 116.58,192.93"];
 	"variant to entity association mixin"	[height=0.5,
 		pos="312.39,178",
 		width=4.7121];
 	"variant to population association" -> "variant to entity association mixin"	[label=uses,
-		lp="821.89,221.5",
-		pos="e,417.5,192.16 2422.6,262.5 2045.6,258.75 1117,247.84 805.39,229 675.67,221.16 527.38,205.16 427.61,193.36"];
+		lp="816.89,221.5",
+		pos="e,415.94,192.31 3331.3,263.79 2827.1,262.84 1296.8,257.6 800.39,229 671.75,221.59 524.7,205.47 425.95,193.53"];
 	"frequency quantifier"	[height=0.5,
 		pos="605.39,178",
 		width=2.9247];
 	"variant to population association" -> "frequency quantifier"	[label=uses,
-		lp="1006.9,221.5",
-		pos="e,678.59,191.05 2422.7,262.5 2074.9,258.93 1264.9,248.74 990.39,229 886,221.49 766.61,204.7 688.81,192.64"];
+		lp="998.89,221.5",
+		pos="e,677.05,191.21 3331.4,264.1 2850.3,264.03 1441.4,261.01 982.39,229 880.12,221.87 763.21,204.99 687.05,192.82"];
 	"frequency qualifier mixin"	[height=0.5,
 		pos="856.39,178",
 		width=3.5386];
 	"variant to population association" -> "frequency qualifier mixin"	[label=uses,
-		lp="1138.9,221.5",
-		pos="e,918.85,193.7 2421.6,263.42 2094.9,261.72 1369.8,255.04 1122.4,229 1056.3,222.05 982.09,207.52 928.87,195.91"];
+		lp="1137.9,221.5",
+		pos="e,918.07,193.75 3331.9,263.22 2832.2,260.6 1339.3,251 1121.4,229 1055.3,222.33 981.1,207.7 928.05,195.98"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -37,9 +37,9 @@ digraph {
 		width=1.0652];
 	"variant to population association" -> id	[color=blue,
 		label=id,
-		lp="1260.4,221.5",
-		pos="e,1069.4,190.01 2421.9,263.2 2118.2,261.14 1474.9,253.88 1253.4,229 1179.1,220.65 1160.5,215.87 1088.4,196 1085.3,195.14 1082.1,\
-194.18 1078.9,193.17",
+		lp="1257.4,221.5",
+		pos="e,1069.4,190 3331.8,263.21 2850.8,260.61 1455,251.24 1250.4,229 1177.3,221.06 1159.2,215.65 1088.4,196 1085.3,195.14 1082.1,194.17 \
+1078.9,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -48,9 +48,9 @@ digraph {
 		width=1.2277];
 	"variant to population association" -> iri	[color=blue,
 		label=iri,
-		lp="1380.4,221.5",
-		pos="e,1174,190.18 2422.8,262.43 2141,259.17 1571,250.15 1372.4,229 1292.4,220.48 1272.4,215.66 1194.4,196 1191,195.14 1187.4,194.17 \
-1183.9,193.15",
+		lp="1374.4,221.5",
+		pos="e,1174.3,190.23 3332.1,262.95 2868.5,259.73 1559.4,248.95 1366.4,229 1289,221 1269.8,215.26 1194.4,196 1191,195.14 1187.5,194.18 \
+1184,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -59,8 +59,8 @@ digraph {
 		width=1.5707];
 	"variant to population association" -> name	[color=blue,
 		label=name,
-		lp="1495.4,221.5",
-		pos="e,1300.4,190.92 2422.7,262.6 2160.4,259.71 1653.6,251.34 1475.4,229 1417.9,221.79 1353.3,205.65 1310.1,193.65",
+		lp="1485.4,221.5",
+		pos="e,1299.2,191.28 3332,263.21 2883.3,260.76 1647.9,251.97 1465.4,229 1411,222.16 1350.1,206.23 1309,194.17",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -69,8 +69,8 @@ digraph {
 		width=2.0943];
 	"variant to population association" -> description	[color=blue,
 		label=description,
-		lp="1621.9,221.5",
-		pos="e,1449.5,193.47 2421.7,263.24 2180.1,261.28 1738.1,254.24 1581.4,229 1539.3,222.22 1492.9,208.24 1459.1,196.78",
+		lp="1612.9,221.5",
+		pos="e,1447.6,193.79 3331.6,263.65 2899.2,262.36 1743.3,256.37 1572.4,229 1532.6,222.63 1489.1,208.78 1457.2,197.27",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -79,8 +79,8 @@ digraph {
 		width=1.4443];
 	"variant to population association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1776.4,221.5",
-		pos="e,1589.8,191.55 2423.5,261.99 2213.7,258.58 1858.4,249.86 1729.4,229 1684.4,221.71 1634.4,206.61 1599.7,194.9",
+		lp="1769.4,221.5",
+		pos="e,1588.7,191.89 3331.9,263.3 2923.9,261.19 1878.4,253.43 1722.4,229 1679.1,222.22 1631.4,207.13 1598.1,195.29",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -89,8 +89,8 @@ digraph {
 		width=2.1665];
 	"variant to population association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1930.4,221.5",
-		pos="e,1746.9,192.99 2428.2,259.73 2257.4,254.4 1995,244.13 1896.4,229 1848.5,221.66 1795.3,207.39 1756.9,195.97",
+		lp="1928.4,221.5",
+		pos="e,1746,193.24 3332.6,262.61 2954.3,259.05 2033.7,248.49 1894.4,229 1846.7,222.33 1793.9,207.93 1755.9,196.29",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -99,8 +99,8 @@ digraph {
 		width=1.2999];
 	"variant to population association" -> negated	[color=blue,
 		label=negated,
-		lp="2066.4,221.5",
-		pos="e,1880.8,190.35 2425,261.11 2315.5,257.35 2167,248.71 2037.4,229 1986.2,221.22 1929,205.22 1890.6,193.4",
+		lp="2071.4,221.5",
+		pos="e,1880.6,190.46 3331.3,264.29 3006.1,264.18 2287.1,260.25 2042.4,229 1989.1,222.19 1929.5,205.66 1890.1,193.46",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -109,8 +109,8 @@ digraph {
 		width=2.1304];
 	"variant to population association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2194.9,221.5",
-		pos="e,2028.3,193.25 2431.7,258.64 2350.9,253.98 2250.2,245.27 2161.4,229 2119.2,221.27 2072.5,207.56 2038.1,196.45",
+		lp="2210.9,221.5",
+		pos="e,2029.5,193.07 3331.1,264.36 3029.4,264.24 2395.2,260.12 2177.4,229 2129.8,222.2 2077.1,207.74 2039.2,196.11",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -119,8 +119,8 @@ digraph {
 		width=1.7332];
 	"variant to population association" -> publications	[color=blue,
 		label=publications,
-		lp="2326.4,221.5",
-		pos="e,2177.2,193.34 2448.3,254.99 2396,249.77 2336,241.62 2282.4,229 2249.5,221.24 2213.6,208.09 2186.7,197.22",
+		lp="2358.4,221.5",
+		pos="e,2180.9,192.71 3331.3,264.32 3054.8,263.99 2505.2,259.37 2314.4,229 2271.5,222.18 2224.3,207.69 2190.5,196.06",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -129,8 +129,8 @@ digraph {
 		width=2.0943];
 	"variant to population association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2457.9,221.5",
-		pos="e,2330.3,194.68 2495,249.86 2467.8,244.51 2438.1,237.59 2411.4,229 2386.8,221.08 2360.4,209.32 2339.5,199.19",
+		lp="2512.9,221.5",
+		pos="e,2338.6,193.61 3331.6,263.57 3084.9,262.05 2627.8,255.6 2466.4,229 2425.8,222.3 2381.1,208.48 2348.4,197.06",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -139,8 +139,8 @@ digraph {
 		width=3.015];
 	"variant to population association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2580.9,221.5",
-		pos="e,2503.8,196.34 2539.6,247.63 2530.9,242.75 2522.6,236.61 2516.4,229 2511.1,222.52 2507.8,214.16 2505.8,206.15",
+		lp="2667.9,221.5",
+		pos="e,2528.2,195.59 3334.6,261.34 3097.3,256.84 2672,246.47 2603.4,229 2580.1,223.06 2555.9,211.3 2537,200.68",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -149,9 +149,8 @@ digraph {
 		width=3.015];
 	"variant to population association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2763.4,221.5",
-		pos="e,2703.7,195.19 2614.4,247.25 2624.3,241.57 2635.4,235.12 2645.4,229 2655.8,222.63 2657.8,220.1 2668.4,214 2676.8,209.16 2685.9,\
-204.28 2694.7,199.76",
+		lp="2839.4,221.5",
+		pos="e,2734.8,196.37 3333.9,261.67 3120.1,257.83 2765.8,248.54 2744.4,229 2738.2,223.35 2735.7,214.95 2734.9,206.63",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -160,9 +159,8 @@ digraph {
 		width=3.015];
 	"variant to population association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2987.9,221.5",
-		pos="e,2926.7,194.43 2697.4,251.98 2765.9,244.26 2843,234.66 2858.4,229 2869.8,224.79 2870.5,219.55 2881.4,214 2892.7,208.22 2905.2,202.83 \
-2917.2,198.09",
+		lp="3047.9,221.5",
+		pos="e,2951.1,195.91 3331.3,264.77 3177.8,263.73 2967.8,257.1 2941.4,229 2934.3,221.47 2937.7,212.1 2944.3,203.51",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -171,9 +169,8 @@ digraph {
 		width=1.5346];
 	"variant to population association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3151.4,221.5",
-		pos="e,3137.5,195.19 2698.1,252.02 2717.6,250.19 2737.5,248.43 2756.4,247 2831.4,241.3 3024.4,256.48 3094.4,229 3102.3,225.88 3117,213.74 \
-3129.8,202.21",
+		lp="3202.4,221.5",
+		pos="e,3154.2,196.41 3351.8,256.21 3270.5,250.46 3181.9,241.47 3167.4,229 3160.8,223.34 3157.4,214.82 3155.6,206.41",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -182,9 +179,8 @@ digraph {
 		width=1.0652];
 	"variant to population association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="3266.4,221.5",
-		pos="e,3244.3,192.7 2697.2,251.93 2716.9,250.08 2737.2,248.35 2756.4,247 2852,240.28 3096.1,258.23 3187.4,229 3199,225.28 3200.1,220.57 \
-3210.4,214 3218.6,208.79 3227.4,203.21 3235.7,198.07",
+		lp="3300.4,221.5",
+		pos="e,3251.2,194.78 3341,258.83 3297.6,253.95 3258.3,245.04 3244.4,229 3238,221.59 3240.3,212 3245.4,203.21",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -193,9 +189,8 @@ digraph {
 		width=1.5887];
 	"variant to population association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3407.9,221.5",
-		pos="e,3363.8,195.49 2696.3,251.85 2716.3,249.99 2736.9,248.27 2756.4,247 2819.2,242.9 3263.8,251.85 3322.4,229 3330.1,225.98 3344.2,\
-213.98 3356.5,202.5",
+		lp="3426.9,221.5",
+		pos="e,3367.4,195.6 3409.1,249.62 3388.2,244.3 3369.9,237.45 3363.4,229 3358,221.92 3359.1,212.99 3362.6,204.65",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -204,138 +199,256 @@ digraph {
 		width=1.0652];
 	"variant to population association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3536.9,221.5",
-		pos="e,3491.6,196.43 2695.8,251.79 2715.9,249.92 2736.8,248.21 2756.4,247 2796.1,244.54 3439.3,251.16 3472.4,229 3480.3,223.7 3485.4,\
-214.89 3488.6,206.12",
+		lp="3545.9,221.5",
+		pos="e,3494.4,196.18 3494.4,246.8 3494.4,235.16 3494.4,219.55 3494.4,206.24",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3627.4,178",
+		width=2.1304];
+	"variant to population association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3670.9,221.5",
+		pos="e,3621.2,195.97 3563.2,248.67 3575.8,243.78 3588.1,237.38 3598.4,229 3606.2,222.66 3612.3,213.66 3616.9,205.03",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3798.4,178",
+		width=2.1304];
+	"variant to population association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3814.9,221.5",
+		pos="e,3782.1,195.71 3612.4,252.51 3661.4,246.55 3712.1,238.52 3734.4,229 3749,222.76 3763.1,212.32 3774.4,202.6",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3931.4,178",
+		width=1.0652];
+	"variant to population association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3948.9,221.5",
+		pos="e,3915.9,194.59 3610.5,252.33 3629.2,250.51 3648.3,248.68 3666.4,247 3712.6,242.72 3831.7,247.2 3874.4,229 3882.1,225.71 3896.3,\
+213.29 3908.6,201.65",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4027.4,178",
+		width=1.0652];
+	"variant to population association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="4068.4,221.5",
+		pos="e,4024.9,196.31 3608.1,252.02 3627.6,250.19 3647.5,248.43 3666.4,247 3704.1,244.14 3975.5,250.77 4006.4,229 4014.1,223.57 4019,214.72 \
+4022.1,205.97",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4160.4,178",
+		width=2.1304];
+	"variant to population association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="4226.9,221.5",
+		pos="e,4152.4,196.15 3606.7,251.93 3626.6,250.08 3647.1,248.33 3666.4,247 3717,243.5 4077.4,252.42 4122.4,229 4132.7,223.66 4140.9,214.15 \
+4147.1,204.86",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4349.4,178",
+		width=2.1304];
+	"variant to population association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4416.9,221.5",
+		pos="e,4343.7,196.11 3605.8,251.83 3625.9,249.96 3646.8,248.24 3666.4,247 3702.6,244.72 4287,247.06 4318.4,229 4327.6,223.71 4334.4,214.48 \
+4339.3,205.37",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4539.4,178",
+		width=1.0652];
+	"variant to population association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4589.4,221.5",
+		pos="e,4532.4,196.19 3605.3,251.77 3625.6,249.89 3646.6,248.19 3666.4,247 3712.9,244.21 4463.3,250.95 4504.4,229 4514.2,223.76 4521.9,\
+214.4 4527.5,205.19",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4698.4,178",
+		width=1.0652];
+	"variant to population association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4742.4,221.5",
+		pos="e,4691,195.74 3605.3,251.71 3625.6,249.84 3646.6,248.15 3666.4,247 3721.6,243.78 4612.3,254.33 4661.4,229 4671.7,223.68 4679.9,213.99 \
+4685.9,204.56",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4849.4,178",
+		width=1.0652];
+	"variant to population association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4902.4,221.5",
+		pos="e,4841.4,195.77 3604.9,251.72 3625.3,249.83 3646.5,248.14 3666.4,247 3698.1,245.19 4781.9,243.17 4810.4,229 4821.1,223.66 4829.8,\
+213.84 4836.2,204.31",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5020.4,178",
+		width=1.0652];
+	"variant to population association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="5067.9,221.5",
+		pos="e,5012.1,195.79 3604.9,251.68 3625.3,249.8 3646.5,248.12 3666.4,247 3702.8,244.95 4947.6,245.04 4980.4,229 4991.3,223.69 5000.1,\
+213.87 5006.7,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="5161.4,178",
+		width=2.347];
+	"variant to population association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="5222.9,221.5",
+		pos="e,5159.3,196.42 3604.4,251.7 3625,249.81 3646.3,248.11 3666.4,247 3707.3,244.73 5107.6,252.18 5141.4,229 5149.1,223.7 5153.9,214.88 \
+5156.8,206.11",
 		style=solid];
 	type	[height=0.5,
-		pos="3582.4,178",
+		pos="5295.4,178",
 		width=0.86659];
 	"variant to population association" -> type	[color=blue,
 		label=type,
-		lp="3614.4,221.5",
-		pos="e,3592.3,195.51 2695.3,251.77 2715.6,249.89 2736.6,248.19 2756.4,247 2779.6,245.61 3576.1,245.6 3592.4,229 3598.6,222.66 3598.4,\
-213.61 3595.9,204.96",
+		lp="5319.4,221.5",
+		pos="e,5301.3,196.13 3604.4,251.68 3625,249.79 3646.3,248.1 3666.4,247 3689,245.76 5280.5,245.1 5296.4,229 5302.3,223.03 5303.6,214.44 \
+5302.9,206.06",
 		style=solid];
 	category	[height=0.5,
-		pos="3683.4,178",
+		pos="5396.4,178",
 		width=1.4263];
 	"variant to population association" -> category	[color=blue,
 		label=category,
-		lp="3687.9,221.5",
-		pos="e,3672.3,195.84 2695.3,251.75 2715.6,249.88 2736.6,248.18 2756.4,247 2805.1,244.1 3589.6,248.36 3634.4,229 3646.8,223.65 3657.6,\
-213.55 3665.9,203.82",
+		lp="5395.9,221.5",
+		pos="e,5383.4,195.45 3604.4,251.68 3625,249.79 3646.3,248.1 3666.4,247 3712.8,244.46 5296,245.61 5339.4,229 5353.5,223.6 5366.4,213 5376.4,\
+202.94",
 		style=solid];
 	subject	[height=0.5,
-		pos="3797.4,178",
+		pos="5510.4,178",
 		width=1.2277];
 	"variant to population association" -> subject	[color=blue,
 		label=subject,
-		lp="3780.4,221.5",
-		pos="e,3780.4,194.74 2695.3,251.72 2715.6,249.85 2736.6,248.16 2756.4,247 2810,243.86 3672.2,245.21 3723.4,229 3741.4,223.31 3759,211.72 \
-3772.5,201.14",
+		lp="5490.4,221.5",
+		pos="e,5492.4,194.55 3604.4,251.67 3625,249.78 3646.3,248.09 3666.4,247 3764.3,241.67 5337.4,256.78 5431.4,229 5450.7,223.31 5469.7,211.44 \
+5484.3,200.7",
 		style=solid];
 	object	[height=0.5,
-		pos="3840.4,91",
+		pos="5553.4,91",
 		width=1.0832];
 	"variant to population association" -> object	[color=blue,
 		label=object,
-		lp="3883.4,178",
-		pos="e,3853.8,108.09 2694.9,251.74 2715.3,249.85 2736.5,248.15 2756.4,247 2814.9,243.62 3755.5,249.27 3810.4,229 3852.9,213.33 3858.1,\
-186.96 3863.4,142 3864.2,135.38 3865.3,133.39 3863.4,127 3862.4,123.55 3860.9,120.13 3859.1,116.85",
+		lp="5597.4,178",
+		pos="e,5566.8,108.09 3604.4,251.66 3625,249.77 3646.3,248.09 3666.4,247 3717.8,244.21 5471.7,245.79 5520.4,229 5543.2,221.14 5550.3,216.2 \
+5563.4,196 5576.8,175.3 5573.5,166.51 5576.4,142 5577.2,135.38 5578.3,133.39 5576.4,127 5575.4,123.55 5573.9,120.13 5572.1,116.85",
 		style=solid];
 	"has quotient"	[height=0.5,
-		pos="4008.4,178",
+		pos="5721.4,178",
 		width=1.9137];
 	"variant to population association" -> "has quotient"	[color=blue,
 		label="has quotient",
-		lp="3983.4,221.5",
-		pos="e,3980.6,194.55 2694.9,251.72 2715.3,249.84 2736.5,248.14 2756.4,247 2882.3,239.79 3768,255.27 3891.4,229 3919.4,223.04 3949,210.32 \
-3971.4,199.2",
+		lp="5696.4,221.5",
+		pos="e,5693.6,194.61 3604.4,251.65 3625,249.76 3646.3,248.08 3666.4,247 3773.9,241.2 5499,251.08 5604.4,229 5632.4,223.13 5662,210.41 \
+5684.4,199.26",
 		style=solid];
 	"has count"	[height=0.5,
-		pos="4151.4,178",
+		pos="5864.4,178",
 		width=1.5526];
 	"variant to population association" -> "has count"	[color=blue,
 		label="has count",
-		lp="4115.4,221.5",
-		pos="e,4124.5,193.84 2694.9,251.69 2715.3,249.81 2736.5,248.12 2756.4,247 2898,239.02 3893.6,257.99 4032.4,229 4061.5,222.92 4092.4,209.7 \
-4115.4,198.39",
+		lp="5828.4,221.5",
+		pos="e,5837.5,193.89 3604.4,251.64 3625,249.75 3646.3,248.08 3666.4,247 3781.7,240.81 5632.3,252.31 5745.4,229 5774.5,223 5805.4,209.78 \
+5828.4,198.44",
 		style=solid];
 	"has total"	[height=0.5,
-		pos="4276.4,178",
+		pos="5989.4,178",
 		width=1.4263];
 	"variant to population association" -> "has total"	[color=blue,
 		label="has total",
-		lp="4234.9,221.5",
-		pos="e,4249.2,193.61 2694.9,251.67 2715.3,249.79 2736.5,248.11 2756.4,247 2911.5,238.35 4002.2,260 4154.4,229 4184.4,222.9 4216.3,209.55 \
-4239.9,198.18",
+		lp="5947.9,221.5",
+		pos="e,5962.7,193.41 3604.4,251.64 3625,249.75 3646.3,248.07 3666.4,247 3788.5,240.48 5747.5,253.12 5867.4,229 5897.7,222.9 5930,209.32 \
+5953.7,197.85",
 		style=solid];
 	"has percentage"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="4388.4,178",
+		pos="6101.4,178",
 		width=1.1735];
 	"variant to population association" -> "has percentage"	[color=blue,
 		label="has percentage",
-		lp="4372.4,221.5",
-		pos="e,4363.5,192.91 2694.4,251.7 2715,249.8 2736.3,248.11 2756.4,247 2840.4,242.36 4188.1,246.23 4270.4,229 4300.1,222.79 4331.6,209.03 \
-4354.6,197.51",
+		lp="6085.4,221.5",
+		pos="e,6077,192.7 3604.4,251.63 3625,249.74 3646.3,248.07 3666.4,247 3794.9,240.16 5857.3,255.11 5983.4,229 6013.3,222.81 6045,208.91 \
+6068,197.33",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="4533.4,178",
+		pos="6246.4,178",
 		width=2.3651];
 	"variant to population association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="4539.4,221.5",
-		pos="e,4508.2,195.32 2694.4,251.68 2715,249.79 2736.3,248.1 2756.4,247 2849.3,241.92 4340.9,250.51 4431.4,229 4455.4,223.29 4480.3,211.21 \
-4499.5,200.36",
+		lp="6252.4,221.5",
+		pos="e,6221.2,195.35 3604.4,251.62 3625,249.73 3646.3,248.06 3666.4,247 3735.1,243.36 6077.4,244.79 6144.4,229 6168.4,223.34 6193.3,211.26 \
+6212.5,200.39",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2803.4,265",
+		pos="3713.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2934.4,265",
+		pos="3844.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3835.4,134.5",
-		pos="e,3822.5,107.23 3798.5,159.55 3799.7,149.57 3802.2,137.07 3807.4,127 3809.6,122.68 3812.5,118.52 3815.7,114.66"];
+		lp="5548.4,134.5",
+		pos="e,5535.5,107.23 5511.5,159.55 5512.7,149.57 5515.2,137.07 5520.4,127 5522.6,122.68 5525.5,118.52 5528.7,114.66"];
 	relation	[height=0.5,
-		pos="3785.4,18",
+		pos="5498.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3786.7,36.188 3796.1,159.79 3794,132.48 3790,78.994 3787.5,46.38",
+	subject -> relation	[pos="e,5499.7,36.188 5509.1,159.79 5507,132.48 5503,78.994 5500.5,46.38",
 		style=dotted];
 	"variant to population association_subject"	[color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="3117.4,265",
+		pos="4027.4,265",
 		width=2.5095];
-	object -> relation	[pos="e,3798.2,35.54 3827.9,73.889 3821,64.939 3812.2,53.617 3804.4,43.584",
+	object -> relation	[pos="e,5511.2,35.54 5540.9,73.889 5534,64.939 5525.2,53.617 5517.4,43.584",
 		style=dotted];
 	"variant to population association_object"	[color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="3397.4,265",
+		pos="4307.4,265",
 		width=4.7662];
 	"variant to population association_has quotient"	[color=blue,
 		height=0.5,
 		label=double,
-		pos="3629.4,265",
+		pos="4539.4,265",
 		width=1.1735];
 	"variant to population association_has count"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="3733.4,265",
+		pos="4643.4,265",
 		width=1.2277];
 	"variant to population association_has total"	[color=blue,
 		height=0.5,
 		label=integer,
-		pos="3839.4,265",
+		pos="4749.4,265",
 		width=1.2277];
 }

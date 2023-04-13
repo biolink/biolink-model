@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,3487.4,283"];
+	graph [bb="0,0,5202.4,283"];
 	node [label="\N"];
 	"chemical to chemical association"	[height=0.5,
 		label="chemical to chemical association",
-		pos="1816.4,265",
+		pos="2834.4,265",
 		width=4.5135];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"chemical to chemical association" -> association	[label=is_a,
-		lp="506.39,221.5",
-		pos="e,107.14,190.59 1654.7,263.13 1405.1,261.03 911.02,253.8 492.39,229 332.89,219.55 292.09,221.76 134.39,196 128.71,195.07 122.81,\
-193.95 116.94,192.72"];
+		lp="496.39,221.5",
+		pos="e,107.14,190.57 2672.5,263.27 2213.5,260.94 909.66,252.4 482.39,229 327.27,220.5 287.69,221.24 134.39,196 128.71,195.06 122.81,193.93 \
+116.94,192.71"];
 	"chemical to entity association mixin"	[height=0.5,
 		pos="320.39,178",
 		width=4.9287];
 	"chemical to chemical association" -> "chemical to entity association mixin"	[label=uses,
-		lp="654.89,221.5",
-		pos="e,398.78,194.15 1656.4,261.75 1381.6,257.47 830.98,246.93 638.39,229 560.35,221.73 472.38,207.42 408.78,195.97"];
+		lp="652.89,221.5",
+		pos="e,397.29,194.28 2671.7,264.39 2232.8,264.95 1031.3,263.22 636.39,229 558.39,222.24 470.48,207.77 407.23,196.12"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"chemical to chemical association" -> id	[color=blue,
 		label=id,
-		lp="778.39,221.5",
-		pos="e,583.11,189.95 1656.3,261.76 1407.1,257.74 937.78,247.91 771.39,229 695.35,220.36 676.22,216.16 602.39,196 599.24,195.14 595.99,\
-194.17 592.75,193.15",
+		lp="773.39,221.5",
+		pos="e,583.37,190.01 2672.6,262.95 2218.5,259.78 953.32,249.22 766.39,229 692.48,221 674.06,215.79 602.39,196 599.28,195.14 596.08,194.18 \
+592.89,193.17",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -36,9 +36,9 @@ digraph {
 		width=1.2277];
 	"chemical to chemical association" -> iri	[color=blue,
 		label=iri,
-		lp="904.39,221.5",
-		pos="e,687.99,190.23 1653.9,264.47 1469.7,263.45 1160.6,257.09 896.39,229 812.04,220.03 790.75,216.34 708.39,196 704.96,195.15 701.42,\
-194.2 697.89,193.19",
+		lp="891.39,221.5",
+		pos="e,688.01,190.16 2671.9,264.61 2268.3,265.55 1228.2,264.35 883.39,229 804.66,220.93 785.11,215.46 708.39,196 704.97,195.13 701.43,\
+194.16 697.9,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"chemical to chemical association" -> name	[color=blue,
 		label=name,
-		lp="1016.4,221.5",
-		pos="e,814.9,190.59 1659.2,260.39 1457.9,255.24 1120.1,244.61 996.39,229 936.63,221.46 869.31,205.16 824.63,193.22",
+		lp="1005.4,221.5",
+		pos="e,813.59,191.06 2673,262.84 2253.4,259.55 1150,249.08 985.39,229 929,222.12 865.78,205.98 823.37,193.88",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"chemical to chemical association" -> description	[color=blue,
 		label=description,
-		lp="1145.9,221.5",
-		pos="e,965.52,193.16 1659.2,260.3 1482.9,255.43 1208,245.5 1105.4,229 1060.7,221.81 1011.2,207.7 975.27,196.29",
+		lp="1136.9,221.5",
+		pos="e,963.36,193.52 2672.4,263.16 2270.6,260.74 1249.2,252.33 1096.4,229 1053.9,222.51 1007.1,208.43 973.04,196.86",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"chemical to chemical association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1305.4,221.5",
-		pos="e,1105.9,191.01 1656.2,261.99 1544.2,258.63 1391.4,250.12 1258.4,229 1208.9,221.13 1153.5,205.68 1115.6,194.03",
+		lp="1298.4,221.5",
+		pos="e,1104.4,191.41 2673.2,262.67 2298.3,259.24 1389,248.98 1251.4,229 1203.7,222.07 1150.7,206.59 1114.2,194.67",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=1.9318];
 	"chemical to chemical association" -> subject	[color=blue,
 		label=subject,
-		lp="1455.4,221.5",
-		pos="e,1255.8,191.45 1676.1,255.84 1602.4,250.41 1510.7,241.86 1429.4,229 1373.1,220.1 1309.7,205.16 1265.5,193.93",
+		lp="1463.4,221.5",
+		pos="e,1254.8,191.65 2672.1,263.82 2356.8,262.83 1671.7,257.36 1437.4,229 1377.6,221.76 1310.4,206.08 1264.5,194.2",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -87,8 +87,8 @@ digraph {
 		width=2.1665];
 	"chemical to chemical association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1573.4,221.5",
-		pos="e,1416,193.49 1694.3,253.11 1645.8,247.6 1589.6,239.75 1539.4,229 1500.6,220.7 1457.8,207.5 1425.6,196.75",
+		lp="1601.4,221.5",
+		pos="e,1418.3,193.17 2671.9,264.1 2379.5,263.51 1775.7,258.6 1567.4,229 1519.5,222.19 1466.4,207.8 1428.2,196.2",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -97,8 +97,8 @@ digraph {
 		width=1.2999];
 	"chemical to chemical association" -> negated	[color=blue,
 		label=negated,
-		lp="1686.4,221.5",
-		pos="e,1549.5,191.48 1739.1,249.07 1712.9,243.47 1683.7,236.6 1657.4,229 1623.8,219.31 1586.6,205.77 1559.1,195.22",
+		lp="1745.4,221.5",
+		pos="e,1553,190.39 2673,262.83 2409,260.26 1896.3,252.34 1716.4,229 1662.6,222.02 1602.4,205.52 1562.6,193.37",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -107,8 +107,8 @@ digraph {
 		width=2.1304];
 	"chemical to chemical association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1778.9,221.5",
-		pos="e,1685.9,195.02 1781.5,247.38 1769.9,241.72 1757,235.24 1745.4,229 1728.5,219.92 1710,209.3 1694.6,200.19",
+		lp="1878.9,221.5",
+		pos="e,1701.3,193.2 2673,262.73 2434.7,260.11 2000,252.21 1845.4,229 1799.1,222.05 1747.8,207.75 1710.8,196.22",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -117,8 +117,8 @@ digraph {
 		width=1.7332];
 	"chemical to chemical association" -> publications	[color=blue,
 		label=publications,
-		lp="1860.4,221.5",
-		pos="e,1816.4,196.18 1816.4,246.8 1816.4,235.16 1816.4,219.55 1816.4,206.24",
+		lp="2016.4,221.5",
+		pos="e,1851,193.08 2672.9,262.63 2461.4,259.93 2102.3,252.01 1972.4,229 1933.7,222.15 1891.4,208.15 1860.6,196.7",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -127,8 +127,8 @@ digraph {
 		width=2.0943];
 	"chemical to chemical association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1977.9,221.5",
-		pos="e,1954.1,195.69 1867.3,247.74 1881,242.54 1895.6,236.22 1908.4,229 1921.7,221.48 1935.3,211.34 1946.5,202.15",
+		lp="2162.9,221.5",
+		pos="e,2006.8,194.09 2674.7,261.51 2496.4,257.79 2219.3,248.95 2116.4,229 2081.9,222.31 2044.4,209.1 2016.3,197.94",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -137,8 +137,8 @@ digraph {
 		width=3.015];
 	"chemical to chemical association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2141.9,221.5",
-		pos="e,2134.3,194.73 1917.1,250.88 1952.6,245.34 1992.5,238.04 2028.4,229 2061,220.77 2096.8,208.57 2124.8,198.28",
+		lp="2301.9,221.5",
+		pos="e,2190,195.95 2678.7,259.73 2515.6,254.48 2277.6,244.33 2237.4,229 2222.6,223.35 2208.5,212.89 2197.5,202.99",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -147,9 +147,8 @@ digraph {
 		width=3.015];
 	"chemical to chemical association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2377.4,221.5",
-		pos="e,2359.2,194.07 1932,252.29 1950.9,250.46 1970.2,248.64 1988.4,247 2087,238.13 2112.7,245.12 2210.4,229 2257.7,221.19 2310.3,207.78 \
-2349.5,196.8",
+		lp="2468.4,221.5",
+		pos="e,2385.2,195.77 2673.6,262.33 2548.9,259.31 2393.9,251.09 2373.4,229 2366,220.97 2370.2,211.37 2378,202.74",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -158,9 +157,8 @@ digraph {
 		width=3.015];
 	"chemical to chemical association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2643.9,221.5",
-		pos="e,2602.6,194.65 1928.3,251.93 1948.3,250.06 1968.9,248.32 1988.4,247 2204.9,232.32 2262.2,264.24 2476.4,229 2516.3,222.44 2560,209.24 \
-2592.8,198.04",
+		lp="2677.9,221.5",
+		pos="e,2595.2,194.17 2677.7,260.19 2630.2,255.5 2586.6,246.37 2571.4,229 2561,217.1 2570.7,206.69 2586.1,198.49",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -169,9 +167,8 @@ digraph {
 		width=1.5346];
 	"chemical to chemical association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2819.4,221.5",
-		pos="e,2809.4,195.19 1927.3,251.8 1947.6,249.92 1968.6,248.21 1988.4,247 2073.4,241.81 2673.5,255.4 2754.4,229 2771.6,223.39 2788.4,212.2 \
-2801.4,201.82",
+		lp="2824.4,221.5",
+		pos="e,2803.6,194.47 2804.8,247.2 2798.6,242.2 2792.9,236.11 2789.4,229 2784.7,219.42 2789.1,209.79 2796.4,201.57",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -180,9 +177,8 @@ digraph {
 		width=1.0652];
 	"chemical to chemical association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2947.4,221.5",
-		pos="e,2920.7,194.01 1926.9,251.8 1947.3,249.91 1968.5,248.19 1988.4,247 2084.9,241.24 2765.7,256.61 2858.4,229 2878.1,223.13 2897.7,\
-211.02 2912.5,200.18",
+		lp="2938.4,221.5",
+		pos="e,2914.4,192.24 2849,246.75 2858.1,236.6 2870.3,223.86 2882.4,214 2889.6,208.17 2897.8,202.54 2905.7,197.56",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -191,47 +187,166 @@ digraph {
 		width=1.5887];
 	"chemical to chemical association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3091.9,221.5",
-		pos="e,3042.5,195.82 1926.9,251.75 1947.3,249.86 1968.5,248.16 1988.4,247 2044.9,243.71 2955.9,252.49 3007.4,229 3019.1,223.68 3029,213.72 \
-3036.5,204.08",
+		lp="3080.9,221.5",
+		pos="e,3037.2,195.85 2932.6,250.55 2953.7,245.48 2975.3,238.53 2994.4,229 3007.5,222.46 3020,212.32 3030.1,202.87",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3184.4,178",
+		pos="3166.4,178",
 		width=1.0652];
 	"chemical to chemical association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3224.9,221.5",
-		pos="e,3180.7,196.04 1926.9,251.71 1947.3,249.83 1968.5,248.14 1988.4,247 2020.9,245.15 3131.9,246.32 3159.4,229 3167.8,223.69 3173.5,\
-214.58 3177.3,205.58",
+		lp="3208.9,221.5",
+		pos="e,3163.4,196.13 2949.9,252.29 3036.3,243.32 3140.3,231.98 3144.4,229 3152.1,223.36 3157.1,214.47 3160.4,205.74",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3299.4,178",
+		width=2.1304];
+	"chemical to chemical association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3339.9,221.5",
+		pos="e,3292.3,196 2949.1,252.2 2968.2,250.37 2987.9,248.56 3006.4,247 3063.7,242.17 3214.4,257.3 3264.4,229 3274.1,223.52 3281.7,214.13 \
+3287.3,204.95",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3470.4,178",
+		width=2.1304];
+	"chemical to chemical association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3485.9,221.5",
+		pos="e,3453.9,195.79 2947.2,251.98 2966.9,250.13 2987.2,248.38 3006.4,247 3094.5,240.65 3320.2,258.72 3403.4,229 3419.2,223.36 3434.3,\
+212.65 3446.2,202.59",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3603.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3621.9,221.5",
+		pos="e,3587.7,194.71 2946.3,251.88 2966.3,250.01 2986.9,248.29 3006.4,247 3066.2,243.05 3489.6,250.8 3545.4,229 3553.3,225.92 3567.7,\
+213.5 3580.2,201.81",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3699.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3741.4,221.5",
+		pos="e,3697,196.4 2945.8,251.81 2965.9,249.94 2986.8,248.23 3006.4,247 3043.7,244.66 3647.6,250.09 3678.4,229 3686.2,223.67 3691.1,214.85 \
+3694.2,206.08",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3832.4,178",
+		width=2.1304];
+	"chemical to chemical association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3899.9,221.5",
+		pos="e,3824.8,196.21 2945.3,251.79 2965.6,249.91 2986.6,248.2 3006.4,247 3050.2,244.34 3756.5,249.18 3795.4,229 3805.6,223.73 3813.7,\
+214.24 3819.7,204.93",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4021.4,178",
+		width=2.1304];
+	"chemical to chemical association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4089.9,221.5",
+		pos="e,4016.1,196.12 2944.9,251.76 2965.3,249.87 2986.5,248.16 3006.4,247 3033.7,245.4 3967.7,242.7 3991.4,229 4000.5,223.73 4007.2,214.51 \
+4011.9,205.4",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4211.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4261.4,221.5",
+		pos="e,4204.7,196.2 2944.9,251.71 2965.3,249.83 2986.5,248.14 3006.4,247 3038.9,245.15 4148.8,244.44 4177.4,229 4187.1,223.77 4194.6,\
+214.42 4200,205.21",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4370.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4414.4,221.5",
+		pos="e,4363,195.75 2944.4,251.73 2965,249.83 2986.3,248.13 3006.4,247 3043.2,244.94 4300.6,245.82 4333.4,229 4343.7,223.7 4351.9,214.02 \
+4357.9,204.58",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4521.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4574.4,221.5",
+		pos="e,4513.4,195.78 2944.4,251.7 2965,249.81 2986.3,248.11 3006.4,247 3047.3,244.73 4445.7,247.21 4482.4,229 4493.1,223.68 4501.8,213.86 \
+4508.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4692.4,178",
+		width=1.0652];
+	"chemical to chemical association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4740.9,221.5",
+		pos="e,4684.1,195.8 2944.4,251.68 2965,249.79 2986.3,248.1 3006.4,247 3052.1,244.5 4611.3,249.03 4652.4,229 4663.3,223.71 4672.1,213.89 \
+4678.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4854.4,178",
+		width=2.347];
+	"chemical to chemical association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4902.9,221.5",
+		pos="e,4845.8,196.3 2944.4,251.67 2965,249.77 2986.3,248.09 3006.4,247 3056.5,244.28 4769.2,250.98 4814.4,229 4825.1,223.78 4833.9,214.17 \
+4840.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3272.4,178",
+		pos="4988.4,178",
 		width=0.86659];
 	"chemical to chemical association" -> type	[color=blue,
 		label=type,
-		lp="3302.4,221.5",
-		pos="e,3281.4,195.57 1926.4,251.73 1947,249.83 1968.3,248.13 1988.4,247 2006.3,245.99 3267.8,241.78 3280.4,229 3286.5,222.79 3286.7,213.89 \
-3284.6,205.31",
+		lp="5002.4,221.5",
+		pos="e,4989.2,196.19 2943.9,251.69 2964.7,249.79 2986.2,248.09 3006.4,247 3033.7,245.53 4955,246.04 4976.4,229 4983.2,223.55 4986.6,214.93 \
+4988.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="3373.4,178",
+		pos="5089.4,178",
 		width=1.4263];
 	"chemical to chemical association" -> category	[color=blue,
 		label=category,
-		lp="3375.9,221.5",
-		pos="e,3361.7,195.89 1926.4,251.72 1947,249.83 1968.3,248.13 1988.4,247 2025.4,244.93 3288.2,243.24 3322.4,229 3335.2,223.66 3346.6,213.42 \
-3355.3,203.58",
+		lp="5081.9,221.5",
+		pos="e,5073.8,195.26 2943.9,251.69 2964.7,249.78 2986.2,248.09 3006.4,247 3062.3,243.99 4969.3,246.88 5022.4,229 5038.6,223.54 5054.1,\
+212.52 5066.1,202.21",
 		style=solid];
 	object	[height=0.5,
 		pos="1276.4,91",
 		width=1.0832];
 	"chemical to chemical association" -> object	[color=blue,
 		label=object,
-		lp="3465.4,178",
-		pos="e,1315.4,92.482 1926.4,251.71 1947,249.81 1968.3,248.12 1988.4,247 2027.9,244.8 3376.7,247.87 3411.4,229 3439.7,213.63 3455.8,183.12 \
-3433.4,160 3395.5,120.86 1643.8,96.685 1325.7,92.613",
+		lp="5180.4,178",
+		pos="e,1315.5,91.926 2943.9,251.68 2964.7,249.78 2986.2,248.08 3006.4,247 3065,243.86 5063.5,252.09 5117.4,229 5148.5,215.69 5173.1,184.11 \
+5149.4,160 5079.1,88.423 1771.3,91.209 1325.8,91.91",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1275.4,134.5",
@@ -244,18 +359,18 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2035.4,265",
+		pos="3053.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2166.4,265",
+		pos="3184.4,265",
 		width=2.0762];
 	object -> relation	[pos="e,1234.2,35.54 1263.9,73.889 1257,64.939 1248.2,53.617 1240.4,43.584",
 		style=dotted];
 	"chemical to chemical association_object"	[color=blue,
 		height=0.5,
 		label="chemical entity",
-		pos="2341.4,265",
+		pos="3359.4,265",
 		width=2.2748];
 }

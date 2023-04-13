@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3064.4,283"];
+	graph [bb="0,0,4788.4,283"];
 	node [label="\N"];
 	"sequence feature relationship"	[height=0.5,
 		label="sequence feature relationship",
-		pos="1542.4,265",
+		pos="2492.4,265",
 		width=4.1524];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"sequence feature relationship" -> association	[label=is_a,
-		lp="283.39,221.5",
-		pos="e,103.54,191.64 1393.1,263.82 1105,262.81 482.25,257.32 269.39,229 215.28,221.8 154.72,206.27 113.16,194.42"];
+		lp="281.39,221.5",
+		pos="e,103.12,191.79 2343.2,263.59 1877.9,262.02 471.57,255.17 267.39,229 213.85,222.14 154.03,206.61 112.9,194.67"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"sequence feature relationship" -> id	[color=blue,
 		label=id,
-		lp="403.39,221.5",
-		pos="e,210.11,189.94 1394.3,262.51 1129.5,259.34 585.16,250.39 396.39,229 321.22,220.48 302.36,216.02 229.39,196 226.24,195.13 222.99,\
-194.16 219.75,193.14",
+		lp="398.39,221.5",
+		pos="e,210.38,190 2343.4,263.11 1896,260.2 583.43,249.98 391.39,229 318.35,221.02 300.2,215.65 229.39,196 226.29,195.14 223.09,194.17 \
+219.89,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"sequence feature relationship" -> iri	[color=blue,
 		label=iri,
-		lp="527.39,221.5",
-		pos="e,314.99,190.21 1395.5,261.57 1154.3,257.14 684.62,246.55 519.39,229 436.78,220.22 416.02,216.07 335.39,196 331.96,195.15 328.43,\
-194.19 324.89,193.17",
+		lp="515.39,221.5",
+		pos="e,315.29,190.23 2343.7,262.85 1913.6,259.33 687.81,247.76 507.39,229 429.97,220.95 410.81,215.26 335.39,196 332.02,195.14 328.54,\
+194.18 325.05,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"sequence feature relationship" -> name	[color=blue,
 		label=name,
-		lp="636.39,221.5",
-		pos="e,441.37,190.85 1395.1,261.66 1172.8,257.59 762.4,247.77 616.39,229 558.92,221.61 494.32,205.5 451.08,193.56",
+		lp="627.39,221.5",
+		pos="e,440.01,191.15 2343.8,263.06 1928.8,260.18 777.28,250.35 607.39,229 552.58,222.11 491.21,206.11 449.83,194.05",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"sequence feature relationship" -> description	[color=blue,
 		label=description,
-		lp="761.89,221.5",
-		pos="e,590.6,193.5 1394.7,262.01 1194.2,258.57 846.57,249.76 721.39,229 679.68,222.08 633.76,208.18 600.17,196.79",
+		lp="755.89,221.5",
+		pos="e,588.8,193.65 2343.3,263.42 1944.7,261.54 873.62,254.18 715.39,229 675.03,222.58 630.79,208.66 598.44,197.14",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"sequence feature relationship" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="915.39,221.5",
-		pos="e,730.76,191.55 1397.8,260.4 1230.8,255.55 966.45,245.57 868.39,229 824.02,221.5 774.85,206.5 740.49,194.88",
+		lp="913.39,221.5",
+		pos="e,729.98,191.75 2343.6,263.04 1969.5,260.31 1009.7,251.21 866.39,229 822.26,222.16 773.51,207 739.58,195.15",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=2.1665];
 	"sequence feature relationship" -> predicate	[color=blue,
 		label=predicate,
-		lp="1068.4,221.5",
-		pos="e,888.04,193 1396.2,261.22 1294.2,257.51 1155.3,248.89 1034.4,229 987.59,221.3 935.56,207.21 897.8,195.94",
+		lp="1074.4,221.5",
+		pos="e,887.81,193.09 2342.8,264.67 2024.3,265.39 1288.2,263.15 1040.4,229 991.17,222.22 936.47,207.65 897.4,195.99",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.2999];
 	"sequence feature relationship" -> negated	[color=blue,
 		label=negated,
-		lp="1201.4,221.5",
-		pos="e,1021.7,190.34 1410.3,256.47 1339.4,251.18 1250.8,242.57 1172.4,229 1123.6,220.54 1068.9,204.99 1031.7,193.47",
+		lp="1220.4,221.5",
+		pos="e,1022.3,190.23 2343.2,263.57 2050.5,262.13 1410,255.9 1191.4,229 1135.6,222.13 1072.9,205.38 1032,193.16",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=2.1304];
 	"sequence feature relationship" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1320.9,221.5",
-		pos="e,1168.1,193.53 1431.5,252.9 1386.5,247.33 1334.2,239.48 1287.4,229 1250.1,220.63 1208.9,207.57 1177.8,196.9",
+		lp="1356.9,221.5",
+		pos="e,1171.6,193.02 2343.3,263.64 2073.8,262.29 1515.8,256.2 1323.4,229 1274.6,222.11 1220.5,207.65 1181.6,196.05",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=1.7332];
 	"sequence feature relationship" -> publications	[color=blue,
 		label=publications,
-		lp="1438.4,221.5",
-		pos="e,1314.4,194.2 1467.8,249.39 1444.1,243.93 1417.9,237.07 1394.4,229 1370.1,220.66 1344,208.78 1323.4,198.69",
+		lp="1499.4,221.5",
+		pos="e,1321.9,192.66 2343.2,263.59 2098.4,262.13 1621.7,255.82 1455.4,229 1412.5,222.09 1365.3,207.61 1331.5,196.01",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=2.0943];
 	"sequence feature relationship" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1544.9,221.5",
-		pos="e,1461.1,195.6 1522,246.8 1506.7,233.96 1485.7,216.27 1468.9,202.19",
+		lp="1652.9,221.5",
+		pos="e,1479.4,193.55 2343.7,262.7 2129.3,260.04 1743.7,252.12 1606.4,229 1566,222.2 1521.6,208.38 1489.1,196.99",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"sequence feature relationship" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1675.9,221.5",
-		pos="e,1628.7,196.14 1570.2,247.31 1578.6,241.84 1587.6,235.49 1595.4,229 1604.6,221.33 1613.9,212.07 1621.8,203.61",
+		lp="1802.9,221.5",
+		pos="e,1667.9,195.78 2342.5,264.73 2155.9,264.3 1848.2,258.84 1738.4,229 1716.6,223.09 1694.2,211.61 1676.7,201.13",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"sequence feature relationship" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1884.4,221.5",
-		pos="e,1841.2,195.02 1638.2,251.13 1672.1,245.6 1710.2,238.25 1744.4,229 1774,220.97 1806.3,209.03 1831.8,198.83",
+		lp="1972.4,221.5",
+		pos="e,1872.6,196 2346.9,260.69 2170.1,255.94 1893.3,245.86 1877.4,229 1871.6,222.9 1870.4,214.27 1871,205.9",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -140,9 +140,8 @@ digraph {
 		width=3.015];
 	"sequence feature relationship" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2137.9,221.5",
-		pos="e,2079.8,195.18 1647.5,252.12 1665.5,250.27 1684,248.49 1701.4,247 1826.5,236.32 1860.7,255.85 1983.4,229 2013.5,222.42 2045.7,210.03 \
-2070.6,199.23",
+		lp="2180.9,221.5",
+		pos="e,2087.6,195.53 2346,261.3 2233,257.65 2092.9,249.08 2074.4,229 2066.7,220.62 2071.6,210.86 2080.1,202.2",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=1.5346];
 	"sequence feature relationship" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2303.4,221.5",
-		pos="e,2284.9,195.77 1645.4,251.87 1664,250 1683.3,248.27 1701.4,247 1762.1,242.76 2193,254.05 2248.4,229 2260.4,223.56 2270.9,213.44 \
-2278.8,203.72",
+		lp="2332.4,221.5",
+		pos="e,2291.1,196.26 2370.8,254.5 2337.7,249.32 2308.1,241.32 2297.4,229 2292,222.83 2290.3,214.43 2290.3,206.27",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -162,9 +160,8 @@ digraph {
 		width=1.0652];
 	"sequence feature relationship" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2422.4,221.5",
-		pos="e,2390.2,194.22 1644.9,251.84 1663.7,249.96 1683.1,248.23 1701.4,247 1772.5,242.21 2275.3,252.89 2342.4,229 2351.2,225.86 2368.2,\
-212.73 2382.5,200.71",
+		lp="2430.4,221.5",
+		pos="e,2387.4,193.75 2401.4,250.57 2390.9,245.4 2381.4,238.42 2374.4,229 2367.7,220.01 2372.5,209.73 2380.3,200.83",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -173,85 +170,203 @@ digraph {
 		width=1.5887];
 	"sequence feature relationship" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2562.9,221.5",
-		pos="e,2512.8,196.24 1644.5,251.81 1663.4,249.92 1683,248.2 1701.4,247 1744.6,244.19 2442.5,248.23 2481.4,229 2492.1,223.71 2500.8,214.09 \
-2507.4,204.69",
+		lp="2556.9,221.5",
+		pos="e,2504.6,195.4 2490.1,246.84 2489.4,236.95 2489.6,224.45 2493.4,214 2494.7,210.42 2496.5,206.94 2498.6,203.64",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2653.4,178",
+		pos="2635.4,178",
 		width=1.0652];
 	"sequence feature relationship" -> "original object"	[color=blue,
 		label="original object",
-		lp="2694.9,221.5",
-		pos="e,2650.4,195.98 1644.1,251.8 1663.1,249.89 1682.8,248.17 1701.4,247 1727.2,245.38 2608.8,243.13 2630.4,229 2638.5,223.68 2643.8,\
-214.69 2647.3,205.79",
+		lp="2681.9,221.5",
+		pos="e,2634.3,196.46 2585.2,250.84 2598.2,245.7 2610.5,238.65 2620.4,229 2626.5,223.04 2630.2,214.69 2632.3,206.52",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2768.4,178",
+		width=2.1304];
+	"sequence feature relationship" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2811.9,221.5",
+		pos="e,2762.2,196.16 2601.8,252.66 2661.5,245.72 2725.6,236.71 2737.4,229 2746.2,223.28 2752.9,214.13 2757.8,205.22",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2939.4,178",
+		width=2.1304];
+	"sequence feature relationship" -> "object category"	[color=blue,
+		label="object category",
+		lp="2956.9,221.5",
+		pos="e,2923.5,195.83 2598.4,252.27 2616.1,250.43 2634.3,248.6 2651.4,247 2701.1,242.35 2828.9,247.14 2875.4,229 2890.3,223.19 2904.6,\
+212.71 2915.8,202.84",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3072.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3093.9,221.5",
+		pos="e,3059.6,195.25 2596.2,252.03 2614.6,250.16 2633.5,248.39 2651.4,247 2691.9,243.84 2978.8,244.4 3016.4,229 3030.2,223.33 3042.9,\
+212.69 3052.7,202.69",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3172.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3214.4,221.5",
+		pos="e,3170.3,196.34 2595.4,251.92 2614,250.04 2633.3,248.29 2651.4,247 2679.2,245.02 3129.6,245.03 3152.4,229 3160.1,223.61 3164.8,214.77 \
+3167.7,206.01",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3305.4,178",
+		width=2.1304];
+	"sequence feature relationship" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3372.9,221.5",
+		pos="e,3297.7,196.18 2594.9,251.86 2613.7,249.97 2633.1,248.24 2651.4,247 2685.6,244.68 3238,244.88 3268.4,229 3278.5,223.69 3286.6,214.2 \
+3292.6,204.9",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3497.4,178",
+		width=2.1304];
+	"sequence feature relationship" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3563.9,221.5",
+		pos="e,3491.1,196.16 2594.5,251.8 2613.4,249.9 2633,248.19 2651.4,247 2696.5,244.1 3424.9,250.85 3464.4,229 3474,223.72 3481.2,214.36 \
+3486.5,205.15",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3687.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3736.4,221.5",
+		pos="e,3680.3,195.72 2594.1,251.78 2613.1,249.87 2632.8,248.16 2651.4,247 2706.9,243.54 3602.2,254.78 3651.4,229 3661.6,223.66 3669.6,\
+213.98 3675.4,204.54",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3846.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3890.4,221.5",
+		pos="e,3838.7,195.76 2594.1,251.74 2613.1,249.84 2632.8,248.13 2651.4,247 2683.5,245.04 3779.7,243.51 3808.4,229 3818.9,223.7 3827.2,\
+214.03 3833.4,204.59",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3997.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4050.4,221.5",
+		pos="e,3989.4,195.78 2593.6,251.75 2612.8,249.84 2632.7,248.13 2651.4,247 2687.6,244.82 3925.9,245.15 3958.4,229 3969.1,223.68 3977.8,\
+213.86 3984.2,204.32",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4168.4,178",
+		width=1.0652];
+	"sequence feature relationship" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4215.9,221.5",
+		pos="e,4160.1,195.8 2593.6,251.73 2612.8,249.82 2632.7,248.11 2651.4,247 2692.4,244.57 4091.5,247 4128.4,229 4139.3,223.7 4148.1,213.88 \
+4154.7,204.34",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4330.4,178",
+		width=2.347];
+	"sequence feature relationship" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4378.9,221.5",
+		pos="e,4321.5,196.31 2593.6,251.71 2612.8,249.8 2632.7,248.1 2651.4,247 2696.8,244.33 4248.4,248.69 4289.4,229 4300.2,223.79 4309.2,214.18 \
+4315.9,204.77",
 		style=solid];
 	type	[height=0.5,
-		pos="2741.4,178",
+		pos="4464.4,178",
 		width=0.86659];
 	"sequence feature relationship" -> type	[color=blue,
 		label=type,
-		lp="2772.4,221.5",
-		pos="e,2750.8,195.54 1644.1,251.76 1663.1,249.86 1682.8,248.15 1701.4,247 1730.5,245.2 2730,249.78 2750.4,229 2756.6,222.69 2756.6,213.66 \
-2754.2,205",
+		lp="4478.4,221.5",
+		pos="e,4465.2,196.18 2593.6,251.7 2612.8,249.79 2632.7,248.09 2651.4,247 2676.4,245.54 4432.8,244.59 4452.4,229 4459.2,223.54 4462.6,\
+214.93 4464.1,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="2842.4,178",
+		pos="4565.4,178",
 		width=1.4263];
 	"sequence feature relationship" -> category	[color=blue,
 		label=category,
-		lp="2846.9,221.5",
-		pos="e,2831,195.87 1644.1,251.75 1663.1,249.85 1682.8,248.14 1701.4,247 1761.9,243.27 2736.6,252.66 2792.4,229 2804.9,223.68 2816,213.59 \
-2824.5,203.85",
+		lp="4558.9,221.5",
+		pos="e,4549.8,195.25 2593.6,251.69 2612.8,249.79 2632.7,248.09 2651.4,247 2702.6,244.02 4449.8,245.4 4498.4,229 4514.6,223.53 4530.1,\
+212.51 4542.1,202.2",
 		style=solid];
 	subject	[height=0.5,
-		pos="2956.4,178",
+		pos="4679.4,178",
 		width=1.2277];
 	"sequence feature relationship" -> subject	[color=blue,
 		label=subject,
-		lp="2939.4,221.5",
-		pos="e,2939.4,194.76 1644.1,251.73 1663.1,249.84 1682.8,248.13 1701.4,247 1766.9,243.01 2819.8,248.69 2882.4,229 2900.4,223.34 2918,211.75 \
-2931.5,201.16",
+		lp="4655.4,221.5",
+		pos="e,4660.1,194.33 2593.6,251.69 2612.8,249.78 2632.7,248.08 2651.4,247 2759.2,240.75 4490.4,257.84 4594.4,229 4615.1,223.25 4636,211.09 \
+4651.9,200.2",
 		style=solid];
 	object	[height=0.5,
-		pos="2999.4,91",
+		pos="4722.4,91",
 		width=1.0832];
 	"sequence feature relationship" -> object	[color=blue,
 		label=object,
-		lp="3042.4,178",
-		pos="e,3012.8,108.09 1644.1,251.72 1663.1,249.82 1682.8,248.12 1701.4,247 1771.7,242.75 2903.3,253.29 2969.4,229 3011.9,213.39 3017.1,\
-186.96 3022.4,142 3023.2,135.38 3024.3,133.39 3022.4,127 3021.4,123.55 3019.9,120.13 3018.1,116.85",
+		lp="4766.4,178",
+		pos="e,4735.8,108.09 2593.6,251.68 2612.8,249.77 2632.7,248.08 2651.4,247 2707.8,243.74 4631.6,246.26 4685.4,229 4709.7,221.2 4718,217.1 \
+4732.4,196 4746.3,175.59 4742.5,166.51 4745.4,142 4746.2,135.38 4747.3,133.39 4745.4,127 4744.4,123.55 4742.9,120.13 4741.1,116.85",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1748.4,265",
+		pos="2698.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1879.4,265",
+		pos="2829.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2994.4,134.5",
-		pos="e,2981.5,107.23 2957.5,159.55 2958.7,149.57 2961.2,137.07 2966.4,127 2968.6,122.68 2971.5,118.52 2974.7,114.66"];
+		lp="4717.4,134.5",
+		pos="e,4704.5,107.23 4680.5,159.55 4681.7,149.57 4684.2,137.07 4689.4,127 4691.6,122.68 4694.5,118.52 4697.7,114.66"];
 	relation	[height=0.5,
-		pos="2944.4,18",
+		pos="4667.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2945.7,36.188 2955.1,159.79 2953,132.48 2949,78.994 2946.5,46.38",
+	subject -> relation	[pos="e,4668.7,36.188 4678.1,159.79 4676,132.48 4672,78.994 4669.5,46.38",
 		style=dotted];
 	"sequence feature relationship_subject"	[color=blue,
 		height=0.5,
 		label="nucleic acid entity",
-		pos="2067.4,265",
+		pos="3017.4,265",
 		width=2.6539];
-	object -> relation	[pos="e,2957.2,35.54 2986.9,73.889 2980,64.939 2971.2,53.617 2963.4,43.584",
+	object -> relation	[pos="e,4680.2,35.54 4709.9,73.889 4703,64.939 4694.2,53.617 4686.4,43.584",
 		style=dotted];
 	"sequence feature relationship_object"	[color=blue,
 		height=0.5,
 		label="nucleic acid entity",
-		pos="2276.4,265",
+		pos="3226.4,265",
 		width=2.6539];
 }

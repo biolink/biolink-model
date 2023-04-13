@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,4021.4,283"];
+	graph [bb="0,0,5734.4,283"];
 	node [label="\N"];
 	"exposure event to outcome association"	[height=0.5,
 		label="exposure event to outcome association",
-		pos="1893.4,265",
+		pos="2911.4,265",
 		width=5.3079];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"exposure event to outcome association" -> association	[label=is_a,
-		lp="501.39,221.5",
-		pos="e,107.14,190.58 1703,263.38 1432.6,261.57 921.72,254.68 487.39,229 330.1,219.7 289.89,221.5 134.39,196 128.71,195.07 122.81,193.94 \
-116.94,192.72"];
+		lp="493.39,221.5",
+		pos="e,107.14,190.56 2720.8,263.25 2227,261 914.2,252.88 479.39,229 325.59,220.55 286.37,221.09 134.39,196 128.71,195.06 122.81,193.93 \
+116.94,192.7"];
 	"entity to outcome association mixin"	[height=0.5,
 		pos="319.39,178",
 		width=4.8926];
 	"exposure event to outcome association" -> "entity to outcome association mixin"	[label=uses,
 		lp="647.89,221.5",
-		pos="e,396.29,194.21 1705,261.81 1405.5,257.81 833.8,247.94 631.39,229 554.95,221.85 468.84,207.57 406.48,196.1"];
+		pos="e,395.31,194.3 2720.2,264.6 2247.8,265.51 1034.5,264.21 631.39,229 554.52,222.29 467.92,207.85 405.5,196.21"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,8 +25,8 @@ digraph {
 		width=1.0652];
 	"exposure event to outcome association" -> id	[color=blue,
 		label=id,
-		lp="767.39,221.5",
-		pos="e,580.38,189.99 1704.8,262.09 1431.1,258.64 937.41,249.72 760.39,229 687.85,220.51 669.77,215.57 599.39,196 596.29,195.14 593.09,\
+		lp="766.39,221.5",
+		pos="e,580.38,189.98 2721.3,262.94 2231.5,259.93 950.96,250.12 759.39,229 687.22,221.04 669.34,215.5 599.39,196 596.29,195.13 593.09,\
 194.17 589.89,193.15",
 		style=solid];
 	iri	[color=blue,
@@ -36,9 +36,9 @@ digraph {
 		width=1.2277];
 	"exposure event to outcome association" -> iri	[color=blue,
 		label=iri,
-		lp="883.39,221.5",
-		pos="e,685.3,190.22 1706.8,261.1 1458,256.63 1030.9,246.66 875.39,229 798.92,220.32 779.95,215.12 705.39,196 702.02,195.13 698.54,194.17 \
-695.05,193.16",
+		lp="873.39,221.5",
+		pos="e,685.31,190.16 2721.7,262.77 2249.5,259.43 1046.4,249.03 865.39,229 793.23,221.01 775.62,214.45 705.39,196 702.02,195.11 698.55,\
+194.14 695.06,193.12",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -47,8 +47,8 @@ digraph {
 		width=1.5707];
 	"exposure event to outcome association" -> name	[color=blue,
 		label=name,
-		lp="985.39,221.5",
-		pos="e,809.55,191.43 1705.5,261.67 1476.5,258 1103,249.09 965.39,229 914.85,221.62 858.44,206.25 819.54,194.49",
+		lp="977.39,221.5",
+		pos="e,808.25,191.78 2721,263.24 2263.6,261.02 1128.4,253.15 957.39,229 908.92,222.16 855.05,206.78 817.81,194.88",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"exposure event to outcome association" -> description	[color=blue,
 		label=description,
-		lp="1099.9,221.5",
-		pos="e,954.6,194.29 1703.7,262.74 1496.4,260.17 1178,252.4 1059.4,229 1026.4,222.5 990.84,209.44 964.05,198.29",
+		lp="1093.9,221.5",
+		pos="e,952.77,194.4 2720.4,264.1 2279,263.81 1213.5,259.86 1053.4,229 1021.7,222.89 987.7,209.84 962.13,198.6",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"exposure event to outcome association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1236.4,221.5",
-		pos="e,1093.9,193.3 1705.2,261.74 1530.6,258.36 1283.9,249.93 1189.4,229 1159.2,222.31 1126.9,208.9 1102.9,197.65",
+		lp="1232.4,221.5",
+		pos="e,1092.9,193.55 2720.4,264.17 2302.4,263.96 1331.9,260.09 1185.4,229 1156.1,222.79 1125,209.44 1101.9,198.1",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -78,7 +78,7 @@ digraph {
 	"exposure event to outcome association" -> subject	[color=blue,
 		label=subject,
 		lp="1359.4,221.5",
-		pos="e,1237.1,194.24 1713.6,258.83 1577.9,253.79 1403.3,244.55 1333.4,229 1303.3,222.3 1270.9,209.48 1246.4,198.5",
+		pos="e,1236.5,194.37 2720.8,263.53 2330.5,262.01 1465.8,255.65 1333.4,229 1302.9,222.87 1270.4,209.91 1245.8,198.72",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -88,7 +88,7 @@ digraph {
 	"exposure event to outcome association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1438.4,221.5",
-		pos="e,1378.5,195.95 1713.3,258.9 1585.1,253.95 1431,244.81 1404.4,229 1395.2,223.53 1388.2,214.26 1383.1,205.18",
+		pos="e,1378.4,196.14 2720.1,264.31 2327.1,264.31 1460.7,260.67 1404.4,229 1395,223.7 1387.9,214.33 1382.8,205.13",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
@@ -98,7 +98,7 @@ digraph {
 	"exposure event to outcome association" -> object	[color=blue,
 		label=object,
 		lp="1517.4,178",
-		pos="e,1346,105.47 1803.6,249.11 1766.7,242.94 1723.5,235.68 1684.4,229 1600.3,214.62 1571.1,235.31 1495.4,196 1475.3,185.57 1478.1,172.77 \
+		pos="e,1346,105.47 2724.3,261.32 2437.7,256.74 1902.9,246.21 1712.4,229 1615.2,220.23 1582.5,240.02 1495.4,196 1475.2,185.79 1478.1,172.77 \
 1459.4,160 1427.3,138.07 1387,120.64 1355.5,108.92",
 		style=solid];
 	negated	[color=blue,
@@ -108,8 +108,8 @@ digraph {
 		width=1.2999];
 	"exposure event to outcome association" -> negated	[color=blue,
 		label=negated,
-		lp="1763.4,221.5",
-		pos="e,1626.5,191.48 1813.6,248.54 1788.1,243.04 1759.9,236.37 1734.4,229 1700.8,219.31 1663.6,205.77 1636.1,195.22",
+		lp="1822.4,221.5",
+		pos="e,1630,190.39 2722.1,262.55 2451.4,259.7 1967.1,251.55 1793.4,229 1739.6,222.02 1679.4,205.52 1639.6,193.37",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -118,8 +118,8 @@ digraph {
 		width=2.1304];
 	"exposure event to outcome association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1855.9,221.5",
-		pos="e,1762.9,195.02 1858.1,247.2 1846.6,241.58 1833.9,235.17 1822.4,229 1805.5,219.92 1787,209.3 1771.6,200.19",
+		lp="1955.9,221.5",
+		pos="e,1778.3,193.2 2722.2,262.41 2479.2,259.49 2071.2,251.33 1922.4,229 1876.1,222.05 1824.8,207.75 1787.8,196.22",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -128,8 +128,8 @@ digraph {
 		width=1.7332];
 	"exposure event to outcome association" -> publications	[color=blue,
 		label=publications,
-		lp="1937.4,221.5",
-		pos="e,1893.4,196.18 1893.4,246.8 1893.4,235.16 1893.4,219.55 1893.4,206.24",
+		lp="2093.4,221.5",
+		pos="e,1928,193.08 2722.1,262.25 2508.3,259.23 2173.7,251.03 2049.4,229 2010.7,222.15 1968.4,208.15 1937.6,196.7",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -138,8 +138,8 @@ digraph {
 		width=2.0943];
 	"exposure event to outcome association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2054.9,221.5",
-		pos="e,2031.1,195.69 1944.8,247.56 1958.3,242.39 1972.7,236.13 1985.4,229 1998.7,221.48 2012.3,211.34 2023.5,202.15",
+		lp="2239.9,221.5",
+		pos="e,2083.8,194.09 2725.1,260.93 2547,256.91 2291.3,247.98 2193.4,229 2158.9,222.31 2121.4,209.1 2093.3,197.94",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -148,8 +148,8 @@ digraph {
 		width=3.015];
 	"exposure event to outcome association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2218.9,221.5",
-		pos="e,2211.3,194.73 1999.5,250.03 2033.6,244.6 2071.3,237.59 2105.4,229 2138,220.77 2173.8,208.57 2201.8,198.28",
+		lp="2378.9,221.5",
+		pos="e,2267,195.95 2731.2,258.92 2569.8,253.47 2352.6,243.58 2314.4,229 2299.6,223.35 2285.5,212.89 2274.5,202.99",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -158,8 +158,8 @@ digraph {
 		width=3.015];
 	"exposure event to outcome association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2454.4,221.5",
-		pos="e,2436.1,193.96 2029.8,252.39 2138.5,243.07 2274.6,231.17 2287.4,229 2334.7,221.01 2387.2,207.6 2426.5,196.68",
+		lp="2545.4,221.5",
+		pos="e,2462.2,195.77 2723.7,261.61 2604.6,258.08 2469.4,249.53 2450.4,229 2443,220.97 2447.2,211.37 2455,202.74",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -168,9 +168,8 @@ digraph {
 		width=3.015];
 	"exposure event to outcome association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2720.9,221.5",
-		pos="e,2679.6,194.62 2025.1,251.94 2047.9,250.11 2071.3,248.37 2093.4,247 2297.6,234.33 2351.5,262.44 2553.4,229 2593.3,222.4 2637,209.19 \
-2669.8,198.01",
+		lp="2754.9,221.5",
+		pos="e,2672.2,194.17 2735.1,257.95 2695.6,252.79 2661.5,243.94 2648.4,229 2638,217.1 2647.7,206.69 2663.1,198.49",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -179,9 +178,8 @@ digraph {
 		width=1.5346];
 	"exposure event to outcome association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2896.4,221.5",
-		pos="e,2886.4,195.18 2023.5,251.8 2046.8,249.94 2070.8,248.24 2093.4,247 2175.3,242.52 2753.4,254.47 2831.4,229 2848.6,223.38 2865.4,\
-212.19 2878.4,201.82",
+		lp="2901.4,221.5",
+		pos="e,2880.6,194.47 2881.8,247.2 2875.6,242.2 2869.9,236.11 2866.4,229 2861.7,219.42 2866.1,209.79 2873.4,201.57",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -190,9 +188,8 @@ digraph {
 		width=1.0652];
 	"exposure event to outcome association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="3024.4,221.5",
-		pos="e,2997.7,194 2023.2,251.76 2046.6,249.9 2070.7,248.21 2093.4,247 2186.8,242.03 2845.7,255.76 2935.4,229 2955.1,223.13 2974.7,211.01 \
-2989.5,200.18",
+		lp="3015.4,221.5",
+		pos="e,2991.4,192.24 2926,246.75 2935.1,236.6 2947.3,223.86 2959.4,214 2966.6,208.17 2974.8,202.54 2982.7,197.56",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -201,60 +198,179 @@ digraph {
 		width=1.5887];
 	"exposure event to outcome association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3168.9,221.5",
-		pos="e,3119.5,195.82 2022.7,251.74 2046.2,249.87 2070.5,248.18 2093.4,247 2148.4,244.17 3034.3,251.86 3084.4,229 3096.1,223.68 3106,213.72 \
-3113.5,204.08",
+		lp="3157.9,221.5",
+		pos="e,3114.2,195.85 3013,249.72 3033,244.74 3053.3,238.02 3071.4,229 3084.5,222.46 3097,212.32 3107.1,202.87",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3261.4,178",
+		pos="3243.4,178",
 		width=1.0652];
 	"exposure event to outcome association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3301.9,221.5",
-		pos="e,3257.7,196.04 2022.4,251.72 2046,249.85 2070.4,248.16 2093.4,247 2125.1,245.4 3209.5,245.91 3236.4,229 3244.8,223.69 3250.5,214.58 \
-3254.3,205.58",
+		lp="3285.9,221.5",
+		pos="e,3240.4,196.13 3044.4,251.99 3125,244.2 3213.9,234.52 3221.4,229 3229.1,223.36 3234.1,214.47 3237.4,205.74",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3376.4,178",
+		width=2.1304];
+	"exposure event to outcome association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3416.9,221.5",
+		pos="e,3369.3,195.96 3047.2,252.33 3068.7,250.52 3090.6,248.69 3111.4,247 3162.5,242.83 3296.9,254.43 3341.4,229 3351.1,223.48 3358.7,\
+214.08 3364.3,204.9",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3547.4,178",
+		width=2.1304];
+	"exposure event to outcome association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3562.9,221.5",
+		pos="e,3530.9,195.77 3044.2,252.04 3066.6,250.21 3089.7,248.45 3111.4,247 3193.3,241.52 3403.1,256.76 3480.4,229 3496.2,223.34 3511.3,\
+212.62 3523.2,202.56",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3680.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3698.9,221.5",
+		pos="e,3664.6,194.71 3042.8,251.89 3065.7,250.06 3089.2,248.33 3111.4,247 3168.1,243.59 3569.5,249.72 3622.4,229 3630.3,225.91 3644.7,\
+213.49 3657.2,201.8",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3776.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3818.4,221.5",
+		pos="e,3774,196.4 3042,251.82 3065.1,249.97 3089,248.27 3111.4,247 3147.1,244.98 3725.9,249.23 3755.4,229 3763.2,223.67 3768.1,214.84 \
+3771.2,206.08",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3909.4,178",
+		width=2.1304];
+	"exposure event to outcome association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3976.9,221.5",
+		pos="e,3901.8,196.21 3041.5,251.78 3064.8,249.93 3088.8,248.23 3111.4,247 3153.6,244.71 3834.9,248.48 3872.4,229 3882.6,223.72 3890.7,\
+214.23 3896.7,204.93",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4098.4,178",
+		width=2.1304];
+	"exposure event to outcome association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4166.9,221.5",
+		pos="e,4093.1,196.12 3040.9,251.73 3064.4,249.87 3088.6,248.18 3111.4,247 3137.9,245.62 4045.4,242.32 4068.4,229 4077.5,223.73 4084.2,\
+214.5 4088.8,205.4",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4288.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4338.4,221.5",
+		pos="e,4281.7,196.2 3040.4,251.72 3064,249.85 3088.4,248.16 3111.4,247 3143.1,245.4 4226.4,244.08 4254.4,229 4264.1,223.77 4271.6,214.42 \
+4277,205.2",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4447.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4491.4,221.5",
+		pos="e,4440,195.75 3040.4,251.68 3064,249.81 3088.4,248.13 3111.4,247 3147.4,245.22 4378.3,245.47 4410.4,229 4420.7,223.7 4428.9,214.02 \
+4434.9,204.58",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4598.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4651.4,221.5",
+		pos="e,4590.4,195.78 3040.1,251.68 3063.8,249.8 3088.3,248.12 3111.4,247 3151.6,245.05 4523.4,246.87 4559.4,229 4570.1,223.68 4578.8,\
+213.86 4585.2,204.33",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4769.4,178",
+		width=1.0652];
+	"exposure event to outcome association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4817.9,221.5",
+		pos="e,4761.1,195.8 3039.9,251.67 3063.6,249.79 3088.2,248.11 3111.4,247 3156.3,244.85 4689,248.7 4729.4,229 4740.3,223.7 4749.1,213.89 \
+4755.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4931.4,178",
+		width=2.347];
+	"exposure event to outcome association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4979.9,221.5",
+		pos="e,4922.8,196.3 3039.9,251.65 3063.6,249.77 3088.2,248.1 3111.4,247 3160.8,244.65 4846.9,250.64 4891.4,229 4902.1,223.78 4910.9,214.17 \
+4917.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3349.4,178",
+		pos="5065.4,178",
 		width=0.86659];
 	"exposure event to outcome association" -> type	[color=blue,
 		label=type,
-		lp="3379.4,221.5",
-		pos="e,3358.4,195.57 2022.4,251.69 2046,249.82 2070.4,248.14 2093.4,247 2110.9,246.13 3345.1,241.5 3357.4,229 3363.5,222.79 3363.7,213.89 \
-3361.6,205.31",
+		lp="5079.4,221.5",
+		pos="e,5066.2,196.19 3039.9,251.64 3063.6,249.76 3088.2,248.09 3111.4,247 3138.3,245.73 5032.3,245.8 5053.4,229 5060.2,223.55 5063.6,\
+214.93 5065.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="3450.4,178",
+		pos="5166.4,178",
 		width=1.4263];
 	"exposure event to outcome association" -> category	[color=blue,
 		label=category,
-		lp="3453.9,221.5",
-		pos="e,3438.7,195.89 2022.4,251.68 2046,249.81 2070.4,248.13 2093.4,247 2129.6,245.21 3365.9,242.95 3399.4,229 3412.2,223.66 3423.6,213.41 \
-3432.3,203.58",
+		lp="5159.9,221.5",
+		pos="e,5150.8,195.26 3039.9,251.63 3063.6,249.76 3088.2,248.09 3111.4,247 3166.6,244.41 5047.1,246.64 5099.4,229 5115.6,223.54 5131.1,\
+212.51 5143.1,202.2",
 		style=solid];
 	"population context qualifier"	[color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="3691.4,178",
+		pos="5407.4,178",
 		width=4.7662];
 	"exposure event to outcome association" -> "population context qualifier"	[color=blue,
 		label="population context qualifier",
-		lp="3667.4,221.5",
-		pos="e,3639.7,195.28 2022.1,251.68 2045.8,249.81 2070.3,248.13 2093.4,247 2248.3,239.43 3335.5,248.77 3489.4,229 3537.3,222.85 3590.2,\
-209.49 3629.9,198.12",
+		lp="5377.4,221.5",
+		pos="e,5353.5,195.22 3039.6,251.65 3063.4,249.76 3088.2,248.09 3111.4,247 3342.7,236.19 4965.5,256.75 5195.4,229 5246,222.9 5302,209.37 \
+5343.8,197.93",
 		style=solid];
 	"temporal context qualifier"	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="3936.4,178",
+		pos="5652.4,178",
 		width=1.5346];
 	"exposure event to outcome association" -> "temporal context qualifier"	[color=blue,
 		label="temporal context qualifier",
-		lp="3927.9,221.5",
-		pos="e,3902.4,192.33 2021.9,251.66 2045.6,249.79 2070.2,248.11 2093.4,247 2279.5,238.1 3586.2,257.15 3770.4,229 3812.9,222.51 3859.6,\
-207.71 3892.6,195.89",
+		lp="5640.9,221.5",
+		pos="e,5617.8,192.13 3039.6,251.63 3063.4,249.74 3088.2,248.07 3111.4,247 3242.9,240.92 5350.2,248.05 5480.4,229 5524.8,222.51 5573.8,\
+207.45 5608.1,195.55",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1289.4,134.5",
@@ -269,11 +385,11 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2140.4,265",
+		pos="3158.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2271.4,265",
+		pos="3289.4,265",
 		width=2.0762];
 }
