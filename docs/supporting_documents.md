@@ -5,7 +5,7 @@ grand_parent: Slots
 layout: default
 ---
 
-# Slot: supporting_documents
+# Slot: supporting_documents _(deprecated)_
 
 
 One or more referencable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement.
@@ -22,7 +22,6 @@ URI: [biolink:supporting_documents](https://w3id.org/biolink/vocab/supporting_do
 
 ## Children
 
- *  [publications](publications.md)
 
 ## Used by
 

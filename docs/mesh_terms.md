@@ -28,8 +28,13 @@ URI: [biolink:mesh_terms](https://w3id.org/biolink/vocab/mesh_terms)
  * [Article](Article.md)
  * [Book](Book.md)
  * [BookChapter](BookChapter.md)
+ * [DrugLabel](DrugLabel.md)
+ * [JournalArticle](JournalArticle.md)
+ * [Patent](Patent.md)
+ * [PreprintPublication](PreprintPublication.md)
  * [Publication](Publication.md)
  * [Serial](Serial.md)
+ * [WebPage](WebPage.md)
 
 ## Other properties
 

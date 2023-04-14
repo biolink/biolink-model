@@ -26,6 +26,7 @@ URI: [biolink:issue](https://w3id.org/biolink/vocab/issue)
 ## Used by
 
  * [Article](Article.md)
+ * [JournalArticle](JournalArticle.md)
  * [Serial](Serial.md)
 
 ## Other properties

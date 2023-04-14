@@ -8,7 +8,7 @@ layout: default
 # Slot: publications
 
 
-One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
+One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
 
 URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 
@@ -18,7 +18,7 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 
 ## Parents
 
- *  is_a: [supporting documents](supporting_documents.md)
+ *  is_a: [association slot](association_slot.md)
 
 ## Children
 
@@ -113,4 +113,6 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | supporting publications |
+|  | | supporting documents |
+| **Comments:** | | The notion of a ‘Publication’ is considered broadly to include any  document made available for public consumption. It covers journal issues,  individual articles, and books - and also things like article pre-prints,  white papers, patents, drug labels, web pages, protocol documents, etc.  |
 

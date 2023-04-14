@@ -375,7 +375,7 @@ class NamedThing(Entity):
     a databased entity or concept/class
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NamedThing"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -401,7 +401,7 @@ class Attribute(NamedThing, OntologyClass):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:Attribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -424,7 +424,7 @@ class ChemicalRole(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ChemicalRole"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -445,7 +445,7 @@ class BiologicalSex(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:BiologicalSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -468,7 +468,7 @@ class PhenotypicSex(BiologicalSex):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:PhenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -491,7 +491,7 @@ class GenotypicSex(BiologicalSex):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:GenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -514,7 +514,7 @@ class SeverityValue(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:SeverityValue"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -547,7 +547,7 @@ class OrganismTaxon(NamedThing):
     A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:OrganismTaxon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -567,7 +567,7 @@ class Event(NamedThing):
     Something that happens at a given place and time.
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Event"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -585,7 +585,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class AdministrativeEntity(NamedThing):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:AdministrativeEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -607,7 +607,7 @@ class Agent(AdministrativeEntity):
     affiliation: Optional[List[str]] = Field(default_factory=list, description="""a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.""")
     address: Optional[str] = Field(None, description="""the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text \"blob\" containing all relevant details of the given location for fitness of purpose. For the moment, this \"address\" can include other contact details such as email and phone number(?).""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Agent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -631,7 +631,7 @@ class InformationContentEntity(NamedThing):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:InformationContentEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -655,7 +655,7 @@ class StudyResult(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:StudyResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -679,7 +679,7 @@ class StudyVariable(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:StudyVariable"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -703,7 +703,7 @@ class CommonDataElement(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:CommonDataElement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -727,7 +727,7 @@ class ConceptCountAnalysisResult(StudyResult):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ConceptCountAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -751,7 +751,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ObservedExpectedFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -775,7 +775,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RelativeFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -799,7 +799,7 @@ class TextMiningResult(StudyResult):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:TextMiningResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -823,7 +823,7 @@ class ChiSquaredAnalysisResult(StudyResult):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ChiSquaredAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -847,7 +847,7 @@ class Dataset(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Dataset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -872,7 +872,7 @@ class DatasetDistribution(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:DatasetDistribution"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -899,7 +899,7 @@ class DatasetVersion(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:DatasetVersion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -925,7 +925,7 @@ class DatasetSummary(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:DatasetSummary"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -949,7 +949,7 @@ class ConfidenceLevel(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ConfidenceLevel"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -973,7 +973,7 @@ class EvidenceType(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:EvidenceType"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -997,7 +997,7 @@ class InformationResource(InformationContentEntity):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:InformationResource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1021,7 +1021,7 @@ class Publication(InformationContentEntity):
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1050,7 +1050,7 @@ class Book(Publication):
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1080,7 +1080,7 @@ class BookChapter(Publication):
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1112,7 +1112,7 @@ class Serial(Publication):
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1143,7 +1143,7 @@ class Article(Publication):
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1170,7 +1170,7 @@ class RetrievalSource(InformationContentEntity):
     resource_id: str = Field(None, description="""The InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
     resource_role: ResourceRoleEnum = Field(None, description="""The role of the InformationResource in the retrieval of the knowledge expressed in an Edge, or data used to generate this knowledge.""")
     upstream_resource_ids: Optional[str] = Field(None, description="""The InformationResources that served as a source for the InformationResource that served as a source for the knowledge expressed in an Edge, or data used to generate this knowledge.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
@@ -1211,7 +1211,7 @@ class PhysicalEntity(PhysicalEssence, NamedThing):
     An entity that has material reality (a.k.a. physical essence).
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PhysicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1247,7 +1247,7 @@ class Activity(ActivityAndBehavior, NamedThing):
     An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Activity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1267,7 +1267,7 @@ class Study(Activity):
     a detailed investigation and/or analysis
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Study"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1287,7 +1287,7 @@ class Procedure(ActivityAndBehavior, NamedThing):
     A series of actions conducted in a certain order or manner
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Procedure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1307,7 +1307,7 @@ class Phenomenon(Occurrent, NamedThing):
     a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Phenomenon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1327,7 +1327,7 @@ class Device(NamedThing):
     A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Device"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1355,7 +1355,7 @@ class MaterialSample(SubjectOfInvestigation, PhysicalEntity):
     A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MaterialSample"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1375,7 +1375,7 @@ class PlanetaryEntity(NamedThing):
     Any entity or process that exists at the level of the whole planet
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PlanetaryEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1393,7 +1393,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class EnvironmentalProcess(PlanetaryEntity, Occurrent):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:EnvironmentalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1411,7 +1411,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class EnvironmentalFeature(PlanetaryEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:EnvironmentalFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1433,7 +1433,7 @@ class GeographicLocation(PlanetaryEntity):
     latitude: Optional[float] = Field(None, description="""latitude""")
     longitude: Optional[float] = Field(None, description="""longitude""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:GeographicLocation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1456,7 +1456,7 @@ class GeographicLocationAtTime(GeographicLocation):
     latitude: Optional[float] = Field(None, description="""latitude""")
     longitude: Optional[float] = Field(None, description="""longitude""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:GeographicLocationAtTime"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1483,7 +1483,7 @@ class BiologicalEntity(ThingWithTaxon, NamedThing):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:BiologicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1520,7 +1520,7 @@ class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:BiologicalProcessOrActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1544,7 +1544,7 @@ class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     enabled_by: Optional[List[str]] = Field(None, description="""The gene product, gene, or complex that catalyzes the reaction""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MolecularActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1568,7 +1568,7 @@ class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     enabled_by: Optional[List[str]] = Field(None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:BiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1590,7 +1590,7 @@ class Pathway(BiologicalProcess, OntologyClass):
     enabled_by: Optional[List[str]] = Field(None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Pathway"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1612,7 +1612,7 @@ class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     enabled_by: Optional[List[str]] = Field(None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PhysiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1634,7 +1634,7 @@ class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
     enabled_by: Optional[List[str]] = Field(None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Behavior"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1659,7 +1659,7 @@ class OrganismAttribute(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:OrganismAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -1682,7 +1682,7 @@ class PhenotypicQuality(OrganismAttribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:PhenotypicQuality"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -1700,7 +1700,7 @@ class GeneticInheritance(BiologicalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:GeneticInheritance"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1721,7 +1721,7 @@ class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:OrganismalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1742,7 +1742,7 @@ class Virus(OrganismalEntity, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Virus"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1761,7 +1761,7 @@ class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:CellularOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1782,7 +1782,7 @@ class LifeStage(OrganismalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:LifeStage"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1803,7 +1803,7 @@ class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:IndividualOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1824,7 +1824,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PopulationOfIndividualOrganisms"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1845,7 +1845,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:StudyPopulation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1866,7 +1866,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:DiseaseOrPhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1887,7 +1887,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Disease"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1908,7 +1908,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1929,7 +1929,7 @@ class BehavioralFeature(PhenotypicFeature):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:BehavioralFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1950,7 +1950,7 @@ class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:AnatomicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1971,7 +1971,7 @@ class CellularComponent(AnatomicalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:CellularComponent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -1990,7 +1990,7 @@ class Cell(AnatomicalEntity):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Cell"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2009,7 +2009,7 @@ class CellLine(OrganismalEntity, SubjectOfInvestigation):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:CellLine"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2028,7 +2028,7 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:GrossAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2059,7 +2059,7 @@ class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, Biologi
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:RegulatoryRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2081,7 +2081,7 @@ class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, G
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:AccessibleDnaRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2103,7 +2103,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGen
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:TranscriptionFactorBindingSite"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2135,7 +2135,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ChemicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2161,7 +2161,7 @@ class MolecularEntity(ChemicalEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MolecularEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2187,7 +2187,7 @@ class SmallMolecule(MolecularEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:SmallMolecule"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2216,7 +2216,7 @@ class ChemicalMixture(ChemicalEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ChemicalMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2245,7 +2245,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NucleicAcidEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2273,7 +2273,7 @@ class MolecularMixture(ChemicalMixture):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2302,7 +2302,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ComplexMolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2331,7 +2331,7 @@ class ProcessedMaterial(ChemicalMixture):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ProcessedMaterial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2361,7 +2361,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Drug"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2383,7 +2383,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:EnvironmentalFoodContaminant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2406,7 +2406,7 @@ class FoodAdditive(ChemicalEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:FoodAdditive"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2435,7 +2435,7 @@ class Food(ChemicalMixture):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Food"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2472,7 +2472,7 @@ class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, 
     """
     symbol: Optional[str] = Field(None, description="""Symbol for a particular thing""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
@@ -2495,7 +2495,7 @@ class GeneProductMixin(GeneOrGeneProduct):
     The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     
 
@@ -2505,7 +2505,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     
 
@@ -2517,7 +2517,7 @@ class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:MacromolecularComplex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2538,7 +2538,7 @@ class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicE
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NucleosomeModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2562,7 +2562,7 @@ class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Genome"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2590,7 +2590,7 @@ class Exon(NucleicAcidEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Exon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2618,7 +2618,7 @@ class Transcript(NucleicAcidEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Transcript"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2644,7 +2644,7 @@ class CodingSequence(NucleicAcidEntity):
     is_toxic: Optional[bool] = Field(None)
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:CodingSequence"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -2664,7 +2664,7 @@ class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGe
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Polypeptide"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2684,7 +2684,7 @@ class Protein(Polypeptide, GeneProductMixin):
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2706,7 +2706,7 @@ class ProteinIsoform(Protein, GeneProductIsoformMixin):
     Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2729,7 +2729,7 @@ class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PosttranslationalModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2751,7 +2751,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:NucleicAcidSequenceMotif"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2769,7 +2769,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class RNAProduct(Transcript, GeneProductMixin):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2798,7 +2798,7 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2825,7 +2825,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class NoncodingRNAProduct(RNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2852,7 +2852,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class MicroRNA(NoncodingRNAProduct):
     
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2881,7 +2881,7 @@ class SiRNA(NoncodingRNAProduct):
     A small RNA molecule that is the product of a longer exogenous or endogenous dsRNA, which is either a bimolecular duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
@@ -2920,7 +2920,7 @@ class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ProteinDomain"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2940,7 +2940,7 @@ class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ProteinFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2962,7 +2962,7 @@ class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biologica
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:GeneFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -2986,7 +2986,7 @@ class Zygosity(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:Zygosity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3007,7 +3007,7 @@ class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Genotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3029,7 +3029,7 @@ class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass)
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Haplotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3052,7 +3052,7 @@ class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, Ontology
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:SequenceVariant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3075,7 +3075,7 @@ class Snv(SequenceVariant):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Snv"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3097,7 +3097,7 @@ class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, Onto
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ReagentTargetedGene"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3122,7 +3122,7 @@ class ClinicalAttribute(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ClinicalAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3145,7 +3145,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ClinicalMeasurement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3168,7 +3168,7 @@ class ClinicalModifier(ClinicalAttribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ClinicalModifier"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3191,7 +3191,7 @@ class ClinicalCourse(ClinicalAttribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ClinicalCourse"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3214,7 +3214,7 @@ class Onset(ClinicalCourse):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:Onset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3231,7 +3231,7 @@ class ClinicalEntity(NamedThing):
     Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
     """
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ClinicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3249,7 +3249,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class ClinicalTrial(ClinicalEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ClinicalTrial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3267,7 +3267,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class ClinicalIntervention(ClinicalEntity):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ClinicalIntervention"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3288,7 +3288,7 @@ class ClinicalFinding(PhenotypicFeature):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:ClinicalFinding"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3306,7 +3306,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class Hospitalization(ClinicalIntervention):
     
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Hospitalization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3332,7 +3332,7 @@ class SocioeconomicAttribute(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:SocioeconomicAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3350,7 +3350,7 @@ class Case(IndividualOrganism, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Case"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3371,7 +3371,7 @@ class Cohort(StudyPopulation, SubjectOfInvestigation):
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Cohort"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3410,7 +3410,7 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:GenomicBackgroundExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3440,7 +3440,7 @@ class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     enabled_by: Optional[List[str]] = Field(None, description="""holds between a process and a physical entity, where the physical entity executes the process""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PathologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -3466,7 +3466,7 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:PathologicalProcessExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3484,7 +3484,7 @@ class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity)
     """
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:PathologicalAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3511,7 +3511,7 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:PathologicalAnatomicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3535,7 +3535,7 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:DiseaseOrPhenotypicFeatureExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3559,7 +3559,7 @@ class ChemicalExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3582,7 +3582,7 @@ class ComplexChemicalExposure(Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:ComplexChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3606,7 +3606,7 @@ class DrugExposure(ChemicalExposure, ExposureEvent):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:DrugExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3631,7 +3631,7 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:DrugToGeneInteractionExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3652,7 +3652,7 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     has_procedure: Optional[List[str]] = Field(None, description="""connects an entity to one or more (medical) procedures""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[str] = Field(["biolink:Treatment"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
@@ -3679,7 +3679,7 @@ class BioticExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:BioticExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3703,7 +3703,7 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:EnvironmentalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3727,7 +3727,7 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:GeographicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3751,7 +3751,7 @@ class BehavioralExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:BehavioralExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
@@ -3775,7 +3775,7 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""Alternate CURIEs for a thing""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     category: List[str] = Field(["biolink:SocioeconomicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.

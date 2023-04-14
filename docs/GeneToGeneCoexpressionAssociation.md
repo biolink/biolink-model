@@ -58,7 +58,7 @@ URI: [biolink:GeneToGeneCoexpressionAssociation](https://w3id.org/biolink/vocab/
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
      * Range: [OntologyClass](OntologyClass.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
+     * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [has evidence](has_evidence.md)  <sub>0..\*</sub>
      * Description: connects an association to an instance of supporting evidence

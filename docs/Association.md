@@ -150,7 +150,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
      * Range: [InformationResource](InformationResource.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
+     * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association
@@ -284,7 +284,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
      * Range: [InformationResource](InformationResource.md)
  * [publications](publications.md)  <sub>0..\*</sub>
-     * Description: One or more publications that report the statement expressed in an Association, or provide information used as  evidence supporting this statement.
+     * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
      * Range: [Publication](Publication.md)
  * [qualifiers](qualifiers.md)  <sub>0..\*</sub>
      * Description: connects an association to qualifiers that modify or qualify the meaning of that association

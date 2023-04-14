@@ -27,6 +27,7 @@ URI: [biolink:volume](https://w3id.org/biolink/vocab/volume)
 
  * [Article](Article.md)
  * [BookChapter](BookChapter.md)
+ * [JournalArticle](JournalArticle.md)
  * [Serial](Serial.md)
 
 ## Other properties

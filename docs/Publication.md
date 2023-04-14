@@ -8,14 +8,14 @@ layout: default
 # Class: Publication
 
 
-Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP).
 
 URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Serial],[Agent]%3Cauthors%200..%2A-%20[Publication%7Cpages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;id:string;name:label_type%20%3F;publication_type:string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[Association]-%20publications%200..%2A%3E[Publication],[Publication]%5E-[Serial],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[InformationContentEntity],[BookChapter],[Book],[Attribute],[Association],[Article],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[WebPage],[Serial],[Agent]%3Cauthors%200..%2A-%20[Publication%7Cpages:string%20%2A;summary:string%20%3F;keywords:string%20%2A;mesh_terms:uriorcurie%20%2A;id:string;name:label_type%20%3F;publication_type:string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F],[Association]-%20publications%200..%2A%3E[Publication],[Publication]%5E-[WebPage],[Publication]%5E-[Serial],[Publication]%5E-[PreprintPublication],[Publication]%5E-[Patent],[Publication]%5E-[DrugLabel],[Publication]%5E-[BookChapter],[Publication]%5E-[Book],[Publication]%5E-[Article],[InformationContentEntity]%5E-[Publication],[PreprintPublication],[Patent],[InformationContentEntity],[DrugLabel],[BookChapter],[Book],[Attribute],[Association],[Article],[Agent])
 
 ---
 
@@ -30,10 +30,14 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 ## Children
 
- * [Article](Article.md)
+ * [Article](Article.md) - a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
  * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
  * [BookChapter](BookChapter.md)
+ * [DrugLabel](DrugLabel.md) - a document accompanying a drug or its container that provides written, printed or graphic information abou thte drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+ * [Patent](Patent.md) - a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
+ * [PreprintPublication](PreprintPublication.md) - a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
  * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
+ * [WebPage](WebPage.md) - a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
 
 ## Referenced by class
 
