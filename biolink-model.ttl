@@ -1517,7 +1517,7 @@
 <https://w3id.org/biolink/vocab/objectidentifier> a linkml:TypeDefinition ;
     skos:definition "A URI or CURIE that represents an object in the model." ;
     skos:inScheme linkml:types ;
-    skos:note "Used for inheritence and type checking" ;
+    skos:note "Used for inheritance and type checking" ;
     linkml:base "ElementIdentifier" ;
     linkml:definition_uri linkml:Objectidentifier ;
     linkml:imported_from "linkml:types" ;
@@ -2241,7 +2241,7 @@
 <https://w3id.org/biolink/vocab/chemical_affects_gene_association_qualified_predicate> a linkml:SlotDefinition ;
     rdfs:subPropertyOf <https://w3id.org/biolink/vocab/causes> ;
     skos:definition "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading." ;
-    skos:editorialNote "to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but doesnt make  sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)" ;
+    skos:editorialNote "to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but does not make  sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:alias "qualified predicate" ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/qualified_predicate> ;
@@ -13222,7 +13222,7 @@
     linkml:slot_uri <https://w3id.org/biolink/vocab/supporting_data_source> .
 
 <https://w3id.org/biolink/vocab/supporting_documents> a linkml:SlotDefinition ;
-    skos:definition "One or more referencable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement." ;
+    skos:definition "One or more referenceable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/supporting_documents> ;
     linkml:domain <https://w3id.org/biolink/vocab/Association> ;
@@ -16057,7 +16057,7 @@
 
 <https://w3id.org/biolink/vocab/associated_with_likelihood_of> a linkml:SlotDefinition ;
     owl:inverseOf <https://w3id.org/biolink/vocab/likelihood_associated_with> ;
-    skos:definition "A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI." ;
+    skos:definition "A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infraction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:annotations [ a linkml:Annotation ;
             skos:example "True" ;
@@ -16243,7 +16243,7 @@
 
 <https://w3id.org/biolink/vocab/qualified_predicate> a linkml:SlotDefinition ;
     skos:definition "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading." ;
-    skos:editorialNote "to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but doesnt make  sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)" ;
+    skos:editorialNote "to express the statement that “Chemical X causes increased expression of Gene Y”, the core triple is read  using the fields subject:ChemX, predicate:affects, object:GeneY . . . and the full statement is read using  the fields subject:ChemX, qualified_predicate:causes, object:GeneY, object_aspect: expression,  object_direction:increased. The predicate ‘affects’ is needed for the core triple reading, but does not make  sense in the full statement reading  (because “Chemical X affects increased expression of Gene Y'' is not  what we mean to say here: it causes increased expression of Gene Y)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/qualified_predicate> ;
     linkml:domain <https://w3id.org/biolink/vocab/Association> ;
@@ -19587,7 +19587,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:slot_uri <https://w3id.org/biolink/vocab/affected_by> .
 
 <https://w3id.org/biolink/vocab/associated_with> a linkml:SlotDefinition ;
-    skos:definition "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes)." ;
+    skos:definition "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes)." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:narrowMatch <http://purl.obolibrary.org/obo/RO_0004029>,
         <http://snomed.info/id/47429007> ;
@@ -22489,7 +22489,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:slot_uri <https://w3id.org/biolink/vocab/aggregator_knowledge_source> .
 
 <https://w3id.org/biolink/vocab/primary_knowledge_source> a linkml:SlotDefinition ;
-    skos:definition "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to caputre non-primary sources." ;
+    skos:definition "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources." ;
     skos:editorialNote "For example: a single ChemicalToGene Edge originally curated by ClinicalTrials.org, is aggregated by ChEMBL, then  incorporated into the MolePro KP, then sent via TRAPI message to the ARAGORN ARA, and finally sent to  the NCATS ARS. The retrieval path for this Edge is as follows:  ARS--retrieved_from-->  ARAGORN  --retrieved_from-->   MolePro  --retrieved_from--> ChEMBL --retrieved_from-->  ClinicalTrials.gov The \"primary knowledge source\" for this edge is \"infores:clinical-trials-gov\".  \"infores:chembl\" and \"infores:molecular_data_provider\" are listed in the \"aggregator knowledge source\" property." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/primary_knowledge_source> ;

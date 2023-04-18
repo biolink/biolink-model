@@ -147,7 +147,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
-     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
+     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
      * Range: [InformationResource](InformationResource.md)
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
@@ -281,7 +281,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
      * Range: [PredicateType](types/PredicateType.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
-     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
+     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
      * Range: [InformationResource](InformationResource.md)
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.

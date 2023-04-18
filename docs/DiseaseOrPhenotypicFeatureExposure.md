@@ -59,7 +59,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/vocab
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
      * Range: [InformationResource](InformationResource.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
-     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to caputre non-primary sources.
+     * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
      * Range: [InformationResource](InformationResource.md)
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.

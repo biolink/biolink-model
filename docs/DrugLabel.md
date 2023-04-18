@@ -8,7 +8,7 @@ layout: default
 # Class: DrugLabel
 
 
-a document accompanying a drug or its container that provides written, printed or graphic information abou thte drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc.
+a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc.
 
 URI: [biolink:DrugLabel](https://w3id.org/biolink/vocab/DrugLabel)
 

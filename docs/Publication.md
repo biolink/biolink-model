@@ -33,7 +33,7 @@ URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
  * [Article](Article.md) - a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
  * [Book](Book.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
  * [BookChapter](BookChapter.md)
- * [DrugLabel](DrugLabel.md) - a document accompanying a drug or its container that provides written, printed or graphic information abou thte drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+ * [DrugLabel](DrugLabel.md) - a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
  * [Patent](Patent.md) - a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
  * [PreprintPublication](PreprintPublication.md) - a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
  * [Serial](Serial.md) - This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.

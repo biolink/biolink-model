@@ -54,7 +54,7 @@ The model itself is organized using linkML Class definition (class), Slot defini
 >
 > To avoid ambiguity in semantics, prefixes are MUST for classes and certain slots.
 >
-> To avoid ambuguity it semantics, prefixes are RECOMMENDED for all slots.
+> To avoid ambiguity it semantics, prefixes are RECOMMENDED for all slots.
 
 
 At a glance the structure is as follows,
