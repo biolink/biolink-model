@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: disease_to_exposure_event_association
+# metamodel_version: 1.7.0# version: 3.2.8id: disease_to_exposure_event_association
 schema_generating: true
 description: An association between an exposure event and a disease.
 display_name: disease to exposure event association
@@ -44,8 +44,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

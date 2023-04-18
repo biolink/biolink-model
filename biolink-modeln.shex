@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.7
+# version: 3.2.8
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -29,7 +29,7 @@ PREFIX UO: <http://purl.obolibrary.org/obo/UO_>
 
 <Unit> UO:0000000
 
-<TimeType> xsd:dateTime
+<TimeType> xsd:time
 
 <BiologicalSequence> xsd:string
 
@@ -45,7 +45,7 @@ linkml:Double xsd:double
 
 linkml:Decimal xsd:decimal
 
-linkml:Time xsd:dateTime
+linkml:Time xsd:time
 
 linkml:Date xsd:date
 
@@ -178,17 +178,19 @@ linkml:Nodeidentifier NONLITERAL
     } OR @<QuantityValue>
 )
 
-<Article> CLOSED {
-    (  $<Article_tes> (  &<Publication_tes> ;
-          rdf:type [ <Publication> ] ? ;
-          <published_in> @linkml:Uriorcurie ;
-          <iso_abbreviation> @linkml:String ? ;
-          <volume> @linkml:String ? ;
-          <issue> @linkml:String ?
-       ) ;
-       rdf:type [ <Article> ]
-    )
-}
+<Article>  (
+    CLOSED {
+       (  $<Article_tes> (  &<Publication_tes> ;
+             rdf:type [ <Publication> ] ? ;
+             <published_in> @linkml:Uriorcurie ;
+             <iso_abbreviation> @linkml:String ? ;
+             <volume> @linkml:String ? ;
+             <issue> @linkml:String ?
+          ) ;
+          rdf:type [ <Article> ]
+       )
+    } OR @<JournalArticle>
+)
 
 <Association>  (
     CLOSED {
@@ -1100,6 +1102,14 @@ linkml:Nodeidentifier NONLITERAL
     } OR @<DrugToGeneInteractionExposure>
 )
 
+<DrugLabel> CLOSED {
+    (  $<DrugLabel_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ?
+       ) ;
+       rdf:type [ <DrugLabel> ]
+    )
+}
+
 <DrugToEntityAssociationMixin> {
     (  $<DrugToEntityAssociationMixin_tes> (  &<ChemicalEntityToEntityAssociationMixin_tes> ;
           rdf:type [ <ChemicalEntityToEntityAssociationMixin> ] ? ;
@@ -1968,6 +1978,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<JournalArticle> CLOSED {
+    (  $<JournalArticle_tes> (  &<Article_tes> ;
+          rdf:type [ <Article> ] ?
+       ) ;
+       rdf:type [ <JournalArticle> ]
+    )
+}
+
 <LifeStage> CLOSED {
     (  $<LifeStage_tes> (  &<OrganismalEntity_tes> ;
           rdf:type [ <OrganismalEntity> ] ?
@@ -2435,6 +2453,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<Patent> CLOSED {
+    (  $<Patent_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ?
+       ) ;
+       rdf:type [ <Patent> ]
+    )
+}
+
 <PathognomonicityQuantifier> {
     (  $<PathognomonicityQuantifier_tes> (  &<SpecificityQuantifier_tes> ;
           rdf:type [ <SpecificityQuantifier> ] ?
@@ -2678,6 +2704,14 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<PreprintPublication> CLOSED {
+    (  $<PreprintPublication_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ?
+       ) ;
+       rdf:type [ <PreprintPublication> ]
+    )
+}
+
 <Procedure> CLOSED {
     (  $<Procedure_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
@@ -2759,7 +2793,7 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <Publication> ]
        )
-    } OR @<Article> OR @<Book> OR @<BookChapter> OR @<Serial>
+    } OR @<Article> OR @<Book> OR @<BookChapter> OR @<DrugLabel> OR @<Patent> OR @<PreprintPublication> OR @<Serial> OR @<WebPage>
 )
 
 <QuantityValue> CLOSED {
@@ -3275,6 +3309,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <SubjectOfInvestigation> ] ?
        ) ;
        rdf:type [ <Virus> ]
+    )
+}
+
+<WebPage> CLOSED {
+    (  $<WebPage_tes> (  &<Publication_tes> ;
+          rdf:type [ <Publication> ] ?
+       ) ;
+       rdf:type [ <WebPage> ]
     )
 }
 
