@@ -18,5 +18,5 @@ jobs:
       - name: Codespell
         uses: codespell-project/actions-codespell@v1
         with:
-          skip: json-schema,golr-views,graphviz,contrib,docs,tests,java,notebooks,prefix-map,notebooks,biolink,images,biolink-model.g*,biolink-model.o*,biolink-model.s*,biolink-model.t*,biolink-model.p*,context.*
           ignore_words_list: amination,ehr,mor,nin,brite,mirgate,BRITE
+          path: biolink-model.yaml
