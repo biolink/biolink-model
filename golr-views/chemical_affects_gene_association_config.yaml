@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: chemical_affects_gene_association
+# metamodel_version: 1.7.0# version: 3.2.8id: chemical_affects_gene_association
 schema_generating: true
 description: Describes an effect that a chemical has on a gene or gene product (e.g.
   an impact of on its abundance, activity, localization, processing, expression, etc.)
@@ -33,8 +33,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

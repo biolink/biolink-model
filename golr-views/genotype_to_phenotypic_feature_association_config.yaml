@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: genotype_to_phenotypic_feature_association
+# metamodel_version: 1.7.0# version: 3.2.8id: genotype_to_phenotypic_feature_association
 schema_generating: true
 description: Any association between one genotype and a phenotypic feature, where
   having the genotype confers the phenotype, either in isolation or through environment
@@ -37,8 +37,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

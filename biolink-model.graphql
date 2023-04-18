@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.7
+# version: 3.2.8
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -1803,6 +1803,29 @@ type DrugExposure implements ExposureEvent
     timepoint: TimeType
   }
 
+type DrugLabel
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
+  }
+
 interface DrugToEntityAssociationMixin
   {
     subject: Drug!
@@ -3428,6 +3451,33 @@ type InformationResource
     creationDate: Date
   }
 
+type JournalArticle
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
+    publishedIn: Uriorcurie!
+    isoAbbreviation: String
+    volume: String
+    issue: String
+  }
+
 type LifeStage
   {
     id: String!
@@ -4381,6 +4431,29 @@ type PairwiseMolecularInteraction
     object: MolecularEntity!
   }
 
+type Patent
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
+  }
+
 interface PathognomonicityQuantifier
   {
   }
@@ -4691,6 +4764,29 @@ type PredicateMapping
     exactMatch: [NamedThing]
     narrowMatch: [NamedThing]
     broadMatch: [NamedThing]
+  }
+
+type PreprintPublication
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
   }
 
 type Procedure implements ActivityAndBehavior
@@ -5756,6 +5852,29 @@ type Virus implements SubjectOfInvestigation
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
+  }
+
+type WebPage
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
   }
 
 type Zygosity
