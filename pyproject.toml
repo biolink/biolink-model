@@ -5,7 +5,8 @@ description = "Entity and association taxonomy and datamodel for life-sciences d
 authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
 license = "https://creativecommons.org/publicdomain/zero/1.0/"
 readme = "README.md"
-packages = [{include = "biolink_model"}]
+
+packages = [{include = "biolink"}]
 
 
 [tool.poetry.dependencies]
