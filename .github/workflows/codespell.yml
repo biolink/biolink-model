@@ -18,5 +18,6 @@ jobs:
       - name: Codespell
         uses: codespell-project/actions-codespell@v1
         with:
-          skip: golr-views,graphviz,contrib,docs,tests,java,notebooks,prefix-maps,notebooks
+          skip: golr-views,graphviz,contrib,docs,tests,java,notebooks,prefix-map,notebooks,biolink,images
+          exclude_file: biolink-model.graphql,biolink-model.owl.ttl,biolink-model.proto,biolink-model.shacl.ttl,biolink-model.shex,biolink-model.shexj,biolink-model.ttl,biolink-modeln.*,context.json*
           only_warn: 1
