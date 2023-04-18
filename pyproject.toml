@@ -22,7 +22,11 @@ style = "pep440"
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
+
 [tool.codespell]
 skip = '.git,*.pdf,*.svg'
-#
-# ignore-words-list = ''
+# amination - domain specific term
+# ehr,mor,nin - short abbreviations used here and there
+# brite - in KEGG.BRITE
+# miRGate - http://mirgate.bioinfo.cnio.es
+ignore-words-list = 'amination,ehr,mor,nin,brite,mirgate'
