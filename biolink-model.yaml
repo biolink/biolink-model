@@ -3968,6 +3968,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
     domain: biological process or activity
+    range: named thing
     annotations:
       canonical_predicate: true
       opposite_of: has output
@@ -3993,6 +3994,7 @@ slots:
 
   is input of:
     is_a: participates in
+    domain: named thing
     range: biological process or activity
     inverse: has input
     in_subset:
@@ -4005,6 +4007,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is an output of the process
     domain: biological process or activity
+    range: named thing
     annotations:
       canonical_predicate: true
       opposite_of: has input
@@ -4025,6 +4028,7 @@ slots:
 
   is output of:
     is_a: participates in
+    domain: named thing
     range: biological process or activity
     inverse: has output
     in_subset:
@@ -4039,6 +4043,7 @@ slots:
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process
     domain: biological process or activity
+    range: occurrent
     annotations:
       canonical_predicate: true
     in_subset:
@@ -4130,6 +4135,7 @@ slots:
       holds between a continuant and a process or function, where
       the continuant actively contributes to part or all of
       the process or function it realizes
+    domain: named thing
     range: biological process or activity
     annotations:
       canonical_predicate: true
@@ -4147,6 +4153,7 @@ slots:
   actively involves:
     is_a: has participant
     domain: biological process or activity
+    range: named thing
     inverse: actively involved in
     in_subset:
       - translator_minimal
@@ -4156,6 +4163,7 @@ slots:
     description: >-
       holds between a physical entity and process or function, where the
       continuant alone has the ability to carry out the process or function.
+    domain: named thing
     range: occurrent
     annotations:
       canonical_predicate: true
@@ -4171,6 +4179,7 @@ slots:
     is_a: actively involves
     inverse: capable of
     domain: occurrent
+    range: named thing
 
   enables:
     is_a: participates in
@@ -4451,6 +4460,8 @@ slots:
 
   consumes:
     is_a: has input
+    domain: named thing
+    range: named thing
     annotations:
       canonical_predicate: true
     narrow_mappings:
@@ -4459,6 +4470,8 @@ slots:
   consumed by:
     is_a: is input of
     inverse: consumes
+    domain: named thing
+    range: named thing
 
   temporally related to:
     is_a: related to at instance level
