@@ -5,7 +5,8 @@ description = "Entity and association taxonomy and datamodel for life-sciences d
 authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
 license = "https://creativecommons.org/publicdomain/zero/1.0/"
 readme = "README.md"
-packages = [{include = "biolink_model"}]
+
+packages = [{include = "biolink"}]
 
 
 [tool.poetry.dependencies]
@@ -19,14 +20,14 @@ enable = true
 vcs = "git"
 style = "pep440"
 
+[tool.poetry.dev-dependencies]
+codespell = "^2.2.4"
+yamllint = "^1.30.0"
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.codespell]
-skip = '.git,*.pdf,*.svg'
-# amination - domain specific term
-# ehr,mor,nin - short abbreviations used here and there
-# brite - in KEGG.BRITE
-# miRGate - http://mirgate.bioinfo.cnio.es
-ignore-words-list = 'amination,ehr,mor,nin,brite,mirgate'
+skip = '.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
+ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
