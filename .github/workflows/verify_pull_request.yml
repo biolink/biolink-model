@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests
         run: |
-          poetry run python -m unittest discover -p 'test_*.py'
+          poetry run make test
 
 
 
