@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: organism_to_organism_association
+# metamodel_version: 1.7.0# version: 3.2.8id: organism_to_organism_association
 schema_generating: true
 display_name: organism to organism association
 document_category: organism to organism association
@@ -35,8 +35,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence

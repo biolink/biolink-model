@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.2.7
+// version: 3.2.8
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -131,6 +131,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   anatomicalEntity object = 0
   predicateType predicate = 0
  }
+// a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
 message Article
  {
   iriType iri = 0
@@ -1679,6 +1680,29 @@ message DrugExposure
  repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
  }
+// a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+message DrugLabel
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+ }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
  {
@@ -3097,6 +3121,33 @@ message InformationResource
   string format = 0
   date creationDate = 0
  }
+// an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+message JournalArticle
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+  uriorcurie publishedIn = 0
+  string isoAbbreviation = 0
+  string volume = 0
+  string issue = 0
+ }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
  {
@@ -3911,6 +3962,29 @@ message PairwiseMolecularInteraction
   predicateType predicate = 0
   molecularEntity object = 0
  }
+// a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
+message Patent
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+ }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
  {
@@ -4197,6 +4271,29 @@ message PredicateMapping
  repeated  namedThing narrowMatch = 0
  repeated  namedThing broadMatch = 0
  }
+// a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
+message PreprintPublication
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+ }
 // A series of actions conducted in a certain order or manner
 message Procedure
  {
@@ -4291,7 +4388,7 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
  repeated  labelType synonym = 0
  }
-// Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+// Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
 message Publication
  {
   iriType iri = 0
@@ -5170,6 +5267,29 @@ message Virus
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
+ }
+// a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
+message WebPage
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
  }
 message Zygosity
  {

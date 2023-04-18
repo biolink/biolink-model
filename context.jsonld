@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-04-12T19:50:50\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.7\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2023-04-18T22:09:43\n    Schema: Biolink-Model\n    metamodel version: 1.7.0\n    model version: 3.2.8\n    \n    id: https://w3id.org/biolink/biolink-model\n    description: Entity and association taxonomy and datamodel for life-sciences data\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "AGRKB": "https://www.alliancegenome.org/",
       "APO": {
@@ -349,6 +349,11 @@
          "@prefix": true
       },
       "PIRSF": "http://identifiers.org/pirsf/",
+      "PMC": {
+         "@id": "http://europepmc.org/articles/PMC",
+         "@prefix": true
+      },
+      "PMCID": "http://www.ncbi.nlm.nih.gov/pmc/",
       "PMID": "http://www.ncbi.nlm.nih.gov/pubmed/",
       "PO": {
          "@id": "http://purl.obolibrary.org/obo/PO_",
@@ -1675,16 +1680,16 @@
          "@type": "@id"
       },
       "temporal_context_qualifier": {
-         "@type": "xsd:dateTime"
+         "@type": "xsd:time"
       },
       "temporal_interval_qualifier": {
-         "@type": "xsd:dateTime"
+         "@type": "xsd:time"
       },
       "temporally_related_to": {
          "@type": "@id"
       },
       "timepoint": {
-         "@type": "xsd:dateTime"
+         "@type": "xsd:time"
       },
       "trade_name": {
          "@type": "@id"
