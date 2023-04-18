@@ -1788,7 +1788,7 @@ slots:
       (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent,
       'related to'. This relationship holds between two concepts represented by variables for which a statistical 
       dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial 
-      Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient 
+      Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient 
       will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to 
       the statistical variables, or represent related entities for which the variables serve as proxies in an 
       Association (e.g. diseases, chemical entities or processes).
@@ -2008,7 +2008,7 @@ slots:
       A a relationship that holds between two concepts represented by variables for which a statistical 
       dependence is demonstrated, wherein the state or value of one variable predicts the future state 
       or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated 
-      with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib 
+      with likelihood of a Myocardial Infraction (MI) diagnosis” asserts that the state of having Afib 
       is associated with an increased or decreased likelihood that a patient will later exhibit MI.
     annotations:
       canonical_predicate: true
@@ -3373,7 +3373,7 @@ slots:
       process or chemical entity that is used to treat the condition
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    # range: chemical or drug or treatement
+    # range: chemical or drug or treatment
     in_subset:
       - translator_minimal
     inverse: treats
@@ -5461,7 +5461,7 @@ slots:
     deprecated: true
     is_a: association slot
     description: >-
-      One or more referencable documents that report the statement expressed in an Association, or provide 
+      One or more referenceable documents that report the statement expressed in an Association, or provide 
       information used as evidence supporting this statement.
     range: uriorcurie
     multivalued: true

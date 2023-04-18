@@ -1517,7 +1517,7 @@
 <https://w3id.org/biolink/vocab/objectidentifier> a linkml:TypeDefinition ;
     skos:definition "A URI or CURIE that represents an object in the model." ;
     skos:inScheme linkml:types ;
-    skos:note "Used for inheritence and type checking" ;
+    skos:note "Used for inheritance and type checking" ;
     linkml:base "ElementIdentifier" ;
     linkml:definition_uri linkml:Objectidentifier ;
     linkml:imported_from "linkml:types" ;
@@ -13222,7 +13222,7 @@
     linkml:slot_uri <https://w3id.org/biolink/vocab/supporting_data_source> .
 
 <https://w3id.org/biolink/vocab/supporting_documents> a linkml:SlotDefinition ;
-    skos:definition "One or more referencable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement." ;
+    skos:definition "One or more referenceable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:definition_uri <https://w3id.org/biolink/vocab/supporting_documents> ;
     linkml:domain <https://w3id.org/biolink/vocab/Association> ;
@@ -16057,7 +16057,7 @@
 
 <https://w3id.org/biolink/vocab/associated_with_likelihood_of> a linkml:SlotDefinition ;
     owl:inverseOf <https://w3id.org/biolink/vocab/likelihood_associated_with> ;
-    skos:definition "A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infarction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI." ;
+    skos:definition "A a relationship that holds between two concepts represented by variables for which a statistical  dependence is demonstrated, wherein the state or value of one variable predicts the future state  or value of the other.  E.g. the statement “An Atrial Fibrillation (Afib) diagnosis is associated  with likelihood of a Myocardial Infraction (MI) diagnosis” asserts that the state of having Afib  is associated with an increased or decreased likelihood that a patient will later exhibit MI." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     linkml:annotations [ a linkml:Annotation ;
             skos:example "True" ;
@@ -19587,7 +19587,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     linkml:slot_uri <https://w3id.org/biolink/vocab/affected_by> .
 
 <https://w3id.org/biolink/vocab/associated_with> a linkml:SlotDefinition ;
-    skos:definition "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infarction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes)." ;
+    skos:definition "Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes)." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:narrowMatch <http://purl.obolibrary.org/obo/RO_0004029>,
         <http://snomed.info/id/47429007> ;
