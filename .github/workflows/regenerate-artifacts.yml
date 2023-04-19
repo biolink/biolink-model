@@ -40,7 +40,7 @@ jobs:
         sudo apt-get install -y graphviz
         wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
         tar -xvzf jsonschema2pojo-1.0.2.tar.gz
-        pip install pipenv
+        pip install poetry
 
     - name: Generate Biolink Model artifacts
       run: |
@@ -68,10 +68,8 @@ jobs:
 
     - name: Build documentation
       run: |
-        python3 -m venv env
-        source env/bin/activate
-        pip install linkml
-        python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+        poetry install
+        poetry run python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
 
     - name: Deploy to gh-pages branch
       uses: JamesIves/github-pages-deploy-action@releases/v3
