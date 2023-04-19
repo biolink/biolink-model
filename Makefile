@@ -39,7 +39,7 @@ install: env.lock
 # Install package into build environment
 # ---------------------------------------
 env.lock:
-	poetry install --dev
+	poetry install
 	cp /dev/null env.lock
 
 
