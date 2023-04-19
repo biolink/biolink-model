@@ -6,8 +6,6 @@ on:
   push:
     branches:
     - master
-    paths:
-    - 'biolink-model.yaml'
   repository_dispatch:
     types: trigger-build-artifacts
 
