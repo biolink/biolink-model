@@ -112,5 +112,5 @@ URI: [biolink:subject_category_closure](https://w3id.org/biolink/vocab/subject_c
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['biolink:Gene', 'biolink:NamedThing']", description='The subject category closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all biolink classes that are ancestors of \'biolink:Gene\' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.', object=None) |
+| **Examples:** | | Example(value='[\'biolink:Gene", "biolink:NamedThing\']', description='The subject category closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all biolink classes that are ancestors of \'biolink:Gene\' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.') |
 

@@ -35,7 +35,7 @@ URI: [biolink:part_qualifier](https://w3id.org/biolink/vocab/part_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='polyA tail', description=None, object=None) |
-|  | | Example(value='upstream control region', description=None, object=None) |
+| **Examples:** | | Example(value='polyA tail', description=None) |
+|  | | Example(value='upstream control region', description=None) |
 | **In Subsets:** | | translator_minimal |
 

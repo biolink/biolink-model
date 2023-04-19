@@ -35,6 +35,6 @@ URI: [biolink:derivative_qualifier](https://w3id.org/biolink/vocab/derivative_qu
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='metabolite', description=None, object=None) |
+| **Examples:** | | Example(value='metabolite', description=None) |
 | **In Subsets:** | | translator_minimal |
 

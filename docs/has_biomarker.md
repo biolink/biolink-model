@@ -11,7 +11,8 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature. # metabolite
+holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.
+ # metabolite
 
 URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 

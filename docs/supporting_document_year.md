@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_year](https://w3id.org/biolink/vocab/supportin
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='1999', description=None, object=None) |
+| **Examples:** | | Example(value='1999', description=None) |
 

@@ -33,7 +33,8 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
 ### Own
 
  * [associated environmental context](associated_environmental_context.md)  <sub>0..1</sub>
-     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
+     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+ # TODO: add examples of values for this property.
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -107,11 +108,11 @@ URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/
  * [subject category closure](subject_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Gene', 'biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Gene", "biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [object category closure](object_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Disease', 'biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Disease", "biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [subject namespace](subject_namespace.md)  <sub>0..1</sub>
      * Description: Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
@@ -182,7 +183,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 ### Domain for slot:
 
  * [associated environmental context](associated_environmental_context.md)  <sub>0..1</sub>
-     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure. # TODO: add examples of values for this property.
+     * Description: An attribute that can be applied to an association where the association holds between two entities located or occurring in a particular environment. For example, two microbial taxa may interact in the context of a human gut; a disease may give rise to a particular phenotype in a particular environmental exposure.
+ # TODO: add examples of values for this property.
      * Range: [String](types/String.md)
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

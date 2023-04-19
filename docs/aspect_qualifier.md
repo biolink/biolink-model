@@ -35,9 +35,9 @@ URI: [biolink:aspect_qualifier](https://w3id.org/biolink/vocab/aspect_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='stability', description=None, object=None) |
-|  | | Example(value='abundance', description=None, object=None) |
-|  | | Example(value='expression', description=None, object=None) |
-|  | | Example(value='exposure', description=None, object=None) |
+| **Examples:** | | Example(value='stability', description=None) |
+|  | | Example(value='abundance', description=None) |
+|  | | Example(value='expression', description=None) |
+|  | | Example(value='exposure', description=None) |
 | **In Subsets:** | | translator_minimal |
 

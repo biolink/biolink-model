@@ -34,7 +34,7 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='zebrafish', description=None, object=None) |
-|  | | Example(value='human', description=None, object=None) |
+| **Examples:** | | Example(value='zebrafish', description=None) |
+|  | | Example(value='human', description=None) |
 | **In Subsets:** | | translator_minimal |
 

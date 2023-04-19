@@ -113,5 +113,5 @@ URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespac
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | subject prefix |
-| **Examples:** | | Example(value='NCBIGene', description="The subject namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.", object=None) |
+| **Examples:** | | Example(value='NCBIGene', description="The subject namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.") |
 

@@ -67,7 +67,8 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[colocalizes with](colocalizes_with.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[completed by](completed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[composed primarily of](composed_primarily_of.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
- *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[consumes](consumes.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[consumed by](consumed_by.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[NamedThing](NamedThing.md)** *[consumes](consumes.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[contains process](contains_process.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[contributes to](contributes_to.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[contribution from](contribution_from.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
@@ -97,7 +98,6 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[has not completed](has_not_completed.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has output](has_output.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[has part](has_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
- *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has participant](has_participant.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[has plasma membrane part](has_plasma_membrane_part.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[has predisposing factor](has_predisposing_factor.md)*  <sub>0..\*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Attribute](Attribute.md)** *[has qualitative value](has_qualitative_value.md)*  <sub>0..1</sub>  **[NamedThing](NamedThing.md)**

@@ -1,5 +1,6 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-12T19:51:34
+# Generation date: 2023-04-18T15:56:32
+
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.2.7"
+version = "3.2.8"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -176,6 +177,8 @@ PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'https://www.pharmgkb.or
 PHARMGKB_VARIANT = CurieNamespace('PHARMGKB_VARIANT', 'https://www.pharmgkb.org/variant/')
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PIRSF = CurieNamespace('PIRSF', 'http://identifiers.org/pirsf/')
+PMC = CurieNamespace('PMC', 'http://europepmc.org/articles/PMC')
+PMCID = CurieNamespace('PMCID', 'http://www.ncbi.nlm.nih.gov/pmc/')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
@@ -377,8 +380,8 @@ class Unit(String):
 
 
 class TimeType(Time):
-    type_class_uri = XSD.dateTime
-    type_class_curie = "xsd:dateTime"
+    type_class_uri = XSD.time
+    type_class_curie = "xsd:time"
     type_name = "time type"
     type_model_uri = BIOLINK.TimeType
 
@@ -532,6 +535,26 @@ class SerialId(PublicationId):
 
 
 class ArticleId(PublicationId):
+    pass
+
+
+class JournalArticleId(ArticleId):
+    pass
+
+
+class PatentId(PublicationId):
+    pass
+
+
+class WebPageId(PublicationId):
+    pass
+
+
+class PreprintPublicationId(PublicationId):
+    pass
+
+
+class DrugLabelId(PublicationId):
     pass
 
 
@@ -2405,10 +2428,11 @@ class InformationResource(InformationContentEntity):
 @dataclass
 class Publication(InformationContentEntity):
     """
-    Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
-    or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
-    section highlighted by NLP). The scope is intended to be general and include information published on the web, as
-    well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+    Any ‘published’ piece of information. Publications are considered broadly to include any document or document part
+    made available in print or on the web - which may include scientific journal issues, individual articles, and
+    books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents, and
+    even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section
+    highlighted by NLP).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2578,6 +2602,9 @@ class Serial(Publication):
 
 @dataclass
 class Article(Publication):
+    """
+    a piece of writing on a particular topic presented as a stand-alone  section of a larger publication
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Article
@@ -2612,6 +2639,137 @@ class Article(Publication):
 
         if self.issue is not None and not isinstance(self.issue, str):
             self.issue = str(self.issue)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class JournalArticle(Article):
+    """
+    an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
+    class_class_curie: ClassVar[str] = "biolink:JournalArticle"
+    class_name: ClassVar[str] = "journal article"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
+
+    id: Union[str, JournalArticleId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: str = None
+    published_in: Union[str, URIorCURIE] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, JournalArticleId):
+            self.id = JournalArticleId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Patent(Publication):
+    """
+    a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use
+    and sell an invention for a set period of time.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Patent
+    class_class_curie: ClassVar[str] = "biolink:Patent"
+    class_name: ClassVar[str] = "patent"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Patent
+
+    id: Union[str, PatentId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PatentId):
+            self.id = PatentId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class WebPage(Publication):
+    """
+    a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound,
+    and/or other features.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.WebPage
+    class_class_curie: ClassVar[str] = "biolink:WebPage"
+    class_name: ClassVar[str] = "web page"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.WebPage
+
+    id: Union[str, WebPageId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, WebPageId):
+            self.id = WebPageId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PreprintPublication(Publication):
+    """
+    a document reresenting an early version of an author's original scholarly work, such as a research paper or a
+    review, prior to formal peer review and publication in a peer-reviewed scholarly or scientific journal.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
+    class_class_curie: ClassVar[str] = "biolink:PreprintPublication"
+    class_name: ClassVar[str] = "preprint publication"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
+
+    id: Union[str, PreprintPublicationId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PreprintPublicationId):
+            self.id = PreprintPublicationId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DrugLabel(Publication):
+    """
+    a document accompanying a drug or its container that provides written, printed or graphic information about the
+    drug, including drug contents, specific instructions or warnings for administration, storage and disposal
+    instructions, etc.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
+    class_class_curie: ClassVar[str] = "biolink:DrugLabel"
+    class_name: ClassVar[str] = "drug label"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
+
+    id: Union[str, DrugLabelId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DrugLabelId):
+            self.id = DrugLabelId(self.id)
 
         super().__post_init__(**kwargs)
 

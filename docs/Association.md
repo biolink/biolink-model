@@ -121,7 +121,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [object category closure](object_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Disease', 'biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Disease", "biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [object closure](object_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
@@ -169,7 +169,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [subject category closure](subject_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Gene', 'biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Gene", "biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [subject closure](subject_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
@@ -255,7 +255,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [object category closure](object_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Disease', 'biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Disease", "biolink:NamedThing'] The object category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Disease' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [object closure](object_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)
@@ -299,7 +299,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [subject category closure](subject_category_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [OntologyClass](OntologyClass.md)
-     * Example: ['biolink:Gene', 'biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
+     * Example: ['biolink:Gene", "biolink:NamedThing'] The subject category closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all biolink classes that are ancestors of 'biolink:Gene' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.
  * [subject closure](subject_closure.md)  <sub>0..\*</sub>
      * Description: Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * Range: [String](types/String.md)

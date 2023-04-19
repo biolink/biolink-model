@@ -41,11 +41,10 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ## Referenced by class
 
- *  **[Occurrent](Occurrent.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
- *  **[Occurrent](Occurrent.md)** *[consumed by](consumed_by.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[NamedThing](NamedThing.md)** *[actively involved in](actively_involved_in.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
  *  **[PhysicalEntity](PhysicalEntity.md)** *[enables](enables.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
- *  **[Occurrent](Occurrent.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
- *  **[Occurrent](Occurrent.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[NamedThing](NamedThing.md)** *[is input of](is_input_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
+ *  **[NamedThing](NamedThing.md)** *[is output of](is_output_of.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
  *  **[Occurrent](Occurrent.md)** *[participates in](participates_in.md)*  <sub>0..\*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
 
 ## Attributes

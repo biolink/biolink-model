@@ -37,8 +37,8 @@ URI: [biolink:superclass_of](https://w3id.org/biolink/vocab/superclass_of)
 | **Exact Mappings:** | | WIKIDATA:Q66088480 |
 |  | | CHEMBL.MECHANISM:superset_of |
 |  | | GO:inverse_isa |
-|  | | MESH:inverse_isa |
 |  | | RXNORM:inverse_isa |
+|  | | MESH:inverse_isa |
 |  | | VANDF:inverse_isa |
 | **Narrow Mappings:** | | NCIT:cdrh_parent_of |
 |  | | NCIT:ctcae_5_parent_of |
