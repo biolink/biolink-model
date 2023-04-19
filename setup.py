@@ -12,7 +12,7 @@ DESCRIPTION = 'Biolink Model: A high level datamodel of biological entities and 
 URL = 'https://github.com/biolink/biolink-model'
 AUTHOR = 'Deepak Unni', 'Sierra Moxon'
 EMAIL = 'smoxon@lbl.gov'
-REQUIRES_PYTHON = '>=3.7'
+REQUIRES_PYTHON = '>=3.9'
 LICENSE = 'BSD'
 
 setup(
@@ -36,7 +36,6 @@ setup(
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.9'
     ],
 )

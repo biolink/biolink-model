@@ -26,9 +26,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-        python-version: 3.7
-        # The target architecture (x86, x64) of the Python interpreter.
-        # architecture: x64 # optional
+        python-version: 3.9
 
     - name: Setup build environment
       run: |
