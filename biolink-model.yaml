@@ -1419,7 +1419,7 @@ slots:
       - translator_minimal
 
   subject context qualifier:
-    is_a: context qualifier
+    is_a: cont`e`xt qualifier
     in_subset:
       - translator_minimal
 
@@ -6533,6 +6533,7 @@ classes:
     narrow_mappings:
        # Manufactured Object
       - STY:T073
+      - STY:T031  # Body Substance
 
   occurrent:
     description: >-
@@ -7130,6 +7131,8 @@ classes:
       - GO:0003674
        # UMLS Semantic Type "Molecular Function"
       - STY:T044
+    broad_mappings:
+      - STY:T045 # Genetic Function
     id_prefixes:
       - GO
       - REACT
@@ -7368,6 +7371,7 @@ classes:
       and infects the host cell.
     exact_mappings:
       - NCBITaxon:10239
+      - STY:T005  # Virus
 
   cellular organism:
     is_a: organismal entity
@@ -7376,6 +7380,41 @@ classes:
     description: >-
     exact_mappings:
       - NCBITaxon:131567
+
+  mammal:
+    is_a: cellular organism
+    mixins:
+      - subject of investigation
+    description: >-
+        A member of the class Mammalia, a clade of endothermic amniotes
+        distinguished from reptiles and birds by the possession of hair,
+        three middle ear bones, mammary glands, and a neocortex
+    exact_mappings:
+        - NCBITaxon:40674 # mammal
+        - STY:T015 # mammal
+        - NCIT:C14234 # Mamalia
+        - FOODON:03411134 # mammal uhm...
+
+  human:
+    is_a: mammal
+    mixins:
+      - subject of investigation
+    description: >-
+      A member of the the species Homo sapiens.
+    exact_mappings:
+      - STY:T016
+      - NCBITaxon:9606
+      - SIO:000485
+      - NCIT:C14225
+
+  plant:
+    is_a: cellular organism
+    description: >-
+    exact_mappings:
+      - NCIT:C14258 # plant
+      - STY:T002  # plant
+      - PO:0000003 # whole plant
+      - NCIT:C79659  # plant, whole
 
   life stage:
     is_a: organismal entity
@@ -7588,6 +7627,7 @@ classes:
       - FMA:62955  # anatomical entity
       - CARO:0000000   # anatomical entity
       - SIO:001262  # anatomical entity
+      - STY:T029 # Body Location or Region
     narrow_mappings:
       - ZFA:0100000  # zebrafish anatomical entity
       - FBbt:10000000  # fly anatomical entity
