@@ -1047,6 +1047,76 @@
             "title": "Attribute",
             "type": "object"
         },
+        "Bacterium": {
+            "additionalProperties": false,
+            "description": "A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Bacterium",
+            "type": "object"
+        },
         "Behavior": {
             "additionalProperties": false,
             "description": "",
@@ -7199,6 +7269,69 @@
             "title": "Device",
             "type": "object"
         },
+        "DiagnosticAid": {
+            "additionalProperties": false,
+            "description": "A device or substance used to help diagnose disease or injury",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "DiagnosticAid",
+            "type": "object"
+        },
         "DirectionQualifierEnum": {
             "description": "",
             "enum": [
@@ -10953,6 +11086,76 @@
             "title": "FunctionalAssociation",
             "type": "object"
         },
+        "Fungus": {
+            "additionalProperties": false,
+            "description": "A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Fungus",
+            "type": "object"
+        },
         "Gene": {
             "additionalProperties": false,
             "description": "A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.",
@@ -11334,10 +11537,6 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
-                "frequency_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-                    "type": "string"
-                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -11373,7 +11572,7 @@
                     "type": "boolean"
                 },
                 "object": {
-                    "description": "disease",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
                 "object_category": {
@@ -11403,10 +11602,6 @@
                 },
                 "object_namespace": {
                     "description": "Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
-                    "type": "string"
-                },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                     "type": "string"
                 },
                 "original_object": {
@@ -11449,10 +11644,6 @@
                         "type": "string"
                     },
                     "type": "array"
-                },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
                 },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
@@ -11603,10 +11794,6 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
-                "frequency_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-                    "type": "string"
-                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -11642,7 +11829,7 @@
                     "type": "boolean"
                 },
                 "object": {
-                    "description": "disease",
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
                 },
                 "object_category": {
@@ -11662,6 +11849,213 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "object_label_closure": {
+                    "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_namespace": {
+                    "description": "Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "original_object": {
+                    "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "original_predicate": {
+                    "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "original_subject": {
+                    "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "predicate": {
+                    "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "type": "string"
+                },
+                "primary_knowledge_source": {
+                    "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "retrieval_source_ids": {
+                    "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_category": {
+                    "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "subject_category_closure": {
+                    "description": "Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_closure": {
+                    "description": "Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_label_closure": {
+                    "description": "Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_namespace": {
+                    "description": "Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "timepoint": {
+                    "description": "a point in time",
+                    "format": "time",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "subject",
+                "predicate",
+                "object",
+                "id"
+            ],
+            "title": "GeneToDiseaseAssociation",
+            "type": "object"
+        },
+        "GeneToDiseaseOrPhenotypicFeatureAssociation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "aggregator_knowledge_source": {
+                    "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "has_count": {
+                    "description": "number of things with a particular property",
+                    "type": "integer"
+                },
+                "has_evidence": {
+                    "description": "connects an association to an instance of supporting evidence",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "has_percentage": {
+                    "description": "equivalent to has quotient multiplied by 100",
+                    "type": "number"
+                },
+                "has_quotient": {
+                    "type": "number"
+                },
+                "has_total": {
+                    "description": "total number of things in a particular reference set",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "knowledge_source": {
+                    "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "boolean"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "object_category": {
+                    "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "object_category_closure": {
+                    "description": "Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_closure": {
+                    "description": "Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum"
                 },
                 "object_label_closure": {
                     "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -11723,9 +12117,16 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "$ref": "#/$defs/GeneOrGeneProduct",
-                    "description": "gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model"
+                    "description": "gene in which variation is correlated with the phenotypic feature"
+                },
+                "subject_aspect_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -11775,7 +12176,7 @@
                 "object",
                 "id"
             ],
-            "title": "GeneToDiseaseAssociation",
+            "title": "GeneToDiseaseOrPhenotypicFeatureAssociation",
             "type": "object"
         },
         "GeneToExpressionSiteAssociation": {
@@ -13097,7 +13498,7 @@
             "title": "GeneToPathwayAssociation",
             "type": "object"
         },
-        "GeneToPhenotypicFeatureAssociation": {
+        "GeneToPhenotypeAssociation": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -13119,10 +13520,6 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
-                "frequency_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-                    "type": "string"
-                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -13130,27 +13527,12 @@
                     },
                     "type": "array"
                 },
-                "has_count": {
-                    "description": "number of things with a particular property",
-                    "type": "integer"
-                },
                 "has_evidence": {
                     "description": "connects an association to an instance of supporting evidence",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
-                },
-                "has_percentage": {
-                    "description": "equivalent to has quotient multiplied by 100",
-                    "type": "number"
-                },
-                "has_quotient": {
-                    "type": "number"
-                },
-                "has_total": {
-                    "description": "total number of things in a particular reference set",
-                    "type": "integer"
                 },
                 "id": {
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -13205,10 +13587,6 @@
                     "description": "Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
                     "type": "string"
                 },
-                "onset_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-                    "type": "string"
-                },
                 "original_object": {
                     "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
                     "type": "string"
@@ -13250,17 +13628,9 @@
                     },
                     "type": "array"
                 },
-                "severity_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-                    "type": "string"
-                },
-                "sex_qualifier": {
-                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-                    "type": "string"
-                },
                 "subject": {
-                    "$ref": "#/$defs/GeneOrGeneProduct",
-                    "description": "gene in which variation is correlated with the phenotypic feature"
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -13310,7 +13680,7 @@
                 "object",
                 "id"
             ],
-            "title": "GeneToPhenotypicFeatureAssociation",
+            "title": "GeneToPhenotypeAssociation",
             "type": "object"
         },
         "GeneticInheritance": {
@@ -15529,6 +15899,76 @@
             "title": "HospitalizationOutcome",
             "type": "object"
         },
+        "Human": {
+            "additionalProperties": false,
+            "description": "A member of the the species Homo sapiens.",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Human",
+            "type": "object"
+        },
         "IndividualOrganism": {
             "additionalProperties": false,
             "description": "An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576",
@@ -15859,6 +16299,76 @@
                 "category"
             ],
             "title": "InformationResource",
+            "type": "object"
+        },
+        "Invertebrate": {
+            "additionalProperties": false,
+            "description": "An animal lacking a vertebral column. This group consists of 98% of all animal species.",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Invertebrate",
             "type": "object"
         },
         "JournalArticle": {
@@ -16690,6 +17200,76 @@
                 "id"
             ],
             "title": "MacromolecularMachineToMolecularActivityAssociation",
+            "type": "object"
+        },
+        "Mammal": {
+            "additionalProperties": false,
+            "description": "A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Mammal",
             "type": "object"
         },
         "MaterialSample": {
@@ -21187,6 +21767,76 @@
                 "category"
             ],
             "title": "PlanetaryEntity",
+            "type": "object"
+        },
+        "Plant": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Plant",
             "type": "object"
         },
         "Polypeptide": {
@@ -26640,6 +27290,76 @@
             "title": "VariantToPopulationAssociation",
             "type": "object"
         },
+        "Vertebrate": {
+            "additionalProperties": false,
+            "description": "A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "pattern": "^biolink:[A-Z][A-Za-z]+$",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "may often be an organism attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "type": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "xref": {
+                    "description": "A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "category"
+            ],
+            "title": "Vertebrate",
+            "type": "object"
+        },
         "Virus": {
             "additionalProperties": false,
             "description": "A virus is a microorganism that replicates itself as a microRNA and infects the host cell.",
@@ -26905,5 +27625,5 @@
     "metamodel_version": "1.7.0",
     "title": "Biolink-Model",
     "type": "object",
-    "version": "3.2.8"
+    "version": "3.3.0"
 }

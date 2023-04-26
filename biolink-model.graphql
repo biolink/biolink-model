@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.8
+# version: 3.3.0
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -263,6 +263,20 @@ type Attribute implements OntologyClass
     hasQuantitativeValue: [QuantityValue]
     hasQualitativeValue: NamedThing
     iri: IriType
+  }
+
+type Bacterium
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Behavior implements OntologyClass, ActivityAndBehavior
@@ -1553,6 +1567,19 @@ type Device
     category: [CategoryType]!
   }
 
+type DiagnosticAid
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+  }
+
 type Disease
   {
     id: String!
@@ -1892,6 +1919,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1915,13 +1943,12 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
     hasEvidence: [DruggableGeneCategoryEnum]
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
   }
 
 interface Entity
@@ -2386,6 +2413,20 @@ type FunctionalAssociation
     object: OntologyClass!
   }
 
+type Fungus
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
 type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -2411,6 +2452,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     description: NarrativeText
     hasAttribute: [Attribute]
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2435,11 +2477,10 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
+    subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
-    subject: GeneOrGeneProduct!
   }
 
 interface GeneExpressionMixin
@@ -2501,9 +2542,6 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -2529,14 +2567,16 @@ interface GeneProductMixin
     xref: [Uriorcurie]
   }
 
-type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type GeneToDiseaseAssociation
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2561,11 +2601,52 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+  }
+
+type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
     subject: GeneOrGeneProduct!
-    object: Disease!
+    object: DiseaseOrPhenotypicFeature!
+    predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 interface GeneToEntityAssociationMixin
@@ -2867,14 +2948,16 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     object: Pathway!
   }
 
-type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+type GeneToPhenotypeAssociation
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2899,16 +2982,6 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    subject: GeneOrGeneProduct!
-    object: PhenotypicFeature!
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
-    hasCount: Integer
-    hasTotal: Integer
-    hasQuotient: Double
-    hasPercentage: Double
   }
 
 type GeneticInheritance
@@ -3367,6 +3440,20 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
+type Human implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
 type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
@@ -3449,6 +3536,20 @@ type InformationResource
     rights: String
     format: String
     creationDate: Date
+  }
+
+type Invertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type JournalArticle
@@ -3622,6 +3723,20 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
+  }
+
+type Mammal implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface MappingCollection
@@ -4660,6 +4775,20 @@ type PlanetaryEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+  }
+
+type Plant
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -5838,6 +5967,20 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasTotal: Integer
     hasPercentage: Double
     frequencyQualifier: FrequencyValue
+  }
+
+type Vertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Virus implements SubjectOfInvestigation
