@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.2.8
+// version: 3.3.0
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -209,6 +209,20 @@ message Attribute
  repeated  quantityValue hasQuantitativeValue = 0
   namedThing hasQualitativeValue = 0
   iriType iri = 0
+ }
+// A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
+message Bacterium
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 message Behavior
  {
@@ -1444,6 +1458,19 @@ message Device
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A device or substance used to help diagnose disease or injury
+message DiagnosticAid
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ }
 // A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
 message Disease
  {
@@ -1764,6 +1791,7 @@ message DruggableGeneToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -1787,13 +1815,12 @@ message DruggableGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
   geneOrGeneProduct subject = 0
   predicateType predicate = 0
  repeated  druggableGeneCategoryEnum hasEvidence = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
  }
 message EntityToDiseaseAssociation
  {
@@ -2169,6 +2196,20 @@ message FunctionalAssociation
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
  }
+// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+message Fungus
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
 // A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
 message Gene
  {
@@ -2194,6 +2235,7 @@ message GeneAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -2218,11 +2260,10 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
+  geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
-  geneOrGeneProduct subject = 0
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -2270,9 +2311,6 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -2285,7 +2323,9 @@ message GeneToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing subject = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -2310,11 +2350,51 @@ message GeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+ }
+message GeneToDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  informationResource knowledgeSource = 0
+  informationResource primaryKnowledgeSource = 0
+ repeated  informationResource aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   geneOrGeneProduct subject = 0
-  disease object = 0
+  diseaseOrPhenotypicFeature object = 0
+  predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -2573,14 +2653,16 @@ message GeneToPathwayAssociation
   geneOrGeneProduct subject = 0
   pathway object = 0
  }
-message GeneToPhenotypicFeatureAssociation
+message GeneToPhenotypeAssociation
  {
   string id = 0
   iriType iri = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing subject = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -2605,16 +2687,6 @@ message GeneToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  geneOrGeneProduct subject = 0
-  phenotypicFeature object = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance
@@ -3054,6 +3126,20 @@ message Hospitalization
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A member of the the species Homo sapiens.
+message Human
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
  {
@@ -3120,6 +3206,20 @@ message InformationResource
   string rights = 0
   string format = 0
   date creationDate = 0
+ }
+// An animal lacking a vertebral column. This group consists of 98% of all animal species.
+message Invertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // an article, typically presenting results of research, that is published  in an issue of a scientific journal.
 message JournalArticle
@@ -3283,6 +3383,20 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
+ }
+// A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
+message Mammal
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -4166,6 +4280,19 @@ message PlanetaryEntity
  repeated  string providedBy = 0
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
+ }
+message Plant
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 message Polypeptide
@@ -5253,6 +5380,20 @@ message VariantToPopulationAssociation
   integer hasTotal = 0
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
+ }
+// A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+message Vertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 message Virus

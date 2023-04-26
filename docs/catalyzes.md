@@ -14,7 +14,7 @@ URI: [biolink:catalyzes](https://w3id.org/biolink/catalyzes)
 
 ## Domain and Range
 
-[NucleicAcidEntity](NucleicAcidEntity.md) ->  <sub>0..\*</sub> [MolecularActivity](MolecularActivity.md)
+[Occurrent](Occurrent.md) ->  <sub>0..\*</sub> [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
 
 ## Parents
 
@@ -24,4 +24,11 @@ URI: [biolink:catalyzes](https://w3id.org/biolink/catalyzes)
 
 
 ## Used by
+
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Exact Mappings:** | | RO:0002327 |
 

@@ -39,6 +39,7 @@ URI: [biolink:Occurrent](https://w3id.org/biolink/Occurrent)
 ## Referenced by class
 
  *  **[NamedThing](NamedThing.md)** *[capable of](capable_of.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
+ *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has catalyst](has_catalyst.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)** *[has participant](has_participant.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[preceded by](preceded_by.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
  *  **[Occurrent](Occurrent.md)** *[precedes](precedes.md)*  <sub>0..\*</sub>  **[Occurrent](Occurrent.md)**
