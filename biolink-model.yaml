@@ -3252,12 +3252,12 @@ slots:
     aliases: ['ameliorates', 'beneficial for condition']
     is_a: affects
     description: >- 
-      Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
-      where the intervention can benefit patients with, or disposed to getting, the condition.  The “benefit” of the 
-      treatment may be preventing, delaying, reducing risk, reducing duration, ameliorating symptoms, or completely 
-      curing the condition.  An intervention does not need to be formally approved, or even used in clinical practice, 
-      to be the subject of a ‘treats’ statement. There only needs to be reasonable evidence to believe that it will 
-      benefit patients with or prevented from getting the condition.
+Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature) 
+  where the intervention can ameliorate condition effects.  The “benefit” of the treatment may be preventing, 
+  delaying, reducing duration, ameliorating symptoms, or completely curing the condition.  An intervention 
+  does not need to be formally approved, or even used in clinical practice, to be the subject of a 
+  ‘beneficial for’ statement. There only needs to be reasonable evidence to believe that it will benefit 
+  patients with or prevented from getting the condition.
     # 'biological entity' currently includes 'exposure event' which covers alot of related ground
     domain: named thing
     range: disease or phenotypic feature
@@ -3307,7 +3307,7 @@ slots:
         Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
         where the intervention can benefit the condition.  The “benefit” of the 
         treatment may be preventing, delaying, reducing risk, reducing duration, ameliorating symptoms, or completely 
-        curing the condition.  
+        curing the condition.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3323,9 +3323,6 @@ slots:
 
   treated by:
     is_a: benefited by
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic
-      process or chemical entity that is used to treat the condition
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
     # range: chemical or drug or treatement
@@ -3346,9 +3343,9 @@ slots:
     description: >-
       Studied to treat is a narrower form of treats that should be applied to 
       interventions that are not formally approved for use in clinical practice.  These interventions
-      could be being tested in clinical trials (see the more narrow children predicates of this one), or they
-      could be used in clinical practice but not formally approved.  These could be interventions
-      are also being assayed in alternative models (e.g. drug efficacy tested in model organisms).
+      could be in clinical trials, or they could be used in clinical practice but not formally approved.  
+      These could be interventions that are also being assayed in alternative models 
+      (e.g. drug efficacy tested in model organisms).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -4788,7 +4785,7 @@ slots:
     description: >-
         A relation that holds between a disease or phenotypic feature and a chemical or drug or treatment, where the
         chemical or drug or treatment is not recommended for use in the disease or phenotypic feature, is harmful for
-        the disease or phenotypic feature when used in combination with another treatment.
+        the disease or phenotypic feature when used in alone or in combination with another treatment.
     domain: drug
     range: disease or phenotypic feature
     annotations:
