@@ -3095,7 +3095,7 @@ slots:
    # NOT a biolink:Association but rather, a biolink:predicate
   genetic association:
     deprecated: true
-    deprecated_element_has_exact_replacement: genetically associated with
+    deprecated_element_has_exact_replacement: biolink:genetically_associated_with
     is_a: associated with
     symmetric: true
 
@@ -3104,15 +3104,14 @@ slots:
     description: >-
     symmetric: true
     annotations:
-          canonical_predicate: true
-          description: >-
-            Co-occurrence of a certain allele of a genetic marker and the phenotype
-            of interest in the same individuals at above-chance level
-          exact_mappings:
-            - WIKIDATA_PROPERTY:P2293
+      canonical_predicate: true
+      description: >-
+        Co-occurrence of a certain allele of a genetic marker and the phenotype
+        of interest in the same individuals at above-chance level
+    exact_mappings:
+      - WIKIDATA_PROPERTY:P2293
     in_subset:
       - translator_minimal
-
 
   gene associated with condition:
     is_a: genetically associated with
@@ -9739,8 +9738,7 @@ classes:
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        range:
-          subproperty_of: affects
+        subproperty_of: affects
     comments:
       - NCIT:R176 refers to the inverse relationship
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
@@ -9748,12 +9746,12 @@ classes:
 
   gene to disease association:
     deprecated: true
-    deprecated_element_has_exact_replacement: gene to disease or phenotypic feature association
+    deprecated_element_has_exact_replacement: biolink:gene_to_disease_or_phenotypic_feature_association
     is_a: association
 
   gene to phenotype association:
     deprecated: true
-    deprecated_element_has_exact_replacement: gene to disease or phenotypic feature association
+    deprecated_element_has_exact_replacement: biolink:gene_to_disease_or_phenotypic_feature_association
     is_a: association
 
   druggable gene to disease association:
