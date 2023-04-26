@@ -1,8 +1,9 @@
 from __future__ import annotations
 from datetime import datetime, date
 from enum import Enum
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional, Any, Union, Literal
 from pydantic import BaseModel as BaseModel, Field
+from linkml_runtime.linkml_model import Decimal
 
 metamodel_version = "None"
 version = "3.2.8"
@@ -358,7 +359,7 @@ class Entity(ConfiguredBaseModel):
     """
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:Entity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Entity","biolink:Entity"]] = Field(["biolink:Entity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -378,7 +379,7 @@ class NamedThing(Entity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:NamedThing"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NamedThing","biolink:NamedThing"]] = Field(["biolink:NamedThing"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -402,7 +403,7 @@ class Attribute(NamedThing, OntologyClass):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:Attribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Attribute","biolink:Attribute"]] = Field(["biolink:Attribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -417,7 +418,7 @@ class ChemicalRole(Attribute):
     """
     	A role played by the molecular entity or part thereof within a chemical context.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -425,7 +426,7 @@ class ChemicalRole(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ChemicalRole"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalRole","biolink:ChemicalRole"]] = Field(["biolink:ChemicalRole"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -438,7 +439,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class BiologicalSex(Attribute):
     
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -446,7 +447,7 @@ class BiologicalSex(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:BiologicalSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BiologicalSex","biolink:BiologicalSex"]] = Field(["biolink:BiologicalSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -461,7 +462,7 @@ class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -469,7 +470,7 @@ class PhenotypicSex(BiologicalSex):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:PhenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PhenotypicSex","biolink:PhenotypicSex"]] = Field(["biolink:PhenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -484,7 +485,7 @@ class GenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -492,7 +493,7 @@ class GenotypicSex(BiologicalSex):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:GenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypicSex","biolink:GenotypicSex"]] = Field(["biolink:GenotypicSex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -507,7 +508,7 @@ class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -515,7 +516,7 @@ class SeverityValue(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:SeverityValue"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SeverityValue","biolink:SeverityValue"]] = Field(["biolink:SeverityValue"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -550,7 +551,7 @@ class OrganismTaxon(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:OrganismTaxon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismTaxon","biolink:OrganismTaxon"]] = Field(["biolink:OrganismTaxon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -570,7 +571,7 @@ class Event(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Event"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Event","biolink:Event"]] = Field(["biolink:Event"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -588,7 +589,7 @@ class AdministrativeEntity(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:AdministrativeEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AdministrativeEntity","biolink:AdministrativeEntity"]] = Field(["biolink:AdministrativeEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -610,7 +611,7 @@ class Agent(AdministrativeEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Agent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Agent","biolink:Agent"]] = Field(["biolink:Agent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -634,7 +635,7 @@ class InformationContentEntity(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:InformationContentEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/InformationContentEntity","biolink:InformationContentEntity"]] = Field(["biolink:InformationContentEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -658,7 +659,7 @@ class StudyResult(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:StudyResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/StudyResult","biolink:StudyResult"]] = Field(["biolink:StudyResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -682,7 +683,7 @@ class StudyVariable(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:StudyVariable"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/StudyVariable","biolink:StudyVariable"]] = Field(["biolink:StudyVariable"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -706,7 +707,7 @@ class CommonDataElement(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:CommonDataElement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CommonDataElement","biolink:CommonDataElement"]] = Field(["biolink:CommonDataElement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -730,7 +731,7 @@ class ConceptCountAnalysisResult(StudyResult):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ConceptCountAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ConceptCountAnalysisResult","biolink:ConceptCountAnalysisResult"]] = Field(["biolink:ConceptCountAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -754,7 +755,7 @@ class ObservedExpectedFrequencyAnalysisResult(StudyResult):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ObservedExpectedFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult","biolink:ObservedExpectedFrequencyAnalysisResult"]] = Field(["biolink:ObservedExpectedFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -778,7 +779,7 @@ class RelativeFrequencyAnalysisResult(StudyResult):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:RelativeFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult","biolink:RelativeFrequencyAnalysisResult"]] = Field(["biolink:RelativeFrequencyAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -802,7 +803,7 @@ class TextMiningResult(StudyResult):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:TextMiningResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/TextMiningResult","biolink:TextMiningResult"]] = Field(["biolink:TextMiningResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -826,7 +827,7 @@ class ChiSquaredAnalysisResult(StudyResult):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ChiSquaredAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult","biolink:ChiSquaredAnalysisResult"]] = Field(["biolink:ChiSquaredAnalysisResult"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -850,7 +851,7 @@ class Dataset(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Dataset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Dataset","biolink:Dataset"]] = Field(["biolink:Dataset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -875,7 +876,7 @@ class DatasetDistribution(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:DatasetDistribution"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DatasetDistribution","biolink:DatasetDistribution"]] = Field(["biolink:DatasetDistribution"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -902,7 +903,7 @@ class DatasetVersion(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:DatasetVersion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DatasetVersion","biolink:DatasetVersion"]] = Field(["biolink:DatasetVersion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -928,7 +929,7 @@ class DatasetSummary(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:DatasetSummary"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DatasetSummary","biolink:DatasetSummary"]] = Field(["biolink:DatasetSummary"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -952,7 +953,7 @@ class ConfidenceLevel(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ConfidenceLevel"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ConfidenceLevel","biolink:ConfidenceLevel"]] = Field(["biolink:ConfidenceLevel"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -976,7 +977,7 @@ class EvidenceType(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:EvidenceType"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EvidenceType","biolink:EvidenceType"]] = Field(["biolink:EvidenceType"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1000,7 +1001,7 @@ class InformationResource(InformationContentEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:InformationResource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/InformationResource","biolink:InformationResource"]] = Field(["biolink:InformationResource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1029,7 +1030,7 @@ class Publication(InformationContentEntity):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Publication"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Publication","biolink:Publication"]] = Field(["biolink:Publication"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1046,7 +1047,7 @@ class Book(Publication):
     This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
     """
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1058,13 +1059,13 @@ class Book(Publication):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""Books should have industry-standard identifier such as from ISBN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Book"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Book","biolink:Book"]] = Field(["biolink:Book"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list, description="""Should generally be set to an ontology class defined term for 'book'.""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1076,7 +1077,7 @@ class BookChapter(Publication):
     volume: Optional[str] = Field(None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     chapter: Optional[str] = Field(None, description="""chapter of a book""")
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1086,15 +1087,15 @@ class BookChapter(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:BookChapter"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BookChapter","biolink:BookChapter"]] = Field(["biolink:BookChapter"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1108,7 +1109,7 @@ class Serial(Publication):
     volume: Optional[str] = Field(None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     issue: Optional[str] = Field(None, description="""issue of a newspaper, a scientific journal or magazine for reference purpose""")
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1120,13 +1121,13 @@ class Serial(Publication):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""Serials (journals) should have industry-standard identifier such as from ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Serial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Serial","biolink:Serial"]] = Field(["biolink:Serial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list, description="""Should generally be set to an ontology class defined term for 'serial' or 'journal'.""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1141,7 +1142,7 @@ class Article(Publication):
     volume: Optional[str] = Field(None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     issue: Optional[str] = Field(None, description="""issue of a newspaper, a scientific journal or magazine for reference purpose""")
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1151,15 +1152,15 @@ class Article(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Article"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Article","biolink:Article"]] = Field(["biolink:Article"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1169,12 +1170,12 @@ class JournalArticle(Article):
     """
     an article, typically presenting results of research, that is published  in an issue of a scientific journal.
     """
-    published_in: str = Field(None, description="""CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.""")
-    iso_abbreviation: Optional[str] = Field(None, description="""Standard abbreviation for periodicals in the International Organization for Standardization (ISO) 4 system See https://www.issn.org/services/online-services/access-to-the-ltwa/. If the 'published in' property is set, then the iso abbreviation pertains to the broader publication context (the journal) within which the given publication node is embedded, not the publication itself.""")
+    published_in: str = Field(None, description="""The enclosing parent serial containing the article should have industry-standard identifier from ISSN.""")
+    iso_abbreviation: Optional[str] = Field(None, description="""Optional value, if used locally as a convenience, is set to the iso abbreviation of the 'published in' parent.""")
     volume: Optional[str] = Field(None, description="""volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication""")
     issue: Optional[str] = Field(None, description="""issue of a newspaper, a scientific journal or magazine for reference purpose""")
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1184,15 +1185,15 @@ class JournalArticle(Article):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:JournalArticle"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/JournalArticle","biolink:JournalArticle"]] = Field(["biolink:JournalArticle"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1203,7 +1204,7 @@ class Patent(Publication):
     a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
     """
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1213,15 +1214,15 @@ class Patent(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Patent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Patent","biolink:Patent"]] = Field(["biolink:Patent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1232,7 +1233,7 @@ class WebPage(Publication):
     a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
     """
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1242,15 +1243,15 @@ class WebPage(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:WebPage"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/WebPage","biolink:WebPage"]] = Field(["biolink:WebPage"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1261,7 +1262,7 @@ class PreprintPublication(Publication):
     a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
     """
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1271,15 +1272,15 @@ class PreprintPublication(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PreprintPublication"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PreprintPublication","biolink:PreprintPublication"]] = Field(["biolink:PreprintPublication"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1290,7 +1291,7 @@ class DrugLabel(Publication):
     a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
     """
     authors: Optional[List[str]] = Field(default_factory=list, description="""connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation expressing the citation list of authorship which might typically otherwise be more completely documented in biolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.""")
-    pages: Optional[List[str]] = Field(default_factory=list, description="""page number of source referenced for statement or publication""")
+    pages: Optional[List[str]] = Field(default_factory=list, description="""When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.""")
     summary: Optional[str] = Field(None, description="""executive  summary of a publication""")
     keywords: Optional[List[str]] = Field(default_factory=list, description="""keywords tagging a publication""")
     mesh_terms: Optional[List[str]] = Field(None, description="""mesh terms tagging a publication""")
@@ -1300,15 +1301,15 @@ class DrugLabel(Publication):
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    id: str = Field(None, description="""Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:DrugLabel"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DrugLabel","biolink:DrugLabel"]] = Field(["biolink:DrugLabel"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -1329,7 +1330,7 @@ class RetrievalSource(InformationContentEntity):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:RetrievalSource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/RetrievalSource","biolink:RetrievalSource"]] = Field(["biolink:RetrievalSource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1365,7 +1366,7 @@ class PhysicalEntity(PhysicalEssence, NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PhysicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PhysicalEntity","biolink:PhysicalEntity"]] = Field(["biolink:PhysicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1401,7 +1402,7 @@ class Activity(ActivityAndBehavior, NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Activity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Activity","biolink:Activity"]] = Field(["biolink:Activity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1421,7 +1422,7 @@ class Study(Activity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Study"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Study","biolink:Study"]] = Field(["biolink:Study"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1441,7 +1442,7 @@ class Procedure(ActivityAndBehavior, NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Procedure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Procedure","biolink:Procedure"]] = Field(["biolink:Procedure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1461,7 +1462,7 @@ class Phenomenon(Occurrent, NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Phenomenon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Phenomenon","biolink:Phenomenon"]] = Field(["biolink:Phenomenon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1481,7 +1482,7 @@ class Device(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Device"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Device","biolink:Device"]] = Field(["biolink:Device"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1509,7 +1510,7 @@ class MaterialSample(SubjectOfInvestigation, PhysicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MaterialSample"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MaterialSample","biolink:MaterialSample"]] = Field(["biolink:MaterialSample"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1529,7 +1530,7 @@ class PlanetaryEntity(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PlanetaryEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PlanetaryEntity","biolink:PlanetaryEntity"]] = Field(["biolink:PlanetaryEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1547,7 +1548,7 @@ class EnvironmentalProcess(PlanetaryEntity, Occurrent):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:EnvironmentalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EnvironmentalProcess","biolink:EnvironmentalProcess"]] = Field(["biolink:EnvironmentalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1565,7 +1566,7 @@ class EnvironmentalFeature(PlanetaryEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:EnvironmentalFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EnvironmentalFeature","biolink:EnvironmentalFeature"]] = Field(["biolink:EnvironmentalFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1587,7 +1588,7 @@ class GeographicLocation(PlanetaryEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:GeographicLocation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeographicLocation","biolink:GeographicLocation"]] = Field(["biolink:GeographicLocation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1610,7 +1611,7 @@ class GeographicLocationAtTime(GeographicLocation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:GeographicLocationAtTime"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeographicLocationAtTime","biolink:GeographicLocationAtTime"]] = Field(["biolink:GeographicLocationAtTime"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1637,7 +1638,7 @@ class BiologicalEntity(ThingWithTaxon, NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:BiologicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BiologicalEntity","biolink:BiologicalEntity"]] = Field(["biolink:BiologicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1673,7 +1674,7 @@ class BiologicalProcessOrActivity(BiologicalEntity, Occurrent, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:BiologicalProcessOrActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BiologicalProcessOrActivity","biolink:BiologicalProcessOrActivity"]] = Field(["biolink:BiologicalProcessOrActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1697,7 +1698,7 @@ class MolecularActivity(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MolecularActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularActivity","biolink:MolecularActivity"]] = Field(["biolink:MolecularActivity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1721,7 +1722,7 @@ class BiologicalProcess(BiologicalProcessOrActivity, Occurrent, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:BiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BiologicalProcess","biolink:BiologicalProcess"]] = Field(["biolink:BiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1743,7 +1744,7 @@ class Pathway(BiologicalProcess, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Pathway"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Pathway","biolink:Pathway"]] = Field(["biolink:Pathway"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1765,7 +1766,7 @@ class PhysiologicalProcess(BiologicalProcess, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PhysiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PhysiologicalProcess","biolink:PhysiologicalProcess"]] = Field(["biolink:PhysiologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1787,7 +1788,7 @@ class Behavior(BiologicalProcess, ActivityAndBehavior, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Behavior"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Behavior","biolink:Behavior"]] = Field(["biolink:Behavior"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1803,7 +1804,7 @@ class OrganismAttribute(Attribute):
     """
     describes a characteristic of an organismal entity.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -1811,7 +1812,7 @@ class OrganismAttribute(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:OrganismAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismAttribute","biolink:OrganismAttribute"]] = Field(["biolink:OrganismAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1826,7 +1827,7 @@ class PhenotypicQuality(OrganismAttribute):
     """
     A property of a phenotype
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -1834,7 +1835,7 @@ class PhenotypicQuality(OrganismAttribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:PhenotypicQuality"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PhenotypicQuality","biolink:PhenotypicQuality"]] = Field(["biolink:PhenotypicQuality"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1854,7 +1855,7 @@ class GeneticInheritance(BiologicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:GeneticInheritance"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneticInheritance","biolink:GeneticInheritance"]] = Field(["biolink:GeneticInheritance"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1875,7 +1876,7 @@ class OrganismalEntity(BiologicalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:OrganismalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismalEntity","biolink:OrganismalEntity"]] = Field(["biolink:OrganismalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1896,7 +1897,7 @@ class Virus(OrganismalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Virus"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Virus","biolink:Virus"]] = Field(["biolink:Virus"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1904,7 +1905,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -1915,7 +1916,7 @@ class CellularOrganism(OrganismalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:CellularOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CellularOrganism","biolink:CellularOrganism"]] = Field(["biolink:CellularOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1923,7 +1924,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -1936,7 +1937,7 @@ class LifeStage(OrganismalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:LifeStage"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/LifeStage","biolink:LifeStage"]] = Field(["biolink:LifeStage"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1944,7 +1945,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -1957,7 +1958,7 @@ class IndividualOrganism(OrganismalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:IndividualOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/IndividualOrganism","biolink:IndividualOrganism"]] = Field(["biolink:IndividualOrganism"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1965,7 +1966,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -1978,7 +1979,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PopulationOfIndividualOrganisms"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms","biolink:PopulationOfIndividualOrganisms"]] = Field(["biolink:PopulationOfIndividualOrganisms"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -1986,7 +1987,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -1999,7 +2000,7 @@ class StudyPopulation(PopulationOfIndividualOrganisms):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:StudyPopulation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/StudyPopulation","biolink:StudyPopulation"]] = Field(["biolink:StudyPopulation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2007,7 +2008,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2020,7 +2021,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:DiseaseOrPhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature","biolink:DiseaseOrPhenotypicFeature"]] = Field(["biolink:DiseaseOrPhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2041,7 +2042,7 @@ class Disease(DiseaseOrPhenotypicFeature):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Disease"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Disease","biolink:Disease"]] = Field(["biolink:Disease"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2062,7 +2063,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PhenotypicFeature","biolink:PhenotypicFeature"]] = Field(["biolink:PhenotypicFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2083,7 +2084,7 @@ class BehavioralFeature(PhenotypicFeature):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:BehavioralFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BehavioralFeature","biolink:BehavioralFeature"]] = Field(["biolink:BehavioralFeature"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2104,7 +2105,7 @@ class AnatomicalEntity(OrganismalEntity, PhysicalEssence):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:AnatomicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AnatomicalEntity","biolink:AnatomicalEntity"]] = Field(["biolink:AnatomicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2112,7 +2113,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2125,7 +2126,7 @@ class CellularComponent(AnatomicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:CellularComponent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CellularComponent","biolink:CellularComponent"]] = Field(["biolink:CellularComponent"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2133,7 +2134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2144,7 +2145,7 @@ class Cell(AnatomicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Cell"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Cell","biolink:Cell"]] = Field(["biolink:Cell"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2152,7 +2153,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2163,7 +2164,7 @@ class CellLine(OrganismalEntity, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:CellLine"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CellLine","biolink:CellLine"]] = Field(["biolink:CellLine"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2171,7 +2172,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2182,7 +2183,7 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:GrossAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GrossAnatomicalStructure","biolink:GrossAnatomicalStructure"]] = Field(["biolink:GrossAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2190,7 +2191,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -2212,7 +2213,7 @@ class RegulatoryRegion(ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, Biologi
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:RegulatoryRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/RegulatoryRegion","biolink:RegulatoryRegion"]] = Field(["biolink:RegulatoryRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2234,7 +2235,7 @@ class AccessibleDnaRegion(RegulatoryRegion, ChemicalEntityOrGeneOrGeneProduct, G
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:AccessibleDnaRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AccessibleDnaRegion","biolink:AccessibleDnaRegion"]] = Field(["biolink:AccessibleDnaRegion"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2256,7 +2257,7 @@ class TranscriptionFactorBindingSite(RegulatoryRegion, ChemicalEntityOrGeneOrGen
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:TranscriptionFactorBindingSite"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/TranscriptionFactorBindingSite","biolink:TranscriptionFactorBindingSite"]] = Field(["biolink:TranscriptionFactorBindingSite"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2289,7 +2290,7 @@ class ChemicalEntity(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneO
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ChemicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalEntity","biolink:ChemicalEntity"]] = Field(["biolink:ChemicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2315,7 +2316,7 @@ class MolecularEntity(ChemicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MolecularEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularEntity","biolink:MolecularEntity"]] = Field(["biolink:MolecularEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2341,7 +2342,7 @@ class SmallMolecule(MolecularEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:SmallMolecule"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SmallMolecule","biolink:SmallMolecule"]] = Field(["biolink:SmallMolecule"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2370,7 +2371,7 @@ class ChemicalMixture(ChemicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ChemicalMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalMixture","biolink:ChemicalMixture"]] = Field(["biolink:ChemicalMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2398,7 +2399,7 @@ class NucleicAcidEntity(MolecularEntity, GenomicEntity, ThingWithTaxon, Physical
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:NucleicAcidEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NucleicAcidEntity","biolink:NucleicAcidEntity"]] = Field(["biolink:NucleicAcidEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2427,7 +2428,7 @@ class MolecularMixture(ChemicalMixture):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularMixture","biolink:MolecularMixture"]] = Field(["biolink:MolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2456,7 +2457,7 @@ class ComplexMolecularMixture(ChemicalMixture):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ComplexMolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ComplexMolecularMixture","biolink:ComplexMolecularMixture"]] = Field(["biolink:ComplexMolecularMixture"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2485,7 +2486,7 @@ class ProcessedMaterial(ChemicalMixture):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ProcessedMaterial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ProcessedMaterial","biolink:ProcessedMaterial"]] = Field(["biolink:ProcessedMaterial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2514,7 +2515,7 @@ class Drug(MolecularMixture, ChemicalOrDrugOrTreatment, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Drug"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Drug","biolink:Drug"]] = Field(["biolink:Drug"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2537,7 +2538,7 @@ class EnvironmentalFoodContaminant(ChemicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:EnvironmentalFoodContaminant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant","biolink:EnvironmentalFoodContaminant"]] = Field(["biolink:EnvironmentalFoodContaminant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2560,7 +2561,7 @@ class FoodAdditive(ChemicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:FoodAdditive"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/FoodAdditive","biolink:FoodAdditive"]] = Field(["biolink:FoodAdditive"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2589,7 +2590,7 @@ class Food(ChemicalMixture):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Food"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Food","biolink:Food"]] = Field(["biolink:Food"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2613,7 +2614,7 @@ class GeneOrGeneProduct(MacromolecularMachineMixin):
     """
     A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
 
 
@@ -2629,13 +2630,13 @@ class Gene(GeneOrGeneProduct, ChemicalEntityOrGeneOrGeneProduct, GenomicEntity, 
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Gene"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Gene","biolink:Gene"]] = Field(["biolink:Gene"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -2647,7 +2648,7 @@ class GeneProductMixin(GeneOrGeneProduct):
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
 
 
@@ -2657,7 +2658,7 @@ class GeneProductIsoformMixin(GeneProductMixin):
     """
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     
 
 
@@ -2665,13 +2666,13 @@ class MacromolecularComplex(MacromolecularMachineMixin, BiologicalEntity):
     """
     A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MacromolecularComplex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MacromolecularComplex","biolink:MacromolecularComplex"]] = Field(["biolink:MacromolecularComplex"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2692,13 +2693,13 @@ class NucleosomeModification(GeneProductIsoformMixin, EpigenomicEntity, GenomicE
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:NucleosomeModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NucleosomeModification","biolink:NucleosomeModification"]] = Field(["biolink:NucleosomeModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
@@ -2715,7 +2716,7 @@ class Genome(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Genome"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Genome","biolink:Genome"]] = Field(["biolink:Genome"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2743,7 +2744,7 @@ class Exon(NucleicAcidEntity):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Exon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Exon","biolink:Exon"]] = Field(["biolink:Exon"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2771,7 +2772,7 @@ class Transcript(NucleicAcidEntity):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Transcript"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Transcript","biolink:Transcript"]] = Field(["biolink:Transcript"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2797,7 +2798,7 @@ class CodingSequence(NucleicAcidEntity):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:CodingSequence"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CodingSequence","biolink:CodingSequence"]] = Field(["biolink:CodingSequence"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2818,7 +2819,7 @@ class Polypeptide(ChemicalEntityOrProteinOrPolypeptide, ChemicalEntityOrGeneOrGe
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Polypeptide"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Polypeptide","biolink:Polypeptide"]] = Field(["biolink:Polypeptide"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2840,13 +2841,13 @@ class Protein(Polypeptide, GeneProductMixin):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Protein"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Protein","biolink:Protein"]] = Field(["biolink:Protein"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -2862,13 +2863,13 @@ class ProteinIsoform(Protein, GeneProductIsoformMixin):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ProteinIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ProteinIsoform","biolink:ProteinIsoform"]] = Field(["biolink:ProteinIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -2883,13 +2884,13 @@ class PosttranslationalModification(GeneProductIsoformMixin, BiologicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PosttranslationalModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PosttranslationalModification","biolink:PosttranslationalModification"]] = Field(["biolink:PosttranslationalModification"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
@@ -2905,7 +2906,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:NucleicAcidSequenceMotif"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NucleicAcidSequenceMotif","biolink:NucleicAcidSequenceMotif"]] = Field(["biolink:NucleicAcidSequenceMotif"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -2932,13 +2933,13 @@ class RNAProduct(Transcript, GeneProductMixin):
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:RNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/RNAProduct","biolink:RNAProduct"]] = Field(["biolink:RNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -2961,13 +2962,13 @@ class RNAProductIsoform(RNAProduct, GeneProductIsoformMixin):
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:RNAProductIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/RNAProductIsoform","biolink:RNAProductIsoform"]] = Field(["biolink:RNAProductIsoform"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -2988,13 +2989,13 @@ class NoncodingRNAProduct(RNAProduct):
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:NoncodingRNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NoncodingRNAProduct","biolink:NoncodingRNAProduct"]] = Field(["biolink:NoncodingRNAProduct"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -3015,13 +3016,13 @@ class MicroRNA(NoncodingRNAProduct):
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:MicroRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MicroRNA","biolink:MicroRNA"]] = Field(["biolink:MicroRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -3044,13 +3045,13 @@ class SiRNA(NoncodingRNAProduct):
     has_chemical_role: Optional[List[str]] = Field(None, description="""A role is particular behaviour which a chemical entity may exhibit.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:SiRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SiRNA","biolink:SiRNA"]] = Field(["biolink:SiRNA"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
     
@@ -3074,7 +3075,7 @@ class ProteinDomain(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ProteinDomain"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ProteinDomain","biolink:ProteinDomain"]] = Field(["biolink:ProteinDomain"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3094,7 +3095,7 @@ class ProteinFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biolog
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ProteinFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ProteinFamily","biolink:ProteinFamily"]] = Field(["biolink:ProteinFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3116,7 +3117,7 @@ class GeneFamily(GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct, Biologica
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:GeneFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneFamily","biolink:GeneFamily"]] = Field(["biolink:GeneFamily"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3130,7 +3131,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class Zygosity(Attribute):
     
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3138,7 +3139,7 @@ class Zygosity(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:Zygosity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Zygosity","biolink:Zygosity"]] = Field(["biolink:Zygosity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3160,7 +3161,7 @@ class Genotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Genotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Genotype","biolink:Genotype"]] = Field(["biolink:Genotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3182,7 +3183,7 @@ class Haplotype(GenomicEntity, BiologicalEntity, PhysicalEssence, OntologyClass)
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Haplotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Haplotype","biolink:Haplotype"]] = Field(["biolink:Haplotype"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3205,7 +3206,7 @@ class SequenceVariant(GenomicEntity, BiologicalEntity, PhysicalEssence, Ontology
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:SequenceVariant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SequenceVariant","biolink:SequenceVariant"]] = Field(["biolink:SequenceVariant"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3221,14 +3222,14 @@ class Snv(SequenceVariant):
     """
     SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
     """
-    has_gene: Optional[List[str]] = Field(None, description="""connects an entity associated with one or more genes""")
-    has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
+    has_gene: Optional[List[str]] = Field(None, description="""Each allele can be associated with any number of genes""")
+    has_biological_sequence: Optional[str] = Field(None, description="""The state of the sequence w.r.t a reference sequence""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Snv"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Snv","biolink:Snv"]] = Field(["biolink:Snv"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3250,7 +3251,7 @@ class ReagentTargetedGene(GenomicEntity, BiologicalEntity, PhysicalEssence, Onto
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ReagentTargetedGene"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ReagentTargetedGene","biolink:ReagentTargetedGene"]] = Field(["biolink:ReagentTargetedGene"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3266,7 +3267,7 @@ class ClinicalAttribute(Attribute):
     """
     Attributes relating to a clinical manifestation
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3274,7 +3275,7 @@ class ClinicalAttribute(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ClinicalAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalAttribute","biolink:ClinicalAttribute"]] = Field(["biolink:ClinicalAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3289,7 +3290,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     """
     A clinical measurement is a special kind of attribute which results from a laboratory observation from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3297,7 +3298,7 @@ class ClinicalMeasurement(ClinicalAttribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ClinicalMeasurement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalMeasurement","biolink:ClinicalMeasurement"]] = Field(["biolink:ClinicalMeasurement"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3312,7 +3313,7 @@ class ClinicalModifier(ClinicalAttribute):
     """
     Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3320,7 +3321,7 @@ class ClinicalModifier(ClinicalAttribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ClinicalModifier"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalModifier","biolink:ClinicalModifier"]] = Field(["biolink:ClinicalModifier"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3335,7 +3336,7 @@ class ClinicalCourse(ClinicalAttribute):
     """
     The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3343,7 +3344,7 @@ class ClinicalCourse(ClinicalAttribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ClinicalCourse"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalCourse","biolink:ClinicalCourse"]] = Field(["biolink:ClinicalCourse"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3358,7 +3359,7 @@ class Onset(ClinicalCourse):
     """
     The age group in which (disease) symptom manifestations appear
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3366,7 +3367,7 @@ class Onset(ClinicalCourse):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:Onset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Onset","biolink:Onset"]] = Field(["biolink:Onset"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3385,7 +3386,7 @@ class ClinicalEntity(NamedThing):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ClinicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalEntity","biolink:ClinicalEntity"]] = Field(["biolink:ClinicalEntity"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3403,7 +3404,7 @@ class ClinicalTrial(ClinicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ClinicalTrial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalTrial","biolink:ClinicalTrial"]] = Field(["biolink:ClinicalTrial"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3421,7 +3422,7 @@ class ClinicalIntervention(ClinicalEntity):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ClinicalIntervention"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalIntervention","biolink:ClinicalIntervention"]] = Field(["biolink:ClinicalIntervention"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3442,7 +3443,7 @@ class ClinicalFinding(PhenotypicFeature):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:ClinicalFinding"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ClinicalFinding","biolink:ClinicalFinding"]] = Field(["biolink:ClinicalFinding"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3460,7 +3461,7 @@ class Hospitalization(ClinicalIntervention):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Hospitalization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Hospitalization","biolink:Hospitalization"]] = Field(["biolink:Hospitalization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3476,7 +3477,7 @@ class SocioeconomicAttribute(Attribute):
     """
     Attributes relating to a socioeconomic manifestation
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3484,7 +3485,7 @@ class SocioeconomicAttribute(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:SocioeconomicAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SocioeconomicAttribute","biolink:SocioeconomicAttribute"]] = Field(["biolink:SocioeconomicAttribute"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3504,7 +3505,7 @@ class Case(IndividualOrganism, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Case"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Case","biolink:Case"]] = Field(["biolink:Case"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3512,7 +3513,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -3525,7 +3526,7 @@ class Cohort(StudyPopulation, SubjectOfInvestigation):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Cohort"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Cohort","biolink:Cohort"]] = Field(["biolink:Cohort"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3533,7 +3534,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -3555,14 +3556,14 @@ class GenomicBackgroundExposure(ExposureEvent, GeneGroupingMixin, GenomicEntity,
     has_biological_sequence: Optional[str] = Field(None, description="""connects a genomic feature to its sequence""")
     in_taxon: Optional[List[str]] = Field(None, description="""connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:GenomicBackgroundExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenomicBackgroundExposure","biolink:GenomicBackgroundExposure"]] = Field(["biolink:GenomicBackgroundExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3593,7 +3594,7 @@ class PathologicalProcess(PathologicalEntityMixin, BiologicalProcess):
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PathologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PathologicalProcess","biolink:PathologicalProcess"]] = Field(["biolink:PathologicalProcess"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3610,7 +3611,7 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3618,7 +3619,7 @@ class PathologicalProcessExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:PathologicalProcessExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PathologicalProcessExposure","biolink:PathologicalProcessExposure"]] = Field(["biolink:PathologicalProcessExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3638,7 +3639,7 @@ class PathologicalAnatomicalStructure(PathologicalEntityMixin, AnatomicalEntity)
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:PathologicalAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PathologicalAnatomicalStructure","biolink:PathologicalAnatomicalStructure"]] = Field(["biolink:PathologicalAnatomicalStructure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3646,7 +3647,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     type: Optional[List[str]] = Field(default_factory=list)
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
-    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    has_attribute: Optional[List[str]] = Field(None, description="""may often be an organism attribute""")
     
 
 
@@ -3655,7 +3656,7 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3663,7 +3664,7 @@ class PathologicalAnatomicalExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:PathologicalAnatomicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure","biolink:PathologicalAnatomicalExposure"]] = Field(["biolink:PathologicalAnatomicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3679,7 +3680,7 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3687,7 +3688,7 @@ class DiseaseOrPhenotypicFeatureExposure(PathologicalEntityMixin, ExposureEvent,
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:DiseaseOrPhenotypicFeatureExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure","biolink:DiseaseOrPhenotypicFeatureExposure"]] = Field(["biolink:DiseaseOrPhenotypicFeatureExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3704,14 +3705,14 @@ class ChemicalExposure(ExposureEvent, Attribute):
     """
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalExposure","biolink:ChemicalExposure"]] = Field(["biolink:ChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3726,7 +3727,7 @@ class ComplexChemicalExposure(Attribute):
     """
     A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
     """
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3734,7 +3735,7 @@ class ComplexChemicalExposure(Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:ComplexChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ComplexChemicalExposure","biolink:ComplexChemicalExposure"]] = Field(["biolink:ComplexChemicalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3751,14 +3752,14 @@ class DrugExposure(ChemicalExposure, ExposureEvent):
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:DrugExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DrugExposure","biolink:DrugExposure"]] = Field(["biolink:DrugExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3776,14 +3777,14 @@ class DrugToGeneInteractionExposure(DrugExposure, GeneGroupingMixin):
     has_gene_or_gene_product: Optional[List[str]] = Field(None, description="""connects an entity with one or more gene or gene products""")
     timepoint: Optional[str] = Field(None, description="""a point in time""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:DrugToGeneInteractionExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DrugToGeneInteractionExposure","biolink:DrugToGeneInteractionExposure"]] = Field(["biolink:DrugToGeneInteractionExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3806,7 +3807,7 @@ class Treatment(ExposureEvent, NamedThing, ChemicalOrDrugOrTreatment):
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: List[str] = Field(["biolink:Treatment"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Treatment","biolink:Treatment"]] = Field(["biolink:Treatment"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3823,7 +3824,7 @@ class BioticExposure(ExposureEvent, Attribute):
     An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3831,7 +3832,7 @@ class BioticExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:BioticExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BioticExposure","biolink:BioticExposure"]] = Field(["biolink:BioticExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3847,7 +3848,7 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     A environmental exposure is a factor relating to abiotic processes in the environment including sunlight (UV-B), atmospheric (heat, cold, general pollution) and water-born contaminants.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3855,7 +3856,7 @@ class EnvironmentalExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:EnvironmentalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EnvironmentalExposure","biolink:EnvironmentalExposure"]] = Field(["biolink:EnvironmentalExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3871,7 +3872,7 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     A geographic exposure is a factor relating to geographic proximity to some impactful entity.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3879,7 +3880,7 @@ class GeographicExposure(EnvironmentalExposure, ExposureEvent):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:GeographicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeographicExposure","biolink:GeographicExposure"]] = Field(["biolink:GeographicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3895,7 +3896,7 @@ class BehavioralExposure(ExposureEvent, Attribute):
     A behavioral exposure is a factor relating to behavior impacting an individual.
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3903,7 +3904,7 @@ class BehavioralExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:BehavioralExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BehavioralExposure","biolink:BehavioralExposure"]] = Field(["biolink:BehavioralExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -3919,7 +3920,7 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
     """
     timepoint: Optional[str] = Field(None, description="""a point in time""")
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    name: Optional[str] = Field(None, description="""The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.""")
     has_attribute_type: str = Field(None, description="""connects an attribute to a class that describes it""")
     has_quantitative_value: Optional[List[QuantityValue]] = Field(None, description="""connects an attribute to a value""")
     has_qualitative_value: Optional[str] = Field(None, description="""connects an attribute to a value""")
@@ -3927,7 +3928,7 @@ class SocioeconomicExposure(ExposureEvent, Attribute):
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
     xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    category: List[str] = Field(["biolink:SocioeconomicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SocioeconomicExposure","biolink:SocioeconomicExposure"]] = Field(["biolink:SocioeconomicExposure"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -4041,7 +4042,7 @@ class Association(Entity):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:Association"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/Association","biolink:Association"]] = Field(["biolink:Association"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -4082,12 +4083,12 @@ class ChemicalEntityAssessesNamedThingAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalEntityAssessesNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation","biolink:ChemicalEntityAssessesNamedThingAssociation"]] = Field(["biolink:ChemicalEntityAssessesNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4125,12 +4126,12 @@ class ContributorAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ContributorAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ContributorAssociation","biolink:ContributorAssociation"]] = Field(["biolink:ContributorAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4168,12 +4169,12 @@ class GenotypeToGenotypePartAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeToGenotypePartAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation","biolink:GenotypeToGenotypePartAssociation"]] = Field(["biolink:GenotypeToGenotypePartAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4211,12 +4212,12 @@ class GenotypeToGeneAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeToGeneAssociation","biolink:GenotypeToGeneAssociation"]] = Field(["biolink:GenotypeToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4254,12 +4255,12 @@ class GenotypeToVariantAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeToVariantAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeToVariantAssociation","biolink:GenotypeToVariantAssociation"]] = Field(["biolink:GenotypeToVariantAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4297,12 +4298,12 @@ class GeneToGeneAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGeneAssociation","biolink:GeneToGeneAssociation"]] = Field(["biolink:GeneToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4313,9 +4314,9 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
     A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     predicate: str = Field(None, description="""homology relationship type""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4340,12 +4341,12 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGeneHomologyAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation","biolink:GeneToGeneHomologyAssociation"]] = Field(["biolink:GeneToGeneHomologyAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4383,12 +4384,12 @@ class GeneToGeneFamilyAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGeneFamilyAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation","biolink:GeneToGeneFamilyAssociation"]] = Field(["biolink:GeneToGeneFamilyAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4410,13 +4411,13 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     """
     Indicates that two genes are co-expressed, generally under the same conditions.
     """
-    quantifier_qualifier: Optional[str] = Field(None, description="""A measurable quantity for the object of the association""")
+    quantifier_qualifier: Optional[str] = Field(None, description="""Optional quantitative value indicating degree of expression.""")
     expression_site: Optional[str] = Field(None, description="""location in which gene or protein expression takes place. May be cell, tissue, or organ.""")
     stage_qualifier: Optional[str] = Field(None, description="""stage during which gene or protein expression of takes place.""")
     phenotypic_state: Optional[str] = Field(None, description="""in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4441,12 +4442,12 @@ class GeneToGeneCoexpressionAssociation(GeneExpressionMixin, GeneToGeneAssociati
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGeneCoexpressionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGeneCoexpressionAssociation","biolink:GeneToGeneCoexpressionAssociation"]] = Field(["biolink:GeneToGeneCoexpressionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4457,9 +4458,9 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     predicate: str = Field(None, description="""interaction relationship type""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4484,12 +4485,12 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:PairwiseGeneToGeneInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction","biolink:PairwiseGeneToGeneInteraction"]] = Field(["biolink:PairwiseGeneToGeneInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4501,9 +4502,9 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     An interaction at the molecular level between two physical entities
     """
     interacting_molecules_category: Optional[str] = Field(None)
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     predicate: str = Field(None, description="""interaction relationship type""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as a proxy for the gene or vice versa.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4528,12 +4529,12 @@ class PairwiseMolecularInteraction(PairwiseGeneToGeneInteraction):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""identifier for the interaction. This may come from an interaction database such as IMEX.""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:PairwiseMolecularInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PairwiseMolecularInteraction","biolink:PairwiseMolecularInteraction"]] = Field(["biolink:PairwiseMolecularInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4584,7 +4585,7 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     """
     A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""the chemical element that is the target of the statement""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -4611,12 +4612,12 @@ class ChemicalToChemicalAssociation(ChemicalToEntityAssociationMixin, Associatio
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalToChemicalAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation","biolink:ChemicalToChemicalAssociation"]] = Field(["biolink:ChemicalToChemicalAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4628,9 +4629,9 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the chemical element that is the target of the statement""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4655,12 +4656,12 @@ class ReactionToParticipantAssociation(ChemicalToChemicalAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ReactionToParticipantAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ReactionToParticipantAssociation","biolink:ReactionToParticipantAssociation"]] = Field(["biolink:ReactionToParticipantAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4672,9 +4673,9 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     stoichiometry: Optional[int] = Field(None, description="""the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.""")
     reaction_direction: Optional[ReactionDirectionEnum] = Field(None, description="""the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)""")
     reaction_side: Optional[ReactionSideEnum] = Field(None, description="""the side of a reaction being modeled (ie: left or right)""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""the chemical element that is the target of the statement""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -4699,12 +4700,12 @@ class ReactionToCatalystAssociation(ReactionToParticipantAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ReactionToCatalystAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ReactionToCatalystAssociation","biolink:ReactionToCatalystAssociation"]] = Field(["biolink:ReactionToCatalystAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4750,12 +4751,12 @@ class ChemicalToChemicalDerivationAssociation(ChemicalToChemicalAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalToChemicalDerivationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation","biolink:ChemicalToChemicalDerivationAssociation"]] = Field(["biolink:ChemicalToChemicalDerivationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4793,12 +4794,12 @@ class MolecularActivityToPathwayAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MolecularActivityToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularActivityToPathwayAssociation","biolink:MolecularActivityToPathwayAssociation"]] = Field(["biolink:MolecularActivityToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4836,12 +4837,12 @@ class ChemicalToPathwayAssociation(ChemicalToEntityAssociationMixin, Association
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation","biolink:ChemicalToPathwayAssociation"]] = Field(["biolink:ChemicalToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4877,12 +4878,12 @@ class NamedThingAssociatedWithLikelihoodOfNamedThingAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation","biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"]] = Field(["biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4901,7 +4902,7 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -4928,12 +4929,12 @@ class ChemicalGeneInteractionAssociation(ChemicalToEntityAssociationMixin, Assoc
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalGeneInteractionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalGeneInteractionAssociation","biolink:ChemicalGeneInteractionAssociation"]] = Field(["biolink:ChemicalGeneInteractionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -4984,12 +4985,12 @@ class ChemicalAffectsGeneAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalAffectsGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation","biolink:ChemicalAffectsGeneAssociation"]] = Field(["biolink:ChemicalAffectsGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5000,7 +5001,7 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     """
     An interaction between a drug and a gene or gene product.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the drug that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""the gene or gene product that is affected by the drug""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5027,12 +5028,12 @@ class DrugToGeneAssociation(DrugToEntityAssociationMixin, Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DrugToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DrugToGeneAssociation","biolink:DrugToGeneAssociation"]] = Field(["biolink:DrugToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5078,12 +5079,12 @@ class MaterialSampleDerivationAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MaterialSampleDerivationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MaterialSampleDerivationAssociation","biolink:MaterialSampleDerivationAssociation"]] = Field(["biolink:MaterialSampleDerivationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5108,7 +5109,7 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     """
     An association between an exposure event and a disease.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""disease class""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5135,12 +5136,12 @@ class DiseaseToExposureEventAssociation(EntityToExposureEventAssociationMixin, D
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DiseaseToExposureEventAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation","biolink:DiseaseToExposureEventAssociation"]] = Field(["biolink:DiseaseToExposureEventAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5188,12 +5189,12 @@ class ExposureEventToOutcomeAssociation(EntityToOutcomeAssociationMixin, Associa
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ExposureEventToOutcomeAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation","biolink:ExposureEventToOutcomeAssociation"]] = Field(["biolink:ExposureEventToOutcomeAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5262,12 +5263,12 @@ class InformationContentEntityToNamedThingAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:InformationContentEntityToNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/InformationContentEntityToNamedThingAssociation","biolink:InformationContentEntityToNamedThingAssociation"]] = Field(["biolink:InformationContentEntityToNamedThingAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5294,7 +5295,7 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     """
     An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""disease or phenotype""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""anatomical entity in which the disease or feature is found.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5321,12 +5322,12 @@ class DiseaseOrPhenotypicFeatureToLocationAssociation(DiseaseOrPhenotypicFeature
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToLocationAssociation","biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"]] = Field(["biolink:DiseaseOrPhenotypicFeatureToLocationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5337,7 +5338,7 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
     """
     An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""disease or phenotype""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""genetic inheritance associated with the specified disease or phenotypic feature.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5364,12 +5365,12 @@ class DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation(DiseaseOrPhenoty
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation","biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"]] = Field(["biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5388,7 +5389,7 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     """
     subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease or phenotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -5413,12 +5414,12 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation","biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation"]] = Field(["biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5429,7 +5430,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     """
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""the disease or phenotype that is affected by the chemical""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5456,12 +5457,12 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhenotypi
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation","biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"]] = Field(["biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5473,9 +5474,9 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
     """
     FDA_adverse_event_level: Optional[FDAIDAAdverseEventEnum] = Field(None)
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease or phenotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -5500,12 +5501,12 @@ class ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation(EntityToD
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation","biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]] = Field(["biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5517,9 +5518,9 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary, typically (but not always) undesirable effect.
     """
     FDA_adverse_event_level: Optional[FDAIDAAdverseEventEnum] = Field(None)
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the chemical entity or entity that is an interactor""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease or phenotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -5544,12 +5545,12 @@ class ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation(C
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation","biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"]] = Field(["biolink:ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5560,9 +5561,9 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     """
     An association between a material sample and a disease or phenotype.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the material sample being described""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease or phenotype""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -5587,12 +5588,12 @@ class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(EntityToDiseaseOrPhe
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation","biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"]] = Field(["biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5637,12 +5638,12 @@ class GenotypeToPhenotypicFeatureAssociation(GenotypeToEntityAssociationMixin, E
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation","biolink:GenotypeToPhenotypicFeatureAssociation"]] = Field(["biolink:GenotypeToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5688,12 +5689,12 @@ class ExposureEventToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssoc
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ExposureEventToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ExposureEventToPhenotypicFeatureAssociation","biolink:ExposureEventToPhenotypicFeatureAssociation"]] = Field(["biolink:ExposureEventToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5712,7 +5713,7 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way.
     """
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""disease class""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5739,12 +5740,12 @@ class DiseaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociation
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DiseaseToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation","biolink:DiseaseToPhenotypicFeatureAssociation"]] = Field(["biolink:DiseaseToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5763,7 +5764,7 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
     """
     sex_qualifier: Optional[str] = Field(None, description="""a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""the case (e.g. patient) that has the property""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -5790,12 +5791,12 @@ class CaseToPhenotypicFeatureAssociation(EntityToPhenotypicFeatureAssociationMix
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:CaseToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation","biolink:CaseToPhenotypicFeatureAssociation"]] = Field(["biolink:CaseToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5841,12 +5842,12 @@ class BehaviorToBehavioralFeatureAssociation(EntityToPhenotypicFeatureAssociatio
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:BehaviorToBehavioralFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/BehaviorToBehavioralFeatureAssociation","biolink:BehaviorToBehavioralFeatureAssociation"]] = Field(["biolink:BehaviorToBehavioralFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5897,12 +5898,12 @@ class GeneToPathwayAssociation(GeneToEntityAssociationMixin, Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToPathwayAssociation","biolink:GeneToPathwayAssociation"]] = Field(["biolink:GeneToPathwayAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5945,12 +5946,12 @@ class GeneToPhenotypicFeatureAssociation(GeneToEntityAssociationMixin, EntityToP
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation","biolink:GeneToPhenotypicFeatureAssociation"]] = Field(["biolink:GeneToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -5968,7 +5969,7 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAsso
     
     subject: str = Field(None, description="""gene in which variation is correlated with the disease, may be protective or causative or associative, or as a model""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -5993,12 +5994,12 @@ class GeneToDiseaseAssociation(GeneToEntityAssociationMixin, EntityToDiseaseAsso
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToDiseaseAssociation","biolink:GeneToDiseaseAssociation"]] = Field(["biolink:GeneToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6012,7 +6013,7 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     
     subject: str = Field(None, description="""gene in which variation is correlated with the disease in a protective manner, or if the product produced by the gene can be targeted by a small molecule and this leads to a protective or improving disease state.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6037,12 +6038,12 @@ class DruggableGeneToDiseaseAssociation(GeneToDiseaseAssociation, GeneToEntityAs
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:DruggableGeneToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation","biolink:DruggableGeneToDiseaseAssociation"]] = Field(["biolink:DruggableGeneToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6056,7 +6057,7 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     """
     An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""a sequence variant in which the allele state is associated with some other entity""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -6083,12 +6084,12 @@ class VariantToGeneAssociation(VariantToEntityAssociationMixin, Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantToGeneAssociation","biolink:VariantToGeneAssociation"]] = Field(["biolink:VariantToGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6099,11 +6100,11 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     """
     An association between a variant and expression of a gene (i.e. e-QTL)
     """
-    quantifier_qualifier: Optional[str] = Field(None, description="""A measurable quantity for the object of the association""")
+    quantifier_qualifier: Optional[str] = Field(None, description="""Optional quantitative value indicating degree of expression.""")
     expression_site: Optional[str] = Field(None, description="""location in which gene or protein expression takes place. May be cell, tissue, or organ.""")
     stage_qualifier: Optional[str] = Field(None, description="""stage during which gene or protein expression of takes place.""")
     phenotypic_state: Optional[str] = Field(None, description="""in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.""")
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""a sequence variant in which the allele state is associated with some other entity""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -6130,12 +6131,12 @@ class VariantToGeneExpressionAssociation(VariantToGeneAssociation, GeneExpressio
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantToGeneExpressionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantToGeneExpressionAssociation","biolink:VariantToGeneExpressionAssociation"]] = Field(["biolink:VariantToGeneExpressionAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6178,12 +6179,12 @@ class VariantToPopulationAssociation(VariantToEntityAssociationMixin, FrequencyQ
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantToPopulationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantToPopulationAssociation","biolink:VariantToPopulationAssociation"]] = Field(["biolink:VariantToPopulationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6221,12 +6222,12 @@ class PopulationToPopulationAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:PopulationToPopulationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/PopulationToPopulationAssociation","biolink:PopulationToPopulationAssociation"]] = Field(["biolink:PopulationToPopulationAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6263,12 +6264,12 @@ class VariantToPhenotypicFeatureAssociation(VariantToEntityAssociationMixin, Ent
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantToPhenotypicFeatureAssociation","biolink:VariantToPhenotypicFeatureAssociation"]] = Field(["biolink:VariantToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6311,12 +6312,12 @@ class VariantToDiseaseAssociation(VariantToEntityAssociationMixin, EntityToDisea
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantToDiseaseAssociation","biolink:VariantToDiseaseAssociation"]] = Field(["biolink:VariantToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6355,12 +6356,12 @@ class GenotypeToDiseaseAssociation(GenotypeToEntityAssociationMixin, EntityToDis
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation","biolink:GenotypeToDiseaseAssociation"]] = Field(["biolink:GenotypeToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6381,8 +6382,8 @@ class ModelToDiseaseAssociationMixin(ConfiguredBaseModel):
 class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(None, description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""The relationship to the disease""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6407,12 +6408,12 @@ class GeneAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GeneToDis
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation","biolink:GeneAsAModelOfDiseaseAssociation"]] = Field(["biolink:GeneAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6425,8 +6426,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, VariantToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(None, description="""A variant that has a role in modeling the disease.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""The relationship to the disease""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6451,12 +6452,12 @@ class VariantAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Varian
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:VariantAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation","biolink:VariantAsAModelOfDiseaseAssociation"]] = Field(["biolink:VariantAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6469,8 +6470,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, GenotypeToDiseaseAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(None, description="""A genotype that has a role in modeling the disease.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""The relationship to the disease""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6495,12 +6496,12 @@ class GenotypeAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, Genot
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenotypeAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenotypeAsAModelOfDiseaseAssociation","biolink:GenotypeAsAModelOfDiseaseAssociation"]] = Field(["biolink:GenotypeAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6513,8 +6514,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellLineToDiseaseOrPhenotypicFeatureAssociation, EntityToDiseaseAssociationMixin):
     
     subject: str = Field(None, description="""A cell line derived from an organismal entity with a disease state that is used as a model of that disease.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""The relationship to the disease""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6539,12 +6540,12 @@ class CellLineAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, CellL
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:CellLineAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation","biolink:CellLineAsAModelOfDiseaseAssociation"]] = Field(["biolink:CellLineAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6557,8 +6558,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin, Association):
     
     subject: str = Field(None, description="""A organismal entity (strain, breed) with a predisposition to a disease, or bred/created specifically to model a disease.""")
-    predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(None, description="""The relationship to the disease""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6583,12 +6584,12 @@ class OrganismalEntityAsAModelOfDiseaseAssociation(ModelToDiseaseAssociationMixi
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismalEntityAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation","biolink:OrganismalEntityAsAModelOfDiseaseAssociation"]] = Field(["biolink:OrganismalEntityAsAModelOfDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6627,12 +6628,12 @@ class OrganismToOrganismAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismToOrganismAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismToOrganismAssociation","biolink:OrganismToOrganismAssociation"]] = Field(["biolink:OrganismToOrganismAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6668,12 +6669,12 @@ class TaxonToTaxonAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:TaxonToTaxonAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/TaxonToTaxonAssociation","biolink:TaxonToTaxonAssociation"]] = Field(["biolink:TaxonToTaxonAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6685,7 +6686,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     subject_form_or_variant_qualifier: Optional[str] = Field(None)
     subject: str = Field(None, description="""A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""disease""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6710,12 +6711,12 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneHasVariantThatContributesToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation","biolink:GeneHasVariantThatContributesToDiseaseAssociation"]] = Field(["biolink:GeneHasVariantThatContributesToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6758,12 +6759,12 @@ class GeneToExpressionSiteAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToExpressionSiteAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation","biolink:GeneToExpressionSiteAssociation"]] = Field(["biolink:GeneToExpressionSiteAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6801,12 +6802,12 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:SequenceVariantModulatesTreatmentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation","biolink:SequenceVariantModulatesTreatmentAssociation"]] = Field(["biolink:SequenceVariantModulatesTreatmentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6844,12 +6845,12 @@ class FunctionalAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:FunctionalAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/FunctionalAssociation","biolink:FunctionalAssociation"]] = Field(["biolink:FunctionalAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6868,9 +6869,9 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""class describing the activity, process or localization of the gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6895,12 +6896,12 @@ class MacromolecularMachineToMolecularActivityAssociation(MacromolecularMachineT
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MacromolecularMachineToMolecularActivityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation","biolink:MacromolecularMachineToMolecularActivityAssociation"]] = Field(["biolink:MacromolecularMachineToMolecularActivityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6911,9 +6912,9 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""class describing the activity, process or localization of the gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6938,12 +6939,12 @@ class MacromolecularMachineToBiologicalProcessAssociation(MacromolecularMachineT
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MacromolecularMachineToBiologicalProcessAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation","biolink:MacromolecularMachineToBiologicalProcessAssociation"]] = Field(["biolink:MacromolecularMachineToBiologicalProcessAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -6954,9 +6955,9 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     """
     A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""gene, product or macromolecular complex that has the function associated with the GO term""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
-    object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    object: str = Field(None, description="""class describing the activity, process or localization of the gene product""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
     qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
     publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
@@ -6981,12 +6982,12 @@ class MacromolecularMachineToCellularComponentAssociation(MacromolecularMachineT
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MacromolecularMachineToCellularComponentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation","biolink:MacromolecularMachineToCellularComponentAssociation"]] = Field(["biolink:MacromolecularMachineToCellularComponentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7024,12 +7025,12 @@ class MolecularActivityToChemicalEntityAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MolecularActivityToChemicalEntityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularActivityToChemicalEntityAssociation","biolink:MolecularActivityToChemicalEntityAssociation"]] = Field(["biolink:MolecularActivityToChemicalEntityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7067,12 +7068,12 @@ class MolecularActivityToMolecularActivityAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:MolecularActivityToMolecularActivityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/MolecularActivityToMolecularActivityAssociation","biolink:MolecularActivityToMolecularActivityAssociation"]] = Field(["biolink:MolecularActivityToMolecularActivityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7108,12 +7109,12 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGoTermAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGoTermAssociation","biolink:GeneToGoTermAssociation"]] = Field(["biolink:GeneToGoTermAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7150,12 +7151,12 @@ class EntityToDiseaseAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:EntityToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EntityToDiseaseAssociation","biolink:EntityToDiseaseAssociation"]] = Field(["biolink:EntityToDiseaseAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7192,12 +7193,12 @@ class EntityToPhenotypicFeatureAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:EntityToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation","biolink:EntityToPhenotypicFeatureAssociation"]] = Field(["biolink:EntityToPhenotypicFeatureAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7235,12 +7236,12 @@ class SequenceAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:SequenceAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SequenceAssociation","biolink:SequenceAssociation"]] = Field(["biolink:SequenceAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7283,12 +7284,12 @@ class GenomicSequenceLocalization(SequenceAssociation):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GenomicSequenceLocalization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GenomicSequenceLocalization","biolink:GenomicSequenceLocalization"]] = Field(["biolink:GenomicSequenceLocalization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7326,12 +7327,12 @@ class SequenceFeatureRelationship(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:SequenceFeatureRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/SequenceFeatureRelationship","biolink:SequenceFeatureRelationship"]] = Field(["biolink:SequenceFeatureRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7369,12 +7370,12 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:TranscriptToGeneRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/TranscriptToGeneRelationship","biolink:TranscriptToGeneRelationship"]] = Field(["biolink:TranscriptToGeneRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7412,12 +7413,12 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:GeneToGeneProductRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneToGeneProductRelationship","biolink:GeneToGeneProductRelationship"]] = Field(["biolink:GeneToGeneProductRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7455,12 +7456,12 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ExonToTranscriptRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ExonToTranscriptRelationship","biolink:ExonToTranscriptRelationship"]] = Field(["biolink:ExonToTranscriptRelationship"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7499,12 +7500,12 @@ class ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation","biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"]] = Field(["biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7540,12 +7541,12 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation","biolink:AnatomicalEntityToAnatomicalEntityAssociation"]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7583,12 +7584,12 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation","biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7626,12 +7627,12 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation","biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation"]] = Field(["biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7650,7 +7651,7 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     """
     A relationship between two organism taxon nodes
     """
-    subject: str = Field(None, description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    subject: str = Field(None, description="""organism taxon that is the subject of the association""")
     predicate: str = Field(None, description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
     object: str = Field(None, description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
     negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
@@ -7677,12 +7678,12 @@ class OrganismTaxonToOrganismTaxonAssociation(OrganismTaxonToEntityAssociation, 
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismTaxonToOrganismTaxonAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonAssociation","biolink:OrganismTaxonToOrganismTaxonAssociation"]] = Field(["biolink:OrganismTaxonToOrganismTaxonAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7720,12 +7721,12 @@ class OrganismTaxonToOrganismTaxonSpecialization(OrganismTaxonToOrganismTaxonAss
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismTaxonToOrganismTaxonSpecialization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonSpecialization","biolink:OrganismTaxonToOrganismTaxonSpecialization"]] = Field(["biolink:OrganismTaxonToOrganismTaxonSpecialization"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7764,12 +7765,12 @@ class OrganismTaxonToOrganismTaxonInteraction(OrganismTaxonToOrganismTaxonAssoci
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismTaxonToOrganismTaxonInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonInteraction","biolink:OrganismTaxonToOrganismTaxonInteraction"]] = Field(["biolink:OrganismTaxonToOrganismTaxonInteraction"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
@@ -7805,12 +7806,12 @@ class OrganismTaxonToEnvironmentAssociation(OrganismTaxonToEntityAssociation, As
     retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
     id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
-    category: Optional[List[str]] = Field(["biolink:OrganismTaxonToEnvironmentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+    category: List[Literal["https://w3id.org/biolink/vocab/OrganismTaxonToEnvironmentAssociation","biolink:OrganismTaxonToEnvironmentAssociation"]] = Field(["biolink:OrganismTaxonToEnvironmentAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
-    type: Optional[List[str]] = Field(default_factory=list)
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
     name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
     description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
