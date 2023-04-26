@@ -30,5 +30,5 @@ URI: [biolink:supporting_text_section_type](https://w3id.org/biolink/supporting_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Introduction', description=None, object=None) |
+| **Examples:** | | Example(value='Introduction', description=None) |
 

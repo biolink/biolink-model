@@ -114,5 +114,5 @@ URI: [biolink:object_namespace](https://w3id.org/biolink/object_namespace)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | object prefix |
-| **Examples:** | | Example(value='MONDO', description="The object namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'MONDO'.", object=None) |
+| **Examples:** | | Example(value='MONDO', description="The object namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'MONDO'.") |
 

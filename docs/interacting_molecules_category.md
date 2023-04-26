@@ -31,6 +31,6 @@ URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/interacti
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein', object=None) |
+| **Examples:** | | Example(value='MI:1048', description='smallmolecule-protein') |
 | **Exact Mappings:** | | MI:1046 |
 

@@ -30,5 +30,5 @@ URI: [biolink:extraction_confidence_score](https://w3id.org/biolink/extraction_c
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None, object=None) |
+| **Examples:** | | Example(value='15', description=None) |
 

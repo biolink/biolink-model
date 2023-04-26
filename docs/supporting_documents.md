@@ -30,5 +30,5 @@ URI: [biolink:supporting_documents](https://w3id.org/biolink/supporting_document
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='PMID:12345678', description=None, object=None) |
+| **Examples:** | | Example(value='PMID:12345678', description=None) |
 

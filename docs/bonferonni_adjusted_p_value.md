@@ -30,5 +30,5 @@ URI: [biolink:bonferonni_adjusted_p_value](https://w3id.org/biolink/bonferonni_a
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='0.018', description=None, object=None) |
+| **Examples:** | | Example(value='0.018', description=None) |
 

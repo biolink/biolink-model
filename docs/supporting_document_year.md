@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_year](https://w3id.org/biolink/supporting_docu
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='1999', description=None, object=None) |
+| **Examples:** | | Example(value='1999', description=None) |
 

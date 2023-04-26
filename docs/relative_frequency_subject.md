@@ -30,5 +30,5 @@ URI: [biolink:relative_frequency_subject](https://w3id.org/biolink/relative_freq
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='0.01840490798', description=None, object=None) |
+| **Examples:** | | Example(value='0.01840490798', description=None) |
 

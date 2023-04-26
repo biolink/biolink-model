@@ -35,10 +35,10 @@ URI: [biolink:form_or_variant_qualifier](https://w3id.org/biolink/form_or_varian
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='mutation', description=None, object=None) |
-|  | | Example(value='late stage', description=None, object=None) |
-|  | | Example(value='severe', description=None, object=None) |
-|  | | Example(value='transplant', description=None, object=None) |
-|  | | Example(value='chemical analog', description=None, object=None) |
+| **Examples:** | | Example(value='mutation', description=None) |
+|  | | Example(value='late stage', description=None) |
+|  | | Example(value='severe', description=None) |
+|  | | Example(value='transplant', description=None) |
+|  | | Example(value='chemical analog', description=None) |
 | **In Subsets:** | | translator_minimal |
 

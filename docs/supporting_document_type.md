@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_type](https://w3id.org/biolink/supporting_docu
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Journal Article', description=None, object=None) |
+| **Examples:** | | Example(value='Journal Article', description=None) |
 

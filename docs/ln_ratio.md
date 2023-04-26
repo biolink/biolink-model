@@ -30,5 +30,5 @@ URI: [biolink:ln_ratio](https://w3id.org/biolink/ln_ratio)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='2.922827136', description=None, object=None) |
+| **Examples:** | | Example(value='2.922827136', description=None) |
 

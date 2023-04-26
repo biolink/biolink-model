@@ -34,7 +34,7 @@ URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/anatomical_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='blood', description=None, object=None) |
-|  | | Example(value='cerebral cortext', description=None, object=None) |
+| **Examples:** | | Example(value='blood', description=None) |
+|  | | Example(value='cerebral cortext', description=None) |
 | **In Subsets:** | | translator_minimal |
 

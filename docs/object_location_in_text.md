@@ -30,5 +30,5 @@ URI: [biolink:object_location_in_text](https://w3id.org/biolink/object_location_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None, object=None) |
+| **Examples:** | | Example(value='15', description=None) |
 
