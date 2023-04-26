@@ -7361,6 +7361,8 @@ classes:
        # that relevant to the Biolink world, but we keep them here for now.
       - UMLSSG:LIVB
       - CARO:0001010
+    narrow_mappings:
+      - STY:T008 # animal
 
   bacterium:
     is_a: organismal entity
@@ -7428,6 +7430,7 @@ classes:
   invertebrate:
     is_a: cellular organism
     description: >-
+      An animal lacking a vertebral column. This group consists of 98% of all animal species.
     exact_mappings:
       - NCIT:C14228 # invertebrate
       - OMIT:0008565 # invertebrates
@@ -7439,12 +7442,28 @@ classes:
   vertebrate:
     is_a: cellular organism
     description: >-
+      A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
     exact_mappings:
       - STY:T010
       - NCBITaxon:7742 # vertebrata
       - OMIT:0015545 # vertebrates
     related_mappings:
       - NCBITaxon:2662825 # unclassified vertebrata (in:vertebrates)
+
+  fungus:
+    is_a: organismal entity
+    description: >- 
+      A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, 
+      including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or
+      asexually, and have life cycles that range from simple to complex. Filamentous 
+      fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+    exact_mappings:
+      - STY:T004
+      - NCIT:C14209
+      - FOODON:03411261
+    narrow_mappings:
+      - FOODON:03315605 # fungus (edible)
+      - NCBITaxon:1670606 # fungus metagenome
 
   life stage:
     is_a: organismal entity
@@ -7658,6 +7677,7 @@ classes:
       - CARO:0000000   # anatomical entity
       - SIO:001262  # anatomical entity
       - STY:T029 # Body Location or Region
+      - STY:T030 # Body Space or Junction
     narrow_mappings:
       - ZFA:0100000  # zebrafish anatomical entity
       - FBbt:10000000  # fly anatomical entity
