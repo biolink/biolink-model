@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.8id: gene_as_a_model_of_disease_association
+# metamodel_version: 1.7.0# version: 3.3.0id: gene_as_a_model_of_disease_association
 schema_generating: true
 display_name: gene as a model of disease association
 document_category: gene as a model of disease association
@@ -26,6 +26,10 @@ fields:
   description: A high-level grouping for the relationship type. AKA minimal predicate.
     This is analogous to category for nodes.
   display_name: predicate
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: object
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -156,10 +160,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: gene to disease association_object
+- id: subject
+  description: A gene that has a role in modeling the disease. This may be a model
+    organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate
+    core features of the disease.
+  display_name: gene as a model of disease association_subject
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
@@ -172,8 +177,3 @@ fields:
   description: a qualifier used in a phenotypic association to state when the phenotype
     appears is in the subject
   display_name: onset qualifier
-- id: subject
-  description: A gene that has a role in modeling the disease. This may be a model
-    organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate
-    core features of the disease.
-  display_name: gene as a model of disease association_subject
