@@ -6534,7 +6534,6 @@ classes:
     narrow_mappings:
        # Manufactured Object
       - STY:T073
-      - STY:T031  # Body Substance
 
   occurrent:
     description: >-
@@ -7413,7 +7412,7 @@ classes:
       - NCBITaxon:40674  # mammal
       - STY:T015  # mammal
       - NCIT:C14234  # Mamalia
-      - FOODON:03411134  # mammal uhm...
+      - FOODON:03411134  # mammal
 
   human:
     is_a: mammal
@@ -7696,6 +7695,7 @@ classes:
       - WBbt:0000100  # c. elegans anatomical entity
       - NCIT:C12219  # human anatomical entity
       - GO:0110165  # cellular anatomical entity, also used directly in CL
+      - STY:T031  # Body Substance
     related_mappings:
       - SNOMEDCT:123037004  # body structure
     id_prefixes:
