@@ -1,6 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-26T14:12:49
-
+# Generation date: 2023-04-26T22:56:16
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11383,16 +11382,16 @@ slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant"
                    model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
-                   model_uri=BIOLINK.catalyzes, domain=NucleicAcidEntity, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=BIOLINK.curie('has_catalyst'),
-                   model_uri=BIOLINK.has_catalyst, domain=MolecularActivity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
-                   model_uri=BIOLINK.has_substrate, domain=MolecularActivity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
-                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
                    model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
