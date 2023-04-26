@@ -2509,8 +2509,9 @@ slots:
   diagnoses:
     is_a: related to at instance level
     description: >-
-      a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
-    domain: chemical or drug or treatment
+      a relationship that identifies the nature of (an illness or other problem) by examination 
+      of the symptoms.
+    domain: diagnostic aid
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -2524,8 +2525,8 @@ slots:
   is diagnosed by:
     is_a: related to at instance level
     inverse: diagnoses
-    range: chemical or drug or treatment
     domain: disease or phenotypic feature
+    range: diagnostic aid
 
   increases amount or activity of:
     deprecated: true
@@ -6638,16 +6639,24 @@ classes:
       A thing made or adapted for a particular purpose, especially
       a piece of mechanical or electronic equipment
     narrow_mappings:
-       # Devices
+      # Devices
       - UMLSSG:DEVI
-       # Medical Device
+      # Medical Device
       - STY:T074
-       # Research Device
+      # Research Device
       - STY:T075
-       # Drug Delivery Device
+      # Drug Delivery Device
       - STY:T203
-       # Biomedical or Dental Material
+      # Biomedical or Dental Material
       - STY:T122
+
+  diagnostic aid:
+    is_a: named thing
+    description: >-
+      A device or substance used to help diagnose disease or injury
+    exact_mappings:
+      - STY:T130  # Diagnostic Aid
+      - SNOMED:2949005  # Diagnostic aid
 
    ## Scientific Studies
 
@@ -7128,8 +7137,10 @@ classes:
           The gene product, gene, or complex that catalyzes the reaction
     exact_mappings:
       - GO:0003674
-       # UMLS Semantic Type "Molecular Function"
+      # UMLS Semantic Type "Molecular Function"
       - STY:T044
+    broad_mappings:
+      - STY:T045  # Genetic Function
     id_prefixes:
       - GO
       - REACT
@@ -7337,7 +7348,7 @@ classes:
       - GENO
       - NCIT
 
-   ## Biological Entities
+    ## Biological Entities
 
   organismal entity:
     description: >-
@@ -7353,11 +7364,22 @@ classes:
           may often be an organism attribute
     exact_mappings:
       - WIKIDATA:Q7239
-       # UMLS Semantic Group "Living Beings"
-       # Several of the associated semantic types here are probably not
-       # that relevant to the Biolink world, but we keep them here for now.
+        # UMLS Semantic Group "Living Beings"
+        # Several of the associated semantic types here are probably not
+      # that relevant to the Biolink world, but we keep them here for now.
       - UMLSSG:LIVB
       - CARO:0001010
+    narrow_mappings:
+      - STY:T008  # animal
+
+  bacterium:
+    is_a: organismal entity
+    description: >-
+      A member of a group of unicellular microorganisms lacking a nuclear membrane,
+      that reproduce by binary fission and are often motile.
+    exact_mappings:
+      - NCBITaxon:1869227
+      - STY:T007  # Bacterium
 
   virus:
     is_a: organismal entity
@@ -7368,6 +7390,7 @@ classes:
       and infects the host cell.
     exact_mappings:
       - NCBITaxon:10239
+      - STY:T005  # Virus
 
   cellular organism:
     is_a: organismal entity
@@ -7377,6 +7400,79 @@ classes:
     exact_mappings:
       - NCBITaxon:131567
 
+  mammal:
+    is_a: cellular organism
+    mixins:
+      - subject of investigation
+    description: >-
+      A member of the class Mammalia, a clade of endothermic amniotes
+      distinguished from reptiles and birds by the possession of hair,
+      three middle ear bones, mammary glands, and a neocortex
+    exact_mappings:
+      - NCBITaxon:40674  # mammal
+      - STY:T015  # mammal
+      - NCIT:C14234  # Mamalia
+      - FOODON:03411134  # mammal
+
+  human:
+    is_a: mammal
+    mixins:
+      - subject of investigation
+    description: >-
+      A member of the the species Homo sapiens.
+    exact_mappings:
+      - STY:T016
+      - NCBITaxon:9606
+      - SIO:000485
+      - NCIT:C14225
+
+  plant:
+    is_a: cellular organism
+    description: >-
+    exact_mappings:
+      - NCIT:C14258  # plant
+      - STY:T002  # plant
+      - PO:0000003  # whole plant
+      - NCIT:C79659  # plant, whole
+
+  invertebrate:
+    is_a: cellular organism
+    description: >-
+      An animal lacking a vertebral column. This group consists of 98% of all animal species.
+    exact_mappings:
+      - NCIT:C14228  # invertebrate
+      - OMIT:0008565  # invertebrates
+      - FOODON:00002452  # invertebrate animals
+      - STY:T011
+    related_mappings:
+      - NCBITaxon:1767184  # unidentified invertebrate
+
+  vertebrate:
+    is_a: cellular organism
+    description: >-
+      A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+    exact_mappings:
+      - STY:T010
+      - NCBITaxon:7742  # vertebrata
+      - OMIT:0015545  # vertebrates
+    related_mappings:
+      - NCBITaxon:2662825  # unclassified vertebrata (in:vertebrates)
+
+  fungus:
+    is_a: cellular entity
+    description: >-
+      A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, 
+      including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or
+      asexually, and have life cycles that range from simple to complex. Filamentous 
+      fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+    exact_mappings:
+      - STY:T004
+      - NCIT:C14209
+      - FOODON:03411261
+    narrow_mappings:
+      - FOODON:03315605  # fungus (edible)
+      - NCBITaxon:1670606  # fungus metagenome
+
   life stage:
     is_a: organismal entity
     description: >-
@@ -7385,7 +7481,7 @@ classes:
     exact_mappings:
       - UBERON:0000105
     narrow_mappings:
-       # constrained to human life cycles
+      # constrained to human life cycles
       - HsapDv:0000000
     in_subset:
       - model_organism_database
@@ -7407,10 +7503,10 @@ classes:
       - subject of investigation
     exact_mappings:
       - SIO:010000
-       # Organism
+      # Organism
       - STY:T001
     narrow_mappings:
-       # Wikidata considers its definition of 'individual' to be constrained to human persons?
+      # Wikidata considers its definition of 'individual' to be constrained to human persons?
       - WIKIDATA:Q795052
       - foaf:Person
     id_prefixes:
@@ -7430,7 +7526,7 @@ classes:
     exact_mappings:
       - PCO:0000001
       - SIO:001061
-       # UMLS Semantic Type "Population Group"
+      # UMLS Semantic Type "Population Group"
       - STY:T098
       - OBI:0000181
     id_prefixes:
@@ -7451,7 +7547,7 @@ classes:
       - disease
       - phenotypic feature
     narrow_mappings:
-       # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
+      # UMLS Semantic Type "Finding" - more specialized use of 'disease or phenotypic feature'
       - STY:T033
 
   disease:
@@ -7588,6 +7684,8 @@ classes:
       - FMA:62955  # anatomical entity
       - CARO:0000000   # anatomical entity
       - SIO:001262  # anatomical entity
+      - STY:T029  # Body Location or Region
+      - STY:T030  # Body Space or Junction
     narrow_mappings:
       - ZFA:0100000  # zebrafish anatomical entity
       - FBbt:10000000  # fly anatomical entity
@@ -7597,6 +7695,7 @@ classes:
       - WBbt:0000100  # c. elegans anatomical entity
       - NCIT:C12219  # human anatomical entity
       - GO:0110165  # cellular anatomical entity, also used directly in CL
+      - STY:T031  # Body Substance
     related_mappings:
       - SNOMEDCT:123037004  # body structure
     id_prefixes:
