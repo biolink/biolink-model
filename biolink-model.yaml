@@ -4087,8 +4087,6 @@ slots:
 
   catalyzes:
     is_a: participates in
-    domain: biological entity
-    range: molecular activity
     annotations:
       canonical_predicate: true
     exact_mappings:
@@ -4097,12 +4095,10 @@ slots:
   has catalyst:
     is_a: has participant
     inverse: catalyzes
-    domain: molecular activity
-    range: biological entity
 
   has substrate:
     is_a: has participant
-    domain: molecular activity
+    domain: chemical entity or gene or gene product
     range: chemical entity or gene or gene product
     annotations:
       canonical_predicate: true
@@ -4111,7 +4107,7 @@ slots:
     is_a: participates in
     inverse: has substrate
     domain: chemical entity or gene or gene product
-    range: molecular activity
+    range: chemical entity or gene or gene product
 
   participates in:
     is_a: related to at instance level
