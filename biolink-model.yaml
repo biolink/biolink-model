@@ -3305,15 +3305,9 @@ slots:
     is_a: beneficial for
     description: >-
         Holds between an intervention (substance, procedure, or activity) and a condition (disease or phenotypic feature)
-        where the intervention can benefit patients with, or disposed to getting, the condition.  The “benefit” of the 
+        where the intervention can benefit the condition.  The “benefit” of the 
         treatment may be preventing, delaying, reducing risk, reducing duration, ameliorating symptoms, or completely 
-        curing the condition.  Treats edges should be used for interventions that are formally approved for use in
-        clinical practice.  For interventions that are not formally approved, use the ‘beneficial for’ predicate.  For
-        interventions that are currently being tested in non-human models, use 'is studied to treat' predicate.
-        In addition, a Translator ARA may use a treats predicate as a shortcut relation that is supported by
-        a combination of other relations (e.g.: an abundance of model organism data, evidence of a beneficial effect
-        in a preclinical trial, a correlation between clinical treatment of a condition and usage of a particular
-        drug that may or may not officially approved).
+        curing the condition.  
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
