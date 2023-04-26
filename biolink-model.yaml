@@ -4087,16 +4087,18 @@ slots:
 
   catalyzes:
     is_a: participates in
-    domain: nucleic acid entity
+    domain: biological entity
     range: molecular activity
     annotations:
       canonical_predicate: true
+    exact_mappings:
+      - RO:0002327
 
   has catalyst:
     is_a: has participant
     inverse: catalyzes
     domain: molecular activity
-    range: nucleic acid entity
+    range: biological entity
 
   has substrate:
     is_a: has participant
@@ -5588,8 +5590,7 @@ slots:
     description: >-
       One or more publications that report the statement expressed in an 
       Association, or provide information used as evidence supporting this statement.
-    comments: 
-      - >-
+    comments: >-
         The notion of a ‘Publication’ is considered broadly to include any 
         document made available for public consumption. It covers journal issues, 
         individual articles, and books - and also things like article pre-prints, 
