@@ -1,6 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-18T15:56:32
-
+# Generation date: 2023-04-25T17:26:48
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -164,6 +163,7 @@ OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
 OMIM_PS = CurieNamespace('OMIM_PS', 'https://www.omim.org/phenotypicSeries/')
+OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/panther/family.do?clsAccession=')
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
@@ -714,11 +714,39 @@ class OrganismalEntityId(BiologicalEntityId):
     pass
 
 
+class BacteriumId(OrganismalEntityId):
+    pass
+
+
 class VirusId(OrganismalEntityId):
     pass
 
 
 class CellularOrganismId(OrganismalEntityId):
+    pass
+
+
+class MammalId(CellularOrganismId):
+    pass
+
+
+class HumanId(MammalId):
+    pass
+
+
+class PlantId(CellularOrganismId):
+    pass
+
+
+class InvertebrateId(CellularOrganismId):
+    pass
+
+
+class VertebrateId(CellularOrganismId):
+    pass
+
+
+class FungusId(OrganismalEntityId):
     pass
 
 
@@ -3953,6 +3981,31 @@ class OrganismalEntity(BiologicalEntity):
 
 
 @dataclass
+class Bacterium(OrganismalEntity):
+    """
+    A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and
+    are often motile.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+    class_class_curie: ClassVar[str] = "biolink:Bacterium"
+    class_name: ClassVar[str] = "bacterium"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+
+    id: Union[str, BacteriumId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BacteriumId):
+            self.id = BacteriumId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Virus(OrganismalEntity):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
@@ -3993,6 +4046,150 @@ class CellularOrganism(OrganismalEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellularOrganismId):
             self.id = CellularOrganismId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Mammal(CellularOrganism):
+    """
+    A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
+    possession of hair, three middle ear bones, mammary glands, and a neocortex
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Mammal
+    class_class_curie: ClassVar[str] = "biolink:Mammal"
+    class_name: ClassVar[str] = "mammal"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Mammal
+
+    id: Union[str, MammalId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MammalId):
+            self.id = MammalId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Human(Mammal):
+    """
+    A member of the the species Homo sapiens.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Human
+    class_class_curie: ClassVar[str] = "biolink:Human"
+    class_name: ClassVar[str] = "human"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Human
+
+    id: Union[str, HumanId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, HumanId):
+            self.id = HumanId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Plant(CellularOrganism):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Plant
+    class_class_curie: ClassVar[str] = "biolink:Plant"
+    class_name: ClassVar[str] = "plant"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Plant
+
+    id: Union[str, PlantId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PlantId):
+            self.id = PlantId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Invertebrate(CellularOrganism):
+    """
+    An animal lacking a vertebral column. This group consists of 98% of all animal species.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+    class_class_curie: ClassVar[str] = "biolink:Invertebrate"
+    class_name: ClassVar[str] = "invertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+
+    id: Union[str, InvertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, InvertebrateId):
+            self.id = InvertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Vertebrate(CellularOrganism):
+    """
+    A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+    class_class_curie: ClassVar[str] = "biolink:Vertebrate"
+    class_name: ClassVar[str] = "vertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+
+    id: Union[str, VertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, VertebrateId):
+            self.id = VertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Fungus(OrganismalEntity):
+    """
+    A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts,
+    smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to
+    complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Fungus
+    class_class_curie: ClassVar[str] = "biolink:Fungus"
+    class_name: ClassVar[str] = "fungus"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Fungus
+
+    id: Union[str, FungusId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, FungusId):
+            self.id = FungusId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -11112,16 +11309,16 @@ slots.has_input = Slot(uri=BIOLINK.has_input, name="has input", curie=BIOLINK.cu
                    model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_input_of = Slot(uri=BIOLINK.is_input_of, name="is input of", curie=BIOLINK.curie('is_input_of'),
-                   model_uri=BIOLINK.is_input_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_input_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_output = Slot(uri=BIOLINK.has_output, name="has output", curie=BIOLINK.curie('has_output'),
                    model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_output_of = Slot(uri=BIOLINK.is_output_of, name="is output of", curie=BIOLINK.curie('is_output_of'),
-                   model_uri=BIOLINK.is_output_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_output_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
-                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
                    model_uri=BIOLINK.catalyzes, domain=NucleicAcidEntity, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
@@ -11139,13 +11336,13 @@ slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in"
                    model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involved_in = Slot(uri=BIOLINK.actively_involved_in, name="actively involved in", curie=BIOLINK.curie('actively_involved_in'),
-                   model_uri=BIOLINK.actively_involved_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.actively_involved_in, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively involves", curie=BIOLINK.curie('actively_involves'),
                    model_uri=BIOLINK.actively_involves, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
-                   model_uri=BIOLINK.capable_of, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.capable_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.can_be_carried_out_by = Slot(uri=BIOLINK.can_be_carried_out_by, name="can be carried out by", curie=BIOLINK.curie('can_be_carried_out_by'),
                    model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -11211,10 +11408,10 @@ slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOL
                    model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
-                   model_uri=BIOLINK.consumes, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.consumes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
-                   model_uri=BIOLINK.consumed_by, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
                    model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
