@@ -2509,8 +2509,9 @@ slots:
   diagnoses:
     is_a: related to at instance level
     description: >-
-      a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
-    domain: chemical or drug or treatment
+      a relationship that identifies the nature of (an illness or other problem) by examination 
+      of the symptoms.
+    domain: diagnostic aid
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
@@ -2524,8 +2525,8 @@ slots:
   is diagnosed by:
     is_a: related to at instance level
     inverse: diagnoses
-    range: chemical or drug or treatment
     domain: disease or phenotypic feature
+    range: diagnostic aid
 
   increases amount or activity of:
     deprecated: true
@@ -6649,6 +6650,14 @@ classes:
       - STY:T203
        # Biomedical or Dental Material
       - STY:T122
+
+  diagnostic aid:
+    is_a: named thing
+    description: >-
+      A device or substance used to help diagnose disease or injury
+    exact_mappings:
+       - STY:T130  # Diagnostic Aid
+       - SNOMED:2949005  # Diagnostic aid
 
    ## Scientific Studies
 
