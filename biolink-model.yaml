@@ -7362,6 +7362,15 @@ classes:
       - UMLSSG:LIVB
       - CARO:0001010
 
+  bacterium:
+    is_a: organismal entity
+    description: >-
+        A member of a group of unicellular microorganisms lacking a nuclear membrane,
+        that reproduce by binary fission and are often motile.
+    exact_mappings:
+      - NCBITaxon:1869227
+      - STY:T007  # Bacterium
+
   virus:
     is_a: organismal entity
     mixins:
@@ -7415,6 +7424,27 @@ classes:
       - STY:T002  # plant
       - PO:0000003 # whole plant
       - NCIT:C79659  # plant, whole
+
+  invertebrate:
+    is_a: cellular organism
+    description: >-
+    exact_mappings:
+      - NCIT:C14228 # invertebrate
+      - OMIT:0008565 # invertebrates
+      - FOODON:00002452 # invertebrate animals
+      - STY:T011
+    related_mappings:
+      - NCBITaxon:1767184 # unidentified invertebrate
+
+  vertebrate:
+    is_a: cellular organism
+    description: >-
+    exact_mappings:
+      - STY:T010
+      - NCBITaxon:7742 # vertebrata
+      - OMIT:0015545 # vertebrates
+    related_mappings:
+      - NCBITaxon:2662825 # unclassified vertebrata (in:vertebrates)
 
   life stage:
     is_a: organismal entity
