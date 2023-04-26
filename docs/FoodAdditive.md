@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FoodAdditive](https://w3id.org/biolink/vocab/FoodAdditive)
+URI: [biolink:FoodAdditive](https://w3id.org/biolink/FoodAdditive)
 
 
 ---

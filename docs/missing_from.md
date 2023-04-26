@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:missing_from](https://w3id.org/biolink/vocab/missing_from)
+URI: [biolink:missing_from](https://w3id.org/biolink/missing_from)
 
 ## Domain and Range
 

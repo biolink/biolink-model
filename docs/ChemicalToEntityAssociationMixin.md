@@ -10,7 +10,7 @@ layout: default
 
 An interaction between a chemical entity and another entity
 
-URI: [biolink:ChemicalToEntityAssociationMixin](https://w3id.org/biolink/vocab/ChemicalToEntityAssociationMixin)
+URI: [biolink:ChemicalToEntityAssociationMixin](https://w3id.org/biolink/ChemicalToEntityAssociationMixin)
 
 
 ---

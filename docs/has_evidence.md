@@ -10,7 +10,7 @@ layout: default
 
 connects an association to an instance of supporting evidence
 
-URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
+URI: [biolink:has_evidence](https://w3id.org/biolink/has_evidence)
 
 ## Domain and Range
 
@@ -58,6 +58,7 @@ URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -66,7 +67,7 @@ URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)

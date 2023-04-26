@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two chemical entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
 
-URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_response_to)
+URI: [biolink:decreases_response_to](https://w3id.org/biolink/decreases_response_to)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:EnvironmentalFeature](https://w3id.org/biolink/vocab/EnvironmentalFeature)
+URI: [biolink:EnvironmentalFeature](https://w3id.org/biolink/EnvironmentalFeature)
 
 
 ---

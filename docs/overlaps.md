@@ -13,7 +13,7 @@ translator_minimal
 
 holds between entities that overlap in their extents (materials or processes)
 
-URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
+URI: [biolink:overlaps](https://w3id.org/biolink/overlaps)
 
 ## Domain and Range
 

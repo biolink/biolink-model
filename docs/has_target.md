@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_target](https://w3id.org/biolink/vocab/has_target)
+URI: [biolink:has_target](https://w3id.org/biolink/has_target)
 
 ## Domain and Range
 

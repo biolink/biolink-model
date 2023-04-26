@@ -10,7 +10,7 @@ layout: default
 
 Subset that is relevant for a typical Model Organism Database (MOD)
 
-URI: [biolink:model_organism_database](https://w3id.org/biolink/vocab/model_organism_database)
+URI: [biolink:model_organism_database](https://w3id.org/biolink/model_organism_database)
 
 
 ### Classes

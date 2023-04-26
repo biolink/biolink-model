@@ -10,7 +10,7 @@ layout: default
 
 The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
 
-URI: [biolink:relative_frequency_object_confidence_interval](https://w3id.org/biolink/vocab/relative_frequency_object_confidence_interval)
+URI: [biolink:relative_frequency_object_confidence_interval](https://w3id.org/biolink/relative_frequency_object_confidence_interval)
 
 ## Domain and Range
 

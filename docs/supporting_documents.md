@@ -10,7 +10,7 @@ layout: default
 
 One or more referenceable documents that report the statement expressed in an Association, or provide  information used as evidence supporting this statement.
 
-URI: [biolink:supporting_documents](https://w3id.org/biolink/vocab/supporting_documents)
+URI: [biolink:supporting_documents](https://w3id.org/biolink/supporting_documents)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:supporting_documents](https://w3id.org/biolink/vocab/supporting_do
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='PMID:12345678', description=None) |
+| **Examples:** | | Example(value='PMID:12345678', description=None, object=None) |
 

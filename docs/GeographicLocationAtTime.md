@@ -10,7 +10,7 @@ layout: default
 
 a location that can be described in lat/long coordinates, for a particular time
 
-URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/vocab/GeographicLocationAtTime)
+URI: [biolink:GeographicLocationAtTime](https://w3id.org/biolink/GeographicLocationAtTime)
 
 
 ---

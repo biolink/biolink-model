@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:adverse_event_of](https://w3id.org/biolink/vocab/adverse_event_of)
+URI: [biolink:adverse_event_of](https://w3id.org/biolink/adverse_event_of)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:primarily_composed_of](https://w3id.org/biolink/vocab/primarily_composed_of)
+URI: [biolink:primarily_composed_of](https://w3id.org/biolink/primarily_composed_of)
 
 ## Domain and Range
 

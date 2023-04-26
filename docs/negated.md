@@ -10,7 +10,7 @@ layout: default
 
 if set to true, then the association is negated i.e. is not true
 
-URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
+URI: [biolink:negated](https://w3id.org/biolink/negated)
 
 ## Domain and Range
 
@@ -59,6 +59,7 @@ URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -67,7 +68,7 @@ URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)

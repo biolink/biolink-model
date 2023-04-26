@@ -10,7 +10,7 @@ layout: default
 
 Represents a relationship held between terminology components that describe the conceptual model of a domain.
 
-URI: [biolink:related_to_at_concept_level](https://w3id.org/biolink/vocab/related_to_at_concept_level)
+URI: [biolink:related_to_at_concept_level](https://w3id.org/biolink/related_to_at_concept_level)
 
 ## Domain and Range
 

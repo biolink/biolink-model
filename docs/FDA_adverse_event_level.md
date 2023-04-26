@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FDA_adverse_event_level](https://w3id.org/biolink/vocab/FDA_adverse_event_level)
+URI: [biolink:FDA_adverse_event_level](https://w3id.org/biolink/FDA_adverse_event_level)
 
 ## Domain and Range
 

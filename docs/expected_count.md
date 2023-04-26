@@ -10,7 +10,7 @@ layout: default
 
 The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
 
-URI: [biolink:expected_count](https://w3id.org/biolink/vocab/expected_count)
+URI: [biolink:expected_count](https://w3id.org/biolink/expected_count)
 
 ## Domain and Range
 

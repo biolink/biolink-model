@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Behavior](https://w3id.org/biolink/vocab/Behavior)
+URI: [biolink:Behavior](https://w3id.org/biolink/Behavior)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 An association between a variant and a population, where the variant has particular frequency in the population
 
-URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/VariantToPopulationAssociation)
+URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/VariantToPopulationAssociation)
 
 
 ---

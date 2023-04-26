@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:can_be_carried_out_by](https://w3id.org/biolink/vocab/can_be_carried_out_by)
+URI: [biolink:can_be_carried_out_by](https://w3id.org/biolink/can_be_carried_out_by)
 
 ## Domain and Range
 

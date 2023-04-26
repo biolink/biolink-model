@@ -10,7 +10,7 @@ layout: default
 
 an item that holds summary level information about a dataset.
 
-URI: [biolink:DatasetSummary](https://w3id.org/biolink/vocab/DatasetSummary)
+URI: [biolink:DatasetSummary](https://w3id.org/biolink/DatasetSummary)
 
 
 ---

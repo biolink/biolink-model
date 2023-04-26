@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_synonymous_variant](https://w3id.org/biolink/vocab/has_synonymous_variant)
+URI: [biolink:has_synonymous_variant](https://w3id.org/biolink/has_synonymous_variant)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 A result of a chi squared analysis.
 
-URI: [biolink:ChiSquaredAnalysisResult](https://w3id.org/biolink/vocab/ChiSquaredAnalysisResult)
+URI: [biolink:ChiSquaredAnalysisResult](https://w3id.org/biolink/ChiSquaredAnalysisResult)
 
 
 ---

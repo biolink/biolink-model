@@ -10,7 +10,7 @@ layout: default
 
 keywords tagging a publication
 
-URI: [biolink:keywords](https://w3id.org/biolink/vocab/keywords)
+URI: [biolink:keywords](https://w3id.org/biolink/keywords)
 
 ## Domain and Range
 

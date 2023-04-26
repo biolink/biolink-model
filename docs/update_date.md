@@ -10,7 +10,7 @@ layout: default
 
 date on which an entity was updated. This can be applied to nodes or edges
 
-URI: [biolink:update_date](https://w3id.org/biolink/vocab/update_date)
+URI: [biolink:update_date](https://w3id.org/biolink/update_date)
 
 ## Domain and Range
 

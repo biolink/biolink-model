@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a gene or gene product and an anatomical entity in which it is expressed
 
-URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
+URI: [biolink:expressed_in](https://w3id.org/biolink/expressed_in)
 
 ## Domain and Range
 

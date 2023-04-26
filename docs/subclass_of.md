@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two classes where the domain class is a specialization of the range class
 
-URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
+URI: [biolink:subclass_of](https://w3id.org/biolink/subclass_of)
 
 ## Domain and Range
 

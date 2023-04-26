@@ -10,7 +10,7 @@ layout: default
 
 The segment of text from a document that supports the mined assertion.
 
-URI: [biolink:supporting_text](https://w3id.org/biolink/vocab/supporting_text)
+URI: [biolink:supporting_text](https://w3id.org/biolink/supporting_text)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:supporting_text](https://w3id.org/biolink/vocab/supporting_text)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='The administration of 50g/ml bupivacaine promoted maximum breast cancer.', description=None) |
+| **Examples:** | | Example(value='The administration of 50g/ml bupivacaine promoted maximum breast cancer.', description=None, object=None) |
 

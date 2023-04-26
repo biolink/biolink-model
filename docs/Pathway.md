@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
+URI: [biolink:Pathway](https://w3id.org/biolink/Pathway)
 
 
 ---

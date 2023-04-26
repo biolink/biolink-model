@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ProteinFamily](https://w3id.org/biolink/vocab/ProteinFamily)
+URI: [biolink:ProteinFamily](https://w3id.org/biolink/ProteinFamily)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 An external biotic exposure is an intake of (sometimes pathological) biological organisms (including viruses).
 
-URI: [biolink:BioticExposure](https://w3id.org/biolink/vocab/BioticExposure)
+URI: [biolink:BioticExposure](https://w3id.org/biolink/BioticExposure)
 
 
 ---

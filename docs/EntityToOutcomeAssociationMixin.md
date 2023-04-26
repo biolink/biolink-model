@@ -10,7 +10,7 @@ layout: default
 
 An association between some entity and an outcome
 
-URI: [biolink:EntityToOutcomeAssociationMixin](https://w3id.org/biolink/vocab/EntityToOutcomeAssociationMixin)
+URI: [biolink:EntityToOutcomeAssociationMixin](https://w3id.org/biolink/EntityToOutcomeAssociationMixin)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities that have strictly equivalent meanings, with a high degree of confidence
 
-URI: [biolink:exact_match](https://w3id.org/biolink/vocab/exact_match)
+URI: [biolink:exact_match](https://w3id.org/biolink/exact_match)
 
 ## Domain and Range
 

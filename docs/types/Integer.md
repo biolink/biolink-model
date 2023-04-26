@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Integer
+title: https://w3id.org/biolink/linkml:types/Integer
 layout: default
 ---
 
-# Type: Integer
+# Type: https://w3id.org/biolink/linkml:types/Integer
 
 
 An integer
 
-URI: [metatype:Integer](https://linkml.github.io/linkml-model/docs/types/Integer)
+URI: [https://w3id.org/biolink/linkml:types/Integer](https://w3id.org/biolink/linkml:types/Integer)
 
 |  |  |  |
 | --- | --- | --- |

@@ -10,7 +10,7 @@ layout: default
 
 An OWL property used as an edge label
 
-URI: [biolink:RelationshipType](https://w3id.org/biolink/vocab/RelationshipType)
+URI: [biolink:RelationshipType](https://w3id.org/biolink/RelationshipType)
 
 
 ---

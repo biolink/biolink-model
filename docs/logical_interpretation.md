@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:logical_interpretation](https://w3id.org/biolink/vocab/logical_interpretation)
+URI: [biolink:logical_interpretation](https://w3id.org/biolink/logical_interpretation)
 
 ## Domain and Range
 

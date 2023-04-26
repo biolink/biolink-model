@@ -10,7 +10,7 @@ layout: default
 
 A quantitative confidence value that represents the probability of obtaining a result at least as extreme as that actually obtained, assuming that the actual value was the result of chance alone.
 
-URI: [biolink:p_value](https://w3id.org/biolink/vocab/p_value)
+URI: [biolink:p_value](https://w3id.org/biolink/p_value)
 
 ## Domain and Range
 

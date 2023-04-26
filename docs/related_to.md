@@ -10,7 +10,7 @@ layout: default
 
 A relationship that is asserted between two named things
 
-URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
+URI: [biolink:related_to](https://w3id.org/biolink/related_to)
 
 ## Domain and Range
 

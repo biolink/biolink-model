@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
+URI: [biolink:subject_category](https://w3id.org/biolink/subject_category)
 
 ## Domain and Range
 
@@ -59,6 +59,7 @@ URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -67,7 +68,7 @@ URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
@@ -112,5 +113,5 @@ URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.") |
+| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.", object=None) |
 

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:exact_synonym](https://w3id.org/biolink/vocab/exact_synonym)
+URI: [biolink:exact_synonym](https://w3id.org/biolink/exact_synonym)
 
 ## Domain and Range
 

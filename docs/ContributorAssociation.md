@@ -10,7 +10,7 @@ layout: default
 
 Any association between an entity (such as a publication) and various agents that contribute to its realisation
 
-URI: [biolink:ContributorAssociation](https://w3id.org/biolink/vocab/ContributorAssociation)
+URI: [biolink:ContributorAssociation](https://w3id.org/biolink/ContributorAssociation)
 
 
 ---

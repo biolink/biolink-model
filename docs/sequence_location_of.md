@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:sequence_location_of](https://w3id.org/biolink/vocab/sequence_location_of)
+URI: [biolink:sequence_location_of](https://w3id.org/biolink/sequence_location_of)
 
 ## Domain and Range
 

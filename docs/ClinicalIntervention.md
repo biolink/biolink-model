@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/vocab/ClinicalIntervention)
+URI: [biolink:ClinicalIntervention](https://w3id.org/biolink/ClinicalIntervention)
 
 
 ---

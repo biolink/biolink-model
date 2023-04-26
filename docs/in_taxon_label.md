@@ -13,7 +13,7 @@ translator_minimal
 
 The human readable scientific name for the taxon of the entity.
 
-URI: [biolink:in_taxon_label](https://w3id.org/biolink/vocab/in_taxon_label)
+URI: [biolink:in_taxon_label](https://w3id.org/biolink/in_taxon_label)
 
 ## Domain and Range
 

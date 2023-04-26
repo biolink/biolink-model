@@ -10,7 +10,7 @@ layout: default
 
 a piece of information that typically describes some topic of discourse or is used as support.
 
-URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
+URI: [biolink:InformationContentEntity](https://w3id.org/biolink/InformationContentEntity)
 
 
 ---

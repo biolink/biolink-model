@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:acts_upstream_of_or_within](https://w3id.org/biolink/vocab/acts_upstream_of_or_within)
+URI: [biolink:acts_upstream_of_or_within](https://w3id.org/biolink/acts_upstream_of_or_within)
 
 ## Domain and Range
 

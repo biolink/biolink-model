@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:rights](https://w3id.org/biolink/vocab/rights)
+URI: [biolink:rights](https://w3id.org/biolink/rights)
 
 ## Domain and Range
 

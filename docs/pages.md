@@ -10,7 +10,7 @@ layout: default
 
 page number of source referenced for statement or publication
 
-URI: [biolink:pages](https://w3id.org/biolink/vocab/pages)
+URI: [biolink:pages](https://w3id.org/biolink/pages)
 
 ## Domain and Range
 

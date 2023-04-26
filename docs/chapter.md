@@ -10,7 +10,7 @@ layout: default
 
 chapter of a book
 
-URI: [biolink:chapter](https://w3id.org/biolink/vocab/chapter)
+URI: [biolink:chapter](https://w3id.org/biolink/chapter)
 
 ## Domain and Range
 

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a gene and a transcribed and/or translated product generated from it
 
-URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
+URI: [biolink:has_gene_product](https://w3id.org/biolink/has_gene_product)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
 
-URI: [biolink:DiseaseOrPhenotypicFeatureOutcome](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureOutcome)
+URI: [biolink:DiseaseOrPhenotypicFeatureOutcome](https://w3id.org/biolink/DiseaseOrPhenotypicFeatureOutcome)
 
 
 ---

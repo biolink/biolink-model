@@ -10,7 +10,7 @@ layout: default
 
 A result of a relative frequency analysis.
 
-URI: [biolink:RelativeFrequencyAnalysisResult](https://w3id.org/biolink/vocab/RelativeFrequencyAnalysisResult)
+URI: [biolink:RelativeFrequencyAnalysisResult](https://w3id.org/biolink/RelativeFrequencyAnalysisResult)
 
 
 ---

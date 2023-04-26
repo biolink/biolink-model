@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:affects_response_to](https://w3id.org/biolink/vocab/affects_response_to)
+URI: [biolink:affects_response_to](https://w3id.org/biolink/affects_response_to)
 
 ## Domain and Range
 

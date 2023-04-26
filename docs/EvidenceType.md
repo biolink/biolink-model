@@ -10,7 +10,7 @@ layout: default
 
 Class of evidence that supports an association
 
-URI: [biolink:EvidenceType](https://w3id.org/biolink/vocab/EvidenceType)
+URI: [biolink:EvidenceType](https://w3id.org/biolink/EvidenceType)
 
 
 ---

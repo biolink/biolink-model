@@ -10,7 +10,7 @@ layout: default
 
 This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature where the disesae or phenotypic feature is a secondary undesirable effect.
 
-URI: [biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation)
+URI: [biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation)
 
 
 ---

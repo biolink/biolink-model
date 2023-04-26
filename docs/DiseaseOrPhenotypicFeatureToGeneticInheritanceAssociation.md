@@ -10,7 +10,7 @@ layout: default
 
 An association between either a disease or a phenotypic feature and its mode of (genetic) inheritance.
 
-URI: [biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation)
+URI: [biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](https://w3id.org/biolink/DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation)
 
 
 ---

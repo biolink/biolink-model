@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:OrganismToOrganismAssociation](https://w3id.org/biolink/vocab/OrganismToOrganismAssociation)
+URI: [biolink:OrganismToOrganismAssociation](https://w3id.org/biolink/OrganismToOrganismAssociation)
 
 
 ---

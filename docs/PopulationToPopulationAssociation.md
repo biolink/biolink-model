@@ -10,7 +10,7 @@ layout: default
 
 An association between a two populations
 
-URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/PopulationToPopulationAssociation)
+URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/PopulationToPopulationAssociation)
 
 
 ---

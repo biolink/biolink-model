@@ -10,7 +10,7 @@ layout: default
 
 A group of people banded together or treated as a group as participants in a research study.
 
-URI: [biolink:StudyPopulation](https://w3id.org/biolink/vocab/StudyPopulation)
+URI: [biolink:StudyPopulation](https://w3id.org/biolink/StudyPopulation)
 
 
 ---

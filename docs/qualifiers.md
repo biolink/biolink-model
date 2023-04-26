@@ -10,7 +10,7 @@ layout: default
 
 connects an association to qualifiers that modify or qualify the meaning of that association
 
-URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
+URI: [biolink:qualifiers](https://w3id.org/biolink/qualifiers)
 
 ## Domain and Range
 
@@ -58,6 +58,7 @@ URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -66,7 +67,7 @@ URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)

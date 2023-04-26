@@ -10,7 +10,7 @@ layout: default
 
 a long-form human readable name for a thing
 
-URI: [biolink:full_name](https://w3id.org/biolink/vocab/full_name)
+URI: [biolink:full_name](https://w3id.org/biolink/full_name)
 
 ## Domain and Range
 

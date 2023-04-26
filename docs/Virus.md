@@ -10,7 +10,7 @@ layout: default
 
 A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 
-URI: [biolink:Virus](https://w3id.org/biolink/vocab/Virus)
+URI: [biolink:Virus](https://w3id.org/biolink/Virus)
 
 
 ---
@@ -107,4 +107,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  |  |  |
 | --- | --- | --- |
 | **Exact Mappings:** | | NCBITaxon:10239 |
+|  | | STY:T005 |
 

@@ -10,7 +10,7 @@ layout: default
 
 An association between a material sample and a disease or phenotype.
 
-URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation)
+URI: [biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/MaterialSampleToDiseaseOrPhenotypicFeatureAssociation)
 
 
 ---

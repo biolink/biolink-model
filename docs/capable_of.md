@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
 
-URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
+URI: [biolink:capable_of](https://w3id.org/biolink/capable_of)
 
 ## Domain and Range
 

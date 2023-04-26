@@ -10,7 +10,7 @@ layout: default
 
 An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure event
 
-URI: [biolink:SocioeconomicOutcome](https://w3id.org/biolink/vocab/SocioeconomicOutcome)
+URI: [biolink:SocioeconomicOutcome](https://w3id.org/biolink/SocioeconomicOutcome)
 
 
 ---

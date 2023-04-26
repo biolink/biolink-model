@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ChemicalEntityDerivativeEnum](https://w3id.org/biolink/vocab/ChemicalEntityDerivativeEnum)
+URI: [biolink:ChemicalEntityDerivativeEnum](https://w3id.org/biolink/ChemicalEntityDerivativeEnum)
 
 
 ## Other properties

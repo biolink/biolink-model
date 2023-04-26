@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Boolean
+title: https://w3id.org/biolink/linkml:types/Boolean
 layout: default
 ---
 
-# Type: Boolean
+# Type: https://w3id.org/biolink/linkml:types/Boolean
 
 
 A binary (true or false) value
 
-URI: [metatype:Boolean](https://linkml.github.io/linkml-model/docs/types/Boolean)
+URI: [https://w3id.org/biolink/linkml:types/Boolean](https://w3id.org/biolink/linkml:types/Boolean)
 
 |  |  |  |
 | --- | --- | --- |

@@ -10,7 +10,7 @@ layout: default
 
 A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
 
-URI: [biolink:disease_has_basis_in](https://w3id.org/biolink/vocab/disease_has_basis_in)
+URI: [biolink:disease_has_basis_in](https://w3id.org/biolink/disease_has_basis_in)
 
 ## Domain and Range
 

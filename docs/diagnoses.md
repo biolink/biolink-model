@@ -8,13 +8,13 @@ layout: default
 # Relation: diagnoses
 
 
-a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
+a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.
 
-URI: [biolink:diagnoses](https://w3id.org/biolink/vocab/diagnoses)
+URI: [biolink:diagnoses](https://w3id.org/biolink/diagnoses)
 
 ## Domain and Range
 
-[ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[DiagnosticAid](DiagnosticAid.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 
 ## Parents
 

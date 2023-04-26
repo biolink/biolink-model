@@ -10,7 +10,7 @@ layout: default
 
 Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
 
-URI: [biolink:GeneToGeneFamilyAssociation](https://w3id.org/biolink/vocab/GeneToGeneFamilyAssociation)
+URI: [biolink:GeneToGeneFamilyAssociation](https://w3id.org/biolink/GeneToGeneFamilyAssociation)
 
 
 ---

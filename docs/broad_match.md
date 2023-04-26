@@ -13,7 +13,7 @@ translator_minimal
 
 a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
 
-URI: [biolink:broad_match](https://w3id.org/biolink/vocab/broad_match)
+URI: [biolink:broad_match](https://w3id.org/biolink/broad_match)
 
 ## Domain and Range
 

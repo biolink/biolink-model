@@ -10,7 +10,7 @@ layout: default
 
 connects an entity to one or more drugs
 
-URI: [biolink:has_drug](https://w3id.org/biolink/vocab/has_drug)
+URI: [biolink:has_drug](https://w3id.org/biolink/has_drug)
 
 ## Domain and Range
 

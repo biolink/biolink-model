@@ -10,7 +10,7 @@ layout: default
 
 A behavioral exposure is a factor relating to behavior impacting an individual.
 
-URI: [biolink:BehavioralExposure](https://w3id.org/biolink/vocab/BehavioralExposure)
+URI: [biolink:BehavioralExposure](https://w3id.org/biolink/BehavioralExposure)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 An association between a material sample and the material entity from which it is derived.
 
-URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/vocab/MaterialSampleDerivationAssociation)
+URI: [biolink:MaterialSampleDerivationAssociation](https://w3id.org/biolink/MaterialSampleDerivationAssociation)
 
 
 ---

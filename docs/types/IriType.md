@@ -10,7 +10,7 @@ layout: default
 
 An IRI
 
-URI: [biolink:IriType](https://w3id.org/biolink/vocab/types/biolink:IriType)
+URI: [biolink:IriType](https://w3id.org/biolink/IriType)
 
 |  |  |  |
 | --- | --- | --- |

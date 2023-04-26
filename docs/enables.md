@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a physical entity and a process, where the physical entity executes the process
 
-URI: [biolink:enables](https://w3id.org/biolink/vocab/enables)
+URI: [biolink:enables](https://w3id.org/biolink/enables)
 
 ## Domain and Range
 

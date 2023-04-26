@@ -10,7 +10,7 @@ layout: default
 
 holds between a sequence variant and a gene sequence that the variant is genomically close to.
 
-URI: [biolink:is_nearby_variant_of](https://w3id.org/biolink/vocab/is_nearby_variant_of)
+URI: [biolink:is_nearby_variant_of](https://w3id.org/biolink/is_nearby_variant_of)
 
 ## Domain and Range
 

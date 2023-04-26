@@ -10,7 +10,7 @@ layout: default
 
 A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
 
-URI: [biolink:binds](https://w3id.org/biolink/vocab/binds)
+URI: [biolink:binds](https://w3id.org/biolink/binds)
 
 ## Domain and Range
 

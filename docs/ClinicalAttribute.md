@@ -10,7 +10,7 @@ layout: default
 
 Attributes relating to a clinical manifestation
 
-URI: [biolink:ClinicalAttribute](https://w3id.org/biolink/vocab/ClinicalAttribute)
+URI: [biolink:ClinicalAttribute](https://w3id.org/biolink/ClinicalAttribute)
 
 
 ---

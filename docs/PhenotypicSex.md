@@ -10,7 +10,7 @@ layout: default
 
 An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 
-URI: [biolink:PhenotypicSex](https://w3id.org/biolink/vocab/PhenotypicSex)
+URI: [biolink:PhenotypicSex](https://w3id.org/biolink/PhenotypicSex)
 
 
 ---

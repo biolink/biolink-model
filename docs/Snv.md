@@ -10,7 +10,7 @@ layout: default
 
 SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist
 
-URI: [biolink:Snv](https://w3id.org/biolink/vocab/Snv)
+URI: [biolink:Snv](https://w3id.org/biolink/Snv)
 
 
 ---

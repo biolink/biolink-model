@@ -10,7 +10,7 @@ layout: default
 
 An association between a sequence feature and a nucleic acid entity it is localized to.
 
-URI: [biolink:SequenceAssociation](https://w3id.org/biolink/vocab/SequenceAssociation)
+URI: [biolink:SequenceAssociation](https://w3id.org/biolink/SequenceAssociation)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 a biological population (general, study, cohort, etc.) with a specific set of characteristics to constrain an association.
 
-URI: [biolink:population_context_qualifier](https://w3id.org/biolink/vocab/population_context_qualifier)
+URI: [biolink:population_context_qualifier](https://w3id.org/biolink/population_context_qualifier)
 
 ## Domain and Range
 

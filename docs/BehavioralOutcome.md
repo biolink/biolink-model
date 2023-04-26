@@ -10,7 +10,7 @@ layout: default
 
 An outcome resulting from an exposure event which is the manifestation of human behavior.
 
-URI: [biolink:BehavioralOutcome](https://w3id.org/biolink/vocab/BehavioralOutcome)
+URI: [biolink:BehavioralOutcome](https://w3id.org/biolink/BehavioralOutcome)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 person, group, organization or project that provides a piece of information (i.e. a knowledge association)
 
-URI: [biolink:Agent](https://w3id.org/biolink/vocab/Agent)
+URI: [biolink:Agent](https://w3id.org/biolink/Agent)
 
 
 ---

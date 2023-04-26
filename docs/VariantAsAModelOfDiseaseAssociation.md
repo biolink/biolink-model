@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:VariantAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/VariantAsAModelOfDiseaseAssociation)
+URI: [biolink:VariantAsAModelOfDiseaseAssociation](https://w3id.org/biolink/VariantAsAModelOfDiseaseAssociation)
 
 
 ---

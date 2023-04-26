@@ -10,7 +10,7 @@ layout: default
 
 An entity that has material reality (a.k.a. physical essence).
 
-URI: [biolink:PhysicalEntity](https://w3id.org/biolink/vocab/PhysicalEntity)
+URI: [biolink:PhysicalEntity](https://w3id.org/biolink/PhysicalEntity)
 
 
 ---

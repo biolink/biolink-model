@@ -10,7 +10,7 @@ layout: default
 
 An outcome resulting from an exposure event which is the manifestation of a pathological process.
 
-URI: [biolink:PathologicalProcessOutcome](https://w3id.org/biolink/vocab/PathologicalProcessOutcome)
+URI: [biolink:PathologicalProcessOutcome](https://w3id.org/biolink/PathologicalProcessOutcome)
 
 
 ---

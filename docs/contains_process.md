@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:contains_process](https://w3id.org/biolink/vocab/contains_process)
+URI: [biolink:contains_process](https://w3id.org/biolink/contains_process)
 
 ## Domain and Range
 

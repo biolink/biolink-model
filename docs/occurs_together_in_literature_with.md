@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
 
-URI: [biolink:occurs_together_in_literature_with](https://w3id.org/biolink/vocab/occurs_together_in_literature_with)
+URI: [biolink:occurs_together_in_literature_with](https://w3id.org/biolink/occurs_together_in_literature_with)
 
 ## Domain and Range
 

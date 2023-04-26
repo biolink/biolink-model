@@ -10,7 +10,7 @@ layout: default
 
 The sample size used in a study that provided evidence for the association (e.g. 'n' of a cohort for a  clinical study).
 
-URI: [biolink:supporting_study_size](https://w3id.org/biolink/vocab/supporting_study_size)
+URI: [biolink:supporting_study_size](https://w3id.org/biolink/supporting_study_size)
 
 ## Domain and Range
 

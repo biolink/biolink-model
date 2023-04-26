@@ -10,7 +10,7 @@ layout: default
 
 Association that holds the relationship between a reaction and the pathway it participates in.
 
-URI: [biolink:MolecularActivityToPathwayAssociation](https://w3id.org/biolink/vocab/MolecularActivityToPathwayAssociation)
+URI: [biolink:MolecularActivityToPathwayAssociation](https://w3id.org/biolink/MolecularActivityToPathwayAssociation)
 
 
 ---

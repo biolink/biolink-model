@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
+URI: [biolink:CodingSequence](https://w3id.org/biolink/CodingSequence)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
 
-URI: [biolink:PreprintPublication](https://w3id.org/biolink/vocab/PreprintPublication)
+URI: [biolink:PreprintPublication](https://w3id.org/biolink/PreprintPublication)
 
 
 ---

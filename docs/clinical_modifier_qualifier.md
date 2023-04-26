@@ -10,7 +10,7 @@ layout: default
 
 the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
 
-URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/vocab/clinical_modifier_qualifier)
+URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/clinical_modifier_qualifier)
 
 ## Domain and Range
 

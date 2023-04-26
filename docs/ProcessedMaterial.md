@@ -10,7 +10,7 @@ layout: default
 
 A chemical entity (often a mixture) processed for consumption for nutritional, medical or technical use. Is a material entity that is created or changed during material processing.
 
-URI: [biolink:ProcessedMaterial](https://w3id.org/biolink/vocab/ProcessedMaterial)
+URI: [biolink:ProcessedMaterial](https://w3id.org/biolink/ProcessedMaterial)
 
 
 ---

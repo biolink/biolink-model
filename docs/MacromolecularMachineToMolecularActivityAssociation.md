@@ -10,7 +10,7 @@ layout: default
 
 A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
 
-URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation)
+URI: [biolink:MacromolecularMachineToMolecularActivityAssociation](https://w3id.org/biolink/MacromolecularMachineToMolecularActivityAssociation)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 one or more molecular entities within a chemical mixture
 
-URI: [biolink:has_constituent](https://w3id.org/biolink/vocab/has_constituent)
+URI: [biolink:has_constituent](https://w3id.org/biolink/has_constituent)
 
 ## Domain and Range
 

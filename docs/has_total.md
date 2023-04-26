@@ -10,7 +10,7 @@ layout: default
 
 total number of things in a particular reference set
 
-URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
+URI: [biolink:has_total](https://w3id.org/biolink/has_total)
 
 ## Domain and Range
 
@@ -31,6 +31,6 @@ URI: [biolink:has_total](https://w3id.org/biolink/vocab/has_total)
  * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two genes or gene products that are part of in the same biological pathway
 
-URI: [biolink:in_pathway_with](https://w3id.org/biolink/vocab/in_pathway_with)
+URI: [biolink:in_pathway_with](https://w3id.org/biolink/in_pathway_with)
 
 ## Domain and Range
 

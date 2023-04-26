@@ -5,12 +5,12 @@ grand_parent: Slots
 layout: default
 ---
 
-# Relation: genetic_association
+# Relation: genetic_association _(deprecated)_
 
 
-Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
 
-URI: [biolink:genetic_association](https://w3id.org/biolink/vocab/genetic_association)
+
+URI: [biolink:genetic_association](https://w3id.org/biolink/genetic_association)
 
 ## Domain and Range
 
@@ -18,19 +18,10 @@ URI: [biolink:genetic_association](https://w3id.org/biolink/vocab/genetic_associ
 
 ## Parents
 
- *  is_a: [related to at instance level](related_to_at_instance_level.md)
+ *  is_a: [associated with](associated_with.md)
 
 ## Children
 
- *  [condition associated with gene](condition_associated_with_gene.md)
- *  [gene associated with condition](gene_associated_with_condition.md)
 
 ## Used by
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Exact Mappings:** | | WIKIDATA_PROPERTY:P2293 |
 

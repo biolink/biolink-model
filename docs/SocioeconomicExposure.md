@@ -10,7 +10,7 @@ layout: default
 
 A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g. poverty).
 
-URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/vocab/SocioeconomicExposure)
+URI: [biolink:SocioeconomicExposure](https://w3id.org/biolink/SocioeconomicExposure)
 
 
 ---

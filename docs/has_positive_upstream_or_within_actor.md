@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_positive_upstream_or_within_actor](https://w3id.org/biolink/vocab/has_positive_upstream_or_within_actor)
+URI: [biolink:has_positive_upstream_or_within_actor](https://w3id.org/biolink/has_positive_upstream_or_within_actor)
 
 ## Domain and Range
 

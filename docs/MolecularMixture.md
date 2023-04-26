@@ -10,7 +10,7 @@ layout: default
 
 A molecular mixture is a chemical mixture composed of two or more molecular entities with known concentration and stoichiometry.
 
-URI: [biolink:MolecularMixture](https://w3id.org/biolink/vocab/MolecularMixture)
+URI: [biolink:MolecularMixture](https://w3id.org/biolink/MolecularMixture)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two chemical entities where the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) of one is affected by the action of the other.
 
-URI: [biolink:response_affected_by](https://w3id.org/biolink/vocab/response_affected_by)
+URI: [biolink:response_affected_by](https://w3id.org/biolink/response_affected_by)
 
 ## Domain and Range
 

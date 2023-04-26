@@ -10,7 +10,7 @@ layout: default
 
 The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
 
-URI: [biolink:supporting_document_type](https://w3id.org/biolink/vocab/supporting_document_type)
+URI: [biolink:supporting_document_type](https://w3id.org/biolink/supporting_document_type)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_type](https://w3id.org/biolink/vocab/supportin
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Journal Article', description=None) |
+| **Examples:** | | Example(value='Journal Article', description=None, object=None) |
 

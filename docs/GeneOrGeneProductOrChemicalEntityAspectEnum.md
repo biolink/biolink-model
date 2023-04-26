@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GeneOrGeneProductOrChemicalEntityAspectEnum](https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum)
+URI: [biolink:GeneOrGeneProductOrChemicalEntityAspectEnum](https://w3id.org/biolink/GeneOrGeneProductOrChemicalEntityAspectEnum)
 
 
 ## Other properties

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:develops_into](https://w3id.org/biolink/vocab/develops_into)
+URI: [biolink:develops_into](https://w3id.org/biolink/develops_into)
 
 ## Domain and Range
 

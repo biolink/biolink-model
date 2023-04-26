@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:OrganismalEntityAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/OrganismalEntityAsAModelOfDiseaseAssociation)
+URI: [biolink:OrganismalEntityAsAModelOfDiseaseAssociation](https://w3id.org/biolink/OrganismalEntityAsAModelOfDiseaseAssociation)
 
 
 ---

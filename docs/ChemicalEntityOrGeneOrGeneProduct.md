@@ -10,7 +10,7 @@ layout: default
 
 A union of chemical entities and children, and gene or gene product. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
-URI: [biolink:ChemicalEntityOrGeneOrGeneProduct](https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProduct)
+URI: [biolink:ChemicalEntityOrGeneOrGeneProduct](https://w3id.org/biolink/ChemicalEntityOrGeneOrGeneProduct)
 
 
 ---

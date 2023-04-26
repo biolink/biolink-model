@@ -10,7 +10,7 @@ layout: default
 
 A child-parent relationship between two taxa. For example: Homo sapiens subclass_of Homo
 
-URI: [biolink:OrganismTaxonToOrganismTaxonSpecialization](https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonSpecialization)
+URI: [biolink:OrganismTaxonToOrganismTaxonSpecialization](https://w3id.org/biolink/OrganismTaxonToOrganismTaxonSpecialization)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_manifestation](https://w3id.org/biolink/vocab/has_manifestation)
+URI: [biolink:has_manifestation](https://w3id.org/biolink/has_manifestation)
 
 ## Domain and Range
 

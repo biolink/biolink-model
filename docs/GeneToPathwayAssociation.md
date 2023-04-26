@@ -10,7 +10,7 @@ layout: default
 
 An interaction between a gene or gene product and a biological process or pathway.
 
-URI: [biolink:GeneToPathwayAssociation](https://w3id.org/biolink/vocab/GeneToPathwayAssociation)
+URI: [biolink:GeneToPathwayAssociation](https://w3id.org/biolink/GeneToPathwayAssociation)
 
 
 ---

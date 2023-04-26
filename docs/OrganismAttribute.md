@@ -10,7 +10,7 @@ layout: default
 
 describes a characteristic of an organismal entity.
 
-URI: [biolink:OrganismAttribute](https://w3id.org/biolink/vocab/OrganismAttribute)
+URI: [biolink:OrganismAttribute](https://w3id.org/biolink/OrganismAttribute)
 
 
 ---

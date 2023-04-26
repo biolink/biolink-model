@@ -10,7 +10,7 @@ layout: default
 
 A chemical entity is a physical entity that pertains to chemistry or biochemistry.
 
-URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
+URI: [biolink:ChemicalEntity](https://w3id.org/biolink/ChemicalEntity)
 
 
 ---

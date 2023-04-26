@@ -10,7 +10,7 @@ layout: default
 
 A list of terms from different schemas or terminology systems that have a narrower meaning. Such terms often describe a more specific concept from different ontological perspectives.
 
-URI: [biolink:narrow_matches](https://w3id.org/biolink/vocab/narrow_matches)
+URI: [biolink:narrow_matches](https://w3id.org/biolink/narrow_matches)
 
 ## Domain and Range
 

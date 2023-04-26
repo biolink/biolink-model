@@ -10,7 +10,7 @@ layout: default
 
 number of things with a particular property
 
-URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
+URI: [biolink:has_count](https://w3id.org/biolink/has_count)
 
 ## Domain and Range
 
@@ -31,7 +31,7 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
  * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
 

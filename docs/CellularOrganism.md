@@ -10,12 +10,12 @@ layout: default
 
 
 
-URI: [biolink:CellularOrganism](https://w3id.org/biolink/vocab/CellularOrganism)
+URI: [biolink:CellularOrganism](https://w3id.org/biolink/CellularOrganism)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubjectOfInvestigation],[OrganismalEntity],[OrganismTaxon],[CellularOrganism%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[SubjectOfInvestigation],[OrganismalEntity]%5E-[CellularOrganism],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Vertebrate],[SubjectOfInvestigation],[Plant],[OrganismalEntity],[OrganismTaxon],[Mammal],[Invertebrate],[Fungus],[CellularOrganism%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[SubjectOfInvestigation],[CellularOrganism]%5E-[Vertebrate],[CellularOrganism]%5E-[Plant],[CellularOrganism]%5E-[Mammal],[CellularOrganism]%5E-[Invertebrate],[CellularOrganism]%5E-[Fungus],[OrganismalEntity]%5E-[CellularOrganism],[Attribute])
 
 ---
 
@@ -27,6 +27,17 @@ URI: [biolink:CellularOrganism](https://w3id.org/biolink/vocab/CellularOrganism)
 ## Uses Mixins
 
  *  mixin: [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
+
+## Children
+
+ * [Fungus](Fungus.md) - A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+ * [Invertebrate](Invertebrate.md) - An animal lacking a vertebral column. This group consists of 98% of all animal species.
+ * [Mammal](Mammal.md) - A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
+ * [Plant](Plant.md)
+ * [Vertebrate](Vertebrate.md) - A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+
+## Referenced by class
+
 
 ## Attributes
 

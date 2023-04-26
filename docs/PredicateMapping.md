@@ -10,7 +10,7 @@ layout: default
 
 A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
 
-URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
+URI: [biolink:PredicateMapping](https://w3id.org/biolink/PredicateMapping)
 
 
 ---
@@ -235,6 +235,24 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+
+### Inherited from gene to disease or phenotypic feature association:
+
+ * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
      * in subsets: (translator_minimal)
  * [subject](subject.md)  <sub>1..1</sub>
      * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

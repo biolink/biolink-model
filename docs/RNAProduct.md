@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:RNAProduct](https://w3id.org/biolink/vocab/RNAProduct)
+URI: [biolink:RNAProduct](https://w3id.org/biolink/RNAProduct)
 
 
 ---

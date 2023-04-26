@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_substrate_of](https://w3id.org/biolink/vocab/is_substrate_of)
+URI: [biolink:is_substrate_of](https://w3id.org/biolink/is_substrate_of)
 
 ## Domain and Range
 

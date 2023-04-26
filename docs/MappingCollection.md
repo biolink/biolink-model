@@ -10,7 +10,7 @@ layout: default
 
 A collection of deprecated mappings.
 
-URI: [biolink:MappingCollection](https://w3id.org/biolink/vocab/MappingCollection)
+URI: [biolink:MappingCollection](https://w3id.org/biolink/MappingCollection)
 
 
 ---

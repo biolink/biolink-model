@@ -13,7 +13,7 @@ samples
 
 connects an attribute to a class that describes it
 
-URI: [biolink:has_attribute_type](https://w3id.org/biolink/vocab/has_attribute_type)
+URI: [biolink:has_attribute_type](https://w3id.org/biolink/has_attribute_type)
 
 ## Domain and Range
 

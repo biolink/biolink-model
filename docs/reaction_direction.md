@@ -10,7 +10,7 @@ layout: default
 
 the direction of a reaction as constrained by the direction enum (ie: left_to_right, neutral, etc.)
 
-URI: [biolink:reaction_direction](https://w3id.org/biolink/vocab/reaction_direction)
+URI: [biolink:reaction_direction](https://w3id.org/biolink/reaction_direction)
 
 ## Domain and Range
 

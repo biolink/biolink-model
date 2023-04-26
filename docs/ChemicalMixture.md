@@ -10,7 +10,7 @@ layout: default
 
 A chemical mixture is a chemical entity composed of two or more molecular entities.
 
-URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
+URI: [biolink:ChemicalMixture](https://w3id.org/biolink/ChemicalMixture)
 
 
 ---

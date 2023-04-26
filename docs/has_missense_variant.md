@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_missense_variant](https://w3id.org/biolink/vocab/has_missense_variant)
+URI: [biolink:has_missense_variant](https://w3id.org/biolink/has_missense_variant)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 A result of text mining.
 
-URI: [biolink:TextMiningResult](https://w3id.org/biolink/vocab/TextMiningResult)
+URI: [biolink:TextMiningResult](https://w3id.org/biolink/TextMiningResult)
 
 
 ---

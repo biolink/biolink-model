@@ -10,7 +10,7 @@ layout: default
 
 An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
-URI: [biolink:DiseaseOrPhenotypicFeatureToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToLocationAssociation)
+URI: [biolink:DiseaseOrPhenotypicFeatureToLocationAssociation](https://w3id.org/biolink/DiseaseOrPhenotypicFeatureToLocationAssociation)
 
 
 ---

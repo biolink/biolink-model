@@ -13,7 +13,7 @@ samples
 
 connects a quantity value to a unit
 
-URI: [biolink:has_unit](https://w3id.org/biolink/vocab/has_unit)
+URI: [biolink:has_unit](https://w3id.org/biolink/has_unit)
 
 ## Domain and Range
 

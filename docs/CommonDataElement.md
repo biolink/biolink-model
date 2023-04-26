@@ -10,7 +10,7 @@ layout: default
 
 A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
 
-URI: [biolink:CommonDataElement](https://w3id.org/biolink/vocab/CommonDataElement)
+URI: [biolink:CommonDataElement](https://w3id.org/biolink/CommonDataElement)
 
 
 ---

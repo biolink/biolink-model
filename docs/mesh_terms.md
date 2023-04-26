@@ -10,7 +10,7 @@ layout: default
 
 mesh terms tagging a publication
 
-URI: [biolink:mesh_terms](https://w3id.org/biolink/vocab/mesh_terms)
+URI: [biolink:mesh_terms](https://w3id.org/biolink/mesh_terms)
 
 ## Domain and Range
 

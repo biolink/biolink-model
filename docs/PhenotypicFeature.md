@@ -10,12 +10,12 @@ layout: default
 
 A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
 
-URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
+URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/PhenotypicFeature)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[EntityToPhenotypicFeatureAssociationMixin]-%20object%201..1%3E[PhenotypicFeature],[GeneToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature],[PhenotypicFeature]%5E-[ClinicalFinding],[PhenotypicFeature]%5E-[BehavioralFeature],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[GeneToPhenotypicFeatureAssociation],[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ClinicalFinding],[BiologicalEntity],[BehavioralFeature],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DiseaseToPhenotypicFeatureAssociation]-%20object%201..1%3E[PhenotypicFeature%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[EntityToPhenotypicFeatureAssociationMixin]-%20object%201..1%3E[PhenotypicFeature],[PhenotypicFeature]%5E-[ClinicalFinding],[PhenotypicFeature]%5E-[BehavioralFeature],[DiseaseOrPhenotypicFeature]%5E-[PhenotypicFeature],[OrganismTaxon],[EntityToPhenotypicFeatureAssociationMixin],[DiseaseToPhenotypicFeatureAssociation],[DiseaseOrPhenotypicFeature],[ClinicalFinding],[BiologicalEntity],[BehavioralFeature],[Attribute])
 
 ---
 
@@ -52,7 +52,6 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
 
  *  **[DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
  *  **[EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
- *  **[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)** *[object](object.md)*  <sub>1..1</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
  *  **[BiologicalEntity](BiologicalEntity.md)** *[has phenotype](has_phenotype.md)*  <sub>0..\*</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
 
 ## Attributes
@@ -131,7 +130,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
-| **Examples:** | | Example(value='MP:0001262', description='decreased body weight') |
+| **Examples:** | | Example(value='MP:0001262', description='decreased body weight', object=None) |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |

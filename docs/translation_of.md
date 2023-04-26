@@ -10,7 +10,7 @@ layout: default
 
 inverse of translates to
 
-URI: [biolink:translation_of](https://w3id.org/biolink/vocab/translation_of)
+URI: [biolink:translation_of](https://w3id.org/biolink/translation_of)
 
 ## Domain and Range
 

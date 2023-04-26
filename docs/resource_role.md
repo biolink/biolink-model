@@ -13,7 +13,7 @@ translator_minimal
 
 The role played by the InformationResource in serving as a source for an Edge. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.
 
-URI: [biolink:resource_role](https://w3id.org/biolink/vocab/resource_role)
+URI: [biolink:resource_role](https://w3id.org/biolink/resource_role)
 
 ## Domain and Range
 

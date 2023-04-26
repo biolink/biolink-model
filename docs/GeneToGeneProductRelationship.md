@@ -10,7 +10,7 @@ layout: default
 
 A gene is transcribed and potentially translated to a gene product
 
-URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/GeneToGeneProductRelationship)
+URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/GeneToGeneProductRelationship)
 
 
 ---

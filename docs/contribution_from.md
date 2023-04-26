@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:contribution_from](https://w3id.org/biolink/vocab/contribution_from)
+URI: [biolink:contribution_from](https://w3id.org/biolink/contribution_from)
 
 ## Domain and Range
 

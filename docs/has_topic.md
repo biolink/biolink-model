@@ -10,7 +10,7 @@ layout: default
 
 Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
 
-URI: [biolink:has_topic](https://w3id.org/biolink/vocab/has_topic)
+URI: [biolink:has_topic](https://w3id.org/biolink/has_topic)
 
 ## Domain and Range
 

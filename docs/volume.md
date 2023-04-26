@@ -10,7 +10,7 @@ layout: default
 
 volume of a book or music release in a collection/series or a published collection of journal issues in a serial publication
 
-URI: [biolink:volume](https://w3id.org/biolink/vocab/volume)
+URI: [biolink:volume](https://w3id.org/biolink/volume)
 
 ## Domain and Range
 

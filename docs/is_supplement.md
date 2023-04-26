@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_supplement](https://w3id.org/biolink/vocab/is_supplement)
+URI: [biolink:is_supplement](https://w3id.org/biolink/is_supplement)
 
 ## Domain and Range
 

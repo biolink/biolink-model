@@ -10,7 +10,7 @@ layout: default
 
 Minimum subset of translator work
 
-URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_minimal)
+URI: [biolink:translator_minimal](https://w3id.org/biolink/translator_minimal)
 
 
 ### Classes
@@ -91,6 +91,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [stage qualifier](stage_qualifier.md) - stage during which gene or protein expression of takes place.
  * [gene_fusion_with](gene_fusion_with.md) - holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.
  * [genetic_neighborhood_of](genetic_neighborhood_of.md) - holds between two genes located nearby one another on a chromosome. 
+ * [genetically associated with](genetically_associated_with.md)
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
  * [has active ingredient](has_active_ingredient.md) - holds between a drug and a molecular entity in which the latter is a part of the former, and is a biologically active component
  * [has biomarker](has_biomarker.md) - holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.

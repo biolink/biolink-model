@@ -10,7 +10,7 @@ layout: default
 
 The number of instances in a dataset/cohort whose records contain the concept in the subject slot of an association.
 
-URI: [biolink:concept_count_subject](https://w3id.org/biolink/vocab/concept_count_subject)
+URI: [biolink:concept_count_subject](https://w3id.org/biolink/concept_count_subject)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:concept_count_subject](https://w3id.org/biolink/vocab/concept_coun
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='489', description=None) |
+| **Examples:** | | Example(value='489', description=None, object=None) |
 

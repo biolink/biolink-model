@@ -10,7 +10,7 @@ layout: default
 
 drug to gene interaction exposure is a drug exposure is where the interactions of the drug with specific genes are known to constitute an 'exposure' to the organism, leading to or influencing an outcome.
 
-URI: [biolink:DrugToGeneInteractionExposure](https://w3id.org/biolink/vocab/DrugToGeneInteractionExposure)
+URI: [biolink:DrugToGeneInteractionExposure](https://w3id.org/biolink/DrugToGeneInteractionExposure)
 
 
 ---

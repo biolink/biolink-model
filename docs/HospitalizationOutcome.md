@@ -10,7 +10,7 @@ layout: default
 
 An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
 
-URI: [biolink:HospitalizationOutcome](https://w3id.org/biolink/vocab/HospitalizationOutcome)
+URI: [biolink:HospitalizationOutcome](https://w3id.org/biolink/HospitalizationOutcome)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/vocab/PhysiologicalProcess)
+URI: [biolink:PhysiologicalProcess](https://w3id.org/biolink/PhysiologicalProcess)
 
 
 ---

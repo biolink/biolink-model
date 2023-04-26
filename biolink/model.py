@@ -1,5 +1,7 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-25T19:58:05
+
+# Generation date: 2023-04-25T17:26:48
+
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -163,6 +165,7 @@ OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
 OMIM_PS = CurieNamespace('OMIM_PS', 'https://www.omim.org/phenotypicSeries/')
+OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/panther/family.do?clsAccession=')
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
@@ -713,11 +716,39 @@ class OrganismalEntityId(BiologicalEntityId):
     pass
 
 
+class BacteriumId(OrganismalEntityId):
+    pass
+
+
 class VirusId(OrganismalEntityId):
     pass
 
 
 class CellularOrganismId(OrganismalEntityId):
+    pass
+
+
+class MammalId(CellularOrganismId):
+    pass
+
+
+class HumanId(MammalId):
+    pass
+
+
+class PlantId(CellularOrganismId):
+    pass
+
+
+class InvertebrateId(CellularOrganismId):
+    pass
+
+
+class VertebrateId(CellularOrganismId):
+    pass
+
+
+class FungusId(OrganismalEntityId):
     pass
 
 
@@ -3952,6 +3983,31 @@ class OrganismalEntity(BiologicalEntity):
 
 
 @dataclass
+class Bacterium(OrganismalEntity):
+    """
+    A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and
+    are often motile.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+    class_class_curie: ClassVar[str] = "biolink:Bacterium"
+    class_name: ClassVar[str] = "bacterium"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+
+    id: Union[str, BacteriumId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BacteriumId):
+            self.id = BacteriumId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Virus(OrganismalEntity):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
@@ -3992,6 +4048,150 @@ class CellularOrganism(OrganismalEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellularOrganismId):
             self.id = CellularOrganismId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Mammal(CellularOrganism):
+    """
+    A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
+    possession of hair, three middle ear bones, mammary glands, and a neocortex
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Mammal
+    class_class_curie: ClassVar[str] = "biolink:Mammal"
+    class_name: ClassVar[str] = "mammal"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Mammal
+
+    id: Union[str, MammalId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MammalId):
+            self.id = MammalId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Human(Mammal):
+    """
+    A member of the the species Homo sapiens.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Human
+    class_class_curie: ClassVar[str] = "biolink:Human"
+    class_name: ClassVar[str] = "human"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Human
+
+    id: Union[str, HumanId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, HumanId):
+            self.id = HumanId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Plant(CellularOrganism):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Plant
+    class_class_curie: ClassVar[str] = "biolink:Plant"
+    class_name: ClassVar[str] = "plant"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Plant
+
+    id: Union[str, PlantId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PlantId):
+            self.id = PlantId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Invertebrate(CellularOrganism):
+    """
+    An animal lacking a vertebral column. This group consists of 98% of all animal species.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+    class_class_curie: ClassVar[str] = "biolink:Invertebrate"
+    class_name: ClassVar[str] = "invertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+
+    id: Union[str, InvertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, InvertebrateId):
+            self.id = InvertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Vertebrate(CellularOrganism):
+    """
+    A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+    class_class_curie: ClassVar[str] = "biolink:Vertebrate"
+    class_name: ClassVar[str] = "vertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+
+    id: Union[str, VertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, VertebrateId):
+            self.id = VertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Fungus(OrganismalEntity):
+    """
+    A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts,
+    smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to
+    complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Fungus
+    class_class_curie: ClassVar[str] = "biolink:Fungus"
+    class_name: ClassVar[str] = "fungus"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Fungus
+
+    id: Union[str, FungusId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, FungusId):
+            self.id = FungusId(self.id)
 
         super().__post_init__(**kwargs)
 

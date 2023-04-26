@@ -10,7 +10,7 @@ layout: default
 
 The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.
 
-URI: [biolink:ResourceRoleEnum](https://w3id.org/biolink/vocab/ResourceRoleEnum)
+URI: [biolink:ResourceRoleEnum](https://w3id.org/biolink/ResourceRoleEnum)
 
 
 ## Other properties

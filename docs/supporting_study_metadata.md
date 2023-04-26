@@ -10,7 +10,7 @@ layout: default
 
 Information about a study used to generate information used as evidence to support the knowledge expressed in an  Association. In practice, data creators should use one of the more specific subtypes of this property.
 
-URI: [biolink:supporting_study_metadata](https://w3id.org/biolink/vocab/supporting_study_metadata)
+URI: [biolink:supporting_study_metadata](https://w3id.org/biolink/supporting_study_metadata)
 
 ## Domain and Range
 

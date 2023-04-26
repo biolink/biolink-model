@@ -10,7 +10,7 @@ layout: default
 
 The number of instances in a dataset/cohort whose records contain both the subject and object concept of an association.
 
-URI: [biolink:concept_pair_count](https://w3id.org/biolink/vocab/concept_pair_count)
+URI: [biolink:concept_pair_count](https://w3id.org/biolink/concept_pair_count)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:concept_pair_count](https://w3id.org/biolink/vocab/concept_pair_co
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='1731', description=None) |
+| **Examples:** | | Example(value='1731', description=None, object=None) |
 

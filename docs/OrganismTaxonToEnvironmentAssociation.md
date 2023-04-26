@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:OrganismTaxonToEnvironmentAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToEnvironmentAssociation)
+URI: [biolink:OrganismTaxonToEnvironmentAssociation](https://w3id.org/biolink/OrganismTaxonToEnvironmentAssociation)
 
 
 ---

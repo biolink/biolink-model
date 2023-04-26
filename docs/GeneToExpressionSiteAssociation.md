@@ -10,7 +10,7 @@ layout: default
 
 An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 
-URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
+URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/GeneToExpressionSiteAssociation)
 
 
 ---

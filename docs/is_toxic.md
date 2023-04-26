@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_toxic](https://w3id.org/biolink/vocab/is_toxic)
+URI: [biolink:is_toxic](https://w3id.org/biolink/is_toxic)
 
 ## Domain and Range
 

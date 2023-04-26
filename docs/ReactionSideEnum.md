@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ReactionSideEnum](https://w3id.org/biolink/vocab/ReactionSideEnum)
+URI: [biolink:ReactionSideEnum](https://w3id.org/biolink/ReactionSideEnum)
 
 
 ## Other properties

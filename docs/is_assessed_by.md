@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_assessed_by](https://w3id.org/biolink/vocab/is_assessed_by)
+URI: [biolink:is_assessed_by](https://w3id.org/biolink/is_assessed_by)
 
 ## Domain and Range
 

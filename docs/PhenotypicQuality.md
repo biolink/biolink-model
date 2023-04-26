@@ -10,7 +10,7 @@ layout: default
 
 A property of a phenotype
 
-URI: [biolink:PhenotypicQuality](https://w3id.org/biolink/vocab/PhenotypicQuality)
+URI: [biolink:PhenotypicQuality](https://w3id.org/biolink/PhenotypicQuality)
 
 PATO:0000001
 {: .mapping-label }
@@ -108,5 +108,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Aliases:** | | phenotypic properties |
 | **Mappings:** | | PATO:0000001 |
-| **Examples:** | | Example(value='weight', description=None) |
+| **Examples:** | | Example(value='weight', description=None, object=None) |
 

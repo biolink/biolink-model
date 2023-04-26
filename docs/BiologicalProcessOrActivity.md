@@ -10,7 +10,7 @@ layout: default
 
 Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
 
-URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/BiologicalProcessOrActivity)
+URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/BiologicalProcessOrActivity)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 Level of confidence in a statement
 
-URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/vocab/ConfidenceLevel)
+URI: [biolink:ConfidenceLevel](https://w3id.org/biolink/ConfidenceLevel)
 
 
 ---

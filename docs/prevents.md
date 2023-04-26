@@ -13,7 +13,7 @@ translator_minimal
 
 holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical entity, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
 
-URI: [biolink:prevents](https://w3id.org/biolink/vocab/prevents)
+URI: [biolink:prevents](https://w3id.org/biolink/prevents)
 
 ## Domain and Range
 

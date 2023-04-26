@@ -10,7 +10,7 @@ layout: default
 
 The document year (typically the publication year) for the supporting document used in a Text Mining Result.
 
-URI: [biolink:supporting_document_year](https://w3id.org/biolink/vocab/supporting_document_year)
+URI: [biolink:supporting_document_year](https://w3id.org/biolink/supporting_document_year)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_year](https://w3id.org/biolink/vocab/supportin
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='1999', description=None) |
+| **Examples:** | | Example(value='1999', description=None, object=None) |
 

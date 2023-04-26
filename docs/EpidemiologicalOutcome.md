@@ -10,7 +10,7 @@ layout: default
 
 An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
 
-URI: [biolink:EpidemiologicalOutcome](https://w3id.org/biolink/vocab/EpidemiologicalOutcome)
+URI: [biolink:EpidemiologicalOutcome](https://w3id.org/biolink/EpidemiologicalOutcome)
 
 
 ---

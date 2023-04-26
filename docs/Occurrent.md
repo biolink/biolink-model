@@ -10,7 +10,7 @@ layout: default
 
 A processual entity.
 
-URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
+URI: [biolink:Occurrent](https://w3id.org/biolink/Occurrent)
 
 
 ---

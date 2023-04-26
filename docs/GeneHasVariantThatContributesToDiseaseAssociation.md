@@ -10,12 +10,12 @@ layout: default
 
 
 
-URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation)
+URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.org/biolink/GeneHasVariantThatContributesToDiseaseAssociation)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[Disease]%3Cobject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation%7Csubject_form_or_variant_qualifier:string%20%3F;predicate:predicate_type;frequency_qualifier(i):frequency_value%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[EvidenceType],[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[Publication],[OntologyClass],[InformationResource],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[Disease]%3Cobject%201..1-%20[GeneHasVariantThatContributesToDiseaseAssociation%7Csubject_form_or_variant_qualifier:string%20%3F;predicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[EvidenceType],[Disease],[Attribute])
 
 ---
 
@@ -171,24 +171,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
-
-### Inherited from entity to feature or disease qualifiers mixin:
-
- * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * Range: [SeverityValue](SeverityValue.md)
-     * in subsets: (translator_minimal)
- * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-     * Range: [Onset](Onset.md)
-     * in subsets: (translator_minimal)
-
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * Range: [FrequencyValue](types/FrequencyValue.md)
-     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

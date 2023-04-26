@@ -10,7 +10,7 @@ layout: default
 
 A gene altered in its expression level in the context of some experiment as a result of being targeted by gene-knockdown reagent(s) such as a morpholino or RNAi.
 
-URI: [biolink:ReagentTargetedGene](https://w3id.org/biolink/vocab/ReagentTargetedGene)
+URI: [biolink:ReagentTargetedGene](https://w3id.org/biolink/ReagentTargetedGene)
 
 
 ---

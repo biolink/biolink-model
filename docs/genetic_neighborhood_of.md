@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two genes located nearby one another on a chromosome.
 
-URI: [biolink:genetic_neighborhood_of](https://w3id.org/biolink/vocab/genetic_neighborhood_of)
+URI: [biolink:genetic_neighborhood_of](https://w3id.org/biolink/genetic_neighborhood_of)
 
 ## Domain and Range
 

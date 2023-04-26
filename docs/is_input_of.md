@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:is_input_of](https://w3id.org/biolink/vocab/is_input_of)
+URI: [biolink:is_input_of](https://w3id.org/biolink/is_input_of)
 
 ## Domain and Range
 

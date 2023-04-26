@@ -10,7 +10,7 @@ layout: default
 
 The age group in which (disease) symptom manifestations appear
 
-URI: [biolink:Onset](https://w3id.org/biolink/vocab/Onset)
+URI: [biolink:Onset](https://w3id.org/biolink/Onset)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 strand
 
-URI: [biolink:StrandEnum](https://w3id.org/biolink/vocab/StrandEnum)
+URI: [biolink:StrandEnum](https://w3id.org/biolink/StrandEnum)
 
 
 ## Other properties

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:TimeType](https://w3id.org/biolink/vocab/types/biolink:TimeType)
+URI: [biolink:TimeType](https://w3id.org/biolink/TimeType)
 
 |  |  |  |
 | --- | --- | --- |

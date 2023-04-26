@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:PercentageFrequencyValue](https://w3id.org/biolink/vocab/types/biolink:PercentageFrequencyValue)
+URI: [biolink:PercentageFrequencyValue](https://w3id.org/biolink/PercentageFrequencyValue)
 
 |  |  |  |
 | --- | --- | --- |

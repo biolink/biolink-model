@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Hospitalization](https://w3id.org/biolink/vocab/Hospitalization)
+URI: [biolink:Hospitalization](https://w3id.org/biolink/Hospitalization)
 
 
 ---

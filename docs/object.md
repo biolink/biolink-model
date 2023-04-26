@@ -10,7 +10,7 @@ layout: default
 
 connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [biolink:object](https://w3id.org/biolink/vocab/object)
+URI: [biolink:object](https://w3id.org/biolink/object)
 
 ## Domain and Range
 
@@ -32,10 +32,14 @@ URI: [biolink:object](https://w3id.org/biolink/vocab/object)
  * [ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation](ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation.md)
  * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)
+ * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+ * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
  * [NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](NamedThingAssociatedWithLikelihoodOfNamedThingAssociation.md)

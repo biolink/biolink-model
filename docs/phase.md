@@ -10,7 +10,7 @@ layout: default
 
 The phase for a coding sequence entity. For example, phase of a CDS as represented in a GFF3 with a value of 0, 1 or 2.
 
-URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
+URI: [biolink:phase](https://w3id.org/biolink/phase)
 
 ## Domain and Range
 

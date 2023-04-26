@@ -10,7 +10,7 @@ layout: default
 
 A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
 
-URI: [biolink:directly_physically_interacts_with](https://w3id.org/biolink/vocab/directly_physically_interacts_with)
+URI: [biolink:directly_physically_interacts_with](https://w3id.org/biolink/directly_physically_interacts_with)
 
 ## Domain and Range
 

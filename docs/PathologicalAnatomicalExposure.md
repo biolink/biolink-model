@@ -10,7 +10,7 @@ layout: default
 
 An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 
-URI: [biolink:PathologicalAnatomicalExposure](https://w3id.org/biolink/vocab/PathologicalAnatomicalExposure)
+URI: [biolink:PathologicalAnatomicalExposure](https://w3id.org/biolink/PathologicalAnatomicalExposure)
 
 
 ---

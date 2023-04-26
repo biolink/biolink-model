@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/vocab/has_frameshift_variant)
+URI: [biolink:has_frameshift_variant](https://w3id.org/biolink/has_frameshift_variant)
 
 ## Domain and Range
 

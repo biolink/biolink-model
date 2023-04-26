@@ -10,7 +10,7 @@ layout: default
 
 A transcript is formed from multiple exons
 
-URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonToTranscriptRelationship)
+URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/ExonToTranscriptRelationship)
 
 
 ---

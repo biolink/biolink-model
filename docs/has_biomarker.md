@@ -14,7 +14,7 @@ translator_minimal
 holds between a disease or phenotypic feature and a measurable chemical entity that is used as an indicator of the presence or state of the disease or feature.
  # metabolite
 
-URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
+URI: [biolink:has_biomarker](https://w3id.org/biolink/has_biomarker)
 
 ## Domain and Range
 

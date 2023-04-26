@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:sensitivity_associated_with](https://w3id.org/biolink/vocab/sensitivity_associated_with)
+URI: [biolink:sensitivity_associated_with](https://w3id.org/biolink/sensitivity_associated_with)
 
 ## Domain and Range
 

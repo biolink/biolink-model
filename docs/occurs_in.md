@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a process and a material entity or site within which the process occurs
 
-URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
+URI: [biolink:occurs_in](https://w3id.org/biolink/occurs_in)
 
 ## Domain and Range
 

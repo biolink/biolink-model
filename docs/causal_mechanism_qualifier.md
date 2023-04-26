@@ -13,7 +13,7 @@ translator_minimal
 
 A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')
 
-URI: [biolink:causal_mechanism_qualifier](https://w3id.org/biolink/vocab/causal_mechanism_qualifier)
+URI: [biolink:causal_mechanism_qualifier](https://w3id.org/biolink/causal_mechanism_qualifier)
 
 ## Domain and Range
 

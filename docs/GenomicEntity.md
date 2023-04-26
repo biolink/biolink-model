@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
+URI: [biolink:GenomicEntity](https://w3id.org/biolink/GenomicEntity)
 
 
 ---

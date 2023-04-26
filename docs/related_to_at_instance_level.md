@@ -10,7 +10,7 @@ layout: default
 
 Represents a relationship held between two instances of a data classes.  Much like an assertion component, in an ABox, these represent facts associated with the conceptual model.
 
-URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/related_to_at_instance_level)
+URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/related_to_at_instance_level)
 
 ## Domain and Range
 
@@ -47,7 +47,6 @@ URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/relat
  *  [diagnoses](diagnoses.md)
  *  [disease has basis in](disease_has_basis_in.md)
  *  [gene product of](gene_product_of.md)
- *  [genetic association](genetic_association.md)
  *  [has active component](has_active_component.md)
  *  [has completed](has_completed.md)
  *  [has contraindication](has_contraindication.md)

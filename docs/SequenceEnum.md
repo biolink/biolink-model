@@ -10,7 +10,7 @@ layout: default
 
 type of sequence
 
-URI: [biolink:SequenceEnum](https://w3id.org/biolink/vocab/SequenceEnum)
+URI: [biolink:SequenceEnum](https://w3id.org/biolink/SequenceEnum)
 
 
 ## Other properties

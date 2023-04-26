@@ -10,7 +10,7 @@ layout: default
 
 a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
 
-URI: [biolink:WebPage](https://w3id.org/biolink/vocab/WebPage)
+URI: [biolink:WebPage](https://w3id.org/biolink/WebPage)
 
 
 ---

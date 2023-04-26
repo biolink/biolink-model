@@ -10,7 +10,7 @@ layout: default
 
 An association between a material sample and something.
 
-URI: [biolink:MaterialSampleToEntityAssociationMixin](https://w3id.org/biolink/vocab/MaterialSampleToEntityAssociationMixin)
+URI: [biolink:MaterialSampleToEntityAssociationMixin](https://w3id.org/biolink/MaterialSampleToEntityAssociationMixin)
 
 
 ---

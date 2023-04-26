@@ -10,7 +10,7 @@ layout: default
 
 Any entity or process that exists at the level of the whole planet
 
-URI: [biolink:PlanetaryEntity](https://w3id.org/biolink/vocab/PlanetaryEntity)
+URI: [biolink:PlanetaryEntity](https://w3id.org/biolink/PlanetaryEntity)
 
 
 ---

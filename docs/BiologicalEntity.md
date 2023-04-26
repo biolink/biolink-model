@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
+URI: [biolink:BiologicalEntity](https://w3id.org/biolink/BiologicalEntity)
 
 
 ---

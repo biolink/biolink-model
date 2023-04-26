@@ -10,7 +10,7 @@ layout: default
 
 This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 
-URI: [biolink:Book](https://w3id.org/biolink/vocab/Book)
+URI: [biolink:Book](https://w3id.org/biolink/Book)
 
 
 ---

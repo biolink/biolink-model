@@ -10,7 +10,7 @@ layout: default
 
 a qualifier that connects an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
 
-URI: [biolink:catalyst_qualifier](https://w3id.org/biolink/vocab/catalyst_qualifier)
+URI: [biolink:catalyst_qualifier](https://w3id.org/biolink/catalyst_qualifier)
 
 ## Domain and Range
 

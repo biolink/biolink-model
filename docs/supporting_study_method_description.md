@@ -10,7 +10,7 @@ layout: default
 
 A uri or curie pointing to information about the methodology used to generate data supporting an Association.
 
-URI: [biolink:supporting_study_method_description](https://w3id.org/biolink/vocab/supporting_study_method_description)
+URI: [biolink:supporting_study_method_description](https://w3id.org/biolink/supporting_study_method_description)
 
 ## Domain and Range
 

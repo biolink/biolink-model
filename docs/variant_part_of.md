@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:variant_part_of](https://w3id.org/biolink/vocab/variant_part_of)
+URI: [biolink:variant_part_of](https://w3id.org/biolink/variant_part_of)
 
 ## Domain and Range
 

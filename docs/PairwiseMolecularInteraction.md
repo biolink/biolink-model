@@ -10,7 +10,7 @@ layout: default
 
 An interaction at the molecular level between two physical entities
 
-URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/vocab/PairwiseMolecularInteraction)
+URI: [biolink:PairwiseMolecularInteraction](https://w3id.org/biolink/PairwiseMolecularInteraction)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 An abstract association for use where the case is the subject
 
-URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/CaseToEntityAssociationMixin)
+URI: [biolink:CaseToEntityAssociationMixin](https://w3id.org/biolink/CaseToEntityAssociationMixin)
 
 
 ---

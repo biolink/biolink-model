@@ -10,7 +10,7 @@ layout: default
 
 a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 
-URI: [biolink:Phenomenon](https://w3id.org/biolink/vocab/Phenomenon)
+URI: [biolink:Phenomenon](https://w3id.org/biolink/Phenomenon)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:regulated_by](https://w3id.org/biolink/vocab/regulated_by)
+URI: [biolink:regulated_by](https://w3id.org/biolink/regulated_by)
 
 ## Domain and Range
 

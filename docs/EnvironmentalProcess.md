@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/vocab/EnvironmentalProcess)
+URI: [biolink:EnvironmentalProcess](https://w3id.org/biolink/EnvironmentalProcess)
 
 
 ---

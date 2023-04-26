@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:consumed_by](https://w3id.org/biolink/vocab/consumed_by)
+URI: [biolink:consumed_by](https://w3id.org/biolink/consumed_by)
 
 ## Domain and Range
 

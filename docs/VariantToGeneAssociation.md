@@ -10,7 +10,7 @@ layout: default
 
 An association between a variant and a gene, where the variant has a genetic association with the gene (i.e. is in linkage disequilibrium)
 
-URI: [biolink:VariantToGeneAssociation](https://w3id.org/biolink/vocab/VariantToGeneAssociation)
+URI: [biolink:VariantToGeneAssociation](https://w3id.org/biolink/VariantToGeneAssociation)
 
 
 ---

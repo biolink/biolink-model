@@ -10,12 +10,12 @@ layout: default
 
 
 
-URI: [biolink:DruggableGeneToDiseaseAssociation](https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation)
+URI: [biolink:DruggableGeneToDiseaseAssociation](https://w3id.org/biolink/DruggableGeneToDiseaseAssociation)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[InformationResource],[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[EntityToDiseaseAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-++[DruggableGeneToDiseaseAssociation%7Cpredicate:predicate_type;has_evidence:DruggableGeneCategoryEnum%20%2A;frequency_qualifier(i):frequency_value%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Disease],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[NamedThing],[InformationResource],[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[EntityToDiseaseAssociationMixin],[GeneOrGeneProduct]%3Csubject%201..1-++[DruggableGeneToDiseaseAssociation%7Cpredicate:predicate_type;has_evidence:DruggableGeneCategoryEnum%20%2A;frequency_qualifier:frequency_value%20%3F;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Attribute])
 
 ---
 
@@ -191,15 +191,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * Range: [FrequencyValue](types/FrequencyValue.md)
      * in subsets: (translator_minimal)
-
-### Inherited from gene to disease association:
-
- * [subject](subject.md)  <sub>1..1</sub>
-     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
- * [object](object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from macromolecular machine mixin:
 

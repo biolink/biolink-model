@@ -13,7 +13,7 @@ samples
 
 connects any entity to an attribute
 
-URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
+URI: [biolink:has_attribute](https://w3id.org/biolink/has_attribute)
 
 ## Domain and Range
 
@@ -87,6 +87,7 @@ URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
  * [DatasetSummary](DatasetSummary.md)
  * [DatasetVersion](DatasetVersion.md)
  * [Device](Device.md)
+ * [DiagnosticAid](DiagnosticAid.md)
  * [Disease](Disease.md)
  * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
  * [DiseaseOrPhenotypicFeatureExposure](DiseaseOrPhenotypicFeatureExposure.md)
@@ -121,6 +122,7 @@ URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
  * [GeneFamily](GeneFamily.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -129,7 +131,7 @@ URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GeneticInheritance](GeneticInheritance.md)
  * [Genome](Genome.md)
  * [GenomicBackgroundExposure](GenomicBackgroundExposure.md)

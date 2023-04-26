@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:lacks_part](https://w3id.org/biolink/vocab/lacks_part)
+URI: [biolink:lacks_part](https://w3id.org/biolink/lacks_part)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
 
-URI: [biolink:RetrievalSource](https://w3id.org/biolink/vocab/RetrievalSource)
+URI: [biolink:RetrievalSource](https://w3id.org/biolink/RetrievalSource)
 
 
 ---

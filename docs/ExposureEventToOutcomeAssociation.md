@@ -10,7 +10,7 @@ layout: default
 
 An association between an exposure event and an outcome.
 
-URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/vocab/ExposureEventToOutcomeAssociation)
+URI: [biolink:ExposureEventToOutcomeAssociation](https://w3id.org/biolink/ExposureEventToOutcomeAssociation)
 
 
 ---

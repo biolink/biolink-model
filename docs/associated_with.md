@@ -10,7 +10,7 @@ layout: default
 
 Expresses a relationship between two named things where the relationship is typically generated statistically (though not in all cases), and is weaker than its child, 'correlated with', but stronger than its parent, 'related to'. This relationship holds between two concepts represented by variables for which a statistical  dependence is demonstrated.  E.g. the statement “Atrial Fibrillation (Afib) is associated with Myocardial  Infraction (MI)” asserts that having Afib is not statistically independent from whether a patient  will also have MI. Note that in Translator associations, the subject and object concepts may map exactly to  the statistical variables, or represent related entities for which the variables serve as proxies in an  Association (e.g. diseases, chemical entities or processes).
 
-URI: [biolink:associated_with](https://w3id.org/biolink/vocab/associated_with)
+URI: [biolink:associated_with](https://w3id.org/biolink/associated_with)
 
 ## Domain and Range
 
@@ -26,6 +26,8 @@ URI: [biolink:associated_with](https://w3id.org/biolink/vocab/associated_with)
  *  [associated with resistance to](associated_with_resistance_to.md)
  *  [associated with sensitivity to](associated_with_sensitivity_to.md)
  *  [correlated with](correlated_with.md)
+ *  [genetic association](genetic_association.md)
+ *  [genetically associated with](genetically_associated_with.md)
  *  [likelihood associated with](likelihood_associated_with.md)
  *  [resistance associated with](resistance_associated_with.md)
  *  [sensitivity associated with](sensitivity_associated_with.md)

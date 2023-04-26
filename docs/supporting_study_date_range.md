@@ -10,7 +10,7 @@ layout: default
 
 The date range over which data was collected in a study that provided evidence for an Association.
 
-URI: [biolink:supporting_study_date_range](https://w3id.org/biolink/vocab/supporting_study_date_range)
+URI: [biolink:supporting_study_date_range](https://w3id.org/biolink/supporting_study_date_range)
 
 ## Domain and Range
 

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
 
-URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
+URI: [biolink:produces](https://w3id.org/biolink/produces)
 
 ## Domain and Range
 

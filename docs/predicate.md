@@ -10,7 +10,7 @@ layout: default
 
 A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 
-URI: [biolink:predicate](https://w3id.org/biolink/vocab/predicate)
+URI: [biolink:predicate](https://w3id.org/biolink/predicate)
 
 ## Domain and Range
 
@@ -49,7 +49,7 @@ URI: [biolink:predicate](https://w3id.org/biolink/vocab/predicate)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)
  * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
  * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)

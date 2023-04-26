@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two processes, where the other is completed before the one begins
 
-URI: [biolink:preceded_by](https://w3id.org/biolink/vocab/preceded_by)
+URI: [biolink:preceded_by](https://w3id.org/biolink/preceded_by)
 
 ## Domain and Range
 

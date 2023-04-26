@@ -10,7 +10,7 @@ layout: default
 
 A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 
-URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/GenomicSequenceLocalization)
+URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/GenomicSequenceLocalization)
 
 
 ---

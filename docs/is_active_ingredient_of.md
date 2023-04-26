@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a molecular entity and a drug, in which the former is a part of the latter, and is a biologically active component
 
-URI: [biolink:is_active_ingredient_of](https://w3id.org/biolink/vocab/is_active_ingredient_of)
+URI: [biolink:is_active_ingredient_of](https://w3id.org/biolink/is_active_ingredient_of)
 
 ## Domain and Range
 

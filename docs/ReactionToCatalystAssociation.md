@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ReactionToCatalystAssociation](https://w3id.org/biolink/vocab/ReactionToCatalystAssociation)
+URI: [biolink:ReactionToCatalystAssociation](https://w3id.org/biolink/ReactionToCatalystAssociation)
 
 
 ---

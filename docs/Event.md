@@ -10,7 +10,7 @@ layout: default
 
 Something that happens at a given place and time.
 
-URI: [biolink:Event](https://w3id.org/biolink/vocab/Event)
+URI: [biolink:Event](https://w3id.org/biolink/Event)
 
 
 ---

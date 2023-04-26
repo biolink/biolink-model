@@ -10,7 +10,7 @@ layout: default
 
 longitude
 
-URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
+URI: [biolink:longitude](https://w3id.org/biolink/longitude)
 
 ## Domain and Range
 

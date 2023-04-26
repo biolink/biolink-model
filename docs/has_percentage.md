@@ -10,7 +10,7 @@ layout: default
 
 equivalent to has quotient multiplied by 100
 
-URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
+URI: [biolink:has_percentage](https://w3id.org/biolink/has_percentage)
 
 ## Domain and Range
 
@@ -31,7 +31,7 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
  * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

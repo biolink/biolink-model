@@ -10,7 +10,7 @@ layout: default
 
 A molecular entity is a chemical entity composed of individual or covalently bonded atoms.
 
-URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
+URI: [biolink:MolecularEntity](https://w3id.org/biolink/MolecularEntity)
 
 
 ---

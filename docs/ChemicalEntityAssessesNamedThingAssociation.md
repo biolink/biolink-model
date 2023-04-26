@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ChemicalEntityAssessesNamedThingAssociation](https://w3id.org/biolink/vocab/ChemicalEntityAssessesNamedThingAssociation)
+URI: [biolink:ChemicalEntityAssessesNamedThingAssociation](https://w3id.org/biolink/ChemicalEntityAssessesNamedThingAssociation)
 
 
 ---

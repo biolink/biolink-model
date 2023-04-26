@@ -10,7 +10,7 @@ layout: default
 
 A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
 
-URI: [biolink:ProteinDomain](https://w3id.org/biolink/vocab/ProteinDomain)
+URI: [biolink:ProteinDomain](https://w3id.org/biolink/ProteinDomain)
 
 
 ---

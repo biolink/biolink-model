@@ -10,7 +10,7 @@ layout: default
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
 
-URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
+URI: [biolink:MolecularActivity](https://w3id.org/biolink/MolecularActivity)
 
 
 ---
@@ -161,4 +161,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | reaction |
 | **Exact Mappings:** | | GO:0003674 |
 |  | | STY:T044 |
+| **Broad Mappings:** | | STY:T045 |
 

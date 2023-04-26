@@ -10,7 +10,7 @@ layout: default
 
 A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 
-URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
+URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/PopulationOfIndividualOrganisms)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 person, group, organization or project that provides a piece of information (e.g. a knowledge association).
 
-URI: [biolink:provider](https://w3id.org/biolink/vocab/provider)
+URI: [biolink:provider](https://w3id.org/biolink/provider)
 
 ## Domain and Range
 

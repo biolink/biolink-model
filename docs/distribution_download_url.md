@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:distribution_download_url](https://w3id.org/biolink/vocab/distribution_download_url)
+URI: [biolink:distribution_download_url](https://w3id.org/biolink/distribution_download_url)
 
 ## Domain and Range
 

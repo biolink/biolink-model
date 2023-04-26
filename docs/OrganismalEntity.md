@@ -10,12 +10,12 @@ layout: default
 
 A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding chemical entities
 
-URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
+URI: [biolink:OrganismalEntity](https://w3id.org/biolink/OrganismalEntity)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Virus],[SubjectOfInvestigation],[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[Attribute]%3Chas%20attribute%200..%2A-%20[OrganismalEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity],[OrganismalEntity]uses%20-.-%3E[SubjectOfInvestigation],[OrganismalEntity]%5E-[Virus],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellularOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[OrganismTaxon],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellularOrganism],[CellLine],[BiologicalEntity],[Attribute],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Virus],[SubjectOfInvestigation],[PopulationOfIndividualOrganisms],[OrganismalEntityAsAModelOfDiseaseAssociation],[Attribute]%3Chas%20attribute%200..%2A-%20[OrganismalEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[OrganismalEntityAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[OrganismalEntity],[OrganismalEntity]uses%20-.-%3E[SubjectOfInvestigation],[OrganismalEntity]%5E-[Virus],[OrganismalEntity]%5E-[PopulationOfIndividualOrganisms],[OrganismalEntity]%5E-[LifeStage],[OrganismalEntity]%5E-[IndividualOrganism],[OrganismalEntity]%5E-[CellularOrganism],[OrganismalEntity]%5E-[CellLine],[OrganismalEntity]%5E-[Bacterium],[OrganismalEntity]%5E-[AnatomicalEntity],[BiologicalEntity]%5E-[OrganismalEntity],[OrganismTaxon],[LifeStage],[IndividualOrganism],[ExposureEvent],[CellularOrganism],[CellLine],[BiologicalEntity],[Bacterium],[Attribute],[AnatomicalEntity])
 
 ---
 
@@ -31,6 +31,7 @@ URI: [biolink:OrganismalEntity](https://w3id.org/biolink/vocab/OrganismalEntity)
 ## Children
 
  * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+ * [Bacterium](Bacterium.md) - A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
  * [CellLine](CellLine.md)
  * [CellularOrganism](CellularOrganism.md)
  * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
@@ -131,4 +132,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | **Exact Mappings:** | | WIKIDATA:Q7239 |
 |  | | UMLSSG:LIVB |
 |  | | CARO:0001010 |
+| **Narrow Mappings:** | | STY:T008 |
 

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:retrieved_on](https://w3id.org/biolink/vocab/retrieved_on)
+URI: [biolink:retrieved_on](https://w3id.org/biolink/retrieved_on)
 
 ## Domain and Range
 

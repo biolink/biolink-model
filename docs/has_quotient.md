@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
+URI: [biolink:has_quotient](https://w3id.org/biolink/has_quotient)
 
 ## Domain and Range
 
@@ -31,6 +31,6 @@ URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
  * [EntityToPhenotypicFeatureAssociationMixin](EntityToPhenotypicFeatureAssociationMixin.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)

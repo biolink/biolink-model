@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two molecular entities in which the first one is derived from the second one as a product of metabolism
 
-URI: [biolink:is_metabolite_of](https://w3id.org/biolink/vocab/is_metabolite_of)
+URI: [biolink:is_metabolite_of](https://w3id.org/biolink/is_metabolite_of)
 
 ## Domain and Range
 

@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: metatype:Uriorcurie
+title: https://w3id.org/biolink/linkml:types/Uriorcurie
 layout: default
 ---
 
-# Type: Uriorcurie
+# Type: https://w3id.org/biolink/linkml:types/Uriorcurie
 
 
 a URI or a CURIE
 
-URI: [metatype:Uriorcurie](https://linkml.github.io/linkml-model/docs/types/Uriorcurie)
+URI: [https://w3id.org/biolink/linkml:types/Uriorcurie](https://w3id.org/biolink/linkml:types/Uriorcurie)
 
 |  |  |  |
 | --- | --- | --- |

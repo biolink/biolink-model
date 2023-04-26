@@ -10,7 +10,7 @@ layout: default
 
 a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc.
 
-URI: [biolink:DrugLabel](https://w3id.org/biolink/vocab/DrugLabel)
+URI: [biolink:DrugLabel](https://w3id.org/biolink/DrugLabel)
 
 
 ---

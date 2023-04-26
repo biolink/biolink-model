@@ -10,7 +10,7 @@ layout: default
 
 a professional relationship between one provider (often a person) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.
 
-URI: [biolink:affiliation](https://w3id.org/biolink/vocab/affiliation)
+URI: [biolink:affiliation](https://w3id.org/biolink/affiliation)
 
 ## Domain and Range
 

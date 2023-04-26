@@ -10,7 +10,7 @@ layout: default
 
 An association between an exposure event and a disease.
 
-URI: [biolink:DiseaseToExposureEventAssociation](https://w3id.org/biolink/vocab/DiseaseToExposureEventAssociation)
+URI: [biolink:DiseaseToExposureEventAssociation](https://w3id.org/biolink/DiseaseToExposureEventAssociation)
 
 
 ---

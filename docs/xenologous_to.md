@@ -13,7 +13,7 @@ translator_minimal
 
 a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
 
-URI: [biolink:xenologous_to](https://w3id.org/biolink/vocab/xenologous_to)
+URI: [biolink:xenologous_to](https://w3id.org/biolink/xenologous_to)
 
 ## Domain and Range
 

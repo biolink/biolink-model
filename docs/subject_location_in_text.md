@@ -10,7 +10,7 @@ layout: default
 
 Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
 
-URI: [biolink:subject_location_in_text](https://w3id.org/biolink/vocab/subject_location_in_text)
+URI: [biolink:subject_location_in_text](https://w3id.org/biolink/subject_location_in_text)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:subject_location_in_text](https://w3id.org/biolink/vocab/subject_l
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None) |
+| **Examples:** | | Example(value='15', description=None, object=None) |
 

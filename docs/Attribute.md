@@ -10,7 +10,7 @@ layout: default
 
 A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 
-URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
+URI: [biolink:Attribute](https://w3id.org/biolink/Attribute)
 
 
 ---

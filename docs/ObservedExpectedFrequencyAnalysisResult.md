@@ -10,7 +10,7 @@ layout: default
 
 A result of a observed expected frequency analysis.
 
-URI: [biolink:ObservedExpectedFrequencyAnalysisResult](https://w3id.org/biolink/vocab/ObservedExpectedFrequencyAnalysisResult)
+URI: [biolink:ObservedExpectedFrequencyAnalysisResult](https://w3id.org/biolink/ObservedExpectedFrequencyAnalysisResult)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:license](https://w3id.org/biolink/vocab/license)
+URI: [biolink:license](https://w3id.org/biolink/license)
 
 ## Domain and Range
 

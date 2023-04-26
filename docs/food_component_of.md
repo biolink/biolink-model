@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a one or more chemical entities present in food, irrespective of nutritional value (i.e. could also be a contaminant or additive)
 
-URI: [biolink:food_component_of](https://w3id.org/biolink/vocab/food_component_of)
+URI: [biolink:food_component_of](https://w3id.org/biolink/food_component_of)
 
 ## Domain and Range
 

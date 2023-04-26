@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ingest_date](https://w3id.org/biolink/vocab/ingest_date)
+URI: [biolink:ingest_date](https://w3id.org/biolink/ingest_date)
 
 ## Domain and Range
 

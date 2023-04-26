@@ -10,7 +10,7 @@ layout: default
 
 refers to is a relation between one named thing and the information content entity that it makes reference to.
 
-URI: [biolink:mentioned_by](https://w3id.org/biolink/vocab/mentioned_by)
+URI: [biolink:mentioned_by](https://w3id.org/biolink/mentioned_by)
 
 ## Domain and Range
 

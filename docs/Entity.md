@@ -10,7 +10,7 @@ layout: default
 
 Root Biolink Model class for all things and informational relationships, real or imagined.
 
-URI: [biolink:Entity](https://w3id.org/biolink/vocab/Entity)
+URI: [biolink:Entity](https://w3id.org/biolink/Entity)
 
 
 ---

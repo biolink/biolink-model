@@ -13,7 +13,7 @@ translator_minimal
 
 A statement qualifier representing a taxonomic category of species in which a relationship expressed in an association took place.
 
-URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_context_qualifier)
+URI: [biolink:species_context_qualifier](https://w3id.org/biolink/species_context_qualifier)
 
 ## Domain and Range
 
@@ -34,7 +34,7 @@ URI: [biolink:species_context_qualifier](https://w3id.org/biolink/vocab/species_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='zebrafish', description=None) |
-|  | | Example(value='human', description=None) |
+| **Examples:** | | Example(value='zebrafish', description=None, object=None) |
+|  | | Example(value='human', description=None, object=None) |
 | **In Subsets:** | | translator_minimal |
 

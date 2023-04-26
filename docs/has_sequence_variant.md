@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_sequence_variant](https://w3id.org/biolink/vocab/has_sequence_variant)
+URI: [biolink:has_sequence_variant](https://w3id.org/biolink/has_sequence_variant)
 
 ## Domain and Range
 

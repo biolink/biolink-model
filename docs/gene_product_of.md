@@ -13,7 +13,7 @@ translator_minimal
 
 definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
 
-URI: [biolink:gene_product_of](https://w3id.org/biolink/vocab/gene_product_of)
+URI: [biolink:gene_product_of](https://w3id.org/biolink/gene_product_of)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 connects an association to an instance of supporting study result
 
-URI: [biolink:has_supporting_study_result](https://w3id.org/biolink/vocab/has_supporting_study_result)
+URI: [biolink:has_supporting_study_result](https://w3id.org/biolink/has_supporting_study_result)
 
 ## Domain and Range
 

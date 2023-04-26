@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DruggableGeneCategoryEnum](https://w3id.org/biolink/vocab/DruggableGeneCategoryEnum)
+URI: [biolink:DruggableGeneCategoryEnum](https://w3id.org/biolink/DruggableGeneCategoryEnum)
 
 
 ## Other properties

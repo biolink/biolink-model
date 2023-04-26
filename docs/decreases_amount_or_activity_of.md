@@ -10,7 +10,7 @@ layout: default
 
 A grouping mixin to help with searching for all the predicates that decrease the amount or activity of the object.
 
-URI: [biolink:decreases_amount_or_activity_of](https://w3id.org/biolink/vocab/decreases_amount_or_activity_of)
+URI: [biolink:decreases_amount_or_activity_of](https://w3id.org/biolink/decreases_amount_or_activity_of)
 
 ## Domain and Range
 

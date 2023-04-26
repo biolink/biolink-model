@@ -10,7 +10,7 @@ layout: default
 
 A subcellular location, cell type or gross anatomical part
 
-URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
+URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/AnatomicalEntity)
 
 
 ---
@@ -153,6 +153,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | FMA:62955 |
 |  | | CARO:0000000 |
 |  | | SIO:001262 |
+|  | | STY:T029 |
+|  | | STY:T030 |
 | **Narrow Mappings:** | | ZFA:0100000 |
 |  | | FBbt:10000000 |
 |  | | EMAPA:0 |
@@ -161,5 +163,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WBbt:0000100 |
 |  | | NCIT:C12219 |
 |  | | GO:0110165 |
+|  | | STY:T031 |
 | **Related Mappings:** | | SNOMEDCT:123037004 |
 

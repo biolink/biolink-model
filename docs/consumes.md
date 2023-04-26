@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:consumes](https://w3id.org/biolink/vocab/consumes)
+URI: [biolink:consumes](https://w3id.org/biolink/consumes)
 
 ## Domain and Range
 

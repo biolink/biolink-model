@@ -10,7 +10,7 @@ layout: default
 
 A mixin that can be used on any entity that can be taxonomically classified. This includes individual organisms; genes, their products and other molecular entities; body parts; biological processes
 
-URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
+URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/ThingWithTaxon)
 
 
 ---

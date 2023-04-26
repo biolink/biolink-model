@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:version](https://w3id.org/biolink/vocab/version)
+URI: [biolink:version](https://w3id.org/biolink/version)
 
 ## Domain and Range
 

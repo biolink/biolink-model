@@ -10,7 +10,7 @@ layout: default
 
 A description of a study population/cohort that was interrogated to provide evidence for the association  (e.g. the inclusion and exclusion criteria).
 
-URI: [biolink:supporting_study_cohort](https://w3id.org/biolink/vocab/supporting_study_cohort)
+URI: [biolink:supporting_study_cohort](https://w3id.org/biolink/supporting_study_cohort)
 
 ## Domain and Range
 

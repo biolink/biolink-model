@@ -10,7 +10,7 @@ layout: default
 
 location in which gene or protein expression takes place. May be cell, tissue, or organ.
 
-URI: [biolink:expression_site](https://w3id.org/biolink/vocab/expression_site)
+URI: [biolink:expression_site](https://w3id.org/biolink/expression_site)
 
 ## Domain and Range
 
@@ -33,5 +33,5 @@ URI: [biolink:expression_site](https://w3id.org/biolink/vocab/expression_site)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0002037', description='cerebellum') |
+| **Examples:** | | Example(value='UBERON:0002037', description='cerebellum', object=None) |
 

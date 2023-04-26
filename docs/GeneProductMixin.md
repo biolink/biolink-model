@@ -10,7 +10,7 @@ layout: default
 
 The functional molecular product of a single gene locus. Gene products are either proteins or functional RNA molecules.
 
-URI: [biolink:GeneProductMixin](https://w3id.org/biolink/vocab/GeneProductMixin)
+URI: [biolink:GeneProductMixin](https://w3id.org/biolink/GeneProductMixin)
 
 
 ---

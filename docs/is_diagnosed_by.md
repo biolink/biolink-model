@@ -10,11 +10,11 @@ layout: default
 
 
 
-URI: [biolink:is_diagnosed_by](https://w3id.org/biolink/vocab/is_diagnosed_by)
+URI: [biolink:is_diagnosed_by](https://w3id.org/biolink/is_diagnosed_by)
 
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [ChemicalOrDrugOrTreatment](ChemicalOrDrugOrTreatment.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [DiagnosticAid](DiagnosticAid.md)
 
 ## Parents
 

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). In SNOMEDCT, disorders with keyword 'characterized by' should translate into this predicate.
 
-URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
+URI: [biolink:has_phenotype](https://w3id.org/biolink/has_phenotype)
 
 ## Domain and Range
 

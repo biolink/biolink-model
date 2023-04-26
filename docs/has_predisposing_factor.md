@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:has_predisposing_factor](https://w3id.org/biolink/vocab/has_predisposing_factor)
+URI: [biolink:has_predisposing_factor](https://w3id.org/biolink/has_predisposing_factor)
 
 ## Domain and Range
 

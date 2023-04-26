@@ -10,7 +10,7 @@ layout: default
 
 A gene is a collection of transcripts
 
-URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/TranscriptToGeneRelationship)
+URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/TranscriptToGeneRelationship)
 
 
 ---

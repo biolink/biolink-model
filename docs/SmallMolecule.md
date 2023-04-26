@@ -10,7 +10,7 @@ layout: default
 
 A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
 
-URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
+URI: [biolink:SmallMolecule](https://w3id.org/biolink/SmallMolecule)
 
 
 ---

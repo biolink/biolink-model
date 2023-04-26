@@ -13,7 +13,7 @@ translator_minimal
 
 A list of knowledge graphs that support the existence of this node.
 
-URI: [biolink:support_graphs](https://w3id.org/biolink/vocab/support_graphs)
+URI: [biolink:support_graphs](https://w3id.org/biolink/support_graphs)
 
 ## Domain and Range
 

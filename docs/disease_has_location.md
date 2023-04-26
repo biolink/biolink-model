@@ -10,7 +10,7 @@ layout: default
 
 A relationship between a disease and an anatomical entity where the disease has one or more features that are located in that entity.
 
-URI: [biolink:disease_has_location](https://w3id.org/biolink/vocab/disease_has_location)
+URI: [biolink:disease_has_location](https://w3id.org/biolink/disease_has_location)
 
 ## Domain and Range
 

@@ -13,7 +13,7 @@ translator_minimal
 
 Defines a mereological relation between a collection and an item.
 
-URI: [biolink:has_member](https://w3id.org/biolink/vocab/has_member)
+URI: [biolink:has_member](https://w3id.org/biolink/has_member)
 
 ## Domain and Range
 

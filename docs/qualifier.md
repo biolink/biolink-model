@@ -13,7 +13,7 @@ translator_minimal
 
 grouping slot for all qualifiers on an edge.  useful for testing compliance with association classes
 
-URI: [biolink:qualifier](https://w3id.org/biolink/vocab/qualifier)
+URI: [biolink:qualifier](https://w3id.org/biolink/qualifier)
 
 ## Domain and Range
 

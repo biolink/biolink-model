@@ -79,8 +79,15 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [CellularComponent](CellularComponent.md) - A location in or around a cell
                  * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
                  * [PathologicalAnatomicalStructure](PathologicalAnatomicalStructure.md) - An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
+             * [Bacterium](Bacterium.md) - A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
              * [CellLine](CellLine.md)
              * [CellularOrganism](CellularOrganism.md)
+                 * [Fungus](Fungus.md) - A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+                 * [Invertebrate](Invertebrate.md) - An animal lacking a vertebral column. This group consists of 98% of all animal species.
+                 * [Mammal](Mammal.md) - A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
+                     * [Human](Human.md) - A member of the the species Homo sapiens.
+                 * [Plant](Plant.md)
+                 * [Vertebrate](Vertebrate.md) - A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
              * [IndividualOrganism](IndividualOrganism.md) - An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
                  * [Case](Case.md) - An individual (human) organism that has a patient role in some clinical context.
              * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
@@ -125,6 +132,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Hospitalization](Hospitalization.md)
          * [ClinicalTrial](ClinicalTrial.md)
      * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+     * [DiagnosticAid](DiagnosticAid.md) - A device or substance used to help diagnose disease or injury
      * [Event](Event.md) - Something that happens at a given place and time.
      * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some topic of discourse or is used as support.
          * [CommonDataElement](CommonDataElement.md) - A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
@@ -206,6 +214,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
          * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
          * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+     * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
      * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and a gene expression site, possibly qualified by stage/timing info.
      * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
          * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) - Indicates that two genes are co-expressed, generally under the same conditions.
@@ -214,7 +223,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) - An interaction at the molecular level between two physical entities
      * [GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md) - Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
      * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) - An interaction between a gene or gene product and a biological process or pathway.
-     * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+     * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
      * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
          * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
      * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -401,6 +410,10 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [negatively correlated with](negatively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).
          * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
          * [positively correlated with](positively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).
+     * [genetic association](genetic_association.md)
+     * [genetically associated with](genetically_associated_with.md)
+         * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+         * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
      * [likelihood associated with](likelihood_associated_with.md)
          * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
          * [increased likelihood associated with](increased_likelihood_associated_with.md)
@@ -465,7 +478,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
  * [develops from](develops_from.md)
  * [develops into](develops_into.md)
- * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
+ * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.
  * [directly physically interacts with](directly_physically_interacts_with.md) - A causal mechanism mediated by a direct contact between the effector and target entities (this contact may  be weak or strong, transient or stable).
      * [binds](binds.md) - A causal mechanism mediated by the direct contact between effector and target chemical or biomolecular entity,  which form a stable physical interaction.
  * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
@@ -485,10 +498,11 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
  * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
  * [gene_fusion_with](gene_fusion_with.md) - holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.
- * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
+ * [genetic association](genetic_association.md)
+ * [genetic_neighborhood_of](genetic_neighborhood_of.md) - holds between two genes located nearby one another on a chromosome. 
+ * [genetically associated with](genetically_associated_with.md)
      * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
      * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
- * [genetic_neighborhood_of](genetic_neighborhood_of.md) - holds between two genes located nearby one another on a chromosome. 
  * [genetically interacts with](genetically_interacts_with.md) - holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
      * [gene_fusion_with](gene_fusion_with.md) - holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.
      * [genetic_neighborhood_of](genetic_neighborhood_of.md) - holds between two genes located nearby one another on a chromosome. 
@@ -764,6 +778,10 @@ Entity and association taxonomy and datamodel for life-sciences data
                  * [negatively correlated with](negatively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).
                  * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
                  * [positively correlated with](positively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).
+             * [genetic association](genetic_association.md)
+             * [genetically associated with](genetically_associated_with.md)
+                 * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+                 * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
              * [likelihood associated with](likelihood_associated_with.md)
                  * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
                  * [increased likelihood associated with](increased_likelihood_associated_with.md)
@@ -793,12 +811,9 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
          * [develops from](develops_from.md)
          * [develops into](develops_into.md)
-         * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
+         * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.
          * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
          * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
-         * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
-             * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-             * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
          * [has active component](has_active_component.md)
          * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
          * [has contraindication](has_contraindication.md)
@@ -977,6 +992,10 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [negatively correlated with](negatively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move in opposite directions (i.e. increased in one or presence of  one correlates with a decrease or absence of the other).
              * [occurs together in literature with](occurs_together_in_literature_with.md) - holds between two entities where their co-occurrence is correlated by counts of publications in which both occur, using some threshold of occurrence as defined by the edge provider.
              * [positively correlated with](positively_correlated_with.md) - A relationship that holds between two concepts represented by variables for which a statistical correlation  is demonstrated, wherein variable values move together in the same direction (i.e. increased in one or  presence of one correlates with an increase or presence of the other).
+         * [genetic association](genetic_association.md)
+         * [genetically associated with](genetically_associated_with.md)
+             * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
+             * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
          * [likelihood associated with](likelihood_associated_with.md)
              * [decreased likelihood associated with](decreased_likelihood_associated_with.md)
              * [increased likelihood associated with](increased_likelihood_associated_with.md)
@@ -1006,12 +1025,9 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [has metabolite](has_metabolite.md) - holds between two molecular entities in which the second one is derived from the first one as a product of metabolism
      * [develops from](develops_from.md)
      * [develops into](develops_into.md)
-     * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination of the symptoms.
+     * [diagnoses](diagnoses.md) - a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.
      * [disease has basis in](disease_has_basis_in.md) - A relation that holds between a disease and an entity where the state of the entity has contribution to the disease.
      * [gene product of](gene_product_of.md) - definition x has gene product of y if and only if y is a gene (SO:0000704) that participates in some gene expression process (GO:0010467) where the output of thatf process is either y or something that is ribosomally translated from x
-     * [genetic association](genetic_association.md) - Co-occurrence of a certain allele of a genetic marker and the phenotype of interest in the same individuals at above-chance level
-         * [condition associated with gene](condition_associated_with_gene.md) - holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-         * [gene associated with condition](gene_associated_with_condition.md) - holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
      * [has active component](has_active_component.md)
      * [has completed](has_completed.md) - holds between an entity and a process that the entity is capable of and has completed
      * [has contraindication](has_contraindication.md)

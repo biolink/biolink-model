@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/RelationshipQuantifier)
+URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/RelationshipQuantifier)
 
 
 ---

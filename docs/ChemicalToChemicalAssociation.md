@@ -10,7 +10,7 @@ layout: default
 
 A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
 
-URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/vocab/ChemicalToChemicalAssociation)
+URI: [biolink:ChemicalToChemicalAssociation](https://w3id.org/biolink/ChemicalToChemicalAssociation)
 
 
 ---

@@ -13,7 +13,7 @@ samples
 
 connects an attribute to a value
 
-URI: [biolink:has_qualitative_value](https://w3id.org/biolink/vocab/has_qualitative_value)
+URI: [biolink:has_qualitative_value](https://w3id.org/biolink/has_qualitative_value)
 
 ## Domain and Range
 

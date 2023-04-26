@@ -13,7 +13,7 @@ translator_minimal
 
 A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
 
-URI: [biolink:retrieval_source_ids](https://w3id.org/biolink/vocab/retrieval_source_ids)
+URI: [biolink:retrieval_source_ids](https://w3id.org/biolink/retrieval_source_ids)
 
 ## Domain and Range
 
@@ -61,6 +61,7 @@ None ->  <sub>0..\*</sub> [RetrievalSource](RetrievalSource.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -69,7 +70,7 @@ None ->  <sub>0..\*</sub> [RetrievalSource](RetrievalSource.md)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)

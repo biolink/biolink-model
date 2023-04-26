@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
+URI: [biolink:object_closure](https://w3id.org/biolink/object_closure)
 
 ## Domain and Range
 
@@ -59,6 +59,7 @@ URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -67,7 +68,7 @@ URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
@@ -112,5 +113,5 @@ URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.') |
+| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.', object=None) |
 

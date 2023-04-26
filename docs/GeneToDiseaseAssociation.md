@@ -5,17 +5,17 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneToDiseaseAssociation
+# Class: GeneToDiseaseAssociation _(deprecated)_
 
 
 
 
-URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDiseaseAssociation)
+URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/GeneToDiseaseAssociation)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[InformationResource],[GeneToEntityAssociationMixin],[Disease]%3Cobject%201..1-%20[GeneToDiseaseAssociation%7Cfrequency_qualifier:frequency_value%20%3F;predicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToDiseaseAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[DruggableGeneToDiseaseAssociation],[Disease],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[Publication],[OntologyClass],[NamedThing],[InformationResource],[GeneToDiseaseAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[DruggableGeneToDiseaseAssociation],[Attribute],[Association])
 
 ---
 
@@ -23,11 +23,6 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
-
-## Uses Mixins
-
- *  mixin: [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
- *  mixin: [GeneToEntityAssociationMixin](GeneToEntityAssociationMixin.md)
 
 ## Children
 
@@ -40,15 +35,6 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 
 ## Attributes
 
-
-### Own
-
- * [object](object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
- * [subject](subject.md)  <sub>1..1</sub>
-     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from association:
 
@@ -177,45 +163,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from entity to feature or disease qualifiers mixin:
-
- * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * Range: [SeverityValue](SeverityValue.md)
-     * in subsets: (translator_minimal)
- * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-     * Range: [Onset](Onset.md)
-     * in subsets: (translator_minimal)
-
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
-     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * Range: [FrequencyValue](types/FrequencyValue.md)
-     * in subsets: (translator_minimal)
-
 ### Inherited from macromolecular machine mixin:
 
  * [name](name.md)  <sub>0..1</sub>
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
-
-### Domain for slot:
-
- * [object](object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
- * [subject](subject.md)  <sub>1..1</sub>
-     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
-| **Comments:** | | NCIT:R176 refers to the inverse relationship |
-| **Exact Mappings:** | | SIO:000983 |
-| **Close Mappings:** | | dcid:DiseaseGeneAssociation |
-

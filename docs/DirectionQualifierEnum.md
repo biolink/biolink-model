@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DirectionQualifierEnum](https://w3id.org/biolink/vocab/DirectionQualifierEnum)
+URI: [biolink:DirectionQualifierEnum](https://w3id.org/biolink/DirectionQualifierEnum)
 
 
 ## Other properties

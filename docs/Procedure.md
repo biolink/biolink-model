@@ -10,7 +10,7 @@ layout: default
 
 A series of actions conducted in a certain order or manner
 
-URI: [biolink:Procedure](https://w3id.org/biolink/vocab/Procedure)
+URI: [biolink:Procedure](https://w3id.org/biolink/Procedure)
 
 
 ---

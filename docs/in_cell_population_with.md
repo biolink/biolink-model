@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two genes or gene products that are expressed in the same cell type or population
 
-URI: [biolink:in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_population_with)
+URI: [biolink:in_cell_population_with](https://w3id.org/biolink/in_cell_population_with)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 a constraint of a time interval placed upon the truth value of an association.
 
-URI: [biolink:temporal_interval_qualifier](https://w3id.org/biolink/vocab/temporal_interval_qualifier)
+URI: [biolink:temporal_interval_qualifier](https://w3id.org/biolink/temporal_interval_qualifier)
 
 ## Domain and Range
 

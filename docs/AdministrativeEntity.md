@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/AdministrativeEntity)
+URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/AdministrativeEntity)
 
 
 ---

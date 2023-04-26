@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespace)
+URI: [biolink:subject_namespace](https://w3id.org/biolink/subject_namespace)
 
 ## Domain and Range
 
@@ -59,6 +59,7 @@ URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespac
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
  * [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md)
@@ -67,7 +68,7 @@ URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespac
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
@@ -113,5 +114,5 @@ URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespac
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | subject prefix |
-| **Examples:** | | Example(value='NCBIGene', description="The subject namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.") |
+| **Examples:** | | Example(value='NCBIGene', description="The subject namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'NCBIGene'.", object=None) |
 

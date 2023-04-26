@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ReactionToParticipantAssociation](https://w3id.org/biolink/vocab/ReactionToParticipantAssociation)
+URI: [biolink:ReactionToParticipantAssociation](https://w3id.org/biolink/ReactionToParticipantAssociation)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 connects an entity to one or more (medical) procedures
 
-URI: [biolink:has_procedure](https://w3id.org/biolink/vocab/has_procedure)
+URI: [biolink:has_procedure](https://w3id.org/biolink/has_procedure)
 
 ## Domain and Range
 

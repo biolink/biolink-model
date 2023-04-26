@@ -10,7 +10,7 @@ layout: default
 
 A phenotypic feature which is behavioral in nature.
 
-URI: [biolink:BehavioralFeature](https://w3id.org/biolink/vocab/BehavioralFeature)
+URI: [biolink:BehavioralFeature](https://w3id.org/biolink/BehavioralFeature)
 
 
 ---

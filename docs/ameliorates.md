@@ -10,7 +10,7 @@ layout: default
 
 A relationship between an entity (e.g. a genotype, genetic variation, chemical, or environmental exposure, clinical intervention) and a condition (a phenotype or disease), where the presence of the entity reduces or eliminates some or all aspects of the condition.
 
-URI: [biolink:ameliorates](https://w3id.org/biolink/vocab/ameliorates)
+URI: [biolink:ameliorates](https://w3id.org/biolink/ameliorates)
 
 ## Domain and Range
 

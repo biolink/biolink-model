@@ -10,7 +10,7 @@ layout: default
 
 a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
 
-URI: [biolink:mechanism_of_action](https://w3id.org/biolink/vocab/mechanism_of_action)
+URI: [biolink:mechanism_of_action](https://w3id.org/biolink/mechanism_of_action)
 
 ## Domain and Range
 

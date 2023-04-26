@@ -10,7 +10,7 @@ layout: default
 
 describes a relationship where the structure, function, or occurrence of one entity is degraded or interfered with by another.
 
-URI: [biolink:disrupted_by](https://w3id.org/biolink/vocab/disrupted_by)
+URI: [biolink:disrupted_by](https://w3id.org/biolink/disrupted_by)
 
 ## Domain and Range
 

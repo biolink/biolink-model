@@ -10,7 +10,7 @@ layout: default
 
 A result of a concept count analysis.
 
-URI: [biolink:ConceptCountAnalysisResult](https://w3id.org/biolink/vocab/ConceptCountAnalysisResult)
+URI: [biolink:ConceptCountAnalysisResult](https://w3id.org/biolink/ConceptCountAnalysisResult)
 
 
 ---

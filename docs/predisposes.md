@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
-URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
+URI: [biolink:predisposes](https://w3id.org/biolink/predisposes)
 
 ## Domain and Range
 
