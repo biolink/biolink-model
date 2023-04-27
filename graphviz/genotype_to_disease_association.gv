@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,4225.4,283"];
+	graph [bb="0,0,5946.4,283"];
 	node [label="\N"];
 	"genotype to disease association"	[height=0.5,
 		label="genotype to disease association",
-		pos="2374.4,265",
+		pos="3267.4,265",
 		width=4.3871];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"genotype to disease association" -> association	[label=is_a,
-		lp="645.39,221.5",
-		pos="e,106.72,190.68 2216.9,263.27 1911.1,261.32 1215.7,254.25 631.39,229 410.23,219.44 353.31,228.88 134.39,196 128.62,195.13 122.62,\
-194.04 116.66,192.82"];
+		lp="638.39,221.5",
+		pos="e,106.72,190.67 3110.1,263.03 2618.1,259.84 1112.7,248.66 624.39,229 406.3,220.22 350.23,228.52 134.39,196 128.62,195.13 122.62,\
+194.03 116.66,192.81"];
 	"genotype to entity association mixin"	[height=0.5,
 		pos="322.39,178",
 		width=4.9829];
 	"genotype to disease association" -> "genotype to entity association mixin"	[label=uses,
-		lp="868.89,221.5",
-		pos="e,435.43,192.01 2216.5,264.06 1939.9,263.34 1349.8,258.14 852.39,229 712.74,220.82 552.94,204.83 445.64,193.13"];
+		lp="858.89,221.5",
+		pos="e,432.51,192.21 3110.1,263.41 2645.7,261.38 1285.9,253.48 842.39,229 704.99,221.42 547.8,205.26 442.54,193.35"];
 	"entity to disease association mixin"	[height=0.5,
 		pos="690.39,178",
 		width=4.7482];
 	"genotype to disease association" -> "entity to disease association mixin"	[label=uses,
-		lp="1015.9,221.5",
-		pos="e,766.22,194.2 2217.8,262.67 1909,259.62 1231.4,250.63 999.39,229 923.54,221.93 838.09,207.61 776.31,196.1"];
+		lp="1013.9,221.5",
+		pos="e,764.77,194.24 3109.4,264.57 2664.8,265.69 1408.3,265.43 997.39,229 921.6,222.28 836.24,207.81 774.8,196.16"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -31,9 +31,9 @@ digraph {
 		width=1.0652];
 	"genotype to disease association" -> id	[color=blue,
 		label=id,
-		lp="1136.4,221.5",
-		pos="e,946.37,190.01 2217.4,262.92 1931.3,260.4 1335.4,252.45 1129.4,229 1055.5,220.59 1037.1,215.79 965.39,196 962.28,195.14 959.08,\
-194.18 955.89,193.17",
+		lp="1131.4,221.5",
+		pos="e,946.38,189.98 3110.1,263.14 2648.8,260.39 1319.5,250.64 1124.4,229 1052.7,221.04 1034.9,215.43 965.39,196 962.29,195.13 959.09,\
+194.17 955.89,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -42,9 +42,9 @@ digraph {
 		width=1.2277];
 	"genotype to disease association" -> iri	[color=blue,
 		label=iri,
-		lp="1254.4,221.5",
-		pos="e,1051,190.16 2218.2,262.15 1954.1,258.53 1429.8,249.02 1246.4,229 1167.7,220.41 1148.1,215.46 1071.4,196 1068,195.13 1064.4,194.16 \
-1060.9,193.14",
+		lp="1244.4,221.5",
+		pos="e,1051.3,190.19 3110.5,262.93 2666.3,259.65 1420.3,248.81 1236.4,229 1162,220.99 1143.8,214.78 1071.4,196 1068,195.12 1064.5,194.16 \
+1061.1,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -53,8 +53,8 @@ digraph {
 		width=1.5707];
 	"genotype to disease association" -> name	[color=blue,
 		label=name,
-		lp="1359.4,221.5",
-		pos="e,1176,191.18 2217.7,262.62 1971.3,259.78 1504.2,251.54 1339.4,229 1286,221.7 1226.2,205.92 1185.6,194.03",
+		lp="1351.4,221.5",
+		pos="e,1175.2,191.54 3110.1,263.27 2680,260.98 1505,252.61 1331.4,229 1280.6,222.09 1224,206.58 1185.1,194.65",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -63,8 +63,8 @@ digraph {
 		width=2.0943];
 	"genotype to disease association" -> description	[color=blue,
 		label=description,
-		lp="1478.9,221.5",
-		pos="e,1323,193.95 2216.8,263.47 1990,261.79 1583,255.1 1438.4,229 1401.9,222.41 1362.1,208.97 1332.6,197.69",
+		lp="1471.9,221.5",
+		pos="e,1321.2,194.15 3109.6,263.83 2694.7,262.98 1593.9,258 1431.4,229 1396.6,222.78 1358.8,209.42 1330.7,198.07",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -73,8 +73,8 @@ digraph {
 		width=1.4443];
 	"genotype to disease association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1621.4,221.5",
-		pos="e,1463,192.73 2217.7,262.61 2020.5,259.9 1693.2,251.99 1574.4,229 1538.9,222.14 1500.4,208.11 1472.4,196.66",
+		lp="1617.4,221.5",
+		pos="e,1462,192.95 3109.9,263.68 2717.8,262.46 1718.9,256.65 1570.4,229 1535.9,222.58 1498.6,208.62 1471.5,197.07",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -83,8 +83,8 @@ digraph {
 		width=1.2999];
 	"genotype to disease association" -> negated	[color=blue,
 		label=negated,
-		lp="1770.4,221.5",
-		pos="e,1583.6,190.33 2217.2,263.2 2088.6,260.65 1902.4,252.65 1741.4,229 1689.8,221.42 1632,205.31 1593.5,193.41",
+		lp="1772.4,221.5",
+		pos="e,1583.2,190.46 3109.4,264.57 2774.8,265.1 2003.6,262.49 1743.4,229 1690.8,222.23 1632.1,205.81 1593.2,193.62",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -93,8 +93,8 @@ digraph {
 		width=2.1304];
 	"genotype to disease association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1900.9,221.5",
-		pos="e,1731.7,193.28 2219.2,261.57 2118.3,257.95 1984.3,249.32 1867.4,229 1824.1,221.48 1776.2,207.6 1741.2,196.37",
+		lp="1910.9,221.5",
+		pos="e,1732.1,193.2 3109.4,264.7 2797.1,265.33 2110.7,262.65 1877.4,229 1830.7,222.26 1778.9,207.87 1741.7,196.25",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -103,8 +103,8 @@ digraph {
 		width=1.7332];
 	"genotype to disease association" -> publications	[color=blue,
 		label=publications,
-		lp="2034.4,221.5",
-		pos="e,1880.8,193.32 2225.4,258.94 2153.7,254.34 2066.9,245.61 1990.4,229 1955.9,221.52 1918.3,208.14 1890.3,197.11",
+		lp="2056.4,221.5",
+		pos="e,1883.1,192.85 3109.5,264.82 2820.8,265.46 2218.8,262.53 2012.4,229 1971,222.28 1925.6,207.95 1892.8,196.35",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -113,8 +113,8 @@ digraph {
 		width=2.0943];
 	"genotype to disease association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2173.9,221.5",
-		pos="e,2035.3,194.37 2255.7,253.11 2214.7,247.78 2168.6,240.05 2127.4,229 2099,221.39 2068.4,209.08 2044.7,198.58",
+		lp="2214.9,221.5",
+		pos="e,2041.4,193.63 3109.6,264.06 2850.1,263.3 2344.6,257.98 2168.4,229 2128,222.35 2083.6,208.52 2051.1,197.09",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -123,8 +123,8 @@ digraph {
 		width=3.015];
 	"genotype to disease association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2302.9,221.5",
-		pos="e,2212.8,196.24 2282.5,250.22 2266.9,245.2 2251.5,238.34 2238.4,229 2229.8,222.9 2222.9,213.84 2217.6,205.1",
+		lp="2369.9,221.5",
+		pos="e,2230.9,195.61 3111.7,261.95 2859.2,258.09 2381.1,248.32 2305.4,229 2282.3,223.1 2258.3,211.34 2239.6,200.71",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -133,8 +133,8 @@ digraph {
 		width=3.015];
 	"genotype to disease association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2470.4,221.5",
-		pos="e,2396,194.65 2370.6,246.59 2369.3,236.37 2369.5,223.63 2375.4,214 2378.6,208.82 2382.8,204.35 2387.6,200.52",
+		lp="2541.4,221.5",
+		pos="e,2437.4,196.33 3110.6,262.49 2879,259.52 2470.3,251.16 2446.4,229 2440.3,223.32 2437.9,214.91 2437.3,206.59",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -143,9 +143,8 @@ digraph {
 		width=3.015];
 	"genotype to disease association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2694.9,221.5",
-		pos="e,2631.7,194.64 2482.6,251.86 2510.2,246.69 2539.4,239.37 2565.4,229 2576.7,224.48 2577.6,219.64 2588.4,214 2599.1,208.42 2610.9,\
-203.13 2622.3,198.44",
+		lp="2749.9,221.5",
+		pos="e,2653.6,195.87 3113.9,260.61 2934.4,255.88 2659.4,245.91 2643.4,229 2636.2,221.43 2639.7,212.05 2646.6,203.46",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -154,9 +153,8 @@ digraph {
 		width=1.5346];
 	"genotype to disease association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2857.4,221.5",
-		pos="e,2841.4,195.4 2485.7,252.16 2504.3,250.33 2523.4,248.54 2541.4,247 2599.1,242.07 2748,251.5 2801.4,229 2808.8,225.86 2822.2,214.06 \
-2834,202.7",
+		lp="2904.4,221.5",
+		pos="e,2856.8,196.43 3117.7,259.19 3012.9,254.42 2888.4,245.38 2869.4,229 2862.9,223.36 2859.5,214.85 2858,206.44",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -165,9 +163,8 @@ digraph {
 		width=1.0652];
 	"genotype to disease association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2972.4,221.5",
-		pos="e,2948.3,193.27 2484.4,252.01 2503.4,250.16 2522.9,248.41 2541.4,247 2619.7,241.02 2819.8,253.67 2894.4,229 2895.7,228.56 2919.4,\
-212.71 2939.8,198.98",
+		lp="3002.4,221.5",
+		pos="e,2953.6,194.82 3124.9,257.13 3045,251.78 2958.8,242.88 2946.4,229 2939.7,221.56 2942.3,211.86 2947.8,202.98",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -176,9 +173,8 @@ digraph {
 		width=1.5887];
 	"genotype to disease association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3112.9,221.5",
-		pos="e,3068.1,195.47 2483,251.92 2502.4,250.05 2522.5,248.31 2541.4,247 2595.5,243.25 2979.2,249.72 3029.4,229 3036.7,225.98 3049.6,214.17 \
-3060.9,202.79",
+		lp="3128.9,221.5",
+		pos="e,3069.6,195.8 3137.6,254.69 3104.8,249.53 3075.9,241.49 3065.4,229 3059.5,222.05 3060.9,213.06 3064.7,204.62",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -187,121 +183,238 @@ digraph {
 		width=1.0652];
 	"genotype to disease association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3242.9,221.5",
-		pos="e,3196,196.32 2482.5,251.82 2502.1,249.95 2522.3,248.24 2541.4,247 2576.8,244.7 3150.7,249.8 3179.4,229 3186.8,223.63 3191.2,214.92 \
-3193.8,206.26",
+		lp="3252.9,221.5",
+		pos="e,3194.9,196.07 3221.7,247.64 3213.8,242.81 3206.5,236.69 3201.4,229 3197,222.32 3195.2,214 3194.8,206.08",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3330.4,178",
+		width=2.1304];
+	"genotype to disease association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3376.9,221.5",
+		pos="e,3325,196.22 3290.8,247.1 3297.1,241.81 3303.5,235.61 3308.4,229 3313.6,221.97 3317.9,213.49 3321.3,205.54",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3501.4,178",
+		width=2.1304];
+	"genotype to disease association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3519.9,221.5",
+		pos="e,3485.3,195.91 3371.6,251.43 3394.9,246.31 3419.1,239.12 3440.4,229 3454,222.54 3467.2,212.41 3477.8,202.94",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3634.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3656.9,221.5",
+		pos="e,3621.3,195.42 3379.4,252.24 3467,242.92 3574.7,231.12 3579.4,229 3592.6,223.04 3604.7,212.72 3614.3,203",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3733.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3777.4,221.5",
+		pos="e,3731.9,196.2 3378.3,252.12 3397,250.29 3416.2,248.5 3434.4,247 3465.6,244.42 3690.4,247.8 3715.4,229 3722.7,223.5 3727.1,214.76 \
+3729.6,206.11",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3866.4,178",
+		width=2.1304];
+	"genotype to disease association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3935.9,221.5",
+		pos="e,3859.4,196.09 3376.9,251.96 3396.1,250.11 3415.8,248.37 3434.4,247 3478.4,243.76 3792.7,250.27 3831.4,229 3841.1,223.64 3848.8,\
+214.27 3854.4,205.07",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4059.4,178",
+		width=2.1304];
+	"genotype to disease association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4126.9,221.5",
+		pos="e,4053.4,196.11 3375.5,251.86 3395.1,249.98 3415.3,248.26 3434.4,247 3467.3,244.83 3998.7,245.26 4027.4,229 4036.8,223.66 4043.9,\
+214.29 4049,205.09",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4249.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4299.4,221.5",
+		pos="e,4242.4,196.18 3375.1,251.78 3394.8,249.91 3415.2,248.2 3434.4,247 3477.7,244.3 4176.2,249.46 4214.4,229 4224.2,223.75 4231.9,214.39 \
+4237.5,205.18",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4408.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4452.4,221.5",
+		pos="e,4401,195.73 3374.6,251.77 3394.5,249.88 3415,248.17 3434.4,247 3486.4,243.86 4325.1,252.88 4371.4,229 4381.7,223.67 4389.9,213.99 \
+4395.9,204.55",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4559.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4612.4,221.5",
+		pos="e,4551.4,195.77 3374.6,251.72 3394.5,249.84 3415,248.14 3434.4,247 3494.6,243.44 4466.4,255.92 4520.4,229 4531.1,223.66 4539.8,213.84 \
+4546.2,204.3",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4730.4,178",
+		width=1.0652];
+	"genotype to disease association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4777.9,221.5",
+		pos="e,4722.1,195.79 3374.2,251.73 3394.2,249.83 3414.9,248.13 3434.4,247 3469.2,244.98 4659.1,244.34 4690.4,229 4701.2,223.69 4710.1,\
+213.87 4716.7,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4872.4,178",
+		width=2.347];
+	"genotype to disease association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4933.9,221.5",
+		pos="e,4870,196.45 3374.2,251.71 3394.2,249.81 3414.9,248.11 3434.4,247 3473.7,244.75 4818.7,251 4851.4,229 4859.2,223.72 4864.1,214.91 \
+4867.2,206.14",
 		style=solid];
 	type	[height=0.5,
-		pos="3285.4,178",
+		pos="5006.4,178",
 		width=0.86659];
 	"genotype to disease association" -> type	[color=blue,
 		label=type,
-		lp="3319.4,221.5",
-		pos="e,3296.4,194.96 2482.1,251.8 2501.8,249.92 2522.2,248.2 2541.4,247 2562.4,245.68 3283.7,244.05 3298.4,229 3304.8,222.4 3304,213.04 \
-3300.7,204.2",
+		lp="5030.4,221.5",
+		pos="e,5012.3,196.12 3374.2,251.69 3394.2,249.79 3414.9,248.1 3434.4,247 3456.2,245.77 4992,244.54 5007.4,229 5013.3,223.03 5014.6,214.44 \
+5013.9,206.05",
 		style=solid];
 	category	[height=0.5,
-		pos="3386.4,178",
+		pos="5107.4,178",
 		width=1.4263];
 	"genotype to disease association" -> category	[color=blue,
 		label=category,
-		lp="3392.9,221.5",
-		pos="e,3375.9,195.82 2482.1,251.78 2501.8,249.9 2522.2,248.19 2541.4,247 2585.7,244.25 3298.9,247.06 3339.4,229 3351.5,223.62 3361.9,\
-213.51 3369.9,203.78",
+		lp="5106.9,221.5",
+		pos="e,5094.4,195.45 3374.2,251.68 3394.2,249.79 3414.9,248.1 3434.4,247 3479.2,244.47 5008.5,245.05 5050.4,229 5064.5,223.6 5077.4,212.99 \
+5087.4,202.94",
 		style=solid];
 	subject	[height=0.5,
-		pos="3500.4,178",
+		pos="5221.4,178",
 		width=1.2277];
 	"genotype to disease association" -> subject	[color=blue,
 		label=subject,
-		lp="3484.4,221.5",
-		pos="e,3483.9,194.72 2481.6,251.78 2501.5,249.89 2522.1,248.18 2541.4,247 2590.6,244 3381.5,244.21 3428.4,229 3445.9,223.34 3462.8,211.92 \
-3475.9,201.42",
+		lp="5201.4,221.5",
+		pos="e,5203.4,194.55 3374.2,251.67 3394.2,249.78 3414.9,248.09 3434.4,247 3529.1,241.69 5051.4,255.9 5142.4,229 5161.7,223.31 5180.7,\
+211.44 5195.3,200.69",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3617.4,178",
+		pos="5338.4,178",
 		width=1.5165];
 	"genotype to disease association" -> predicate	[color=blue,
 		label=predicate,
-		lp="3590.4,221.5",
-		pos="e,3593.5,194.29 2481.6,251.75 2501.5,249.87 2522,248.16 2541.4,247 2649.3,240.52 3409.2,254.2 3514.4,229 3539.3,223.04 3565.1,210.45 \
-3584.7,199.39",
+		lp="5308.4,221.5",
+		pos="e,5314,194.11 3374.2,251.66 3394.2,249.77 3414.9,248.09 3434.4,247 3534.1,241.44 5134,251.14 5231.4,229 5257.4,223.09 5284.6,210.27 \
+5305.1,199.1",
 		style=solid];
 	object	[height=0.5,
-		pos="3567.4,91",
+		pos="5288.4,91",
 		width=1.0832];
 	"genotype to disease association" -> object	[color=blue,
 		label=object,
-		lp="3709.4,178",
-		pos="e,3599.5,101.28 2481.6,251.72 2501.5,249.84 2522,248.14 2541.4,247 2601.7,243.44 3570.5,246.08 3628.4,229 3665.5,218.06 3700.5,193.63 \
-3681.4,160 3666,132.81 3634.9,115.34 3609,104.93",
+		lp="5430.4,178",
+		pos="e,5318.2,102.71 3374.2,251.65 3394.2,249.76 3414.9,248.08 3434.4,247 3540.5,241.11 5244,257.43 5346.4,229 5374.2,221.27 5388.1,221.08 \
+5402.4,196 5424.7,156.94 5368.7,124.38 5327.5,106.59",
 		style=solid];
 	"frequency qualifier"	[color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="3855.4,178",
+		pos="5576.4,178",
 		width=2.3651];
 	"genotype to disease association" -> "frequency qualifier"	[color=blue,
 		label="frequency qualifier",
-		lp="3843.4,221.5",
-		pos="e,3823.2,194.68 2481.6,251.7 2501.5,249.82 2522,248.13 2541.4,247 2672.4,239.35 3593.5,253.45 3722.4,229 3754.1,222.99 3788.1,210.07 \
-3813.8,198.87",
+		lp="5564.4,221.5",
+		pos="e,5544.2,194.74 3373.7,251.69 3393.9,249.78 3414.8,248.09 3434.4,247 3545.8,240.84 5333.7,249.45 5443.4,229 5475.1,223.09 5509.1,\
+210.17 5534.8,198.94",
 		style=solid];
 	"severity qualifier"	[color=blue,
 		height=0.5,
 		label="severity value",
-		pos="4034.4,178",
+		pos="5755.4,178",
 		width=2.1123];
 	"genotype to disease association" -> "severity qualifier"	[color=blue,
 		label="severity qualifier",
-		lp="4024.4,221.5",
-		pos="e,4005.6,194.82 2481.2,251.71 2501.2,249.81 2521.9,248.12 2541.4,247 2693.8,238.26 3765.9,260.15 3915.4,229 3943.7,223.09 3973.8,\
-210.41 3996.6,199.3",
+		lp="5745.4,221.5",
+		pos="e,5726.6,194.86 3373.7,251.68 3393.9,249.77 3414.8,248.08 3434.4,247 3556.5,240.3 5516.6,253.66 5636.4,229 5664.8,223.16 5694.8,\
+210.48 5717.6,199.35",
 		style=solid];
 	"onset qualifier"	[color=blue,
 		height=0.5,
 		label=onset,
-		pos="4171.4,178",
+		pos="5892.4,178",
 		width=1.011];
 	"genotype to disease association" -> "onset qualifier"	[color=blue,
 		label="onset qualifier",
-		lp="4173.9,221.5",
-		pos="e,4153.5,193.83 2481.2,251.69 2501.2,249.79 2521.9,248.1 2541.4,247 2627.3,242.14 4006.7,252.73 4089.4,229 4109.6,223.19 4129.8,\
-210.96 4145.1,200.04",
+		lp="5894.9,221.5",
+		pos="e,5874.5,193.85 3373.7,251.67 3393.9,249.76 3414.8,248.07 3434.4,247 3500.3,243.4 5746.9,247.09 5810.4,229 5830.6,223.23 5850.9,\
+211 5866.1,200.07",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2588.4,265",
+		pos="3481.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2719.4,265",
+		pos="3612.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3566.4,134.5",
-		pos="e,3554.7,108.05 3513.3,160.61 3523.3,147.95 3537.3,130.24 3548.5,115.98"];
+		lp="5287.4,134.5",
+		pos="e,5275.7,108.05 5234.3,160.61 5244.3,147.95 5258.3,130.24 5269.5,115.98"];
 	relation	[height=0.5,
-		pos="3512.4,18",
+		pos="5233.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3511.1,36.188 3501.7,159.79 3503.8,132.48 3507.8,78.994 3510.3,46.38",
+	subject -> relation	[pos="e,5232.1,36.188 5222.7,159.79 5224.8,132.48 5228.8,78.994 5231.3,46.38",
 		style=dotted];
 	"genotype to disease association_subject"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="2881.4,265",
+		pos="3774.4,265",
 		width=1.9318];
 	"genotype to disease association_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="3047.4,265",
+		pos="3940.4,265",
 		width=2.1665];
-	object -> relation	[pos="e,3525.2,35.54 3554.9,73.889 3548,64.939 3539.2,53.617 3531.4,43.584",
+	object -> relation	[pos="e,5246.2,35.54 5275.9,73.889 5269,64.939 5260.2,53.617 5252.4,43.584",
 		style=dotted];
 	"genotype to disease association_object"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="3213.4,265",
+		pos="4106.4,265",
 		width=1.9318];
 }

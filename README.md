@@ -133,7 +133,7 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 
 
 
-## How do I use Biolink Model YAML programatically?
+## How do I use Biolink Model YAML programmatically?
 
 For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides convenience methods for traversing Biolink Model.
 

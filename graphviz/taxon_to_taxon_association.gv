@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3064.4,283"];
+	graph [bb="0,0,4788.4,283"];
 	node [label="\N"];
 	"taxon to taxon association"	[height=0.5,
 		label="taxon to taxon association",
-		pos="1542.4,265",
+		pos="2492.4,265",
 		width=3.665];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"taxon to taxon association" -> association	[label=is_a,
-		lp="283.39,221.5",
-		pos="e,103.54,191.64 1410.7,263.87 1131.3,263.03 486.71,257.91 269.39,229 215.28,221.8 154.72,206.27 113.16,194.42"];
+		lp="281.39,221.5",
+		pos="e,103.12,191.79 2360.8,263.64 1914.4,262.2 474.2,255.51 267.39,229 213.85,222.14 154.03,206.61 112.9,194.67"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"taxon to taxon association" -> id	[color=blue,
 		label=id,
-		lp="403.39,221.5",
-		pos="e,210.11,189.94 1411,262.71 1153.2,259.72 589.24,250.85 396.39,229 321.22,220.48 302.36,216.02 229.39,196 226.24,195.13 222.99,194.16 \
-219.75,193.14",
+		lp="398.39,221.5",
+		pos="e,210.38,190 2360.7,263.22 1931,260.47 585.98,250.26 391.39,229 318.35,221.02 300.2,215.65 229.39,196 226.29,195.14 223.09,194.17 \
+219.89,193.16",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"taxon to taxon association" -> iri	[color=blue,
 		label=iri,
-		lp="527.39,221.5",
-		pos="e,314.99,190.21 1412.1,261.87 1176.5,257.63 688.49,246.96 519.39,229 436.78,220.22 416.02,216.07 335.39,196 331.96,195.15 328.43,\
-194.19 324.89,193.17",
+		lp="515.39,221.5",
+		pos="e,315.29,190.23 2361.2,263 1948,259.65 690.32,248.02 507.39,229 429.97,220.95 410.81,215.26 335.39,196 332.02,195.14 328.54,194.18 \
+325.05,193.17",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"taxon to taxon association" -> name	[color=blue,
 		label=name,
-		lp="636.39,221.5",
-		pos="e,441.37,190.85 1412,261.97 1194.3,258.09 766.19,248.26 616.39,229 558.92,221.61 494.32,205.5 451.08,193.56",
+		lp="627.39,221.5",
+		pos="e,440.01,191.15 2360.8,263.18 1961.4,260.46 779.67,250.65 607.39,229 552.58,222.11 491.21,206.11 449.83,194.05",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"taxon to taxon association" -> description	[color=blue,
 		label=description,
-		lp="761.89,221.5",
-		pos="e,590.6,193.5 1411.6,262.29 1214.4,259.06 850.17,250.35 721.39,229 679.68,222.08 633.76,208.18 600.17,196.79",
+		lp="755.89,221.5",
+		pos="e,588.8,193.65 2360.9,263.5 1977.1,261.76 876,254.56 715.39,229 675.03,222.58 630.79,208.66 598.44,197.14",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"taxon to taxon association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="915.39,221.5",
-		pos="e,730.76,191.55 1413.7,260.86 1248.1,256.19 969.63,246.11 868.39,229 824.02,221.5 774.85,206.5 740.49,194.88",
+		lp="913.39,221.5",
+		pos="e,729.98,191.75 2360.9,263.17 2000.1,260.59 1011.9,251.56 866.39,229 822.26,222.16 773.51,207 739.58,195.15",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=2.1665];
 	"taxon to taxon association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1068.4,221.5",
-		pos="e,888.04,193 1412.4,261.78 1309.3,258.4 1161.9,249.97 1034.4,229 987.59,221.3 935.56,207.21 897.8,195.94",
+		lp="1074.4,221.5",
+		pos="e,887.81,193.09 2360.4,264.62 2052.3,265.46 1292.9,263.8 1040.4,229 991.17,222.22 936.47,207.65 897.4,195.99",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.2999];
 	"taxon to taxon association" -> negated	[color=blue,
 		label=negated,
-		lp="1201.4,221.5",
-		pos="e,1021.7,190.34 1422.6,257.37 1349.9,252.18 1255.4,243.37 1172.4,229 1123.6,220.54 1068.9,204.99 1031.7,193.47",
+		lp="1220.4,221.5",
+		pos="e,1022.3,190.23 2360.8,263.65 2076.9,262.38 1414.5,256.46 1191.4,229 1135.6,222.13 1072.9,205.38 1032,193.16",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=2.1304];
 	"taxon to taxon association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1320.9,221.5",
-		pos="e,1168.1,193.53 1439,253.82 1392.4,248.2 1336.8,240.07 1287.4,229 1250.1,220.63 1208.9,207.57 1177.8,196.9",
+		lp="1356.9,221.5",
+		pos="e,1171.6,193.02 2360.6,263.72 2098.4,262.55 1520,256.8 1323.4,229 1274.6,222.11 1220.5,207.65 1181.6,196.05",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=1.7332];
 	"taxon to taxon association" -> publications	[color=blue,
 		label=publications,
-		lp="1438.4,221.5",
-		pos="e,1314.4,194.2 1470.1,249.9 1445.7,244.37 1418.6,237.33 1394.4,229 1370.1,220.66 1344,208.78 1323.4,198.69",
+		lp="1499.4,221.5",
+		pos="e,1321.9,192.66 2360.5,263.68 2121.5,262.42 1625.7,256.46 1455.4,229 1412.5,222.09 1365.3,207.61 1331.5,196.01",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=2.0943];
 	"taxon to taxon association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1544.9,221.5",
-		pos="e,1461,195.47 1522.4,247.21 1507.1,234.32 1485.8,216.38 1468.9,202.13",
+		lp="1652.9,221.5",
+		pos="e,1479.4,193.55 2361.1,262.91 2150.8,260.47 1747.5,252.76 1606.4,229 1566,222.2 1521.6,208.38 1489.1,196.99",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"taxon to taxon association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1675.9,221.5",
-		pos="e,1628.7,196.14 1570.2,247.31 1578.6,241.84 1587.6,235.49 1595.4,229 1604.6,221.33 1613.9,212.07 1621.8,203.61",
+		lp="1802.9,221.5",
+		pos="e,1667.9,195.78 2360.3,264.76 2176,264.63 1851.7,259.81 1738.4,229 1716.6,223.09 1694.2,211.61 1676.7,201.13",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -130,8 +130,8 @@ digraph {
 		width=3.015];
 	"taxon to taxon association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="1884.4,221.5",
-		pos="e,1841.2,195.02 1633.4,251.9 1668.4,246.3 1708.6,238.69 1744.4,229 1774,220.97 1806.3,209.03 1831.8,198.83",
+		lp="1972.4,221.5",
+		pos="e,1872.6,196 2363.4,261.13 2188,256.58 1893.8,246.39 1877.4,229 1871.6,222.9 1870.4,214.27 1871,205.9",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -140,9 +140,8 @@ digraph {
 		width=3.015];
 	"taxon to taxon association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2137.9,221.5",
-		pos="e,2079.8,195.22 1634.5,252.09 1650.7,250.22 1667.6,248.43 1683.4,247 1816.4,235 1852.9,257.31 1983.4,229 2013.5,222.48 2045.8,210.09 \
-2070.6,199.27",
+		lp="2180.9,221.5",
+		pos="e,2087.6,195.53 2362.4,261.8 2247.1,258.46 2093.8,250.07 2074.4,229 2066.7,220.62 2071.6,210.86 2080.1,202.2",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=1.5346];
 	"taxon to taxon association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2303.4,221.5",
-		pos="e,2284.9,195.77 1632.9,251.89 1649.7,249.99 1667,248.24 1683.4,247 1746,242.24 2191.1,254.85 2248.4,229 2260.4,223.56 2270.9,213.45 \
-2278.8,203.73",
+		lp="2332.4,221.5",
+		pos="e,2291.1,196.26 2379.2,255.75 2342.9,250.63 2309,242.36 2297.4,229 2292,222.83 2290.3,214.43 2290.3,206.27",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -162,9 +160,8 @@ digraph {
 		width=1.0652];
 	"taxon to taxon association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2422.4,221.5",
-		pos="e,2390.2,194.23 1632.9,251.83 1649.7,249.93 1667,248.21 1683.4,247 1756.4,241.61 2273.4,253.53 2342.4,229 2351.2,225.86 2368.2,212.73 \
-2382.5,200.72",
+		lp="2430.4,221.5",
+		pos="e,2387.4,193.75 2403.7,251.67 2392.3,246.41 2381.9,239.1 2374.4,229 2367.7,220.01 2372.5,209.73 2380.3,200.83",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -173,85 +170,203 @@ digraph {
 		width=1.5887];
 	"taxon to taxon association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2562.9,221.5",
-		pos="e,2512.8,196.24 1632.5,251.81 1649.4,249.9 1666.9,248.18 1683.4,247 1727.6,243.84 2441.6,248.66 2481.4,229 2492.1,223.72 2500.8,\
-214.09 2507.4,204.69",
+		lp="2556.9,221.5",
+		pos="e,2504.6,195.4 2490.1,246.84 2489.4,236.95 2489.6,224.45 2493.4,214 2494.7,210.42 2496.5,206.94 2498.6,203.64",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2653.4,178",
+		pos="2635.4,178",
 		width=1.0652];
 	"taxon to taxon association" -> "original object"	[color=blue,
 		label="original object",
-		lp="2694.9,221.5",
-		pos="e,2650.4,195.98 1632.2,251.8 1649.1,249.88 1666.8,248.16 1683.4,247 1709.6,245.17 2608.4,243.4 2630.4,229 2638.5,223.68 2643.8,214.69 \
-2647.3,205.79",
+		lp="2681.9,221.5",
+		pos="e,2634.3,196.46 2582.6,251.85 2596.6,246.63 2609.8,239.3 2620.4,229 2626.5,223.04 2630.2,214.69 2632.3,206.52",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2768.4,178",
+		width=2.1304];
+	"taxon to taxon association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2811.9,221.5",
+		pos="e,2762.2,196.16 2587,252.37 2653.1,243.92 2730.9,233.26 2737.4,229 2746.2,223.28 2752.9,214.13 2757.8,205.22",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2939.4,178",
+		width=2.1304];
+	"taxon to taxon association" -> "object category"	[color=blue,
+		label="object category",
+		lp="2956.9,221.5",
+		pos="e,2923.7,195.62 2585.2,252.19 2601.3,250.33 2617.8,248.52 2633.4,247 2687.1,241.77 2825.1,248.44 2875.4,229 2890.4,223.19 2904.8,\
+212.61 2916.1,202.67",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3072.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3093.9,221.5",
+		pos="e,3059.6,195.26 2584.1,251.96 2600.5,250.09 2617.4,248.34 2633.4,247 2675.8,243.45 2977,245.11 3016.4,229 3030.2,223.34 3042.9,212.71 \
+3052.7,202.7",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3172.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3214.4,221.5",
+		pos="e,3170.3,196.35 2583.3,251.88 2599.9,250 2617.2,248.26 2633.4,247 2662.2,244.77 3128.8,245.59 3152.4,229 3160.1,223.61 3164.8,214.77 \
+3167.7,206.02",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3305.4,178",
+		width=2.1304];
+	"taxon to taxon association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3372.9,221.5",
+		pos="e,3297.7,196.19 2582.9,251.84 2599.7,249.95 2617,248.21 2633.4,247 2668.6,244.39 3237.1,245.33 3268.4,229 3278.6,223.7 3286.6,214.2 \
+3292.6,204.9",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3497.4,178",
+		width=2.1304];
+	"taxon to taxon association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3563.9,221.5",
+		pos="e,3491.1,196.16 2582.5,251.8 2599.4,249.89 2616.9,248.17 2633.4,247 2679.5,243.73 3424,251.32 3464.4,229 3474,223.72 3481.2,214.36 \
+3486.5,205.16",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3687.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3736.4,221.5",
+		pos="e,3680.3,195.72 2582.1,251.78 2599.1,249.87 2616.8,248.14 2633.4,247 2689.8,243.11 3601.3,255.23 3651.4,229 3661.6,223.66 3669.6,\
+213.98 3675.4,204.54",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3846.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="3890.4,221.5",
+		pos="e,3838.7,195.76 2582.1,251.75 2599.1,249.84 2616.8,248.13 2633.4,247 2666,244.79 3779.3,243.73 3808.4,229 3818.9,223.71 3827.2,214.03 \
+3833.4,204.59",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3997.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4050.4,221.5",
+		pos="e,3989.4,195.78 2582.1,251.73 2599.1,249.82 2616.8,248.11 2633.4,247 2670.1,244.54 3925.4,245.37 3958.4,229 3969.1,223.68 3977.8,\
+213.86 3984.2,204.32",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4168.4,178",
+		width=1.0652];
+	"taxon to taxon association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4215.9,221.5",
+		pos="e,4160.1,195.8 2581.8,251.75 2598.9,249.82 2616.7,248.11 2633.4,247 2674.8,244.26 4091.1,247.22 4128.4,229 4139.3,223.7 4148.1,213.88 \
+4154.7,204.34",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4330.4,178",
+		width=2.347];
+	"taxon to taxon association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4378.9,221.5",
+		pos="e,4321.5,196.31 2581.8,251.73 2598.9,249.81 2616.7,248.1 2633.4,247 2679.3,243.99 4247.9,248.9 4289.4,229 4300.2,223.79 4309.2,214.18 \
+4315.9,204.77",
 		style=solid];
 	type	[height=0.5,
-		pos="2741.4,178",
+		pos="4464.4,178",
 		width=0.86659];
 	"taxon to taxon association" -> type	[color=blue,
 		label=type,
-		lp="2772.4,221.5",
-		pos="e,2750.8,195.54 1632.1,251.77 1649.1,249.86 1666.8,248.14 1683.4,247 1713,244.97 2729.6,250.14 2750.4,229 2756.6,222.69 2756.6,213.66 \
-2754.2,205",
+		lp="4478.4,221.5",
+		pos="e,4465.2,196.18 2581.8,251.72 2598.9,249.8 2616.7,248.09 2633.4,247 2658.6,245.36 4432.6,244.74 4452.4,229 4459.2,223.54 4462.6,\
+214.93 4464.1,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="2842.4,178",
+		pos="4565.4,178",
 		width=1.4263];
 	"taxon to taxon association" -> category	[color=blue,
 		label=category,
-		lp="2846.9,221.5",
-		pos="e,2831,195.87 1632.1,251.76 1649.1,249.85 1666.8,248.13 1683.4,247 1744.9,242.81 2735.7,253.04 2792.4,229 2804.9,223.69 2816,213.59 \
-2824.5,203.85",
+		lp="4558.9,221.5",
+		pos="e,4549.8,195.25 2581.8,251.72 2598.9,249.79 2616.7,248.09 2633.4,247 2685.1,243.64 4449.3,245.56 4498.4,229 4514.6,223.53 4530.1,\
+212.51 4542.1,202.2",
 		style=solid];
 	subject	[height=0.5,
-		pos="2956.4,178",
+		pos="4679.4,178",
 		width=1.2277];
 	"taxon to taxon association" -> subject	[color=blue,
 		label=subject,
-		lp="2939.4,221.5",
-		pos="e,2939.4,194.76 1632.1,251.75 1649.1,249.84 1666.8,248.12 1683.4,247 1749.9,242.51 2818.8,248.98 2882.4,229 2900.4,223.34 2918,211.76 \
-2931.5,201.16",
+		lp="4655.4,221.5",
+		pos="e,4660.1,194.33 2581.8,251.71 2598.9,249.79 2616.7,248.08 2633.4,247 2742.1,239.97 4489.4,258.11 4594.4,229 4615.1,223.25 4636,211.09 \
+4651.9,200.2",
 		style=solid];
 	object	[height=0.5,
-		pos="2999.4,91",
+		pos="4722.4,91",
 		width=1.0832];
 	"taxon to taxon association" -> object	[color=blue,
 		label=object,
-		lp="3042.4,178",
-		pos="e,3012.8,108.09 1632.1,251.73 1649.1,249.82 1666.8,248.11 1683.4,247 1754.7,242.22 2902.3,253.63 2969.4,229 3011.9,213.39 3017.1,\
-186.96 3022.4,142 3023.2,135.38 3024.3,133.39 3022.4,127 3021.4,123.55 3019.9,120.13 3018.1,116.85",
+		lp="4766.4,178",
+		pos="e,4735.8,108.09 2581.8,251.71 2598.9,249.78 2616.7,248.08 2633.4,247 2690.3,243.33 4631.1,246.41 4685.4,229 4709.7,221.2 4718,217.1 \
+4732.4,196 4746.3,175.59 4742.5,166.51 4745.4,142 4746.2,135.38 4747.3,133.39 4745.4,127 4744.4,123.55 4742.9,120.13 4741.1,116.85",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1730.4,265",
+		pos="2680.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1861.4,265",
+		pos="2811.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="2994.4,134.5",
-		pos="e,2981.5,107.23 2957.5,159.55 2958.7,149.57 2961.2,137.07 2966.4,127 2968.6,122.68 2971.5,118.52 2974.7,114.66"];
+		lp="4717.4,134.5",
+		pos="e,4704.5,107.23 4680.5,159.55 4681.7,149.57 4684.2,137.07 4689.4,127 4691.6,122.68 4694.5,118.52 4697.7,114.66"];
 	relation	[height=0.5,
-		pos="2944.4,18",
+		pos="4667.4,18",
 		width=1.2999];
-	subject -> relation	[pos="e,2945.7,36.188 2955.1,159.79 2953,132.48 2949,78.994 2946.5,46.38",
+	subject -> relation	[pos="e,4668.7,36.188 4678.1,159.79 4676,132.48 4672,78.994 4669.5,46.38",
 		style=dotted];
 	"taxon to taxon association_subject"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="2037.4,265",
+		pos="2987.4,265",
 		width=2.3109];
-	object -> relation	[pos="e,2957.2,35.54 2986.9,73.889 2980,64.939 2971.2,53.617 2963.4,43.584",
+	object -> relation	[pos="e,4680.2,35.54 4709.9,73.889 4703,64.939 4694.2,53.617 4686.4,43.584",
 		style=dotted];
 	"taxon to taxon association_object"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="2221.4,265",
+		pos="3171.4,265",
 		width=2.3109];
 }

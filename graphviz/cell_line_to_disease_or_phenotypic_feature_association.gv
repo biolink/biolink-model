@@ -1,30 +1,30 @@
 digraph {
-	graph [bb="0,0,4010.6,283"];
+	graph [bb="0,0,5726.6,283"];
 	node [label="\N"];
 	"cell line to disease or phenotypic feature association"	[height=0.5,
 		label="cell line to disease or phenotypic feature association",
-		pos="2216.4,265",
+		pos="3267.4,265",
 		width=7.0771];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"cell line to disease or phenotypic feature association" -> association	[label=is_a,
 		lp="717.39,221.5",
-		pos="e,106.47,190.83 1968,260.9 1668.2,256.54 1148.7,247.04 703.39,229 449.84,218.73 384.44,233.02 133.39,196 127.91,195.19 122.22,194.16 \
-116.57,193.01"];
+		pos="e,106.47,190.83 3012.6,264.25 2551.6,263.86 1548.7,259.22 703.39,229 449.8,219.93 384.44,233.02 133.39,196 127.91,195.19 122.22,\
+194.16 116.57,193.01"];
 	"cell line to entity association mixin"	[height=0.5,
 		pos="315.39,178",
 		width=4.8024];
 	"cell line to disease or phenotypic feature association" -> "cell line to entity association mixin"	[label=uses,
 		lp="1023.9,221.5",
-		pos="e,436.75,190.82 1973.4,259.51 1729.2,254.4 1342.1,244.67 1007.4,229 780.5,218.38 723.83,213.9 497.39,196 481,194.7 463.78,193.24 \
+		pos="e,436.75,190.82 3012.7,264.13 2594,263.43 1734.5,258.14 1007.4,229 780.44,219.91 723.83,213.9 497.39,196 481,194.7 463.78,193.24 \
 446.75,191.72"];
 	"entity to disease or phenotypic feature association mixin"	[height=0.5,
 		pos="780.39,178",
 		width=7.6188];
 	"cell line to disease or phenotypic feature association" -> "entity to disease or phenotypic feature association mixin"	[label=uses,
 		lp="1206.9,221.5",
-		pos="e,887.18,194.61 1966.2,261.56 1758.3,258.07 1454.7,249.59 1190.4,229 1091.2,221.28 979.15,207.24 897.27,196"];
+		pos="e,884.16,194.7 3014.1,263.05 2540.5,260.71 1537.4,253.01 1190.4,229 1090,222.05 976.37,207.68 894.27,196.13"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -33,7 +33,7 @@ digraph {
 	"cell line to disease or phenotypic feature association" -> id	[color=blue,
 		label=id,
 		lp="1324.4,221.5",
-		pos="e,1140.4,189.97 1975.3,259.15 1753.1,253.85 1439.8,244.05 1317.4,229 1246.2,220.24 1228.5,215.35 1159.4,196 1156.3,195.13 1153.1,\
+		pos="e,1140.4,189.97 3015.5,262.12 2526.3,258.09 1481.4,247.43 1317.4,229 1246.1,220.99 1228.5,215.35 1159.4,196 1156.3,195.13 1153.1,\
 194.16 1149.9,193.14",
 		style=solid];
 	iri	[color=blue,
@@ -43,9 +43,8 @@ digraph {
 		width=1.2277];
 	"cell line to disease or phenotypic feature association" -> iri	[color=blue,
 		label=iri,
-		lp="1428.4,221.5",
-		pos="e,1245.3,190.13 1962.3,263.54 1805.5,260.6 1600.7,251.99 1420.4,229 1350.5,220.09 1333.5,214.11 1265.4,196 1262,195.1 1258.6,194.12 \
-1255.1,193.1",
+		lp="1421.4,221.5",
+		pos="e,1245.7,190.01 3015.7,262.05 2545.6,258.01 1567.8,247.48 1413.4,229 1357.9,222.36 1295.8,205.37 1255.5,193.03",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -54,8 +53,8 @@ digraph {
 		width=1.5707];
 	"cell line to disease or phenotypic feature association" -> name	[color=blue,
 		label=name,
-		lp="1521.4,221.5",
-		pos="e,1367,192.15 1978.9,258.41 1807.1,253.22 1590.1,243.99 1501.4,229 1458.2,221.7 1410.4,207.04 1376.6,195.48",
+		lp="1517.4,221.5",
+		pos="e,1365.7,192.35 3014.2,262.81 2560.5,260.11 1642.7,251.88 1497.4,229 1455.1,222.34 1408.5,207.64 1375.5,195.89",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -64,8 +63,8 @@ digraph {
 		width=2.0943];
 	"cell line to disease or phenotypic feature association" -> description	[color=blue,
 		label=description,
-		lp="1622.9,221.5",
-		pos="e,1506.8,195.22 1969.5,260.52 1823.5,256.48 1653.7,247.77 1582.4,229 1559,222.84 1534.6,210.95 1515.7,200.31",
+		lp="1620.9,221.5",
+		pos="e,1505.8,195.24 3016.6,261.72 2563.4,257.19 1648.6,246 1580.4,229 1557.1,223.2 1533,211.2 1514.5,200.41",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -75,7 +74,7 @@ digraph {
 	"cell line to disease or phenotypic feature association" -> "has attribute"	[color=blue,
 		label="has attribute",
 		lp="1740.4,221.5",
-		pos="e,1642.4,195.18 1968.9,260.7 1859.3,256.54 1743.9,247.65 1693.4,229 1677.5,223.11 1662.1,212.16 1650.1,202.01",
+		pos="e,1642,195.18 3015.1,262.4 2586,259.11 1754.6,250.06 1693.4,229 1677.2,223.43 1661.8,212.4 1649.8,202.11",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -85,17 +84,18 @@ digraph {
 	"cell line to disease or phenotypic feature association" -> predicate	[color=blue,
 		label=predicate,
 		lp="1840.4,221.5",
-		pos="e,1780.8,196.39 2010.3,254.4 1917.7,248.62 1824.9,240.18 1806.4,229 1797.4,223.54 1790.4,214.45 1785.4,205.5",
+		pos="e,1780.4,196.13 3012.6,264.07 2607.8,263.32 1857.9,257.98 1806.4,229 1797,223.69 1789.9,214.33 1784.8,205.13",
 		style=solid];
 	object	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="3868.4,91",
+		pos="5584.4,91",
 		width=1.9318];
 	"cell line to disease or phenotypic feature association" -> object	[color=blue,
 		label=object,
 		lp="1919.4,178",
-		pos="e,3798.9,91.724 2024.9,253.12 1929.3,240.88 1844.3,214.93 1897.4,160 1964.1,90.926 3428.4,90.699 3788.8,91.695",
+		pos="e,5514.6,91.943 3022.5,260.03 2737.4,254.8 2284,244.42 2114.4,229 2013.6,219.84 1826.5,232.22 1897.4,160 1962.8,93.377 4971.8,91.711 \
+5504.3,91.938",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -104,8 +104,8 @@ digraph {
 		width=1.2999];
 	"cell line to disease or phenotypic feature association" -> negated	[color=blue,
 		label=negated,
-		lp="2140.4,221.5",
-		pos="e,2026.1,192.48 2163.2,247.31 2146.5,241.8 2128.1,235.42 2111.4,229 2085.7,219.12 2057.4,206.72 2035.5,196.74",
+		lp="2224.4,221.5",
+		pos="e,2032,190.37 3017.5,261.44 2751.5,257.72 2348.2,248.93 2195.4,229 2141.6,221.98 2081.4,205.49 2041.6,193.35",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -114,8 +114,8 @@ digraph {
 		width=2.1304];
 	"cell line to disease or phenotypic feature association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="2215.9,221.5",
-		pos="e,2153.9,195.89 2200.6,246.8 2189.2,234.39 2173.7,217.46 2161,203.62",
+		lp="2356.9,221.5",
+		pos="e,2180.1,193.18 3018.5,261.14 2784.7,257.3 2452.2,248.53 2323.4,229 2277.5,222.05 2226.8,207.84 2190,196.34",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -124,8 +124,8 @@ digraph {
 		width=1.7332];
 	"cell line to disease or phenotypic feature association" -> publications	[color=blue,
 		label=publications,
-		lp="2311.4,221.5",
-		pos="e,2282.2,195.62 2235.2,246.96 2241.2,241.37 2247.7,235.05 2253.4,229 2261,220.96 2268.9,211.79 2275.8,203.52",
+		lp="2494.4,221.5",
+		pos="e,2329.8,193.06 3019.6,260.68 2819.9,256.65 2555.6,247.87 2450.4,229 2412,222.11 2369.9,208.11 2339.3,196.67",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -134,8 +134,8 @@ digraph {
 		width=2.0943];
 	"cell line to disease or phenotypic feature association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2437.9,221.5",
-		pos="e,2426.1,195.08 2298.1,247.85 2318.4,242.79 2340,236.51 2359.4,229 2379.3,221.31 2400.3,210.17 2417.1,200.36",
+		lp="2639.9,221.5",
+		pos="e,2485.6,194.18 3028.1,258.78 2868.6,253.92 2674,244.94 2593.4,229 2559.4,222.29 2522.6,209.15 2495,198.02",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -144,8 +144,8 @@ digraph {
 		width=3.015];
 	"cell line to disease or phenotypic feature association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2608.9,221.5",
-		pos="e,2609.4,194.5 2359.7,250.08 2401.5,244.81 2447,237.88 2488.4,229 2526.2,220.9 2567.8,208.25 2599.8,197.7",
+		lp="2778.9,221.5",
+		pos="e,2668.6,196.17 3014.2,262.87 2895.6,259.33 2768.7,250.36 2714.4,229 2700,223.35 2686.5,212.99 2675.9,203.16",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -154,8 +154,8 @@ digraph {
 		width=3.015];
 	"cell line to disease or phenotypic feature association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2849.4,221.5",
-		pos="e,2836,193.85 2392.5,251.96 2510.5,243.67 2649.2,233.38 2677.4,229 2728,221.13 2784.4,207.5 2826.2,196.45",
+		lp="2945.4,221.5",
+		pos="e,2863.1,195.6 3035.1,257.56 2947,252.68 2864.3,244.09 2850.4,229 2842.8,220.79 2847.4,211.15 2855.6,202.54",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -164,9 +164,8 @@ digraph {
 		width=3.015];
 	"cell line to disease or phenotypic feature association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="3118.9,221.5",
-		pos="e,3079.8,194.61 2392.8,252.01 2422.1,250.2 2452.1,248.46 2480.4,247 2688.3,236.31 2742.8,261.83 2948.4,229 2990,222.36 3035.7,209.07 \
-3070,197.86",
+		lp="3154.9,221.5",
+		pos="e,3072.6,194.03 3100.8,251.32 3076.6,246.2 3057,239.03 3048.4,229 3038,216.84 3047.9,206.43 3063.4,198.31",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -175,9 +174,8 @@ digraph {
 		width=1.5346];
 	"cell line to disease or phenotypic feature association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="3296.4,221.5",
-		pos="e,3287.2,195.2 2390.3,251.8 2420.3,249.98 2451.3,248.29 2480.4,247 2563.6,243.32 3149.9,253.84 3229.4,229 3247.5,223.34 3265.3,211.99 \
-3279.2,201.53",
+		lp="3303.4,221.5",
+		pos="e,3283.3,194.53 3264.5,246.62 3263.6,236.66 3263.9,224.16 3268.4,214 3270.3,209.58 3273.2,205.46 3276.4,201.7",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -186,9 +184,9 @@ digraph {
 		width=1.0652];
 	"cell line to disease or phenotypic feature association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="3425.4,221.5",
-		pos="e,3399.2,194.01 2389.6,251.77 2419.8,249.94 2451,248.25 2480.4,247 2575.3,242.95 3244.2,255.65 3335.4,229 3355.5,223.14 3375.5,211.02 \
-3390.8,200.18",
+		lp="3417.4,221.5",
+		pos="e,3395.3,192.7 3304,247.02 3315.2,241.54 3327.4,235.26 3338.4,229 3349,222.96 3351.1,220.57 3361.4,214 3369.6,208.79 3378.4,203.21 \
+3386.7,198.07",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -197,71 +195,189 @@ digraph {
 		width=1.5887];
 	"cell line to disease or phenotypic feature association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="3569.9,221.5",
-		pos="e,3521.2,195.83 2388.9,251.74 2419.4,249.9 2450.8,248.22 2480.4,247 2536.2,244.71 3434.5,251.9 3485.4,229 3497.2,223.69 3507.4,213.73 \
-3515.1,204.09",
+		lp="3556.9,221.5",
+		pos="e,3514.4,195.43 3410.4,250.1 3432.1,245.06 3453.8,238.23 3473.4,229 3480.9,225.48 3494.7,213.61 3507,202.31",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3663.4,178",
+		pos="3645.4,178",
 		width=1.0652];
 	"cell line to disease or phenotypic feature association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3702.9,221.5",
-		pos="e,3659.4,196.06 2388.5,251.7 2419.1,249.86 2450.7,248.19 2480.4,247 2512.5,245.72 3610,245.89 3637.4,229 3646,223.71 3651.8,214.61 \
-3655.8,205.6",
+		lp="3687.9,221.5",
+		pos="e,3642.4,196.18 3460.8,253.27 3536.6,247.5 3609,239.41 3623.4,229 3631.1,223.42 3636.1,214.54 3639.4,205.8",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3778.4,178",
+		width=2.1304];
+	"cell line to disease or phenotypic feature association" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="3818.9,221.5",
+		pos="e,3771.3,195.98 3449.5,252.39 3581.1,243.72 3736.8,232.76 3743.4,229 3753.1,223.5 3760.7,214.1 3766.3,204.93",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3949.4,178",
+		width=2.1304];
+	"cell line to disease or phenotypic feature association" -> "object category"	[color=blue,
+		label="object category",
+		lp="3964.9,221.5",
+		pos="e,3932.9,195.75 3446.3,252.16 3474.8,250.37 3503.9,248.59 3531.4,247 3609.4,242.49 3808.9,255.5 3882.4,229 3898.1,223.32 3913.3,\
+212.6 3925.2,202.54",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4082.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="4100.9,221.5",
+		pos="e,4066.6,194.71 3443.4,251.98 3472.8,250.17 3503,248.43 3531.4,247 3586.1,244.24 3973.4,249.02 4024.4,229 4032.3,225.9 4046.7,213.48 \
+4059.2,201.8",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4178.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="4220.4,221.5",
+		pos="e,4176,196.39 3442,251.88 3471.8,250.06 3502.5,248.35 3531.4,247 3566.1,245.38 4128.7,248.67 4157.4,229 4165.2,223.66 4170.1,214.84 \
+4173.2,206.07",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4311.4,178",
+		width=2.1304];
+	"cell line to disease or phenotypic feature association" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="4378.9,221.5",
+		pos="e,4303.8,196.2 3441.3,251.81 3471.3,249.99 3502.3,248.29 3531.4,247 3572.6,245.17 4237.8,248.03 4274.4,229 4284.6,223.72 4292.7,\
+214.23 4298.7,204.92",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="4500.4,178",
+		width=2.1304];
+	"cell line to disease or phenotypic feature association" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="4568.9,221.5",
+		pos="e,4495.1,196.12 3440.2,251.75 3470.6,249.92 3501.9,248.23 3531.4,247 3557.5,245.91 4447.8,242.07 4470.4,229 4479.5,223.73 4486.2,\
+214.5 4490.8,205.39",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4690.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="4740.4,221.5",
+		pos="e,4683.7,196.2 3439.5,251.71 3470.1,249.87 3501.7,248.19 3531.4,247 3562.6,245.75 4628.9,243.84 4656.4,229 4666.1,223.77 4673.6,\
+214.41 4679,205.2",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4849.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4893.4,221.5",
+		pos="e,4842,195.75 3439.2,251.68 3469.9,249.84 3501.6,248.17 3531.4,247 3567,245.61 4780.7,245.24 4812.4,229 4822.7,223.7 4830.9,214.02 \
+4836.9,204.58",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5000.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="5053.4,221.5",
+		pos="e,4992.4,195.78 3438.8,251.67 3469.6,249.82 3501.4,248.15 3531.4,247 3571.1,245.47 4925.8,246.65 4961.4,229 4972.1,223.68 4980.8,\
+213.86 4987.2,204.32",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="5171.4,178",
+		width=1.0652];
+	"cell line to disease or phenotypic feature association" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="5219.9,221.5",
+		pos="e,5163.1,195.8 3438.5,251.66 3469.4,249.8 3501.3,248.14 3531.4,247 3575.8,245.32 5091.4,248.48 5131.4,229 5142.3,223.7 5151.1,213.89 \
+5157.7,204.35",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="5333.4,178",
+		width=2.347];
+	"cell line to disease or phenotypic feature association" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="5381.9,221.5",
+		pos="e,5324.8,196.3 3438.5,251.63 3469.4,249.78 3501.3,248.12 3531.4,247 3580.3,245.18 5249.4,250.43 5293.4,229 5304.1,223.78 5312.9,\
+214.17 5319.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="3751.4,178",
+		pos="5467.4,178",
 		width=0.86659];
 	"cell line to disease or phenotypic feature association" -> type	[color=blue,
 		label=type,
-		lp="3780.4,221.5",
-		pos="e,3759.9,195.59 2388.2,251.68 2418.9,249.84 2450.6,248.17 2480.4,247 2498.1,246.3 3745.9,241.64 3758.4,229 3764.5,222.81 3764.8,\
-213.91 3762.9,205.33",
+		lp="5481.4,221.5",
+		pos="e,5468.2,196.19 3438.1,251.63 3469.1,249.77 3501.2,248.11 3531.4,247 3558.1,246.02 5434.5,245.64 5455.4,229 5462.2,223.55 5465.6,\
+214.93 5467.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="3852.4,178",
+		pos="5568.4,178",
 		width=1.4263];
 	"cell line to disease or phenotypic feature association" -> category	[color=blue,
 		label=category,
-		lp="3853.9,221.5",
-		pos="e,3840.4,195.9 2388.2,251.67 2418.9,249.83 2450.6,248.16 2480.4,247 2517,245.57 3766.5,242.93 3800.4,229 3813.4,223.67 3825,213.43 \
-3833.9,203.59",
+		lp="5560.9,221.5",
+		pos="e,5552.8,195.26 3438.1,251.63 3469.1,249.77 3501.2,248.11 3531.4,247 3586.1,244.99 5449.5,246.48 5501.4,229 5517.6,223.54 5533.1,\
+212.51 5545.1,202.2",
 		style=solid];
 	subject	[height=0.5,
-		pos="3966.4,178",
+		pos="5682.4,178",
 		width=1.2277];
 	"cell line to disease or phenotypic feature association" -> subject	[color=blue,
 		label=subject,
-		lp="3946.4,221.5",
-		pos="e,3948.9,194.53 2387.8,251.67 2418.6,249.83 2450.4,248.15 2480.4,247 2558.6,243.98 3814.5,251.71 3889.4,229 3908.1,223.33 3926.5,\
-211.63 3940.7,200.97",
+		lp="5657.4,221.5",
+		pos="e,5662.9,194.34 3438.1,251.61 3469.1,249.76 3501.2,248.1 3531.4,247 3588.7,244.91 5541.1,244.17 5596.4,229 5617.3,223.26 5638.4,\
+211.1 5654.5,200.21",
 		style=solid];
 	relation	[height=0.5,
-		pos="3917.4,18",
+		pos="5633.4,18",
 		width=1.2999];
-	object -> relation	[pos="e,3905.9,35.705 3880,73.174 3886,64.509 3893.4,53.768 3900,44.141",
+	object -> relation	[pos="e,5621.9,35.705 5596,73.174 5602,64.509 5609.4,53.768 5616,44.141",
 		style=dotted];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2527.4,265",
+		pos="3578.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2658.4,265",
+		pos="3709.4,265",
 		width=2.0762];
 	subject -> object	[label=relation,
-		lp="3924.4,134.5",
-		pos="e,3874.8,108.97 3933.9,165.59 3921.1,159.94 3907,152.13 3896.4,142 3889.4,135.31 3883.7,126.48 3879.3,118.1"];
-	subject -> relation	[pos="e,3928.6,35.828 3965,159.99 3962.9,139.02 3958,102.55 3947.4,73 3943.9,63.258 3938.8,53.189 3933.8,44.423",
+		lp="5640.4,134.5",
+		pos="e,5590.8,108.97 5649.9,165.59 5637.1,159.94 5623,152.13 5612.4,142 5605.4,135.31 5599.7,126.48 5595.3,118.1"];
+	subject -> relation	[pos="e,5644.6,35.828 5681,159.99 5678.9,139.02 5674,102.55 5663.4,73 5659.9,63.258 5654.8,53.189 5649.8,44.423",
 		style=dotted];
 	"cell line to disease or phenotypic feature association_subject"	[color=blue,
 		height=0.5,
 		label="disease or phenotypic feature",
-		pos="2900.4,265",
+		pos="3951.4,265",
 		width=4.1344];
 }

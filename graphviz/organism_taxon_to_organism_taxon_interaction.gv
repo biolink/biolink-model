@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,3691.5,283"];
+	graph [bb="0,0,5414.5,283"];
 	node [label="\N"];
 	"organism taxon to organism taxon interaction"	[height=0.5,
 		label="organism taxon to organism taxon interaction",
-		pos="1962.9,265",
+		pos="2855.9,265",
 		width=6.2106];
 	"organism taxon to organism taxon association"	[height=0.5,
 		pos="224.88,178",
 		width=6.2467];
 	"organism taxon to organism taxon interaction" -> "organism taxon to organism taxon association"	[label=is_a,
-		lp="606.88,221.5",
-		pos="e,317.59,194.46 1743.8,261.33 1415.1,256.81 809.58,246.44 592.88,229 502.96,221.76 401.4,207.5 327.79,196.06"];
+		lp="604.88,221.5",
+		pos="e,315.55,194.48 2632.6,263.97 2142,263.35 982.54,258.67 590.88,229 500.79,222.18 399.02,207.72 325.71,196.1"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"organism taxon to organism taxon interaction" -> id	[color=blue,
 		label=id,
-		lp="724.88,221.5",
-		pos="e,534.86,190.01 1741.7,262.31 1438.5,259.22 909.49,250.81 717.88,229 644.01,220.59 625.55,215.79 553.88,196 550.77,195.14 547.57,\
-194.18 544.37,193.17",
+		lp="719.88,221.5",
+		pos="e,534.87,189.98 2634,262.74 2124.4,259.52 899.53,249.71 712.88,229 641.15,221.04 623.39,215.43 553.88,196 550.77,195.13 547.58,194.17 \
+544.38,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,9 +29,9 @@ digraph {
 		width=1.2277];
 	"organism taxon to organism taxon interaction" -> iri	[color=blue,
 		label=iri,
-		lp="842.88,221.5",
-		pos="e,639.49,190.16 1744.1,261.25 1466.9,257.06 1004.8,247.54 834.88,229 756.2,220.41 736.6,215.46 659.88,196 656.45,195.13 652.92,194.16 \
-649.38,193.14",
+		lp="832.88,221.5",
+		pos="e,639.79,190.19 2634.3,262.44 2144.8,258.66 1000.5,247.92 824.88,229 750.52,220.99 732.27,214.78 659.88,196 656.5,195.12 653.03,\
+194.16 649.54,193.14",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -40,8 +40,8 @@ digraph {
 		width=1.5707];
 	"organism taxon to organism taxon interaction" -> name	[color=blue,
 		label=name,
-		lp="947.88,221.5",
-		pos="e,764.5,191.18 1742.8,261.82 1486.6,258.36 1079.4,249.72 927.88,229 874.48,221.7 814.71,205.92 774.13,194.03",
+		lp="939.88,221.5",
+		pos="e,763.64,191.54 2633.6,262.91 2160.8,260.16 1085.4,251.51 919.88,229 869.1,222.09 812.51,206.58 773.62,194.65",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=2.0943];
 	"organism taxon to organism taxon interaction" -> description	[color=blue,
 		label=description,
-		lp="1067.4,221.5",
-		pos="e,911.44,193.95 1740.6,262.89 1508,260.45 1158.6,252.77 1026.9,229 990.38,222.41 950.61,208.97 921.05,197.69",
+		lp="1060.4,221.5",
+		pos="e,909.69,194.15 2632.9,263.68 2178.4,262.44 1174.5,256.59 1019.9,229 985.04,222.78 947.3,209.42 919.2,198.07",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=1.4443];
 	"organism taxon to organism taxon interaction" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1209.9,221.5",
-		pos="e,1051.4,192.73 1743.1,261.62 1545.3,258.16 1269.8,249.68 1162.9,229 1127.4,222.14 1088.9,208.11 1060.9,196.66",
+		lp="1205.9,221.5",
+		pos="e,1050.5,192.95 2633.1,263.45 2205.6,261.8 1299.7,255.22 1158.9,229 1124.4,222.58 1087.1,208.62 1060,197.07",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.2999];
 	"organism taxon to organism taxon interaction" -> negated	[color=blue,
 		label=negated,
-		lp="1358.9,221.5",
-		pos="e,1172.1,190.33 1742.9,261.61 1620.7,257.84 1466.3,249.03 1329.9,229 1278.3,221.42 1220.5,205.31 1182,193.41",
+		lp="1360.9,221.5",
+		pos="e,1171.7,190.46 2632.2,264.63 2271.3,264.67 1576.2,260.46 1331.9,229 1279.3,222.23 1220.6,205.81 1181.7,193.62",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=2.1304];
 	"organism taxon to organism taxon interaction" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1489.4,221.5",
-		pos="e,1320.2,193.28 1751.4,259.15 1660,254.54 1552.2,245.74 1455.9,229 1412.6,221.48 1364.7,207.6 1329.7,196.37",
+		lp="1499.4,221.5",
+		pos="e,1320.6,193.2 2632.2,264.78 2297.9,264.84 1684,260.45 1465.9,229 1419.2,222.26 1367.4,207.87 1330.2,196.25",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.7332];
 	"organism taxon to organism taxon interaction" -> publications	[color=blue,
 		label=publications,
-		lp="1622.9,221.5",
-		pos="e,1469.3,193.32 1770.5,255.76 1708.8,250.65 1640.5,242.38 1578.9,229 1544.4,221.52 1506.8,208.14 1478.8,197.11",
+		lp="1644.9,221.5",
+		pos="e,1471.6,192.85 2632.3,264.9 2326.2,264.89 1792.7,260.16 1600.9,229 1559.5,222.28 1514,207.95 1481.3,196.35",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=2.0943];
 	"organism taxon to organism taxon interaction" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="1762.4,221.5",
-		pos="e,1623.8,194.37 1826.4,250.69 1790.2,245.52 1751.2,238.48 1715.9,229 1687.5,221.39 1656.9,209.08 1633.2,198.58",
+		lp="1803.4,221.5",
+		pos="e,1629.9,193.63 2632.7,263.78 2361.2,262.32 1919.2,255.71 1756.9,229 1716.5,222.35 1672.1,208.52 1639.6,197.09",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
@@ -110,8 +110,8 @@ digraph {
 		width=3.015];
 	"organism taxon to organism taxon interaction" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="1891.4,221.5",
-		pos="e,1801.2,196.24 1866.4,248.68 1852.4,243.82 1838.7,237.42 1826.9,229 1818.3,222.9 1811.4,213.84 1806.1,205.1",
+		lp="1958.4,221.5",
+		pos="e,1819.4,195.61 2637.9,260.95 2376.2,256.52 1963.7,246.83 1893.9,229 1870.8,223.1 1846.8,211.34 1828.1,200.71",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
@@ -120,8 +120,8 @@ digraph {
 		width=3.015];
 	"organism taxon to organism taxon interaction" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2058.9,221.5",
-		pos="e,1984.5,194.65 1959.1,246.59 1957.8,236.37 1958,223.63 1963.9,214 1967,208.82 1971.3,204.35 1976.1,200.52",
+		lp="2129.9,221.5",
+		pos="e,2025.8,196.33 2636.2,261.6 2400.5,257.99 2056.8,249.26 2034.9,229 2028.7,223.32 2026.4,214.91 2025.8,206.59",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
@@ -130,9 +130,8 @@ digraph {
 		width=3.015];
 	"organism taxon to organism taxon interaction" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2283.4,221.5",
-		pos="e,2220.2,194.64 2081.9,249.74 2106.2,244.74 2131.3,238.02 2153.9,229 2165.2,224.48 2166.1,219.64 2176.9,214 2187.6,208.42 2199.4,\
-203.13 2210.8,198.44",
+		lp="2338.4,221.5",
+		pos="e,2242.1,195.87 2644.9,259 2469.5,253.78 2246.2,244.19 2231.9,229 2224.7,221.43 2228.2,212.05 2235,203.46",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
@@ -141,8 +140,8 @@ digraph {
 		width=1.5346];
 	"organism taxon to organism taxon interaction" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2443.9,221.5",
-		pos="e,2429.9,195.38 2120.7,252.22 2239.7,243.16 2383.5,231.73 2389.9,229 2397.3,225.82 2410.6,214.01 2422.5,202.67",
+		lp="2492.9,221.5",
+		pos="e,2445.3,196.43 2657.2,256.69 2565.8,251.48 2474,242.87 2457.9,229 2451.3,223.36 2448,214.85 2446.4,206.44",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
@@ -151,9 +150,8 @@ digraph {
 		width=1.0652];
 	"organism taxon to organism taxon interaction" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2560.9,221.5",
-		pos="e,2536.8,193.27 2121.1,252.24 2146.1,250.44 2171.7,248.64 2195.9,247 2259.6,242.67 2422.3,249.42 2482.9,229 2484.2,228.55 2507.9,\
-212.7 2528.3,198.97",
+		lp="2590.9,221.5",
+		pos="e,2542.1,194.82 2675.4,254.33 2608.1,248.85 2545.4,240.69 2534.9,229 2528.2,221.56 2530.8,211.86 2536.3,202.98",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
@@ -162,9 +160,8 @@ digraph {
 		width=1.5887];
 	"organism taxon to organism taxon interaction" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2701.4,221.5",
-		pos="e,2656.6,195.46 2117.9,252.03 2143.9,250.21 2170.7,248.46 2195.9,247 2242.7,244.29 2574.6,247.05 2617.9,229 2625.2,225.96 2638.1,\
-214.15 2649.4,202.78",
+		lp="2717.4,221.5",
+		pos="e,2658.1,195.8 2708.1,251.46 2683.1,246.35 2662.4,239.14 2653.9,229 2648,222.05 2649.3,213.06 2653.2,204.62",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
@@ -173,102 +170,218 @@ digraph {
 		width=1.0652];
 	"organism taxon to organism taxon interaction" -> "original object"	[color=blue,
 		label="original object",
-		lp="2831.4,221.5",
-		pos="e,2784.5,196.31 2116.4,251.9 2142.9,250.06 2170.2,248.34 2195.9,247 2227.6,245.34 2742.2,247.69 2767.9,229 2775.3,223.62 2779.7,\
-214.9 2782.2,206.24",
+		lp="2841.4,221.5",
+		pos="e,2783.3,196.07 2809.5,247.23 2801.9,242.47 2794.8,236.48 2789.9,229 2785.5,222.32 2783.7,214 2783.3,206.08",
+		style=solid];
+	"subject category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="2918.9,178",
+		width=2.1304];
+	"organism taxon to organism taxon interaction" -> "subject category"	[color=blue,
+		label="subject category",
+		lp="2965.4,221.5",
+		pos="e,2913.5,196.22 2879.8,246.74 2885.9,241.53 2892.1,235.46 2896.9,229 2902.1,221.97 2906.4,213.49 2909.8,205.54",
+		style=solid];
+	"object category"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3089.9,178",
+		width=2.1304];
+	"organism taxon to organism taxon interaction" -> "object category"	[color=blue,
+		label="object category",
+		lp="3108.4,221.5",
+		pos="e,3073.8,195.91 2968.7,249.44 2989.3,244.49 3010.2,237.87 3028.9,229 3042.5,222.54 3055.7,212.41 3066.3,202.94",
+		style=solid];
+	"subject closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3222.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "subject closure"	[color=blue,
+		label="subject closure",
+		lp="3245.4,221.5",
+		pos="e,3209.8,195.42 3004.3,251.48 3077,244.6 3152.3,236.05 3167.9,229 3181.1,223.04 3193.2,212.72 3202.8,203",
+		style=solid];
+	"object closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3322.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "object closure"	[color=blue,
+		label="object closure",
+		lp="3365.9,221.5",
+		pos="e,3321,196.18 3013.1,252.2 3141.6,242.48 3302.4,230.12 3303.9,229 3311.3,223.48 3315.8,214.73 3318.5,206.08",
+		style=solid];
+	"subject category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3455.9,178",
+		width=2.1304];
+	"organism taxon to organism taxon interaction" -> "subject category closure"	[color=blue,
+		label="subject category closure",
+		lp="3524.4,221.5",
+		pos="e,3448.5,196.07 3012.8,252.15 3038.3,250.35 3064.3,248.57 3088.9,247 3125.6,244.66 3387.6,246.68 3419.9,229 3429.7,223.61 3437.6,\
+214.23 3443.4,205.04",
+		style=solid];
+	"object category closure"	[color=blue,
+		height=0.5,
+		label="ontology class",
+		pos="3647.9,178",
+		width=2.1304];
+	"organism taxon to organism taxon interaction" -> "object category closure"	[color=blue,
+		label="object category closure",
+		lp="3715.4,221.5",
+		pos="e,3641.8,196.1 3009.7,251.93 3036.1,250.1 3063.3,248.37 3088.9,247 3118.1,245.43 3590.4,243.5 3615.9,229 3625.3,223.64 3632.4,214.27 \
+3637.4,205.08",
+		style=solid];
+	"subject namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3837.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "subject namespace"	[color=blue,
+		label="subject namespace",
+		lp="3887.9,221.5",
+		pos="e,3830.9,196.17 3008.4,251.82 3035.2,249.98 3062.9,248.28 3088.9,247 3128.5,245.06 3767.9,247.77 3802.9,229 3812.7,223.74 3820.3,\
+214.38 3825.9,205.17",
+		style=solid];
+	"object namespace"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="3996.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "object namespace"	[color=blue,
+		label="object namespace",
+		lp="4040.9,221.5",
+		pos="e,3989.5,195.72 3007.8,251.77 3034.8,249.92 3062.6,248.23 3088.9,247 3137.2,244.74 3916.9,251.23 3959.9,229 3970.2,223.66 3978.4,\
+213.98 3984.4,204.54",
+		style=solid];
+	"subject label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4147.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "subject label closure"	[color=blue,
+		label="subject label closure",
+		lp="4200.9,221.5",
+		pos="e,4139.9,195.76 3007.2,251.74 3034.3,249.89 3062.4,248.2 3088.9,247 3145.5,244.44 4058.2,254.31 4108.9,229 4119.6,223.65 4128.2,\
+213.83 4134.6,204.3",
+		style=solid];
+	"object label closure"	[color=blue,
+		height=0.5,
+		label=string,
+		pos="4318.9,178",
+		width=1.0652];
+	"organism taxon to organism taxon interaction" -> "object label closure"	[color=blue,
+		label="object label closure",
+		lp="4366.4,221.5",
+		pos="e,4310.6,195.78 3006.8,251.71 3034.1,249.85 3062.3,248.17 3088.9,247 3121.9,245.55 4249.2,243.55 4278.9,229 4289.7,223.68 4298.6,\
+213.86 4305.2,204.33",
+		style=solid];
+	"retrieval source ids"	[color=blue,
+		height=0.5,
+		label="retrieval source",
+		pos="4462.9,178",
+		width=2.347];
+	"organism taxon to organism taxon interaction" -> "retrieval source ids"	[color=blue,
+		label="retrieval source ids",
+		lp="4522.4,221.5",
+		pos="e,4459.9,196 3006.5,251.69 3033.9,249.83 3062.2,248.15 3088.9,247 3126.4,245.38 4408.4,249.46 4439.9,229 4448,223.7 4453.3,214.72 \
+4456.8,205.82",
 		style=solid];
 	type	[height=0.5,
-		pos="2873.9,178",
+		pos="4596.9,178",
 		width=0.86659];
 	"organism taxon to organism taxon interaction" -> type	[color=blue,
 		label=type,
-		lp="2907.9,221.5",
-		pos="e,2884.9,194.95 2115.7,251.82 2142.4,249.99 2170,248.28 2195.9,247 2215.1,246.05 2873.5,242.75 2886.9,229 2893.3,222.4 2892.5,213.03 \
-2889.2,204.19",
+		lp="4618.9,221.5",
+		pos="e,4602,196.18 3006.5,251.66 3033.9,249.8 3062.2,248.13 3088.9,247 3109.8,246.11 4581,243.74 4595.9,229 4601.8,223.09 4603.4,214.51 \
+4603.1,206.12",
 		style=solid];
 	category	[height=0.5,
-		pos="2974.9,178",
+		pos="4697.9,178",
 		width=1.4263];
 	"organism taxon to organism taxon interaction" -> category	[color=blue,
 		label=category,
-		lp="2981.4,221.5",
-		pos="e,2964.4,195.81 2115.4,251.81 2142.2,249.97 2169.9,248.27 2195.9,247 2236.5,245.02 2890.7,245.6 2927.9,229 2939.9,223.61 2950.4,\
-213.5 2958.3,203.77",
+		lp="4696.4,221.5",
+		pos="e,4684.3,195.45 3006.2,251.67 3033.7,249.81 3062.1,248.13 3088.9,247 3131.9,245.18 4598.5,244.06 4638.9,229 4653.5,223.56 4666.9,\
+212.8 4677.3,202.65",
 		style=solid];
 	"associated environmental context"	[height=0.5,
-		pos="3210.9,178",
+		pos="4933.9,178",
 		width=4.6399];
 	"organism taxon to organism taxon interaction" -> "associated environmental context"	[color=blue,
 		label="associated environmental context",
-		lp="3213.4,221.5",
-		pos="e,3160.9,195.28 2115.1,251.77 2142,249.93 2169.7,248.24 2195.9,247 2378.2,238.36 2836.1,253.94 3016.9,229 3062.6,222.7 3113,209.5 \
-3151,198.25",
+		lp="4931.4,221.5",
+		pos="e,4882.6,195.19 3006.2,251.66 3033.7,249.79 3062.1,248.12 3088.9,247 3271.3,239.35 4550.8,252.09 4731.9,229 4780,222.87 4833.1,209.44 \
+4872.8,198.04",
 		style=solid];
 	subject	[height=0.5,
-		pos="3439.9,178",
+		pos="5162.9,178",
 		width=1.2277];
 	"organism taxon to organism taxon interaction" -> subject	[color=blue,
 		label=subject,
-		lp="3404.9,221.5",
-		pos="e,3417.5,193.58 2114.1,251.7 2141.3,249.85 2169.4,248.17 2195.9,247 2259.3,244.19 3276.2,243.82 3337.9,229 3363,222.96 3389.2,209.97 \
-3408.7,198.75",
+		lp="5124.9,221.5",
+		pos="e,5139.7,193.4 3005.9,251.64 3033.5,249.77 3062,248.1 3088.9,247 3198.1,242.52 4949.3,253.18 5055.9,229 5082.4,222.98 5110.2,209.77 \
+5130.8,198.44",
 		style=solid];
 	object	[height=0.5,
-		pos="3482.9,91",
+		pos="5205.9,91",
 		width=1.0832];
 	"organism taxon to organism taxon interaction" -> object	[color=blue,
 		label=object,
-		lp="3532.9,178",
-		pos="e,3496.3,108.09 2113.8,251.7 2141.1,249.84 2169.3,248.16 2195.9,247 2264.7,243.99 3368.5,247.09 3434.9,229 3463.5,221.21 3475.1,\
-219.7 3492.9,196 3511.6,171.06 3514.8,156.9 3505.9,127 3504.8,123.55 3503.4,120.13 3501.6,116.85",
+		lp="5255.9,178",
+		pos="e,5219.3,108.09 3005.9,251.63 3033.5,249.76 3062,248.1 3088.9,247 3146.2,244.66 5099.3,243.33 5154.9,229 5184.7,221.31 5197.1,220.43 \
+5215.9,196 5234.9,171.26 5237.8,156.9 5228.9,127 5227.8,123.55 5226.4,120.13 5224.6,116.85",
 		style=solid];
 	predicate	[height=0.5,
-		pos="3636.9,178",
+		pos="5359.9,178",
 		width=1.5165];
 	"organism taxon to organism taxon interaction" -> predicate	[color=blue,
 		label=predicate,
-		lp="3609.9,221.5",
-		pos="e,3613,194.32 2113.5,251.69 2140.9,249.83 2169.2,248.15 2195.9,247 2270.2,243.79 3461.5,246.14 3533.9,229 3558.8,223.1 3584.6,210.51 \
-3604.2,199.44",
+		lp="5332.9,221.5",
+		pos="e,5336.1,194.36 3005.9,251.62 3033.5,249.75 3062,248.09 3088.9,247 3209.2,242.12 5139.6,256.47 5256.9,229 5281.8,223.17 5307.7,210.57 \
+5327.2,199.48",
 		style=solid];
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2242.9,265",
+		pos="3135.9,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="2373.9,265",
+		pos="3266.9,265",
 		width=2.0762];
 	"organism taxon to organism taxon interaction_associated environmental context"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2504.9,265",
+		pos="3397.9,265",
 		width=1.0652];
 	subject -> object	[label=relation,
-		lp="3477.9,134.5",
-		pos="e,3465,107.23 3441,159.55 3442.2,149.57 3444.7,137.07 3449.9,127 3452.1,122.68 3455,118.52 3458.2,114.66"];
+		lp="5200.9,134.5",
+		pos="e,5188,107.23 5164,159.55 5165.2,149.57 5167.7,137.07 5172.9,127 5175.1,122.68 5178,118.52 5181.2,114.66"];
 	relation	[height=0.5,
-		pos="3427.9,18",
+		pos="5150.9,18",
 		width=1.2999];
-	subject -> relation	[pos="e,3429.2,36.188 3438.6,159.79 3436.5,132.48 3432.4,78.994 3430,46.38",
+	subject -> relation	[pos="e,5152.2,36.188 5161.6,159.79 5159.5,132.48 5155.4,78.994 5153,46.38",
 		style=dotted];
 	"organism taxon to organism taxon interaction_subject"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="2644.9,265",
+		pos="3537.9,265",
 		width=2.3109];
-	object -> relation	[pos="e,3440.7,35.54 3470.4,73.889 3463.5,64.939 3454.7,53.617 3446.9,43.584",
+	object -> relation	[pos="e,5163.7,35.54 5193.4,73.889 5186.5,64.939 5177.7,53.617 5169.9,43.584",
 		style=dotted];
 	"organism taxon to organism taxon interaction_object"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="2828.9,265",
+		pos="3721.9,265",
 		width=2.3109];
 	"organism taxon to organism taxon interaction_predicate"	[color=blue,
 		height=0.5,
 		label="predicate type",
-		pos="3007.9,265",
+		pos="3900.9,265",
 		width=2.1665];
 }

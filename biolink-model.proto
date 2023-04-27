@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.2.5
+// version: 3.3.0
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -78,6 +78,17 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
@@ -103,12 +114,24 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity subject = 0
   anatomicalEntity object = 0
   predicateType predicate = 0
  }
+// a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
 message Article
  {
   iriType iri = 0
@@ -121,7 +144,7 @@ message Article
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -157,6 +180,17 @@ message Association
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
  }
@@ -176,6 +210,20 @@ message Attribute
   namedThing hasQualitativeValue = 0
   iriType iri = 0
  }
+// A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
+message Bacterium
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
 message Behavior
  {
   string id = 0
@@ -188,8 +236,8 @@ message Behavior
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
@@ -212,6 +260,17 @@ message BehaviorToBehavioralFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   behavior subject = 0
@@ -269,8 +328,8 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Either an individual molecular activity, or a collection of causally connected molecular activities in a biological system.
@@ -286,8 +345,8 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 message BiologicalSex
@@ -334,7 +393,7 @@ message Book
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -357,7 +416,7 @@ message BookChapter
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -406,6 +465,17 @@ message CaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   frequencyValue frequencyQualifier = 0
@@ -463,6 +533,17 @@ message CellLineAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   cellLine subject = 0
@@ -491,6 +572,17 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature subject = 0
@@ -541,6 +633,17 @@ message ChemicalAffectsGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -598,6 +701,17 @@ message ChemicalEntityAssessesNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
@@ -623,6 +737,17 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   directionQualifierEnum objectDirectionQualifier = 0
@@ -666,6 +791,17 @@ message ChemicalGeneInteractionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
@@ -723,6 +859,17 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -749,6 +896,17 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   fDAIDAAdverseEventEnum fDAAdverseEventLevel = 0
@@ -791,6 +949,17 @@ message ChemicalToChemicalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
@@ -821,6 +990,17 @@ message ChemicalToChemicalDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
  repeated  macromolecularMachineMixin catalystQualifier = 0
@@ -849,6 +1029,17 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   diseaseOrPhenotypicFeature object = 0
@@ -873,6 +1064,17 @@ message ChemicalToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity subject = 0
@@ -1151,6 +1353,17 @@ message ContributorAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   informationContentEntity subject = 0
@@ -1245,6 +1458,19 @@ message Device
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A device or substance used to help diagnose disease or injury
+message DiagnosticAid
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ }
 // A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
 message Disease
  {
@@ -1310,6 +1536,17 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -1336,6 +1573,17 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   anatomicalEntity object = 0
@@ -1362,6 +1610,17 @@ message DiseaseToExposureEventAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
  }
@@ -1385,6 +1644,17 @@ message DiseaseToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   disease subject = 0
@@ -1437,6 +1707,29 @@ message DrugExposure
  repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
  }
+// a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+message DrugLabel
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+ }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
  {
@@ -1458,6 +1751,17 @@ message DrugToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct object = 0
@@ -1487,6 +1791,7 @@ message DruggableGeneToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -1497,15 +1802,25 @@ message DruggableGeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
   geneOrGeneProduct subject = 0
   predicateType predicate = 0
  repeated  druggableGeneCategoryEnum hasEvidence = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
  }
 message EntityToDiseaseAssociation
  {
@@ -1528,6 +1843,17 @@ message EntityToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
@@ -1553,6 +1879,17 @@ message EntityToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   fDAApprovalStatusEnum fDAApprovalStatus = 0
@@ -1686,6 +2023,17 @@ message ExonToTranscriptRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   exon subject = 0
@@ -1713,6 +2061,17 @@ message ExposureEventToOutcomeAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms populationContextQualifier = 0
@@ -1739,6 +2098,17 @@ message ExposureEventToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   exposureEvent subject = 0
@@ -1810,10 +2180,35 @@ message FunctionalAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
+ }
+// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+message Fungus
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
 message Gene
@@ -1840,6 +2235,7 @@ message GeneAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -1851,13 +2247,23 @@ message GeneAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
+  geneOrGeneProduct subject = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
-  geneOrGeneProduct subject = 0
  }
 // any grouping of multiple genes or gene products related by common descent
 message GeneFamily
@@ -1892,11 +2298,19 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -1909,7 +2323,9 @@ message GeneToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing subject = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -1921,13 +2337,64 @@ message GeneToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+ }
+message GeneToDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  informationResource knowledgeSource = 0
+  informationResource primaryKnowledgeSource = 0
+ repeated  informationResource aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   geneOrGeneProduct subject = 0
-  disease object = 0
+  diseaseOrPhenotypicFeature object = 0
+  predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -1948,6 +2415,17 @@ message GeneToExpressionSiteAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   lifeStage stageQualifier = 0
@@ -1975,6 +2453,17 @@ message GeneToGeneCoexpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -2004,6 +2493,17 @@ message GeneToGeneFamilyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -2029,6 +2529,17 @@ message GeneToGeneHomologyAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -2054,6 +2565,17 @@ message GeneToGeneProductRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -2079,6 +2601,17 @@ message GeneToGoTermAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   gene subject = 0
@@ -2104,19 +2637,32 @@ message GeneToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
   pathway object = 0
  }
-message GeneToPhenotypicFeatureAssociation
+message GeneToPhenotypeAssociation
  {
   string id = 0
   iriType iri = 0
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
+  namedThing subject = 0
   predicateType predicate = 0
+  namedThing object = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
@@ -2128,18 +2674,19 @@ message GeneToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  geneOrGeneProduct subject = 0
-  phenotypicFeature object = 0
-  frequencyValue frequencyQualifier = 0
-  severityValue severityQualifier = 0
-  onset onsetQualifier = 0
-  biologicalSex sexQualifier = 0
-  integer hasCount = 0
-  integer hasTotal = 0
-  double hasQuotient = 0
-  double hasPercentage = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance
@@ -2209,6 +2756,17 @@ message GenomicSequenceLocalization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   integer startInterbaseCoordinate = 0
@@ -2254,6 +2812,17 @@ message GenotypeAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2281,6 +2850,17 @@ message GenotypeToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -2309,6 +2889,17 @@ message GenotypeToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2334,6 +2925,17 @@ message GenotypeToGenotypePartAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2360,6 +2962,17 @@ message GenotypeToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2392,6 +3005,17 @@ message GenotypeToVariantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -2502,6 +3126,20 @@ message Hospitalization
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A member of the the species Homo sapiens.
+message Human
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
  {
@@ -2535,6 +3173,17 @@ message InformationContentEntityToNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -2557,6 +3206,47 @@ message InformationResource
   string rights = 0
   string format = 0
   date creationDate = 0
+ }
+// An animal lacking a vertebral column. This group consists of 98% of all animal species.
+message Invertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
+ }
+// an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+message JournalArticle
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
+  uriorcurie publishedIn = 0
+  string isoAbbreviation = 0
+  string volume = 0
+  string issue = 0
  }
 // A stage of development or growth of an organism, including post-natal adult stages
 message LifeStage
@@ -2606,6 +3296,17 @@ message MacromolecularMachineToBiologicalProcessAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -2631,6 +3332,17 @@ message MacromolecularMachineToCellularComponentAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
@@ -2656,10 +3368,35 @@ message MacromolecularMachineToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
+ }
+// A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
+message Mammal
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -2693,6 +3430,17 @@ message MaterialSampleDerivationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   materialSample subject = 0
@@ -2721,6 +3469,17 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
  }
@@ -2782,6 +3541,17 @@ message MolecularActivityToChemicalEntityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2807,6 +3577,17 @@ message MolecularActivityToMolecularActivityAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2831,6 +3612,17 @@ message MolecularActivityToPathwayAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   molecularActivity subject = 0
@@ -2911,6 +3703,17 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -3073,6 +3876,17 @@ message OrganismTaxonToOrganismTaxonInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   string associatedEnvironmentalContext = 0
@@ -3099,6 +3913,17 @@ message OrganismTaxonToOrganismTaxonSpecialization
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
@@ -3124,6 +3949,17 @@ message OrganismToOrganismAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   individualOrganism subject = 0
@@ -3149,6 +3985,17 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   organismalEntity subject = 0
@@ -3175,6 +4022,17 @@ message PairwiseGeneToGeneInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   geneOrGeneProduct subject = 0
@@ -3199,6 +4057,17 @@ message PairwiseMolecularInteraction
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   ontologyClass interactingMoleculesCategory = 0
@@ -3206,6 +4075,29 @@ message PairwiseMolecularInteraction
   string id = 0
   predicateType predicate = 0
   molecularEntity object = 0
+ }
+// a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
+message Patent
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
@@ -3251,8 +4143,8 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
@@ -3284,8 +4176,8 @@ message Pathway
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -3372,8 +4264,8 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
- repeated  occurrent hasInput = 0
- repeated  occurrent hasOutput = 0
+ repeated  namedThing hasInput = 0
+ repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
  }
 // Any entity or process that exists at the level of the whole planet
@@ -3388,6 +4280,19 @@ message PlanetaryEntity
  repeated  string providedBy = 0
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
+ }
+message Plant
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 message Polypeptide
@@ -3436,6 +4341,17 @@ message PopulationToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   populationOfIndividualOrganisms subject = 0
@@ -3481,6 +4397,29 @@ message PredicateMapping
  repeated  namedThing exactMatch = 0
  repeated  namedThing narrowMatch = 0
  repeated  namedThing broadMatch = 0
+ }
+// a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
+message PreprintPublication
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
@@ -3576,7 +4515,7 @@ message ProteinIsoform
  repeated  organismTaxon inTaxon = 0
  repeated  labelType synonym = 0
  }
-// Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+// Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
 message Publication
  {
   iriType iri = 0
@@ -3589,7 +4528,7 @@ message Publication
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -3624,6 +4563,17 @@ message ReactionToCatalystAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   integer stoichiometry = 0
@@ -3651,6 +4601,17 @@ message ReactionToParticipantAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   chemicalEntity object = 0
@@ -3726,9 +4687,9 @@ message RetrievalSource
   string rights = 0
   string format = 0
   date creationDate = 0
-  uriorcurie resource = 0
+  uriorcurie resourceId = 0
   resourceRoleEnum resourceRole = 0
-  uriorcurie upstreamResources = 0
+  uriorcurie upstreamResourceIds = 0
  repeated  uriorcurie xref = 0
  }
 message RNAProduct
@@ -3796,6 +4757,17 @@ message SequenceAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
  }
@@ -3819,6 +4791,17 @@ message SequenceFeatureRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   nucleicAcidEntity subject = 0
@@ -3852,7 +4835,7 @@ message Serial
   string rights = 0
   string format = 0
   date creationDate = 0
- repeated  string authors = 0
+ repeated  agent authors = 0
  repeated  string pages = 0
   string summary = 0
  repeated  string keywords = 0
@@ -4035,6 +5018,17 @@ message TaxonToTaxonAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   organismTaxon subject = 0
@@ -4103,6 +5097,17 @@ message TranscriptToGeneRelationship
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   transcript subject = 0
@@ -4158,6 +5163,17 @@ message VariantAsAModelOfDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   predicateType predicate = 0
@@ -4185,6 +5201,17 @@ message VariantToDiseaseAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   namedThing subject = 0
@@ -4214,6 +5241,17 @@ message VariantToGeneAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   gene object = 0
@@ -4239,6 +5277,17 @@ message VariantToGeneExpressionAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   gene object = 0
@@ -4268,6 +5317,17 @@ message VariantToPhenotypicFeatureAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0
@@ -4300,6 +5360,17 @@ message VariantToPopulationAssociation
   string originalSubject = 0
   uriorcurie originalPredicate = 0
   string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
   sequenceVariant subject = 0
@@ -4309,6 +5380,20 @@ message VariantToPopulationAssociation
   integer hasTotal = 0
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
+ }
+// A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+message Vertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+ repeated  attribute hasAttribute = 0
  }
 // A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 message Virus
@@ -4323,6 +5408,29 @@ message Virus
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
  repeated  attribute hasAttribute = 0
+ }
+// a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
+message WebPage
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+  string publicationType = 0
  }
 message Zygosity
  {

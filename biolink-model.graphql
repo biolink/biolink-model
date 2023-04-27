@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.5
+# version: 3.3.0
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -93,6 +93,17 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -117,6 +128,17 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -142,6 +164,17 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: AnatomicalEntity!
@@ -165,7 +198,7 @@ type Article
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -201,6 +234,17 @@ type Association
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
   }
@@ -221,6 +265,20 @@ type Attribute implements OntologyClass
     iri: IriType
   }
 
+type Bacterium
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
 type Behavior implements OntologyClass, ActivityAndBehavior
   {
     id: String!
@@ -233,8 +291,8 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -257,6 +315,17 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Behavior!
@@ -332,8 +401,8 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -349,8 +418,8 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -398,7 +467,7 @@ type Book
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -422,7 +491,7 @@ type BookChapter
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -476,6 +545,17 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     frequencyQualifier: FrequencyValue
@@ -536,6 +616,17 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: CellLine!
@@ -564,6 +655,17 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: DiseaseOrPhenotypicFeature!
@@ -620,6 +722,17 @@ type ChemicalAffectsGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -678,6 +791,17 @@ type ChemicalEntityAssessesNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: ChemicalEntity!
@@ -707,6 +831,17 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     objectDirectionQualifier: DirectionQualifierEnum
@@ -759,6 +894,17 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
@@ -820,6 +966,17 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -846,6 +1003,17 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     fDAAdverseEventLevel: FDAIDAAdverseEventEnum
@@ -888,6 +1056,17 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: ChemicalEntity!
@@ -911,6 +1090,17 @@ type ChemicalToChemicalDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     catalystQualifier: [MacromolecularMachineMixin]
@@ -939,6 +1129,17 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: DiseaseOrPhenotypicFeature!
@@ -968,6 +1169,17 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: ChemicalEntity!
@@ -1249,6 +1461,17 @@ type ContributorAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: InformationContentEntity!
@@ -1344,6 +1567,19 @@ type Device
     category: [CategoryType]!
   }
 
+type DiagnosticAid
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+  }
+
 type Disease
   {
     id: String!
@@ -1417,6 +1653,17 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -1443,6 +1690,17 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: AnatomicalEntity!
@@ -1474,6 +1732,17 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
   }
@@ -1497,6 +1766,17 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Disease!
@@ -1550,6 +1830,29 @@ type DrugExposure implements ExposureEvent
     timepoint: TimeType
   }
 
+type DrugLabel
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
+  }
+
 interface DrugToEntityAssociationMixin
   {
     subject: Drug!
@@ -1575,6 +1878,17 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: GeneOrGeneProduct!
@@ -1605,6 +1919,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -1615,15 +1930,25 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
     hasEvidence: [DruggableGeneCategoryEnum]
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
   }
 
 interface Entity
@@ -1658,6 +1983,17 @@ type EntityToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1714,6 +2050,17 @@ type EntityToPhenotypicFeatureAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     fDAApprovalStatus: FDAApprovalStatusEnum
@@ -1872,6 +2219,17 @@ type ExonToTranscriptRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Exon!
@@ -1905,6 +2263,17 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     populationContextQualifier: PopulationOfIndividualOrganisms
@@ -1931,6 +2300,17 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: ExposureEvent!
@@ -2016,10 +2396,35 @@ type FunctionalAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: OntologyClass!
+  }
+
+type Fungus
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
@@ -2047,6 +2452,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     description: NarrativeText
     hasAttribute: [Attribute]
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2058,13 +2464,23 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
+    subject: GeneOrGeneProduct!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
-    subject: GeneOrGeneProduct!
   }
 
 interface GeneExpressionMixin
@@ -2113,11 +2529,19 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -2143,14 +2567,16 @@ interface GeneProductMixin
     xref: [Uriorcurie]
   }
 
-type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+type GeneToDiseaseAssociation
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2162,13 +2588,65 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+  }
+
+type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: InformationResource
+    primaryKnowledgeSource: InformationResource
+    aggregatorKnowledgeSource: [InformationResource]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
     subject: GeneOrGeneProduct!
-    object: Disease!
+    object: DiseaseOrPhenotypicFeature!
+    predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 interface GeneToEntityAssociationMixin
@@ -2194,6 +2672,17 @@ type GeneToExpressionSiteAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     stageQualifier: LifeStage
@@ -2222,6 +2711,17 @@ interface GeneToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2246,6 +2746,17 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2275,6 +2786,17 @@ type GeneToGeneFamilyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Gene!
@@ -2300,6 +2822,17 @@ type GeneToGeneHomologyAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -2325,6 +2858,17 @@ type GeneToGeneProductRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Gene!
@@ -2351,6 +2895,17 @@ type GeneToGoTermAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Gene!
@@ -2376,20 +2931,33 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
     object: Pathway!
   }
 
-type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+type GeneToPhenotypeAssociation
   {
     id: String!
     iri: IriType
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
+    subject: NamedThing!
     predicate: PredicateType!
+    object: NamedThing!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
@@ -2401,18 +2969,19 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    subject: GeneOrGeneProduct!
-    object: PhenotypicFeature!
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
-    hasCount: Integer
-    hasTotal: Integer
-    hasQuotient: Double
-    hasPercentage: Double
   }
 
 type GeneticInheritance
@@ -2487,6 +3056,17 @@ type GenomicSequenceLocalization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     startInterbaseCoordinate: Integer
@@ -2533,6 +3113,17 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -2561,6 +3152,17 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: NamedThing!
@@ -2594,6 +3196,17 @@ type GenotypeToGeneAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -2619,6 +3232,17 @@ type GenotypeToGenotypePartAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -2645,6 +3269,17 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -2677,6 +3312,17 @@ type GenotypeToVariantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -2794,6 +3440,20 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
+type Human implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
 type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
@@ -2843,6 +3503,17 @@ type InformationContentEntityToNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: NamedThing!
@@ -2865,6 +3536,47 @@ type InformationResource
     rights: String
     format: String
     creationDate: Date
+  }
+
+type Invertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
+  }
+
+type JournalArticle
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
+    publishedIn: Uriorcurie!
+    isoAbbreviation: String
+    volume: String
+    issue: String
   }
 
 type LifeStage
@@ -2919,6 +3631,17 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2944,6 +3667,17 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
@@ -2974,10 +3708,35 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
+  }
+
+type Mammal implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 interface MappingCollection
@@ -3016,6 +3775,17 @@ type MaterialSampleDerivationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MaterialSample!
@@ -3044,6 +3814,17 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
   }
@@ -3117,6 +3898,17 @@ type MolecularActivityToChemicalEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
@@ -3142,6 +3934,17 @@ type MolecularActivityToMolecularActivityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
@@ -3166,6 +3969,17 @@ type MolecularActivityToPathwayAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: MolecularActivity!
@@ -3251,6 +4065,17 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -3428,6 +4253,17 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3454,6 +4290,17 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3478,6 +4325,17 @@ type OrganismTaxonToOrganismTaxonInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     associatedEnvironmentalContext: String
@@ -3504,6 +4362,17 @@ type OrganismTaxonToOrganismTaxonSpecialization
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -3530,6 +4399,17 @@ type OrganismToOrganismAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: IndividualOrganism!
@@ -3570,6 +4450,17 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: OrganismalEntity!
@@ -3600,6 +4491,17 @@ type PairwiseGeneToGeneInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: GeneOrGeneProduct!
@@ -3624,6 +4526,17 @@ type PairwiseMolecularInteraction
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     interactingMoleculesCategory: OntologyClass
@@ -3631,6 +4544,29 @@ type PairwiseMolecularInteraction
     id: String!
     predicate: PredicateType!
     object: MolecularEntity!
+  }
+
+type Patent
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
   }
 
 interface PathognomonicityQuantifier
@@ -3688,8 +4624,8 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3726,8 +4662,8 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3823,8 +4759,8 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
-    hasInput: [Occurrent]
-    hasOutput: [Occurrent]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
   }
 
@@ -3839,6 +4775,20 @@ type PlanetaryEntity
     providedBy: [String]
     xref: [Uriorcurie]
     category: [CategoryType]!
+  }
+
+type Plant
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
@@ -3887,6 +4837,17 @@ type PopulationToPopulationAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: PopulationOfIndividualOrganisms!
@@ -3932,6 +4893,29 @@ type PredicateMapping
     exactMatch: [NamedThing]
     narrowMatch: [NamedThing]
     broadMatch: [NamedThing]
+  }
+
+type PreprintPublication
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
   }
 
 type Procedure implements ActivityAndBehavior
@@ -4041,7 +5025,7 @@ type Publication
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -4077,6 +5061,17 @@ type ReactionToCatalystAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     stoichiometry: Integer
@@ -4105,6 +5100,17 @@ type ReactionToParticipantAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: ChemicalEntity!
@@ -4184,9 +5190,9 @@ type RetrievalSource
     rights: String
     format: String
     creationDate: Date
-    resource: Uriorcurie!
+    resourceId: Uriorcurie!
     resourceRole: ResourceRoleEnum!
-    upstreamResources: Uriorcurie
+    upstreamResourceIds: Uriorcurie
     xref: [Uriorcurie]
   }
 
@@ -4259,6 +5265,17 @@ type SequenceAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
   }
@@ -4282,6 +5299,17 @@ type SequenceFeatureRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: NucleicAcidEntity!
@@ -4323,6 +5351,17 @@ interface SequenceVariantModulatesTreatmentAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4340,7 +5379,7 @@ type Serial
     rights: String
     format: String
     creationDate: Date
-    authors: [String]
+    authors: [Agent]
     pages: [String]
     summary: String
     keywords: [String]
@@ -4553,6 +5592,17 @@ type TaxonToTaxonAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: OrganismTaxon!
@@ -4626,6 +5676,17 @@ type TranscriptToGeneRelationship
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: Transcript!
@@ -4682,6 +5743,17 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     predicate: PredicateType!
@@ -4710,6 +5782,17 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: NamedThing!
@@ -4744,6 +5827,17 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: Gene!
@@ -4769,6 +5863,17 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     object: Gene!
@@ -4799,6 +5904,17 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4831,6 +5947,17 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     originalSubject: String
     originalPredicate: Uriorcurie
     originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
     subject: SequenceVariant!
@@ -4840,6 +5967,20 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasTotal: Integer
     hasPercentage: Double
     frequencyQualifier: FrequencyValue
+  }
+
+type Vertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    hasAttribute: [Attribute]
   }
 
 type Virus implements SubjectOfInvestigation
@@ -4854,6 +5995,29 @@ type Virus implements SubjectOfInvestigation
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     hasAttribute: [Attribute]
+  }
+
+type WebPage
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: String!
   }
 
 type Zygosity

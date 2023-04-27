@@ -40,7 +40,7 @@ To add an entity class to Biolink Model you need to determine the following:
   - What are the valid namespace prefixes for identifiers of instances of this class?
     - For representing an instance of this entity class determine the identifier namespace and valid prefix(es)
   - What are the mapping(s) for this class?
-    - Mappings are a way of rooting this new entity classs in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
+    - Mappings are a way of rooting this new entity class in the context of other ontologies, thesauri, controlled vocabularies and taxonomies
     - Determine the level of granularity for your mappings where they can be divided into 5 types: `related_mappings`, `broad_mappings`, `narrow_mappings` `close_mappings`, `exact_mappings`
 
 

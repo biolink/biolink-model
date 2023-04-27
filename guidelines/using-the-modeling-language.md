@@ -233,7 +233,7 @@ Here we define a human readable description that describes the predicate slot `g
 
 ### slot_uri
 
-The `slot_uri` slot can be used to define a canonical URI that is the true representation for that particular slot. That is, the value of `slot_uri` can be used interchangably with the slot being defined.
+The `slot_uri` slot can be used to define a canonical URI that is the true representation for that particular slot. That is, the value of `slot_uri` can be used interchangeably with the slot being defined.
 
 ```yaml
   name:

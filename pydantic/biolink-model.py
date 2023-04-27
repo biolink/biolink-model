@@ -98,7 +98,7 @@ class DrugDeliveryEnum(str, Enum):
     
     inhalation = "inhalation"
     oral = "oral"
-    absorbtion_through_the_skin = "absorbtion through the skin"
+    absorbtion_through_the_skin = "absorption through the skin"
     intravenous_injection = "intravenous injection"
     
     

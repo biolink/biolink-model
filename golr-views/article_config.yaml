@@ -1,5 +1,7 @@
-# metamodel_version: 1.7.0# version: 3.2.5id: article
+# metamodel_version: 1.7.0# version: 3.3.0id: article
 schema_generating: true
+description: "a piece of writing on a particular topic presented as a stand-alone\
+  \  section of a larger publication\t  "
 display_name: article
 document_category: article
 weight: 20
@@ -77,7 +79,11 @@ fields:
   display_name: mesh terms
   cardinality: multi
 - id: xref
-  description: Alternate CURIEs for a thing
+  description: A database cross reference or alternative identifier for a NamedThing
+    or edge between two  NamedThings.  This property should point to a database record
+    or webpage that supports the existence of the edge, or  gives more detail about
+    the edge. This property can be used on a node or edge to provide multiple URIs
+    or CURIE cross references.
   display_name: xref
   cardinality: multi
 - id: id

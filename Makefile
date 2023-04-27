@@ -5,7 +5,7 @@
 # There are three alternatives:
 #   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
 #   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
-#   3) make imgflags=""               -- genrate uml images as inline url's
+#   3) make imgflags=""               -- generate uml images as inline url's
 imgflags?=-i
 
 
@@ -39,7 +39,7 @@ install: env.lock
 # Install package into build environment
 # ---------------------------------------
 env.lock:
-	pipenv install --dev
+	poetry install
 	cp /dev/null env.lock
 
 
@@ -51,49 +51,49 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
-	export PIPENV_DONT_LOAD_ENV=1 && pipenv run gen-py-classes $< > $@.tmp && pipenv run python $@.tmp &&  mv $@.tmp $@
+	export PIPENV_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml env.lock
-	pipenv run gen-markdown --dir docs $(imgflags) $<
+	poetry run gen-markdown --dir docs $(imgflags) $<
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JEKYLL DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/Classes.md: biolink-model.yaml env.lock
-	pipenv run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
+	poetry run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
 gen-golr-views: biolink-model.yaml dir-golr-views env.lock
-	pipenv run gen-golr-views -d golr-views $<
+	poetry run gen-golr-views -d golr-views $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # pydantic
 # ~~~~~~~~~~~~~~~~~~~~
 gen-pydantic: biolink-model.yaml dir-pydantic env.lock
-	pipenv run gen-pydantic $< > biolink/pydanticmodel.py
+	poetry run gen-pydantic $< > biolink/pydanticmodel.py
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.graphql: biolink-model.yaml env.lock
-	pipenv run gen-graphql $< > $@
+	poetry run gen-graphql $< > $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphviz
 # ~~~~~~~~~~~~~~~~~~~~
 gen-graphviz: biolink-model.yaml dir-graphviz env.lock
-	pipenv run gen-graphviz  -d graphviz $< -f gv
-	pipenv run gen-graphviz  -d graphviz $< -f svg
+	poetry run gen-graphviz  -d graphviz $< -f gv
+	poetry run gen-graphviz  -d graphviz $< -f svg
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -108,18 +108,18 @@ java: json-schema/biolink-model.json dir-java env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml env.lock
 	touch $@
-	pipenv run gen-jsonld-context $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
+	poetry run gen-jsonld-context $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 contextn.jsonld: biolink-model.yaml env.lock
 	touch $@
-	pipenv run gen-jsonld-context --metauris $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
+	poetry run gen-jsonld-context --metauris $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSON-SCHEMA
 # ~~~~~~~~~~~~~~~~~~~~
 json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
-	pipenv run gen-json-schema $< > $@
+	poetry run gen-json-schema $< > $@
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -127,50 +127,50 @@ json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 
 prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.lock
-	pipenv run gen-prefix-map $< > $@
+	poetry run gen-prefix-map $< > $@
 
 id-prefixes:
-	pipenv run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
-	cd script && pipenv run python id_prefixes.py
+	poetry run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
+	cd script && poetry run python id_prefixes.py
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.owl.ttl: biolink-model.yaml env.lock
-	pipenv run gen-owl --no-metaclasses -o $@ $<
+	poetry run gen-owl --no-metaclasses -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Proto
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.proto: biolink-model.yaml env.lock
-	pipenv run gen-proto $< > $@
+	poetry run gen-proto $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.ttl: biolink-model.yaml env.lock
-	pipenv run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
+	poetry run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-modeel.shex: biolink-model.yaml
-	pipenv run gen-shex $< > $@
+	poetry run gen-shex $< > $@
 biolink-modeln.shex: biolink-model.yaml
 	touch $@
-	pipenv run gen-shex --metauris $< > $@
+	poetry run gen-shex --metauris $< > $@
 biolink-model.shexj: biolink-model.yaml
 	touch $@
-	pipenv run gen-shex --format json $< > $@
+	poetry run gen-shex --format json $< > $@
 biolink-modeln.shexj: biolink-model.yaml
 	touch $@
-	pipenv run gen-shex --metauris --format json $< > $@
+	poetry run gen-shex --metauris --format json $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # SHACL
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.shacl.ttl: biolink-model.yaml
-	pipenv run gen-shacl $< > $@
+	poetry run gen-shacl $< > $@
 
 # ----------------------------------------
 # Ontology conversion
@@ -200,49 +200,51 @@ contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex contrib/%/
 	echo
 
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml env.lock
-	pipenv run gen-py-classes contrib/$*.yaml > tmp.py && (pipenv run comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
+	poetry run gen-py-classes contrib/$*.yaml > tmp.py && (poetry run comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
 
 contrib/%/docs/index.md: contrib/%.yaml
-	pipenv run gen-markdown --dir contrib/$*/docs $<
+	poetry run gen-markdown --dir contrib/$*/docs $<
 
 contrib/%/datamodel.py: contrib/%.yaml
-	pipenv run gen-py-classes contrib/$*.yaml > $@
+	poetry run gen-py-classes contrib/$*.yaml > $@
 
 contrib-golr-%: contrib-dir-% contrib/%.yaml
-	pipenv run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
+	poetry run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
 contrib-pydantic-%: contrib-dir-% contrib/%.yaml
-	pipenv run gen-pydantic -d contrib/$*/pydantic contrib/$*.yaml
+	poetry run gen-pydantic -d contrib/$*/pydantic contrib/$*.yaml
 
 
 contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
-	pipenv run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
+	poetry run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
 
 contrib-java-%: contrib-dir-% contrib/%/schema.json
 	mkdir -p contrib/$*/java
 	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
 
 contrib/%/schema.json: contrib-dir-% contrib/%.yaml
-	pipenv run gen-json-schema contrib/$*.yaml > $@
+	poetry run gen-json-schema contrib/$*.yaml > $@
 
 contrib/%/%.owl: contrib/%.yaml
-	pipenv run gen-owl -o $@ contrib/$*.yaml
+	poetry run gen-owl -o $@ contrib/$*.yaml
 
 contrib/%/%.shex: contrib-dir-% contrib/%.yaml
-	pipenv run gen-shex contrib/*.yaml > $@
+	poetry run gen-shex contrib/*.yaml > $@
 
 contrib/%/%.shacl.ttl: contrib-dir-% contrib/%.yaml
-	pipenv run gen-shacl contrib/*.yaml > $@
+	poetry run gen-shacl contrib/*.yaml > $@
 
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
 test: tests
 tests: biolink-model.yaml env.lock pytest # jsonschema_test
-	pipenv run python -m unittest discover -p 'test_*.py'
+	poetry run python -m unittest discover -p 'test_*.py'
+	poetry run codespell
+	poetry run yamllint -c .yamllint-config biolink-model.yaml
 
 pytest: biolink/model.py
-	pipenv run python $<
+	poetry run python $<
 
 # jsonschema_test: json-schema/biolink-model.json
 #	jsonschema $<
@@ -253,7 +255,7 @@ pytest: biolink/model.py
 clean:
 	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex shacl pydantic
 	rm -f env.lock
-	pipenv --rm
+	poetry --rm
 
 # ----------------------------------------
 # UTILS

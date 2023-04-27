@@ -5,7 +5,8 @@ description = "Entity and association taxonomy and datamodel for life-sciences d
 authors = ["Sierra Taylor Moxon <sierra.taylor@gmail.com>"]
 license = "https://creativecommons.org/publicdomain/zero/1.0/"
 readme = "README.md"
-packages = [{include = "biolink_model"}]
+
+packages = [{include = "biolink"}]
 
 
 [tool.poetry.dependencies]
@@ -13,12 +14,21 @@ python = "^3.9"
 linkml = "^1.4"
 curies = "^0.5.2"
 prefixmaps = "^0.1.4"
+pytest = "^7.3.1"
 
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
 style = "pep440"
 
+[tool.poetry.dev-dependencies]
+codespell = "^2.2.4"
+yamllint = "^1.30.0"
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.codespell]
+skip = '.idea,.venv,.git,*.pdf,*.svg,context.*,prefix-map,biolink,docs,json-schema,graphql,biolink-model.g*,biolink-model.t*,biolink-model.s*,biolink-model.o*,biolink-model.p*,'
+ignore-words-list = 'amination,ehr,mor,brite,nin,mirgate'
