@@ -66,6 +66,9 @@ jobs:
       run: |
         poetry install
         poetry run python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+        cp biolink-model.yaml docs
+	    cp predicate-mapping.yaml docs
+
 
     - name: Deploy to gh-pages branch
       uses: JamesIves/github-pages-deploy-action@releases/v3

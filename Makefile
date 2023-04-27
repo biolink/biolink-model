@@ -65,7 +65,6 @@ docs/index.md: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 docs/Classes.md: biolink-model.yaml env.lock
 	poetry run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
-	cp biolink-model.yaml docs
 
 
 # ~~~~~~~~~~~~~~~~~~~~
