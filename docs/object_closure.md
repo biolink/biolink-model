@@ -113,5 +113,5 @@ URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.', object=None) |
+| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.') |
 

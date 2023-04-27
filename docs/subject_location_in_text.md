@@ -30,5 +30,5 @@ URI: [biolink:subject_location_in_text](https://w3id.org/biolink/vocab/subject_l
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None, object=None) |
+| **Examples:** | | Example(value='15', description=None) |
 

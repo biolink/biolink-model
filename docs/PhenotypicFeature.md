@@ -130,7 +130,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
-| **Examples:** | | Example(value='MP:0001262', description='decreased body weight', object=None) |
+| **Examples:** | | Example(value='MP:0001262', description='decreased body weight') |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |
