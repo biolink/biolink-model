@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:BookChapter](https://w3id.org/biolink/BookChapter)
+URI: [biolink:BookChapter](https://w3id.org/biolink/vocab/BookChapter)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
 
-URI: [biolink:RegulatoryRegion](https://w3id.org/biolink/RegulatoryRegion)
+URI: [biolink:RegulatoryRegion](https://w3id.org/biolink/vocab/RegulatoryRegion)
 
 
 ---

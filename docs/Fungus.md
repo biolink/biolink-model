@@ -10,7 +10,7 @@ layout: default
 
 A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
 
-URI: [biolink:Fungus](https://w3id.org/biolink/Fungus)
+URI: [biolink:Fungus](https://w3id.org/biolink/vocab/Fungus)
 
 
 ---

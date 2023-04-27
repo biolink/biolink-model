@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:subject_category_closure](https://w3id.org/biolink/subject_category_closure)
+URI: [biolink:subject_category_closure](https://w3id.org/biolink/vocab/subject_category_closure)
 
 ## Domain and Range
 
@@ -113,5 +113,5 @@ URI: [biolink:subject_category_closure](https://w3id.org/biolink/subject_categor
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='[\'biolink:Gene", "biolink:NamedThing\']', description='The subject category closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all biolink classes that are ancestors of \'biolink:Gene\' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.') |
+| **Examples:** | | Example(value='[\'biolink:Gene", "biolink:NamedThing\']', description='The subject category closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all biolink classes that are ancestors of \'biolink:Gene\' in the biolink model.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.', object=None) |
 

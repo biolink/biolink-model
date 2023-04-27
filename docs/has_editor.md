@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_editor](https://w3id.org/biolink/has_editor)
+URI: [biolink:has_editor](https://w3id.org/biolink/vocab/has_editor)
 
 ## Domain and Range
 

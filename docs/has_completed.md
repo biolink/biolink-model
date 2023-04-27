@@ -10,7 +10,7 @@ layout: default
 
 holds between an entity and a process that the entity is capable of and has completed
 
-URI: [biolink:has_completed](https://w3id.org/biolink/has_completed)
+URI: [biolink:has_completed](https://w3id.org/biolink/vocab/has_completed)
 
 ## Domain and Range
 

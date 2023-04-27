@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DruggableGeneToDiseaseAssociation](https://w3id.org/biolink/DruggableGeneToDiseaseAssociation)
+URI: [biolink:DruggableGeneToDiseaseAssociation](https://w3id.org/biolink/vocab/DruggableGeneToDiseaseAssociation)
 
 
 ---

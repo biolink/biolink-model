@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:models](https://w3id.org/biolink/models)
+URI: [biolink:models](https://w3id.org/biolink/vocab/models)
 
 ## Domain and Range
 

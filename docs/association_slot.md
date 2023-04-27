@@ -10,7 +10,7 @@ layout: default
 
 any slot that relates an association to another entity
 
-URI: [biolink:association_slot](https://w3id.org/biolink/association_slot)
+URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
 
 ## Domain and Range
 

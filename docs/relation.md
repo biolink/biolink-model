@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:relation](https://w3id.org/biolink/relation)
+URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
 
 ## Domain and Range
 

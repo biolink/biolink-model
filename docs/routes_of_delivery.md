@@ -10,7 +10,7 @@ layout: default
 
 the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
 
-URI: [biolink:routes_of_delivery](https://w3id.org/biolink/routes_of_delivery)
+URI: [biolink:routes_of_delivery](https://w3id.org/biolink/vocab/routes_of_delivery)
 
 ## Domain and Range
 

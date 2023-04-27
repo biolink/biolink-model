@@ -10,7 +10,7 @@ layout: default
 
 A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 
-URI: [biolink:Device](https://w3id.org/biolink/Device)
+URI: [biolink:Device](https://w3id.org/biolink/vocab/Device)
 
 
 ---

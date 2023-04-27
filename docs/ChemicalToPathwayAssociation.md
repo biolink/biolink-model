@@ -10,7 +10,7 @@ layout: default
 
 An interaction between a chemical entity and a biological process or pathway.
 
-URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/ChemicalToPathwayAssociation)
+URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation)
 
 
 ---

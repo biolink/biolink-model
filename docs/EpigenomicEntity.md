@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:EpigenomicEntity](https://w3id.org/biolink/EpigenomicEntity)
+URI: [biolink:EpigenomicEntity](https://w3id.org/biolink/vocab/EpigenomicEntity)
 
 
 ---

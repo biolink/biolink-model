@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Plant](https://w3id.org/biolink/Plant)
+URI: [biolink:Plant](https://w3id.org/biolink/vocab/Plant)
 
 
 ---

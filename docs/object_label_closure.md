@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:object_label_closure](https://w3id.org/biolink/object_label_closure)
+URI: [biolink:object_label_closure](https://w3id.org/biolink/vocab/object_label_closure)
 
 ## Domain and Range
 
@@ -113,5 +113,5 @@ URI: [biolink:object_label_closure](https://w3id.org/biolink/object_label_closur
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['breast cancer', 'cancer']", description="The object label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'breast cancer' in the biolink model.") |
+| **Examples:** | | Example(value="['breast cancer', 'cancer']", description="The object label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'breast cancer' in the biolink model.", object=None) |
 

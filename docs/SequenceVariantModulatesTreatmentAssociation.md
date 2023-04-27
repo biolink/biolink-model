@@ -10,7 +10,7 @@ layout: default
 
 An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
 
-URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/biolink/SequenceVariantModulatesTreatmentAssociation)
+URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation)
 
 
 ---

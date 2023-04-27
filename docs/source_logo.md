@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:source_logo](https://w3id.org/biolink/source_logo)
+URI: [biolink:source_logo](https://w3id.org/biolink/vocab/source_logo)
 
 ## Domain and Range
 

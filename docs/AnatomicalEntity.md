@@ -10,7 +10,7 @@ layout: default
 
 A subcellular location, cell type or gross anatomical part
 
-URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/AnatomicalEntity)
+URI: [biolink:AnatomicalEntity](https://w3id.org/biolink/vocab/AnatomicalEntity)
 
 
 ---

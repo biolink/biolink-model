@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/SpecificityQuantifier)
+URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 executive  summary of a publication
 
-URI: [biolink:summary](https://w3id.org/biolink/summary)
+URI: [biolink:summary](https://w3id.org/biolink/vocab/summary)
 
 ## Domain and Range
 

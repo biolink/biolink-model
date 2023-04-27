@@ -10,7 +10,7 @@ layout: default
 
 Biolink Model root class for entity annotations.
 
-URI: [biolink:Annotation](https://w3id.org/biolink/Annotation)
+URI: [biolink:Annotation](https://w3id.org/biolink/vocab/Annotation)
 
 
 ---

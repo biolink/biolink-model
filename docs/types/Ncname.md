@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Ncname
+title: metatype:Ncname
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Ncname
+# Type: Ncname
 
 
 Prefix part of CURIE
 
-URI: [https://w3id.org/biolink/linkml:types/Ncname](https://w3id.org/biolink/linkml:types/Ncname)
+URI: [metatype:Ncname](https://linkml.github.io/linkml-model/docs/types/Ncname)
 
 |  |  |  |
 | --- | --- | --- |

@@ -10,7 +10,7 @@ layout: default
 
 A role played by the chemical entity or part thereof within a chemical context.
 
-URI: [biolink:chemical_role_mixin](https://w3id.org/biolink/chemical_role_mixin)
+URI: [biolink:chemical_role_mixin](https://w3id.org/biolink/vocab/chemical_role_mixin)
 
 ## Domain and Range
 

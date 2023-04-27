@@ -13,7 +13,7 @@ samples
 
 connects any entity to an attribute
 
-URI: [biolink:has_attribute](https://w3id.org/biolink/has_attribute)
+URI: [biolink:has_attribute](https://w3id.org/biolink/vocab/has_attribute)
 
 ## Domain and Range
 

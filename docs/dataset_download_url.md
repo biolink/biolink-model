@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:dataset_download_url](https://w3id.org/biolink/dataset_download_url)
+URI: [biolink:dataset_download_url](https://w3id.org/biolink/vocab/dataset_download_url)
 
 ## Domain and Range
 

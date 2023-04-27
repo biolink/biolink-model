@@ -10,7 +10,7 @@ layout: default
 
 A geographic exposure is a factor relating to geographic proximity to some impactful entity.
 
-URI: [biolink:GeographicExposure](https://w3id.org/biolink/GeographicExposure)
+URI: [biolink:GeographicExposure](https://w3id.org/biolink/vocab/GeographicExposure)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
-URI: [biolink:Protein](https://w3id.org/biolink/Protein)
+URI: [biolink:Protein](https://w3id.org/biolink/vocab/Protein)
 
 
 ---

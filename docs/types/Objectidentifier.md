@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Objectidentifier
+title: metatype:Objectidentifier
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Objectidentifier
+# Type: Objectidentifier
 
 
 A URI or CURIE that represents an object in the model.
 
-URI: [https://w3id.org/biolink/linkml:types/Objectidentifier](https://w3id.org/biolink/linkml:types/Objectidentifier)
+URI: [metatype:Objectidentifier](https://linkml.github.io/linkml-model/docs/types/Objectidentifier)
 
 |  |  |  |
 | --- | --- | --- |

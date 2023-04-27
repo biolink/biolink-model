@@ -10,7 +10,7 @@ layout: default
 
 the organism or organism part being exposed
 
-URI: [biolink:has_receptor](https://w3id.org/biolink/has_receptor)
+URI: [biolink:has_receptor](https://w3id.org/biolink/vocab/has_receptor)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 A complex chemical exposure is an intake of a chemical mixture (e.g. gasoline), other than a drug.
 
-URI: [biolink:ComplexChemicalExposure](https://w3id.org/biolink/ComplexChemicalExposure)
+URI: [biolink:ComplexChemicalExposure](https://w3id.org/biolink/vocab/ComplexChemicalExposure)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 
-URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/GenotypeToPhenotypicFeatureAssociation)
+URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation)
 
 
 ---

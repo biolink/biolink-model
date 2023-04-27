@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:trade_name](https://w3id.org/biolink/trade_name)
+URI: [biolink:trade_name](https://w3id.org/biolink/vocab/trade_name)
 
 ## Domain and Range
 

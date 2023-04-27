@@ -10,7 +10,7 @@ layout: default
 
 A region (or regions) of the genome that contains a region of DNA known or predicted to bind a protein that modulates gene transcription
 
-URI: [biolink:TranscriptionFactorBindingSite](https://w3id.org/biolink/TranscriptionFactorBindingSite)
+URI: [biolink:TranscriptionFactorBindingSite](https://w3id.org/biolink/vocab/TranscriptionFactorBindingSite)
 
 
 ---

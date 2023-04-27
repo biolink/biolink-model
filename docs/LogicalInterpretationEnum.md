@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:LogicalInterpretationEnum](https://w3id.org/biolink/LogicalInterpretationEnum)
+URI: [biolink:LogicalInterpretationEnum](https://w3id.org/biolink/vocab/LogicalInterpretationEnum)
 
 
 ## Other properties

@@ -10,7 +10,7 @@ layout: default
 
 the natural log of the ratio of co-occurrence to expected
 
-URI: [biolink:ln_ratio](https://w3id.org/biolink/ln_ratio)
+URI: [biolink:ln_ratio](https://w3id.org/biolink/vocab/ln_ratio)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:ln_ratio](https://w3id.org/biolink/ln_ratio)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='2.922827136', description=None) |
+| **Examples:** | | Example(value='2.922827136', description=None, object=None) |
 

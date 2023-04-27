@@ -10,7 +10,7 @@ layout: default
 
 A union of gene locus, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 
-URI: [biolink:MacromolecularMachineMixin](https://w3id.org/biolink/MacromolecularMachineMixin)
+URI: [biolink:MacromolecularMachineMixin](https://w3id.org/biolink/vocab/MacromolecularMachineMixin)
 
 
 ---

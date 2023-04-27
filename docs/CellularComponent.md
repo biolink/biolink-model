@@ -10,7 +10,7 @@ layout: default
 
 A location in or around a cell
 
-URI: [biolink:CellularComponent](https://w3id.org/biolink/CellularComponent)
+URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponent)
 
 
 ---

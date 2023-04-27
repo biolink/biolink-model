@@ -10,7 +10,7 @@ layout: default
 
 A regulatory relationship between two genes
 
-URI: [biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](https://w3id.org/biolink/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation)
+URI: [biolink:ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation](https://w3id.org/biolink/vocab/ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation)
 
 
 ---

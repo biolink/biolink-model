@@ -10,7 +10,7 @@ layout: default
 
 describes the severity of a phenotypic feature or disease
 
-URI: [biolink:SeverityValue](https://w3id.org/biolink/SeverityValue)
+URI: [biolink:SeverityValue](https://w3id.org/biolink/vocab/SeverityValue)
 
 
 ---

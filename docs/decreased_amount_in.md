@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:decreased_amount_in](https://w3id.org/biolink/decreased_amount_in)
+URI: [biolink:decreased_amount_in](https://w3id.org/biolink/vocab/decreased_amount_in)
 
 ## Domain and Range
 

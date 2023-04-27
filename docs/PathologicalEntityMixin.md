@@ -10,7 +10,7 @@ layout: default
 
 A pathological (abnormal) structure or process.
 
-URI: [biolink:PathologicalEntityMixin](https://w3id.org/biolink/PathologicalEntityMixin)
+URI: [biolink:PathologicalEntityMixin](https://w3id.org/biolink/vocab/PathologicalEntityMixin)
 
 
 ---

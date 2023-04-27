@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_molecular_consequence_of](https://w3id.org/biolink/is_molecular_consequence_of)
+URI: [biolink:is_molecular_consequence_of](https://w3id.org/biolink/vocab/is_molecular_consequence_of)
 
 ## Domain and Range
 

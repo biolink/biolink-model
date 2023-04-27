@@ -10,7 +10,7 @@ layout: default
 
 an item that holds version level information about a dataset.
 
-URI: [biolink:DatasetVersion](https://w3id.org/biolink/DatasetVersion)
+URI: [biolink:DatasetVersion](https://w3id.org/biolink/vocab/DatasetVersion)
 
 
 ---

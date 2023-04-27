@@ -10,7 +10,7 @@ layout: default
 
 An association between an mixture behavior and a behavioral feature manifested by the individual exhibited or has exhibited the behavior.
 
-URI: [biolink:BehaviorToBehavioralFeatureAssociation](https://w3id.org/biolink/BehaviorToBehavioralFeatureAssociation)
+URI: [biolink:BehaviorToBehavioralFeatureAssociation](https://w3id.org/biolink/vocab/BehaviorToBehavioralFeatureAssociation)
 
 
 ---

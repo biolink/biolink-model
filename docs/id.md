@@ -13,7 +13,7 @@ translator_minimal
 
 A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
 
-URI: [biolink:id](https://w3id.org/biolink/id)
+URI: [biolink:id](https://w3id.org/biolink/vocab/id)
 
 ## Domain and Range
 

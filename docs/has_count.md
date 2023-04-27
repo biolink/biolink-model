@@ -10,7 +10,7 @@ layout: default
 
 number of things with a particular property
 
-URI: [biolink:has_count](https://w3id.org/biolink/has_count)
+URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 
 ## Domain and Range
 

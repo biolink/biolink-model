@@ -10,7 +10,7 @@ layout: default
 
 description of chemical compound based on element symbols
 
-URI: [biolink:has_chemical_formula](https://w3id.org/biolink/has_chemical_formula)
+URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
 
 ## Domain and Range
 

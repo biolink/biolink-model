@@ -10,7 +10,7 @@ layout: default
 
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing.
 
-URI: [biolink:Exon](https://w3id.org/biolink/Exon)
+URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
 
 ---

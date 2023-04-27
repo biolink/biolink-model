@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/CellLineAsAModelOfDiseaseAssociation)
+URI: [biolink:CellLineAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/CellLineAsAModelOfDiseaseAssociation)
 
 
 ---

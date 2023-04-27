@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities that make physical contact as part of some interaction.  does not imply a causal relationship.
 
-URI: [biolink:physically_interacts_with](https://w3id.org/biolink/physically_interacts_with)
+URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physically_interacts_with)
 
 ## Domain and Range
 

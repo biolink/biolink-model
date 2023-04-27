@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:subject_category](https://w3id.org/biolink/subject_category)
+URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
 
 ## Domain and Range
 
@@ -113,5 +113,5 @@ URI: [biolink:subject_category](https://w3id.org/biolink/subject_category)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.") |
+| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.", object=None) |
 

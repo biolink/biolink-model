@@ -13,7 +13,7 @@ translator_minimal
 
 connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
 
-URI: [biolink:in_taxon](https://w3id.org/biolink/in_taxon)
+URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 
 ## Domain and Range
 

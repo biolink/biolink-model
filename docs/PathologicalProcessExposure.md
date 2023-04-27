@@ -10,7 +10,7 @@ layout: default
 
 A pathological process, when viewed as an exposure, representing a precondition, leading to or influencing an outcome, e.g. autoimmunity leading to disease.
 
-URI: [biolink:PathologicalProcessExposure](https://w3id.org/biolink/PathologicalProcessExposure)
+URI: [biolink:PathologicalProcessExposure](https://w3id.org/biolink/vocab/PathologicalProcessExposure)
 
 
 ---

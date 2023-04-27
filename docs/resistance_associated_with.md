@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:resistance_associated_with](https://w3id.org/biolink/resistance_associated_with)
+URI: [biolink:resistance_associated_with](https://w3id.org/biolink/vocab/resistance_associated_with)
 
 ## Domain and Range
 

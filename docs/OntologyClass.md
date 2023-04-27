@@ -10,7 +10,7 @@ layout: default
 
 a concept or class in an ontology, vocabulary or thesaurus. Note that nodes in a biolink compatible KG can be considered both instances of biolink classes, and OWL classes in their own right. In general you should not need to use this class directly. Instead, use the appropriate biolink class. For example, for the GO concept of endocytosis (GO:0006897), use bl:BiologicalProcess as the type.
 
-URI: [biolink:OntologyClass](https://w3id.org/biolink/OntologyClass)
+URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 
 ---
@@ -115,7 +115,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 | --- | --- | --- |
 | **Comments:** | | This is modeled as a mixin. 'ontology class' should not be the primary type of a node in the KG. Instead you should use an informative bioloink category, such as AnatomicalEntity (for Uberon classes), ChemicalSubstance (for CHEBI or CHEMBL), etc |
 |  | | Note that formally this is a metaclass. Instances of this class are instances in the graph, but can be the object of 'type' edges. For example, if we had a node in the graph representing a specific brain of a specific patient (e.g brain001), this could have a category of bl:Sample, and by typed more specifically with an ontology class UBERON:nnn, which has as category bl:AnatomicalEntity |
-| **Examples:** | | Example(value='UBERON:0000955', description="the class 'brain' from the Uberon anatomy ontology") |
+| **Examples:** | | Example(value='UBERON:0000955', description="the class 'brain' from the Uberon anatomy ontology", object=None) |
 | **See also:** | | [https://github.com/biolink/biolink-model/issues/486](https://github.com/biolink/biolink-model/issues/486) |
 | **Exact Mappings:** | | owl:Class |
 |  | | schema:Class |

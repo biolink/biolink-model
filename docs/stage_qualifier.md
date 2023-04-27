@@ -13,7 +13,7 @@ translator_minimal
 
 stage during which gene or protein expression of takes place.
 
-URI: [biolink:stage_qualifier](https://w3id.org/biolink/stage_qualifier)
+URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 
 ## Domain and Range
 
@@ -36,6 +36,6 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/stage_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0000069', description='larval stage') |
+| **Examples:** | | Example(value='UBERON:0000069', description='larval stage', object=None) |
 | **In Subsets:** | | translator_minimal |
 

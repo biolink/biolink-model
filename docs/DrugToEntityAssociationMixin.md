@@ -10,7 +10,7 @@ layout: default
 
 An interaction between a drug and another entity
 
-URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/DrugToEntityAssociationMixin)
+URI: [biolink:DrugToEntityAssociationMixin](https://w3id.org/biolink/vocab/DrugToEntityAssociationMixin)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A term or terms describing the experimental setting/context in which evidence supporting the Association was  generated ('context' may be defined by many factors, including taxon, model system (e.g. cell line type), tissue  type, disease, etc.).
 
-URI: [biolink:supporting_study_context](https://w3id.org/biolink/supporting_study_context)
+URI: [biolink:supporting_study_context](https://w3id.org/biolink/vocab/supporting_study_context)
 
 ## Domain and Range
 

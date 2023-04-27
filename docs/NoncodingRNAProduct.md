@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/NoncodingRNAProduct)
+URI: [biolink:NoncodingRNAProduct](https://w3id.org/biolink/vocab/NoncodingRNAProduct)
 
 
 ---

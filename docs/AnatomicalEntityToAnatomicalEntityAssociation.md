@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/biolink/AnatomicalEntityToAnatomicalEntityAssociation)
+URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
 
 
 ---

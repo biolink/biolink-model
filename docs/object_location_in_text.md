@@ -10,7 +10,7 @@ layout: default
 
 Character offsets for the text span(s) in the supporting text corresponding to the object concept of the extracted assertion
 
-URI: [biolink:object_location_in_text](https://w3id.org/biolink/object_location_in_text)
+URI: [biolink:object_location_in_text](https://w3id.org/biolink/vocab/object_location_in_text)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:object_location_in_text](https://w3id.org/biolink/object_location_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None) |
+| **Examples:** | | Example(value='15', description=None, object=None) |
 

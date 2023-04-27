@@ -10,7 +10,7 @@ layout: default
 
 a databased entity or concept/class
 
-URI: [biolink:NamedThing](https://w3id.org/biolink/NamedThing)
+URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
 
 ---

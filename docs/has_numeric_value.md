@@ -13,7 +13,7 @@ samples
 
 connects a quantity value to a number
 
-URI: [biolink:has_numeric_value](https://w3id.org/biolink/has_numeric_value)
+URI: [biolink:has_numeric_value](https://w3id.org/biolink/vocab/has_numeric_value)
 
 ## Domain and Range
 

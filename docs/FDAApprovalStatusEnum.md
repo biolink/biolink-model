@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FDAApprovalStatusEnum](https://w3id.org/biolink/FDAApprovalStatusEnum)
+URI: [biolink:FDAApprovalStatusEnum](https://w3id.org/biolink/vocab/FDAApprovalStatusEnum)
 
 
 ## Other properties

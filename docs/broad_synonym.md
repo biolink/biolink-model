@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:broad_synonym](https://w3id.org/biolink/broad_synonym)
+URI: [biolink:broad_synonym](https://w3id.org/biolink/vocab/broad_synonym)
 
 ## Domain and Range
 

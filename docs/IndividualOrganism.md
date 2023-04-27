@@ -10,7 +10,7 @@ layout: default
 
 An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 
-URI: [biolink:IndividualOrganism](https://w3id.org/biolink/IndividualOrganism)
+URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
 
 ---

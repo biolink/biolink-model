@@ -10,7 +10,7 @@ layout: default
 
 Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
-URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/ActivityAndBehavior)
+URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 
 ---

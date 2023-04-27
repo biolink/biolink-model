@@ -10,7 +10,7 @@ layout: default
 
 A role played by the molecular entity or part thereof within a chemical context.
 
-URI: [biolink:ChemicalRole](https://w3id.org/biolink/ChemicalRole)
+URI: [biolink:ChemicalRole](https://w3id.org/biolink/vocab/ChemicalRole)
 
 
 ---
@@ -111,6 +111,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='CHEBI:35469', description=None) |
+| **Examples:** | | Example(value='CHEBI:35469', description=None, object=None) |
 | **Exact Mappings:** | | CHEBI:51086 |
 

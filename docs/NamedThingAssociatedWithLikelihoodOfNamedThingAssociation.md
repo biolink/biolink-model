@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](https://w3id.org/biolink/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation)
+URI: [biolink:NamedThingAssociatedWithLikelihoodOfNamedThingAssociation](https://w3id.org/biolink/vocab/NamedThingAssociatedWithLikelihoodOfNamedThingAssociation)
 
 
 ---

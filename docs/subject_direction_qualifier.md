@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:subject_direction_qualifier](https://w3id.org/biolink/subject_direction_qualifier)
+URI: [biolink:subject_direction_qualifier](https://w3id.org/biolink/vocab/subject_direction_qualifier)
 
 ## Domain and Range
 

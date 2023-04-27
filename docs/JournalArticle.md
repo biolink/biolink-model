@@ -10,7 +10,7 @@ layout: default
 
 an article, typically presenting results of research, that is published  in an issue of a scientific journal.
 
-URI: [biolink:JournalArticle](https://w3id.org/biolink/JournalArticle)
+URI: [biolink:JournalArticle](https://w3id.org/biolink/vocab/JournalArticle)
 
 
 ---

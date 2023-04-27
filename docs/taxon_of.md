@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:taxon_of](https://w3id.org/biolink/taxon_of)
+URI: [biolink:taxon_of](https://w3id.org/biolink/vocab/taxon_of)
 
 ## Domain and Range
 

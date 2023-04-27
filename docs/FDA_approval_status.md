@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FDA_approval_status](https://w3id.org/biolink/FDA_approval_status)
+URI: [biolink:FDA_approval_status](https://w3id.org/biolink/vocab/FDA_approval_status)
 
 ## Domain and Range
 

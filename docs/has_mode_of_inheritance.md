@@ -13,7 +13,7 @@ translator_minimal
 
 Relates a disease or phenotypic feature to its observed genetic segregation and assumed associated underlying DNA manifestation (i.e. autosomal, sex or mitochondrial chromosome).
 
-URI: [biolink:has_mode_of_inheritance](https://w3id.org/biolink/has_mode_of_inheritance)
+URI: [biolink:has_mode_of_inheritance](https://w3id.org/biolink/vocab/has_mode_of_inheritance)
 
 ## Domain and Range
 

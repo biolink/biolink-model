@@ -10,7 +10,7 @@ layout: default
 
 holds between a sequence variant and a gene, where the variant does not affect the coding sequence
 
-URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/is_non_coding_variant_of)
+URI: [biolink:is_non_coding_variant_of](https://w3id.org/biolink/vocab/is_non_coding_variant_of)
 
 ## Domain and Range
 

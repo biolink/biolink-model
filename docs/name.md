@@ -16,7 +16,7 @@ samples
 
 A human-readable name for an attribute or entity.
 
-URI: [biolink:name](https://w3id.org/biolink/name)
+URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 
 ## Domain and Range
 

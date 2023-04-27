@@ -13,7 +13,7 @@ translator_minimal
 
 A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
 
-URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/anatomical_context_qualifier)
+URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/vocab/anatomical_context_qualifier)
 
 ## Domain and Range
 
@@ -34,7 +34,7 @@ URI: [biolink:anatomical_context_qualifier](https://w3id.org/biolink/anatomical_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='blood', description=None) |
-|  | | Example(value='cerebral cortext', description=None) |
+| **Examples:** | | Example(value='blood', description=None, object=None) |
+|  | | Example(value='cerebral cortext', description=None, object=None) |
 | **In Subsets:** | | translator_minimal |
 

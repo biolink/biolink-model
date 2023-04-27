@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:subject_closure](https://w3id.org/biolink/subject_closure)
+URI: [biolink:subject_closure](https://w3id.org/biolink/vocab/subject_closure)
 
 ## Domain and Range
 

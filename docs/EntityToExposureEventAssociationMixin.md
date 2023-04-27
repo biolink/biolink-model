@@ -10,7 +10,7 @@ layout: default
 
 An association between some entity and an exposure event.
 
-URI: [biolink:EntityToExposureEventAssociationMixin](https://w3id.org/biolink/EntityToExposureEventAssociationMixin)
+URI: [biolink:EntityToExposureEventAssociationMixin](https://w3id.org/biolink/vocab/EntityToExposureEventAssociationMixin)
 
 
 ---

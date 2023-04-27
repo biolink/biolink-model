@@ -10,7 +10,7 @@ layout: default
 
 used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.
 
-URI: [biolink:original_object](https://w3id.org/biolink/original_object)
+URI: [biolink:original_object](https://w3id.org/biolink/vocab/original_object)
 
 ## Domain and Range
 

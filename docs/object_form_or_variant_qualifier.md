@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:object_form_or_variant_qualifier](https://w3id.org/biolink/object_form_or_variant_qualifier)
+URI: [biolink:object_form_or_variant_qualifier](https://w3id.org/biolink/vocab/object_form_or_variant_qualifier)
 
 ## Domain and Range
 

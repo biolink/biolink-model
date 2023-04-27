@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:mode_of_inheritance_of](https://w3id.org/biolink/mode_of_inheritance_of)
+URI: [biolink:mode_of_inheritance_of](https://w3id.org/biolink/vocab/mode_of_inheritance_of)
 
 ## Domain and Range
 

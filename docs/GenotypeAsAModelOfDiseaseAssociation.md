@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/GenotypeAsAModelOfDiseaseAssociation)
+URI: [biolink:GenotypeAsAModelOfDiseaseAssociation](https://w3id.org/biolink/vocab/GenotypeAsAModelOfDiseaseAssociation)
 
 
 ---

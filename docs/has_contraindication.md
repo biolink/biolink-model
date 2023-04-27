@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_contraindication](https://w3id.org/biolink/has_contraindication)
+URI: [biolink:has_contraindication](https://w3id.org/biolink/vocab/has_contraindication)
 
 ## Domain and Range
 

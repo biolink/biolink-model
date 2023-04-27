@@ -10,7 +10,7 @@ layout: default
 
 CURIE identifier of a broader publication context within which the publication may be placed, e.g. a specified book or journal.
 
-URI: [biolink:published_in](https://w3id.org/biolink/published_in)
+URI: [biolink:published_in](https://w3id.org/biolink/vocab/published_in)
 
 ## Domain and Range
 

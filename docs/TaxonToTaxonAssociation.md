@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/TaxonToTaxonAssociation)
+URI: [biolink:TaxonToTaxonAssociation](https://w3id.org/biolink/vocab/TaxonToTaxonAssociation)
 
 
 ---

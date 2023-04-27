@@ -10,7 +10,7 @@ layout: default
 
 A complex molecular mixture is a chemical mixture composed of two or more molecular entities with unknown concentration and stoichiometry.
 
-URI: [biolink:ComplexMolecularMixture](https://w3id.org/biolink/ComplexMolecularMixture)
+URI: [biolink:ComplexMolecularMixture](https://w3id.org/biolink/vocab/ComplexMolecularMixture)
 
 
 ---

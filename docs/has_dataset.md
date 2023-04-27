@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_dataset](https://w3id.org/biolink/has_dataset)
+URI: [biolink:has_dataset](https://w3id.org/biolink/vocab/has_dataset)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 x is transcribed from y if and only if x is synthesized from template y
 
-URI: [biolink:transcribed_from](https://w3id.org/biolink/transcribed_from)
+URI: [biolink:transcribed_from](https://w3id.org/biolink/vocab/transcribed_from)
 
 ## Domain and Range
 

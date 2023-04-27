@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_active_component](https://w3id.org/biolink/has_active_component)
+URI: [biolink:has_active_component](https://w3id.org/biolink/vocab/has_active_component)
 
 ## Domain and Range
 

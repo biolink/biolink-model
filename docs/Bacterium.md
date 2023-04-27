@@ -10,7 +10,7 @@ layout: default
 
 A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
 
-URI: [biolink:Bacterium](https://w3id.org/biolink/Bacterium)
+URI: [biolink:Bacterium](https://w3id.org/biolink/vocab/Bacterium)
 
 
 ---

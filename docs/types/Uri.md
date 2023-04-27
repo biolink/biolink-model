@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Uri
+title: metatype:Uri
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Uri
+# Type: Uri
 
 
 a complete URI
 
-URI: [https://w3id.org/biolink/linkml:types/Uri](https://w3id.org/biolink/linkml:types/Uri)
+URI: [metatype:Uri](https://linkml.github.io/linkml-model/docs/types/Uri)
 
 |  |  |  |
 | --- | --- | --- |

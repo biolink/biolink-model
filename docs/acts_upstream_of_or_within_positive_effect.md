@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:acts_upstream_of_or_within_positive_effect](https://w3id.org/biolink/acts_upstream_of_or_within_positive_effect)
+URI: [biolink:acts_upstream_of_or_within_positive_effect](https://w3id.org/biolink/vocab/acts_upstream_of_or_within_positive_effect)
 
 ## Domain and Range
 

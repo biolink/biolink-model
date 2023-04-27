@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_splice_site_variant](https://w3id.org/biolink/has_splice_site_variant)
+URI: [biolink:has_splice_site_variant](https://w3id.org/biolink/vocab/has_splice_site_variant)
 
 ## Domain and Range
 

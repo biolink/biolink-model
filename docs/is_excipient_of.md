@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a molecular entity and a drug in which the former is a part of the latter, and is a biologically inactive component
 
-URI: [biolink:is_excipient_of](https://w3id.org/biolink/is_excipient_of)
+URI: [biolink:is_excipient_of](https://w3id.org/biolink/vocab/is_excipient_of)
 
 ## Domain and Range
 

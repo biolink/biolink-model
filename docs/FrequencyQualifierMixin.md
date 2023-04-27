@@ -10,7 +10,7 @@ layout: default
 
 Qualifier for frequency type associations
 
-URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/FrequencyQualifierMixin)
+URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQualifierMixin)
 
 
 ---

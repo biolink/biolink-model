@@ -10,7 +10,7 @@ layout: default
 
 Indicates that two genes are co-expressed, generally under the same conditions.
 
-URI: [biolink:GeneToGeneCoexpressionAssociation](https://w3id.org/biolink/GeneToGeneCoexpressionAssociation)
+URI: [biolink:GeneToGeneCoexpressionAssociation](https://w3id.org/biolink/vocab/GeneToGeneCoexpressionAssociation)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities that are considered equivalent to each other
 
-URI: [biolink:same_as](https://w3id.org/biolink/same_as)
+URI: [biolink:same_as](https://w3id.org/biolink/vocab/same_as)
 
 ## Domain and Range
 

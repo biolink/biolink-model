@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
 
-URI: [biolink:coexists_with](https://w3id.org/biolink/coexists_with)
+URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 
 ## Domain and Range
 

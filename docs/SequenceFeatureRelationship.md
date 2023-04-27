@@ -10,7 +10,7 @@ layout: default
 
 For example, a particular exon is part of a particular transcript or gene
 
-URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/SequenceFeatureRelationship)
+URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 holds between two entities with a temporal relationship
 
-URI: [biolink:temporally_related_to](https://w3id.org/biolink/temporally_related_to)
+URI: [biolink:temporally_related_to](https://w3id.org/biolink/vocab/temporally_related_to)
 
 ## Domain and Range
 

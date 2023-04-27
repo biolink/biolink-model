@@ -10,7 +10,7 @@ layout: default
 
 A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
 
-URI: [biolink:Vertebrate](https://w3id.org/biolink/Vertebrate)
+URI: [biolink:Vertebrate](https://w3id.org/biolink/vocab/Vertebrate)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:completed_by](https://w3id.org/biolink/completed_by)
+URI: [biolink:completed_by](https://w3id.org/biolink/vocab/completed_by)
 
 ## Domain and Range
 

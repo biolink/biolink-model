@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a therapeutic procedure or chemical entity and a disease or phenotypic feature that it is used to treat
 
-URI: [biolink:treats](https://w3id.org/biolink/treats)
+URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 
 ## Domain and Range
 

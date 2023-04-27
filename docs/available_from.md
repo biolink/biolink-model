@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:available_from](https://w3id.org/biolink/available_from)
+URI: [biolink:available_from](https://w3id.org/biolink/vocab/available_from)
 
 ## Domain and Range
 

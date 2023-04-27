@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:occurs_in_disease](https://w3id.org/biolink/occurs_in_disease)
+URI: [biolink:occurs_in_disease](https://w3id.org/biolink/vocab/occurs_in_disease)
 
 ## Domain and Range
 

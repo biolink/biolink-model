@@ -10,7 +10,7 @@ layout: default
 
 An relationship between a cell line and another entity
 
-URI: [biolink:CellLineToEntityAssociationMixin](https://w3id.org/biolink/CellLineToEntityAssociationMixin)
+URI: [biolink:CellLineToEntityAssociationMixin](https://w3id.org/biolink/vocab/CellLineToEntityAssociationMixin)
 
 
 ---

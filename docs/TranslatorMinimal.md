@@ -10,7 +10,7 @@ layout: default
 
 Minimum subset of translator work
 
-URI: [biolink:translator_minimal](https://w3id.org/biolink/translator_minimal)
+URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_minimal)
 
 
 ### Classes

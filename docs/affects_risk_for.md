@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities where exposure to one entity alters the chance of developing the other
 
-URI: [biolink:affects_risk_for](https://w3id.org/biolink/affects_risk_for)
+URI: [biolink:affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
 
 ## Domain and Range
 

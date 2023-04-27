@@ -10,7 +10,7 @@ layout: default
 
 A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
 
-URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/NucleicAcidEntity)
+URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntity)
 
 
 ---

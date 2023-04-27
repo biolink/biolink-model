@@ -13,7 +13,7 @@ translator_minimal
 
 a human-readable description of an entity
 
-URI: [biolink:description](https://w3id.org/biolink/description)
+URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 
 ## Domain and Range
 

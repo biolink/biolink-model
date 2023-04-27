@@ -10,7 +10,7 @@ layout: default
 
 Attributes relating to a socioeconomic manifestation
 
-URI: [biolink:SocioeconomicAttribute](https://w3id.org/biolink/SocioeconomicAttribute)
+URI: [biolink:SocioeconomicAttribute](https://w3id.org/biolink/vocab/SocioeconomicAttribute)
 
 
 ---

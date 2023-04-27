@@ -10,7 +10,7 @@ layout: default
 
 An agglomeration of drug regulatory status worldwide. Not specific to FDA.
 
-URI: [biolink:drug_regulatory_status_world_wide](https://w3id.org/biolink/drug_regulatory_status_world_wide)
+URI: [biolink:drug_regulatory_status_world_wide](https://w3id.org/biolink/vocab/drug_regulatory_status_world_wide)
 
 ## Domain and Range
 

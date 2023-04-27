@@ -10,7 +10,7 @@ layout: default
 
 A union of gene loci or gene products. Frequently an identifier for one will be used as proxy for another
 
-URI: [biolink:GeneOrGeneProduct](https://w3id.org/biolink/GeneOrGeneProduct)
+URI: [biolink:GeneOrGeneProduct](https://w3id.org/biolink/vocab/GeneOrGeneProduct)
 
 
 ---

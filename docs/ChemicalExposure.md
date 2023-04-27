@@ -10,7 +10,7 @@ layout: default
 
 A chemical exposure is an intake of a particular chemical entity.
 
-URI: [biolink:ChemicalExposure](https://w3id.org/biolink/ChemicalExposure)
+URI: [biolink:ChemicalExposure](https://w3id.org/biolink/vocab/ChemicalExposure)
 
 
 ---

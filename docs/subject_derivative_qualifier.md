@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:subject_derivative_qualifier](https://w3id.org/biolink/subject_derivative_qualifier)
+URI: [biolink:subject_derivative_qualifier](https://w3id.org/biolink/vocab/subject_derivative_qualifier)
 
 ## Domain and Range
 

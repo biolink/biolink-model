@@ -10,7 +10,7 @@ layout: default
 
 The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
 
-URI: [biolink:ln_ratio_confidence_interval](https://w3id.org/biolink/ln_ratio_confidence_interval)
+URI: [biolink:ln_ratio_confidence_interval](https://w3id.org/biolink/vocab/ln_ratio_confidence_interval)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:ln_ratio_confidence_interval](https://w3id.org/biolink/ln_ratio_co
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='2.922827136', description=None) |
+| **Examples:** | | Example(value='2.922827136', description=None, object=None) |
 

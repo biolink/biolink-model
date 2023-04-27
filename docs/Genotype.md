@@ -10,7 +10,7 @@ layout: default
 
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some established background
 
-URI: [biolink:Genotype](https://w3id.org/biolink/Genotype)
+URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.
 
-URI: [biolink:relative_frequency_subject](https://w3id.org/biolink/relative_frequency_subject)
+URI: [biolink:relative_frequency_subject](https://w3id.org/biolink/vocab/relative_frequency_subject)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:relative_frequency_subject](https://w3id.org/biolink/relative_freq
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='0.01840490798', description=None) |
+| **Examples:** | | Example(value='0.01840490798', description=None, object=None) |
 

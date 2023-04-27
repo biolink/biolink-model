@@ -10,7 +10,7 @@ layout: default
 
 A role is particular behaviour which a chemical entity may exhibit.
 
-URI: [biolink:has_chemical_role](https://w3id.org/biolink/has_chemical_role)
+URI: [biolink:has_chemical_role](https://w3id.org/biolink/vocab/has_chemical_role)
 
 ## Domain and Range
 

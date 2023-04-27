@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_non_coding_variant](https://w3id.org/biolink/has_non_coding_variant)
+URI: [biolink:has_non_coding_variant](https://w3id.org/biolink/vocab/has_non_coding_variant)
 
 ## Domain and Range
 

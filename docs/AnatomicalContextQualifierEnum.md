@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:AnatomicalContextQualifierEnum](https://w3id.org/biolink/AnatomicalContextQualifierEnum)
+URI: [biolink:AnatomicalContextQualifierEnum](https://w3id.org/biolink/vocab/AnatomicalContextQualifierEnum)
 
 
 ## Other properties

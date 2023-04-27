@@ -10,7 +10,7 @@ layout: default
 
 An outcome of death from resulting from an exposure event.
 
-URI: [biolink:MortalityOutcome](https://w3id.org/biolink/MortalityOutcome)
+URI: [biolink:MortalityOutcome](https://w3id.org/biolink/vocab/MortalityOutcome)
 
 
 ---

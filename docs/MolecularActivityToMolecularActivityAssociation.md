@@ -10,7 +10,7 @@ layout: default
 
 Added in response to capturing relationship between microbiome activities as measured via measurements of blood analytes as collected via blood and stool samples
 
-URI: [biolink:MolecularActivityToMolecularActivityAssociation](https://w3id.org/biolink/MolecularActivityToMolecularActivityAssociation)
+URI: [biolink:MolecularActivityToMolecularActivityAssociation](https://w3id.org/biolink/vocab/MolecularActivityToMolecularActivityAssociation)
 
 
 ---

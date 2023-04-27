@@ -10,7 +10,7 @@ layout: default
 
 connects an association to an instance of supporting evidence
 
-URI: [biolink:has_evidence](https://w3id.org/biolink/has_evidence)
+URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 
 ## Domain and Range
 

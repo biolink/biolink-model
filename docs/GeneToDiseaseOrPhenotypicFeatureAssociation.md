@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GeneToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/GeneToDiseaseOrPhenotypicFeatureAssociation)
+URI: [biolink:GeneToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToDiseaseOrPhenotypicFeatureAssociation)
 
 
 ---

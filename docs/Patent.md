@@ -10,7 +10,7 @@ layout: default
 
 a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time.
 
-URI: [biolink:Patent](https://w3id.org/biolink/Patent)
+URI: [biolink:Patent](https://w3id.org/biolink/vocab/Patent)
 
 
 ---

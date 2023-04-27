@@ -10,7 +10,7 @@ layout: default
 
 A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
 
-URI: [biolink:TaxonomicRank](https://w3id.org/biolink/TaxonomicRank)
+URI: [biolink:TaxonomicRank](https://w3id.org/biolink/vocab/TaxonomicRank)
 
 WIKIDATA:Q427626
 {: .mapping-label }

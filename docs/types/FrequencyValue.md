@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FrequencyValue](https://w3id.org/biolink/FrequencyValue)
+URI: [biolink:FrequencyValue](https://w3id.org/biolink/vocab/types/biolink:FrequencyValue)
 
 |  |  |  |
 | --- | --- | --- |

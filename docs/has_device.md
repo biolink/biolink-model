@@ -10,7 +10,7 @@ layout: default
 
 connects an entity to one or more (medical) devices
 
-URI: [biolink:has_device](https://w3id.org/biolink/has_device)
+URI: [biolink:has_device](https://w3id.org/biolink/vocab/has_device)
 
 ## Domain and Range
 

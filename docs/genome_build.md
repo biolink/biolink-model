@@ -10,7 +10,7 @@ layout: default
 
 The version of the genome on which a feature is located. For example, GRCh38 for Homo sapiens.
 
-URI: [biolink:genome_build](https://w3id.org/biolink/genome_build)
+URI: [biolink:genome_build](https://w3id.org/biolink/vocab/genome_build)
 
 ## Domain and Range
 

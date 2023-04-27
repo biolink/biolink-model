@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.org/biolink/GeneHasVariantThatContributesToDiseaseAssociation)
+URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two biological entities that have common evolutionary origin
 
-URI: [biolink:homologous_to](https://w3id.org/biolink/homologous_to)
+URI: [biolink:homologous_to](https://w3id.org/biolink/vocab/homologous_to)
 
 ## Domain and Range
 

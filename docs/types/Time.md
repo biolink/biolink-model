@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Time
+title: metatype:Time
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Time
+# Type: Time
 
 
 A time object represents a (local) time of day, independent of any particular day
 
-URI: [https://w3id.org/biolink/linkml:types/Time](https://w3id.org/biolink/linkml:types/Time)
+URI: [metatype:Time](https://linkml.github.io/linkml-model/docs/types/Time)
 
 |  |  |  |
 | --- | --- | --- |

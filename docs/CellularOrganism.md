@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:CellularOrganism](https://w3id.org/biolink/CellularOrganism)
+URI: [biolink:CellularOrganism](https://w3id.org/biolink/vocab/CellularOrganism)
 
 
 ---

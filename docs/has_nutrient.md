@@ -13,7 +13,7 @@ translator_minimal
 
 one or more nutrients which are growth factors for a living organism
 
-URI: [biolink:has_nutrient](https://w3id.org/biolink/has_nutrient)
+URI: [biolink:has_nutrient](https://w3id.org/biolink/vocab/has_nutrient)
 
 ## Domain and Range
 

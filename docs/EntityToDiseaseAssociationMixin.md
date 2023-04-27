@@ -10,7 +10,7 @@ layout: default
 
 mixin class for any association whose object (target node) is a disease
 
-URI: [biolink:EntityToDiseaseAssociationMixin](https://w3id.org/biolink/EntityToDiseaseAssociationMixin)
+URI: [biolink:EntityToDiseaseAssociationMixin](https://w3id.org/biolink/vocab/EntityToDiseaseAssociationMixin)
 
 
 ---

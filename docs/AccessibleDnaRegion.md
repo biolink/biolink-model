@@ -10,7 +10,7 @@ layout: default
 
 A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 
-URI: [biolink:AccessibleDnaRegion](https://w3id.org/biolink/AccessibleDnaRegion)
+URI: [biolink:AccessibleDnaRegion](https://w3id.org/biolink/vocab/AccessibleDnaRegion)
 
 
 ---

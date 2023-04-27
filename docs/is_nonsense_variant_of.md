@@ -10,7 +10,7 @@ layout: default
 
 holds between a sequence variant and a gene, such the sequence variant results in a premature stop codon
 
-URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/is_nonsense_variant_of)
+URI: [biolink:is_nonsense_variant_of](https://w3id.org/biolink/vocab/is_nonsense_variant_of)
 
 ## Domain and Range
 

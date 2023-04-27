@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:object_closure](https://w3id.org/biolink/object_closure)
+URI: [biolink:object_closure](https://w3id.org/biolink/vocab/object_closure)
 
 ## Domain and Range
 
@@ -113,5 +113,5 @@ URI: [biolink:object_closure](https://w3id.org/biolink/object_closure)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.') |
+| **Examples:** | | Example(value="['MONDO:0000167', 'MONDO:0005395']", description='The object closure of the association between the gene \'BRCA1\' and the disease \'breast cancer\' is the set of all diseases that are ancestors of \'breast cancer\' in the MONDO ontology.  Note: typically the "subclass of" and "part of"  relations are used to construct the closure, but other relations may be used as well.', object=None) |
 

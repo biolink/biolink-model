@@ -10,7 +10,7 @@ layout: default
 
 A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
 
-URI: [biolink:Mammal](https://w3id.org/biolink/Mammal)
+URI: [biolink:Mammal](https://w3id.org/biolink/vocab/Mammal)
 
 
 ---

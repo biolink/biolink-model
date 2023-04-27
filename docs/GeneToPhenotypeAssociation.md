@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GeneToPhenotypeAssociation](https://w3id.org/biolink/GeneToPhenotypeAssociation)
+URI: [biolink:GeneToPhenotypeAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation)
 
 
 ---

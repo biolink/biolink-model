@@ -10,7 +10,7 @@ layout: default
 
 An association between an organism taxon and another entity
 
-URI: [biolink:OrganismTaxonToEntityAssociation](https://w3id.org/biolink/OrganismTaxonToEntityAssociation)
+URI: [biolink:OrganismTaxonToEntityAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToEntityAssociation)
 
 
 ---

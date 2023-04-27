@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:amount_or_activity_increased_by](https://w3id.org/biolink/amount_or_activity_increased_by)
+URI: [biolink:amount_or_activity_increased_by](https://w3id.org/biolink/vocab/amount_or_activity_increased_by)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 A measurable quantity for the object of the association
 
-URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/quantifier_qualifier)
+URI: [biolink:quantifier_qualifier](https://w3id.org/biolink/vocab/quantifier_qualifier)
 
 ## Domain and Range
 

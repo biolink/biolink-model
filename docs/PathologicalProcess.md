@@ -10,7 +10,7 @@ layout: default
 
 A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-URI: [biolink:PathologicalProcess](https://w3id.org/biolink/PathologicalProcess)
+URI: [biolink:PathologicalProcess](https://w3id.org/biolink/vocab/PathologicalProcess)
 
 
 ---

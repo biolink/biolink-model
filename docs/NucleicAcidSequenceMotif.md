@@ -10,7 +10,7 @@ layout: default
 
 A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 
-URI: [biolink:NucleicAcidSequenceMotif](https://w3id.org/biolink/NucleicAcidSequenceMotif)
+URI: [biolink:NucleicAcidSequenceMotif](https://w3id.org/biolink/vocab/NucleicAcidSequenceMotif)
 
 
 ---

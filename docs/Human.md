@@ -10,7 +10,7 @@ layout: default
 
 A member of the the species Homo sapiens.
 
-URI: [biolink:Human](https://w3id.org/biolink/Human)
+URI: [biolink:Human](https://w3id.org/biolink/vocab/Human)
 
 
 ---

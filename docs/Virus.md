@@ -10,7 +10,7 @@ layout: default
 
 A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 
-URI: [biolink:Virus](https://w3id.org/biolink/Virus)
+URI: [biolink:Virus](https://w3id.org/biolink/vocab/Virus)
 
 
 ---

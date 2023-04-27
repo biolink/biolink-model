@@ -10,7 +10,7 @@ layout: default
 
 an association which has a macromolecular machine mixin as a subject
 
-URI: [biolink:MacromolecularMachineToEntityAssociationMixin](https://w3id.org/biolink/MacromolecularMachineToEntityAssociationMixin)
+URI: [biolink:MacromolecularMachineToEntityAssociationMixin](https://w3id.org/biolink/vocab/MacromolecularMachineToEntityAssociationMixin)
 
 
 ---

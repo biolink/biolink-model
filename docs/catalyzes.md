@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:catalyzes](https://w3id.org/biolink/catalyzes)
+URI: [biolink:catalyzes](https://w3id.org/biolink/vocab/catalyzes)
 
 ## Domain and Range
 

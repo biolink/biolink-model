@@ -10,7 +10,7 @@ layout: default
 
 connects an entity associated with one or more genes
 
-URI: [biolink:has_gene](https://w3id.org/biolink/has_gene)
+URI: [biolink:has_gene](https://w3id.org/biolink/vocab/has_gene)
 
 ## Domain and Range
 

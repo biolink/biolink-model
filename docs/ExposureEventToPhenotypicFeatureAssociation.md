@@ -10,7 +10,7 @@ layout: default
 
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
 
-URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biolink/ExposureEventToPhenotypicFeatureAssociation)
+URI: [biolink:ExposureEventToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ExposureEventToPhenotypicFeatureAssociation)
 
 
 ---

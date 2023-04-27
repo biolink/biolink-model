@@ -10,7 +10,7 @@ layout: default
 
 an item that holds distribution level information about a dataset.
 
-URI: [biolink:DatasetDistribution](https://w3id.org/biolink/DatasetDistribution)
+URI: [biolink:DatasetDistribution](https://w3id.org/biolink/vocab/DatasetDistribution)
 
 
 ---

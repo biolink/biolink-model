@@ -10,7 +10,7 @@ layout: default
 
 A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
 
-URI: [biolink:base_coordinate](https://w3id.org/biolink/base_coordinate)
+URI: [biolink:base_coordinate](https://w3id.org/biolink/vocab/base_coordinate)
 
 ## Domain and Range
 

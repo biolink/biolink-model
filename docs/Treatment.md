@@ -10,7 +10,7 @@ layout: default
 
 A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
 
-URI: [biolink:Treatment](https://w3id.org/biolink/Treatment)
+URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 
 ---

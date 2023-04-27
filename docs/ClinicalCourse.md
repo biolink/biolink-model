@@ -10,7 +10,7 @@ layout: default
 
 The course a disease typically takes from its onset, progression in time, and eventual resolution or death of the affected individual
 
-URI: [biolink:ClinicalCourse](https://w3id.org/biolink/ClinicalCourse)
+URI: [biolink:ClinicalCourse](https://w3id.org/biolink/vocab/ClinicalCourse)
 
 
 ---

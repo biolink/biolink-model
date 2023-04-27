@@ -13,7 +13,7 @@ translator_minimal
 
 Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
 
-URI: [biolink:context_qualifier](https://w3id.org/biolink/context_qualifier)
+URI: [biolink:context_qualifier](https://w3id.org/biolink/vocab/context_qualifier)
 
 ## Domain and Range
 
@@ -35,7 +35,7 @@ URI: [biolink:context_qualifier](https://w3id.org/biolink/context_qualifier)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='cohort x (e.g. a specific population, referenced by an identifier)', description=None) |
-|  | | Example(value='gut microbiome', description=None) |
+| **Examples:** | | Example(value='cohort x (e.g. a specific population, referenced by an identifier)', description=None, object=None) |
+|  | | Example(value='gut microbiome', description=None, object=None) |
 | **In Subsets:** | | translator_minimal |
 

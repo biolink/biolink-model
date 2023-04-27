@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:genetic_association](https://w3id.org/biolink/genetic_association)
+URI: [biolink:genetic_association](https://w3id.org/biolink/vocab/genetic_association)
 
 ## Domain and Range
 

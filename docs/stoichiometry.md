@@ -10,7 +10,7 @@ layout: default
 
 the relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
 
-URI: [biolink:stoichiometry](https://w3id.org/biolink/stoichiometry)
+URI: [biolink:stoichiometry](https://w3id.org/biolink/vocab/stoichiometry)
 
 ## Domain and Range
 

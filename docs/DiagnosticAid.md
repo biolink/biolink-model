@@ -10,7 +10,7 @@ layout: default
 
 A device or substance used to help diagnose disease or injury
 
-URI: [biolink:DiagnosticAid](https://w3id.org/biolink/DiagnosticAid)
+URI: [biolink:DiagnosticAid](https://w3id.org/biolink/vocab/DiagnosticAid)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/FrequencyQuantifier)
+URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuantifier)
 
 
 ---

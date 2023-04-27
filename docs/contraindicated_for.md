@@ -10,7 +10,7 @@ layout: default
 
 Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
 
-URI: [biolink:contraindicated_for](https://w3id.org/biolink/contraindicated_for)
+URI: [biolink:contraindicated_for](https://w3id.org/biolink/vocab/contraindicated_for)
 
 ## Domain and Range
 

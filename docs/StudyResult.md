@@ -10,7 +10,7 @@ layout: default
 
 A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
 
-URI: [biolink:StudyResult](https://w3id.org/biolink/StudyResult)
+URI: [biolink:StudyResult](https://w3id.org/biolink/vocab/StudyResult)
 
 
 ---

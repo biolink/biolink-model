@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_zygosity](https://w3id.org/biolink/has_zygosity)
+URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 
 ## Domain and Range
 

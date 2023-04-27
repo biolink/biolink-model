@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GenotypeToDiseaseAssociation](https://w3id.org/biolink/GenotypeToDiseaseAssociation)
+URI: [biolink:GenotypeToDiseaseAssociation](https://w3id.org/biolink/vocab/GenotypeToDiseaseAssociation)
 
 
 ---

@@ -16,7 +16,7 @@ samples
 
 An IRI for an entity. This is determined by the id using expansion rules.
 
-URI: [biolink:iri](https://w3id.org/biolink/iri)
+URI: [biolink:iri](https://w3id.org/biolink/vocab/iri)
 
 ## Domain and Range
 

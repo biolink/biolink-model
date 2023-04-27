@@ -10,7 +10,7 @@ layout: default
 
 Represents a protein that is a specific isoform of the canonical or reference RNA
 
-URI: [biolink:RNAProductIsoform](https://w3id.org/biolink/RNAProductIsoform)
+URI: [biolink:RNAProductIsoform](https://w3id.org/biolink/vocab/RNAProductIsoform)
 
 
 ---

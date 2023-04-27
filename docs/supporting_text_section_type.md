@@ -10,7 +10,7 @@ layout: default
 
 The section of the supporting text of a Text Mining Result within the supporting document. This is in the form of the name of the document section (e.g., Abstract, Introduction) that contains the supporting text.
 
-URI: [biolink:supporting_text_section_type](https://w3id.org/biolink/supporting_text_section_type)
+URI: [biolink:supporting_text_section_type](https://w3id.org/biolink/vocab/supporting_text_section_type)
 
 ## Domain and Range
 
@@ -30,5 +30,5 @@ URI: [biolink:supporting_text_section_type](https://w3id.org/biolink/supporting_
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Introduction', description=None) |
+| **Examples:** | | Example(value='Introduction', description=None, object=None) |
 

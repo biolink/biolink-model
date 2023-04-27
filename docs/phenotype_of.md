@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:phenotype_of](https://w3id.org/biolink/phenotype_of)
+URI: [biolink:phenotype_of](https://w3id.org/biolink/vocab/phenotype_of)
 
 ## Domain and Range
 

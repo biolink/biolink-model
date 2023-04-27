@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/GrossAnatomicalStructure)
+URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
 
 ---

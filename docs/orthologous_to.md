@@ -13,7 +13,7 @@ translator_minimal
 
 a homology relationship between entities (typically genes) that diverged after a speciation event.
 
-URI: [biolink:orthologous_to](https://w3id.org/biolink/orthologous_to)
+URI: [biolink:orthologous_to](https://w3id.org/biolink/vocab/orthologous_to)
 
 ## Domain and Range
 

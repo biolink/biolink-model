@@ -10,7 +10,7 @@ layout: default
 
 A stage of development or growth of an organism, including post-natal adult stages
 
-URI: [biolink:LifeStage](https://w3id.org/biolink/LifeStage)
+URI: [biolink:LifeStage](https://w3id.org/biolink/vocab/LifeStage)
 
 
 ---

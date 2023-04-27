@@ -10,7 +10,7 @@ layout: default
 
 A union of chemical entities and children, and protein and polypeptide. This mixin is helpful to use when searching across chemical entities that must include genes and their children as chemical entities.
 
-URI: [biolink:ChemicalEntityOrProteinOrPolypeptide](https://w3id.org/biolink/ChemicalEntityOrProteinOrPolypeptide)
+URI: [biolink:ChemicalEntityOrProteinOrPolypeptide](https://w3id.org/biolink/vocab/ChemicalEntityOrProteinOrPolypeptide)
 
 
 ---

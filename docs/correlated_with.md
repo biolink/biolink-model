@@ -13,7 +13,7 @@ translator_minimal
 
 A relationship that holds between two concepts represented by variables for which a statistical dependence is  demonstrated using a correlation analysis method.
 
-URI: [biolink:correlated_with](https://w3id.org/biolink/correlated_with)
+URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 
 ## Domain and Range
 

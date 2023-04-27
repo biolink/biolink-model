@@ -10,7 +10,7 @@ layout: default
 
 Symbol for a particular thing
 
-URI: [biolink:symbol](https://w3id.org/biolink/symbol)
+URI: [biolink:symbol](https://w3id.org/biolink/vocab/symbol)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 TBD
 
-URI: [biolink:testing](https://w3id.org/biolink/testing)
+URI: [biolink:testing](https://w3id.org/biolink/vocab/testing)
 
 
 ### Classes

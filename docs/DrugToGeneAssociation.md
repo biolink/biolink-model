@@ -10,7 +10,7 @@ layout: default
 
 An interaction between a drug and a gene or gene product.
 
-URI: [biolink:DrugToGeneAssociation](https://w3id.org/biolink/DrugToGeneAssociation)
+URI: [biolink:DrugToGeneAssociation](https://w3id.org/biolink/vocab/DrugToGeneAssociation)
 
 
 ---

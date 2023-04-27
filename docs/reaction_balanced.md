@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:reaction_balanced](https://w3id.org/biolink/reaction_balanced)
+URI: [biolink:reaction_balanced](https://w3id.org/biolink/vocab/reaction_balanced)
 
 ## Domain and Range
 

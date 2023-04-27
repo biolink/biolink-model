@@ -10,7 +10,7 @@ layout: default
 
 An individual (human) organism that has a patient role in some clinical context.
 
-URI: [biolink:Case](https://w3id.org/biolink/Case)
+URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
 
 ---

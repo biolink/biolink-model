@@ -10,7 +10,7 @@ layout: default
 
 This class may rarely be instantiated except if use cases of a given knowledge graph support its utility.
 
-URI: [biolink:Serial](https://w3id.org/biolink/Serial)
+URI: [biolink:Serial](https://w3id.org/biolink/vocab/Serial)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 holds between a nucleic acid entity and a nucleic acid entity that is a sub-component of it
 
-URI: [biolink:has_variant_part](https://w3id.org/biolink/has_variant_part)
+URI: [biolink:has_variant_part](https://w3id.org/biolink/vocab/has_variant_part)
 
 ## Domain and Range
 

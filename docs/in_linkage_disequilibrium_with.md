@@ -10,7 +10,7 @@ layout: default
 
 holds between two sequence variants, the presence of which are correlated in a population
 
-URI: [biolink:in_linkage_disequilibrium_with](https://w3id.org/biolink/in_linkage_disequilibrium_with)
+URI: [biolink:in_linkage_disequilibrium_with](https://w3id.org/biolink/vocab/in_linkage_disequilibrium_with)
 
 ## Domain and Range
 

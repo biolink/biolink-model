@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:is_side_effect_of](https://w3id.org/biolink/is_side_effect_of)
+URI: [biolink:is_side_effect_of](https://w3id.org/biolink/vocab/is_side_effect_of)
 
 ## Domain and Range
 

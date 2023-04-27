@@ -10,7 +10,7 @@ layout: default
 
 inverse of transcribed from
 
-URI: [biolink:transcribed_to](https://w3id.org/biolink/transcribed_to)
+URI: [biolink:transcribed_to](https://w3id.org/biolink/vocab/transcribed_to)
 
 ## Domain and Range
 

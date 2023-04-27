@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/VariantToEntityAssociationMixin)
+URI: [biolink:VariantToEntityAssociationMixin](https://w3id.org/biolink/vocab/VariantToEntityAssociationMixin)
 
 
 ---

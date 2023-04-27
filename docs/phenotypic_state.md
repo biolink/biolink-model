@@ -10,7 +10,7 @@ layout: default
 
 in experiments (e.g. gene expression) assaying diseased or unhealthy tissue, the phenotypic state can be put here, e.g. MONDO ID. For healthy tissues, use XXX.
 
-URI: [biolink:phenotypic_state](https://w3id.org/biolink/phenotypic_state)
+URI: [biolink:phenotypic_state](https://w3id.org/biolink/vocab/phenotypic_state)
 
 ## Domain and Range
 

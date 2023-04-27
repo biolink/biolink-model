@@ -10,7 +10,7 @@ layout: default
 
 Represents a relationship held between two instances of a data classes.  Much like an assertion component, in an ABox, these represent facts associated with the conceptual model.
 
-URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/related_to_at_instance_level)
+URI: [biolink:related_to_at_instance_level](https://w3id.org/biolink/vocab/related_to_at_instance_level)
 
 ## Domain and Range
 

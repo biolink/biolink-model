@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a process and a continuant, where the continuant is an output of the process
 
-URI: [biolink:has_output](https://w3id.org/biolink/has_output)
+URI: [biolink:has_output](https://w3id.org/biolink/vocab/has_output)
 
 ## Domain and Range
 

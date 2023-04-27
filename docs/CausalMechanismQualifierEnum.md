@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:CausalMechanismQualifierEnum](https://w3id.org/biolink/CausalMechanismQualifierEnum)
+URI: [biolink:CausalMechanismQualifierEnum](https://w3id.org/biolink/vocab/CausalMechanismQualifierEnum)
 
 
 ## Other properties

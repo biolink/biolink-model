@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Cell](https://w3id.org/biolink/Cell)
+URI: [biolink:Cell](https://w3id.org/biolink/vocab/Cell)
 
 
 ---

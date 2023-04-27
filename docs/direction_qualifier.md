@@ -13,7 +13,7 @@ translator_minimal
 
 Composes with the core concept (+ aspect if provided) to describe a change in its direction or degree.
 
-URI: [biolink:direction_qualifier](https://w3id.org/biolink/direction_qualifier)
+URI: [biolink:direction_qualifier](https://w3id.org/biolink/vocab/direction_qualifier)
 
 ## Domain and Range
 

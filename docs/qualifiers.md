@@ -10,7 +10,7 @@ layout: default
 
 connects an association to qualifiers that modify or qualify the meaning of that association
 
-URI: [biolink:qualifiers](https://w3id.org/biolink/qualifiers)
+URI: [biolink:qualifiers](https://w3id.org/biolink/vocab/qualifiers)
 
 ## Domain and Range
 

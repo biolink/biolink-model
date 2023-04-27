@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/GeneToGoTermAssociation)
+URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A combination of entity and quality that makes up a phenotyping statement. An observable characteristic of an  individual resulting from the interaction of its genotype with its molecular and physical environment.
 
-URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/PhenotypicFeature)
+URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
 
 ---
@@ -130,7 +130,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | phenotype |
 |  | | trait |
 |  | | endophenotype |
-| **Examples:** | | Example(value='MP:0001262', description='decreased body weight') |
+| **Examples:** | | Example(value='MP:0001262', description='decreased body weight', object=None) |
 | **In Subsets:** | | model_organism_database |
 | **Exact Mappings:** | | UPHENO:0001001 |
 |  | | SIO:010056 |

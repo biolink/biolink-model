@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:is_exacerbated_by](https://w3id.org/biolink/is_exacerbated_by)
+URI: [biolink:is_exacerbated_by](https://w3id.org/biolink/vocab/is_exacerbated_by)
 
 ## Domain and Range
 

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
 
-URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/gene_associated_with_condition)
+URI: [biolink:gene_associated_with_condition](https://w3id.org/biolink/vocab/gene_associated_with_condition)
 
 ## Domain and Range
 

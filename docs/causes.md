@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
 
-URI: [biolink:causes](https://w3id.org/biolink/causes)
+URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 
 ## Domain and Range
 

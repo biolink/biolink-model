@@ -10,7 +10,7 @@ layout: default
 
 Semantic mixin concept.  Pertains to entities that have physical properties such as mass, volume, or charge.
 
-URI: [biolink:PhysicalEssence](https://w3id.org/biolink/PhysicalEssence)
+URI: [biolink:PhysicalEssence](https://w3id.org/biolink/vocab/PhysicalEssence)
 
 
 ---

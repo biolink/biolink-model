@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_contributor](https://w3id.org/biolink/has_contributor)
+URI: [biolink:has_contributor](https://w3id.org/biolink/vocab/has_contributor)
 
 ## Domain and Range
 

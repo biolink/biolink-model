@@ -10,7 +10,7 @@ layout: default
 
 An interaction relationship between two taxa. This may be a symbiotic relationship (encompassing mutualism and parasitism), or it may be non-symbiotic. Example: plague transmitted_by flea; cattle domesticated_by Homo sapiens; plague infects Homo sapiens
 
-URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/OrganismTaxonToOrganismTaxonInteraction)
+URI: [biolink:OrganismTaxonToOrganismTaxonInteraction](https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonInteraction)
 
 
 ---

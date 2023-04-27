@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ClinicalTrial](https://w3id.org/biolink/ClinicalTrial)
+URI: [biolink:ClinicalTrial](https://w3id.org/biolink/vocab/ClinicalTrial)
 
 
 ---

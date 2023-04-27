@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Zygosity](https://w3id.org/biolink/Zygosity)
+URI: [biolink:Zygosity](https://w3id.org/biolink/vocab/Zygosity)
 
 
 ---

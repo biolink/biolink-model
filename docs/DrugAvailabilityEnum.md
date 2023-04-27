@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DrugAvailabilityEnum](https://w3id.org/biolink/DrugAvailabilityEnum)
+URI: [biolink:DrugAvailabilityEnum](https://w3id.org/biolink/vocab/DrugAvailabilityEnum)
 
 
 ## Other properties

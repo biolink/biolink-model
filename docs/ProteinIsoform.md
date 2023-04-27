@@ -10,7 +10,7 @@ layout: default
 
 Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 
-URI: [biolink:ProteinIsoform](https://w3id.org/biolink/ProteinIsoform)
+URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
 
 ---

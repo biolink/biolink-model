@@ -10,7 +10,7 @@ layout: default
 
 A relationship between two organism taxon nodes
 
-URI: [biolink:OrganismTaxonToOrganismTaxonAssociation](https://w3id.org/biolink/OrganismTaxonToOrganismTaxonAssociation)
+URI: [biolink:OrganismTaxonToOrganismTaxonAssociation](https://w3id.org/biolink/vocab/OrganismTaxonToOrganismTaxonAssociation)
 
 
 ---

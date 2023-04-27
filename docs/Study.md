@@ -10,7 +10,7 @@ layout: default
 
 a detailed investigation and/or analysis
 
-URI: [biolink:Study](https://w3id.org/biolink/Study)
+URI: [biolink:Study](https://w3id.org/biolink/vocab/Study)
 
 
 ---

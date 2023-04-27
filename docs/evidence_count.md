@@ -10,7 +10,7 @@ layout: default
 
 The number of evidence instances that are connected to an association.
 
-URI: [biolink:evidence_count](https://w3id.org/biolink/evidence_count)
+URI: [biolink:evidence_count](https://w3id.org/biolink/vocab/evidence_count)
 
 ## Domain and Range
 

@@ -17,7 +17,7 @@ A causal relationship between two chemical entities, where the subject represent
   THEN
   C1 derives-into C2 <<catalyst qualifier P>>
 
-URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/ChemicalToChemicalDerivationAssociation)
+URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:actively_involves](https://w3id.org/biolink/actively_involves)
+URI: [biolink:actively_involves](https://w3id.org/biolink/vocab/actively_involves)
 
 ## Domain and Range
 

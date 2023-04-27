@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:statement_qualifier](https://w3id.org/biolink/statement_qualifier)
+URI: [biolink:statement_qualifier](https://w3id.org/biolink/vocab/statement_qualifier)
 
 ## Domain and Range
 

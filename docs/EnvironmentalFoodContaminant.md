@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:EnvironmentalFoodContaminant](https://w3id.org/biolink/EnvironmentalFoodContaminant)
+URI: [biolink:EnvironmentalFoodContaminant](https://w3id.org/biolink/vocab/EnvironmentalFoodContaminant)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
 
-URI: [biolink:NucleosomeModification](https://w3id.org/biolink/NucleosomeModification)
+URI: [biolink:NucleosomeModification](https://w3id.org/biolink/vocab/NucleosomeModification)
 
 
 ---

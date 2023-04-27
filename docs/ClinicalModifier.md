@@ -10,7 +10,7 @@ layout: default
 
 Used to characterize and specify the phenotypic abnormalities defined in the phenotypic abnormality sub-ontology, with respect to severity, laterality, and other aspects
 
-URI: [biolink:ClinicalModifier](https://w3id.org/biolink/ClinicalModifier)
+URI: [biolink:ClinicalModifier](https://w3id.org/biolink/vocab/ClinicalModifier)
 
 
 ---

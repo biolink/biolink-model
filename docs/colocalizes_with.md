@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two entities that are observed to be located in the same place.
 
-URI: [biolink:colocalizes_with](https://w3id.org/biolink/colocalizes_with)
+URI: [biolink:colocalizes_with](https://w3id.org/biolink/vocab/colocalizes_with)
 
 ## Domain and Range
 

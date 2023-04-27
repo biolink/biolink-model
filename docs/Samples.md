@@ -10,7 +10,7 @@ layout: default
 
 Sample/biosample datamodel
 
-URI: [biolink:samples](https://w3id.org/biolink/samples)
+URI: [biolink:samples](https://w3id.org/biolink/vocab/samples)
 
 
 ### Classes

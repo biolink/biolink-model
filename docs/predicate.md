@@ -10,7 +10,7 @@ layout: default
 
 A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 
-URI: [biolink:predicate](https://w3id.org/biolink/predicate)
+URI: [biolink:predicate](https://w3id.org/biolink/vocab/predicate)
 
 ## Domain and Range
 

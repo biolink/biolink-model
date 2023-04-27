@@ -13,7 +13,7 @@ translator_minimal
 
 A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
 
-URI: [biolink:retrieval_source_ids](https://w3id.org/biolink/retrieval_source_ids)
+URI: [biolink:retrieval_source_ids](https://w3id.org/biolink/vocab/retrieval_source_ids)
 
 ## Domain and Range
 

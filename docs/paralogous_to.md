@@ -13,7 +13,7 @@ translator_minimal
 
 a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
 
-URI: [biolink:paralogous_to](https://w3id.org/biolink/paralogous_to)
+URI: [biolink:paralogous_to](https://w3id.org/biolink/vocab/paralogous_to)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 the process or entity that the receptor is being exposed to
 
-URI: [biolink:has_stressor](https://w3id.org/biolink/has_stressor)
+URI: [biolink:has_stressor](https://w3id.org/biolink/vocab/has_stressor)
 
 ## Domain and Range
 

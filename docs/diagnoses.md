@@ -10,7 +10,7 @@ layout: default
 
 a relationship that identifies the nature of (an illness or other problem) by examination  of the symptoms.
 
-URI: [biolink:diagnoses](https://w3id.org/biolink/diagnoses)
+URI: [biolink:diagnoses](https://w3id.org/biolink/vocab/diagnoses)
 
 ## Domain and Range
 

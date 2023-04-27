@@ -10,7 +10,7 @@ layout: default
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
 
-URI: [biolink:MolecularActivity](https://w3id.org/biolink/MolecularActivity)
+URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
 
 
 ---

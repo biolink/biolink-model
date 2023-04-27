@@ -10,7 +10,7 @@ layout: default
 
 abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
 
-URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/GeneToGeneAssociation)
+URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAssociation)
 
 
 ---

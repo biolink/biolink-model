@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:BiologicalSex](https://w3id.org/biolink/BiologicalSex)
+URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
 
 ---

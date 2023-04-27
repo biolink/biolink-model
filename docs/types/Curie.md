@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Curie
+title: metatype:Curie
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Curie
+# Type: Curie
 
 
 a compact URI
 
-URI: [https://w3id.org/biolink/linkml:types/Curie](https://w3id.org/biolink/linkml:types/Curie)
+URI: [metatype:Curie](https://linkml.github.io/linkml-model/docs/types/Curie)
 
 |  |  |  |
 | --- | --- | --- |

@@ -10,7 +10,7 @@ layout: default
 
 An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
 
-URI: [biolink:Activity](https://w3id.org/biolink/Activity)
+URI: [biolink:Activity](https://w3id.org/biolink/vocab/Activity)
 
 
 ---

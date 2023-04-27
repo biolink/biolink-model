@@ -10,7 +10,7 @@ layout: default
 
 holds between a sequence variant and a gene, such the sequence variant is in the coding sequence of the gene, but results in the same amino acid sequence
 
-URI: [biolink:is_synonymous_variant_of](https://w3id.org/biolink/is_synonymous_variant_of)
+URI: [biolink:is_synonymous_variant_of](https://w3id.org/biolink/vocab/is_synonymous_variant_of)
 
 ## Domain and Range
 

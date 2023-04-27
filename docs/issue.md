@@ -10,7 +10,7 @@ layout: default
 
 issue of a newspaper, a scientific journal or magazine for reference purpose
 
-URI: [biolink:issue](https://w3id.org/biolink/issue)
+URI: [biolink:issue](https://w3id.org/biolink/vocab/issue)
 
 ## Domain and Range
 

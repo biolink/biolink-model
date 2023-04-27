@@ -10,7 +10,7 @@ layout: default
 
 Any association between one genotype and a genotypic entity that is a sub-component of it
 
-URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/GenotypeToGenotypePartAssociation)
+URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation)
 
 
 ---

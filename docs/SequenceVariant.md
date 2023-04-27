@@ -10,7 +10,7 @@ layout: default
 
 A sequence_variant is a non exact copy of a sequence_feature or genome exhibiting one or more sequence_alteration.
 
-URI: [biolink:SequenceVariant](https://w3id.org/biolink/SequenceVariant)
+URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
 
 ---

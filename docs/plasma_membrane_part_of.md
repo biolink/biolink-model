@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:plasma_membrane_part_of](https://w3id.org/biolink/plasma_membrane_part_of)
+URI: [biolink:plasma_membrane_part_of](https://w3id.org/biolink/vocab/plasma_membrane_part_of)
 
 ## Domain and Range
 

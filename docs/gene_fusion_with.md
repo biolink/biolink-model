@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two independent genes that have fused through  translocation, interstitial deletion, or chromosomal inversion to  form a new, hybrid gene. Fusion genes are often implicated in various neoplasms and cancers.
 
-URI: [biolink:gene_fusion_with](https://w3id.org/biolink/gene_fusion_with)
+URI: [biolink:gene_fusion_with](https://w3id.org/biolink/vocab/gene_fusion_with)
 
 ## Domain and Range
 

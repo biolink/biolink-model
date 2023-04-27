@@ -10,7 +10,7 @@ layout: default
 
 an item that refers to a collection of data from a data source.
 
-URI: [biolink:Dataset](https://w3id.org/biolink/Dataset)
+URI: [biolink:Dataset](https://w3id.org/biolink/vocab/Dataset)
 
 
 ---

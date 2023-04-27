@@ -13,7 +13,7 @@ translator_minimal
 
 holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
 
-URI: [biolink:in_complex_with](https://w3id.org/biolink/in_complex_with)
+URI: [biolink:in_complex_with](https://w3id.org/biolink/vocab/in_complex_with)
 
 ## Domain and Range
 

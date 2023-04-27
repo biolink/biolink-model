@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/String
+title: metatype:String
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/String
+# Type: String
 
 
 A character string
 
-URI: [https://w3id.org/biolink/linkml:types/String](https://w3id.org/biolink/linkml:types/String)
+URI: [metatype:String](https://linkml.github.io/linkml-model/docs/types/String)
 
 |  |  |  |
 | --- | --- | --- |

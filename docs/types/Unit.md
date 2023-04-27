@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:Unit](https://w3id.org/biolink/Unit)
+URI: [biolink:Unit](https://w3id.org/biolink/vocab/types/biolink:Unit)
 
 |  |  |  |
 | --- | --- | --- |

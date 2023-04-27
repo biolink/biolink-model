@@ -10,7 +10,7 @@ layout: default
 
 a piece of writing on a particular topic presented as a stand-alone  section of a larger publication
 
-URI: [biolink:Article](https://w3id.org/biolink/Article)
+URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 
 ---

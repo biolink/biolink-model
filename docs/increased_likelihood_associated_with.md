@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:increased_likelihood_associated_with](https://w3id.org/biolink/increased_likelihood_associated_with)
+URI: [biolink:increased_likelihood_associated_with](https://w3id.org/biolink/vocab/increased_likelihood_associated_with)
 
 ## Domain and Range
 

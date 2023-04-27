@@ -10,7 +10,7 @@ layout: default
 
 holds between a potential outcome of which the likelihood was reduced by the application or use of an entity.
 
-URI: [biolink:prevented_by](https://w3id.org/biolink/prevented_by)
+URI: [biolink:prevented_by](https://w3id.org/biolink/vocab/prevented_by)
 
 ## Domain and Range
 

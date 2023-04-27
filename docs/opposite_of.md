@@ -10,7 +10,7 @@ layout: default
 
 x is the opposite of y if there exists some distance metric M, and there exists no z such as M(x,z) <= M(x,y) or M(y,z) <= M(y,x). (This description is from RO. Needs to be rephrased).
 
-URI: [biolink:opposite_of](https://w3id.org/biolink/opposite_of)
+URI: [biolink:opposite_of](https://w3id.org/biolink/vocab/opposite_of)
 
 ## Domain and Range
 

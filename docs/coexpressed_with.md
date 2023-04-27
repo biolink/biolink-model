@@ -10,7 +10,7 @@ layout: default
 
 holds between any two genes or gene products, in which both are generally expressed within a single defined experimental context.
 
-URI: [biolink:coexpressed_with](https://w3id.org/biolink/coexpressed_with)
+URI: [biolink:coexpressed_with](https://w3id.org/biolink/vocab/coexpressed_with)
 
 ## Domain and Range
 

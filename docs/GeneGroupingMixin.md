@@ -10,7 +10,7 @@ layout: default
 
 any grouping of multiple genes or gene products
 
-URI: [biolink:GeneGroupingMixin](https://w3id.org/biolink/GeneGroupingMixin)
+URI: [biolink:GeneGroupingMixin](https://w3id.org/biolink/vocab/GeneGroupingMixin)
 
 
 ---

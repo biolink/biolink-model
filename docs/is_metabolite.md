@@ -10,7 +10,7 @@ layout: default
 
 indicates whether a molecular entity is a metabolite
 
-URI: [biolink:is_metabolite](https://w3id.org/biolink/is_metabolite)
+URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
 
 ## Domain and Range
 

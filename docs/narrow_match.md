@@ -13,7 +13,7 @@ translator_minimal
 
 a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
 
-URI: [biolink:narrow_match](https://w3id.org/biolink/narrow_match)
+URI: [biolink:narrow_match](https://w3id.org/biolink/vocab/narrow_match)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 An association between a variant and expression of a gene (i.e. e-QTL)
 
-URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/VariantToGeneExpressionAssociation)
+URI: [biolink:VariantToGeneExpressionAssociation](https://w3id.org/biolink/vocab/VariantToGeneExpressionAssociation)
 
 
 ---

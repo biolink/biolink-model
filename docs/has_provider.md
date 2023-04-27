@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_provider](https://w3id.org/biolink/has_provider)
+URI: [biolink:has_provider](https://w3id.org/biolink/vocab/has_provider)
 
 ## Domain and Range
 

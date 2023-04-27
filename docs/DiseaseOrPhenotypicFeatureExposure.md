@@ -10,7 +10,7 @@ layout: default
 
 A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 
-URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/DiseaseOrPhenotypicFeatureExposure)
+URI: [biolink:DiseaseOrPhenotypicFeatureExposure](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureExposure)
 
 
 ---

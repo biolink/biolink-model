@@ -10,7 +10,7 @@ layout: default
 
 A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 
-URI: [biolink:Cohort](https://w3id.org/biolink/Cohort)
+URI: [biolink:Cohort](https://w3id.org/biolink/vocab/Cohort)
 
 
 ---

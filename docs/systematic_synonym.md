@@ -10,7 +10,7 @@ layout: default
 
 more commonly used for gene symbols in yeast
 
-URI: [biolink:systematic_synonym](https://w3id.org/biolink/systematic_synonym)
+URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_synonym)
 
 ## Domain and Range
 

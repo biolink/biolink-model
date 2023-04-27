@@ -13,7 +13,7 @@ translator_minimal
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 
-URI: [biolink:onset_qualifier](https://w3id.org/biolink/onset_qualifier)
+URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
 
 ## Domain and Range
 

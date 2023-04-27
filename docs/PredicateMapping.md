@@ -10,7 +10,7 @@ layout: default
 
 A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
 
-URI: [biolink:PredicateMapping](https://w3id.org/biolink/PredicateMapping)
+URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
 
 
 ---

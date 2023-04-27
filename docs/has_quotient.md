@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_quotient](https://w3id.org/biolink/has_quotient)
+URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 
 ## Domain and Range
 

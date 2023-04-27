@@ -10,7 +10,7 @@ layout: default
 
 a qualifier used in an association with the variant
 
-URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/sequence_variant_qualifier)
+URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/vocab/sequence_variant_qualifier)
 
 ## Domain and Range
 

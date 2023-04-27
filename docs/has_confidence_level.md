@@ -10,7 +10,7 @@ layout: default
 
 connects an association to a qualitative term denoting the level of confidence
 
-URI: [biolink:has_confidence_level](https://w3id.org/biolink/has_confidence_level)
+URI: [biolink:has_confidence_level](https://w3id.org/biolink/vocab/has_confidence_level)
 
 ## Domain and Range
 

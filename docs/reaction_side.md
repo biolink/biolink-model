@@ -10,7 +10,7 @@ layout: default
 
 the side of a reaction being modeled (ie: left or right)
 
-URI: [biolink:reaction_side](https://w3id.org/biolink/reaction_side)
+URI: [biolink:reaction_side](https://w3id.org/biolink/vocab/reaction_side)
 
 ## Domain and Range
 

@@ -13,7 +13,7 @@ translator_minimal
 
 
 
-URI: [biolink:genetically_associated_with](https://w3id.org/biolink/genetically_associated_with)
+URI: [biolink:genetically_associated_with](https://w3id.org/biolink/vocab/genetically_associated_with)
 
 ## Domain and Range
 

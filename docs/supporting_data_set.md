@@ -10,7 +10,7 @@ layout: default
 
 A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
 
-URI: [biolink:supporting_data_set](https://w3id.org/biolink/supporting_data_set)
+URI: [biolink:supporting_data_set](https://w3id.org/biolink/vocab/supporting_data_set)
 
 ## Domain and Range
 

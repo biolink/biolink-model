@@ -10,7 +10,7 @@ layout: default
 
 One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
 
-URI: [biolink:publications](https://w3id.org/biolink/publications)
+URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 
 ## Domain and Range
 

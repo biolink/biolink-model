@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:produced_by](https://w3id.org/biolink/produced_by)
+URI: [biolink:produced_by](https://w3id.org/biolink/vocab/produced_by)
 
 ## Domain and Range
 

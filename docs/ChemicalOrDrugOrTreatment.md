@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ChemicalOrDrugOrTreatment](https://w3id.org/biolink/ChemicalOrDrugOrTreatment)
+URI: [biolink:ChemicalOrDrugOrTreatment](https://w3id.org/biolink/vocab/ChemicalOrDrugOrTreatment)
 
 
 ---

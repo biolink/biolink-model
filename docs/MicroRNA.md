@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:MicroRNA](https://w3id.org/biolink/MicroRNA)
+URI: [biolink:MicroRNA](https://w3id.org/biolink/vocab/MicroRNA)
 
 
 ---

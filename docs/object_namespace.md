@@ -10,7 +10,7 @@ layout: default
 
 Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
 
-URI: [biolink:object_namespace](https://w3id.org/biolink/object_namespace)
+URI: [biolink:object_namespace](https://w3id.org/biolink/vocab/object_namespace)
 
 ## Domain and Range
 
@@ -114,5 +114,5 @@ URI: [biolink:object_namespace](https://w3id.org/biolink/object_namespace)
 |  |  |  |
 | --- | --- | --- |
 | **Aliases:** | | object prefix |
-| **Examples:** | | Example(value='MONDO', description="The object namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'MONDO'.") |
+| **Examples:** | | Example(value='MONDO', description="The object namespace of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'MONDO'.", object=None) |
 

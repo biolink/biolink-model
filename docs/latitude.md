@@ -10,7 +10,7 @@ layout: default
 
 latitude
 
-URI: [biolink:latitude](https://w3id.org/biolink/latitude)
+URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
 ## Domain and Range
 

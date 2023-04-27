@@ -10,7 +10,7 @@ layout: default
 
 An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
 
-URI: [biolink:aggregator_knowledge_source](https://w3id.org/biolink/aggregator_knowledge_source)
+URI: [biolink:aggregator_knowledge_source](https://w3id.org/biolink/vocab/aggregator_knowledge_source)
 
 ## Domain and Range
 

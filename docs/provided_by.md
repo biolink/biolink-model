@@ -10,7 +10,7 @@ layout: default
 
 The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
 
-URI: [biolink:provided_by](https://w3id.org/biolink/provided_by)
+URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
 
 ## Domain and Range
 

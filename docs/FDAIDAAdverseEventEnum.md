@@ -10,7 +10,7 @@ layout: default
 
 please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
 
-URI: [biolink:FDAIDAAdverseEventEnum](https://w3id.org/biolink/FDAIDAAdverseEventEnum)
+URI: [biolink:FDAIDAAdverseEventEnum](https://w3id.org/biolink/vocab/FDAIDAAdverseEventEnum)
 
 
 ## Other properties

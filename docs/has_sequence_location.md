@@ -10,7 +10,7 @@ layout: default
 
 holds between two nucleic acid entities when the subject can be localized in sequence coordinates on the object. For example, between an exon and a chromosome/contig.
 
-URI: [biolink:has_sequence_location](https://w3id.org/biolink/has_sequence_location)
+URI: [biolink:has_sequence_location](https://w3id.org/biolink/vocab/has_sequence_location)
 
 ## Domain and Range
 

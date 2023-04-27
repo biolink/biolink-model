@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/DateOrDatetime
+title: metatype:DateOrDatetime
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/DateOrDatetime
+# Type: DateOrDatetime
 
 
 Either a date or a datetime
 
-URI: [https://w3id.org/biolink/linkml:types/DateOrDatetime](https://w3id.org/biolink/linkml:types/DateOrDatetime)
+URI: [metatype:DateOrDatetime](https://linkml.github.io/linkml-model/docs/types/DateOrDatetime)
 
 |  |  |  |
 | --- | --- | --- |

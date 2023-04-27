@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.org/biolink/DiseaseOrPhenotypicFeatureToEntityAssociationMixin)
+URI: [biolink:DiseaseOrPhenotypicFeatureToEntityAssociationMixin](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureToEntityAssociationMixin)
 
 
 ---

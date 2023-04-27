@@ -10,7 +10,7 @@ layout: default
 
 A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
 
-URI: [biolink:MacromolecularComplex](https://w3id.org/biolink/MacromolecularComplex)
+URI: [biolink:MacromolecularComplex](https://w3id.org/biolink/vocab/MacromolecularComplex)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 represents the chi-squared statistic computed from observations
 
-URI: [biolink:chi_squared_statistic](https://w3id.org/biolink/chi_squared_statistic)
+URI: [biolink:chi_squared_statistic](https://w3id.org/biolink/vocab/chi_squared_statistic)
 
 ## Domain and Range
 

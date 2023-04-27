@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:DiseaseToEntityAssociationMixin](https://w3id.org/biolink/DiseaseToEntityAssociationMixin)
+URI: [biolink:DiseaseToEntityAssociationMixin](https://w3id.org/biolink/vocab/DiseaseToEntityAssociationMixin)
 
 
 ---

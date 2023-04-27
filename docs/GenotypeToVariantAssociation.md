@@ -10,7 +10,7 @@ layout: default
 
 Any association between a genotype and a sequence variant.
 
-URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/GenotypeToVariantAssociation)
+URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
 
 ---

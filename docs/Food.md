@@ -10,7 +10,7 @@ layout: default
 
 A substance consumed by a living organism as a source of nutrition
 
-URI: [biolink:Food](https://w3id.org/biolink/Food)
+URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 
 
 ---

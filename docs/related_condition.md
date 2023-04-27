@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:related_condition](https://w3id.org/biolink/related_condition)
+URI: [biolink:related_condition](https://w3id.org/biolink/vocab/related_condition)
 
 ## Domain and Range
 

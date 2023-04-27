@@ -10,7 +10,7 @@ layout: default
 
 The position at which the subject genomic entity starts on the chromosome or other entity to which it is located on. (ie: the start of the sequence being referenced is 1).
 
-URI: [biolink:start_coordinate](https://w3id.org/biolink/start_coordinate)
+URI: [biolink:start_coordinate](https://w3id.org/biolink/vocab/start_coordinate)
 
 ## Domain and Range
 

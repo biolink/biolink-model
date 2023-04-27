@@ -10,7 +10,7 @@ layout: default
 
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [biolink:subject](https://w3id.org/biolink/subject)
+URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
 
 ## Domain and Range
 

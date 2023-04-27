@@ -1,16 +1,16 @@
 ---
 parent: Built-in Types
 grand_parent: Types
-title: https://w3id.org/biolink/linkml:types/Double
+title: metatype:Double
 layout: default
 ---
 
-# Type: https://w3id.org/biolink/linkml:types/Double
+# Type: Double
 
 
 A real number that conforms to the xsd:double specification
 
-URI: [https://w3id.org/biolink/linkml:types/Double](https://w3id.org/biolink/linkml:types/Double)
+URI: [metatype:Double](https://linkml.github.io/linkml-model/docs/types/Double)
 
 |  |  |  |
 | --- | --- | --- |

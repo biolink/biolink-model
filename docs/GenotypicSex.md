@@ -10,7 +10,7 @@ layout: default
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 
-URI: [biolink:GenotypicSex](https://w3id.org/biolink/GenotypicSex)
+URI: [biolink:GenotypicSex](https://w3id.org/biolink/vocab/GenotypicSex)
 
 
 ---

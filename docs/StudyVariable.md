@@ -10,7 +10,7 @@ layout: default
 
 a variable that is used as a measure in the investigation of a study
 
-URI: [biolink:StudyVariable](https://w3id.org/biolink/StudyVariable)
+URI: [biolink:StudyVariable](https://w3id.org/biolink/vocab/StudyVariable)
 
 
 ---

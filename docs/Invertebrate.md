@@ -10,7 +10,7 @@ layout: default
 
 An animal lacking a vertebral column. This group consists of 98% of all animal species.
 
-URI: [biolink:Invertebrate](https://w3id.org/biolink/Invertebrate)
+URI: [biolink:Invertebrate](https://w3id.org/biolink/vocab/Invertebrate)
 
 
 ---

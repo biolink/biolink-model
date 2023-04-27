@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum](https://w3id.org/biolink/ChemicalOrGeneOrGeneProductFormOrVariantEnum)
+URI: [biolink:ChemicalOrGeneOrGeneProductFormOrVariantEnum](https://w3id.org/biolink/vocab/ChemicalOrGeneOrGeneProductFormOrVariantEnum)
 
 
 ## Other properties

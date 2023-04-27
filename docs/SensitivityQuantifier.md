@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/SensitivityQuantifier)
+URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/vocab/SensitivityQuantifier)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between an entity and some other entity with similar features.
 
-URI: [biolink:similar_to](https://w3id.org/biolink/similar_to)
+URI: [biolink:similar_to](https://w3id.org/biolink/vocab/similar_to)
 
 ## Domain and Range
 

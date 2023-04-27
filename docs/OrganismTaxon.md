@@ -10,7 +10,7 @@ layout: default
 
 A classification of a set of organisms. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria). Can also be used to represent strains or subspecies.
 
-URI: [biolink:OrganismTaxon](https://w3id.org/biolink/OrganismTaxon)
+URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
 
 ---

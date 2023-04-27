@@ -10,7 +10,7 @@ layout: default
 
 A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 
-URI: [biolink:QuantityValue](https://w3id.org/biolink/QuantityValue)
+URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 holds between parts and wholes (material entities or processes)
 
-URI: [biolink:part_of](https://w3id.org/biolink/part_of)
+URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 
 ## Domain and Range
 

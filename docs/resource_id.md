@@ -13,7 +13,7 @@ translator_minimal
 
 The CURIE for an Information Resource that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
 
-URI: [biolink:resource_id](https://w3id.org/biolink/resource_id)
+URI: [biolink:resource_id](https://w3id.org/biolink/vocab/resource_id)
 
 ## Domain and Range
 

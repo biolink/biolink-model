@@ -10,7 +10,7 @@ layout: default
 
 Either a physical or processual entity.
 
-URI: [biolink:PhysicalEssenceOrOccurrent](https://w3id.org/biolink/PhysicalEssenceOrOccurrent)
+URI: [biolink:PhysicalEssenceOrOccurrent](https://w3id.org/biolink/vocab/PhysicalEssenceOrOccurrent)
 
 
 ---

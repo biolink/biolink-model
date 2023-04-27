@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_nearby_variant](https://w3id.org/biolink/has_nearby_variant)
+URI: [biolink:has_nearby_variant](https://w3id.org/biolink/vocab/has_nearby_variant)
 
 ## Domain and Range
 

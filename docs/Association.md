@@ -10,7 +10,7 @@ layout: default
 
 A typed association between two entities, supported by evidence
 
-URI: [biolink:Association](https://w3id.org/biolink/Association)
+URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
 
 ---

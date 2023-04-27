@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:indirectly_physically_interacts_with](https://w3id.org/biolink/indirectly_physically_interacts_with)
+URI: [biolink:indirectly_physically_interacts_with](https://w3id.org/biolink/vocab/indirectly_physically_interacts_with)
 
 ## Domain and Range
 

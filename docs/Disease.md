@@ -10,7 +10,7 @@ layout: default
 
 A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
 
-URI: [biolink:Disease](https://w3id.org/biolink/Disease)
+URI: [biolink:Disease](https://w3id.org/biolink/vocab/Disease)
 
 
 ---

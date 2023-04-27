@@ -10,7 +10,7 @@ layout: default
 
 describes an entity of which the state or quality is affected by another existing entity.
 
-URI: [biolink:affected_by](https://w3id.org/biolink/affected_by)
+URI: [biolink:affected_by](https://w3id.org/biolink/vocab/affected_by)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 
-URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/GeneToGeneHomologyAssociation)
+URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
 
 ---

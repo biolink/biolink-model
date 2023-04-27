@@ -10,7 +10,7 @@ layout: default
 
 A drug exposure is an intake of a particular drug.
 
-URI: [biolink:DrugExposure](https://w3id.org/biolink/DrugExposure)
+URI: [biolink:DrugExposure](https://w3id.org/biolink/vocab/DrugExposure)
 
 
 ---

@@ -13,7 +13,7 @@ translator_minimal
 
 A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
 
-URI: [biolink:derivative_qualifier](https://w3id.org/biolink/derivative_qualifier)
+URI: [biolink:derivative_qualifier](https://w3id.org/biolink/vocab/derivative_qualifier)
 
 ## Domain and Range
 
@@ -35,6 +35,6 @@ URI: [biolink:derivative_qualifier](https://w3id.org/biolink/derivative_qualifie
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='metabolite', description=None) |
+| **Examples:** | | Example(value='metabolite', description=None, object=None) |
 | **In Subsets:** | | translator_minimal |
 

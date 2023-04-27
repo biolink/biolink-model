@@ -10,7 +10,7 @@ layout: default
 
 One or more causally connected executions of molecular functions
 
-URI: [biolink:BiologicalProcess](https://w3id.org/biolink/BiologicalProcess)
+URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
 
 
 ---

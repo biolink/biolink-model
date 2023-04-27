@@ -10,7 +10,7 @@ layout: default
 
 Qualifiers for entity to disease or phenotype associations.
 
-URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/EntityToFeatureOrDiseaseQualifiersMixin)
+URI: [biolink:EntityToFeatureOrDiseaseQualifiersMixin](https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiersMixin)
 
 
 ---

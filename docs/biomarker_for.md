@@ -13,7 +13,7 @@ translator_minimal
 
 holds between a measurable chemical entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
 
-URI: [biolink:biomarker_for](https://w3id.org/biolink/biomarker_for)
+URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
 
 ## Domain and Range
 

@@ -10,7 +10,7 @@ layout: default
 
 Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP).
 
-URI: [biolink:Publication](https://w3id.org/biolink/Publication)
+URI: [biolink:Publication](https://w3id.org/biolink/vocab/Publication)
 
 
 ---

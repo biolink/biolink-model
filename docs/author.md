@@ -10,7 +10,7 @@ layout: default
 
 an instance of one (co-)creator primarily responsible for a written work
 
-URI: [biolink:author](https://w3id.org/biolink/author)
+URI: [biolink:author](https://w3id.org/biolink/vocab/author)
 
 ## Domain and Range
 

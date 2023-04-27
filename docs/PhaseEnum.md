@@ -10,7 +10,7 @@ layout: default
 
 phase
 
-URI: [biolink:PhaseEnum](https://w3id.org/biolink/PhaseEnum)
+URI: [biolink:PhaseEnum](https://w3id.org/biolink/vocab/PhaseEnum)
 
 
 ## Other properties

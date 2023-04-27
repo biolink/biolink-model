@@ -10,7 +10,7 @@ layout: default
 
 An anatomical structure with the potential of have an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
 
-URI: [biolink:PathologicalAnatomicalStructure](https://w3id.org/biolink/PathologicalAnatomicalStructure)
+URI: [biolink:PathologicalAnatomicalStructure](https://w3id.org/biolink/vocab/PathologicalAnatomicalStructure)
 
 
 ---

@@ -10,7 +10,7 @@ layout: default
 
 A chemical modification of a polypeptide or protein that occurs after translation.  e.g. polypeptide cleavage to form separate proteins, methylation or acetylation of histone tail amino acids,  protein ubiquitination.
 
-URI: [biolink:PosttranslationalModification](https://w3id.org/biolink/PosttranslationalModification)
+URI: [biolink:PosttranslationalModification](https://w3id.org/biolink/vocab/PosttranslationalModification)
 
 
 ---

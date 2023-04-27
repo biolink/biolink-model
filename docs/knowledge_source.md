@@ -10,7 +10,7 @@ layout: default
 
 An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
 
-URI: [biolink:knowledge_source](https://w3id.org/biolink/knowledge_source)
+URI: [biolink:knowledge_source](https://w3id.org/biolink/vocab/knowledge_source)
 
 ## Domain and Range
 

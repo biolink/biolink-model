@@ -10,7 +10,7 @@ layout: default
 
 
 
-URI: [biolink:has_distribution](https://w3id.org/biolink/has_distribution)
+URI: [biolink:has_distribution](https://w3id.org/biolink/vocab/has_distribution)
 
 ## Domain and Range
 

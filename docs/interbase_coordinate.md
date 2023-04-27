@@ -10,7 +10,7 @@ layout: default
 
 A position in interbase coordinates. Interbase coordinates start at position 0 instead of position 1. This is applied to a sequence localization edge.
 
-URI: [biolink:interbase_coordinate](https://w3id.org/biolink/interbase_coordinate)
+URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)
 
 ## Domain and Range
 

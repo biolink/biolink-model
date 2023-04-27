@@ -13,7 +13,7 @@ translator_minimal
 
 holds between material entity or site and a material entity that is located within it (but not considered a part of it)
 
-URI: [biolink:location_of](https://w3id.org/biolink/location_of)
+URI: [biolink:location_of](https://w3id.org/biolink/vocab/location_of)
 
 ## Domain and Range
 
