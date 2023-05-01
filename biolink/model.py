@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-26T22:56:16
+# Generation date: 2023-04-27T22:05:52
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.3.0"
+version = "3.3.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -252,7 +252,7 @@ ZFIN = CurieNamespace('ZFIN', 'http://identifiers.org/zfin/')
 ZFS = CurieNamespace('ZFS', 'http://purl.obolibrary.org/obo/ZFS_')
 ZP = CurieNamespace('ZP', 'http://purl.obolibrary.org/obo/ZP_')
 APOLLO = CurieNamespace('apollo', 'https://github.com/GMOD/Apollo')
-BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
+BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOSCHEMAS = CurieNamespace('bioschemas', 'https://bioschemas.org/')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCID = CurieNamespace('dcid', 'https://datacommons.org/browser/')
