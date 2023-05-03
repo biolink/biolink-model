@@ -526,12 +526,6 @@ slots:
     in_subset:
       - translator_minimal
 
-  translator architecture category:
-    is_a: node property
-    description: >-
-    range: TranslatorArchitectureCategoryEnum
-    in_subset:
-      - translator_minimal
 
   publication type:
     slot_uri: dct:type
@@ -6297,8 +6291,6 @@ classes:
       - id
       - xref
       - synonym
-      - translator category
-      - has contributor
       - description
     description: >-
       A database or knowledgebase and its supporting ecosystem of interfaces 
@@ -10676,12 +10668,6 @@ classes:
           predicate describing the relationship between the taxon and the environment
 
 enums:
-
-  TranslatorArchitectureCategoryEnum:
-    permissible_values:
-      KP:
-      ARA:
-
   InformationResourceStatusEnum:
     permissible_values:
       released:
