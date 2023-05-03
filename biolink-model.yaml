@@ -3182,7 +3182,7 @@ slots:
   contributes to:
     is_a: related to at instance level
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the
+      holds between two entities where the occurrence, existence, or activity of one contributes to the
       occurrence or generation of the other
     in_subset:
       - translator_minimal
@@ -6342,6 +6342,9 @@ classes:
        # UMLS Semantic Type "Intellectual Product"
       - STY:T170
     id_prefixes:
+      - PMID
+      - PMC
+      - DOI
       - NLMID
     in_subset:
       - model_organism_database
