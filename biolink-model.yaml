@@ -5582,6 +5582,12 @@ slots:
     is_a: association slot
     range: disease or phenotypic feature
 
+  information resources:
+    description: a collection of information resources
+    multivalued: true
+    range: information resource
+    inlined_as_list: true
+
   publications:
     aliases: ['supporting publications', 'supporting documents']
     description: >-
@@ -6303,6 +6309,12 @@ classes:
     in_subset:
       - translator_minimal
 
+  InformationResourceCollection:
+    tree_root: true
+    description: >-
+      A collection of information resources
+    slots:
+      - information resources
 
    ## Publications
 
