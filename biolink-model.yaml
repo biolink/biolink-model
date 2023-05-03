@@ -526,6 +526,13 @@ slots:
     in_subset:
       - translator_minimal
 
+  translator architecture category:
+    is_a: node property
+    description: >-
+    range: TranslatorArchitectureCategoryEnum
+    in_subset:
+      - translator_minimal
+
   publication type:
     slot_uri: dct:type
     description: >-
@@ -5697,6 +5704,11 @@ slots:
     description: >-
     range: FDAApprovalStatusEnum
 
+  information resource status:
+    is_a: node property
+    description: the status of the infores identifier, default is released
+    range: InformationResourceStatusEnum
+
   supporting study metadata:
     is_a: association slot
     description: >-
@@ -6279,6 +6291,15 @@ classes:
   information resource:
     is_a: information content entity
     aliases: ['knowledgebase']
+    slots:
+      - information resource status
+      - name
+      - id
+      - xref
+      - synonym
+      - translator category
+      - has contributor
+      - description
     description: >-
       A database or knowledgebase and its supporting ecosystem of interfaces 
       and services that deliver content to consumers (e.g. web portals, APIs, 
@@ -10655,6 +10676,17 @@ classes:
           predicate describing the relationship between the taxon and the environment
 
 enums:
+
+  TranslatorArchitectureCategoryEnum:
+    permissible_values:
+      KP:
+      ARA:
+
+  InformationResourceStatusEnum:
+    permissible_values:
+      released:
+      deprecated:
+      draft:
 
   AnatomicalContextQualifierEnum:
     reachable_from:
