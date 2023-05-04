@@ -2017,9 +2017,17 @@ linkml:Nodeidentifier NONLITERAL
 
 <InformationResource> CLOSED {
     (  $<InformationResource_tes> (  &<InformationContentEntity_tes> ;
-          rdf:type [ <InformationContentEntity> ] ?
+          rdf:type [ <InformationContentEntity> ] ? ;
+          <information_resource_status> @<InformationResourceStatusEnum> ? ;
+          <synonym> @<LabelType> *
        ) ;
        rdf:type [ <InformationResource> ]
+    )
+}
+
+<InformationResourceCollection> CLOSED {
+    (  $<InformationResourceCollection_tes> <information_resources> @<InformationResource> * ;
+       rdf:type [ <InformationResourceCollection> ] ?
     )
 }
 

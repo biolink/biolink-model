@@ -16259,6 +16259,10 @@
                     "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
+                "information_resource_status": {
+                    "$ref": "#/$defs/InformationResourceStatusEnum",
+                    "description": "the status of the infores identifier, default is released"
+                },
                 "iri": {
                     "description": "An IRI for an entity. This is determined by the id using expansion rules.",
                     "type": "string"
@@ -16280,6 +16284,13 @@
                 "rights": {
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -16300,6 +16311,31 @@
             ],
             "title": "InformationResource",
             "type": "object"
+        },
+        "InformationResourceCollection": {
+            "additionalProperties": false,
+            "description": "A collection of information resources",
+            "properties": {
+                "information_resources": {
+                    "description": "a collection of information resources",
+                    "items": {
+                        "$ref": "#/$defs/InformationResource"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "InformationResourceCollection",
+            "type": "object"
+        },
+        "InformationResourceStatusEnum": {
+            "description": "",
+            "enum": [
+                "released",
+                "deprecated",
+                "draft"
+            ],
+            "title": "InformationResourceStatusEnum",
+            "type": "string"
         },
         "Invertebrate": {
             "additionalProperties": false,
@@ -27623,6 +27659,15 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
+    "properties": {
+        "information_resources": {
+            "description": "a collection of information resources",
+            "items": {
+                "$ref": "#/$defs/InformationResource"
+            },
+            "type": "array"
+        }
+    },
     "title": "Biolink-Model",
     "type": "object",
     "version": "3.3.1"
