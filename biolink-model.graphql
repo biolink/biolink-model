@@ -3523,19 +3523,26 @@ type InformationContentEntityToNamedThingAssociation
 
 type InformationResource
   {
-    id: String!
     iri: IriType
     type: [String]
-    name: LabelType
-    description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
-    xref: [Uriorcurie]
     category: [CategoryType]!
     license: String
     rights: String
     format: String
     creationDate: Date
+    informationResourceStatus: InformationResourceStatusEnum
+    name: LabelType
+    id: String!
+    xref: [Uriorcurie]
+    synonym: [LabelType]
+    description: NarrativeText
+  }
+
+type InformationResourceCollection
+  {
+    informationResources: [InformationResource]
   }
 
 type Invertebrate

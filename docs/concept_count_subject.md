@@ -30,5 +30,5 @@ URI: [biolink:concept_count_subject](https://w3id.org/biolink/vocab/concept_coun
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='489', description=None) |
+| **Examples:** | | Example(value='489', description=None, object=None) |
 

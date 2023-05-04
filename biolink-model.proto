@@ -3193,19 +3193,26 @@ message InformationContentEntityToNamedThingAssociation
 // A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
 message InformationResource
  {
-  string id = 0
   iriType iri = 0
  repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
  repeated  attribute hasAttribute = 0
  repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
   string license = 0
   string rights = 0
   string format = 0
   date creationDate = 0
+  informationResourceStatusEnum informationResourceStatus = 0
+  labelType name = 0
+  string id = 0
+ repeated  uriorcurie xref = 0
+ repeated  labelType synonym = 0
+  narrativeText description = 0
+ }
+// A collection of information resources
+message InformationResourceCollection
+ {
+ repeated  informationResource informationResources = 0
  }
 // An animal lacking a vertebral column. This group consists of 98% of all animal species.
 message Invertebrate

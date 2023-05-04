@@ -20,6 +20,14 @@ class ConfiguredBaseModel(WeakRefShimBaseModel,
     pass                    
 
 
+class InformationResourceStatusEnum(str, Enum):
+    
+    released = "released"
+    deprecated = "deprecated"
+    draft = "draft"
+    
+    
+
 class AnatomicalContextQualifierEnum(str, Enum):
     
     
@@ -993,13 +1001,17 @@ class InformationResource(InformationContentEntity):
     """
     A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
     """
+    information_resource_status: Optional[InformationResourceStatusEnum] = Field(None, description="""the status of the infores identifier, default is released""")
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
+    synonym: Optional[List[str]] = Field(default_factory=list, description="""Alternate human-readable names for a thing""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     license: Optional[str] = Field(None)
     rights: Optional[str] = Field(None)
     format: Optional[str] = Field(None)
     creation_date: Optional[date] = Field(None, description="""date on which an entity was created. This can be applied to nodes or edges""")
     provided_by: Optional[List[str]] = Field(None, description="""The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.""")
-    xref: Optional[List[str]] = Field(default_factory=list, description="""A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.""")
-    id: str = Field(None, description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/InformationResource","biolink:InformationResource"]] = Field(["biolink:InformationResource"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -1007,9 +1019,15 @@ class InformationResource(InformationContentEntity):
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
 In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
     type: Optional[List[str]] = Field(default_factory=list)
-    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
-    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
     has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class InformationResourceCollection(ConfiguredBaseModel):
+    """
+    A collection of information resources
+    """
+    information_resources: Optional[List[InformationResource]] = Field(None, description="""a collection of information resources""")
     
 
 
@@ -8064,6 +8082,7 @@ DatasetSummary.update_forward_refs()
 ConfidenceLevel.update_forward_refs()
 EvidenceType.update_forward_refs()
 InformationResource.update_forward_refs()
+InformationResourceCollection.update_forward_refs()
 Publication.update_forward_refs()
 Book.update_forward_refs()
 BookChapter.update_forward_refs()

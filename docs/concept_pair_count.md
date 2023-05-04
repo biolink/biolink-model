@@ -30,5 +30,5 @@ URI: [biolink:concept_pair_count](https://w3id.org/biolink/vocab/concept_pair_co
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='1731', description=None) |
+| **Examples:** | | Example(value='1731', description=None, object=None) |
 

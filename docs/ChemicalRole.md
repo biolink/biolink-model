@@ -117,6 +117,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='CHEBI:35469', description=None) |
+| **Examples:** | | Example(value='CHEBI:35469', description=None, object=None) |
 | **Exact Mappings:** | | CHEBI:51086 |
 

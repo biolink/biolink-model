@@ -30,5 +30,5 @@ URI: [biolink:supporting_document_type](https://w3id.org/biolink/vocab/supportin
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Journal Article', description=None) |
+| **Examples:** | | Example(value='Journal Article', description=None, object=None) |
 
