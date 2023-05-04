@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-01T22:15:54
+# Generation date: 2023-05-04T21:31:49
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -2451,12 +2451,54 @@ class InformationResource(InformationContentEntity):
 
     id: Union[str, InformationResourceId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    information_resource_status: Optional[Union[str, "InformationResourceStatusEnum"]] = None
+    name: Optional[Union[str, LabelType]] = None
+    xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
+    description: Optional[Union[str, NarrativeText]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InformationResourceId):
             self.id = InformationResourceId(self.id)
+
+        if self.information_resource_status is not None and not isinstance(self.information_resource_status, InformationResourceStatusEnum):
+            self.information_resource_status = InformationResourceStatusEnum(self.information_resource_status)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        if not isinstance(self.xref, list):
+            self.xref = [self.xref] if self.xref is not None else []
+        self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        if not isinstance(self.synonym, list):
+            self.synonym = [self.synonym] if self.synonym is not None else []
+        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
+
+        if self.description is not None and not isinstance(self.description, NarrativeText):
+            self.description = NarrativeText(self.description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class InformationResourceCollection(YAMLRoot):
+    """
+    A collection of information resources
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationResourceCollection
+    class_class_curie: ClassVar[str] = "biolink:InformationResourceCollection"
+    class_name: ClassVar[str] = "InformationResourceCollection"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.InformationResourceCollection
+
+    information_resources: Optional[Union[Dict[Union[str, InformationResourceId], Union[dict, InformationResource]], List[Union[dict, InformationResource]]]] = empty_dict()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        self._normalize_inlined_as_list(slot_name="information_resources", slot_type=InformationResource, key_name="id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -10152,6 +10194,16 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class InformationResourceStatusEnum(EnumDefinitionImpl):
+
+    released = PermissibleValue(text="released")
+    deprecated = PermissibleValue(text="deprecated")
+    draft = PermissibleValue(text="draft")
+
+    _defn = EnumDefinition(
+        name="InformationResourceStatusEnum",
+    )
+
 class AnatomicalContextQualifierEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -11786,6 +11838,9 @@ slots.expression_site = Slot(uri=BIOLINK.expression_site, name="expression site"
 slots.phenotypic_state = Slot(uri=BIOLINK.phenotypic_state, name="phenotypic state", curie=BIOLINK.curie('phenotypic_state'),
                    model_uri=BIOLINK.phenotypic_state, domain=Association, range=Optional[Union[str, DiseaseOrPhenotypicFeatureId]])
 
+slots.information_resources = Slot(uri=BIOLINK.information_resources, name="information resources", curie=BIOLINK.curie('information_resources'),
+                   model_uri=BIOLINK.information_resources, domain=None, range=Optional[Union[Dict[Union[str, InformationResourceId], Union[dict, InformationResource]], List[Union[dict, InformationResource]]]])
+
 slots.publications = Slot(uri=BIOLINK.publications, name="publications", curie=BIOLINK.curie('publications'),
                    model_uri=BIOLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
@@ -11821,6 +11876,9 @@ slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase')
 
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
+
+slots.information_resource_status = Slot(uri=BIOLINK.information_resource_status, name="information resource status", curie=BIOLINK.curie('information_resource_status'),
+                   model_uri=BIOLINK.information_resource_status, domain=NamedThing, range=Optional[Union[str, "InformationResourceStatusEnum"]])
 
 slots.supporting_study_metadata = Slot(uri=BIOLINK.supporting_study_metadata, name="supporting study metadata", curie=BIOLINK.curie('supporting_study_metadata'),
                    model_uri=BIOLINK.supporting_study_metadata, domain=Association, range=Optional[str])

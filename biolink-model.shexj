@@ -10335,6 +10335,20 @@
                            ]
                         },
                         "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/information_resource_status",
+                        "valueExpr": "https://w3id.org/biolink/vocab/InformationResourceStatusEnum",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/synonym",
+                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                        "min": 0,
+                        "max": -1
                      }
                   ]
                },
@@ -10348,6 +10362,35 @@
                      ]
                   },
                   "min": 1
+               }
+            ]
+         }
+      },
+      {
+         "type": "Shape",
+         "id": "https://w3id.org/biolink/vocab/InformationResourceCollection",
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "id": "https://w3id.org/biolink/vocab/InformationResourceCollection_tes",
+                  "predicate": "https://w3id.org/biolink/vocab/information_resources",
+                  "valueExpr": "https://w3id.org/biolink/vocab/InformationResource",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/InformationResourceCollection"
+                     ]
+                  },
+                  "min": 0
                }
             ]
          }
