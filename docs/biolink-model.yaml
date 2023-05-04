@@ -526,6 +526,7 @@ slots:
     in_subset:
       - translator_minimal
 
+
   publication type:
     slot_uri: dct:type
     description: >-
@@ -3182,7 +3183,7 @@ slots:
   contributes to:
     is_a: related to at instance level
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the
+      holds between two entities where the occurrence, existence, or activity of one contributes to the
       occurrence or generation of the other
     in_subset:
       - translator_minimal
@@ -5581,6 +5582,12 @@ slots:
     is_a: association slot
     range: disease or phenotypic feature
 
+  information resources:
+    description: a collection of information resources
+    multivalued: true
+    range: information resource
+    inlined_as_list: true
+
   publications:
     aliases: ['supporting publications', 'supporting documents']
     description: >-
@@ -5696,6 +5703,11 @@ slots:
     is_a: association slot
     description: >-
     range: FDAApprovalStatusEnum
+
+  information resource status:
+    is_a: node property
+    description: the status of the infores identifier, default is released
+    range: InformationResourceStatusEnum
 
   supporting study metadata:
     is_a: association slot
@@ -6279,6 +6291,13 @@ classes:
   information resource:
     is_a: information content entity
     aliases: ['knowledgebase']
+    slots:
+      - information resource status
+      - name
+      - id
+      - xref
+      - synonym
+      - description
     description: >-
       A database or knowledgebase and its supporting ecosystem of interfaces 
       and services that deliver content to consumers (e.g. web portals, APIs, 
@@ -6290,6 +6309,12 @@ classes:
     in_subset:
       - translator_minimal
 
+  InformationResourceCollection:
+    tree_root: true
+    description: >-
+      A collection of information resources
+    slots:
+      - information resources
 
    ## Publications
 
@@ -6342,6 +6367,9 @@ classes:
        # UMLS Semantic Type "Intellectual Product"
       - STY:T170
     id_prefixes:
+      - PMID
+      - PMC
+      - doi
       - NLMID
     in_subset:
       - model_organism_database
@@ -10652,6 +10680,11 @@ classes:
           predicate describing the relationship between the taxon and the environment
 
 enums:
+  InformationResourceStatusEnum:
+    permissible_values:
+      released:
+      deprecated:
+      draft:
 
   AnatomicalContextQualifierEnum:
     reachable_from:

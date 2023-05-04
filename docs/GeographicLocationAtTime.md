@@ -127,10 +127,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from entity:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -145,10 +141,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
@@ -169,6 +161,20 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [longitude](longitude.md)  <sub>0..1</sub>
      * Description: longitude
      * Range: [Float](types/Float.md)
+
+### Inherited from information resource:
+
+ * [information resource status](information_resource_status.md)  <sub>0..1</sub>
+     * Description: the status of the infores identifier, default is released
+     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

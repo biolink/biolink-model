@@ -333,6 +333,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
  * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
  * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
+ * [InformationResourceCollection](InformationResourceCollection.md) - A collection of information resources
  * [MappingCollection](MappingCollection.md) - A collection of deprecated mappings.
  * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
  * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
@@ -453,7 +454,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [consumes](consumes.md)
  * [contains process](contains_process.md)
  * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
- * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+ * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one contributes to the occurrence or generation of the other
      * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
  * [contribution from](contribution_from.md)
      * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -795,7 +796,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [completed by](completed_by.md)
          * [contains process](contains_process.md)
          * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
-         * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+         * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one contributes to the occurrence or generation of the other
              * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
          * [contribution from](contribution_from.md)
              * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -1009,7 +1010,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [completed by](completed_by.md)
      * [contains process](contains_process.md)
      * [contraindicated for](contraindicated_for.md) - Holds between a drug and a disease or phenotype, such that a person with that disease should not be treated with the drug.
-     * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+     * [contributes to](contributes_to.md) - holds between two entities where the occurrence, existence, or activity of one contributes to the occurrence or generation of the other
          * [causes](causes.md) - holds between two entities where the occurrence, existence, or activity of one causes the occurrence or generation of the other
      * [contribution from](contribution_from.md)
          * [caused by](caused_by.md) - holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or generation of the other
@@ -1224,6 +1225,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
  * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
+ * [information resource status](information_resource_status.md) - the status of the infores identifier, default is released
  * [ingest date](ingest_date.md)
  * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
  * [is supplement](is_supplement.md)
@@ -1273,6 +1275,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
      * [has zygosity](has_zygosity.md)
      * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
+     * [information resource status](information_resource_status.md) - the status of the infores identifier, default is released
      * [ingest date](ingest_date.md)
      * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
      * [is supplement](is_supplement.md)
@@ -1666,6 +1669,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [highest FDA approval status](highest_FDA_approval_status.md) - Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+ * [information resources](information_resources.md) - a collection of information resources
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [mapped predicate](mapped_predicate.md) - The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.
  * [name](name.md) - A human-readable name for an attribute or entity.
@@ -1754,6 +1758,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md) - please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
  * [GeneOrGeneProductOrChemicalEntityAspectEnum](GeneOrGeneProductOrChemicalEntityAspectEnum.md)
  * [GeneOrGeneProductOrChemicalPartQualifierEnum](GeneOrGeneProductOrChemicalPartQualifierEnum.md)
+ * [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
  * [LogicalInterpretationEnum](LogicalInterpretationEnum.md)
  * [PhaseEnum](PhaseEnum.md) - phase
  * [ReactionDirectionEnum](ReactionDirectionEnum.md)

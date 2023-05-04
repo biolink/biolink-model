@@ -15,7 +15,7 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Association]-%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Association]-%20aggregator%20knowledge%20source%200..%2A%3E[InformationResource%7Cinformation_resource_status:InformationResourceStatusEnum%20%3F;synonym:label_type%20%2A;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationResourceCollection]++-%20information%20resources%200..%2A%3E[InformationResource],[Association]-%20knowledge%20source%200..1%3E[InformationResource],[Association]-%20primary%20knowledge%20source%200..1%3E[InformationResource],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity],[Attribute],[Association],[InformationResourceCollection])
 
 ---
 
@@ -27,6 +27,7 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 ## Referenced by class
 
  *  **[Association](Association.md)** *[aggregator knowledge source](aggregator_knowledge_source.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
+ *  **None** *[information resources](information_resources.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[knowledge source](knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[primary knowledge source](primary_knowledge_source.md)*  <sub>0..1</sub>  **[InformationResource](InformationResource.md)**
  *  **[Association](Association.md)** *[supporting data set](supporting_data_set.md)*  <sub>0..\*</sub>  **[InformationResource](InformationResource.md)**
@@ -35,12 +36,22 @@ URI: [biolink:InformationResource](https://w3id.org/biolink/vocab/InformationRes
 ## Attributes
 
 
-### Inherited from entity:
+### Own
 
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [id](id.md)  <sub>1..1</sub>
      * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
+ * [information resource status](information_resource_status.md)  <sub>0..1</sub>
+     * Description: the status of the infores identifier, default is released
+     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
+
+### Inherited from entity:
+
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -55,10 +66,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)

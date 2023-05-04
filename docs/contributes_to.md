@@ -11,7 +11,7 @@ translator_minimal
 {: .translator_minimal-subset-label }
 
 
-holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+holds between two entities where the occurrence, existence, or activity of one contributes to the occurrence or generation of the other
 
 URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 
