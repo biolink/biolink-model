@@ -113,5 +113,5 @@ URI: [biolink:subject_label_closure](https://w3id.org/biolink/vocab/subject_labe
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="['BRACA1']", description="The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.", object=None) |
+| **Examples:** | | Example(value="['BRACA1']", description="The subject label closure of the association between the gene 'BRCA1' and the disease 'breast cancer' is the set of all labels that are ancestors of 'BRCA1' in the biolink model.") |
 

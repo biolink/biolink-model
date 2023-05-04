@@ -30,5 +30,5 @@ URI: [biolink:ln_ratio_confidence_interval](https://w3id.org/biolink/vocab/ln_ra
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='2.922827136', description=None, object=None) |
+| **Examples:** | | Example(value='2.922827136', description=None) |
 
