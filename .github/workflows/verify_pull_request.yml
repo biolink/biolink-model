@@ -51,6 +51,7 @@ jobs:
       - name: Run tests
         run: |
           poetry run make test
+          poetry run python scripts/verify_infores.py
 
 
 

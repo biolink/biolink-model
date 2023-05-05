@@ -4,7 +4,7 @@ import requests
 import csv
 from typing import List
 
-INFORES_TSV = os.path.join('../infores_catalog_nodes.tsv')
+INFORES_TSV = os.path.join('infores_catalog_nodes.tsv')
 
 
 def is_valid_urls(url: str) -> bool:
@@ -22,7 +22,7 @@ def is_valid_urls(url: str) -> bool:
 class InformationResource:
 
     def __init__(self) -> None:
-        self.sv = SchemaView('../biolink-model.yaml')
+        infores_map = {}
 
     def dump(self):
         raise NotImplementedError
@@ -32,7 +32,6 @@ class InformationResource:
         with open(INFORES_TSV, 'r') as tsv_file:
             reader = csv.reader(tsv_file, delimiter='\t')
             for line in reader:
-                print(line)
                 if line[2] == 'id' or line[3] == '':
                     continue
                 if line[2] == 'infores:athena' \
@@ -48,6 +47,7 @@ class InformationResource:
                         "description": line[5],
                     }
                 else:
+                    print(line)
                     print("Invalid infores URL:" + line[3] + " for " + line[2])
                     raise ValueError("Invalid infores URL")
 
