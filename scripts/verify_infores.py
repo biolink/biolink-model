@@ -2,21 +2,26 @@ from linkml_runtime.utils.schemaview import SchemaView
 import os
 import requests
 import csv
+import time
 from typing import List
 
 INFORES_TSV = os.path.join('infores_catalog_nodes.tsv')
 
 
 def is_valid_urls(url: str) -> bool:
-    try:
-        response = requests.get(url)
-        if response.status_code != 200:
-            print(response.status_code)
-            return False
-        return True
-    except requests.exceptions.RequestException:
-        print("Exception:" + url)
-        return False
+    retries = 3
+    for i in range(retries):
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                return True
+            else:
+                print(f"Response status code: {response.status_code}. Retrying...")
+                time.sleep(1)
+        except requests.exceptions.RequestException as e:
+            print(f"Exception: {e}. Retrying...")
+            time.sleep(1)
+    return False
 
 
 class InformationResource:
@@ -40,6 +45,7 @@ class InformationResource:
                         or line[2] == 'infores:isb-incov' \
                         or line[2] == 'infores:preppi'  \
                         or line[2] == 'infores:ttd' \
+                        or line[2] == 'infores:flybase' \
                         or is_valid_urls(line[3]):
                     infores_map[line[2]] = {
                         "status": line[0],
