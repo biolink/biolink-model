@@ -13,44 +13,33 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
-        python-version: [ "3.9", "3.10" ]
+        python: [ "3.9", "3.10" ]
 
-    runs-on: ${{ matrix.os }}
-
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-      #----------------------------------------------
-      #          install poetry
-      #----------------------------------------------
-      - name: Install Poetry
-        run: pipx install poetry
-
-      #----------------------------------------------
-      #       check-out repo and set-up python
-      #----------------------------------------------
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v2
+        name: setup python environment
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'poetry'
+          python-version: ${{ matrix.python }}
 
-      #----------------------------------------------
-      #    install your root project, if required
-      #----------------------------------------------
-      - name: Install library
-        run: poetry install --no-interaction
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install poetry
+          poetry install 
 
       - name: Run tests
         run: |
-          poetry run make test
+         poetry run make test
 
 
 
