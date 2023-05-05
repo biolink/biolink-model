@@ -39,6 +39,8 @@ class InformationResource:
                         or line[2] == 'infores:isb-wellness' \
                         or line[0] == 'deprecated' \
                         or line[2] == 'infores:isb-incov' \
+                        or line[2] == 'infores:preppi'  \
+                        or line[2] == 'infores:ttd' \
                         or is_valid_urls(line[3]):
                     infores_map[line[2]] = {
                         "status": line[0],
