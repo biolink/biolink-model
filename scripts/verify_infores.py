@@ -34,7 +34,6 @@ class InformationResource:
             for line in reader:
                 if line[2] == 'id' or line[3] == '':
                     continue
-                print(line)
                 if line[2] == 'infores:athena' \
                         or line[2] == 'infores:isb-wellness' \
                         or line[0] == 'deprecated' \
