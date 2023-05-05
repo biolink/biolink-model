@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This initial version of the script assumes that the 'predicates' TSV file
+This initial version of the scripts assumes that the 'predicates' TSV file
 has the structure of the Anne Thessen September 2020 predicate inventory at
 https://docs.google.com/spreadsheets/d/1bnEk6Fs6n_pCYL73cl4G4_igbeCtilV7xEvt3W6hS9k/edit#gid=0
 """
