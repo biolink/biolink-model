@@ -65,7 +65,7 @@ jobs:
       - name: Build documentation
         run: |
           poetry install
-          poetry run python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+          poetry run python scripts/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
           cp biolink-model.yaml docs
           cp predicate_mapping.yaml docs
 
