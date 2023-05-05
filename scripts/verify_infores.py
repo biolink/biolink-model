@@ -36,6 +36,7 @@ class InformationResource:
                 if line[2] == 'id' or line[3] == '':
                     continue
                 if line[2] == 'infores:athena' \
+                        or line[2] == 'infores:isb-wellness' \
                         or line[0] == 'deprecated' \
                         or line[2] == 'infores:isb-incov' \
                         or is_valid_urls(line[3]):

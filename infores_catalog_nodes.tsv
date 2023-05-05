@@ -199,14 +199,14 @@ released	InterPro	infores:interpro	http://www.ebi.ac.uk/interpro
 released	Inxight: Drugs	infores:inxight-drugs	https://drugs.ncats.io/		"NCATS Inxight Drugs contains information on ingredients in medicinal products, including: US APPROVED DRUGS, MARKETED DRUGS and INVESTIGATIONAL DRUGS. Manually curated data supplied by the FDA and private companies, and provides marketing and regulatory status, rigorous drug ingredient definitions, biological activity, clinical use, and more."
 released	iProClass	infores:iproclass	http://pir.georgetown.edu/iproclass/		
 released	iRefIndex	infores:irefindex	https://irefindex.vib.be/wiki/index.php/iRefIndex		
-released	Institute for Systems Biology COVID-19 Immune Response Study	infores:isb-incov	https://isbscience.org/research/covid-19/	ISB Novel COronaVirus
+released	Institute for Systems Biology COVID-19 Immune Response Study	infores:isb-incov	https://isbscience.org/research/covid-19/	ISB Novel COronaVirus	
 released	Institute for Systems Biology Scientific Wellness	infores:isb-wellness	https://isbscience.org/research/scientificwellness/		
 released	Kyoto Encyclopedia of Genes and Genomes (KEGG)	infores:kegg	https://www.genome.jp/kegg/	KEGG	
 released	Knowledge Graph Exchange Archive	infores:kgea	https://archive.translator.ncats.io/		
-released	Translator Knowledge Collaboratory API	infores:knowledge-collaboratory	https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api		"Translator Reasoner API for the Knowledge Collaboratory, hosted on the [Nanopublications network](http://nanopub.org/wordpress/), for annotated drug indications or any other BioLink-compliant claims.    This Open API supports [Translator Reasoner API](https://github.com/NCATSTranslator/ReasonerAPI) queries and the [`KGX`](https://github.com/biolink/kgx) format   See the API GitHub repository: [github.com/MaastrichtU-IDS/knowledge-collaboratory-api](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api)   [![Test production API](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml/badge.svg)](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml)   This service is supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)"
+released	Translator Knowledge Collaboratory API	infores:knowledge-collaboratory		Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications network](https://nanopub.net/), for annotated drug  indications or any other BioLink-compliant claims. This Open API supports [Translator Reasoner API](https://github.com/NCATSTranslator/ReasonerAPI) queries and the [`KGX`](https://github.com/biolink/kgx) format   See the API GitHub repository: [github.com/MaastrichtU-IDS/knowledge-collaboratory-api](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api)   [![Test production API](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml/badge.svg)](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml) This service is supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)
 released	Life Science Resource Registry	infores:life-science-resource-registry	https://download.bio2rdf.org/files/release/3/lsr/lsr.html		
 released	Library of Integrated Network-Based Cellular Signatures	infores:lincs	http://www.lincsproject.org/	LINCS	
-released	Linked Structured Product Labels	infores:linkedspl	http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/	LinkedSPL	
+released	Linked Structured Product Labels	infores:linkedspl		LinkedSPL	
 released	LitVar API	infores:litvar	https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/LitVar/		"LitVar allows the search and retrieval of variant relevant information from the biomedical literature and shows key biological relations between a variant and its close related entities (e.g. genes, diseases, and drugs). The LitVar results are automatically extracted (with regular updates) from over 27 million PubMed articles as well as applicable full-text articles in PubMed Central."
 released	Logical Observation Identifiers Names and Codes	infores:loinc	https://loinc.org/	LOINC	
 released	LOINC (from UMLS)	infores:loinc-umls	"https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20(Logical%20Observations%20Identifiers,produced%20by%20the%20Regenstrief%20Institute."		
@@ -223,7 +223,7 @@ released	Mouse Genome Informatics	infores:mgi	http://www.informatics.jax.org/	MG
 released	Mouse pathology ontology	infores:mpath	https://obofoundry.org/ontology/mpath.html	MPATH	A structured controlled vocabulary of mutant and transgenic mouse pathology phenotypes
 released	Molecular Interactions Controlled Vocabulary	infores:mi	http://www.obofoundry.org/ontology/mi.html	MI	
 released	The microRNA Database 	infores:mirbase	http://www.mirbase.org/	miRBase	
-released	MiRGate	infores:mirgate	http://mirgate.bioinfo.cnio.es/miRGate/		
+released	MiRGate	infores:mirgate			
 released	Molecular Data Provider for NCATS Biomedical Translator Reasoners	infores:molepro	https://github.com/broadinstitute/molecular-data-provider		Molecular Data Provider for NCATS Biomedical Translator Reasoners
 deprecated	SciGraph-Monarch-Data	infores:monarch-data	scigraph-data.monarchinitiative.org/scigraph/docs/		
 deprecated	SciGraph-Monarch-Ontology	infores:monarch-ontology	scigraph-ontology.monarchinitiative.org/scigraph/docs/		
@@ -236,7 +236,7 @@ released	MyChem.info API	infores:mychem-info	http://mychem.info	mychem	Documenta
 released	MyDisease.info API	infores:mydisease-info	http://mydisease.info/	mydisease	Documentation of the MyDisease.info disease query web services.  Learn more about [mydisease.info](http://mydisease.info/)
 released	MyGene.info API	infores:mygene-info	https://mygene.info/	mygene	Documentation of the MyGene.info Gene Query web services. Learn more about [MyGene.info](http://mygene.info/)
 released	MyVariant.info API	infores:myvariant-info	http://myvariant.info/	myvariant	Documentation of the MyVariant.info Variant Query web services. Learn more about [MyVariant.info](http://myvariant.info/)
-released	Nanopublications Network	infores:nanopublications	http://nanopub.org/wordpress/	Nanopublications	
+released	Nanopublications Network	infores:nanopublications	http://nanopub.net/	Nanopublications	
 released	Neuro Behavior Ontology	infores:nbo	http://www.obofoundry.org/ontology/nbo.html	NBO	
 released	National Center for Advancing Translational Science Biomedical Data Translator Autonomous Relay System	infores:ncats-ars		"NCATS Translator Autonomous Relay System Translator  Autonomous Relay System, NCATS Translator ARS"	
 released	National Center for Biotechnology Information Gene	infores:ncbi-gene	http://www.ncbi.nlm.nih.gov/gene	"NGBI Gene, ncbigene"	
