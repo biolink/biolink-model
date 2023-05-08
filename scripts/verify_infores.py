@@ -25,15 +25,14 @@ def is_valid_urls(url: str) -> bool:
                     print(f"Response status code: {response.status}. Retrying...")
                     time.sleep(1)
         except requests.exceptions.RequestException as e:
-            try:
-                resp = requests.get(url)
-                if resp.status_code == 200:
-                    return True
-                else:
-                    print(f"Exception: {e}. Retrying...")
-                    time.sleep(1)
-            except requests.exceptions.RequestException as e:
-                print(url)
+            print(url)
+    try:
+        resp = requests.get(url)
+        if resp.status_code == 200:
+            return True
+    except requests.exceptions.RequestException as e:
+        print(f"Exception: {e}")
+        print(f"Response status code: {response.status}.", url)
     return False
 
 
