@@ -19,7 +19,7 @@ def is_valid_urls(url: str) -> bool:
     for i in range(retries):
         try:
             with urllib3.PoolManager(ssl_context=ctx) as http:
-                response = http.request("GET", url)
+                response = http.request("GET", url, headers={'User-Agent': 'Mozilla/5.0'})
                 if response.status == 200:
                     return True
                 else:
@@ -56,6 +56,8 @@ class InformationResource:
                         or line[2] == 'infores:preppi'  \
                         or line[2] == 'infores:ttd' \
                         or line[2] == 'infores:flybase' \
+                        or line[2] == 'infores:lincs' \
+                        or line[2] == 'infores:aeolus' \
                         or is_valid_urls(line[3]):
                     infores_map[line[2]] = {
                         "status": line[0],
