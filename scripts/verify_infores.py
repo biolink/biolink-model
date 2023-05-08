@@ -25,8 +25,15 @@ def is_valid_urls(url: str) -> bool:
                     print(f"Response status code: {response.status}. Retrying...")
                     time.sleep(1)
         except requests.exceptions.RequestException as e:
-            print(f"Exception: {e}. Retrying...")
-            time.sleep(1)
+            try:
+                resp = requests.get(url)
+                if resp.status_code == 200:
+                    return True
+                else:
+                    print(f"Exception: {e}. Retrying...")
+                    time.sleep(1)
+            except requests.exceptions.RequestException as e:
+                print(url)
     return False
 
 
@@ -44,7 +51,7 @@ class InformationResource:
             reader = csv.reader(tsv_file, delimiter='\t')
             for line in reader:
                 if len(line) < 5:
-                    raise ValueError("Invalid infores TSV: too few items in a line")
+                    raise ValueError("Invalid infores TSV: too few items in a line", line)
                 if line[2] == 'id' or line[0] == 'deprecated':
                     continue
                 elif line[3] == '' and line[0] != 'deprecated':
@@ -58,7 +65,6 @@ class InformationResource:
                             or line[2] == 'infores:preppi' \
                             or line[2] == 'infores:ttd' \
                             or line[2] == 'infores:flybase' \
-                            or line[2] == 'infores:lincs' \
                             or line[2] == 'infores:aeolus' \
                             or is_valid_urls(line[3]):
                         infores_map[line[2]] = {
