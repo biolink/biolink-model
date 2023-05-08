@@ -11,7 +11,7 @@ released	Athena	infores:athena	https://athena.ohdsi.org/search-terms/start
 released	Automat Alliance of Genome Resources	infores:automat-genome-alliance	https://github.com/NCATSTranslator/Translator-All/wiki/Automat#genome-alliance		
 released	Automat Biolink	infores:automat-biolink	https://github.com/NCATSTranslator/Translator-All/wiki/Automat#biolink		A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).
 deprecated	Automat Chemical normalization (trapi v-1.1.0)	infores:automat-chem-norm			"A graph  linking together similar compounds.  Two compounds are linked by an edge in the graph if they are equivalent when charge, salts, and stereochemistry are ignored."
-deprecated	Automat Chembio	infores:automat-chembio			A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).
+deprecated	Automat Chembio	infores:automat-chembio	https://chembio.com/	A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).	
 deprecated	Automat Cord19	infores:automat-cord19			A literature co-occurence graph based on parsing the CORD-19 paper set.
 deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite			A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.
 deprecated	Automat Cord19 Scigraph (trapi v-1.1.0)	infores:automat-cord19-scigraph			A literature co-occurence graph based on scigraph parsing of the CORD-19 paper set. All triples contain covid-19 as either subject or object.
@@ -290,7 +290,7 @@ released	PubMed Central	infores:pubmed-central	https://www.ncbi.nlm.nih.gov/pmc/
 released	QuickGO	infores:quickgo	https://www.ebi.ac.uk/QuickGO/api/index.html#!/gene_ontology/baseUrlUsingGET_1	QuickGO	
 released	Reactome	infores:reactome	http://reactome.org/ContentService/		
 released	RENCI BioNames	infores:renci-bionames	https://bionames.renci.org/apidocs/#/default/get_lookup__q___concept__	Bionames	
-released	Drug Repositioning Database	infores:repodb	https://portal.dbmi.hms.harvard.edu/projects/repoDB/	repoDB	
+released	Drug Repositioning Database	infores:repodb	http://apps.chiragjpgroup.org/repoDB/	repoDB	
 released	RGD API	infores:rgd	https://rgd.mcw.edu/		The RGD API
 released	Relations Ontology	infores:ro	http://www.obofoundry.org/ontology/ro.html	RO	
 released	ROBOKOP	infores:robokop	http://robokop.renci.org	Robokop	An API for answering biomedical questions

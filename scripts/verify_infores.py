@@ -47,7 +47,7 @@ class InformationResource:
                     raise ValueError("Invalid infores TSV: too few items in a line")
                 if line[2] == 'id' or line[0] == 'deprecated':
                     continue
-                elif line[3] == '':
+                elif line[3] == '' and line[0] != 'deprecated':
                     print(line)
                 else:
                     # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
