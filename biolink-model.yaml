@@ -1163,6 +1163,15 @@ slots:
     is_a: qualifier
     range: time type
 
+  disease or phenotypic feature context qualifier:
+    description: >-
+      the disease or phenotypic feature (phenotype) that provides the context in which 
+      an association is true.
+    is_a: qualifier
+    range: disease or phenotypic feature
+    in_subset:
+      - translator_minimal
+
   temporal interval qualifier:
     is_a: temporal context qualifier
     description: >-
