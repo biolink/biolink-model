@@ -3,6 +3,13 @@ import os
 import requests
 import csv
 import time
+import urllib3
+from urllib3.util.ssl_ import create_urllib3_context
+
+ctx = create_urllib3_context()
+ctx.load_default_certs()
+ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
+
 
 INFORES_TSV = os.path.join('infores_catalog_nodes.tsv')
 
@@ -11,12 +18,13 @@ def is_valid_urls(url: str) -> bool:
     retries = 3
     for i in range(retries):
         try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                return True
-            else:
-                print(f"Response status code: {response.status_code}. Retrying...")
-                time.sleep(1)
+            with urllib3.PoolManager(ssl_context=ctx) as http:
+                response = http.request("GET", url)
+                if response.status == 200:
+                    return True
+                else:
+                    print(f"Response status code: {response.status}. Retrying...")
+                    time.sleep(1)
         except requests.exceptions.RequestException as e:
             print(f"Exception: {e}. Retrying...")
             time.sleep(1)
