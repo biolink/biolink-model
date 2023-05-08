@@ -12,8 +12,8 @@ released	Automat Alliance of Genome Resources	infores:automat-genome-alliance	ht
 released	Automat Biolink	infores:automat-biolink	https://github.com/NCATSTranslator/Translator-All/wiki/Automat#biolink		A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).
 deprecated	Automat Chemical normalization (trapi v-1.1.0)	infores:automat-chem-norm			"A graph  linking together similar compounds.  Two compounds are linked by an edge in the graph if they are equivalent when charge, salts, and stereochemistry are ignored."
 deprecated	Automat Chembio	infores:automat-chembio	https://chembio.com/	A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).	
-deprecated	Automat Cord19	infores:automat-cord19			A literature co-occurence graph based on parsing the CORD-19 paper set.
-deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite			A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.
+deprecated	Automat Cord19	infores:automat-cord19	https://github.com/allenai/cord19	A literature co-occurence graph based on parsing the CORD-19 paper set.	
+deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite	https://github.com/allenai/cord19		A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.
 deprecated	Automat Cord19 Scigraph (trapi v-1.1.0)	infores:automat-cord19-scigraph			A literature co-occurence graph based on scigraph parsing of the CORD-19 paper set. All triples contain covid-19 as either subject or object.
 deprecated	Automat Covid Phenotypes (trapi v-1.1.0)	infores:automat-covid-phenotypes			A hand-curated graph of phenotypes of covid-19.
 deprecated	Automat Covidkop KG (trapi v-1.1.0)	infores:automat-covidkop			Knowledge graph constructed from Robokop KG by incorporating Cord-19 dataset and other covid related knowledge sources.
