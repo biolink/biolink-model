@@ -5375,10 +5375,10 @@ slots:
       The number of evidence instances that are connected to an association.
     range: integer
 
-  population count:
+  dataset count:
     is_a: association slot
     description: >-
-      The total number of instances (e.g., number of patients) in a dataset/cohort.
+      The total number of instances (e.g., number of patients, number of rows, etc) in a dataset/cohort.
     range: integer
     examples:
       - value: 100000
