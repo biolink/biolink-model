@@ -46,8 +46,10 @@ class InformationResource:
             for line in reader:
                 if len(line) < 5:
                     raise ValueError("Invalid infores TSV: too few items in a line")
-                if line[2] == 'id' or line[3] == '' or line[0] == 'deprecated':
+                if line[2] == 'id' or line[0] == 'deprecated':
                     continue
+                if line[3] == '':
+                    print(line)
                 # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
                 # user to accept a popup before resolving):
                 if line[2] == 'infores:athena' \
