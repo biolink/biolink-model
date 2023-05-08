@@ -6,7 +6,7 @@ from pydantic import BaseModel as BaseModel, Field
 from linkml_runtime.linkml_model import Decimal
 
 metamodel_version = "None"
-version = "3.3.1"
+version = "3.3.2"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'

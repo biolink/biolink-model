@@ -33,5 +33,5 @@ URI: [biolink:expression_site](https://w3id.org/biolink/vocab/expression_site)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='UBERON:0002037', description='cerebellum') |
+| **Examples:** | | Example(value='UBERON:0002037', description='cerebellum', object=None) |
 

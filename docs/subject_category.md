@@ -113,5 +113,5 @@ URI: [biolink:subject_category](https://w3id.org/biolink/vocab/subject_category)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.") |
+| **Examples:** | | Example(value='biolink:Gene', description="The subject category of the association between the gene 'BRCA1' and the disease 'breast cancer' is 'biolink:Gene'.", object=None) |
 

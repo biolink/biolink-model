@@ -30,5 +30,5 @@ URI: [biolink:supporting_text_section_type](https://w3id.org/biolink/vocab/suppo
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='Introduction', description=None) |
+| **Examples:** | | Example(value='Introduction', description=None, object=None) |
 

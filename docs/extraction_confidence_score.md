@@ -30,5 +30,5 @@ URI: [biolink:extraction_confidence_score](https://w3id.org/biolink/vocab/extrac
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='15', description=None) |
+| **Examples:** | | Example(value='15', description=None, object=None) |
 
