@@ -6,14 +6,14 @@ released	ARAGORN	infores:aragorn	https://github.com/ranking-agent/aragorn		ARAGO
 released	ARAGORN Ranker	infores:aragorn-ranker	https://github.com/ranking-agent/aragorn-ranker	ARAGORN	"ARAGORN Ranker: The ranker used by the ARAGORN ARA, which takes a TRAPI 1.0 message containing answers, and calculates numerical scores for each answer."
 released	ARAX Translator Reasoner	infores:arax	https://arax.ncats.io/	ARAX	TRAPI 1.1 endpoint for the NCATS Biomedical Translator Reasoner called ARAX
 released	Anatomical Therapeutic Chemical (ATC) Codes (from UMLS)	infores:atc-codes-umls	https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ATC/index.html		
-released	Autophagy Ontology	infores:atgo	http://atgo.ucsd.edu/	ATGO	
+released	Autophagy Ontology	infores:atgo	https://pubmed.ncbi.nlm.nih.gov/28132844/	ATGO	
 released	Athena	infores:athena	https://athena.ohdsi.org/search-terms/start		
 released	Automat Alliance of Genome Resources	infores:automat-genome-alliance	https://github.com/NCATSTranslator/Translator-All/wiki/Automat#genome-alliance		
 released	Automat Biolink	infores:automat-biolink	https://github.com/NCATSTranslator/Translator-All/wiki/Automat#biolink		A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).
 deprecated	Automat Chemical normalization (trapi v-1.1.0)	infores:automat-chem-norm			"A graph  linking together similar compounds.  Two compounds are linked by an edge in the graph if they are equivalent when charge, salts, and stereochemistry are ignored."
-deprecated	Automat Chembio	infores:automat-chembio			A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).
-deprecated	Automat Cord19	infores:automat-cord19			A literature co-occurence graph based on parsing the CORD-19 paper set.
-deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite			A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.
+deprecated	Automat Chembio	infores:automat-chembio	https://chembio.com/	A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).	
+deprecated	Automat Cord19	infores:automat-cord19	https://github.com/allenai/cord19	A literature co-occurence graph based on parsing the CORD-19 paper set.	
+deprecated	Automat Cord19 Scibite (trapi v-1.1.0)	infores:automat-cord19-scibite	https://github.com/allenai/cord19		A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19) of the CORD-19 paper set.
 deprecated	Automat Cord19 Scigraph (trapi v-1.1.0)	infores:automat-cord19-scigraph			A literature co-occurence graph based on scigraph parsing of the CORD-19 paper set. All triples contain covid-19 as either subject or object.
 deprecated	Automat Covid Phenotypes (trapi v-1.1.0)	infores:automat-covid-phenotypes			A hand-curated graph of phenotypes of covid-19.
 deprecated	Automat Covidkop KG (trapi v-1.1.0)	infores:automat-covidkop			Knowledge graph constructed from Robokop KG by incorporating Cord-19 dataset and other covid related knowledge sources.
@@ -111,7 +111,7 @@ released	Columbia Open Health Data (COHD)	infores:cohd	https://github.com/NCATST
 released	Columbia Open Health Data (COHD) for COVID-19 Research	infores:cohd-covid	https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP		"The Columbia Open Health Data (COHD) for COVID-19 Research API provides access to counts and frequencies (i.e., EHR visit prevalence) of conditions, procedures, drug exposures, and the co-occurrence frequencies between them for a cohort of hospitalized COVID-19 patients and two comparator cohorts of hospitalized influenza patients and hospitalized patients. Count and frequency data were derived from the [Columbia University Medical Center's](http://www.cumc.columbia.edu/) [OHDSI](https://www.ohdsi.org/) database including inpatient. Counts are the number of inpatient visits associated with the concept, e.g., diagnosed with a condition, exposed to a drug, or a procedure was performed. Frequencies are the number of unique visits associated with the concept divided by the total number of visits in the dataset, i.e., prevalence in the electronic health records. To protect patient privacy, all concepts and pairs of concepts where the count <= 10 were excluded, and counts were randomized by the Poisson distribution.           Datasets from three primary cohorts are available:  1) COVID-19: Hospitalized patients aged 18 or older with a COVID-19 related condition diagnosis and/or a confirmed positive COVID-19 test during their hospitalization period or within the prior 21 days. Date range: March 1, 2020 to September 1, 2020. This cohort is also further stratified by sex (male and female) and age (adult: 18-64, senior: 65+). 2) General inpatient: All hospitalized patients aged 18 or older. Date range: January 1, 2014 to December 31, 2019. 3) Influenza: Hospitalized patients aged 18 or older who had at least one occurrence of influenza conditions or pre-coordinated positive measurements or positive influenza testing in the prior 21 days or during their hospitalization period. Date range: January 1, 2014 to December 31, 2019.  Both hierarchical and non-hierarchical datasets are available for each cohort. In the hierarchical datasets, the counts for each concept include the visits from all descendant concepts. For example, the count for ibuprofen (ID 1177480) includes visits with Ibuprofen 600 MG Oral Tablet (ID 19019073), Ibuprofen 400 MG Oral Tablet (ID 19019072), Ibuprofen 20 MG/ML Oral Suspension (ID 19019050), etc.   Clinical concepts (e.g., conditions, procedures, drugs) are coded by their standard concept ID in the [OMOP Common Data Model](https://github.com/OHDSI/CommonDataModel/wiki). API methods are provided to map to/from other vocabularies supported in OMOP and other ontologies using the EMBL-EBI Ontology Xref Service (OxO).    The following resources are available through this API:    1. Metadata: Metadata on the COHD database, including dataset descriptions, number of concepts, etc.    2. OMOP: Access to the common vocabulary for name and concept identifier mapping   3. Clinical Frequencies: Access to the counts and frequencies of conditions, procedures, and drug exposures, and the associations between them. Frequency was determined as the number of visits with the code(s) / total number of visits.    4. Concept Associations: Inferred associations between concepts using chi-square analysis, ratio between observed to expected frequency, and relative frequency.    A [Python notebook](https://github.com/WengLab-InformaticsResearch/cohd_api/blob/master/notebooks/COHD_API_Example.ipynb) demonstrates simple examples of how to use the COHD API.   COHD was developed at the [Columbia University Department of Biomedical Informatics](https://www.dbmi.columbia.edu/) as a collaboration between the [Weng Lab](http://people.dbmi.columbia.edu/~chw7007/), [Tatonetti Lab](http://tatonettilab.org/), and the [NCATS Biomedical Data Translator](https://ncats.nih.gov/translator) program (TReK Team). This work was supported in part by grants: NCATS 1OT2TR003434, NLM R01LM012895, NCATS OT3TR002027, NLM R01LM009886-08A1, and NIGMS R01GM107145.  The following external resources may be useful:   [OHDSI](https://www.ohdsi.org/)   [OMOP Common Data Model](https://github.com/OHDSI/CommonDataModel/wiki)   [Athena](http://athena.ohdsi.org) (OMOP vocabularies, search, concept relationships, concept hierarchy)   [Atlas](http://www.ohdsi.org/web/atlas/) (OMOP vocabularies, search, concept relationships, concept hierarchy, concept sets)    [NCATS Biomedical Data Translator](https://sites.google.com/ncats.nih.gov/translator-io/home)"
 released	Columbia Open Health Data for COVID-19 Research API	infores:cohd-covid19-api	https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP	COHD COVID-19	
 released	Connections Hypothesis Provider API	infores:connections-hypothesis	https://github.com/di2ag/chp		A Translator Reasoner API for the Connections Hypothesis Provider
-released	COVID-19 Open Research Dataset	infores:cord19		CORD19	
+released	COVID-19 Open Research Dataset	infores:cord19	https://github.com/allenai/cord19	CORD19	
 released	COVID-19 Open Research Dataset Scibite	infores:cord19-scibite		CORD19-Scibite	
 released	Catalog of Somatic Mutations in Cancer	infores:cosmic	https://cancer.sanger.ac.uk/cosmic	COSMIC	
 deprecated	Covid Phenotypes	infores:covid-phenotypes			
@@ -128,7 +128,7 @@ released	Drug Gene Interaction Database	infores:dgidb	http://dgidb.genome.wustl.
 released	Drug-Induced Liver Injury Network (DILIN) Participant Data	infores:dili-network-study-data			
 released	Drosophila gross anatomy	infores:fbbt	https://obofoundry.org/ontology/fbbt.html	FBbt	An ontology representing the gross anatomy of Drosophila melanogaster.
 released	Disease Ontology	infores:disease-ontology	http://www.disease-ontology.org/	DO	
-released	Disease-gene associations mined from literature	infores:diseases			
+released	Disease-gene associations mined from literature	infores:diseases	https://diseases.jensenlab.org/About		
 released	DisGeNET	infores:disgenet	http://www.disgenet.org		
 released	Diseases & Traits in LD database	infores:distild		DistiLD database	
 released	Disease Ontology Annotation Framework (DOAF)	infores:doaf	https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049686	DOAF	
@@ -203,9 +203,9 @@ released	Institute for Systems Biology COVID-19 Immune Response Study	infores:is
 released	Institute for Systems Biology Scientific Wellness	infores:isb-wellness	https://isbscience.org/research/scientificwellness/		
 released	Kyoto Encyclopedia of Genes and Genomes (KEGG)	infores:kegg	https://www.genome.jp/kegg/	KEGG	
 released	Knowledge Graph Exchange Archive	infores:kgea	https://archive.translator.ncats.io/		
-released	Translator Knowledge Collaboratory API	infores:knowledge-collaboratory		Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications network](https://nanopub.net/), for annotated drug  indications or any other BioLink-compliant claims. This Open API supports [Translator Reasoner API](https://github.com/NCATSTranslator/ReasonerAPI) queries and the [`KGX`](https://github.com/biolink/kgx) format   See the API GitHub repository: [github.com/MaastrichtU-IDS/knowledge-collaboratory-api](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api)   [![Test production API](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml/badge.svg)](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml) This service is supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)	
+released	Translator Knowledge Collaboratory API	infores:knowledge-collaboratory	https://github.com/NCATSTranslator/Translator-All/wiki/Knowledge-Collaboratory-KP	Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications network](https://nanopub.net/), for annotated drug  indications or any other BioLink-compliant claims. This Open API supports [Translator Reasoner API](https://github.com/NCATSTranslator/ReasonerAPI) queries and the [`KGX`](https://github.com/biolink/kgx) format   See the API GitHub repository: [github.com/MaastrichtU-IDS/knowledge-collaboratory-api](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api)   [![Test production API](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml/badge.svg)](https://github.com/MaastrichtU-IDS/knowledge-collaboratory-api/actions/workflows/run-tests-prod.yml) This service is supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)	
 released	Life Science Resource Registry	infores:life-science-resource-registry	https://download.bio2rdf.org/files/release/3/lsr/lsr.html		
-released	Library of Integrated Network-Based Cellular Signatures	infores:lincs	http://www.lincsproject.org/	LINCS	
+released	Library of Integrated Network-Based Cellular Signatures	infores:lincs	https://www.lincsproject.org/	LINCS	
 released	Linked Structured Product Labels	infores:linkedspl		LinkedSPL	
 released	LitVar API	infores:litvar	https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/LitVar/		"LitVar allows the search and retrieval of variant relevant information from the biomedical literature and shows key biological relations between a variant and its close related entities (e.g. genes, diseases, and drugs). The LitVar results are automatically extracted (with regular updates) from over 27 million PubMed articles as well as applicable full-text articles in PubMed Central."
 released	Logical Observation Identifiers Names and Codes	infores:loinc	https://loinc.org/	LOINC	
@@ -223,7 +223,7 @@ released	Mouse Genome Informatics	infores:mgi	http://www.informatics.jax.org/	MG
 released	Mouse pathology ontology	infores:mpath	https://obofoundry.org/ontology/mpath.html	MPATH	A structured controlled vocabulary of mutant and transgenic mouse pathology phenotypes
 released	Molecular Interactions Controlled Vocabulary	infores:mi	http://www.obofoundry.org/ontology/mi.html	MI	
 released	The microRNA Database 	infores:mirbase	http://www.mirbase.org/	miRBase	
-released	MiRGate	infores:mirgate			
+released	MiRGate	infores:mirgate	https://pubmed.ncbi.nlm.nih.gov/25858286/		
 released	Molecular Data Provider for NCATS Biomedical Translator Reasoners	infores:molepro	https://github.com/broadinstitute/molecular-data-provider		Molecular Data Provider for NCATS Biomedical Translator Reasoners
 deprecated	SciGraph-Monarch-Data	infores:monarch-data	scigraph-data.monarchinitiative.org/scigraph/docs/		
 deprecated	SciGraph-Monarch-Ontology	infores:monarch-ontology	scigraph-ontology.monarchinitiative.org/scigraph/docs/		
@@ -250,8 +250,8 @@ released	National Drug Code Directory	infores:ndcd	https://www.fda.gov/drugs/dru
 released	National Drug Data File (NDDF) (from UMLS)	infores:nddf-umls			
 released	NDEx	infores:ndex	http://www.ndexbio.org		
 released	National Drug File - Reference Terminology (NDF-RT) (from UMLS)	infores:ndfrt	https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html		
-released	NEXO Align Ontology	infores:nexo-align			
-released	NEXO Construct Ontology	infores:nexo-construct			
+released	NEXO Align Ontology	infores:nexo-align	http://nexo.ucsd.edu/		
+released	NEXO Construct Ontology	infores:nexo-construct	http://nexo.ucsd.edu/		
 released	NIEHS Environmental Polymorphisms Registry	infores:niehs-epr-study-data		NIEHS EPR	
 released	nSides	infores:nsides	https://www.nsides.io/		
 released	Ontology Lookup Service API	infores:ols	https://www.ebi.ac.uk/ols/docs/api	OLS	"The OLS REST API provides access to key biological data from OLS. The services provide a unified interface to query information about ontology terms from GO (the Gene Ontology) and ECO (the Evidence & Conclusion Ontology), Gene Ontology annotations from the EBI's GOA database, and gene products (proteins from UniProt, RNA from RNAcentral and complexes from ComplexPortal). "
@@ -290,7 +290,7 @@ released	PubMed Central	infores:pubmed-central	https://www.ncbi.nlm.nih.gov/pmc/
 released	QuickGO	infores:quickgo	https://www.ebi.ac.uk/QuickGO/api/index.html#!/gene_ontology/baseUrlUsingGET_1	QuickGO	
 released	Reactome	infores:reactome	http://reactome.org/ContentService/		
 released	RENCI BioNames	infores:renci-bionames	https://bionames.renci.org/apidocs/#/default/get_lookup__q___concept__	Bionames	
-released	Drug Repositioning Database	infores:repodb	https://portal.dbmi.hms.harvard.edu/projects/repoDB/	repoDB	
+released	Drug Repositioning Database	infores:repodb	http://apps.chiragjpgroup.org/repoDB/	repoDB	
 released	RGD API	infores:rgd	https://rgd.mcw.edu/		The RGD API
 released	Relations Ontology	infores:ro	http://www.obofoundry.org/ontology/ro.html	RO	
 released	ROBOKOP	infores:robokop	http://robokop.renci.org	Robokop	An API for answering biomedical questions
@@ -303,7 +303,8 @@ released	Semantic Analytics & Clean Data Intelligence Experts	infores:scibite	ht
 released	Semantic Medline Database	infores:semmeddb	https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMed.html		
 released	Saccharomyces Genome Database	infores:sgd	http://www.yeastgenome.org/		
 released	SIDER	infores:sider	http://sideeffects.embl.de/		
-released	SmartAPI API	infores:smart-api			This is the API provided from [SmartAPI](https://smart-api.info) application.
+deprecated	SmartAPI API	infores:smart-api			This is the API provided from [SmartAPI](https://smart-api.info) application.
+released	SmartAPI API	infores:smartapi	https://smart-api.info	This is the API provided from [SmartAPI](https://smart-api.info) application.	
 released	Small Molecule Pathway Database (SMPDB)	infores:smpdb	https://smpdb.ca/	SMPDB	
 released	Systemized Nomenclature of Medicine	infores:snomedct	http://www.snomed.org/	SNOMED	
 released	Sequence Ontology	infores:so	http://purl.obolibrary.org/obo/so.owl	SO	
@@ -337,7 +338,7 @@ released	UniRef 	infores:uniref	https://www.uniprot.org/help/uniref	UniRef
 released	Unsecret Agent OpenAPI for NCATS Biomedical Translator Reasoners	infores:unsecret-agent	https://github.com/NCATSTranslator/Translator-All/wiki/UnSecret-Agent		OpenAPI for NCATS Biomedical Translator Reasoners
 released	United States Census Bureau American Community Survey Data	infores:us-census-acs-data	https://www.census.gov/programs-surveys/acs/data.html		
 released	United States Census Bureau TIGER/line Roadway Data	infores:us-census-tiger-roadway-exposures-data	http://www.census.gov/geo/maps-data/data/tiger-line.html		
-released	United States Department of Transportation Roadway Exposures Data	infores:us-dot-roadway-exposures-data	https://www.fhwa.dot.gov/publications/research/safety/17106/004.cfm		
+released	United States Department of Transportation Roadway Exposures Data	infores:us-dot-roadway-exposures-data	https://highways.dot.gov/		
 released	United States Environmental Protection Agency Airborne Pollutant Exposures Data	infores:us-epa-airborne-pollutant-exposures-data			
 released	Unified phenotype ontology	infores:upheno	https://obofoundry.org/ontology/upheno.html	uPheno	The uPheno ontology integrates multiple phenotype ontologies into a unified cross-species phenotype ontology.
 released	Veterans Association National Drug File (VANDF) (from UMLS)	infores:vandf-umls	https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html		
