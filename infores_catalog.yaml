@@ -1478,7 +1478,7 @@ information_resources:
   status: released
   name: LOINC (from UMLS)
   xref:
-  - '"https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20(Logical%20Observations%20Identifiers,produced%20by%20the%20Regenstrief%20Institute."'
+  - https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20
 - id: infores:mp
   status: released
   name: Mammalian Phenotype Ontology
@@ -1492,12 +1492,12 @@ information_resources:
   - http://www.obofoundry.org/ontology/maxo.html
   synonym:
   - MAXO
-  description: 'See also: https://github.com/monarch-initiative/MAxO'
+  description: see also https://github.com/monarch-initiative/MAxO
 - id: infores:meddra-umls
   status: released
   name: MedDRA (from UMLS)
   xref:
-  - '"https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MDR/index.html#:~:text=MedDRA%20is%20an%20international%20medical,effects%20and%20malfunction%20of%20devices."'
+  - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MDR/index.html#:~:text=MedDRA%20is%20an%20international%20medical,effects%20and%20malfunction%20of%20devices.
   synonym:
   - MEDRA
 - id: infores:medgen
@@ -1530,7 +1530,7 @@ information_resources:
   xref:
   - https://metacyc.org/
   synonym:
-  - 'MetaCyc '
+  - MetaCyc
 - id: infores:emapa
   status: released
   name: Mouse Developmental Anatomy Ontology
@@ -1565,7 +1565,7 @@ information_resources:
   - MI
 - id: infores:mirbase
   status: released
-  name: 'The microRNA Database '
+  name: The microRNA Database
   xref:
   - http://www.mirbase.org/
   synonym:
@@ -1679,15 +1679,15 @@ information_resources:
   name: National Center for Advancing Translational Science Biomedical Data Translator
     Autonomous Relay System
   synonym:
-  - '"NCATS Translator Autonomous Relay System Translator  Autonomous Relay System,
-    NCATS Translator ARS"'
+  - NCATS Translator Autonomous Relay System Translator  Autonomous Relay System,
+    NCATS Translator ARS
 - id: infores:ncbi-gene
   status: released
   name: National Center for Biotechnology Information Gene
   xref:
   - http://www.ncbi.nlm.nih.gov/gene
   synonym:
-  - '"NGBI Gene, ncbigene"'
+  - NGBI Gene, ncbigene
 - id: infores:ncbi-taxon
   status: released
   name: NCBI Taxonomy Ontology
@@ -1699,7 +1699,7 @@ information_resources:
   xref:
   - http://www.ncbi.nlm.nih.gov/taxonomy
   synonym:
-  - '"ncbitaxonomy, ncbitaxon"'
+  - ncbitaxonomy, ncbitaxon
 - id: infores:ncdeq-cafo-exposures-data
   status: released
   name: North Carolina Department of Environmental Quality Concentrated Animal Feeding
@@ -1768,11 +1768,11 @@ information_resources:
   - https://www.ebi.ac.uk/ols/docs/api
   synonym:
   - OLS
-  description: '"The OLS REST API provides access to key biological data from OLS.
+  description: The OLS REST API provides access to key biological data from OLS.
     The services provide a unified interface to query information about ontology terms
     from GO (the Gene Ontology) and ECO (the Evidence & Conclusion Ontology), Gene
-    Ontology annotations from the EBI''s GOA database, and gene products (proteins
-    from UniProt, RNA from RNAcentral and complexes from ComplexPortal). "'
+    Ontology annotations from the EBI's GOA database, and gene products (proteins
+    from UniProt, RNA from RNAcentral and complexes from ComplexPortal).
 - id: infores:omicsdi
   status: released
   name: OmicsDI
@@ -1817,16 +1817,17 @@ information_resources:
   name: OpenPredict API
   xref:
   - https://github.com/MaastrichtU-IDS/translator-openpredict
-  description: '"Get predicted targets for a given entity: the **potential drugs treating
-    a given disease**, or the **potential diseases a given drug could treat**.   *
+  description: >-
+    Get predicted targets for a given entity.  The potential drugs treating
+    a given disease, or the potential diseases a given drug could treat. 
     Use the `/predict` operation to easily retrieve predictions for a given entity
-    (operation annotated for the [BioThings Explorer](https://x-bte-extension.readthedocs.io/en/latest/x-bte-kgs-operations.html)).   *
+    (operation annotated for the [BioThings Explorer](https://x-bte-extension.readthedocs.io/en/latest/x-bte-kgs-operations.html)).
     Predictions are currently produced using the [PREDICT method](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159979/)
     from the [fair-workflows/openpredict](https://github.com/fair-workflows/openpredict)
-    project.   * You can also install the [OpenPredict Python package](https://pypi.org/project/openpredict/)
-    to train and serve a new model yourself.   * More documentation available at [github.com/MaastrichtU-IDS/translator-openpredict](https://github.com/MaastrichtU-IDS/translator-openpredict)   [![Test
+    project.  You can also install the [OpenPredict Python package](https://pypi.org/project/openpredict/)
+    to train and serve a new model yourself. More documentation available at [github.com/MaastrichtU-IDS/translator-openpredict](https://github.com/MaastrichtU-IDS/translator-openpredict)   [![Test
     production API](https://github.com/MaastrichtU-IDS/translator-openpredict/actions/workflows/run-tests-prod.yml/badge.svg)](https://github.com/MaastrichtU-IDS/translator-openpredict/actions/workflows/run-tests-prod.yml)   Service
-    supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)"'
+    supported by the [NCATS Translator project](https://ncats.nih.gov/translator/about)
 - id: infores:ordo
   status: released
   name: Orphanet Rare Disease Ontology
@@ -1846,7 +1847,7 @@ information_resources:
   - https://github.com/monarch-initiative/owlsim-v3
 - id: infores:oxo
   status: released
-  name: 'Ontology Xref Service '
+  name: Ontology Xref Service
   xref:
   - https://www.ebi.ac.uk/spot/oxo/
   synonym:
@@ -1946,8 +1947,9 @@ information_resources:
   name: Pharos
   xref:
   - https://pharos.nih.gov
-  description: '"focusing on three of the most commonly drug-targeted protein families:
-    G-protein-coupled receptors (GPCRs, Ion channels (ICs), Kinases"'
+  description: >- 
+    focusing on three of the most commonly drug-targeted protein families:
+    G-protein-coupled receptors (GPCRs, Ion channels (ICs), Kinases
 - id: infores:pr
   status: released
   name: Protein Ontology
@@ -1976,15 +1978,15 @@ information_resources:
   status: released
   name: Psychological Index Terms (PSY) (from UMLS)
   xref:
-  - '"https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PSY/index.html#:~:text=PSY%20(Psychological%20Index%20Terms)%20%2D%20Synopsis,-Synopsis%20Metadata%20Statistics&text=The%20Thesaurus%20of%20Psychological%20Index%20Terms%20is%20a%20controlled%20vocabulary,provide%20subject%20searching%20of%20data."'
+  - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PSY/index.html#:~:text=PSY%20(Psychological%20Index%20Terms)%20%2D%20Synopsis,-Synopsis%20Metadata%20Statistics&text=The%20Thesaurus%20of%20Psychological%20Index%20Terms%20is%20a%20controlled%20vocabulary,provide%20subject%20searching%20of%20data.
 - id: infores:pubchem
   status: released
   name: PubChem
   xref:
   - https://pubchem.ncbi.nlm.nih.gov/
-  description: '"an open chemistry database at the National Institutes of Health (NIH),
+  description: an open chemistry database at the National Institutes of Health (NIH),
     mostly contains small molecules, but also larger molecules such as nucleotides,
-    carbohydrates, lipids, peptides, and chemically-modified macromolecules"'
+    carbohydrates, lipids, peptides, and chemically-modified macromolecules
 - id: infores:pubmed
   status: released
   name: PubMed
@@ -2069,10 +2071,10 @@ information_resources:
   name: RxNorm
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/index.html
-  description: '"normalized names for clinical drugs and links its names to many of
+  description: normalized names for clinical drugs and links its names to many of
     the drug vocabularies commonly used in pharmacy management and drug interaction
     software, including those of First Databank, Micromedex, and Gold Standard Drug
-    Database"'
+    Database
 - id: infores:sabio-rk
   status: released
   name: SABIO-RK Biochemical Reaction Kinetics Database
@@ -2135,13 +2137,13 @@ information_resources:
   name: SPOKE KP
   synonym:
   - Spoke
-  description: SPOKE KP - an NIH NCATS Knowledge Provider to expose UCSF's SPOKE
+  description: SPOKE KP - an NIH NCATS Knowledge Provider to expose UCSFs SPOKE
 - id: infores:sri-edge-normalizaion-service
   status: released
   name: Edge Normalization Service
   xref:
   - https://github.com/TranslatorSRI/EdgeNormalization
-  description: 'SRI service to validate and normalize edges to Translator standards. '
+  description: SRI service to validate and normalize edges to Translator standards.
 - id: infores:sri-name-resolver
   status: released
   name: Name Resolver
@@ -2153,8 +2155,8 @@ information_resources:
   name: Node Normalization
   xref:
   - https://github.com/TranslatorSRI/NodeNormalization
-  description: '"Node normalization takes a CURIE, and returns resolved alias and
-    the canonical identifier of a node."'
+  description: Node normalization takes a CURIE, and returns resolved alias and
+    the canonical identifier of a node.
 - id: infores:sri-ontology
   status: released
   name: Ontology-KP API
@@ -2176,7 +2178,7 @@ information_resources:
     The KGX file set is hosted on the Knowledge Graph Exchange Archive (https://archive.translator.ncats.io).
 - id: infores:startgeo
   status: released
-  name: 'STAR GEO Search Application '
+  name: STAR GEO Search Application
   xref:
   - http://stargeo.org/
   synonym:
@@ -2230,24 +2232,24 @@ information_resources:
   - https://datascience.unm.edu/tiga/
   synonym:
   - TIGA
-  description: '"Aggregating and assessing experimental evidence for interpretable,
-    explainable, accountable gene-trait associations."'
+  description: Aggregating and assessing experimental evidence for interpretable,
+    explainable, accountable gene-trait associations.
 - id: infores:text-mining-provider-cooccurrence
   status: released
   name: Text Mining COOCCURRENCE API
-  description: '"API serving a knowledge graph comprised of pairs of concepts that
+  description: API serving a knowledge graph comprised of pairs of concepts that
     have been found to co-occur in the scientific literature. Here, cooccurrence of
     a pair of biomedical concepts within a single document or sentence serves as a
-    proxy for a potential relationship between the two concepts."'
+    proxy for a potential relationship between the two concepts.
 - id: infores:text-mining-provider-targeted
   status: released
   name: Text Mining Targeted Association API
   xref:
   - https://github.com/UCDenver-ccp/text-mining-provider-trapi
-  description: '"API serving explicitly targeted Biolink Associations extracted from
+  description: API serving explicitly targeted Biolink Associations extracted from
     sentences in the scientific literature. Here, targeted refers to the fact that
     this service is based on text-mining models targeted to extract specific associations
-    between concepts, as opposed to concepts cooccurring with each other."'
+    between concepts, as opposed to concepts cooccurring with each other.
 - id: infores:tissues-expression-db
   status: released
   name: Tissue Expression Database
@@ -2266,7 +2268,7 @@ information_resources:
   status: released
   name: Therapeutic Target Database (TTD)
   xref:
-  - 'https://db.idrblab.net/ttd/ '
+  - https://db.idrblab.net/ttd/
   synonym:
   - TTD
 - id: infores:uberon
@@ -2309,7 +2311,7 @@ information_resources:
   - UniProt
 - id: infores:uniref
   status: released
-  name: 'UniRef '
+  name: UniRef
   xref:
   - https://www.uniprot.org/help/uniref
   synonym:
@@ -2375,8 +2377,8 @@ information_resources:
   - https://obofoundry.org/ontology/xpo.html
   synonym:
   - XPO
-  description: '"XPO represents anatomical, cellular, and gene function phenotypes
-    occurring throughout the development of the African frogs Xenopus laevis and tropicalis."'
+  description: XPO represents anatomical, cellular, and gene function phenotypes
+    occurring throughout the development of the African frogs Xenopus laevis and tropicalis.
 - id: infores:workflow-runner
   status: released
   name: Translator Workflow Runner
@@ -2409,10 +2411,10 @@ information_resources:
   name: DDinter
   xref:
   - http://ddinter.scbdd.com
-  description: '"DDInter is anopen-access database specific to drug-drug interactions
+  description: DDInter is anopen-access database specific to drug-drug interactions
     with annotations including mechanism description, risk levels, management strategies,
     alternative medications, etc. to improve clinical decision-making and patient
-    safety."'
+    safety.
 - id: infores:ki-database
   status: released
   name: Ki database
@@ -2420,9 +2422,9 @@ information_resources:
   - https://pdsp.unc.edu/databases/kidb.php
   synonym:
   - KiDB
-  description: '"The Ki database serves as a data warehouse for published and internally-derived
-    Ki, or affinity, values for a large number of drugs and drug candidates at UNC''s
-    Psychoactive Drug Screening Program"'
+  description: The Ki database serves as a data warehouse for published and internally-derived
+    Ki, or affinity, values for a large number of drugs and drug candidates at UNC's
+    Psychoactive Drug Screening Program
 - id: infores:community-sar
   status: released
   name: Community Structure-Activity Resource
@@ -2447,10 +2449,10 @@ information_resources:
   name: Adverse Event Open Learning through Universal Standardization (AEOLUS)
   xref:
   - http://doi.org/10.1038/sdata.2016.26
-  description: '"A curated and standardized version of FAERS removing duplicate case
+  description: A curated and standardized version of FAERS removing duplicate case
     records, applying standardized vocabularies with drug names mapped to RxNorm concepts
     and outcomes mapped to SNOMED-CT concepts, and pre-computed summary statistics
-    about drug-outcome relationships for general consumption."'
+    about drug-outcome relationships for general consumption.
 - id: infores:regl
   status: released
   name: Richards Effector Gene List
@@ -2464,10 +2466,10 @@ information_resources:
   - http://www.interactome-atlas.org/download
   synonym:
   - HuRI
-  description: '"A human ‘all-by-all’ reference interactome map of human binary protein
+  description: A human ‘all-by-all’ reference interactome map of human binary protein
     interactions, or ‘HuRI’. With approximately 53,000 protein–protein interactions,
     HuRI has approximately four times as many such interactions as there are high-quality
-    curated interactions from small-scale studies"'
+    curated interactions from small-scale studies
 - id: infores:zp
   status: released
   name: Zebrafish Phenotype Ontology
@@ -2492,12 +2494,12 @@ information_resources:
   - https://xenbase.org
   synonym:
   - Xenbase
-  description: '"Xenbase''s mission is to provide the international research community
+  description: Xenbase's mission is to provide the international research community
     with a comprehensive, integrated and easy to use web based resource that gives
     access the diverse and rich genomic, expression and functional data available
     from Xenopus research. Xenbase also provides a critical data sharing infrastructure
     for many other NIH-funded projects, and is a focal point for the Xenopus community.
     In addition to our primary goal of supporting Xenopus researchers, Xenbase enhances
     the availability and visibility of Xenopus data to the broader biomedical research
-    community."'
+    community.
 

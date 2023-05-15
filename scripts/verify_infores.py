@@ -11,7 +11,7 @@ ctx.load_default_certs()
 ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
 
 
-INFORES_YAML = os.path.join('../infores_catalog.yaml')
+INFORES_YAML = os.path.join('infores_catalog.yaml')
 
 
 def is_valid_urls(url: str) -> bool:
@@ -68,6 +68,7 @@ class InformationResource:
                     print(infores)
                     print("Invalid infores URL:" + infores.get("xref") + " for " + infores.get("name"))
                     raise ValueError("invalid return code for URL" + infores.get("name") + " for " + infores.get("id"))
+
 
 if __name__ == "__main__":
     InformationResource().validate()
