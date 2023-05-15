@@ -4,17 +4,19 @@ import csv
 import time
 import urllib3
 from urllib3.util.ssl_ import create_urllib3_context
+import yaml
 
 ctx = create_urllib3_context()
 ctx.load_default_certs()
 ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
 
 
-INFORES_TSV = os.path.join('infores_catalog_nodes.tsv')
+INFORES_YAML = os.path.join('../infores_catalog.yaml')
 
 
 def is_valid_urls(url: str) -> bool:
     retries = 3
+    url = url[0]
     for i in range(retries):
         try:
             with urllib3.PoolManager(ssl_context=ctx) as http:
@@ -45,39 +47,27 @@ class InformationResource:
         raise NotImplementedError
 
     def validate(self):
-        infores_map = {}
-        with open(INFORES_TSV, 'r') as tsv_file:
-            reader = csv.reader(tsv_file, delimiter='\t')
-            for line in reader:
-                if len(line) < 5:
-                    raise ValueError("Invalid infores TSV: too few items in a line", line)
-                if line[2] == 'id' or line[0] == 'deprecated':
-                    continue
-                elif line[3] == '' and line[0] != 'deprecated':
-                    print(line)
+        with open(INFORES_YAML, 'r') as yaml_file:
+            data = yaml.safe_load(yaml_file)
+            print(data)
+            for infores in data.get('information_resources'):
+                print(infores.get("id"), infores.get("name"), infores.get("xref"))
+                # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
+                # user to accept a popup before resolving):
+                if infores.get("id") == 'infores:athena' \
+                    or infores.get("id") == 'infores:isb-wellness' \
+                    or infores.get("id") == 'infores:isb-incov' \
+                    or infores.get("id") == 'infores:preppi' \
+                    or infores.get("id") == 'infores:ttd' \
+                    or infores.get("id") == 'infores:flybase' \
+                    or infores.get("id") == 'infores:aeolus' \
+                    or infores.get("xref") is None \
+                    or is_valid_urls(infores.get("xref")):
+                        print(infores.get('id'), "has valid URL (xref)")
                 else:
-                    # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
-                    # user to accept a popup before resolving):
-                    if line[2] == 'infores:athena' \
-                            or line[2] == 'infores:isb-wellness' \
-                            or line[2] == 'infores:isb-incov' \
-                            or line[2] == 'infores:preppi' \
-                            or line[2] == 'infores:ttd' \
-                            or line[2] == 'infores:flybase' \
-                            or line[2] == 'infores:aeolus' \
-                            or is_valid_urls(line[3]):
-                        infores_map[line[2]] = {
-                            "status": line[0],
-                            "name": line[1],
-                            "url": line[3],
-                            "synonyms": line[4],
-                            "description": line[5],
-                        }
-                    else:
-                        print(line)
-                        print("Invalid infores URL:" + line[3] + " for " + line[2])
-                        raise ValueError("invalid return code for URL" + line[3] + " for " + line[2])
-
+                    print(infores)
+                    print("Invalid infores URL:" + infores.get("xref") + " for " + infores.get("name"))
+                    raise ValueError("invalid return code for URL" + infores.get("name") + " for " + infores.get("id"))
 
 if __name__ == "__main__":
     InformationResource().validate()
