@@ -61,7 +61,6 @@ jobs:
           else
             echo "'make' failed to finish successfully"
           fi
-
       - name: Build documentation
         run: |
           poetry install

@@ -24,7 +24,7 @@ shacl: biolink-model.shacl.ttl
 json-schema: json-schema/biolink-model.json
 prefix-map: prefix-map/biolink-model-prefix-map.json
 
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld infores \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex shacl biolink-model.ttl \
 prefix-map/biolink-model-prefix-map.json gen-pydantic id-prefixes
 
@@ -53,6 +53,8 @@ biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
 	export PIPENV_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
 
+infores:
+	poetry run gen-python information-resource.yaml > information_resource.py
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
@@ -256,6 +258,7 @@ pytest: biolink/model.py
 clean:
 	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex shacl pydantic
 	rm -f env.lock
+	rm -rf information_resource.py
 	poetry --rm
 
 # ----------------------------------------

@@ -1,5 +1,5 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-15T15:06:25
+# Generation date: 2023-05-15T15:25:56
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -134,6 +134,7 @@ class InformationResourceStatusEnum(EnumDefinitionImpl):
     released = PermissibleValue(text="released")
     deprecated = PermissibleValue(text="deprecated")
     draft = PermissibleValue(text="draft")
+    modified = PermissibleValue(text="modified")
 
     _defn = EnumDefinition(
         name="InformationResourceStatusEnum",
