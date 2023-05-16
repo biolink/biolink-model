@@ -28,7 +28,7 @@ Adding a new entry to the registry is as easy as adding a stanza to the informat
 repository and submitting the change via pull request in the repository.  Alternatively, making a ticket for a new
 resource in the biolink-model github repository will also work.  
 
-### Conventions for minting new Information Resource identifiers:
+#### Minting new Information Resource identifiers:
 
 - Each smartAPI-registered Translator API gets its own InfoRes, as will each upstream source from which it aggregates knowledge.
   - Each upstream source from which a Translator API retrieves data computed on to generate knowledge will also get its own InfoRes.
