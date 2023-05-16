@@ -10,12 +10,13 @@ ctx = create_urllib3_context()
 ctx.load_default_certs()
 ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
 
-INFORES_YAML = os.path.join('infores_catalog.yaml')
+INFORES_YAML = os.path.join('../infores_catalog.yaml')
 
 
 def is_valid_urls(url: str) -> bool:
     retries = 3
     url = url[0]
+    print("Checking URL: " + url)
     for i in range(retries):
         try:
             with urllib3.PoolManager(ssl_context=ctx) as http:
