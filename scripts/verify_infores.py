@@ -10,7 +10,6 @@ ctx = create_urllib3_context()
 ctx.load_default_certs()
 ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
 
-
 INFORES_YAML = os.path.join('infores_catalog.yaml')
 
 
@@ -49,21 +48,19 @@ class InformationResource:
     def validate(self):
         with open(INFORES_YAML, 'r') as yaml_file:
             data = yaml.safe_load(yaml_file)
-            print(data)
             for infores in data.get('information_resources'):
-                print(infores.get("id"), infores.get("name"), infores.get("xref"))
                 # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
                 # user to accept a popup before resolving):
                 if infores.get("id") == 'infores:athena' \
-                    or infores.get("id") == 'infores:isb-wellness' \
-                    or infores.get("id") == 'infores:isb-incov' \
-                    or infores.get("id") == 'infores:preppi' \
-                    or infores.get("id") == 'infores:ttd' \
-                    or infores.get("id") == 'infores:flybase' \
-                    or infores.get("id") == 'infores:aeolus' \
-                    or infores.get("xref") is None \
-                    or is_valid_urls(infores.get("xref")):
-                        print(infores.get('id'), "has valid URL (xref)")
+                        or infores.get("id") == 'infores:isb-wellness' \
+                        or infores.get("id") == 'infores:isb-incov' \
+                        or infores.get("id") == 'infores:preppi' \
+                        or infores.get("id") == 'infores:ttd' \
+                        or infores.get("id") == 'infores:flybase' \
+                        or infores.get("id") == 'infores:aeolus' \
+                        or infores.get("xref") is None \
+                        or is_valid_urls(infores.get("xref")):
+                    print(infores.get('id'), "has valid URL (xref)")
                 else:
                     print(infores)
                     print("Invalid infores URL:" + infores.get("xref") + " for " + infores.get("name"))
