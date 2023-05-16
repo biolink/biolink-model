@@ -57,6 +57,7 @@ class InformationResource:
                         or infores.get("id") == 'infores:preppi' \
                         or infores.get("id") == 'infores:ttd' \
                         or infores.get("id") == 'infores:flybase' \
+                        or infores.get("id") == 'infores:xenbase' \
                         or infores.get("id") == 'infores:aeolus' \
                         or infores.get("xref") is None \
                         or is_valid_urls(infores.get("xref")):
