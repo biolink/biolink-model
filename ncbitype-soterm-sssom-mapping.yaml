@@ -54,23 +54,23 @@ mappings:
   subject_label: scrna
   object_label: scrna
 - subject_id: other
-  predicate_id:
-  object_id:
-  mapping_justification:
-  subject_label:
-  object_label:
+  predicate_id: skos:broadMatch
+  object_id: SO:0000110
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: other
+  object_label: sequence feature
 - subject_id: miscrna
-  predicate_id:
-  object_id:
-  mapping_justification:
-  subject_label:
-  object_label:
+  predicate_id: skos:broadMatch
+  object_id: SO:0000356
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: miscrna
+  object_label: rna
 - subject_id: unknown
-  predicate_id:
-  object_id:
-  mapping_justification:
-  subject_label:
-  object_label:
+  predicate_id: skos:broadMatch
+  object_id: SO:0000110
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: unknown
+  object_label: sequence feature
 
 
 
