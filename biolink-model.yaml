@@ -1199,6 +1199,11 @@ slots:
       A role is particular behaviour which a chemical entity may exhibit.
     range: chemical role
     multivalued: true
+    id_prefixes:
+      - CHEBI
+    comment: >-
+      We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between
+      CHEBI And ATC codes to support this slot.
 
   max tolerated dose:
     description: >-
@@ -1209,16 +1214,6 @@ slots:
     is_a: node property
     multivalued: false
     range: string
-
-  atc classifications:
-    is_a: node property
-    description: >-
-      In the Anatomical Therapeutic Chemical (ATC) classification system, the active substances are divided 
-      into different groups according to the organ or system on which they act and their therapeutic, 
-      pharmacological and chemical properties. Drugs are classified in groups at five different levels.
-    range: string
-    multivalued: true
-
 
   animal model available from:
     description: >-
@@ -6862,7 +6857,6 @@ classes:
       - max tolerated dose
       - is toxic
       - has chemical role
-      - atc classifications
     exact_mappings:
       - CHEBI:24431
       - SIO:010004  # Chemical entity
