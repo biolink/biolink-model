@@ -5267,7 +5267,27 @@ slots:
     is_a: association slot
     description: >-
       connects an association to an instance of supporting study result
-    
+
+  log odds ratio:
+    is_a: association slot
+    description: >-
+      The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the 
+      odds of event Y occurring in a non-exposed group.
+    range: float
+
+  log odds ration 95 ci:
+    is_a: association slot
+    description: >-
+      The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+    range: float
+
+  total sample size:
+    is_a: dataset count
+    description: >-
+      The total number of patients or participants within a sample population.
+    range: integer
+
+
   mechanism of action:
     is_a: association slot
     range: boolean
@@ -6130,6 +6150,11 @@ classes:
     is_a: study result
     description: >-
       A result of a chi squared analysis.
+
+  log odds analysis result:
+    is_a: study result
+    description: >-
+      A result of a log odds ratio analysis.
 
   agent:
     is_a: administrative entity
