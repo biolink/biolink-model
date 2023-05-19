@@ -26,7 +26,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.3.2"
+version = "3.3.4"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
