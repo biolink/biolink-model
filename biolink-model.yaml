@@ -1199,6 +1199,11 @@ slots:
       A role is particular behaviour which a chemical entity may exhibit.
     range: chemical role
     multivalued: true
+    id_prefixes:
+      - CHEBI
+    comments: >-
+      We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between
+      CHEBI And ATC codes to support this slot.
 
   max tolerated dose:
     description: >-

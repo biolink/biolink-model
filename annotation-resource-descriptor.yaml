@@ -1,0 +1,12 @@
+mappings:
+- curie_prefix: UniProt
+  annotation_type: Gene Ontology Annotation Summary
+  url_prefix: http://amigo.geneontology.org/amigo/gene_product/
+  example_id: UniProtKB:P12345
+  curie_pattern: "^UniProt:\\d+$"
+- curie_prefix: MONDO
+  annotation_type: Human Phenotypes
+  url_prefix: https://monarchinitiative.org/disease/[%s]/#phenotype
+  example_id: MONDO:0007947
+  curie_pattern: "^MONDO:\\d+$"
+

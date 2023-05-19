@@ -1,0 +1,76 @@
+mappings:
+- subject_id: protein-coding
+  predicate_id: skos:exactMatch
+  object_id: SO:0000010
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: protein-coding
+  object_label: protein-coding
+- subject_id: ncrna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000655
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: ncrna
+  object_label: ncrna
+- subject_id: pseudo
+  predicate_id: skos:narrowMatch
+  object_id: SO:0000336
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: pseudo
+  object_label: pseudogene
+- subject_id: trna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000253
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: trna
+  object_label: trna
+- subject_id: rrna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000252
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: rrna
+  object_label: rrna
+- subject_id: snorna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000275
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: snorna
+  object_label: snorna
+- subject_id: snrna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000274
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: snrna
+  object_label: snrna
+- subject_id: biological-region
+  predicate_id: skos:exactMatch
+  object_id: SO:0001411
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: biological-region
+  object_label: biological_region
+- subject_id: scrna
+  predicate_id: skos:exactMatch
+  object_id: SO:0000013
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: scrna
+  object_label: scrna
+- subject_id: other
+  predicate_id: skos:broadMatch
+  object_id: SO:0000110
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: other
+  object_label: sequence feature
+- subject_id: miscrna
+  predicate_id: skos:broadMatch
+  object_id: SO:0000356
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: miscrna
+  object_label: rna
+- subject_id: unknown
+  predicate_id: skos:broadMatch
+  object_id: SO:0000110
+  mapping_justification: semapv:ManualMappingCuration
+  subject_label: unknown
+  object_label: sequence feature
+
+
+
