@@ -10677,15 +10677,6 @@ classes:
 
 enums:
 
-  AnatomicalContextQualifierEnum:
-    reachable_from:
-      source_ontology: bioregistry:uberon
-      source_nodes:
-        - UBERON:0001062
-      is_direct: false
-      relationship_types:
-        - rdfs:subClassOf
-
   DirectionQualifierEnum:
     permissible_values:
       increased:
