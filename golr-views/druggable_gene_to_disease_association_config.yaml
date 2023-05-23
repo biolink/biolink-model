@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.3.2id: druggable_gene_to_disease_association
+# metamodel_version: 1.7.0# version: 3.4.0id: druggable_gene_to_disease_association
 schema_generating: true
 display_name: druggable gene to disease association
 document_category: druggable gene to disease association
@@ -22,10 +22,6 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: object
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -152,6 +148,42 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
+- id: subject_aspect_qualifier
+  display_name: gene to disease or phenotypic feature association_subject aspect qualifier
+- id: object_direction_qualifier
+  display_name: gene to disease or phenotypic feature association_object direction
+    qualifier
+- id: frequency_qualifier
+  description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject
+  display_name: frequency qualifier
+- id: severity_qualifier
+  description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject
+  display_name: severity qualifier
+- id: onset_qualifier
+  description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject
+  display_name: onset qualifier
+- id: sex_qualifier
+  description: a qualifier used in a phenotypic association to state whether the association
+    is specific to a particular sex.
+  display_name: sex qualifier
+- id: has_count
+  description: number of things with a particular property
+  display_name: has count
+- id: has_total
+  description: total number of things in a particular reference set
+  display_name: has total
+- id: has_quotient
+  display_name: has quotient
+- id: has_percentage
+  description: equivalent to has quotient multiplied by 100
+  display_name: has percentage
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: gene to disease association_object
 - id: subject
   description: gene in which variation is correlated with the disease in a protective
     manner, or if the product produced by the gene can be targeted by a small molecule
@@ -165,15 +197,3 @@ fields:
   description: connects an association to an instance of supporting evidence
   display_name: druggable gene to disease association_has evidence
   cardinality: multi
-- id: frequency_qualifier
-  description: a qualifier used in a phenotypic association to state how frequent
-    the phenotype is observed in the subject
-  display_name: frequency qualifier
-- id: severity_qualifier
-  description: a qualifier used in a phenotypic association to state how severe the
-    phenotype is in the subject
-  display_name: severity qualifier
-- id: onset_qualifier
-  description: a qualifier used in a phenotypic association to state when the phenotype
-    appears is in the subject
-  display_name: onset qualifier

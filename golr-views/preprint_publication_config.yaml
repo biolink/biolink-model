@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.3.2id: preprint_publication
+# metamodel_version: 1.7.0# version: 3.4.0id: preprint_publication
 schema_generating: true
 description: a document reresenting an early version of an author's original scholarly
   work,  such as a research paper or a review, prior to formal peer review and publication  in
@@ -112,3 +112,4 @@ fields:
     knowledge graph, then the CURIE identified term must be documented in the graph
     as a concept node of biolink:category biolink:OntologyClass.
   display_name: publication_publication type
+  cardinality: multi
