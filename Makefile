@@ -66,7 +66,7 @@ docs/index.md: biolink-model.yaml env.lock
 # JEKYLL DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/Classes.md: biolink-model.yaml env.lock
-	poetry run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
+	poetry run python scripts/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -132,8 +132,8 @@ prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.
 	poetry run gen-prefix-map $< > $@
 
 id-prefixes:
-	poetry run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
-	cd script && poetry run python id_prefixes.py
+	poetry run gen-python prefix-map/class_prefixes.yaml > scripts/classprefixes.py
+	cd scripts && poetry run python id_prefixes.py
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
