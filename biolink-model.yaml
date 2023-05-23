@@ -1513,7 +1513,6 @@ slots:
     description: >-
       A statement qualifier representing an anatomical location where an relationship expressed in an
       association took place (can be a tissue, cell type, or sub-cellular location).
-    range: AnatomicalContextQualifierEnum
     notes: >-
       Anatomical context values can be any term from UBERON. For example, the context qualifier ‘cerebral cortext’ 
       combines with a core concept of ‘neuron’ 
@@ -10677,15 +10676,6 @@ classes:
           predicate describing the relationship between the taxon and the environment
 
 enums:
-
-  AnatomicalContextQualifierEnum:
-    reachable_from:
-      source_ontology: bioregistry:uberon
-      source_nodes:
-        - UBERON:0001062
-      is_direct: false
-      relationship_types:
-        - rdfs:subClassOf
 
   DirectionQualifierEnum:
     permissible_values:
