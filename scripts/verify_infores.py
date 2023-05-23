@@ -1,26 +1,40 @@
-from linkml_runtime.utils.schemaview import SchemaView
 import os
 import requests
 import csv
 import time
-from typing import List
+import urllib3
+from urllib3.util.ssl_ import create_urllib3_context
+import yaml
 
-INFORES_TSV = os.path.join('infores_catalog_nodes.tsv')
+ctx = create_urllib3_context()
+ctx.load_default_certs()
+ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
+
+INFORES_YAML = os.path.join('infores_catalog.yaml')
 
 
 def is_valid_urls(url: str) -> bool:
     retries = 3
+    url = url[0]
+    print("Checking URL: " + url)
     for i in range(retries):
         try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                return True
-            else:
-                print(f"Response status code: {response.status_code}. Retrying...")
-                time.sleep(1)
+            with urllib3.PoolManager(ssl_context=ctx) as http:
+                response = http.request("GET", url, headers={'User-Agent': 'Mozilla/5.0'})
+                if response.status == 200:
+                    return True
+                else:
+                    print(f"Response status code: {response.status}. Retrying...")
+                    time.sleep(1)
         except requests.exceptions.RequestException as e:
-            print(f"Exception: {e}. Retrying...")
-            time.sleep(1)
+            print(url)
+    try:
+        resp = requests.get(url)
+        if resp.status_code == 200:
+            return True
+    except requests.exceptions.RequestException as e:
+        print(f"Exception: {e}")
+        print(f"Response status code: {response.status}.", url)
     return False
 
 
@@ -33,31 +47,26 @@ class InformationResource:
         raise NotImplementedError
 
     def validate(self):
-        infores_map = {}
-        with open(INFORES_TSV, 'r') as tsv_file:
-            reader = csv.reader(tsv_file, delimiter='\t')
-            for line in reader:
-                if line[2] == 'id' or line[3] == '':
-                    continue
-                if line[2] == 'infores:athena' \
-                        or line[2] == 'infores:isb-wellness' \
-                        or line[0] == 'deprecated' \
-                        or line[2] == 'infores:isb-incov' \
-                        or line[2] == 'infores:preppi'  \
-                        or line[2] == 'infores:ttd' \
-                        or line[2] == 'infores:flybase' \
-                        or is_valid_urls(line[3]):
-                    infores_map[line[2]] = {
-                        "status": line[0],
-                        "name": line[1],
-                        "url": line[3],
-                        "synonyms": line[4],
-                        "description": line[5],
-                    }
+        with open(INFORES_YAML, 'r') as yaml_file:
+            data = yaml.safe_load(yaml_file)
+            for infores in data.get('information_resources'):
+                # exceptions for resolvable URLs that don't return 200 response for some reason (e.g. require
+                # user to accept a popup before resolving):
+                if infores.get("id") == 'infores:athena' \
+                        or infores.get("id") == 'infores:isb-wellness' \
+                        or infores.get("id") == 'infores:isb-incov' \
+                        or infores.get("id") == 'infores:preppi' \
+                        or infores.get("id") == 'infores:ttd' \
+                        or infores.get("id") == 'infores:flybase' \
+                        or infores.get("id") == 'infores:xenbase' \
+                        or infores.get("id") == 'infores:aeolus' \
+                        or infores.get("xref") is None \
+                        or is_valid_urls(infores.get("xref")):
+                    print(infores.get('id'), "has valid URL (xref)")
                 else:
-                    print(line)
-                    print("Invalid infores URL:" + line[3] + " for " + line[2])
-                    raise ValueError("Invalid infores URL")
+                    print(infores)
+                    print("Invalid infores URL:" + infores.get("xref") + " for " + infores.get("name"))
+                    raise ValueError("invalid return code for URL" + infores.get("name") + " for " + infores.get("id"))
 
 
 if __name__ == "__main__":

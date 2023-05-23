@@ -14,7 +14,7 @@ URI: [biolink:publication_type](https://w3id.org/biolink/vocab/publication_type)
 
 ## Domain and Range
 
-None ->  <sub>0..1</sub> [String](types/String.md)
+None ->  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

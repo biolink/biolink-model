@@ -15,7 +15,7 @@ URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/Informati
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[StudyVariable],[StudyResult],[RetrievalSource],[Publication],[NamedThing],[InformationResource],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Clicense:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[StudyVariable],[InformationContentEntity]%5E-[StudyResult],[InformationContentEntity]%5E-[RetrievalSource],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[InformationResource],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary],[InformationContentEntity]%5E-[DatasetDistribution],[InformationContentEntity]%5E-[Dataset],[InformationContentEntity]%5E-[ConfidenceLevel],[InformationContentEntity]%5E-[CommonDataElement],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DatasetVersion],[DatasetSummary],[DatasetDistribution],[Dataset],[ContributorAssociation],[ConfidenceLevel],[CommonDataElement],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[StudyVariable],[StudyResult],[RetrievalSource],[Publication],[NamedThing],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Clicense:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[StudyVariable],[InformationContentEntity]%5E-[StudyResult],[InformationContentEntity]%5E-[RetrievalSource],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary],[InformationContentEntity]%5E-[DatasetDistribution],[InformationContentEntity]%5E-[Dataset],[InformationContentEntity]%5E-[ConfidenceLevel],[InformationContentEntity]%5E-[CommonDataElement],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DatasetVersion],[DatasetSummary],[DatasetDistribution],[Dataset],[ContributorAssociation],[ConfidenceLevel],[CommonDataElement],[Attribute],[Agent])
 
 ---
 
@@ -37,7 +37,6 @@ URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/Informati
  * [DatasetSummary](DatasetSummary.md) - an item that holds summary level information about a dataset.
  * [DatasetVersion](DatasetVersion.md) - an item that holds version level information about a dataset.
  * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
- * [InformationResource](InformationResource.md) - A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
  * [Publication](Publication.md) - Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
  * [RetrievalSource](RetrievalSource.md) - Provides information about how a particular InformationResource served as a source from which knowledge expressed in an Edge, or data used to generate this knowledge, was retrieved.
  * [StudyResult](StudyResult.md) - A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
@@ -66,6 +65,10 @@ URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/Informati
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -80,6 +83,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
@@ -90,20 +97,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [xref](xref.md)  <sub>0..\*</sub>
      * Description: A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.
      * Range: [Uriorcurie](types/Uriorcurie.md)
-     * in subsets: (translator_minimal)
-
-### Inherited from information resource:
-
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:

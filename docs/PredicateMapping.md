@@ -15,7 +15,7 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Cbroad%20match%200..%2A-%20[PredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:DirectionQualifierEnum%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:DirectionQualifierEnum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:CausalMechanismQualifierEnum%20%3F;anatomical_context_qualifier:AnatomicalContextQualifierEnum%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[PredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[PredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[PredicateMapping],[MappingCollection]++-%20predicate%20mappings%200..%2A%3E[PredicateMapping],[OrganismTaxon],[NamedThing],[MappingCollection])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing]%3Cbroad%20match%200..%2A-%20[PredicateMapping%7Cmapped_predicate:string%20%3F;subject_aspect_qualifier:string%20%3F;subject_direction_qualifier:DirectionQualifierEnum%20%3F;subject_form_or_variant_qualifier:string%20%3F;subject_part_qualifier:string%20%3F;subject_derivative_qualifier:string%20%3F;subject_context_qualifier:string%20%3F;predicate:predicate_type;qualified_predicate:string%20%3F;object_aspect_qualifier:string%20%3F;object_direction_qualifier:DirectionQualifierEnum%20%3F;object_form_or_variant_qualifier:string%20%3F;object_part_qualifier:string%20%3F;object_derivative_qualifier:string%20%3F;object_context_qualifier:string%20%3F;causal_mechanism_qualifier:CausalMechanismQualifierEnum%20%3F;anatomical_context_qualifier:string%20%3F],[NamedThing]%3Cnarrow%20match%200..%2A-%20[PredicateMapping],[NamedThing]%3Cexact%20match%200..%2A-%20[PredicateMapping],[OrganismTaxon]%3Cspecies%20context%20qualifier%200..1-%20[PredicateMapping],[MappingCollection]++-%20predicate%20mappings%200..%2A%3E[PredicateMapping],[OrganismTaxon],[NamedThing],[MappingCollection])
 
 ---
 
@@ -79,13 +79,13 @@ URI: [biolink:PredicateMapping](https://w3id.org/biolink/vocab/PredicateMapping)
      * Range: [EvidenceType](EvidenceType.md)
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
@@ -190,7 +190,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [anatomical context qualifier](anatomical_context_qualifier.md)  <sub>0..1</sub>
      * Description: A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).
-     * Range: [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
+     * Range: [String](types/String.md)
      * Example: blood None
      * Example: cerebral cortext None
      * in subsets: (translator_minimal)

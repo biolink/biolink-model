@@ -15,7 +15,7 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](https:/
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[Publication],[OntologyClass],[NamedThing],[InformationResource],[GeneticInheritance],[EvidenceType],[GeneticInheritance]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Association]%5E-[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[Publication],[OntologyClass],[NamedThing],[GeneticInheritance],[EvidenceType],[GeneticInheritance]%3Cobject%201..1-%20[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation%7Cpredicate:predicate_type;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation]uses%20-.-%3E[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Association]%5E-[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[DiseaseOrPhenotypicFeatureToEntityAssociationMixin],[Attribute],[Association])
 
 ---
 
@@ -68,13 +68,13 @@ URI: [biolink:DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](https:/
      * Range: [EvidenceType](EvidenceType.md)
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
@@ -143,6 +143,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -157,24 +161,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
-
-### Inherited from information resource:
-
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
 ### Inherited from macromolecular machine mixin:
 

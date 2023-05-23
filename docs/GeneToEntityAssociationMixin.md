@@ -15,16 +15,20 @@ URI: [biolink:GeneToEntityAssociationMixin](https://w3id.org/biolink/vocab/GeneT
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPathwayAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPathwayAssociation],[GeneToDiseaseOrPhenotypicFeatureAssociation],[GeneOrGeneProduct],[DruggableGeneToDiseaseAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToEntityAssociationMixin],[GeneToPhenotypeAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPathwayAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[DruggableGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[CorrelatedGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[CausalGeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToPhenotypeAssociation],[GeneToPathwayAssociation],[GeneToDiseaseOrPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[GeneOrGeneProduct],[DruggableGeneToDiseaseAssociation],[CorrelatedGeneToDiseaseAssociation],[CausalGeneToDiseaseAssociation])
 
 ---
 
 
 ## Mixin for
 
+ * [CausalGeneToDiseaseAssociation](CausalGeneToDiseaseAssociation.md) (mixin) 
+ * [CorrelatedGeneToDiseaseAssociation](CorrelatedGeneToDiseaseAssociation.md) (mixin) 
  * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md) (mixin) 
+ * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) (mixin) 
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md) (mixin) 
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) (mixin)  - An interaction between a gene or gene product and a biological process or pathway.
+ * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md) (mixin) 
 
 ## Referenced by class
 

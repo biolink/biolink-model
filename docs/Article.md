@@ -15,7 +15,7 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[JournalArticle],[Attribute],[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;id(i):string;name(i):label_type%20%3F;publication_type(i):string;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F]%5E-[JournalArticle],[Publication]%5E-[Article],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Publication],[JournalArticle],[Attribute],[Article%7Cpublished_in:uriorcurie;iso_abbreviation:string%20%3F;volume:string%20%3F;issue:string%20%3F;pages(i):string%20%2A;summary(i):string%20%3F;keywords(i):string%20%2A;mesh_terms(i):uriorcurie%20%2A;id(i):string;name(i):label_type%20%3F;publication_type(i):string%20%2B;license(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;description(i):narrative_text%20%3F]%5E-[JournalArticle],[Publication]%5E-[Article],[Agent])
 
 ---
 
@@ -49,6 +49,10 @@ URI: [biolink:Article](https://w3id.org/biolink/vocab/Article)
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -63,6 +67,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
@@ -86,20 +94,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [creation date](creation_date.md)  <sub>0..1</sub>
      * Description: date on which an entity was created. This can be applied to nodes or edges
      * Range: [Date](types/Date.md)
-
-### Inherited from information resource:
-
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
 
 ### Inherited from named thing:
 
@@ -140,7 +134,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
- * [publication type](publication_type.md)  <sub>0..1</sub>
+ * [publication type](publication_type.md)  <sub>0..\*</sub>
      * Description: Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), FRBR-aligned Bibliographic Ontology (https://sparontologies.github.io/fabio/current/fabio.html), the MESH publication types (https://www.nlm.nih.gov/mesh/pubtypes.html), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of biolink:category biolink:OntologyClass.
      * Range: [String](types/String.md)
 

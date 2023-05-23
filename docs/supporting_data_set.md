@@ -14,7 +14,7 @@ URI: [biolink:supporting_data_set](https://w3id.org/biolink/vocab/supporting_dat
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..\*</sub> [InformationResource](InformationResource.md)
+[Association](Association.md) ->  <sub>0..\*</sub> [String](types/String.md)
 
 ## Parents
 

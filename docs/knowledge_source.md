@@ -14,7 +14,7 @@ URI: [biolink:knowledge_source](https://w3id.org/biolink/vocab/knowledge_source)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..1</sub> [InformationResource](InformationResource.md)
+[Association](Association.md) ->  <sub>0..1</sub> [String](types/String.md)
 
 ## Parents
 
@@ -33,6 +33,7 @@ URI: [biolink:knowledge_source](https://w3id.org/biolink/vocab/knowledge_source)
  * [Association](Association.md)
  * [BehaviorToBehavioralFeatureAssociation](BehaviorToBehavioralFeatureAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
+ * [CausalGeneToDiseaseAssociation](CausalGeneToDiseaseAssociation.md)
  * [CellLineAsAModelOfDiseaseAssociation](CellLineAsAModelOfDiseaseAssociation.md)
  * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalAffectsGeneAssociation](ChemicalAffectsGeneAssociation.md)
@@ -46,6 +47,7 @@ URI: [biolink:knowledge_source](https://w3id.org/biolink/vocab/knowledge_source)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [ContributorAssociation](ContributorAssociation.md)
+ * [CorrelatedGeneToDiseaseAssociation](CorrelatedGeneToDiseaseAssociation.md)
  * [DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation](DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation.md)
  * [DiseaseOrPhenotypicFeatureToLocationAssociation](DiseaseOrPhenotypicFeatureToLocationAssociation.md)
  * [DiseaseToExposureEventAssociation](DiseaseToExposureEventAssociation.md)

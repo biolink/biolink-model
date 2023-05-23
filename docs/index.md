@@ -142,7 +142,6 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [DatasetSummary](DatasetSummary.md) - an item that holds summary level information about a dataset.
          * [DatasetVersion](DatasetVersion.md) - an item that holds version level information about a dataset.
          * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
-         * [InformationResource](InformationResource.md) - A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
          * [Publication](Publication.md) - Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
              * [Article](Article.md) - a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
                  * [JournalArticle](JournalArticle.md) - an article, typically presenting results of research, that is published  in an issue of a scientific journal.
@@ -157,6 +156,7 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [StudyResult](StudyResult.md) - A collection of data items from a study that are about a particular study subject or experimental unit (the  'focus' of the Result) - optionally with context/provenance metadata that may be relevant to the interpretation of this data as evidence.
              * [ChiSquaredAnalysisResult](ChiSquaredAnalysisResult.md) - A result of a chi squared analysis.
              * [ConceptCountAnalysisResult](ConceptCountAnalysisResult.md) - A result of a concept count analysis.
+             * [LogOddsAnalysisResult](LogOddsAnalysisResult.md) - A result of a log odds ratio analysis.
              * [ObservedExpectedFrequencyAnalysisResult](ObservedExpectedFrequencyAnalysisResult.md) - A result of a observed expected frequency analysis.
              * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md) - A result of a relative frequency analysis.
              * [TextMiningResult](TextMiningResult.md) - A result of text mining.
@@ -210,11 +210,14 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
          * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component.
          * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution.
-     * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
-         * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
-         * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
-         * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
      * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
+         * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+             * [CausalGeneToDiseaseAssociation](CausalGeneToDiseaseAssociation.md)
+             * [CorrelatedGeneToDiseaseAssociation](CorrelatedGeneToDiseaseAssociation.md)
+             * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
+             * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+             * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+         * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
      * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and a gene expression site, possibly qualified by stage/timing info.
      * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
          * [GeneToGeneCoexpressionAssociation](GeneToGeneCoexpressionAssociation.md) - Indicates that two genes are co-expressed, generally under the same conditions.
@@ -223,7 +226,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [PairwiseMolecularInteraction](PairwiseMolecularInteraction.md) - An interaction at the molecular level between two physical entities
      * [GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md) - Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
      * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) - An interaction between a gene or gene product and a biological process or pathway.
-     * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
      * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
          * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
      * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -333,7 +335,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [DiseaseOrPhenotypicFeatureOutcome](DiseaseOrPhenotypicFeatureOutcome.md) - Physiological outcomes resulting from an exposure event which is the manifestation of a disease or other characteristic phenotype.
  * [EpidemiologicalOutcome](EpidemiologicalOutcome.md) - An epidemiological outcome, such as societal disease burden, resulting from an exposure event.
  * [HospitalizationOutcome](HospitalizationOutcome.md) - An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room visit) or chronic (inpatient) hospitalization.
- * [InformationResourceCollection](InformationResourceCollection.md) - A collection of information resources
  * [MappingCollection](MappingCollection.md) - A collection of deprecated mappings.
  * [MortalityOutcome](MortalityOutcome.md) - An outcome of death from resulting from an exposure event.
  * [PathologicalAnatomicalOutcome](PathologicalAnatomicalOutcome.md) - An outcome resulting from an exposure event which is the manifestation of an abnormal anatomical structure.
@@ -1225,7 +1226,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
  * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
- * [information resource status](information_resource_status.md) - the status of the infores identifier, default is released
  * [ingest date](ingest_date.md)
  * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
  * [is supplement](is_supplement.md)
@@ -1275,7 +1275,6 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
      * [has zygosity](has_zygosity.md)
      * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
-     * [information resource status](information_resource_status.md) - the status of the infores identifier, default is released
      * [ingest date](ingest_date.md)
      * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
      * [is supplement](is_supplement.md)
@@ -1356,6 +1355,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [concept count object](concept_count_object.md) - The number of instances in a dataset/cohort whose records contain the concept in the object slot of an association.
      * [concept count subject](concept_count_subject.md) - The number of instances in a dataset/cohort whose records contain the concept in the subject slot of an association.
      * [concept pair count](concept_pair_count.md) - The number of instances in a dataset/cohort whose records contain both the subject and object concept of an association.
+     * [dataset count](dataset_count.md) - The total number of instances (e.g., number of patients, number of rows, etc) in a dataset/cohort.
+         * [total sample size](total_sample_size.md) - The total number of patients or participants within a sample population.
      * [evidence count](evidence_count.md) - The number of evidence instances that are connected to an association.
      * [expected count](expected_count.md) - The expected (calculated) number of instances in a dataset/cohort whose records contain both the subject and  object concept of an association if the subject and object concepts are independent.
      * [expression site](expression_site.md) - location in which gene or protein expression takes place. May be cell, tissue, or organ.
@@ -1369,6 +1370,8 @@ Entity and association taxonomy and datamodel for life-sciences data
          * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
      * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
      * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+     * [log odds ratio](log_odds_ratio.md) - The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the  odds of event Y occurring in a non-exposed group.
+     * [log odds ration 95 ci](log_odds_ration_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
      * [logical interpretation](logical_interpretation.md)
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1476,6 +1479,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [context qualifier](context_qualifier.md) - Restricts the setting/context/location where the core concept (or qualified core concept) resides or occurs.
      * [object context qualifier](object_context_qualifier.md)
      * [subject context qualifier](subject_context_qualifier.md)
+ * [dataset count](dataset_count.md) - The total number of instances (e.g., number of patients, number of rows, etc) in a dataset/cohort.
+     * [total sample size](total_sample_size.md) - The total number of patients or participants within a sample population.
  * [derivative qualifier](derivative_qualifier.md) - A qualifier that composes with a core subject/object  concept to describe something that is derived from the core concept.  For example, the qualifier ‘metabolite’ combines with a ‘Chemical X’ core concept to express the composed concept ‘a metabolite of Chemical X’.
      * [object derivative qualifier](object_derivative_qualifier.md)
      * [subject derivative qualifier](subject_derivative_qualifier.md)
@@ -1507,6 +1512,8 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [primary knowledge source](primary_knowledge_source.md) - The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
  * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
  * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+ * [log odds ratio](log_odds_ratio.md) - The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the  odds of event Y occurring in a non-exposed group.
+ * [log odds ration 95 ci](log_odds_ration_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
  * [logical interpretation](logical_interpretation.md)
  * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1639,6 +1646,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [temporal context qualifier](temporal_context_qualifier.md) - a constraint of time placed upon the truth value of an association. for time intervales, use temporal interval qualifier.
      * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
  * [temporal interval qualifier](temporal_interval_qualifier.md) - a constraint of a time interval placed upon the truth value of an association.
+ * [total sample size](total_sample_size.md) - The total number of patients or participants within a sample population.
 
 ### Slot Mixins
 
@@ -1669,7 +1677,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has unit](has_unit.md) - connects a quantity value to a unit
  * [highest FDA approval status](highest_FDA_approval_status.md) - Should be the highest level of FDA approval this chemical entity or device has, regardless of which disease, condition or phenotype it is currently being reviewed to treat.  For specific levels of FDA approval for a specific condition, disease, phenotype, etc., see the association slot, 'FDA approval status.'
  * [id](id.md) - A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
- * [information resources](information_resources.md) - a collection of information resources
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.
  * [mapped predicate](mapped_predicate.md) - The predicate that is being replaced by the fully qualified representation of predicate + subject and object  qualifiers.  Only to be used in test data and mapping data to help with the transition to the fully qualified predicate model. Not to be used in knowledge graphs.
  * [name](name.md) - A human-readable name for an attribute or entity.
@@ -1746,7 +1753,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ## Enums
 
- * [AnatomicalContextQualifierEnum](AnatomicalContextQualifierEnum.md)
  * [CausalMechanismQualifierEnum](CausalMechanismQualifierEnum.md)
  * [ChemicalEntityDerivativeEnum](ChemicalEntityDerivativeEnum.md)
  * [ChemicalOrGeneOrGeneProductFormOrVariantEnum](ChemicalOrGeneOrGeneProductFormOrVariantEnum.md)
@@ -1758,7 +1764,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [FDAIDAAdverseEventEnum](FDAIDAAdverseEventEnum.md) - please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
  * [GeneOrGeneProductOrChemicalEntityAspectEnum](GeneOrGeneProductOrChemicalEntityAspectEnum.md)
  * [GeneOrGeneProductOrChemicalPartQualifierEnum](GeneOrGeneProductOrChemicalPartQualifierEnum.md)
- * [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
  * [LogicalInterpretationEnum](LogicalInterpretationEnum.md)
  * [PhaseEnum](PhaseEnum.md) - phase
  * [ReactionDirectionEnum](ReactionDirectionEnum.md)

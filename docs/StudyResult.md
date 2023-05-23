@@ -15,7 +15,7 @@ URI: [biolink:StudyResult](https://w3id.org/biolink/vocab/StudyResult)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TextMiningResult],[StudyResult%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[TextMiningResult],[StudyResult]%5E-[RelativeFrequencyAnalysisResult],[StudyResult]%5E-[ObservedExpectedFrequencyAnalysisResult],[StudyResult]%5E-[ConceptCountAnalysisResult],[StudyResult]%5E-[ChiSquaredAnalysisResult],[InformationContentEntity]%5E-[StudyResult],[RelativeFrequencyAnalysisResult],[ObservedExpectedFrequencyAnalysisResult],[InformationContentEntity],[ConceptCountAnalysisResult],[ChiSquaredAnalysisResult],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TextMiningResult],[StudyResult%7Clicense(i):string%20%3F;rights(i):string%20%3F;format(i):string%20%3F;creation_date(i):date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[TextMiningResult],[StudyResult]%5E-[RelativeFrequencyAnalysisResult],[StudyResult]%5E-[ObservedExpectedFrequencyAnalysisResult],[StudyResult]%5E-[LogOddsAnalysisResult],[StudyResult]%5E-[ConceptCountAnalysisResult],[StudyResult]%5E-[ChiSquaredAnalysisResult],[InformationContentEntity]%5E-[StudyResult],[RelativeFrequencyAnalysisResult],[ObservedExpectedFrequencyAnalysisResult],[LogOddsAnalysisResult],[InformationContentEntity],[ConceptCountAnalysisResult],[ChiSquaredAnalysisResult],[Attribute])
 
 ---
 
@@ -28,6 +28,7 @@ URI: [biolink:StudyResult](https://w3id.org/biolink/vocab/StudyResult)
 
  * [ChiSquaredAnalysisResult](ChiSquaredAnalysisResult.md) - A result of a chi squared analysis.
  * [ConceptCountAnalysisResult](ConceptCountAnalysisResult.md) - A result of a concept count analysis.
+ * [LogOddsAnalysisResult](LogOddsAnalysisResult.md) - A result of a log odds ratio analysis.
  * [ObservedExpectedFrequencyAnalysisResult](ObservedExpectedFrequencyAnalysisResult.md) - A result of a observed expected frequency analysis.
  * [RelativeFrequencyAnalysisResult](RelativeFrequencyAnalysisResult.md) - A result of a relative frequency analysis.
  * [TextMiningResult](TextMiningResult.md) - A result of text mining.
@@ -40,6 +41,10 @@ URI: [biolink:StudyResult](https://w3id.org/biolink/vocab/StudyResult)
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -54,6 +59,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
@@ -77,20 +86,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [creation date](creation_date.md)  <sub>0..1</sub>
      * Description: date on which an entity was created. This can be applied to nodes or edges
      * Range: [Date](types/Date.md)
-
-### Inherited from information resource:
-
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
-     * in subsets: (translator_minimal)
 
 ### Inherited from macromolecular machine mixin:
 

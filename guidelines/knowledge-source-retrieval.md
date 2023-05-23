@@ -46,6 +46,5 @@ External Resource CURIE: infores:dgidb
 Translator Resource CURIE: infores:molepro
 
 ### Adding a new Information Resource entry: 
-If there is no record in the catalog for a given resource, users can contact Biolink via issue in the tracker to add their resource.
-Minimally, add the ‘name’ and ‘url’ for the resource (if one exists). You may also suggest an infores CURIE.
+Please see the editing guidelines here for more information: [Modifying or Adding to the Information Resource Registry (infores)](information-resource-registry.md)
 

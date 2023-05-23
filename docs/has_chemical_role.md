@@ -45,3 +45,10 @@ URI: [biolink:has_chemical_role](https://w3id.org/biolink/vocab/has_chemical_rol
  * [SiRNA](SiRNA.md)
  * [SmallMolecule](SmallMolecule.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | We expect primarily to use CHEBI chemical roles here; however, we are looking for a mapping between CHEBI And ATC codes to support this slot. |
+

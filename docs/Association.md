@@ -15,7 +15,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[TaxonToTaxonAssociation],[SequenceVariantModulatesTreatmentAssociation],[SequenceFeatureRelationship],[SequenceAssociation],[RetrievalSource],[Publication],[PopulationToPopulationAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismToOrganismAssociation],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[MolecularActivityToPathwayAssociation],[MolecularActivityToMolecularActivityAssociation],[MolecularActivityToChemicalEntityAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSampleDerivationAssociation],[InformationResource],[InformationContentEntityToNamedThingAssociation],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToDiseaseAssociation],[GeneToPhenotypeAssociation],[GeneToPathwayAssociation],[GeneToGeneFamilyAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToDiseaseOrPhenotypicFeatureAssociation],[GeneToDiseaseAssociation],[FunctionalAssociation],[ExposureEventToPhenotypicFeatureAssociation],[ExposureEventToOutcomeAssociation],[EvidenceType],[EntityToPhenotypicFeatureAssociation],[EntityToDiseaseAssociation],[Entity],[DrugToGeneAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureEventAssociation],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[ContributorAssociation],[ChemicalToPathwayAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalGeneInteractionAssociation],[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[ChemicalEntityAssessesNamedThingAssociation],[ChemicalAffectsGeneAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BehaviorToBehavioralFeatureAssociation],[Attribute],[RetrievalSource]%3Cretrieval%20source%20ids%200..%2A-%20[Association%7Cpredicate:predicate_type;negated:boolean%20%3F;timepoint:time_type%20%3F;original_subject:string%20%3F;original_predicate:uriorcurie%20%3F;original_object:string%20%3F;subject_closure:string%20%2A;object_closure:string%20%2A;subject_namespace:string%20%3F;object_namespace:string%20%3F;subject_label_closure:string%20%2A;object_label_closure:string%20%2A;type:string%20%2A;category:category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[OntologyClass]%3Cobject%20category%20closure%200..%2A-%20[Association],[OntologyClass]%3Csubject%20category%20closure%200..%2A-%20[Association],[OntologyClass]%3Cobject%20category%200..1-%20[Association],[OntologyClass]%3Csubject%20category%200..1-%20[Association],[InformationResource]%3Caggregator%20knowledge%20source%200..%2A-%20[Association],[InformationResource]%3Cprimary%20knowledge%20source%200..1-%20[Association],[InformationResource]%3Cknowledge%20source%200..1-%20[Association],[EvidenceType]%3Chas%20evidence%200..%2A-%20[Association],[Publication]%3Cpublications%200..%2A-%20[Association],[OntologyClass]%3Cqualifiers%200..%2A-%20[Association],[NamedThing]%3Cobject%201..1-%20[Association],[NamedThing]%3Csubject%201..1-%20[Association],[Association]%5E-[VariantToPopulationAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[Association]%5E-[VariantToGeneAssociation],[Association]%5E-[VariantToDiseaseAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceFeatureRelationship],[Association]%5E-[SequenceAssociation],[Association]%5E-[PopulationToPopulationAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[Association]%5E-[OrganismToOrganismAssociation],[Association]%5E-[OrganismTaxonToOrganismTaxonAssociation],[Association]%5E-[OrganismTaxonToEnvironmentAssociation],[Association]%5E-[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[Association]%5E-[MolecularActivityToPathwayAssociation],[Association]%5E-[MolecularActivityToMolecularActivityAssociation],[Association]%5E-[MolecularActivityToChemicalEntityAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[Association]%5E-[InformationContentEntityToNamedThingAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[Association]%5E-[GeneToPhenotypeAssociation],[Association]%5E-[GeneToPathwayAssociation],[Association]%5E-[GeneToGeneFamilyAssociation],[Association]%5E-[GeneToGeneAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[GeneToDiseaseAssociation],[Association]%5E-[FunctionalAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToOutcomeAssociation],[Association]%5E-[EntityToPhenotypicFeatureAssociation],[Association]%5E-[EntityToDiseaseAssociation],[Association]%5E-[DrugToGeneAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToExposureEventAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureToLocationAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[Association]%5E-[ContributorAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[Association]%5E-[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalGeneInteractionAssociation],[Association]%5E-[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[Association]%5E-[ChemicalEntityAssessesNamedThingAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[Association]%5E-[BehaviorToBehavioralFeatureAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[Entity]%5E-[Association],[AnatomicalEntityToAnatomicalEntityAssociation])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToGeneAssociation],[VariantToDiseaseAssociation],[TaxonToTaxonAssociation],[SequenceVariantModulatesTreatmentAssociation],[SequenceFeatureRelationship],[SequenceAssociation],[RetrievalSource],[Publication],[PopulationToPopulationAssociation],[OrganismalEntityAsAModelOfDiseaseAssociation],[OrganismToOrganismAssociation],[OrganismTaxonToOrganismTaxonAssociation],[OrganismTaxonToEnvironmentAssociation],[OntologyClass],[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[NamedThing],[MolecularActivityToPathwayAssociation],[MolecularActivityToMolecularActivityAssociation],[MolecularActivityToChemicalEntityAssociation],[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[MaterialSampleDerivationAssociation],[InformationContentEntityToNamedThingAssociation],[GenotypeToVariantAssociation],[GenotypeToPhenotypicFeatureAssociation],[GenotypeToGenotypePartAssociation],[GenotypeToGeneAssociation],[GenotypeToDiseaseAssociation],[GeneToPathwayAssociation],[GeneToGeneFamilyAssociation],[GeneToGeneAssociation],[GeneToExpressionSiteAssociation],[GeneToDiseaseOrPhenotypicFeatureAssociation],[FunctionalAssociation],[ExposureEventToPhenotypicFeatureAssociation],[ExposureEventToOutcomeAssociation],[EvidenceType],[EntityToPhenotypicFeatureAssociation],[EntityToDiseaseAssociation],[Entity],[DrugToGeneAssociation],[DiseaseToPhenotypicFeatureAssociation],[DiseaseToExposureEventAssociation],[DiseaseOrPhenotypicFeatureToLocationAssociation],[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[ContributorAssociation],[ChemicalToPathwayAssociation],[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[ChemicalToChemicalAssociation],[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[ChemicalGeneInteractionAssociation],[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[ChemicalEntityAssessesNamedThingAssociation],[ChemicalAffectsGeneAssociation],[CellLineToDiseaseOrPhenotypicFeatureAssociation],[CaseToPhenotypicFeatureAssociation],[BehaviorToBehavioralFeatureAssociation],[Attribute],[RetrievalSource]%3Cretrieval%20source%20ids%200..%2A-%20[Association%7Cpredicate:predicate_type;negated:boolean%20%3F;knowledge_source:string%20%3F;primary_knowledge_source:string%20%3F;aggregator_knowledge_source:string%20%2A;timepoint:time_type%20%3F;original_subject:string%20%3F;original_predicate:uriorcurie%20%3F;original_object:string%20%3F;subject_closure:string%20%2A;object_closure:string%20%2A;subject_namespace:string%20%3F;object_namespace:string%20%3F;subject_label_closure:string%20%2A;object_label_closure:string%20%2A;type:string%20%2A;category:category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[OntologyClass]%3Cobject%20category%20closure%200..%2A-%20[Association],[OntologyClass]%3Csubject%20category%20closure%200..%2A-%20[Association],[OntologyClass]%3Cobject%20category%200..1-%20[Association],[OntologyClass]%3Csubject%20category%200..1-%20[Association],[EvidenceType]%3Chas%20evidence%200..%2A-%20[Association],[Publication]%3Cpublications%200..%2A-%20[Association],[OntologyClass]%3Cqualifiers%200..%2A-%20[Association],[NamedThing]%3Cobject%201..1-%20[Association],[NamedThing]%3Csubject%201..1-%20[Association],[Association]%5E-[VariantToPopulationAssociation],[Association]%5E-[VariantToPhenotypicFeatureAssociation],[Association]%5E-[VariantToGeneAssociation],[Association]%5E-[VariantToDiseaseAssociation],[Association]%5E-[TaxonToTaxonAssociation],[Association]%5E-[SequenceVariantModulatesTreatmentAssociation],[Association]%5E-[SequenceFeatureRelationship],[Association]%5E-[SequenceAssociation],[Association]%5E-[PopulationToPopulationAssociation],[Association]%5E-[OrganismalEntityAsAModelOfDiseaseAssociation],[Association]%5E-[OrganismToOrganismAssociation],[Association]%5E-[OrganismTaxonToOrganismTaxonAssociation],[Association]%5E-[OrganismTaxonToEnvironmentAssociation],[Association]%5E-[NamedThingAssociatedWithLikelihoodOfNamedThingAssociation],[Association]%5E-[MolecularActivityToPathwayAssociation],[Association]%5E-[MolecularActivityToMolecularActivityAssociation],[Association]%5E-[MolecularActivityToChemicalEntityAssociation],[Association]%5E-[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[MaterialSampleDerivationAssociation],[Association]%5E-[InformationContentEntityToNamedThingAssociation],[Association]%5E-[GenotypeToVariantAssociation],[Association]%5E-[GenotypeToPhenotypicFeatureAssociation],[Association]%5E-[GenotypeToGenotypePartAssociation],[Association]%5E-[GenotypeToGeneAssociation],[Association]%5E-[GenotypeToDiseaseAssociation],[Association]%5E-[GeneToPathwayAssociation],[Association]%5E-[GeneToGeneFamilyAssociation],[Association]%5E-[GeneToGeneAssociation],[Association]%5E-[GeneToExpressionSiteAssociation],[Association]%5E-[GeneToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[FunctionalAssociation],[Association]%5E-[ExposureEventToPhenotypicFeatureAssociation],[Association]%5E-[ExposureEventToOutcomeAssociation],[Association]%5E-[EntityToPhenotypicFeatureAssociation],[Association]%5E-[EntityToDiseaseAssociation],[Association]%5E-[DrugToGeneAssociation],[Association]%5E-[DiseaseToPhenotypicFeatureAssociation],[Association]%5E-[DiseaseToExposureEventAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureToLocationAssociation],[Association]%5E-[DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation],[Association]%5E-[ContributorAssociation],[Association]%5E-[ChemicalToPathwayAssociation],[Association]%5E-[ChemicalToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalToChemicalAssociation],[Association]%5E-[ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[ChemicalGeneInteractionAssociation],[Association]%5E-[ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation],[Association]%5E-[ChemicalEntityAssessesNamedThingAssociation],[Association]%5E-[ChemicalAffectsGeneAssociation],[Association]%5E-[CellLineToDiseaseOrPhenotypicFeatureAssociation],[Association]%5E-[CaseToPhenotypicFeatureAssociation],[Association]%5E-[BehaviorToBehavioralFeatureAssociation],[Association]%5E-[AnatomicalEntityToAnatomicalEntityAssociation],[Entity]%5E-[Association],[AnatomicalEntityToAnatomicalEntityAssociation])
 
 ---
 
@@ -49,13 +49,11 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
  * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
- * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and a gene expression site, possibly qualified by stage/timing info.
  * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
  * [GeneToGeneFamilyAssociation](GeneToGeneFamilyAssociation.md) - Set membership of a gene in a family of genes related by common evolutionary ancestry usually inferred by sequence comparisons. The genes in a given family generally share common sequence motifs which generally map onto shared gene product structure-function relationships.
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md) - An interaction between a gene or gene product and a biological process or pathway.
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
  * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
  * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) - Any association between one genotype and a genotypic entity that is a sub-component of it
@@ -92,7 +90,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -108,7 +106,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [EvidenceType](EvidenceType.md)
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
@@ -149,7 +147,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [PredicateType](types/PredicateType.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
      * Range: [Publication](Publication.md)
@@ -188,6 +186,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -202,24 +204,14 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
- * [has attribute](has_attribute.md)  <sub>0..\*</sub>
-     * Description: connects any entity to an attribute
-     * Range: [Attribute](Attribute.md)
-     * in subsets: (samples)
-
-### Inherited from information resource:
-
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
-     * Range: [String](types/String.md)
-     * in subsets: (translator_minimal)
  * [description](description.md)  <sub>0..1</sub>
      * Description: a human-readable description of an entity
      * Range: [NarrativeText](types/NarrativeText.md)
      * in subsets: (translator_minimal)
+ * [has attribute](has_attribute.md)  <sub>0..\*</sub>
+     * Description: connects any entity to an attribute
+     * Range: [Attribute](Attribute.md)
+     * in subsets: (samples)
 
 ### Inherited from macromolecular machine mixin:
 
@@ -232,7 +224,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
@@ -248,7 +240,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [EvidenceType](EvidenceType.md)
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [negated](negated.md)  <sub>0..1</sub>
      * Description: if set to true, then the association is negated i.e. is not true
      * Range: [Boolean](types/Boolean.md)
@@ -289,7 +281,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [PredicateType](types/PredicateType.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [publications](publications.md)  <sub>0..\*</sub>
      * Description: One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.
      * Range: [Publication](Publication.md)

@@ -5,7 +5,7 @@ grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneToDiseaseAssociation _(deprecated)_
+# Class: GeneToDiseaseAssociation
 
 
 
@@ -15,17 +15,24 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RetrievalSource],[Publication],[OntologyClass],[NamedThing],[InformationResource],[GeneToDiseaseAssociation%7Cpredicate(i):predicate_type;negated(i):boolean%20%3F;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[Association]%5E-[GeneToDiseaseAssociation],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[DruggableGeneToDiseaseAssociation],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[OntologyClass],[Onset],[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation],[Disease]%3Cobject%201..1-%20[GeneToDiseaseAssociation%7Csubject_aspect_qualifier(i):GeneOrGeneProductOrChemicalEntityAspectEnum%20%3F;object_direction_qualifier(i):DirectionQualifierEnum%20%3F;predicate(i):predicate_type;frequency_qualifier(i):frequency_value%20%3F;has_count(i):integer%20%3F;has_total(i):integer%20%3F;has_quotient(i):double%20%3F;has_percentage(i):double%20%3F;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToDiseaseAssociation],[GeneToDiseaseAssociation]uses%20-.-%3E[EntityToDiseaseAssociationMixin],[GeneToDiseaseAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseAssociation]%5E-[GeneHasVariantThatContributesToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[GeneAsAModelOfDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[DruggableGeneToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[CorrelatedGeneToDiseaseAssociation],[GeneToDiseaseAssociation]%5E-[CausalGeneToDiseaseAssociation],[GeneToDiseaseOrPhenotypicFeatureAssociation]%5E-[GeneToDiseaseAssociation],[GeneOrGeneProduct],[GeneHasVariantThatContributesToDiseaseAssociation],[GeneAsAModelOfDiseaseAssociation],[EvidenceType],[EntityToDiseaseAssociationMixin],[DruggableGeneToDiseaseAssociation],[Disease],[CorrelatedGeneToDiseaseAssociation],[CausalGeneToDiseaseAssociation],[BiologicalSex],[Attribute])
 
 ---
 
 
 ## Parents
 
- *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+ *  is_a: [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
+
+## Uses Mixins
+
+ *  mixin: [EntityToDiseaseAssociationMixin](EntityToDiseaseAssociationMixin.md) - mixin class for any association whose object (target node) is a disease
+ *  mixin: [GeneToEntityAssociationMixin](GeneToEntityAssociationMixin.md)
 
 ## Children
 
+ * [CausalGeneToDiseaseAssociation](CausalGeneToDiseaseAssociation.md)
+ * [CorrelatedGeneToDiseaseAssociation](CorrelatedGeneToDiseaseAssociation.md)
  * [DruggableGeneToDiseaseAssociation](DruggableGeneToDiseaseAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -35,6 +42,15 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
 
 ## Attributes
 
+
+### Own
+
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from association:
 
@@ -61,13 +77,13 @@ URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDis
      * Range: [EvidenceType](EvidenceType.md)
  * [knowledge source](knowledge_source.md)  <sub>0..1</sub>
      * Description: An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [primary knowledge source](primary_knowledge_source.md)  <sub>0..1</sub>
      * Description: The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  "aggregator knowledge source" can be used to capture non-primary sources.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [aggregator knowledge source](aggregator_knowledge_source.md)  <sub>0..\*</sub>
      * Description: An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.
-     * Range: [InformationResource](InformationResource.md)
+     * Range: [String](types/String.md)
  * [timepoint](timepoint.md)  <sub>0..1</sub>
      * Description: a point in time
      * Range: [TimeType](types/TimeType.md)
@@ -136,6 +152,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from entity:
 
+ * [id](id.md)  <sub>1..1</sub>
+     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [iri](iri.md)  <sub>0..1</sub>
      * Description: An IRI for an entity. This is determined by the id using expansion rules.
      * Range: [IriType](types/IriType.md)
@@ -150,24 +170,74 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * in subsets: (translator_minimal)
  * [type](type.md)  <sub>0..\*</sub>
      * Range: [String](types/String.md)
+ * [description](description.md)  <sub>0..1</sub>
+     * Description: a human-readable description of an entity
+     * Range: [NarrativeText](types/NarrativeText.md)
+     * in subsets: (translator_minimal)
  * [has attribute](has_attribute.md)  <sub>0..\*</sub>
      * Description: connects any entity to an attribute
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from information resource:
+### Inherited from entity to feature or disease qualifiers mixin:
 
- * [information resource status](information_resource_status.md)  <sub>0..1</sub>
-     * Description: the status of the infores identifier, default is released
-     * Range: [InformationResourceStatusEnum](InformationResourceStatusEnum.md)
- * [id](id.md)  <sub>1..1</sub>
-     * Description: A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI
+ * [severity qualifier](severity_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * Range: [SeverityValue](SeverityValue.md)
+     * in subsets: (translator_minimal)
+ * [onset qualifier](onset_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * Range: [Onset](Onset.md)
+     * in subsets: (translator_minimal)
+
+### Inherited from entity to phenotypic feature association mixin:
+
+ * [sex qualifier](sex_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * Range: [BiologicalSex](BiologicalSex.md)
+     * in subsets: (translator_minimal)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+
+### Inherited from frequency qualifier mixin:
+
+ * [frequency qualifier](frequency_qualifier.md)  <sub>0..1</sub>
+     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * Range: [FrequencyValue](types/FrequencyValue.md)
+     * in subsets: (translator_minimal)
+
+### Inherited from frequency quantifier:
+
+ * [has count](has_count.md)  <sub>0..1</sub>
+     * Description: number of things with a particular property
+     * Range: [Integer](types/Integer.md)
+ * [has total](has_total.md)  <sub>0..1</sub>
+     * Description: total number of things in a particular reference set
+     * Range: [Integer](types/Integer.md)
+ * [has quotient](has_quotient.md)  <sub>0..1</sub>
+     * Range: [Double](types/Double.md)
+ * [has percentage](has_percentage.md)  <sub>0..1</sub>
+     * Description: equivalent to has quotient multiplied by 100
+     * Range: [Double](types/Double.md)
+
+### Inherited from gene to disease or phenotypic feature association:
+
+ * [subject aspect qualifier](subject_aspect_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
      * in subsets: (translator_minimal)
- * [description](description.md)  <sub>0..1</sub>
-     * Description: a human-readable description of an entity
-     * Range: [NarrativeText](types/NarrativeText.md)
+ * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
      * in subsets: (translator_minimal)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
 
 ### Inherited from macromolecular machine mixin:
 
@@ -175,3 +245,21 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
+
+### Domain for slot:
+
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | NCIT:R176 refers to the inverse relationship |
+| **Exact Mappings:** | | SIO:000983 |
+| **Close Mappings:** | | dcid:DiseaseGeneAssociation |
+
