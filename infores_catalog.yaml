@@ -164,8 +164,14 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gwascatalog
   description: A graph based on the GWAS Catalog
 - id: infores:automat-hetio
-  status: released
+  status: deprecated
   name: Automat Hetio
+  xref:
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
+  description: A graph based on [hetionet (het.io)](het.io).
+- id: infores:automat-hetio-net 
+  status: released
+  name: Automat Hetio Net
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
   description: A graph based on [hetionet (het.io)](het.io).

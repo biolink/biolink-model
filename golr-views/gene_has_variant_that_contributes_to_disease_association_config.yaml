@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.3.2id: gene_has_variant_that_contributes_to_disease_association
+# metamodel_version: 1.7.0# version: 3.4.0id: gene_has_variant_that_contributes_to_disease_association
 schema_generating: true
 display_name: gene has variant that contributes to disease association
 document_category: gene has variant that contributes to disease association
@@ -152,6 +152,38 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
+- id: subject_aspect_qualifier
+  display_name: gene to disease or phenotypic feature association_subject aspect qualifier
+- id: object_direction_qualifier
+  display_name: gene to disease or phenotypic feature association_object direction
+    qualifier
+- id: frequency_qualifier
+  description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject
+  display_name: frequency qualifier
+- id: severity_qualifier
+  description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject
+  display_name: severity qualifier
+- id: onset_qualifier
+  description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject
+  display_name: onset qualifier
+- id: sex_qualifier
+  description: a qualifier used in a phenotypic association to state whether the association
+    is specific to a particular sex.
+  display_name: sex qualifier
+- id: has_count
+  description: number of things with a particular property
+  display_name: has count
+- id: has_total
+  description: total number of things in a particular reference set
+  display_name: has total
+- id: has_quotient
+  display_name: has quotient
+- id: has_percentage
+  description: equivalent to has quotient multiplied by 100
+  display_name: has percentage
 - id: subject_form_or_variant_qualifier
   display_name: subject form or variant qualifier
 - id: subject

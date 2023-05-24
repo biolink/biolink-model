@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.3.2
+# version: 3.4.0
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -203,9 +203,9 @@ linkml:Nodeidentifier NONLITERAL
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <has_evidence> @<EvidenceType> * ;
-             <knowledge_source> @<InformationResource> ? ;
-             <primary_knowledge_source> @<InformationResource> ? ;
-             <aggregator_knowledge_source> @<InformationResource> * ;
+             <knowledge_source> @linkml:String ? ;
+             <primary_knowledge_source> @linkml:String ? ;
+             <aggregator_knowledge_source> @linkml:String * ;
              <timepoint> @<TimeType> ? ;
              <original_subject> @linkml:String ? ;
              <original_predicate> @linkml:Uriorcurie ? ;
@@ -235,10 +235,9 @@ linkml:Nodeidentifier NONLITERAL
     @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
     @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
-    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneToDiseaseAssociation> OR
-    @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
-    @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GeneToPhenotypeAssociation> OR
-    @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR
+    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR
+    @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation>
+    OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR
     @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
     @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
     @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
@@ -460,6 +459,20 @@ linkml:Nodeidentifier NONLITERAL
           <has_percentage> @linkml:Double ?
        ) ;
        rdf:type [ <CaseToPhenotypicFeatureAssociation> ]
+    )
+}
+
+<CausalGeneToDiseaseAssociation> CLOSED {
+    (  $<CausalGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <object> @<Disease>
+       ) ;
+       rdf:type [ <CausalGeneToDiseaseAssociation> ]
     )
 }
 
@@ -935,6 +948,20 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<CorrelatedGeneToDiseaseAssociation> CLOSED {
+    (  $<CorrelatedGeneToDiseaseAssociation_tes> (  &<GeneToDiseaseAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseAssociation> ] ? ;
+          &<EntityToDiseaseAssociationMixin_tes> ;
+          rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <object> @<Disease>
+       ) ;
+       rdf:type [ <CorrelatedGeneToDiseaseAssociation> ]
+    )
+}
+
 <Dataset> CLOSED {
     (  $<Dataset_tes> (  &<InformationContentEntity_tes> ;
           rdf:type [ <InformationContentEntity> ] ?
@@ -1169,10 +1196,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
           <subject> @<GeneOrGeneProduct> ;
           <predicate> @<PredicateType> ;
-          <has_evidence> @<DruggableGeneCategoryEnum> * ;
-          <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ?
+          <has_evidence> @<DruggableGeneCategoryEnum> *
        ) ;
        rdf:type [ <DruggableGeneToDiseaseAssociation> ]
     )
@@ -1481,10 +1505,7 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <ModelToDiseaseAssociationMixin> ] ? ;
           &<EntityToDiseaseAssociationMixin_tes> ;
           rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
-          <subject> @<GeneOrGeneProduct> ;
-          <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ?
+          <subject> @<GeneOrGeneProduct>
        ) ;
        rdf:type [ <GeneAsAModelOfDiseaseAssociation> ]
     )
@@ -1563,39 +1584,47 @@ linkml:Nodeidentifier NONLITERAL
 
 <GeneToDiseaseAssociation>  (
     CLOSED {
-       (  $<GeneToDiseaseAssociation_tes> (  &<Association_tes> ;
-             rdf:type [ <Association> ] ?
+       (  $<GeneToDiseaseAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
+             rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
+             &<EntityToDiseaseAssociationMixin_tes> ;
+             rdf:type [ <EntityToDiseaseAssociationMixin> ] ? ;
+             &<GeneToEntityAssociationMixin_tes> ;
+             rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+             <subject> @<GeneOrGeneProduct> ;
+             <object> @<Disease>
           ) ;
           rdf:type [ <GeneToDiseaseAssociation> ]
        )
-    } OR @<DruggableGeneToDiseaseAssociation> OR @<GeneAsAModelOfDiseaseAssociation> OR
-    @<GeneHasVariantThatContributesToDiseaseAssociation>
+    } OR @<CausalGeneToDiseaseAssociation> OR @<CorrelatedGeneToDiseaseAssociation> OR @<DruggableGeneToDiseaseAssociation> OR
+    @<GeneAsAModelOfDiseaseAssociation> OR @<GeneHasVariantThatContributesToDiseaseAssociation>
 )
 
-<GeneToDiseaseOrPhenotypicFeatureAssociation> CLOSED {
-    (  $<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ? ;
-          &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
-          rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
-          &<GeneToEntityAssociationMixin_tes> ;
-          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
-          <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
-          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
-          <subject> @<GeneOrGeneProduct> ;
-          <object> @<DiseaseOrPhenotypicFeature> ;
-          <predicate> @<PredicateType> ;
-          <frequency_qualifier> @<FrequencyValue> ? ;
-          <severity_qualifier> @<SeverityValue> ? ;
-          <onset_qualifier> @<Onset> ? ;
-          <sex_qualifier> @<BiologicalSex> ? ;
-          <has_count> @linkml:Integer ? ;
-          <has_total> @linkml:Integer ? ;
-          <has_quotient> @linkml:Double ? ;
-          <has_percentage> @linkml:Double ?
-       ) ;
-       rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ]
-    )
-}
+<GeneToDiseaseOrPhenotypicFeatureAssociation>  (
+    CLOSED {
+       (  $<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> (  &<Association_tes> ;
+             rdf:type [ <Association> ] ? ;
+             &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
+             rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
+             &<GeneToEntityAssociationMixin_tes> ;
+             rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+             <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+             <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+             <subject> @<GeneOrGeneProduct> ;
+             <object> @<DiseaseOrPhenotypicFeature> ;
+             <predicate> @<PredicateType> ;
+             <frequency_qualifier> @<FrequencyValue> ? ;
+             <severity_qualifier> @<SeverityValue> ? ;
+             <onset_qualifier> @<Onset> ? ;
+             <sex_qualifier> @<BiologicalSex> ? ;
+             <has_count> @linkml:Integer ? ;
+             <has_total> @linkml:Integer ? ;
+             <has_quotient> @linkml:Double ? ;
+             <has_percentage> @linkml:Double ?
+          ) ;
+          rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ]
+       )
+    } OR @<GeneToDiseaseAssociation> OR @<GeneToPhenotypeAssociation>
+)
 
 <GeneToEntityAssociationMixin> {
     (  $<GeneToEntityAssociationMixin_tes> <subject> @<GeneOrGeneProduct> ;
@@ -1701,8 +1730,14 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <GeneToPhenotypeAssociation> CLOSED {
-    (  $<GeneToPhenotypeAssociation_tes> (  &<Association_tes> ;
-          rdf:type [ <Association> ] ?
+    (  $<GeneToPhenotypeAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
+          rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
+          &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
+          rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
+          &<GeneToEntityAssociationMixin_tes> ;
+          rdf:type [ <GeneToEntityAssociationMixin> ] ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <object> @<PhenotypicFeature>
        ) ;
        rdf:type [ <GeneToPhenotypeAssociation> ]
     )
@@ -1989,7 +2024,7 @@ linkml:Nodeidentifier NONLITERAL
 
 <InformationContentEntity>  (
     @<CommonDataElement> OR @<ConfidenceLevel> OR @<Dataset> OR @<DatasetDistribution> OR @<DatasetSummary> OR @<DatasetVersion> OR
-    @<EvidenceType> OR @<InformationResource> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
+    @<EvidenceType> OR @<Publication> OR @<RetrievalSource> OR @<StudyResult> OR @<StudyVariable>
 )
 
 <InformationContentEntity_struct> {
@@ -2015,22 +2050,6 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<InformationResource> CLOSED {
-    (  $<InformationResource_tes> (  &<InformationContentEntity_tes> ;
-          rdf:type [ <InformationContentEntity> ] ? ;
-          <information_resource_status> @<InformationResourceStatusEnum> ? ;
-          <synonym> @<LabelType> *
-       ) ;
-       rdf:type [ <InformationResource> ]
-    )
-}
-
-<InformationResourceCollection> CLOSED {
-    (  $<InformationResourceCollection_tes> <information_resources> @<InformationResource> * ;
-       rdf:type [ <InformationResourceCollection> ] ?
-    )
-}
-
 <Invertebrate> CLOSED {
     (  $<Invertebrate_tes> (  &<CellularOrganism_tes> ;
           rdf:type [ <CellularOrganism> ] ?
@@ -2052,6 +2071,14 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <OrganismalEntity> ] ?
        ) ;
        rdf:type [ <LifeStage> ]
+    )
+}
+
+<LogOddsAnalysisResult> CLOSED {
+    (  $<LogOddsAnalysisResult_tes> (  &<StudyResult_tes> ;
+          rdf:type [ <StudyResult> ] ?
+       ) ;
+       rdf:type [ <LogOddsAnalysisResult> ]
     )
 }
 
@@ -2775,7 +2802,7 @@ linkml:Nodeidentifier NONLITERAL
           <object_derivative_qualifier> @linkml:String ? ;
           <object_context_qualifier> @linkml:String ? ;
           <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
-          <anatomical_context_qualifier> @<AnatomicalContextQualifierEnum> ? ;
+          <anatomical_context_qualifier> @linkml:String ? ;
           <species_context_qualifier> @<OrganismTaxon> ? ;
           <exact_match> @<NamedThing> * ;
           <narrow_match> @<NamedThing> * ;
@@ -2870,7 +2897,7 @@ linkml:Nodeidentifier NONLITERAL
              <keywords> @linkml:String * ;
              <mesh_terms> @linkml:Uriorcurie * ;
              <name> @<LabelType> ? ;
-             <publication_type> @linkml:String
+             <publication_type> @linkml:String +
           ) ;
           rdf:type [ <Publication> ]
        )
@@ -3163,8 +3190,8 @@ linkml:Nodeidentifier NONLITERAL
 )
 
 <StudyResult>  (
-    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<ObservedExpectedFrequencyAnalysisResult> OR
-    @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult>
+    @<ChiSquaredAnalysisResult> OR @<ConceptCountAnalysisResult> OR @<LogOddsAnalysisResult> OR
+    @<ObservedExpectedFrequencyAnalysisResult> OR @<RelativeFrequencyAnalysisResult> OR @<TextMiningResult>
 )
 
 <StudyResult_struct> {
