@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.0
+# version: 3.4.2
 {
    "type": "Schema",
    "@context": [
@@ -8236,7 +8236,7 @@
                }
             },
             "https://w3id.org/biolink/vocab/GeneToDiseaseAssociation",
-            "https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation"
+            "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation"
          ]
       },
       {
@@ -8790,14 +8790,14 @@
       },
       {
          "type": "Shape",
-         "id": "https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation",
+         "id": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation",
          "closed": true,
          "expression": {
             "type": "EachOf",
             "expressions": [
                {
                   "type": "EachOf",
-                  "id": "https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation_tes",
+                  "id": "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation_tes",
                   "expressions": [
                      "https://w3id.org/biolink/vocab/GeneToDiseaseOrPhenotypicFeatureAssociation_tes",
                      {
@@ -8857,7 +8857,7 @@
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "values": [
-                        "https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation"
+                        "https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation"
                      ]
                   },
                   "min": 1

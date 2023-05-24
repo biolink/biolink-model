@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.0
+# version: 3.4.2
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -1623,7 +1623,7 @@ linkml:Nodeidentifier NONLITERAL
           ) ;
           rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ]
        )
-    } OR @<GeneToDiseaseAssociation> OR @<GeneToPhenotypeAssociation>
+    } OR @<GeneToDiseaseAssociation> OR @<GeneToPhenotypicFeatureAssociation>
 )
 
 <GeneToEntityAssociationMixin> {
@@ -1729,8 +1729,8 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
-<GeneToPhenotypeAssociation> CLOSED {
-    (  $<GeneToPhenotypeAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
+<GeneToPhenotypicFeatureAssociation> CLOSED {
+    (  $<GeneToPhenotypicFeatureAssociation_tes> (  &<GeneToDiseaseOrPhenotypicFeatureAssociation_tes> ;
           rdf:type [ <GeneToDiseaseOrPhenotypicFeatureAssociation> ] ? ;
           &<EntityToPhenotypicFeatureAssociationMixin_tes> ;
           rdf:type [ <EntityToPhenotypicFeatureAssociationMixin> ] ? ;
@@ -1739,7 +1739,7 @@ linkml:Nodeidentifier NONLITERAL
           <subject> @<GeneOrGeneProduct> ;
           <object> @<PhenotypicFeature>
        ) ;
-       rdf:type [ <GeneToPhenotypeAssociation> ]
+       rdf:type [ <GeneToPhenotypicFeatureAssociation> ]
     )
 }
 
