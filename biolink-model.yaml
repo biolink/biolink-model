@@ -2006,8 +2006,6 @@ slots:
     is_a: related to at instance level
     inverse: affects likelihood of
 
-
-
   associated with likelihood of:
     is_a: associated with
     description: >-
@@ -3288,7 +3286,7 @@ slots:
       - RO:0009501
 
   ameliorates condition:
-    aliases: [ 'ameliorates', 'beneficial for condition', 'therapeutic for condition']
+    aliases: ['ameliorates', 'beneficial for condition', 'therapeutic for condition']
     is_a: affects
     description: >-
       Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is 
@@ -3398,8 +3396,7 @@ slots:
 
   treats:
     mixin: true
-    aliases: [ 'is substance that treats', 'indicated for', 'ameliorates or prevents condition' ]
-    is_a: beneficial for
+    aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
       and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition 
@@ -3424,10 +3421,10 @@ slots:
       - MONDO:disease_responds_to
 
   treated by:
-    is_a: benefited by
+    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    # range: chemical or drug or treatement
+    # range: chemical or drug or treatment
     in_subset:
       - translator_minimal
     inverse: treats
@@ -3488,7 +3485,7 @@ slots:
     is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-    inverse: is studied to treat
+    inverse: studied to treat
 
   in clinical trials for:
     is_a: studied to treat
@@ -3502,7 +3499,7 @@ slots:
       interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
       can be capture using other modeling elements. 
       A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a 
-      study was observed to have been performed). Note that if the soruce reports an intervention to be in a phase 4 
+      study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4 
       trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge 
       SHOULD also be created (with knowledge_level = Assertion).
     domain: chemical or drug or treatment
@@ -3560,11 +3557,11 @@ slots:
       Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
       procedure, or activity was actually taken by one or more patients with the intent of treating the condition.
     notes: >-
-      This predicate is used simply to report obervations of use in the real world, and is agnostic to whether the 
+      This predicate is used simply to report observations of use in the real world, and is agnostic to whether the 
       treatment is approved for or might be effective in treating the condition. The treatment could be taken by a 
       patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In 
       practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
-      where pateints directly report the condition for which they took a drug, or statements from a database cataloging 
+      where patients directly report the condition for which they took a drug, or statements from a database cataloging 
       instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level 
       of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
       prescribed for use at some point in time).
@@ -4994,7 +4991,7 @@ slots:
     is_a: related to at instance level
     domain: disease or phenotypic feature
     range: drug
-    inverse: contraindicated for
+    inverse: contraindicated in
 
    # The remaining new slots are here because we ran across them somewhere and
    # they didn't seem to map well to anything else.
@@ -9582,11 +9579,11 @@ classes:
           - HP
       predicate:
         subproperty_of: treats
-      object_aspect_qualifier:
+      object aspect qualifier:
         range: DiseaseAspectQualifierEnum
-      object_direction_qualifier:
+      object direction qualifier:
         range: DirectionQualifierEnum
-      subject_direction_qualifier:
+      subject direction qualifier:
         range: DirectionQualifierEnum
 
   chemical or drug or treatment is studied to treat disease or phenotypic feature association:
@@ -9607,15 +9604,15 @@ classes:
           - MONDO
           - HP
       predicate:
-        subproperty_of: is studied to treat
-      object_aspect_qualifier:
+        subproperty_of: studied to treat
+      object aspect qualifier:
         range: DiseaseAspectQualifierEnum
-      object_direction_qualifier:
+      object direction qualifier:
         range: DirectionQualifierEnum
-      subject_direction_qualifier:
+      subject direction qualifier:
         range: DirectionQualifierEnum
 
-  chemical or drug or treatment detrimental for phenotypic feature association:
+  chemical or drug or treatment exacerbates phenotypic feature association:
     description: >-
       This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
       where the disesae or phenotypic feature is a secondary undesirable effect.
@@ -9637,20 +9634,20 @@ classes:
           - MONDO
           - HP
       predicate:
-        subproperty_of: detrimental for
-      object_aspect_qualifier:
+        subproperty_of: exacerbates condition
+      object aspect qualifier:
         range: DiseaseAspectQualifierEnum
-      object_direction_qualifier:
+      object direction qualifier:
         range: DirectionQualifierEnum
-      subject_direction_qualifier:
+      subject direction qualifier:
         range: DirectionQualifierEnum
     narrow_mappings:
       - SIO:000993
 
-  chemical or drug or treatment beneficial for phenotypic feature association:
+  chemical or drug or treatment treats phenotypic feature association:
     description: >-
-      This association defines a relationship between a chemical or treatment (or procedure) and a disease or phenotypic feature
-      where the disesae or phenotypic feature is a secondary undesirable effect.
+      This association defines a relationship between a chemical or treatment (or procedure) and a disease or 
+      phenotypic feature where the disease or phenotypic feature is a secondary undesirable effect.
     is_a: association
     mixins:
       - chemical to entity association mixin
@@ -9669,12 +9666,12 @@ classes:
           - MONDO
           - HP
       predicate:
-        subproperty_of: beneficial for
-      object_aspect_qualifier:
+        subproperty_of: treats
+      object aspect qualifier:
         range: DiseaseAspectQualifierEnum
-      object_direction_qualifier:
+      object direction qualifier:
         range: DirectionQualifierEnum
-      subject_direction_qualifier:
+      subject direction qualifier:
         range: DirectionQualifierEnum
     narrow_mappings:
       - SIO:000993
@@ -10047,10 +10044,9 @@ classes:
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-          subproperty_of: affects
+        subproperty_of: affects
     exact_mappings:
       - WBVocab:Gene-Phenotype-Association
-    range: disease or phenotypic feature
     notes: >-
       NCIT:R176 refers to the inverse relationship
       For use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating 
@@ -10924,7 +10920,6 @@ classes:
 
 enums:
 
-<<<<<<< HEAD
   DiseaseAspectQualifierEnum:
     permissible_values:
       onset:
