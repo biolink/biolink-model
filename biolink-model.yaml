@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.4.0
+version: 3.4.1
 
 
 ## ------------
@@ -527,7 +527,6 @@ slots:
     in_subset:
       - translator_minimal
 
-
   publication type:
     slot_uri: dct:type
     description: >-
@@ -611,7 +610,7 @@ slots:
     in_subset:
       - translator_minimal
     narrow_mappings:
-       # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
+       # there is an interesting debate here: are these terms "narrower" a.k.a. more specnaialized instances of
        # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
        # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
