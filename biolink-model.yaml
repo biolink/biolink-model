@@ -3477,8 +3477,61 @@ slots:
       performed in human patients to test the potential of the intervention to treat the medical condition  
       (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it 
       manifesting in the first place).
-    notes: >- 
-      
+    notes: >-
+      This predicate should be used when a source reports a clinical trial where the intervention is being or was 
+      interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
+      can be capture using other modeling elements. 
+      A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a 
+      study was observed to have been performed). Note that if the soruce reports an intervention to be in a phase 4 
+      trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge 
+      SHOULD also be created (with knowledge_level = Assertion).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+  # TODO: inverse of in_clinical_trials_for needed
+
+  in preclinical trials for:
+    is_a: studied to treat
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical 
+      study has been performed specifically to test the potential of the  substance, procedure, or activity to treat 
+      the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce 
+      the risk of it manifesting in the first place).
+    notes: >-
+      A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
+      was observed to have been performed).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: inverse of in_preclincal_trials_for needed
+
+  beneficial in models for:
+    is_a: studied to treat
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ 
+      phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
+    notes: >-
+      This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention 
+      alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.  
+      (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation 
+      phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
+      A knowledge level of Assertion should be used with this predicate, because it requires interpretation of 
+      results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
+      occurrence of a study).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: need inverse of beneficial_in_models_for
 
   prevents:
     is_a: affects risk for
