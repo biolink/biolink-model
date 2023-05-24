@@ -11060,7 +11060,8 @@ enums:
   TreatmentEvidenceTypeEnum:
     permissible_values:
       preclinical_evidence:
-        model_organism_evidence:
+      model_organism_evidence:
+        is_a: preclinical_evidence
       medical_use_evidence:
       patient_self_report_evidence:
       ehr_evidence:
