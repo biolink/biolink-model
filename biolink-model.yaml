@@ -3173,36 +3173,6 @@ slots:
        # narrower since just diseases, not phenotypic features as well
       - NCIT:R176
 
-  affects risk for:
-    is_a: related to at instance level
-    description: >-
-      holds between two entities where exposure to one entity alters the chance of developing the other
-    annotations:
-      canonical_predicate: true
-    in_subset:
-      - translator_minimal
-
-  risk affected by:
-    is_a: related to at instance level
-    inverse: affects risk for
-
-  predisposes:
-    is_a: affects risk for
-    description: >-
-      holds between two entities where exposure to one entity increases the chance of developing the other
-    in_subset:
-      - translator_minimal
-    annotations:
-      canonical_predicate: true
-      opposite_of: prevents
-    exact_mappings:
-      - SEMMEDDB:PREDISPOSES
-
-  has predisposing factor:
-    is_a: risk affected by
-    inverse: predisposes
-    in_subset:
-      - translator_minimal
 
   contributes to:
     is_a: related to at instance level
@@ -3311,6 +3281,7 @@ slots:
       disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
     mixins:
       - treats
+      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3325,12 +3296,12 @@ slots:
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
-
   prevents condition:
     aliases: ['prophylactic for']
     is_a: affects likelihood of
     mixins:
       - treats
+      - treats or taken or studied to treat
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
       and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.
@@ -3497,12 +3468,14 @@ slots:
       edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 
       'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it 
       is merely reporting that a study was observed to have been performed).
+    mixins:
+      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
 
-  treated in a study:
+  studied for treatment with:
     is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3526,11 +3499,13 @@ slots:
       SHOULD also be created (with knowledge_level = Assertion).
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
+    mixins:
+      - treats or taken or studied to treat
     annotations:
       canonical_predicate: true
     in_subset:
       - translator_minimal
-
+  # TODO: add inverse
 
   in preclinical trials for:
     is_a: studied to treat
@@ -3542,6 +3517,8 @@ slots:
     notes: >-
       A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
       was observed to have been performed).
+    mixins:
+      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3551,7 +3528,7 @@ slots:
     # TODO: inverse of in_preclincal_trials_for needed
 
   beneficial in models for:
-    is_a: studied to treat
+    is_a: in preclinical trials for
     description: >-
       Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
       procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ 
@@ -3564,6 +3541,8 @@ slots:
       A knowledge level of Assertion should be used with this predicate, because it requires interpretation of 
       results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
       occurrence of a study).
+    mixins:
+      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3587,6 +3566,8 @@ slots:
       instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level 
       of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
       prescribed for use at some point in time).
+    mixins:
+      - treats or taken or studied to treat
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
@@ -3595,32 +3576,23 @@ slots:
       - translator_minimal
    # TODO: need an inverse for taken to treat
 
-  prevents:
-    is_a: affects risk for
+  treats or taken or studied to treat:
+    mixin: true
     description: >-
-      holds between an entity whose application or use reduces
-      the likelihood of a potential outcome. Typically used to associate
-      a chemical entity, exposure, activity, or medical intervention
-      that can prevent the onset a disease or phenotypic feature.
+      Holds between an substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the substance, procedure, or activity is able to treat the condition, has been observed to be 
+      taken/prescribed in practice with the intent of treating the condition, or has been interrogated in a scientific 
+      study that hypothesized an ability to treat the condition (in humans or other biological systems/organisms).
+    notes: >-
+      This predicate is helpful both as a grouping predicate to aid in searching for broader senses of treating a 
+      condition, and as a catch-all for representing sources that are not clear about the sense of treats that is 
+      being reported. For example, text-mined statements concerning treatments for disease are based on sentences 
+      that can report treatment in any of these different senses and thus require a broader predicate such as 
+      this to safely report statement semantics.
     annotations:
       canonical_predicate: true
-      opposite_of: predisposes
     in_subset:
       - translator_minimal
-    exact_mappings:
-      - SEMMEDDB:PREVENTS
-    narrow_mappings:
-       # more restricted case of a material entity mitigating a pathological process
-      - RO:0002599
-
-  prevented by:
-    is_a: risk affected by
-    description: >-
-      holds between a potential outcome of which the likelihood
-      was reduced by the application or use of an entity.
-    inverse: prevents
-    annotations:
-      opposite_of: enabled by
 
   correlated with:
     is_a: associated with
@@ -5001,7 +4973,7 @@ slots:
       a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who 
       are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated 
       in people taking warfarrin as a preventative treatment for stroke).
-    domain: drug
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
