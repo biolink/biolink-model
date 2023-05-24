@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.4.0
+version: 3.4.2
 
 
 ## ------------
@@ -203,7 +203,6 @@ subsets:
 
 imports:
   - linkml:types
-  - information-resource
 
 types:
 
@@ -526,7 +525,6 @@ slots:
     multivalued: true
     in_subset:
       - translator_minimal
-
 
   publication type:
     slot_uri: dct:type
@@ -9864,7 +9862,7 @@ classes:
       - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
       - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
 
-  gene to phenotype association:
+  gene to phenotypic feature association:
     is_a: gene to disease or phenotypic feature association
     exact_mappings:
       - WBVocab:Gene-Phenotype-Association
