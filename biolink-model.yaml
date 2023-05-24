@@ -9866,12 +9866,21 @@ classes:
       - object
 
   entity to outcome association mixin:
-    deprecated: true
+    description: >-
+      An association between some entity and an outcome
+    mixin: true
+    defining_slots:
+      - object
+    slot_usage:
+      object:
+        range: outcome
 
   exposure event to outcome association:
     description: >-
       An association between an exposure event and an outcome.
     is_a: association
+    mixins:
+      - entity to outcome association mixin
     slots:
       - population context qualifier
       - temporal context qualifier
