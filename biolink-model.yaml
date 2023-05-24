@@ -609,7 +609,7 @@ slots:
     in_subset:
       - translator_minimal
     narrow_mappings:
-       # there is an interesting debate here: are these terms "narrower" a.k.a. more specnaialized instances of
+       # there is an interesting debate here: are these terms "narrower" a.k.a. more specialized instances of
        # 'biolink:synonym' or should they be binned into their respective namesake class of mappings?
        # namely, is 'oboInOwl:hasExactSynonym' an instance 'exact_mappings', etc.
       - skos:altLabel
