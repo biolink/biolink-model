@@ -1558,6 +1558,7 @@ slots:
       - translator_minimal
 
   severity qualifier:
+    deprecated: true
     description: >-
       a qualifier used in a phenotypic association to state
       how severe the phenotype is in the subject
@@ -1576,6 +1577,7 @@ slots:
       - translator_minimal
 
   onset qualifier:
+    deprecated: true
     description: >-
       a qualifier used in a phenotypic association to state
       when the phenotype appears is in the subject
@@ -1999,6 +2001,24 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
+  affects likelihood of:
+    is_a: related to at instance level
+    description: >-
+      Holds between two entities where the presence or application of one alters the chance that the other will come
+      to be.
+    notes: >-
+      This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
+      actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used 
+      for a statistical associations that describe correlations between two feature variables (use predicates 
+      in the 'associated with likelihood of' hierarchy here.)
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  likelihood affected by:
+    is_a: related to at instance level
+    inverse: affects likelihood of
 
   associated with likelihood of:
     is_a: associated with
@@ -2418,11 +2438,11 @@ slots:
   affects:
     is_a: related to at instance level
     description: >-
-      describes an entity that has a direct affect on the state or quality
-      of another existing entity. Use of the 'affects' predicate implies that
-      the affected entity already exists, unlike predicates such as
-      'affects risk for' and 'prevents, where the outcome is something
-      that may or may not come to be.
+      Describes an entity that has an effect on the state or quality of another existing entity.
+    notes: >-
+      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 
+      'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or 
+      may not come into existence.
     in_subset:
       - translator_minimal
     annotations:
@@ -3280,65 +3300,133 @@ slots:
       - RO:0009501
 
    # TODO: ameliorates and exacerbates inverses.
-  ameliorates:
+  ameliorates condition:
+    aliases: ['ameliorates', 'beneficial for condition', 'therapeutic for condition']
     is_a: affects
     description: >-
-      A relationship between an entity (e.g. a genotype,
-      genetic variation, chemical, or environmental exposure, clinical intervention)
-      and a condition (a phenotype or disease), where the
-      presence of the entity reduces or eliminates some or
-      all aspects of the condition.
-     # 'biological entity' currently includes 'exposure event' which covers a lot of related ground
-    domain: named thing
+      Holds between an entity and an existing medical condition (disease or phenotypic feature) where the entity is 
+      able to ameliorate symptoms, stabilize progression, or cure the condition.
+    notes: >-
+      This predicate describes a narrower view of 'treats' - that covers interventions that are beneficial for existing 
+      disease, and excludes interventions that prevent/reduce risk of developing a condition in the future.
+    mixins:
+      - treats
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: exacerbates
+      opposite_of: exacerbates condition
     exact_mappings:
       - RO:0003307
 
-  is ameliorated by:
-    inverse: ameliorates
+  condition ameliorated by:
+    inverse: ameliorates condition
     is_a: affected by
     domain: disease or phenotypic feature
-    range: named thing
+    range: chemical or drug or treatment
 
-  exacerbates:
-    is_a: affects
+
+  prevents condition:
+    aliases: ['prophylactic for']
+    is_a: affects likelihood of
+    mixins:
+      - treats
     description: >-
-      A relationship between an entity (e.g. a chemical,
-      environmental exposure, or some form of genetic variation)
-      and a condition (a phenotype or disease), where the presence
-      of the entity worsens some or all aspects of the condition.
-     # 'biological entity' currently includes 'exposure event' which covers a lot of related ground
-    domain: biological entity
+      Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the  substance, procedure, or activity is able to prevent it manifesting in the first place.
+    domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
+      opposite_of: promotes condition
+    in_subset:
+      - translator_minimal
+
+  condition prevented by:
+    inverse: prevents condition
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+
+  promotes condition:
+    mixin: true
+    is_a: related to at instance level
+    description: >-
+      Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+      opposite_of: prevents condition
+    in_subset:
+      - translator_minimal
+
+  predisposes to condition:
+    is_a: affects likelihood of
+    mixins:
+      - promotes condition
+    description: >-
+      Holds between two entities where the presence or application of one increases the chance that the
+      other will come to be.
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  condition predisposed by:
+    inverse: predisposes to condition
+    is_a: related to at instance level
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    in_subset:
+      - translator_minimal
+
+  exacerbates condition:
+    aliases: ['exacerbates', 'detrimental for condition']
+    is_a: affects
+    description: >-
+       Holds between a substance, procedure, or activity and an existing medical condition (disease or phenotypic 
+        feature) where the substance, procedure, or activity worsens some or all aspects of the condition.
+    mixins:
+      - promotes condition
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+      opposite_of: ameliorates condition
     exact_mappings:
       - RO:0003309
     broad_mappings:
       - SEMMEDDB:COMPLICATES
 
-  is exacerbated by:
-    inverse: exacerbates
+  condition exacerbated by:
+    inverse: exacerbates condition
     is_a: affected by
     domain: disease or phenotypic feature
-    range: biological entity
+    range: chemical or drug or treatment
     in_subset:
       - translator_minimal
 
   treats:
-    aliases: ['is substance that treats', 'indicated for']
-    is_a: ameliorates
+    mixin: true
+    aliases: ['is substance that treats', 'indicated for', 'ameliorates or prevents condition']
     description: >-
-      holds between a therapeutic procedure or chemical entity
-      and a disease or phenotypic feature that it is used to treat
+      Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
+      and states that the substance, procedure, or activity is able to ameliorate, stabilize, or cure the condition 
+      or delay, prevent, or reduce the risk of it manifesting in the first place. ‘Treats’ edges should be asserted 
+      (knoweldge_level: assertion) only in cases where there is strong supporting 
+      evidence - i.e. the intervention is approved or in phase 4 trials for the condition, or is a well-established 
+      treatment in the medical community. In the absence of such evidence, weaker predicates should be used in 
+      asserted edges (e.g. ‘in clinical trials for’ or ‘beneficial in models of’). ‘Treats’ edges based on weaker 
+      or indirect forms of evidence can however be created as predictions (knowledge_level: prediction) and should 
+      point to the more foundational asserted edges that support them.
     domain: chemical or drug or treatment
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: contraindicated for
     in_subset:
       - translator_minimal
     related_mappings:
@@ -3373,26 +3461,139 @@ slots:
       - REPODB:clinically_tested_withdrawn_phase_2_or_phase_3
       - REPODB:clinically_tested_withdrawn_phase_3
       - SNOMED:plays_role
+    broad_mappings:
+      - DRUGBANK:treats
+      - SEMMEDDB:TREATS
+      - WIKIDATA_PROPERTY:P2175
+      - MONDO:disease_responds_to
 
   treated by:
-    is_a: is ameliorated by
-    description: >-
-      holds between a disease or phenotypic feature and a therapeutic
-      process or chemical entity that is used to treat the condition
+    mixin: true
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
-     # range: chemical or drug or treatment
+    # range: chemical or drug or treatment
     in_subset:
       - translator_minimal
     inverse: treats
     exact_mappings:
       - WIKIDATA_PROPERTY:P2176
-       # RTX contributed term tagged as inverse of 'biolink:treats'
+      # RTX contributed term tagged as inverse of 'biolink:treats'
       - MONDO:disease_responds_to
     narrow_mappings:
-       # "is treated by substance" constrains statements to
-       # subset of the universe of all possible treatments
+      # "is treated by substance" constrains statements to
+      # subset of the universe of all possible treatments
       - RO:0002302
+
+  studied to treat:
+    is_a: related to at instance level
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that one or more 
+      scientific study has been performed to specifically test the potential of the  substance, procedure, or 
+      activity to treat the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, 
+      prevent, or reduce the risk of it manifesting in the first place).
+    notes: >-
+      Predicates in this hierarchy are used in practice when a source reports performance of a study, but there is 
+      not sufficient evidence or demonstrated efficacy against the condition to warrant creating a ‘treats’ assertion 
+      edge. Note however that a 'studied to treat' edge may be used as evidence to support creation of a separate 
+      'treats' prediction edge. A knowledge level of Observation MUST be used with this predicate (because it 
+      is merely reporting that a study was observed to have been performed).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+
+  treated in a study:
+    is_a: affected by
+    domain: disease or phenotypic feature
+    range: chemical or drug or treatment
+    # range: chemical or drug or treatment
+    inverse: studied to treat
+
+  in clinical trials for:
+    is_a: studied to treat
+    description: >-
+      Holds between an intervention and a medical condition, and reports that a clinical trial  is being or has been 
+      performed in human patients to test the potential of the intervention to treat the medical condition  
+      (e.g. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce the risk of it 
+      manifesting in the first place).
+    notes: >-
+      This predicate should be used when a source reports a clinical trial where the intervention is being or was 
+      interrogated, regardless of the phase of the trial, or its ultimate outcome.  Information about phase and outcome
+      can be capture using other modeling elements. 
+      A knowledge level of ""Observation"" MUST be used with this predicate (because it is merely reporting that a 
+      study was observed to have been performed). Note that if the source reports an intervention to be in a phase 4 
+      trial, or a completed phase 3 trial where clinical benefit was demonstrated, a separate 'treats' edge 
+      SHOULD also be created (with knowledge_level = Assertion).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+
+  in preclinical trials for:
+    is_a: studied to treat
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that a pre-clinical 
+      study has been performed specifically to test the potential of the  substance, procedure, or activity to treat 
+      the medical condition  (i.e. to ameliorate, stabilize, or cure the condition, or to delay, prevent, or reduce 
+      the risk of it manifesting in the first place).
+    notes: >-
+      A knowledge level of Observation MUST be used with this predicate (because it is merely reporting that a study 
+      was observed to have been performed).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: inverse of in_preclincal_trials_for needed
+
+  beneficial in models for:
+    is_a: studied to treat
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity has been shown to be effective in alleviating, preventing, or delaying symptoms/ 
+      phenotypes associated with a disease, in a model system for that disease (e.g. a mouse, fly, cell line, etc).
+    notes: >-
+      This predicate would be used to represent Model Organism Database (MOD) records reporting that an intervention 
+      alleviated phenotypes associated with a human disease in a model organism designated as a model of that disease.  
+      (e.g. a ZFIN record reporting that treatment with Braf Inhibitors reduced the abnormal brain cell proliferation 
+      phenotype of zebrafish used to model the human disease Kabuki Syndrome) .
+      A knowledge level of Assertion should be used with this predicate, because it requires interpretation of 
+      results to conclude an intervention to be 'beneficial', and thus goes beyond merely reporting the 
+      occurrence of a study).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+    # TODO: need inverse of beneficial_in_models_for
+
+  taken to treat:
+    aliases: ['administered to treat', 'used to treat', 'given to treat']
+    is_a: related to at instance level
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity was actually taken by one or more patients with the intent of treating the condition.
+    notes: >-
+      This predicate is used simply to report observations of use in the real world, and is agnostic to whether the 
+      treatment is approved for or might be effective in treating the condition. The treatment could be taken by a 
+      patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In 
+      practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
+      where patients directly report the condition for which they took a drug, or statements from a database cataloging 
+      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level 
+      of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
+      prescribed for use at some point in time).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+   # TODO: need an inverse for taken to treat
 
   prevents:
     is_a: affects risk for
@@ -4787,10 +4988,19 @@ slots:
     range: chemical or drug or treatment
     inverse: has side effect
 
-  contraindicated for:
+  contraindicated in:
     is_a: related to at instance level
-    description: Holds between a drug and a disease or phenotype, such that a person
-      with that disease should not be treated with the drug.
+    description: >-
+      Holds between a substance, procedure, or activity and a medical condition or circumstance, where an authority 
+      has established that the substance, procedure, or activity should not be applied as an intervention in patients 
+      with the condition or circumstance because it can result in detrimental outcomes.
+    notes: >-
+      This predicate relates the intervention with a specific disease, phenotype, or other medical circumstance that 
+      puts patients at high risk for detrimental outcomes.  This may be a different condition from the one that the 
+      drug would be used to treat (e.g.  pseudoephedrine is contraindicated in people with high-blood pressure as 
+      a treatment for nasal congestion), a biological state (e.g. isotretinoin is contraindicated in people who 
+      are pregnant as a treatment for acne), or being on a different medication (e.g. aspirin is contraindicated 
+      in people taking warfarrin as a preventative treatment for stroke).
     domain: drug
     range: disease or phenotypic feature
     annotations:
@@ -4799,11 +5009,16 @@ slots:
     exact_mappings:
       - NCIT:C37933
 
+  chemical entity or drug or treatment:
+    description: >-
+      A union of chemical entities and children, and drug or treatment.
+    mixin: true
+
   has contraindication:
     is_a: related to at instance level
     domain: disease or phenotypic feature
     range: drug
-    inverse: contraindicated for
+    inverse: contraindicated in
 
    # The remaining new slots are here because we ran across them somewhere and
    # they didn't seem to map well to anything else.
@@ -5721,8 +5936,13 @@ slots:
     exact_mappings:
       - gff3:phase
 
-  FDA approval status:
+  clinical use status:
     is_a: association slot
+    description: >-
+    range: ClinicalStatusEnum
+
+  FDA approval status:
+    is_a: clinical use status
     description: >-
     range: FDAApprovalStatusEnum
 
@@ -5942,6 +6162,7 @@ classes:
       - PATO:0020000
 
   severity value:
+    deprecated: true
     is_a: attribute
     description: >-
       describes the severity of a phenotypic feature or disease
@@ -8423,6 +8644,7 @@ classes:
       - HP:0031797
 
   onset:
+    deprecated: true
     is_a: clinical course
     description: >-
       The age group in which (disease) symptom manifestations appear
