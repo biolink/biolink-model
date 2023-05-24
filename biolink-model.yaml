@@ -1987,6 +1987,26 @@ slots:
       - https://doi.org/10.1101/108977
       - https://github.com/biolink/biolink-model/issues/657
 
+  affects likelihood of:
+    is_a: related to at instance level
+    description: >-
+      Holds between two entities where the presence or application of one alters the chance that the other will come
+      to be.
+    notes: >-
+      This predicate implies causation, where the 'affected' entity is something that does not yet exist, and the 
+      actions/execution of effector impact the likelihood that this entity may come to be. It is NOT to be used 
+      for a statistical associations that describe correlations between two feature variables (use predicates 
+      in the 'associated with likelihood of' hierarchy here.)
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+
+  likelihood affected by:
+    is_a: related to at instance level
+    inverse: affects likelihood of
+
+
 
   associated with likelihood of:
     is_a: associated with
@@ -2406,10 +2426,10 @@ slots:
   affects:
     is_a: related to at instance level
     description: >-
-      Describes an entity that has an effect on the state or quality  of another existing entity.
+      Describes an entity that has an effect on the state or quality of another existing entity.
     notes: >-
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 
-      'affects likelihood of' and 'prevents' where the effect concerns whether  or when something may or 
+      'affects likelihood of' and 'prevents' where the effect concerns whether or when something may or 
       may not come into existence.
     in_subset:
       - translator_minimal
@@ -3294,7 +3314,7 @@ slots:
 
   prevents condition:
     aliases: ['prophylactic for']
-    is_a: affects
+    is_a: affects likelihood of
     mixins:
       - treats
     description: >-
@@ -3316,7 +3336,7 @@ slots:
 
   promotes condition:
     mixin: true
-    is_a: affects
+    is_a: related to at instance level
     description: >-
       Holds between a substance, procedure, or activity and a medical condition (disease or phenotypic feature), 
       and states that the  substance, procedure, or activity is able to promote it manifesting in the first place.
@@ -3329,7 +3349,7 @@ slots:
       - translator_minimal
 
   predisposes to condition:
-    is_a: related to at instance level
+    is_a: affects likelihood of
     mixins:
       - promotes condition
     description: >-
@@ -3394,7 +3414,7 @@ slots:
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: contraindicated for
+      opposite_of: contraindicated in
     in_subset:
       - translator_minimal
     broad_mappings:
@@ -3532,6 +3552,29 @@ slots:
     in_subset:
       - translator_minimal
     # TODO: need inverse of beneficial_in_models_for
+
+  taken to treat:
+    aliases: ['administered to treat', 'used to treat', 'given to treat']
+    is_a: related to at instance level
+    description: >-
+      Holds between an  substance, procedure, or activity and a medical condition, and reports that the  substance, 
+      procedure, or activity was actually taken by one or more patients with the intent of treating the condition.
+    notes: >-
+      This predicate is used simply to report obervations of use in the real world, and is agnostic to whether the 
+      treatment is approved for or might be effective in treating the condition. The treatment could be taken by a 
+      patient on their own accord or prescribed by a clinician, as an off-label or an approved intervention. In 
+      practice, it would be used to represent records/statements from patient self-reporting sources like FAERS / AEOLUS
+      where pateints directly report the condition for which they took a drug, or statements from a database cataloging 
+      instances of off-label prescription of drugs for specific conditions (e.g. here, here, here). A knowledge level 
+      of Observation MUST be used with this predicate (because it is merely reporting that an intervention was used / 
+      prescribed for use at some point in time).
+    domain: chemical or drug or treatment
+    range: disease or phenotypic feature
+    annotations:
+      canonical_predicate: true
+    in_subset:
+      - translator_minimal
+   # TODO: need an inverse for taken to treat
 
   prevents:
     is_a: affects risk for
