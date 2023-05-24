@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.3.0id: drug_label
+# metamodel_version: 1.7.0# version: 3.4.2id: drug_label
 schema_generating: true
 description: 'a document accompanying a drug or its container that provides written,
   printed or graphic information about the drug, including drug contents, specific
@@ -113,3 +113,4 @@ fields:
     knowledge graph, then the CURIE identified term must be documented in the graph
     as a concept node of biolink:category biolink:OntologyClass.
   display_name: publication_publication type
+  cardinality: multi

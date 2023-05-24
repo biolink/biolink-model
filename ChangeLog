@@ -1,5 +1,38 @@
 CHANGES
 =======
+3.4.2
+----
+move GeneToPhenotypeAssociation to GeneToPhenotypicFeatureAssociation
+
+3.4.1
+-----
+recreate wheel with pydantic included
+
+3.4.0
+-----
+remove support for dynamic enumerations in anatomical context qualifier
+reinstate gene to disease and gene to phenotype associations as subclasses of
+gene to disease or phenotypic feature association.
+more infores URL updates
+
+3.3.4
+-----
+infores updates and format change
+infores TSV IS NOW DEPRECATED in favor of the infores-catalog.yaml file.  please make changes here going forward.
+bug fixes for documentation.
+
+3.3.3
+-----
+Infores formatting fixes and validation script updates.
+
+3.3.2
+-----
+added mappings identified from semmeddb domain/range analysis
+
+3.3.1
+----
+changes to support fixing documentation links and accessing biolink-model.yaml for use as an import.
+
 3.3.0
 -----
 * codespell: configuration, github action + typos fixed by @yarikoptic in https://github.com/biolink/biolink-model/pull/1285

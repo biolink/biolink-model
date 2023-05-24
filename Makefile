@@ -24,7 +24,7 @@ shacl: biolink-model.shacl.ttl
 json-schema: json-schema/biolink-model.json
 prefix-map: prefix-map/biolink-model-prefix-map.json
 
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld \
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld infores \
 json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex shacl biolink-model.ttl \
 prefix-map/biolink-model-prefix-map.json gen-pydantic id-prefixes
 
@@ -53,6 +53,8 @@ biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
 	export PIPENV_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
 
+infores:
+	poetry run gen-python information-resource.yaml > information_resource.py
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
@@ -64,7 +66,7 @@ docs/index.md: biolink-model.yaml env.lock
 # JEKYLL DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/Classes.md: biolink-model.yaml env.lock
-	poetry run python script/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
+	poetry run python scripts/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -130,8 +132,8 @@ prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.
 	poetry run gen-prefix-map $< > $@
 
 id-prefixes:
-	poetry run gen-python prefix-map/class_prefixes.yaml > script/classprefixes.py
-	cd script && poetry run python id_prefixes.py
+	poetry run gen-python prefix-map/class_prefixes.yaml > scripts/classprefixes.py
+	cd scripts && poetry run python id_prefixes.py
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
@@ -242,6 +244,7 @@ tests: biolink-model.yaml env.lock pytest # jsonschema_test
 	poetry run python -m unittest discover -p 'test_*.py'
 	poetry run codespell
 	poetry run yamllint -c .yamllint-config biolink-model.yaml
+	poetry run python scripts/verify_infores.py
 
 pytest: biolink/model.py
 	poetry run python $<
@@ -255,6 +258,7 @@ pytest: biolink/model.py
 clean:
 	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex shacl pydantic
 	rm -f env.lock
+	rm -rf information_resource.py
 	poetry --rm
 
 # ----------------------------------------

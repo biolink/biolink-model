@@ -5,7 +5,7 @@ name: Regenerate Biolink Model Artifacts
 on:
   push:
     branches:
-    - master
+      - master
   repository_dispatch:
     types: trigger-build-artifacts
 
@@ -18,60 +18,61 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE
-    - name: Checkout
-      uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Setup Python Environment
-      uses: actions/setup-python@v2
-      with:
-        # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-        python-version: 3.9
+      - name: Setup Python Environment
+        uses: actions/setup-python@v2
+        with:
+          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+          python-version: 3.9
 
-    - name: Setup build environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential git wget curl
-        sudo apt-get install -y openjdk-8-jre
-        sudo apt-get install -y graphviz
-        wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
-        tar -xvzf jsonschema2pojo-1.0.2.tar.gz
-        pip install poetry
+      - name: Setup build environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential git wget curl
+          sudo apt-get install -y openjdk-8-jre
+          sudo apt-get install -y graphviz
+          wget https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.0.2/jsonschema2pojo-1.0.2.tar.gz
+          tar -xvzf jsonschema2pojo-1.0.2.tar.gz
+          pip install poetry
 
-    - name: Generate Biolink Model artifacts
-      run: |
-        export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
-        make -B install build
-        if [ $? -eq 0 ]; then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add biolink-model.*
-          git add biolink-modeln.*
-          git add context*
-          git add biolink/model.py
-          git add biolink/pydanticmodel.py
-          git add java/BiolinkModel.java
-          git add graphviz/*
-          git add golr-views/*
-          git add pydantic/*
-          git add json-schema/biolink-model.json
-          git add prefix-map/biolink-model-prefix-map.json
-          git commit -m "Regenerate artifacts from biolink-model.yaml"
-          git push
-        else
-          echo "'make' failed to finish successfully"
-        fi
+      - name: Generate Biolink Model artifacts
+        run: |
+          export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
+          make -B install build
+          if [ $? -eq 0 ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add biolink-model.*
+            git add biolink-modeln.*
+            git add context*
+            git add biolink/model.py
+            git add biolink/pydanticmodel.py
+            git add java/BiolinkModel.java
+            git add graphviz/*
+            git add golr-views/*
+            git add pydantic/*
+            git add json-schema/biolink-model.json
+            git add prefix-map/biolink-model-prefix-map.json
+            git commit -m "Regenerate artifacts from biolink-model.yaml"
+            git push
+          else
+            echo "'make' failed to finish successfully"
+          fi
+      - name: Build documentation
+        run: |
+          poetry install
+          poetry run python scripts/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+          cp biolink-model.yaml docs
+          cp predicate_mapping.yaml docs
 
-    - name: Build documentation
-      run: |
-        poetry install
-        poetry run python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
-
-    - name: Deploy to gh-pages branch
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ github.token }}
-        REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
-        BRANCH: gh-pages # The branch the action should deploy to.
-        COMMIT_MESSAGE: 'Update documentation'
-        FOLDER: . # The folder the action should deploy.
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
+          BRANCH: gh-pages # The branch the action should deploy to.
+          COMMIT_MESSAGE: 'Update documentation'
+          FOLDER: . # The folder the action should deploy.

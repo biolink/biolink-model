@@ -3,7 +3,7 @@ name: Deploy Documentation
 # Controls when the action will run. Triggers the workflow on push
 on:
   release:
-    types: [created]
+    types: [ created ]
   repository_dispatch:
     types: trigger-build-documentation
 
@@ -28,36 +28,38 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup Python Environment
-      uses: actions/setup-python@v2
-      with:
-        # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-        python-version: 3.8
-        # The target architecture (x86, x64) of the Python interpreter.
-        # architecture: x64 # optional
+      - name: Setup Python Environment
+        uses: actions/setup-python@v2
+        with:
+          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
+          python-version: 3.8
+          # The target architecture (x86, x64) of the Python interpreter.
+          # architecture: x64 # optional
 
-    - name: Setup build environment
-      run: |
-        python3 -m venv env
-        source env/bin/activate
-        pip install linkml
+      - name: Setup build environment
+        run: |
+          python3 -m venv env
+          source env/bin/activate
+          pip install linkml
 
-    - name: Build documentation
-      run: |
-        source env/bin/activate
-        python script/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+      - name: Build documentation
+        run: |
+          source env/bin/activate
+          python scripts/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
+          cp biolink-model.yaml docs
+          cp predicate_mapping.yaml docs
 
-    - name: Deploy to gh-pages branch
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ github.token }}
-        REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
-        BRANCH: gh-pages # The branch the action should deploy to.
-        COMMIT_MESSAGE: 'Update documentation'
-        FOLDER: . # The folder the action should deploy.
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
+          BRANCH: gh-pages # The branch the action should deploy to.
+          COMMIT_MESSAGE: 'Update documentation'
+          FOLDER: . # The folder the action should deploy.
