@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-24T15:37:21
+# Generation date: 2023-05-24T15:55:34
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10246,6 +10246,14 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
+class ClinicalStatusEnum(EnumDefinitionImpl):
+
+    approved = PermissibleValue(text="approved")
+
+    _defn = EnumDefinition(
+        name="ClinicalStatusEnum",
+    )
+
 class DirectionQualifierEnum(EnumDefinitionImpl):
 
     increased = PermissibleValue(text="increased")
@@ -11370,18 +11378,6 @@ slots.gene_associated_with_condition = Slot(uri=BIOLINK.gene_associated_with_con
 slots.condition_associated_with_gene = Slot(uri=BIOLINK.condition_associated_with_gene, name="condition associated with gene", curie=BIOLINK.curie('condition_associated_with_gene'),
                    model_uri=BIOLINK.condition_associated_with_gene, domain=Gene, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.affects_risk_for = Slot(uri=BIOLINK.affects_risk_for, name="affects risk for", curie=BIOLINK.curie('affects_risk_for'),
-                   model_uri=BIOLINK.affects_risk_for, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.risk_affected_by = Slot(uri=BIOLINK.risk_affected_by, name="risk affected by", curie=BIOLINK.curie('risk_affected_by'),
-                   model_uri=BIOLINK.risk_affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.predisposes = Slot(uri=BIOLINK.predisposes, name="predisposes", curie=BIOLINK.curie('predisposes'),
-                   model_uri=BIOLINK.predisposes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_predisposing_factor = Slot(uri=BIOLINK.has_predisposing_factor, name="has predisposing factor", curie=BIOLINK.curie('has_predisposing_factor'),
-                   model_uri=BIOLINK.has_predisposing_factor, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
 slots.contributes_to = Slot(uri=BIOLINK.contributes_to, name="contributes to", curie=BIOLINK.curie('contributes_to'),
                    model_uri=BIOLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
@@ -11430,8 +11426,8 @@ slots.treated_by = Slot(uri=BIOLINK.treated_by, name="treated by", curie=BIOLINK
 slots.studied_to_treat = Slot(uri=BIOLINK.studied_to_treat, name="studied to treat", curie=BIOLINK.curie('studied_to_treat'),
                    model_uri=BIOLINK.studied_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.treated_in_a_study = Slot(uri=BIOLINK.treated_in_a_study, name="treated in a study", curie=BIOLINK.curie('treated_in_a_study'),
-                   model_uri=BIOLINK.treated_in_a_study, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+slots.studied_for_treatment_with = Slot(uri=BIOLINK.studied_for_treatment_with, name="studied for treatment with", curie=BIOLINK.curie('studied_for_treatment_with'),
+                   model_uri=BIOLINK.studied_for_treatment_with, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.in_clinical_trials_for = Slot(uri=BIOLINK.in_clinical_trials_for, name="in clinical trials for", curie=BIOLINK.curie('in_clinical_trials_for'),
                    model_uri=BIOLINK.in_clinical_trials_for, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
@@ -11445,11 +11441,8 @@ slots.beneficial_in_models_for = Slot(uri=BIOLINK.beneficial_in_models_for, name
 slots.taken_to_treat = Slot(uri=BIOLINK.taken_to_treat, name="taken to treat", curie=BIOLINK.curie('taken_to_treat'),
                    model_uri=BIOLINK.taken_to_treat, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
-slots.prevents = Slot(uri=BIOLINK.prevents, name="prevents", curie=BIOLINK.curie('prevents'),
-                   model_uri=BIOLINK.prevents, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.prevented_by = Slot(uri=BIOLINK.prevented_by, name="prevented by", curie=BIOLINK.curie('prevented_by'),
-                   model_uri=BIOLINK.prevented_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+slots.treats_or_taken_or_studied_to_treat = Slot(uri=BIOLINK.treats_or_taken_or_studied_to_treat, name="treats or taken or studied to treat", curie=BIOLINK.curie('treats_or_taken_or_studied_to_treat'),
+                   model_uri=BIOLINK.treats_or_taken_or_studied_to_treat, domain=None, range=Optional[str])
 
 slots.correlated_with = Slot(uri=BIOLINK.correlated_with, name="correlated with", curie=BIOLINK.curie('correlated_with'),
                    model_uri=BIOLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -11734,7 +11727,7 @@ slots.is_side_effect_of = Slot(uri=BIOLINK.is_side_effect_of, name="is side effe
                    model_uri=BIOLINK.is_side_effect_of, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
 
 slots.contraindicated_in = Slot(uri=BIOLINK.contraindicated_in, name="contraindicated in", curie=BIOLINK.curie('contraindicated_in'),
-                   model_uri=BIOLINK.contraindicated_in, domain=Drug, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.contraindicated_in, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.chemical_entity_or_drug_or_treatment = Slot(uri=BIOLINK.chemical_entity_or_drug_or_treatment, name="chemical entity or drug or treatment", curie=BIOLINK.curie('chemical_entity_or_drug_or_treatment'),
                    model_uri=BIOLINK.chemical_entity_or_drug_or_treatment, domain=None, range=Optional[str])
@@ -12008,6 +12001,9 @@ slots.strand = Slot(uri=BIOLINK.strand, name="strand", curie=BIOLINK.curie('stra
 
 slots.phase = Slot(uri=BIOLINK.phase, name="phase", curie=BIOLINK.curie('phase'),
                    model_uri=BIOLINK.phase, domain=CodingSequence, range=Optional[Union[str, "PhaseEnum"]])
+
+slots.clinical_use_status = Slot(uri=BIOLINK.clinical_use_status, name="clinical use status", curie=BIOLINK.curie('clinical_use_status'),
+                   model_uri=BIOLINK.clinical_use_status, domain=Association, range=Optional[Union[str, "ClinicalStatusEnum"]])
 
 slots.FDA_approval_status = Slot(uri=BIOLINK.FDA_approval_status, name="FDA approval status", curie=BIOLINK.curie('FDA_approval_status'),
                    model_uri=BIOLINK.FDA_approval_status, domain=Association, range=Optional[Union[str, "FDAApprovalStatusEnum"]])
