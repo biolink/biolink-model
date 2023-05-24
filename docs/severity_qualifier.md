@@ -43,7 +43,7 @@ URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualif
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)

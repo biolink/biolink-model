@@ -70,7 +70,7 @@ URI: [biolink:aggregator_knowledge_source](https://w3id.org/biolink/vocab/aggreg
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)

@@ -40,7 +40,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
 

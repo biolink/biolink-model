@@ -1,21 +1,21 @@
 ---
 parent: Associations
-title: biolink:GeneToPhenotypeAssociation
+title: biolink:GeneToPhenotypicFeatureAssociation
 grand_parent: Classes
 layout: default
 ---
 
-# Class: GeneToPhenotypeAssociation
+# Class: GeneToPhenotypicFeatureAssociation
 
 
 
 
-URI: [biolink:GeneToPhenotypeAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypeAssociation)
+URI: [biolink:GeneToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation)
 
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[PhenotypicFeature],[OntologyClass],[Onset],[PhenotypicFeature]%3Cobject%201..1-%20[GeneToPhenotypeAssociation%7Csubject_aspect_qualifier(i):GeneOrGeneProductOrChemicalEntityAspectEnum%20%3F;object_direction_qualifier(i):DirectionQualifierEnum%20%3F;predicate(i):predicate_type;frequency_qualifier(i):frequency_value%20%3F;has_count(i):integer%20%3F;has_total(i):integer%20%3F;has_quotient(i):double%20%3F;has_percentage(i):double%20%3F;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToPhenotypeAssociation],[GeneToPhenotypeAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypeAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation]%5E-[GeneToPhenotypeAssociation],[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation],[GeneOrGeneProduct],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SeverityValue],[RetrievalSource],[Publication],[PhenotypicFeature],[OntologyClass],[Onset],[PhenotypicFeature]%3Cobject%201..1-%20[GeneToPhenotypicFeatureAssociation%7Csubject_aspect_qualifier(i):GeneOrGeneProductOrChemicalEntityAspectEnum%20%3F;object_direction_qualifier(i):DirectionQualifierEnum%20%3F;predicate(i):predicate_type;frequency_qualifier(i):frequency_value%20%3F;has_count(i):integer%20%3F;has_total(i):integer%20%3F;has_quotient(i):double%20%3F;has_percentage(i):double%20%3F;negated(i):boolean%20%3F;knowledge_source(i):string%20%3F;primary_knowledge_source(i):string%20%3F;aggregator_knowledge_source(i):string%20%2A;timepoint(i):time_type%20%3F;original_subject(i):string%20%3F;original_predicate(i):uriorcurie%20%3F;original_object(i):string%20%3F;subject_closure(i):string%20%2A;object_closure(i):string%20%2A;subject_namespace(i):string%20%3F;object_namespace(i):string%20%3F;subject_label_closure(i):string%20%2A;object_label_closure(i):string%20%2A;type(i):string%20%2A;category(i):category_type%20%2A;id(i):string;iri(i):iri_type%20%3F;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneOrGeneProduct]%3Csubject%201..1-++[GeneToPhenotypicFeatureAssociation],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[EntityToPhenotypicFeatureAssociationMixin],[GeneToPhenotypicFeatureAssociation]uses%20-.-%3E[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation]%5E-[GeneToPhenotypicFeatureAssociation],[GeneToEntityAssociationMixin],[GeneToDiseaseOrPhenotypicFeatureAssociation],[GeneOrGeneProduct],[EvidenceType],[EntityToPhenotypicFeatureAssociationMixin],[BiologicalSex],[Attribute])
 
 ---
 

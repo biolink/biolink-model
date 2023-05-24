@@ -44,7 +44,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)

@@ -70,7 +70,7 @@ URI: [biolink:original_predicate](https://w3id.org/biolink/vocab/original_predic
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
  * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
  * [GeneToPathwayAssociation](GeneToPathwayAssociation.md)
- * [GeneToPhenotypeAssociation](GeneToPhenotypeAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
  * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
  * [GenotypeAsAModelOfDiseaseAssociation](GenotypeAsAModelOfDiseaseAssociation.md)
  * [GenotypeToDiseaseAssociation](GenotypeToDiseaseAssociation.md)
