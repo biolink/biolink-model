@@ -10040,21 +10040,22 @@ classes:
         examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
+      object:
+        range: disease or phenotypic feature
       subject aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
-      object:
-        range: phenotypic feature
-    exact_mappings:
-      - WBVocab:Gene-Phenotype-Association
-        range: disease or phenotypic feature
       object direction qualifier:
         range: DirectionQualifierEnum
       predicate:
-        subproperty_of: affects
-    comments:
-      - NCIT:R176 refers to the inverse relationship
-      - for use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating a symptom/phenotype
-      - if the relationship of the statement using this predicate is statistical in nature, please use `associated with likelihood` or one of its children.
+          subproperty_of: affects
+    exact_mappings:
+      - WBVocab:Gene-Phenotype-Association
+    range: disease or phenotypic feature
+    notes: >-
+      NCIT:R176 refers to the inverse relationship
+      For use in describing the affect that the loss of function of a gene can have on exacerbating or ameliorating 
+      a symptom/phenotype.  If the relationship of the statement using this predicate is statistical in nature, please use 
+      `associated with likelihood` or one of its children.
 
   gene to phenotypic feature association:
     is_a: gene to disease or phenotypic feature association
