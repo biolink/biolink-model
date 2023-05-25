@@ -12,6 +12,7 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -71,6 +72,7 @@ type AnatomicalEntity implements PhysicalEssence
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -276,6 +278,7 @@ type Bacterium
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -291,6 +294,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -369,6 +373,7 @@ type BehavioralFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type BehavioralOutcome implements Outcome
@@ -387,6 +392,7 @@ type BiologicalEntity implements ThingWithTaxon
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type BiologicalProcess implements Occurrent, OntologyClass
@@ -401,6 +407,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -418,6 +425,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -516,6 +524,7 @@ type Case implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -625,6 +634,7 @@ type Cell
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -639,6 +649,7 @@ type CellLine implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -733,6 +744,7 @@ type CellularComponent
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -747,6 +759,7 @@ type CellularOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -1305,6 +1318,7 @@ type ClinicalFinding
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [ClinicalAttribute]
   }
 
@@ -1385,6 +1399,7 @@ type CodingSequence
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Cohort implements SubjectOfInvestigation
@@ -1398,6 +1413,7 @@ type Cohort implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -1684,6 +1700,7 @@ type Disease
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type DiseaseOrPhenotypicFeature
@@ -1698,6 +1715,7 @@ type DiseaseOrPhenotypicFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
@@ -2297,6 +2315,7 @@ type Exon
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type ExonToTranscriptRelationship
@@ -2523,6 +2542,7 @@ type Fungus
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -2537,6 +2557,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     providedBy: [String]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     symbol: String
     synonym: [LabelType]
     xref: [Uriorcurie]
@@ -2609,6 +2630,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -3132,6 +3154,7 @@ type GeneticInheritance
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -3146,6 +3169,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -3167,6 +3191,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     hasGeneOrGeneProduct: [Gene]
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 interface GenomicEntity
@@ -3227,6 +3252,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasZygosity: Zygosity
     hasBiologicalSequence: BiologicalSequence
   }
@@ -3541,6 +3567,7 @@ type GrossAnatomicalStructure
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3556,6 +3583,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -3587,6 +3615,7 @@ type Human implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3601,6 +3630,7 @@ type IndividualOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3668,6 +3698,7 @@ type Invertebrate
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3709,6 +3740,7 @@ type LifeStage
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3741,6 +3773,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 interface MacromolecularMachineMixin
@@ -3872,6 +3905,7 @@ type Mammal implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3989,6 +4023,7 @@ type MicroRNA
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -4010,6 +4045,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
     enabledBy: [MacromolecularMachineMixin]
@@ -4240,6 +4276,7 @@ type NoncodingRNAProduct
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -4262,6 +4299,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type NucleicAcidSequenceMotif
@@ -4276,6 +4314,7 @@ type NucleicAcidSequenceMotif
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, EpigenomicEntity
@@ -4290,6 +4329,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -4563,6 +4603,7 @@ type OrganismalEntity implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4741,6 +4782,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4760,6 +4802,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4798,6 +4841,7 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4828,6 +4872,7 @@ type PhenotypicFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type PhenotypicQuality
@@ -4895,6 +4940,7 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4924,6 +4970,7 @@ type Plant
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4939,6 +4986,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
@@ -4952,6 +5000,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -5003,6 +5052,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5101,6 +5151,7 @@ type Protein implements GeneProductMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5116,6 +5167,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -5131,6 +5183,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -5146,6 +5199,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5268,6 +5322,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -5283,6 +5338,7 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -5351,6 +5407,7 @@ type RNAProduct implements GeneProductMixin
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5373,6 +5430,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5463,6 +5521,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -5565,6 +5624,7 @@ type SiRNA
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5598,6 +5658,7 @@ type Snv
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -5668,6 +5729,7 @@ type StudyPopulation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -5770,6 +5832,7 @@ type TextMiningResult
 interface ThingWithTaxon
   {
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Transcript
@@ -5791,6 +5854,7 @@ type Transcript
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type TranscriptToGeneRelationship
@@ -5841,6 +5905,7 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -6116,6 +6181,7 @@ type Vertebrate
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -6130,6 +6196,7 @@ type Virus implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
