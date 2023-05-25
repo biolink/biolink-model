@@ -15,7 +15,7 @@ URI: [biolink:LifeStage](https://w3id.org/biolink/vocab/LifeStage)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[OrganismTaxon],[GeneToExpressionSiteAssociation]-%20stage%20qualifier%200..1%3E[LifeStage%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneExpressionMixin]-%20stage%20qualifier%200..1%3E[LifeStage],[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%200..1%3E[LifeStage],[OrganismalEntity]%5E-[LifeStage],[GeneToExpressionSiteAssociation],[GeneExpressionMixin],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismalEntity],[OrganismTaxon],[GeneToExpressionSiteAssociation]-%20stage%20qualifier%200..1%3E[LifeStage%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneExpressionMixin]-%20stage%20qualifier%200..1%3E[LifeStage],[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%200..1%3E[LifeStage],[OrganismalEntity]%5E-[LifeStage],[GeneToExpressionSiteAssociation],[GeneExpressionMixin],[Attribute],[Association])
 
 ---
 
@@ -110,6 +110,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

@@ -15,7 +15,7 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon],[NucleicAcidEntity]uses%20-.-%3E[ThingWithTaxon],[GenomicBackgroundExposure]uses%20-.-%3E[ThingWithTaxon],[BiologicalEntity]uses%20-.-%3E[ThingWithTaxon],[OrganismTaxon],[NucleicAcidEntity],[GenomicBackgroundExposure],[BiologicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon]%3Cin%20taxon%200..%2A-%20[ThingWithTaxon%7Cin_taxon_label:label_type%20%3F],[NucleicAcidEntity]uses%20-.-%3E[ThingWithTaxon],[GenomicBackgroundExposure]uses%20-.-%3E[ThingWithTaxon],[BiologicalEntity]uses%20-.-%3E[ThingWithTaxon],[OrganismTaxon],[NucleicAcidEntity],[GenomicBackgroundExposure],[BiologicalEntity])
 
 ---
 
@@ -39,10 +39,18 @@ URI: [biolink:ThingWithTaxon](https://w3id.org/biolink/vocab/ThingWithTaxon)
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
      * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal)
 
 ### Domain for slot:
 
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)

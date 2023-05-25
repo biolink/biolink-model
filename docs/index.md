@@ -1225,7 +1225,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
  * [has total](has_total.md) - total number of things in a particular reference set
  * [has zygosity](has_zygosity.md)
- * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
+ * [in taxon label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
  * [ingest date](ingest_date.md)
  * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
  * [is supplement](is_supplement.md)
@@ -1274,7 +1274,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [has taxonomic rank](has_taxonomic_rank.md)
      * [has topic](has_topic.md) - Connects a node to a vocabulary term or ontology class that describes some aspect of the entity. In general specific characterization is preferred. See https://github.com/biolink/biolink-model/issues/238
      * [has zygosity](has_zygosity.md)
-     * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
+     * [in taxon label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
      * [ingest date](ingest_date.md)
      * [is metabolite](is_metabolite.md) - indicates whether a molecular entity is a metabolite
      * [is supplement](is_supplement.md)

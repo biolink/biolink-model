@@ -113,7 +113,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [in complex with](in_complex_with.md) - holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
  * [in pathway with](in_pathway_with.md) - holds between two genes or gene products that are part of in the same biological pathway
  * [in taxon](in_taxon.md) - connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
- * [in_taxon_label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
+ * [in taxon label](in_taxon_label.md) - The human readable scientific name for the taxon of the entity.
  * [increases response to](increases_response_to.md) - holds between two chemical entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine mixin, biological or pathological process) to the other
  * [interacts with](interacts_with.md) - holds between any two entities that directly or indirectly interact with each other
  * [iri](iri.md) - An IRI for an entity. This is determined by the id using expansion rules.

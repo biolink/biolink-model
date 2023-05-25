@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.0
+# version: 3.4.2
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -3074,7 +3074,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     object: Pathway!
   }
 
-type GeneToPhenotypeAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
   {
     id: String!
     iri: IriType

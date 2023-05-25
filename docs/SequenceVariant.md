@@ -15,7 +15,7 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[VariantAsAModelOfDiseaseAssociation],[Snv],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..%2A-%20[SequenceVariant%7Chas_biological_sequence:biological_sequence%20%3F;id:string;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToEntityAssociationMixin]-%20subject%201..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[SequenceVariant]uses%20-.-%3E[GenomicEntity],[SequenceVariant]uses%20-.-%3E[PhysicalEssence],[SequenceVariant]uses%20-.-%3E[OntologyClass],[SequenceVariant]%5E-[Snv],[BiologicalEntity]%5E-[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenotypeToVariantAssociation],[GenomicEntity],[Gene],[BiologicalEntity],[Attribute],[Association])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToPopulationAssociation],[VariantToPhenotypicFeatureAssociation],[VariantToEntityAssociationMixin],[VariantAsAModelOfDiseaseAssociation],[Snv],[SequenceVariantModulatesTreatmentAssociation],[Gene]%3Chas%20gene%200..%2A-%20[SequenceVariant%7Chas_biological_sequence:biological_sequence%20%3F;id:string;in_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenotypeToVariantAssociation]-%20object%201..1%3E[SequenceVariant],[SequenceVariantModulatesTreatmentAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantAsAModelOfDiseaseAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToEntityAssociationMixin]-%20subject%201..1%3E[SequenceVariant],[VariantToPhenotypicFeatureAssociation]-%20subject%201..1%3E[SequenceVariant],[VariantToPopulationAssociation]-%20subject%201..1%3E[SequenceVariant],[SequenceVariant]uses%20-.-%3E[GenomicEntity],[SequenceVariant]uses%20-.-%3E[PhysicalEssence],[SequenceVariant]uses%20-.-%3E[OntologyClass],[SequenceVariant]%5E-[Snv],[BiologicalEntity]%5E-[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenotypeToVariantAssociation],[GenomicEntity],[Gene],[BiologicalEntity],[Attribute],[Association])
 
 ---
 
@@ -146,6 +146,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ### Domain for slot:

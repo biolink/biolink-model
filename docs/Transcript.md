@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;in_taxon_label(i):label_type%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
 
 ---
 
@@ -132,6 +132,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

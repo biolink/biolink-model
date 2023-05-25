@@ -15,7 +15,7 @@ URI: [biolink:BiologicalEntity](https://w3id.org/biolink/vocab/BiologicalEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[SequenceVariant],[RegulatoryRegion],[ReagentTargetedGene],[ProteinFamily],[ProteinDomain],[PosttranslationalModification],[Polypeptide],[PhenotypicFeature],[OrganismalEntity],[OrganismTaxon],[NucleosomeModification],[NucleicAcidSequenceMotif],[NamedThing],[MacromolecularComplex],[Haplotype],[Genotype],[Genome],[GeneticInheritance],[GeneFamily],[Gene],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ThingWithTaxon],[BiologicalEntity]%5E-[SequenceVariant],[BiologicalEntity]%5E-[RegulatoryRegion],[BiologicalEntity]%5E-[ReagentTargetedGene],[BiologicalEntity]%5E-[ProteinFamily],[BiologicalEntity]%5E-[ProteinDomain],[BiologicalEntity]%5E-[PosttranslationalModification],[BiologicalEntity]%5E-[Polypeptide],[BiologicalEntity]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[NucleosomeModification],[BiologicalEntity]%5E-[NucleicAcidSequenceMotif],[BiologicalEntity]%5E-[MacromolecularComplex],[BiologicalEntity]%5E-[Haplotype],[BiologicalEntity]%5E-[Genotype],[BiologicalEntity]%5E-[Genome],[BiologicalEntity]%5E-[GeneticInheritance],[BiologicalEntity]%5E-[GeneFamily],[BiologicalEntity]%5E-[Gene],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ThingWithTaxon],[SequenceVariant],[RegulatoryRegion],[ReagentTargetedGene],[ProteinFamily],[ProteinDomain],[PosttranslationalModification],[Polypeptide],[PhenotypicFeature],[OrganismalEntity],[OrganismTaxon],[NucleosomeModification],[NucleicAcidSequenceMotif],[NamedThing],[MacromolecularComplex],[Haplotype],[Genotype],[Genome],[GeneticInheritance],[GeneFamily],[Gene],[DiseaseOrPhenotypicFeature],[BiologicalProcessOrActivity],[BiologicalEntity%7Cin_taxon_label:label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[ThingWithTaxon],[BiologicalEntity]%5E-[SequenceVariant],[BiologicalEntity]%5E-[RegulatoryRegion],[BiologicalEntity]%5E-[ReagentTargetedGene],[BiologicalEntity]%5E-[ProteinFamily],[BiologicalEntity]%5E-[ProteinDomain],[BiologicalEntity]%5E-[PosttranslationalModification],[BiologicalEntity]%5E-[Polypeptide],[BiologicalEntity]%5E-[OrganismalEntity],[BiologicalEntity]%5E-[NucleosomeModification],[BiologicalEntity]%5E-[NucleicAcidSequenceMotif],[BiologicalEntity]%5E-[MacromolecularComplex],[BiologicalEntity]%5E-[Haplotype],[BiologicalEntity]%5E-[Genotype],[BiologicalEntity]%5E-[Genome],[BiologicalEntity]%5E-[GeneticInheritance],[BiologicalEntity]%5E-[GeneFamily],[BiologicalEntity]%5E-[Gene],[BiologicalEntity]%5E-[DiseaseOrPhenotypicFeature],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[NamedThing]%5E-[BiologicalEntity],[Attribute])
 
 ---
 
@@ -120,6 +120,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

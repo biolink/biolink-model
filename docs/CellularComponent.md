@@ -15,7 +15,7 @@ URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponen
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachineToCellularComponentAssociation],[GeneOrGeneProduct],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[AnatomicalEntity]%5E-[CellularComponent],[Attribute],[AnatomicalEntity])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OrganismTaxon],[MacromolecularMachineToCellularComponentAssociation],[GeneOrGeneProduct],[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1%3E[CellularComponent%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[AnatomicalEntity]%5E-[CellularComponent],[Attribute],[AnatomicalEntity])
 
 ---
 
@@ -111,6 +111,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ## Other properties

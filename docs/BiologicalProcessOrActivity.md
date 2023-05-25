@@ -15,7 +15,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[Occurrent],[NamedThing],[MolecularActivity],[PhysicalEntity]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cprovided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[NamedThing]%3Chas%20output%200..%2A-%20[BiologicalProcessOrActivity],[NamedThing]%3Chas%20input%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PhysicalEntity],[OrganismTaxon],[OntologyClass],[Occurrent],[NamedThing],[MolecularActivity],[PhysicalEntity]%3Cenabled%20by%200..%2A-%20[BiologicalProcessOrActivity%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[NamedThing]%3Chas%20output%200..%2A-%20[BiologicalProcessOrActivity],[NamedThing]%3Chas%20input%200..%2A-%20[BiologicalProcessOrActivity],[BiologicalProcessOrActivity]uses%20-.-%3E[Occurrent],[BiologicalProcessOrActivity]uses%20-.-%3E[OntologyClass],[BiologicalProcessOrActivity]%5E-[MolecularActivity],[BiologicalProcessOrActivity]%5E-[BiologicalProcess],[BiologicalEntity]%5E-[BiologicalProcessOrActivity],[BiologicalProcess],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -128,6 +128,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ### Domain for slot:

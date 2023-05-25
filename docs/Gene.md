@@ -15,7 +15,7 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[Transcript],[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenotypeToGeneAssociation],[GenomicEntity],[GeneToGoTermAssociation],[GeneToGeneProductRelationship],[GeneToGeneFamilyAssociation],[GeneProductMixin],[GeneOrGeneProduct],[GeneToGeneFamilyAssociation]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;has_biological_sequence:biological_sequence%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene],[GeneToGoTermAssociation]-%20subject%201..1%3E[Gene],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..%2A%3E[Gene],[GeneGroupingMixin]-%20has%20gene%20or%20gene%20product%200..%2A%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[Gene]uses%20-.-%3E[GeneOrGeneProduct],[Gene]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Gene]uses%20-.-%3E[PhysicalEssence],[Gene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Gene],[GeneGroupingMixin],[DiseaseOrPhenotypicFeature],[Disease],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VariantToGeneAssociation],[TranscriptToGeneRelationship],[Transcript],[SequenceVariant],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[NamedThing],[GenotypeToGeneAssociation],[GenomicEntity],[GeneToGoTermAssociation],[GeneToGeneProductRelationship],[GeneToGeneFamilyAssociation],[GeneProductMixin],[GeneOrGeneProduct],[GeneToGeneFamilyAssociation]-%20subject%201..1%3E[Gene%7Csymbol:string%20%3F;synonym:label_type%20%2A;has_biological_sequence:biological_sequence%20%3F;in_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GeneToGeneProductRelationship]-%20subject%201..1%3E[Gene],[GeneToGoTermAssociation]-%20subject%201..1%3E[Gene],[GenotypeToGeneAssociation]-%20object%201..1%3E[Gene],[SequenceVariant]-%20has%20gene(i)%200..%2A%3E[Gene],[GeneGroupingMixin]-%20has%20gene%20or%20gene%20product%200..%2A%3E[Gene],[SequenceVariant]-%20has%20gene%200..%2A%3E[Gene],[TranscriptToGeneRelationship]-%20object%201..1%3E[Gene],[VariantToGeneAssociation]-%20object%201..1%3E[Gene],[Gene]uses%20-.-%3E[GeneOrGeneProduct],[Gene]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[Gene]uses%20-.-%3E[PhysicalEssence],[Gene]uses%20-.-%3E[OntologyClass],[BiologicalEntity]%5E-[Gene],[GeneGroupingMixin],[DiseaseOrPhenotypicFeature],[Disease],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -143,6 +143,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [in taxon](in_taxon.md)  <sub>0..\*</sub>
      * Description: connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'
      * Range: [OrganismTaxon](OrganismTaxon.md)
+     * in subsets: (translator_minimal)
+ * [in taxon label](in_taxon_label.md)  <sub>0..1</sub>
+     * Description: The human readable scientific name for the taxon of the entity.
+     * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal)
 
 ## Other properties
