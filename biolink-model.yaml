@@ -3296,8 +3296,8 @@ slots:
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
 
-  prevents condition:
-    aliases: ['prophylactic for']
+  preventative for condition:
+    aliases: ['prophylactic for', 'prevents']
     is_a: affects likelihood of
     mixins:
       - treats
