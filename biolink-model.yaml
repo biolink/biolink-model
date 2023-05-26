@@ -10955,17 +10955,17 @@ enums:
 
   MaxResearchPhaseEnum:
     permissible_values:
-      discovery_and_development_phase:
-        description: >-
-          Discovery & Development Phase. Discovery involves researchers finding new possibilities
+      preclinical_research:
+        description: >- 
+          Biolink 'preclinical_research' covers FDA discovery and development phase and preclinical research phase 
+          which are described here. Discovery & Development Phase. Discovery involves researchers finding new possibilities
           for medication through testing molecular compounds, noting unexpected effects from existing treatments,
           or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
           Drug development occurs after researchers identify potential compounds for experiments
-      preclinical_research_phase:
-        description: >-
           Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
           they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.
+          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.  DrugBank
+          calls this 'experimental'.
       clinical_research_phase:
         description: >-
           Clinical Research Phase. Clinical research involves trials of the drug on people,
