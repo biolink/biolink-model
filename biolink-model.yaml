@@ -5114,7 +5114,7 @@ slots:
     narrow_mappings:
       - RO:0002160
 
-  in_taxon_label:
+  in taxon label:
     is_a: node property
     domain: thing with taxon
     range: label type
@@ -6958,6 +6958,7 @@ classes:
       entities; body parts; biological processes
     slots:
       - in taxon
+      - in taxon label
 
   biological entity:
     is_a: named thing
