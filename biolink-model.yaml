@@ -10951,15 +10951,16 @@ enums:
     permissible_values:
       preclinical_research_phase:
         description: >- 
-          Biolink 'preclinical_research' permissible value here, covers FDA discovery and development phase and 
-          preclinical research phase. Biolink definition is the union of Discovery & Development Phase. Discovery 
-          involves researchers finding new possibilities for medication through testing molecular compounds, noting 
-          unexpected effects from existing treatments, or the creation of new technology that allows novel ways of 
-          targeting medical products to sites in the body. Drug development occurs after researchers identify potential 
-          compounds for experiments Preclinical Research Phase.  Once researchers have examined the possibilities a 
-          new drug may contain, they must do preliminary research to determine its potential for harm (toxicity).
-          This is categorized as preclinical research and can be one of two types: in vitro or in vivo.  DrugBank
-          calls this 'experimental'.
+          Biolink 'preclinical_research' is the union of both the `FDA discovery and development phase` and 
+          `FDA preclinical research phase`. Discovery involves researchers finding new possibilities for medication 
+          through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of 
+          new technology that allows novel ways of targeting medical products to sites in the body. Drug development 
+          occurs after researchers identify potential compounds for experiments Preclinical Research Phase.  
+          Once researchers have examined the possibilities a new drug may contain, they must do preliminary research 
+          to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of 
+          two types: in vitro or in vivo.
+        notes: >-
+          DrugBank calls this 'experimental'.
       clinical_trial_phase:
         description: >-
           Clinical research involves trials of the drug on people,
