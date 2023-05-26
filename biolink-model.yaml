@@ -10949,15 +10949,8 @@ enums:
       fda_approved_for_condition:
         is_a: approved_for_condition
       not_approved_for_condition:
-      failed_in_clinical_trials:
-        is_a: not_approved_for_condition
-      clinical_trials_ongoing:
-        is_a: not_approved_for_condition
-      not_tested_in_clinical_trials:
-        is_a: not_approved_for_condition
-      off_label_use:
-        is_a: not_approved_for_condition
       post_approval_withdrawl:
+        is_a: not_approved_for_condition
       not_provided:
 
   MaxResearchPhaseEnum:
