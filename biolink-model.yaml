@@ -5918,10 +5918,6 @@ slots:
     is_a: association slot
     range: MaxResearchPhaseEnum
 
-  treatment evidence type:
-    is_a: association slot
-    range: TreatmentEvidenceTypeEnum
-
   supporting study metadata:
     is_a: association slot
     description: >-
@@ -10663,7 +10659,6 @@ classes:
     slots:
       - clinical approval status
       - max research phase
-      - treatment evidence type
     defining_slots:
       - subject
       - object
@@ -10674,7 +10669,6 @@ classes:
     slots:
       - clinical approval status
       - max research phase
-      - treatment evidence type
     defining_slots:
       - subject
       - object
@@ -10998,17 +10992,6 @@ enums:
           volunteers who have the disease or condition and continues to monitor safety and efficacy.
           If a drug passes this phase, it goes on to FDA review.
       not_provided:
-
-  TreatmentEvidenceTypeEnum:
-    permissible_values:
-      preclinical_evidence:
-      model_organism_evidence:
-        is_a: preclinical_evidence
-      medical_use_evidence:
-      patient_self_report_evidence:
-      ehr_evidence:
-      prescription_record_evidence:
-      text_mined_evidence:
 
   DirectionQualifierEnum:
     permissible_values:
