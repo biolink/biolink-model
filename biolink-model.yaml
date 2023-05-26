@@ -10955,46 +10955,46 @@ enums:
 
   MaxResearchPhaseEnum:
     permissible_values:
-      preclinical_research:
+      preclinical_research_phase:
         description: >- 
-          Biolink 'preclinical_research' covers FDA discovery and development phase and preclinical research phase 
-          which are described here. Discovery & Development Phase. Discovery involves researchers finding new possibilities
-          for medication through testing molecular compounds, noting unexpected effects from existing treatments,
-          or the creation of new technology that allows novel ways of targeting medical products to sites in the body.
-          Drug development occurs after researchers identify potential compounds for experiments
-          Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain,
-          they must do preliminary research to determine its potential for harm (toxicity).
+          Biolink 'preclinical_research' permissible value here, covers FDA discovery and development phase and 
+          preclinical research phase. Biolink definition is the union of Discovery & Development Phase. Discovery 
+          involves researchers finding new possibilities for medication through testing molecular compounds, noting 
+          unexpected effects from existing treatments, or the creation of new technology that allows novel ways of 
+          targeting medical products to sites in the body. Drug development occurs after researchers identify potential 
+          compounds for experiments Preclinical Research Phase.  Once researchers have examined the possibilities a 
+          new drug may contain, they must do preliminary research to determine its potential for harm (toxicity).
           This is categorized as preclinical research and can be one of two types: in vitro or in vivo.  DrugBank
           calls this 'experimental'.
-      clinical_research_phase:
+      clinical_trial_phase:
         description: >-
-          Clinical Research Phase. Clinical research involves trials of the drug on people,
+          Clinical research involves trials of the drug on people,
           and it is one of the most involved stages in the drug development and approval process.
           Clinical trials must answer specific questions and follow a protocol determined by
           the drug researcher or manufacturer.
-      clinical_research_phase_1:
-        is_a: clincal_research_phase
+      clinical_trial_phase_1:
+        is_a: clinical_trial_phase
         description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 1 involves 20 – 100 study participants and
           lasts several months. This phase is used to determine the safety and dosage of the drug,
           and about 70% of these drugs move on to the next clinical research phase.
-      clinical_research_phase_2:
-        is_a: clincal_research_phase
+      clinical_trial_phase_2:
+        is_a: clinical_trial_phase
         description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people,
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 2 involves up to several hundred people,
           who must have the disease or condition the drug supposes to treat. This phase can last
           from a few months to two years, and its purpose is to monitor the efficacy of the drug,
           as well as note side effects that may occur.
-      clinical_research_phase_3:
-        is_a: clincal_research_phase
+      clinical_trial_phase_3:
+        is_a: clinical_trial_phase
         description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 3 involves 300 – 3000 volunteers
           and can last up to four years. It is used to continue monitoring the efficacy of
           the drug, as well as exploring any longer-term adverse reactions.
-      clinical_research_phase_4:
-        is_a: clincal_research_phase
+      clinical_trial_phase_4:
+        is_a: clinical_trial_phase
         description: >-
-          In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of
+          In the FDA Clinical Trial Phase, the Clinical Trial Phase 4 involves several thousands of
           volunteers who have the disease or condition and continues to monitor safety and efficacy.
           If a drug passes this phase, it goes on to FDA review.
       not_provided:
