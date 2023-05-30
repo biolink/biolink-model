@@ -3314,7 +3314,7 @@ slots:
       - translator_minimal
 
   condition prevented by:
-    inverse: prevents condition
+    inverse: preventative for condition
     is_a: affected by
     domain: disease or phenotypic feature
     range: chemical or drug or treatment
@@ -3329,7 +3329,7 @@ slots:
     range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
-      opposite_of: prevents condition
+      opposite_of: preventative for condition
     in_subset:
       - translator_minimal
 
