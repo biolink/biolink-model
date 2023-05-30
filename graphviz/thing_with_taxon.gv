@@ -1,18 +1,28 @@
 digraph {
-	graph [bb="0,0,174.18,123"];
+	graph [bb="0,0,303.19,123"];
 	node [label="\N"];
 	"thing with taxon"	[height=0.5,
 		label="thing with taxon",
-		pos="87.092,105",
+		pos="162.19,105",
 		width=2.4192];
 	"in taxon"	[color=blue,
 		height=0.5,
 		label="organism taxon",
-		pos="87.092,18",
+		pos="83.193,18",
 		width=2.3109];
 	"thing with taxon" -> "in taxon"	[color=blue,
 		label="in taxon",
-		lp="116.09,61.5",
-		pos="e,87.092,36.175 87.092,86.799 87.092,75.163 87.092,59.548 87.092,46.237",
+		lp="157.19,61.5",
+		pos="e,98.768,35.758 146.58,87.207 134.9,74.633 118.74,57.252 105.67,43.182",
+		style=solid];
+	"in taxon label"	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="241.19,18",
+		width=1.5707];
+	"thing with taxon" -> "in taxon label"	[color=blue,
+		label="in taxon label",
+		lp="254.69,61.5",
+		pos="e,225.89,35.469 177.8,87.207 189.56,74.552 205.85,57.026 218.97,42.909",
 		style=solid];
 }

@@ -348,7 +348,8 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <NamedThing> ] ? ;
           &<ThingWithTaxon_tes> ;
           rdf:type [ <ThingWithTaxon> ] ? ;
-          <in_taxon> @<OrganismTaxon> *
+          <in_taxon> @<OrganismTaxon> * ;
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <BiologicalEntity> ]
     )
@@ -1784,7 +1785,8 @@ linkml:Nodeidentifier NONLITERAL
           <timepoint> @<TimeType> ? ;
           <has_gene_or_gene_product> @<Gene> * ;
           <has_biological_sequence> @<BiologicalSequence> ? ;
-          <in_taxon> @<OrganismTaxon> *
+          <in_taxon> @<OrganismTaxon> * ;
+          <in_taxon_label> @<LabelType> ?
        ) ;
        rdf:type [ <GenomicBackgroundExposure> ]
     )
@@ -2338,7 +2340,8 @@ linkml:Nodeidentifier NONLITERAL
              &<OntologyClass_tes> ;
              rdf:type [ <OntologyClass> ] ? ;
              <has_biological_sequence> @<BiologicalSequence> ? ;
-             <in_taxon> @<OrganismTaxon> *
+             <in_taxon> @<OrganismTaxon> * ;
+             <in_taxon_label> @<LabelType> ?
           ) ;
           rdf:type [ <NucleicAcidEntity> ]
        )
@@ -3243,7 +3246,9 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <ThingWithTaxon> {
-    (  $<ThingWithTaxon_tes> <in_taxon> @<OrganismTaxon> * ;
+    (  $<ThingWithTaxon_tes> (  <in_taxon> @<OrganismTaxon> * ;
+          <in_taxon_label> @<LabelType> ?
+       ) ;
        rdf:type [ <ThingWithTaxon> ] ?
     )
 }

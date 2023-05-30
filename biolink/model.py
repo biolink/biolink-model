@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-24T00:52:02
+# Generation date: 2023-05-25T06:15:32
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -3255,11 +3255,15 @@ class ThingWithTaxon(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
 
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -3276,11 +3280,15 @@ class BiologicalEntity(NamedThing):
     id: Union[str, BiologicalEntityId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -3481,6 +3489,7 @@ class NucleicAcidEntity(MolecularEntity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3494,6 +3503,9 @@ class NucleicAcidEntity(MolecularEntity):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -5747,6 +5759,7 @@ class GenomicBackgroundExposure(Attribute):
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -5767,6 +5780,9 @@ class GenomicBackgroundExposure(Attribute):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -11742,7 +11758,7 @@ slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curi
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
-slots.in_taxon_label = Slot(uri=RDFS.label, name="in_taxon_label", curie=RDFS.curie('label'),
+slots.in_taxon_label = Slot(uri=RDFS.label, name="in taxon label", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.in_taxon_label, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),

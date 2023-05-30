@@ -15,6 +15,7 @@ message AccessibleDnaRegion
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
@@ -57,6 +58,7 @@ message AnatomicalEntity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
@@ -222,6 +224,7 @@ message Bacterium
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message Behavior
@@ -236,6 +239,7 @@ message Behavior
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -314,6 +318,7 @@ message BehavioralFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -328,6 +333,7 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -345,6 +351,7 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -441,6 +448,7 @@ message Case
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
@@ -543,6 +551,7 @@ message Cell
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellLine
@@ -556,6 +565,7 @@ message CellLine
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellLineAsAModelOfDiseaseAssociation
@@ -644,6 +654,7 @@ message CellularComponent
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellularOrganism
@@ -657,6 +668,7 @@ message CellularOrganism
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
@@ -1199,6 +1211,7 @@ message ClinicalFinding
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
 message ClinicalIntervention
@@ -1276,6 +1289,7 @@ message CodingSequence
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -1289,6 +1303,7 @@ message Cohort
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
@@ -1574,6 +1589,7 @@ message Disease
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
@@ -1588,6 +1604,7 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -2099,6 +2116,7 @@ message Exon
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -2305,6 +2323,7 @@ message Fungus
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
@@ -2319,6 +2338,7 @@ message Gene
  repeated  string providedBy = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   string symbol = 0
  repeated  labelType synonym = 0
  repeated  uriorcurie xref = 0
@@ -2382,6 +2402,7 @@ message GeneFamily
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
@@ -2835,6 +2856,7 @@ message GeneticInheritance
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A genome is the sum of genetic material within a cell or virion.
 message Genome
@@ -2849,6 +2871,7 @@ message Genome
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
@@ -2870,6 +2893,7 @@ message GenomicBackgroundExposure
  repeated  gene hasGeneOrGeneProduct = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -2925,6 +2949,7 @@ message Genotype
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   zygosity hasZygosity = 0
   biologicalSequence hasBiologicalSequence = 0
  }
@@ -3231,6 +3256,7 @@ message GrossAnatomicalStructure
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -3246,6 +3272,7 @@ message Haplotype
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 message Hospitalization
@@ -3272,6 +3299,7 @@ message Human
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
@@ -3286,6 +3314,7 @@ message IndividualOrganism
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
@@ -3336,6 +3365,7 @@ message Invertebrate
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // an article, typically presenting results of research, that is published  in an issue of a scientific journal.
@@ -3377,6 +3407,7 @@ message LifeStage
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A result of a log odds ratio analysis.
@@ -3409,6 +3440,7 @@ message MacromolecularComplex
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -3530,6 +3562,7 @@ message Mammal
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
@@ -3636,6 +3669,7 @@ message MicroRNA
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -3651,6 +3685,7 @@ message MolecularActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  molecularEntity hasInput = 0
  repeated  molecularEntity hasOutput = 0
  repeated  macromolecularMachineMixin enabledBy = 0
@@ -3875,6 +3910,7 @@ message NoncodingRNAProduct
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
@@ -3897,6 +3933,7 @@ message NucleicAcidEntity
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -3911,6 +3948,7 @@ message NucleicAcidSequenceMotif
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
 message NucleosomeModification
@@ -3925,6 +3963,7 @@ message NucleosomeModification
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
   biologicalSequence hasBiologicalSequence = 0
  }
@@ -4262,6 +4301,7 @@ message PathologicalAnatomicalStructure
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
@@ -4277,6 +4317,7 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -4310,6 +4351,7 @@ message Pathway
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -4340,6 +4382,7 @@ message PhenotypicFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -4398,6 +4441,7 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -4426,6 +4470,7 @@ message Plant
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
@@ -4441,6 +4486,7 @@ message Polypeptide
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 message PopulationOfIndividualOrganisms
@@ -4454,6 +4500,7 @@ message PopulationOfIndividualOrganisms
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // An association between a two populations
@@ -4505,6 +4552,7 @@ message PosttranslationalModification
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
@@ -4603,6 +4651,7 @@ message Protein
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
@@ -4618,6 +4667,7 @@ message ProteinDomain
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 message ProteinFamily
@@ -4632,6 +4682,7 @@ message ProteinFamily
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
@@ -4647,6 +4698,7 @@ message ProteinIsoform
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
@@ -4767,6 +4819,7 @@ message ReagentTargetedGene
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
@@ -4782,6 +4835,7 @@ message RegulatoryRegion
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // An OWL property used as an edge label
@@ -4845,6 +4899,7 @@ message RNAProduct
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -4867,6 +4922,7 @@ message RNAProductIsoform
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -4953,6 +5009,7 @@ message SequenceVariant
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
@@ -5019,6 +5076,7 @@ message SiRNA
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
@@ -5052,6 +5110,7 @@ message Snv
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
@@ -5114,6 +5173,7 @@ message StudyPopulation
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // a variable that is used as a measure in the investigation of a study
@@ -5210,6 +5270,7 @@ message Transcript
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -5260,6 +5321,7 @@ message TranscriptionFactorBindingSite
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
@@ -5527,6 +5589,7 @@ message Vertebrate
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
@@ -5541,6 +5604,7 @@ message Virus
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
