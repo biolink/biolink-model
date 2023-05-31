@@ -6,6 +6,8 @@ information_resources:
   - https://www.alliancegenome.org/
   synonym:
   - ALLIANCE
+  knowledge level:
+  agent type:
 - id: infores:aact
   status: released
   name: Aggregate Analysis of ClinicalTrial.gov (AACT) database
@@ -13,6 +15,8 @@ information_resources:
   - https://aact.ctti-clinicaltrials.org/
   synonym:
   - AACT
+  knowledge level:
+  agent type:
   description: https://ctti-clinicaltrials.org/our-work/quality/state-of-clinical-trials/
     Researchers can use CTTI’s Aggregate Analysis of ClinicalTrial.gov (AACT) database
     to easily access and analyze data from the ClinicalTrials.gov registry to evaluate
@@ -22,6 +26,8 @@ information_resources:
   name: Answer coalesce
   xref:
   - https://github.com/ranking-agent/AnswerCoalesce
+  knowledge level:
+  agent type:
   description: '"Answer coalesce: This service accepts a TRAPI 1.1 object containing
     answers and returns answers that have been coalesced by property, graph or ontology
     analysis."'
@@ -30,6 +36,8 @@ information_resources:
   name: ARAGORN
   xref:
   - https://github.com/ranking-agent/aragorn
+  knowledge level:
+  agent type:
   description: 'ARAGORN: Performs a query operation which compiles data from numerous
     ARAGORN ranking agent services.'
 - id: infores:aragorn-ranker
@@ -39,6 +47,8 @@ information_resources:
   - https://github.com/ranking-agent/aragorn-ranker
   synonym:
   - ARAGORN
+  knowledge level:
+  agent type:
   description: '"ARAGORN Ranker: The ranker used by the ARAGORN ARA, which takes a
     TRAPI 1.0 message containing answers, and calculates numerical scores for each
     answer."'
@@ -49,6 +59,8 @@ information_resources:
   - https://arax.ncats.io/
   synonym:
   - ARAX
+  knowledge level:
+  agent type:
   description: TRAPI 1.1 endpoint for the NCATS Biomedical Translator Reasoner called
     ARAX
 - id: infores:atc-codes-umls
@@ -56,6 +68,8 @@ information_resources:
   name: Anatomical Therapeutic Chemical (ATC) Codes (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ATC/index.html
+  knowledge level:
+  agent type:
 - id: infores:atgo
   status: released
   name: Autophagy Ontology
@@ -63,62 +77,86 @@ information_resources:
   - https://pubmed.ncbi.nlm.nih.gov/28132844/
   synonym:
   - ATGO
+  knowledge level:
+  agent type:
 - id: infores:athena
   status: released
   name: Athena
   xref:
   - https://athena.ohdsi.org/search-terms/start
+  knowledge level:
+  agent type:
 - id: infores:automat-genome-alliance
   status: released
   name: Automat Alliance of Genome Resources
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#genome-alliance
+  knowledge level:
+  agent type:
 - id: infores:automat-biolink
   status: released
   name: Automat Biolink
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#biolink
+  knowledge level:
+  agent type:
   description: A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).
 - id: infores:automat-chem-norm
   status: deprecated
   name: Automat Chemical normalization (trapi v-1.1.0)
-  description: '"A graph  linking together similar compounds.  Two compounds are linked
+  description: >- 
+    A graph  linking together similar compounds.  Two compounds are linked
     by an edge in the graph if they are equivalent when charge, salts, and stereochemistry
-    are ignored."'
+    are ignored.
+  knowledge level:
+  agent type:
 - id: infores:automat-chembio
   status: deprecated
   name: Automat Chembio
   xref:
   - https://chembio.com/
-  synonym:
-  - A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).
+  knowledge level:
+  agent type:
+  description: >- 
+    A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).
 - id: infores:automat-cord19
   status: deprecated
   name: Automat Cord19
   xref:
   - https://github.com/allenai/cord19
-  synonym:
-  - A literature co-occurence graph based on parsing the CORD-19 paper set.
+  knowledge level:
+  agent type:
+  description: >-
+    A literature co-occurence graph based on parsing the CORD-19 paper set.
 - id: infores:automat-cord19-scibite
   status: deprecated
   name: Automat Cord19 Scibite (trapi v-1.1.0)
   xref:
   - https://github.com/allenai/cord19
-  description: A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19)
+  knowledge level:
+  agent type:
+  description: >- 
+    A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19)
     of the CORD-19 paper set.
 - id: infores:automat-cord19-scigraph
   status: deprecated
   name: Automat Cord19 Scigraph (trapi v-1.1.0)
-  description: A literature co-occurence graph based on scigraph parsing of the CORD-19
+  description: >- 
+    A literature co-occurence graph based on scigraph parsing of the CORD-19
     paper set. All triples contain covid-19 as either subject or object.
 - id: infores:automat-covid-phenotypes
   status: deprecated
   name: Automat Covid Phenotypes (trapi v-1.1.0)
+  knowledge level:
+  agent type:
   description: A hand-curated graph of phenotypes of covid-19.
 - id: infores:automat-covidkop
   status: deprecated
   name: Automat Covidkop KG (trapi v-1.1.0)
-  description: Knowledge graph constructed from Robokop KG by incorporating Cord-19
+  knowledge level:
+  agent type:
+  description: >- 
+    Knowledge graph constructed from Robokop KG by incorporating Cord-19
     dataset and other covid related knowledge sources.
 - id: infores:automat-cam-kp
   status: released
