@@ -163,138 +163,187 @@ information_resources:
   name: Automat CAM-KP
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#cam-kp
+  knowledge level:
+  agent type:
   description: TRAPI interface to database of Causal Activity Models
 - id: infores:automat-ctd
   status: released
   name: Automat CTD
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ctd
+  knowledge level:
+  agent type:
   description: A graph based on the [Comparative Toxicogenomics Database (ctdbase.org)](ctdbase.org).
 - id: infores:automat-drug-central
   status: released
   name: Automat DrugCentral
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#drugcentral
+  knowledge level:
+  agent type:
   description: A graph based on DrugCentral
 - id: infores:automat-foodb
   status: released
   name: Automat Foodb
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#foodb
+  knowledge level:
+  agent type:
   description: A graph of the food/chemical relationships in [foodb.ca](foodb.ca).
 - id: infores:automat-gtex
   status: released
   name: Automat GTEx
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gtex
-  description: A graph containing eqtl and sqtl information from [GTEx Portal (https://gtexportal.org/home/)](https://gtexportal.org/home/).
+  knowledge level:
+  agent type:
+  description: >- 
+    A graph containing eqtl and sqtl information from [GTEx Portal (https://gtexportal.org/home/)](https://gtexportal.org/home/).
     Also includes genes that the variants lie within or near.
 - id: infores:automat-gtopdb
   status: released
   name: Automat GtoPdb
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gtopdb
+  knowledge level:
+  agent type:
   description: A graph based on the [IUPHAR Guide to Pharmacology (https://www.guidetopharmacology.org/)](https://www.guidetopharmacology.org/)
 - id: infores:automat-gwas-catalog
   status: released
   name: Automat GWAS Catalog
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gwascatalog
+  knowledge level:
+  agent type:
   description: A graph based on the GWAS Catalog
 - id: infores:automat-hetio
   status: deprecated
   name: Automat Hetio
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
+  knowledge level:
+  agent type:
   description: A graph based on [hetionet (het.io)](het.io).
 - id: infores:automat-hetio-net 
   status: released
   name: Automat Hetio Net
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
+  knowledge level:
+  agent type:
   description: A graph based on [hetionet (het.io)](het.io).
 - id: infores:automat-hgnc
   status: released
   name: Automat HGNC
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hgnc
+  knowledge level:
+  agent type:
   description: Gene families from [HGNC (genenames.org)](genenames.org).
 - id: infores:automat-hmdb
   status: released
   name: Automat HMDB
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hmdb
+  knowledge level:
+  agent type:
   description: A graph based on the [Human Metabolome DataBase (hmdb.org)](hmdb.org).
 - id: infores:automat-human-goa
   status: released
   name: Automat Human GOA
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#human-goa
+  knowledge level:
+  agent type:
   description: Human Gene Ontology Annotations from the GO consortium.
 - id: infores:automat-icees-kg
   status: released
   name: Automat ICEES (Integrated Clinical and Environmental Exposures Service)
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
+  knowledge level:
+  agent type:
 - id: infores:automat-intact
   status: released
   name: Automat IntAct
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#intact
+  knowledge level:
+  agent type:
   description: Molecular (Gene-Gene) interactions from EBI IntAct (https://www.ebi.ac.uk/intact/)](https://www.ebi.ac.uk/intact/).
 - id: infores:automat-kegg
   status: deprecated
   name: Automat KEGG
+  knowledge level:
+  agent type:
   description: A graph based on the [Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)](https://www.genome.jp/kegg/).
 - id: infores:automat-mychem-info
   status: deprecated
   name: Automat MyChem (trapi v-1.1.0)
-  description: '"A graph integrating DrugBank, DrugCentral, and Aeolus data as provided
-    by [mychem.info](mychem.info)."'
+  knowledge level:
+  agent type:
+  description: >- 
+    A graph integrating DrugBank, DrugCentral, and Aeolus data as provided
+    by [mychem.info](mychem.info).
 - id: infores:automat-ontology-hierarchy
   status: deprecated
   name: Automat Ontological Hierarchy (trapi v-1.1.0)
+  knowledge level:
+  agent type:
   description: A graph for ontological hierarchy extracted from Uberongraph.
 - id: infores:automat-panther
   status: released
   name: Automat Panther
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#panther
+  knowledge level:
+  agent type:
   description: A graph of gene families and pathways from [Panther (pantherdb.org)](pantherdb.org)
 - id: infores:automat-pharos
   status: released
   name: Automat Pharos
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#pharos
+  knowledge level:
+  agent type:
   description: A graph based on [Pharos (pharos.nih.gov)](pharos.nih.gov).
 - id: infores:automat-robokop
   status: released
   name: Automat RobokopKG
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#robokopkg
+  knowledge level:
+  agent type:
   description: Biomedical Knowledge graph build by constructing relationships from
     federated data sets.
 - id: infores:automat-text-mining-provider
   status: deprecated
   name: Automat Textmining KP
-  description: A literature co-occurrence graph created by the Translator Text Mining
-    KP.
+  knowledge level:
+  agent type:
+  description: A literature co-occurrence graph created by the Translator Text Mining KP.
 - id: infores:automat-string-db
   status: released
   name: Automat STRING
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#string-db
-  description: '"The Search Tool for the Retrieval of INteracting Genes/proteins (STRING)
+  knowledge level:
+  agent type:
+  description: >- 
+    The Search Tool for the Retrieval of INteracting Genes/proteins (STRING)
     database provides information on known and predicted protein-protein interactions
     (both direct and indirect) derived from genomic context predictions, high-throughput
     laboratory experiments, conserved co-expression, automated text mining, and aggregated
-    knowledge from primary data sources."'
+    knowledge from primary data sources.
 - id: infores:automat-sri-reference-kg
   status: released
   name: Automat SRI Reference Knowledge Graph
   xref:
   - https://monarchinitiative.org/
-  description: The SRI reference KG aims to aggregate knowledge sources across translator
+  knowledge level:
+  agent type:
+  description: >-
+    The SRI reference KG aims to aggregate knowledge sources across translator
     using KGX.  The initial graph contains data files provided by the Monarch Initiative
     and several ontologies.
 - id: infores:automat-ubergraph
@@ -302,24 +351,33 @@ information_resources:
   name: Automat Ubergraph
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ubergraph
-  description: '"A graph representation of Ubergraph, an integration of ontologies
-    including GO, CHEBI, Uberon, and HPO."'
+  knowledge level:
+  agent type:
+  description: >-
+    A graph representation of Ubergraph, an integration of ontologies
+    including GO, CHEBI, Uberon, and HPO.
 - id: infores:automat-ubergraph-nonredundant
   status: released
   name: Automat Ubergraph Nonredundant
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ubergraph-nonredundant
-  description: '"A graph representation of Ubergraph, an integration of ontologies
+  knowledge level:
+  agent type:
+  description: >-
+    A graph representation of Ubergraph, an integration of ontologies
     including GO, CHEBI, Uberon, and HPO. The redundant version of Ubergraph contains
     the complete inference closure for all subclass and existential relations, including
-    transitive, reflexive subclass relations."'
+    transitive, reflexive subclass relations.
 - id: infores:automat-viral-protome
   status: released
   name: Automat Viral Proteome
+  knowledge level:
+  agent type:
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#viral-proteome
-  description: '"A graph consisting of viral proteins from UniProt, connected by similarity
-    edges from UniRef."'
+  description: >-
+    A graph consisting of viral proteins from UniProt, connected by similarity
+    edges from UniRef.
 - id: infores:bfo
   status: released
   name: Basic Formal Ontology
@@ -327,6 +385,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/bfo.html
   synonym:
   - BFO
+  knowledge level:
+  agent type:
 - id: infores:bgee
   status: released
   name: Bgee
@@ -334,6 +394,8 @@ information_resources:
   - https://bgee.org/
   synonym:
   - BGEE
+  knowledge level:
+  agent type:
 - id: infores:bigclam
   status: deprecated
   name: Big Cell Line Association Miner
@@ -341,6 +403,8 @@ information_resources:
   - https://github.com/PriceLab/translator-bigquery-api
   synonym:
   - BigClam
+  knowledge level:
+  agent type:
 - id: infores:bigg-models
   status: released
   name: BiGG Models
@@ -348,6 +412,8 @@ information_resources:
   - http://bigg.ucsd.edu/
   synonym:
   - BIGG
+  knowledge level:
+  agent type:
   description: a knowledgebase of genome-scale metabolic network reconstructions
 - id: infores:biggim
   status: deprecated
@@ -356,6 +422,8 @@ information_resources:
   - https://github.com/PriceLab/translator-bigquery-api/
   synonym:
   - BigGIM
+  knowledge level:
+  agent type:
 - id: infores:bindingdb
   status: released
   name: BindingDB
@@ -363,16 +431,21 @@ information_resources:
   - https://www.bindingdb.org
   synonym:
   - The Binding Database
-  description: '"BindingDB is a public, web-accessible database of measured binding
+  knowledge level:
+  agent type:
+  description: >- 
+    BindingDB is a public, web-accessible database of measured binding
     affinities, focusing chiefly on the interactions of protein considered to be drug-targets
     with small, drug-like molecules. As of July 31, 2021, BindingDB contains 41,300
     Entries, each with a DOI, containing 2,303,972 binding data for 8,561 protein
-    targets and 995,797 small molecules."'
+    targets and 995,797 small molecules.
 - id: infores:bio2rdf
   status: released
   name: Bio2RDF
   xref:
   - https://bio2rdf.org
+  knowledge level:
+  agent type:
 - id: infores:biocatalogue
   status: released
   name: BioCatalogue
@@ -383,23 +456,31 @@ information_resources:
   - https://thebiogrid.org/
   synonym:
   - BioGrid
+  knowledge level:
+  agent type:
 - id: infores:biolink-api
   status: released
   name: BioLink API
   xref:
   - https://api.monarchinitiative.org/api/
+  knowledge level:
+  agent type:
   description: API integration layer for linked biological objects.
 - id: infores:biolink-model-lookup
   status: released
   name: Biolink Model Lookup
   xref:
   - https://github.com/TranslatorSRI/bl_lookup
+  knowledge level:
+  agent type:
   description: Biolink Model Lookup service.
 - id: infores:biolink-ontology
   status: released
   name: Biolink ontology
   xref:
   - https://github.com/biolink/biolink-model/blob/master/biolink-model.owl.ttl
+  knowledge level:
+  agent type:
 - id: infores:bioportal
   status: released
   name: 'National Center for Biomedical Ontology BioPortal '
@@ -407,27 +488,37 @@ information_resources:
   - http://bioportal.bioontology.org/
   synonym:
   - bioportal
+  knowledge level:
+  agent type:
 - id: infores:biothings-biggim-1
   status: deprecated
   name: Big GIM 1 API
+  knowledge level:
+  agent type:
   description: Documentation of the Big GIM 1 KP query web services.
 - id: infores:biothings-dgidb
   status: released
   name: BioThings DGIdb API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the BioThings DGIdb query web services.
 - id: infores:biothings-diseases
   status: released
   name: BioThings DISEASES API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the DISEASES query web services.
 - id: infores:biothings-ebi-gene2phenotype
   status: released
   name: BioThings EBIgene2phenotype API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the EBIgene2phenotype query web services.
 - id: infores:biothings-explorer
   status: released
@@ -436,6 +527,8 @@ information_resources:
   - http://biothings.io/explorer/
   synonym:
   - BTE
+  knowledge level:
+  agent type:
 - id: infores:service-provider-trapi
   status: released
   name: Service Provider TRAPI endpoints
@@ -443,120 +536,164 @@ information_resources:
   - https://github.com/biothings
   synonym:
   - service provider
+  knowledge level:
+  agent type:
 - id: infores:biothings-go-bp
   status: released
   name: BioThings Gene Ontology Biological Process API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the Gene Ontology Biological Process query web services.
 - id: infores:biothings-go-cc
   status: released
   name: BioThings Gene Ontology Cellular Component API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the Gene Ontology Cellular Component query web services.
 - id: infores:biothings-go-mf
   status: released
   name: BioThings Gene Ontology Molecular Activity API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the Gene Ontology Molecular Activity query web services.
 - id: infores:biothings-hpo
   status: released
   name: BioThings Human Phenotype Ontology API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the HPO query web services.
 - id: infores:biothings-idisk
   status: released
   name: BioThings iDISK API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
 - id: infores:biothings-mgi-g2p
   status: released
   name: BioThings MGIgene2phenotype API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the MGIgene2phenotype query web services.
 - id: infores:biothings-multiomics-biggim-drugresponse
   status: released
   name: Multiomics BigGIM-DrugResponse KP API
   xref:
-  - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Drug-Response-KP;
-    https://github.com/NCATS-Tangerine/BigGIM_APIWrapper
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Drug-Response-KP
+  - https://github.com/NCATS-Tangerine/BigGIM_APIWrapper
+  knowledge level:
+  agent type:
   description: Documentation of the Drug Response KP query web services.
 - id: infores:biothings-multiomics-ehr-risk
   status: modified
   name: Multiomics EHR Risk KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
-  description: Documentation of the Multiomics Electronic-Health-Record (EHR) Risk
+  knowledge level:
+  agent type:
+  description: >- 
+    Documentation of the Multiomics Electronic-Health-Record (EHR) Risk
     KP query web services.
 - id: infores:providence-st-joseph-ehr
   status: released
   name: Providence St. Joseph EHR Data
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
-  description: '"A partnership with Providence/Swedish Health Services and Institute
+  knowledge level:
+  agent type:
+  description: >- 
+    A partnership with Providence/Swedish Health Services and Institute
     for Systems Biology allows analysis of 26 million EHRs from patients in seven
     states in the US, including Alaska, California, Montana, Oregon, Washington, Texas,
-    and New Mexico. Please email data-access@isbscience.org for more information."'
+    and New Mexico. Please email data-access@isbscience.org for more information.
 - id: infores:biothings-multiomics-wellness
   status: released
   name: Multiomics Wellness KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Wellness-KP
+  knowledge level:
+  agent type:
   description: Documentation of the Multiomics Wellness KP query web services.
 - id: infores:biothings-multiomics-clinicaltrials
   status: released
   name: Multiomics ClinicalTrials KP API
   xref:
   - https://github.com/GitHubbit/Multiomics_ClinicalTrials_KP#readme
+  knowledge level:
+  agent type:
 - id: infores:biothings-pfcor
   status: modified
   name: BioThings pfocr API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the pfocr query web services.
 - id: infores:biothings-semmeddb
   status: released
   name: BioThings SEMMEDDB API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the BioThings SEMMEDDB query web services.
 - id: infores:biothings-semmeddb-anatomy
   status: deprecated
   name: SEMMED Anatomy API
   xref:
   - https://github.com/biothings
-  description: Documentation of the SEMMED disease query web services.  Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
 - id: infores:biothings-semmeddb-biological-process
   status: deprecated
   name: SEMMED Biological Process API
   xref:
   - https://github.com/biothings
-  description: Documentation of the SEMMED disease query web services.  Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
 - id: infores:biothings-semmeddb-chemical
   status: deprecated
   name: SEMMED Chemical API
   xref:
   - https://github.com/biothings
-  description: Documentation of the SEMMED disease query web services.  Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
 - id: infores:biothings-semmeddb-disease
   status: deprecated
   name: SEMMED Disease API
   xref:
   - https://github.com/biothings
-  description: Documentation of the SEMMED disease query web services.  Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the SEMMED disease query web services.  Learn more
     about [semmed disease](http://pending.biothings.io/semmed)
 - id: infores:biothings-semmeddb-gene
   status: deprecated
   name: SEMMED Gene API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
 - id: infores:biothings-semmeddb-phenotype
@@ -564,6 +701,8 @@ information_resources:
   name: SEMMED Phenotype API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
 - id: infores:biothings-tcga-mut-freq
@@ -571,51 +710,70 @@ information_resources:
   name: Multiomics TCGA Mutation Frequency KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Tumor-gene-mutation-KP
+  knowledge level:
+  agent type:
   description: Documentation of the TCGA Mutation Frequency KP query web services.
 - id: infores:biothings-uberon-ontology
   status: released
   name: BioThings UBERON Ontology API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the UBERON query web services.
 - id: infores:biothings-rhea
   status: released
   name: BioThings Rhea API
   xref:
   - https://github.com/biothings
+  knowledge level:
+  agent type:
   description: Documentation of the BioThings Rhea query web services.
 - id: infores:rhea
   status: released
   name: Rhea
   xref:
   - https://www.rhea-db.org/
+  knowledge level:
+  agent type:
   description: https://www.rhea-db.org/
 - id: infores:biothings-bioplanet-pathway-disease
   status: released
   name: BioThings BioPlanet Pathway-Disease API
   xref:
   - https://github.com/biothings
-  description: Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
-    pathway-disease     association query web services.
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
+    pathway-disease association query web services.
 - id: infores:biothings-bioplanet-pathway- gene
   status: released
   name: BioThings BioPlanet Pathway-Gene API
   xref:
   - https://github.com/biothings
-  description: Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
-    pathway-gene     association query web services.
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
+    pathway-gene association query web services.
 - id: infores:bioplanet
   status: released
   name: BioPlanet
   xref:
   - https://ncats.nih.gov/pubs/features/bioplanet
+  knowledge level:
+  agent type:
   description: https://tripod.nih.gov/bioplanet/#
 - id: infores:biothings-bindingdb
   status: released
   name: BioThings BindingDB API
   xref:
   - https://github.com/biothings
-  description: Documentation of the BioThings [BindingDB](https://www.bindingdb.org/rwd/bind/index.jsp)
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the BioThings [BindingDB](https://www.bindingdb.org/rwd/bind/index.jsp)
     query web services.
 - id: infores:bspo
   status: released
@@ -624,6 +782,8 @@ information_resources:
   - https://obofoundry.org/ontology/bspo.html
   synonym:
   - BSPO
+  knowledge level:
+  agent type:
 - id: infores:wbbt
   status: released
   name: C. elegans Gross Anatomy Ontology
@@ -631,8 +791,9 @@ information_resources:
   - https://obofoundry.org/ontology/wbbt.html
   synonym:
   - WBBT
-  description: A structured controlled vocabulary of the anatomy of Caenorhabditis
-    elegans.
+  knowledge level:
+  agent type:
+  description: A structured controlled vocabulary of the anatomy of Caenorhabditis elegans.
 - id: infores:wbphenotype
   status: released
   name: C. elegans phenotype
@@ -640,6 +801,8 @@ information_resources:
   - https://obofoundry.org/ontology/wbphenotype.html
   synonym:
   - WBPhenotype
+  knowledge level:
+  agent type:
   description: A structured controlled vocabulary of Caenorhabditis elegans phenotypes
 - id: infores:cam-kp
   status: released
@@ -648,6 +811,8 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
   synonym:
   - Causal Activity Model KP
+  knowledge level:
+  agent type:
   description: TRAPI interface to database of Causal Activity Models
 - id: infores:campfhir
   status: released
@@ -656,6 +821,8 @@ information_resources:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/camp-fhir
   synonym:
   - CAMP FHIR
+  knowledge level:
+  agent type:
 - id: infores:chebi
   status: released
   name: Chemical Entity of Biological Interest
@@ -663,23 +830,29 @@ information_resources:
   - https://pubchem.ncbi.nlm.nih.gov/source/ChEBI
   synonym:
   - ChEBI
-  description: a freely available dictionary of molecular entities focused on ‘small’
-    chemical compounds
+  knowledge level:
+  agent type:
+  description: a freely available dictionary of molecular entities focused on ‘small’ chemical compounds
 - id: infores:chem2bio2rdf
   status: released
   name: Chem2bio2RDF
   xref:
   - http://cheminfov.informatics.indiana.edu:8080/c2b2r/
+  knowledge level:
+  agent type:
 - id: infores:chembank
   status: released
   name: ChemBank
   xref:
   - https://data.broadinstitute.org/chembank/
-  description: Initiative for Chemical Genetics contract from the National Cancer
-    Institute
+  knowledge level:
+  agent type:
+  description: Initiative for Chemical Genetics contract from the National Cancer Institute
 - id: infores:chembio
   status: released
   name: ChemBio
+  knowledge level:
+  agent type:
 - id: infores:chembl
   status: released
   name: ChEMBL
@@ -687,12 +860,16 @@ information_resources:
   - https://www.ebi.ac.uk/chembl/
   synonym:
   - Chembl
+  knowledge level:
+  agent type:
   description: a manually curated database of bioactive molecules with drug-like properties.
 - id: infores:chemotext
   status: released
   name: Chemotext
   xref:
   - http://chemotext.mml.unc.edu/
+  knowledge level:
+  agent type:
 - id: infores:civic
   status: released
   name: Clinital Interpretation of Variants in Cancer
@@ -700,6 +877,8 @@ information_resources:
   - https://civicdb.org/home
   synonym:
   - CIViC
+  knowledge level:
+  agent type:
 - id: infores:cl
   status: released
   name: Cell Ontology
@@ -707,29 +886,41 @@ information_resources:
   - https://obofoundry.org/ontology/cl.html
   synonym:
   - CL
+  knowledge level:
+  agent type:
 - id: infores:clingen
   status: released
   name: 'Clinical Genome Resource (ClinGen) '
   xref:
   - https://clinicalgenome.org/
-  description: ClinGen is a NIH-funded resource dedicated to building a central resource
+  knowledge level:
+  agent type:
+  description: >- 
+    ClinGen is a NIH-funded resource dedicated to building a central resource
     that defines the clinical relevance of genes and variants for use in precision
     medicine and research
 - id: infores:clinical-profiles
   status: deprecated
   name: Clinical Profiles
+  knowledge level:
+  agent type:
 - id: infores:clinicaltrials
   status: released
   name: ClinicalTrials.gov
   xref:
   - https://clinicaltrials.gov
+  knowledge level:
+  agent type:
 - id: infores:clinvar
   status: released
   name: ClinVar
   xref:
   - https://www.ncbi.nlm.nih.gov/clinvar/
-  description: '"ClinVar is a freely accessible, public archive of reports of the
-    relationships among human variations and phenotypes, with supporting evidence."'
+  knowledge level:
+  agent type:
+  description: >-
+    ClinVar is a freely accessible, public archive of reports of the
+    relationships among human variations and phenotypes, with supporting evidence.
 - id: infores:cmap
   status: released
   name: Connectivity Map
@@ -737,7 +928,10 @@ information_resources:
   - https://clue.io/cmap
   synonym:
   - CMAP
-  description: '"genome-scale library of cellular signatures that catalogs transcriptional
+  knowledge level:
+  agent type:
+  description: >- 
+    genome-scale library of cellular signatures that catalogs transcriptional
     responses to chemical, genetic, and disease perturbation"'
 - id: infores:columbia-cdw-ehr-data
   status: released
@@ -748,12 +942,17 @@ information_resources:
   - The Columbia Clinical Data Warehouse (CDW) contains clinical information for over
     4.5 million individuals treated at Columbia University Irving Medical Center (CUIMC)
     since the 1980s.
+  knowledge level:
+  agent type:
 - id: infores:cohd
   status: released
   name: Columbia Open Health Data (COHD)
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
-  description: '"The Columbia Open Health Data (COHD) API provides access to counts
+  knowledge level:
+  agent type:
+  description: >-
+    The Columbia Open Health Data (COHD) API provides access to counts
     and frequencies (i.e., EHR prevalence) of conditions, procedures, drug exposures,
     and patient demographics, and the co-occurrence frequencies between them. Count
     and frequency data were derived from the [Columbia University Medical Center''s](http://www.cumc.columbia.edu/)
@@ -796,13 +995,16 @@ information_resources:
     may be useful:   [OHDSI](https://www.ohdsi.org/)   [OMOP Common Data Model](https://github.com/OHDSI/CommonDataModel/wiki)   [Athena](http://athena.ohdsi.org)
     (OMOP vocabularies, search, concept relationships, concept hierarchy)   [Atlas](http://www.ohdsi.org/web/atlas/)
     (OMOP vocabularies, search, concept relationships, concept hierarchy, concept
-    sets)"'
+    sets)
 - id: infores:cohd-covid
   status: released
   name: Columbia Open Health Data (COHD) for COVID-19 Research
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
-  description: '"The Columbia Open Health Data (COHD) for COVID-19 Research API provides
+  knowledge level:
+  agent type:
+  description: >-
+    The Columbia Open Health Data (COHD) for COVID-19 Research API provides
     access to counts and frequencies (i.e., EHR visit prevalence) of conditions, procedures,
     drug exposures, and the co-occurrence frequencies between them for a cohort of
     hospitalized COVID-19 patients and two comparator cohorts of hospitalized influenza
@@ -852,7 +1054,7 @@ information_resources:
     Common Data Model](https://github.com/OHDSI/CommonDataModel/wiki)   [Athena](http://athena.ohdsi.org)
     (OMOP vocabularies, search, concept relationships, concept hierarchy)   [Atlas](http://www.ohdsi.org/web/atlas/)
     (OMOP vocabularies, search, concept relationships, concept hierarchy, concept
-    sets)    [NCATS Biomedical Data Translator](https://sites.google.com/ncats.nih.gov/translator-io/home)"'
+    sets)    [NCATS Biomedical Data Translator](https://sites.google.com/ncats.nih.gov/translator-io/home)
 - id: infores:cohd-covid19-api
   status: released
   name: Columbia Open Health Data for COVID-19 Research API
@@ -860,11 +1062,15 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
   synonym:
   - COHD COVID-19
+  knowledge level:
+  agent type:
 - id: infores:connections-hypothesis
   status: released
   name: Connections Hypothesis Provider API
   xref:
   - https://github.com/di2ag/chp
+  knowledge level:
+  agent type:
   description: A Translator Reasoner API for the Connections Hypothesis Provider
 - id: infores:cord19
   status: released
@@ -873,11 +1079,15 @@ information_resources:
   - https://github.com/allenai/cord19
   synonym:
   - CORD19
+  knowledge level:
+  agent type:
 - id: infores:cord19-scibite
   status: released
   name: COVID-19 Open Research Dataset Scibite
   synonym:
   - CORD19-Scibite
+  knowledge level:
+  agent type:
 - id: infores:cosmic
   status: released
   name: Catalog of Somatic Mutations in Cancer
@@ -885,9 +1095,13 @@ information_resources:
   - https://cancer.sanger.ac.uk/cosmic
   synonym:
   - COSMIC
+  knowledge level:
+  agent type:
 - id: infores:covid-phenotypes
   status: deprecated
   name: Covid Phenotypes
+  knowledge level:
+  agent type:
 - id: infores:cpdb
   status: released
   name: ConsensusPathDB
@@ -895,9 +1109,13 @@ information_resources:
   - http://cpdb.molgen.mpg.de/
   synonym:
   - CPDB
+  knowledge level:
+  agent type:
 - id: infores:cpt-codes-umls
   status: released
   name: Current Procedural Terminology (CPT) Codes (from UMLS)
+  knowledge level:
+  agent type:
 - id: infores:ctd
   status: released
   name: Comparative Toxicogenomics Database
@@ -905,8 +1123,11 @@ information_resources:
   - http://ctdbase.org
   synonym:
   - CTDbase
-  description: '"A robust, publicly available database that aims to advance understanding
-    about how environmental exposures affect human health."'
+  knowledge level:
+  agent type:
+  description: >-
+    A robust, publicly available database that aims to advance understanding
+    about how environmental exposures affect human health.
 - id: infores:ctrp
   status: released
   name: Cancer Therapeutics Response Portal
@@ -914,9 +1135,12 @@ information_resources:
   - https://portals.broadinstitute.org/ctrp.v2.1/
   synonym:
   - CTRP
-  description: '"links genetic, lineage, and other cellular features of cancer cell
+  knowledge level:
+  agent type:
+  description: >-
+    links genetic, lineage, and other cellular features of cancer cell
     lines to small-molecule sensitivity with the goal of accelerating discovery of
-    patient-matched cancer therapeutics."'
+    patient-matched cancer therapeutics.
 - id: infores:date
   status: released
   name: Drugs to target pAthways by the Tissue Expression
@@ -924,6 +1148,8 @@ information_resources:
   - http://tatonettilab.org/date/
   synonym:
   - DATE
+  knowledge level:
+  agent type:
 - id: infores:dbsnp
   status: released
   name: Single Nucleotide Polymorphism Database
@@ -931,6 +1157,8 @@ information_resources:
   - http://www.ncbi.nlm.nih.gov/SNP/
   synonym:
   - dbSNP
+  knowledge level:
+  agent type:
 - id: infores:dda
   status: released
   name: Dictyostelium discoideum anatomy
@@ -938,11 +1166,15 @@ information_resources:
   - http://www.obofoundry.org/ontology/ddanat.html
   synonym:
   - DDA
+  knowledge level:
+  agent type:
 - id: infores:delta-qt-db
   status: released
   name: delta QT Database
   xref:
   - http://deltaqt.org
+  knowledge level:
+  agent type:
 - id: infores:depmap
   status: released
   name: Cancer Dependency Map
@@ -950,7 +1182,10 @@ information_resources:
   - https://depmap.org/portal/
   synonym:
   - DepMap
-  description: Cancer Dependency Map to systematically identify genetic and pharmacologic
+  knowledge level:
+  agent type:
+  description: >-
+    Cancer Dependency Map to systematically identify genetic and pharmacologic
     dependencies and the biomarkers that predict them.
 - id: infores:dgidb
   status: released
@@ -959,12 +1194,17 @@ information_resources:
   - http://dgidb.genome.wustl.edu
   synonym:
   - DGIdb
-  description: '"information on drug-gene interactions and druggable genes from publications,
+  knowledge level:
+  agent type:
+  description: >- 
+    information on drug-gene interactions and druggable genes from publications,
     databases, and other web-based sources. Drug, gene, and interaction data are normalized
-    and merged into conceptual groups."'
+    and merged into conceptual groups.
 - id: infores:dili-network-study-data
   status: released
   name: Drug-Induced Liver Injury Network (DILIN) Participant Data
+  knowledge level:
+  agent type:
 - id: infores:fbbt
   status: released
   name: Drosophila gross anatomy
@@ -972,6 +1212,8 @@ information_resources:
   - https://obofoundry.org/ontology/fbbt.html
   synonym:
   - FBbt
+  knowledge level:
+  agent type:
   description: An ontology representing the gross anatomy of Drosophila melanogaster.
 - id: infores:disease-ontology
   status: released
@@ -980,21 +1222,29 @@ information_resources:
   - http://www.disease-ontology.org/
   synonym:
   - DO
+  knowledge level:
+  agent type:
 - id: infores:diseases
   status: released
   name: Disease-gene associations mined from literature
   xref:
   - https://diseases.jensenlab.org/About
+  knowledge level:
+  agent type:
 - id: infores:disgenet
   status: released
   name: DisGeNET
   xref:
   - http://www.disgenet.org
+  knowledge level:
+  agent type:
 - id: infores:distild
   status: released
   name: Diseases & Traits in LD database
   synonym:
   - DistiLD database
+  knowledge level:
+  agent type:
 - id: infores:doaf
   status: released
   name: Disease Ontology Annotation Framework (DOAF)
@@ -1002,13 +1252,18 @@ information_resources:
   - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049686
   synonym:
   - DOAF
+  knowledge level:
+  agent type:
 - id: infores:drug-repurposing-hub
   status: released
   name: Drug Repurposing Hub
   xref:
   - https://clue.io/repurposing
-  description: '"curated and annotated collection of FDA-approved drugs, clinical
-    trial drugs, and pre-clinical tool compounds with a companion information resource"'
+  knowledge level:
+  agent type:
+  description: >-
+    Curated and annotated collection of FDA-approved drugs, clinical
+    trial drugs, and pre-clinical tool compounds with a companion information resource
 - id: infores:drugbank
   status: released
   name: DrugBank
@@ -1016,10 +1271,13 @@ information_resources:
   - http://www.drugbank.ca/
   synonym:
   - Drugbank
-  description: '"a comprehensive, free-to-access, online database containing information
+  knowledge level:
+  agent type:
+  description: >-
+    A comprehensive, free-to-access, online database containing information
     on drugs and drug targets. As both a bioinformatics and a cheminformatics resource,
     we combine detailed drug (i.e. chemical, pharmacological and pharmaceutical) data
-    with comprehensive drug target (i.e. sequence, structure, and pathway) information"'
+    with comprehensive drug target (i.e. sequence, structure, and pathway) information
 - id: infores:drugcentral
   status: released
   name: DrugCentral
@@ -1027,7 +1285,10 @@ information_resources:
   - http://drugcentral.org
   synonym:
   - Drugcentral
-  description: online drug information resource created and maintained by Division
+  knowledge level:
+  agent type:
+  description: >-
+    Online drug information resource created and maintained by Division
     of Translational Informatics at University of New Mexico in collaboration with
     the IDG.
 - id: infores:ebi
@@ -1037,17 +1298,24 @@ information_resources:
   - https://www.ebi.ac.uk/
   synonym:
   - EBI
+  knowledge level:
+  agent type:
 - id: infores:ebi-gene2phenotype
   status: modified
   name: European Bioinformatics Institute Gene to Phenotype Resource
   xref:
   - https://www.ebi.ac.uk/gene2phenotype/disclaimer
+  knowledge level:
+  agent type:
 - id: infores:ebi-proteins
   status: released
   name: EBI Proteins API
   xref:
   - https://www.ebi.ac.uk/proteins/api/doc/
-  description: '"The Proteins REST API provides access to key biological data from
+  knowledge level:
+  agent type:
+  description: >- 
+    The Proteins REST API provides access to key biological data from
     UniProt and data from Large Scale Studies (LSS) mapped to UniProt. The services
     provide sequence feature annotations from UniProtKB, variation data from UniProtKB
     and mapped from LSS (1000 Genomes, ExAC, ClinVar, TCGA, COSMIC, TOPMed and gnomAD),
@@ -1062,12 +1330,14 @@ information_resources:
   - https://www.ebi.ac.uk/QuickGO/api/index.html
   synonym:
   - QuickGO
-  description: '"The QuickGO REST API provides access to key biological data from
+  knowledge level:
+  agent type:
+  description: >-
+    The QuickGO REST API provides access to key biological data from
     QuickGO and GOA. The services provide a unified interface to query information
     about ontology terms from GO (the Gene Ontology) and ECO (the Evidence & Conclusion
     Ontology), Gene Ontology annotations from the EBI''s GOA database, and gene products
     (proteins from UniProt, RNA from RNAcentral and complexes from ComplexPortal).
-    "'
 - id: infores:eco
   status: released
   name: 'Evidence & Conclusion Ontology '
@@ -1075,6 +1345,8 @@ information_resources:
   - https://obofoundry.org/ontology/eco.html
   synonym:
   - ECO
+  knowledge level:
+  agent type:
 - id: infores:ecto
   status: released
   name: '"Environmental conditions, treatments and exposures ontology"'
@@ -1082,6 +1354,8 @@ information_resources:
   - https://obofoundry.org/ontology/ecto.html
   synonym:
   - ECTO
+  knowledge level:
+  agent type:
 - id: infores:eram
   status: released
   name: 'eRAM: encyclopedia of rare disease annotations for precision medicine'
@@ -1089,6 +1363,8 @@ information_resources:
   - https://pubmed.ncbi.nlm.nih.gov/29106618/
   synonym:
   - eRAM
+  knowledge level:
+  agent type:
   description: encyclopedia of rare disease annotations for precision medicine
 - id: infores:efo
   status: released
@@ -1097,6 +1373,8 @@ information_resources:
   - https://www.ebi.ac.uk/efo/
   synonym:
   - EFO
+  knowledge level:
+  agent type:
 - id: infores:ehdaa2
   status: released
   name: Human Developmental Anatomy Ontology
@@ -1104,11 +1382,15 @@ information_resources:
   - http://obofoundry.org/ontology/ehdaa2.html
   synonym:
   - EHDAA2
+  knowledge level:
+  agent type:
 - id: infores:ensembl-gene
   status: released
   name: Ensembl gene
   xref:
   - https://www.ebi.ac.uk/training/online/courses/ensembl-browsing-genomes/exploring-sources-of-biological-data/ensembl-genes/
+  knowledge level:
+  agent type:
 - id: infores:entrez
   status: released
   name: Entrez
@@ -1116,16 +1398,22 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/Web/Search/entrezfs.html
   synonym:
   - NCBIGene
+  knowledge level:
+  agent type:
 - id: infores:erc-analysis
   status: released
   name: Evolutionary Rate Covariation (ERC) Analysis
   synonym:
   - ERC Analysis
+  knowledge level:
+  agent type:
 - id: infores:explanatory-agent
   status: released
   name: Explanatory Agent API
   xref:
   - https://github.com/NCATSTranslator/Explanatory-Agent
+  knowledge level:
+  agent type:
   description: A Translator Reasoner API for the Explanatory Agent
 - id: infores:fhir-pit
   status: released
@@ -1134,21 +1422,29 @@ information_resources:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/fhir-pit
   synonym:
   - FHIR PIT
+  knowledge level:
+  agent type:
 - id: infores:fma-obo
   status: released
   name: Foundational Model of Anatomy Ontology (FMA -- both from UMLS and from OBO)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/FMA/index.html
+  knowledge level:
+  agent type:
 - id: infores:fma-umls
   status: released
   name: Foundational Model of Anatomy Ontology (FMA -- both from UMLS and from OBO)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/FMA/index.html
+  knowledge level:
+  agent type:
 - id: infores:fooddb
   status: released
   name: Food Database
   xref:
   - https://foodb.ca/
+  knowledge level:
+  agent type:
 - id: infores:foodon
   status: released
   name: Food Ontology
@@ -1156,6 +1452,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/foodon.html
   synonym:
   - FOODON
+  knowledge level:
+  agent type:
 - id: infores:gdc
   status: released
   name: National Cancer Institute Genomic Data Commons Data Portal
@@ -1163,6 +1461,8 @@ information_resources:
   - https://portal.gdc.cancer.gov/projects/
   synonym:
   - GDC
+  knowledge level:
+  agent type:
 - id: infores:gdsc
   status: released
   name: Genomics of Drug Sensitivity in Cancer
@@ -1170,6 +1470,8 @@ information_resources:
   - https://www.cancerrxgene.org/faq
   synonym:
   - GDSC
+  knowledge level:
+  agent type:
 - id: infores:genage
   status: released
   name: GenAge Database of Ageing-Related Genes
@@ -1177,13 +1479,18 @@ information_resources:
   - http://genomics.senescence.info/genes/
   synonym:
   - GenAge; The Aging Gene Database
+  knowledge level:
+  agent type:
 - id: infores:gencc
   status: released
   name: The Gene Curation Coalition (GenCC)
   xref:
   - https://thegencc.org/
-  description: '"The GenCC DB provides information pertaining to the validity of gene-disease
-    relationships, with a current focus on Mendelian diseases"'
+  knowledge level:
+  agent type:
+  description: >-
+    The GenCC DB provides information pertaining to the validity of gene-disease
+    relationships, with a current focus on Mendelian diseases
 - id: infores:gendr
   status: released
   name: GenDR Database of Dietary Restriction-Related Genes
@@ -1191,15 +1498,20 @@ information_resources:
   - http://genomics.senescence.info/diet/
   synonym:
   - GenDR
+  knowledge level:
+  agent type:
 - id: infores:genebass
   status: released
   name: 'Genebass: Gene-based association summary statistics'
   xref:
   - https://genebass.org/
-  description: '"Genebass is a resource of exome-based association statistics, made
+  knowledge level:
+  agent type:
+  description: >-
+    Genebass is a resource of exome-based association statistics, made
     available to the public. The dataset encompasses 3,817 phenotypes with gene-based
     and single-variant testing across 281,852 individuals with exome sequence data
-    from the UK Biobank."'
+    from the UK Biobank.
 - id: infores:genepio
   status: released
   name: Genomic Epidemiology Ontology
@@ -1207,24 +1519,32 @@ information_resources:
   - https://genepio.org/
   synonym:
   - GenEpiO
+  knowledge level:
+  agent type:
 - id: infores:geneprof
   status: released
   name: GeneProf
   xref:
   - https://bio.tools/geneprof
+  knowledge level:
+  agent type:
   description: underlying resource is throwing 404 error atm
 - id: infores:genetics-data-provider
   status: released
   name: Genetics KP
   xref:
   - https://github.com/broadinstitute/genetics-kp-dev
-  description: TRAPI 1.1 endpoint for the NCATS Biomedical Translator Genetics Data
-    KP
+  knowledge level:
+  agent type:
+  description: >-
+    TRAPI 1.1 endpoint for the NCATS Biomedical Translator Genetics Data KP
 - id: infores:ghr
   status: released
   name: Genetics Home Reference
   xref:
   - https://ghr.nlm.nih.gov/
+  knowledge level:
+  agent type:
 - id: infores:gnbr
   status: released
   name: Global Network of Biomedical Relationships
@@ -1232,11 +1552,15 @@ information_resources:
   - https://zenodo.org/record/1035500
   synonym:
   - GNBR
+  knowledge level:
+  agent type:
 - id: infores:go
   status: released
   name: Gene Ontology
   xref:
   - http://www.geneontology.org/
+  knowledge level:
+  agent type:
 - id: infores:go-cam
   status: released
   name: Gene Ontology Causal Activity Model Annotations
@@ -1244,11 +1568,15 @@ information_resources:
   - http://www.geneontology.org/docs/gocam-overview/
   synonym:
   - GO-CAM
+  knowledge level:
+  agent type:
 - id: infores:go-plus
   status: released
   name: Gene Ontology Plus
   synonym:
   - GO-Plus
+  knowledge level:
+  agent type:
 - id: infores:goa
   status: released
   name: Gene Ontology Annotations
@@ -1256,6 +1584,8 @@ information_resources:
   - http://www.geneontology.org/
   synonym:
   - GOA
+  knowledge level:
+  agent type:
 - id: infores:gote
   status: released
   name: GOTE (Gpcrs to dOwnstream cellular pathways byTissue Expression)
@@ -1263,6 +1593,8 @@ information_resources:
   - http://tatonettilab.org/resources/GOTE/source_code/
   synonym:
   - GOTE
+  knowledge level:
+  agent type:
 - id: infores:gtex
   status: released
   name: 'Genotype-Tissue Expression '
@@ -1270,14 +1602,19 @@ information_resources:
   - https://gtexportal.org/home/
   synonym:
   - GTEx
+  knowledge level:
+  agent type:
 - id: infores:gtopdb
   status: released
   name: Guide to Pharmacology
   xref:
   - https://www.guidetopharmacology.org/
-  description: '"an expert-curated resource of ligand-activity-target relationships,
+  knowledge level:
+  agent type:
+  description: >-
+    An expert-curated resource of ligand-activity-target relationships,
     the majority of which come from high-quality pharmacological and medicinal chemistry
-    literature"'
+    literature
 - id: infores:gwas-catalog
   status: released
   name: GWAS Catalog
@@ -1285,21 +1622,29 @@ information_resources:
   - https://www.ebi.ac.uk/gwas/
   synonym:
   - GWAS
+  knowledge level:
+  agent type:
 - id: infores:hcp-codes-umls
   status: released
   name: Healthcare Common Procedure Coding System (from UMLS)
   xref:
   - https://www.cms.gov/medicare/coding/medhcpcsgeninfo
+  knowledge level:
+  agent type:
 - id: infores:hcpcs-cpt-umls
   status: released
   name: HCPCS Version of Current Procedural Terminology (HCPT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/HCPT/index.html
+  knowledge level:
+  agent type:
 - id: infores:hetionet
   status: released
   name: Hetionet
   xref:
   - https://het.io/
+  knowledge level:
+  agent type:
 - id: infores:hgnc
   status: released
   name: HUGO Gene Nomenclature Committee
@@ -1307,46 +1652,62 @@ information_resources:
   - https://www.genenames.org/
   synonym:
   - HGNC
+  knowledge level:
+  agent type:
 - id: infores:hl7-umls
   status: released
   name: Health Level Seven (HL7) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/HL7V3.0/index.html
+  knowledge level:
+  agent type:
 - id: infores:hmdb
   status: released
   name: 'Human Metabolome Database '
   xref:
   - https://hmdb.ca/
   synonym:
-  - 'HMDB '
-  description: a freely available electronic database containing detailed information
+  - HMDB
+  knowledge level:
+  agent type:
+  description: >-
+    A freely available electronic database containing detailed information
     about small molecule metabolites found in the human body
 - id: infores:homologene
   status: released
   name: HomoloGene
   xref:
   - https://www.ncbi.nlm.nih.gov/homologene
+  knowledge level:
+  agent type:
 - id: infores:hopkins-synthetic-patient-data
   status: released
   name: Hopkins Synthetic Patient Data
   xref:
   - http://ictrweb.johnshopkins.edu/rest/synthetic/Patient
+  knowledge level:
+  agent type:
 - id: infores:hpa
   status: released
   name: Human Protein Atlas
   xref:
   - http://www.proteinatlas.org/
-  description: '"The Human Protein Atlas is a Swedish-based program initiated in 2003
+  knowledge level:
+  agent type:
+  description: >- 
+    The Human Protein Atlas is a Swedish-based program initiated in 2003
     with the aim to map all the human proteins in cells, tissues and organs using
     an integration of various omics technologies, including antibody-based imaging,
     mass spectrometry-based proteomics, transcriptomics and systems biology. All the
     data in the knowledge resource is open access to allow scientists both in academia
-    and industry to freely access the data for exploration of the human proteome."'
+    and industry to freely access the data for exploration of the human proteome.
 - id: infores:hpo
   status: released
   name: Human Phenotype Ontology
   xref:
   - http://obofoundry.org/ontology/hp
+  knowledge level:
+  agent type:
 - id: infores:hpo-annotations
   status: released
   name: Human Phenotype Ontology
@@ -1354,31 +1715,43 @@ information_resources:
   - https://hpo.jax.org/app/data/annotations
   synonym:
   - HPO Annotations
+  knowledge level:
+  agent type:
 - id: infores:icd10-umls
   status: released
   name: ICD10 (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10/index.html
+  knowledge level:
+  agent type:
 - id: infores:icd10ae-umls
   status: released
   name: ICD10AE (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10AE/index.html
+  knowledge level:
+  agent type:
 - id: infores:icd10cm-umls
   status: released
   name: ICD10CM (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10CM/index.html
+  knowledge level:
+  agent type:
 - id: infores:icd10pcs-umls
   status: released
   name: ICD10PCS (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10PCS/index.html
+  knowledge level:
+  agent type:
 - id: infores:icd9cm-umls
   status: released
   name: ICD9CM (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD9CM/index.html
+  knowledge level:
+  agent type:
 - id: infores:icees-kg
   status: deprecated
   name: ICEES (Integrated Clinical and Environmental Exposures Service)
@@ -1386,6 +1759,8 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
   synonym:
   - KP
+  knowledge level:
+  agent type:
   description: Information Resource
 - id: infores:idisk
   status: released
@@ -1394,59 +1769,80 @@ information_resources:
   - https://conservancy.umn.edu/handle/11299/204783
   synonym:
   - iDISK
+  knowledge level:
+  agent type:
   description: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075538/
 - id: infores:improving-agent
   status: released
   name: imProving Agent
   xref:
   - https://github.com/suihuanglab/improving-agent
+  knowledge level:
+  agent type:
   description: imProving Agent OpenAPI TRAPI Specification
 - id: infores:indigo-reasoner
   status: released
   name: OpenAPI for indigo NCATS Biomedical Translator Reasoner
   xref:
   - https://github.com/NCATSTranslator/ReasonerAPI
+  knowledge level:
+  agent type:
   description: OpenAPI for indigo NCATS Biomedical Translator Reasoner
 - id: infores:ino
   status: released
   name: Interaction Network Ontology
   xref:
   - http://www.obofoundry.org/ontology/ino.html
+  knowledge level:
+  agent type:
 - id: infores:intact
   status: released
   name: IntAct
   xref:
   - https://www.ebi.ac.uk/intact/
+  knowledge level:
+  agent type:
 - id: infores:interactome-ccsb
   status: released
   name: Interactome Projects at CCSB
   xref:
   - http://interactome.dfci.harvard.edu/
+  knowledge level:
+  agent type:
 - id: infores:interpro
   status: released
   name: InterPro
   xref:
   - http://www.ebi.ac.uk/interpro
+  knowledge level:
+  agent type:
 - id: infores:inxight-drugs
   status: released
   name: 'Inxight: Drugs'
   xref:
   - https://drugs.ncats.io/
-  description: '"NCATS Inxight Drugs contains information on ingredients in medicinal
+  knowledge level:
+  agent type:
+  description: >-
+    NCATS Inxight Drugs contains information on ingredients in medicinal
     products, including: US APPROVED DRUGS, MARKETED DRUGS and INVESTIGATIONAL DRUGS.
     Manually curated data supplied by the FDA and private companies, and provides
     marketing and regulatory status, rigorous drug ingredient definitions, biological
-    activity, clinical use, and more."'
+    activity, clinical use, and more.
 - id: infores:iproclass
   status: released
   name: iProClass
   xref:
   - http://pir.georgetown.edu/iproclass/
+  knowledge level:
+  agent type:
 - id: infores:irefindex
   status: released
   name: iRefIndex
   xref:
   - https://irefindex.vib.be/wiki/index.php/iRefIndex
+  knowledge level:
+  agent type:
 - id: infores:isb-incov
   status: released
   name: Institute for Systems Biology COVID-19 Immune Response Study
@@ -1454,11 +1850,15 @@ information_resources:
   - https://isbscience.org/research/covid-19/
   synonym:
   - ISB Novel COronaVirus
+  knowledge level:
+  agent type:
 - id: infores:isb-wellness
   status: released
   name: Institute for Systems Biology Scientific Wellness
   xref:
   - https://isbscience.org/research/scientificwellness/
+  knowledge level:
+  agent type:
 - id: infores:kegg
   status: released
   name: Kyoto Encyclopedia of Genes and Genomes (KEGG)
@@ -1466,18 +1866,24 @@ information_resources:
   - https://www.genome.jp/kegg/
   synonym:
   - KEGG
+  knowledge level:
+  agent type:
 - id: infores:kgea
   status: released
   name: Knowledge Graph Exchange Archive
   xref:
   - https://archive.translator.ncats.io/
+  knowledge level:
+  agent type:
 - id: infores:knowledge-collaboratory
   status: released
   name: Translator Knowledge Collaboratory API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Knowledge-Collaboratory-KP
-  synonym:
-  - 'Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications
+  knowledge level:
+  agent type:
+  description: >-
+    Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications
     network](https://nanopub.net/), for annotated drug  indications or any other BioLink-compliant
     claims. This Open API supports [Translator Reasoner API](https://github.com/NCATSTranslator/ReasonerAPI)
     queries and the [`KGX`](https://github.com/biolink/kgx) format   See the API GitHub
@@ -1489,28 +1895,36 @@ information_resources:
   name: Life Science Resource Registry
   xref:
   - https://download.bio2rdf.org/files/release/3/lsr/lsr.html
+  knowledge level:
+  agent type:
 - id: infores:lincs
   status: released
   name: Library of Integrated Network-Based Cellular Signatures
   xref:
   - https://www.lincsproject.org/
+  knowledge level:
+  agent type:
   synonym:
   - LINCS
 - id: infores:linkedspl
   status: released
   name: Linked Structured Product Labels
-  synonym:
+  knowledge level:
+  agent type:
   - LinkedSPL
 - id: infores:litvar
   status: released
   name: LitVar API
   xref:
   - https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/LitVar/
-  description: '"LitVar allows the search and retrieval of variant relevant information
+  knowledge level:
+  agent type:
+  description: >-
+    LitVar allows the search and retrieval of variant relevant information
     from the biomedical literature and shows key biological relations between a variant
     and its close related entities (e.g. genes, diseases, and drugs). The LitVar results
     are automatically extracted (with regular updates) from over 27 million PubMed
-    articles as well as applicable full-text articles in PubMed Central."'
+    articles as well as applicable full-text articles in PubMed Central.
 - id: infores:loinc
   status: released
   name: Logical Observation Identifiers Names and Codes
@@ -1518,16 +1932,22 @@ information_resources:
   - https://loinc.org/
   synonym:
   - LOINC
+  knowledge level:
+  agent type:
 - id: infores:loinc-umls
   status: released
   name: LOINC (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20
+  knowledge level:
+  agent type:
 - id: infores:mp
   status: released
   name: Mammalian Phenotype Ontology
   xref:
   - https://obofoundry.org/ontology/mp.html
+  knowledge level:
+  agent type:
   description: Standard terms for annotating mammalian phenotypic data.
 - id: infores:maxo
   status: released
@@ -1536,6 +1956,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/maxo.html
   synonym:
   - MAXO
+  knowledge level:
+  agent type:
   description: see also https://github.com/monarch-initiative/MAxO
 - id: infores:meddra-umls
   status: released
@@ -1544,6 +1966,8 @@ information_resources:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MDR/index.html#:~:text=MedDRA%20is%20an%20international%20medical,effects%20and%20malfunction%20of%20devices.
   synonym:
   - MEDRA
+  knowledge level:
+  agent type:
 - id: infores:medgen
   status: released
   name: MedGen
@@ -1551,16 +1975,22 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/medgen/
   synonym:
   - MedGen
+  knowledge level:
+  agent type:
 - id: infores:medlineplus
   status: released
   name: MedlinePlus (from UMLS)
   xref:
   - https://medlineplus.gov/
+  knowledge level:
+  agent type:
 - id: infores:medrt-umls
   status: released
   name: Medication Reference Terminology (MED-RT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MED-RT/index.html
+  knowledge level:
+  agent type:
 - id: infores:mesh
   status: released
   name: Medical Subject Headings Thesaurus
@@ -1568,6 +1998,8 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/mesh
   synonym:
   - MeSH
+  knowledge level:
+  agent type:
 - id: infores:metacyc
   status: released
   name: MetaCyc Metabolic Pathway Database
@@ -1575,6 +2007,8 @@ information_resources:
   - https://metacyc.org/
   synonym:
   - MetaCyc
+  knowledge level:
+  agent type:
 - id: infores:emapa
   status: released
   name: Mouse Developmental Anatomy Ontology
@@ -1582,7 +2016,10 @@ information_resources:
   - https://obofoundry.org/ontology/emapa.html
   synonym:
   - EMAPA
-  description: An ontology for mouse anatomy covering embryonic development and postnatal
+  knowledge level:
+  agent type:
+  description: >- 
+    An ontology for mouse anatomy covering embryonic development and postnatal
     stages.
 - id: infores:mgi
   status: released
@@ -1591,6 +2028,8 @@ information_resources:
   - http://www.informatics.jax.org/
   synonym:
   - MGI
+  knowledge level:
+  agent type:
 - id: infores:mpath
   status: released
   name: Mouse pathology ontology
@@ -1598,7 +2037,10 @@ information_resources:
   - https://obofoundry.org/ontology/mpath.html
   synonym:
   - MPATH
-  description: A structured controlled vocabulary of mutant and transgenic mouse pathology
+  knowledge level:
+  agent type:
+  description: >-
+    A structured controlled vocabulary of mutant and transgenic mouse pathology
     phenotypes
 - id: infores:mi
   status: released
@@ -1607,6 +2049,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/mi.html
   synonym:
   - MI
+  knowledge level:
+  agent type:
 - id: infores:mirbase
   status: released
   name: The microRNA Database
@@ -1614,32 +2058,44 @@ information_resources:
   - http://www.mirbase.org/
   synonym:
   - miRBase
+  knowledge level:
+  agent type:
 - id: infores:mirgate
   status: released
   name: MiRGate
   xref:
   - https://pubmed.ncbi.nlm.nih.gov/25858286/
+  knowledge level:
+  agent type:
 - id: infores:molepro
   status: released
   name: Molecular Data Provider for NCATS Biomedical Translator Reasoners
   xref:
   - https://github.com/broadinstitute/molecular-data-provider
+  knowledge level:
+  agent type:
   description: Molecular Data Provider for NCATS Biomedical Translator Reasoners
 - id: infores:monarch-data
   status: deprecated
   name: SciGraph-Monarch-Data
   xref:
   - scigraph-data.monarchinitiative.org/scigraph/docs/
+  knowledge level:
+  agent type:
 - id: infores:monarch-ontology
   status: deprecated
   name: SciGraph-Monarch-Ontology
   xref:
   - scigraph-ontology.monarchinitiative.org/scigraph/docs/
+  knowledge level:
+  agent type:
 - id: infores:monarchinitiative
   status: released
   name: Monarch Initiative
   xref:
   - https://monarchinitiative.org/
+  knowledge level:
+  agent type:
 - id: infores:mondo
   status: released
   name: MONDO Disease Ontology
@@ -1647,6 +2103,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/mondo.html
   synonym:
   - MONDO
+  knowledge level:
+  agent type:
 - id: infores:mop
   status: released
   name: Molecular Process Ontology
@@ -1654,6 +2112,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/mop.html
   synonym:
   - MOP
+  knowledge level:
+  agent type:
 - id: infores:mousemine
   status: released
   name: Mouse Genome Informatics Mousemine
@@ -1661,6 +2121,8 @@ information_resources:
   - http://www.mousemine.org/mousemine/api.do
   synonym:
   - Mousemine
+  knowledge level:
+  agent type:
 - id: infores:msigdb
   status: released
   name: Molecular Signatures Database
@@ -1668,6 +2130,8 @@ information_resources:
   - https://www.gsea-msigdb.org/gsea/msigdb
   synonym:
   - MSigDB
+  knowledge level:
+  agent type:
 - id: infores:mychem-info
   status: released
   name: MyChem.info API
@@ -1675,7 +2139,10 @@ information_resources:
   - http://mychem.info
   synonym:
   - mychem
-  description: Documentation of the MyChem.info chem query web services.  Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the MyChem.info chem query web services.  Learn more
     about [MyChem.info](http://MyChem.info/)
 - id: infores:mydisease-info
   status: released
@@ -1684,7 +2151,10 @@ information_resources:
   - http://mydisease.info/
   synonym:
   - mydisease
-  description: Documentation of the MyDisease.info disease query web services.  Learn
+  knowledge level:
+  agent type:
+  description: >- 
+    Documentation of the MyDisease.info disease query web services.  Learn
     more about [mydisease.info](http://mydisease.info/)
 - id: infores:mygene-info
   status: released
@@ -1693,7 +2163,10 @@ information_resources:
   - https://mygene.info/
   synonym:
   - mygene
-  description: Documentation of the MyGene.info Gene Query web services. Learn more
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the MyGene.info Gene Query web services. Learn more
     about [MyGene.info](http://mygene.info/)
 - id: infores:myvariant-info
   status: released
@@ -1702,7 +2175,10 @@ information_resources:
   - http://myvariant.info/
   synonym:
   - myvariant
-  description: Documentation of the MyVariant.info Variant Query web services. Learn
+  knowledge level:
+  agent type:
+  description: >-
+    Documentation of the MyVariant.info Variant Query web services. Learn
     more about [MyVariant.info](http://myvariant.info/)
 - id: infores:nanopublications
   status: released
@@ -1711,6 +2187,8 @@ information_resources:
   - http://nanopub.net/
   synonym:
   - Nanopublications
+  knowledge level:
+  agent type:
 - id: infores:nbo
   status: released
   name: Neuro Behavior Ontology
@@ -1718,39 +2196,54 @@ information_resources:
   - http://www.obofoundry.org/ontology/nbo.html
   synonym:
   - NBO
+  knowledge level:
+  agent type:
 - id: infores:ncats-ars
   status: released
   name: National Center for Advancing Translational Science Biomedical Data Translator
     Autonomous Relay System
   synonym:
-  - NCATS Translator Autonomous Relay System Translator  Autonomous Relay System,
-    NCATS Translator ARS
+  - NCATS Translator Autonomous Relay System Translator  Autonomous Relay System
+  - NCATS Translator ARS
+  knowledge level:
+  agent type:
 - id: infores:ncbi-gene
   status: released
   name: National Center for Biotechnology Information Gene
   xref:
   - http://www.ncbi.nlm.nih.gov/gene
   synonym:
-  - NGBI Gene, ncbigene
+  - NGBI Gene
+  - ncbigene
+  knowledge level:
+  agent type:
 - id: infores:ncbi-taxon
   status: released
   name: NCBI Taxonomy Ontology
   xref:
   - http://www.obofoundry.org/ontology/ncbitaxon.html
+  knowledge level:
+  agent type:
 - id: infores:ncbi-taxonomy
   status: released
   name: NCBI Taxonomy
   xref:
   - http://www.ncbi.nlm.nih.gov/taxonomy
   synonym:
-  - ncbitaxonomy, ncbitaxon
+  - ncbitaxonomy
+  - ncbitaxon
+  knowledge level:
+  agent type:
 - id: infores:ncdeq-cafo-exposures-data
   status: released
-  name: North Carolina Department of Environmental Quality Concentrated Animal Feeding
-    Operations Exposures Data
+  name: North Carolina Department of Environmental Quality Concentrated Animal Feeding Operations Exposures Data
+  knowledge level:
+  agent type:
 - id: infores:ncdeq-landfill-exposures-data
   status: released
   name: North Carolina Department of Environmental Quality Landfill Exposures Data
+  knowledge level:
+  agent type:
 - id: infores:nces-schools-exposure-data
   status: released
   name: NCES public school exposures data
@@ -1758,13 +2251,18 @@ information_resources:
   - https://nces.ed.gov/
   synonym:
   - NCES Data
+  knowledge level:
+  agent type:
 - id: infores:ncit
   status: released
   name: National Cancer Institute Thesaurus
   xref:
   - https://ncithesaurus.nci.nih.gov/
   synonym:
-  - NCT Thesaurus, NCIt
+  - NCT Thesaurus
+  - NCIt
+  knowledge level:
+  agent type:
 - id: infores:ndcd
   status: released
   name: National Drug Code Directory
@@ -1772,6 +2270,8 @@ information_resources:
   - https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory
   synonym:
   - NDCD
+  knowledge level:
+  agent type:
 - id: infores:nddf-umls
   status: released
   name: National Drug Data File (NDDF) (from UMLS)
@@ -1780,31 +2280,43 @@ information_resources:
   name: NDEx
   xref:
   - http://www.ndexbio.org
+  knowledge level:
+  agent type:
 - id: infores:ndfrt
   status: released
   name: National Drug File - Reference Terminology (NDF-RT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html
+  knowledge level:
+  agent type:
 - id: infores:nexo-align
   status: released
   name: NEXO Align Ontology
   xref:
   - http://nexo.ucsd.edu/
+  knowledge level:
+  agent type:
 - id: infores:nexo-construct
   status: released
   name: NEXO Construct Ontology
   xref:
   - http://nexo.ucsd.edu/
+  knowledge level:
+  agent type:
 - id: infores:niehs-epr-study-data
   status: released
   name: NIEHS Environmental Polymorphisms Registry
   synonym:
   - NIEHS EPR
+  knowledge level:
+  agent type:
 - id: infores:nsides
   status: released
   name: nSides
   xref:
   - https://www.nsides.io/
+  knowledge level:
+  agent type:
 - id: infores:ols
   status: released
   name: Ontology Lookup Service API
@@ -1812,7 +2324,10 @@ information_resources:
   - https://www.ebi.ac.uk/ols/docs/api
   synonym:
   - OLS
-  description: The OLS REST API provides access to key biological data from OLS.
+  knowledge level:
+  agent type:
+  description: >-
+    The OLS REST API provides access to key biological data from OLS.
     The services provide a unified interface to query information about ontology terms
     from GO (the Gene Ontology) and ECO (the Evidence & Conclusion Ontology), Gene
     Ontology annotations from the EBI's GOA database, and gene products (proteins
@@ -1822,6 +2337,8 @@ information_resources:
   name: OmicsDI
   xref:
   - http://www.omicsdi.org
+  knowledge level:
+  agent type:
 - id: infores:omim
   status: released
   name: Online Mendelian Inheritance in Man (OMIM)
@@ -1829,6 +2346,8 @@ information_resources:
   - https://www.omim.org/
   synonym:
   - OMIM
+  knowledge level:
+  agent type:
 - id: infores:omnicorp
   status: released
   name: OmniCorp
@@ -1836,6 +2355,8 @@ information_resources:
   - https://github.com/NCATS-Gamma/omnicorp
   synonym:
   - OmniCorp
+  knowledge level:
+  agent type:
 - id: infores:omop-cdm
   status: released
   name: Observational Medical Outcomes Partnership Common Data Model
@@ -1843,6 +2364,8 @@ information_resources:
   - https://www.ohdsi.org/data-standardization/the-common-data-model/
   synonym:
   - OMOP-CDM
+  knowledge level:
+  agent type:
 - id: infores:omop-ohdsi-api
   status: released
   name: Observational Medical Outcomes Partnership Observational Health Data Sciences
@@ -1851,16 +2374,22 @@ information_resources:
   - https://chime.ucsf.edu/observational-medical-outcomes-partnership-omop
   synonym:
   - OMOP OHDSI API
+  knowledge level:
+  agent type:
 - id: infores:open-targets
   status: released
   name: Open Targets
   xref:
   - https://www.opentargets.org/
+  knowledge level:
+  agent type:
 - id: infores:openpredict
   status: released
   name: OpenPredict API
   xref:
   - https://github.com/MaastrichtU-IDS/translator-openpredict
+  knowledge level:
+  agent type:
   description: >-
     Get predicted targets for a given entity.  The potential drugs treating
     a given disease, or the potential diseases a given drug could treat. 
@@ -1879,16 +2408,22 @@ information_resources:
   - https://bioportal.bioontology.org/ontologies/ORDO
   synonym:
   - ORDO
+  knowledge level:
+  agent type:
 - id: infores:orphanet
   status: released
   name: Orphanet
   xref:
   - https://www.orpha.net
+  knowledge level:
+  agent type:
 - id: infores:owlsim
   status: released
   name: OWLSim Ontology Based Profile Matching
   xref:
   - https://github.com/monarch-initiative/owlsim-v3
+  knowledge level:
+  agent type:
 - id: infores:oxo
   status: released
   name: Ontology Xref Service
@@ -1896,6 +2431,8 @@ information_resources:
   - https://www.ebi.ac.uk/spot/oxo/
   synonym:
   - OxO
+  knowledge level:
+  agent type:
 - id: infores:panther
   status: released
   name: Panther Classification System
@@ -1903,21 +2440,29 @@ information_resources:
   - http://pantherdb.org/
   synonym:
   - Panther
+  knowledge level:
+  agent type:
 - id: infores:path-pheno-db
   status: released
   name: PathoPhenoDB
   xref:
   - http://patho.phenomebrowser.net/#/
+  knowledge level:
+  agent type:
 - id: infores:pathway-commons
   status: released
   name: Pathway Commons
   xref:
   - https://www.pathwaycommons.org/
+  knowledge level:
+  agent type:
 - id: infores:pathwhiz
   status: released
   name: PathWhiz
   xref:
   - https://smpdb.ca/pathwhiz
+  knowledge level:
+  agent type:
 - id: infores:pato
   status: released
   name: Phenotype and Trait Ontology
@@ -1925,6 +2470,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/pato.html
   synonym:
   - PATO
+  knowledge level:
+  agent type:
 - id: infores:phenio
   status: released
   name: Phenomics Integrated Ontology
@@ -1932,7 +2479,10 @@ information_resources:
   - https://github.com/monarch-initiative/phenio
   synonym:
   - PHENIO
-  description: An ontology for accessing and comparing knowledge concerning phenotypes
+  knowledge level:
+  agent type:
+  description: >-
+    An ontology for accessing and comparing knowledge concerning phenotypes
     across species and genetic backgrounds.
 - id: infores:patric
   status: released
@@ -1941,6 +2491,8 @@ information_resources:
   - https://ngdc.cncb.ac.cn/databasecommons/database/id/230
   synonym:
   - PATRIC
+  knowledge level:
+  agent type:
 - id: infores:pgxmine
   status: released
   name: Text Mined pharmacogenomic polymorphisms
@@ -1948,18 +2500,25 @@ information_resources:
   - https://pgxmine.pharmgkb.org/
   synonym:
   - PGxMine
-  description: Text mined pharmacogenomic polymorphisms to assist curation of PharmGKB.
+  description:
+  knowledge level:
+  agent type:: Text mined pharmacogenomic polymorphisms to assist curation of PharmGKB.
 - id: infores:pdq-umls
   status: released
   name: Physician Data Query (PDQ) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PDQ/index.html
+  knowledge level:
+  agent type:
 - id: infores:pfam
   status: released
   name: Pfam
   xref:
   - https://www.ebi.ac.uk/interpro
-  description: The Pfam database is a large collection of protein families, each represented
+  knowledge level:
+  agent type:
+  description: >-
+    The Pfam database is a large collection of protein families, each represented
     by multiple sequence alignments and hidden Markov models (HMMs).  Proteins are
     generally composed of one or more functional regions, commonly termed domains.
     Different combinations of domains give rise to the diverse range of proteins found
@@ -1979,6 +2538,8 @@ information_resources:
   - https://github.com/dhimmel/indications
   synonym:
   - PharmacotherapyDB
+  knowledge level:
+  agent type:
 - id: infores:pharmgkb
   status: released
   name: Pharmacogenomics Knowledgebase
@@ -1986,11 +2547,15 @@ information_resources:
   - https://www.pharmgkb.org/
   synonym:
   - PharmGKB
+  knowledge level:
+  agent type:
 - id: infores:pharos
   status: released
   name: Pharos
   xref:
   - https://pharos.nih.gov
+  knowledge level:
+  agent type:
   description: >- 
     focusing on three of the most commonly drug-targeted protein families:
     G-protein-coupled receptors (GPCRs, Ion channels (ICs), Kinases
@@ -2001,11 +2566,15 @@ information_resources:
   - https://proconsortium.org/
   synonym:
   - PRO
+  knowledge level:
+  agent type:
 - id: infores:prefixcommons
   status: released
   name: Prefix Commons
   xref:
   - https://github.com/prefixcommons
+  knowledge level:
+  agent type:
 - id: infores:preppi
   status: released
   name: PrePPI
@@ -2013,22 +2582,31 @@ information_resources:
   - https://honiglab.c2b2.columbia.edu/PrePPI/
   synonym:
   - PrePPI
+  knowledge level:
+  agent type:
 - id: infores:probe-miner
   status: released
   name: Probe Miner
   xref:
   - https://probeminer.icr.ac.uk
+  knowledge level:
+  agent type:
 - id: infores:psy-umls
   status: released
   name: Psychological Index Terms (PSY) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PSY/index.html#:~:text=PSY%20(Psychological%20Index%20Terms)%20%2D%20Synopsis,-Synopsis%20Metadata%20Statistics&text=The%20Thesaurus%20of%20Psychological%20Index%20Terms%20is%20a%20controlled%20vocabulary,provide%20subject%20searching%20of%20data.
+  knowledge level:
+  agent type:
 - id: infores:pubchem
   status: released
   name: PubChem
   xref:
   - https://pubchem.ncbi.nlm.nih.gov/
-  description: an open chemistry database at the National Institutes of Health (NIH),
+  knowledge level:
+  agent type:
+  description: >-
+    an open chemistry database at the National Institutes of Health (NIH),
     mostly contains small molecules, but also larger molecules such as nucleotides,
     carbohydrates, lipids, peptides, and chemically-modified macromolecules
 - id: infores:pubmed
@@ -2036,6 +2614,8 @@ information_resources:
   name: PubMed
   xref:
   - https://pubmed.ncbi.nlm.nih.gov/
+  knowledge level:
+  agent type:
 - id: infores:pubmed-central
   status: released
   name: PubMed Central
@@ -2043,6 +2623,8 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/
   synonym:
   - PMC
+  knowledge level:
+  agent type:
 - id: infores:quickgo
   status: released
   name: QuickGO
@@ -2050,11 +2632,15 @@ information_resources:
   - https://www.ebi.ac.uk/QuickGO/api/index.html#!/gene_ontology/baseUrlUsingGET_1
   synonym:
   - QuickGO
+  knowledge level:
+  agent type:
 - id: infores:reactome
   status: released
   name: Reactome
   xref:
   - http://reactome.org/ContentService/
+  knowledge level:
+  agent type:
 - id: infores:renci-bionames
   status: released
   name: RENCI BioNames
@@ -2062,6 +2648,8 @@ information_resources:
   - https://bionames.renci.org/apidocs/#/default/get_lookup__q___concept__
   synonym:
   - Bionames
+  knowledge level:
+  agent type:
 - id: infores:repodb
   status: released
   name: Drug Repositioning Database
@@ -2069,11 +2657,15 @@ information_resources:
   - http://apps.chiragjpgroup.org/repoDB/
   synonym:
   - repoDB
+  knowledge level:
+  agent type:
 - id: infores:rgd
   status: released
   name: RGD API
   xref:
   - https://rgd.mcw.edu/
+  knowledge level:
+  agent type:
   description: The RGD API
 - id: infores:ro
   status: released
@@ -2082,6 +2674,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/ro.html
   synonym:
   - RO
+  knowledge level:
+  agent type:
 - id: infores:robokop
   status: released
   name: ROBOKOP
@@ -2089,17 +2683,23 @@ information_resources:
   - http://robokop.renci.org
   synonym:
   - Robokop
+  knowledge level:
+  agent type:
   description: An API for answering biomedical questions
 - id: infores:robokop-kp
   status: released
   name: ROBOKOP (Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathway)
   xref:
   - http://robokop.renci.org
+  knowledge level:
+  agent type:
 - id: infores:robokp-ranker
   status: released
   name: ROBOKOP Ranker
   xref:
   - http://robokop.renci.org
+  knowledge level:
+  agent type:
   description: An API for answering biomedical questions
 - id: infores:rtx-kg2
   status: released
@@ -2108,6 +2708,8 @@ information_resources:
   - https://github.com/RTXteam/RTX-KG2
   synonym:
   - Rtx-kg2
+  knowledge level:
+  agent type:
   description: TRAPI 1.1 endpoint for the NCATS Biomedical Translator KP called RTX
     KG2
 - id: infores:rxnorm
@@ -2115,7 +2717,10 @@ information_resources:
   name: RxNorm
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/index.html
-  description: normalized names for clinical drugs and links its names to many of
+  knowledge level:
+  agent type:
+  description: >-
+    normalized names for clinical drugs and links its names to many of
     the drug vocabularies commonly used in pharmacy management and drug interaction
     software, including those of First Databank, Micromedex, and Gold Standard Drug
     Database
@@ -2124,36 +2729,50 @@ information_resources:
   name: SABIO-RK Biochemical Reaction Kinetics Database
   xref:
   - http://sabiork.h-its.org/
+  knowledge level:
+  agent type:
 - id: infores:scibite
   status: released
   name: Semantic Analytics & Clean Data Intelligence Experts
   xref:
   - https://www.scibite.com/
+  knowledge level:
+  agent type:
 - id: infores:semmeddb
   status: released
   name: Semantic Medline Database
   xref:
   - https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMed.html
+  knowledge level:
+  agent type:
 - id: infores:sgd
   status: released
   name: Saccharomyces Genome Database
   xref:
   - http://www.yeastgenome.org/
+  knowledge level:
+  agent type:
 - id: infores:sider
   status: released
   name: SIDER
   xref:
   - http://sideeffects.embl.de/
+  knowledge level:
+  agent type:
 - id: infores:smart-api
   status: deprecated
   name: SmartAPI API
+  knowledge level:
+  agent type:
   description: This is the API provided from [SmartAPI](https://smart-api.info) application.
 - id: infores:smartapi
   status: released
   name: SmartAPI API
   xref:
   - https://smart-api.info
-  synonym:
+  knowledge level:
+  agent type:
+  description:
   - This is the API provided from [SmartAPI](https://smart-api.info) application.
 - id: infores:smpdb
   status: released
@@ -2162,6 +2781,8 @@ information_resources:
   - https://smpdb.ca/
   synonym:
   - SMPDB
+  knowledge level:
+  agent type:
 - id: infores:snomedct
   status: released
   name: Systemized Nomenclature of Medicine
@@ -2169,6 +2790,8 @@ information_resources:
   - http://www.snomed.org/
   synonym:
   - SNOMED
+  knowledge level:
+  agent type:
 - id: infores:so
   status: released
   name: Sequence Ontology
@@ -2176,47 +2799,66 @@ information_resources:
   - http://purl.obolibrary.org/obo/so.owl
   synonym:
   - SO
+  knowledge level:
+  agent type:
 - id: infores:spoke
   status: released
   name: SPOKE KP
   synonym:
   - Spoke
+  knowledge level:
+  agent type:
   description: SPOKE KP - an NIH NCATS Knowledge Provider to expose UCSFs SPOKE
 - id: infores:sri-edge-normalizaion-service
   status: released
   name: Edge Normalization Service
   xref:
   - https://github.com/TranslatorSRI/EdgeNormalization
+  knowledge level:
+  agent type:
   description: SRI service to validate and normalize edges to Translator standards.
 - id: infores:sri-name-resolver
   status: released
   name: Name Resolver
   xref:
   - https://github.com/TranslatorSRI/NameResolution
+  knowledge level:
+  agent type:
   description: Service to resolve Translator concept names.
 - id: infores:sri-node-normalizer
   status: released
   name: Node Normalization
   xref:
   - https://github.com/TranslatorSRI/NodeNormalization
-  description: Node normalization takes a CURIE, and returns resolved alias and
+  knowledge level:
+  agent type:
+  description: >-
+    Node normalization takes a CURIE, and returns resolved alias and
     the canonical identifier of a node.
 - id: infores:sri-ontology
   status: released
   name: Ontology-KP API
+  knowledge level:
+  agent type:
   description: TRAPI interface to integrated ontology knowledgebase
 - id: infores:sri-reference-kg
   status: released
   name: SRI Reference Knowledge Graph API
   xref:
   - https://monarchinitiative.org/
-  description: The SRI reference KG aims to aggregate knowledge sources across translator
+  knowledge level:
+  agent type:
+  description: >- 
+    The SRI reference KG aims to aggregate knowledge sources across translator
     using KGX.  The initial graph contains data files provided by the Monarch Initiative
     and several ontologies.
 - id: infores:sri-semmeddb
   status: deprecated
   name: SRI SemMedDb KGX File Set
-  description: The SRI Semantic Medline Database is a Biolink Model compliant KGX
+  knowledge level:
+  agent type:
+  description: >-
+    The SRI Semantic Medline Database is a Biolink Model compliant KGX
     file set mapping of NIH NLM SemMedDb.  The graph contains data files generated
     by the ETL process pipeline at https://github.com/NCATS-Tangerine/semmed-biolink.
     The KGX file set is hosted on the Knowledge Graph Exchange Archive (https://archive.translator.ncats.io).
@@ -2227,6 +2869,8 @@ information_resources:
   - http://stargeo.org/
   synonym:
   - STARGEO
+  knowledge level:
+  agent type:
 - id: infores:stitch
   status: released
   name: STITCH
@@ -2234,7 +2878,10 @@ information_resources:
   - http://stitch.embl.de/
   synonym:
   - STITCH
-  description: database of known and predicted interactions between chemicals and
+  knowledge level:
+  agent type:
+  description: >-
+    Database of known and predicted interactions between chemicals and
     proteins. The interactions include direct (physical) and indirect (functional)
     associations
 - id: infores:strider
@@ -2242,6 +2889,8 @@ information_resources:
   name: Strider
   xref:
   - https://github.com/ranking-agent/strider
+  knowledge level:
+  agent type:
   description: Translator Autonomous Relay Agent
 - id: infores:string
   status: released
@@ -2250,11 +2899,15 @@ information_resources:
   - https://string-db.org
   synonym:
   - STRING
+  knowledge level:
+  agent type:
 - id: infores:symp
   status: released
   name: Symptom Ontology
   xref:
   - http://www.obofoundry.org/ontology/symp.html
+  knowledge level:
+  agent type:
 - id: infores:tcga
   status: released
   name: The Cancer Genome Atlas
@@ -2262,6 +2915,8 @@ information_resources:
   - https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga
   synonym:
   - TCGA
+  knowledge level:
+  agent type:
 - id: infores:tcrd
   status: released
   name: Target Central Resource Database
@@ -2269,6 +2924,8 @@ information_resources:
   - http://juniper.health.unm.edu/tcrd/
   synonym:
   - TCRD
+  knowledge level:
+  agent type:
 - id: infores:tiga
   status: released
   name: Target Illumination GWAS Analytics
@@ -2276,21 +2933,30 @@ information_resources:
   - https://datascience.unm.edu/tiga/
   synonym:
   - TIGA
-  description: Aggregating and assessing experimental evidence for interpretable,
+  knowledge level:
+  agent type:
+  description: >-
+    Aggregating and assessing experimental evidence for interpretable,
     explainable, accountable gene-trait associations.
 - id: infores:text-mining-provider-cooccurrence
   status: released
   name: Text Mining COOCCURRENCE API
-  description: API serving a knowledge graph comprised of pairs of concepts that
+  knowledge level:
+  agent type:
+  description: >-
+    API serving a knowledge graph comprised of pairs of concepts that
     have been found to co-occur in the scientific literature. Here, cooccurrence of
     a pair of biomedical concepts within a single document or sentence serves as a
     proxy for a potential relationship between the two concepts.
 - id: infores:text-mining-provider-targeted
   status: released
   name: Text Mining Targeted Association API
+  knowledge level:
+  agent type:
   xref:
   - https://github.com/UCDenver-ccp/text-mining-provider-trapi
-  description: API serving explicitly targeted Biolink Associations extracted from
+  description: >-
+    API serving explicitly targeted Biolink Associations extracted from
     sentences in the scientific literature. Here, targeted refers to the fact that
     this service is based on text-mining models targeted to extract specific associations
     between concepts, as opposed to concepts cooccurring with each other.
@@ -2301,6 +2967,8 @@ information_resources:
   - http://tissues.jensenlab.org/
   synonym:
   - TED
+  knowledge level:
+  agent type:
 - id: infores:topmed
   status: released
   name: NHLBI Trans-Omics for Precision Medicine
@@ -2308,6 +2976,8 @@ information_resources:
   - https://www.nhlbi.nih.gov/science/trans-omics-precision-medicine-topmed-program
   synonym:
   - TOPMed
+  knowledge level:
+  agent type:
 - id: infores:ttd
   status: released
   name: Therapeutic Target Database (TTD)
@@ -2315,6 +2985,8 @@ information_resources:
   - https://db.idrblab.net/ttd/
   synonym:
   - TTD
+  knowledge level:
+  agent type:
 - id: infores:uberon
   status: released
   name: Uber Anatomy Ontology
@@ -2322,6 +2994,8 @@ information_resources:
   - http://www.obofoundry.org/ontology/uberon.html
   synonym:
   - Uberon
+  knowledge level:
+  agent type:
 - id: infores:umls
   status: released
   name: Unified Medical Language System
@@ -2329,16 +3003,22 @@ information_resources:
   - https://www.nlm.nih.gov/research/umls/index.html
   synonym:
   - UMLS
+  knowledge level:
+  agent type:
 - id: infores:umls-metathesaurus
   status: released
   name: UMLS Metathesaurus (MTH) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MTH/index.html
+  knowledge level:
+  agent type:
 - id: infores:unc-cdwh-ehr-data
   status: released
   name: UNC Carolina Data Warehouse for Health Patient EHR Data
   xref:
   - https://tracs.unc.edu/index.php/services/informatics-and-data-science/cdw-h
+  knowledge level:
+  agent type:
 - id: infores:unichem
   status: released
   name: UniChem
@@ -2346,6 +3026,8 @@ information_resources:
   - https://www.ebi.ac.uk/unichem/
   synonym:
   - unichem
+  knowledge level:
+  agent type:
 - id: infores:uniprot
   status: released
   name: UniProt Knowledgebase
@@ -2353,6 +3035,8 @@ information_resources:
   - https://www.uniprot.org/
   synonym:
   - UniProt
+  knowledge level:
+  agent type:
 - id: infores:uniref
   status: released
   name: UniRef
@@ -2360,31 +3044,43 @@ information_resources:
   - https://www.uniprot.org/help/uniref
   synonym:
   - UniRef
+  knowledge level:
+  agent type:
 - id: infores:unsecret-agent
   status: released
   name: Unsecret Agent OpenAPI for NCATS Biomedical Translator Reasoners
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/UnSecret-Agent
+  knowledge level:
+  agent type:
   description: OpenAPI for NCATS Biomedical Translator Reasoners
 - id: infores:us-census-acs-data
   status: released
   name: United States Census Bureau American Community Survey Data
   xref:
   - https://www.census.gov/programs-surveys/acs/data.html
+  knowledge level:
+  agent type:
 - id: infores:us-census-tiger-roadway-exposures-data
   status: released
   name: United States Census Bureau TIGER/line Roadway Data
   xref:
   - http://www.census.gov/geo/maps-data/data/tiger-line.html
+  knowledge level:
+  agent type:
 - id: infores:us-dot-roadway-exposures-data
   status: released
   name: United States Department of Transportation Roadway Exposures Data
   xref:
   - https://highways.dot.gov/
+  knowledge level:
+  agent type:
 - id: infores:us-epa-airborne-pollutant-exposures-data
   status: released
   name: United States Environmental Protection Agency Airborne Pollutant Exposures
     Data
+  knowledge level:
+  agent type:
 - id: infores:upheno
   status: released
   name: Unified phenotype ontology
@@ -2392,6 +3088,8 @@ information_resources:
   - https://obofoundry.org/ontology/upheno.html
   synonym:
   - uPheno
+  knowledge level:
+  agent type:
   description: The uPheno ontology integrates multiple phenotype ontologies into a
     unified cross-species phenotype ontology.
 - id: infores:vandf-umls
@@ -2399,21 +3097,29 @@ information_resources:
   name: Veterans Association National Drug File (VANDF) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html
+  knowledge level:
+  agent type:
 - id: infores:wikidata
   status: released
   name: Wikidata
   xref:
   - https://wikidata.org
+  knowledge level:
+  agent type:
 - id: infores:wikidata-garbanzo
   status: released
   name: Wikidata Garbanzo
   xref:
   - https://query.wikidata.org
+  knowledge level:
+  agent type:
 - id: infores:wikipathways
   status: released
   name: WikiPathways
   xref:
   - https://www.wikipathways.org
+  knowledge level:
+  agent type:
 - id: infores:xpo
   status: released
   name: Xenopus Phenotype Ontology
@@ -2421,6 +3127,8 @@ information_resources:
   - https://obofoundry.org/ontology/xpo.html
   synonym:
   - XPO
+  knowledge level:
+  agent type:
   description: XPO represents anatomical, cellular, and gene function phenotypes
     occurring throughout the development of the African frogs Xenopus laevis and tropicalis.
 - id: infores:workflow-runner
@@ -2428,12 +3136,16 @@ information_resources:
   name: Translator Workflow Runner
   xref:
   - https://github.com/NCATSTranslator/workflow-runner
+  knowledge level:
+  agent type:
   description: Translator general purpose workflow runner
 - id: infores:wormbase
   status: released
   name: WormBase
   xref:
   - http://www.wormbase.org/
+  knowledge level:
+  agent type:
 - id: infores:zfa
   status: released
   name: Zebrafish anatomy and development ontology
@@ -2441,6 +3153,8 @@ information_resources:
   - https://obofoundry.org/ontology/zfa.html
   synonym:
   - ZFA
+  knowledge level:
+  agent type:
   description: A structured controlled vocabulary of the anatomy and development of
     the Zebrafish
 - id: infores:zfin
@@ -2450,12 +3164,17 @@ information_resources:
   - https://zfin.org/
   synonym:
   - ZFIN
+  knowledge level:
+  agent type:
 - id: infores:ddinter
   status: released
   name: DDinter
   xref:
   - http://ddinter.scbdd.com
-  description: DDInter is anopen-access database specific to drug-drug interactions
+  knowledge level:
+  agent type:
+  description: >-
+    DDInter is anopen-access database specific to drug-drug interactions
     with annotations including mechanism description, risk levels, management strategies,
     alternative medications, etc. to improve clinical decision-making and patient
     safety.
@@ -2466,7 +3185,10 @@ information_resources:
   - https://pdsp.unc.edu/databases/kidb.php
   synonym:
   - KiDB
-  description: The Ki database serves as a data warehouse for published and internally-derived
+  knowledge level:
+  agent type:
+  description: >-
+    The Ki database serves as a data warehouse for published and internally-derived
     Ki, or affinity, values for a large number of drugs and drug candidates at UNC's
     Psychoactive Drug Screening Program
 - id: infores:community-sar
@@ -2476,7 +3198,10 @@ information_resources:
   - http://www.csardock.org/
   synonym:
   - CSAR
-  description: CSAR disseminated experimental datasets of crystal structures and binding
+  knowledge level:
+  agent type:
+  description: >-
+    CSAR disseminated experimental datasets of crystal structures and binding
     affinities for diverse protein-ligand complexes
 - id: infores:drug-design
   status: released
@@ -2485,7 +3210,10 @@ information_resources:
   - https://drugdesigndata.org/
   synonym:
   - D3R
-  description: The Drug Design Data Resource (D3R) aims to advance the technology
+  knowledge level:
+  agent type:
+  description: >-
+    The Drug Design Data Resource (D3R) aims to advance the technology
     of computer-aided drug discovery through the interchange of high quality protein-ligand
     datasets
 - id: infores:aeolus
@@ -2493,7 +3221,10 @@ information_resources:
   name: Adverse Event Open Learning through Universal Standardization (AEOLUS)
   xref:
   - http://doi.org/10.1038/sdata.2016.26
-  description: A curated and standardized version of FAERS removing duplicate case
+  knowledge level:
+  agent type:
+  description: >-
+    A curated and standardized version of FAERS removing duplicate case
     records, applying standardized vocabularies with drug names mapped to RxNorm concepts
     and outcomes mapped to SNOMED-CT concepts, and pre-computed summary statistics
     about drug-outcome relationships for general consumption.
@@ -2502,6 +3233,8 @@ information_resources:
   name: Richards Effector Gene List
   xref:
   - https://www.mcgill.ca/genepi/
+  knowledge level:
+  agent type:
   description: An effector index to predict target genes at GWAS loci
 - id: infores:huri
   status: released
@@ -2510,7 +3243,10 @@ information_resources:
   - http://www.interactome-atlas.org/download
   synonym:
   - HuRI
-  description: A human ‘all-by-all’ reference interactome map of human binary protein
+  knowledge level:
+  agent type:
+  description: >-
+    A human ‘all-by-all’ reference interactome map of human binary protein
     interactions, or ‘HuRI’. With approximately 53,000 protein–protein interactions,
     HuRI has approximately four times as many such interactions as there are high-quality
     curated interactions from small-scale studies
@@ -2521,7 +3257,10 @@ information_resources:
   - https://obofoundry.org/ontology/zp.html
   synonym:
   - ZP
-  description: The Zebrafish Phenotype Ontology formally defines all phenotypes of
+  knowledge level:
+  agent type:
+  description: >-
+    The Zebrafish Phenotype Ontology formally defines all phenotypes of
     the Zebrafish model organism.
 - id: infores:flybase
   status: released
@@ -2530,6 +3269,8 @@ information_resources:
   - https://flybase.org
   synonym:
   - FlyBase
+  knowledge level:
+  agent type:
   description: A Database of Drosophila Genes & Genomes
 - id: infores:xenbase
   status: released
@@ -2538,7 +3279,10 @@ information_resources:
   - https://xenbase.org
   synonym:
   - Xenbase
-  description: Xenbase's mission is to provide the international research community
+  knowledge level:
+  agent type:
+  description: >-
+    Xenbase's mission is to provide the international research community
     with a comprehensive, integrated and easy to use web based resource that gives
     access the diverse and rich genomic, expression and functional data available
     from Xenopus research. Xenbase also provides a critical data sharing infrastructure
@@ -2551,12 +3295,14 @@ information_resources:
   name: BioThings RARe-SOURCE API
   xref:
    - https://github.com/biothings
-  synonym:
+  knowledge level:
+  agent type:
   description: Documentation of the BioThings API for [NCATS RARe-SOURCE](https://raresource.nih.gov/) data.
 - id: infores:rare-source
   status: released
   name: NCATS RARe-SOURCE
   xref:
    - https://raresource.nih.gov/
-  synonym:
+  knowledge level:
+  agent type:
   description: Integrated Bioinformatics Resource for Rare Diseases
