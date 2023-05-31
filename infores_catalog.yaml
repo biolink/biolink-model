@@ -28,9 +28,10 @@ information_resources:
   - https://github.com/ranking-agent/AnswerCoalesce
   knowledge level: not_provided
   agent type: not_provided
-  description: '"Answer coalesce: This service accepts a TRAPI 1.1 object containing
+  description: >-
+    Answer coalesce: This service accepts a TRAPI 1.1 object containing
     answers and returns answers that have been coalesced by property, graph or ontology
-    analysis."'
+    analysis.
 - id: infores:aragorn
   status: released
   name: ARAGORN
@@ -38,8 +39,9 @@ information_resources:
   - https://github.com/ranking-agent/aragorn
   knowledge level: not_provided
   agent type: not_provided
-  description: 'ARAGORN: Performs a query operation which compiles data from numerous
-    ARAGORN ranking agent services.'
+  description: >-
+    ARAGORN: Performs a query operation which compiles data from numerous
+    ARAGORN ranking agent services.
 - id: infores:aragorn-ranker
   status: released
   name: ARAGORN Ranker
@@ -49,9 +51,10 @@ information_resources:
   - ARAGORN
   knowledge level: not_provided
   agent type: not_provided
-  description: '"ARAGORN Ranker: The ranker used by the ARAGORN ARA, which takes a
+  description: >-
+    ARAGORN Ranker: The ranker used by the ARAGORN ARA, which takes a
     TRAPI 1.0 message containing answers, and calculates numerical scores for each
-    answer."'
+    answer.
 - id: infores:arax
   status: released
   name: ARAX Translator Reasoner
@@ -385,7 +388,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/bfo.html
   synonym:
   - BFO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:bgee
   status: released
@@ -479,11 +482,11 @@ information_resources:
   name: Biolink ontology
   xref:
   - https://github.com/biolink/biolink-model/blob/master/biolink-model.owl.ttl
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:bioportal
   status: released
-  name: 'National Center for Biomedical Ontology BioPortal '
+  name: National Center for Biomedical Ontology BioPortal
   xref:
   - http://bioportal.bioontology.org/
   synonym:
@@ -777,12 +780,12 @@ information_resources:
     query web services.
 - id: infores:bspo
   status: released
-  name: 'Biological Spatial Ontology '
+  name: Biological Spatial Ontology
   xref:
   - https://obofoundry.org/ontology/bspo.html
   synonym:
   - BSPO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:wbbt
   status: released
@@ -791,7 +794,7 @@ information_resources:
   - https://obofoundry.org/ontology/wbbt.html
   synonym:
   - WBBT
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: A structured controlled vocabulary of the anatomy of Caenorhabditis elegans.
 - id: infores:wbphenotype
@@ -801,7 +804,7 @@ information_resources:
   - https://obofoundry.org/ontology/wbphenotype.html
   synonym:
   - WBPhenotype
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: A structured controlled vocabulary of Caenorhabditis elegans phenotypes
 - id: infores:cam-kp
@@ -830,7 +833,7 @@ information_resources:
   - https://pubchem.ncbi.nlm.nih.gov/source/ChEBI
   synonym:
   - ChEBI
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: a freely available dictionary of molecular entities focused on ‘small’ chemical compounds
 - id: infores:chem2bio2rdf
@@ -886,11 +889,11 @@ information_resources:
   - https://obofoundry.org/ontology/cl.html
   synonym:
   - CL
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:clingen
   status: released
-  name: 'Clinical Genome Resource (ClinGen) '
+  name: Clinical Genome Resource (ClinGen)
   xref:
   - https://clinicalgenome.org/
   knowledge level: not_provided
@@ -1166,7 +1169,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/ddanat.html
   synonym:
   - DDA
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:delta-qt-db
   status: released
@@ -1212,7 +1215,7 @@ information_resources:
   - https://obofoundry.org/ontology/fbbt.html
   synonym:
   - FBbt
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: An ontology representing the gross anatomy of Drosophila melanogaster.
 - id: infores:disease-ontology
@@ -1222,7 +1225,7 @@ information_resources:
   - http://www.disease-ontology.org/
   synonym:
   - DO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:diseases
   status: released
@@ -1340,21 +1343,21 @@ information_resources:
     (proteins from UniProt, RNA from RNAcentral and complexes from ComplexPortal).
 - id: infores:eco
   status: released
-  name: 'Evidence & Conclusion Ontology '
+  name: Evidence & Conclusion Ontology
   xref:
   - https://obofoundry.org/ontology/eco.html
   synonym:
   - ECO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:ecto
   status: released
-  name: '"Environmental conditions, treatments and exposures ontology"'
+  name: Environmental conditions, treatments and exposures ontology
   xref:
   - https://obofoundry.org/ontology/ecto.html
   synonym:
   - ECTO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:eram
   status: released
@@ -1382,7 +1385,7 @@ information_resources:
   - http://obofoundry.org/ontology/ehdaa2.html
   synonym:
   - EHDAA2
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:ensembl-gene
   status: released
@@ -1452,7 +1455,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/foodon.html
   synonym:
   - FOODON
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:gdc
   status: released
@@ -1559,7 +1562,7 @@ information_resources:
   name: Gene Ontology
   xref:
   - http://www.geneontology.org/
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:go-cam
   status: released
@@ -1568,7 +1571,7 @@ information_resources:
   - http://www.geneontology.org/docs/gocam-overview/
   synonym:
   - GO-CAM
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:go-plus
   status: released
@@ -1584,7 +1587,7 @@ information_resources:
   - http://www.geneontology.org/
   synonym:
   - GOA
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:gote
   status: released
@@ -1706,7 +1709,7 @@ information_resources:
   name: Human Phenotype Ontology
   xref:
   - http://obofoundry.org/ontology/hp
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:hpo-annotations
   status: released
@@ -1793,7 +1796,7 @@ information_resources:
   name: Interaction Network Ontology
   xref:
   - http://www.obofoundry.org/ontology/ino.html
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:intact
   status: released
@@ -1946,7 +1949,7 @@ information_resources:
   name: Mammalian Phenotype Ontology
   xref:
   - https://obofoundry.org/ontology/mp.html
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: Standard terms for annotating mammalian phenotypic data.
 - id: infores:maxo
@@ -1956,7 +1959,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/maxo.html
   synonym:
   - MAXO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: see also https://github.com/monarch-initiative/MAxO
 - id: infores:meddra-umls
@@ -2016,7 +2019,7 @@ information_resources:
   - https://obofoundry.org/ontology/emapa.html
   synonym:
   - EMAPA
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: >- 
     An ontology for mouse anatomy covering embryonic development and postnatal
@@ -2037,7 +2040,7 @@ information_resources:
   - https://obofoundry.org/ontology/mpath.html
   synonym:
   - MPATH
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: >-
     A structured controlled vocabulary of mutant and transgenic mouse pathology
@@ -2049,7 +2052,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/mi.html
   synonym:
   - MI
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:mirbase
   status: released
@@ -2087,7 +2090,7 @@ information_resources:
   name: SciGraph-Monarch-Ontology
   xref:
   - scigraph-ontology.monarchinitiative.org/scigraph/docs/
-  knowledge level: not_provided
+  knowledge level: `not_provided`
   agent type: not_provided
 - id: infores:monarchinitiative
   status: released
@@ -2103,7 +2106,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/mondo.html
   synonym:
   - MONDO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:mop
   status: released
@@ -2112,7 +2115,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/mop.html
   synonym:
   - MOP
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:mousemine
   status: released
@@ -2196,7 +2199,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/nbo.html
   synonym:
   - NBO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:ncats-ars
   status: released
@@ -2222,7 +2225,7 @@ information_resources:
   name: NCBI Taxonomy Ontology
   xref:
   - http://www.obofoundry.org/ontology/ncbitaxon.html
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:ncbi-taxonomy
   status: released
@@ -2408,7 +2411,7 @@ information_resources:
   - https://bioportal.bioontology.org/ontologies/ORDO
   synonym:
   - ORDO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:orphanet
   status: released
@@ -2470,7 +2473,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/pato.html
   synonym:
   - PATO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:phenio
   status: released
@@ -2674,7 +2677,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/ro.html
   synonym:
   - RO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:robokop
   status: released
@@ -2906,7 +2909,7 @@ information_resources:
   name: Symptom Ontology
   xref:
   - http://www.obofoundry.org/ontology/symp.html
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:tcga
   status: released
@@ -2994,7 +2997,7 @@ information_resources:
   - http://www.obofoundry.org/ontology/uberon.html
   synonym:
   - Uberon
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:umls
   status: released
@@ -3088,9 +3091,10 @@ information_resources:
   - https://obofoundry.org/ontology/upheno.html
   synonym:
   - uPheno
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
-  description: The uPheno ontology integrates multiple phenotype ontologies into a
+  description: >-
+    The uPheno ontology integrates multiple phenotype ontologies into a
     unified cross-species phenotype ontology.
 - id: infores:vandf-umls
   status: released
@@ -3127,7 +3131,7 @@ information_resources:
   - https://obofoundry.org/ontology/xpo.html
   synonym:
   - XPO
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: XPO represents anatomical, cellular, and gene function phenotypes
     occurring throughout the development of the African frogs Xenopus laevis and tropicalis.
@@ -3153,7 +3157,7 @@ information_resources:
   - https://obofoundry.org/ontology/zfa.html
   synonym:
   - ZFA
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: A structured controlled vocabulary of the anatomy and development of
     the Zebrafish
@@ -3257,7 +3261,7 @@ information_resources:
   - https://obofoundry.org/ontology/zp.html
   synonym:
   - ZP
-  knowledge level: not_provided
+  knowledge level: knowledge_assertion
   agent type: not_provided
   description: >-
     The Zebrafish Phenotype Ontology formally defines all phenotypes of
