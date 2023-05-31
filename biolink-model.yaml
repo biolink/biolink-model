@@ -5801,13 +5801,13 @@ slots:
       - value: prediction
       - value: statistical_association
 
-    agent type:
-      aliases: ['knowledge type']
-      is_a: association slot
-      description: >-
+  agent type:
+    aliases: ['knowledge type']
+    is_a: association slot
+    description: >-
         Describes the high-level category of agent that generated the a statemetn of 
         knolwedge or other piece of information.
-      notes: >-
+    notes: >-
         Note that this property indicates the type of agent who ultimately
         produced a statement of knowledge, and is independent from the type
         of agent or agents that produced information used as evidence to 
@@ -5819,14 +5819,14 @@ slots:
         But if any of these automated systems is programmed to generate knowledge
         statements directly and without human assistance, the statement would be
         attributed to an 'automated_agent'.
-      domain: association
-      range: AgentTypeEnum
-      multivalued: false
-      examples:
-        - value: manual_agent
-        - value: automated_agent
-        - value: computational_model
-        - value: text_mining_agent
+    domain: association
+    range: AgentTypeEnum
+    multivalued: false
+    examples:
+      - value: manual_agent
+      - value: automated_agent
+      - value: computational_model
+      - value: text_mining_agent
 
 classes:
 
