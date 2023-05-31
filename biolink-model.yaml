@@ -11353,18 +11353,16 @@ enums:
           (e.g. heuristic models, supervised classifiers), or learned from patterns 
           observed in data (e.g. ML models, unsupervised classifiers).
         notes: >-
-          The bar is quite relatively for what is considered to be a 
+          The bar is quite low relatively for what is considered to be a 
           ‘computational model’ by our definition. Even agents/tools that apply 
           simple rules or logic to the output of an ingest or analysis pipeline
           to allow for a stronger or more general conclusion to be stated can 
-          qualify an agent as a model.
-          For example, an ingest pipeline that applies rules to its ingest of 
+          qualify an agent as a model. For example, an ingest pipeline that applies rules to its ingest of 
           clinical trials data to create a 'treats' prediction edge when the 
           source reports a drug to be in phase 2 or 3 trials represents a
           computational model because it is automatically drawing a stronger
           conclusion than the source reports, based on logic encoded in the ingest
-          pipeline.
-          Similarly, a data analysis pipeline that is extended with rules to 
+          pipeline. Similarly, a data analysis pipeline that is extended with rules to 
           automatically generate broader conclusions based on dataset-specific
           statistical correlations (e.g. create a 'treats' edge when the analysis
           reveals a drug-disease correlation in the data with statistical scores 
@@ -11375,14 +11373,13 @@ enums:
         description: >- 
           An automated agent that uses Natural Language Processing to recognize
           concepts and/or relationships in text, and report them using formally
-          encoded semantics (e.g. as an edge in a knowledge graph) 
+          encoded semantics (e.g. as an edge in a knowledge graph).
         notes: >-
           The original statement in the source text is typically made by a human / 
           manual agent, but if a specific encoding of this knowledge is produced
           by a text-mining tool, it has an agent_type of 'text_mining_agent'.
           Examples of text mining agents include SemmedDB, and the Translator
-          Text-Mining Knowledge Provider. 
-          Note that text-mining tools are prone to erroneous interpretation of 
+          Text-Mining Knowledge Provider. Note that text-mining tools are prone to erroneous interpretation of 
           concepts and relationships, and can fail to provide important details 
           about the context in which the original knowledge was reported - so
           users should always consult the source text for a text-mined statement
@@ -11464,8 +11461,7 @@ enums:
           'Diabetes Diagnosis' in EHR records could support a Prediction that "Metformin treats Diabetes", 
           or "Metformin causes Diabetes". This 'treats' edge may have a knowledge_level of 'Prediction', 
           but the provider could use the 'evidence_type' edge property to indicate that this prediction is 
-          based on a 'Statistical Association'.
-          Because Statistical Associations directly report analysis-specific results, we can consider
+          based on a 'Statistical Association'. Because Statistical Associations directly report analysis-specific results, we can consider
           them to be inherently true statements, whose broader utility is dependent on subsequent generalization
           of the reported result to a broader population, and/or interpretation of the result as support for 
           a more meaningful statements about the domain of discourse.

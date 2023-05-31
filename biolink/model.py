@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-31T14:35:05
+# Generation date: 2023-05-31T14:37:25
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10713,7 +10713,7 @@ class KnowledgeLevelEnum(EnumDefinitionImpl):
         description="""A statement reporting (and possibly quantifying) a phenomenon that was observed to occur -  absent any analysis or interpretation that generates a statistical association or supports a broader conclusion or inference.""")
     not_provided = PermissibleValue(
         text="not_provided",
-        description="""The knowledge level is not provided, typically because it cannot be determined from available information.""")
+        description="""The knowledge level is not provided, typically because it cannot be determined from available. information.""")
 
     _defn = EnumDefinition(
         name="KnowledgeLevelEnum",
