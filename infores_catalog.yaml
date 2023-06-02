@@ -2243,6 +2243,8 @@ information_resources:
 - id: infores:text-mining-provider-cooccurrence
   status: released
   name: Text Mining COOCCURRENCE API
+  xref:
+  - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_cooccur_kgs.md
   description: API serving a knowledge graph comprised of pairs of concepts that
     have been found to co-occur in the scientific literature. Here, cooccurrence of
     a pair of biomedical concepts within a single document or sentence serves as a
@@ -2251,7 +2253,7 @@ information_resources:
   status: released
   name: Text Mining Targeted Association API
   xref:
-  - https://github.com/UCDenver-ccp/text-mining-provider-trapi
+  - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_assoc_kgs.md
   description: API serving explicitly targeted Biolink Associations extracted from
     sentences in the scientific literature. Here, targeted refers to the fact that
     this service is based on text-mining models targeted to extract specific associations
