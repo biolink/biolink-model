@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: organism_taxon_to_organism_taxon_specialization
+# metamodel_version: 1.7.0# version: 3.4.3id: organism_taxon_to_organism_taxon_specialization
 schema_generating: true
 description: 'A child-parent relationship between two taxa. For example: Homo sapiens
   subclass_of Homo'
@@ -33,8 +33,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -52,7 +52,7 @@ fields:
     that an implementer can identify.  Performing a rigorous analysis of upstream
     data providers is expected; every effort is made to catalog the most upstream
     source of data in this property.  Only one data source should be declared primary
-    in any association.  "aggregator knowledge source" can be used to caputre non-primary
+    in any association.  "aggregator knowledge source" can be used to capture non-primary
     sources.
   display_name: primary knowledge source
 - id: aggregator_knowledge_source

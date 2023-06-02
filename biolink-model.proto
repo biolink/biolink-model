@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.2.7
+// version: 3.4.3
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -15,6 +15,7 @@ message AccessibleDnaRegion
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
@@ -57,6 +58,7 @@ message AnatomicalEntity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A relationship between two anatomical entities where the relationship is ontogenic, i.e. the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship.
@@ -71,9 +73,9 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -107,9 +109,9 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -131,6 +133,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   anatomicalEntity object = 0
   predicateType predicate = 0
  }
+// a piece of writing on a particular topic presented as a stand-alone  section of a larger publication	  
 message Article
  {
   iriType iri = 0
@@ -151,7 +154,7 @@ message Article
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string publicationType = 0
+ repeated  string publicationType = 0
   uriorcurie publishedIn = 0
   string isoAbbreviation = 0
   string volume = 0
@@ -172,9 +175,9 @@ message Association
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -209,6 +212,21 @@ message Attribute
   namedThing hasQualitativeValue = 0
   iriType iri = 0
  }
+// A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and are often motile.
+message Bacterium
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
 message Behavior
  {
   string id = 0
@@ -221,6 +239,7 @@ message Behavior
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -238,9 +257,9 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -299,6 +318,7 @@ message BehavioralFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -313,6 +333,7 @@ message BiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -330,6 +351,7 @@ message BiologicalProcessOrActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -385,7 +407,7 @@ message Book
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
   labelType name = 0
-  string publicationType = 0
+ repeated  string publicationType = 0
   string id = 0
  repeated  string type = 0
  }
@@ -409,7 +431,7 @@ message BookChapter
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string publicationType = 0
+ repeated  string publicationType = 0
   uriorcurie publishedIn = 0
   string volume = 0
   string chapter = 0
@@ -426,6 +448,7 @@ message Case
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype.
@@ -443,9 +466,9 @@ message CaseToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -472,6 +495,51 @@ message CaseToPhenotypicFeatureAssociation
   double hasQuotient = 0
   double hasPercentage = 0
  }
+message CausalGeneToDiseaseAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+  geneOrGeneProduct subject = 0
+  disease object = 0
+ }
 message Cell
  {
   string id = 0
@@ -483,6 +551,7 @@ message Cell
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellLine
@@ -496,6 +565,7 @@ message CellLine
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellLineAsAModelOfDiseaseAssociation
@@ -511,9 +581,9 @@ message CellLineAsAModelOfDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -550,9 +620,9 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -584,6 +654,7 @@ message CellularComponent
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 message CellularOrganism
@@ -597,6 +668,7 @@ message CellularOrganism
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
@@ -611,9 +683,9 @@ message ChemicalAffectsGeneAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -679,9 +751,9 @@ message ChemicalEntityAssessesNamedThingAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -715,9 +787,9 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -769,9 +841,9 @@ message ChemicalGeneInteractionAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -837,9 +909,9 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -874,9 +946,9 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -927,9 +999,9 @@ message ChemicalToChemicalAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -968,9 +1040,9 @@ message ChemicalToChemicalDerivationAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1007,9 +1079,9 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1042,9 +1114,9 @@ message ChemicalToPathwayAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1139,6 +1211,7 @@ message ClinicalFinding
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  clinicalAttribute hasAttribute = 0
  }
 message ClinicalIntervention
@@ -1216,6 +1289,7 @@ message CodingSequence
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -1229,6 +1303,7 @@ message Cohort
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A Common Data Element (CDE) is a standardized, precisely defined question, paired with a set of allowable  responses, used systematically across different sites, studies, or clinical trials to ensure consistent  data collection. Multiple CDEs (from one or more Collections) can be curated into Forms.  (https://cde.nlm.nih.gov/home)
@@ -1331,9 +1406,9 @@ message ContributorAssociation
   boolean negated = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1355,6 +1430,51 @@ message ContributorAssociation
   predicateType predicate = 0
   agent object = 0
  repeated  ontologyClass qualifiers = 0
+ }
+message CorrelatedGeneToDiseaseAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+  geneOrGeneProduct subject = 0
+  disease object = 0
  }
 // an item that refers to a collection of data from a data source.
 message Dataset
@@ -1443,6 +1563,19 @@ message Device
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A device or substance used to help diagnose disease or injury
+message DiagnosticAid
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ }
 // A disorder of structure or function, especially one that produces specific  signs, phenotypes or symptoms or that affects a specific location and is not simply a  direct result of physical injury.  A disposition to undergo pathological processes that exists in an  organism because of one or more disorders in that organism.
 message Disease
  {
@@ -1456,6 +1589,7 @@ message Disease
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.  Please see definitions of phenotypic feature and disease in this model for their independent descriptions.  This class is helpful to enforce domains and ranges   that may involve either a disease or a phenotypic feature.
 message DiseaseOrPhenotypicFeature
@@ -1470,6 +1604,7 @@ message DiseaseOrPhenotypicFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A disease or phenotypic feature state, when viewed as an exposure, represents an precondition, leading to or influencing an outcome, e.g. HIV predisposing an individual to infections; a relative deficiency of skin pigmentation predisposing an individual to skin cancer.
 message DiseaseOrPhenotypicFeatureExposure
@@ -1501,9 +1636,9 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1538,9 +1673,9 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1575,9 +1710,9 @@ message DiseaseToExposureEventAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1609,9 +1744,9 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1679,6 +1814,29 @@ message DrugExposure
  repeated  quantityValue hasQuantitativeValue = 0
   timeType timepoint = 0
  }
+// a document accompanying a drug or its container that provides written, printed or graphic information about the drug, including drug contents, specific instructions  or warnings for administration, storage and disposal instructions, etc. 
+message DrugLabel
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+ repeated  string publicationType = 0
+ }
 // An interaction between a drug and a gene or gene product.
 message DrugToGeneAssociation
  {
@@ -1693,9 +1851,9 @@ message DrugToGeneAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1743,9 +1901,9 @@ message DruggableGeneToDiseaseAssociation
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1763,10 +1921,17 @@ message DruggableGeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+  disease object = 0
   geneOrGeneProduct subject = 0
   predicateType predicate = 0
  repeated  druggableGeneCategoryEnum hasEvidence = 0
@@ -1785,9 +1950,9 @@ message EntityToDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1821,9 +1986,9 @@ message EntityToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -1951,6 +2116,7 @@ message Exon
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -1965,9 +2131,9 @@ message ExonToTranscriptRelationship
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2003,9 +2169,9 @@ message ExposureEventToOutcomeAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2040,9 +2206,9 @@ message ExposureEventToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2122,9 +2288,9 @@ message FunctionalAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2145,6 +2311,21 @@ message FunctionalAssociation
   macromolecularMachineMixin subject = 0
   ontologyClass object = 0
  }
+// A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites,  including mushrooms, yeasts, smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to complex. Filamentous  fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+message Fungus
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
 // A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
 message Gene
  {
@@ -2157,6 +2338,7 @@ message Gene
  repeated  string providedBy = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   string symbol = 0
  repeated  labelType synonym = 0
  repeated  uriorcurie xref = 0
@@ -2169,14 +2351,13 @@ message GeneAsAModelOfDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
-  predicateType predicate = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2194,10 +2375,18 @@ message GeneAsAModelOfDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  disease object = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+  disease object = 0
   geneOrGeneProduct subject = 0
  }
 // any grouping of multiple genes or gene products related by common descent
@@ -2213,6 +2402,7 @@ message GeneFamily
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
@@ -2226,9 +2416,9 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2246,9 +2436,16 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
   string subjectFormOrVariantQualifier = 0
   geneOrGeneProduct subject = 0
   disease object = 0
@@ -2261,14 +2458,13 @@ message GeneToDiseaseAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
-  predicateType predicate = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2286,11 +2482,64 @@ message GeneToDiseaseAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  geneOrGeneProduct subject = 0
-  disease object = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
+  geneOrGeneProduct subject = 0
+  disease object = 0
+ }
+message GeneToDiseaseOrPhenotypicFeatureAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  geneOrGeneProduct subject = 0
+  diseaseOrPhenotypicFeature object = 0
+  predicateType predicate = 0
+  frequencyValue frequencyQualifier = 0
+  severityValue severityQualifier = 0
+  onset onsetQualifier = 0
+  biologicalSex sexQualifier = 0
+  integer hasCount = 0
+  integer hasTotal = 0
+  double hasQuotient = 0
+  double hasPercentage = 0
  }
 // An association between a gene and a gene expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -2304,9 +2553,9 @@ message GeneToExpressionSiteAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2342,9 +2591,9 @@ message GeneToGeneCoexpressionAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2382,9 +2631,9 @@ message GeneToGeneFamilyAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2418,9 +2667,9 @@ message GeneToGeneHomologyAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2454,9 +2703,9 @@ message GeneToGeneProductRelationship
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2490,9 +2739,9 @@ message GeneToGoTermAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2526,9 +2775,9 @@ message GeneToPathwayAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2556,14 +2805,13 @@ message GeneToPhenotypicFeatureAssociation
   labelType name = 0
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
-  predicateType predicate = 0
   boolean negated = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2581,8 +2829,9 @@ message GeneToPhenotypicFeatureAssociation
  repeated  retrievalSource retrievalSourceIds = 0
  repeated  string type = 0
  repeated  categoryType category = 0
-  geneOrGeneProduct subject = 0
-  phenotypicFeature object = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  predicateType predicate = 0
   frequencyValue frequencyQualifier = 0
   severityValue severityQualifier = 0
   onset onsetQualifier = 0
@@ -2591,6 +2840,8 @@ message GeneToPhenotypicFeatureAssociation
   integer hasTotal = 0
   double hasQuotient = 0
   double hasPercentage = 0
+  geneOrGeneProduct subject = 0
+  phenotypicFeature object = 0
  }
 // The pattern or 'mode' in which a particular genetic trait or disorder is passed from one generation to the next, e.g. autosomal dominant, autosomal recessive, etc.
 message GeneticInheritance
@@ -2605,6 +2856,7 @@ message GeneticInheritance
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A genome is the sum of genetic material within a cell or virion.
 message Genome
@@ -2619,6 +2871,7 @@ message Genome
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.
@@ -2640,6 +2893,7 @@ message GenomicBackgroundExposure
  repeated  gene hasGeneOrGeneProduct = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A relationship between a sequence feature and a nucleic acid entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig.
 message GenomicSequenceLocalization
@@ -2653,9 +2907,9 @@ message GenomicSequenceLocalization
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2695,6 +2949,7 @@ message Genotype
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   zygosity hasZygosity = 0
   biologicalSequence hasBiologicalSequence = 0
  }
@@ -2709,9 +2964,9 @@ message GenotypeAsAModelOfDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2747,9 +3002,9 @@ message GenotypeToDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2786,9 +3041,9 @@ message GenotypeToGeneAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2822,9 +3077,9 @@ message GenotypeToGenotypePartAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2859,9 +3114,9 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -2902,9 +3157,9 @@ message GenotypeToVariantAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3001,6 +3256,7 @@ message GrossAnatomicalStructure
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -3016,6 +3272,7 @@ message Haplotype
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 message Hospitalization
@@ -3030,6 +3287,21 @@ message Hospitalization
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+// A member of the the species Homo sapiens.
+message Human
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
 // An instance of an organism. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID: ORCID:0000-0002-5355-2576
 message IndividualOrganism
  {
@@ -3042,6 +3314,7 @@ message IndividualOrganism
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // association between a named thing and a information content entity where the specific context of the relationship between that named thing and the publication is unknown. For example, model organisms databases often capture the knowledge that a gene is found in a journal article, but not specifically the context in which that gene was documented in the article. In these cases, this association with the accompanying predicate 'mentions' could be used. Conversely, for more specific associations (like 'gene to disease association', the publication should be captured as an edge property).
@@ -3056,9 +3329,9 @@ message InformationContentEntityToNamedThingAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3080,8 +3353,65 @@ message InformationContentEntityToNamedThingAssociation
   namedThing object = 0
   predicateType predicate = 0
  }
-// A database or knowledgebase and its supporting ecosystem of interfaces  and services that deliver content to consumers (e.g. web portals, APIs,  query endpoints, streaming services, data downloads, etc.). A single Information Resource by this definition may span many different datasets or databases, and include many access endpoints and user interfaces. Information Resources include project-specific resources such as a Translator Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
-message InformationResource
+// An animal lacking a vertebral column. This group consists of 98% of all animal species.
+message Invertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
+// an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+message JournalArticle
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+ repeated  string publicationType = 0
+  uriorcurie publishedIn = 0
+  string isoAbbreviation = 0
+  string volume = 0
+  string issue = 0
+ }
+// A stage of development or growth of an organism, including post-natal adult stages
+message LifeStage
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
+// A result of a log odds ratio analysis.
+message LogOddsAnalysisResult
  {
   string id = 0
   iriType iri = 0
@@ -3097,20 +3427,6 @@ message InformationResource
   string format = 0
   date creationDate = 0
  }
-// A stage of development or growth of an organism, including post-natal adult stages
-message LifeStage
- {
-  string id = 0
-  iriType iri = 0
- repeated  string type = 0
-  labelType name = 0
-  narrativeText description = 0
- repeated  string providedBy = 0
- repeated  uriorcurie xref = 0
- repeated  categoryType category = 0
- repeated  organismTaxon inTaxon = 0
- repeated  attribute hasAttribute = 0
- }
 // A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.
 message MacromolecularComplex
  {
@@ -3124,6 +3440,7 @@ message MacromolecularComplex
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it.
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -3138,9 +3455,9 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3174,9 +3491,9 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3210,9 +3527,9 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3232,6 +3549,21 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  categoryType category = 0
   macromolecularMachineMixin subject = 0
   molecularActivity object = 0
+ }
+// A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the possession of hair, three middle ear bones, mammary glands, and a neocortex
+message Mammal
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
  }
 // A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
 message MaterialSample
@@ -3258,9 +3590,9 @@ message MaterialSampleDerivationAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3297,9 +3629,9 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3337,6 +3669,7 @@ message MicroRNA
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // An execution of a molecular function carried out by a gene product or macromolecular complex.
@@ -3352,6 +3685,7 @@ message MolecularActivity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  molecularEntity hasInput = 0
  repeated  molecularEntity hasOutput = 0
  repeated  macromolecularMachineMixin enabledBy = 0
@@ -3369,9 +3703,9 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3405,9 +3739,9 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3440,9 +3774,9 @@ message MolecularActivityToPathwayAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3531,9 +3865,9 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3576,6 +3910,7 @@ message NoncodingRNAProduct
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
@@ -3598,6 +3933,7 @@ message NucleicAcidEntity
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A linear nucleotide sequence pattern that is widespread and has, or is conjectured to have, a biological significance. e.g. the TATA box promoter motif, transcription factor binding consensus sequences.
 message NucleicAcidSequenceMotif
@@ -3612,6 +3948,7 @@ message NucleicAcidSequenceMotif
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A chemical modification of a histone protein within a nucleosome octomer or a substitution of a histone with a variant histone isoform. e.g. Histone 4 Lysine 20 methylation (H4K20me), histone variant H2AZ substituting H2A.
 message NucleosomeModification
@@ -3626,6 +3963,7 @@ message NucleosomeModification
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
   biologicalSequence hasBiologicalSequence = 0
  }
@@ -3704,9 +4042,9 @@ message OrganismTaxonToOrganismTaxonInteraction
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3741,9 +4079,9 @@ message OrganismTaxonToOrganismTaxonSpecialization
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3777,9 +4115,9 @@ message OrganismToOrganismAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3813,9 +4151,9 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3850,9 +4188,9 @@ message PairwiseGeneToGeneInteraction
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3885,9 +4223,9 @@ message PairwiseMolecularInteraction
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -3910,6 +4248,29 @@ message PairwiseMolecularInteraction
   string id = 0
   predicateType predicate = 0
   molecularEntity object = 0
+ }
+// a legal document granted by a patent issuing authority which confers upon  the patenter the sole right to make, use and sell an invention for a set period of time. 
+message Patent
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+ repeated  string publicationType = 0
  }
 // An abnormal anatomical structure, when viewed as an exposure, representing an precondition, leading to or influencing an outcome, e.g. thrombosis leading to an ischemic disease outcome.
 message PathologicalAnatomicalExposure
@@ -3940,6 +4301,7 @@ message PathologicalAnatomicalStructure
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // A biologic function or a process having an abnormal or deleterious effect at the subcellular, cellular, multicellular, or organismal level.
@@ -3955,6 +4317,7 @@ message PathologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -3988,6 +4351,7 @@ message Pathway
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -4018,6 +4382,7 @@ message PhenotypicFeature
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A property of a phenotype
 message PhenotypicQuality
@@ -4076,6 +4441,7 @@ message PhysiologicalProcess
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  namedThing hasInput = 0
  repeated  namedThing hasOutput = 0
  repeated  physicalEntity enabledBy = 0
@@ -4093,6 +4459,20 @@ message PlanetaryEntity
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  }
+message Plant
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
 // A polypeptide is a molecular entity characterized by availability in protein databases of amino-acid-based sequence representations of its precise primary structure; for convenience of representation, partial sequences of various kinds are included, even if they do not represent a physical molecule.
 message Polypeptide
  {
@@ -4106,6 +4486,7 @@ message Polypeptide
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A collection of individuals from the same taxonomic class distinguished by one or more characteristics.  Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes.
 message PopulationOfIndividualOrganisms
@@ -4119,6 +4500,7 @@ message PopulationOfIndividualOrganisms
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // An association between a two populations
@@ -4133,9 +4515,9 @@ message PopulationToPopulationAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4170,6 +4552,7 @@ message PosttranslationalModification
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A deprecated predicate mapping object contains the deprecated predicate and an example of the rewiring that should be done to use a qualified statement in its place.
@@ -4191,11 +4574,34 @@ message PredicateMapping
   string objectDerivativeQualifier = 0
   string objectContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
-  anatomicalContextQualifierEnum anatomicalContextQualifier = 0
+  string anatomicalContextQualifier = 0
   organismTaxon speciesContextQualifier = 0
  repeated  namedThing exactMatch = 0
  repeated  namedThing narrowMatch = 0
  repeated  namedThing broadMatch = 0
+ }
+// a document reresenting an early version of an author's original scholarly work,  such as a research paper or a review, prior to formal peer review and publication  in a peer-reviewed scholarly or scientific journal.
+message PreprintPublication
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+ repeated  string publicationType = 0
  }
 // A series of actions conducted in a certain order or manner
 message Procedure
@@ -4245,6 +4651,7 @@ message Protein
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A conserved part of protein sequence and (tertiary) structure that can evolve, function, and exist independently of the rest of the protein chain. Protein domains maintain their structure and function independently of the proteins in which they are found. e.g. an SH3 domain.
@@ -4260,6 +4667,7 @@ message ProteinDomain
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 message ProteinFamily
@@ -4274,6 +4682,7 @@ message ProteinFamily
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGeneOrGeneProduct = 0
  }
 // Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
@@ -4289,9 +4698,10 @@ message ProteinIsoform
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
-// Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+// Any ‘published’ piece of information. Publications are considered broadly  to include any document or document part made available in print or on the  web - which may include scientific journal issues, individual articles, and  books - as well as things like pre-prints, white papers, patents, drug  labels, web pages, protocol documents,  and even a part of a publication if  of significant knowledge scope (e.g. a figure, figure legend, or section  highlighted by NLP). 
 message Publication
  {
   iriType iri = 0
@@ -4312,7 +4722,7 @@ message Publication
  repeated  uriorcurie xref = 0
   string id = 0
   labelType name = 0
-  string publicationType = 0
+ repeated  string publicationType = 0
  }
 // A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 message QuantityValue
@@ -4332,9 +4742,9 @@ message ReactionToCatalystAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4370,9 +4780,9 @@ message ReactionToParticipantAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4409,6 +4819,7 @@ message ReagentTargetedGene
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A region (or regions) of the genome that contains known or putative regulatory elements that act in cis- or trans- to affect the transcription of gene
@@ -4424,6 +4835,7 @@ message RegulatoryRegion
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // An OWL property used as an edge label
@@ -4487,6 +4899,7 @@ message RNAProduct
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -4509,6 +4922,7 @@ message RNAProductIsoform
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // An association between a sequence feature and a nucleic acid entity it is localized to.
@@ -4526,9 +4940,9 @@ message SequenceAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4560,9 +4974,9 @@ message SequenceFeatureRelationship
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4595,6 +5009,7 @@ message SequenceVariant
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
@@ -4618,7 +5033,7 @@ message Serial
  repeated  uriorcurie meshTerms = 0
  repeated  uriorcurie xref = 0
   labelType name = 0
-  string publicationType = 0
+ repeated  string publicationType = 0
   string isoAbbreviation = 0
   string volume = 0
   string issue = 0
@@ -4661,6 +5076,7 @@ message SiRNA
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  labelType synonym = 0
  }
 // A small molecule entity is a molecular entity characterized by availability in small-molecule databases of SMILES, InChI, IUPAC, or other unambiguous representation of its precise chemical structure; for convenience of representation, any valid chemical representation is included, even if it is not strictly molecular (e.g., sodium ion).
@@ -4694,6 +5110,7 @@ message Snv
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  gene hasGene = 0
   biologicalSequence hasBiologicalSequence = 0
   string id = 0
@@ -4756,6 +5173,7 @@ message StudyPopulation
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
 // a variable that is used as a measure in the investigation of a study
@@ -4787,9 +5205,9 @@ message TaxonToTaxonAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4852,6 +5270,7 @@ message Transcript
   boolean isMetabolite = 0
   biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  }
 // A gene is a collection of transcripts
 message TranscriptToGeneRelationship
@@ -4866,9 +5285,9 @@ message TranscriptToGeneRelationship
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4902,6 +5321,7 @@ message TranscriptionFactorBindingSite
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
   biologicalSequence hasBiologicalSequence = 0
  }
 // A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures', medical devices and/or procedures
@@ -4932,9 +5352,9 @@ message VariantAsAModelOfDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -4970,9 +5390,9 @@ message VariantToDiseaseAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5010,9 +5430,9 @@ message VariantToGeneAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5046,9 +5466,9 @@ message VariantToGeneExpressionAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5086,9 +5506,9 @@ message VariantToPhenotypicFeatureAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5129,9 +5549,9 @@ message VariantToPopulationAssociation
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
-  informationResource knowledgeSource = 0
-  informationResource primaryKnowledgeSource = 0
- repeated  informationResource aggregatorKnowledgeSource = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
   timeType timepoint = 0
   string originalSubject = 0
   uriorcurie originalPredicate = 0
@@ -5157,6 +5577,21 @@ message VariantToPopulationAssociation
   double hasPercentage = 0
   frequencyValue frequencyQualifier = 0
  }
+// A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+message Vertebrate
+ {
+  string id = 0
+  iriType iri = 0
+ repeated  string type = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  string providedBy = 0
+ repeated  uriorcurie xref = 0
+ repeated  categoryType category = 0
+ repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
+ repeated  attribute hasAttribute = 0
+ }
 // A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
 message Virus
  {
@@ -5169,7 +5604,31 @@ message Virus
  repeated  uriorcurie xref = 0
  repeated  categoryType category = 0
  repeated  organismTaxon inTaxon = 0
+  labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
+ }
+// a document that is published according to World Wide Web standards, which  may incorporate text, graphics, sound, and/or other features.
+message WebPage
+ {
+  iriType iri = 0
+ repeated  string type = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+ repeated  string providedBy = 0
+ repeated  categoryType category = 0
+  string license = 0
+  string rights = 0
+  string format = 0
+  date creationDate = 0
+ repeated  agent authors = 0
+ repeated  string pages = 0
+  string summary = 0
+ repeated  string keywords = 0
+ repeated  uriorcurie meshTerms = 0
+ repeated  uriorcurie xref = 0
+  string id = 0
+  labelType name = 0
+ repeated  string publicationType = 0
  }
 message Zygosity
  {

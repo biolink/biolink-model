@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: haplotype
+# metamodel_version: 1.7.0# version: 3.4.3id: haplotype
 schema_generating: true
 description: A set of zero or more Alleles on a single instance of a Sequence[VMC]
 display_name: haplotype
@@ -60,6 +60,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence

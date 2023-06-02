@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: behavioral_feature
+# metamodel_version: 1.7.0# version: 3.4.3id: behavioral_feature
 schema_generating: true
 description: A phenotypic feature which is behavioral in nature.
 display_name: behavioral feature
@@ -60,3 +60,6 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label

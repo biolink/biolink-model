@@ -1,5 +1,68 @@
 CHANGES
 =======
+3.4.3
+----
+in_taxon_label addition
+
+3.4.2
+----
+move GeneToPhenotypeAssociation to GeneToPhenotypicFeatureAssociation
+
+3.4.1
+-----
+recreate wheel with pydantic included
+
+3.4.0
+-----
+remove support for dynamic enumerations in anatomical context qualifier
+reinstate gene to disease and gene to phenotype associations as subclasses of
+gene to disease or phenotypic feature association.
+more infores URL updates
+
+3.3.4
+-----
+infores updates and format change
+infores TSV IS NOW DEPRECATED in favor of the infores-catalog.yaml file.  please make changes here going forward.
+bug fixes for documentation.
+
+3.3.3
+-----
+Infores formatting fixes and validation script updates.
+
+3.3.2
+-----
+added mappings identified from semmeddb domain/range analysis
+
+3.3.1
+----
+changes to support fixing documentation links and accessing biolink-model.yaml for use as an import.
+
+3.3.0
+-----
+* codespell: configuration, github action + typos fixed by @yarikoptic in https://github.com/biolink/biolink-model/pull/1285
+* Update codespell to ignore regenerated files by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1286
+* Poetry for artifacts by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1287
+* Add infores by @gloriachin in https://github.com/biolink/biolink-model/pull/1288
+* Improved CAM-KP infores entries by @gaurav in https://github.com/biolink/biolink-model/pull/1293
+* Update COHD URLs to Translator Wiki landing pages in Infores Catalog by @CaseyTa in https://github.com/biolink/biolink-model/pull/1290
+* fix prefix for biolink by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1297
+* Semmeddb mappings per analysis in #1292, fixes #1295 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1294
+* fixes #1279 fixes #1216 by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1296
+
+## New Contributors
+* @yarikoptic made their first contribution in https://github.com/biolink/biolink-model/pull/1285
+* @gloriachin made their first contribution in https://github.com/biolink/biolink-model/pull/1288
+* @gaurav made their first contribution in https://github.com/biolink/biolink-model/pull/1293
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.2.8...v3.3.0
+
+
+3.2.8
+-----
+infores catalog URL updates
+some changes to mappings for deprecated predicates
+update xref definition to be more explicit
+
 3.2.7
 -----
 minor fixes to infores URL properties
@@ -113,7 +176,7 @@ restructured annotations syntax to comply with LinkML including a change to cano
 2.4.2
 -----
 * fix exposure classes
-* more documenation
+* more documentation
 
 
 2.4.1

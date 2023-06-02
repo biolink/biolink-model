@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: gene_to_phenotypic_feature_association
+# metamodel_version: 1.7.0# version: 3.4.3id: gene_to_phenotypic_feature_association
 schema_generating: true
 display_name: gene to phenotypic feature association
 document_category: gene to phenotypic feature association
@@ -22,10 +22,6 @@ fields:
   description: connects any entity to an attribute
   display_name: has attribute
   cardinality: multi
-- id: predicate
-  description: A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes.
-  display_name: predicate
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
@@ -35,8 +31,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -54,7 +50,7 @@ fields:
     that an implementer can identify.  Performing a rigorous analysis of upstream
     data providers is expected; every effort is made to catalog the most upstream
     source of data in this property.  Only one data source should be declared primary
-    in any association.  "aggregator knowledge source" can be used to caputre non-primary
+    in any association.  "aggregator knowledge source" can be used to capture non-primary
     sources.
   display_name: primary knowledge source
 - id: aggregator_knowledge_source
@@ -156,13 +152,15 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
-- id: subject
-  description: gene in which variation is correlated with the phenotypic feature
-  display_name: gene to phenotypic feature association_subject
-- id: object
-  description: connects an association to the object of the association. For example,
-    in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: gene to phenotypic feature association_object
+- id: subject_aspect_qualifier
+  display_name: gene to disease or phenotypic feature association_subject aspect qualifier
+- id: object_direction_qualifier
+  display_name: gene to disease or phenotypic feature association_object direction
+    qualifier
+- id: predicate
+  description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
+  display_name: gene to disease or phenotypic feature association_predicate
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
@@ -190,3 +188,10 @@ fields:
 - id: has_percentage
   description: equivalent to has quotient multiplied by 100
   display_name: has percentage
+- id: subject
+  description: gene in which variation is correlated with the phenotypic feature
+  display_name: gene to phenotypic feature association_subject
+- id: object
+  description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: gene to phenotypic feature association_object

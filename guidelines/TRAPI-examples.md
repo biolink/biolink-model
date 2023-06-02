@@ -15,7 +15,7 @@ The summary of TRAPI 1.3 support for qualifiers is as follows:
 * Define a new Qualifier object 
 * Extend QEdge model to include support for qualifier-constraints
 
-To represent a query for "what decreases degredation of ESR1 protein", a TRAPI query graph would look like this:
+To represent a query for "what decreases degradation of ESR1 protein", a TRAPI query graph would look like this:
 ```json
 {
   "query_graph": {
@@ -40,7 +40,7 @@ To represent a query for "what decreases degredation of ESR1 protein", a TRAPI q
             "qualifier_set": [
               {
                 "qualifier_type_id": "biolink:object_aspect_qualifier",
-                "qualifier_value": "degredation"
+                "qualifier_value": "degradation"
               },
               {
                 "qualifier_type_id": "biolink:object_direction_qualifier",
@@ -78,7 +78,7 @@ and a TRAPI result would look like this:
         "qualifiers": [
           {
             "qualifier_type_id": "biolink:object_aspect_qualifier",
-            "qualifier_value": "degredation"
+            "qualifier_value": "degradation"
           },
           {
             "qualifier_type_id": "biolink:object_direction_qualifier",

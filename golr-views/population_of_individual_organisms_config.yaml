@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: population_of_individual_organisms
+# metamodel_version: 1.7.0# version: 3.4.3id: population_of_individual_organisms
 schema_generating: true
 description: A collection of individuals from the same taxonomic class distinguished
   by one or more characteristics.  Characteristics can include, but are not limited
@@ -58,6 +58,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_attribute
   description: may often be an organism attribute
   display_name: organismal entity_has attribute

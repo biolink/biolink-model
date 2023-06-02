@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: book_chapter
+# metamodel_version: 1.7.0# version: 3.4.3id: book_chapter
 schema_generating: true
 display_name: book chapter
 document_category: book chapter
@@ -109,6 +109,7 @@ fields:
     knowledge graph, then the CURIE identified term must be documented in the graph
     as a concept node of biolink:category biolink:OntologyClass.
   display_name: publication_publication type
+  cardinality: multi
 - id: published_in
   description: The enclosing parent book containing the chapter should have industry-standard
     identifier from ISBN.

@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.2.7
+# version: 3.4.3
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -12,6 +12,7 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -71,6 +72,7 @@ type AnatomicalEntity implements PhysicalEssence
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -86,9 +88,9 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -121,9 +123,9 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -157,9 +159,9 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -206,7 +208,7 @@ type Article
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    publicationType: String!
+    publicationType: [String]!
     publishedIn: Uriorcurie!
     isoAbbreviation: String
     volume: String
@@ -227,9 +229,9 @@ type Association
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -265,6 +267,21 @@ type Attribute implements OntologyClass
     iri: IriType
   }
 
+type Bacterium
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
 type Behavior implements OntologyClass, ActivityAndBehavior
   {
     id: String!
@@ -277,6 +294,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -294,9 +312,9 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -355,6 +373,7 @@ type BehavioralFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type BehavioralOutcome implements Outcome
@@ -373,6 +392,7 @@ type BiologicalEntity implements ThingWithTaxon
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type BiologicalProcess implements Occurrent, OntologyClass
@@ -387,6 +407,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -404,6 +425,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -460,7 +482,7 @@ type Book
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
     name: LabelType
-    publicationType: String!
+    publicationType: [String]!
     id: String!
     type: [String]
   }
@@ -485,7 +507,7 @@ type BookChapter
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    publicationType: String!
+    publicationType: [String]!
     publishedIn: Uriorcurie!
     volume: String
     chapter: String
@@ -502,6 +524,7 @@ type Case implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -524,9 +547,9 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -554,6 +577,52 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasPercentage: Double
   }
 
+type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    subject: GeneOrGeneProduct!
+    object: Disease!
+  }
+
 type Cell
   {
     id: String!
@@ -565,6 +634,7 @@ type Cell
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -579,6 +649,7 @@ type CellLine implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -595,9 +666,9 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -634,9 +705,9 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -673,6 +744,7 @@ type CellularComponent
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -687,6 +759,7 @@ type CellularOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -701,9 +774,9 @@ type ChemicalAffectsGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -770,9 +843,9 @@ type ChemicalEntityAssessesNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -810,9 +883,9 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -873,9 +946,9 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -945,9 +1018,9 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -982,9 +1055,9 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1035,9 +1108,9 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1069,9 +1142,9 @@ type ChemicalToChemicalDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1108,9 +1181,9 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1148,9 +1221,9 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1245,6 +1318,7 @@ type ClinicalFinding
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [ClinicalAttribute]
   }
 
@@ -1325,6 +1399,7 @@ type CodingSequence
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Cohort implements SubjectOfInvestigation
@@ -1338,6 +1413,7 @@ type Cohort implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -1440,9 +1516,9 @@ type ContributorAssociation
     negated: Boolean
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1464,6 +1540,52 @@ type ContributorAssociation
     predicate: PredicateType!
     object: Agent!
     qualifiers: [OntologyClass]
+  }
+
+type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    subject: GeneOrGeneProduct!
+    object: Disease!
   }
 
 type Dataset
@@ -1553,6 +1675,19 @@ type Device
     category: [CategoryType]!
   }
 
+type DiagnosticAid
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+  }
+
 type Disease
   {
     id: String!
@@ -1565,6 +1700,7 @@ type Disease
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type DiseaseOrPhenotypicFeature
@@ -1579,6 +1715,7 @@ type DiseaseOrPhenotypicFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEntityMixin
@@ -1619,9 +1756,9 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1656,9 +1793,9 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1698,9 +1835,9 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1732,9 +1869,9 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1803,6 +1940,29 @@ type DrugExposure implements ExposureEvent
     timepoint: TimeType
   }
 
+type DrugLabel
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: [String]!
+  }
+
 interface DrugToEntityAssociationMixin
   {
     subject: Drug!
@@ -1821,9 +1981,9 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1872,9 +2032,9 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1892,10 +2052,17 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    object: Disease!
     subject: GeneOrGeneProduct!
     predicate: PredicateType!
     hasEvidence: [DruggableGeneCategoryEnum]
@@ -1926,9 +2093,9 @@ type EntityToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -1993,9 +2160,9 @@ type EntityToPhenotypicFeatureAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2148,6 +2315,7 @@ type Exon
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type ExonToTranscriptRelationship
@@ -2162,9 +2330,9 @@ type ExonToTranscriptRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2206,9 +2374,9 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2243,9 +2411,9 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2339,9 +2507,9 @@ type FunctionalAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2363,6 +2531,21 @@ type FunctionalAssociation
     object: OntologyClass!
   }
 
+type Fungus
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
 type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -2374,6 +2557,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     providedBy: [String]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     symbol: String
     synonym: [LabelType]
     xref: [Uriorcurie]
@@ -2387,14 +2571,13 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
-    predicate: PredicateType!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2412,10 +2595,18 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    object: Disease!
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    object: Disease!
     subject: GeneOrGeneProduct!
   }
 
@@ -2439,6 +2630,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -2458,9 +2650,9 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2478,9 +2670,16 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
     subjectFormOrVariantQualifier: String
     subject: GeneOrGeneProduct!
     object: Disease!
@@ -2513,14 +2712,13 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
-    predicate: PredicateType!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2538,11 +2736,65 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    subject: GeneOrGeneProduct!
-    object: Disease!
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    subject: GeneOrGeneProduct!
+    object: Disease!
+  }
+
+type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociationMixin, GeneToEntityAssociationMixin
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    subject: GeneOrGeneProduct!
+    object: DiseaseOrPhenotypicFeature!
+    predicate: PredicateType!
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
   }
 
 interface GeneToEntityAssociationMixin
@@ -2561,9 +2813,9 @@ type GeneToExpressionSiteAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2600,9 +2852,9 @@ interface GeneToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2635,9 +2887,9 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2675,9 +2927,9 @@ type GeneToGeneFamilyAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2711,9 +2963,9 @@ type GeneToGeneHomologyAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2747,9 +2999,9 @@ type GeneToGeneProductRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2784,9 +3036,9 @@ type GeneToGoTermAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2820,9 +3072,9 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2851,14 +3103,13 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     name: LabelType
     description: NarrativeText
     hasAttribute: [Attribute]
-    predicate: PredicateType!
     negated: Boolean
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2876,8 +3127,9 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     retrievalSourceIds: [RetrievalSource]
     type: [String]
     category: [CategoryType]
-    subject: GeneOrGeneProduct!
-    object: PhenotypicFeature!
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    predicate: PredicateType!
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
@@ -2886,6 +3138,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     hasTotal: Integer
     hasQuotient: Double
     hasPercentage: Double
+    subject: GeneOrGeneProduct!
+    object: PhenotypicFeature!
   }
 
 type GeneticInheritance
@@ -2900,6 +3154,7 @@ type GeneticInheritance
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
@@ -2914,6 +3169,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -2935,6 +3191,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     hasGeneOrGeneProduct: [Gene]
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 interface GenomicEntity
@@ -2953,9 +3210,9 @@ type GenomicSequenceLocalization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -2995,6 +3252,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasZygosity: Zygosity
     hasBiologicalSequence: BiologicalSequence
   }
@@ -3010,9 +3268,9 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3049,9 +3307,9 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3093,9 +3351,9 @@ type GenotypeToGeneAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3129,9 +3387,9 @@ type GenotypeToGenotypePartAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3166,9 +3424,9 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3209,9 +3467,9 @@ type GenotypeToVariantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3309,6 +3567,7 @@ type GrossAnatomicalStructure
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3324,6 +3583,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -3344,6 +3604,21 @@ type HospitalizationOutcome implements Outcome
   {
   }
 
+type Human implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
 type IndividualOrganism implements SubjectOfInvestigation
   {
     id: String!
@@ -3355,6 +3630,7 @@ type IndividualOrganism implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -3386,9 +3662,9 @@ type InformationContentEntityToNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3411,7 +3687,64 @@ type InformationContentEntityToNamedThingAssociation
     predicate: PredicateType!
   }
 
-type InformationResource
+type Invertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
+type JournalArticle
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: [String]!
+    publishedIn: Uriorcurie!
+    isoAbbreviation: String
+    volume: String
+    issue: String
+  }
+
+type LifeStage
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
+type LogOddsAnalysisResult
   {
     id: String!
     iri: IriType
@@ -3428,20 +3761,6 @@ type InformationResource
     creationDate: Date
   }
 
-type LifeStage
-  {
-    id: String!
-    iri: IriType
-    type: [String]
-    name: LabelType
-    description: NarrativeText
-    providedBy: [String]
-    xref: [Uriorcurie]
-    category: [CategoryType]!
-    inTaxon: [OrganismTaxon]
-    hasAttribute: [Attribute]
-  }
-
 type MacromolecularComplex implements MacromolecularMachineMixin
   {
     id: String!
@@ -3454,6 +3773,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 interface MacromolecularMachineMixin
@@ -3473,9 +3793,9 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3509,9 +3829,9 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3550,9 +3870,9 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3572,6 +3892,21 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     category: [CategoryType]
     subject: MacromolecularMachineMixin!
     object: MolecularActivity!
+  }
+
+type Mammal implements SubjectOfInvestigation
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
   }
 
 interface MappingCollection
@@ -3603,9 +3938,9 @@ type MaterialSampleDerivationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3642,9 +3977,9 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3688,6 +4023,7 @@ type MicroRNA
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -3709,6 +4045,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [MolecularEntity]
     hasOutput: [MolecularEntity]
     enabledBy: [MacromolecularMachineMixin]
@@ -3726,9 +4063,9 @@ type MolecularActivityToChemicalEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3762,9 +4099,9 @@ type MolecularActivityToMolecularActivityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3797,9 +4134,9 @@ type MolecularActivityToPathwayAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3893,9 +4230,9 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -3939,6 +4276,7 @@ type NoncodingRNAProduct
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -3961,6 +4299,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type NucleicAcidSequenceMotif
@@ -3975,6 +4314,7 @@ type NucleicAcidSequenceMotif
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, EpigenomicEntity
@@ -3989,6 +4329,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
     hasBiologicalSequence: BiologicalSequence
   }
@@ -4081,9 +4422,9 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4118,9 +4459,9 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4153,9 +4494,9 @@ type OrganismTaxonToOrganismTaxonInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4190,9 +4531,9 @@ type OrganismTaxonToOrganismTaxonSpecialization
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4227,9 +4568,9 @@ type OrganismToOrganismAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4262,6 +4603,7 @@ type OrganismalEntity implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4278,9 +4620,9 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4319,9 +4661,9 @@ type PairwiseGeneToGeneInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4354,9 +4696,9 @@ type PairwiseMolecularInteraction
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4379,6 +4721,29 @@ type PairwiseMolecularInteraction
     id: String!
     predicate: PredicateType!
     object: MolecularEntity!
+  }
+
+type Patent
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: [String]!
   }
 
 interface PathognomonicityQuantifier
@@ -4417,6 +4782,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4436,6 +4802,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4474,6 +4841,7 @@ type Pathway implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4504,6 +4872,7 @@ type PhenotypicFeature
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type PhenotypicQuality
@@ -4571,6 +4940,7 @@ type PhysiologicalProcess implements OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasInput: [NamedThing]
     hasOutput: [NamedThing]
     enabledBy: [PhysicalEntity]
@@ -4589,6 +4959,21 @@ type PlanetaryEntity
     category: [CategoryType]!
   }
 
+type Plant
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
 type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrProteinOrPolypeptide
   {
     id: String!
@@ -4601,6 +4986,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
@@ -4614,6 +5000,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -4628,9 +5015,9 @@ type PopulationToPopulationAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4665,6 +5052,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -4686,11 +5074,34 @@ type PredicateMapping
     objectDerivativeQualifier: String
     objectContextQualifier: String
     causalMechanismQualifier: CausalMechanismQualifierEnum
-    anatomicalContextQualifier: AnatomicalContextQualifierEnum
+    anatomicalContextQualifier: String
     speciesContextQualifier: OrganismTaxon
     exactMatch: [NamedThing]
     narrowMatch: [NamedThing]
     broadMatch: [NamedThing]
+  }
+
+type PreprintPublication
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: [String]!
   }
 
 type Procedure implements ActivityAndBehavior
@@ -4740,6 +5151,7 @@ type Protein implements GeneProductMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -4755,6 +5167,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -4770,6 +5183,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGeneOrGeneProduct: [Gene]
   }
 
@@ -4785,6 +5199,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -4808,7 +5223,7 @@ type Publication
     xref: [Uriorcurie]
     id: String!
     name: LabelType
-    publicationType: String!
+    publicationType: [String]!
   }
 
 type QuantityValue
@@ -4829,9 +5244,9 @@ type ReactionToCatalystAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4868,9 +5283,9 @@ type ReactionToParticipantAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -4907,6 +5322,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -4922,6 +5338,7 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -4990,6 +5407,7 @@ type RNAProduct implements GeneProductMixin
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5012,6 +5430,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5033,9 +5452,9 @@ type SequenceAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5067,9 +5486,9 @@ type SequenceFeatureRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5102,6 +5521,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -5119,9 +5539,9 @@ interface SequenceVariantModulatesTreatmentAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5161,7 +5581,7 @@ type Serial
     meshTerms: [Uriorcurie]
     xref: [Uriorcurie]
     name: LabelType
-    publicationType: String!
+    publicationType: [String]!
     isoAbbreviation: String
     volume: String
     issue: String
@@ -5204,6 +5624,7 @@ type SiRNA
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     synonym: [LabelType]
   }
 
@@ -5237,6 +5658,7 @@ type Snv
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasGene: [Gene]
     hasBiologicalSequence: BiologicalSequence
     id: String!
@@ -5307,6 +5729,7 @@ type StudyPopulation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
   }
 
@@ -5360,9 +5783,9 @@ type TaxonToTaxonAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5409,6 +5832,7 @@ type TextMiningResult
 interface ThingWithTaxon
   {
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type Transcript
@@ -5430,6 +5854,7 @@ type Transcript
     isMetabolite: Boolean
     hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
   }
 
 type TranscriptToGeneRelationship
@@ -5444,9 +5869,9 @@ type TranscriptToGeneRelationship
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5480,6 +5905,7 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasBiologicalSequence: BiologicalSequence
   }
 
@@ -5511,9 +5937,9 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5550,9 +5976,9 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5595,9 +6021,9 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5631,9 +6057,9 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5672,9 +6098,9 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5715,9 +6141,9 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
-    knowledgeSource: InformationResource
-    primaryKnowledgeSource: InformationResource
-    aggregatorKnowledgeSource: [InformationResource]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
     timepoint: TimeType
     originalSubject: String
     originalPredicate: Uriorcurie
@@ -5744,6 +6170,21 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     frequencyQualifier: FrequencyValue
   }
 
+type Vertebrate
+  {
+    id: String!
+    iri: IriType
+    type: [String]
+    name: LabelType
+    description: NarrativeText
+    providedBy: [String]
+    xref: [Uriorcurie]
+    category: [CategoryType]!
+    inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
+    hasAttribute: [Attribute]
+  }
+
 type Virus implements SubjectOfInvestigation
   {
     id: String!
@@ -5755,7 +6196,31 @@ type Virus implements SubjectOfInvestigation
     xref: [Uriorcurie]
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
+    inTaxonLabel: LabelType
     hasAttribute: [Attribute]
+  }
+
+type WebPage
+  {
+    iri: IriType
+    type: [String]
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    providedBy: [String]
+    category: [CategoryType]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [Agent]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    meshTerms: [Uriorcurie]
+    xref: [Uriorcurie]
+    id: String!
+    name: LabelType
+    publicationType: [String]!
   }
 
 type Zygosity

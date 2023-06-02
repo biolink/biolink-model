@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: life_stage
+# metamodel_version: 1.7.0# version: 3.4.3id: life_stage
 schema_generating: true
 description: A stage of development or growth of an organism, including post-natal
   adult stages
@@ -57,6 +57,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_attribute
   description: may often be an organism attribute
   display_name: organismal entity_has attribute

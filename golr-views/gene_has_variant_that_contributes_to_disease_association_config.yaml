@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: gene_has_variant_that_contributes_to_disease_association
+# metamodel_version: 1.7.0# version: 3.4.3id: gene_has_variant_that_contributes_to_disease_association
 schema_generating: true
 display_name: gene has variant that contributes to disease association
 document_category: gene has variant that contributes to disease association
@@ -31,8 +31,8 @@ fields:
   display_name: qualifiers
   cardinality: multi
 - id: publications
-  description: One or more publications that report the statement expressed in an
-    Association, or provide information used as  evidence supporting this statement.
+  description: One or more publications that report the statement expressed in an  Association,
+    or provide information used as evidence supporting this statement.
   display_name: publications
   cardinality: multi
 - id: has_evidence
@@ -50,7 +50,7 @@ fields:
     that an implementer can identify.  Performing a rigorous analysis of upstream
     data providers is expected; every effort is made to catalog the most upstream
     source of data in this property.  Only one data source should be declared primary
-    in any association.  "aggregator knowledge source" can be used to caputre non-primary
+    in any association.  "aggregator knowledge source" can be used to capture non-primary
     sources.
   display_name: primary knowledge source
 - id: aggregator_knowledge_source
@@ -152,6 +152,11 @@ fields:
     \ biolink:NamedThing}"
   display_name: association_category
   cardinality: multi
+- id: subject_aspect_qualifier
+  display_name: gene to disease or phenotypic feature association_subject aspect qualifier
+- id: object_direction_qualifier
+  display_name: gene to disease or phenotypic feature association_object direction
+    qualifier
 - id: frequency_qualifier
   description: a qualifier used in a phenotypic association to state how frequent
     the phenotype is observed in the subject
@@ -164,6 +169,21 @@ fields:
   description: a qualifier used in a phenotypic association to state when the phenotype
     appears is in the subject
   display_name: onset qualifier
+- id: sex_qualifier
+  description: a qualifier used in a phenotypic association to state whether the association
+    is specific to a particular sex.
+  display_name: sex qualifier
+- id: has_count
+  description: number of things with a particular property
+  display_name: has count
+- id: has_total
+  description: total number of things in a particular reference set
+  display_name: has total
+- id: has_quotient
+  display_name: has quotient
+- id: has_percentage
+  description: equivalent to has quotient multiplied by 100
+  display_name: has percentage
 - id: subject_form_or_variant_qualifier
   display_name: subject form or variant qualifier
 - id: subject

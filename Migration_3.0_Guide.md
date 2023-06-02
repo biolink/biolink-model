@@ -5,7 +5,7 @@ In general, we represent statements of knowledge using the "onion" model, where 
 and object) is qualified in one layer and provenance is added in another.
 
 Note: association object has a "qualifiers" slot that is not currently modeled to contain all qualifiers on an edge.
-instead this is a left-over property that will be deprecated when more of the qualifer methodology is 
+instead this is a left-over property that will be deprecated when more of the qualifier methodology is 
 instantiated in the model. 
 
 ![](images/onion.png)
@@ -26,7 +26,7 @@ to their equivalent Association-based, qualifiier representation.
 - [Association semantics using qualifiers](guidelines/association-examples-with-qualifiers.md)
 This is a general guide with examples of fully qualified Associations in the chemical-to-gene domain.
 
-- [Predicate tranformation table](images/predicate_transformation.pdf)
+- [Predicate transformation table](images/predicate_transformation.pdf)
 View the predicate transformations to qualifiers in the predicate hierarchy
 
 

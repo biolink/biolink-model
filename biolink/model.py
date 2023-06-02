@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-12T19:51:34
+# Generation date: 2023-05-31T23:39:50
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7,7 +7,6 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
-import sys
 import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
@@ -26,7 +25,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.2.7"
+version = "3.4.3"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -163,6 +162,7 @@ OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
 OMIM = CurieNamespace('OMIM', 'http://purl.obolibrary.org/obo/OMIM_')
 OMIM_PS = CurieNamespace('OMIM_PS', 'https://www.omim.org/phenotypicSeries/')
+OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'http://www.pantherdb.org/panther/family.do?clsAccession=')
 PANTHER_PATHWAY = CurieNamespace('PANTHER_PATHWAY', 'http://identifiers.org/panther.pathway/')
@@ -176,6 +176,8 @@ PHARMGKB_PATHWAYS = CurieNamespace('PHARMGKB_PATHWAYS', 'https://www.pharmgkb.or
 PHARMGKB_VARIANT = CurieNamespace('PHARMGKB_VARIANT', 'https://www.pharmgkb.org/variant/')
 PHAROS = CurieNamespace('PHAROS', 'http://pharos.nih.gov')
 PIRSF = CurieNamespace('PIRSF', 'http://identifiers.org/pirsf/')
+PMC = CurieNamespace('PMC', 'http://europepmc.org/articles/PMC')
+PMCID = CurieNamespace('PMCID', 'http://www.ncbi.nlm.nih.gov/pmc/')
 PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
 PO = CurieNamespace('PO', 'http://purl.obolibrary.org/obo/PO_')
 PR = CurieNamespace('PR', 'http://purl.obolibrary.org/obo/PR_')
@@ -377,8 +379,8 @@ class Unit(String):
 
 
 class TimeType(Time):
-    type_class_uri = XSD.dateTime
-    type_class_curie = "xsd:dateTime"
+    type_class_uri = XSD.time
+    type_class_curie = "xsd:time"
     type_name = "time type"
     type_model_uri = BIOLINK.TimeType
 
@@ -487,6 +489,10 @@ class ChiSquaredAnalysisResultId(StudyResultId):
     pass
 
 
+class LogOddsAnalysisResultId(StudyResultId):
+    pass
+
+
 class DatasetId(InformationContentEntityId):
     pass
 
@@ -511,10 +517,6 @@ class EvidenceTypeId(InformationContentEntityId):
     pass
 
 
-class InformationResourceId(InformationContentEntityId):
-    pass
-
-
 class PublicationId(InformationContentEntityId):
     pass
 
@@ -532,6 +534,26 @@ class SerialId(PublicationId):
 
 
 class ArticleId(PublicationId):
+    pass
+
+
+class JournalArticleId(ArticleId):
+    pass
+
+
+class PatentId(PublicationId):
+    pass
+
+
+class WebPageId(PublicationId):
+    pass
+
+
+class PreprintPublicationId(PublicationId):
+    pass
+
+
+class DrugLabelId(PublicationId):
     pass
 
 
@@ -560,6 +582,10 @@ class PhenomenonId(NamedThingId):
 
 
 class DeviceId(NamedThingId):
+    pass
+
+
+class DiagnosticAidId(NamedThingId):
     pass
 
 
@@ -691,11 +717,39 @@ class OrganismalEntityId(BiologicalEntityId):
     pass
 
 
+class BacteriumId(OrganismalEntityId):
+    pass
+
+
 class VirusId(OrganismalEntityId):
     pass
 
 
 class CellularOrganismId(OrganismalEntityId):
+    pass
+
+
+class MammalId(CellularOrganismId):
+    pass
+
+
+class HumanId(MammalId):
+    pass
+
+
+class PlantId(CellularOrganismId):
+    pass
+
+
+class InvertebrateId(CellularOrganismId):
+    pass
+
+
+class VertebrateId(CellularOrganismId):
+    pass
+
+
+class FungusId(CellularOrganismId):
     pass
 
 
@@ -1131,11 +1185,23 @@ class BehaviorToBehavioralFeatureAssociationId(AssociationId):
     pass
 
 
-class GeneToPhenotypicFeatureAssociationId(AssociationId):
+class GeneToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
-class GeneToDiseaseAssociationId(AssociationId):
+class GeneToPhenotypicFeatureAssociationId(GeneToDiseaseOrPhenotypicFeatureAssociationId):
+    pass
+
+
+class GeneToDiseaseAssociationId(GeneToDiseaseOrPhenotypicFeatureAssociationId):
+    pass
+
+
+class CausalGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
+    pass
+
+
+class CorrelatedGeneToDiseaseAssociationId(GeneToDiseaseAssociationId):
     pass
 
 
@@ -1354,7 +1420,7 @@ class PredicateMapping(YAMLRoot):
     object_derivative_qualifier: Optional[str] = None
     object_context_qualifier: Optional[str] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
-    anatomical_context_qualifier: Optional[Union[str, "AnatomicalContextQualifierEnum"]] = None
+    anatomical_context_qualifier: Optional[str] = None
     species_context_qualifier: Optional[Union[str, OrganismTaxonId]] = None
     exact_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
     narrow_match: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
@@ -1411,8 +1477,8 @@ class PredicateMapping(YAMLRoot):
         if self.causal_mechanism_qualifier is not None and not isinstance(self.causal_mechanism_qualifier, CausalMechanismQualifierEnum):
             self.causal_mechanism_qualifier = CausalMechanismQualifierEnum(self.causal_mechanism_qualifier)
 
-        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, AnatomicalContextQualifierEnum):
-            self.anatomical_context_qualifier = AnatomicalContextQualifierEnum(self.anatomical_context_qualifier)
+        if self.anatomical_context_qualifier is not None and not isinstance(self.anatomical_context_qualifier, str):
+            self.anatomical_context_qualifier = str(self.anatomical_context_qualifier)
 
         if self.species_context_qualifier is not None and not isinstance(self.species_context_qualifier, OrganismTaxonId):
             self.species_context_qualifier = OrganismTaxonId(self.species_context_qualifier)
@@ -2207,6 +2273,30 @@ class ChiSquaredAnalysisResult(StudyResult):
 
 
 @dataclass
+class LogOddsAnalysisResult(StudyResult):
+    """
+    A result of a log odds ratio analysis.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.LogOddsAnalysisResult
+    class_class_curie: ClassVar[str] = "biolink:LogOddsAnalysisResult"
+    class_name: ClassVar[str] = "log odds analysis result"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.LogOddsAnalysisResult
+
+    id: Union[str, LogOddsAnalysisResultId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, LogOddsAnalysisResultId):
+            self.id = LogOddsAnalysisResultId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Dataset(InformationContentEntity):
     """
     an item that refers to a collection of data from a data source.
@@ -2375,40 +2465,13 @@ class EvidenceType(InformationContentEntity):
 
 
 @dataclass
-class InformationResource(InformationContentEntity):
-    """
-    A database or knowledgebase and its supporting ecosystem of interfaces and services that deliver content to
-    consumers (e.g. web portals, APIs, query endpoints, streaming services, data downloads, etc.). A single
-    Information Resource by this definition may span many different datasets or databases, and include many access
-    endpoints and user interfaces. Information Resources include project-specific resources such as a Translator
-    Knowledge Provider, and community knowledgebases like ChemBL, OMIM, or DGIdb.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = BIOLINK.InformationResource
-    class_class_curie: ClassVar[str] = "biolink:InformationResource"
-    class_name: ClassVar[str] = "information resource"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.InformationResource
-
-    id: Union[str, InformationResourceId] = None
-    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, InformationResourceId):
-            self.id = InformationResourceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class Publication(InformationContentEntity):
     """
-    Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
-    or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
-    section highlighted by NLP). The scope is intended to be general and include information published on the web, as
-    well as printed materials, either directly or in one of the Publication Biolink category subclasses.
+    Any ‘published’ piece of information. Publications are considered broadly to include any document or document part
+    made available in print or on the web - which may include scientific journal issues, individual articles, and
+    books - as well as things like pre-prints, white papers, patents, drug labels, web pages, protocol documents, and
+    even a part of a publication if of significant knowledge scope (e.g. a figure, figure legend, or section
+    highlighted by NLP).
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2419,7 +2482,7 @@ class Publication(InformationContentEntity):
 
     id: Union[str, PublicationId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    publication_type: str = None
+    publication_type: Union[str, List[str]] = None
     authors: Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]] = empty_list()
     pages: Optional[Union[str, List[str]]] = empty_list()
     summary: Optional[str] = None
@@ -2436,8 +2499,9 @@ class Publication(InformationContentEntity):
 
         if self._is_empty(self.publication_type):
             self.MissingRequiredField("publication_type")
-        if not isinstance(self.publication_type, str):
-            self.publication_type = str(self.publication_type)
+        if not isinstance(self.publication_type, list):
+            self.publication_type = [self.publication_type] if self.publication_type is not None else []
+        self.publication_type = [v if isinstance(v, str) else str(v) for v in self.publication_type]
 
         if not isinstance(self.authors, list):
             self.authors = [self.authors] if self.authors is not None else []
@@ -2482,7 +2546,7 @@ class Book(Publication):
 
     id: Union[str, BookId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    publication_type: str = None
+    publication_type: Union[str, List[str]] = None
     type: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -2509,7 +2573,7 @@ class BookChapter(Publication):
 
     id: Union[str, BookChapterId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    publication_type: str = None
+    publication_type: Union[str, List[str]] = None
     published_in: Union[str, URIorCURIE] = None
     volume: Optional[str] = None
     chapter: Optional[str] = None
@@ -2548,7 +2612,7 @@ class Serial(Publication):
 
     id: Union[str, SerialId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    publication_type: str = None
+    publication_type: Union[str, List[str]] = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
     issue: Optional[str] = None
@@ -2578,6 +2642,9 @@ class Serial(Publication):
 
 @dataclass
 class Article(Publication):
+    """
+    a piece of writing on a particular topic presented as a stand-alone  section of a larger publication
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Article
@@ -2587,7 +2654,7 @@ class Article(Publication):
 
     id: Union[str, ArticleId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    publication_type: str = None
+    publication_type: Union[str, List[str]] = None
     published_in: Union[str, URIorCURIE] = None
     iso_abbreviation: Optional[str] = None
     volume: Optional[str] = None
@@ -2612,6 +2679,137 @@ class Article(Publication):
 
         if self.issue is not None and not isinstance(self.issue, str):
             self.issue = str(self.issue)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class JournalArticle(Article):
+    """
+    an article, typically presenting results of research, that is published  in an issue of a scientific journal.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
+    class_class_curie: ClassVar[str] = "biolink:JournalArticle"
+    class_name: ClassVar[str] = "journal article"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.JournalArticle
+
+    id: Union[str, JournalArticleId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: Union[str, List[str]] = None
+    published_in: Union[str, URIorCURIE] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, JournalArticleId):
+            self.id = JournalArticleId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Patent(Publication):
+    """
+    a legal document granted by a patent issuing authority which confers upon the patenter the sole right to make, use
+    and sell an invention for a set period of time.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Patent
+    class_class_curie: ClassVar[str] = "biolink:Patent"
+    class_name: ClassVar[str] = "patent"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Patent
+
+    id: Union[str, PatentId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: Union[str, List[str]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PatentId):
+            self.id = PatentId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class WebPage(Publication):
+    """
+    a document that is published according to World Wide Web standards, which may incorporate text, graphics, sound,
+    and/or other features.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.WebPage
+    class_class_curie: ClassVar[str] = "biolink:WebPage"
+    class_name: ClassVar[str] = "web page"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.WebPage
+
+    id: Union[str, WebPageId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: Union[str, List[str]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, WebPageId):
+            self.id = WebPageId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PreprintPublication(Publication):
+    """
+    a document reresenting an early version of an author's original scholarly work, such as a research paper or a
+    review, prior to formal peer review and publication in a peer-reviewed scholarly or scientific journal.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
+    class_class_curie: ClassVar[str] = "biolink:PreprintPublication"
+    class_name: ClassVar[str] = "preprint publication"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PreprintPublication
+
+    id: Union[str, PreprintPublicationId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: Union[str, List[str]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PreprintPublicationId):
+            self.id = PreprintPublicationId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DrugLabel(Publication):
+    """
+    a document accompanying a drug or its container that provides written, printed or graphic information about the
+    drug, including drug contents, specific instructions or warnings for administration, storage and disposal
+    instructions, etc.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
+    class_class_curie: ClassVar[str] = "biolink:DrugLabel"
+    class_name: ClassVar[str] = "drug label"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DrugLabel
+
+    id: Union[str, DrugLabelId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    publication_type: Union[str, List[str]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DrugLabelId):
+            self.id = DrugLabelId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -2855,6 +3053,30 @@ class Device(NamedThing):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class DiagnosticAid(NamedThing):
+    """
+    A device or substance used to help diagnose disease or injury
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.DiagnosticAid
+    class_class_curie: ClassVar[str] = "biolink:DiagnosticAid"
+    class_name: ClassVar[str] = "diagnostic aid"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.DiagnosticAid
+
+    id: Union[str, DiagnosticAidId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, DiagnosticAidId):
+            self.id = DiagnosticAidId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
 class SubjectOfInvestigation(YAMLRoot):
     """
     An entity that has the role of being studied in an investigation, study, or experiment
@@ -3033,11 +3255,15 @@ class ThingWithTaxon(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = BIOLINK.ThingWithTaxon
 
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -3054,11 +3280,15 @@ class BiologicalEntity(NamedThing):
     id: Union[str, BiologicalEntityId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -3259,6 +3489,7 @@ class NucleicAcidEntity(MolecularEntity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -3272,6 +3503,9 @@ class NucleicAcidEntity(MolecularEntity):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -3795,6 +4029,31 @@ class OrganismalEntity(BiologicalEntity):
 
 
 @dataclass
+class Bacterium(OrganismalEntity):
+    """
+    A member of a group of unicellular microorganisms lacking a nuclear membrane, that reproduce by binary fission and
+    are often motile.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+    class_class_curie: ClassVar[str] = "biolink:Bacterium"
+    class_name: ClassVar[str] = "bacterium"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Bacterium
+
+    id: Union[str, BacteriumId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, BacteriumId):
+            self.id = BacteriumId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Virus(OrganismalEntity):
     """
     A virus is a microorganism that replicates itself as a microRNA and infects the host cell.
@@ -3835,6 +4094,150 @@ class CellularOrganism(OrganismalEntity):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CellularOrganismId):
             self.id = CellularOrganismId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Mammal(CellularOrganism):
+    """
+    A member of the class Mammalia, a clade of endothermic amniotes distinguished from reptiles and birds by the
+    possession of hair, three middle ear bones, mammary glands, and a neocortex
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Mammal
+    class_class_curie: ClassVar[str] = "biolink:Mammal"
+    class_name: ClassVar[str] = "mammal"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Mammal
+
+    id: Union[str, MammalId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, MammalId):
+            self.id = MammalId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Human(Mammal):
+    """
+    A member of the the species Homo sapiens.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Human
+    class_class_curie: ClassVar[str] = "biolink:Human"
+    class_name: ClassVar[str] = "human"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Human
+
+    id: Union[str, HumanId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, HumanId):
+            self.id = HumanId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Plant(CellularOrganism):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Plant
+    class_class_curie: ClassVar[str] = "biolink:Plant"
+    class_name: ClassVar[str] = "plant"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Plant
+
+    id: Union[str, PlantId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, PlantId):
+            self.id = PlantId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Invertebrate(CellularOrganism):
+    """
+    An animal lacking a vertebral column. This group consists of 98% of all animal species.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+    class_class_curie: ClassVar[str] = "biolink:Invertebrate"
+    class_name: ClassVar[str] = "invertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Invertebrate
+
+    id: Union[str, InvertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, InvertebrateId):
+            self.id = InvertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Vertebrate(CellularOrganism):
+    """
+    A sub-phylum of animals consisting of those having a bony or cartilaginous vertebral column.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+    class_class_curie: ClassVar[str] = "biolink:Vertebrate"
+    class_name: ClassVar[str] = "vertebrate"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Vertebrate
+
+    id: Union[str, VertebrateId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, VertebrateId):
+            self.id = VertebrateId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Fungus(CellularOrganism):
+    """
+    A kingdom of eukaryotic, heterotrophic organisms that live as saprobes or parasites, including mushrooms, yeasts,
+    smuts, molds, etc. They reproduce either sexually or asexually, and have life cycles that range from simple to
+    complex. Filamentous fungi refer to those that grow as multicellular colonies (mushrooms and molds).
+    """
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.Fungus
+    class_class_curie: ClassVar[str] = "biolink:Fungus"
+    class_name: ClassVar[str] = "fungus"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.Fungus
+
+    id: Union[str, FungusId] = None
+    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, FungusId):
+            self.id = FungusId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -5356,6 +5759,7 @@ class GenomicBackgroundExposure(Attribute):
     has_gene_or_gene_product: Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
     in_taxon: Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]] = empty_list()
+    in_taxon_label: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -5376,6 +5780,9 @@ class GenomicBackgroundExposure(Attribute):
         if not isinstance(self.in_taxon, list):
             self.in_taxon = [self.in_taxon] if self.in_taxon is not None else []
         self.in_taxon = [v if isinstance(v, OrganismTaxonId) else OrganismTaxonId(v) for v in self.in_taxon]
+
+        if self.in_taxon_label is not None and not isinstance(self.in_taxon_label, LabelType):
+            self.in_taxon_label = LabelType(self.in_taxon_label)
 
         super().__post_init__(**kwargs)
 
@@ -5982,9 +6389,9 @@ class Association(Entity):
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
-    knowledge_source: Optional[Union[str, InformationResourceId]] = None
-    primary_knowledge_source: Optional[Union[str, InformationResourceId]] = None
-    aggregator_knowledge_source: Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]] = empty_list()
+    knowledge_source: Optional[str] = None
+    primary_knowledge_source: Optional[str] = None
+    aggregator_knowledge_source: Optional[Union[str, List[str]]] = empty_list()
     timepoint: Optional[Union[str, TimeType]] = None
     original_subject: Optional[str] = None
     original_predicate: Optional[Union[str, URIorCURIE]] = None
@@ -6039,15 +6446,15 @@ class Association(Entity):
             self.has_evidence = [self.has_evidence] if self.has_evidence is not None else []
         self.has_evidence = [v if isinstance(v, EvidenceTypeId) else EvidenceTypeId(v) for v in self.has_evidence]
 
-        if self.knowledge_source is not None and not isinstance(self.knowledge_source, InformationResourceId):
-            self.knowledge_source = InformationResourceId(self.knowledge_source)
+        if self.knowledge_source is not None and not isinstance(self.knowledge_source, str):
+            self.knowledge_source = str(self.knowledge_source)
 
-        if self.primary_knowledge_source is not None and not isinstance(self.primary_knowledge_source, InformationResourceId):
-            self.primary_knowledge_source = InformationResourceId(self.primary_knowledge_source)
+        if self.primary_knowledge_source is not None and not isinstance(self.primary_knowledge_source, str):
+            self.primary_knowledge_source = str(self.primary_knowledge_source)
 
         if not isinstance(self.aggregator_knowledge_source, list):
             self.aggregator_knowledge_source = [self.aggregator_knowledge_source] if self.aggregator_knowledge_source is not None else []
-        self.aggregator_knowledge_source = [v if isinstance(v, InformationResourceId) else InformationResourceId(v) for v in self.aggregator_knowledge_source]
+        self.aggregator_knowledge_source = [v if isinstance(v, str) else str(v) for v in self.aggregator_knowledge_source]
 
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
@@ -8091,7 +8498,57 @@ class VariantToEntityAssociationMixin(YAMLRoot):
 
 
 @dataclass
-class GeneToPhenotypicFeatureAssociation(Association):
+class GeneToDiseaseOrPhenotypicFeatureAssociation(Association):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
+    class_class_curie: ClassVar[str] = "biolink:GeneToDiseaseOrPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "gene to disease or phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseOrPhenotypicFeatureAssociation
+
+    id: Union[str, GeneToDiseaseOrPhenotypicFeatureAssociationId] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, DiseaseOrPhenotypicFeatureId] = None
+    predicate: Union[str, PredicateType] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
+    object_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
+    sex_qualifier: Optional[Union[str, BiologicalSexId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneToDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = GeneToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
+            self.object = DiseaseOrPhenotypicFeatureId(self.object)
+
+        if self._is_empty(self.predicate):
+            self.MissingRequiredField("predicate")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
+
+        if self.object_direction_qualifier is not None and not isinstance(self.object_direction_qualifier, DirectionQualifierEnum):
+            self.object_direction_qualifier = DirectionQualifierEnum(self.object_direction_qualifier)
+
+        if self.sex_qualifier is not None and not isinstance(self.sex_qualifier, BiologicalSexId):
+            self.sex_qualifier = BiologicalSexId(self.sex_qualifier)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class GeneToPhenotypicFeatureAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToPhenotypicFeatureAssociation
@@ -8128,7 +8585,7 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 
 @dataclass
-class GeneToDiseaseAssociation(Association):
+class GeneToDiseaseAssociation(GeneToDiseaseOrPhenotypicFeatureAssociation):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.GeneToDiseaseAssociation
@@ -8146,6 +8603,72 @@ class GeneToDiseaseAssociation(Association):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneToDiseaseAssociationId):
             self.id = GeneToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CausalGeneToDiseaseAssociation(GeneToDiseaseAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CausalGeneToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:CausalGeneToDiseaseAssociation"
+    class_name: ClassVar[str] = "causal gene to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CausalGeneToDiseaseAssociation
+
+    id: Union[str, CausalGeneToDiseaseAssociationId] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, DiseaseId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CausalGeneToDiseaseAssociationId):
+            self.id = CausalGeneToDiseaseAssociationId(self.id)
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, GeneOrGeneProduct):
+            self.subject = GeneOrGeneProduct(**as_dict(self.subject))
+
+        if self._is_empty(self.object):
+            self.MissingRequiredField("object")
+        if not isinstance(self.object, DiseaseId):
+            self.object = DiseaseId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class CorrelatedGeneToDiseaseAssociation(GeneToDiseaseAssociation):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.CorrelatedGeneToDiseaseAssociation
+    class_class_curie: ClassVar[str] = "biolink:CorrelatedGeneToDiseaseAssociation"
+    class_name: ClassVar[str] = "correlated gene to disease association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.CorrelatedGeneToDiseaseAssociation
+
+    id: Union[str, CorrelatedGeneToDiseaseAssociationId] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[dict, GeneOrGeneProduct] = None
+    object: Union[str, DiseaseId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CorrelatedGeneToDiseaseAssociationId):
+            self.id = CorrelatedGeneToDiseaseAssociationId(self.id)
 
         if self._is_empty(self.subject):
             self.MissingRequiredField("subject")
@@ -9739,12 +10262,6 @@ class OrganismTaxonToEnvironmentAssociation(Association):
 
 
 # Enumerations
-class AnatomicalContextQualifierEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="AnatomicalContextQualifierEnum",
-    )
-
 class DirectionQualifierEnum(EnumDefinitionImpl):
 
     increased = PermissibleValue(text="increased")
@@ -9793,14 +10310,15 @@ class GeneOrGeneProductOrChemicalPartQualifierEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "3_prime_utr",
-                PermissibleValue(text="3_prime_utr") )
+            PermissibleValue(text="3_prime_utr"))
         setattr(cls, "5_prime_utr",
-                PermissibleValue(text="5_prime_utr") )
+            PermissibleValue(text="5_prime_utr"))
 
 class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
 
-    activity_or_abundance = PermissibleValue(text="activity_or_abundance",
-                                                                 description="Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.")
+    activity_or_abundance = PermissibleValue(
+        text="activity_or_abundance",
+        description="""Used in cases where the specificity of the relationship can not be determined to be either activity  or abundance.  In general, a more specific value from this enumeration should be used.""")
     abundance = PermissibleValue(text="abundance")
     activity = PermissibleValue(text="activity")
     expression = PermissibleValue(text="expression")
@@ -9855,40 +10373,55 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "ADP-ribosylation",
-                PermissibleValue(text="ADP-ribosylation") )
+            PermissibleValue(text="ADP-ribosylation"))
 
 class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
-    binding = PermissibleValue(text="binding",
-                                     description="A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction.")
-    inhibition = PermissibleValue(text="inhibition",
-                                           description="A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.")
-    antibody_inhibition = PermissibleValue(text="antibody_inhibition",
-                                                             description="A causal mechanism in which an antibody specifically binds to and interferes with the target.")
-    antagonism = PermissibleValue(text="antagonism",
-                                           description="A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.")
-    molecular_channel_blockage = PermissibleValue(text="molecular_channel_blockage",
-                                                                           description="A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.")
-    inverse_agonism = PermissibleValue(text="inverse_agonism",
-                                                     description="A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.")
-    negative_allosteric_modulation = PermissibleValue(text="negative_allosteric_modulation",
-                                                                                   description="A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)")
-    agonism = PermissibleValue(text="agonism",
-                                     description="A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.")
-    molecular_channel_opening = PermissibleValue(text="molecular_channel_opening",
-                                                                         description="A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.")
-    positive_allosteric_modulation = PermissibleValue(text="positive_allosteric_modulation",
-                                                                                   description="A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)")
-    potentiation = PermissibleValue(text="potentiation",
-                                               description="A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.")
-    activation = PermissibleValue(text="activation",
-                                           description="A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.")
-    inducer = PermissibleValue(text="inducer",
-                                     description="A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.")
-    transcriptional_regulation = PermissibleValue(text="transcriptional_regulation",
-                                                                           description="A causal mechanism mediated by through the control of target gene transcription")
-    signaling_mediated_control = PermissibleValue(text="signaling_mediated_control",
-                                                                           description="A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)")
+    binding = PermissibleValue(
+        text="binding",
+        description="""A causal mechanism mediated by the direct contact between effector and target chemical or  biomolecular entity, which form a stable physical interaction.""")
+    inhibition = PermissibleValue(
+        text="inhibition",
+        description="""A causal mechanism in which the effector binds to the target and negatively effects its normal function,  e.g. prevention of enzymatic reaction or activation of downstream pathway.""")
+    antibody_inhibition = PermissibleValue(
+        text="antibody_inhibition",
+        description="A causal mechanism in which an antibody specifically binds to and interferes with the target.")
+    antagonism = PermissibleValue(
+        text="antagonism",
+        description="""A causal mechanism in which the effector binds to a receptor and prevents activation by an agonist  through competing for the binding site.""")
+    molecular_channel_blockage = PermissibleValue(
+        text="molecular_channel_blockage",
+        description="""A causal mechanism in which the effector binds to a molecular channel and prevents or reduces  transport of ions through it.""")
+    inverse_agonism = PermissibleValue(
+        text="inverse_agonism",
+        description="""A causal mechanism in which the effector binds to the same receptor-binding site as an agonist and antagonizes its effects, often exerting the opposite effect of the agonist by suppressing spontaneous receptor signaling.""")
+    negative_allosteric_modulation = PermissibleValue(
+        text="negative_allosteric_modulation",
+        description="""A causal mechanism in which the effector reduces or prevents the action of the endogenous ligand of a  receptor by binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+    agonism = PermissibleValue(
+        text="agonism",
+        description="""A causal mechanism in which the effector binds and activates a receptor to mimic the effect of an  endogenous ligand.""")
+    molecular_channel_opening = PermissibleValue(
+        text="molecular_channel_opening",
+        description="""A causal mechanism in which the effector binds to a molecular channel and facilitates transport of  ions through it.""")
+    positive_allosteric_modulation = PermissibleValue(
+        text="positive_allosteric_modulation",
+        description="""A causal mechanism in which the effector enhances the action of the endogenous ligand of a receptor by  binding to a site distinct from that ligand (i.e. non-competitive inhibition)""")
+    potentiation = PermissibleValue(
+        text="potentiation",
+        description="""A causal mechanism in which the effector  binds to and enhances or intensifies the effect of some  other chemical or drug on its target.""")
+    activation = PermissibleValue(
+        text="activation",
+        description="""A causal mechanism in which the effector binds to and positively affects the normal functioning of its target.""")
+    inducer = PermissibleValue(
+        text="inducer",
+        description="""A causal mechanism in which the effector binds to and increases the activity/rate of an enzyme that  processes drugs in the body.""")
+    transcriptional_regulation = PermissibleValue(
+        text="transcriptional_regulation",
+        description="A causal mechanism mediated by through the control of target gene transcription")
+    signaling_mediated_control = PermissibleValue(
+        text="signaling_mediated_control",
+        description="""A causal mechanism mediated by the activation or control of signaling events that influence the some aspect  of the target entity (e.g. its activity, processing, transport, etc)""")
     stabilization = PermissibleValue(text="stabilization")
     stimulation = PermissibleValue(text="stimulation")
     releasing_activity = PermissibleValue(text="releasing_activity")
@@ -9899,12 +10432,14 @@ class CausalMechanismQualifierEnum(EnumDefinitionImpl):
 
 class LogicalInterpretationEnum(EnumDefinitionImpl):
 
-    some_some = PermissibleValue(text="some_some",
-                                         description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
-                                         meaning=OS.SomeSomeInterpretation)
-    all_some = PermissibleValue(text="all_some",
-                                       description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
-                                       meaning=OS.AllSomeInterpretation)
+    some_some = PermissibleValue(
+        text="some_some",
+        description="A modifier on a triple that causes the triple to be interpreted as a some-some statement",
+        meaning=OS.SomeSomeInterpretation)
+    all_some = PermissibleValue(
+        text="all_some",
+        description="A modifier on a triple that causes the triple to be interpreted as an all-some statement.",
+        meaning=OS.AllSomeInterpretation)
     inverse_all_some = PermissibleValue(text="inverse_all_some")
 
     _defn = EnumDefinition(
@@ -9943,11 +10478,11 @@ class PhaseEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "0",
-                PermissibleValue(text="0") )
+            PermissibleValue(text="0"))
         setattr(cls, "1",
-                PermissibleValue(text="1") )
+            PermissibleValue(text="1"))
         setattr(cls, "2",
-                PermissibleValue(text="2") )
+            PermissibleValue(text="2"))
 
 class StrandEnum(EnumDefinitionImpl):
     """
@@ -9961,26 +10496,32 @@ class StrandEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "+",
-                PermissibleValue(text="+",
-                                 description="Positive") )
+            PermissibleValue(
+                text="+",
+                description="Positive"))
         setattr(cls, "-",
-                PermissibleValue(text="-",
-                                 description="Negative") )
+            PermissibleValue(
+                text="-",
+                description="Negative"))
         setattr(cls, ".",
-                PermissibleValue(text=".",
-                                 description="Unstranded") )
+            PermissibleValue(
+                text=".",
+                description="Unstranded"))
         setattr(cls, "?",
-                PermissibleValue(text="?",
-                                 description="Unknown") )
+            PermissibleValue(
+                text="?",
+                description="Unknown"))
 
 class SequenceEnum(EnumDefinitionImpl):
     """
     type of sequence
     """
-    na = PermissibleValue(text="na",
-                           description="nucleic acid")
-    aa = PermissibleValue(text="aa",
-                           description="amino acid")
+    na = PermissibleValue(
+        text="na",
+        description="nucleic acid")
+    aa = PermissibleValue(
+        text="aa",
+        description="amino acid")
 
     _defn = EnumDefinition(
         name="SequenceEnum",
@@ -9989,14 +10530,18 @@ class SequenceEnum(EnumDefinitionImpl):
 
 class DruggableGeneCategoryEnum(EnumDefinitionImpl):
 
-    tclin = PermissibleValue(text="tclin",
-                                 description="These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.")
-    tbio = PermissibleValue(text="tbio",
-                               description="These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.")
-    tchem = PermissibleValue(text="tchem",
-                                 description="These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code")
-    tdark = PermissibleValue(text="tdark",
-                                 description="These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.")
+    tclin = PermissibleValue(
+        text="tclin",
+        description="""These targets have activities in DrugCentral (ie. approved drugs) with known mechanism of action.""")
+    tbio = PermissibleValue(
+        text="tbio",
+        description="""These targets have activities in ChEMBL, Guide to Pharmacology or DrugCentral that satisfy the activity thresholds detailed below.""")
+    tchem = PermissibleValue(
+        text="tchem",
+        description="""These targets do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy one or more of the following criteria: target is above the cutoff criteria for Tdark target is annotated with a Gene Ontology Molecular Function or Biological Process leaf term(s) with an Experimental Evidence code""")
+    tdark = PermissibleValue(
+        text="tdark",
+        description="""These are targets about which virtually nothing is known. They do not have known drug or small molecule activities that satisfy the activity thresholds detailed below AND satisfy two or more of the following criteria: A PubMed text-mining score from Jensen Lab less than 5, greater than or equal TO 3 Gene RIFs, or less than or equal to 50 Antibodies available according to http://antibodypedia.com.""")
 
     _defn = EnumDefinition(
         name="DruggableGeneCategoryEnum",
@@ -10004,10 +10549,12 @@ class DruggableGeneCategoryEnum(EnumDefinitionImpl):
 
 class DrugAvailabilityEnum(EnumDefinitionImpl):
 
-    over_the_counter = PermissibleValue(text="over_the_counter",
-                                                       description="chemical entity is available over the counter without a prescription.")
-    prescription = PermissibleValue(text="prescription",
-                                               description="chemical entity is available by prescription.")
+    over_the_counter = PermissibleValue(
+        text="over_the_counter",
+        description="chemical entity is available over the counter without a prescription.")
+    prescription = PermissibleValue(
+        text="prescription",
+        description="chemical entity is available by prescription.")
 
     _defn = EnumDefinition(
         name="DrugAvailabilityEnum",
@@ -10036,39 +10583,53 @@ class ResourceRoleEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ResourceRoleEnum",
-        description="The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.",
+        description="""The role played by the information reource in serving as a source for an edge in a TRAPI message. Note that a given Edge should have one and only one 'primary' source, and may have any number of 'aggregator' or 'supporting data' sources.  This enumeration is found in Biolink Model, but is repeated here for convenience.""",
     )
 
 class FDAApprovalStatusEnum(EnumDefinitionImpl):
 
-    discovery_and_development_phase = PermissibleValue(text="discovery_and_development_phase",
-                                                                                     description="Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.")
-    preclinical_research_phase = PermissibleValue(text="preclinical_research_phase",
-                                                                           description="Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.")
-    fda_clinical_research_phase = PermissibleValue(text="fda_clinical_research_phase",
-                                                                             description="Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.")
-    fda_review_phase_4 = PermissibleValue(text="fda_review_phase_4",
-                                                           description="FDA Review")
-    fda_post_market_safety_review = PermissibleValue(text="fda_post_market_safety_review",
-                                                                                 description="FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.")
-    fda_clinical_research_phase_1 = PermissibleValue(text="fda_clinical_research_phase_1",
-                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.")
-    fda_clinical_research_phase_2 = PermissibleValue(text="fda_clinical_research_phase_2",
-                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.")
-    fda_clinical_research_phase_3 = PermissibleValue(text="fda_clinical_research_phase_3",
-                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.")
-    fda_clinical_research_phase_4 = PermissibleValue(text="fda_clinical_research_phase_4",
-                                                                                 description="In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.")
-    fda_fast_track = PermissibleValue(text="fda_fast_track",
-                                                   description="Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track")
-    fda_breakthrough_therapy = PermissibleValue(text="fda_breakthrough_therapy",
-                                                                       description="Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy")
-    fda_accelerated_approval = PermissibleValue(text="fda_accelerated_approval",
-                                                                       description="When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval")
-    fda_priority_review = PermissibleValue(text="fda_priority_review",
-                                                             description="Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review")
-    regular_fda_approval = PermissibleValue(text="regular_fda_approval",
-                                                               description="Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.")
+    discovery_and_development_phase = PermissibleValue(
+        text="discovery_and_development_phase",
+        description="""Discovery & Development Phase. Discovery involves researchers finding new possibilities for medication through testing molecular compounds, noting unexpected effects from existing treatments, or the creation of new technology that allows novel ways of targeting medical products to sites in the body. Drug development occurs after researchers identify potential compounds for experiments.""")
+    preclinical_research_phase = PermissibleValue(
+        text="preclinical_research_phase",
+        description="""Preclinical Research Phase.  Once researchers have examined the possibilities a new drug may contain, they must do preliminary research to determine its potential for harm (toxicity). This is categorized as preclinical research and can be one of two types: in vitro or in vivo.""")
+    fda_clinical_research_phase = PermissibleValue(
+        text="fda_clinical_research_phase",
+        description="""Clinical Research Phase. Clinical research involves trials of the drug on people, and it is one of the most involved stages in the drug development and approval process. Clinical trials must answer specific questions and follow a protocol determined by the drug researcher or manufacturer.""")
+    fda_review_phase_4 = PermissibleValue(
+        text="fda_review_phase_4",
+        description="FDA Review")
+    fda_post_market_safety_review = PermissibleValue(
+        text="fda_post_market_safety_review",
+        description="""FDA Post-Market Safety Monitoring.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
+    fda_clinical_research_phase_1 = PermissibleValue(
+        text="fda_clinical_research_phase_1",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 1 involves 20 – 100 study participants and lasts several months. This phase is used to determine the safety and dosage of the drug, and about 70% of these drugs move on to the next clinical research phase.""")
+    fda_clinical_research_phase_2 = PermissibleValue(
+        text="fda_clinical_research_phase_2",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 2 involves up to several hundred people, who must have the disease or condition the drug supposes to treat. This phase can last from a few months to two years, and its purpose is to monitor the efficacy of the drug, as well as note side effects that may occur.""")
+    fda_clinical_research_phase_3 = PermissibleValue(
+        text="fda_clinical_research_phase_3",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 3 involves 300 – 3000 volunteers and can last up to four years. It is used to continue monitoring the efficacy of the drug, as well as exploring any longer-term adverse reactions.""")
+    fda_clinical_research_phase_4 = PermissibleValue(
+        text="fda_clinical_research_phase_4",
+        description="""In the FDA Clinical Research Phase, the Clinical Research Phase 4 involves several thousands of volunteers who have the disease or condition and continues to monitor safety and efficacy. If a drug passes this phase, it goes on to FDA review.""")
+    fda_fast_track = PermissibleValue(
+        text="fda_fast_track",
+        description="""Fast track is a process designed to facilitate the development, and expedite the review of drugs to treat serious conditions and fill an unmet medical need. The purpose is to get important new drugs to the patient earlier. Fast Track addresses a broad range of serious conditions. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/fast-track""")
+    fda_breakthrough_therapy = PermissibleValue(
+        text="fda_breakthrough_therapy",
+        description="""Breakthrough Therapy designation is a process designed to expedite the development and review of drugs that are intended to treat a serious condition and preliminary clinical evidence indicates that the drug may demonstrate substantial improvement over available therapy on a clinically significant endpoint(s). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/breakthrough-therapy""")
+    fda_accelerated_approval = PermissibleValue(
+        text="fda_accelerated_approval",
+        description="""When studying a new drug, it can sometimes take many years to learn whether a drug actually provides a real effect on how a patient survives, feels, or functions. A positive therapeutic effect that is clinically meaningful in the context of a given disease is known as “clinical benefit”. Mindful of the fact that it may take an extended period of time to measure a drug’s intended clinical benefit, in 1992 FDA instituted the Accelerated Approval regulations. These regulations allowed drugs for serious conditions that filled an unmet medical need to be approved based on a surrogate endpoint. Using a surrogate endpoint enabled the FDA to approve these drugs faster. For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/accelerated-approval""")
+    fda_priority_review = PermissibleValue(
+        text="fda_priority_review",
+        description="""Prior to approval, each drug marketed in the United States must go through a detailed FDA review process. In 1992, under the Prescription Drug User Act (PDUFA), FDA agreed to specific goals for improving the drug review time and created a two-tiered system of review times – Standard Review and Priority Review. A Priority Review designation means FDA’s goal is to take action on an application within 6 months (compared to 10 months under standard review). For more information https://www.fda.gov/patients/fast-track-breakthrough-therapy-accelerated-approval-priority-review/priority-review""")
+    regular_fda_approval = PermissibleValue(
+        text="regular_fda_approval",
+        description="""Regular FDA Approval.  The last phase of drug approval is an ongoing one while the drug is on the marketplace. If a developer wants to change anything about the drug formulation or approve it for a new use, they must apply with the FDA. The FDA also frequently reviews the drug’s advertising and its manufacturing facility to make sure everything involved in its creation and marketing is in compliance with regulations.""")
     post_approval_withdrawal = PermissibleValue(text="post_approval_withdrawal")
 
     _defn = EnumDefinition(
@@ -10080,18 +10641,22 @@ class FDAIDAAdverseEventEnum(EnumDefinitionImpl):
     please consult with the FDA guidelines as proposed in this document:
     https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32
     """
-    life_threatening_adverse_event = PermissibleValue(text="life_threatening_adverse_event",
-                                                                                   description="An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death.")
-    serious_adverse_event = PermissibleValue(text="serious_adverse_event",
-                                                                 description="An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse.")
-    suspected_adverse_reaction = PermissibleValue(text="suspected_adverse_reaction",
-                                                                           description="means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.")
-    unexpected_adverse_event = PermissibleValue(text="unexpected_adverse_event",
-                                                                       description="An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation.")
+    life_threatening_adverse_event = PermissibleValue(
+        text="life_threatening_adverse_event",
+        description="""An adverse event or suspected adverse reaction is considered 'life-threatening' if, in the view of either  the investigator or sponsor, its occurrence places the patient or subject at immediate risk of death.  It does not include an adverse event or suspected adverse reaction that, had it occurred in a more  severe form, might have caused death.""")
+    serious_adverse_event = PermissibleValue(
+        text="serious_adverse_event",
+        description="""An adverse event or suspected adverse reaction is considered 'serious' if, in the view of either the  investigator or sponsor, it results in any of the following outcomes: Death, a life-threatening adverse event, inpatient hospitalization or prolongation of existing hospitalization, a persistent or significant incapacity  or substantial disruption of the ability to conduct normal life functions, or a congenital anomaly/birth  defect. Important medical events that may not result in death, be life-threatening, or require hospitalization may be considered serious when, based upon appropriate medical judgment, they may jeopardize the patient or  subject and may require medical or surgical intervention to prevent one of the outcomes listed in this  definition. Examples of such medical events include allergic bronchospasm requiring intensive treatment  in an emergency room or at home, blood dyscrasias or convulsions that do not result in inpatient  hospitalization, or the development of drug dependency or drug abuse.""")
+    suspected_adverse_reaction = PermissibleValue(
+        text="suspected_adverse_reaction",
+        description="""means any adverse event for which there is a reasonable possibility that the drug caused the adverse event.  For the purposes of IND safety reporting, 'reasonable possibility' means there is evidence to suggest a  causal relationship between the drug and the adverse event. Suspected adverse reaction implies a lesser  degree of certainty about causality than adverse reaction, which means any adverse event caused by a drug.""")
+    unexpected_adverse_event = PermissibleValue(
+        text="unexpected_adverse_event",
+        description="""An adverse event or suspected adverse reaction is considered 'unexpected' if it is not listed in the  investigator brochure or is not listed at the specificity or severity that has been observed; or, if an  investigator brochure is not required or available, is not consistent with the risk information described  in the general investigational plan or elsewhere in the current application, as amended. For example,  under this definition, hepatic necrosis would be unexpected (by virtue of greater severity) if the  investigator brochure referred only to elevated hepatic enzymes or hepatitis. Similarly, cerebral  thromboembolism and cerebral vasculitis would be unexpected (by virtue of greater specificity) if the  investigator brochure listed only cerebral vascular accidents. 'Unexpected', as used in this definition,  also refers to adverse events or suspected adverse reactions that are mentioned in the investigator brochure as occurring with a class of drugs or as anticipated from the pharmacological properties of the drug, but  are not specifically mentioned as occurring with the particular drug under investigation.""")
 
     _defn = EnumDefinition(
         name="FDAIDAAdverseEventEnum",
-        description="please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32",
+        description="""please consult with the FDA guidelines as proposed in this document: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=312.32""",
     )
 
 # Slots
@@ -10135,7 +10700,7 @@ slots.category = Slot(uri=BIOLINK.category, name="category", curie=BIOLINK.curie
                    model_uri=BIOLINK.category, domain=Entity, range=Optional[Union[Union[str, CategoryType], List[Union[str, CategoryType]]]])
 
 slots.publication_type = Slot(uri=DCT.type, name="publication type", curie=DCT.curie('type'),
-                   model_uri=BIOLINK.publication_type, domain=None, range=Optional[str])
+                   model_uri=BIOLINK.publication_type, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.name, domain=Entity, range=Optional[Union[str, LabelType]])
@@ -10477,7 +11042,7 @@ slots.causal_mechanism_qualifier = Slot(uri=BIOLINK.causal_mechanism_qualifier, 
                    model_uri=BIOLINK.causal_mechanism_qualifier, domain=Association, range=Optional[Union[str, "CausalMechanismQualifierEnum"]])
 
 slots.anatomical_context_qualifier = Slot(uri=BIOLINK.anatomical_context_qualifier, name="anatomical context qualifier", curie=BIOLINK.curie('anatomical_context_qualifier'),
-                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[Union[str, "AnatomicalContextQualifierEnum"]])
+                   model_uri=BIOLINK.anatomical_context_qualifier, domain=Association, range=Optional[str])
 
 slots.species_context_qualifier = Slot(uri=BIOLINK.species_context_qualifier, name="species context qualifier", curie=BIOLINK.curie('species_context_qualifier'),
                    model_uri=BIOLINK.species_context_qualifier, domain=Association, range=Optional[Union[str, OrganismTaxonId]])
@@ -10705,10 +11270,10 @@ slots.resistance_associated_with = Slot(uri=BIOLINK.resistance_associated_with, 
                    model_uri=BIOLINK.resistance_associated_with, domain=ChemicalEntity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.diagnoses = Slot(uri=BIOLINK.diagnoses, name="diagnoses", curie=BIOLINK.curie('diagnoses'),
-                   model_uri=BIOLINK.diagnoses, domain=None, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.diagnoses, domain=DiagnosticAid, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.is_diagnosed_by = Slot(uri=BIOLINK.is_diagnosed_by, name="is diagnosed by", curie=BIOLINK.curie('is_diagnosed_by'),
-                   model_uri=BIOLINK.is_diagnosed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[dict, ChemicalOrDrugOrTreatment], List[Union[dict, ChemicalOrDrugOrTreatment]]]])
+                   model_uri=BIOLINK.is_diagnosed_by, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, DiagnosticAidId], List[Union[str, DiagnosticAidId]]]])
 
 slots.increases_amount_or_activity_of = Slot(uri=BIOLINK.increases_amount_or_activity_of, name="increases amount or activity of", curie=BIOLINK.curie('increases_amount_or_activity_of'),
                    model_uri=BIOLINK.increases_amount_or_activity_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -10805,6 +11370,9 @@ slots.colocalizes_with = Slot(uri=BIOLINK.colocalizes_with, name="colocalizes wi
 
 slots.genetic_association = Slot(uri=BIOLINK.genetic_association, name="genetic association", curie=BIOLINK.curie('genetic_association'),
                    model_uri=BIOLINK.genetic_association, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+
+slots.genetically_associated_with = Slot(uri=BIOLINK.genetically_associated_with, name="genetically associated with", curie=BIOLINK.curie('genetically_associated_with'),
+                   model_uri=BIOLINK.genetically_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.gene_associated_with_condition = Slot(uri=BIOLINK.gene_associated_with_condition, name="gene associated with condition", curie=BIOLINK.curie('gene_associated_with_condition'),
                    model_uri=BIOLINK.gene_associated_with_condition, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
@@ -10954,40 +11522,40 @@ slots.has_input = Slot(uri=BIOLINK.has_input, name="has input", curie=BIOLINK.cu
                    model_uri=BIOLINK.has_input, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_input_of = Slot(uri=BIOLINK.is_input_of, name="is input of", curie=BIOLINK.curie('is_input_of'),
-                   model_uri=BIOLINK.is_input_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_input_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_output = Slot(uri=BIOLINK.has_output, name="has output", curie=BIOLINK.curie('has_output'),
                    model_uri=BIOLINK.has_output, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.is_output_of = Slot(uri=BIOLINK.is_output_of, name="is output of", curie=BIOLINK.curie('is_output_of'),
-                   model_uri=BIOLINK.is_output_of, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.is_output_of, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_participant = Slot(uri=BIOLINK.has_participant, name="has participant", curie=BIOLINK.curie('has_participant'),
-                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.has_participant, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.catalyzes = Slot(uri=BIOLINK.catalyzes, name="catalyzes", curie=BIOLINK.curie('catalyzes'),
-                   model_uri=BIOLINK.catalyzes, domain=NucleicAcidEntity, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+                   model_uri=BIOLINK.catalyzes, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.has_catalyst = Slot(uri=BIOLINK.has_catalyst, name="has catalyst", curie=BIOLINK.curie('has_catalyst'),
-                   model_uri=BIOLINK.has_catalyst, domain=MolecularActivity, range=Optional[Union[Union[str, NucleicAcidEntityId], List[Union[str, NucleicAcidEntityId]]]])
+                   model_uri=BIOLINK.has_catalyst, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[dict, Occurrent], List[Union[dict, Occurrent]]]])
 
 slots.has_substrate = Slot(uri=BIOLINK.has_substrate, name="has substrate", curie=BIOLINK.curie('has_substrate'),
-                   model_uri=BIOLINK.has_substrate, domain=MolecularActivity, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
+                   model_uri=BIOLINK.has_substrate, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.is_substrate_of = Slot(uri=BIOLINK.is_substrate_of, name="is substrate of", curie=BIOLINK.curie('is_substrate_of'),
-                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[str, MolecularActivityId], List[Union[str, MolecularActivityId]]]])
+                   model_uri=BIOLINK.is_substrate_of, domain=None, range=Optional[Union[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"], List[Union[dict, "ChemicalEntityOrGeneOrGeneProduct"]]]])
 
 slots.participates_in = Slot(uri=BIOLINK.participates_in, name="participates in", curie=BIOLINK.curie('participates_in'),
                    model_uri=BIOLINK.participates_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involved_in = Slot(uri=BIOLINK.actively_involved_in, name="actively involved in", curie=BIOLINK.curie('actively_involved_in'),
-                   model_uri=BIOLINK.actively_involved_in, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.actively_involved_in, domain=NamedThing, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
 
 slots.actively_involves = Slot(uri=BIOLINK.actively_involves, name="actively involves", curie=BIOLINK.curie('actively_involves'),
                    model_uri=BIOLINK.actively_involves, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.capable_of = Slot(uri=BIOLINK.capable_of, name="capable of", curie=BIOLINK.curie('capable_of'),
-                   model_uri=BIOLINK.capable_of, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
+                   model_uri=BIOLINK.capable_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
 slots.can_be_carried_out_by = Slot(uri=BIOLINK.can_be_carried_out_by, name="can be carried out by", curie=BIOLINK.curie('can_be_carried_out_by'),
                    model_uri=BIOLINK.can_be_carried_out_by, domain=None, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -11053,10 +11621,10 @@ slots.produced_by = Slot(uri=BIOLINK.produced_by, name="produced by", curie=BIOL
                    model_uri=BIOLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumes = Slot(uri=BIOLINK.consumes, name="consumes", curie=BIOLINK.curie('consumes'),
-                   model_uri=BIOLINK.consumes, domain=BiologicalProcessOrActivity, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
+                   model_uri=BIOLINK.consumes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.consumed_by = Slot(uri=BIOLINK.consumed_by, name="consumed by", curie=BIOLINK.curie('consumed_by'),
-                   model_uri=BIOLINK.consumed_by, domain=None, range=Optional[Union[Union[str, BiologicalProcessOrActivityId], List[Union[str, BiologicalProcessOrActivityId]]]])
+                   model_uri=BIOLINK.consumed_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.temporally_related_to = Slot(uri=BIOLINK.temporally_related_to, name="temporally related to", curie=BIOLINK.curie('temporally_related_to'),
                    model_uri=BIOLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
@@ -11190,7 +11758,7 @@ slots.develops_into = Slot(uri=BIOLINK.develops_into, name="develops into", curi
 slots.in_taxon = Slot(uri=BIOLINK.in_taxon, name="in taxon", curie=BIOLINK.curie('in_taxon'),
                    model_uri=BIOLINK.in_taxon, domain=None, range=Optional[Union[Union[str, OrganismTaxonId], List[Union[str, OrganismTaxonId]]]])
 
-slots.in_taxon_label = Slot(uri=RDFS.label, name="in_taxon_label", curie=RDFS.curie('label'),
+slots.in_taxon_label = Slot(uri=RDFS.label, name="in taxon label", curie=RDFS.curie('label'),
                    model_uri=BIOLINK.in_taxon_label, domain=None, range=Optional[Union[str, LabelType]])
 
 slots.taxon_of = Slot(uri=BIOLINK.taxon_of, name="taxon of", curie=BIOLINK.curie('taxon_of'),
@@ -11271,26 +11839,35 @@ slots.has_evidence = Slot(uri=BIOLINK.has_evidence, name="has evidence", curie=B
 slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result, name="has supporting study result", curie=BIOLINK.curie('has_supporting_study_result'),
                    model_uri=BIOLINK.has_supporting_study_result, domain=Association, range=Optional[str])
 
+slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
+                   model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
+
+slots.log_odds_ration_95_ci = Slot(uri=BIOLINK.log_odds_ration_95_ci, name="log odds ration 95 ci", curie=BIOLINK.curie('log_odds_ration_95_ci'),
+                   model_uri=BIOLINK.log_odds_ration_95_ci, domain=Association, range=Optional[float])
+
+slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
+                   model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])
+
 slots.mechanism_of_action = Slot(uri=BIOLINK.mechanism_of_action, name="mechanism of action", curie=BIOLINK.curie('mechanism_of_action'),
                    model_uri=BIOLINK.mechanism_of_action, domain=Association, range=Optional[Union[bool, Bool]])
 
 slots.knowledge_source = Slot(uri=BIOLINK.knowledge_source, name="knowledge source", curie=BIOLINK.curie('knowledge_source'),
-                   model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])
+                   model_uri=BIOLINK.knowledge_source, domain=Association, range=Optional[str])
 
 slots.provided_by = Slot(uri=BIOLINK.provided_by, name="provided by", curie=BIOLINK.curie('provided_by'),
                    model_uri=BIOLINK.provided_by, domain=NamedThing, range=Optional[Union[str, List[str]]])
 
 slots.primary_knowledge_source = Slot(uri=BIOLINK.primary_knowledge_source, name="primary knowledge source", curie=BIOLINK.curie('primary_knowledge_source'),
-                   model_uri=BIOLINK.primary_knowledge_source, domain=Association, range=Optional[Union[str, InformationResourceId]])
+                   model_uri=BIOLINK.primary_knowledge_source, domain=Association, range=Optional[str])
 
 slots.aggregator_knowledge_source = Slot(uri=BIOLINK.aggregator_knowledge_source, name="aggregator knowledge source", curie=BIOLINK.curie('aggregator_knowledge_source'),
-                   model_uri=BIOLINK.aggregator_knowledge_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
+                   model_uri=BIOLINK.aggregator_knowledge_source, domain=Association, range=Optional[Union[str, List[str]]])
 
 slots.supporting_data_source = Slot(uri=BIOLINK.supporting_data_source, name="supporting data source", curie=BIOLINK.curie('supporting_data_source'),
-                   model_uri=BIOLINK.supporting_data_source, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
+                   model_uri=BIOLINK.supporting_data_source, domain=Association, range=Optional[Union[str, List[str]]])
 
 slots.supporting_data_set = Slot(uri=BIOLINK.supporting_data_set, name="supporting data set", curie=BIOLINK.curie('supporting_data_set'),
-                   model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[Union[str, InformationResourceId], List[Union[str, InformationResourceId]]]])
+                   model_uri=BIOLINK.supporting_data_set, domain=Association, range=Optional[Union[str, List[str]]])
 
 slots.chi_squared_statistic = Slot(uri=BIOLINK.chi_squared_statistic, name="chi squared statistic", curie=BIOLINK.curie('chi_squared_statistic'),
                    model_uri=BIOLINK.chi_squared_statistic, domain=Association, range=Optional[float])
@@ -11300,6 +11877,9 @@ slots.p_value = Slot(uri=BIOLINK.p_value, name="p value", curie=BIOLINK.curie('p
 
 slots.evidence_count = Slot(uri=BIOLINK.evidence_count, name="evidence count", curie=BIOLINK.curie('evidence_count'),
                    model_uri=BIOLINK.evidence_count, domain=Association, range=Optional[int])
+
+slots.dataset_count = Slot(uri=BIOLINK.dataset_count, name="dataset count", curie=BIOLINK.curie('dataset_count'),
+                   model_uri=BIOLINK.dataset_count, domain=Association, range=Optional[int])
 
 slots.concept_count_subject = Slot(uri=BIOLINK.concept_count_subject, name="concept count subject", curie=BIOLINK.curie('concept_count_subject'),
                    model_uri=BIOLINK.concept_count_subject, domain=Association, range=Optional[int])
@@ -11450,7 +12030,7 @@ slots.publication_name = Slot(uri=RDFS.label, name="publication_name", curie=RDF
                    model_uri=BIOLINK.publication_name, domain=Publication, range=Optional[Union[str, LabelType]])
 
 slots.publication_publication_type = Slot(uri=DCT.type, name="publication_publication type", curie=DCT.curie('type'),
-                   model_uri=BIOLINK.publication_publication_type, domain=Publication, range=str)
+                   model_uri=BIOLINK.publication_publication_type, domain=Publication, range=Union[str, List[str]])
 
 slots.publication_pages = Slot(uri=BIOLINK.pages, name="publication_pages", curie=BIOLINK.curie('pages'),
                    model_uri=BIOLINK.publication_pages, domain=Publication, range=Optional[Union[str, List[str]]])
@@ -11875,6 +12455,21 @@ slots.gene_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="gen
 slots.variant_to_entity_association_mixin_subject = Slot(uri=RDF.subject, name="variant to entity association mixin_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.variant_to_entity_association_mixin_subject, domain=None, range=Union[str, SequenceVariantId])
 
+slots.gene_to_disease_or_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to disease or phenotypic feature association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="gene to disease or phenotypic feature association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_subject_aspect_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
+
+slots.gene_to_disease_or_phenotypic_feature_association_object = Slot(uri=RDF.object, name="gene to disease or phenotypic feature association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_object, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, DiseaseOrPhenotypicFeatureId])
+
+slots.gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier = Slot(uri=BIOLINK.object_direction_qualifier, name="gene to disease or phenotypic feature association_object direction qualifier", curie=BIOLINK.curie('object_direction_qualifier'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_object_direction_qualifier, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Optional[Union[str, "DirectionQualifierEnum"]])
+
+slots.gene_to_disease_or_phenotypic_feature_association_predicate = Slot(uri=RDF.predicate, name="gene to disease or phenotypic feature association_predicate", curie=RDF.curie('predicate'),
+                   model_uri=BIOLINK.gene_to_disease_or_phenotypic_feature_association_predicate, domain=GeneToDiseaseOrPhenotypicFeatureAssociation, range=Union[str, PredicateType])
+
 slots.gene_to_phenotypic_feature_association_subject = Slot(uri=RDF.subject, name="gene to phenotypic feature association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.gene_to_phenotypic_feature_association_subject, domain=GeneToPhenotypicFeatureAssociation, range=Union[dict, GeneOrGeneProduct])
 
@@ -11886,6 +12481,18 @@ slots.gene_to_disease_association_subject = Slot(uri=RDF.subject, name="gene to 
 
 slots.gene_to_disease_association_object = Slot(uri=RDF.object, name="gene to disease association_object", curie=RDF.curie('object'),
                    model_uri=BIOLINK.gene_to_disease_association_object, domain=GeneToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.causal_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="causal gene to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.causal_gene_to_disease_association_subject, domain=CausalGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.causal_gene_to_disease_association_object = Slot(uri=RDF.object, name="causal gene to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.causal_gene_to_disease_association_object, domain=CausalGeneToDiseaseAssociation, range=Union[str, DiseaseId])
+
+slots.correlated_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="correlated gene to disease association_subject", curie=RDF.curie('subject'),
+                   model_uri=BIOLINK.correlated_gene_to_disease_association_subject, domain=CorrelatedGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])
+
+slots.correlated_gene_to_disease_association_object = Slot(uri=RDF.object, name="correlated gene to disease association_object", curie=RDF.curie('object'),
+                   model_uri=BIOLINK.correlated_gene_to_disease_association_object, domain=CorrelatedGeneToDiseaseAssociation, range=Union[str, DiseaseId])
 
 slots.druggable_gene_to_disease_association_subject = Slot(uri=RDF.subject, name="druggable gene to disease association_subject", curie=RDF.curie('subject'),
                    model_uri=BIOLINK.druggable_gene_to_disease_association_subject, domain=DruggableGeneToDiseaseAssociation, range=Union[dict, GeneOrGeneProduct])

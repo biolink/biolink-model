@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: anatomical_entity
+# metamodel_version: 1.7.0# version: 3.4.3id: anatomical_entity
 schema_generating: true
 description: A subcellular location, cell type or gross anatomical part
 display_name: anatomical entity
@@ -56,6 +56,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_attribute
   description: may often be an organism attribute
   display_name: organismal entity_has attribute

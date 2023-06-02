@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: accessible_dna_region
+# metamodel_version: 1.7.0# version: 3.4.3id: accessible_dna_region
 schema_generating: true
 description: A region (or regions) of a chromatinized genome that has been measured
   to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
@@ -61,6 +61,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_biological_sequence
   description: connects a genomic feature to its sequence
   display_name: has biological sequence

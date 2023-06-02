@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.2.7id: case
+# metamodel_version: 1.7.0# version: 3.4.3id: case
 schema_generating: true
 description: An individual (human) organism that has a patient role in some clinical
   context.
@@ -57,6 +57,9 @@ fields:
     of entities can be taxonomically classified; see 'thing with taxon'
   display_name: in taxon
   cardinality: multi
+- id: in_taxon_label
+  description: The human readable scientific name for the taxon of the entity.
+  display_name: in taxon label
 - id: has_attribute
   description: may often be an organism attribute
   display_name: organismal entity_has attribute

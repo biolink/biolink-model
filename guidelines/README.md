@@ -11,7 +11,14 @@ Following is a primer on understanding the Biolink Model and how to work with th
 
 The guidelines are organized into five parts:
 - [Understanding the Biolink Model](understanding-the-model.md)
+- [Association Examples With qualifiers](association-examples-with-qualifiers.md)
+- [Reading a Qualifier Based Statement](reading-a-qualifier-based-statement.md)
+  - [TRAPI Query Examples](TRAPI-examples.md) 
+- [Knowledge Source Retrieval](knowledge-source-retrieval.md)
+   - [Modifying or Adding to the Information Resource Registry (infores)](information-resource-registry.md)
+- [Supporting Publications Guidelines](supporting-publications-guidelines.md)
 - [Curating the Biolink Model](curating-the-model.md)
 - [Using the Modeling Language](using-the-modeling-language.md)
 - [Working with the Biolink Model](working-with-the-model.md)
 - [Maintaining the Biolink Model](maintaining-the-model.md)
+- [FAQ])(faq.md)
