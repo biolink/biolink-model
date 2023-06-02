@@ -5780,19 +5780,19 @@ slots:
     description: >-
       Describes the level of knowledge expressed in a statement, based on the
       reasoning or analysis methods used to generate the statement, or the
-      scope/reach of what the statement expresses to be true.
+      scope or specificity of what the statement expresses to be true.
     notes: >-
-      The 'level' of knowledge can related to how strong/confident we are in
-      the truth of a statement that makes general claims about our domain of
-      discourse. Here, we can generally consider Assertions to be stronger than
-      Entailments to be stronger than Predictions. 
-      But in another sense, this 'level' can refer to the scope or reach of what a
-      statement expresses, on a spectrum from context-specific data to generalized
-      knowledge or fact. Here, Statistical Associations and Observations represent
-      more foundational statements that are only slightly removed from the data on
-      which they are based - the former reporting the direct results of an analysis
-      in terms of correlations between variables in the data, and the latter
-      reporting phenomena that were directly observed to have occurred.
+      The notion of a 'level' of knowledge can in one sense relate to the strength 
+      of a statement - i.e. how confident we are that it says something true about
+      our domain of discourse. Here, we can generally consider Assertions to be 
+      stronger than Entailments to be stronger than Predictions. 
+      But in another sense, 'level' of knowledge can refer to the scope or specificity of
+      what a statement expresses - on a spectrum from context-specific results of a data
+      analysis, to generalized assertions of knowledge or fact. Here, Statistical 
+      Associations and  Observations represent more foundational statements that are only 
+      slightly removed from the data on which they are based (the former reporting the 
+      direct results of  an analysis in terms of correlations between variables in the data,
+      and the latter describing phenomena that were observed/reported to have occurred).
     domain: association
     range: KnowledgeLevelEnum
     multivalued: false
@@ -5804,20 +5804,21 @@ slots:
   agent type:
     is_a: association slot
     description: >-
-        Describes the high-level category of agent that generated the a statement of 
-        knowledge or other piece of information.
+        Describes the high-level category of agent who originally generated a 
+        statement of knowledge or other type of information.
     notes: >-
-        Note that this property indicates the type of agent who ultimately
-        produced a statement of knowledge, and is independent from the type
-        of agent or agents that produced information used as evidence to 
+        Note that this property indicates the type of agent who produced a 
+        final statement of knowledge, which is often different from the 
+        agent oragents who produced information used as evidence to 
         support generation of this knowledge. For example, if a human curator
         concludes that a particular gene variant causes a medical condition -
         based on their interpretation of information produced by computational 
         modeling tools, automated data analysis pipelines, and robotic laboratory
-        assay systems - the agent_type for this statement is 'manual agent'. 
-        But if any of these automated systems is programmed to generate knowledge
-        statements directly and without human assistance, the statement would be
-        attributed to an 'automated_agent'.
+        assay systems - the agent_type for this statement is 'manual agent' - 
+        despite all of the evidence being created by automated agents. But if any
+        of these systems is programmed to generate knowledge statements 
+        directly and without human assistance, the statement would be attributed 
+        to an 'automated_agent'.
     domain: association
     range: AgentTypeEnum
     multivalued: false
