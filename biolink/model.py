@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-06-15T20:59:17
+# Generation date: 2023-06-15T23:13:49
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1707,6 +1707,7 @@ class NamedThing(Entity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     provided_by: Optional[Union[str, List[str]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    full_name: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1727,6 +1728,9 @@ class NamedThing(Entity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        if self.full_name is not None and not isinstance(self.full_name, LabelType):
+            self.full_name = LabelType(self.full_name)
 
         super().__post_init__(**kwargs)
 
