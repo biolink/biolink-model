@@ -15,7 +15,7 @@ URI: [biolink:NucleicAcidEntity](https://w3id.org/biolink/vocab/NucleicAcidEntit
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[SequenceFeatureRelationship],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenomicSequenceLocalization]-%20object%201..1%3E[NucleicAcidEntity%7Chas_biological_sequence:biological_sequence%20%3F;in_taxon_label:label_type%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenomicSequenceLocalization]-%20subject%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[NucleicAcidEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[ThingWithTaxon],[NucleicAcidEntity]uses%20-.-%3E[PhysicalEssence],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]%5E-[Transcript],[NucleicAcidEntity]%5E-[Exon],[NucleicAcidEntity]%5E-[CodingSequence],[MolecularEntity]%5E-[NucleicAcidEntity],[MolecularEntity],[GenomicSequenceLocalization],[GenomicEntity],[Exon],[CodingSequence],[ChemicalRole],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transcript],[ThingWithTaxon],[SequenceFeatureRelationship],[PhysicalEssence],[OrganismTaxon],[OntologyClass],[GenomicSequenceLocalization]-%20object%201..1%3E[NucleicAcidEntity%7Chas_biological_sequence:biological_sequence%20%3F;in_taxon_label:label_type%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[GenomicSequenceLocalization]-%20subject%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20object%201..1%3E[NucleicAcidEntity],[SequenceFeatureRelationship]-%20subject%201..1%3E[NucleicAcidEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[ThingWithTaxon],[NucleicAcidEntity]uses%20-.-%3E[PhysicalEssence],[NucleicAcidEntity]uses%20-.-%3E[OntologyClass],[NucleicAcidEntity]%5E-[Transcript],[NucleicAcidEntity]%5E-[Exon],[NucleicAcidEntity]%5E-[CodingSequence],[MolecularEntity]%5E-[NucleicAcidEntity],[MolecularEntity],[GenomicSequenceLocalization],[GenomicEntity],[Exon],[CodingSequence],[ChemicalRole],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -143,6 +143,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [provided by](provided_by.md)  <sub>0..\*</sub>
      * Description: The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * Range: [String](types/String.md)
+ * [full name](full_name.md)  <sub>0..1</sub>
+     * Description: a long-form human readable name for a thing
+     * Range: [LabelType](types/LabelType.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.

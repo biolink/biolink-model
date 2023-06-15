@@ -15,7 +15,7 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalRole],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;drug_regulatory_status_world_wide:string%20%3F;routes_of_delivery:DrugDeliveryEnum%20%2A;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalRole],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;drug_regulatory_status_world_wide:string%20%3F;routes_of_delivery:DrugDeliveryEnum%20%2A;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -139,6 +139,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [provided by](provided_by.md)  <sub>0..\*</sub>
      * Description: The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * Range: [String](types/String.md)
+ * [full name](full_name.md)  <sub>0..1</sub>
+     * Description: a long-form human readable name for a thing
+     * Range: [LabelType](types/LabelType.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.

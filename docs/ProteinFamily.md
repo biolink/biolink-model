@@ -15,7 +15,7 @@ URI: [biolink:ProteinFamily](https://w3id.org/biolink/vocab/ProteinFamily)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProteinFamily%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[GeneGroupingMixin],[ProteinFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[ProteinFamily],[OrganismTaxon],[GeneGroupingMixin],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProteinFamily%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F]uses%20-.-%3E[GeneGroupingMixin],[ProteinFamily]uses%20-.-%3E[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity]%5E-[ProteinFamily],[OrganismTaxon],[GeneGroupingMixin],[Gene],[ChemicalEntityOrGeneOrGeneProduct],[BiologicalEntity],[Attribute])
 
 ---
 
@@ -86,6 +86,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [provided by](provided_by.md)  <sub>0..\*</sub>
      * Description: The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.
      * Range: [String](types/String.md)
+ * [full name](full_name.md)  <sub>0..1</sub>
+     * Description: a long-form human readable name for a thing
+     * Range: [LabelType](types/LabelType.md)
  * [category](category.md)  <sub>0..\*</sub>
      * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
