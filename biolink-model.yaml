@@ -932,7 +932,8 @@ slots:
   ingest date:
     is_a: node property
     domain: dataset version
-    slot_uri: dct:issued
+    broad_mappings:
+      - dct:issued
 
   has distribution:
     is_a: node property
