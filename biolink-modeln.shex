@@ -2295,6 +2295,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Entity> ] ? ;
              <provided_by> @linkml:String * ;
              <xref> @linkml:Uriorcurie * ;
+             <full_name> @<LabelType> ? ;
              <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]

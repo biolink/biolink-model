@@ -1371,7 +1371,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
      * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
      * [log odds ratio](log_odds_ratio.md) - The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the  odds of event Y occurring in a non-exposed group.
-     * [log odds ration 95 ci](log_odds_ration_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+     * [log odds ratio 95 ci](log_odds_ratio_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
      * [logical interpretation](logical_interpretation.md)
      * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
      * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1513,7 +1513,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ln ratio](ln_ratio.md) - the natural log of the ratio of co-occurrence to expected
  * [ln ratio confidence interval](ln_ratio_confidence_interval.md) - The 99% confidence interval for the ln_ratio calculation (i.e. the range of values within which the true value has a 99% chance of falling)
  * [log odds ratio](log_odds_ratio.md) - The logarithm of the odds ratio, or the ratio of the odds of event Y occurring in an exposed group versus the  odds of event Y occurring in a non-exposed group.
- * [log odds ration 95 ci](log_odds_ration_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
+ * [log odds ratio 95 ci](log_odds_ratio_95_ci.md) - The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
  * [logical interpretation](logical_interpretation.md)
  * [mechanism of action](mechanism_of_action.md) - a boolean flag to indicate if the edge is part of a path or subgraph of a knowledge graph that constitutes the mechanism of action for a result.
  * [negated](negated.md) - if set to true, then the association is negated i.e. is not true
@@ -1735,6 +1735,8 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [FrequencyValue](types/FrequencyValue.md)  ([String](types/String.md)) 
  * [Integer](types/Integer.md)  (**int**)  - An integer
  * [IriType](types/IriType.md)  ([Uriorcurie](types/Uriorcurie.md))  - An IRI
+ * [Jsonpath](types/Jsonpath.md)  (**str**)  - A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.
+ * [Jsonpointer](types/Jsonpointer.md)  (**str**)  - A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.
  * [LabelType](types/LabelType.md)  ([String](types/String.md))  - A string that provides a human-readable name for an entity
  * [NarrativeText](types/NarrativeText.md)  ([String](types/String.md))  - A string that provides a human-readable description of something
  * [Ncname](types/Ncname.md)  (**NCName**)  - Prefix part of CURIE
@@ -1743,6 +1745,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [PercentageFrequencyValue](types/PercentageFrequencyValue.md)  ([Double](types/Double.md)) 
  * [PredicateType](types/PredicateType.md)  ([Uriorcurie](types/Uriorcurie.md))  - A CURIE from the biolink related_to hierarchy. For example, biolink:related_to, biolink:causes, biolink:treats.
  * [Quotient](types/Quotient.md)  ([Double](types/Double.md)) 
+ * [Sparqlpath](types/Sparqlpath.md)  (**str**)  - A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.
  * [String](types/String.md)  (**str**)  - A character string
  * [SymbolType](types/SymbolType.md)  ([String](types/String.md)) 
  * [Time](types/Time.md)  (**XSDTime**)  - A time object represents a (local) time of day, independent of any particular day

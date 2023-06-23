@@ -1,16 +1,16 @@
 ---
 parent: Edge Properties
-title: biolink:log_odds_ration_95_ci
+title: biolink:log_odds_ratio_95_ci
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: log_odds_ration_95_ci
+# Slot: log_odds_ratio_95_ci
 
 
 The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
 
-URI: [biolink:log_odds_ration_95_ci](https://w3id.org/biolink/vocab/log_odds_ration_95_ci)
+URI: [biolink:log_odds_ratio_95_ci](https://w3id.org/biolink/vocab/log_odds_ratio_95_ci)
 
 ## Domain and Range
 
