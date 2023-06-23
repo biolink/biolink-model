@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-06-15T23:13:49
+# Generation date: 2023-06-23T00:17:50
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -11846,8 +11846,8 @@ slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
 
-slots.log_odds_ration_95_ci = Slot(uri=BIOLINK.log_odds_ration_95_ci, name="log odds ration 95 ci", curie=BIOLINK.curie('log_odds_ration_95_ci'),
-                   model_uri=BIOLINK.log_odds_ration_95_ci, domain=Association, range=Optional[float])
+slots.log_odds_ratio_95_ci = Slot(uri=BIOLINK.log_odds_ratio_95_ci, name="log odds ratio 95 ci", curie=BIOLINK.curie('log_odds_ratio_95_ci'),
+                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[float])
 
 slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
                    model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])
