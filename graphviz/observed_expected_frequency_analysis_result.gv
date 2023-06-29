@@ -1,16 +1,16 @@
 digraph {
-	graph [bb="0,0,1566.1,123"];
+	graph [bb="0,0,1697.1,123"];
 	node [label="\N"];
 	"observed expected frequency analysis result"	[height=0.5,
 		label="observed expected frequency analysis result",
-		pos="851.94,105",
+		pos="913.94,105",
 		width=6.0481];
 	"study result"	[height=0.5,
 		pos="66.944,18",
 		width=1.8596];
 	"observed expected frequency analysis result" -> "study result"	[label=is_a,
 		lp="289.94,61.5",
-		pos="e,110.54,31.78 642.4,100.03 532.76,95.75 396.59,86.957 275.94,69 222.31,61.017 162.2,45.981 120.27,34.474"];
+		pos="e,110.53,31.857 699.23,101.84 575.01,98.189 416.04,89.43 275.94,69 222.28,61.175 162.18,46.117 120.25,34.563"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -18,9 +18,9 @@ digraph {
 		width=1.0652];
 	"observed expected frequency analysis result" -> id	[color=blue,
 		label=id,
-		lp="399.94,61.5",
-		pos="e,218.94,29.954 666.52,95.515 582.68,90.228 482.53,81.893 392.94,69 323.23,58.967 305.73,55.131 237.94,36 234.84,35.124 231.64,34.151 \
-228.45,33.129",
+		lp="401.94,61.5",
+		pos="e,218.94,29.966 717.35,97.228 620.03,92.229 500.95,83.642 394.94,69 324.31,59.244 306.59,55.278 237.94,36 234.84,35.128 231.64,34.158 \
+228.44,33.138",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -29,8 +29,8 @@ digraph {
 		width=1.2277];
 	"observed expected frequency analysis result" -> iri	[color=blue,
 		label=iri,
-		lp="485.94,61.5",
-		pos="e,324.31,29.942 683.22,93.609 618.71,88.226 544.65,80.331 477.94,69 427.76,60.476 371.5,44.535 333.92,32.939",
+		lp="488.94,61.5",
+		pos="e,324.49,29.97 729.08,95.481 652.03,90.269 561.83,81.999 480.94,69 429.78,60.777 372.43,44.705 334.25,32.996",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -39,9 +39,9 @@ digraph {
 		width=1.0652];
 	"observed expected frequency analysis result" -> type	[color=blue,
 		label=type,
-		lp="576.94,61.5",
-		pos="e,420.9,29.898 711.43,91.247 663.46,85.796 609.65,78.464 560.94,69 505.8,58.285 492.51,52.901 438.94,36 436.19,35.131 433.36,34.201 \
-430.51,33.24",
+		lp="582.94,61.5",
+		pos="e,420.88,29.953 752.57,92.849 693.86,87.445 627.15,79.733 566.94,69 509.11,58.689 495.07,53.344 438.94,36 436.18,35.147 433.35,34.229 \
+430.5,33.277",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -50,8 +50,8 @@ digraph {
 		width=1.5707];
 	"observed expected frequency analysis result" -> name	[color=blue,
 		label=name,
-		lp="662.94,61.5",
-		pos="e,537.59,32.737 742.13,89.454 709.92,84.155 674.79,77.362 642.94,69 610.13,60.383 574.12,47.204 547.11,36.54",
+		lp="670.94,61.5",
+		pos="e,538.32,32.545 776.85,90.959 736.03,85.681 691.41,78.523 650.94,69 615.45,60.646 576.42,47.041 547.66,36.13",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 		width=2.0943];
 	"observed expected frequency analysis result" -> description	[color=blue,
 		label=description,
-		lp="747.44,61.5",
-		pos="e,668.24,35.782 757.19,88.789 739.86,83.899 722.39,77.463 706.94,69 695.1,62.511 684.01,52.619 675.14,43.342",
+		lp="760.44,61.5",
+		pos="e,671.93,35.762 787.9,90.294 764.71,85.266 741.14,78.393 719.94,69 705.38,62.549 691.14,52.19 679.71,42.57",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.4443];
 	"observed expected frequency analysis result" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="841.94,61.5",
-		pos="e,793.48,36.221 812.55,87.256 805.5,82.423 799.08,76.398 794.94,69 791.09,62.118 790.59,53.863 791.54,46.061",
+		lp="859.94,61.5",
+		pos="e,800.43,36.228 839.76,88.008 829.74,83.237 820.37,77.043 812.94,69 807.21,62.793 803.94,54.382 802.09,46.23",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.0652];
 	"observed expected frequency analysis result" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="939.44,61.5",
-		pos="e,903.53,36.115 873.26,86.928 878.91,81.632 884.63,75.474 888.94,69 893.65,61.938 897.42,53.545 900.32,45.671",
+		lp="954.44,61.5",
+		pos="e,909.16,36.175 912.73,86.799 911.91,75.163 910.81,59.548 909.87,46.237",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
@@ -90,62 +90,72 @@ digraph {
 		width=1.5887];
 	"observed expected frequency analysis result" -> xref	[color=blue,
 		label=xref,
-		lp="1016.4,61.5",
-		pos="e,1013.5,36.236 944.99,88.69 959.45,83.832 973.65,77.431 985.94,69 994.94,62.829 1002.5,53.638 1008.3,44.813",
+		lp="1025.4,61.5",
+		pos="e,1017.9,36.207 972.25,87.46 982.33,82.693 992.09,76.642 999.94,69 1006.5,62.632 1011.2,53.979 1014.6,45.661",
+		style=solid];
+	"full name"	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="1153.9,18",
+		width=1.5707];
+	"observed expected frequency analysis result" -> "full name"	[color=blue,
+		label="full name",
+		lp="1114.4,61.5",
+		pos="e,1125.1,33.699 982.4,87.816 1002.4,82.476 1024.3,76.071 1043.9,69 1068.4,60.207 1095,48.2 1115.9,38.157",
 		style=solid];
 	category	[height=0.5,
-		pos="1148.9,18",
+		pos="1279.9,18",
 		width=1.4263];
 	"observed expected frequency analysis result" -> category	[color=blue,
 		label=category,
-		lp="1105.4,61.5",
-		pos="e,1121,33.349 952.19,89.021 979.35,83.831 1008.5,77.203 1034.9,69 1061.4,60.791 1089.9,48.285 1111.8,37.834",
+		lp="1227.4,61.5",
+		pos="e,1250.3,32.787 1042.9,90.465 1078.5,85.258 1117,78.259 1151.9,69 1182.6,60.875 1215.9,47.716 1240.9,36.937",
 		style=solid];
 	license	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1256.9,18",
+		pos="1387.9,18",
 		width=1.0652];
 	"observed expected frequency analysis result" -> license	[color=blue,
 		label=license,
-		lp="1208.9,61.5",
-		pos="e,1232.3,32.069 1012.5,92.82 1054.8,87.64 1100,80.068 1140.9,69 1169.7,61.246 1200.5,47.674 1223.2,36.626",
+		lp="1333.9,61.5",
+		pos="e,1362.3,31.732 1071,92.535 1145.9,86.201 1226.9,77.838 1262.9,69 1294.4,61.292 1328.4,47.274 1353,36.038",
 		style=solid];
 	rights	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1351.9,18",
+		pos="1482.9,18",
 		width=1.0652];
 	"observed expected frequency analysis result" -> rights	[color=blue,
 		label=rights,
-		lp="1301.4,61.5",
-		pos="e,1327.9,32.309 1006.7,92.339 1104,84.592 1215.4,74.812 1237.9,69 1266.3,61.695 1296.6,48.097 1318.9,36.923",
+		lp="1429.4,61.5",
+		pos="e,1458.4,31.928 1068,92.274 1196.5,82.449 1359.3,69.884 1362.9,69 1393.2,61.709 1425.7,47.751 1449.3,36.432",
 		style=solid];
 	format	[color=blue,
 		height=0.5,
 		label=string,
-		pos="1446.9,18",
+		pos="1577.9,18",
 		width=1.0652];
 	"observed expected frequency analysis result" -> format	[color=blue,
 		label=format,
-		lp="1396.4,61.5",
-		pos="e,1422.5,31.971 1006.6,92.303 1030.5,90.516 1054.9,88.7 1077.9,87 1188.6,78.839 1219,94.671 1326.9,69 1357.2,61.795 1389.7,47.83 \
-1413.3,36.486",
+		lp="1525.4,61.5",
+		pos="e,1553.3,31.853 1066.5,92.15 1091,90.35 1116.2,88.572 1139.9,87 1279.9,77.74 1318.1,99.82 1454.9,69 1486.3,61.933 1520,47.724 1544.2,\
+36.253",
 		style=solid];
 	"creation date"	[color=blue,
 		height=0.5,
 		label=date,
-		pos="1534.9,18",
+		pos="1665.9,18",
 		width=0.86659];
 	"observed expected frequency analysis result" -> "creation date"	[color=blue,
 		label="creation date",
-		lp="1512.4,61.5",
-		pos="e,1513.9,31.465 1003.9,92.085 1028.6,90.284 1054,88.522 1077.9,87 1155,82.104 1349.9,87.296 1424.9,69 1453.3,62.072 1483.4,47.867 \
-1504.9,36.363",
+		lp="1642.4,61.5",
+		pos="e,1644.9,31.294 1064.6,91.998 1089.8,90.187 1115.6,88.445 1139.9,87 1231.9,81.546 1464.3,90.143 1553.9,69 1583.1,62.112 1614.1,47.664 \
+1636.1,36.062",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1161.9,105",
+		pos="1223.9,105",
 		width=2.0762];
 }

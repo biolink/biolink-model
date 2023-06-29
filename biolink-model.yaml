@@ -848,7 +848,8 @@ slots:
     is_a: node property
     domain: dataset version
     range: dataset
-    slot_uri: dct:source
+    broad_mappings:
+      - dct:source
 
   source web page:
     is_a: node property
@@ -928,7 +929,8 @@ slots:
   ingest date:
     is_a: node property
     domain: dataset version
-    slot_uri: pav:version
+    broad_mappings:
+      - dct:issued
 
   has distribution:
     is_a: node property
@@ -5263,7 +5265,7 @@ slots:
       odds of event Y occurring in a non-exposed group.
     range: float
 
-  log odds ration 95 ci:
+  log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
@@ -5996,6 +5998,7 @@ classes:
     slots:
       - provided by
       - xref
+      - full name
     slot_usage:
       category:
         required: true
