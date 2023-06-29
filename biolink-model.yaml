@@ -852,7 +852,8 @@ slots:
     is_a: node property
     domain: dataset version
     range: dataset
-    slot_uri: dct:source
+    broad_mappings:
+      - dct:source
 
   source web page:
     is_a: node property
@@ -932,7 +933,8 @@ slots:
   ingest date:
     is_a: node property
     domain: dataset version
-    slot_uri: pav:version
+    broad_mappings:
+      - dct:issued
 
   has distribution:
     is_a: node property
