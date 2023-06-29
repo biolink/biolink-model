@@ -4977,14 +4977,14 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://purl.org/dc/terms/source",
+                        "predicate": "https://w3id.org/biolink/vocab/has_dataset",
                         "valueExpr": "https://w3id.org/biolink/vocab/Dataset",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://purl.org/pav/version",
+                        "predicate": "https://w3id.org/biolink/vocab/ingest_date",
                         "valueExpr": "https://w3id.org/linkml/String",
                         "min": 0,
                         "max": 1

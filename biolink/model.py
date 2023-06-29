@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-06-23T00:17:50
+# Generation date: 2023-06-29T21:55:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10808,7 +10808,7 @@ slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", c
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
 
-slots.has_dataset = Slot(uri=DCT.source, name="has dataset", curie=DCT.curie('source'),
+slots.has_dataset = Slot(uri=BIOLINK.has_dataset, name="has dataset", curie=BIOLINK.curie('has_dataset'),
                    model_uri=BIOLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
 
 slots.source_web_page = Slot(uri=BIOLINK.source_web_page, name="source web page", curie=BIOLINK.curie('source_web_page'),
@@ -10847,7 +10847,7 @@ slots.dataset_download_url = Slot(uri=DCAT.downloadURL, name="dataset download u
 slots.distribution_download_url = Slot(uri=BIOLINK.distribution_download_url, name="distribution download url", curie=BIOLINK.curie('distribution_download_url'),
                    model_uri=BIOLINK.distribution_download_url, domain=DatasetDistribution, range=Optional[str])
 
-slots.ingest_date = Slot(uri=PAV.version, name="ingest date", curie=PAV.curie('version'),
+slots.ingest_date = Slot(uri=BIOLINK.ingest_date, name="ingest date", curie=BIOLINK.curie('ingest_date'),
                    model_uri=BIOLINK.ingest_date, domain=DatasetVersion, range=Optional[str])
 
 slots.has_distribution = Slot(uri=DCT.distribution, name="has distribution", curie=DCT.curie('distribution'),
