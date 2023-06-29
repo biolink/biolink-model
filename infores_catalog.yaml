@@ -6,8 +6,8 @@ information_resources:
   - https://www.alliancegenome.org/
   synonym:
   - ALLIANCE
-  knowledge level: knowledge_assertion
-  agent type: manual_validation_of_automated_agent
+  knowledge level: curated
+  agent type: not_provided
 - id: infores:aact
   status: released
   name: Aggregate Analysis of ClinicalTrial.gov (AACT) database
@@ -15,7 +15,7 @@ information_resources:
   - https://aact.ctti-clinicaltrials.org/
   synonym:
   - AACT
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: https://ctti-clinicaltrials.org/our-work/quality/state-of-clinical-trials/
     Researchers can use CTTI’s Aggregate Analysis of ClinicalTrial.gov (AACT) database
@@ -26,7 +26,7 @@ information_resources:
   name: Answer coalesce
   xref:
   - https://github.com/ranking-agent/AnswerCoalesce
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Answer coalesce: This service accepts a TRAPI 1.1 object containing
@@ -37,7 +37,7 @@ information_resources:
   name: ARAGORN
   xref:
   - https://github.com/ranking-agent/aragorn
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: >-
     ARAGORN: Performs a query operation which compiles data from numerous
@@ -49,7 +49,7 @@ information_resources:
   - https://github.com/ranking-agent/aragorn-ranker
   synonym:
   - ARAGORN
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     ARAGORN Ranker: The ranker used by the ARAGORN ARA, which takes a
@@ -62,7 +62,7 @@ information_resources:
   - https://arax.ncats.io/
   synonym:
   - ARAX
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: TRAPI 1.1 endpoint for the NCATS Biomedical Translator Reasoner called
     ARAX
@@ -71,7 +71,7 @@ information_resources:
   name: Anatomical Therapeutic Chemical (ATC) Codes (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ATC/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:atgo
   status: released
@@ -80,28 +80,28 @@ information_resources:
   - https://pubmed.ncbi.nlm.nih.gov/28132844/
   synonym:
   - ATGO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:athena
   status: released
   name: Athena
   xref:
   - https://athena.ohdsi.org/search-terms/start
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:automat-genome-alliance
   status: released
   name: Automat Alliance of Genome Resources
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#genome-alliance
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:automat-biolink
   status: released
   name: Automat Biolink
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#biolink
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the [Monarch API (https://api.monarchinitiative.org/)](https://api.monarchinitiative.org/).
 - id: infores:automat-chem-norm
@@ -111,14 +111,14 @@ information_resources:
     A graph  linking together similar compounds.  Two compounds are linked
     by an edge in the graph if they are equivalent when charge, salts, and stereochemistry
     are ignored.
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:automat-chembio
   status: deprecated
   name: Automat Chembio
   xref:
   - https://chembio.com/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     A graph based on [chem2bio2rdf (http://cheminfov.informatics.indiana.edu:8080/c2b2r/)](http://cheminfov.informatics.indiana.edu:8080/c2b2r/).
@@ -127,7 +127,7 @@ information_resources:
   name: Automat Cord19
   xref:
   - https://github.com/allenai/cord19
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     A literature co-occurence graph based on parsing the CORD-19 paper set.
@@ -136,7 +136,7 @@ information_resources:
   name: Automat Cord19 Scibite (trapi v-1.1.0)
   xref:
   - https://github.com/allenai/cord19
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >- 
     A literature co-occurence graph based on the [scibite parsing (https://github.com/SciBiteLabs/CORD19)](https://github.com/SciBiteLabs/CORD19)
@@ -147,16 +147,18 @@ information_resources:
   description: >- 
     A literature co-occurence graph based on scigraph parsing of the CORD-19
     paper set. All triples contain covid-19 as either subject or object.
+  knowledge level: text_mined
+  agent type: not_provided
 - id: infores:automat-covid-phenotypes
   status: deprecated
   name: Automat Covid Phenotypes (trapi v-1.1.0)
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A hand-curated graph of phenotypes of covid-19.
 - id: infores:automat-covidkop
   status: deprecated
   name: Automat Covidkop KG (trapi v-1.1.0)
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     Knowledge graph constructed from Robokop KG by incorporating Cord-19
@@ -166,7 +168,7 @@ information_resources:
   name: Automat CAM-KP
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#cam-kp
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: TRAPI interface to database of Causal Activity Models
 - id: infores:automat-ctd
@@ -174,7 +176,7 @@ information_resources:
   name: Automat CTD
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ctd
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the [Comparative Toxicogenomics Database (ctdbase.org)](ctdbase.org).
 - id: infores:automat-drug-central
@@ -182,7 +184,7 @@ information_resources:
   name: Automat DrugCentral
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#drugcentral
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on DrugCentral
 - id: infores:automat-foodb
@@ -190,7 +192,7 @@ information_resources:
   name: Automat Foodb
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#foodb
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph of the food/chemical relationships in [foodb.ca](foodb.ca).
 - id: infores:automat-gtex
@@ -198,7 +200,7 @@ information_resources:
   name: Automat GTEx
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gtex
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     A graph containing eqtl and sqtl information from [GTEx Portal (https://gtexportal.org/home/)](https://gtexportal.org/home/).
@@ -208,7 +210,7 @@ information_resources:
   name: Automat GtoPdb
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gtopdb
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the [IUPHAR Guide to Pharmacology (https://www.guidetopharmacology.org/)](https://www.guidetopharmacology.org/)
 - id: infores:automat-gwas-catalog
@@ -216,7 +218,7 @@ information_resources:
   name: Automat GWAS Catalog
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#gwascatalog
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the GWAS Catalog
 - id: infores:automat-hetio
@@ -224,7 +226,7 @@ information_resources:
   name: Automat Hetio
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on [hetionet (het.io)](het.io).
 - id: infores:automat-hetio-net 
@@ -232,7 +234,7 @@ information_resources:
   name: Automat Hetio Net
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hetio
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on [hetionet (het.io)](het.io).
 - id: infores:automat-hgnc
@@ -240,7 +242,7 @@ information_resources:
   name: Automat HGNC
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hgnc
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Gene families from [HGNC (genenames.org)](genenames.org).
 - id: infores:automat-hmdb
@@ -248,7 +250,7 @@ information_resources:
   name: Automat HMDB
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#hmdb
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the [Human Metabolome DataBase (hmdb.org)](hmdb.org).
 - id: infores:automat-human-goa
@@ -256,7 +258,7 @@ information_resources:
   name: Automat Human GOA
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#human-goa
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Human Gene Ontology Annotations from the GO consortium.
 - id: infores:automat-icees-kg
@@ -264,26 +266,26 @@ information_resources:
   name: Automat ICEES (Integrated Clinical and Environmental Exposures Service)
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:automat-intact
   status: released
   name: Automat IntAct
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#intact
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Molecular (Gene-Gene) interactions from EBI IntAct (https://www.ebi.ac.uk/intact/)](https://www.ebi.ac.uk/intact/).
 - id: infores:automat-kegg
   status: deprecated
   name: Automat KEGG
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on the [Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)](https://www.genome.jp/kegg/).
 - id: infores:automat-mychem-info
   status: deprecated
   name: Automat MyChem (trapi v-1.1.0)
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     A graph integrating DrugBank, DrugCentral, and Aeolus data as provided
@@ -291,7 +293,7 @@ information_resources:
 - id: infores:automat-ontology-hierarchy
   status: deprecated
   name: Automat Ontological Hierarchy (trapi v-1.1.0)
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph for ontological hierarchy extracted from Uberongraph.
 - id: infores:automat-panther
@@ -299,7 +301,7 @@ information_resources:
   name: Automat Panther
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#panther
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph of gene families and pathways from [Panther (pantherdb.org)](pantherdb.org)
 - id: infores:automat-pharos
@@ -307,7 +309,7 @@ information_resources:
   name: Automat Pharos
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#pharos
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A graph based on [Pharos (pharos.nih.gov)](pharos.nih.gov).
 - id: infores:automat-robokop
@@ -315,14 +317,14 @@ information_resources:
   name: Automat RobokopKG
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#robokopkg
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Biomedical Knowledge graph build by constructing relationships from
     federated data sets.
 - id: infores:automat-text-mining-provider
   status: deprecated
   name: Automat Textmining KP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: A literature co-occurrence graph created by the Translator Text Mining KP.
 - id: infores:automat-string-db
@@ -330,7 +332,7 @@ information_resources:
   name: Automat STRING
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#string-db
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     The Search Tool for the Retrieval of INteracting Genes/proteins (STRING)
@@ -343,7 +345,7 @@ information_resources:
   name: Automat SRI Reference Knowledge Graph
   xref:
   - https://monarchinitiative.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The SRI reference KG aims to aggregate knowledge sources across translator
@@ -354,7 +356,7 @@ information_resources:
   name: Automat Ubergraph
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ubergraph
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A graph representation of Ubergraph, an integration of ontologies
@@ -364,7 +366,7 @@ information_resources:
   name: Automat Ubergraph Nonredundant
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#ubergraph-nonredundant
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A graph representation of Ubergraph, an integration of ontologies
@@ -374,7 +376,7 @@ information_resources:
 - id: infores:automat-viral-protome
   status: released
   name: Automat Viral Proteome
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Automat#viral-proteome
@@ -397,7 +399,7 @@ information_resources:
   - https://bgee.org/
   synonym:
   - BGEE
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:bigclam
   status: deprecated
@@ -406,7 +408,7 @@ information_resources:
   - https://github.com/PriceLab/translator-bigquery-api
   synonym:
   - BigClam
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:bigg-models
   status: released
@@ -415,7 +417,7 @@ information_resources:
   - http://bigg.ucsd.edu/
   synonym:
   - BIGG
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: a knowledgebase of genome-scale metabolic network reconstructions
 - id: infores:biggim
@@ -425,7 +427,7 @@ information_resources:
   - https://github.com/PriceLab/translator-bigquery-api/
   synonym:
   - BigGIM
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:bindingdb
   status: released
@@ -434,7 +436,7 @@ information_resources:
   - https://www.bindingdb.org
   synonym:
   - The Binding Database
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     BindingDB is a public, web-accessible database of measured binding
@@ -447,7 +449,7 @@ information_resources:
   name: Bio2RDF
   xref:
   - https://bio2rdf.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biocatalogue
   status: released
@@ -459,14 +461,14 @@ information_resources:
   - https://thebiogrid.org/
   synonym:
   - BioGrid
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biolink-api
   status: released
   name: BioLink API
   xref:
   - https://api.monarchinitiative.org/api/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: API integration layer for linked biological objects.
 - id: infores:biolink-model-lookup
@@ -474,7 +476,7 @@ information_resources:
   name: Biolink Model Lookup
   xref:
   - https://github.com/TranslatorSRI/bl_lookup
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Biolink Model Lookup service.
 - id: infores:biolink-ontology
@@ -491,12 +493,12 @@ information_resources:
   - http://bioportal.bioontology.org/
   synonym:
   - bioportal
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biothings-biggim-1
   status: deprecated
   name: Big GIM 1 API
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the Big GIM 1 KP query web services.
 - id: infores:biothings-dgidb
@@ -504,7 +506,7 @@ information_resources:
   name: BioThings DGIdb API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the BioThings DGIdb query web services.
 - id: infores:biothings-diseases
@@ -512,7 +514,7 @@ information_resources:
   name: BioThings DISEASES API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the DISEASES query web services.
 - id: infores:biothings-ebi-gene2phenotype
@@ -520,7 +522,7 @@ information_resources:
   name: BioThings EBIgene2phenotype API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the EBIgene2phenotype query web services.
 - id: infores:biothings-explorer
@@ -530,7 +532,7 @@ information_resources:
   - http://biothings.io/explorer/
   synonym:
   - BTE
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:service-provider-trapi
   status: released
@@ -539,14 +541,14 @@ information_resources:
   - https://github.com/biothings
   synonym:
   - service provider
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biothings-go-bp
   status: released
   name: BioThings Gene Ontology Biological Process API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the Gene Ontology Biological Process query web services.
 - id: infores:biothings-go-cc
@@ -554,7 +556,7 @@ information_resources:
   name: BioThings Gene Ontology Cellular Component API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the Gene Ontology Cellular Component query web services.
 - id: infores:biothings-go-mf
@@ -562,7 +564,7 @@ information_resources:
   name: BioThings Gene Ontology Molecular Activity API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the Gene Ontology Molecular Activity query web services.
 - id: infores:biothings-hpo
@@ -570,7 +572,7 @@ information_resources:
   name: BioThings Human Phenotype Ontology API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the HPO query web services.
 - id: infores:biothings-idisk
@@ -578,14 +580,14 @@ information_resources:
   name: BioThings iDISK API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biothings-mgi-g2p
   status: released
   name: BioThings MGIgene2phenotype API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the MGIgene2phenotype query web services.
 - id: infores:biothings-multiomics-biggim-drugresponse
@@ -594,7 +596,7 @@ information_resources:
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Drug-Response-KP
   - https://github.com/NCATS-Tangerine/BigGIM_APIWrapper
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the Drug Response KP query web services.
 - id: infores:biothings-multiomics-ehr-risk
@@ -602,7 +604,7 @@ information_resources:
   name: Multiomics EHR Risk KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: >- 
     Documentation of the Multiomics Electronic-Health-Record (EHR) Risk
@@ -612,7 +614,7 @@ information_resources:
   name: Providence St. Joseph EHR Data
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     A partnership with Providence/Swedish Health Services and Institute
@@ -624,7 +626,7 @@ information_resources:
   name: Multiomics Wellness KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Wellness-KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: Documentation of the Multiomics Wellness KP query web services.
 - id: infores:biothings-multiomics-clinicaltrials
@@ -632,14 +634,14 @@ information_resources:
   name: Multiomics ClinicalTrials KP API
   xref:
   - https://github.com/GitHubbit/Multiomics_ClinicalTrials_KP#readme
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:biothings-pfcor
   status: modified
   name: BioThings pfocr API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: Documentation of the pfocr query web services.
 - id: infores:biothings-semmeddb
@@ -647,7 +649,7 @@ information_resources:
   name: BioThings SEMMEDDB API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: Documentation of the BioThings SEMMEDDB query web services.
 - id: infores:biothings-semmeddb-anatomy
@@ -655,7 +657,7 @@ information_resources:
   name: SEMMED Anatomy API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     Documentation of the SEMMED disease query web services.  Learn more
@@ -665,7 +667,7 @@ information_resources:
   name: SEMMED Biological Process API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     Documentation of the SEMMED disease query web services.  Learn more
@@ -675,7 +677,7 @@ information_resources:
   name: SEMMED Chemical API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     Documentation of the SEMMED disease query web services.  Learn more
@@ -685,7 +687,7 @@ information_resources:
   name: SEMMED Disease API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     Documentation of the SEMMED disease query web services.  Learn more
@@ -695,7 +697,7 @@ information_resources:
   name: SEMMED Gene API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
@@ -704,7 +706,7 @@ information_resources:
   name: SEMMED Phenotype API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: Documentation of the SEMMED disease query web services.  Learn more
     about [mydisease.info](http://pending.biothings.io/semmed)
@@ -713,7 +715,7 @@ information_resources:
   name: Multiomics TCGA Mutation Frequency KP API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Tumor-gene-mutation-KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: Documentation of the TCGA Mutation Frequency KP query web services.
 - id: infores:biothings-uberon-ontology
@@ -721,7 +723,7 @@ information_resources:
   name: BioThings UBERON Ontology API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the UBERON query web services.
 - id: infores:biothings-rhea
@@ -729,7 +731,7 @@ information_resources:
   name: BioThings Rhea API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the BioThings Rhea query web services.
 - id: infores:rhea
@@ -737,7 +739,7 @@ information_resources:
   name: Rhea
   xref:
   - https://www.rhea-db.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: https://www.rhea-db.org/
 - id: infores:biothings-bioplanet-pathway-disease
@@ -745,7 +747,7 @@ information_resources:
   name: BioThings BioPlanet Pathway-Disease API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
@@ -755,7 +757,7 @@ information_resources:
   name: BioThings BioPlanet Pathway-Gene API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
@@ -765,7 +767,7 @@ information_resources:
   name: BioPlanet
   xref:
   - https://ncats.nih.gov/pubs/features/bioplanet
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: https://tripod.nih.gov/bioplanet/#
 - id: infores:biothings-bindingdb
@@ -773,7 +775,7 @@ information_resources:
   name: BioThings BindingDB API
   xref:
   - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the BioThings [BindingDB](https://www.bindingdb.org/rwd/bind/index.jsp)
@@ -814,7 +816,7 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
   synonym:
   - Causal Activity Model KP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: TRAPI interface to database of Causal Activity Models
 - id: infores:campfhir
@@ -824,7 +826,7 @@ information_resources:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/camp-fhir
   synonym:
   - CAMP FHIR
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:chebi
   status: released
@@ -841,20 +843,20 @@ information_resources:
   name: Chem2bio2RDF
   xref:
   - http://cheminfov.informatics.indiana.edu:8080/c2b2r/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:chembank
   status: released
   name: ChemBank
   xref:
   - https://data.broadinstitute.org/chembank/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Initiative for Chemical Genetics contract from the National Cancer Institute
 - id: infores:chembio
   status: released
   name: ChemBio
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:chembl
   status: released
@@ -863,7 +865,7 @@ information_resources:
   - https://www.ebi.ac.uk/chembl/
   synonym:
   - Chembl
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: a manually curated database of bioactive molecules with drug-like properties.
 - id: infores:chemotext
@@ -871,7 +873,7 @@ information_resources:
   name: Chemotext
   xref:
   - http://chemotext.mml.unc.edu/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:civic
   status: released
@@ -880,7 +882,7 @@ information_resources:
   - https://civicdb.org/home
   synonym:
   - CIViC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cl
   status: released
@@ -896,7 +898,7 @@ information_resources:
   name: Clinical Genome Resource (ClinGen)
   xref:
   - https://clinicalgenome.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     ClinGen is a NIH-funded resource dedicated to building a central resource
@@ -905,21 +907,21 @@ information_resources:
 - id: infores:clinical-profiles
   status: deprecated
   name: Clinical Profiles
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:clinicaltrials
   status: released
   name: ClinicalTrials.gov
   xref:
   - https://clinicaltrials.gov
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:clinvar
   status: released
   name: ClinVar
   xref:
   - https://www.ncbi.nlm.nih.gov/clinvar/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     ClinVar is a freely accessible, public archive of reports of the
@@ -931,7 +933,7 @@ information_resources:
   - https://clue.io/cmap
   synonym:
   - CMAP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     genome-scale library of cellular signatures that catalogs transcriptional
@@ -945,14 +947,14 @@ information_resources:
   - The Columbia Clinical Data Warehouse (CDW) contains clinical information for over
     4.5 million individuals treated at Columbia University Irving Medical Center (CUIMC)
     since the 1980s.
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cohd
   status: released
   name: Columbia Open Health Data (COHD)
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: >-
     The Columbia Open Health Data (COHD) API provides access to counts
@@ -1004,7 +1006,7 @@ information_resources:
   name: Columbia Open Health Data (COHD) for COVID-19 Research
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: >-
     The Columbia Open Health Data (COHD) for COVID-19 Research API provides
@@ -1065,14 +1067,14 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
   synonym:
   - COHD COVID-19
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:connections-hypothesis
   status: released
   name: Connections Hypothesis Provider API
   xref:
   - https://github.com/di2ag/chp
-  knowledge level: not_provided
+  knowledge level: prediction
   agent type: not_provided
   description: A Translator Reasoner API for the Connections Hypothesis Provider
 - id: infores:cord19
@@ -1082,14 +1084,14 @@ information_resources:
   - https://github.com/allenai/cord19
   synonym:
   - CORD19
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cord19-scibite
   status: released
   name: COVID-19 Open Research Dataset Scibite
   synonym:
   - CORD19-Scibite
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cosmic
   status: released
@@ -1098,12 +1100,12 @@ information_resources:
   - https://cancer.sanger.ac.uk/cosmic
   synonym:
   - COSMIC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:covid-phenotypes
   status: deprecated
   name: Covid Phenotypes
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cpdb
   status: released
@@ -1112,12 +1114,12 @@ information_resources:
   - http://cpdb.molgen.mpg.de/
   synonym:
   - CPDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:cpt-codes-umls
   status: released
   name: Current Procedural Terminology (CPT) Codes (from UMLS)
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ctd
   status: released
@@ -1126,7 +1128,7 @@ information_resources:
   - http://ctdbase.org
   synonym:
   - CTDbase
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A robust, publicly available database that aims to advance understanding
@@ -1138,7 +1140,7 @@ information_resources:
   - https://portals.broadinstitute.org/ctrp.v2.1/
   synonym:
   - CTRP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     links genetic, lineage, and other cellular features of cancer cell
@@ -1151,7 +1153,7 @@ information_resources:
   - http://tatonettilab.org/date/
   synonym:
   - DATE
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:dbsnp
   status: released
@@ -1160,7 +1162,7 @@ information_resources:
   - http://www.ncbi.nlm.nih.gov/SNP/
   synonym:
   - dbSNP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:dda
   status: released
@@ -1176,7 +1178,7 @@ information_resources:
   name: delta QT Database
   xref:
   - http://deltaqt.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:depmap
   status: released
@@ -1185,7 +1187,7 @@ information_resources:
   - https://depmap.org/portal/
   synonym:
   - DepMap
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Cancer Dependency Map to systematically identify genetic and pharmacologic
@@ -1197,7 +1199,7 @@ information_resources:
   - http://dgidb.genome.wustl.edu
   synonym:
   - DGIdb
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     information on drug-gene interactions and druggable genes from publications,
@@ -1206,7 +1208,7 @@ information_resources:
 - id: infores:dili-network-study-data
   status: released
   name: Drug-Induced Liver Injury Network (DILIN) Participant Data
-  knowledge level: not_provided
+  knowledge level: correlated
   agent type: not_provided
 - id: infores:fbbt
   status: released
@@ -1232,21 +1234,21 @@ information_resources:
   name: Disease-gene associations mined from literature
   xref:
   - https://diseases.jensenlab.org/About
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:disgenet
   status: released
   name: DisGeNET
   xref:
   - http://www.disgenet.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:distild
   status: released
   name: Diseases & Traits in LD database
   synonym:
   - DistiLD database
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:doaf
   status: released
@@ -1255,14 +1257,14 @@ information_resources:
   - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049686
   synonym:
   - DOAF
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:drug-repurposing-hub
   status: released
   name: Drug Repurposing Hub
   xref:
   - https://clue.io/repurposing
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Curated and annotated collection of FDA-approved drugs, clinical
@@ -1274,7 +1276,7 @@ information_resources:
   - http://www.drugbank.ca/
   synonym:
   - Drugbank
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A comprehensive, free-to-access, online database containing information
@@ -1288,7 +1290,7 @@ information_resources:
   - http://drugcentral.org
   synonym:
   - Drugcentral
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Online drug information resource created and maintained by Division
@@ -1301,21 +1303,21 @@ information_resources:
   - https://www.ebi.ac.uk/
   synonym:
   - EBI
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ebi-gene2phenotype
   status: modified
   name: European Bioinformatics Institute Gene to Phenotype Resource
   xref:
   - https://www.ebi.ac.uk/gene2phenotype/disclaimer
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ebi-proteins
   status: released
   name: EBI Proteins API
   xref:
   - https://www.ebi.ac.uk/proteins/api/doc/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     The Proteins REST API provides access to key biological data from
@@ -1333,7 +1335,7 @@ information_resources:
   - https://www.ebi.ac.uk/QuickGO/api/index.html
   synonym:
   - QuickGO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The QuickGO REST API provides access to key biological data from
@@ -1366,7 +1368,7 @@ information_resources:
   - https://pubmed.ncbi.nlm.nih.gov/29106618/
   synonym:
   - eRAM
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: encyclopedia of rare disease annotations for precision medicine
 - id: infores:efo
@@ -1376,7 +1378,7 @@ information_resources:
   - https://www.ebi.ac.uk/efo/
   synonym:
   - EFO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ehdaa2
   status: released
@@ -1392,7 +1394,7 @@ information_resources:
   name: Ensembl gene
   xref:
   - https://www.ebi.ac.uk/training/online/courses/ensembl-browsing-genomes/exploring-sources-of-biological-data/ensembl-genes/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:entrez
   status: released
@@ -1401,21 +1403,21 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/Web/Search/entrezfs.html
   synonym:
   - NCBIGene
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:erc-analysis
   status: released
   name: Evolutionary Rate Covariation (ERC) Analysis
   synonym:
   - ERC Analysis
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:explanatory-agent
   status: released
   name: Explanatory Agent API
   xref:
   - https://github.com/NCATSTranslator/Explanatory-Agent
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: A Translator Reasoner API for the Explanatory Agent
 - id: infores:fhir-pit
@@ -1425,28 +1427,28 @@ information_resources:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/fhir-pit
   synonym:
   - FHIR PIT
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:fma-obo
   status: released
   name: Foundational Model of Anatomy Ontology (FMA -- both from UMLS and from OBO)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/FMA/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:fma-umls
   status: released
   name: Foundational Model of Anatomy Ontology (FMA -- both from UMLS and from OBO)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/FMA/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:fooddb
   status: released
   name: Food Database
   xref:
   - https://foodb.ca/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:foodon
   status: released
@@ -1464,7 +1466,7 @@ information_resources:
   - https://portal.gdc.cancer.gov/projects/
   synonym:
   - GDC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:gdsc
   status: released
@@ -1473,7 +1475,7 @@ information_resources:
   - https://www.cancerrxgene.org/faq
   synonym:
   - GDSC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:genage
   status: released
@@ -1482,14 +1484,14 @@ information_resources:
   - http://genomics.senescence.info/genes/
   synonym:
   - GenAge; The Aging Gene Database
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:gencc
   status: released
   name: The Gene Curation Coalition (GenCC)
   xref:
   - https://thegencc.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The GenCC DB provides information pertaining to the validity of gene-disease
@@ -1501,14 +1503,14 @@ information_resources:
   - http://genomics.senescence.info/diet/
   synonym:
   - GenDR
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:genebass
   status: released
   name: 'Genebass: Gene-based association summary statistics'
   xref:
   - https://genebass.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Genebass is a resource of exome-based association statistics, made
@@ -1522,14 +1524,14 @@ information_resources:
   - https://genepio.org/
   synonym:
   - GenEpiO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:geneprof
   status: released
   name: GeneProf
   xref:
   - https://bio.tools/geneprof
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: underlying resource is throwing 404 error atm
 - id: infores:genetics-data-provider
@@ -1537,7 +1539,7 @@ information_resources:
   name: Genetics KP
   xref:
   - https://github.com/broadinstitute/genetics-kp-dev
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     TRAPI 1.1 endpoint for the NCATS Biomedical Translator Genetics Data KP
@@ -1546,7 +1548,7 @@ information_resources:
   name: Genetics Home Reference
   xref:
   - https://ghr.nlm.nih.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:gnbr
   status: released
@@ -1555,7 +1557,7 @@ information_resources:
   - https://zenodo.org/record/1035500
   synonym:
   - GNBR
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:go
   status: released
@@ -1578,7 +1580,7 @@ information_resources:
   name: Gene Ontology Plus
   synonym:
   - GO-Plus
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:goa
   status: released
@@ -1596,7 +1598,7 @@ information_resources:
   - http://tatonettilab.org/resources/GOTE/source_code/
   synonym:
   - GOTE
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:gtex
   status: released
@@ -1605,14 +1607,14 @@ information_resources:
   - https://gtexportal.org/home/
   synonym:
   - GTEx
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:gtopdb
   status: released
   name: Guide to Pharmacology
   xref:
   - https://www.guidetopharmacology.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     An expert-curated resource of ligand-activity-target relationships,
@@ -1625,28 +1627,28 @@ information_resources:
   - https://www.ebi.ac.uk/gwas/
   synonym:
   - GWAS
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:hcp-codes-umls
   status: released
   name: Healthcare Common Procedure Coding System (from UMLS)
   xref:
   - https://www.cms.gov/medicare/coding/medhcpcsgeninfo
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hcpcs-cpt-umls
   status: released
   name: HCPCS Version of Current Procedural Terminology (HCPT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/HCPT/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hetionet
   status: released
   name: Hetionet
   xref:
   - https://het.io/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hgnc
   status: released
@@ -1655,14 +1657,14 @@ information_resources:
   - https://www.genenames.org/
   synonym:
   - HGNC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hl7-umls
   status: released
   name: Health Level Seven (HL7) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/HL7V3.0/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hmdb
   status: released
@@ -1671,7 +1673,7 @@ information_resources:
   - https://hmdb.ca/
   synonym:
   - HMDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A freely available electronic database containing detailed information
@@ -1681,21 +1683,21 @@ information_resources:
   name: HomoloGene
   xref:
   - https://www.ncbi.nlm.nih.gov/homologene
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hopkins-synthetic-patient-data
   status: released
   name: Hopkins Synthetic Patient Data
   xref:
   - http://ictrweb.johnshopkins.edu/rest/synthetic/Patient
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:hpa
   status: released
   name: Human Protein Atlas
   xref:
   - http://www.proteinatlas.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     The Human Protein Atlas is a Swedish-based program initiated in 2003
@@ -1718,42 +1720,42 @@ information_resources:
   - https://hpo.jax.org/app/data/annotations
   synonym:
   - HPO Annotations
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icd10-umls
   status: released
   name: ICD10 (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icd10ae-umls
   status: released
   name: ICD10AE (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10AE/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icd10cm-umls
   status: released
   name: ICD10CM (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10CM/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icd10pcs-umls
   status: released
   name: ICD10PCS (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD10PCS/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icd9cm-umls
   status: released
   name: ICD9CM (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/ICD9CM/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:icees-kg
   status: deprecated
@@ -1762,7 +1764,7 @@ information_resources:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
   synonym:
   - KP
-  knowledge level: not_provided
+  knowledge level: correlation
   agent type: not_provided
   description: Information Resource
 - id: infores:idisk
@@ -1772,7 +1774,7 @@ information_resources:
   - https://conservancy.umn.edu/handle/11299/204783
   synonym:
   - iDISK
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075538/
 - id: infores:improving-agent
@@ -1780,7 +1782,7 @@ information_resources:
   name: imProving Agent
   xref:
   - https://github.com/suihuanglab/improving-agent
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: imProving Agent OpenAPI TRAPI Specification
 - id: infores:indigo-reasoner
@@ -1788,7 +1790,7 @@ information_resources:
   name: OpenAPI for indigo NCATS Biomedical Translator Reasoner
   xref:
   - https://github.com/NCATSTranslator/ReasonerAPI
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: OpenAPI for indigo NCATS Biomedical Translator Reasoner
 - id: infores:ino
@@ -1803,28 +1805,28 @@ information_resources:
   name: IntAct
   xref:
   - https://www.ebi.ac.uk/intact/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:interactome-ccsb
   status: released
   name: Interactome Projects at CCSB
   xref:
   - http://interactome.dfci.harvard.edu/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:interpro
   status: released
   name: InterPro
   xref:
   - http://www.ebi.ac.uk/interpro
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:inxight-drugs
   status: released
   name: 'Inxight: Drugs'
   xref:
   - https://drugs.ncats.io/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     NCATS Inxight Drugs contains information on ingredients in medicinal
@@ -1837,14 +1839,14 @@ information_resources:
   name: iProClass
   xref:
   - http://pir.georgetown.edu/iproclass/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:irefindex
   status: released
   name: iRefIndex
   xref:
   - https://irefindex.vib.be/wiki/index.php/iRefIndex
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:isb-incov
   status: released
@@ -1853,14 +1855,14 @@ information_resources:
   - https://isbscience.org/research/covid-19/
   synonym:
   - ISB Novel COronaVirus
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:isb-wellness
   status: released
   name: Institute for Systems Biology Scientific Wellness
   xref:
   - https://isbscience.org/research/scientificwellness/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:kegg
   status: released
@@ -1869,21 +1871,21 @@ information_resources:
   - https://www.genome.jp/kegg/
   synonym:
   - KEGG
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:kgea
   status: released
   name: Knowledge Graph Exchange Archive
   xref:
   - https://archive.translator.ncats.io/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:knowledge-collaboratory
   status: released
   name: Translator Knowledge Collaboratory API
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/Knowledge-Collaboratory-KP
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Translator Reasoner API for the Knowledge Collaboratory,hosted on the [Nanopublications
@@ -1898,21 +1900,21 @@ information_resources:
   name: Life Science Resource Registry
   xref:
   - https://download.bio2rdf.org/files/release/3/lsr/lsr.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:lincs
   status: released
   name: Library of Integrated Network-Based Cellular Signatures
   xref:
   - https://www.lincsproject.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   synonym:
   - LINCS
 - id: infores:linkedspl
   status: released
   name: Linked Structured Product Labels
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   - LinkedSPL
 - id: infores:litvar
@@ -1920,7 +1922,7 @@ information_resources:
   name: LitVar API
   xref:
   - https://www.ncbi.nlm.nih.gov/CBBresearch/Lu/Demo/LitVar/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     LitVar allows the search and retrieval of variant relevant information
@@ -1935,14 +1937,14 @@ information_resources:
   - https://loinc.org/
   synonym:
   - LOINC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:loinc-umls
   status: released
   name: LOINC (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:mp
   status: released
@@ -1969,7 +1971,7 @@ information_resources:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MDR/index.html#:~:text=MedDRA%20is%20an%20international%20medical,effects%20and%20malfunction%20of%20devices.
   synonym:
   - MEDRA
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:medgen
   status: released
@@ -1978,21 +1980,21 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/medgen/
   synonym:
   - MedGen
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:medlineplus
   status: released
   name: MedlinePlus (from UMLS)
   xref:
   - https://medlineplus.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:medrt-umls
   status: released
   name: Medication Reference Terminology (MED-RT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MED-RT/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:mesh
   status: released
@@ -2001,7 +2003,7 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/mesh
   synonym:
   - MeSH
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:metacyc
   status: released
@@ -2010,7 +2012,7 @@ information_resources:
   - https://metacyc.org/
   synonym:
   - MetaCyc
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:emapa
   status: released
@@ -2061,21 +2063,21 @@ information_resources:
   - http://www.mirbase.org/
   synonym:
   - miRBase
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:mirgate
   status: released
   name: MiRGate
   xref:
   - https://pubmed.ncbi.nlm.nih.gov/25858286/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:molepro
   status: released
   name: Molecular Data Provider for NCATS Biomedical Translator Reasoners
   xref:
   - https://github.com/broadinstitute/molecular-data-provider
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Molecular Data Provider for NCATS Biomedical Translator Reasoners
 - id: infores:monarch-data
@@ -2083,7 +2085,7 @@ information_resources:
   name: SciGraph-Monarch-Data
   xref:
   - scigraph-data.monarchinitiative.org/scigraph/docs/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:monarch-ontology
   status: deprecated
@@ -2124,7 +2126,7 @@ information_resources:
   - http://www.mousemine.org/mousemine/api.do
   synonym:
   - Mousemine
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:msigdb
   status: released
@@ -2133,7 +2135,7 @@ information_resources:
   - https://www.gsea-msigdb.org/gsea/msigdb
   synonym:
   - MSigDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:mychem-info
   status: released
@@ -2142,7 +2144,7 @@ information_resources:
   - http://mychem.info
   synonym:
   - mychem
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the MyChem.info chem query web services.  Learn more
@@ -2154,7 +2156,7 @@ information_resources:
   - http://mydisease.info/
   synonym:
   - mydisease
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     Documentation of the MyDisease.info disease query web services.  Learn
@@ -2166,7 +2168,7 @@ information_resources:
   - https://mygene.info/
   synonym:
   - mygene
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the MyGene.info Gene Query web services. Learn more
@@ -2178,7 +2180,7 @@ information_resources:
   - http://myvariant.info/
   synonym:
   - myvariant
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Documentation of the MyVariant.info Variant Query web services. Learn
@@ -2190,7 +2192,7 @@ information_resources:
   - http://nanopub.net/
   synonym:
   - Nanopublications
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nbo
   status: released
@@ -2208,7 +2210,7 @@ information_resources:
   synonym:
   - NCATS Translator Autonomous Relay System Translator  Autonomous Relay System
   - NCATS Translator ARS
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ncbi-gene
   status: released
@@ -2218,7 +2220,7 @@ information_resources:
   synonym:
   - NGBI Gene
   - ncbigene
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ncbi-taxon
   status: released
@@ -2235,17 +2237,17 @@ information_resources:
   synonym:
   - ncbitaxonomy
   - ncbitaxon
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ncdeq-cafo-exposures-data
   status: released
   name: North Carolina Department of Environmental Quality Concentrated Animal Feeding Operations Exposures Data
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ncdeq-landfill-exposures-data
   status: released
   name: North Carolina Department of Environmental Quality Landfill Exposures Data
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nces-schools-exposure-data
   status: released
@@ -2254,7 +2256,7 @@ information_resources:
   - https://nces.ed.gov/
   synonym:
   - NCES Data
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ncit
   status: released
@@ -2264,7 +2266,7 @@ information_resources:
   synonym:
   - NCT Thesaurus
   - NCIt
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ndcd
   status: released
@@ -2273,7 +2275,7 @@ information_resources:
   - https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory
   synonym:
   - NDCD
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nddf-umls
   status: released
@@ -2283,42 +2285,42 @@ information_resources:
   name: NDEx
   xref:
   - http://www.ndexbio.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ndfrt
   status: released
   name: National Drug File - Reference Terminology (NDF-RT) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nexo-align
   status: released
   name: NEXO Align Ontology
   xref:
   - http://nexo.ucsd.edu/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nexo-construct
   status: released
   name: NEXO Construct Ontology
   xref:
   - http://nexo.ucsd.edu/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:niehs-epr-study-data
   status: released
   name: NIEHS Environmental Polymorphisms Registry
   synonym:
   - NIEHS EPR
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:nsides
   status: released
   name: nSides
   xref:
   - https://www.nsides.io/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ols
   status: released
@@ -2327,7 +2329,7 @@ information_resources:
   - https://www.ebi.ac.uk/ols/docs/api
   synonym:
   - OLS
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The OLS REST API provides access to key biological data from OLS.
@@ -2340,7 +2342,7 @@ information_resources:
   name: OmicsDI
   xref:
   - http://www.omicsdi.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:omim
   status: released
@@ -2349,7 +2351,7 @@ information_resources:
   - https://www.omim.org/
   synonym:
   - OMIM
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:omnicorp
   status: released
@@ -2358,7 +2360,7 @@ information_resources:
   - https://github.com/NCATS-Gamma/omnicorp
   synonym:
   - OmniCorp
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:omop-cdm
   status: released
@@ -2367,7 +2369,7 @@ information_resources:
   - https://www.ohdsi.org/data-standardization/the-common-data-model/
   synonym:
   - OMOP-CDM
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:omop-ohdsi-api
   status: released
@@ -2377,21 +2379,21 @@ information_resources:
   - https://chime.ucsf.edu/observational-medical-outcomes-partnership-omop
   synonym:
   - OMOP OHDSI API
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:open-targets
   status: released
   name: Open Targets
   xref:
   - https://www.opentargets.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:openpredict
   status: released
   name: OpenPredict API
   xref:
   - https://github.com/MaastrichtU-IDS/translator-openpredict
-  knowledge level: not_provided
+  knowledge level: predicted
   agent type: not_provided
   description: >-
     Get predicted targets for a given entity.  The potential drugs treating
@@ -2418,14 +2420,14 @@ information_resources:
   name: Orphanet
   xref:
   - https://www.orpha.net
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:owlsim
   status: released
   name: OWLSim Ontology Based Profile Matching
   xref:
   - https://github.com/monarch-initiative/owlsim-v3
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:oxo
   status: released
@@ -2434,7 +2436,7 @@ information_resources:
   - https://www.ebi.ac.uk/spot/oxo/
   synonym:
   - OxO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:panther
   status: released
@@ -2443,28 +2445,28 @@ information_resources:
   - http://pantherdb.org/
   synonym:
   - Panther
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:path-pheno-db
   status: released
   name: PathoPhenoDB
   xref:
   - http://patho.phenomebrowser.net/#/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pathway-commons
   status: released
   name: Pathway Commons
   xref:
   - https://www.pathwaycommons.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pathwhiz
   status: released
   name: PathWhiz
   xref:
   - https://smpdb.ca/pathwhiz
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pato
   status: released
@@ -2482,7 +2484,7 @@ information_resources:
   - https://github.com/monarch-initiative/phenio
   synonym:
   - PHENIO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     An ontology for accessing and comparing knowledge concerning phenotypes
@@ -2494,7 +2496,7 @@ information_resources:
   - https://ngdc.cncb.ac.cn/databasecommons/database/id/230
   synonym:
   - PATRIC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pgxmine
   status: released
@@ -2503,7 +2505,7 @@ information_resources:
   - https://pgxmine.pharmgkb.org/
   synonym:
   - PGxMine
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Text mined pharmacogenomic polymorphisms to assist curation of PharmGKB.
 - id: infores:pdq-umls
@@ -2511,14 +2513,14 @@ information_resources:
   name: Physician Data Query (PDQ) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PDQ/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pfam
   status: released
   name: Pfam
   xref:
   - https://www.ebi.ac.uk/interpro
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The Pfam database is a large collection of protein families, each represented
@@ -2541,7 +2543,7 @@ information_resources:
   - https://github.com/dhimmel/indications
   synonym:
   - PharmacotherapyDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pharmgkb
   status: released
@@ -2550,14 +2552,14 @@ information_resources:
   - https://www.pharmgkb.org/
   synonym:
   - PharmGKB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pharos
   status: released
   name: Pharos
   xref:
   - https://pharos.nih.gov
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     focusing on three of the most commonly drug-targeted protein families:
@@ -2569,14 +2571,14 @@ information_resources:
   - https://proconsortium.org/
   synonym:
   - PRO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:prefixcommons
   status: released
   name: Prefix Commons
   xref:
   - https://github.com/prefixcommons
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:preppi
   status: released
@@ -2585,28 +2587,28 @@ information_resources:
   - https://honiglab.c2b2.columbia.edu/PrePPI/
   synonym:
   - PrePPI
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:probe-miner
   status: released
   name: Probe Miner
   xref:
   - https://probeminer.icr.ac.uk
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:psy-umls
   status: released
   name: Psychological Index Terms (PSY) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/PSY/index.html#:~:text=PSY%20(Psychological%20Index%20Terms)%20%2D%20Synopsis,-Synopsis%20Metadata%20Statistics&text=The%20Thesaurus%20of%20Psychological%20Index%20Terms%20is%20a%20controlled%20vocabulary,provide%20subject%20searching%20of%20data.
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pubchem
   status: released
   name: PubChem
   xref:
   - https://pubchem.ncbi.nlm.nih.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     an open chemistry database at the National Institutes of Health (NIH),
@@ -2617,7 +2619,7 @@ information_resources:
   name: PubMed
   xref:
   - https://pubmed.ncbi.nlm.nih.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:pubmed-central
   status: released
@@ -2626,7 +2628,7 @@ information_resources:
   - https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/
   synonym:
   - PMC
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:quickgo
   status: released
@@ -2635,14 +2637,14 @@ information_resources:
   - https://www.ebi.ac.uk/QuickGO/api/index.html#!/gene_ontology/baseUrlUsingGET_1
   synonym:
   - QuickGO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:reactome
   status: released
   name: Reactome
   xref:
   - http://reactome.org/ContentService/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:renci-bionames
   status: released
@@ -2651,7 +2653,7 @@ information_resources:
   - https://bionames.renci.org/apidocs/#/default/get_lookup__q___concept__
   synonym:
   - Bionames
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:repodb
   status: released
@@ -2660,7 +2662,7 @@ information_resources:
   - http://apps.chiragjpgroup.org/repoDB/
   synonym:
   - repoDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:rgd
   status: released
@@ -2686,7 +2688,7 @@ information_resources:
   - http://robokop.renci.org
   synonym:
   - Robokop
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: An API for answering biomedical questions
 - id: infores:robokop-kp
@@ -2694,14 +2696,14 @@ information_resources:
   name: ROBOKOP (Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathway)
   xref:
   - http://robokop.renci.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:robokp-ranker
   status: released
   name: ROBOKOP Ranker
   xref:
   - http://robokop.renci.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: An API for answering biomedical questions
 - id: infores:rtx-kg2
@@ -2711,7 +2713,7 @@ information_resources:
   - https://github.com/RTXteam/RTX-KG2
   synonym:
   - Rtx-kg2
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: TRAPI 1.1 endpoint for the NCATS Biomedical Translator KP called RTX
     KG2
@@ -2720,7 +2722,7 @@ information_resources:
   name: RxNorm
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     normalized names for clinical drugs and links its names to many of
@@ -2732,21 +2734,21 @@ information_resources:
   name: SABIO-RK Biochemical Reaction Kinetics Database
   xref:
   - http://sabiork.h-its.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:scibite
   status: released
   name: Semantic Analytics & Clean Data Intelligence Experts
   xref:
   - https://www.scibite.com/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:semmeddb
   status: released
   name: Semantic Medline Database
   xref:
   - https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMed.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:sgd
   status: released
@@ -2760,12 +2762,12 @@ information_resources:
   name: SIDER
   xref:
   - http://sideeffects.embl.de/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:smart-api
   status: deprecated
   name: SmartAPI API
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: This is the API provided from [SmartAPI](https://smart-api.info) application.
 - id: infores:smartapi
@@ -2773,7 +2775,7 @@ information_resources:
   name: SmartAPI API
   xref:
   - https://smart-api.info
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description:
   - This is the API provided from [SmartAPI](https://smart-api.info) application.
@@ -2784,7 +2786,7 @@ information_resources:
   - https://smpdb.ca/
   synonym:
   - SMPDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:snomedct
   status: released
@@ -2793,7 +2795,7 @@ information_resources:
   - http://www.snomed.org/
   synonym:
   - SNOMED
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:so
   status: released
@@ -2802,14 +2804,14 @@ information_resources:
   - http://purl.obolibrary.org/obo/so.owl
   synonym:
   - SO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:spoke
   status: released
   name: SPOKE KP
   synonym:
   - Spoke
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: SPOKE KP - an NIH NCATS Knowledge Provider to expose UCSFs SPOKE
 - id: infores:sri-edge-normalizaion-service
@@ -2817,7 +2819,7 @@ information_resources:
   name: Edge Normalization Service
   xref:
   - https://github.com/TranslatorSRI/EdgeNormalization
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: SRI service to validate and normalize edges to Translator standards.
 - id: infores:sri-name-resolver
@@ -2825,7 +2827,7 @@ information_resources:
   name: Name Resolver
   xref:
   - https://github.com/TranslatorSRI/NameResolution
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Service to resolve Translator concept names.
 - id: infores:sri-node-normalizer
@@ -2833,7 +2835,7 @@ information_resources:
   name: Node Normalization
   xref:
   - https://github.com/TranslatorSRI/NodeNormalization
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Node normalization takes a CURIE, and returns resolved alias and
@@ -2841,7 +2843,7 @@ information_resources:
 - id: infores:sri-ontology
   status: released
   name: Ontology-KP API
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: TRAPI interface to integrated ontology knowledgebase
 - id: infores:sri-reference-kg
@@ -2849,7 +2851,7 @@ information_resources:
   name: SRI Reference Knowledge Graph API
   xref:
   - https://monarchinitiative.org/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >- 
     The SRI reference KG aims to aggregate knowledge sources across translator
@@ -2858,7 +2860,7 @@ information_resources:
 - id: infores:sri-semmeddb
   status: deprecated
   name: SRI SemMedDb KGX File Set
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The SRI Semantic Medline Database is a Biolink Model compliant KGX
@@ -2872,7 +2874,7 @@ information_resources:
   - http://stargeo.org/
   synonym:
   - STARGEO
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:stitch
   status: released
@@ -2881,7 +2883,7 @@ information_resources:
   - http://stitch.embl.de/
   synonym:
   - STITCH
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Database of known and predicted interactions between chemicals and
@@ -2892,7 +2894,7 @@ information_resources:
   name: Strider
   xref:
   - https://github.com/ranking-agent/strider
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Translator Autonomous Relay Agent
 - id: infores:string
@@ -2902,7 +2904,7 @@ information_resources:
   - https://string-db.org
   synonym:
   - STRING
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:symp
   status: released
@@ -2918,7 +2920,7 @@ information_resources:
   - https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga
   synonym:
   - TCGA
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:tcrd
   status: released
@@ -2927,7 +2929,7 @@ information_resources:
   - http://juniper.health.unm.edu/tcrd/
   synonym:
   - TCRD
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:tiga
   status: released
@@ -2936,7 +2938,7 @@ information_resources:
   - https://datascience.unm.edu/tiga/
   synonym:
   - TIGA
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     Aggregating and assessing experimental evidence for interpretable,
@@ -2944,7 +2946,7 @@ information_resources:
 - id: infores:text-mining-provider-cooccurrence
   status: released
   name: Text Mining COOCCURRENCE API
-  knowledge level: not_provided
+  knowledge level: text_mined
   agent type: not_provided
   description: >-
     API serving a knowledge graph comprised of pairs of concepts that
@@ -2954,7 +2956,7 @@ information_resources:
 - id: infores:text-mining-provider-targeted
   status: released
   name: Text Mining Targeted Association API
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   xref:
   - https://github.com/UCDenver-ccp/text-mining-provider-trapi
@@ -2970,7 +2972,7 @@ information_resources:
   - http://tissues.jensenlab.org/
   synonym:
   - TED
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:topmed
   status: released
@@ -2979,7 +2981,7 @@ information_resources:
   - https://www.nhlbi.nih.gov/science/trans-omics-precision-medicine-topmed-program
   synonym:
   - TOPMed
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:ttd
   status: released
@@ -2988,7 +2990,7 @@ information_resources:
   - https://db.idrblab.net/ttd/
   synonym:
   - TTD
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:uberon
   status: released
@@ -3006,21 +3008,21 @@ information_resources:
   - https://www.nlm.nih.gov/research/umls/index.html
   synonym:
   - UMLS
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:umls-metathesaurus
   status: released
   name: UMLS Metathesaurus (MTH) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/sourcereleasedocs/current/MTH/index.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:unc-cdwh-ehr-data
   status: released
   name: UNC Carolina Data Warehouse for Health Patient EHR Data
   xref:
   - https://tracs.unc.edu/index.php/services/informatics-and-data-science/cdw-h
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:unichem
   status: released
@@ -3029,7 +3031,7 @@ information_resources:
   - https://www.ebi.ac.uk/unichem/
   synonym:
   - unichem
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:uniprot
   status: released
@@ -3038,7 +3040,7 @@ information_resources:
   - https://www.uniprot.org/
   synonym:
   - UniProt
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:uniref
   status: released
@@ -3047,14 +3049,14 @@ information_resources:
   - https://www.uniprot.org/help/uniref
   synonym:
   - UniRef
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:unsecret-agent
   status: released
   name: Unsecret Agent OpenAPI for NCATS Biomedical Translator Reasoners
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/UnSecret-Agent
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: OpenAPI for NCATS Biomedical Translator Reasoners
 - id: infores:us-census-acs-data
@@ -3062,27 +3064,27 @@ information_resources:
   name: United States Census Bureau American Community Survey Data
   xref:
   - https://www.census.gov/programs-surveys/acs/data.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:us-census-tiger-roadway-exposures-data
   status: released
   name: United States Census Bureau TIGER/line Roadway Data
   xref:
   - http://www.census.gov/geo/maps-data/data/tiger-line.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:us-dot-roadway-exposures-data
   status: released
   name: United States Department of Transportation Roadway Exposures Data
   xref:
   - https://highways.dot.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:us-epa-airborne-pollutant-exposures-data
   status: released
   name: United States Environmental Protection Agency Airborne Pollutant Exposures
     Data
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:upheno
   status: released
@@ -3101,28 +3103,28 @@ information_resources:
   name: Veterans Association National Drug File (VANDF) (from UMLS)
   xref:
   - https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:wikidata
   status: released
   name: Wikidata
   xref:
   - https://wikidata.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:wikidata-garbanzo
   status: released
   name: Wikidata Garbanzo
   xref:
   - https://query.wikidata.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:wikipathways
   status: released
   name: WikiPathways
   xref:
   - https://www.wikipathways.org
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
 - id: infores:xpo
   status: released
@@ -3140,7 +3142,7 @@ information_resources:
   name: Translator Workflow Runner
   xref:
   - https://github.com/NCATSTranslator/workflow-runner
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Translator general purpose workflow runner
 - id: infores:wormbase
@@ -3175,7 +3177,7 @@ information_resources:
   name: DDinter
   xref:
   - http://ddinter.scbdd.com
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     DDInter is anopen-access database specific to drug-drug interactions
@@ -3189,7 +3191,7 @@ information_resources:
   - https://pdsp.unc.edu/databases/kidb.php
   synonym:
   - KiDB
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The Ki database serves as a data warehouse for published and internally-derived
@@ -3202,7 +3204,7 @@ information_resources:
   - http://www.csardock.org/
   synonym:
   - CSAR
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     CSAR disseminated experimental datasets of crystal structures and binding
@@ -3214,7 +3216,7 @@ information_resources:
   - https://drugdesigndata.org/
   synonym:
   - D3R
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     The Drug Design Data Resource (D3R) aims to advance the technology
@@ -3225,7 +3227,7 @@ information_resources:
   name: Adverse Event Open Learning through Universal Standardization (AEOLUS)
   xref:
   - http://doi.org/10.1038/sdata.2016.26
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A curated and standardized version of FAERS removing duplicate case
@@ -3237,7 +3239,7 @@ information_resources:
   name: Richards Effector Gene List
   xref:
   - https://www.mcgill.ca/genepi/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: An effector index to predict target genes at GWAS loci
 - id: infores:huri
@@ -3247,7 +3249,7 @@ information_resources:
   - http://www.interactome-atlas.org/download
   synonym:
   - HuRI
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: >-
     A human ‘all-by-all’ reference interactome map of human binary protein
@@ -3299,7 +3301,7 @@ information_resources:
   name: BioThings RARe-SOURCE API
   xref:
    - https://github.com/biothings
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Documentation of the BioThings API for [NCATS RARe-SOURCE](https://raresource.nih.gov/) data.
 - id: infores:rare-source
@@ -3307,6 +3309,6 @@ information_resources:
   name: NCATS RARe-SOURCE
   xref:
    - https://raresource.nih.gov/
-  knowledge level: not_provided
+  knowledge level: curated
   agent type: not_provided
   description: Integrated Bioinformatics Resource for Rare Diseases
