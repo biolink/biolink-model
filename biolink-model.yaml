@@ -278,13 +278,6 @@ types:
 
 slots:
 
-
-  cell_type:
-    range: CellTypeEnum
-   ## ---------------
-   ## ATTRIBUTE SLOTS
-   ## ---------------
-
   has attribute:
     description: >-
       connects any entity to an attribute
@@ -10744,15 +10737,6 @@ classes:
 
 
 enums:
-
-  CellTypeEnum:
-    reachable_from:
-      source_ontology: obo:cl
-      source_nodes:
-        - CL:0000000
-      include_self: false
-      relationship_types:
-        - rdfs:subClassOf
 
   DirectionQualifierEnum:
     permissible_values:
