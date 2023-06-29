@@ -31,5 +31,5 @@ URI: [biolink:ingest_date](https://w3id.org/biolink/vocab/ingest_date)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | pav:version |
+| **Broad Mappings:** | | dct:issued |
 

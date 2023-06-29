@@ -155,6 +155,21 @@
          "nodeKind": "nonliteral"
       },
       {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Jsonpointer",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Jsonpath",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Sparqlpath",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      },
+      {
          "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/AccessibleDnaRegion",
          "closed": true,

@@ -31,5 +31,5 @@ URI: [biolink:has_dataset](https://w3id.org/biolink/vocab/has_dataset)
 
 |  |  |  |
 | --- | --- | --- |
-| **Mappings:** | | dct:source |
+| **Broad Mappings:** | | dct:source |
 
