@@ -27,6 +27,12 @@ class ConfiguredBaseModel(WeakRefShimBaseModel,
     pass
 
 
+class CellTypeEnum(str, Enum):
+    
+    
+    dummy = "dummy"
+    
+
 class DirectionQualifierEnum(str, Enum):
     
     
