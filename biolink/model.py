@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-30T23:09:23
+# Generation date: 2023-06-29T21:55:54
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1707,6 +1707,7 @@ class NamedThing(Entity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     provided_by: Optional[Union[str, List[str]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    full_name: Optional[Union[str, LabelType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1727,6 +1728,9 @@ class NamedThing(Entity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        if self.full_name is not None and not isinstance(self.full_name, LabelType):
+            self.full_name = LabelType(self.full_name)
 
         super().__post_init__(**kwargs)
 
@@ -10804,7 +10808,7 @@ slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", c
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
 
-slots.has_dataset = Slot(uri=DCT.source, name="has dataset", curie=DCT.curie('source'),
+slots.has_dataset = Slot(uri=BIOLINK.has_dataset, name="has dataset", curie=BIOLINK.curie('has_dataset'),
                    model_uri=BIOLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
 
 slots.source_web_page = Slot(uri=BIOLINK.source_web_page, name="source web page", curie=BIOLINK.curie('source_web_page'),
@@ -10843,7 +10847,7 @@ slots.dataset_download_url = Slot(uri=DCAT.downloadURL, name="dataset download u
 slots.distribution_download_url = Slot(uri=BIOLINK.distribution_download_url, name="distribution download url", curie=BIOLINK.curie('distribution_download_url'),
                    model_uri=BIOLINK.distribution_download_url, domain=DatasetDistribution, range=Optional[str])
 
-slots.ingest_date = Slot(uri=PAV.version, name="ingest date", curie=PAV.curie('version'),
+slots.ingest_date = Slot(uri=BIOLINK.ingest_date, name="ingest date", curie=BIOLINK.curie('ingest_date'),
                    model_uri=BIOLINK.ingest_date, domain=DatasetVersion, range=Optional[str])
 
 slots.has_distribution = Slot(uri=DCT.distribution, name="has distribution", curie=DCT.curie('distribution'),
@@ -11842,8 +11846,8 @@ slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
 
-slots.log_odds_ration_95_ci = Slot(uri=BIOLINK.log_odds_ration_95_ci, name="log odds ration 95 ci", curie=BIOLINK.curie('log_odds_ration_95_ci'),
-                   model_uri=BIOLINK.log_odds_ration_95_ci, domain=Association, range=Optional[float])
+slots.log_odds_ratio_95_ci = Slot(uri=BIOLINK.log_odds_ratio_95_ci, name="log odds ratio 95 ci", curie=BIOLINK.curie('log_odds_ratio_95_ci'),
+                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[float])
 
 slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
                    model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])

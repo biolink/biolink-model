@@ -529,7 +529,7 @@ information_resources:
   status: released
   name: BioThings Explorer
   xref:
-  - http://biothings.io/explorer/
+  - https://explorer.biothings.io/
   synonym:
   - BTE
   knowledge level: curated
@@ -2076,7 +2076,7 @@ information_resources:
   status: released
   name: Molecular Data Provider for NCATS Biomedical Translator Reasoners
   xref:
-  - https://github.com/broadinstitute/molecular-data-provider
+    - https://github.com/NCATSTranslator/Translator-All/wiki/Molecular-Data-Provider
   knowledge level: curated
   agent type: not_provided
   description: Molecular Data Provider for NCATS Biomedical Translator Reasoners
@@ -2948,6 +2948,8 @@ information_resources:
   name: Text Mining COOCCURRENCE API
   knowledge level: text_mined
   agent type: not_provided
+  xref:
+    - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_cooccur_kgs.md
   description: >-
     API serving a knowledge graph comprised of pairs of concepts that
     have been found to co-occur in the scientific literature. Here, cooccurrence of
@@ -2959,8 +2961,8 @@ information_resources:
   knowledge level: text_mined
   agent type: not_provided
   xref:
-  - https://github.com/UCDenver-ccp/text-mining-provider-trapi
-  description: >-
+    - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_assoc_kgs.md
+  description: >- 
     API serving explicitly targeted Biolink Associations extracted from
     sentences in the scientific literature. Here, targeted refers to the fact that
     this service is based on text-mining models targeted to extract specific associations

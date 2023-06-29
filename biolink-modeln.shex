@@ -65,6 +65,12 @@ linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
 
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
 <AccessibleDnaRegion> CLOSED {
     (  $<AccessibleDnaRegion_tes> (  &<RegulatoryRegion_tes> ;
           rdf:type [ <RegulatoryRegion> ] ? ;
@@ -2295,6 +2301,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Entity> ] ? ;
              <provided_by> @linkml:String * ;
              <xref> @linkml:Uriorcurie * ;
+             <full_name> @<LabelType> ? ;
              <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]
