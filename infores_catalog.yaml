@@ -820,7 +820,7 @@ information_resources:
   agent type: not_provided
   description: TRAPI interface to database of Causal Activity Models
 - id: infores:campfhir
-  status: released
+  status: deprecated
   name: Clinical Asset Mapping Program for FHIR
   xref:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/camp-fhir
@@ -869,7 +869,7 @@ information_resources:
   agent type: not_provided
   description: a manually curated database of bioactive molecules with drug-like properties.
 - id: infores:chemotext
-  status: released
+  status: deprecated
   name: Chemotext
   xref:
   - http://chemotext.mml.unc.edu/
@@ -1140,7 +1140,7 @@ information_resources:
   - https://portals.broadinstitute.org/ctrp.v2.1/
   synonym:
   - CTRP
-  knowledge level: curated
+  knowledge level: correlation
   agent type: not_provided
   description: >-
     links genetic, lineage, and other cellular features of cancer cell
@@ -1174,7 +1174,7 @@ information_resources:
   knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:delta-qt-db
-  status: released
+  status: deprecated
   name: delta QT Database
   xref:
   - http://deltaqt.org
@@ -1187,7 +1187,7 @@ information_resources:
   - https://depmap.org/portal/
   synonym:
   - DepMap
-  knowledge level: curated
+  knowledge level: correlation
   agent type: not_provided
   description: >-
     Cancer Dependency Map to systematically identify genetic and pharmacologic
@@ -1410,7 +1410,7 @@ information_resources:
   name: Evolutionary Rate Covariation (ERC) Analysis
   synonym:
   - ERC Analysis
-  knowledge level: curated
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:explanatory-agent
   status: released
@@ -1421,7 +1421,7 @@ information_resources:
   agent type: not_provided
   description: A Translator Reasoner API for the Explanatory Agent
 - id: infores:fhir-pit
-  status: released
+  status: deprecated
   name: FHIR Patient data Integration Tool
   xref:
   - https://researchsoftwareinstitute.github.io/data-translator/apps/fhir-pit
@@ -1592,7 +1592,7 @@ information_resources:
   knowledge level: knowledge_assertion
   agent type: not_provided
 - id: infores:gote
-  status: released
+  status: deprecated
   name: GOTE (Gpcrs to dOwnstream cellular pathways byTissue Expression)
   xref:
   - http://tatonettilab.org/resources/GOTE/source_code/
@@ -2587,14 +2587,14 @@ information_resources:
   - https://honiglab.c2b2.columbia.edu/PrePPI/
   synonym:
   - PrePPI
-  knowledge level: curated
+  knowledge level: predicted
   agent type: not_provided
 - id: infores:probe-miner
   status: released
   name: Probe Miner
   xref:
   - https://probeminer.icr.ac.uk
-  knowledge level: curated
+  knowledge level: correlation
   agent type: not_provided
 - id: infores:psy-umls
   status: released
@@ -2741,14 +2741,14 @@ information_resources:
   name: Semantic Analytics & Clean Data Intelligence Experts
   xref:
   - https://www.scibite.com/
-  knowledge level: curated
+  knowledge level: text_mined
   agent type: not_provided
 - id: infores:semmeddb
   status: released
   name: Semantic Medline Database
   xref:
   - https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMed.html
-  knowledge level: curated
+  knowledge level: text_mined
   agent type: not_provided
 - id: infores:sgd
   status: released
@@ -2956,7 +2956,7 @@ information_resources:
 - id: infores:text-mining-provider-targeted
   status: released
   name: Text Mining Targeted Association API
-  knowledge level: curated
+  knowledge level: text_mined
   agent type: not_provided
   xref:
   - https://github.com/UCDenver-ccp/text-mining-provider-trapi
@@ -3056,7 +3056,7 @@ information_resources:
   name: Unsecret Agent OpenAPI for NCATS Biomedical Translator Reasoners
   xref:
   - https://github.com/NCATSTranslator/Translator-All/wiki/UnSecret-Agent
-  knowledge level: curated
+  knowledge level: predicted
   agent type: not_provided
   description: OpenAPI for NCATS Biomedical Translator Reasoners
 - id: infores:us-census-acs-data
