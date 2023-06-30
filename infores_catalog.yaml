@@ -22,6 +22,7 @@ information_resources:
     to easily access and analyze data from the ClinicalTrials.gov registry to evaluate
     studies and characterize the current state of clinical trials.
 - id: infores:answer-coalesce
+  deprecated: true
   status: released
   name: Answer coalesce
   xref:
@@ -36,13 +37,14 @@ information_resources:
   status: released
   name: ARAGORN
   xref:
-  - https://github.com/ranking-agent/aragorn
+  - https://github.com/NCATSTranslator/Translator-All/wiki/ARAGORN
   knowledge level: predicted
   agent type: not_provided
   description: >-
     ARAGORN: Performs a query operation which compiles data from numerous
     ARAGORN ranking agent services.
 - id: infores:aragorn-ranker
+  deprecated: true
   status: released
   name: ARAGORN Ranker
   xref:
@@ -475,7 +477,7 @@ information_resources:
   status: released
   name: Biolink Model Lookup
   xref:
-  - https://github.com/TranslatorSRI/bl_lookup
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Biolink-Lookup-Service
   knowledge level: curated
   agent type: not_provided
   description: Biolink Model Lookup service.
@@ -505,7 +507,7 @@ information_resources:
   status: released
   name: BioThings DGIdb API
   xref:
-  - https://github.com/biothings
+  - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DGIdb-API
   knowledge level: curated
   agent type: not_provided
   description: Documentation of the BioThings DGIdb query web services.
@@ -513,7 +515,7 @@ information_resources:
   status: released
   name: BioThings DISEASES API
   xref:
-  - https://github.com/biothings
+  - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DISEASES-API
   knowledge level: curated
   agent type: not_provided
   description: Documentation of the DISEASES query web services.
@@ -730,7 +732,7 @@ information_resources:
   status: released
   name: BioThings Rhea API
   xref:
-  - https://github.com/biothings
+  - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-RHEA-API
   knowledge level: curated
   agent type: not_provided
   description: Documentation of the BioThings Rhea query web services.
@@ -1073,7 +1075,7 @@ information_resources:
   status: released
   name: Connections Hypothesis Provider API
   xref:
-  - https://github.com/di2ag/chp
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Connections-Hypothesis-Provider
   knowledge level: prediction
   agent type: not_provided
   description: A Translator Reasoner API for the Connections Hypothesis Provider
@@ -1416,7 +1418,7 @@ information_resources:
   status: released
   name: Explanatory Agent API
   xref:
-  - https://github.com/NCATSTranslator/Explanatory-Agent
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Explanatory-Agent
   knowledge level: predicted
   agent type: not_provided
   description: A Translator Reasoner API for the Explanatory Agent
@@ -1538,7 +1540,7 @@ information_resources:
   status: released
   name: Genetics KP
   xref:
-  - https://github.com/broadinstitute/genetics-kp-dev
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Genetics-Knowledge-Provider
   knowledge level: curated
   agent type: not_provided
   description: >-
@@ -1781,11 +1783,12 @@ information_resources:
   status: released
   name: imProving Agent
   xref:
-  - https://github.com/suihuanglab/improving-agent
+  - https://github.com/NCATSTranslator/Translator-All/wiki/imProving-Agent
   knowledge level: predicted
   agent type: not_provided
   description: imProving Agent OpenAPI TRAPI Specification
 - id: infores:indigo-reasoner
+  deprecated: true
   status: released
   name: OpenAPI for indigo NCATS Biomedical Translator Reasoner
   xref:
@@ -2391,7 +2394,7 @@ information_resources:
   status: released
   name: OpenPredict API
   xref:
-  - https://github.com/MaastrichtU-IDS/translator-openpredict
+  - https://github.com/NCATSTranslator/Translator-All/wiki/OpenPredict-KP
   knowledge level: predicted
   agent type: not_provided
   description: >-
@@ -2814,6 +2817,7 @@ information_resources:
   agent type: not_provided
   description: SPOKE KP - an NIH NCATS Knowledge Provider to expose UCSFs SPOKE
 - id: infores:sri-edge-normalizaion-service
+  deprecated: true
   status: released
   name: Edge Normalization Service
   xref:
@@ -2825,7 +2829,7 @@ information_resources:
   status: released
   name: Name Resolver
   xref:
-  - https://github.com/TranslatorSRI/NameResolution
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Name-Resolution-Service
   knowledge level: curated
   agent type: not_provided
   description: Service to resolve Translator concept names.
@@ -2833,7 +2837,7 @@ information_resources:
   status: released
   name: Node Normalization
   xref:
-  - https://github.com/TranslatorSRI/NodeNormalization
+  - https://github.com/NCATSTranslator/Translator-All/wiki/Node-Normalizer
   knowledge level: curated
   agent type: not_provided
   description: >-
@@ -2889,6 +2893,7 @@ information_resources:
     proteins. The interactions include direct (physical) and indirect (functional)
     associations
 - id: infores:strider
+  deprecated: true
   status: released
   name: Strider
   xref:
@@ -2948,7 +2953,7 @@ information_resources:
   knowledge level: text_mined
   agent type: not_provided
   xref:
-    - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_cooccur_kgs.md
+    - https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider
   description: >-
     API serving a knowledge graph comprised of pairs of concepts that
     have been found to co-occur in the scientific literature. Here, cooccurrence of
@@ -2960,7 +2965,7 @@ information_resources:
   knowledge level: text_mined
   agent type: not_provided
   xref:
-    - https://github.com/NCATSTranslator/Text-Mining-Provider-Roadmap/blob/master/README_assoc_kgs.md
+    - https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider
   description: >- 
     API serving explicitly targeted Biolink Associations extracted from
     sentences in the scientific literature. Here, targeted refers to the fact that
