@@ -856,6 +856,7 @@ information_resources:
   agent type: not_provided
   description: Initiative for Chemical Genetics contract from the National Cancer Institute
 - id: infores:chembio
+  deprecated: true
   status: released
   name: ChemBio
   knowledge level: curated
@@ -1089,6 +1090,7 @@ information_resources:
   knowledge level: curated
   agent type: not_provided
 - id: infores:cord19-scibite
+  deprecated: true
   status: released
   name: COVID-19 Open Research Dataset Scibite
   synonym:
@@ -2214,6 +2216,8 @@ information_resources:
   - NCATS Translator ARS
   knowledge level: curated
   agent type: not_provided
+  xref:
+    - https://github:com/NCATSTranslator/Translator-All/wiki/Autonomous-Relay-System-(ARS)
 - id: infores:ncbi-gene
   status: released
   name: National Center for Biotechnology Information Gene
@@ -2242,11 +2246,13 @@ information_resources:
   knowledge level: curated
   agent type: not_provided
 - id: infores:ncdeq-cafo-exposures-data
+  deprecated: true
   status: released
   name: North Carolina Department of Environmental Quality Concentrated Animal Feeding Operations Exposures Data
   knowledge level: curated
   agent type: not_provided
 - id: infores:ncdeq-landfill-exposures-data
+  deprecated: true
   status: released
   name: North Carolina Department of Environmental Quality Landfill Exposures Data
   knowledge level: curated
@@ -2311,6 +2317,7 @@ information_resources:
   knowledge level: curated
   agent type: not_provided
 - id: infores:niehs-epr-study-data
+  deprecated: true
   status: released
   name: NIEHS Environmental Polymorphisms Registry
   synonym:
@@ -2687,7 +2694,7 @@ information_resources:
   status: released
   name: ROBOKOP
   xref:
-  - http://robokop.renci.org
+  - https://github.com/NCATSTranslator/Translator-All/wiki/ARAGORN#ROBOKOP
   synonym:
   - Robokop
   knowledge level: curated
@@ -2767,11 +2774,12 @@ information_resources:
   knowledge level: curated
   agent type: not_provided
 - id: infores:smart-api
-  status: deprecated
   name: SmartAPI API
   knowledge level: curated
   agent type: not_provided
   description: This is the API provided from [SmartAPI](https://smart-api.info) application.
+  xref:
+    - https://smart-api.info/
 - id: infores:smartapi
   status: released
   name: SmartAPI API
@@ -3087,9 +3095,9 @@ information_resources:
   knowledge level: curated
   agent type: not_provided
 - id: infores:us-epa-airborne-pollutant-exposures-data
+  deprecated: true
   status: released
-  name: United States Environmental Protection Agency Airborne Pollutant Exposures
-    Data
+  name: United States Environmental Protection Agency Airborne Pollutant Exposures Data
   knowledge level: curated
   agent type: not_provided
 - id: infores:upheno
