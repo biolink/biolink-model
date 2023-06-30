@@ -38,7 +38,6 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 |  |  |  |
 | --- | --- | --- |
 | **In Subsets:** | | translator_minimal |
-| **Exact Mappings:** | | SEMMEDDB:COEXISTS_WITH |
 | **Narrow Mappings:** | | BSPO:0000096 |
 |  | | BSPO:0000097 |
 |  | | BSPO:0000098 |
@@ -205,4 +204,5 @@ URI: [biolink:coexists_with](https://w3id.org/biolink/vocab/coexists_with)
 |  | | UBERON:protects |
 |  | | UBERON:proximally_connected_to |
 |  | | UBERON:sexually_homologous_to |
+| **Broad Mappings:** | | SEMMEDDB:COEXISTS_WITH |
 

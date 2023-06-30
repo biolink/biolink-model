@@ -43,8 +43,7 @@ URI: [biolink:affects](https://w3id.org/biolink/vocab/affects)
 | **In Subsets:** | | translator_minimal |
 | **Exact Mappings:** | | SEMMEDDB:AFFECTS |
 |  | | DGIdb:affects |
-| **Narrow Mappings:** | | SEMMEDDB:ADMINISTERED_TO |
-|  | | CTD:prediction_hypothesis |
+| **Narrow Mappings:** | | CTD:prediction_hypothesis |
 |  | | GOREL:0001006 |
 |  | | CTD:inferred |
 |  | | UPHENO:0000001 |
