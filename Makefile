@@ -51,7 +51,7 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
-	export PIPENV_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
+	poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
 
 infores:
 	poetry run gen-python information-resource.yaml > information_resource.py
