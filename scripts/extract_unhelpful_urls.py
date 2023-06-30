@@ -1,8 +1,4 @@
 import os
-import requests
-import csv
-import time
-import urllib3
 from urllib3.util.ssl_ import create_urllib3_context
 import yaml
 
@@ -14,18 +10,19 @@ INFORES_YAML = os.path.join('../infores_catalog.yaml')
 
 
 def extract_github_sources():
-    with open(INFORES_YAML, 'r') as yaml_file, open('github_sources.txt', 'w') as github_file, open('no_url_sources.txt', 'w') as no_url_file:
+    with open(INFORES_YAML, 'r') as yaml_file, open('github_sources.txt', 'w') as github_file, open('no_url_sources.txt', 'w') as no_url_file, open('wiki_links.txt', 'w') as wiki_links:
         data = yaml.safe_load(yaml_file)
         for infores in data.get('information_resources'):
             if "xref" in infores.keys():
-                for xref in infores.get("xref"):
-                    if xref.startswith("https://github.com"):
-                        github_file.write(f"{infores.get('name')} {xref}\n")
+                if not infores.get("deprecated"):
+                    for xref in infores.get("xref"):
+                        if xref.startswith("https://github.com") and not xref.startswith("https://github.com/NCATSTranslator/Translator-All/wiki"):
+                            github_file.write(f"{infores.get('id')},{infores.get('name')},{xref}\n")
+                        elif xref.startswith("https://github.com/NCATSTranslator/Translator-All/wiki"):
+                            wiki_links.write(f"{infores.get('id')},{infores.get('name')},{xref}\n")
             else:
-                no_url_file.write(f"NO URL {infores.get('name')}\n")
-
-# Example usage
-extract_github_sources()
+                if not infores.get("deprecated"):
+                    no_url_file.write(f"{infores.get('id')}, {infores.get('name')}\n")
 
 
 if __name__ == "__main__":

@@ -1647,10 +1647,11 @@ slots:
     exact_mappings:
       - skos:relatedMatch
       - UMLS:related_to
+      - SEMMEDDB:ASSOCIATED_WITH
+      - SEMMEDDB:ADMINISTERED_TO
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
       - SEMMEDDB:compared_with
       - SEMMEDDB:higher_than
       - SEMMEDDB:lower_than
@@ -2432,7 +2433,6 @@ slots:
       - SEMMEDDB:AFFECTS
       - DGIdb:affects
     narrow_mappings:
-      - SEMMEDDB:ADMINISTERED_TO
       - CTD:prediction_hypothesis
       - GOREL:0001006
       - CTD:inferred
@@ -2857,7 +2857,7 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
-    exact_mappings:
+    broad_mappings:
       - SEMMEDDB:COEXISTS_WITH
     narrow_mappings:
       - BSPO:0000096
