@@ -1215,6 +1215,16 @@ information_resources:
     name: Drug-Induced Liver Injury Network (DILIN) Participant Data
     knowledge level: correlated
     agent type: not_provided
+  - id: infores:faers
+    status: released
+    name: FDA Adverse Event Reporting System
+    xref:
+      - https://open.fda.gov/data/faers/
+    knowledge level: observation
+    agent type: not_provided
+    description: >-
+      The FDA Adverse Event Reporting System (FAERS) is a database that contains information 
+      on adverse event and medication error reports submitted to FDA.
   - id: infores:fbbt
     status: released
     name: Drosophila gross anatomy
@@ -2519,6 +2529,16 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: Text mined pharmacogenomic polymorphisms to assist curation of PharmGKB.
+  - id: infores:pdsp
+    status: released
+    name: Psychoactive Drug Screening Program
+    xref:
+      - https://pdsp.unc.edu/pdspweb/
+    knowledge level: not_provided
+    agent type: not_provided
+    description: >-
+      This service provides screening of novel psychoactive compounds for pharmacological and 
+      functional activity at cloned human or rodent CNS receptors, channels, and transporters.
   - id: infores:pdq-umls
     status: released
     name: Physician Data Query (PDQ) (from UMLS)
@@ -2809,6 +2829,16 @@ information_resources:
       - SNOMED
     knowledge level: curated
     agent type: not_provided
+  - id: infores:snpeff
+    status: released
+    name: SnpEff
+    xref:
+      - https://pcingola.github.io/SnpEff/
+    knowledge level: prediction
+    agent type: computational_model
+    description: >-
+      Genetic variant annotation and functional effect prediction toolbox. 
+      It annotates and predicts the effects of genetic variants on genes and proteins (such as amino acid changes).
   - id: infores:so
     status: released
     name: Sequence Ontology
