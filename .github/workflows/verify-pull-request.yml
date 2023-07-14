@@ -43,6 +43,7 @@ jobs:
           poetry run codespell
           poetry run yamllint -c .yamllint-config biolink-model.yaml
           poetry run yamllint -c .yamllint-config infores_catalog.yaml
+          poetry run yamllint -c .yamllint-config semmed-exclude-list.yaml
 
 
 

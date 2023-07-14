@@ -1579,7 +1579,7 @@ information_resources:
     status: released
     name: Gene Ontology Causal Activity Model Annotations
     xref:
-      - http://www.geneontology.org/docs/gocam-overview/
+      - http://geneontology.org/docs/gocam-overview/
     synonym:
       - GO-CAM
     knowledge level: curated
@@ -1591,7 +1591,8 @@ information_resources:
       - GO-Plus
     knowledge level: curated
     agent type: not_provided
-    xref: http://obofoundry.org/ontology/go.html
+    xref:
+     - http://obofoundry.org/ontology/go.html
   - id: infores:goa
     status: released
     name: Gene Ontology Annotations
@@ -3350,23 +3351,27 @@ information_resources:
   - id: infores:infores:sri-answer-appraiser
     status: released
     name: SRI Answer Appraiser
-    xref: https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Answer-Appraiser
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Answer-Appraiser
     knowledge level: curated
   - id: infores:sri-clinical-evidence-score
     status: released
     name: SRI Clinical Evidence Score
-    xref: https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Clinical-Evidence-Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Clinical-Evidence-Score
     knowledge level: curated
     agent type: not_provided
   - id: infores:sri-confidence-score
     status: released
     name: SRI Confidence Score
-    xref: https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Confidence-Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Confidence-Score
     knowledge level: curated
     agent type: not_provided
   - id: infores:sri-novelty-score
     status: released
     name: SRI Novelty Score
-    xref: https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Novelty-Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Novelty-Score
     knowledge level: curated
     agent type: not_provided
