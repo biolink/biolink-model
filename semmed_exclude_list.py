@@ -1,5 +1,5 @@
 # Auto generated from semmed-exclude-list-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-07-13T17:59:24
+# Generation date: 2023-07-13T18:06:33
 # Schema: semmed-exclude-list-model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -84,7 +84,7 @@ class ExcludedSemmedbRecord(YAMLRoot):
     semmed_predicate: Optional[str] = None
     semmed_object_code: Optional[str] = None
     semmed_object_t_code: Optional[str] = None
-    notes: Optional[str] = None
+    exclusion_type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.semmed_subject_code is not None and not isinstance(self.semmed_subject_code, str):
@@ -102,8 +102,8 @@ class ExcludedSemmedbRecord(YAMLRoot):
         if self.semmed_object_t_code is not None and not isinstance(self.semmed_object_t_code, str):
             self.semmed_object_t_code = str(self.semmed_object_t_code)
 
-        if self.notes is not None and not isinstance(self.notes, str):
-            self.notes = str(self.notes)
+        if self.exclusion_type is not None and not isinstance(self.exclusion_type, str):
+            self.exclusion_type = str(self.exclusion_type)
 
         super().__post_init__(**kwargs)
 
@@ -130,8 +130,8 @@ slots.semmed_object_code = Slot(uri=SEL.semmed_object_code, name="semmed_object_
 slots.semmed_object_t_code = Slot(uri=SEL.semmed_object_t_code, name="semmed_object_t_code", curie=SEL.curie('semmed_object_t_code'),
                    model_uri=SEL.semmed_object_t_code, domain=None, range=Optional[str])
 
-slots.notes = Slot(uri=SEL.notes, name="notes", curie=SEL.curie('notes'),
-                   model_uri=SEL.notes, domain=None, range=Optional[str])
+slots.exclusion_type = Slot(uri=SEL.exclusion_type, name="exclusion_type", curie=SEL.curie('exclusion_type'),
+                   model_uri=SEL.exclusion_type, domain=None, range=Optional[str])
 
 slots.excluded_semmedb_records = Slot(uri=SEL.excluded_semmedb_records, name="excluded_semmedb_records", curie=SEL.curie('excluded_semmedb_records'),
                    model_uri=SEL.excluded_semmedb_records, domain=None, range=Optional[Union[Union[dict, ExcludedSemmedbRecord], List[Union[dict, ExcludedSemmedbRecord]]]])

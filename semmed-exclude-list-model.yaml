@@ -61,7 +61,7 @@ classes:
       - semmed_predicate
       - semmed_object_code
       - semmed_object_t_code
-      - notes
+      - exclusion_type
 
 slots:
 
@@ -90,7 +90,7 @@ slots:
       The object t code of the semmeddb record
     range: string
 
-  notes:
+  exclusion_type:
     description: >-
       The notes describing the kind of exclusion that generated this record.
     range: string
