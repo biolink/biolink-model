@@ -168,7 +168,7 @@ information_resources:
     status: released
     name: Automat CAM-KP
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Automat
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
     knowledge level: curated
     agent type: not_provided
     description: TRAPI interface to database of Causal Activity Models
@@ -453,7 +453,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:biocatalogue
-    status: released
+    status: deprecated
     name: BioCatalogue
   - id: infores:biogrid
     status: released
@@ -522,7 +522,7 @@ information_resources:
     status: released
     name: BioThings EBIgene2phenotype API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-EBI-Gene2Phenotype
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the EBIgene2phenotype query web services.
@@ -539,7 +539,7 @@ information_resources:
     status: released
     name: Service Provider TRAPI endpoints
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Service-Provider-TRAPI
     synonym:
       - service provider
     knowledge level: curated
@@ -548,7 +548,7 @@ information_resources:
     status: released
     name: BioThings Gene Ontology Biological Process API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-BP
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Biological Process query web services.
@@ -556,7 +556,7 @@ information_resources:
     status: released
     name: BioThings Gene Ontology Cellular Component API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-CC
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Cellular Component query web services.
@@ -564,7 +564,7 @@ information_resources:
     status: released
     name: BioThings Gene Ontology Molecular Activity API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GO-MF
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the Gene Ontology Molecular Activity query web services.
@@ -572,7 +572,7 @@ information_resources:
     status: released
     name: BioThings Human Phenotype Ontology API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-HPO
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the HPO query web services.
@@ -580,14 +580,14 @@ information_resources:
     status: released
     name: BioThings iDISK API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-IDISK
     knowledge level: curated
     agent type: not_provided
   - id: infores:biothings-mgi-g2p
     status: released
     name: BioThings MGIgene2phenotype API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-MGI-G2P
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the MGIgene2phenotype query web services.
@@ -611,7 +611,7 @@ information_resources:
       Documentation of the Multiomics Electronic-Health-Record (EHR) Risk
       KP query web services.
   - id: infores:providence-st-joseph-ehr
-    status: released
+    status: deprecated
     name: Providence St. Joseph EHR Data
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
@@ -634,14 +634,14 @@ information_resources:
     status: released
     name: Multiomics ClinicalTrials KP API
     xref:
-      - https://github.com/GitHubbit/Multiomics_ClinicalTrials_KP#readme
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Clinical-Trials-KP
     knowledge level: curated
     agent type: not_provided
   - id: infores:biothings-pfcor
     status: modified
     name: BioThings pfocr API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFCOR
     knowledge level: predicted
     agent type: not_provided
     description: Documentation of the pfocr query web services.
@@ -649,7 +649,7 @@ information_resources:
     status: released
     name: BioThings SEMMEDDB API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB
     knowledge level: text_mined
     agent type: not_provided
     description: Documentation of the BioThings SEMMEDDB query web services.
@@ -657,7 +657,7 @@ information_resources:
     status: deprecated
     name: SEMMED Anatomy API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Anatomy
     knowledge level: text_mined
     agent type: not_provided
     description: >-
@@ -667,7 +667,7 @@ information_resources:
     status: deprecated
     name: SEMMED Biological Process API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Biological-Process
     knowledge level: text_mined
     agent type: not_provided
     description: >-
@@ -677,7 +677,7 @@ information_resources:
     status: deprecated
     name: SEMMED Chemical API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Chemical
     knowledge level: text_mined
     agent type: not_provided
     description: >-
@@ -687,7 +687,7 @@ information_resources:
     status: deprecated
     name: SEMMED Disease API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Disease
     knowledge level: text_mined
     agent type: not_provided
     description: >-
@@ -697,7 +697,7 @@ information_resources:
     status: deprecated
     name: SEMMED Gene API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SEMMED-DB-Gene
     knowledge level: text_mined
     agent type: not_provided
     description: Documentation of the SEMMED disease query web services.  Learn more
@@ -723,7 +723,7 @@ information_resources:
     status: released
     name: BioThings UBERON Ontology API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-UBERON-Ontology
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the UBERON query web services.
@@ -747,17 +747,17 @@ information_resources:
     status: released
     name: BioThings BioPlanet Pathway-Disease API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-bioplanet-pathway-disease
     knowledge level: curated
     agent type: not_provided
     description: >-
       Documentation of the BioThings [BioPlanet](https://tripod.nih.gov/bioplanet/#)
       pathway-disease association query web services.
-  - id: infores:biothings-bioplanet-pathway- gene
+  - id: infores:biothings-bioplanet-pathway-gene
     status: released
     name: BioThings BioPlanet Pathway-Gene API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-bioplanet-pathway-gene
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -775,7 +775,7 @@ information_resources:
     status: released
     name: BioThings BindingDB API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-Binding-DB
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -811,7 +811,7 @@ information_resources:
     agent type: not_provided
     description: A structured controlled vocabulary of Caenorhabditis elegans phenotypes
   - id: infores:cam-kp
-    status: released
+    status: deprecated
     name: CAM-KP API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
@@ -849,8 +849,6 @@ information_resources:
   - id: infores:chembank
     status: released
     name: ChemBank
-    xref:
-      - https://data.broadinstitute.org/chembank/
     knowledge level: curated
     agent type: not_provided
     description: Initiative for Chemical Genetics contract from the National Cancer Institute
@@ -1062,7 +1060,7 @@ information_resources:
       (OMOP vocabularies, search, concept relationships, concept hierarchy, concept
       sets)    [NCATS Biomedical Data Translator](https://sites.google.com/ncats.nih.gov/translator-io/home)
   - id: infores:cohd-covid19-api
-    status: released
+    status: deprecated
     name: Columbia Open Health Data for COVID-19 Research API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/COHD-KP
@@ -1079,7 +1077,7 @@ information_resources:
     agent type: not_provided
     description: A Translator Reasoner API for the Connections Hypothesis Provider
   - id: infores:cord19
-    status: released
+    status: deprecated
     name: COVID-19 Open Research Dataset
     xref:
       - https://github.com/allenai/cord19
@@ -1118,7 +1116,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:cpt-codes-umls
-    status: released
+    status: deprecated
     name: Current Procedural Terminology (CPT) Codes (from UMLS)
     knowledge level: curated
     agent type: not_provided
@@ -1255,7 +1253,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:distild
-    status: released
+    status: deprecated
     name: Diseases & Traits in LD database
     synonym:
       - DistiLD database
@@ -1417,7 +1415,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:erc-analysis
-    status: released
+    status: deprecated
     name: Evolutionary Rate Covariation (ERC) Analysis
     synonym:
       - ERC Analysis
@@ -1581,7 +1579,7 @@ information_resources:
     status: released
     name: Gene Ontology Causal Activity Model Annotations
     xref:
-      - http://www.geneontology.org/docs/gocam-overview/
+      - http://geneontology.org/docs/gocam-overview/
     synonym:
       - GO-CAM
     knowledge level: curated
@@ -1593,6 +1591,8 @@ information_resources:
       - GO-Plus
     knowledge level: curated
     agent type: not_provided
+    xref:
+      - http://obofoundry.org/ontology/go.html
   - id: infores:goa
     status: released
     name: Gene Ontology Annotations
@@ -1922,7 +1922,7 @@ information_resources:
     synonym:
       - LINCS
   - id: infores:linkedspl
-    status: released
+    status: deprecated
     name: Linked Structured Product Labels
     knowledge level: curated
     agent type: not_provided
@@ -2289,7 +2289,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:nddf-umls
-    status: released
+    status: deprecated
     name: National Drug Data File (NDDF) (from UMLS)
   - id: infores:ndex
     status: released
@@ -2368,7 +2368,7 @@ information_resources:
     status: released
     name: OmniCorp
     xref:
-      - https://github.com/NCATS-Gamma/omnicorp
+      - https://github.com/NCATSTranslator/Translator-All/wiki/OmniCorp
     synonym:
       - OmniCorp
     knowledge level: curated
@@ -2880,11 +2880,13 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: TRAPI interface to integrated ontology knowledgebase
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Ontology-Service
   - id: infores:sri-reference-kg
     status: released
     name: SRI Reference Knowledge Graph API
     xref:
-      - https://monarchinitiative.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Reference-Knowledge-Graph
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -3176,7 +3178,7 @@ information_resources:
     status: released
     name: Translator Workflow Runner
     xref:
-      - https://github.com/NCATSTranslator/workflow-runner
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Workflow-Runner
     knowledge level: curated
     agent type: not_provided
     description: Translator general purpose workflow runner
@@ -3335,7 +3337,7 @@ information_resources:
     status: released
     name: BioThings RARe-SOURCE API
     xref:
-      - https://github.com/biothings
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-RARe-SOURCE-API
     knowledge level: curated
     agent type: not_provided
     description: Documentation of the BioThings API for [NCATS RARe-SOURCE](https://raresource.nih.gov/) data.
@@ -3347,3 +3349,30 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: Integrated Bioinformatics Resource for Rare Diseases
+  - id: infores:infores:sri-answer-appraiser
+    status: released
+    name: SRI Answer Appraiser
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Answer-Appraiser
+    knowledge level: curated
+  - id: infores:sri-clinical-evidence-score
+    status: released
+    name: SRI Clinical Evidence Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Clinical-Evidence-Score
+    knowledge level: curated
+    agent type: not_provided
+  - id: infores:sri-confidence-score
+    status: released
+    name: SRI Confidence Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Confidence-Score
+    knowledge level: curated
+    agent type: not_provided
+  - id: infores:sri-novelty-score
+    status: released
+    name: SRI Novelty Score
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Novelty-Score
+    knowledge level: curated
+    agent type: not_provided
