@@ -1,5 +1,5 @@
 # Auto generated from semmed-exclude-list-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-07-13T17:12:25
+# Generation date: 2023-07-13T17:59:24
 # Schema: semmed-exclude-list-model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -79,28 +79,28 @@ class ExcludedSemmedbRecord(YAMLRoot):
     class_name: ClassVar[str] = "ExcludedSemmedbRecord"
     class_model_uri: ClassVar[URIRef] = SEL.ExcludedSemmedbRecord
 
-    semmeddb_subject_code: Optional[str] = None
-    semmeddb_subject_t_code: Optional[str] = None
-    semmeddb_predicate: Optional[str] = None
-    semmeddb_object_code: Optional[str] = None
-    semmeddb_object_t_code: Optional[str] = None
+    semmed_subject_code: Optional[str] = None
+    semmed_subject_t_code: Optional[str] = None
+    semmed_predicate: Optional[str] = None
+    semmed_object_code: Optional[str] = None
+    semmed_object_t_code: Optional[str] = None
     notes: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.semmeddb_subject_code is not None and not isinstance(self.semmeddb_subject_code, str):
-            self.semmeddb_subject_code = str(self.semmeddb_subject_code)
+        if self.semmed_subject_code is not None and not isinstance(self.semmed_subject_code, str):
+            self.semmed_subject_code = str(self.semmed_subject_code)
 
-        if self.semmeddb_subject_t_code is not None and not isinstance(self.semmeddb_subject_t_code, str):
-            self.semmeddb_subject_t_code = str(self.semmeddb_subject_t_code)
+        if self.semmed_subject_t_code is not None and not isinstance(self.semmed_subject_t_code, str):
+            self.semmed_subject_t_code = str(self.semmed_subject_t_code)
 
-        if self.semmeddb_predicate is not None and not isinstance(self.semmeddb_predicate, str):
-            self.semmeddb_predicate = str(self.semmeddb_predicate)
+        if self.semmed_predicate is not None and not isinstance(self.semmed_predicate, str):
+            self.semmed_predicate = str(self.semmed_predicate)
 
-        if self.semmeddb_object_code is not None and not isinstance(self.semmeddb_object_code, str):
-            self.semmeddb_object_code = str(self.semmeddb_object_code)
+        if self.semmed_object_code is not None and not isinstance(self.semmed_object_code, str):
+            self.semmed_object_code = str(self.semmed_object_code)
 
-        if self.semmeddb_object_t_code is not None and not isinstance(self.semmeddb_object_t_code, str):
-            self.semmeddb_object_t_code = str(self.semmeddb_object_t_code)
+        if self.semmed_object_t_code is not None and not isinstance(self.semmed_object_t_code, str):
+            self.semmed_object_t_code = str(self.semmed_object_t_code)
 
         if self.notes is not None and not isinstance(self.notes, str):
             self.notes = str(self.notes)
@@ -115,20 +115,20 @@ class ExcludedSemmedbRecord(YAMLRoot):
 class slots:
     pass
 
-slots.semmeddb_subject_code = Slot(uri=SEL.semmeddb_subject_code, name="semmeddb_subject_code", curie=SEL.curie('semmeddb_subject_code'),
-                   model_uri=SEL.semmeddb_subject_code, domain=None, range=Optional[str])
+slots.semmed_subject_code = Slot(uri=SEL.semmed_subject_code, name="semmed_subject_code", curie=SEL.curie('semmed_subject_code'),
+                   model_uri=SEL.semmed_subject_code, domain=None, range=Optional[str])
 
-slots.semmeddb_subject_t_code = Slot(uri=SEL.semmeddb_subject_t_code, name="semmeddb_subject_t_code", curie=SEL.curie('semmeddb_subject_t_code'),
-                   model_uri=SEL.semmeddb_subject_t_code, domain=None, range=Optional[str])
+slots.semmed_subject_t_code = Slot(uri=SEL.semmed_subject_t_code, name="semmed_subject_t_code", curie=SEL.curie('semmed_subject_t_code'),
+                   model_uri=SEL.semmed_subject_t_code, domain=None, range=Optional[str])
 
-slots.semmeddb_predicate = Slot(uri=SEL.semmeddb_predicate, name="semmeddb_predicate", curie=SEL.curie('semmeddb_predicate'),
-                   model_uri=SEL.semmeddb_predicate, domain=None, range=Optional[str])
+slots.semmed_predicate = Slot(uri=SEL.semmed_predicate, name="semmed_predicate", curie=SEL.curie('semmed_predicate'),
+                   model_uri=SEL.semmed_predicate, domain=None, range=Optional[str])
 
-slots.semmeddb_object_code = Slot(uri=SEL.semmeddb_object_code, name="semmeddb_object_code", curie=SEL.curie('semmeddb_object_code'),
-                   model_uri=SEL.semmeddb_object_code, domain=None, range=Optional[str])
+slots.semmed_object_code = Slot(uri=SEL.semmed_object_code, name="semmed_object_code", curie=SEL.curie('semmed_object_code'),
+                   model_uri=SEL.semmed_object_code, domain=None, range=Optional[str])
 
-slots.semmeddb_object_t_code = Slot(uri=SEL.semmeddb_object_t_code, name="semmeddb_object_t_code", curie=SEL.curie('semmeddb_object_t_code'),
-                   model_uri=SEL.semmeddb_object_t_code, domain=None, range=Optional[str])
+slots.semmed_object_t_code = Slot(uri=SEL.semmed_object_t_code, name="semmed_object_t_code", curie=SEL.curie('semmed_object_t_code'),
+                   model_uri=SEL.semmed_object_t_code, domain=None, range=Optional[str])
 
 slots.notes = Slot(uri=SEL.notes, name="notes", curie=SEL.curie('notes'),
                    model_uri=SEL.notes, domain=None, range=Optional[str])
