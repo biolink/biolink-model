@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.3
+# version: 3.5.0
 type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduct, PhysicalEssence, OntologyClass
   {
     id: String!
@@ -10,6 +10,7 @@ type AccessibleDnaRegion implements GenomicEntity, ChemicalEntityOrGeneOrGenePro
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -26,6 +27,7 @@ type Activity implements ActivityAndBehavior
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -43,6 +45,7 @@ interface AdministrativeEntity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -54,6 +57,7 @@ type Agent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     affiliation: [Uriorcurie]
     address: String
@@ -70,6 +74,7 @@ type AnatomicalEntity implements PhysicalEssence
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -195,6 +200,7 @@ type Article
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -259,6 +265,7 @@ type Attribute implements OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -276,6 +283,7 @@ type Bacterium
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -292,6 +300,7 @@ type Behavior implements OntologyClass, ActivityAndBehavior
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -352,6 +361,7 @@ type BehavioralExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -371,6 +381,7 @@ type BehavioralFeature
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -390,6 +401,7 @@ type BiologicalEntity implements ThingWithTaxon
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -405,6 +417,7 @@ type BiologicalProcess implements Occurrent, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -423,6 +436,7 @@ type BiologicalProcessOrActivity implements Occurrent, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -439,6 +453,7 @@ type BiologicalSex
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -455,6 +470,7 @@ type BioticExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -470,6 +486,7 @@ type Book
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -494,6 +511,7 @@ type BookChapter
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -522,6 +540,7 @@ type Case implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -632,6 +651,7 @@ type Cell
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -647,6 +667,7 @@ type CellLine implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -742,6 +763,7 @@ type CellularComponent
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -757,6 +779,7 @@ type CellularOrganism implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -824,6 +847,7 @@ type ChemicalEntity implements PhysicalEssence, ChemicalOrDrugOrTreatment, Chemi
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -926,6 +950,7 @@ type ChemicalExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -989,6 +1014,7 @@ type ChemicalMixture
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1087,6 +1113,7 @@ type ChemicalRole
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1255,6 +1282,7 @@ type ChiSquaredAnalysisResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1270,6 +1298,7 @@ type ClinicalAttribute
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1286,6 +1315,7 @@ type ClinicalCourse
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1304,6 +1334,7 @@ type ClinicalEntity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -1316,6 +1347,7 @@ type ClinicalFinding
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1332,6 +1364,7 @@ type ClinicalIntervention
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -1343,6 +1376,7 @@ type ClinicalMeasurement
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasQuantitativeValue: [QuantityValue]
@@ -1359,6 +1393,7 @@ type ClinicalModifier
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1377,6 +1412,7 @@ type ClinicalTrial
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -1390,6 +1426,7 @@ type CodingSequence
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1411,6 +1448,7 @@ type Cohort implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1427,6 +1465,7 @@ type CommonDataElement
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1442,6 +1481,7 @@ type ComplexChemicalExposure
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1460,6 +1500,7 @@ type ComplexMolecularMixture
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1482,6 +1523,7 @@ type ConceptCountAnalysisResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1499,6 +1541,7 @@ type ConfidenceLevel
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1598,6 +1641,7 @@ type Dataset
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1615,6 +1659,7 @@ type DatasetDistribution
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1633,6 +1678,7 @@ type DatasetSummary
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1652,6 +1698,7 @@ type DatasetVersion
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -1672,6 +1719,7 @@ type Device
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -1685,6 +1733,7 @@ type DiagnosticAid
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -1698,6 +1747,7 @@ type Disease
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1713,6 +1763,7 @@ type DiseaseOrPhenotypicFeature
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -1726,6 +1777,7 @@ type DiseaseOrPhenotypicFeatureExposure implements ExposureEvent, PathologicalEn
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1911,6 +1963,7 @@ type Drug implements ChemicalOrDrugOrTreatment, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -1931,6 +1984,7 @@ type DrugExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -1947,6 +2001,7 @@ type DrugLabel
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -2012,6 +2067,7 @@ type DrugToGeneInteractionExposure implements GeneGroupingMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2204,6 +2260,7 @@ type EnvironmentalExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -2223,6 +2280,7 @@ type EnvironmentalFeature
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -2236,6 +2294,7 @@ type EnvironmentalFoodContaminant
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2254,6 +2313,7 @@ type EnvironmentalProcess implements Occurrent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -2276,6 +2336,7 @@ type Event
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -2289,6 +2350,7 @@ type EvidenceType
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -2306,6 +2368,7 @@ type Exon
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2452,6 +2515,7 @@ type Food
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2474,6 +2538,7 @@ type FoodAdditive
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -2540,6 +2605,7 @@ type Fungus
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2555,6 +2621,7 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -2628,6 +2695,7 @@ type GeneFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProduct
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3152,6 +3220,7 @@ type GeneticInheritance
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3167,6 +3236,7 @@ type Genome implements GenomicEntity, PhysicalEssence, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3181,6 +3251,7 @@ type GenomicBackgroundExposure implements ExposureEvent, GeneGroupingMixin, Phys
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3250,6 +3321,7 @@ type Genotype implements PhysicalEssence, GenomicEntity, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3500,6 +3572,7 @@ type GenotypicSex
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3516,6 +3589,7 @@ type GeographicExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -3535,6 +3609,7 @@ type GeographicLocation
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     latitude: Float
     longitude: Float
@@ -3550,6 +3625,7 @@ type GeographicLocationAtTime
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     latitude: Float
     longitude: Float
@@ -3565,6 +3641,7 @@ type GrossAnatomicalStructure
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3581,6 +3658,7 @@ type Haplotype implements GenomicEntity, PhysicalEssence, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3597,6 +3675,7 @@ type Hospitalization
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -3613,6 +3692,7 @@ type Human implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3628,6 +3708,7 @@ type IndividualOrganism implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3644,6 +3725,7 @@ interface InformationContentEntity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -3696,6 +3778,7 @@ type Invertebrate
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3709,6 +3792,7 @@ type JournalArticle
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -3738,6 +3822,7 @@ type LifeStage
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3754,6 +3839,7 @@ type LogOddsAnalysisResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -3771,6 +3857,7 @@ type MacromolecularComplex implements MacromolecularMachineMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3903,6 +3990,7 @@ type Mammal implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -3924,6 +4012,7 @@ type MaterialSample implements SubjectOfInvestigation
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -4014,6 +4103,7 @@ type MicroRNA
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -4043,6 +4133,7 @@ type MolecularActivity implements Occurrent, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4169,6 +4260,7 @@ type MolecularEntity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -4188,6 +4280,7 @@ type MolecularMixture
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -4214,6 +4307,7 @@ type NamedThing
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -4267,6 +4361,7 @@ type NoncodingRNAProduct
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -4290,6 +4385,7 @@ type NucleicAcidEntity implements GenomicEntity, ThingWithTaxon, PhysicalEssence
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -4312,6 +4408,7 @@ type NucleicAcidSequenceMotif
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4327,6 +4424,7 @@ type NucleosomeModification implements GeneProductIsoformMixin, GenomicEntity, E
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4344,6 +4442,7 @@ type ObservedExpectedFrequencyAnalysisResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -4363,6 +4462,7 @@ type Onset
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4384,6 +4484,7 @@ type OrganismAttribute
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4402,6 +4503,7 @@ type OrganismTaxon
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     hasTaxonomicRank: TaxonomicRank
   }
@@ -4601,6 +4703,7 @@ type OrganismalEntity implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4730,6 +4833,7 @@ type Patent
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -4758,6 +4862,7 @@ type PathologicalAnatomicalExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4780,6 +4885,7 @@ type PathologicalAnatomicalStructure implements PathologicalEntityMixin
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4800,6 +4906,7 @@ type PathologicalProcess implements PathologicalEntityMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4816,6 +4923,7 @@ type PathologicalProcessExposure implements ExposureEvent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4839,6 +4947,7 @@ type Pathway implements OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4857,6 +4966,7 @@ type Phenomenon implements Occurrent
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -4870,6 +4980,7 @@ type PhenotypicFeature
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4883,6 +4994,7 @@ type PhenotypicQuality
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4899,6 +5011,7 @@ type PhenotypicSex
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -4917,6 +5030,7 @@ type PhysicalEntity implements PhysicalEssence
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -4938,6 +5052,7 @@ type PhysiologicalProcess implements OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4956,6 +5071,7 @@ type PlanetaryEntity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -4968,6 +5084,7 @@ type Plant
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4984,6 +5101,7 @@ type Polypeptide implements ChemicalEntityOrGeneOrGeneProduct, ChemicalEntityOrP
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -4998,6 +5116,7 @@ type PopulationOfIndividualOrganisms implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5050,6 +5169,7 @@ type PosttranslationalModification implements GeneProductIsoformMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5088,6 +5208,7 @@ type PreprintPublication
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5114,6 +5235,7 @@ type Procedure implements ActivityAndBehavior
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -5127,6 +5249,7 @@ type ProcessedMaterial
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5149,6 +5272,7 @@ type Protein implements GeneProductMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5165,6 +5289,7 @@ type ProteinDomain implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5181,6 +5306,7 @@ type ProteinFamily implements GeneGroupingMixin, ChemicalEntityOrGeneOrGeneProdu
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5197,6 +5323,7 @@ type ProteinIsoform implements GeneProductIsoformMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5210,6 +5337,7 @@ type Publication
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5320,6 +5448,7 @@ type ReagentTargetedGene implements GenomicEntity, PhysicalEssence, OntologyClas
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5336,6 +5465,7 @@ type RegulatoryRegion implements GenomicEntity, ChemicalEntityOrGeneOrGeneProduc
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5361,6 +5491,7 @@ type RelativeFrequencyAnalysisResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5377,6 +5508,7 @@ type RetrievalSource
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5398,6 +5530,7 @@ type RNAProduct implements GeneProductMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5421,6 +5554,7 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5519,6 +5653,7 @@ type SequenceVariant implements GenomicEntity, PhysicalEssence, OntologyClass
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5569,6 +5704,7 @@ type Serial
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5597,6 +5733,7 @@ type SeverityValue
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5615,6 +5752,7 @@ type SiRNA
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5637,6 +5775,7 @@ type SmallMolecule
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5656,6 +5795,7 @@ type Snv
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5672,6 +5812,7 @@ type SocioeconomicAttribute
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5687,6 +5828,7 @@ type SocioeconomicExposure implements ExposureEvent
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!
@@ -5715,6 +5857,7 @@ type Study
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
   }
 
@@ -5727,6 +5870,7 @@ type StudyPopulation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5743,6 +5887,7 @@ interface StudyResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5760,6 +5905,7 @@ type StudyVariable
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5822,6 +5968,7 @@ type TextMiningResult
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -5845,6 +5992,7 @@ type Transcript
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     tradeName: ChemicalEntity
     availableFrom: [DrugAvailabilityEnum]
@@ -5903,6 +6051,7 @@ type TranscriptionFactorBindingSite implements GenomicEntity, ChemicalEntityOrGe
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -5919,6 +6068,7 @@ type Treatment implements ExposureEvent, ChemicalOrDrugOrTreatment
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     hasDrug: [Drug]
     hasDevice: [Device]
@@ -6179,6 +6329,7 @@ type Vertebrate
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6194,6 +6345,7 @@ type Virus implements SubjectOfInvestigation
     description: NarrativeText
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
@@ -6207,6 +6359,7 @@ type WebPage
     description: NarrativeText
     hasAttribute: [Attribute]
     providedBy: [String]
+    fullName: LabelType
     category: [CategoryType]!
     license: String
     rights: String
@@ -6231,6 +6384,7 @@ type Zygosity
     hasAttribute: [Attribute]
     providedBy: [String]
     xref: [Uriorcurie]
+    fullName: LabelType
     category: [CategoryType]!
     name: LabelType
     hasAttributeType: OntologyClass!

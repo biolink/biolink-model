@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.4.3
+version: 3.5.0
 
 
 ## ------------
@@ -64,6 +64,8 @@ classes:
       - xref
       - synonym
       - description
+      - knowledge level
+      - agent type
     description: >-
       A database or knowledgebase and its supporting ecosystem of interfaces 
       and services that deliver content to consumers (e.g. web portals, APIs, 
@@ -136,6 +138,8 @@ slots:
       - RXNORM:has_tradename
 
   description:
+  knowledge level:
+  agent type:
 
 enums:
   InformationResourceStatusEnum:

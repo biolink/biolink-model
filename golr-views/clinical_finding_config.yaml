@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.4.3id: clinical_finding
+# metamodel_version: 1.7.0# version: 3.5.0id: clinical_finding
 schema_generating: true
 description: this category is currently considered broad enough to tag clinical lab
   measurements and other biological attributes taken as 'clinical traits' with some
@@ -38,6 +38,9 @@ fields:
     or CURIE cross references.
   display_name: xref
   cardinality: multi
+- id: full_name
+  description: a long-form human readable name for a thing
+  display_name: full name
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\

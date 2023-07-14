@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.4.3id: organism_attribute
+# metamodel_version: 1.7.0# version: 3.5.0id: organism_attribute
 schema_generating: true
 description: describes a characteristic of an organismal entity.
 display_name: organism attribute
@@ -33,6 +33,9 @@ fields:
     or CURIE cross references.
   display_name: xref
   cardinality: multi
+- id: full_name
+  description: a long-form human readable name for a thing
+  display_name: full name
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\

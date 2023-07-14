@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.3
+# version: 3.5.0
 BASE <https://w3id.org/biolink/vocab/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -64,6 +64,12 @@ linkml:Ncname xsd:string
 linkml:Objectidentifier IRI
 
 linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
 
 <AccessibleDnaRegion> CLOSED {
     (  $<AccessibleDnaRegion_tes> (  &<RegulatoryRegion_tes> ;
@@ -2295,6 +2301,7 @@ linkml:Nodeidentifier NONLITERAL
              rdf:type [ <Entity> ] ? ;
              <provided_by> @linkml:String * ;
              <xref> @linkml:Uriorcurie * ;
+             <full_name> @<LabelType> ? ;
              <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]

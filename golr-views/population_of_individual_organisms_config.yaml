@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.4.3id: population_of_individual_organisms
+# metamodel_version: 1.7.0# version: 3.5.0id: population_of_individual_organisms
 schema_generating: true
 description: A collection of individuals from the same taxonomic class distinguished
   by one or more characteristics.  Characteristics can include, but are not limited
@@ -38,6 +38,9 @@ fields:
     or CURIE cross references.
   display_name: xref
   cardinality: multi
+- id: full_name
+  description: a long-form human readable name for a thing
+  display_name: full name
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\

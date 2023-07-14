@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.4.3
+# version: 3.5.0
 {
    "type": "Schema",
    "@context": [
@@ -153,6 +153,21 @@
          "type": "NodeConstraint",
          "id": "https://w3id.org/linkml/Nodeidentifier",
          "nodeKind": "nonliteral"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Jsonpointer",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Jsonpath",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      },
+      {
+         "type": "NodeConstraint",
+         "id": "https://w3id.org/linkml/Sparqlpath",
+         "datatype": "http://www.w3.org/2001/XMLSchema#string"
       },
       {
          "type": "Shape",
@@ -11761,6 +11776,13 @@
                               "valueExpr": "https://w3id.org/linkml/Uriorcurie",
                               "min": 0,
                               "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/full_name",
+                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                              "min": 0,
+                              "max": 1
                            },
                            {
                               "type": "TripleConstraint",
