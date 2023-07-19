@@ -61,5 +61,5 @@ Now, run the following commands:
 ```sh
 rm -rf dist/
 python setup.py sdist bdist_wheel
-twine upload --repository-url https://upload.pypi.org/legacy/ --username PYPI_USERNAME dist/*
+twine upload --repository-url https://upload.pypi.org/legacy/ --username __token__ dist/*
 ```
