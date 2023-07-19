@@ -2439,7 +2439,7 @@ information_resources:
     status: released
     name: OWLSim Ontology Based Profile Matching
     xref:
-      - https://github.com/monarch-initiative/owlsim-v3
+      - http://berkeleybop.github.io/software/owlsim/
     knowledge level: curated
     agent type: not_provided
   - id: infores:oxo
@@ -2494,7 +2494,7 @@ information_resources:
     status: released
     name: Phenomics Integrated Ontology
     xref:
-      - https://github.com/monarch-initiative/phenio
+      - https://github.com/NCATSTranslator/Translator-All/wiki/phenio
     synonym:
       - PHENIO
     knowledge level: curated
@@ -2597,7 +2597,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:prefixcommons
-    status: released
+    status: deprecated
     name: Prefix Commons
     xref:
       - https://github.com/prefixcommons
@@ -2733,7 +2733,7 @@ information_resources:
     status: released
     name: RTX KG2
     xref:
-      - https://github.com/RTXteam/RTX-KG2
+      - https://github.com/NCATSTranslator/Translator-All/wiki/RTX%E2%80%90KG2
     synonym:
       - Rtx-kg2
     knowledge level: curated
@@ -3376,3 +3376,10 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Novelty-Score
     knowledge level: curated
     agent type: not_provided
+  - id: infores:translator-f-score
+    status: released
+    name: SRI Novelty Score
+    knowledge level: curated
+    agent type: not_provided
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-f()%E2%80%90score
