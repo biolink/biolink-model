@@ -131,6 +131,12 @@ export PATH=$PATH:`pwd`/jsonschema2pojo-1.0.2/bin
 
 See [GraphViz site](https://graphviz.org/) for installation in your operating system.
 
+### to regenerate semmeddb exclusion list:
+
+```zsh
+
+
+```
 
 
 ## How do I use Biolink Model YAML programmatically?
