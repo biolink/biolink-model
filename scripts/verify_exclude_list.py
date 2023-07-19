@@ -10,7 +10,7 @@ ctx = create_urllib3_context()
 ctx.load_default_certs()
 ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT
 
-EXCLUDE_YAML = os.path.join('semmed-exclude-list.yaml')
+EXCLUDE_YAML = os.path.join('../semmed-exclude-list.yaml')
 
 
 def validate():
