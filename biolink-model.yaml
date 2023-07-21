@@ -9423,7 +9423,7 @@ classes:
       subject derivative qualifier:
         range: ChemicalEntityDerivativeEnum
       subject aspect qualifier:
-        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       subject context qualifier:
         range: anatomical entity
       subject direction qualifier:
@@ -9439,7 +9439,7 @@ classes:
       object part qualifier:
         range: GeneOrGeneProductOrChemicalPartQualifierEnum
       object aspect qualifier:
-        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object context qualifier:
         range: anatomical entity
       object direction qualifier:
