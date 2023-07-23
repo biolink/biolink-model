@@ -667,6 +667,7 @@ slots:
     description: >-
       A list of knowledge graphs that support the existence of this node.
     multivalued: true
+    is_a: association slot
     in_subset:
       - translator_minimal
   
