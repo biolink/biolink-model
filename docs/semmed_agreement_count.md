@@ -1,23 +1,23 @@
 ---
 parent: Edge Properties
-title: biolink:support_graphs
+title: biolink:semmed_agreement_count
 grand_parent: Slots
 layout: default
 ---
 
-# Slot: support_graphs
+# Slot: semmed_agreement_count
 
 translator_minimal
 {: .translator_minimal-subset-label }
 
 
-A list of knowledge graphs that support the existence of this node.
+The number of times this concept has been asserted in the SemMedDB literature database.
 
-URI: [biolink:support_graphs](https://w3id.org/biolink/vocab/support_graphs)
+URI: [biolink:semmed_agreement_count](https://w3id.org/biolink/vocab/semmed_agreement_count)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>0..\*</sub> [String](types/String.md)
+[Association](Association.md) ->  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Parents
 

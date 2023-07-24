@@ -1,7 +1,7 @@
  syntax="proto3";
  package
 // metamodel_version: 1.7.0
-// version: 3.5.1
+// version: 3.5.2
 // A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
 message AccessibleDnaRegion
  {
@@ -727,12 +727,12 @@ message ChemicalAffectsGeneAssociation
   chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
   chemicalEntityDerivativeEnum subjectDerivativeQualifier = 0
-  geneOrGeneProductOrChemicalPartQualifierEnum subjectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
   anatomicalEntity subjectContextQualifier = 0
   directionQualifierEnum subjectDirectionQualifier = 0
   chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
   geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
-  geneOrGeneProductOrChemicalPartQualifierEnum objectAspectQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
   anatomicalEntity objectContextQualifier = 0
   causalMechanismQualifierEnum causalMechanismQualifier = 0
   anatomicalEntity anatomicalContextQualifier = 0

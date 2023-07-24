@@ -156,6 +156,7 @@ URI: [biolink:translator_minimal](https://w3id.org/biolink/vocab/translator_mini
  * [response increased by](response_increased_by.md)
  * [retrieval source ids](retrieval_source_ids.md) - A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
  * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
+ * [semmed agreement count](semmed_agreement_count.md) - The number of times this concept has been asserted in the SemMedDB literature database.
  * [severity qualifier](severity_qualifier.md) - a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
  * [sex qualifier](sex_qualifier.md) - a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
  * [similar to](similar_to.md) - holds between an entity and some other entity with similar features.

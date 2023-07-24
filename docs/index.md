@@ -1431,6 +1431,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
      * [relative frequency subject](relative_frequency_subject.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.
      * [relative frequency subject confidence interval](relative_frequency_subject_confidence_interval.md) - The 99% confidence interval for the relative_frequency_subject calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+     * [semmed agreement count](semmed_agreement_count.md) - The number of times this concept has been asserted in the SemMedDB literature database.
      * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
          * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
              * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1451,6 +1452,7 @@ Entity and association taxonomy and datamodel for life-sciences data
      * [subject label closure](subject_label_closure.md) - Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
      * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
      * [subject namespace](subject_namespace.md) - Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
+     * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
      * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
      * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
      * [supporting document type](supporting_document_type.md) - The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
@@ -1587,6 +1589,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [relative frequency object confidence interval](relative_frequency_object_confidence_interval.md) - The 99% confidence interval for the relative_frequency_object calculation (i.e. the range of values within which the true value has a 99% chance of falling)
  * [relative frequency subject](relative_frequency_subject.md) - The frequency at which subject and object concepts co-occur in  records within a dataset/cohort, relative to the frequency at which the subject concept appears in these same records.
  * [relative frequency subject confidence interval](relative_frequency_subject_confidence_interval.md) - The 99% confidence interval for the relative_frequency_subject calculation (i.e. the range of values within which the true value has a 99% chance of falling)
+ * [semmed agreement count](semmed_agreement_count.md) - The number of times this concept has been asserted in the SemMedDB literature database.
  * [sequence localization attribute](sequence_localization_attribute.md) - An attribute that can be applied to a genome sequence localization edge. These edges connect a nucleic acid entity such as an exon to an entity such as a chromosome. Edge properties are used to ascribe specific positional information and other metadata to the localization. In pragmatic terms this can be thought of as columns in a GFF3 line.
      * [base coordinate](base_coordinate.md) - A position in the base coordinate system.  Base coordinates start at position 1 instead of position 0.
          * [end coordinate](end_coordinate.md) - The position at which the subject genomic entity ends on the chromosome or other entity to which it is located on.
@@ -1623,6 +1626,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [subject location in text](subject_location_in_text.md) - Character offsets for the text span(s) in the supporting text corresponding to the subject concept of the extracted assertion.
  * [subject namespace](subject_namespace.md) - Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.
  * [subject part qualifier](subject_part_qualifier.md)
+ * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
  * [supporting data set](supporting_data_set.md) - A set of data used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
  * [supporting data source](supporting_data_source.md) - An Information Resource from which data was retrieved and subsequently used as evidence to generate the knowledge expressed in an Association (e.g. through computation on, reasoning or inference over the retrieved data).
  * [supporting document type](supporting_document_type.md) - The document type (e.g., Journal Article, Case Study, Preprint) for the supporting document used in a Text Mining Result.
@@ -1686,7 +1690,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [relation](relation.md)
  * [retrieval source ids](retrieval_source_ids.md) - A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.
  * [routes of delivery](routes_of_delivery.md) - the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.
- * [support graphs](support_graphs.md) - A list of knowledge graphs that support the existence of this node.
  * [timepoint](timepoint.md) - a point in time
  * [type](type.md)
      * [category](category.md) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.

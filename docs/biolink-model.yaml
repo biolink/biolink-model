@@ -663,10 +663,19 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  semmed agreement count:
+    is_a: association slot
+    range: integer
+    description: >-
+      The number of times this concept has been asserted in the SemMedDB literature database.
+    in_subset:
+      - translator_minimal
+
   support graphs:
     description: >-
       A list of knowledge graphs that support the existence of this node.
     multivalued: true
+    is_a: association slot
     in_subset:
       - translator_minimal
   

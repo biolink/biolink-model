@@ -12,7 +12,7 @@ else:
 
 
 metamodel_version = "None"
-version = "3.5.1"
+version = "3.5.2"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -5480,12 +5480,12 @@ class ChemicalAffectsGeneAssociation(Association):
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
     subject_derivative_qualifier: Optional[ChemicalEntityDerivativeEnum] = Field(None)
-    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
     subject_context_qualifier: Optional[str] = Field(None)
     subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
     object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
-    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
     object_context_qualifier: Optional[str] = Field(None)
     causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
     anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")

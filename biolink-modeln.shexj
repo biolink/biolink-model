@@ -1,5 +1,5 @@
 # metamodel_version: 1.7.0
-# version: 3.5.1
+# version: 3.5.2
 {
    "type": "Schema",
    "@context": [
@@ -2723,7 +2723,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/subject_aspect_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum",
                         "min": 0,
                         "max": 1
                      },
@@ -2758,7 +2758,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/object_aspect_qualifier",
-                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalPartQualifierEnum",
+                        "valueExpr": "https://w3id.org/biolink/vocab/GeneOrGeneProductOrChemicalEntityAspectEnum",
                         "min": 0,
                         "max": 1
                      },
