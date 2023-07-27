@@ -3131,8 +3131,8 @@ slots:
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence,
       contribute to, or correlate with
-    domain: disease or phenotypic feature
-    range: gene
+    domain: gene
+    range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3151,8 +3151,8 @@ slots:
     aliases: ['disease associated with gene']
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-    domain: gene
-    range: disease or phenotypic feature
+    domain: disease or phenotypic feature
+    range: gene
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
