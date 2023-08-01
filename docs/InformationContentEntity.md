@@ -15,7 +15,7 @@ URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/Informati
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[StudyVariable],[StudyResult],[RetrievalSource],[Publication],[NamedThing],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Clicense:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[StudyVariable],[InformationContentEntity]%5E-[StudyResult],[InformationContentEntity]%5E-[RetrievalSource],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary],[InformationContentEntity]%5E-[DatasetDistribution],[InformationContentEntity]%5E-[Dataset],[InformationContentEntity]%5E-[ConfidenceLevel],[InformationContentEntity]%5E-[CommonDataElement],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DatasetVersion],[DatasetSummary],[DatasetDistribution],[Dataset],[ContributorAssociation],[ConfidenceLevel],[CommonDataElement],[Attribute],[Agent])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[StudyVariable],[StudyResult],[RetrievalSource],[Publication],[NamedThing],[ContributorAssociation]-%20subject%201..1%3E[InformationContentEntity%7Clicense:string%20%3F;rights:string%20%3F;format:string%20%3F;creation_date:date%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;synonym(i):label_type%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[InformationContentEntity]%5E-[StudyVariable],[InformationContentEntity]%5E-[StudyResult],[InformationContentEntity]%5E-[RetrievalSource],[InformationContentEntity]%5E-[Publication],[InformationContentEntity]%5E-[EvidenceType],[InformationContentEntity]%5E-[DatasetVersion],[InformationContentEntity]%5E-[DatasetSummary],[InformationContentEntity]%5E-[DatasetDistribution],[InformationContentEntity]%5E-[Dataset],[InformationContentEntity]%5E-[ConfidenceLevel],[InformationContentEntity]%5E-[CommonDataElement],[NamedThing]%5E-[InformationContentEntity],[EvidenceType],[DatasetVersion],[DatasetSummary],[DatasetDistribution],[Dataset],[ContributorAssociation],[ConfidenceLevel],[CommonDataElement],[Attribute],[Agent])
 
 ---
 
@@ -94,6 +94,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from gene product mixin:
 
+ * [synonym](synonym.md)  <sub>0..\*</sub>
+     * Description: Alternate human-readable names for a thing
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal)
  * [xref](xref.md)  <sub>0..\*</sub>
      * Description: A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.
      * Range: [Uriorcurie](types/Uriorcurie.md)

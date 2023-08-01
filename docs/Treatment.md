@@ -15,7 +15,7 @@ URI: [biolink:Treatment](https://w3id.org/biolink/vocab/Treatment)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]%3Chas%20procedure%200..%2A-%20[Treatment%7Ctimepoint:time_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Device]%3Chas%20device%200..%2A-%20[Treatment],[Drug]%3Chas%20drug%200..%2A-%20[Treatment],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[Treatment]uses%20-.-%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[NamedThing]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[Procedure],[NamedThing],[ExposureEvent],[Drug],[Device],[ChemicalOrDrugOrTreatment],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Procedure]%3Chas%20procedure%200..%2A-%20[Treatment%7Ctimepoint:time_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;synonym(i):label_type%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[Device]%3Chas%20device%200..%2A-%20[Treatment],[Drug]%3Chas%20drug%200..%2A-%20[Treatment],[SequenceVariantModulatesTreatmentAssociation]-%20object%201..1%3E[Treatment],[Treatment]uses%20-.-%3E[ExposureEvent],[Treatment]uses%20-.-%3E[ChemicalOrDrugOrTreatment],[NamedThing]%5E-[Treatment],[SequenceVariantModulatesTreatmentAssociation],[Procedure],[NamedThing],[ExposureEvent],[Drug],[Device],[ChemicalOrDrugOrTreatment],[Attribute])
 
 ---
 
@@ -177,6 +177,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from gene product mixin:
 
+ * [synonym](synonym.md)  <sub>0..\*</sub>
+     * Description: Alternate human-readable names for a thing
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal)
  * [xref](xref.md)  <sub>0..\*</sub>
      * Description: A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.
      * Range: [Uriorcurie](types/Uriorcurie.md)

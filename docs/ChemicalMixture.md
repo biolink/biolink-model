@@ -15,7 +15,7 @@ URI: [biolink:ChemicalMixture](https://w3id.org/biolink/vocab/ChemicalMixture)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalRole],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;drug_regulatory_status_world_wide:string%20%3F;routes_of_delivery:DrugDeliveryEnum%20%2A;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ProcessedMaterial],[NamedThing],[MolecularMixture],[Food],[ComplexMolecularMixture],[ChemicalRole],[ChemicalMixture]%3Cis%20supplement%200..1-%20[ChemicalMixture%7Chighest_FDA_approval_status:string%20%3F;drug_regulatory_status_world_wide:string%20%3F;routes_of_delivery:DrugDeliveryEnum%20%2A;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;synonym(i):label_type%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[ChemicalMixture]%5E-[ProcessedMaterial],[ChemicalMixture]%5E-[MolecularMixture],[ChemicalMixture]%5E-[Food],[ChemicalMixture]%5E-[ComplexMolecularMixture],[ChemicalEntity]%5E-[ChemicalMixture],[ChemicalEntity],[Attribute])
 
 ---
 
@@ -122,6 +122,10 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 ### Inherited from gene product mixin:
 
+ * [synonym](synonym.md)  <sub>0..\*</sub>
+     * Description: Alternate human-readable names for a thing
+     * Range: [LabelType](types/LabelType.md)
+     * in subsets: (translator_minimal)
  * [xref](xref.md)  <sub>0..\*</sub>
      * Description: A database cross reference or alternative identifier for a NamedThing or edge between two  NamedThings.  This property should point to a database record or webpage that supports the existence of the edge, or  gives more detail about the edge. This property can be used on a node or edge to provide multiple URIs or CURIE cross references.
      * Range: [Uriorcurie](types/Uriorcurie.md)
