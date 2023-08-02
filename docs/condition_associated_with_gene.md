@@ -17,7 +17,7 @@ URI: [biolink:condition_associated_with_gene](https://w3id.org/biolink/vocab/con
 
 ## Domain and Range
 
-[Gene](Gene.md) ->  <sub>0..\*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..\*</sub> [Gene](Gene.md)
 
 ## Parents
 

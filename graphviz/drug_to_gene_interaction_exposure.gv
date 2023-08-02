@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,2361,123"];
+	graph [bb="0,0,2494,123"];
 	node [label="\N"];
 	"drug to gene interaction exposure"	[height=0.5,
 		label="drug to gene interaction exposure",
-		pos="1170,105",
+		pos="1235,105",
 		width=4.694];
 	"drug exposure"	[height=0.5,
 		pos="77.993,18",
 		width=2.1665];
 	"drug to gene interaction exposure" -> "drug exposure"	[label=is_a,
-		lp="413.99,61.5",
-		pos="e,134.54,30.504 1005.2,100.99 849.09,97.084 608.19,88.307 399.99,69 294.97,59.261 269.01,53.453 164.99,36 158.36,34.888 151.47,33.66 \
-144.58,32.389"];
+		lp="415.99,61.5",
+		pos="e,134.54,30.514 1068.7,101.72 900.37,98.313 632.65,89.855 401.99,69 296.08,59.423 269.89,53.537 164.99,36 158.36,34.892 151.46,33.667 \
+144.58,32.397"];
 	"gene grouping mixin"	[height=0.5,
 		pos="280.99,18",
 		width=2.9608];
 	"drug to gene interaction exposure" -> "gene grouping mixin"	[label=uses,
-		lp="532.49,61.5",
-		pos="e,336.6,33.397 1002.7,102.23 870.14,99.098 680.57,90.776 515.99,69 458.08,61.338 393.21,47.096 346.32,35.767"];
+		lp="535.49,61.5",
+		pos="e,336.83,33.345 1066.5,103.27 921,100.85 705.38,92.981 518.99,69 460.15,61.43 394.21,47.108 346.68,35.725"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,9 +25,9 @@ digraph {
 		width=1.0652];
 	"drug to gene interaction exposure" -> id	[color=blue,
 		label=id,
-		lp="629.99,61.5",
-		pos="e,473.04,29.778 1004.6,101.28 895.62,97.553 750.15,88.912 622.99,69 563.67,59.711 549.47,53.375 491.99,36 488.9,35.066 485.72,34.053 \
-482.53,33.002",
+		lp="635.99,61.5",
+		pos="e,473.02,29.828 1067.6,102.35 945.49,99.205 776.24,90.808 628.99,69 567.04,59.824 552.04,53.812 491.99,36 488.9,35.082 485.71,34.081 \
+482.52,33.038",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -36,8 +36,8 @@ digraph {
 		width=1.0652];
 	"drug to gene interaction exposure" -> type	[color=blue,
 		label=type,
-		lp="713.99,61.5",
-		pos="e,567.47,30.304 1006.2,100.5 914.84,96.389 799.42,87.614 697.99,69 655.75,61.247 609.04,45.675 577.24,33.958",
+		lp="722.99,61.5",
+		pos="e,567.92,29.967 1069,101.58 964.5,97.947 827.13,89.286 706.99,69 661.52,61.322 611.01,45.213 577.37,33.346",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -46,8 +46,8 @@ digraph {
 		width=2.0943];
 	"drug to gene interaction exposure" -> description	[color=blue,
 		label=description,
-		lp="811.49,61.5",
-		pos="e,696.22,34.97 1019.9,96.666 926.86,90.99 816.62,81.902 770.99,69 747.88,62.464 723.74,50.563 704.98,40.012",
+		lp="824.49,61.5",
+		pos="e,699.29,34.759 1080.8,97.587 972.78,92.042 838.44,82.73 783.99,69 757.72,62.375 729.86,50.115 708.38,39.394",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -56,8 +56,8 @@ digraph {
 		width=1.4443];
 	"drug to gene interaction exposure" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="927.99,61.5",
-		pos="e,832.05,35.363 1033.4,94.363 972.69,88.673 908.71,80.332 880.99,69 865.79,62.784 851.09,52.015 839.52,42.059",
+		lp="947.99,61.5",
+		pos="e,836.78,34.67 1093.3,95.149 1019,89.317 936.23,80.601 900.99,69 881.28,62.51 861.18,50.957 845.48,40.59",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -66,8 +66,8 @@ digraph {
 		width=1.0652];
 	"drug to gene interaction exposure" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="1050.5,61.5",
-		pos="e,944.08,33.507 1078.9,89.724 1055.4,84.578 1030.4,77.797 1008,69 988.59,61.364 968.46,49.539 952.77,39.305",
+		lp="1078.5,61.5",
+		pos="e,948.67,32.139 1131.3,90.722 1100.3,85.425 1066.4,78.316 1036,69 1008.9,60.695 979.62,47.485 957.82,36.729",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
@@ -76,8 +76,8 @@ digraph {
 		width=1.5887];
 	"drug to gene interaction exposure" -> xref	[color=blue,
 		label=xref,
-		lp="1126.5,61.5",
-		pos="e,1062.2,34.612 1143.9,87.207 1123,73.71 1093.4,54.672 1070.8,40.138",
+		lp="1163.5,61.5",
+		pos="e,1070.5,33.015 1196.5,87.409 1163,72.924 1114.4,51.946 1079.8,37.046",
 		style=solid];
 	"full name"	[color=blue,
 		height=0.5,
@@ -86,98 +86,108 @@ digraph {
 		width=1.5707];
 	"drug to gene interaction exposure" -> "full name"	[color=blue,
 		label="full name",
-		lp="1203.5,61.5",
-		pos="e,1170,36.175 1170,86.799 1170,75.163 1170,59.548 1170,46.237",
+		lp="1240.5,61.5",
+		pos="e,1182.7,35.597 1221.8,86.799 1212.4,74.426 1199.5,57.555 1188.9,43.738",
+		style=solid];
+	synonym	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="1301,18",
+		width=1.5707];
+	"drug to gene interaction exposure" -> synonym	[color=blue,
+		label=synonym,
+		lp="1319,61.5",
+		pos="e,1295.3,36.279 1260,86.852 1266.4,81.64 1272.9,75.543 1278,69 1283.4,62.02 1287.9,53.563 1291.4,45.606",
 		style=solid];
 	category	[height=0.5,
-		pos="1296,18",
+		pos="1427,18",
 		width=1.4263];
 	"drug to gene interaction exposure" -> category	[color=blue,
 		label=category,
-		lp="1292.5,61.5",
-		pos="e,1280.2,35.611 1208.7,87.359 1219.5,82.071 1231,75.808 1241,69 1252.2,61.395 1263.4,51.649 1272.8,42.784",
+		lp="1412.5,61.5",
+		pos="e,1407.9,34.841 1302.4,88.467 1320,83.321 1338.5,76.853 1355,69 1370.8,61.471 1386.9,50.634 1399.8,40.973",
 		style=solid];
 	name	[height=0.5,
-		pos="1402,18",
+		pos="1533,18",
 		width=1.011];
 	"drug to gene interaction exposure" -> name	[color=blue,
 		label=name,
-		lp="1374,61.5",
-		pos="e,1384.3,33.808 1261.7,89.803 1283.9,84.711 1307.2,77.934 1328,69 1345.2,61.594 1362.7,50.031 1376.3,39.889",
+		lp="1500,61.5",
+		pos="e,1513.4,33.352 1354.7,92.249 1385.7,87.076 1418.6,79.65 1448,69 1468.2,61.674 1489.1,49.485 1505.1,38.976",
 		style=solid];
 	"has attribute type"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1533,18",
+		pos="1664,18",
 		width=2.1304];
 	"drug to gene interaction exposure" -> "has attribute type"	[color=blue,
 		label="has attribute type",
-		lp="1509,61.5",
-		pos="e,1498.1,34.154 1281.7,91.458 1319,86.051 1360.6,78.692 1398,69 1428.9,60.996 1462.5,48.537 1488.5,38.059",
+		lp="1640,61.5",
+		pos="e,1628.7,34.084 1354.4,92.234 1419.1,85.317 1492.3,76.488 1524,69 1556.5,61.318 1592,48.601 1619.1,37.915",
 		style=solid];
 	"has qualitative value"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1697,18",
+		pos="1828,18",
 		width=1.9318];
 	"drug to gene interaction exposure" -> "has qualitative value"	[color=blue,
 		label="has qualitative value",
-		lp="1696.5,61.5",
-		pos="e,1667.6,34.49 1289.7,92.289 1309.1,90.462 1329.1,88.639 1348,87 1450.1,78.126 1478.3,93.167 1578,69 1605.9,62.222 1635.8,49.677 \
-1658.6,38.848",
+		lp="1827.5,61.5",
+		pos="e,1799.1,34.403 1353.2,92.136 1373.1,90.298 1393.6,88.511 1413,87 1544.4,76.733 1580.6,98.951 1709,69 1737.2,62.421 1767.2,49.747 \
+1790.1,38.806",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
 		label="iri type",
-		pos="1829,18",
+		pos="1960,18",
 		width=1.2277];
 	"drug to gene interaction exposure" -> iri	[color=blue,
 		label=iri,
-		lp="1805,61.5",
-		pos="e,1816.4,35.766 1286.7,91.957 1307.1,90.107 1328.2,88.363 1348,87 1395.4,83.742 1731.2,87.253 1775,69 1788.2,63.497 1800.2,53.233 \
-1809.5,43.43",
+		lp="1936,61.5",
+		pos="e,1947.8,35.303 1351.2,91.906 1371.8,90.051 1393,88.318 1413,87 1467.7,83.393 1855.3,89.927 1906,69 1919.4,63.457 1931.6,52.985 \
+1940.9,43.051",
 		style=solid];
 	"has quantitative value"	[color=blue,
 		height=0.5,
 		label="quantity value",
-		pos="1969,18",
+		pos="2100,18",
 		width=2.1484];
 	"drug to gene interaction exposure" -> "has quantitative value"	[color=blue,
 		label="has quantitative value",
-		lp="1953,61.5",
-		pos="e,1932.9,34.06 1286.7,91.894 1307.1,90.051 1328.2,88.326 1348,87 1452.1,80.039 1714.3,87.475 1817,69 1853.6,62.412 1893.5,49.042 \
-1923.2,37.784",
+		lp="2088,61.5",
+		pos="e,2064.2,33.991 1351.2,91.858 1371.8,90.008 1393,88.289 1413,87 1531.7,79.342 1830.9,89.795 1948,69 1984.7,62.477 2024.8,49.035 \
+2054.5,37.73",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2120,18",
+		pos="2251,18",
 		width=1.5346];
 	"drug to gene interaction exposure" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2106,61.5",
-		pos="e,2100.2,34.948 1285.3,91.817 1306.1,89.948 1327.7,88.233 1348,87 1424.4,82.357 1963.5,90.469 2037,69 2056.7,63.244 2076.5,51.612 \
-2091.8,41.015",
+		lp="2240,61.5",
+		pos="e,2232.3,34.958 1350.3,91.777 1371.1,89.911 1392.7,88.208 1413,87 1497.2,81.987 2091.3,93.444 2172,69 2191,63.26 2209.8,51.628 2224.3,\
+41.028",
 		style=solid];
 	"has gene or gene product"	[color=blue,
 		height=0.5,
 		label=gene,
-		pos="2226,18",
+		pos="2357,18",
 		width=0.92075];
 	"drug to gene interaction exposure" -> "has gene or gene product"	[color=blue,
 		label="has gene or gene product",
-		lp="2269.5,61.5",
-		pos="e,2208.7,33.521 1285.3,91.758 1306.1,89.894 1327.7,88.197 1348,87 1436.4,81.786 2060.1,94.143 2145,69 2165.1,63.04 2185.2,50.678 \
-2200.4,39.739",
+		lp="2402.5,61.5",
+		pos="e,2340.1,33.766 1349.8,91.77 1370.8,89.893 1392.5,88.188 1413,87 1509.1,81.421 2186.9,97.02 2279,69 2298.4,63.089 2317.6,50.851 \
+2332.2,39.963",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1432,105",
+		pos="1497,105",
 		width=2.0762];
 	attribute_name	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="1581,105",
+		pos="1646,105",
 		width=1.5707];
 }

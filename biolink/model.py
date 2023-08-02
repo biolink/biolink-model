@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-07-24T17:42:38
+# Generation date: 2023-08-01T20:30:14
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -1708,6 +1708,7 @@ class NamedThing(Entity):
     provided_by: Optional[Union[str, List[str]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
     full_name: Optional[Union[str, LabelType]] = None
+    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1731,6 +1732,10 @@ class NamedThing(Entity):
 
         if self.full_name is not None and not isinstance(self.full_name, LabelType):
             self.full_name = LabelType(self.full_name)
+
+        if not isinstance(self.synonym, list):
+            self.synonym = [self.synonym] if self.synonym is not None else []
+        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
 
         super().__post_init__(**kwargs)
 
@@ -4633,7 +4638,6 @@ class Gene(BiologicalEntity):
     id: Union[str, GeneId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     symbol: Optional[str] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
@@ -4645,10 +4649,6 @@ class Gene(BiologicalEntity):
 
         if self.symbol is not None and not isinstance(self.symbol, str):
             self.symbol = str(self.symbol)
-
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym] if self.synonym is not None else []
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []

@@ -7551,13 +7551,6 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/synonym",
-                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
                         "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
                         "min": 0,
@@ -11786,6 +11779,13 @@
                            },
                            {
                               "type": "TripleConstraint",
+                              "predicate": "https://w3id.org/biolink/vocab/synonym",
+                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                              "min": 0,
+                              "max": -1
+                           },
+                           {
+                              "type": "TripleConstraint",
                               "predicate": "https://w3id.org/biolink/vocab/category",
                               "valueExpr": "https://w3id.org/biolink/vocab/CategoryType",
                               "min": 1,
@@ -12158,13 +12158,6 @@
                            ]
                         },
                         "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/synonym",
-                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                        "min": 0,
-                        "max": -1
                      },
                      {
                         "type": "TripleConstraint",
@@ -14221,13 +14214,6 @@
                            ]
                         },
                         "min": 0
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "https://w3id.org/biolink/vocab/synonym",
-                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                        "min": 0,
-                        "max": -1
                      }
                   ]
                },
@@ -14585,13 +14571,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/synonym",
-                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },
@@ -15471,13 +15450,6 @@
                                  ]
                               },
                               "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/synonym",
-                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                              "min": 0,
-                              "max": -1
                            }
                         ]
                      },

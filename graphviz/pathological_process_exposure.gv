@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,2111.2,123"];
+	graph [bb="0,0,2242.2,123"];
 	node [label="\N"];
 	"pathological process exposure"	[height=0.5,
 		label="pathological process exposure",
-		pos="1003,105",
+		pos="1068,105",
 		width=4.2066];
 	attribute	[height=0.5,
 		pos="51.995,18",
 		width=1.4443];
 	"pathological process exposure" -> attribute	[label=is_a,
-		lp="322,61.5",
-		pos="e,90.239,30.314 854.14,101.55 713.14,98.039 495.65,89.531 308,69 220.62,59.44 198.78,55.158 113,36 108.83,35.07 104.53,34.031 100.22,\
-32.938"];
+		lp="321,61.5",
+		pos="e,90.24,30.309 917.77,102.51 763.97,99.719 518.21,91.735 307,69 220.04,59.64 198.35,55.099 113,36 108.83,35.068 104.53,34.028 100.22,\
+32.934"];
 	"exposure event"	[height=0.5,
 		pos="204,18",
 		width=2.2748];
 	"pathological process exposure" -> "exposure event"	[label=uses,
-		lp="432.5,61.5",
-		pos="e,251.53,32.693 853.29,102.16 734.24,98.995 563.72,90.66 416,69 363,61.229 303.75,46.751 261.39,35.366"];
+		lp="430.5,61.5",
+		pos="e,251.06,32.784 916.9,103.62 783.86,101.45 585.19,93.754 414,69 361.46,61.403 302.77,46.906 260.82,35.47"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -25,8 +25,9 @@ digraph {
 		width=1.0652];
 	"pathological process exposure" -> id	[color=blue,
 		label=id,
-		lp="523,61.5",
-		pos="e,371.38,29.714 856.19,100.5 759.11,96.454 629.31,87.747 516,69 468.72,61.179 416.05,44.941 381.17,33.085",
+		lp="528,61.5",
+		pos="e,371.04,29.778 918.9,101.81 808.46,98.403 654.61,89.924 521,69 461.68,59.711 447.47,53.375 390,36 386.91,35.066 383.72,34.053 380.53,\
+33.002",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -35,8 +36,8 @@ digraph {
 		width=1.0652];
 	"pathological process exposure" -> type	[color=blue,
 		label=type,
-		lp="604,61.5",
-		pos="e,464.82,30.512 857.83,99.788 777.65,95.458 676.63,86.699 588,69 548.34,61.081 504.64,45.86 474.5,34.283",
+		lp="612,61.5",
+		pos="e,465.47,30.304 920,101.18 826.45,97.386 703.38,88.708 596,69 553.75,61.247 507.04,45.675 475.24,33.958",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -45,8 +46,8 @@ digraph {
 		width=2.0943];
 	"pathological process exposure" -> description	[color=blue,
 		label=description,
-		lp="696.5,61.5",
-		pos="e,591.38,35.41 869.79,96.318 789.27,90.559 694.9,81.51 656,69 636.12,62.611 615.8,51.251 599.79,40.971",
+		lp="709.5,61.5",
+		pos="e,594.22,34.97 930.62,97.425 835.11,91.815 716.71,82.493 669,69 645.88,62.464 621.75,50.563 602.98,40.012",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -55,8 +56,8 @@ digraph {
 		width=1.4443];
 	"pathological process exposure" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="806,61.5",
-		pos="e,724.46,35.753 881.25,94.278 831.48,88.718 780.56,80.51 759,69 747.84,63.046 738.07,53.184 730.51,43.784",
+		lp="826,61.5",
+		pos="e,730.05,35.363 940.62,95.207 877.27,89.51 808.12,80.906 779,69 763.79,62.784 749.09,52.015 737.52,42.059",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -65,8 +66,8 @@ digraph {
 		width=1.0652];
 	"pathological process exposure" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="919.5,61.5",
-		pos="e,835.9,35.117 927.78,89.276 910.48,84.235 892.6,77.613 877,69 864.52,62.111 852.56,51.857 843.01,42.425",
+		lp="948.5,61.5",
+		pos="e,842.09,33.507 979.44,90.272 955.16,85.063 929.16,78.113 906,69 886.59,61.364 866.46,49.539 850.77,39.305",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
@@ -75,8 +76,8 @@ digraph {
 		width=1.5887];
 	"pathological process exposure" -> xref	[color=blue,
 		label=xref,
-		lp="988.5,61.5",
-		pos="e,949.08,35.597 989.44,86.799 979.68,74.426 966.39,57.555 955.49,43.738",
+		lp="1024.5,61.5",
+		pos="e,960.24,34.612 1041.9,87.207 1021,73.71 991.39,54.672 968.82,40.138",
 		style=solid];
 	"full name"	[color=blue,
 		height=0.5,
@@ -85,87 +86,98 @@ digraph {
 		width=1.5707];
 	"pathological process exposure" -> "full name"	[color=blue,
 		label="full name",
-		lp="1073.5,61.5",
-		pos="e,1055.3,35.597 1016.1,86.799 1025.6,74.426 1038.5,57.555 1049.1,43.738",
+		lp="1101.5,61.5",
+		pos="e,1068,36.175 1068,86.799 1068,75.163 1068,59.548 1068,46.237",
+		style=solid];
+	synonym	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="1199,18",
+		width=1.5707];
+	"pathological process exposure" -> synonym	[color=blue,
+		label=synonym,
+		lp="1191,61.5",
+		pos="e,1181.7,35.265 1105.8,87.439 1116.8,82.068 1128.6,75.741 1139,69 1151.2,61.05 1163.8,50.952 1174.2,41.916",
 		style=solid];
 	category	[height=0.5,
-		pos="1194,18",
+		pos="1325,18",
 		width=1.4263];
 	"pathological process exposure" -> category	[color=blue,
 		label=category,
-		lp="1171.5,61.5",
-		pos="e,1171.9,34.247 1059.7,88.308 1076.5,82.942 1094.8,76.4 1111,69 1129,60.774 1148.1,49.524 1163.3,39.778",
+		lp="1292.5,61.5",
+		pos="e,1300,34.007 1151.2,89.853 1176,84.535 1202.9,77.632 1227,69 1249.1,61.06 1272.7,49.183 1291.1,38.998",
 		style=solid];
 	name	[height=0.5,
-		pos="1300,18",
+		pos="1431,18",
 		width=1.011];
 	"pathological process exposure" -> name	[color=blue,
 		label=name,
-		lp="1262,61.5",
-		pos="e,1279.1,32.786 1110.2,92.261 1141.9,87.022 1176.3,79.558 1207,69 1229.3,61.326 1252.6,48.746 1270.4,38.125",
+		lp="1387,61.5",
+		pos="e,1408.5,32.505 1178.4,92.655 1236.1,86.029 1300.3,77.35 1328,69 1353.1,61.42 1379.7,48.352 1399.6,37.476",
 		style=solid];
 	"has attribute type"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1431,18",
+		pos="1562,18",
 		width=2.1304];
 	"pathological process exposure" -> "has attribute type"	[color=blue,
 		label="has attribute type",
-		lp="1404,61.5",
-		pos="e,1394.7,33.903 1108.5,92.029 1181.6,83.556 1268.7,73.014 1286,69 1319.9,61.154 1356.9,48.301 1385.1,37.591",
+		lp="1531,61.5",
+		pos="e,1525.1,33.779 1176.4,92.363 1193.7,90.546 1211.3,88.706 1228,87 1309.3,78.683 1331,85.949 1411,69 1446.8,61.411 1486,48.28 1515.5,\
+37.379",
 		style=solid];
 	"has quantitative value"	[color=blue,
 		height=0.5,
 		label="quantity value",
-		pos="1603,18",
+		pos="1734,18",
 		width=2.1484];
 	"pathological process exposure" -> "has quantitative value"	[color=blue,
 		label="has quantitative value",
-		lp="1601,61.5",
-		pos="e,1571,34.515 1108.8,92.038 1126.9,90.201 1145.5,88.44 1163,87 1300.5,75.706 1338.1,98.119 1473,69 1503.7,62.372 1536.7,49.596 1561.8,\
-38.618",
+		lp="1730,61.5",
+		pos="e,1701.5,34.357 1172.9,91.98 1191.3,90.128 1210.2,88.377 1228,87 1393,74.25 1437.9,102.33 1600,69 1631.8,62.461 1666.1,49.552 1692,\
+38.49",
 		style=solid];
 	"has qualitative value"	[color=blue,
 		height=0.5,
 		label="named thing",
-		pos="1768,18",
+		pos="1899,18",
 		width=1.9318];
 	"pathological process exposure" -> "has qualitative value"	[color=blue,
 		label="has qualitative value",
-		lp="1793.5,61.5",
-		pos="e,1747.6,35.382 1107,91.857 1125.7,89.995 1144.9,88.273 1163,87 1220.9,82.932 1629.4,85.502 1685,69 1704.4,63.242 1723.9,51.844 \
-1739.1,41.383",
+		lp="1923.5,61.5",
+		pos="e,1878,35.408 1171.6,91.843 1190.4,89.971 1209.7,88.248 1228,87 1293,82.556 1751.4,87.078 1814,69 1834,63.227 1854.1,51.671 1869.8,\
+41.122",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
 		label="iri type",
-		pos="1939,18",
+		pos="2070,18",
 		width=1.2277];
 	"pathological process exposure" -> iri	[color=blue,
 		label=iri,
-		lp="1909,61.5",
-		pos="e,1923.6,34.922 1106.2,91.805 1125.1,89.924 1144.6,88.209 1163,87 1241.6,81.833 1797.5,94.777 1872,69 1888.3,63.368 1903.8,52.22 \
-1915.9,41.876",
+		lp="2039,61.5",
+		pos="e,2054.3,34.937 1171.2,91.773 1190.1,89.895 1209.6,88.189 1228,87 1313.8,81.451 1920.6,96.764 2002,69 2018.6,63.336 2034.6,52.028 \
+2046.8,41.597",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2056,18",
+		pos="2187,18",
 		width=1.5346];
 	"pathological process exposure" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2010,61.5",
-		pos="e,2026.3,33.276 1106.2,91.78 1125.1,89.902 1144.6,88.194 1163,87 1331.1,76.09 1755.5,100.69 1921,69 1954.4,62.594 1990.5,48.841 \
-2017,37.378",
+		lp="2140,61.5",
+		pos="e,2157,33.292 1171.2,91.752 1190,89.876 1209.6,88.177 1228,87 1410.6,75.326 1871.3,103.03 2051,69 2084.7,62.624 2121,48.869 2147.7,\
+37.398",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1247,105",
+		pos="1312,105",
 		width=2.0762];
 	attribute_name	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="1396,105",
+		pos="1461,105",
 		width=1.5707];
 }

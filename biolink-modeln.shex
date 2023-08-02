@@ -1498,7 +1498,6 @@ linkml:Sparqlpath xsd:string
           &<OntologyClass_tes> ;
           rdf:type [ <OntologyClass> ] ? ;
           <symbol> @linkml:String ? ;
-          <synonym> @<LabelType> * ;
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
        rdf:type [ <Gene> ]
@@ -2302,6 +2301,7 @@ linkml:Sparqlpath xsd:string
              <provided_by> @linkml:String * ;
              <xref> @linkml:Uriorcurie * ;
              <full_name> @<LabelType> ? ;
+             <synonym> @<LabelType> * ;
              <category> @<CategoryType> +
           ) ;
           rdf:type [ <NamedThing> ]
@@ -2372,7 +2372,6 @@ linkml:Sparqlpath xsd:string
           rdf:type [ <GenomicEntity> ] ? ;
           &<EpigenomicEntity_tes> ;
           rdf:type [ <EpigenomicEntity> ] ? ;
-          <synonym> @<LabelType> * ;
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
        rdf:type [ <NucleosomeModification> ]
@@ -2788,8 +2787,7 @@ linkml:Sparqlpath xsd:string
     (  $<PosttranslationalModification_tes> (  &<BiologicalEntity_tes> ;
           rdf:type [ <BiologicalEntity> ] ? ;
           &<GeneProductIsoformMixin_tes> ;
-          rdf:type [ <GeneProductIsoformMixin> ] ? ;
-          <synonym> @<LabelType> *
+          rdf:type [ <GeneProductIsoformMixin> ] ?
        ) ;
        rdf:type [ <PosttranslationalModification> ]
     )
@@ -2853,8 +2851,7 @@ linkml:Sparqlpath xsd:string
        (  $<Protein_tes> (  &<Polypeptide_tes> ;
              rdf:type [ <Polypeptide> ] ? ;
              &<GeneProductMixin_tes> ;
-             rdf:type [ <GeneProductMixin> ] ? ;
-             <synonym> @<LabelType> *
+             rdf:type [ <GeneProductMixin> ] ?
           ) ;
           rdf:type [ <Protein> ]
        )
@@ -3023,8 +3020,7 @@ linkml:Sparqlpath xsd:string
        (  $<RNAProduct_tes> (  &<Transcript_tes> ;
              rdf:type [ <Transcript> ] ? ;
              &<GeneProductMixin_tes> ;
-             rdf:type [ <GeneProductMixin> ] ? ;
-             <synonym> @<LabelType> *
+             rdf:type [ <GeneProductMixin> ] ?
           ) ;
           rdf:type [ <RNAProduct> ]
        )
