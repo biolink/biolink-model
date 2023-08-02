@@ -16,6 +16,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -52,6 +56,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -94,6 +105,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -115,6 +130,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -168,6 +190,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -189,6 +215,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -231,6 +264,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -263,6 +300,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -690,6 +734,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -758,6 +806,13 @@
                 "summary": {
                     "description": "executive  summary of a publication",
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -986,6 +1041,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1022,6 +1081,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1065,6 +1131,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -1097,6 +1167,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1146,6 +1223,10 @@
                     },
                     "type": "array"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1192,6 +1273,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1450,6 +1538,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1486,6 +1578,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1534,6 +1633,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1566,6 +1669,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1621,6 +1731,10 @@
                     },
                     "type": "array"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1667,6 +1781,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1716,6 +1837,10 @@
                     },
                     "type": "array"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1767,6 +1892,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -1802,6 +1934,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -1840,6 +1976,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1883,6 +2026,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -1919,6 +2066,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -1982,6 +2136,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -2039,6 +2197,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "description": "Should generally be set to an ontology class defined term for 'book'.",
                     "items": {
@@ -2094,6 +2259,10 @@
                     "type": "string"
                 },
                 "format": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -2157,6 +2326,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -2199,6 +2375,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -2231,6 +2411,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -2736,6 +2923,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -2768,6 +2959,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -2810,6 +3008,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -2842,6 +3044,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -3266,6 +3475,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -3298,6 +3511,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -3340,6 +3560,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -3372,6 +3596,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -3467,7 +3698,7 @@
                     "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
                 },
                 "object_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
                 },
                 "object_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3557,7 +3788,7 @@
                     "type": "string"
                 },
                 "subject_aspect_qualifier": {
-                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
                 },
                 "subject_category": {
                     "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
@@ -3648,6 +3879,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -3684,6 +3919,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -4111,6 +4353,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -4147,6 +4393,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -4416,6 +4669,10 @@
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -4469,6 +4726,13 @@
                     "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
                     "items": {
                         "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
                     },
                     "type": "array"
                 },
@@ -4905,6 +5169,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -4941,6 +5209,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -5739,6 +6014,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -5770,6 +6049,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -5808,6 +6094,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -5844,6 +6134,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -5887,6 +6184,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -5923,6 +6224,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -5966,6 +6274,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -5987,6 +6299,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6029,6 +6348,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6061,6 +6384,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6103,6 +6433,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6124,6 +6458,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6166,6 +6507,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6202,6 +6547,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6245,6 +6597,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6281,6 +6637,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6324,6 +6687,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6345,6 +6712,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6392,6 +6766,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -6454,6 +6832,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -6495,6 +6880,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -6527,6 +6916,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6577,6 +6973,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6608,6 +7008,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -6646,6 +7053,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6682,6 +7093,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -6734,6 +7152,10 @@
                 },
                 "drug_regulatory_status_world_wide": {
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -6792,6 +7214,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -6841,6 +7270,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6872,6 +7305,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -6918,6 +7358,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -6949,6 +7393,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -7402,6 +7853,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7433,6 +7888,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -7482,6 +7944,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7513,6 +7979,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -7559,6 +8032,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7596,6 +8073,13 @@
                 },
                 "source_web_page": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -7642,6 +8126,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7683,6 +8171,13 @@
                 "rights": {
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -7720,6 +8215,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7741,6 +8240,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -7783,6 +8289,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7804,6 +8314,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -7857,6 +8374,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7889,6 +8410,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -7931,6 +8459,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -7963,6 +8495,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -8005,6 +8544,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -8041,6 +8584,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -8877,6 +9427,10 @@
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -8930,6 +9484,13 @@
                     "description": "the method or process of administering a pharmaceutical compound to achieve a therapeutic effect in humans or animals.",
                     "items": {
                         "$ref": "#/$defs/DrugDeliveryEnum"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
                     },
                     "type": "array"
                 },
@@ -8994,6 +9555,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -9030,6 +9595,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -9093,6 +9665,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -9149,6 +9725,13 @@
                 "summary": {
                     "description": "executive  summary of a publication",
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -9372,6 +9955,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -9415,6 +10002,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10074,6 +10668,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10110,6 +10708,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10158,6 +10763,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10179,6 +10788,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10228,6 +10844,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10264,6 +10884,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10310,6 +10937,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10331,6 +10962,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10379,6 +11017,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10400,6 +11042,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -10450,6 +11099,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -10481,6 +11134,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -10524,6 +11184,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -10581,6 +11245,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -11266,6 +11937,10 @@
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -11322,6 +11997,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -11370,6 +12052,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -11406,6 +12092,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -11637,6 +12330,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -11669,6 +12366,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -11709,6 +12413,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -12022,6 +12730,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -12061,6 +12773,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -14382,6 +15101,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -14414,6 +15137,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -14454,6 +15184,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -14497,6 +15231,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -14532,6 +15273,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -14592,6 +15337,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -14845,6 +15597,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -14884,6 +15640,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16091,6 +16854,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -16127,6 +16894,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16170,6 +16944,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -16206,6 +16984,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16254,6 +17039,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -16283,6 +17072,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16325,6 +17121,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -16354,6 +17154,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16401,6 +17208,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -16433,6 +17244,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16473,6 +17291,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -16516,6 +17338,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -16553,6 +17382,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -16574,6 +17407,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16622,6 +17462,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -16654,6 +17498,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16696,6 +17547,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -16728,6 +17583,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -16955,6 +17817,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -16987,6 +17853,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -17042,6 +17915,10 @@
                     "type": "string"
                 },
                 "format": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -17113,6 +17990,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -17155,6 +18039,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -17187,6 +18075,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -17237,6 +18132,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -17268,6 +18167,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -17316,6 +18222,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -17348,6 +18258,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -17945,6 +18862,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -17977,6 +18898,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -18019,6 +18947,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -18040,6 +18972,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -18459,6 +19398,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -18574,6 +19517,10 @@
                     },
                     "type": "array"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -18620,6 +19567,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -19224,6 +20178,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -19264,6 +20222,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -19319,6 +20284,10 @@
                 },
                 "drug_regulatory_status_world_wide": {
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -19377,6 +20346,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -19424,6 +20400,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -19445,6 +20425,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -19679,6 +20666,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -19794,6 +20785,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -19854,6 +20849,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -19895,6 +20897,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -19927,6 +20933,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -19967,6 +20980,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -20062,6 +21079,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -20093,6 +21114,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -20131,6 +21159,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -20167,6 +21199,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -20210,6 +21249,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -20246,6 +21289,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -20289,6 +21339,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -20310,6 +21364,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -21496,6 +22557,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -21553,6 +22618,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -21588,6 +22660,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -21626,6 +22702,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -21680,6 +22763,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -21712,6 +22799,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -21760,6 +22854,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -21812,6 +22910,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -21847,6 +22952,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -21885,6 +22994,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -21946,6 +23062,10 @@
                     },
                     "type": "array"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -21992,6 +23112,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22044,6 +23171,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22065,6 +23196,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22107,6 +23245,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22139,6 +23281,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22181,6 +23330,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22217,6 +23370,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22260,6 +23420,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22296,6 +23460,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22339,6 +23510,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22360,6 +23535,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22408,6 +23590,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
                 },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
@@ -22460,6 +23646,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -22497,6 +23690,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22518,6 +23715,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22560,6 +23764,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -22592,6 +23800,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22634,6 +23849,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -22666,6 +23885,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22708,6 +23934,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -22740,6 +23970,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -22967,6 +24204,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23155,6 +24396,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23212,6 +24457,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -23249,6 +24501,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23270,6 +24526,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -23321,6 +24584,10 @@
                 },
                 "drug_regulatory_status_world_wide": {
                     "description": "An agglomeration of drug regulatory status worldwide. Not specific to FDA.",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -23379,6 +24646,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -23418,6 +24692,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -23501,6 +24779,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23540,6 +24822,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -23582,6 +24871,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23626,6 +24919,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -23661,6 +24961,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -23759,6 +25063,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -23815,6 +25123,13 @@
                 "summary": {
                     "description": "executive  summary of a publication",
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -23874,6 +25189,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -23989,6 +25308,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -24513,6 +25836,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -24549,6 +25876,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -24591,6 +25925,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -24627,6 +25965,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -24692,6 +26037,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -24723,6 +26072,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -24779,6 +26135,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -24818,6 +26178,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -25241,6 +26608,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -25284,6 +26655,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -25339,6 +26717,10 @@
                     "type": "string"
                 },
                 "format": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -25406,6 +26788,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "description": "Should generally be set to an ontology class defined term for 'serial' or 'journal'.",
                     "items": {
@@ -25448,6 +26837,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -25484,6 +26877,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -25532,6 +26932,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -25649,6 +27053,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -25694,6 +27102,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "trade_name": {
                     "description": "",
                     "type": "string"
@@ -25733,6 +27148,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -25783,6 +27202,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -25818,6 +27244,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -25856,6 +27286,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -25899,6 +27336,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -25935,6 +27376,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -26001,6 +27449,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -26022,6 +27474,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -26064,6 +27523,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -26096,6 +27559,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -26146,6 +27616,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -26177,6 +27651,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -26423,6 +27904,10 @@
                 "format": {
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -26454,6 +27939,13 @@
                 },
                 "rights": {
                     "type": "string"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "type": {
                     "items": {
@@ -26497,6 +27989,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -26554,6 +28050,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -26785,6 +28288,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "connects any entity to an attribute",
                     "items": {
@@ -26826,6 +28333,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -26861,6 +28375,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -26905,6 +28423,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -28153,6 +29678,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -28185,6 +29714,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -28227,6 +29763,10 @@
                     "description": "a human-readable description of an entity",
                     "type": "string"
                 },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
+                    "type": "string"
+                },
                 "has_attribute": {
                     "description": "may often be an organism attribute",
                     "items": {
@@ -28259,6 +29799,13 @@
                 },
                 "provided_by": {
                     "description": "The value in this node property represents the knowledge provider that created or assembled the node and all of its attributes.  Used internally to represent how a particular node made its way into a knowledge provider or graph.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
                     "items": {
                         "type": "string"
                     },
@@ -28314,6 +29861,10 @@
                     "type": "string"
                 },
                 "format": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -28373,6 +29924,13 @@
                     "description": "executive  summary of a publication",
                     "type": "string"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -28408,6 +29966,10 @@
                 },
                 "description": {
                     "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "full_name": {
+                    "description": "a long-form human readable name for a thing",
                     "type": "string"
                 },
                 "has_attribute": {
@@ -28451,6 +30013,13 @@
                     },
                     "type": "array"
                 },
+                "synonym": {
+                    "description": "Alternate human-readable names for a thing",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "type": {
                     "items": {
                         "type": "string"
@@ -28480,5 +30049,5 @@
     "metamodel_version": "1.7.0",
     "title": "Biolink-Model",
     "type": "object",
-    "version": "3.4.2"
+    "version": "3.5.2"
 }

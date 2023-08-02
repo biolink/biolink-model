@@ -1,5 +1,7 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
+
 # Generation date: 2023-05-30T09:56:14
+
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -25,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.4.2"
+version = "3.5.2"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -1707,6 +1709,8 @@ class NamedThing(Entity):
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     provided_by: Optional[Union[str, List[str]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    full_name: Optional[Union[str, LabelType]] = None
+    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1727,6 +1731,13 @@ class NamedThing(Entity):
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
         self.xref = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xref]
+
+        if self.full_name is not None and not isinstance(self.full_name, LabelType):
+            self.full_name = LabelType(self.full_name)
+
+        if not isinstance(self.synonym, list):
+            self.synonym = [self.synonym] if self.synonym is not None else []
+        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
 
         super().__post_init__(**kwargs)
 
@@ -4629,7 +4640,6 @@ class Gene(BiologicalEntity):
     id: Union[str, GeneId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
     symbol: Optional[str] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
     xref: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
@@ -4641,10 +4651,6 @@ class Gene(BiologicalEntity):
 
         if self.symbol is not None and not isinstance(self.symbol, str):
             self.symbol = str(self.symbol)
-
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym] if self.synonym is not None else []
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
 
         if not isinstance(self.xref, list):
             self.xref = [self.xref] if self.xref is not None else []
@@ -7655,12 +7661,12 @@ class ChemicalAffectsGeneAssociation(Association):
     subject_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     subject_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
     subject_derivative_qualifier: Optional[Union[str, "ChemicalEntityDerivativeEnum"]] = None
-    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
+    subject_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     subject_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     subject_direction_qualifier: Optional[Union[str, "DirectionQualifierEnum"]] = None
     object_form_or_variant_qualifier: Optional[Union[str, "ChemicalOrGeneOrGeneProductFormOrVariantEnum"]] = None
     object_part_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
-    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]] = None
+    object_aspect_qualifier: Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]] = None
     object_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
     causal_mechanism_qualifier: Optional[Union[str, "CausalMechanismQualifierEnum"]] = None
     anatomical_context_qualifier: Optional[Union[str, AnatomicalEntityId]] = None
@@ -7698,8 +7704,8 @@ class ChemicalAffectsGeneAssociation(Association):
         if self.subject_derivative_qualifier is not None and not isinstance(self.subject_derivative_qualifier, ChemicalEntityDerivativeEnum):
             self.subject_derivative_qualifier = ChemicalEntityDerivativeEnum(self.subject_derivative_qualifier)
 
-        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
-            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.subject_aspect_qualifier)
+        if self.subject_aspect_qualifier is not None and not isinstance(self.subject_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.subject_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.subject_aspect_qualifier)
 
         if self.subject_context_qualifier is not None and not isinstance(self.subject_context_qualifier, AnatomicalEntityId):
             self.subject_context_qualifier = AnatomicalEntityId(self.subject_context_qualifier)
@@ -7713,8 +7719,8 @@ class ChemicalAffectsGeneAssociation(Association):
         if self.object_part_qualifier is not None and not isinstance(self.object_part_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
             self.object_part_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.object_part_qualifier)
 
-        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalPartQualifierEnum):
-            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalPartQualifierEnum(self.object_aspect_qualifier)
+        if self.object_aspect_qualifier is not None and not isinstance(self.object_aspect_qualifier, GeneOrGeneProductOrChemicalEntityAspectEnum):
+            self.object_aspect_qualifier = GeneOrGeneProductOrChemicalEntityAspectEnum(self.object_aspect_qualifier)
 
         if self.object_context_qualifier is not None and not isinstance(self.object_context_qualifier, AnatomicalEntityId):
             self.object_context_qualifier = AnatomicalEntityId(self.object_context_qualifier)
@@ -10737,8 +10743,11 @@ slots.has_topic = Slot(uri=BIOLINK.has_topic, name="has topic", curie=BIOLINK.cu
 slots.xref = Slot(uri=BIOLINK.xref, name="xref", curie=BIOLINK.curie('xref'),
                    model_uri=BIOLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
+slots.semmed_agreement_count = Slot(uri=BIOLINK.semmed_agreement_count, name="semmed agreement count", curie=BIOLINK.curie('semmed_agreement_count'),
+                   model_uri=BIOLINK.semmed_agreement_count, domain=Association, range=Optional[int])
+
 slots.support_graphs = Slot(uri=BIOLINK.support_graphs, name="support graphs", curie=BIOLINK.curie('support_graphs'),
-                   model_uri=BIOLINK.support_graphs, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=BIOLINK.support_graphs, domain=Association, range=Optional[Union[str, List[str]]])
 
 slots.resource_id = Slot(uri=BIOLINK.resource_id, name="resource id", curie=BIOLINK.curie('resource_id'),
                    model_uri=BIOLINK.resource_id, domain=RetrievalSource, range=Optional[Union[str, URIorCURIE]])
@@ -10800,7 +10809,7 @@ slots.has_percentage = Slot(uri=BIOLINK.has_percentage, name="has percentage", c
 slots.has_taxonomic_rank = Slot(uri=BIOLINK.has_taxonomic_rank, name="has taxonomic rank", curie=BIOLINK.curie('has_taxonomic_rank'),
                    model_uri=BIOLINK.has_taxonomic_rank, domain=NamedThing, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
 
-slots.has_dataset = Slot(uri=DCT.source, name="has dataset", curie=DCT.curie('source'),
+slots.has_dataset = Slot(uri=BIOLINK.has_dataset, name="has dataset", curie=BIOLINK.curie('has_dataset'),
                    model_uri=BIOLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
 
 slots.source_web_page = Slot(uri=BIOLINK.source_web_page, name="source web page", curie=BIOLINK.curie('source_web_page'),
@@ -10839,7 +10848,7 @@ slots.dataset_download_url = Slot(uri=DCAT.downloadURL, name="dataset download u
 slots.distribution_download_url = Slot(uri=BIOLINK.distribution_download_url, name="distribution download url", curie=BIOLINK.curie('distribution_download_url'),
                    model_uri=BIOLINK.distribution_download_url, domain=DatasetDistribution, range=Optional[str])
 
-slots.ingest_date = Slot(uri=PAV.version, name="ingest date", curie=PAV.curie('version'),
+slots.ingest_date = Slot(uri=BIOLINK.ingest_date, name="ingest date", curie=BIOLINK.curie('ingest_date'),
                    model_uri=BIOLINK.ingest_date, domain=DatasetVersion, range=Optional[str])
 
 slots.has_distribution = Slot(uri=DCT.distribution, name="has distribution", curie=DCT.curie('distribution'),
@@ -11865,8 +11874,8 @@ slots.has_supporting_study_result = Slot(uri=BIOLINK.has_supporting_study_result
 slots.log_odds_ratio = Slot(uri=BIOLINK.log_odds_ratio, name="log odds ratio", curie=BIOLINK.curie('log_odds_ratio'),
                    model_uri=BIOLINK.log_odds_ratio, domain=Association, range=Optional[float])
 
-slots.log_odds_ration_95_ci = Slot(uri=BIOLINK.log_odds_ration_95_ci, name="log odds ration 95 ci", curie=BIOLINK.curie('log_odds_ration_95_ci'),
-                   model_uri=BIOLINK.log_odds_ration_95_ci, domain=Association, range=Optional[float])
+slots.log_odds_ratio_95_ci = Slot(uri=BIOLINK.log_odds_ratio_95_ci, name="log odds ratio 95 ci", curie=BIOLINK.curie('log_odds_ratio_95_ci'),
+                   model_uri=BIOLINK.log_odds_ratio_95_ci, domain=Association, range=Optional[float])
 
 slots.total_sample_size = Slot(uri=BIOLINK.total_sample_size, name="total sample size", curie=BIOLINK.curie('total_sample_size'),
                    model_uri=BIOLINK.total_sample_size, domain=Association, range=Optional[int])
@@ -12356,7 +12365,7 @@ slots.chemical_affects_gene_association_subject_derivative_qualifier = Slot(uri=
                    model_uri=BIOLINK.chemical_affects_gene_association_subject_derivative_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "ChemicalEntityDerivativeEnum"]])
 
 slots.chemical_affects_gene_association_subject_aspect_qualifier = Slot(uri=BIOLINK.subject_aspect_qualifier, name="chemical affects gene association_subject aspect qualifier", curie=BIOLINK.curie('subject_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_subject_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
+                   model_uri=BIOLINK.chemical_affects_gene_association_subject_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
 
 slots.chemical_affects_gene_association_subject_context_qualifier = Slot(uri=BIOLINK.subject_context_qualifier, name="chemical affects gene association_subject context qualifier", curie=BIOLINK.curie('subject_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_subject_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])
@@ -12380,7 +12389,7 @@ slots.chemical_affects_gene_association_object_part_qualifier = Slot(uri=BIOLINK
                    model_uri=BIOLINK.chemical_affects_gene_association_object_part_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
 
 slots.chemical_affects_gene_association_object_aspect_qualifier = Slot(uri=BIOLINK.object_aspect_qualifier, name="chemical affects gene association_object aspect qualifier", curie=BIOLINK.curie('object_aspect_qualifier'),
-                   model_uri=BIOLINK.chemical_affects_gene_association_object_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalPartQualifierEnum"]])
+                   model_uri=BIOLINK.chemical_affects_gene_association_object_aspect_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, "GeneOrGeneProductOrChemicalEntityAspectEnum"]])
 
 slots.chemical_affects_gene_association_object_context_qualifier = Slot(uri=BIOLINK.object_context_qualifier, name="chemical affects gene association_object context qualifier", curie=BIOLINK.curie('object_context_qualifier'),
                    model_uri=BIOLINK.chemical_affects_gene_association_object_context_qualifier, domain=ChemicalAffectsGeneAssociation, range=Optional[Union[str, AnatomicalEntityId]])

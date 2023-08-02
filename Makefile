@@ -51,7 +51,7 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 biolink/model.py: biolink-model.yaml env.lock
 	mkdir biolink 2>/dev/null || true
-	export PIPENV_DONT_LOAD_ENV=1 && poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
+	poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
 
 infores:
 	poetry run gen-python information-resource.yaml > information_resource.py
@@ -244,6 +244,7 @@ tests: biolink-model.yaml env.lock pytest # jsonschema_test
 	poetry run python -m unittest discover -p 'test_*.py'
 	poetry run codespell
 	poetry run yamllint -c .yamllint-config biolink-model.yaml
+	poetry run yamllint -c .yamllint-config infores_catalog.yaml
 	poetry run python scripts/verify_infores.py
 
 pytest: biolink/model.py

@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.4.2id: gene
+# metamodel_version: 1.7.0# version: 3.5.2id: gene
 schema_generating: true
 description: A region (or regions) that includes all of the sequence elements necessary
   to encode a functional transcript. A gene locus may include regulatory regions,
@@ -34,6 +34,13 @@ fields:
     how a particular node made its way into a knowledge provider or graph.
   display_name: provided by
   cardinality: multi
+- id: full_name
+  description: a long-form human readable name for a thing
+  display_name: full name
+- id: synonym
+  description: Alternate human-readable names for a thing
+  display_name: synonym
+  cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\
     \ Corresponds to the label for the biolink entity type class.\n * In a neo4j database\
@@ -60,10 +67,6 @@ fields:
 - id: symbol
   description: Symbol for a particular thing
   display_name: symbol
-- id: synonym
-  description: Alternate human-readable names for a thing
-  display_name: synonym
-  cardinality: multi
 - id: xref
   description: A database cross reference or alternative identifier for a NamedThing
     or edge between two  NamedThings.  This property should point to a database record

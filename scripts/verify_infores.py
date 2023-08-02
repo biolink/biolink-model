@@ -60,6 +60,7 @@ class InformationResource:
                         or infores.get("id") == 'infores:flybase' \
                         or infores.get("id") == 'infores:xenbase' \
                         or infores.get("id") == 'infores:aeolus' \
+                        or infores.get("id") == 'infores:ctrp' \
                         or infores.get("xref") is None \
                         or is_valid_urls(infores.get("xref")):
                     print(infores.get('id'), "has valid URL (xref)")

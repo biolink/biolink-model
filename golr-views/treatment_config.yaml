@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0# version: 3.4.2id: treatment
+# metamodel_version: 1.7.0# version: 3.5.2id: treatment
 schema_generating: true
 description: A treatment is targeted at a disease or phenotype and may involve multiple
   drug 'exposures', medical devices and/or procedures
@@ -40,6 +40,13 @@ fields:
     the edge. This property can be used on a node or edge to provide multiple URIs
     or CURIE cross references.
   display_name: xref
+  cardinality: multi
+- id: full_name
+  description: a long-form human readable name for a thing
+  display_name: full name
+- id: synonym
+  description: Alternate human-readable names for a thing
+  display_name: synonym
   cardinality: multi
 - id: category
   description: "Name of the high level ontology class in which this entity is categorized.\

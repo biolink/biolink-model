@@ -1,22 +1,22 @@
 digraph {
-	graph [bb="0,0,1979.7,123"];
+	graph [bb="0,0,2110.7,123"];
 	node [label="\N"];
 	"posttranslational modification"	[height=0.5,
 		label="posttranslational modification",
-		pos="1055.1,105",
+		pos="1123.1,105",
 		width=4.1524];
 	"biological entity"	[height=0.5,
 		pos="85.142,18",
 		width=2.3651];
 	"posttranslational modification" -> "biological entity"	[label=is_a,
-		lp="457.14,61.5",
-		pos="e,145.97,30.656 914.56,98.781 741,91.03 437.13,73.191 179.14,36 171.58,34.91 163.7,33.662 155.86,32.349"];
+		lp="478.14,61.5",
+		pos="e,145.98,30.614 978.89,100.21 793.11,93.81 460.6,77.254 179.14,36 171.59,34.892 163.71,33.633 155.86,32.312"];
 	"gene product isoform mixin"	[height=0.5,
 		pos="327.14,18",
 		width=3.8635];
 	"posttranslational modification" -> "gene product isoform mixin"	[label=uses,
-		lp="627.64,61.5",
-		pos="e,398.34,33.483 921.72,96.82 833.38,91.246 715.08,82.215 611.14,69 542.39,60.258 464.94,46.349 408.31,35.418"];
+		lp="619.64,61.5",
+		pos="e,396,33.69 982.59,98.806 877.73,93.896 731.1,84.846 603.14,69 536.26,60.718 461.04,46.779 406.03,35.719"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -24,8 +24,9 @@ digraph {
 		width=1.0652];
 	"posttranslational modification" -> id	[color=blue,
 		label=id,
-		lp="722.14,61.5",
-		pos="e,551.13,29.99 928.43,95.435 829.46,86.554 689.23,69.121 570.14,36 567.03,35.135 563.84,34.172 560.64,33.155",
+		lp="732.14,61.5",
+		pos="e,551.14,29.954 991.36,96.464 913.61,91.01 813.46,82.235 725.14,69 655.49,58.562 637.93,55.131 570.14,36 567.04,35.124 563.84,34.151 \
+560.64,33.129",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -34,9 +35,9 @@ digraph {
 		width=1.2277];
 	"posttranslational modification" -> iri	[color=blue,
 		label=iri,
-		lp="829.14,61.5",
-		pos="e,656.43,29.938 958.38,91.228 916.11,85.211 866.04,77.49 821.14,69 756.63,56.801 740.51,53.205 677.14,36 673.56,35.029 669.87,33.974 \
-666.17,32.883",
+		lp="822.14,61.5",
+		pos="e,656.45,29.879 1004.5,94.027 946.84,88.296 876.62,80.019 814.14,69 752.46,58.121 737.49,52.747 677.14,36 673.57,35.009 669.88,33.941 \
+666.18,32.84",
 		style=solid];
 	type	[color=blue,
 		height=0.5,
@@ -45,8 +46,9 @@ digraph {
 		width=1.0652];
 	"posttranslational modification" -> type	[color=blue,
 		label=type,
-		lp="903.14,61.5",
-		pos="e,753.09,29.935 981.75,89.241 923.97,76.948 841.7,57.951 771.14,36 768.38,35.142 765.55,34.22 762.7,33.265",
+		lp="914.14,61.5",
+		pos="e,753.08,29.944 1027,91.197 986.96,85.313 940.14,77.701 898.14,69 841.04,57.17 826.85,53.27 771.14,36 768.38,35.145 765.55,34.225 \
+762.7,33.271",
 		style=solid];
 	name	[color=blue,
 		height=0.5,
@@ -55,8 +57,8 @@ digraph {
 		width=1.5707];
 	"posttranslational modification" -> name	[color=blue,
 		label=name,
-		lp="980.14,61.5",
-		pos="e,871.6,32.437 1013.4,87.712 975.41,72.913 919.62,51.159 881.02,36.11",
+		lp="996.14,61.5",
+		pos="e,871.06,32.403 1053.2,89.021 1028.7,83.329 1001,76.415 976.14,69 943.75,59.349 907.86,46.381 880.67,36.07",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -65,8 +67,8 @@ digraph {
 		width=2.0943];
 	"posttranslational modification" -> description	[color=blue,
 		label=description,
-		lp="1060.6,61.5",
-		pos="e,997.33,36.264 1036.6,86.854 1031.1,81.369 1025.1,75.126 1020.1,69 1014,61.506 1008,52.858 1002.8,44.883",
+		lp="1078.6,61.5",
+		pos="e,1001.4,36.011 1074.7,87.827 1062.3,82.686 1049.3,76.381 1038.1,69 1027.4,61.925 1017,52.383 1008.4,43.532",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -75,8 +77,8 @@ digraph {
 		width=1.4443];
 	"posttranslational modification" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1159.1,61.5",
-		pos="e,1123.8,35.806 1080.9,87.007 1087.9,81.713 1095.2,75.535 1101.1,69 1107.7,61.751 1113.7,52.916 1118.7,44.701",
+		lp="1171.1,61.5",
+		pos="e,1127.5,35.966 1122.6,86.814 1122.5,77.14 1122.8,64.858 1124.1,54 1124.5,51.309 1124.9,48.522 1125.4,45.749",
 		style=solid];
 	"provided by"	[color=blue,
 		height=0.5,
@@ -85,8 +87,8 @@ digraph {
 		width=1.0652];
 	"posttranslational modification" -> "provided by"	[color=blue,
 		label="provided by",
-		lp="1266.6,61.5",
-		pos="e,1234.1,35.857 1161,92.174 1178.5,86.939 1195.6,79.51 1210.1,69 1218.5,62.987 1224.9,53.899 1229.6,45.113",
+		lp="1271.6,61.5",
+		pos="e,1236.2,36.312 1187,88.556 1198.3,83.68 1209.3,77.308 1218.1,69 1224.8,62.743 1229.6,54.117 1232.9,45.79",
 		style=solid];
 	xref	[color=blue,
 		height=0.5,
@@ -95,53 +97,64 @@ digraph {
 		width=1.5887];
 	"posttranslational modification" -> xref	[color=blue,
 		label=xref,
-		lp="1345.6,61.5",
-		pos="e,1345,35.774 1157.4,91.865 1226.4,83.399 1306.1,72.94 1313.1,69 1323.6,63.132 1332.5,53.413 1339.3,44.095",
+		lp="1348.6,61.5",
+		pos="e,1346.2,36.061 1228.6,92.2 1266,86.532 1302.6,78.809 1318.1,69 1327.5,63.099 1335.2,53.797 1341,44.808",
 		style=solid];
-	category	[height=0.5,
-		pos="1481.1,18",
-		width=1.4263];
-	"posttranslational modification" -> category	[color=blue,
-		label=category,
-		lp="1438.6,61.5",
-		pos="e,1453.6,33.496 1161.7,92.297 1249,82.643 1359.1,70.323 1364.1,69 1392,61.643 1421.8,48.811 1444.4,37.989",
-		style=solid];
-	"in taxon"	[color=blue,
-		height=0.5,
-		label="organism taxon",
-		pos="1634.1,18",
-		width=2.3109];
-	"posttranslational modification" -> "in taxon"	[color=blue,
-		label="in taxon",
-		lp="1562.1,61.5",
-		pos="e,1595.3,33.938 1160,92.143 1177.8,90.305 1196,88.516 1213.1,87 1329,76.779 1359.9,90.488 1474.1,69 1512.3,61.818 1554.2,48.522 \
-1585.6,37.446",
-		style=solid];
-	"in taxon label"	[color=blue,
+	"full name"	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="1792.1,18",
+		pos="1486.1,18",
 		width=1.5707];
-	"posttranslational modification" -> "in taxon label"	[color=blue,
-		label="in taxon label",
-		lp="1715.6,61.5",
-		pos="e,1753.7,31.222 1158.7,91.952 1176.9,90.103 1195.5,88.361 1213.1,87 1382.6,73.903 1427,93.883 1595.1,69 1646.8,61.356 1704.5,45.846 \
-1744.1,34.115",
+	"posttranslational modification" -> "full name"	[color=blue,
+		label="full name",
+		lp="1444.6,61.5",
+		pos="e,1457.1,33.694 1226,91.9 1280.2,84.99 1340.9,76.28 1367.1,69 1395,61.274 1425.1,48.611 1448,37.962",
 		style=solid];
 	synonym	[color=blue,
 		height=0.5,
 		label="label type",
-		pos="1923.1,18",
+		pos="1617.1,18",
 		width=1.5707];
 	"posttranslational modification" -> synonym	[color=blue,
 		label=synonym,
-		lp="1860.1,61.5",
-		pos="e,1890,32.7 1157.5,91.863 1176,89.989 1195.1,88.26 1213.1,87 1336.2,78.394 1646.6,90.148 1768.1,69 1807.1,62.222 1849.8,47.926 1880.4,\
-36.35",
+		lp="1564.1,61.5",
+		pos="e,1586.2,33.14 1229.4,92.309 1246.7,90.48 1264.4,88.651 1281.1,87 1370.4,78.202 1394.7,88.749 1482.1,69 1514.9,61.599 1550.5,48.175 \
+1576.9,37.099",
+		style=solid];
+	category	[height=0.5,
+		pos="1743.1,18",
+		width=1.4263];
+	"posttranslational modification" -> category	[color=blue,
+		label=category,
+		lp="1684.6,61.5",
+		pos="e,1712.6,32.493 1227.2,92.046 1245.2,90.198 1263.7,88.431 1281.1,87 1422.7,75.401 1460.9,96.706 1600.1,69 1635.9,61.885 1674.9,47.81 \
+1703.1,36.402",
+		style=solid];
+	"in taxon"	[color=blue,
+		height=0.5,
+		label="organism taxon",
+		pos="1896.1,18",
+		width=2.3109];
+	"posttranslational modification" -> "in taxon"	[color=blue,
+		label="in taxon",
+		lp="1813.1,61.5",
+		pos="e,1854.8,33.741 1226.3,91.905 1244.6,90.05 1263.4,88.317 1281.1,87 1475.9,72.547 1527.3,99.897 1720.1,69 1763,62.139 1810.2,48.375 \
+1844.9,37.023",
+		style=solid];
+	"in taxon label"	[color=blue,
+		height=0.5,
+		label="label type",
+		pos="2054.1,18",
+		width=1.5707];
+	"posttranslational modification" -> "in taxon label"	[color=blue,
+		label="in taxon label",
+		lp="1975.6,61.5",
+		pos="e,2014.7,31.116 1225.5,91.854 1244,89.981 1263.1,88.255 1281.1,87 1531.8,69.549 1597,101.59 1846.1,69 1901.4,61.774 1963.3,45.854 \
+2005.1,33.907",
 		style=solid];
 	"named thing_category"	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="1297.1,105",
+		pos="1365.1,105",
 		width=2.0762];
 }

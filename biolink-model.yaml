@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.4.2
+version: 3.5.2
 
 
 ## ------------
@@ -277,10 +277,6 @@ types:
 ## ------------
 
 slots:
-
-   ## ---------------
-   ## ATTRIBUTE SLOTS
-   ## ---------------
 
   has attribute:
     description: >-
@@ -667,10 +663,19 @@ slots:
       - gff3:Dbxref
       - gpi:DB_Xrefs
 
+  semmed agreement count:
+    is_a: association slot
+    range: integer
+    description: >-
+      The number of times this concept has been asserted in the SemMedDB literature database.
+    in_subset:
+      - translator_minimal
+
   support graphs:
     description: >-
       A list of knowledge graphs that support the existence of this node.
     multivalued: true
+    is_a: association slot
     in_subset:
       - translator_minimal
   
@@ -852,7 +857,8 @@ slots:
     is_a: node property
     domain: dataset version
     range: dataset
-    slot_uri: dct:source
+    broad_mappings:
+      - dct:source
 
   source web page:
     is_a: node property
@@ -932,7 +938,8 @@ slots:
   ingest date:
     is_a: node property
     domain: dataset version
-    slot_uri: pav:version
+    broad_mappings:
+      - dct:issued
 
   has distribution:
     is_a: node property
@@ -1651,10 +1658,11 @@ slots:
     exact_mappings:
       - skos:relatedMatch
       - UMLS:related_to
+      - SEMMEDDB:ASSOCIATED_WITH
+      - SEMMEDDB:ADMINISTERED_TO
     broad_mappings:
       - owl:topObjectProperty
     narrow_mappings:
-      - SEMMEDDB:ASSOCIATED_WITH
       - SEMMEDDB:compared_with
       - SEMMEDDB:higher_than
       - SEMMEDDB:lower_than
@@ -2454,7 +2462,6 @@ slots:
       - SEMMEDDB:AFFECTS
       - DGIdb:affects
     narrow_mappings:
-      - SEMMEDDB:ADMINISTERED_TO
       - CTD:prediction_hypothesis
       - GOREL:0001006
       - CTD:inferred
@@ -2879,7 +2886,7 @@ slots:
     symmetric: true
     annotations:
       canonical_predicate: true
-    exact_mappings:
+    broad_mappings:
       - SEMMEDDB:COEXISTS_WITH
     narrow_mappings:
       - BSPO:0000096
@@ -3144,8 +3151,8 @@ slots:
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence,
       contribute to, or correlate with
-    domain: disease or phenotypic feature
-    range: gene
+    domain: gene
+    range: disease or phenotypic feature
     annotations:
       canonical_predicate: true
     in_subset:
@@ -3164,8 +3171,8 @@ slots:
     aliases: ['disease associated with gene']
     description: >-
       holds between a gene and a disease or phenotypic feature that may be influenced, contribute to, or be correlated with the gene or its alleles/products
-    domain: gene
-    range: disease or phenotypic feature
+    domain: disease or phenotypic feature
+    range: gene
     in_subset:
       - translator_minimal
     inverse: gene associated with condition
@@ -5455,7 +5462,7 @@ slots:
       odds of event Y occurring in a non-exposed group.
     range: float
 
-  log odds ration 95 ci:
+  log odds ratio 95 ci:
     is_a: association slot
     description: >-
       The ninety-five percent confidence range in which the true log odds ratio for the sample population falls.
@@ -6193,6 +6200,8 @@ classes:
     slots:
       - provided by
       - xref
+      - full name
+      - synonym
     slot_usage:
       category:
         required: true
@@ -8064,7 +8073,6 @@ classes:
       - ontology class
     slots:
       - symbol
-      - synonym
       - xref
     exact_mappings:
       - SO:0000704
@@ -9618,7 +9626,7 @@ classes:
       subject derivative qualifier:
         range: ChemicalEntityDerivativeEnum
       subject aspect qualifier:
-        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       subject context qualifier:
         range: anatomical entity
       subject direction qualifier:
@@ -9634,7 +9642,7 @@ classes:
       object part qualifier:
         range: GeneOrGeneProductOrChemicalPartQualifierEnum
       object aspect qualifier:
-        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object context qualifier:
         range: anatomical entity
       object direction qualifier:
@@ -10934,6 +10942,7 @@ classes:
       predicate:
         description: >-
           predicate describing the relationship between the taxon and the environment
+
 
 enums:
 

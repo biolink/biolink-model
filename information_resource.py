@@ -1,5 +1,5 @@
 # Auto generated from information-resource.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-15T15:25:56
+# Generation date: 2023-06-30T16:31:33
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7,7 +7,6 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
-import sys
 import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
@@ -25,7 +24,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import String
 
 metamodel_version = "1.7.0"
-version = "3.3.2"
+version = "3.5.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -101,6 +100,8 @@ class InformationResource(YAMLRoot):
     xref: Optional[Union[str, List[str]]] = empty_list()
     synonym: Optional[Union[str, List[str]]] = empty_list()
     description: Optional[str] = None
+    knowledge_level: Optional[str] = None
+    agent_type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -124,6 +125,12 @@ class InformationResource(YAMLRoot):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        if self.knowledge_level is not None and not isinstance(self.knowledge_level, str):
+            self.knowledge_level = str(self.knowledge_level)
+
+        if self.agent_type is not None and not isinstance(self.agent_type, str):
+            self.agent_type = str(self.agent_type)
 
         super().__post_init__(**kwargs)
 
@@ -164,3 +171,9 @@ slots.synonym = Slot(uri=INFORES.synonym, name="synonym", curie=INFORES.curie('s
 
 slots.description = Slot(uri=INFORES.description, name="description", curie=INFORES.curie('description'),
                    model_uri=INFORES.description, domain=None, range=Optional[str])
+
+slots.knowledge_level = Slot(uri=INFORES.knowledge_level, name="knowledge level", curie=INFORES.curie('knowledge_level'),
+                   model_uri=INFORES.knowledge_level, domain=None, range=Optional[str])
+
+slots.agent_type = Slot(uri=INFORES.agent_type, name="agent type", curie=INFORES.curie('agent_type'),
+                   model_uri=INFORES.agent_type, domain=None, range=Optional[str])
