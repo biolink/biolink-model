@@ -52,10 +52,10 @@ prefixes:
   DOID-PROPERTY: 'http://purl.obolibrary.org/obo/doid#'
   DrugCentral: 'http://drugcentral.org/drugcard/'
   ECTO: 'http://purl.obolibrary.org/obo/ECTO_'
-  EDAM-DATA: 'http://edamontology.org/data_'
-  EDAM-FORMAT: 'http://edamontology.org/format_'
-  EDAM-OPERATION: 'http://edamontology.org/operation_'
-  EDAM-TOPIC: 'http://edamontology.org/topic_'
+  edam.data: 'http://edamontology.org/data_'
+  edam.format: 'http://edamontology.org/format_'
+  edam.operation: 'http://edamontology.org/operation_'
+  edam.topic: 'http://edamontology.org/topic_'
   EFO: 'http://www.ebi.ac.uk/efo/EFO_'
   ExO: 'http://purl.obolibrary.org/obo/ExO_'
   fabio: 'http://purl.org/spar/fabio/'
@@ -5393,7 +5393,7 @@ slots:
     exact_mappings:
       - OBI:0000175
       - NCIT:C44185
-      - EDAM-DATA:1669
+      - edam.data:1669
 
   evidence count:
     is_a: association slot
@@ -5907,10 +5907,10 @@ classes:
           interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default
           to the name associated with the 'has attribute type' slot ontology term.
     id_prefixes:
-      - EDAM-DATA
-      - EDAM-FORMAT
-      - EDAM-OPERATION
-      - EDAM-TOPIC
+      - edam.data
+      - edam.format
+      - edam.operation
+      - edam.topic
     exact_mappings:
       - SIO:000614
     in_subset:
