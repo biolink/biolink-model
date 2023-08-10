@@ -4,7 +4,7 @@ information_resources:
     status: released
     name: Alliance of Genome Resources (AGR Knowledgebase)
     xref:
-      - https://www.alliancegenome.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Alliance-of-Genome-Resources
     synonym:
       - ALLIANCE
     knowledge level: curated
@@ -363,7 +363,7 @@ information_resources:
       A graph representation of Ubergraph, an integration of ontologies
       including GO, CHEBI, Uberon, and HPO.
   - id: infores:automat-ubergraph-nonredundant
-    status: released
+    status: deprecated
     name: Automat Ubergraph Nonredundant
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Automat
@@ -397,7 +397,7 @@ information_resources:
     status: released
     name: Bgee
     xref:
-      - https://bgee.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Bgee
     synonym:
       - BGEE
     knowledge level: curated
@@ -611,10 +611,10 @@ information_resources:
       Documentation of the Multiomics Electronic-Health-Record (EHR) Risk
       KP query web services.
   - id: infores:providence-st-joseph-ehr
-    status: deprecated
+    status: released
     name: Providence St. Joseph EHR Data
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Risk-KP
+      - https://github.com/NCATSTranslator/Translator-All/wiki/EHR-Data
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -712,10 +712,10 @@ information_resources:
     description: Documentation of the SEMMED disease query web services.  Learn more
       about [mydisease.info](http://pending.biothings.io/semmed)
   - id: infores:biothings-tcga-mut-freq
-    status: released
+    status: deprecated
     name: Multiomics TCGA Mutation Frequency KP API
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/Big-GIM-II:-Tumor-gene-mutation-KP
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-CAM-AOP
     knowledge level: correlation
     agent type: not_provided
     description: Documentation of the TCGA Mutation Frequency KP query web services.
@@ -861,7 +861,7 @@ information_resources:
     status: released
     name: ChEMBL
     xref:
-      - https://www.ebi.ac.uk/chembl/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ChEMBL
     synonym:
       - Chembl
     knowledge level: curated
@@ -1124,7 +1124,7 @@ information_resources:
     status: released
     name: Comparative Toxicogenomics Database
     xref:
-      - http://ctdbase.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/CTD
     synonym:
       - CTDbase
     knowledge level: curated
@@ -1213,7 +1213,7 @@ information_resources:
     status: released
     name: FDA Adverse Event Reporting System
     xref:
-      - https://open.fda.gov/data/faers/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/FAERS
     knowledge level: observation
     agent type: not_provided
     description: >-
@@ -1242,14 +1242,14 @@ information_resources:
     status: released
     name: Disease-gene associations mined from literature
     xref:
-      - https://diseases.jensenlab.org/About
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Diseases
     knowledge level: curated
     agent type: not_provided
   - id: infores:disgenet
     status: released
     name: DisGeNET
     xref:
-      - http://www.disgenet.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/DisGeNET
     knowledge level: curated
     agent type: not_provided
   - id: infores:distild
@@ -1296,7 +1296,7 @@ information_resources:
     status: released
     name: DrugCentral
     xref:
-      - http://drugcentral.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/DrugCentral
     synonym:
       - Drugcentral
     knowledge level: curated
@@ -1374,7 +1374,7 @@ information_resources:
     status: released
     name: 'eRAM: encyclopedia of rare disease annotations for precision medicine'
     xref:
-      - https://pubmed.ncbi.nlm.nih.gov/29106618/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/eRAM
     synonym:
       - eRAM
     knowledge level: curated
@@ -1593,6 +1593,11 @@ information_resources:
     agent type: not_provided
     xref:
       - http://obofoundry.org/ontology/go.html
+  - id: infores:human-goa
+    status: released
+    name: Human Gene Ontology Annotations
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Human-GOA
   - id: infores:goa
     status: released
     name: Gene Ontology Annotations
@@ -1615,7 +1620,7 @@ information_resources:
     status: released
     name: 'Genotype-Tissue Expression '
     xref:
-      - https://gtexportal.org/home/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/GTEx
     synonym:
       - GTEx
     knowledge level: curated
@@ -1624,7 +1629,7 @@ information_resources:
     status: released
     name: Guide to Pharmacology
     xref:
-      - https://www.guidetopharmacology.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/GtoPdb
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -1635,7 +1640,7 @@ information_resources:
     status: released
     name: GWAS Catalog
     xref:
-      - https://www.ebi.ac.uk/gwas/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/GWAS-Catalog
     synonym:
       - GWAS
     knowledge level: correlation
@@ -1658,14 +1663,14 @@ information_resources:
     status: released
     name: Hetionet
     xref:
-      - https://het.io/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Hetionet
     knowledge level: curated
     agent type: not_provided
   - id: infores:hgnc
     status: released
     name: HUGO Gene Nomenclature Committee
     xref:
-      - https://www.genenames.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/HGNC
     synonym:
       - HGNC
     knowledge level: curated
@@ -1681,7 +1686,7 @@ information_resources:
     status: released
     name: 'Human Metabolome Database '
     xref:
-      - https://hmdb.ca/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/HMDB
     synonym:
       - HMDB
     knowledge level: curated
@@ -1769,7 +1774,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
   - id: infores:icees-kg
-    status: deprecated
+    status: released
     name: ICEES (Integrated Clinical and Environmental Exposures Service)
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES
@@ -1815,7 +1820,7 @@ information_resources:
     status: released
     name: IntAct
     xref:
-      - https://www.ebi.ac.uk/intact/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/IntAct
     knowledge level: curated
     agent type: not_provided
   - id: infores:interactome-ccsb
@@ -1923,7 +1928,7 @@ information_resources:
     status: released
     name: Library of Integrated Network-Based Cellular Signatures
     xref:
-      - https://www.lincsproject.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/LINCS
     knowledge level: curated
     agent type: not_provided
     synonym:
@@ -2114,7 +2119,7 @@ information_resources:
     status: released
     name: Monarch Initiative
     xref:
-      - https://monarchinitiative.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SRI-Reference-Knowledge-Graph
     knowledge level: curated
     agent type: not_provided
   - id: infores:mondo
@@ -2462,7 +2467,7 @@ information_resources:
     status: released
     name: Panther Classification System
     xref:
-      - http://pantherdb.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/PANTHER
     synonym:
       - Panther
     knowledge level: curated
@@ -2532,7 +2537,7 @@ information_resources:
     status: released
     name: Psychoactive Drug Screening Program
     xref:
-      - https://pdsp.unc.edu/pdspweb/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/PDSP
     knowledge level: not_provided
     agent type: not_provided
     description: >-
@@ -2589,7 +2594,7 @@ information_resources:
     status: released
     name: Pharos
     xref:
-      - https://pharos.nih.gov
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Pharos
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -2722,6 +2727,12 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: An API for answering biomedical questions
+  - id: infores:robokop-kg
+    name: ROBOKOP KG
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ROBOKOP-KG
+    knowledge level: curated
+    agent type: not_provided
   - id: infores:robokop-kp
     status: released
     name: ROBOKOP (Reasoning Over Biomedical Objects linked in Knowledge-Oriented Pathway)
@@ -2792,7 +2803,7 @@ information_resources:
     status: released
     name: SIDER
     xref:
-      - http://sideeffects.embl.de/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SIDER
     knowledge level: curated
     agent type: not_provided
   - id: infores:smart-api
@@ -2945,7 +2956,7 @@ information_resources:
     status: released
     name: Search Tool for the Retrieval of Interacting Genes/Proteins
     xref:
-      - https://string-db.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/STRING
     synonym:
       - STRING
     knowledge level: curated
@@ -2979,7 +2990,7 @@ information_resources:
     status: released
     name: Target Illumination GWAS Analytics
     xref:
-      - https://datascience.unm.edu/tiga/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/TIGA
     synonym:
       - TIGA
     knowledge level: curated
@@ -2987,6 +2998,12 @@ information_resources:
     description: >-
       Aggregating and assessing experimental evidence for interpretable,
       explainable, accountable gene-trait associations.
+  - id: infores:textmining-kp
+    name: Text Mining KP
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider-KG
+    knowledge level: text_mined
+    agent type: not_provided
   - id: infores:text-mining-provider-cooccurrence
     status: released
     name: Text Mining COOCCURRENCE API
@@ -3015,7 +3032,7 @@ information_resources:
     status: released
     name: Tissue Expression Database
     xref:
-      - http://tissues.jensenlab.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Tissue-Expression-Database
     synonym:
       - TED
     knowledge level: curated
@@ -3083,7 +3100,7 @@ information_resources:
     status: released
     name: UniProt Knowledgebase
     xref:
-      - https://www.uniprot.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/UniProt
     synonym:
       - UniProt
     knowledge level: curated
