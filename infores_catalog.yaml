@@ -37,7 +37,7 @@ information_resources:
     status: released
     name: ARAGORN
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/ARAGORN
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ARAGORN-and-ROBOKOP
     knowledge level: predicted
     agent type: not_provided
     description: >-
@@ -415,7 +415,7 @@ information_resources:
     status: released
     name: BiGG Models
     xref:
-      - http://bigg.ucsd.edu/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BiGG-Models
     synonym:
       - BIGG
     knowledge level: curated
@@ -434,7 +434,7 @@ information_resources:
     status: released
     name: BindingDB
     xref:
-      - https://www.bindingdb.org
+      - https://github.com/NCATSTranslator/Translator-All/wiki/bindingdb
     synonym:
       - The Binding Database
     knowledge level: curated
@@ -484,7 +484,7 @@ information_resources:
     status: released
     name: Biolink ontology
     xref:
-      - https://github.com/biolink/biolink-model/blob/master/biolink-model.owl.ttl
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioLink-OWL
     knowledge level: curated
     agent type: not_provided
   - id: infores:bioportal
@@ -645,6 +645,13 @@ information_resources:
     knowledge level: predicted
     agent type: not_provided
     description: Documentation of the pfocr query web services.
+  - id: infores:pfocr
+    status: released
+    name: PFCOR
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/pfocr
+    knowledge level: predicted
+    agent type: not_provided
   - id: infores:biothings-semmeddb
     status: released
     name: BioThings SEMMEDDB API
@@ -739,7 +746,7 @@ information_resources:
     status: released
     name: Rhea
     xref:
-      - https://www.rhea-db.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/rhea
     knowledge level: curated
     agent type: not_provided
     description: https://www.rhea-db.org/
@@ -767,7 +774,7 @@ information_resources:
     status: released
     name: BioPlanet
     xref:
-      - https://ncats.nih.gov/pubs/features/bioplanet
+      - https://github.com/NCATSTranslator/Translator-All/wiki/bioplanet
     knowledge level: curated
     agent type: not_provided
     description: https://tripod.nih.gov/bioplanet/#
@@ -833,7 +840,7 @@ information_resources:
     status: released
     name: Chemical Entity of Biological Interest
     xref:
-      - https://pubchem.ncbi.nlm.nih.gov/source/ChEBI
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ChEBI
     synonym:
       - ChEBI
     knowledge level: curated
@@ -878,7 +885,7 @@ information_resources:
     status: released
     name: Clinital Interpretation of Variants in Cancer
     xref:
-      - https://civicdb.org/home
+      - https://github.com/NCATSTranslator/Translator-All/wiki/civic
     synonym:
       - CIViC
     knowledge level: curated
@@ -887,7 +894,7 @@ information_resources:
     status: released
     name: Cell Ontology
     xref:
-      - https://obofoundry.org/ontology/cl.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/CL
     synonym:
       - CL
     knowledge level: curated
@@ -896,7 +903,7 @@ information_resources:
     status: released
     name: Clinical Genome Resource (ClinGen)
     xref:
-      - https://clinicalgenome.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/clingen
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -919,7 +926,7 @@ information_resources:
     status: released
     name: ClinVar
     xref:
-      - https://www.ncbi.nlm.nih.gov/clinvar/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/clinvar
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -1110,7 +1117,7 @@ information_resources:
     status: released
     name: ConsensusPathDB
     xref:
-      - http://cpdb.molgen.mpg.de/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/cpdb
     synonym:
       - CPDB
     knowledge level: curated
@@ -1158,7 +1165,7 @@ information_resources:
     status: released
     name: Single Nucleotide Polymorphism Database
     xref:
-      - http://www.ncbi.nlm.nih.gov/SNP/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/dbsnp
     synonym:
       - dbSNP
     knowledge level: curated
@@ -1195,7 +1202,7 @@ information_resources:
     status: released
     name: Drug Gene Interaction Database
     xref:
-      - http://dgidb.genome.wustl.edu
+      - https://github.com/NCATSTranslator/Translator-All/wiki/dgidb
     synonym:
       - DGIdb
     knowledge level: curated
@@ -1233,7 +1240,7 @@ information_resources:
     status: released
     name: Disease Ontology
     xref:
-      - http://www.disease-ontology.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/disease-ontology
     synonym:
       - DO
     knowledge level: curated
@@ -1266,6 +1273,13 @@ information_resources:
       - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0049686
     synonym:
       - DOAF
+    knowledge level: curated
+    agent type: not_provided
+  - id: infores:docm
+    status: released
+    name: Database of Curated Mutations
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/docm
     knowledge level: curated
     agent type: not_provided
   - id: infores:drug-repurposing-hub
@@ -1318,7 +1332,7 @@ information_resources:
     status: modified
     name: European Bioinformatics Institute Gene to Phenotype Resource
     xref:
-      - https://www.ebi.ac.uk/gene2phenotype/disclaimer
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ebi-gene2phenotype
     knowledge level: curated
     agent type: not_provided
   - id: infores:ebi-proteins
@@ -1384,7 +1398,7 @@ information_resources:
     status: released
     name: Experimental Factor Ontology
     xref:
-      - https://www.ebi.ac.uk/efo/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/EFO
     synonym:
       - EFO
     knowledge level: curated
@@ -1422,7 +1436,7 @@ information_resources:
     knowledge level: correlation
     agent type: not_provided
   - id: infores:explanatory-agent
-    status: released
+    status: deprecated
     name: Explanatory Agent API
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Explanatory-Agent
@@ -1456,7 +1470,7 @@ information_resources:
     status: released
     name: Food Database
     xref:
-      - https://foodb.ca/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/FooDB
     knowledge level: curated
     agent type: not_provided
   - id: infores:foodon
@@ -1572,14 +1586,14 @@ information_resources:
     status: released
     name: Gene Ontology
     xref:
-      - http://www.geneontology.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/go
     knowledge level: curated
     agent type: not_provided
   - id: infores:go-cam
     status: released
     name: Gene Ontology Causal Activity Model Annotations
     xref:
-      - http://geneontology.org/docs/gocam-overview/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/GO%E2%80%90CAM
     synonym:
       - GO-CAM
     knowledge level: curated
@@ -1592,7 +1606,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     xref:
-      - http://obofoundry.org/ontology/go.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/GO%E2%80%90Plus
   - id: infores:human-goa
     status: released
     name: Human Gene Ontology Annotations
@@ -1614,6 +1628,15 @@ information_resources:
       - http://tatonettilab.org/resources/GOTE/source_code/
     synonym:
       - GOTE
+    knowledge level: curated
+    agent type: not_provided
+  - id: infores:gtrx
+    status: released
+    name: Gene Transcription Regulation Database
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/gtrx
+    synonym:
+      - GTRD
     knowledge level: curated
     agent type: not_provided
   - id: infores:gtex
@@ -1726,14 +1749,14 @@ information_resources:
     status: released
     name: Human Phenotype Ontology
     xref:
-      - http://obofoundry.org/ontology/hp
+      - https://github.com/NCATSTranslator/Translator-All/wiki/HPO
     knowledge level: curated
     agent type: not_provided
   - id: infores:hpo-annotations
     status: released
     name: Human Phenotype Ontology
     xref:
-      - https://hpo.jax.org/app/data/annotations
+      - https://github.com/NCATSTranslator/Translator-All/wiki/HPO-Annotations
     synonym:
       - HPO Annotations
     knowledge level: curated
@@ -1787,7 +1810,7 @@ information_resources:
     status: released
     name: integrated Dietary Supplement Knowledge Base
     xref:
-      - https://conservancy.umn.edu/handle/11299/204783
+      - https://github.com/NCATSTranslator/Translator-All/wiki/iDISK
     synonym:
       - iDISK
     knowledge level: curated
@@ -1964,7 +1987,7 @@ information_resources:
     status: released
     name: LOINC (from UMLS)
     xref:
-      - https://www.nlm.nih.gov/research/umls/loinc_main.html#:~:text=LOINC%C2%AE%20
+      - https://github.com/NCATSTranslator/Translator-All/wiki/LOINC-%E2%80%90-UMLS
     knowledge level: curated
     agent type: not_provided
   - id: infores:mp
@@ -2021,7 +2044,7 @@ information_resources:
     status: released
     name: Medical Subject Headings Thesaurus
     xref:
-      - https://www.ncbi.nlm.nih.gov/mesh
+      - https://github.com/NCATSTranslator/Translator-All/wiki/MeSH
     synonym:
       - MeSH
     knowledge level: curated
@@ -2051,7 +2074,7 @@ information_resources:
     status: released
     name: Mouse Genome Informatics
     xref:
-      - http://www.informatics.jax.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/mgi
     synonym:
       - MGI
     knowledge level: curated
@@ -2126,7 +2149,7 @@ information_resources:
     status: released
     name: MONDO Disease Ontology
     xref:
-      - http://www.obofoundry.org/ontology/mondo.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/mondo
     synonym:
       - MONDO
     knowledge level: curated
@@ -2219,7 +2242,7 @@ information_resources:
     status: released
     name: Neuro Behavior Ontology
     xref:
-      - http://www.obofoundry.org/ontology/nbo.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/NBO
     synonym:
       - NBO
     knowledge level: curated
@@ -2239,7 +2262,7 @@ information_resources:
     status: released
     name: National Center for Biotechnology Information Gene
     xref:
-      - http://www.ncbi.nlm.nih.gov/gene
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ncbi-gene
     synonym:
       - NGBI Gene
       - ncbigene
@@ -2285,7 +2308,7 @@ information_resources:
     status: released
     name: National Cancer Institute Thesaurus
     xref:
-      - https://ncithesaurus.nci.nih.gov/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/NCIT
     synonym:
       - NCT Thesaurus
       - NCIt
@@ -2371,7 +2394,7 @@ information_resources:
     status: released
     name: Online Mendelian Inheritance in Man (OMIM)
     xref:
-      - https://www.omim.org/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/OMIM
     synonym:
       - OMIM
     knowledge level: curated
@@ -2451,7 +2474,7 @@ information_resources:
     status: released
     name: OWLSim Ontology Based Profile Matching
     xref:
-      - http://berkeleybop.github.io/software/owlsim/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/OWLSim
     knowledge level: curated
     agent type: not_provided
   - id: infores:oxo
@@ -2497,7 +2520,7 @@ information_resources:
     status: released
     name: Phenotype and Trait Ontology
     xref:
-      - http://www.obofoundry.org/ontology/pato.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/PATO
     synonym:
       - PATO
     knowledge level: curated
@@ -2575,7 +2598,6 @@ information_resources:
     status: released
     name: Pharmacotherapy Database
     xref:
-      - https://github.com/dhimmel/indications
       - https://github.com/NCATSTranslator/Translator-All/wiki/Pharmacotherapy-Database
     synonym:
       - PharmacotherapyDB
@@ -2679,7 +2701,7 @@ information_resources:
     status: released
     name: Reactome
     xref:
-      - http://reactome.org/ContentService/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/reactome
     knowledge level: curated
     agent type: not_provided
   - id: infores:renci-bionames
@@ -2695,7 +2717,7 @@ information_resources:
     status: released
     name: Drug Repositioning Database
     xref:
-      - http://apps.chiragjpgroup.org/repoDB/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/repoDB
     synonym:
       - repoDB
     knowledge level: curated
@@ -2763,7 +2785,7 @@ information_resources:
     status: released
     name: RxNorm
     xref:
-      - https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/RxNORM
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -2789,7 +2811,7 @@ information_resources:
     status: released
     name: Semantic Medline Database
     xref:
-      - https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR/SemMed.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SemMedDB
     knowledge level: text_mined
     agent type: not_provided
   - id: infores:sgd
@@ -2812,7 +2834,7 @@ information_resources:
     agent type: not_provided
     description: This is the API provided from [SmartAPI](https://smart-api.info) application.
     xref:
-      - https://smart-api.info/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Smart-API-Registry
   - id: infores:smartapi
     status: released
     name: SmartAPI API
@@ -3059,7 +3081,7 @@ information_resources:
     status: released
     name: Uber Anatomy Ontology
     xref:
-      - http://www.obofoundry.org/ontology/uberon.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/Uberon
     synonym:
       - Uberon
     knowledge level: curated
@@ -3164,7 +3186,7 @@ information_resources:
     status: released
     name: Veterans Association National Drug File (VANDF) (from UMLS)
     xref:
-      - https://www.nlm.nih.gov/research/umls/rxnorm/sourcereleasedocs/vandf.html
+      - https://github.com/NCATSTranslator/Translator-All/wiki/VANDF
     knowledge level: curated
     agent type: not_provided
   - id: infores:wikidata
@@ -3238,7 +3260,7 @@ information_resources:
     status: released
     name: DDinter
     xref:
-      - http://ddinter.scbdd.com
+      - https://github.com/NCATSTranslator/Translator-All/wiki/ddinter
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -3288,7 +3310,7 @@ information_resources:
     status: released
     name: Adverse Event Open Learning through Universal Standardization (AEOLUS)
     xref:
-      - http://doi.org/10.1038/sdata.2016.26
+      - https://github.com/NCATSTranslator/Translator-All/wiki/AEOLUS
     knowledge level: curated
     agent type: not_provided
     description: >-
@@ -3370,7 +3392,7 @@ information_resources:
     status: released
     name: NCATS RARe-SOURCE
     xref:
-      - https://raresource.nih.gov/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/rare-source
     knowledge level: curated
     agent type: not_provided
     description: Integrated Bioinformatics Resource for Rare Diseases
