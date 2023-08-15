@@ -1,6 +1,6 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
 
-# Generation date: 2023-05-30T09:56:14
+# Generation date: 2023-08-15T17:04:20
 
 # Schema: Biolink-Model
 #
@@ -27,7 +27,7 @@ from linkml_runtime.linkml_model.types import Boolean, Date, Double, Float, Inte
 from linkml_runtime.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
 
 metamodel_version = "1.7.0"
-version = "3.5.2"
+version = "3.5.4"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -10386,6 +10386,8 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     transport = PermissibleValue(text="transport")
     secretion = PermissibleValue(text="secretion")
     uptake = PermissibleValue(text="uptake")
+    splicing = PermissibleValue(text="splicing")
+    molecular_interaction = PermissibleValue(text="molecular_interaction")
     molecular_modification = PermissibleValue(text="molecular_modification")
     acetylation = PermissibleValue(text="acetylation")
     acylation = PermissibleValue(text="acylation")
@@ -11386,10 +11388,10 @@ slots.genetically_associated_with = Slot(uri=BIOLINK.genetically_associated_with
                    model_uri=BIOLINK.genetically_associated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.gene_associated_with_condition = Slot(uri=BIOLINK.gene_associated_with_condition, name="gene associated with condition", curie=BIOLINK.curie('gene_associated_with_condition'),
-                   model_uri=BIOLINK.gene_associated_with_condition, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
+                   model_uri=BIOLINK.gene_associated_with_condition, domain=Gene, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
 
 slots.condition_associated_with_gene = Slot(uri=BIOLINK.condition_associated_with_gene, name="condition associated with gene", curie=BIOLINK.curie('condition_associated_with_gene'),
-                   model_uri=BIOLINK.condition_associated_with_gene, domain=Gene, range=Optional[Union[Union[str, DiseaseOrPhenotypicFeatureId], List[Union[str, DiseaseOrPhenotypicFeatureId]]]])
+                   model_uri=BIOLINK.condition_associated_with_gene, domain=DiseaseOrPhenotypicFeature, range=Optional[Union[Union[str, GeneId], List[Union[str, GeneId]]]])
 
 slots.contributes_to = Slot(uri=BIOLINK.contributes_to, name="contributes to", curie=BIOLINK.curie('contributes_to'),
                    model_uri=BIOLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])

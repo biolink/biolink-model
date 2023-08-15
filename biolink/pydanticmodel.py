@@ -12,7 +12,7 @@ else:
 
 
 metamodel_version = "None"
-version = "3.5.2"
+version = "3.5.4"
 
 class WeakRefShimBaseModel(BaseModel):
    __slots__ = '__weakref__'
@@ -119,6 +119,10 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     secretion = "secretion"
     
     uptake = "uptake"
+    
+    splicing = "splicing"
+    
+    molecular_interaction = "molecular_interaction"
     
     molecular_modification = "molecular_modification"
     

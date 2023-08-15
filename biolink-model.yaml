@@ -6,7 +6,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 
 # Version should be kept in sync with primary Git repository release tag
 
-version: 3.5.2
+version: 3.5.4
 
 
 ## ------------
@@ -7558,7 +7558,6 @@ classes:
       A property of a phenotype
     examples:
       - value: weight
-
     mappings:
       - PATO:0000001
 
@@ -11087,6 +11086,8 @@ enums:
         is_a: transport
       uptake:
         is_a: transport
+      splicing:
+      molecular_interaction:
       molecular_modification:
       acetylation:
         is_a: molecular_modification

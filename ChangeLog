@@ -1,5 +1,24 @@
 CHANGES
 =======
+3.5.4
+-----
+Summary: infores catalog URL replacements with TranslatorWiki pages, and a few new infores entries.
+
+* adding infores for MolePro new data source. by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1377
+* many URL updates to the infores catalog to conform with Translator Wiki requirements.
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.3...v3.5.4
+
+3.5.3
+-----
+* fix: chemical-affects-gene-association aspect qualifier range by @colleenXu in https://github.com/biolink/biolink-model/pull/1362
+* add association slot annotation to support graphs slot, add 'semmed agreement count' as an association slot by @sierra-moxon in https://github.com/biolink/biolink-model/pull/1364
+* Adds synonym to named thing, removes it from gene by @kevinschaper in https://github.com/biolink/biolink-model/pull/1369
+* Update domain and range of gene condition association by @nicholsn in https://github.com/biolink/biolink-model/pull/1367
+* Bump certifi from 2023.5.7 to 2023.7.22 by @dependabot in https://github.com/biolink/biolink-model/pull/1365
+
+**Full Changelog**: https://github.com/biolink/biolink-model/compare/v3.5.2...v3.5.3
+
 3.5.1
 ----
 Summary:  added more xrefs for infores catalog and added a semmeddb exclude list
