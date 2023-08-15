@@ -120,6 +120,10 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(str, Enum):
     
     uptake = "uptake"
     
+    splicing = "splicing"
+    
+    molecular_interaction = "molecular_interaction"
+    
     molecular_modification = "molecular_modification"
     
     acetylation = "acetylation"

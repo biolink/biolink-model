@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-08-11T00:39:15
+# Generation date: 2023-08-15T17:04:20
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10338,6 +10338,8 @@ class GeneOrGeneProductOrChemicalEntityAspectEnum(EnumDefinitionImpl):
     transport = PermissibleValue(text="transport")
     secretion = PermissibleValue(text="secretion")
     uptake = PermissibleValue(text="uptake")
+    splicing = PermissibleValue(text="splicing")
+    molecular_interaction = PermissibleValue(text="molecular_interaction")
     molecular_modification = PermissibleValue(text="molecular_modification")
     acetylation = PermissibleValue(text="acetylation")
     acylation = PermissibleValue(text="acylation")
