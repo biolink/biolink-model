@@ -38,6 +38,8 @@ URI: [biolink:GeneOrGeneProductOrChemicalEntityAspectEnum](https://w3id.org/biol
 | transport |  |  |  |
 | secretion |  |  | {'is_a': 'transport'} |
 | uptake |  |  | {'is_a': 'transport'} |
+| splicing |  |  |  |
+| molecular_interaction |  |  |  |
 | molecular_modification |  |  |  |
 | acetylation |  |  | {'is_a': 'molecular_modification'} |
 | acylation |  |  | {'is_a': 'molecular_modification'} |
