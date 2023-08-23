@@ -6684,6 +6684,8 @@ classes:
       - STY:T075
       # Drug Delivery Device
       - STY:T203
+      # Biomedical or Dental Material
+      - STY:T122
 
   diagnostic aid:
     is_a: named thing
@@ -10830,6 +10832,8 @@ enums:
         is_a: transport
       uptake:
         is_a: transport
+      splicing:
+      molecular_interaction:
       molecular_modification:
       acetylation:
         is_a: molecular_modification
