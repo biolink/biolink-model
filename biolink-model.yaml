@@ -9404,8 +9404,8 @@ classes:
 
   chemical affects gene association:
     description: >-
-      Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,
-      localization, processing, expression, etc.)
+      Describes an effect that a chemical has on a gene or gene product (e.g. an impact
+      of on its abundance, activity,localization, processing, expression, etc.)
     is_a: association
     slots:
       - subject form or variant qualifier
@@ -9446,6 +9446,70 @@ classes:
         range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
       object part qualifier:
         range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      object aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      object context qualifier:
+        range: anatomical entity
+      object direction qualifier:
+        range: DirectionQualifierEnum
+      causal mechanism qualifier:
+        range: CausalMechanismQualifierEnum
+      anatomical context qualifier:
+        range: anatomical entity
+      species context qualifier:
+        range: organism taxon
+
+  gene affects chemical association:
+    description: >-
+      Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
+      of on its abundance, activity,localization, processing, expression, etc.)
+    examples:
+      value:
+        subject: TRPC4
+        predicate: affects
+        object: Barium
+        object_aspect_qualifier: transport
+        object_direction_qualifier: increased
+    is_a: association
+    slots:
+      - subject form or variant qualifier
+      - subject part qualifier
+      - subject derivative qualifier
+      - subject aspect qualifier
+      - subject context qualifier
+      - subject direction qualifier
+      - object form or variant qualifier
+      - object part qualifier
+      - object aspect qualifier
+      - object context qualifier
+      - causal mechanism qualifier
+      - anatomical context qualifier
+      - qualified predicate
+    slot_usage:
+      subject:
+        range: gene or gene product
+      subject form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      subject part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      subject aspect qualifier:
+        range: GeneOrGeneProductOrChemicalEntityAspectEnum
+      subject context qualifier:
+        range: anatomical entity
+      subject direction qualifier:
+        range: DirectionQualifierEnum
+      predicate:
+        subproperty_of: affects
+      qualified predicate:
+        subproperty_of: causes
+      object:
+        range: chemical entity
+      object form or variant qualifier:
+        range: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+      object part qualifier:
+        range: GeneOrGeneProductOrChemicalPartQualifierEnum
+      object derivative qualifier:
+        range: ChemicalEntityDerivativeEnum
       object aspect qualifier:
         range: GeneOrGeneProductOrChemicalEntityAspectEnum
       object context qualifier:
