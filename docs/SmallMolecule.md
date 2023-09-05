@@ -22,10 +22,10 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
 
 ## Identifier prefixes
 
+ * CHEBI
  * PUBCHEM.COMPOUND
  * CHEMBL.COMPOUND
  * UNII
- * CHEBI
  * DRUGBANK
  * MESH
  * CAS
