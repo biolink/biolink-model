@@ -637,17 +637,17 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Clinical-Trials-KP
     knowledge level: curated
     agent type: not_provided
-  - id: infores:biothings-pfcor
+  - id: infores:biothings-pfocr
     status: modified
-    name: BioThings pfocr API
+    name: BioThings PFOCR API
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFCOR
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFOCR
     knowledge level: predicted
     agent type: not_provided
     description: Documentation of the pfocr query web services.
   - id: infores:pfocr
     status: released
-    name: PFCOR
+    name: PFOCR
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/pfocr
     knowledge level: predicted
@@ -1319,6 +1319,17 @@ information_resources:
       Online drug information resource created and maintained by Division
       of Translational Informatics at University of New Mexico in collaboration with
       the IDG.
+  - id: infores:drugmechdb
+    status: released
+    name: DrugMechDB
+    xref:
+      - https://github.com/SuLab/DrugMechDB
+    synonym:
+      - drugmechdb
+    knowledge level: curated
+    agent type: not provided
+    description: >-
+      A database of paths that represent the mechanism of action from a drug to a disease in an indication.
   - id: infores:ebi
     status: released
     name: European Bioinformatics Institute
