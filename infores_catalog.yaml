@@ -3081,11 +3081,15 @@ information_resources:
     status: released
     name: Therapeutic Target Database (TTD)
     xref:
-      - https://db.idrblab.net/ttd/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/TTD
     synonym:
       - TTD
     knowledge level: curated
     agent type: not_provided
+    description: >-
+      TTD is a database providing information about the known and explored therapeutic protein 
+      and nucleic acid targets, the targeted disease, pathway information and the corresponding drugs 
+      directed at each of these targets.
   - id: infores:uberon
     status: released
     name: Uber Anatomy Ontology
@@ -3482,3 +3486,13 @@ information_resources:
       interventions for seriously ill newborns, infants and children with newly diagnosed genetic diseases. 
       These may include therapeutics, dietary changes, surgery, medical devices or other interventions. 
       For more info, see the paper (open-access): https://www.nature.com/articles/s41467-022-31446-6.
+  - id: infores:biothings-ttd
+    status: released
+    name: Biothings Therapeutic Target Database API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TTD-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [TherapeuticTargetDatabase](https://db.idrblab.net/ttd/).
+      This KP contains drug-disease, target-disease, drug-protein target, and biomarker-disease associations.
