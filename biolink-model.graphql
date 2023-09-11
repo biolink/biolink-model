@@ -2697,6 +2697,58 @@ type Gene implements GeneOrGeneProduct, GenomicEntity, ChemicalEntityOrGeneOrGen
     hasBiologicalSequence: BiologicalSequence
   }
 
+type GeneAffectsChemicalAssociation
+  {
+    id: String!
+    iri: IriType
+    name: LabelType
+    description: NarrativeText
+    hasAttribute: [Attribute]
+    negated: Boolean
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    hasEvidence: [EvidenceType]
+    knowledgeSource: String
+    primaryKnowledgeSource: String
+    aggregatorKnowledgeSource: [String]
+    timepoint: TimeType
+    originalSubject: String
+    originalPredicate: Uriorcurie
+    originalObject: String
+    subjectCategory: OntologyClass
+    objectCategory: OntologyClass
+    subjectClosure: [String]
+    objectClosure: [String]
+    subjectCategoryClosure: [OntologyClass]
+    objectCategoryClosure: [OntologyClass]
+    subjectNamespace: String
+    objectNamespace: String
+    subjectLabelClosure: [String]
+    objectLabelClosure: [String]
+    retrievalSourceIds: [RetrievalSource]
+    type: [String]
+    category: [CategoryType]
+    subjectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    subjectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    subjectDerivativeQualifier: String
+    subjectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    subjectContextQualifier: AnatomicalEntity
+    subjectDirectionQualifier: DirectionQualifierEnum
+    objectFormOrVariantQualifier: ChemicalOrGeneOrGeneProductFormOrVariantEnum
+    objectPartQualifier: GeneOrGeneProductOrChemicalPartQualifierEnum
+    objectAspectQualifier: GeneOrGeneProductOrChemicalEntityAspectEnum
+    objectContextQualifier: AnatomicalEntity
+    causalMechanismQualifier: CausalMechanismQualifierEnum
+    anatomicalContextQualifier: AnatomicalEntity
+    qualifiedPredicate: String
+    subject: GeneOrGeneProduct!
+    predicate: PredicateType!
+    object: ChemicalEntity!
+    objectDerivativeQualifier: ChemicalEntityDerivativeEnum
+    objectDirectionQualifier: DirectionQualifierEnum
+    speciesContextQualifier: OrganismTaxon
+  }
+
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin, EntityToDiseaseAssociationMixin
   {
     id: String!

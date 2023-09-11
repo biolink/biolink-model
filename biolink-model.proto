@@ -713,7 +713,7 @@ message CellularOrganism
   labelType inTaxonLabel = 0
  repeated  attribute hasAttribute = 0
  }
-// Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
+// Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
 message ChemicalAffectsGeneAssociation
  {
   string id = 0
@@ -2472,6 +2472,58 @@ message Gene
   string symbol = 0
  repeated  uriorcurie xref = 0
   biologicalSequence hasBiologicalSequence = 0
+ }
+// Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
+message GeneAffectsChemicalAssociation
+ {
+  string id = 0
+  iriType iri = 0
+  labelType name = 0
+  narrativeText description = 0
+ repeated  attribute hasAttribute = 0
+  boolean negated = 0
+ repeated  ontologyClass qualifiers = 0
+ repeated  publication publications = 0
+ repeated  evidenceType hasEvidence = 0
+  string knowledgeSource = 0
+  string primaryKnowledgeSource = 0
+ repeated  string aggregatorKnowledgeSource = 0
+  timeType timepoint = 0
+  string originalSubject = 0
+  uriorcurie originalPredicate = 0
+  string originalObject = 0
+  ontologyClass subjectCategory = 0
+  ontologyClass objectCategory = 0
+ repeated  string subjectClosure = 0
+ repeated  string objectClosure = 0
+ repeated  ontologyClass subjectCategoryClosure = 0
+ repeated  ontologyClass objectCategoryClosure = 0
+  string subjectNamespace = 0
+  string objectNamespace = 0
+ repeated  string subjectLabelClosure = 0
+ repeated  string objectLabelClosure = 0
+ repeated  retrievalSource retrievalSourceIds = 0
+ repeated  string type = 0
+ repeated  categoryType category = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum subjectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum subjectPartQualifier = 0
+  string subjectDerivativeQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum subjectAspectQualifier = 0
+  anatomicalEntity subjectContextQualifier = 0
+  directionQualifierEnum subjectDirectionQualifier = 0
+  chemicalOrGeneOrGeneProductFormOrVariantEnum objectFormOrVariantQualifier = 0
+  geneOrGeneProductOrChemicalPartQualifierEnum objectPartQualifier = 0
+  geneOrGeneProductOrChemicalEntityAspectEnum objectAspectQualifier = 0
+  anatomicalEntity objectContextQualifier = 0
+  causalMechanismQualifierEnum causalMechanismQualifier = 0
+  anatomicalEntity anatomicalContextQualifier = 0
+  string qualifiedPredicate = 0
+  geneOrGeneProduct subject = 0
+  predicateType predicate = 0
+  chemicalEntity object = 0
+  chemicalEntityDerivativeEnum objectDerivativeQualifier = 0
+  directionQualifierEnum objectDirectionQualifier = 0
+  organismTaxon speciesContextQualifier = 0
  }
 message GeneAsAModelOfDiseaseAssociation
  {

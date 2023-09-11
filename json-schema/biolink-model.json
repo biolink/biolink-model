@@ -3631,7 +3631,7 @@
         },
         "ChemicalAffectsGeneAssociation": {
             "additionalProperties": false,
-            "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)",
+            "description": "Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
             "properties": {
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
@@ -12490,6 +12490,233 @@
                 "category"
             ],
             "title": "Gene",
+            "type": "object"
+        },
+        "GeneAffectsChemicalAssociation": {
+            "additionalProperties": false,
+            "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+            "properties": {
+                "aggregator_knowledge_source": {
+                    "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "anatomical_context_qualifier": {
+                    "description": "A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.\n * In a neo4j database this MAY correspond to the neo4j label tag.\n * In an RDF database it should be a biolink model class URI.\nThis field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...\nIn an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "causal_mechanism_qualifier": {
+                    "$ref": "#/$defs/CausalMechanismQualifierEnum",
+                    "description": "A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')"
+                },
+                "description": {
+                    "description": "a human-readable description of an entity",
+                    "type": "string"
+                },
+                "has_attribute": {
+                    "description": "connects any entity to an attribute",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "has_evidence": {
+                    "description": "connects an association to an instance of supporting evidence",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "iri": {
+                    "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+                    "type": "string"
+                },
+                "knowledge_source": {
+                    "description": "An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for an attribute or entity.",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "boolean"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "object_aspect_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                },
+                "object_category": {
+                    "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "object_category_closure": {
+                    "description": "Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_closure": {
+                    "description": "Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_context_qualifier": {
+                    "type": "string"
+                },
+                "object_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                },
+                "object_label_closure": {
+                    "description": "Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_namespace": {
+                    "description": "Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "object_part_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                },
+                "original_object": {
+                    "description": "used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "original_predicate": {
+                    "description": "used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "original_subject": {
+                    "description": "used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.",
+                    "type": "string"
+                },
+                "predicate": {
+                    "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+                    "type": "string"
+                },
+                "primary_knowledge_source": {
+                    "description": "The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualified_predicate": {
+                    "description": "Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a \u2018full statement\u2019 reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.",
+                    "type": "string"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "retrieval_source_ids": {
+                    "description": "A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject": {
+                    "$ref": "#/$defs/GeneOrGeneProduct",
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+                },
+                "subject_aspect_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalEntityAspectEnum"
+                },
+                "subject_category": {
+                    "description": "Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "subject_category_closure": {
+                    "description": "Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_closure": {
+                    "description": "Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_context_qualifier": {
+                    "type": "string"
+                },
+                "subject_derivative_qualifier": {
+                    "type": "string"
+                },
+                "subject_direction_qualifier": {
+                    "$ref": "#/$defs/DirectionQualifierEnum"
+                },
+                "subject_form_or_variant_qualifier": {
+                    "$ref": "#/$defs/ChemicalOrGeneOrGeneProductFormOrVariantEnum"
+                },
+                "subject_label_closure": {
+                    "description": "Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_namespace": {
+                    "description": "Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.",
+                    "type": "string"
+                },
+                "subject_part_qualifier": {
+                    "$ref": "#/$defs/GeneOrGeneProductOrChemicalPartQualifierEnum"
+                },
+                "timepoint": {
+                    "description": "a point in time",
+                    "format": "time",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "rdf:type of biolink:Association should be fixed at rdf:Statement",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "subject",
+                "predicate",
+                "object",
+                "id"
+            ],
+            "title": "GeneAffectsChemicalAssociation",
             "type": "object"
         },
         "GeneAsAModelOfDiseaseAssociation": {
