@@ -152,7 +152,22 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [CategoryType](types/CategoryType.md)
      * in subsets: (translator_minimal)
 
-### Inherited from chemical affects gene association:
+### Inherited from chemical entity or gene or gene product regulates gene association:
+
+ * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
+     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
+     * in subsets: (translator_minimal)
+ * [predicate](predicate.md)  <sub>1..1</sub>
+     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * Range: [PredicateType](types/PredicateType.md)
+ * [subject](subject.md)  <sub>1..1</sub>
+     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+ * [object](object.md)  <sub>1..1</sub>
+     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * Range: [NamedThing](NamedThing.md)
+
+### Inherited from gene affects chemical association:
 
  * [subject form or variant qualifier](subject_form_or_variant_qualifier.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
@@ -206,6 +221,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
  * [object](object.md)  <sub>1..1</sub>
      * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * Range: [NamedThing](NamedThing.md)
+ * [object derivative qualifier](object_derivative_qualifier.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+     * in subsets: (translator_minimal)
  * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
      * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
      * in subsets: (translator_minimal)
@@ -215,21 +233,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Example: zebrafish None
      * Example: human None
      * in subsets: (translator_minimal)
-
-### Inherited from chemical entity or gene or gene product regulates gene association:
-
- * [object direction qualifier](object_direction_qualifier.md)  <sub>0..1</sub>
-     * Range: [DirectionQualifierEnum](DirectionQualifierEnum.md)
-     * in subsets: (translator_minimal)
- * [predicate](predicate.md)  <sub>1..1</sub>
-     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-     * Range: [PredicateType](types/PredicateType.md)
- * [subject](subject.md)  <sub>1..1</sub>
-     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
- * [object](object.md)  <sub>1..1</sub>
-     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-     * Range: [NamedThing](NamedThing.md)
 
 ### Inherited from gene has variant that contributes to disease association:
 

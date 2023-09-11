@@ -8,7 +8,7 @@ layout: default
 # Class: ChemicalAffectsGeneAssociation
 
 
-Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
+Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
 
 URI: [biolink:ChemicalAffectsGeneAssociation](https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation)
 

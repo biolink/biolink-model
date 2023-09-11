@@ -58,6 +58,7 @@ URI: [biolink:original_predicate](https://w3id.org/biolink/vocab/original_predic
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

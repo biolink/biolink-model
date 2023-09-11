@@ -57,6 +57,7 @@ URI: [biolink:association_category](https://w3id.org/biolink/vocab/association_c
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

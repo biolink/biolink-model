@@ -58,6 +58,7 @@ URI: [biolink:subject_namespace](https://w3id.org/biolink/vocab/subject_namespac
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

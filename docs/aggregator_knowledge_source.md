@@ -58,6 +58,7 @@ URI: [biolink:aggregator_knowledge_source](https://w3id.org/biolink/vocab/aggreg
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md)
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

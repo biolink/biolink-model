@@ -28,6 +28,7 @@ URI: [biolink:subject_derivative_qualifier](https://w3id.org/biolink/vocab/subje
 
 ## Used by
 
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md)
  * [PredicateMapping](PredicateMapping.md)
 
 ## Other properties
