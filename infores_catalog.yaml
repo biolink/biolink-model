@@ -3439,3 +3439,25 @@ information_resources:
     agent type: not_provided
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-f()%E2%80%90score
+  - id: infores:biothings-suppkg
+    status: released
+    name: BioThings SuppKG API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SuppKG-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for
+      [SuppKG](https://github.com/zhang-informatics/SemRep_DS/tree/main/SuppKG) data. SuppKG contains relations
+      between dietary supplements and other entities, such as diseases. More information can be found in [this 
+      paper](https://doi.org/10.1016/j.jbi.2022.104120). 
+  - id: infores:suppkg
+    status: released
+    name: SuppKG
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SuppKG
+    knowledge level: text_mined
+    agent type: not_provided
+    description: >-
+      SuppKG contains relations between dietary supplements and other entities, such as diseases. 
+      More information can be found in [this paper](https://doi.org/10.1016/j.jbi.2022.104120).
