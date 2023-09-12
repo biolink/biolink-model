@@ -241,12 +241,12 @@ linkml:Sparqlpath xsd:string
     @<DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation> OR @<DiseaseOrPhenotypicFeatureToLocationAssociation> OR
     @<DiseaseToExposureEventAssociation> OR @<DiseaseToPhenotypicFeatureAssociation> OR @<DrugToGeneAssociation> OR
     @<EntityToDiseaseAssociation> OR @<EntityToPhenotypicFeatureAssociation> OR @<ExposureEventToOutcomeAssociation> OR
-    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR
-    @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation>
-    OR @<GenotypeToDiseaseAssociation> OR @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR
-    @<GenotypeToPhenotypicFeatureAssociation> OR @<GenotypeToVariantAssociation> OR
-    @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation> OR
-    @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
+    @<ExposureEventToPhenotypicFeatureAssociation> OR @<FunctionalAssociation> OR @<GeneAffectsChemicalAssociation> OR
+    @<GeneToDiseaseOrPhenotypicFeatureAssociation> OR @<GeneToExpressionSiteAssociation> OR @<GeneToGeneAssociation> OR
+    @<GeneToGeneFamilyAssociation> OR @<GeneToPathwayAssociation> OR @<GenotypeToDiseaseAssociation> OR
+    @<GenotypeToGeneAssociation> OR @<GenotypeToGenotypePartAssociation> OR @<GenotypeToPhenotypicFeatureAssociation> OR
+    @<GenotypeToVariantAssociation> OR @<InformationContentEntityToNamedThingAssociation> OR @<MaterialSampleDerivationAssociation>
+    OR @<MaterialSampleToDiseaseOrPhenotypicFeatureAssociation> OR @<MolecularActivityToChemicalEntityAssociation> OR
     @<MolecularActivityToMolecularActivityAssociation> OR @<MolecularActivityToPathwayAssociation> OR
     @<NamedThingAssociatedWithLikelihoodOfNamedThingAssociation> OR @<OrganismTaxonToEnvironmentAssociation> OR
     @<OrganismTaxonToOrganismTaxonAssociation> OR @<OrganismToOrganismAssociation> OR
@@ -1501,6 +1501,33 @@ linkml:Sparqlpath xsd:string
           <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
        rdf:type [ <Gene> ]
+    )
+}
+
+<GeneAffectsChemicalAssociation> CLOSED {
+    (  $<GeneAffectsChemicalAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <subject_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormOrVariantEnum> ? ;
+          <subject_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <subject_derivative_qualifier> @linkml:String ? ;
+          <subject_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+          <subject_context_qualifier> @<AnatomicalEntity> ? ;
+          <subject_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <object_form_or_variant_qualifier> @<ChemicalOrGeneOrGeneProductFormOrVariantEnum> ? ;
+          <object_part_qualifier> @<GeneOrGeneProductOrChemicalPartQualifierEnum> ? ;
+          <object_aspect_qualifier> @<GeneOrGeneProductOrChemicalEntityAspectEnum> ? ;
+          <object_context_qualifier> @<AnatomicalEntity> ? ;
+          <causal_mechanism_qualifier> @<CausalMechanismQualifierEnum> ? ;
+          <anatomical_context_qualifier> @<AnatomicalEntity> ? ;
+          <qualified_predicate> @linkml:String ? ;
+          <subject> @<GeneOrGeneProduct> ;
+          <predicate> @<PredicateType> ;
+          <object> @<ChemicalEntity> ;
+          <object_derivative_qualifier> @<ChemicalEntityDerivativeEnum> ? ;
+          <object_direction_qualifier> @<DirectionQualifierEnum> ? ;
+          <species_context_qualifier> @<OrganismTaxon> ?
+       ) ;
+       rdf:type [ <GeneAffectsChemicalAssociation> ]
     )
 }
 
