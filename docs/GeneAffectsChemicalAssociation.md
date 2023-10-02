@@ -8,7 +8,7 @@ layout: default
 # Class: GeneAffectsChemicalAssociation
 
 
-Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
+Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
 
 URI: [biolink:GeneAffectsChemicalAssociation](https://w3id.org/biolink/vocab/GeneAffectsChemicalAssociation)
 
@@ -299,5 +299,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="JsonObj(subject='TRPC4', predicate='affects', object='Barium', object_aspect_qualifier='transport', object_direction_qualifier='increased')", description=None, object=None) |
+| **Examples:** | | Example(value="JsonObj(subject='TRPC4', predicate='affects', qualified_predicte='causes', object='Barium', object_aspect_qualifier='transport', object_direction_qualifier='increased')", description=None, object=None) |
 

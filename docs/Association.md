@@ -49,7 +49,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [ExposureEventToOutcomeAssociation](ExposureEventToOutcomeAssociation.md) - An association between an exposure event and an outcome.
  * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype.
  * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine mixin (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed.
- * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md) - Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
+ * [GeneAffectsChemicalAssociation](GeneAffectsChemicalAssociation.md) - Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
  * [GeneToDiseaseOrPhenotypicFeatureAssociation](GeneToDiseaseOrPhenotypicFeatureAssociation.md)
  * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and a gene expression site, possibly qualified by stage/timing info.
  * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.

@@ -9462,11 +9462,12 @@ classes:
   gene affects chemical association:
     description: >-
       Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact
-      of on its abundance, activity,localization, processing, expression, etc.)
+      of on its abundance, activity, localization, processing, transport, etc.)
     examples:
       value:
         subject: TRPC4
         predicate: affects
+        qualified_predicte: causes
         object: Barium
         object_aspect_qualifier: transport
         object_direction_qualifier: increased
