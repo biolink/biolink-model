@@ -115,7 +115,7 @@ These three properties (or slots) define what Biolink calls a "core triple".
 
 Subjects and objects are always classes in the Biolink Model that are descendants of "biolink:NamedThing" and 
 represent core biological, chemical, and biomedical concepts (e.g. genes, diseases, chemicals, phenotypes), 
-whose IRIs come from community standard ontologies (e.g. HGNC, MONOD, ChEBI, HPO).  As a best practice, 
+whose IRIs come from community standard ontologies (e.g. HGNC, MONDO, ChEBI, HPO).  As a best practice, 
 Biolink Model prioritizes connectivity and practicality. 
 
 The predicate in an Association is always a Biolink property (or slot) that is or descends from the "biolink:related_to" 

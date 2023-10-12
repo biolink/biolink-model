@@ -5623,7 +5623,7 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 
 class ChemicalAffectsGeneAssociation(Association):
     """
-    Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity, localization, processing, expression, etc.)
+    Describes an effect that a chemical has on a gene or gene product (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
     """
     subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
     subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
@@ -5666,6 +5666,62 @@ class ChemicalAffectsGeneAssociation(Association):
     id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
     iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
     category: List[Literal["https://w3id.org/biolink/vocab/ChemicalAffectsGeneAssociation","biolink:ChemicalAffectsGeneAssociation"]] = Field(["biolink:ChemicalAffectsGeneAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+ * In a neo4j database this MAY correspond to the neo4j label tag.
+ * In an RDF database it should be a biolink model class URI.
+This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
+In an RDF database, nodes will typically have an rdf:type triples. This can be to the most specific biolink class, or potentially to a class more specific than something in biolink. For example, a sequence feature `f` may have a rdf:type assertion to a SO class such as TF_binding_site, which is more specific than anything in biolink. Here we would have categories {biolink:GenomicEntity, biolink:MolecularEntity, biolink:NamedThing}""")
+    type: Optional[List[str]] = Field(default_factory=list, description="""rdf:type of biolink:Association should be fixed at rdf:Statement""")
+    name: Optional[str] = Field(None, description="""A human-readable name for an attribute or entity.""")
+    description: Optional[str] = Field(None, description="""a human-readable description of an entity""")
+    has_attribute: Optional[List[str]] = Field(None, description="""connects any entity to an attribute""")
+    
+
+
+class GeneAffectsChemicalAssociation(Association):
+    """
+    Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
+    """
+    subject_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
+    subject_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    subject_derivative_qualifier: Optional[str] = Field(None)
+    subject_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    subject_context_qualifier: Optional[str] = Field(None)
+    subject_direction_qualifier: Optional[DirectionQualifierEnum] = Field(None)
+    object_form_or_variant_qualifier: Optional[ChemicalOrGeneOrGeneProductFormOrVariantEnum] = Field(None)
+    object_part_qualifier: Optional[GeneOrGeneProductOrChemicalPartQualifierEnum] = Field(None)
+    object_aspect_qualifier: Optional[GeneOrGeneProductOrChemicalEntityAspectEnum] = Field(None)
+    object_context_qualifier: Optional[str] = Field(None)
+    causal_mechanism_qualifier: Optional[CausalMechanismQualifierEnum] = Field(None, description="""A statement qualifier representing a type of molecular control mechanism through which an effect of a chemical on a gene or gene product is mediated (e.g. 'agonism', 'inhibition', 'allosteric modulation', 'channel blocker')""")
+    anatomical_context_qualifier: Optional[str] = Field(None, description="""A statement qualifier representing an anatomical location where an relationship expressed in an association took place (can be a tissue, cell type, or sub-cellular location).""")
+    qualified_predicate: Optional[str] = Field(None, description="""Predicate to be used in an association when subject and object qualifiers are present and the full reading of the statement requires a qualification to the predicate in use in order to refine or  increase the specificity of the full statement reading.  This qualifier holds a relationship to be used instead of that  expressed by the primary predicate, in a ‘full statement’ reading of the association, where qualifier-based  semantics are included.  This is necessary only in cases where the primary predicate does not work in a  full statement reading.""")
+    subject: str = Field(..., description="""connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    predicate: str = Field(..., description="""A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.""")
+    object: str = Field(..., description="""connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.""")
+    negated: Optional[bool] = Field(None, description="""if set to true, then the association is negated i.e. is not true""")
+    qualifiers: Optional[List[str]] = Field(default_factory=list, description="""connects an association to qualifiers that modify or qualify the meaning of that association""")
+    publications: Optional[List[str]] = Field(default_factory=list, description="""One or more publications that report the statement expressed in an  Association, or provide information used as evidence supporting this statement.""")
+    has_evidence: Optional[List[str]] = Field(None, description="""connects an association to an instance of supporting evidence""")
+    knowledge_source: Optional[str] = Field(None, description="""An Information Resource from which the knowledge expressed in an Association was retrieved, directly or indirectly. This can be any resource through which the knowledge passed on its way to its currently serialized form. In practice, implementers should use one of the more specific subtypes of this generic property.""")
+    primary_knowledge_source: Optional[str] = Field(None, description="""The most upstream source of the knowledge expressed in an Association that an implementer can identify.  Performing a rigorous analysis of upstream data providers is expected; every effort is made to catalog the most upstream source of data in this property.  Only one data source should be declared primary in any association.  \"aggregator knowledge source\" can be used to capture non-primary sources.""")
+    aggregator_knowledge_source: Optional[List[str]] = Field(None, description="""An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.""")
+    timepoint: Optional[str] = Field(None, description="""a point in time""")
+    original_subject: Optional[str] = Field(None, description="""used to hold the original subject of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_predicate: Optional[str] = Field(None, description="""used to hold the original relation/predicate that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    original_object: Optional[str] = Field(None, description="""used to hold the original object of a relation (or predicate) that an external knowledge source uses before transformation to match the biolink-model specification.""")
+    subject_category: Optional[str] = Field(None, description="""Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category: Optional[str] = Field(None, description="""Used to hold the biolink class/category of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_closure: Optional[List[str]] = Field(None, description="""Used to hold the object closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_category_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_category_closure: Optional[List[str]] = Field(None, description="""Used to hold the object category closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_namespace: Optional[str] = Field(None, description="""Used to hold the subject namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_namespace: Optional[str] = Field(None, description="""Used to hold the object namespace of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    subject_label_closure: Optional[List[str]] = Field(None, description="""Used to hold the subject label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    object_label_closure: Optional[List[str]] = Field(None, description="""Used to hold the object label closure of an association. This is a denormalized  field used primarily in the SQL serialization of a knowledge graph via KGX.""")
+    retrieval_source_ids: Optional[List[str]] = Field(None, description="""A list of retrieval sources that served as a source of knowledge expressed in an Edge, or a source of data used to generate this knowledge.""")
+    id: str = Field(..., description="""A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI""")
+    iri: Optional[str] = Field(None, description="""An IRI for an entity. This is determined by the id using expansion rules.""")
+    category: List[Literal["https://w3id.org/biolink/vocab/GeneAffectsChemicalAssociation","biolink:GeneAffectsChemicalAssociation"]] = Field(["biolink:GeneAffectsChemicalAssociation"], description="""Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
  * In a neo4j database this MAY correspond to the neo4j label tag.
  * In an RDF database it should be a biolink model class URI.
 This field is multi-valued. It should include values for ancestors of the biolink class; for example, a protein such as Shh would have category values `biolink:Protein`, `biolink:GeneProduct`, `biolink:MolecularEntity`, ...
@@ -8905,6 +8961,7 @@ ChemicalToPathwayAssociation.update_forward_refs()
 NamedThingAssociatedWithLikelihoodOfNamedThingAssociation.update_forward_refs()
 ChemicalGeneInteractionAssociation.update_forward_refs()
 ChemicalAffectsGeneAssociation.update_forward_refs()
+GeneAffectsChemicalAssociation.update_forward_refs()
 DrugToGeneAssociation.update_forward_refs()
 MaterialSampleToEntityAssociationMixin.update_forward_refs()
 MaterialSampleDerivationAssociation.update_forward_refs()

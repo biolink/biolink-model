@@ -374,7 +374,7 @@ information_resources:
       including GO, CHEBI, Uberon, and HPO. The redundant version of Ubergraph contains
       the complete inference closure for all subclass and existential relations, including
       transitive, reflexive subclass relations.
-  - id: infores:automat-viral-protome
+  - id: infores:automat-viral-proteome
     status: released
     name: Automat Viral Proteome
     knowledge level: curated
@@ -637,17 +637,17 @@ information_resources:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Clinical-Trials-KP
     knowledge level: curated
     agent type: not_provided
-  - id: infores:biothings-pfcor
+  - id: infores:biothings-pfocr
     status: modified
-    name: BioThings pfocr API
+    name: BioThings PFOCR API
     xref:
-      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFCOR
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-PFOCR
     knowledge level: predicted
     agent type: not_provided
     description: Documentation of the pfocr query web services.
   - id: infores:pfocr
     status: released
-    name: PFCOR
+    name: PFOCR
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/pfocr
     knowledge level: predicted
@@ -1319,6 +1319,17 @@ information_resources:
       Online drug information resource created and maintained by Division
       of Translational Informatics at University of New Mexico in collaboration with
       the IDG.
+  - id: infores:drugmechdb
+    status: released
+    name: DrugMechDB
+    xref:
+      - https://github.com/SuLab/DrugMechDB
+    synonym:
+      - drugmechdb
+    knowledge level: curated
+    agent type: not provided
+    description: >-
+      A database of paths that represent the mechanism of action from a drug to a disease in an indication.
   - id: infores:ebi
     status: released
     name: European Bioinformatics Institute
@@ -3070,11 +3081,15 @@ information_resources:
     status: released
     name: Therapeutic Target Database (TTD)
     xref:
-      - https://db.idrblab.net/ttd/
+      - https://github.com/NCATSTranslator/Translator-All/wiki/TTD
     synonym:
       - TTD
     knowledge level: curated
     agent type: not_provided
+    description: >-
+      TTD is a database providing information about the known and explored therapeutic protein 
+      and nucleic acid targets, the targeted disease, pathway information and the corresponding drugs 
+      directed at each of these targets.
   - id: infores:uberon
     status: released
     name: Uber Anatomy Ontology
@@ -3262,7 +3277,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: >-
-      DDInter is anopen-access database specific to drug-drug interactions
+      DDInter is an open-access database specific to drug-drug interactions
       with annotations including mechanism description, risk levels, management strategies,
       alternative medications, etc. to improve clinical decision-making and patient
       safety.
@@ -3394,7 +3409,7 @@ information_resources:
     knowledge level: curated
     agent type: not_provided
     description: Integrated Bioinformatics Resource for Rare Diseases
-  - id: infores:infores:sri-answer-appraiser
+  - id: infores:sri-answer-appraiser
     status: released
     name: SRI Answer Appraiser
     xref:
@@ -3428,3 +3443,69 @@ information_resources:
     agent type: not_provided
     xref:
       - https://github.com/NCATSTranslator/Translator-All/wiki/Translator-f()%E2%80%90score
+  - id: infores:biothings-suppkg
+    status: released
+    name: BioThings SuppKG API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-SuppKG-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for
+      [SuppKG](https://github.com/zhang-informatics/SemRep_DS/tree/main/SuppKG) data. SuppKG contains relations
+      between dietary supplements and other entities, such as diseases. More information can be found in [this 
+      paper](https://doi.org/10.1016/j.jbi.2022.104120). 
+  - id: infores:suppkg
+    status: released
+    name: SuppKG
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/SuppKG
+    knowledge level: text_mined
+    agent type: not_provided
+    description: >-
+      SuppKG contains relations between dietary supplements and other entities, such as diseases. 
+      More information can be found in [this paper](https://doi.org/10.1016/j.jbi.2022.104120).
+  - id: infores:biothings-ddinter
+    status: released
+    name: BioThings DDInter API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-DDInter-API
+    knowledge level: curated
+    agent type: not_provided
+    description: Documentation of the BioThings API for [DDInter](http://ddinter.scbdd.com/) data.
+  - id: infores:biothings-gtrx
+    status: released
+    name: BioThings GTRx API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-GTRx-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [Genome-to-Treatment (GTRx™)](https://gtrx.rbsapp.net/about.html). 
+      This API includes the content from the linked website, specifically the recommended acute treatments and 
+      interventions for seriously ill newborns, infants and children with newly diagnosed genetic diseases. 
+      These may include therapeutics, dietary changes, surgery, medical devices or other interventions. 
+      For more info, see the paper (open-access): https://www.nature.com/articles/s41467-022-31446-6.
+  - id: infores:biothings-ttd
+    status: released
+    name: Biothings Therapeutic Target Database API
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/BioThings-TTD-API
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      Documentation of the BioThings API for [TherapeuticTargetDatabase](https://db.idrblab.net/ttd/).
+      This KP contains drug-disease, target-disease, drug-protein target, and biomarker-disease associations.
+  - id: infores:rampdb
+    status: released
+    name: RaMPDB
+    xref:
+      - https://github.com/NCATSTranslator/Translator-All/wiki/RaMPDB
+    knowledge level: curated
+    agent type: not_provided
+    description: >-
+      RaMP-DB (Relational database of Metabolomic Pathways) is a multi-sourced integrated database 
+      with comprehensive annotations on biological pathways, structure/chemistry, disease and ontology 
+      annotations for genes, proteins, and metabolites. RaMP-DB also provides a framework for single 
+      and batch queries of those annotations, and for performing chemical and biological pathway 
+      enrichment analyses on input multi-omic datasets.
