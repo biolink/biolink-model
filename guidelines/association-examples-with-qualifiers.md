@@ -250,7 +250,7 @@ where an analog of a specified chemical is the effector of a heavily qualified S
   "id": "e0",
   "category": "biolink:ChemicalAffectsGeneAssociation",
   "subject": "CHEBI:5001"  # Fenofibrate,
-  "predicate": "biolink:afects",
+  "predicate": "biolink:affects",
   "qualified_predicate": "biolink:causes",
   "object": "NCBIGene:5465"  # PPARA,
   "object_aspect_qualifier": "activity",
