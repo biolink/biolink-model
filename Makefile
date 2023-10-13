@@ -247,6 +247,9 @@ tests: biolink-model.yaml env.lock pytest # jsonschema_test
 	poetry run yamllint -c .yamllint-config infores_catalog.yaml
 	poetry run python scripts/verify_infores.py
 
+spell:
+	poetry run codespell
+
 pytest: biolink/model.py
 	poetry run python $<
 
