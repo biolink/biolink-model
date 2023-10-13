@@ -38,13 +38,13 @@ URI: [biolink:SmallMolecule](https://w3id.org/biolink/vocab/SmallMolecule)
  * SIDER.DRUG
  * INCHI
  * INCHIKEY
- * KEGG.GLYCAN
- * KEGG.DRUG
- * KEGG.ENVIRON
- * KEGG
  * BIGG.METABOLITE
  * UMLS
  * foodb.compound
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.ENVIRON
+ * UMLS
 
 ## Parents
 

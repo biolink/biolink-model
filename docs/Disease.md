@@ -154,9 +154,4 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | dcid:Disease |
 | **Narrow Mappings:** | | STY:T019 |
 |  | | STY:T020 |
-|  | | STY:T048 |
-|  | | STY:T049 |
-|  | | STY:T190 |
-|  | | STY:T191 |
-|  | | MONDO:0042489 |
 

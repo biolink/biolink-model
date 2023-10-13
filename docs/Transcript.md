@@ -15,7 +15,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Chas_biological_sequence(i):biological_sequence%20%3F;in_taxon_label(i):label_type%20%3F;is_metabolite(i):boolean%20%3F;available_from(i):DrugAvailabilityEnum%20%2A;max_tolerated_dose(i):string%20%3F;is_toxic(i):boolean%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;synonym(i):label_type%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[NucleicAcidEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[NucleicAcidEntity],[Gene],[ExonToTranscriptRelationship],[ChemicalRole],[ChemicalEntity],[Attribute],[RNAProduct])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TranscriptToGeneRelationship],[ExonToTranscriptRelationship]-%20object%201..1%3E[Transcript%7Cin_taxon_label(i):label_type%20%3F;provided_by(i):string%20%2A;xref(i):uriorcurie%20%2A;full_name(i):label_type%20%3F;synonym(i):label_type%20%2A;category(i):category_type%20%2B;id(i):string;iri(i):iri_type%20%3F;type(i):string%20%2A;name(i):label_type%20%3F;description(i):narrative_text%20%3F],[TranscriptToGeneRelationship]-%20subject%201..1%3E[Transcript],[Transcript]%5E-[RNAProduct],[BiologicalEntity]%5E-[Transcript],[Protein],[OrganismTaxon],[Gene],[ExonToTranscriptRelationship],[BiologicalEntity],[Attribute],[RNAProduct])
 
 ---
 
@@ -27,7 +27,7 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Parents
 
- *  is_a: [NucleicAcidEntity](NucleicAcidEntity.md) - A nucleic acid entity is a molecular entity characterized by availability in gene databases of nucleotide-based sequence representations of its precise sequence; for convenience of representation, partial sequences of various kinds are included.
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
 
 ## Children
 
@@ -42,21 +42,6 @@ URI: [biolink:Transcript](https://w3id.org/biolink/vocab/Transcript)
 
 ## Attributes
 
-
-### Inherited from chemical entity:
-
- * [trade name](trade_name.md)  <sub>0..1</sub>
-     * Range: [ChemicalEntity](ChemicalEntity.md)
- * [available from](available_from.md)  <sub>0..\*</sub>
-     * Range: [DrugAvailabilityEnum](DrugAvailabilityEnum.md)
- * [max tolerated dose](max_tolerated_dose.md)  <sub>0..1</sub>
-     * Description: The highest dose of a drug or treatment that does not cause unacceptable side effects. The maximum tolerated dose is determined in clinical trials by testing increasing doses on different groups of people until the highest dose with acceptable side effects is found. Also called MTD.
-     * Range: [String](types/String.md)
- * [is toxic](is_toxic.md)  <sub>0..1</sub>
-     * Range: [Boolean](types/Boolean.md)
- * [has chemical role](has_chemical_role.md)  <sub>0..\*</sub>
-     * Description: A role is particular behaviour which a chemical entity may exhibit.
-     * Range: [ChemicalRole](ChemicalRole.md)
 
 ### Inherited from entity:
 
@@ -87,12 +72,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Range: [Attribute](Attribute.md)
      * in subsets: (samples)
 
-### Inherited from epigenomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>0..1</sub>
-     * Description: connects a genomic feature to its sequence
-     * Range: [BiologicalSequence](types/BiologicalSequence.md)
-
 ### Inherited from gene product mixin:
 
  * [synonym](synonym.md)  <sub>0..\*</sub>
@@ -110,12 +89,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
      * Description: A human-readable name for an attribute or entity.
      * Range: [LabelType](types/LabelType.md)
      * in subsets: (translator_minimal,samples)
-
-### Inherited from molecular entity:
-
- * [is metabolite](is_metabolite.md)  <sub>0..1</sub>
-     * Description: indicates whether a molecular entity is a metabolite
-     * Range: [Boolean](types/Boolean.md)
 
 ### Inherited from named thing:
 

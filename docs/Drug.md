@@ -26,6 +26,26 @@ URI: [biolink:Drug](https://w3id.org/biolink/vocab/Drug)
  * RXCUI
  * NDC
  * UMLS
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * MESH
+ * CAS
+ * GTOPDB
+ * HMDB
+ * KEGG
+ * KEGG.COMPOUND
+ * ChemBank
+ * PUBCHEM.SUBSTANCE
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.ENVIRON
+ * ChemBank
+ * SIDER.DRUG
+ * BIGG.METABOLITE
+ * foodb.compound
 
 ## Parents
 

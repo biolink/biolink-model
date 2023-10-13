@@ -15,7 +15,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
 ---
 
-![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[TranscriptionFactorBindingSite]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[SequenceVariant]uses%20-.-%3E[GenomicEntity],[RegulatoryRegion]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleosomeModification]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[AccessibleDnaRegion]uses%20-.-%3E[GenomicEntity],[TranscriptionFactorBindingSite],[RegulatoryRegion],[ReagentTargetedGene],[NucleosomeModification],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene],[AccessibleDnaRegion])
+![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SequenceVariant],[TranscriptionFactorBindingSite]uses%20-.-%3E[GenomicEntity%7Chas_biological_sequence:biological_sequence%20%3F],[SequenceVariant]uses%20-.-%3E[GenomicEntity],[RegulatoryRegion]uses%20-.-%3E[GenomicEntity],[ReagentTargetedGene]uses%20-.-%3E[GenomicEntity],[NucleosomeModification]uses%20-.-%3E[GenomicEntity],[NucleicAcidEntity]uses%20-.-%3E[GenomicEntity],[Haplotype]uses%20-.-%3E[GenomicEntity],[Genotype]uses%20-.-%3E[GenomicEntity],[GenomicBackgroundExposure]uses%20-.-%3E[GenomicEntity],[Genome]uses%20-.-%3E[GenomicEntity],[Gene]uses%20-.-%3E[GenomicEntity],[CodingSequence]uses%20-.-%3E[GenomicEntity],[AccessibleDnaRegion]uses%20-.-%3E[GenomicEntity],[TranscriptionFactorBindingSite],[RegulatoryRegion],[ReagentTargetedGene],[NucleosomeModification],[NucleicAcidEntity],[Haplotype],[Genotype],[GenomicBackgroundExposure],[Genome],[Gene],[CodingSequence],[AccessibleDnaRegion])
 
 ---
 
@@ -23,6 +23,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 ## Mixin for
 
  * [AccessibleDnaRegion](AccessibleDnaRegion.md) (mixin)  - A region (or regions) of a chromatinized genome that has been measured to be more accessible to an enzyme such as DNase-I or Tn5 Transpose
+ * [CodingSequence](CodingSequence.md) (mixin) 
  * [Gene](Gene.md) (mixin)  - A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene locus may include regulatory regions, transcribed regions and/or other functional sequence regions.
  * [Genome](Genome.md) (mixin)  - A genome is the sum of genetic material within a cell or virion.
  * [GenomicBackgroundExposure](GenomicBackgroundExposure.md) (mixin)  - A genomic background exposure is where an individual's specific genomic background of genes, sequence variants or other pre-existing genomic conditions constitute a kind of 'exposure' to the organism, leading to or influencing an outcome.

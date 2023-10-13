@@ -25,17 +25,9 @@ URI: [biolink:is_metabolite](https://w3id.org/biolink/vocab/is_metabolite)
 
 ## Used by
 
- * [RNAProduct](RNAProduct.md)
- * [RNAProductIsoform](RNAProductIsoform.md)
- * [CodingSequence](CodingSequence.md)
- * [Exon](Exon.md)
- * [MicroRNA](MicroRNA.md)
  * [MolecularEntity](MolecularEntity.md)
- * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [NucleicAcidEntity](NucleicAcidEntity.md)
- * [SiRNA](SiRNA.md)
  * [SmallMolecule](SmallMolecule.md)
- * [Transcript](Transcript.md)
 
 ## Other properties
 

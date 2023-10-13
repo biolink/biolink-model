@@ -12494,7 +12494,7 @@
         },
         "GeneAffectsChemicalAssociation": {
             "additionalProperties": false,
-            "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)",
+            "description": "Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)",
             "properties": {
                 "aggregator_knowledge_source": {
                     "description": "An intermediate aggregator resource from which knowledge expressed in an Association was retrieved downstream of the original source, on its path to its current serialized form.",

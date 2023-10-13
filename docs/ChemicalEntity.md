@@ -29,6 +29,21 @@ URI: [biolink:ChemicalEntity](https://w3id.org/biolink/vocab/ChemicalEntity)
  * UMLS
  * ncats.drug
  * PHARMGKB.CHEMICAL
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * DrugCentral
+ * GTOPDB
+ * HMDB
+ * KEGG.COMPOUND
+ * ChemBank
+ * PUBCHEM.SUBSTANCE
+ * SIDER.DRUG
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.DRUG
+ * KEGG.ENVIRON
+ * KEGG
 
 ## Parents
 

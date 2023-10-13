@@ -20,6 +20,33 @@ URI: [biolink:FoodAdditive](https://w3id.org/biolink/vocab/FoodAdditive)
 ---
 
 
+## Identifier prefixes
+
+ * ncats.drug
+ * RXCUI
+ * NDC
+ * UMLS
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * MESH
+ * CAS
+ * GTOPDB
+ * HMDB
+ * KEGG
+ * KEGG.COMPOUND
+ * ChemBank
+ * PUBCHEM.SUBSTANCE
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.ENVIRON
+ * ChemBank
+ * SIDER.DRUG
+ * BIGG.METABOLITE
+ * foodb.compound
+
 ## Parents
 
  *  is_a: [ChemicalEntity](ChemicalEntity.md) - A chemical entity is a physical entity that pertains to chemistry or biochemistry.

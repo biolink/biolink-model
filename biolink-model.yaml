@@ -494,7 +494,6 @@ slots:
     slot_uri: rdf:type
     domain: entity
     exact_mappings:
-      - AGRKB:soTermId
       - gff3:type
       - gpi:DB_Object_Type
     multivalued: true
@@ -6881,6 +6880,23 @@ classes:
       - UMLS
       - ncats.drug
       - PHARMGKB.CHEMICAL
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - DrugCentral
+      - GTOPDB
+      - HMDB
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - SIDER.DRUG
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.DRUG     # D number
+      - KEGG.ENVIRON  # E number
+      - KEGG
 
   small molecule:
     is_a: molecular entity
@@ -6926,13 +6942,13 @@ classes:
       - INCHIKEY
        # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
-      - KEGG.GLYCAN   ## G number
-      - KEGG.DRUG     ## D number
-      - KEGG.ENVIRON  ## E number
-      - KEGG
       - BIGG.METABOLITE
       - UMLS
       - foodb.compound
+      - KEGG.GLYCAN   # G number
+      - KEGG.DRUG     # D number
+      - KEGG.ENVIRON  # E number
+      - UMLS
     slot_usage:
       id:
         examples:
@@ -7025,6 +7041,11 @@ classes:
        # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
       - KEGG.GLYCAN   # G number
       - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
+      - foodb.compound
+      - UMLS
 
   regulatory region:
     aliases: ['regulatory element']
@@ -7289,6 +7310,30 @@ classes:
       - OBI:0000047
     id_prefixes:
       - UMLS
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - MESH
+      - CAS
+      - GTOPDB
+      - HMDB
+      - KEGG
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
+      - foodb.compound
+      - UMLS
+      - foodb.food
 
   drug:
     is_a: molecular mixture
@@ -7318,6 +7363,28 @@ classes:
       - RXCUI
       - NDC
       - UMLS
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - MESH
+      - CAS
+      - GTOPDB
+      - HMDB
+      - KEGG
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
+      - foodb.compound
 
    ## Food
 
@@ -7326,12 +7393,66 @@ classes:
     related_mappings:
        # substance role
       - CHEBI:78299
+    id_prefixes:
+      - ncats.drug
+      - RXCUI
+      - NDC
+      - UMLS
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - MESH
+      - CAS
+      - GTOPDB
+      - HMDB
+      - KEGG
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
+      - foodb.compound
 
   food additive:
     is_a: chemical entity
     related_mappings:
        # substance role
       - CHEBI:64047
+    id_prefixes:
+      - ncats.drug
+      - RXCUI
+      - NDC
+      - UMLS
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - MESH
+      - CAS
+      - GTOPDB
+      - HMDB
+      - KEGG
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
+      - foodb.compound
 
   food:
     is_a: chemical mixture
@@ -7339,9 +7460,31 @@ classes:
       A substance consumed by a living organism as a source of nutrition
     id_prefixes:
       - foodb.food
+      - foodb.compound
       - FOODON
       - UMLS
       - NCIT
+      - PUBCHEM.COMPOUND
+      - CHEMBL.COMPOUND
+      - UNII
+      - CHEBI
+      - MESH
+      - CAS
+      - GTOPDB
+      - HMDB
+      - KEGG
+      - KEGG.COMPOUND
+      - ChemBank
+      - PUBCHEM.SUBSTANCE
+      - INCHI
+      - INCHIKEY
+      # - iupac  # is not actually a CURIE namespace but only a naming convention for chemistry
+      # - SMILES   # is not actually a CURIE namespace but only a query language for chemistry
+      - KEGG.GLYCAN   # G number
+      - KEGG.ENVIRON  # E number
+      - ChemBank
+      - SIDER.DRUG
+      - BIGG.METABOLITE
     exact_mappings:
        # Food
       - STY:T168
@@ -7601,26 +7744,13 @@ classes:
       - NCIT:C2991
       - WIKIDATA:Q12136
       - SIO:010299
-       # UMLS Semantic Group "Disorders"
       - UMLSSG:DISO
-       # Disease or Syndrome
       - STY:T047
       - dcid:Disease
     narrow_mappings:
-       # Congenital Abnormality
       - STY:T019
        # Acquired Abnormality
       - STY:T020
-       # Mental or Behavioral Dysfunction
-      - STY:T048
-       # Cell or Molecular Dysfunction
-      - STY:T049
-       # Anatomical Abnormality
-      - STY:T190
-       # Neoplastic Process
-      - STY:T191
-       # disease susceptibility
-      - MONDO:0042489
     id_prefixes:
       - MONDO
       - DOID
@@ -7991,7 +8121,7 @@ classes:
       - model_organism_database
 
   exon:
-    is_a: nucleic acid entity
+    is_a: biological entity
     description: >-
       A region of the transcript sequence within a gene which is not
       removed from the primary RNA transcript by RNA splicing.
@@ -8001,7 +8131,7 @@ classes:
       - WIKIDATA:Q373027
 
   transcript:
-    is_a: nucleic acid entity
+    is_a: biological entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     exact_mappings:
@@ -8016,7 +8146,9 @@ classes:
       - model_organism_database
 
   coding sequence:
-    is_a: nucleic acid entity
+    is_a: biological entity
+    mixins:
+      - genomic entity
     exact_mappings:
       - SO:0000316
       - SIO:001390
@@ -10833,9 +10965,9 @@ enums:
         exact_mappings:
           - RO:0004035
           - RO:0002212
-        close_mappings:  # This RTX contributed term is tagged as an inverse of this Biolink predicate
+        close_mappings:
           - RO:0002335
-        broad_mappings:  # This term is slightly broader in that it includes that A acts within B as well
+        broad_mappings:
           - RO:0004033
 
   ChemicalEntityDerivativeEnum:

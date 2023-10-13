@@ -25,23 +25,15 @@ URI: [biolink:max_tolerated_dose](https://w3id.org/biolink/vocab/max_tolerated_d
 
 ## Used by
 
- * [RNAProduct](RNAProduct.md)
- * [RNAProductIsoform](RNAProductIsoform.md)
  * [ChemicalEntity](ChemicalEntity.md)
  * [ChemicalMixture](ChemicalMixture.md)
- * [CodingSequence](CodingSequence.md)
  * [ComplexMolecularMixture](ComplexMolecularMixture.md)
  * [Drug](Drug.md)
  * [EnvironmentalFoodContaminant](EnvironmentalFoodContaminant.md)
- * [Exon](Exon.md)
  * [Food](Food.md)
  * [FoodAdditive](FoodAdditive.md)
- * [MicroRNA](MicroRNA.md)
  * [MolecularEntity](MolecularEntity.md)
  * [MolecularMixture](MolecularMixture.md)
- * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [NucleicAcidEntity](NucleicAcidEntity.md)
  * [ProcessedMaterial](ProcessedMaterial.md)
- * [SiRNA](SiRNA.md)
  * [SmallMolecule](SmallMolecule.md)
- * [Transcript](Transcript.md)

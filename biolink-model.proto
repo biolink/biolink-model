@@ -2473,7 +2473,7 @@ message Gene
  repeated  uriorcurie xref = 0
   biologicalSequence hasBiologicalSequence = 0
  }
-// Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity,localization, processing, expression, etc.)
+// Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance, activity, localization, processing, transport, etc.)
 message GeneAffectsChemicalAssociation
  {
   string id = 0

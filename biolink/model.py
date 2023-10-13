@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-10-02T19:00:46
+# Generation date: 2023-10-02T19:50:24
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7749,7 +7749,7 @@ class ChemicalAffectsGeneAssociation(Association):
 class GeneAffectsChemicalAssociation(Association):
     """
     Describes an effect that a gene or gene product has on a chemical entity (e.g. an impact of on its abundance,
-    activity,localization, processing, expression, etc.)
+    activity, localization, processing, transport, etc.)
     """
     _inherited_slots: ClassVar[List[str]] = []
 

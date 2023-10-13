@@ -23,9 +23,29 @@ URI: [biolink:Food](https://w3id.org/biolink/vocab/Food)
 ## Identifier prefixes
 
  * foodb.food
+ * foodb.compound
  * FOODON
  * UMLS
  * NCIT
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * MESH
+ * CAS
+ * GTOPDB
+ * HMDB
+ * KEGG
+ * KEGG.COMPOUND
+ * ChemBank
+ * PUBCHEM.SUBSTANCE
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.ENVIRON
+ * ChemBank
+ * SIDER.DRUG
+ * BIGG.METABOLITE
 
 ## Parents
 

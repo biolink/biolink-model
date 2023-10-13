@@ -23,6 +23,28 @@ URI: [biolink:ProcessedMaterial](https://w3id.org/biolink/vocab/ProcessedMateria
 ## Identifier prefixes
 
  * UMLS
+ * PUBCHEM.COMPOUND
+ * CHEMBL.COMPOUND
+ * UNII
+ * CHEBI
+ * MESH
+ * CAS
+ * GTOPDB
+ * HMDB
+ * KEGG
+ * KEGG.COMPOUND
+ * ChemBank
+ * PUBCHEM.SUBSTANCE
+ * INCHI
+ * INCHIKEY
+ * KEGG.GLYCAN
+ * KEGG.ENVIRON
+ * ChemBank
+ * SIDER.DRUG
+ * BIGG.METABOLITE
+ * foodb.compound
+ * UMLS
+ * foodb.food
 
 ## Parents
 
