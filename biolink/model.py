@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-10-02T19:50:24
+# Generation date: 2023-10-13T19:06:44
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -821,15 +821,15 @@ class GenomeId(BiologicalEntityId):
     pass
 
 
-class ExonId(NucleicAcidEntityId):
+class ExonId(BiologicalEntityId):
     pass
 
 
-class TranscriptId(NucleicAcidEntityId):
+class TranscriptId(BiologicalEntityId):
     pass
 
 
-class CodingSequenceId(NucleicAcidEntityId):
+class CodingSequenceId(BiologicalEntityId):
     pass
 
 
@@ -4793,12 +4793,12 @@ class Genome(BiologicalEntity):
 
 
 @dataclass
-class Exon(NucleicAcidEntity):
+class Exon(BiologicalEntity):
     """
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
     splicing.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Exon
     class_class_curie: ClassVar[str] = "biolink:Exon"
@@ -4818,11 +4818,11 @@ class Exon(NucleicAcidEntity):
 
 
 @dataclass
-class Transcript(NucleicAcidEntity):
+class Transcript(BiologicalEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.Transcript
     class_class_curie: ClassVar[str] = "biolink:Transcript"
@@ -4842,8 +4842,8 @@ class Transcript(NucleicAcidEntity):
 
 
 @dataclass
-class CodingSequence(NucleicAcidEntity):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+class CodingSequence(BiologicalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.CodingSequence
     class_class_curie: ClassVar[str] = "biolink:CodingSequence"
@@ -4852,12 +4852,16 @@ class CodingSequence(NucleicAcidEntity):
 
     id: Union[str, CodingSequenceId] = None
     category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
+    has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, CodingSequenceId):
             self.id = CodingSequenceId(self.id)
+
+        if self.has_biological_sequence is not None and not isinstance(self.has_biological_sequence, BiologicalSequence):
+            self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
 
         super().__post_init__(**kwargs)
 
@@ -5057,7 +5061,7 @@ class NucleicAcidSequenceMotif(BiologicalEntity):
 
 @dataclass
 class RNAProduct(Transcript):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.RNAProduct
     class_class_curie: ClassVar[str] = "biolink:RNAProduct"
@@ -5091,7 +5095,7 @@ class RNAProductIsoform(RNAProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.RNAProductIsoform
     class_class_curie: ClassVar[str] = "biolink:RNAProductIsoform"
@@ -5112,7 +5116,7 @@ class RNAProductIsoform(RNAProduct):
 
 @dataclass
 class NoncodingRNAProduct(RNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.NoncodingRNAProduct
     class_class_curie: ClassVar[str] = "biolink:NoncodingRNAProduct"
@@ -5133,7 +5137,7 @@ class NoncodingRNAProduct(RNAProduct):
 
 @dataclass
 class MicroRNA(NoncodingRNAProduct):
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.MicroRNA
     class_class_curie: ClassVar[str] = "biolink:MicroRNA"
@@ -5159,7 +5163,7 @@ class SiRNA(NoncodingRNAProduct):
     duplex or very long hairpin, processed (via the Dicer pathway) such that numerous siRNAs accumulate from both
     strands of the dsRNA. SRNAs trigger the cleavage of their target molecules.
     """
-    _inherited_slots: ClassVar[List[str]] = ["has_chemical_role", "in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
     class_class_uri: ClassVar[URIRef] = BIOLINK.SiRNA
     class_class_curie: ClassVar[str] = "biolink:SiRNA"
