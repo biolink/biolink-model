@@ -1351,15 +1351,9 @@ message CodingSequence
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
+  biologicalSequence hasBiologicalSequence = 0
  }
 // A group of people banded together or treated as a group who share common characteristics. A cohort 'study' is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through time.
 message Cohort
@@ -2230,13 +2224,6 @@ message Exon
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -3886,13 +3873,6 @@ message MicroRNA
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -4136,13 +4116,6 @@ message NoncodingRNAProduct
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -5194,13 +5167,6 @@ message RNAProduct
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -5218,13 +5184,6 @@ message RNAProductIsoform
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -5379,13 +5338,6 @@ message SiRNA
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }
@@ -5590,13 +5542,6 @@ message Transcript
   labelType fullName = 0
  repeated  labelType synonym = 0
  repeated  categoryType category = 0
-  chemicalEntity tradeName = 0
- repeated  drugAvailabilityEnum availableFrom = 0
-  string maxToleratedDose = 0
-  boolean isToxic = 0
- repeated  chemicalRole hasChemicalRole = 0
-  boolean isMetabolite = 0
-  biologicalSequence hasBiologicalSequence = 0
  repeated  organismTaxon inTaxon = 0
   labelType inTaxonLabel = 0
  }

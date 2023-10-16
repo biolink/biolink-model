@@ -1452,7 +1452,7 @@ type ClinicalTrial
     category: [CategoryType]!
   }
 
-type CodingSequence
+type CodingSequence implements GenomicEntity
   {
     id: String!
     iri: IriType
@@ -1465,15 +1465,9 @@ type CodingSequence
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
+    hasBiologicalSequence: BiologicalSequence
   }
 
 type Cohort implements SubjectOfInvestigation
@@ -2433,13 +2427,6 @@ type Exon
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -4246,13 +4233,6 @@ type MicroRNA
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -4508,13 +4488,6 @@ type NoncodingRNAProduct
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -5710,13 +5683,6 @@ type RNAProduct implements GeneProductMixin
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -5734,13 +5700,6 @@ type RNAProductIsoform implements GeneProductIsoformMixin
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -5935,13 +5894,6 @@ type SiRNA
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }
@@ -6184,13 +6136,6 @@ type Transcript
     fullName: LabelType
     synonym: [LabelType]
     category: [CategoryType]!
-    tradeName: ChemicalEntity
-    availableFrom: [DrugAvailabilityEnum]
-    maxToleratedDose: String
-    isToxic: Boolean
-    hasChemicalRole: [ChemicalRole]
-    isMetabolite: Boolean
-    hasBiologicalSequence: BiologicalSequence
     inTaxon: [OrganismTaxon]
     inTaxonLabel: LabelType
   }

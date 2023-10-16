@@ -343,10 +343,10 @@ linkml:Sparqlpath xsd:string
 }
 
 <BiologicalEntity>  (
-    @<BiologicalProcessOrActivity> OR @<DiseaseOrPhenotypicFeature> OR @<Gene> OR @<GeneFamily> OR @<GeneticInheritance> OR
-    @<Genome> OR @<Genotype> OR @<Haplotype> OR @<MacromolecularComplex> OR @<NucleicAcidSequenceMotif> OR
+    @<BiologicalProcessOrActivity> OR @<CodingSequence> OR @<DiseaseOrPhenotypicFeature> OR @<Exon> OR @<Gene> OR @<GeneFamily> OR
+    @<GeneticInheritance> OR @<Genome> OR @<Genotype> OR @<Haplotype> OR @<MacromolecularComplex> OR @<NucleicAcidSequenceMotif> OR
     @<NucleosomeModification> OR @<OrganismalEntity> OR @<Polypeptide> OR @<PosttranslationalModification> OR @<ProteinDomain> OR
-    @<ProteinFamily> OR @<ReagentTargetedGene> OR @<RegulatoryRegion> OR @<SequenceVariant>
+    @<ProteinFamily> OR @<ReagentTargetedGene> OR @<RegulatoryRegion> OR @<SequenceVariant> OR @<Transcript>
 )
 
 <BiologicalEntity_struct> {
@@ -886,8 +886,11 @@ linkml:Sparqlpath xsd:string
 }
 
 <CodingSequence> CLOSED {
-    (  $<CodingSequence_tes> (  &<NucleicAcidEntity_tes> ;
-          rdf:type [ <NucleicAcidEntity> ] ?
+    (  $<CodingSequence_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ? ;
+          &<GenomicEntity_tes> ;
+          rdf:type [ <GenomicEntity> ] ? ;
+          <has_biological_sequence> @<BiologicalSequence> ?
        ) ;
        rdf:type [ <CodingSequence> ]
     )
@@ -1370,8 +1373,8 @@ linkml:Sparqlpath xsd:string
 }
 
 <Exon> CLOSED {
-    (  $<Exon_tes> (  &<NucleicAcidEntity_tes> ;
-          rdf:type [ <NucleicAcidEntity> ] ?
+    (  $<Exon_tes> (  &<BiologicalEntity_tes> ;
+          rdf:type [ <BiologicalEntity> ] ?
        ) ;
        rdf:type [ <Exon> ]
     )
@@ -2361,26 +2364,24 @@ linkml:Sparqlpath xsd:string
     } OR @<MicroRNA> OR @<SiRNA>
 )
 
-<NucleicAcidEntity>  (
-    CLOSED {
-       (  $<NucleicAcidEntity_tes> (  &<MolecularEntity_tes> ;
-             rdf:type [ <MolecularEntity> ] ? ;
-             &<GenomicEntity_tes> ;
-             rdf:type [ <GenomicEntity> ] ? ;
-             &<ThingWithTaxon_tes> ;
-             rdf:type [ <ThingWithTaxon> ] ? ;
-             &<PhysicalEssence_tes> ;
-             rdf:type [ <PhysicalEssence> ] ? ;
-             &<OntologyClass_tes> ;
-             rdf:type [ <OntologyClass> ] ? ;
-             <has_biological_sequence> @<BiologicalSequence> ? ;
-             <in_taxon> @<OrganismTaxon> * ;
-             <in_taxon_label> @<LabelType> ?
-          ) ;
-          rdf:type [ <NucleicAcidEntity> ]
-       )
-    } OR @<CodingSequence> OR @<Exon> OR @<Transcript>
-)
+<NucleicAcidEntity> CLOSED {
+    (  $<NucleicAcidEntity_tes> (  &<MolecularEntity_tes> ;
+          rdf:type [ <MolecularEntity> ] ? ;
+          &<GenomicEntity_tes> ;
+          rdf:type [ <GenomicEntity> ] ? ;
+          &<ThingWithTaxon_tes> ;
+          rdf:type [ <ThingWithTaxon> ] ? ;
+          &<PhysicalEssence_tes> ;
+          rdf:type [ <PhysicalEssence> ] ? ;
+          &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ? ;
+          <has_biological_sequence> @<BiologicalSequence> ? ;
+          <in_taxon> @<OrganismTaxon> * ;
+          <in_taxon_label> @<LabelType> ?
+       ) ;
+       rdf:type [ <NucleicAcidEntity> ]
+    )
+}
 
 <NucleicAcidSequenceMotif> CLOSED {
     (  $<NucleicAcidSequenceMotif_tes> (  &<BiologicalEntity_tes> ;
@@ -3285,8 +3286,8 @@ linkml:Sparqlpath xsd:string
 
 <Transcript>  (
     CLOSED {
-       (  $<Transcript_tes> (  &<NucleicAcidEntity_tes> ;
-             rdf:type [ <NucleicAcidEntity> ] ?
+       (  $<Transcript_tes> (  &<BiologicalEntity_tes> ;
+             rdf:type [ <BiologicalEntity> ] ?
           ) ;
           rdf:type [ <Transcript> ]
        )

@@ -1557,7 +1557,9 @@
          "id": "https://w3id.org/biolink/vocab/BiologicalEntity",
          "shapeExprs": [
             "https://w3id.org/biolink/vocab/BiologicalProcessOrActivity",
+            "https://w3id.org/biolink/vocab/CodingSequence",
             "https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
+            "https://w3id.org/biolink/vocab/Exon",
             "https://w3id.org/biolink/vocab/Gene",
             "https://w3id.org/biolink/vocab/GeneFamily",
             "https://w3id.org/biolink/vocab/GeneticInheritance",
@@ -1574,7 +1576,8 @@
             "https://w3id.org/biolink/vocab/ProteinFamily",
             "https://w3id.org/biolink/vocab/ReagentTargetedGene",
             "https://w3id.org/biolink/vocab/RegulatoryRegion",
-            "https://w3id.org/biolink/vocab/SequenceVariant"
+            "https://w3id.org/biolink/vocab/SequenceVariant",
+            "https://w3id.org/biolink/vocab/Transcript"
          ]
       },
       {
@@ -4397,17 +4400,36 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/CodingSequence_tes",
                   "expressions": [
-                     "https://w3id.org/biolink/vocab/NucleicAcidEntity_tes",
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "values": [
-                              "https://w3id.org/biolink/vocab/NucleicAcidEntity"
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
                            ]
                         },
                         "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GenomicEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GenomicEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
+                        "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
+                        "min": 0,
+                        "max": 1
                      }
                   ]
                },
@@ -6873,14 +6895,14 @@
                   "type": "EachOf",
                   "id": "https://w3id.org/biolink/vocab/Exon_tes",
                   "expressions": [
-                     "https://w3id.org/biolink/vocab/NucleicAcidEntity_tes",
+                     "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "values": [
-                              "https://w3id.org/biolink/vocab/NucleicAcidEntity"
+                              "https://w3id.org/biolink/vocab/BiologicalEntity"
                            ]
                         },
                         "min": 0
@@ -12119,120 +12141,112 @@
          ]
       },
       {
-         "type": "ShapeOr",
+         "type": "Shape",
          "id": "https://w3id.org/biolink/vocab/NucleicAcidEntity",
-         "shapeExprs": [
-            {
-               "type": "Shape",
-               "closed": true,
-               "expression": {
+         "closed": true,
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
                   "type": "EachOf",
+                  "id": "https://w3id.org/biolink/vocab/NucleicAcidEntity_tes",
                   "expressions": [
-                     {
-                        "type": "EachOf",
-                        "id": "https://w3id.org/biolink/vocab/NucleicAcidEntity_tes",
-                        "expressions": [
-                           "https://w3id.org/biolink/vocab/MolecularEntity_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/MolecularEntity"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/GenomicEntity_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/GenomicEntity"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/ThingWithTaxon"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/PhysicalEssence_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/PhysicalEssence"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           "https://w3id.org/biolink/vocab/OntologyClass_tes",
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                              "valueExpr": {
-                                 "type": "NodeConstraint",
-                                 "values": [
-                                    "https://w3id.org/biolink/vocab/OntologyClass"
-                                 ]
-                              },
-                              "min": 0
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
-                              "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
-                              "min": 0,
-                              "max": 1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "https://w3id.org/biolink/vocab/in_taxon",
-                              "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
-                              "min": 0,
-                              "max": -1
-                           },
-                           {
-                              "type": "TripleConstraint",
-                              "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
-                              "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
-                              "min": 0,
-                              "max": 1
-                           }
-                        ]
-                     },
+                     "https://w3id.org/biolink/vocab/MolecularEntity_tes",
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "values": [
-                              "https://w3id.org/biolink/vocab/NucleicAcidEntity"
+                              "https://w3id.org/biolink/vocab/MolecularEntity"
                            ]
                         },
-                        "min": 1
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/GenomicEntity_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/GenomicEntity"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/ThingWithTaxon_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/ThingWithTaxon"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/PhysicalEssence_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/PhysicalEssence"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     "https://w3id.org/biolink/vocab/OntologyClass_tes",
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "values": [
+                              "https://w3id.org/biolink/vocab/OntologyClass"
+                           ]
+                        },
+                        "min": 0
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/has_biological_sequence",
+                        "valueExpr": "https://w3id.org/biolink/vocab/BiologicalSequence",
+                        "min": 0,
+                        "max": 1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "https://w3id.org/biolink/vocab/in_taxon",
+                        "valueExpr": "https://w3id.org/biolink/vocab/OrganismTaxon",
+                        "min": 0,
+                        "max": -1
+                     },
+                     {
+                        "type": "TripleConstraint",
+                        "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
+                        "valueExpr": "https://w3id.org/biolink/vocab/LabelType",
+                        "min": 0,
+                        "max": 1
                      }
                   ]
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "values": [
+                        "https://w3id.org/biolink/vocab/NucleicAcidEntity"
+                     ]
+                  },
+                  "min": 1
                }
-            },
-            "https://w3id.org/biolink/vocab/CodingSequence",
-            "https://w3id.org/biolink/vocab/Exon",
-            "https://w3id.org/biolink/vocab/Transcript"
-         ]
+            ]
+         }
       },
       {
          "type": "Shape",
@@ -16787,14 +16801,14 @@
                         "type": "EachOf",
                         "id": "https://w3id.org/biolink/vocab/Transcript_tes",
                         "expressions": [
-                           "https://w3id.org/biolink/vocab/NucleicAcidEntity_tes",
+                           "https://w3id.org/biolink/vocab/BiologicalEntity_tes",
                            {
                               "type": "TripleConstraint",
                               "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                               "valueExpr": {
                                  "type": "NodeConstraint",
                                  "values": [
-                                    "https://w3id.org/biolink/vocab/NucleicAcidEntity"
+                                    "https://w3id.org/biolink/vocab/BiologicalEntity"
                                  ]
                               },
                               "min": 0
