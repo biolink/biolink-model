@@ -81,7 +81,12 @@ gen-golr-views: biolink-model.yaml dir-golr-views env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 gen-pydantic: biolink-model.yaml dir-pydantic env.lock
 	poetry run gen-pydantic $< > biolink/pydanticmodel.py
+	# poetry run gen-pydantic --pydantic_version 1 $< > biolink/pydanticmodel_v1.py
 
+
+gen-pydantic-v2: biolink-model.yaml dir-pydantic env.lock
+	poetry run gen-pydantic --pydantic_version 2 $< > biolink/pydanticmodel_v2.py
+	# poetry run gen-pydantic --pydantic_version 2 $< > biolink/pydanticmodel.py
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
