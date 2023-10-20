@@ -174,4 +174,5 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
 |  | | WIKIDATA:Q79529 |
 |  | | STY:T103 |
 | **Narrow Mappings:** | | WIKIDATA:Q43460564 |
+| **Broad Mappings:** | | STY:T167 |
 
