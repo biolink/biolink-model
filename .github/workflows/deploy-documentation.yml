@@ -1,65 +1,33 @@
-name: Deploy Documentation
-
-# Controls when the action will run. Triggers the workflow on push
+---
+name: Auto-deployment of testviz Documentation
 on:
-  release:
-    types: [ created ]
-  repository_dispatch:
-    types: trigger-build-documentation
+  push:
+    branches: [main]
 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  synchronize:
+  build-docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Merge master to gh-pages branch
-        uses: devmasx/merge-branch@v1.1.0
-        with:
-          type: now
-          target_branch: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # otherwise, you will fail to push refs to dest repo
 
-      - name: Setup Python Environment
-        uses: actions/setup-python@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
         with:
-          # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-          python-version: 3.8
-          # The target architecture (x86, x64) of the Python interpreter.
-          # architecture: x64 # optional
+          python-version: 3.9
 
-      - name: Setup build environment
+      - name: Install Poetry.
+        uses: snok/install-poetry@v1.3
+
+      - name: Install dependencies.
+        run: poetry install -E docs
+
+      - name: Build documentation.
         run: |
-          python3 -m venv env
-          source env/bin/activate
-          pip install linkml
-
-      - name: Build documentation
-        run: |
-          source env/bin/activate
-          python scripts/jekyllmarkdowngen.py --yaml biolink-model.yaml --dir docs
-          cp biolink-model.yaml docs
-          cp predicate_mapping.yaml docs
-
-      - name: Deploy to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ github.token }}
-          REPOSITORY_NAME: biolink/biolink-model # The repository the action should deploy to
-          BRANCH: gh-pages # The branch the action should deploy to.
-          COMMIT_MESSAGE: 'Update documentation'
-          FOLDER: . # The folder the action should deploy.
+          mkdir -p docs
+          touch docs/.nojekyll
+          make gendoc
+          ([ ! -f docs/about.md ] && cp src/docs/about.md docs/) || true
+          make mkd-gh-deploy
