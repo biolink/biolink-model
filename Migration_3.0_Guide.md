@@ -23,7 +23,7 @@ Late Stage Ebola has phenotype Severe Bleeding with 92%  penetrance in adults
 This is a mapping file that shows how deprecated predicates like "increases expression of" can be translated
 to their equivalent Association-based, qualifiier representation. 
 
-- [Association semantics using qualifiers](guidelines/association-examples-with-qualifiers.md)
+- [Association semantics using qualifiers](src/docs/association-examples-with-qualifiers.md)
 This is a general guide with examples of fully qualified Associations in the chemical-to-gene domain.
 
 - [Predicate transformation table](images/predicate_transformation.pdf)

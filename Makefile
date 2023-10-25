@@ -1,80 +1,136 @@
-# All artifacts of the build should be preserved
+MAKEFLAGS += --warn-undefined-variables
+SHELL := bash
+.SHELLFLAGS := -eu -o pipefail -c
+.DEFAULT_GOAL := help
+.DELETE_ON_ERROR:
+.SUFFIXES:
 .SECONDARY:
 
-# It can be fairly expensive to regenerate the various png's in the markdown.
-# There are three alternatives:
-#   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
-#   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
-#   3) make imgflags=""               -- generate uml images as inline url's
-imgflags?=-i
+RUN = poetry run
+# get values from about.yaml file
+SCHEMA_NAME = biolink-model
+SOURCE_SCHEMA_PATH = biolink-model.yaml
+SOURCE_SCHEMA_DIR = ./
+SRC = src
+DEST = project
+PYMODEL = $(SRC)/biolink
+DOCDIR = docs
 
 
-# ----------------------------------------
-# TOP LEVEL TARGETS
-# ----------------------------------------
-all: install tests build
+GEN_PARGS =
+ifdef LINKML_GENERATORS_PROJECT_ARGS
+GEN_PARGS = ${LINKML_GENERATORS_PROJECT_ARGS}
+endif
 
-# Build the biolink model python library
-python: biolink/model.py
-docs: docs/index.md
-jekyll-docs: docs/Classes.md
-
-shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
-shacl: biolink-model.shacl.ttl
-json-schema: json-schema/biolink-model.json
-prefix-map: prefix-map/biolink-model-prefix-map.json
-
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz context.jsonld contextn.jsonld infores \
-json-schema/biolink-model.json biolink-model.owl.ttl biolink-model.proto shex shacl biolink-model.ttl \
-prefix-map/biolink-model-prefix-map.json gen-pydantic id-prefixes
-
-# TODO: Get this working
-build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
-
-install: env.lock
+GEN_DARGS =
+ifdef LINKML_GENERATORS_MARKDOWN_ARGS
+GEN_DARGS = ${LINKML_GENERATORS_MARKDOWN_ARGS}
+endif
 
 
+# basename of a YAML file in model/
+.PHONY: all clean
 
-# ---------------------------------------
-# Install package into build environment
-# ---------------------------------------
-env.lock:
+# note: "help" MUST be the first target in the file,
+# when the user types "make" they should get help info
+help: status
+	@echo ""
+	@echo "make setup -- initial setup (run this first)"
+	@echo "make site -- makes site locally"
+	@echo "make test -- runs tests"
+	@echo "make lint -- perform linting"
+	@echo "make testdoc -- builds docs and runs local test server"
+	@echo "make deploy -- deploys site"
+	@echo "make update -- updates linkml version"
+	@echo "make help -- show this help"
+	@echo ""
+
+status: check-config
+	@echo "Project: $(SCHEMA_NAME)"
+	@echo "Source: $(SOURCE_SCHEMA_PATH)"
+
+install:
 	poetry install
-	cp /dev/null env.lock
+
+update: update-linkml
 
 
-# ----------------------------------------
-# BUILD/COMPILATION
-# ----------------------------------------
-# ~~~~~~~~~~~~~~~~~~~~
-# Python
-# ~~~~~~~~~~~~~~~~~~~~
-biolink/model.py: biolink-model.yaml env.lock
-	mkdir biolink 2>/dev/null || true
-	poetry run gen-py-classes $< > $@.tmp && poetry run python $@.tmp &&  mv $@.tmp $@
+# todo: consider pinning to template
+update-linkml:
+	poetry add -D linkml@latest
+
+# EXPERIMENTAL
+create-data-harmonizer:
+	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
+
+all: site gen-viz-data
+site: gen-project gendoc
+%.yaml: gen-project
+deploy: all mkd-gh-deploy
+
+compile-sheets:
+	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
+
+# In future this will be done by conversion
+gen-examples:
+	cp src/data/examples/* $(EXAMPLEDIR)
+
+# generates all project files
+
+gen-project: $(PYMODEL)
+	$(RUN) gen-project ${GEN_PARGS} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+
+
+test: test-schema test-python test-examples
+
+test-schema:
+	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
+
+test-python:
+	$(RUN) python -m unittest discover
+
+lint:
+	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)
+
+check-config:
+	@(grep my-datamodel about.yaml > /dev/null && printf "\n**Project not configured**:\n\n  - Remember to edit 'about.yaml'\n\n" || exit 0)
+
+
+# Test documentation locally
+serve: mkd-serve
+
+# Python datamodel
+$(PYMODEL):
+	mkdir -p $@
+
+$(DOCDIR):
+	mkdir -p $@
+
+gendoc: $(DOCDIR)
+	cp $(SRC)/docs/*md $(DOCDIR) ; \
+	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
+
+testdoc: gendoc serve
+
+MKDOCS = $(RUN) mkdocs
+mkd-%:
+	$(MKDOCS) $*
+
+PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+git-init-add: git-init git-add git-commit git-status
+git-init:
+	git init
+git-add: .cruft.json
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/testviz/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
+	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
+git-commit:
+	git commit -m 'chore: initial commit' -a
+git-status:
+	git status
+
 
 infores:
 	poetry run gen-python information-resource.yaml > information_resource.py
-
-# ~~~~~~~~~~~~~~~~~~~~
-# DOCS
-# ~~~~~~~~~~~~~~~~~~~~
-docs/index.md: biolink-model.yaml env.lock
-	poetry run gen-markdown --dir docs $(imgflags) $<
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JEKYLL DOCS
-# ~~~~~~~~~~~~~~~~~~~~
-docs/Classes.md: biolink-model.yaml env.lock
-	poetry run python scripts/jekyllmarkdowngen.py --dir jekyll_docs --yaml $<
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Solr
-# ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views: biolink-model.yaml dir-golr-views env.lock
-	poetry run gen-golr-views -d golr-views $<
-
 
 # ~~~~~~~~~~~~~~~~~~~~
 # pydantic
@@ -88,46 +144,6 @@ gen-pydantic-v2: biolink-model.yaml dir-pydantic env.lock
 	poetry run gen-pydantic --pydantic_version 2 $< > biolink/pydanticmodel_v2.py
 	# poetry run gen-pydantic --pydantic_version 2 $< > biolink/pydanticmodel.py
 
-# ~~~~~~~~~~~~~~~~~~~~
-# Graphql
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.graphql: biolink-model.yaml env.lock
-	poetry run gen-graphql $< > $@
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Graphviz
-# ~~~~~~~~~~~~~~~~~~~~
-gen-graphviz: biolink-model.yaml dir-graphviz env.lock
-	poetry run gen-graphviz  -d graphviz $< -f gv
-	poetry run gen-graphviz  -d graphviz $< -f svg
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Java
-# ~~~~~~~~~~~~~~~~~~~~
-java: json-schema/biolink-model.json dir-java env.lock
-	jsonschema2pojo --source $< -T JSONSCHEMA -t java
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JSON-LD CONTEXT
-# ~~~~~~~~~~~~~~~~~~~~
-context.jsonld: biolink-model.yaml env.lock
-	touch $@
-	poetry run gen-jsonld-context $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
-
-contextn.jsonld: biolink-model.yaml env.lock
-	touch $@
-	poetry run gen-jsonld-context --metauris $< > tmp.jsonld && ( poetry run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JSON-SCHEMA
-# ~~~~~~~~~~~~~~~~~~~~
-json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
-	poetry run gen-json-schema $< > $@
-
 
 # ~~~~~~~~~~~~~~~~~~~~
 # prefix-map
@@ -139,114 +155,12 @@ prefix-map/biolink-model-prefix-map.json: biolink-model.yaml dir-prefix-map env.
 id-prefixes:
 	poetry run gen-python prefix-map/class_prefixes.yaml > scripts/classprefixes.py
 	cd scripts && poetry run python id_prefixes.py
-# ~~~~~~~~~~~~~~~~~~~~
-# Ontology
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.owl.ttl: biolink-model.yaml env.lock
-	poetry run gen-owl --no-metaclasses -o $@ $<
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Proto
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.proto: biolink-model.yaml env.lock
-	poetry run gen-proto $< > $@
-
-# ~~~~~~~~~~~~~~~~~~~~
-# RDF
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.ttl: biolink-model.yaml env.lock
-	poetry run gen-rdf -f ttl --context https://w3id.org/linkml/context.jsonld $<  > $@
-
-# ~~~~~~~~~~~~~~~~~~~~
-# ShEx
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-modeel.shex: biolink-model.yaml
-	poetry run gen-shex $< > $@
-biolink-modeln.shex: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --metauris $< > $@
-biolink-model.shexj: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --format json $< > $@
-biolink-modeln.shexj: biolink-model.yaml
-	touch $@
-	poetry run gen-shex --metauris --format json $< > $@
-
-# ~~~~~~~~~~~~~~~~~~~~
-# SHACL
-# ~~~~~~~~~~~~~~~~~~~~
-biolink-model.shacl.ttl: biolink-model.yaml
-	poetry run gen-shacl $< > $@
-
-# ----------------------------------------
-# Ontology conversion
-# ----------------------------------------
-
-# ontology/%.json: ontology/%.ttl
-# 	owltools $< -o -f json $@
-
-# ontology/%.obo: ontology/%.ttl
-# 	owltools $< -o -f obo --no-check $@
-
-# ontology/%.omn: ontology/%.ttl
-# 	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
-
-# ontology/%.tree: ontology/%.json
-# 	ogr --showdefs -t tree -r $< % > $@
-
-# ontology/%.png: ontology/%.json
-# 	ogr-tree -t png -o $@ -r $< %
-
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Contrib
-# ~~~~~~~~~~~~~~~~~~~~
-contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/%.graphql \
-contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex contrib/%/%.shacl.ttl
-	echo
-
-contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml env.lock
-	poetry run gen-py-classes contrib/$*.yaml > tmp.py && (poetry run comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
-
-contrib/%/docs/index.md: contrib/%.yaml
-	poetry run gen-markdown --dir contrib/$*/docs $<
-
-contrib/%/datamodel.py: contrib/%.yaml
-	poetry run gen-py-classes contrib/$*.yaml > $@
-
-contrib-golr-%: contrib-dir-% contrib/%.yaml
-	poetry run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
-
-contrib-pydantic-%: contrib-dir-% contrib/%.yaml
-	poetry run gen-pydantic -d contrib/$*/pydantic contrib/$*.yaml
-
-
-contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
-	poetry run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
-
-contrib-java-%: contrib-dir-% contrib/%/schema.json
-	mkdir -p contrib/$*/java
-	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
-
-contrib/%/schema.json: contrib-dir-% contrib/%.yaml
-	poetry run gen-json-schema contrib/$*.yaml > $@
-
-contrib/%/%.owl: contrib/%.yaml
-	poetry run gen-owl -o $@ contrib/$*.yaml
-
-contrib/%/%.shex: contrib-dir-% contrib/%.yaml
-	poetry run gen-shex contrib/*.yaml > $@
-
-contrib/%/%.shacl.ttl: contrib-dir-% contrib/%.yaml
-	poetry run gen-shacl contrib/*.yaml > $@
 
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
 test: tests
-tests: biolink-model.yaml env.lock pytest # jsonschema_test
-	poetry run python -m unittest discover -p 'test_*.py'
+tests: unittest discover -p 'test_*.py'
 	poetry run codespell
 	poetry run yamllint -c .yamllint-config biolink-model.yaml
 	poetry run yamllint -c .yamllint-config infores_catalog.yaml
@@ -258,23 +172,15 @@ spell:
 pytest: biolink/model.py
 	poetry run python $<
 
-# jsonschema_test: json-schema/biolink-model.json
-#	jsonschema $<
+# only necessary if setting up via cookiecutter
+.cruft.json:
+	echo "creating a stub for .cruft.json. IMPORTANT: setup via cruft not cookiecutter recommended!" ; \
+	touch $@
 
-# ----------------------------------------
-# CLEAN
-# ----------------------------------------
 clean:
-	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex shacl pydantic
-	rm -f env.lock
-	rm -rf information_resource.py
-	poetry --rm
+	rm -rf $(DEST)
+	rm -rf tmp
+	rm -fr docs/*
+	rm -fr $(PYMODEL)/*
 
-# ----------------------------------------
-# UTILS
-# ----------------------------------------
-dir-%:
-	mkdir -p $*
-
-contrib-dir-%:
-	mkdir -p contrib/$*
+include project.Makefile

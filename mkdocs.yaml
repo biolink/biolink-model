@@ -1,0 +1,25 @@
+---
+site_name: "biolink-model"
+theme:
+  name: material
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  features:
+    - content.tabs.link
+plugins:
+  - search
+  - mermaid2
+nav:
+  # - Home: home.md
+  - Index: index.md
+  - About: about.md
+site_url: https://sierra-moxon.github.io/biolink-model-d
+repo_url: https://github.com/sierra-moxon/biolink-model-d
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

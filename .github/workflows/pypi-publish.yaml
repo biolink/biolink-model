@@ -1,8 +1,9 @@
+---
 name: Publish Python Package
 
 on:
-  push:
-    branches: [no_branch_here]
+  release:
+    types: [created]
 
 jobs:
   build-n-publish:
@@ -10,25 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install wheel
+      - name: Install Poetry
+        run: |
+          pip install poetry
+          poetry self add "poetry-dynamic-versioning[plugin]"
+        # uses: snok/install-poetry@v1.1.6
+        # with:
+        #   virtualenvs-create: true
+        #   virtualenvs-in-project: true
 
-    - name: build a binary wheel dist
-      run: |
-        rm -fr dist
-        python setup.py bdist_wheel sdist
+      # - name: Install dependencies
+      #   run: poetry install --no-interaction
 
-    - name: Publish distribution 📦 to PyPI
-      uses: pypa/gh-action-pypi-publish@v1.2.2
-      with:
-        user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Build source and wheel archives
+        run: poetry build
+
+      - name: Publish distribution 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.2.2
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}

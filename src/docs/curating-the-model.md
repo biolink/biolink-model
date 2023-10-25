@@ -9,12 +9,12 @@ nav_order: 7
 
 Before curating the Biolink Model, we recommend that you familiarize yourself with the basics of [LinkML](https://github.com/linkml).
 
-In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../biolink-model.yaml)
+In Biolink Model all the curation should happen in one place: [biolink-model.yaml](../../biolink-model.yaml)
 This is the one source of truth for the model.
 
 This section explores how to go about adding new classes and slots to the model.
 
-![Modeling Components](../images/model_onion.png)
+![Modeling Components](../../images/model_onion.png)
 
 
 ### Adding an Entity class
@@ -361,7 +361,7 @@ indirectly reduce or otherwise regulate the expression of RHOBTB2. Thus, Biolink
 together into a single system, thereby reducing the burden on the user to find and manually assemble data from these independent resources 
 (see citation below).
 
-![Figure 2](../images/translator_example_figure2.png)
+![Figure 2](../../images/translator_example_figure2.png)
 Figure 2. An overview of the Translator architecture that supports biomedical KG-based question-answering, including the 
 role of Biolink Model, in the context of an example question. In this example, a user has posed the natural-language question: 
 what chemicals or drugs might be used to treat neurological disorders such as epilepsy that are associated with genomic variants of 
