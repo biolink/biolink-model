@@ -27,6 +27,10 @@ fields:
 - id: negated
   description: if set to true, then the association is negated i.e. is not true
   display_name: negated
+- id: qualifier
+  description: grouping slot for all qualifiers on an edge.  useful for testing compliance
+    with association classes
+  display_name: qualifier
 - id: publications
   description: One or more publications that report the statement expressed in an  Association,
     or provide information used as evidence supporting this statement.

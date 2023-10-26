@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,5138.4,283"];
+	graph [bb="0,0,5231.4,283"];
 	node [label="\N"];
 	"disease or phenotypic feature to location association"	[height=0.5,
 		label="disease or phenotypic feature to location association",
-		pos="2770.4,265",
+		pos="2817.4,265",
 		width=7.0771];
 	association	[height=0.5,
 		pos="62.394,178",
 		width=1.7332];
 	"disease or phenotypic feature to location association" -> association	[label=is_a,
 		lp="663.39,221.5",
-		pos="e,106.72,190.7 2516,263.7 2117.8,262.35 1323,256.13 649.39,229 420.22,219.77 361.25,229.8 134.39,196 128.62,195.14 122.62,194.05 \
+		pos="e,106.72,190.7 2562.8,263.83 2157.6,262.68 1341,256.73 649.39,229 420.22,219.81 361.25,229.8 134.39,196 128.62,195.14 122.62,194.05 \
 116.66,192.83"];
 	"disease or phenotypic feature to entity association mixin"	[height=0.5,
 		pos="417.39,178",
 		width=7.6188];
 	"disease or phenotypic feature to location association" -> "disease or phenotypic feature to entity association mixin"	[label=uses,
 		lp="844.89,221.5",
-		pos="e,521.42,194.66 2517.4,262.68 2068.3,259.81 1148.9,251.32 828.39,229 727.72,221.99 613.86,207.63 531.55,196.09"];
+		pos="e,521.42,194.67 2564.2,262.81 2106.4,260.12 1158.1,251.89 828.39,229 727.72,222.01 613.86,207.65 531.55,196.1"];
 	id	[color=blue,
 		height=0.5,
 		label=string,
@@ -26,8 +26,8 @@ digraph {
 	"disease or phenotypic feature to location association" -> id	[color=blue,
 		label=id,
 		lp="964.39,221.5",
-		pos="e,777.38,189.99 2515.6,264.83 2089.7,265.24 1251.2,261.67 957.39,229 884.8,220.93 866.77,215.57 796.39,196 793.29,195.14 790.09,\
-194.17 786.89,193.15",
+		pos="e,777.38,189.99 2566.2,261.84 2095.2,257.4 1112.6,246.22 957.39,229 884.8,220.95 866.77,215.57 796.39,196 793.29,195.14 790.09,194.17 \
+786.89,193.15",
 		style=solid];
 	iri	[color=blue,
 		height=0.5,
@@ -37,7 +37,7 @@ digraph {
 	"disease or phenotypic feature to location association" -> iri	[color=blue,
 		label=iri,
 		lp="1079.4,221.5",
-		pos="e,882.3,190.21 2515.9,264.13 2112.3,263.42 1343.3,258.13 1071.4,229 995.3,220.85 976.51,215.05 902.39,196 899.02,195.13 895.54,194.17 \
+		pos="e,882.3,190.21 2562.5,264.3 2149.6,263.88 1352.3,259.02 1071.4,229 995.3,220.87 976.51,215.05 902.39,196 899.02,195.13 895.54,194.17 \
 892.05,193.16",
 		style=solid];
 	name	[color=blue,
@@ -48,7 +48,7 @@ digraph {
 	"disease or phenotypic feature to location association" -> name	[color=blue,
 		label=name,
 		lp="1189.4,221.5",
-		pos="e,1006.8,191.31 2520.2,261.52 2103.3,256.95 1299.1,246.06 1169.4,229 1116.2,222 1056.7,206.18 1016.4,194.19",
+		pos="e,1006.8,191.32 2566.7,261.69 2139.5,257.31 1303.6,246.61 1169.4,229 1116.2,222.02 1056.7,206.19 1016.4,194.2",
 		style=solid];
 	description	[color=blue,
 		height=0.5,
@@ -57,8 +57,8 @@ digraph {
 		width=2.0943];
 	"disease or phenotypic feature to location association" -> description	[color=blue,
 		label=description,
-		lp="1314.9,221.5",
-		pos="e,1154.5,193.86 2518.7,262.04 2124.3,258.38 1393.1,248.99 1274.4,229 1236.3,222.59 1194.7,208.91 1164.1,197.48",
+		lp="1313.9,221.5",
+		pos="e,1154.3,193.86 2565.5,262.27 2160.3,258.89 1396.7,249.83 1273.4,229 1235.5,222.6 1194.2,208.92 1163.8,197.49",
 		style=solid];
 	"has attribute"	[color=blue,
 		height=0.5,
@@ -67,8 +67,8 @@ digraph {
 		width=1.4443];
 	"disease or phenotypic feature to location association" -> "has attribute"	[color=blue,
 		label="has attribute",
-		lp="1467.4,221.5",
-		pos="e,1295.5,192.18 2520.6,261.33 2160,256.89 1525.3,246.7 1420.4,229 1380.3,222.24 1336.3,207.57 1305.2,195.87",
+		lp="1465.4,221.5",
+		pos="e,1295.4,192.31 2567,261.62 2194.9,257.5 1527.9,247.63 1418.4,229 1378.9,222.28 1335.7,207.69 1304.9,195.99",
 		style=solid];
 	subject	[color=blue,
 		height=0.5,
@@ -77,8 +77,8 @@ digraph {
 		width=1.9318];
 	"disease or phenotypic feature to location association" -> subject	[color=blue,
 		label=subject,
-		lp="1616.4,221.5",
-		pos="e,1443.7,192.68 2516.5,263.34 2224.2,261.36 1762.3,254.19 1590.4,229 1543.1,222.07 1490.6,207.4 1453.3,195.73",
+		lp="1614.4,221.5",
+		pos="e,1443.6,192.82 2562.9,263.79 2259.2,262.31 1769.4,255.66 1588.4,229 1541.9,222.15 1490.4,207.65 1453.6,196.01",
 		style=solid];
 	predicate	[color=blue,
 		height=0.5,
@@ -87,8 +87,8 @@ digraph {
 		width=2.1665];
 	"disease or phenotypic feature to location association" -> predicate	[color=blue,
 		label=predicate,
-		lp="1730.4,221.5",
-		pos="e,1600.3,194.64 2523.8,260.4 2231.8,255.43 1774.9,245.22 1696.4,229 1666.3,222.78 1634.1,210.01 1609.6,198.94",
+		lp="1727.4,221.5",
+		pos="e,1599.5,194.66 2569.2,260.88 2264.1,256.33 1776.4,246.44 1693.4,229 1663.9,222.8 1632.5,210.04 1608.6,198.96",
 		style=solid];
 	negated	[color=blue,
 		height=0.5,
@@ -97,258 +97,268 @@ digraph {
 		width=1.2999];
 	"disease or phenotypic feature to location association" -> negated	[color=blue,
 		label=negated,
-		lp="1834.4,221.5",
-		pos="e,1733.7,194.16 2522.5,260.83 2259.5,256.55 1872.6,247.23 1805.4,229 1782.9,222.91 1759.9,210.58 1742.4,199.68",
+		lp="1830.4,221.5",
+		pos="e,1733.1,194.41 2567.2,261.55 2290.2,257.87 1873,249.05 1801.4,229 1780.1,223.03 1758.4,210.99 1741.8,200.22",
+		style=solid];
+	qualifier	[color=blue,
+		height=0.5,
+		label=string,
+		pos="1815.4,178",
+		width=1.0652];
+	"disease or phenotypic feature to location association" -> qualifier	[color=blue,
+		label=qualifier,
+		lp="1926.4,221.5",
+		pos="e,1833.4,193.91 2568.6,261.06 2317.8,257.06 1959,248.06 1896.4,229 1876.6,222.97 1856.7,210.85 1841.7,200.05",
 		style=solid];
 	qualifiers	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1853.4,178",
+		pos="1948.4,178",
 		width=2.1304];
 	"disease or phenotypic feature to location association" -> qualifiers	[color=blue,
 		label=qualifiers,
-		lp="1913.9,221.5",
-		pos="e,1857.8,195.99 2524.4,260.29 2270.5,255.56 1907.5,245.9 1880.4,229 1871.8,223.63 1865.7,214.51 1861.6,205.52",
+		lp="2006.9,221.5",
+		pos="e,1952.3,196.44 2573,259.9 2332.8,254.95 1998.4,245.21 1973.4,229 1965.1,223.66 1959.5,214.71 1955.7,205.85",
 		style=solid];
 	publications	[color=blue,
 		height=0.5,
 		label=publication,
-		pos="2010.4,178",
+		pos="2105.4,178",
 		width=1.7332];
 	"disease or phenotypic feature to location association" -> publications	[color=blue,
 		label=publications,
-		lp="1999.4,221.5",
-		pos="e,1977.5,193.31 2520.2,261.55 2288,258 1975,249.44 1955.4,229 1945.3,218.5 1954.8,207.57 1968.5,198.61",
+		lp="2092.4,221.5",
+		pos="e,2071.4,193.13 2569.5,260.85 2351.6,256.83 2066.5,247.96 2048.4,229 2038.1,218.18 2048.1,207.11 2062.5,198.14",
 		style=solid];
 	"has evidence"	[color=blue,
 		height=0.5,
 		label="evidence type",
-		pos="2166.4,178",
+		pos="2261.4,178",
 		width=2.0943];
 	"disease or phenotypic feature to location association" -> "has evidence"	[color=blue,
 		label="has evidence",
-		lp="2096.9,221.5",
-		pos="e,2108.7,189.71 2525,260.03 2322.9,255.52 2067,246.4 2050.4,229 2045.8,224.17 2046.4,219.35 2050.4,214 2056.9,205.25 2077.2,197.84 \
-2099,192.13",
+		lp="2189.9,221.5",
+		pos="e,2203,189.51 2576.1,259.21 2388.8,254.27 2158.6,244.99 2143.4,229 2138.8,224.17 2139.4,219.34 2143.4,214 2150,205.09 2170.8,197.64 \
+2193.1,191.93",
 		style=solid];
 	"knowledge source"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2298.4,178",
+		pos="2393.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "knowledge source"	[color=blue,
 		label="knowledge source",
-		lp="2227.9,221.5",
-		pos="e,2269.4,189.98 2536.1,257.87 2370.9,252.36 2176.6,242.96 2163.4,229 2117.8,180.74 2103.1,237.12 2250.4,196 2253.5,195.13 2256.7,\
-194.17 2259.9,193.15",
+		lp="2321.9,221.5",
+		pos="e,2364.4,189.99 2589.8,256.84 2439.9,250.98 2269.2,241.59 2257.4,229 2211.6,180.28 2195.2,237.74 2345.4,196 2348.5,195.14 2351.7,\
+194.17 2354.9,193.16",
 		style=solid];
 	"primary knowledge source"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2393.4,178",
+		pos="2488.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "primary knowledge source"	[color=blue,
 		label="primary knowledge source",
-		lp="2394.4,221.5",
-		pos="e,2363.8,189.56 2525.4,260.06 2419.6,255.75 2316,246.93 2299.4,229 2294.9,224.11 2295.6,219.48 2299.4,214 2300.3,212.74 2328.9,202.19 \
-2354.3,193",
+		lp="2488.4,221.5",
+		pos="e,2458.8,189.47 2583,257.89 2492.7,253.06 2407.6,244.43 2393.4,229 2388.9,224.1 2389.6,219.47 2393.4,214 2394.3,212.72 2423.4,202.11 \
+2449.1,192.9",
 		style=solid];
 	"aggregator knowledge source"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2488.4,178",
+		pos="2583.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "aggregator knowledge source"	[color=blue,
 		label="aggregator knowledge source",
-		lp="2608.9,221.5",
-		pos="e,2488.6,196.37 2576.5,253.32 2543.4,248.09 2515.5,240.37 2502.4,229 2495.8,223.29 2492.2,214.77 2490.3,206.36",
+		lp="2701.9,221.5",
+		pos="e,2583,196.23 2656.7,250.99 2629.2,245.9 2606,238.83 2595.4,229 2589.1,223.14 2585.8,214.58 2584.2,206.19",
 		style=solid];
 	timepoint	[color=blue,
 		height=0.5,
 		label="time type",
-		pos="2714.4,178",
+		pos="2807.4,178",
 		width=1.5346];
 	"disease or phenotypic feature to location association" -> timepoint	[color=blue,
 		label=timepoint,
-		lp="2760.4,221.5",
-		pos="e,2715.3,196.31 2742.3,246.98 2735.9,241.92 2729.7,235.86 2725.4,229 2721.2,222.28 2718.5,214.16 2716.9,206.44",
+		lp="2848.4,221.5",
+		pos="e,2809.4,196.18 2815.4,246.8 2814,235.16 2812.2,219.55 2810.6,206.24",
 		style=solid];
 	"original subject"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="2826.4,178",
+		pos="2919.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "original subject"	[color=blue,
 		label="original subject",
-		lp="2861.4,221.5",
-		pos="e,2816.3,195.84 2783.1,246.71 2787.1,241.11 2791.5,234.84 2795.4,229 2800.7,221.09 2806.2,212.33 2811.1,204.38",
+		lp="2956.4,221.5",
+		pos="e,2911.5,195.95 2860.1,247.24 2869.7,242.26 2879.4,236.18 2887.4,229 2894.9,222.22 2901.4,213.26 2906.5,204.8",
 		style=solid];
 	"original predicate"	[color=blue,
 		height=0.5,
 		label=uriorcurie,
-		pos="2952.4,178",
+		pos="3045.4,178",
 		width=1.5887];
 	"disease or phenotypic feature to location association" -> "original predicate"	[color=blue,
 		label="original predicate",
-		lp="2999.9,221.5",
-		pos="e,2945.8,196.33 2882.4,248.69 2896.3,243.8 2909.7,237.39 2921.4,229 2929.7,223.06 2936.2,214.14 2941.1,205.48",
+		lp="3093.9,221.5",
+		pos="e,3039.8,196.02 2948.3,249.53 2977.8,244.34 3004.1,237.59 3016.4,229 3024.7,223.18 3031,214.13 3035.6,205.32",
 		style=solid];
 	"original object"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3086.4,178",
+		pos="3179.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "original object"	[color=blue,
 		label="original object",
-		lp="3130.9,221.5",
-		pos="e,3084.4,196.05 2979.5,254.68 3018.3,249.41 3051.6,241.33 3067.4,229 3074.7,223.33 3079.1,214.55 3081.9,205.92",
+		lp="3223.9,221.5",
+		pos="e,3177.8,196.08 3008.9,253.06 3080.7,247.34 3148.2,239.35 3161.4,229 3168.6,223.37 3172.9,214.59 3175.5,205.96",
 		style=solid];
 	"subject category"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3219.4,178",
+		pos="3312.4,178",
 		width=2.1304];
 	"disease or phenotypic feature to location association" -> "subject category"	[color=blue,
 		label="subject category",
-		lp="3261.9,221.5",
-		pos="e,3212.7,196.41 2951.3,252.33 3058.6,244.81 3175.8,235.3 3186.4,229 3195.6,223.56 3202.7,214.47 3207.9,205.52",
+		lp="3354.9,221.5",
+		pos="e,3305.9,195.95 2996.8,252.21 3123.9,243.56 3273.1,232.72 3279.4,229 3288.8,223.46 3296.1,214.06 3301.3,204.89",
 		style=solid];
 	"object category"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3390.4,178",
+		pos="3483.4,178",
 		width=2.1304];
 	"disease or phenotypic feature to location association" -> "object category"	[color=blue,
 		label="object category",
-		lp="3406.9,221.5",
-		pos="e,3374.5,195.69 2951.1,252.3 2979,250.51 3007.5,248.7 3034.4,247 3099.1,242.92 3264.7,251.75 3325.4,229 3340.8,223.23 3355.5,212.51 \
-3367,202.47",
+		lp="3499.9,221.5",
+		pos="e,3467.5,195.74 2996.7,252.19 3025,250.4 3054,248.61 3081.4,247 3156.3,242.59 3348.1,255.03 3418.4,229 3433.8,223.3 3448.5,212.58 \
+3460,202.52",
 		style=solid];
 	"subject closure"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3523.4,178",
+		pos="3616.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "subject closure"	[color=blue,
 		label="subject closure",
-		lp="3543.9,221.5",
-		pos="e,3510.3,195.29 2947.5,252.04 2976.5,250.24 3006.3,248.49 3034.4,247 3082.4,244.46 3421.8,246.86 3466.4,229 3480.4,223.39 3493.3,\
-212.76 3503.3,202.74",
+		lp="3638.9,221.5",
+		pos="e,3603.3,195.31 2993.8,251.99 3023.1,250.18 3053.1,248.44 3081.4,247 3134.5,244.29 3510,248.66 3559.4,229 3573.4,223.41 3586.3,212.79 \
+3596.3,202.77",
 		style=solid];
 	"object closure"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3631.4,178",
+		pos="3724.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "object closure"	[color=blue,
 		label="object closure",
-		lp="3667.4,221.5",
-		pos="e,3626.4,196.06 2945.7,251.91 2975.3,250.1 3005.7,248.38 3034.4,247 3065.9,245.49 3575.3,245.19 3602.4,229 3611.3,223.65 3617.8,\
-214.41 3622.3,205.31",
+		lp="3761.4,221.5",
+		pos="e,3720,196.03 2992,251.89 3021.8,250.07 3052.5,248.35 3081.4,247 3115.6,245.4 3668.3,246.97 3697.4,229 3706,223.68 3712.1,214.57 \
+3716.2,205.57",
 		style=solid];
 	"subject category closure"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3764.4,178",
+		pos="3857.4,178",
 		width=2.1304];
 	"disease or phenotypic feature to location association" -> "subject category closure"	[color=blue,
 		label="subject category closure",
-		lp="3827.9,221.5",
-		pos="e,3754.8,196.26 2944.7,251.84 2974.6,250.02 3005.4,248.31 3034.4,247 3072.5,245.27 3686.9,245.38 3721.4,229 3732.5,223.74 3741.8,\
-214.11 3748.9,204.71",
+		lp="3921.9,221.5",
+		pos="e,3848.1,196.26 2991.3,251.82 3021.3,249.99 3052.3,248.29 3081.4,247 3122.1,245.19 3778.6,246.68 3815.4,229 3826.3,223.73 3835.5,\
+214.11 3842.4,204.7",
 		style=solid];
 	"object category closure"	[color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="3957.4,178",
+		pos="4050.4,178",
 		width=2.1304];
 	"disease or phenotypic feature to location association" -> "object category closure"	[color=blue,
 		label="object category closure",
-		lp="4019.9,221.5",
-		pos="e,3949.4,196.23 2943.6,251.75 2973.8,249.93 3005,248.24 3034.4,247 3083.5,244.92 3875.6,251.3 3919.4,229 3929.7,223.75 3938,214.27 \
-3944.2,204.96",
+		lp="4113.9,221.5",
+		pos="e,4042.8,196.22 2990.2,251.75 3020.6,249.92 3051.9,248.23 3081.4,247 3133.1,244.84 3967.4,252.75 4013.4,229 4023.6,223.74 4031.7,\
+214.26 4037.7,204.95",
 		style=solid];
 	"subject namespace"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="4147.4,178",
+		pos="4240.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "subject namespace"	[color=blue,
 		label="subject namespace",
-		lp="4193.4,221.5",
-		pos="e,4139.1,195.78 2942.9,251.71 2973.4,249.88 3004.8,248.2 3034.4,247 3064.2,245.79 4080.6,242.14 4107.4,229 4118.2,223.67 4127.1,\
-213.85 4133.7,204.32",
+		lp="4287.4,221.5",
+		pos="e,4232.4,195.77 2989.5,251.71 3020.1,249.87 3051.7,248.19 3081.4,247 3112.5,245.75 4173.5,242.88 4201.4,229 4212.1,223.66 4220.8,\
+213.84 4227.2,204.31",
 		style=solid];
 	"object namespace"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="4306.4,178",
+		pos="4399.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "object namespace"	[color=blue,
 		label="object namespace",
-		lp="4347.4,221.5",
-		pos="e,4297.8,195.8 2942.2,251.7 2972.9,249.85 3004.6,248.18 3034.4,247 3068.6,245.65 4234.6,243.85 4265.4,229 4276.4,223.7 4285.4,213.88 \
-4292.2,204.34",
+		lp="4441.4,221.5",
+		pos="e,4391.1,195.79 2989.2,251.68 3019.9,249.84 3051.6,248.17 3081.4,247 3116.9,245.61 4327.5,244.6 4359.4,229 4370.3,223.69 4379.1,\
+213.87 4385.7,204.33",
 		style=solid];
 	"subject label closure"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="4457.4,178",
+		pos="4550.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "subject label closure"	[color=blue,
 		label="subject label closure",
-		lp="4509.4,221.5",
-		pos="e,4448.5,195.81 2941.8,251.68 2972.6,249.83 3004.4,248.16 3034.4,247 3072.7,245.52 4380.7,245.43 4415.4,229 4426.5,223.72 4435.8,\
-213.91 4442.7,204.36",
+		lp="4603.4,221.5",
+		pos="e,4541.8,195.8 2988.8,251.67 3019.6,249.82 3051.4,248.15 3081.4,247 3121,245.47 4473.6,246.19 4509.4,229 4520.4,223.71 4529.4,213.9 \
+4536.2,204.35",
 		style=solid];
 	"object label closure"	[color=blue,
 		height=0.5,
 		label=string,
-		pos="4628.4,178",
+		pos="4721.4,178",
 		width=1.0652];
 	"disease or phenotypic feature to location association" -> "object label closure"	[color=blue,
 		label="object label closure",
-		lp="4676.9,221.5",
-		pos="e,4619.8,195.81 2941.8,251.64 2972.6,249.8 3004.4,248.14 3034.4,247 3077.5,245.36 4548.5,247.68 4587.4,229 4598.4,223.72 4607.4,\
-213.9 4614.2,204.36",
+		lp="4769.9,221.5",
+		pos="e,4713.1,195.8 2988.5,251.66 3019.4,249.8 3051.3,248.14 3081.4,247 3125.8,245.32 4641.4,248.48 4681.4,229 4692.3,223.7 4701.1,213.89 \
+4707.7,204.35",
 		style=solid];
 	"retrieval source ids"	[color=blue,
 		height=0.5,
 		label="retrieval source",
-		pos="4790.4,178",
+		pos="4883.4,178",
 		width=2.347];
 	"disease or phenotypic feature to location association" -> "retrieval source ids"	[color=blue,
 		label="retrieval source ids",
-		lp="4838.9,221.5",
-		pos="e,4781.8,196.3 2941.5,251.64 2972.4,249.79 3004.3,248.12 3034.4,247 3082,245.22 4707.5,249.87 4750.4,229 4761.1,223.78 4769.9,214.17 \
-4776.4,204.75",
+		lp="4931.9,221.5",
+		pos="e,4874.8,196.3 2988.5,251.63 3019.4,249.78 3051.3,248.12 3081.4,247 3130.3,245.18 4799.4,250.43 4843.4,229 4854.1,223.78 4862.9,\
+214.17 4869.4,204.76",
 		style=solid];
 	type	[height=0.5,
-		pos="4924.4,178",
+		pos="5017.4,178",
 		width=0.86659];
 	"disease or phenotypic feature to location association" -> type	[color=blue,
 		label=type,
-		lp="4938.4,221.5",
-		pos="e,4925.2,196.19 2941.1,251.64 2972.1,249.78 3004.2,248.12 3034.4,247 3060.5,246.04 4892,245.25 4912.4,229 4919.2,223.54 4922.6,214.93 \
-4924.2,206.37",
+		lp="5031.4,221.5",
+		pos="e,5018.2,196.19 2988.1,251.63 3019.1,249.77 3051.2,248.11 3081.4,247 3108.1,246.02 4984.5,245.64 5005.4,229 5012.2,223.55 5015.6,\
+214.93 5017.2,206.37",
 		style=solid];
 	category	[height=0.5,
-		pos="5025.4,178",
+		pos="5118.4,178",
 		width=1.4263];
 	"disease or phenotypic feature to location association" -> category	[color=blue,
 		label=category,
-		lp="5017.9,221.5",
-		pos="e,5009.8,195.26 2941.1,251.63 2972.1,249.77 3004.2,248.11 3034.4,247 3087.8,245.03 4907.7,246.08 4958.4,229 4974.6,223.54 4990.1,\
-212.51 5002.1,202.2",
+		lp="5110.9,221.5",
+		pos="e,5102.8,195.26 2988.1,251.63 3019.1,249.77 3051.2,248.11 3081.4,247 3136.1,244.99 4999.5,246.48 5051.4,229 5067.6,223.54 5083.1,\
+212.51 5095.1,202.2",
 		style=solid];
 	object	[height=0.5,
 		pos="1470.4,91",
 		width=1.0832];
 	"disease or phenotypic feature to location association" -> object	[color=blue,
 		label=object,
-		lp="5116.4,178",
-		pos="e,1509.6,91.976 2941.1,251.62 2972.1,249.76 3004.2,248.11 3034.4,247 3090.4,244.95 5001.8,251.09 5053.4,229 5084.5,215.69 5109.1,\
-184.13 5085.4,160 5020,93.321 1948.3,91.853 1519.8,91.973",
+		lp="5209.4,178",
+		pos="e,1509.4,91.958 2988.1,251.61 3019.1,249.76 3051.2,248.1 3081.4,247 3138.7,244.91 5093.7,251.59 5146.4,229 5177.5,215.69 5202.1,\
+184.12 5178.4,160 5111.2,91.534 1952.5,91.616 1519.4,91.95",
 		style=solid];
 	subject -> object	[label=relation,
 		lp="1469.4,134.5",
@@ -361,18 +371,18 @@ digraph {
 	association_type	[color=blue,
 		height=0.5,
 		label=string,
-		pos="3081.4,265",
+		pos="3128.4,265",
 		width=1.0652];
 	association_category	[color=blue,
 		height=0.5,
 		label="category type",
-		pos="3212.4,265",
+		pos="3259.4,265",
 		width=2.0762];
 	object -> relation	[pos="e,1428.2,35.54 1457.9,73.889 1451,64.939 1442.2,53.617 1434.4,43.584",
 		style=dotted];
 	"disease or phenotypic feature to location association_object"	[color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="3396.4,265",
+		pos="3443.4,265",
 		width=2.5456];
 }

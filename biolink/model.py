@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-10-20T15:36:13
+# Generation date: 2023-10-26T15:38:42
 # Schema: Biolink-Model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -7228,6 +7228,7 @@ class Association(Entity):
     predicate: Union[str, PredicateType] = None
     object: Union[str, NamedThingId] = None
     negated: Optional[Union[bool, Bool]] = None
+    qualifier: Optional[str] = None
     qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
     publications: Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]] = empty_list()
     has_evidence: Optional[Union[Union[str, EvidenceTypeId], List[Union[str, EvidenceTypeId]]]] = empty_list()
@@ -7275,6 +7276,9 @@ class Association(Entity):
 
         if self.negated is not None and not isinstance(self.negated, Bool):
             self.negated = Bool(self.negated)
+
+        if self.qualifier is not None and not isinstance(self.qualifier, str):
+            self.qualifier = str(self.qualifier)
 
         if not isinstance(self.qualifiers, list):
             self.qualifiers = [self.qualifiers] if self.qualifiers is not None else []

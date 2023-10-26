@@ -206,6 +206,7 @@ linkml:Sparqlpath xsd:string
              <predicate> @<PredicateType> ;
              <object> @<NamedThing> ;
              <negated> @linkml:Boolean ? ;
+             <qualifier> @linkml:String ? ;
              <qualifiers> @<OntologyClass> * ;
              <publications> @<Publication> * ;
              <has_evidence> @<EvidenceType> * ;
