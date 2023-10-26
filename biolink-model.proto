@@ -78,6 +78,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -114,6 +115,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -182,6 +184,7 @@ message Association
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -270,6 +273,7 @@ message BehaviorToBehavioralFeatureAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -497,6 +501,7 @@ message CaseToPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -537,6 +542,7 @@ message CausalGeneToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -616,6 +622,7 @@ message CellLineAsAModelOfDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -655,6 +662,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -722,6 +730,7 @@ message ChemicalAffectsGeneAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -792,6 +801,7 @@ message ChemicalEntityAssessesNamedThingAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -828,6 +838,7 @@ message ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -884,6 +895,7 @@ message ChemicalGeneInteractionAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -954,6 +966,7 @@ message ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation
   namedThing subject = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -991,6 +1004,7 @@ message ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation
   namedThing subject = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1046,6 +1060,7 @@ message ChemicalToChemicalAssociation
   namedThing subject = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1087,6 +1102,7 @@ message ChemicalToChemicalDerivationAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1126,6 +1142,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
   namedThing subject = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1161,6 +1178,7 @@ message ChemicalToPathwayAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1480,6 +1498,7 @@ message ContributorAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
   string knowledgeSource = 0
@@ -1515,6 +1534,7 @@ message CorrelatedGeneToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1727,6 +1747,7 @@ message DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation
  repeated  attribute hasAttribute = 0
   namedThing subject = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1764,6 +1785,7 @@ message DiseaseOrPhenotypicFeatureToLocationAssociation
   namedThing subject = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1801,6 +1823,7 @@ message DiseaseToExposureEventAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1835,6 +1858,7 @@ message DiseaseToPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -1948,6 +1972,7 @@ message DrugToGeneAssociation
   namedThing subject = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2001,6 +2026,7 @@ message DruggableGeneToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
   string knowledgeSource = 0
@@ -2049,6 +2075,7 @@ message EntityToDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2085,6 +2112,7 @@ message EntityToPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2237,6 +2265,7 @@ message ExonToTranscriptRelationship
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2275,6 +2304,7 @@ message ExposureEventToOutcomeAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2312,6 +2342,7 @@ message ExposureEventToPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2398,6 +2429,7 @@ message FunctionalAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2469,6 +2501,7 @@ message GeneAffectsChemicalAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2520,6 +2553,7 @@ message GeneAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2583,6 +2617,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2629,6 +2664,7 @@ message GeneToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2674,6 +2710,7 @@ message GeneToDiseaseOrPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2720,6 +2757,7 @@ message GeneToExpressionSiteAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2758,6 +2796,7 @@ message GeneToGeneCoexpressionAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2798,6 +2837,7 @@ message GeneToGeneFamilyAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2834,6 +2874,7 @@ message GeneToGeneHomologyAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2870,6 +2911,7 @@ message GeneToGeneProductRelationship
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2906,6 +2948,7 @@ message GeneToGoTermAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2942,6 +2985,7 @@ message GeneToPathwayAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -2976,6 +3020,7 @@ message GeneToPhenotypicFeatureAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3080,6 +3125,7 @@ message GenomicSequenceLocalization
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3139,6 +3185,7 @@ message GenotypeAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3177,6 +3224,7 @@ message GenotypeToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3216,6 +3264,7 @@ message GenotypeToGeneAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3252,6 +3301,7 @@ message GenotypeToGenotypePartAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3289,6 +3339,7 @@ message GenotypeToPhenotypicFeatureAssociation
  repeated  attribute hasAttribute = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3332,6 +3383,7 @@ message GenotypeToVariantAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3522,6 +3574,7 @@ message InformationContentEntityToNamedThingAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3658,6 +3711,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3694,6 +3748,7 @@ message MacromolecularMachineToCellularComponentAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3730,6 +3785,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3797,6 +3853,7 @@ message MaterialSampleDerivationAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3836,6 +3893,7 @@ message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3906,6 +3964,7 @@ message MolecularActivityToChemicalEntityAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3942,6 +4001,7 @@ message MolecularActivityToMolecularActivityAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -3977,6 +4037,7 @@ message MolecularActivityToPathwayAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4074,6 +4135,7 @@ message NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
   namedThing subject = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4258,6 +4320,7 @@ message OrganismTaxonToOrganismTaxonInteraction
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4295,6 +4358,7 @@ message OrganismTaxonToOrganismTaxonSpecialization
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4331,6 +4395,7 @@ message OrganismToOrganismAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4367,6 +4432,7 @@ message OrganismalEntityAsAModelOfDiseaseAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4404,6 +4470,7 @@ message PairwiseGeneToGeneInteraction
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4439,6 +4506,7 @@ message PairwiseMolecularInteraction
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -4763,6 +4831,7 @@ message PopulationToPopulationAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5005,6 +5074,7 @@ message ReactionToCatalystAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5043,6 +5113,7 @@ message ReactionToParticipantAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5199,6 +5270,7 @@ message SequenceAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5233,6 +5305,7 @@ message SequenceFeatureRelationship
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5478,6 +5551,7 @@ message TaxonToTaxonAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5555,6 +5629,7 @@ message TranscriptToGeneRelationship
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5626,6 +5701,7 @@ message VariantAsAModelOfDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5664,6 +5740,7 @@ message VariantToDiseaseAssociation
   narrativeText description = 0
  repeated  attribute hasAttribute = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5704,6 +5781,7 @@ message VariantToGeneAssociation
  repeated  attribute hasAttribute = 0
   namedThing subject = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5740,6 +5818,7 @@ message VariantToGeneExpressionAssociation
  repeated  attribute hasAttribute = 0
   namedThing subject = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5780,6 +5859,7 @@ message VariantToPhenotypicFeatureAssociation
   predicateType predicate = 0
   namedThing object = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0
@@ -5823,6 +5903,7 @@ message VariantToPopulationAssociation
  repeated  attribute hasAttribute = 0
   predicateType predicate = 0
   boolean negated = 0
+  string qualifier = 0
  repeated  ontologyClass qualifiers = 0
  repeated  publication publications = 0
  repeated  evidenceType hasEvidence = 0

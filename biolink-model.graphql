@@ -95,6 +95,7 @@ interface AnatomicalEntityToAnatomicalEntityAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -130,6 +131,7 @@ type AnatomicalEntityToAnatomicalEntityOntogenicAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -166,6 +168,7 @@ type AnatomicalEntityToAnatomicalEntityPartOfAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -238,6 +241,7 @@ type Association
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -327,6 +331,7 @@ type BehaviorToBehavioralFeatureAssociation implements EntityToPhenotypicFeature
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -582,6 +587,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -623,6 +629,7 @@ type CausalGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, 
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -705,6 +712,7 @@ type CellLineAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -744,6 +752,7 @@ type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToEntity
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -817,6 +826,7 @@ type ChemicalAffectsGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -888,6 +898,7 @@ type ChemicalEntityAssessesNamedThingAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -928,6 +939,7 @@ type ChemicalEntityOrGeneOrGeneProductRegulatesGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -993,6 +1005,7 @@ type ChemicalGeneInteractionAssociation implements ChemicalToEntityAssociationMi
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1067,6 +1080,7 @@ type ChemicalOrDrugOrTreatmentSideEffectDiseaseOrPhenotypicFeatureAssociation im
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1104,6 +1118,7 @@ type ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation implements
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1159,6 +1174,7 @@ type ChemicalToChemicalAssociation implements ChemicalToEntityAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1193,6 +1209,7 @@ type ChemicalToChemicalDerivationAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1232,6 +1249,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToEntity
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1272,6 +1290,7 @@ type ChemicalToPathwayAssociation implements ChemicalToEntityAssociationMixin
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1594,6 +1613,7 @@ type ContributorAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     publications: [Publication]
     hasEvidence: [EvidenceType]
     knowledgeSource: String
@@ -1630,6 +1650,7 @@ type CorrelatedGeneToDiseaseAssociation implements EntityToDiseaseAssociationMix
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1851,6 +1872,7 @@ type DiseaseOrPhenotypicFeatureToGeneticInheritanceAssociation implements Diseas
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1888,6 +1910,7 @@ type DiseaseOrPhenotypicFeatureToLocationAssociation implements DiseaseOrPhenoty
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1930,6 +1953,7 @@ type DiseaseToExposureEventAssociation implements DiseaseToEntityAssociationMixi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -1964,6 +1988,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2082,6 +2107,7 @@ type DrugToGeneAssociation implements DrugToEntityAssociationMixin
     subject: NamedThing!
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2136,6 +2162,7 @@ type DruggableGeneToDiseaseAssociation implements EntityToDiseaseAssociationMixi
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     knowledgeSource: String
@@ -2196,6 +2223,7 @@ type EntityToDiseaseAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2263,6 +2291,7 @@ type EntityToPhenotypicFeatureAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2440,6 +2469,7 @@ type ExonToTranscriptRelationship
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2484,6 +2514,7 @@ type ExposureEventToOutcomeAssociation implements EntityToOutcomeAssociationMixi
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2521,6 +2552,7 @@ type ExposureEventToPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2621,6 +2653,7 @@ type FunctionalAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2692,6 +2725,7 @@ type GeneAffectsChemicalAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2744,6 +2778,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMixin,
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2821,6 +2856,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2887,6 +2923,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociationMixin, GeneTo
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2933,6 +2970,7 @@ type GeneToDiseaseOrPhenotypicFeatureAssociation implements EntityToPhenotypicFe
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -2984,6 +3022,7 @@ type GeneToExpressionSiteAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3023,6 +3062,7 @@ interface GeneToGeneAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3058,6 +3098,7 @@ type GeneToGeneCoexpressionAssociation implements GeneExpressionMixin
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3098,6 +3139,7 @@ type GeneToGeneFamilyAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3134,6 +3176,7 @@ type GeneToGeneHomologyAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3170,6 +3213,7 @@ type GeneToGeneProductRelationship
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3207,6 +3251,7 @@ type GeneToGoTermAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3243,6 +3288,7 @@ type GeneToPathwayAssociation implements GeneToEntityAssociationMixin
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3278,6 +3324,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3387,6 +3434,7 @@ type GenomicSequenceLocalization
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3447,6 +3495,7 @@ type GenotypeAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMi
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3486,6 +3535,7 @@ type GenotypeToDiseaseAssociation implements GenotypeToEntityAssociationMixin, E
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3530,6 +3580,7 @@ type GenotypeToGeneAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3566,6 +3617,7 @@ type GenotypeToGenotypePartAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3603,6 +3655,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
     hasAttribute: [Attribute]
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3646,6 +3699,7 @@ type GenotypeToVariantAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -3861,6 +3915,7 @@ type InformationContentEntityToNamedThingAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4002,6 +4057,7 @@ type MacromolecularMachineToBiologicalProcessAssociation implements Macromolecul
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4038,6 +4094,7 @@ type MacromolecularMachineToCellularComponentAssociation implements Macromolecul
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4079,6 +4136,7 @@ type MacromolecularMachineToMolecularActivityAssociation implements Macromolecul
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4151,6 +4209,7 @@ type MaterialSampleDerivationAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4190,6 +4249,7 @@ type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSa
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4272,6 +4332,7 @@ type MolecularActivityToChemicalEntityAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4308,6 +4369,7 @@ type MolecularActivityToMolecularActivityAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4343,6 +4405,7 @@ type MolecularActivityToPathwayAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4445,6 +4508,7 @@ type NamedThingAssociatedWithLikelihoodOfNamedThingAssociation
     subject: NamedThing!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4644,6 +4708,7 @@ type OrganismTaxonToEnvironmentAssociation implements OrganismTaxonToEntityAssoc
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4681,6 +4746,7 @@ type OrganismTaxonToOrganismTaxonAssociation implements OrganismTaxonToEntityAss
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4716,6 +4782,7 @@ type OrganismTaxonToOrganismTaxonInteraction
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4753,6 +4820,7 @@ type OrganismTaxonToOrganismTaxonSpecialization
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4790,6 +4858,7 @@ type OrganismToOrganismAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4844,6 +4913,7 @@ type OrganismalEntityAsAModelOfDiseaseAssociation implements ModelToDiseaseAssoc
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4885,6 +4955,7 @@ type PairwiseGeneToGeneInteraction
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -4920,6 +4991,7 @@ type PairwiseMolecularInteraction
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5271,6 +5343,7 @@ type PopulationToPopulationAssociation
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5515,6 +5588,7 @@ type ReactionToCatalystAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5554,6 +5628,7 @@ type ReactionToParticipantAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5719,6 +5794,7 @@ type SequenceAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5753,6 +5829,7 @@ type SequenceFeatureRelationship
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -5808,6 +5885,7 @@ interface SequenceVariantModulatesTreatmentAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6066,6 +6144,7 @@ type TaxonToTaxonAssociation
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6149,6 +6228,7 @@ type TranscriptToGeneRelationship
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6221,6 +6301,7 @@ type VariantAsAModelOfDiseaseAssociation implements ModelToDiseaseAssociationMix
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6260,6 +6341,7 @@ type VariantToDiseaseAssociation implements VariantToEntityAssociationMixin, Ent
     description: NarrativeText
     hasAttribute: [Attribute]
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6305,6 +6387,7 @@ type VariantToGeneAssociation implements VariantToEntityAssociationMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6341,6 +6424,7 @@ type VariantToGeneExpressionAssociation implements GeneExpressionMixin
     hasAttribute: [Attribute]
     subject: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6382,6 +6466,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToEntityAssociation
     predicate: PredicateType!
     object: NamedThing!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
@@ -6425,6 +6510,7 @@ type VariantToPopulationAssociation implements VariantToEntityAssociationMixin, 
     hasAttribute: [Attribute]
     predicate: PredicateType!
     negated: Boolean
+    qualifier: String
     qualifiers: [OntologyClass]
     publications: [Publication]
     hasEvidence: [EvidenceType]
